@@ -1,0 +1,59 @@
+{
+  "scope": "Files prepared for reisi09/DACON-DeepVoice-Contest; excludes this manifest itself",
+  "upstream_aasist_commit": "a04c9863f63d44471dde8a6abcb3b082b07cd1d1",
+  "upstream_archive_url": "https://codeload.github.com/clovaai/aasist/zip/a04c9863f63d44471dde8a6abcb3b082b07cd1d1",
+  "aasist_weights": [
+    {
+      "path_in_archive": "aasist-a04c9863f63d44471dde8a6abcb3b082b07cd1d1/models/weights/AASIST-L.pth",
+      "bytes": 426428,
+      "sha256": "814331d088032bb4c3fa61cc014789eadeed464209dd094ab3a2dd6ffbdce27a"
+    },
+    {
+      "path_in_archive": "aasist-a04c9863f63d44471dde8a6abcb3b082b07cd1d1/models/weights/AASIST.pth",
+      "bytes": 1281532,
+      "sha256": "51d2d9cf0738172f61e2a384ec50a54a55363240f67c971ed55a92435bc1a1c0"
+    }
+  ],
+  "files": [
+    {
+      "path": "AASIST_official_with_weights.zip",
+      "bytes": 1491521,
+      "sha256": "6f60178bf41c121539e51ab64c7cf51615bf34a4f32829494b82d8982da10659"
+    },
+    {
+      "path": "DATASETS.csv",
+      "bytes": 2418,
+      "sha256": "6662780693196986beb86e92a6ffed4be584bf1448ad0cb7c2ed28954ed8ee76"
+    },
+    {
+      "path": "DATA_CATALOG.md",
+      "bytes": 3729,
+      "sha256": "83d0ad9507586a4ca6009796a7d164d684854f8cfffca7fe73c0b6e8afa90b79"
+    },
+    {
+      "path": "DOWNLOADS.md",
+      "bytes": 1959,
+      "sha256": "bf2e324afa8700180c1135f805a06bb972f40c31d61055c40dd8bd57ff7f158a"
+    },
+    {
+      "path": "MODELS.csv",
+      "bytes": 3789,
+      "sha256": "2c8715fe4581899097c09da58ac702e8d0ee26870f783fd994c955a4473f0d31"
+    },
+    {
+      "path": "MODEL_CATALOG.md",
+      "bytes": 4376,
+      "sha256": "1726380bf04c7854c6a6eaf60532a7b1f977d9c712fd4cc1442451e3b51f306a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2252,
+      "sha256": "edd6019d8c77b345cdedecc5ef67d5ce2634f041bfe64f5b0310c4ce6e034bf1"
+    },
+    {
+      "path": "SOURCES.json",
+      "bytes": 11118,
+      "sha256": "e4b61b0c7318980ac409d93ce7ec9d73e6ae8d9d1eb81ddb9c17c135c28bea04"
+    }
+  ]
+}
