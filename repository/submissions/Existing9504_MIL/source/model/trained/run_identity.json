@@ -1,0 +1,32 @@
+{
+  "cache": "cc5eef8284e3682bd5a5128109da49d87514eed09927872c8043eb61fbaf800e",
+  "device": "NVIDIA H100 80GB HBM3",
+  "manifest": "96ba67dd2dfdbcfbf041465e883e0e003e6489e14f82e93054df4b42075a9ae3",
+  "max_epochs": 50,
+  "modules": {
+    "dacon9504a100/common.py": "561a3411d1a6aa453cb229441f3d3afdb91311236cfdf2c6116dfead567fcbbb",
+    "dacon9504a100/dataset.py": "ef172d2c75c9a2b1573bd7f9ae9289a110e89524492c23296726b51c34eeb97d",
+    "dacon9504a100/evaluation.py": "f07b58730321a11d61052a8560064380db4911584826c3b0cfd7a6d2eaaa2fac",
+    "dacon9504a100/features.py": "d17f213a5b7a67e07e9ff8bfa3806c58ed285519746a26e46f0a05f0b3b438cb",
+    "dacon9504a100/fingerprint.py": "37c5cc0f042b98dd7114cd33723fb7f55491d047213c6652bdd90e12a8b2b5a4",
+    "dacon9504a100/gpu.py": "93d26e778ed35bde97ecf66173a0586cc3fbeda3d6c8a59991ffe5a28d9c605c",
+    "dacon9504a100/training.py": "81c5a230df49f1cbf7868dbc799676502c72bf7198bf7169813c5ae59de5b686",
+    "source/eight_heads.py": "c3e040ad607e0f40046358a7bd6069d0fe389f6c6c6201c39992060838eeba09",
+    "source/eight_metrics.py": "78ea26c579d4f59791956c60a674c00c963334be5ccfebfc82ff445ef6f64d4c",
+    "source/full_bank_batches.py": "f7dea887167586c428c366ed9bff1122abf8df959a3b2d94f0496346f54db583",
+    "source/full_bank_evaluate.py": "3db489ec1f7491389fd374ceca4c10328ca6178015381c07c66f48f36d519bba",
+    "source/full_bank_features.py": "59963062eb536d514f8f1a8ea8aa981d65cf2d8f03c7df905597c973d9481116",
+    "source/full_bank_train.py": "bb35c7d23fd305fdaff97398b0b9a07dd7a5da2121494279be00dd2148293673",
+    "source/graph_scoring.py": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+    "source/localization_models.py": "f0c325d9b654cb0a6fa64740082637a39da89c6137c9d29206c1a376201ec94c"
+  },
+  "patience": 5,
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "torch": "2.9.1+cu128",
+  "train_benchmark_override": null,
+  "voice_initial": "078ab77b25e5698d42217c0907e6161384d8bb1b1f3e9ccaa85cd6750a9dd612"
+}

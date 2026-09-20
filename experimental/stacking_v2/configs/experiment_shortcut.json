@@ -1,0 +1,51 @@
+{
+  "seed": 41,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "bootstrap": 2000,
+  "weighting": "parent_equal",
+  "group_mode": "parent",
+  "feature_sets": [
+    "F1",
+    "F1S"
+  ],
+  "grids": {
+    "lr": [
+      {
+        "C": 0.1
+      },
+      {
+        "C": 1.0
+      }
+    ],
+    "et": [
+      {
+        "n_estimators": 128,
+        "max_depth": 3,
+        "min_samples_leaf": 12
+      },
+      {
+        "n_estimators": 128,
+        "max_depth": 5,
+        "min_samples_leaf": 16
+      }
+    ],
+    "xgb": [
+      {
+        "max_depth": 2,
+        "n_estimators": 200,
+        "min_child_weight": 10
+      },
+      {
+        "max_depth": 3,
+        "n_estimators": 200,
+        "min_child_weight": 10
+      }
+    ]
+  },
+  "selection_metric": "inner_logloss",
+  "primary_comparison": "outer_file_discrete_eer",
+  "imputation": "none",
+  "calibration": "none",
+  "locked_ood_access": "separate command after production candidate lock"
+}

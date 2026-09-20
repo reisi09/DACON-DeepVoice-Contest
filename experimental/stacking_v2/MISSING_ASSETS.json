@@ -1,0 +1,118 @@
+{
+  "raw_audio_supplied": false,
+  "new_independent_meta_dev_audio": 0,
+  "new_locked_ood_audio": 0,
+  "current_full_submission_missing_members": [
+    {
+      "path": "model/assets/baseline/model/df_arena_1b/.gitattributes",
+      "expected_sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/assets/baseline/model/df_arena_1b/.gitignore",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/assets/baseline/model/df_arena_1b/pytorch_model.bin",
+      "expected_sha256": "780bc14fd4c15e65d58efdef728427cf03cd29cd60be528e97badf8c89087988",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/assets/baseline/model/htdemucs/955717e8-8726e21a.th",
+      "expected_sha256": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/assets/baseline/model/htdemucs/htdemucs.yaml",
+      "expected_sha256": "239c445d0b14454d541ad8bd9bb271c9e536d267e8a4625208744cbb2e7bb66c",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/assets/baseline/model/panns/Cnn14_mAP=0.431.pth",
+      "expected_sha256": "0dc499e40e9761ef5ea061ffc77697697f277f6a960894903df3ada000e34b31",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/assets/baseline/model/panns/class_labels_indices.csv",
+      "expected_sha256": "cdd1049833c4b86127c2773ac0d14a2754b6a6d0d1798002ed5c66e699708429",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/assets/mert/pytorch_model.bin",
+      "expected_sha256": "0c03774d821a6ad972cb48220b128a10ebea2c790116bd0fd35e5a013f8017f6",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/runtime/bin/ffmpeg",
+      "expected_sha256": "e7e7fb30477f717e6f55f9180a70386c62677ef8a4d4d1a5d948f4098aa3eb99",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/trained/music_41.pt",
+      "expected_sha256": "37402170d05f13840becc4ae45b1d9755e565d89889c5330fd6fa11bcd0aeb82",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/trained/music_42.pt",
+      "expected_sha256": "3315cd455b2781571e2d0a5ba02388d4335bfa5210222a1e130ecf79f2101609",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/trained/music_43.pt",
+      "expected_sha256": "ef4dae28ef052d74e2cdd236765be5d2b33d220f02bc6f29129b31e3211be540",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/trained/voice_41.pt",
+      "expected_sha256": "c1d00490d79765e422f99022ea2179db19be6eac800c93832fa4ffb5272c705c",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/trained/voice_42.pt",
+      "expected_sha256": "bc394b6bed3cf212f4a09f9811651d8f8b8477efbeeae1a676ba65a9442dd4bb",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    },
+    {
+      "path": "model/trained/voice_43.pt",
+      "expected_sha256": "31b350e02eb54105dac35bf78a43dc674dffa30af0bc75c9b0f665226ae9185b",
+      "note": "Six trained .pt files also exist under fixtures/heads in the input; other large assets are not supplied"
+    }
+  ],
+  "new_data_required": [
+    "all original parent audio and rendered file audio",
+    "reviewed parent/speaker/track/source/generator-family provenance",
+    "five labels with explicit unknown masks",
+    "license/revision/redistribution evidence",
+    "independently acquired meta_dev and source/family-held-out locked_ood manifests"
+  ],
+  "new_cache_required": [
+    "GPU-native window/seed measurements for newly acquired meta data",
+    "PANN 527-class per-clip predictions for F2",
+    "same frozen raw DF/MERT branch measurements and raw/stem energies for F2R"
+  ],
+  "missing_python_runtime": [
+    "skops==0.13.0 (installation failed, not tested)",
+    "actual baseline GPU runtime and large encoder dependencies, including transformers"
+  ],
+  "NOT_RUN": [
+    "real new-data fit/selection/lock/OOD evaluation",
+    "GPU parity and L4 profiling",
+    "official upload/submission",
+    "dataset audio download/acquisition"
+  ],
+  "v2_review_attachment": {
+    "status": "NOT_AVAILABLE",
+    "requested_file": "reproduce_preprocessing_gap.py",
+    "note": "Files conversation listing and mounted files did not contain a separate Codex review attachment. User message was used to create tests/reproduce_review_findings.py; the absent script was not read or executed."
+  },
+  "v2_optional_serialization": {
+    "skops": "NOT_RUN",
+    "reason": "skops==0.13.0 not installed; both pip attempts and official-wheel download failed. No pickle fallback.",
+    "logs": [
+      "logs/v2/02_install_skops.txt",
+      "logs/v2/04_install_skops_pypi.txt",
+      "logs/v2/07_skops_wheel_download.txt"
+    ]
+  }
+}

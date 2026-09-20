@@ -1,0 +1,95 @@
+{
+  "schema": "dacon.stacking.data.v1",
+  "format": "UTF-8 JSONL; each row has one final audio file",
+  "required": [
+    "ID",
+    "split",
+    "category",
+    "audio_sha256",
+    "parents",
+    "base_exposure",
+    "FILE_FAKE",
+    "VOICE_FAKE",
+    "MUSIC_FAKE",
+    "VOICE_PRESENT",
+    "MUSIC_PRESENT",
+    "FILE_FAKE_mask",
+    "VOICE_FAKE_mask",
+    "MUSIC_FAKE_mask",
+    "VOICE_PRESENT_mask",
+    "MUSIC_PRESENT_mask"
+  ],
+  "split_values": [
+    "meta_dev",
+    "locked_ood"
+  ],
+  "exclusive_category_values": [
+    "Voice-only",
+    "Music-only",
+    "Mixed",
+    "Stress"
+  ],
+  "parents": "list of original ancestors; Mixed exactly two; keep speaker/track/PCM hash when known; propagate derivative ancestry",
+  "parent_required": [
+    "parent_id",
+    "audio_sha256",
+    "source",
+    "generator_family"
+  ],
+  "parent_recommended": [
+    "speaker",
+    "track",
+    "artist",
+    "pcm_sha256",
+    "dataset_revision",
+    "source_url",
+    "license_url",
+    "license_snapshot_sha256",
+    "redistribution_status",
+    "generator_version",
+    "provenance_refs"
+  ],
+  "base_exposure": {
+    "head_train": "no required for production",
+    "head_selection": "no required for production",
+    "historical_development": "no required for production",
+    "upstream": "yes/no/unknown, never inferred from CSV absence",
+    "evidence": "nonempty list of evidence references covering all ancestors",
+    "reviewed_parent_ids": "exact set of parents reviewed"
+  },
+  "labels": "0/1 or null; mask 0 excludes label even when numeric 0; composition RR/FR/RF/FF uses voice/music order",
+  "GPU_extraction_extra": [
+    "audio_path",
+    "preserve_gain boolean, default false; true is rejected in every production path"
+  ],
+  "group_only_metadata": [
+    "ID",
+    "parents",
+    "split",
+    "category",
+    "composition",
+    "source",
+    "generator_family",
+    "codec_condition",
+    "duration_bin",
+    "snr_bin",
+    "base_exposure",
+    "route",
+    "window_truth"
+  ],
+  "identity_requirement": "code/checkpoint/audio/preprocessing/numeric-mode identity in extended cache; current supplied snapshot hashes pinned",
+  "registry_caveat": "no conflict is not proof of novel source/upstream data",
+  "production_preprocessing_policy": {
+    "sr": 16000,
+    "mono": true,
+    "default_peak_cap": 0.6,
+    "preserve_gain": false,
+    "demucs": "shifts=0;split=True;overlap=.25;trim/right-pad; source snapshot hashed"
+  },
+  "preprocessing_measurements": {
+    "source_peak": "per-file measurement, excluded from common policy equality",
+    "normalization_gain": "per-file measurement, excluded from common policy equality",
+    "normalized_rms": "optional per-file measurement, excluded from common policy equality"
+  },
+  "production_preprocessing_contract": "Manifest default false; explicit false required in cache policy; shared policy pinned in dev report, model provenance and candidate lock, checked on OOD/cache/audio inference. Missing/unsupported policy is rejected. No production preserve_gain=True exception."
+}
