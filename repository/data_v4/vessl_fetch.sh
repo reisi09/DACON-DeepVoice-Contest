@@ -22,8 +22,10 @@ for src in $SOURCES; do
   log "fetch $src"
   if ACQUIRE_BANK="$LOCAL" ACQUIRE_OUT="$LOG/receipts" ACQUIRE_RESERVE_GIB=${RESERVE_GIB:-2} \
        $PY "$CODE/candidate_data_acquire.py" "$PLANS/$src.json" >> "$LOG/$src.log" 2>&1; then
-    tar -cf "$ARCH/$src.tar.part" -C "$LOCAL" "$src"
-    mv "$ARCH/$src.tar.part" "$ARCH/$src.tar"
+    # No rename on the object-storage mount: a job that exits right after `mv` lost the rename (2026-09-23,
+    # mlaad_other). The .done marker, written only after tar succeeds, is the commit point.
+    rm -f "$ARCH/$src.tar.done"
+    tar -cf "$ARCH/$src.tar" -C "$LOCAL" "$src"
     $PY -c "import sys,pathlib;print(sum(f.stat().st_size for f in pathlib.Path(sys.argv[1]).rglob('*') if f.is_file()))" "$LOCAL/$src" > "$ARCH/$src.tar.done"      # marker = verified payload bytes
     rm -rf "$LOCAL/$src"
     log "done $src ($(cat "$ARCH/$src.tar.done") bytes)"
