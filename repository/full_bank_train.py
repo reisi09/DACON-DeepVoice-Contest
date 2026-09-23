@@ -20,7 +20,7 @@ from torch.nn import functional as F
 
 from eight_fixed_io import atomic_json
 from full_bank_features import load_rows, validate_cache, row_identity
-from full_bank_batches import Item, epoch_order, loss_weights, groups
+from full_bank_batches import Item, epoch_order, loss_weights, groups, duration_balance
 from graph_scoring import _roc_metrics
 from localization_models import WindowMIL
 from v6_data import sha256
@@ -180,6 +180,9 @@ def train(args: argparse.Namespace) -> None:
                     'batches': sha256(Path(__file__).with_name('full_bank_batches.py')),
                     'voice_initial': sha256(args.cache / 'voice_classifier_initial.pt'),
                     'max_epochs': args.max_epochs, 'patience': args.patience, 'seeds': [41, 42, 43]}
+    if args.duration_balance:
+        run_identity['duration_balance'] = True
+        samples = {k: v['samples'] for k, v in json.loads((args.cache / 'index.json').read_text())['items'].items()}
     identity_path = args.output / 'run_identity.json'
     if identity_path.exists() and json.loads(identity_path.read_text()) != run_identity:
         raise ValueError('Output directory belongs to a different training run')
@@ -191,6 +194,10 @@ def train(args: argparse.Namespace) -> None:
         if not training or not validation or {x.label for x in validation} != {0., 1.}:
             raise ValueError(f'Incomplete train/validation classes for {route}')
         weights = loss_weights(training)
+        if args.duration_balance:
+            ids = [x.row['ID'] for x in training]
+            factor = duration_balance([x.label for x in training], [samples[i] for i in ids], [weights[i] for i in ids])
+            weights = {i: weights[i] * f for i, f in zip(ids, factor, strict=True)}
         means = np.stack([x.features.mean(0) for x in training])
         mean, scale = torch.tensor(means.mean(0)), torch.tensor(np.maximum(means.std(0), 1e-6))
         seed_predictions = []
@@ -281,4 +288,6 @@ if __name__ == '__main__':
         parser.add_argument('--'+name, type=Path, required=True)
     parser.add_argument('--max-epochs', type=int, default=50)
     parser.add_argument('--patience', type=int, default=5)
+    parser.add_argument('--duration-balance', action='store_true',
+                        help='reweight train rows so both classes share one log-duration histogram (length shortcut control)')
     train(parser.parse_args())

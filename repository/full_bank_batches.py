@@ -36,6 +36,24 @@ def loss_weights(items: Sequence[Item]) -> dict[str, float]:
 
 
 
+def duration_balance(labels: Sequence[float], samples: Sequence[int], base: Sequence[float] | None = None,
+                     bins: int = 10, clip: float = 10.) -> np.ndarray:
+    """Multipliers giving each class the pooled (base-weighted) log-duration histogram while keeping each
+    class's total weight, so file length alone stops separating real from fake."""
+    y, d = np.asarray(labels, float), np.log(np.maximum(np.asarray(samples, float), 1.))
+    w = np.ones(len(y)) if base is None else np.asarray(base, float)
+    edges = np.unique(np.quantile(d, np.linspace(0, 1, bins + 1)[1:-1]))
+    b = np.searchsorted(edges, d, side='right')
+    pooled = np.bincount(b, w, len(edges) + 1) / w.sum()
+    out = np.ones(len(y))
+    for c in (0., 1.):
+        m = y == c
+        own = np.bincount(b[m], w[m], len(edges) + 1) / w[m].sum()
+        out[m] = np.clip(pooled[b[m]] / own[b[m]], 1 / clip, clip)
+        out[m] *= w[m].sum() / (w[m] * out[m]).sum()
+    return out
+
+
 def groups(items: Sequence[Item], microbatch: int, window_limit: int) -> list[list[Item]]:
     """Bound total windows; a longest-file benchmark establishes single-bag safety."""
     result, current, count = [], [], 0
