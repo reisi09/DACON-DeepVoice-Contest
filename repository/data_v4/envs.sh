@@ -6,7 +6,7 @@ set -euo pipefail
 ENVS=${ENVS:-/root/envs}; MODELS=${MODELS:-/root/gen_models}; mkdir -p "$ENVS" "$MODELS"
 command -v uv >/dev/null || pip install -q uv
 TORCH="torch==2.7.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128"
-mk() { uv venv -q -p "$2" "$ENVS/$1"; }
+mk() { [ -x "$ENVS/$1/bin/python" ] || uv venv -q -p "$2" "$ENVS/$1"; }   # idempotent reruns
 pipi() { uv pip install -q -p "$ENVS/$1/bin/python" "${@:2}"; }
 
 for b in "$@"; do case "$b" in
@@ -20,8 +20,9 @@ for b in "$@"; do case "$b" in
                echo "export PYTHONPATH=$MODELS/CosyVoice:$MODELS/CosyVoice/third_party/Matcha-TTS" > "$ENVS/cosyvoice2/pythonpath" ;;
   seedvc)      mk seedvc 3.10;     git -C "$MODELS" clone -q https://github.com/Plachtaa/seed-vc.git || true
                pipi seedvc $TORCH; pipi seedvc -r "$MODELS/seed-vc/requirements.txt" pyarrow ;;
-  acestep)     mk acestep 3.10;    pipi acestep $TORCH; pipi acestep "git+https://github.com/ace-step/ACE-Step.git" ;;
+  acestep)     mk acestep 3.10;    pipi acestep $TORCH; pipi acestep "git+https://github.com/ace-step/ACE-Step.git" torchcodec ;;   # torchaudio>=2.9 saves via torchcodec
   data)        mk data 3.11;       pipi data $TORCH; pipi data demucs==4.0.1 panns-inference==0.1.1 librosa==0.10.2.post1 soundfile pyarrow \
-                                     scikit-learn huggingface_hub modelscope ;;
+                                     scikit-learn huggingface_hub modelscope \
+                                     transformers==4.57.6 accelerate nnAudio ;;   # MERT/full_bank_* imports
   *) echo "unknown backend $b" >&2; exit 2 ;;
 esac; echo "env ready: $b"; done

@@ -57,6 +57,7 @@ def main() -> None:
     ap.add_argument('--bank', type=Path, required=True, help='bank_trainval.csv (val rows are used)')
     ap.add_argument('--test-bank', type=Path, required=True)
     ap.add_argument('--cache', type=Path, required=True)
+    ap.add_argument('--test-cache', type=Path, help='feature cache of the test rows (default: --cache)')
     ap.add_argument('--train-dir', type=Path, required=True)
     ap.add_argument('--presence-head', type=Path)
     ap.add_argument('--prev-val', type=Path)
@@ -67,24 +68,33 @@ def main() -> None:
     heads = json.loads(a.presence_head.read_text()) if a.presence_head else None
     prev = lambda p: {r['ID']: float(r['FILE_FAKE_PROB']) for r in csv.DictReader(p.open())} if p else {}
 
-    def files_for(bank: Path, split: str, prev_scores: dict):
+    def files_for(bank: Path, split: str, prev_scores: dict, cache: Path):
         rows = [r for r in csv.DictReader(bank.open()) if r['split'] == split and r['FILE_FAKE_mask'] == '1']
         out = []
-        for s in score_rows(rows, a.cache, a.train_dir, a.device):
+        for s in score_rows(rows, cache, a.train_dir, a.device):
             vp, mp = dh.presence(heads, s['presence_features'], (s['Pv'], s['Pm']))
-            out.append({**s, 'Pv': vp, 'Pm': mp, 'prev_file': prev_scores.get(s['ID'])})
-        return out, np.array([int(r['FILE_FAKE']) for r in rows])
+            out.append({**s, 'Pv_raw': s['Pv'], 'Pm_raw': s['Pm'], 'Pv': vp, 'Pm': mp, 'prev_file': prev_scores.get(s['ID'])})
+        return out, np.array([int(r['FILE_FAKE']) for r in rows]), rows
 
-    val, yv = files_for(a.bank, 'val', prev(a.prev_val))
+    val, yv, val_rows = files_for(a.bank, 'val', prev(a.prev_val), a.cache)
     ens, report = fit(val, yv)
-    test, yt = files_for(a.test_bank, 'test', prev(a.prev_test))
+    test, yt, test_rows = files_for(a.test_bank, 'test', prev(a.prev_test), a.test_cache or a.cache)
     if all(f['prev_file'] is None for f in test) and 'prev' in ens['weights']:
         raise SystemExit('prev candidate fitted on val but missing for test; pass --prev-test')
     report['test_one_shot'] = {'n': len(yt), 'ensemble_eer': round(eer(yt, [dh.file_score(ens, f) for f in test]), 5),
                                'max_rule_eer': round(eer(yt, [dh.CANDIDATES['max'](f) for f in test]), 5)}
+    # all five columns + official metrics, before (legacy PANNs max, max rule) and after (presence head + ensemble)
+    from graph_scoring import official_metrics, SUBMISSION_COLUMNS
+    from full_bank_evaluate import five_columns
+    for split, fs, rows in (('val', val, val_rows), ('test', test, test_rows)):
+        for tag, ph, en in (('legacy', None, None), ('decision', heads, ens)):
+            preds = [five_columns({**f, 'Pv': f['Pv_raw'], 'Pm': f['Pm_raw']}, ph, en) for f in fs]
+            with (a.train_dir / f'{split}_predictions_{tag}.csv').open('w', newline='') as out:
+                w = csv.DictWriter(out, fieldnames=SUBMISSION_COLUMNS); w.writeheader(); w.writerows(preds)
+            report[f'{split}_official_{tag}'] = official_metrics(rows, preds)
     (a.train_dir / 'file_ensemble.json').write_text(json.dumps(ens) + '\n')
-    (a.train_dir / 'file_ensemble.report.json').write_text(json.dumps(report, indent=1) + '\n')
-    print(json.dumps(report, indent=1))
+    (a.train_dir / 'file_ensemble.report.json').write_text(json.dumps(report, indent=1, default=str) + '\n')
+    print(json.dumps(report, indent=1, default=str))
 
 
 def self_check() -> None:

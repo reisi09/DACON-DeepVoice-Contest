@@ -86,13 +86,18 @@ def ing_asvspoof2021(raw: Path, track: str):
 
 
 def ing_mlaad(raw: Path):
-    for meta in sorted(raw.rglob('meta.csv')):
-        for r in csv.DictReader(meta.open(encoding='utf-8'), delimiter='|'):
-            p = meta.parent / Path(r['path']).name
-            if p.exists():
-                yield item('mlaad', f"{meta.parent.name}/{p.stem}", p, lab(1, 0, 1, None), 'dataset:all_fake',
-                           'CC-BY-NC-4.0', [f"mailabs_text:{r.get('original_file', p.stem)}"],
-                           generator=r.get('model_name', meta.parent.name), language=r.get('language'))
+    """fake/<lang>/<system>/*.wav. meta.csv (model name, source text) when the folder kept it; the per-folder cap
+    in sources.py dropped it for most mlaad_other folders -> system = folder name, language = parent folder,
+    text group = file stem (M-AILABS sentence id, shared by systems that read the same sentence)."""
+    for d in sorted({w.parent for w in raw.rglob('*.wav')}):
+        meta = {}
+        if (d / 'meta.csv').exists():
+            meta = {Path(r['path']).name: r for r in csv.DictReader((d / 'meta.csv').open(encoding='utf-8'), delimiter='|')}
+        for p in sorted(d.glob('*.wav')):
+            r = meta.get(p.name, {})
+            yield item('mlaad', f"{d.parent.name}/{d.name}/{p.stem}", p, lab(1, 0, 1, None), 'dataset:all_fake',
+                       'CC-BY-NC-4.0', [f"mailabs_text:{Path(r.get('original_file') or p.stem).stem}"],
+                       generator=r.get('model_name') or d.name, language=r.get('language') or d.parent.name)
 
 
 def ing_speechfake(raw: Path):
@@ -100,7 +105,7 @@ def ing_speechfake(raw: Path):
     Groups: SeedVC files embed their CommonVoice source id -> linked to that real CV clip; CosyVoice/MeloTTS/
     OpenVoice share text ids (ko-kr-XXXX-YY) -> one component per text; EdgeTTS -> one component per voice."""
     import re
-    root = raw / 'speechfake'
+    root = raw          # tar layout: speechfake/{MD,CommonVoice,metadata}
     meta = root / 'metadata'
     lic = 'CC-BY-4.0 (GitHub) / Apache-2.0 (ModelScope)'
     for csv_path in sorted((meta / 'MD').glob('*_ko.csv')) + [meta / 'Real' / 'CommonVoice.csv']:
@@ -124,6 +129,17 @@ def ing_speechfake(raw: Path):
                        'CC0-1.0 (Common Voice)' if not fake else lic, groups,
                        generator=r['model'] if fake else 'bonafide', kind=r['generator'].lower() if fake else None,
                        language='ko')
+
+
+def ing_echoes(raw: Path):
+    """Echoes (HF Octavian97/Echoes): generated music, layout .../<generator>/<TTA|ATA>/... . Vocal presence is
+    unknown until the separator check; any vocal is generated with the music (conditional VF=1)."""
+    for p in sorted(x for x in raw.rglob('*') if x.suffix.lower() in ('.wav', '.mp3', '.flac', '.ogg')):
+        parts = p.relative_to(raw).parts
+        mode = next((x for x in parts if x.upper() in ('TTA', 'ATA')), 'unknown')
+        gen = parts[parts.index(mode) - 1] if mode in parts and parts.index(mode) > 0 else parts[-2]
+        yield item('echoes', '/'.join(parts), p, lab(None, 1, 1, 1), 'dataset:all_fake_music', 'CC-BY-SA-4.0',
+                   [f'echoes_item:{mode}:{p.stem}'], generator=f'{gen}/{mode}')
 
 
 def ing_vocalset(raw: Path):
@@ -231,8 +247,10 @@ def ing_generated(raw: Path):
                        parent_ids=r.get('parent_ids', []))
 
 
-def ing_existing(csv_path: Path, audio_root: Path):
-    """Previous 16,042-row bank (already licensed/audited). Masks are carried over, not re-guessed."""
+def ing_existing(csv_path: Path, audio_root: Path, mapping: Path | None = None):
+    """Previous 16,042-row bank (already licensed/audited). Masks are carried over, not re-guessed.
+    mapping = audio_upload.json (ID -> 'audio/<sha256>.<ext>' inside the uploaded zips), else the CSV path."""
+    where = {i['ID']: i['path'] for i in json.loads(mapping.read_text())['items']} if mapping else {}
     for r in csv.DictReader(csv_path.open(encoding='utf-8')):
         v = {n: (int(float(r[n])) if r.get(n) not in (None, '', 'nan') and r.get(n + '_mask', '1') in ('1', '1.0', 'True') else None)
              for n in LABELS}
@@ -242,14 +260,14 @@ def ing_existing(csv_path: Path, audio_root: Path):
         groups += [f"track:fma:{r['track_id']}"] if r.get('track_id') and 'FMA' in r['source'] else []
         # an audited real file has only real components: its (possibly unlabeled) voice is real if present
         vf = v['VOICE_FAKE'] if v['VOICE_FAKE'] is not None else 0 if v['FILE_FAKE'] == 0 else None
-        yield item('existing:' + r['source'], r['ID'], audio_root / r['path'], lab(v['VOICE_PRESENT'], v['MUSIC_PRESENT'],
+        yield item('existing:' + r['source'], r['ID'], audio_root / where.get(r['ID'], r['path']), lab(v['VOICE_PRESENT'], v['MUSIC_PRESENT'],
                    vf, v['MUSIC_FAKE'], ff=v['FILE_FAKE']), 'existing_bank', r.get('license', ''), groups,
                    file_fake_override=v['FILE_FAKE'],
                    generator=r.get('generator') or r.get('attack_id'), prior_split=r.get('prior_split'),
                    prior_seen=r.get('prior_seen'))
 
 
-ADAPTERS = {'speechfake': ing_speechfake, 'zeroth_korean': ing_zeroth, 'fleurs_ko': ing_fleurs, 'mlaad_ko': ing_mlaad, 'mlaad_other': ing_mlaad,
+ADAPTERS = {'echoes': ing_echoes, 'speechfake': ing_speechfake, 'zeroth_korean': ing_zeroth, 'fleurs_ko': ing_fleurs, 'mlaad_ko': ing_mlaad, 'mlaad_other': ing_mlaad,
             'asvspoof2021_la': lambda r: ing_asvspoof2021(r, 'LA'), 'asvspoof2021_df': lambda r: ing_asvspoof2021(r, 'DF'),
             'vocalset': ing_vocalset, 'csd': ing_csd, 'haim': ing_haim, 'sonics': ing_sonics, 'openmic': ing_openmic,
             'musan': ing_musan, 'gen': ing_generated}
@@ -456,19 +474,21 @@ def plan_songs(rows: list[dict], n: int, seed: int, max_partners: int = 40) -> l
 
 
 def plan_splices(rows: list[dict], n: int, seed: int) -> list[dict]:
-    """Gap 2: partial voice fakes = a 1-3 s TTS segment of the *same speaker* inside a real utterance.
-    Same speaker keeps the component unchanged (the generated row is already linked to that speaker)."""
+    """Gap 2: partial voice fakes = a 1-3 s generated segment inside a real utterance of the *same lineage*:
+    Zeroth speaker S + our TTS of S, or a CommonVoice-ko clip + the SpeechFake SeedVC conversion of that clip.
+    Sharing the lineage key keeps components unchanged (the fake row is already linked to it)."""
     rng = random.Random(seed + 2)
-    spk = lambda r: next((k for k in r['group_keys'] if k.startswith('speaker:zeroth:')), None)
-    real = [r for r in rows if _voice_only(r) and r['VOICE_FAKE'] == 0 and r['source'] == 'zeroth']
-    fake = [r for r in rows if _voice_only(r) and r['VOICE_FAKE'] == 1 and r['source'] == 'generated_speech' and r.get('kind') == 'tts']
-    by_spk: dict = {}
+    key = lambda r: next((k for k in r['group_keys'] if k.startswith(('speaker:zeroth:', 'commonvoice_ko:'))), None)
+    real = [r for r in rows if _voice_only(r) and r['VOICE_FAKE'] == 0 and r['source'] in ('zeroth', 'speechfake')]
+    fake = [r for r in rows if _voice_only(r) and r['VOICE_FAKE'] == 1 and (
+            (r['source'] == 'generated_speech' and r.get('kind') == 'tts') or (r['source'] == 'speechfake' and r.get('generator') == 'SeedVC'))]
+    by_key: dict = {}
     for r in fake:
-        if spk(r):
-            by_spk.setdefault(spk(r), []).append(r)
+        if key(r):
+            by_key.setdefault(key(r), []).append(r)
     jobs = []
     for r in sorted(real, key=lambda r: hashlib.sha256(r['ID'].encode()).hexdigest()):
-        pool = by_spk.get(spk(r))
+        pool = by_key.get(key(r))
         if pool and r.get('crop_len_s', 0) >= 4:
             jobs.append(dict(real=r, fake=rng.choice(pool), seg_s=rng.uniform(1, 3), pos=rng.uniform(.15, .85)))
             if len(jobs) >= n:
@@ -582,6 +602,39 @@ def enhance_one(job: dict, out: Path, sep, device: str) -> dict:
                 ai_postprocessed_real=True, enhancement='noise+htdemucs_vocals', snr_db=round(job['snr_db'], 2))
 
 
+# ---------------------------------------------------------------- select (bounds feature-extraction cost)
+DEFAULT_CAP = 400
+CAPS = {  # source -> (cap per cell, extra cell keys). Cell = (source, generator, FILE, VP, MP) + extras.
+    'zeroth': (3000, ()), 'fleurs_ko': (1500, ()), 'speechfake': (600, ()),       # Korean real ~ Korean fake
+    'mlaad': (300, ()),                                                            # 12 ko systems + ~500 others
+    'asvspoof2021_la': (30, ('channel',)), 'asvspoof2021_df': (25, ('channel',)),  # attack x transmission/codec
+    'openmic': (1200, ()), 'vocalset': (800, ()), 'haim': (300, ('subset',)), 'echoes': (300, ()),
+    'musan_music': (700, ()), 'musan_speech': (500, ()), 'musan_noise': (900, ()),
+}
+UNCAPPED = ('generated_speech', 'generated_music', 'csd')
+
+
+def select_rows(rows: list[dict]) -> tuple[list[dict], dict]:
+    """Deterministic cap per cell (order = sha256(ID), not model scores or labels beyond the cell key).
+    Every generator/condition keeps up to its cap, so diversity survives while volume is bounded."""
+    kept, cells = [], {}
+    for r in sorted(rows, key=lambda r: hashlib.sha256(r['ID'].encode()).hexdigest()):
+        src = r['source']
+        if src in UNCAPPED:
+            kept.append(r)
+            continue
+        base = src.split(':', 1)[0] if src.startswith('existing:') else src
+        cap, extra = CAPS.get(base, (DEFAULT_CAP, ()))
+        key = (src, r.get('generator'), r['FILE_FAKE'], r['VOICE_PRESENT'], r['MUSIC_PRESENT'], *(r.get(k) for k in extra))
+        if cells.get(key, 0) < cap:
+            cells[key] = cells.get(key, 0) + 1
+            kept.append(r)
+    by_source = {}
+    for r in kept:
+        by_source[r['source']] = by_source.get(r['source'], 0) + 1
+    return kept, dict(sorted(by_source.items()))
+
+
 # ---------------------------------------------------------------- CLI
 def jsonl(path: Path):
     return [json.loads(l) for l in path.open()] if path.exists() else []
@@ -589,11 +642,12 @@ def jsonl(path: Path):
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument('stage', choices=['ingest', 'vocals', 'materialize', 'construct'])
+    ap.add_argument('stage', choices=['ingest', 'select', 'materialize', 'vocals', 'construct'])
     ap.add_argument('--raw', type=Path, default=Path('/root/data_v4/raw'))
     ap.add_argument('--out', type=Path, default=Path('/root/data_v4/out'))
     ap.add_argument('--existing-csv', type=Path)
     ap.add_argument('--existing-audio', type=Path)
+    ap.add_argument('--existing-map', type=Path, help='audio_upload.json of the legacy bank')
     ap.add_argument('--seed', type=int, default=20260923)
     ap.add_argument('--vocal-hi', type=float, default=0.35)
     ap.add_argument('--vocal-lo', type=float, default=0.08)
@@ -612,14 +666,23 @@ def main() -> None:
                 if not (a.raw / name).exists():
                     print(f'skip {name}: {a.raw / name} missing', flush=True)
                     continue
-                for r in fn(a.raw / name):
-                    f.write(json.dumps(r, ensure_ascii=False) + '\n')
-                    counts[name] = counts.get(name, 0) + 1
+                try:  # one wrong schema guess must not stop an unattended GPU run; it is reported instead
+                    for r in fn(a.raw / name):
+                        f.write(json.dumps(r, ensure_ascii=False) + '\n')
+                        counts[name] = counts.get(name, 0) + 1
+                except Exception as exc:
+                    counts[name + '_ERROR'] = f'{type(exc).__name__}: {exc}'[:300]
+                    print(f'adapter {name} failed after {counts.get(name, 0)} rows: {exc}', flush=True)
             if a.existing_csv:
-                for r in ing_existing(a.existing_csv, a.existing_audio):
+                for r in ing_existing(a.existing_csv, a.existing_audio, a.existing_map):
                     f.write(json.dumps(r, ensure_ascii=False) + '\n')
                     counts['existing'] = counts.get('existing', 0) + 1
         print(json.dumps(counts, indent=1))
+    elif a.stage == 'select':
+        kept, counts = select_rows(jsonl(items))
+        (a.out / 'items_selected.jsonl').write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in kept))
+        (a.out / 'select_counts.json').write_text(json.dumps({'total': len(kept), **counts}, indent=1) + '\n')
+        print(json.dumps({'total': len(kept), **counts}, indent=1))
     elif a.stage == 'vocals':
         # runs on the *materialized crop*: the label describes exactly the audio that is trained on
         import torch
@@ -640,7 +703,8 @@ def main() -> None:
     elif a.stage == 'materialize':
         from concurrent.futures import ProcessPoolExecutor
         done = {r['ID'] for r in jsonl(manifest)}
-        todo = [r for r in jsonl(items) if r['ID'] not in done]
+        chosen = a.out / 'items_selected.jsonl'
+        todo = [r for r in jsonl(chosen if chosen.exists() else items) if r['ID'] not in done]
         with manifest.open('a') as f, ProcessPoolExecutor(a.workers) as pool:
             futs = {pool.submit(materialize_one, r, a.out, a.seed): r['ID'] for r in todo}
             for i, fut in enumerate(futs):
@@ -712,12 +776,17 @@ def self_check() -> None:
     gen = [dict(ID=f'g{i}', source='generated_speech', kind='tts', group_keys=[f'speaker:zeroth:{i}'], **lab(1, 0, 1, None)) for i in range(2)]
     spl = plan_splices(real + gen, 100, 1)
     assert spl and all(j['real']['group_keys'] == j['fake']['group_keys'] for j in spl), 'splice only within one speaker'
+    cvr = [dict(ID='cv1', source='speechfake', crop_len_s=6., group_keys=['commonvoice_ko:77'], **lab(1, 0, 0, None))]
+    cvf = [dict(ID='svc1', source='speechfake', generator='SeedVC', group_keys=['commonvoice_ko:77'], **lab(1, 0, 1, None)),
+           dict(ID='cos1', source='speechfake', generator='CosyVoice', group_keys=['speechfake_text:x'], **lab(1, 0, 1, None))]
+    sv = plan_splices(cvr + cvf, 10, 1)
+    assert [(j['real']['ID'], j['fake']['ID']) for j in sv] == [('cv1', 'svc1')], 'CommonVoice clip + its own SeedVC conversion'
     noise = [dict(ID=f'n{i}', source='musan_noise', group_keys=[f'musan_noise:{i}'], **lab(0, 0, None, None)) for i in range(3)]
     enh = plan_enhanced(real + noise, 100, 1)
     assert len({j['noise']['ID'] for j in enh}) == len(enh) <= 2, 'each noise component used once, one per speaker component'
     import tempfile
     with tempfile.TemporaryDirectory() as d:
-        root = Path(d) / 'speechfake' / 'speechfake'
+        root = Path(d) / 'speechfake'
         (root / 'metadata' / 'MD').mkdir(parents=True); (root / 'metadata' / 'Real').mkdir(parents=True)
         files = ['MD/SeedVC/ko/6081_41_common_voice_ko_35852237.wav', 'MD/CosyVoice/ko/ko-kr-0329-13.wav',
                  'MD/EdgeTTS/ko/ko-KR-SunHiNeural/ko-KR-SunHiNeural_1.wav', 'CommonVoice/ko/dev/common_voice_ko_35852237.wav']
@@ -733,6 +802,20 @@ def self_check() -> None:
         assert len(sf_rows) == 4 and by[files[3]]['FILE_FAKE'] == 0 and by[files[0]]['FILE_FAKE'] == 1
         assert by[files[0]]['group_keys'] == by[files[3]]['group_keys'], 'SeedVC output linked to its CommonVoice source'
         assert by[files[2]]['group_keys'] == ['speechfake_voice:ko-KR-SunHiNeural'] and by[files[1]]['generator'] == 'CosyVoice'
+    many = [dict(ID=f'z{i}', source='asvspoof2021_la', generator='A07', channel=f'C{i % 3}', **lab(1, 0, 1, None)) for i in range(300)]
+    many += [dict(ID=f'g{i}', source='generated_speech', generator='cosyvoice2', **lab(1, 0, 1, None)) for i in range(50)]
+    kept, counts = select_rows(many)
+    assert counts == {'asvspoof2021_la': 90, 'generated_speech': 50}, counts
+    assert select_rows(list(reversed(many)))[0] == kept, 'selection independent of input order'
+    with tempfile.TemporaryDirectory() as d:
+        dd = Path(d) / 'fake' / 'de' / 'Edge-TTS'
+        dd.mkdir(parents=True); (dd / 'dorothy_01_f000004.wav').write_bytes(b'')
+        ml = list(ing_mlaad(Path(d)))
+        assert ml[0]['generator'] == 'Edge-TTS' and ml[0]['language'] == 'de' and ml[0]['group_keys'] == ['mailabs_text:dorothy_01_f000004']
+    with tempfile.TemporaryDirectory() as d:
+        e = Path(d) / 'Echoes' / 'suno' / 'TTA'; e.mkdir(parents=True); (e / 'x1.mp3').write_bytes(b'')
+        er = list(ing_echoes(Path(d)))
+        assert er[0]['generator'] == 'suno/TTA' and er[0]['FILE_FAKE'] == 1 and er[0]['VOICE_PRESENT'] is None
     print('build_manifest self-check ok')
 
 
