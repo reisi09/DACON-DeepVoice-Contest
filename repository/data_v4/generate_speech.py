@@ -91,16 +91,18 @@ class Backend:
         elif name == 'seedvc':
             import os
             import subprocess
-            from huggingface_hub import hf_hub_download
-            # weights pre-fetched by fetch_weights.py (set seedvc, HF cache layout); run fully offline
-            cache = Path(os.environ.get('SEEDVC_HF_CACHE', '/root/data_v4/weights/hf_cache'))
-            get = lambda f: hf_hub_download('Plachta/Seed-VC', f, cache_dir=cache, local_files_only=True)
-            self.ckpt = get('DiT_seed_v2_uvit_whisper_small_wavenet_bigvgan_pruned.pth')
-            self.cfg = get('config_dit_mel_seed_uvit_whisper_small_wavenet.yml')
-            link = work / 'seed-vc' / 'checkpoints'   # seed-vc downloads CAM++ into ./checkpoints (HF cache layout)
-            if not link.exists():
-                link.symlink_to(cache, target_is_directory=True)
-            self.env = {**os.environ, 'HF_HUB_CACHE': str(cache), 'HF_HUB_OFFLINE': '1'}
+            # weights pre-fetched by fetch_weights.py (set seedvc, plain per-repo dirs); the config is rewritten
+            # so whisper/BigVGAN load from local dirs (both loaders accept a directory in place of a repo id)
+            w = Path(os.environ.get('SEEDVC_WEIGHTS', '/root/data_v4/weights'))
+            self.ckpt = str(w / 'Plachta__Seed-VC' / 'DiT_seed_v2_uvit_whisper_small_wavenet_bigvgan_pruned.pth')
+            cfg = (w / 'Plachta__Seed-VC' / 'config_dit_mel_seed_uvit_whisper_small_wavenet.yml').read_text()
+            for repo in ('openai/whisper-small', 'nvidia/bigvgan_v2_22khz_80band_256x'):
+                if repo not in cfg:
+                    raise SystemExit(f'Seed-VC config no longer names {repo}; update the local-path rewrite')
+                cfg = cfg.replace(repo, str(w / repo.replace('/', '__')))
+            self.cfg = str(work / 'seed-vc' / 'config_local_paths.yml')
+            Path(self.cfg).write_text(cfg)
+            self.env = dict(os.environ)   # CAM++ (28 MB) is still fetched by seed-vc into ./checkpoints
             self.run = subprocess.run
         else:
             raise SystemExit(f'unknown backend {name}')

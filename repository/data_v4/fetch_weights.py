@@ -2,8 +2,9 @@
 
   python data_v4/fetch_weights.py OUT_DIR core|seedvc [--dry-run]
 core   -> OUT_DIR/<org>__<name>/ (local_dir layout, loaded by path)
-seedvc -> OUT_DIR/hf_cache (HF cache layout: Seed-VC's inference resolves whisper/bigvgan by repo name,
-          so HF_HUB_CACHE=OUT_DIR/hf_cache makes it work offline). Revisions pinned, receipt per set.
+seedvc -> same layout; generate_speech writes a Seed-VC config pointing whisper/bigvgan at these dirs.
+Plain files only: the object-storage mount does not keep the HF cache's snapshot->blob symlinks.
+Revisions pinned, receipt per set.
 """
 from __future__ import annotations
 
@@ -43,15 +44,16 @@ def fetch(out: Path, name: str) -> dict:
     from huggingface_hub import snapshot_download
     receipt = {}
     for row in plan(name):
-        try:
-            kw = dict(revision=row['revision'], allow_patterns=row['patterns'])
-            if name == 'seedvc':
-                path = snapshot_download(row['repo'], cache_dir=out / 'hf_cache', **kw)
-            else:
-                path = snapshot_download(row['repo'], local_dir=out / row['repo'].replace('/', '__'), **kw)
-            row['bytes_on_disk'] = sum(f.stat().st_size for f in Path(path).rglob('*') if f.is_file())
-        except Exception as exc:  # one missing repo must not block the others
-            row['error'] = f'{type(exc).__name__}: {exc}'[:300]
+        for attempt in range(3):  # transient transfer errors (seen: brotli DecodingError) get retried
+            try:
+                path = snapshot_download(row['repo'], local_dir=out / row['repo'].replace('/', '__'),
+                                         revision=row['revision'], allow_patterns=row['patterns'])
+                row['bytes_on_disk'] = sum(f.stat().st_size for f in Path(path).rglob('*')
+                                           if f.is_file() and '.cache' not in f.parts)
+                row.pop('error', None)
+                break
+            except Exception as exc:  # one missing repo must not block the others
+                row['error'] = f'{type(exc).__name__}: {exc}'[:300]
         receipt[row['repo']] = row
         print(row['repo'], {k: v for k, v in row.items() if k != 'repo'}, flush=True)
     if name == 'core':
