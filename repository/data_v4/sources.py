@@ -63,7 +63,7 @@ CATALOG: tuple[Source, ...] = (
     Source('speechfake', 'modelscope', 'inclusionAI/SPEECHFAKE', 'CC-BY-4.0',
            'GitHub README badge + LICENSE; real part from Common Voice CC0',
            'Korean fakes from 30 open generators (CosyVoice, Fish, GPT-SoVITS, MeloTTS, Seed-VC...)',
-           note='modelscope SDK download; subset names inspected at run time'),
+           note='Korean subset via HTTP Range from the 115.7 GB split zip: vessl_fetch_speechfake.sh / zip_range_extract.py'),
     Source('rtcfake', 'hf', 'JunXueTech/RTCFake', 'CC-BY-NC-4.0',
            'HF tag; gated=manual (author approval)', 'Deepfakes transmitted through real RTC apps',
            enabled=False, note='manual approval -> "publicly accessible" is uncertain; enable only if approved and noted in report'),

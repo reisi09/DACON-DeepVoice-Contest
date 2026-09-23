@@ -95,6 +95,37 @@ def ing_mlaad(raw: Path):
                            generator=r.get('model_name', meta.parent.name), language=r.get('language'))
 
 
+def ing_speechfake(raw: Path):
+    """SpeechFake Korean subset (extracted by vessl_fetch_speechfake.sh). Labels from the dataset metadata CSVs.
+    Groups: SeedVC files embed their CommonVoice source id -> linked to that real CV clip; CosyVoice/MeloTTS/
+    OpenVoice share text ids (ko-kr-XXXX-YY) -> one component per text; EdgeTTS -> one component per voice."""
+    import re
+    root = raw / 'speechfake'
+    meta = root / 'metadata'
+    lic = 'CC-BY-4.0 (GitHub) / Apache-2.0 (ModelScope)'
+    for csv_path in sorted((meta / 'MD').glob('*_ko.csv')) + [meta / 'Real' / 'CommonVoice.csv']:
+        for r in csv.DictReader(csv_path.open(encoding='utf-8')):
+            if r['language'] != 'ko':
+                continue
+            rel = r['file'][len('Real/'):] if r['file'].startswith('Real/') else r['file']
+            p = root / rel
+            if not p.exists():
+                continue
+            fake = int(r['label'] == 'spoof')
+            stem = Path(rel).stem
+            cv = re.search(r'common_voice_ko_(\d+)', stem)
+            if cv:
+                groups = [f'commonvoice_ko:{cv.group(1)}']
+            elif r['model'] == 'EdgeTTS':
+                groups = [f"speechfake_voice:{Path(rel).parent.name}"]
+            else:
+                groups = [f'speechfake_text:{stem}']
+            yield item('speechfake', rel, p, lab(1, 0, fake, None), 'dataset:metadata_csv',
+                       'CC0-1.0 (Common Voice)' if not fake else lic, groups,
+                       generator=r['model'] if fake else 'bonafide', kind=r['generator'].lower() if fake else None,
+                       language='ko')
+
+
 def ing_vocalset(raw: Path):
     for p in sorted(raw.rglob('*.wav')):
         singer = next((x for x in p.parts if x[:1] in 'fm' and x[1:].isdigit()), p.parent.name)
@@ -218,7 +249,7 @@ def ing_existing(csv_path: Path, audio_root: Path):
                    prior_seen=r.get('prior_seen'))
 
 
-ADAPTERS = {'zeroth_korean': ing_zeroth, 'fleurs_ko': ing_fleurs, 'mlaad_ko': ing_mlaad, 'mlaad_other': ing_mlaad,
+ADAPTERS = {'speechfake': ing_speechfake, 'zeroth_korean': ing_zeroth, 'fleurs_ko': ing_fleurs, 'mlaad_ko': ing_mlaad, 'mlaad_other': ing_mlaad,
             'asvspoof2021_la': lambda r: ing_asvspoof2021(r, 'LA'), 'asvspoof2021_df': lambda r: ing_asvspoof2021(r, 'DF'),
             'vocalset': ing_vocalset, 'csd': ing_csd, 'haim': ing_haim, 'sonics': ing_sonics, 'openmic': ing_openmic,
             'musan': ing_musan, 'gen': ing_generated}
@@ -684,6 +715,24 @@ def self_check() -> None:
     noise = [dict(ID=f'n{i}', source='musan_noise', group_keys=[f'musan_noise:{i}'], **lab(0, 0, None, None)) for i in range(3)]
     enh = plan_enhanced(real + noise, 100, 1)
     assert len({j['noise']['ID'] for j in enh}) == len(enh) <= 2, 'each noise component used once, one per speaker component'
+    import tempfile
+    with tempfile.TemporaryDirectory() as d:
+        root = Path(d) / 'speechfake' / 'speechfake'
+        (root / 'metadata' / 'MD').mkdir(parents=True); (root / 'metadata' / 'Real').mkdir(parents=True)
+        files = ['MD/SeedVC/ko/6081_41_common_voice_ko_35852237.wav', 'MD/CosyVoice/ko/ko-kr-0329-13.wav',
+                 'MD/EdgeTTS/ko/ko-KR-SunHiNeural/ko-KR-SunHiNeural_1.wav', 'CommonVoice/ko/dev/common_voice_ko_35852237.wav']
+        for f in files:
+            (root / f).parent.mkdir(parents=True, exist_ok=True); (root / f).write_bytes(b'')
+        hdr = 'file,label,generator,model,speaker,language\n'
+        (root / 'metadata/MD/VC_SeedVC_ko.csv').write_text(hdr + f'{files[0]},spoof,VC,SeedVC,-,ko\n')
+        (root / 'metadata/MD/TTS_CosyVoice_ko.csv').write_text(hdr + f'{files[1]},spoof,TTS,CosyVoice,-,ko\n')
+        (root / 'metadata/MD/TTS_EdgeTTS_ko.csv').write_text(hdr + f'{files[2]},spoof,TTS,EdgeTTS,-,ko\n')
+        (root / 'metadata/Real/CommonVoice.csv').write_text(hdr + f'Real/{files[3]},bonafide,-,-,-,ko\nReal/x/en.wav,bonafide,-,-,-,en\n')
+        sf_rows = list(ing_speechfake(Path(d) / 'speechfake'))
+        by = {r['ID'].split(':', 1)[1]: r for r in sf_rows}
+        assert len(sf_rows) == 4 and by[files[3]]['FILE_FAKE'] == 0 and by[files[0]]['FILE_FAKE'] == 1
+        assert by[files[0]]['group_keys'] == by[files[3]]['group_keys'], 'SeedVC output linked to its CommonVoice source'
+        assert by[files[2]]['group_keys'] == ['speechfake_voice:ko-KR-SunHiNeural'] and by[files[1]]['generator'] == 'CosyVoice'
     print('build_manifest self-check ok')
 
 
