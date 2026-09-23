@@ -141,7 +141,7 @@ def main(plan: Path) -> None:
         if shutil.disk_usage(BANK).free < required + RESERVE:
             raise RuntimeError(f"Insufficient physical disk space for {required:,} pending bytes plus OS reserve")
         failures = []
-        with (OUT / (plan.stem + "_receipts.jsonl")).open("a") as receipt, ThreadPoolExecutor(max_workers=4) as pool:
+        with (OUT / (plan.stem + "_receipts.jsonl")).open("a") as receipt, ThreadPoolExecutor(max_workers=int(os.environ.get("ACQUIRE_WORKERS", "4"))) as pool:
             pending = {pool.submit(acquire, job): job for job in jobs}
             for future in as_completed(pending):
                 job = pending[future]
