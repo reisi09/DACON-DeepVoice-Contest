@@ -190,6 +190,15 @@ AudioSet 분류기 교체는 차이가 없다(노래 속 보컬 누락이 공통
 - 학습: data_v4 manifest의 존재 라벨(마스크 제외), split 규칙의 train. val/test에서 raw PANNs 대비 AUC를 보고한다. 추출은 (원천, 존재 패턴) 셀당 400행으로 GPU 시간을 제한한다.
 - 연결: head 출력이 `VOICE/MUSIC_PRESENT_PROB`와 FILE 결합식의 Pv·Pm을 대체한다. 채택은 리더보드 1요인 A/B로 결정한다.
 
+## 6.6 최종 파일 판정 앙상블 (`decision_heads.py`, `file_ensemble.py`)
+
+- 후보 파일 점수: `max`(현재 규칙), `noisy_or`, `max_nopresence`(존재 확률 미적용), `prev`(이전 최고 제출의 FILE, 있으면).
+- **파일 독립 예측 규칙(2-4) 준수:** 평가 파일끼리 순위를 매기지 않는다. 후보마다 **val에서 고정한 분위수 표**로 한 파일의 점수를 0~1로 바꾸고 가중 평균한다. 다른 평가 파일의 정보·통계는 쓰지 않는다.
+- 가중치: val File EER(공식 산식)로 0.1 간격 격자 탐색. 균등 가중보다 0.002 이상 나을 때만 격자 결과를 쓴다(과적합 방지). test는 보고용 1회 평가.
+- 공유 코드: `decision_heads.py` 하나를 특징 캐시(`full_bank_features.py`), 평가(`full_bank_evaluate.score_rows`), 제출 추론(`full_bank_submission.py`)이 같이 쓴다. PANNs는 파일 전체 구간을 한 번에 추론하고, 기존 존재 확률은 그 최댓값으로 계산해 값이 같다.
+- 패키징: `presence_head.json`, `file_ensemble.json`이 학습 산출물에 있으면 `model/trained/`에 넣는다. 없으면 기존 규칙(PANNs 최댓값, `max`)으로 동작한다.
+- **검증(로컬 CPU, 실제 오디오 4개):** 결정 파일이 없을 때 새 추론과 기존 제출 추론의 5개 출력 최대 차이 **4.9e-7**. 결정 파일이 있으면 적용되고 출력은 0~1. 참고로 Lyria 가짜 노래에서 기존 VOICE_PRESENT=0.058로 보컬을 놓쳐 FILE이 0.26에 그쳤다. 존재 판정 head가 필요한 실제 사례다.
+
 ## 7. Split 방법론 — seed 무작위 배정이 아닌 분석 기반
 
 사용자 지시(09-23): train/val/test는 seed로 나누지 않고 분석해서 정한다.

@@ -22,7 +22,7 @@ from dacon9504a100.handoff import coverage_report, zip_reader, verify_zip
 CANDIDATE = 'existing9504_MERT330M_WindowMIL_DFfc5_701515'
 RUNTIME = ('mert12_submission.py', 'eight_heads.py', 'v6_runtime.py', 'v6_core.py',
            'v6_data.py', 'graph_scoring.py', 'localization_models.py', 'ast_multitask.py',
-           'full_bank_submission.py')
+           'full_bank_submission.py', 'decision_heads.py')
 REQUIREMENTS = '--extra-index-url https://download.pytorch.org/whl/cu128\ntorchvision==0.22.1+cu128\n'
 
 
@@ -73,8 +73,14 @@ def package(handoff: Path, output: Path) -> None:
                 path = work / dst
                 extract_member(source, source_members[src], path)
                 members[dst] = path
+            # optional per-file decision layer (decision_heads.py); runtime falls back to legacy rules if absent
+            for name in ('presence_head.json', 'file_ensemble.json'):
+                if 'model/' + name in source_members:
+                    path = work / 'trained' / name
+                    extract_member(source, source_members['model/' + name], path)
+                    members['model/trained/' + name] = path
         choice = {'candidate': CANDIDATE, 'train_rows': 6652, 'validation_rows': 1426, 'test_rows': 1426,
-                  'seeds': [41, 42, 43], 'file_fusion': 'max', 'selection': 'validation_only',
+                  'seeds': [41, 42, 43], 'file_fusion': 'file_ensemble.json if packaged, else max', 'selection': 'validation_only',
                   'independent_test': False, 'historically_exposed_validation_rows': 997,
                   'historically_exposed_test_rows': 1001, 'voice_head': 'backbone.conformer.fc5',
                   'htdemucs': 'htdemucs', 'mert': 'MERT-v1-330M', 'mert_layer': 12,

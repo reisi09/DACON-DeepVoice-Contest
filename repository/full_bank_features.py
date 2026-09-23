@@ -23,6 +23,7 @@ from mert12_submission import WINDOW, HOP, pin_torchaudio_loader, window_layout,
 from localization_features import select_batch
 from v6_data import sha256
 from v6_runtime import baseline_module
+import decision_heads
 
 
 def row_identity(row: Mapping[str, str], identity: str) -> str:
@@ -115,7 +116,7 @@ def prepare(args: argparse.Namespace) -> None:
             raise ValueError(f'Asset identity mismatch: {name}')
     identity = {'manifest_sha256': sha256(args.manifest), 'assets': asset_hashes,
                 'implementation': {name: sha256(Path(__file__).parent / name) for name in
-                                   ('full_bank_features.py', 'mert12_submission.py', 'v6_runtime.py')},
+                                   ('full_bank_features.py', 'mert12_submission.py', 'v6_runtime.py', 'decision_heads.py')},
                 'window': WINDOW, 'hop': HOP, 'mert_layer': 12, 'dtype': 'float32',
                 'duration': 'all samples, no crop', 'torch': torch.__version__}
     identity_key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
@@ -138,6 +139,8 @@ def prepare(args: argparse.Namespace) -> None:
     if initial['fake_label_index'] != fake_index or any(not torch.equal(v.cpu(), initial['state_dict'][k]) for k, v in classifier.state_dict().items()):
         raise ValueError('Cached voice classifier initialization changed')
     panns, voice_indices, music_indices = base.load_panns_model(device)
+    from panns_inference import labels as panns_labels
+    label_groups = json.loads((base.PANNS_DIR / 'component_labels.json').read_text())
     processor = AutoFeatureExtractor.from_pretrained(args.assets / 'mert', local_files_only=True)
     mert, loading = AutoModel.from_pretrained(args.assets / 'mert', trust_remote_code=True,
                                              local_files_only=True, output_loading_info=True)
@@ -197,14 +200,17 @@ def prepare(args: argparse.Namespace) -> None:
             with torch.inference_mode():
                 logits = voice_model(input_values=torch.from_numpy(segment).to(device))['logits']
             voice_scores.append(float(logits.float().softmax(-1)[0, fake_index]))
-            a, b = base.predict_presence(panns, voice_indices, music_indices, base.extract_segment(raw, start))
-            presence = np.maximum(presence, [a, b])
+        # one batched PANNs pass over the same segments as the legacy per-segment loop; legacy presence = its max
+        probs = panns.inference(base.make_panns_segments(raw))[0]
+        presence = np.asarray(decision_heads.legacy_presence(probs, panns_labels, label_groups), np.float32)
+        presence_feats = decision_heads.presence_features(probs, panns_labels, label_groups, raw, voice)
         voice_silent = base.calculate_rms(voice) < base.SILENCE_RMS
         temporary = target.with_suffix('.tmp.npz')
         np.savez(temporary, identity=np.array(key), mert_windows=vectors, starts=starts, valid_samples=valid,
                  window_truth=window_truth(row, starts, valid), voice_embeddings=np.concatenate(captured),
                  voice_original=np.array(0. if voice_silent else max(voice_scores)),
                  voice_silent=np.array(voice_silent), presence=np.asarray(presence, np.float32),
+                 presence_features=np.array(json.dumps(presence_feats)),
                  samples=np.array(len(raw)), source_peak=np.array(peak), normalization_gain=np.array(gain),
                  normalized_rms=np.array(base.calculate_rms(raw)))
         temporary.replace(target)

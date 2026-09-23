@@ -15,6 +15,7 @@ from mert12_submission import (AutoFeatureExtractor, AutoModel, SEEDS, PREDICTIO
     SUBMISSION_COLUMNS, baseline_module, pin_torchaudio_loader, windows, window_layout,
     sha256, validate_predictions, SubmissionError)
 from localization_models import WindowMIL
+import decision_heads
 
 CANDIDATE = 'balanced7144_MERT330M_WindowMIL_DFfc5_8020'
 
@@ -48,6 +49,12 @@ class Engine:
         self.df, original_fake = self.base.load_df_arena_model(self.device)
         self.df.requires_grad_(False)
         self.panns, self.vi, self.mi = self.base.load_panns_model(self.device)
+        from panns_inference import labels as panns_labels
+        self.panns_labels = list(panns_labels)
+        self.label_groups = json.loads((self.base.PANNS_DIR / 'component_labels.json').read_text())
+        # optional per-file decision layer (decision_heads); absent files -> legacy PANNs max and FILE = max rule
+        read = lambda name: json.loads((trained / name).read_text()) if (trained / name).exists() else None
+        self.presence_heads, self.ensemble = read('presence_head.json'), read('file_ensemble.json')
         self.processor = AutoFeatureExtractor.from_pretrained(assets/'mert', local_files_only=True)
         self.mert, info = AutoModel.from_pretrained(assets/'mert', trust_remote_code=True,
                                                   local_files_only=True, output_loading_info=True)
@@ -90,20 +97,22 @@ class Engine:
                 logits, _ = head.head((features-head.mean)/head.scale)
                 music.append(float((logits.float().logsumexp(0)-np.log(len(features))).sigmoid()))
         embeddings = []
-        presence = np.zeros(2)
         for start in self.base.get_segment_starts(len(raw)):
             self.df(input_values=torch.from_numpy(self.base.extract_segment(voice, start)).to(self.device))
             embeddings.append(self.embedding)
-            presence = np.maximum(presence, self.base.predict_presence(self.panns, self.vi, self.mi,
-                                                                     self.base.extract_segment(raw, start)))
         embeddings = torch.cat(embeddings)
         with torch.autocast('cuda', dtype=torch.bfloat16, enabled=self.device.type == 'cuda'):
             voices = [float(head(embeddings).float().softmax(-1)[:, self.fake_index].max())
                       for head in self.voice_heads]
-        vp, mp = presence.tolist()
+        probs = self.panns.inference(self.base.make_panns_segments(raw))[0]   # same segments as the legacy loop
+        legacy = decision_heads.legacy_presence(probs, self.panns_labels, self.label_groups)
+        feats = (decision_heads.presence_features(probs, self.panns_labels, self.label_groups, raw, voice)
+                 if self.presence_heads else None)
+        vp, mp = decision_heads.presence(self.presence_heads, feats, legacy)
         vf = 0. if self.base.calculate_rms(voice) < self.base.SILENCE_RMS else float(np.mean(voices))
         mf = float(np.mean(music))
-        return dict(zip(PREDICTION_COLUMNS, (max(vp*vf, mp*mf), vf, mf, vp, mp), strict=True))
+        file = decision_heads.file_score(self.ensemble, dict(Pv=vp, Pm=mp, Fv=vf, Fm=mf))
+        return dict(zip(PREDICTION_COLUMNS, (file, vf, mf, vp, mp), strict=True))
 
 
 def run(root: Path):

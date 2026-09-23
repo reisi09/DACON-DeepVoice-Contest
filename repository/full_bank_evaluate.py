@@ -14,12 +14,10 @@ from full_bank_features import load_rows
 from graph_scoring import PREDICTION_COLUMNS, SUBMISSION_COLUMNS, official_metrics, validate_predictions
 from localization_models import WindowMIL
 from v6_data import sha256
+import decision_heads
 
 
-@torch.no_grad()
-def evaluate(manifest: Path, cache: Path, output: Path, device: str = 'cuda') -> None:
-    """No fitted calibration or cross-file aggregation; file-max graph is unchanged."""
-    rows = [row for row in load_rows(manifest) if row['split'] == 'val']
+def load_selected_heads(output: Path, device: str):
     music_heads, voice_heads, checkpoints = [], [], {}
     fake_index = None
     for seed in (41, 42, 43):
@@ -36,13 +34,21 @@ def evaluate(manifest: Path, cache: Path, output: Path, device: str = 'cuda') ->
         fake_index = voice['fake_label_index']
         for route in ('music', 'voice'):
             checkpoints[f'{route}_{seed}.pt'] = sha256(output / f'{route}_{seed}.pt')
-    predictions = []
+    return music_heads, voice_heads, fake_index, checkpoints
+
+
+@torch.no_grad()
+def score_rows(rows, cache: Path, output: Path, device: str = 'cuda') -> list[dict]:
+    """Per-file Pv/Pm (legacy PANNs max), Fv/Fm (seed means) and cached presence features; any split."""
+    music_heads, voice_heads, fake_index, _ = load_selected_heads(output, device)
+    scored = []
     for row in rows:
         with np.load(cache / f"{row['ID']}.npz", allow_pickle=False) as data:
             features = torch.from_numpy(data['mert_windows']).to(device)
             embeddings = torch.from_numpy(data['voice_embeddings']).to(device)
             presence = data['presence']
             silent = bool(data['voice_silent'])
+            feats = json.loads(str(data['presence_features'])) if 'presence_features' in data.files else None
         music_scores, voice_scores = [], []
         with torch.autocast('cuda', dtype=torch.bfloat16, enabled=device == 'cuda'):
             for head in music_heads:
@@ -50,9 +56,24 @@ def evaluate(manifest: Path, cache: Path, output: Path, device: str = 'cuda') ->
                 music_scores.append(float((logits.float().logsumexp(0)-np.log(len(features))).sigmoid()))
             for head in voice_heads:
                 voice_scores.append(0. if silent else float(head(embeddings).float().softmax(-1)[:, fake_index].max()))
-        music, voice = float(np.mean(music_scores)), float(np.mean(voice_scores))
-        values = [max(voice*presence[0], music*presence[1]), voice, music, float(presence[0]), float(presence[1])]
-        predictions.append({'ID': row['ID'], **dict(zip(PREDICTION_COLUMNS, values, strict=True))})
+        scored.append({'ID': row['ID'], 'Pv': float(presence[0]), 'Pm': float(presence[1]),
+                       'Fv': float(np.mean(voice_scores)), 'Fm': float(np.mean(music_scores)), 'presence_features': feats})
+    return scored
+
+
+def five_columns(s: dict, presence_heads=None, ensemble=None) -> dict:
+    """Same per-file decision layer as the submission runtime (decision_heads)."""
+    vp, mp = decision_heads.presence(presence_heads, s['presence_features'], (s['Pv'], s['Pm']))
+    file = decision_heads.file_score(ensemble, {**s, 'Pv': vp, 'Pm': mp})
+    return {'ID': s['ID'], **dict(zip(PREDICTION_COLUMNS, (file, s['Fv'], s['Fm'], vp, mp), strict=True))}
+
+
+@torch.no_grad()
+def evaluate(manifest: Path, cache: Path, output: Path, device: str = 'cuda') -> None:
+    """No fitted calibration or cross-file aggregation; file-max graph is unchanged."""
+    rows = [row for row in load_rows(manifest) if row['split'] == 'val']
+    checkpoints = load_selected_heads(output, device)[3]
+    predictions = [five_columns(s) for s in score_rows(rows, cache, output, device)]
     validated = validate_predictions(predictions, [row['ID'] for row in rows])
     with (output / 'validation_predictions.csv').open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=SUBMISSION_COLUMNS)

@@ -1,12 +1,15 @@
-"""Trained presence heads (VOICE_PRESENT / MUSIC_PRESENT) on frozen-model features.
+"""Train presence heads (VOICE_PRESENT / MUSIC_PRESENT) for decision_heads.presence.
 
-Why: swapping PANNs for AST/CED gave the same voice-presence AUC (~0.81-0.84) on real clips;
-singing inside songs is the miss. A small head over AudioSet group scores + HTDemucs stem-energy
-features learns that from our presence labels. Both feature sources already run in the submission.
+Why: swapping PANNs for AST/CED gave the same voice-presence AUC (~0.81-0.84) on real clips; singing inside
+songs is the miss (DESIGN.md §6.5). A regularised logistic head over PANNs class-group statistics + HTDemucs
+stem energy learns it from our presence labels.
 
-  extract : python data_v4/presence.py extract --manifest OUT/manifest.jsonl --root OUT --panns DIR --out OUT/presence_feats.jsonl
-  train   : python data_v4/presence.py train --feats ... --manifest ... --splits OUT/splits.csv --out OUT/presence_head.json
-  runtime : head = json.load(...); predict(head, features(...))    (numpy only, no pickle)
+Features come from decision_heads.presence_features computed with the *baseline module* (same load_audio, gain,
+separate_voice_and_music and make_panns_segments as full_bank_features.py and the submission runtime), so
+training and inference see identical features. Rows need no fake label: noise/none rows train presence too.
+
+  extract : python data_v4/presence.py extract --manifest OUT/manifest.jsonl --root OUT --assets ASSETS --out OUT/presence_feats.jsonl
+  train   : python data_v4/presence.py train --manifest ... --feats ... --splits OUT/splits.csv --out OUT/presence_head.json
 """
 from __future__ import annotations
 
@@ -18,96 +21,61 @@ from pathlib import Path
 
 import numpy as np
 
-SR, WIN = 16000, 64600                     # baseline presence windows (4.04 s)
-VOICE_CORE = ('Speech', 'Male speech, man speaking', 'Female speech, woman speaking', 'Conversation', 'Narration, monologue')
-SINGING = ('Singing', 'Choir', 'Male singing', 'Female singing', 'Child singing', 'Synthetic singing', 'Rapping', 'Humming')
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import decision_heads  # noqa: E402
+
 TARGETS = ('VOICE_PRESENT', 'MUSIC_PRESENT')
+BASE = {'VOICE_PRESENT': 'tag_voice_max', 'MUSIC_PRESENT': 'tag_music_max'}   # legacy score = raw PANNs group max
 
 
-def _windows(y: np.ndarray, n: int = WIN) -> list[np.ndarray]:
-    if len(y) <= n:
-        return [np.pad(y, (0, n - len(y)))]
-    starts = list(range(0, len(y) - n + 1, n))
-    if starts[-1] != len(y) - n:
-        starts.append(len(y) - n)
-    return [y[s:s + n] for s in starts]
+class BaselineExtractor:
+    """Runtime-identical presence features (see module docstring)."""
 
-
-def _stats(prefix: str, x: np.ndarray) -> dict:
-    return {f'{prefix}_max': float(x.max()), f'{prefix}_mean': float(x.mean()), f'{prefix}_q90': float(np.quantile(x, .9))}
-
-
-def tagger_features(probs: np.ndarray, labels: list[str], groups: dict) -> dict:
-    """probs: [windows, 527] AudioSet sigmoid scores."""
-    idx = {l: i for i, l in enumerate(labels)}
-    col = lambda names: probs[:, [idx[n] for n in names if n in idx]].max(1)
-    out = {}
-    out.update(_stats('tag_voice', col(groups['voice'])))
-    out.update(_stats('tag_music', col(groups['music'])))
-    out.update(_stats('tag_speech', col(VOICE_CORE)))
-    out.update(_stats('tag_singing', col(SINGING)))
-    out.update(_stats('tag_music_only', probs[:, idx['Music']]))
-    return out
-
-
-def stem_features(mix: np.ndarray, vocals: np.ndarray, sr: int, win_s: float = 3.0) -> dict:
-    """Energy of separated vocals / accompaniment relative to the mixture, per 3 s window (mono arrays)."""
-    w = max(1, int(win_s * sr))
-    n = max(1, len(mix) // w)
-    acc = mix[:len(vocals)] - vocals[:len(mix)]
-    e = lambda x, i: float(np.mean(x[i * w:(i + 1) * w] ** 2)) + 1e-10
-    vr = np.array([np.sqrt(e(vocals, i) / e(mix, i)) for i in range(n)])
-    ar = np.array([np.sqrt(e(acc, i) / e(mix, i)) for i in range(n)])
-    out = {**_stats('stem_vocal_ratio', vr), **_stats('stem_acc_ratio', ar)}
-    out['stem_vocal_frac'] = float((vr >= .35).mean())
-    out['stem_acc_frac'] = float((ar >= .35).mean())
-    out['mix_rms_db'] = float(10 * np.log10(np.mean(mix ** 2) + 1e-10))
-    return out
-
-
-class Extractor:
-    """PANNs CNN14 (same checkpoint/class groups as the submission) + HTDemucs."""
-
-    def __init__(self, panns_dir: Path, device: str = 'cuda'):
+    def __init__(self, assets: Path, device: str = 'cuda'):
         import torch
-        from panns_inference import AudioTagging, labels
-        from demucs.pretrained import get_model
-        self.torch, self.device = torch, device
-        self.tagger = AudioTagging(checkpoint_path=str(panns_dir / 'Cnn14_mAP=0.431.pth'), device=device)
+        from panns_inference import labels
+        from v6_runtime import baseline_module
+        from mert12_submission import pin_torchaudio_loader
+        self.base = baseline_module(assets)
+        pin_torchaudio_loader(self.base)
+        self.device = torch.device(device)
+        self.torch = torch
+        self.demucs = self.base.load_htdemucs_model().to(self.device).eval().requires_grad_(False)
+        self.panns, _, _ = self.base.load_panns_model(self.device)
         self.labels = list(labels)
-        self.groups = json.loads((panns_dir / 'component_labels.json').read_text())
-        self.sep = get_model('htdemucs').to(device).eval()
+        self.groups = json.loads((self.base.PANNS_DIR / 'component_labels.json').read_text())
 
-    def __call__(self, y16: np.ndarray) -> dict:
-        import librosa
-        from demucs.apply import apply_model
-        seg = np.stack([librosa.resample(w, orig_sr=SR, target_sr=32000) for w in _windows(y16)])
-        probs, _ = self.tagger.inference(seg)
-        x = librosa.resample(y16, orig_sr=SR, target_sr=self.sep.samplerate)
-        t = self.torch.from_numpy(x).float()[None].repeat(2, 1)[None].to(self.device)
-        with self.torch.inference_mode():
-            stems = apply_model(self.sep, t, split=True, overlap=.1, progress=False)[0]
-        voc = stems[self.sep.sources.index('vocals')].mean(0).cpu().numpy()
-        return {**tagger_features(probs, self.labels, self.groups), **stem_features(x, voc, self.sep.samplerate)}
+    def __call__(self, path: Path) -> dict:
+        import tempfile
+        import soundfile as sf
+        raw = self.base.load_audio(path)
+        peak = float(np.abs(raw).max())
+        if peak > .6:
+            raw = (raw * (.6 / peak)).astype(np.float32)
+        with tempfile.TemporaryDirectory(prefix='presence_') as tmp:
+            wav = Path(tmp) / 'normalized.wav'
+            sf.write(wav, raw, 16000, subtype='FLOAT')
+            with self.torch.inference_mode():
+                voice, _ = self.base.separate_voice_and_music(wav, self.demucs, self.device)
+        voice = np.pad(voice[:len(raw)], (0, max(0, len(raw) - len(voice))))
+        probs = self.panns.inference(self.base.make_panns_segments(raw))[0]
+        return decision_heads.presence_features(probs, self.labels, self.groups, raw, voice)
 
 
-# ---------------------------------------------------------------- head: standardized logistic regression, JSON
 def fit(X: np.ndarray, y: np.ndarray, names: list[str], C: float = 0.05) -> dict:
+    """Standardised L2 logistic regression -> JSON consumed by decision_heads.logistic (numpy only)."""
     from sklearn.linear_model import LogisticRegression
     mu, sd = X.mean(0), X.std(0) + 1e-9
     m = LogisticRegression(C=C, max_iter=5000).fit((X - mu) / sd, y)
     return dict(features=names, mean=mu.tolist(), scale=sd.tolist(), coef=m.coef_[0].tolist(), intercept=float(m.intercept_[0]), C=C)
 
 
-def predict(head: dict, feats: dict | list[dict]) -> np.ndarray:
-    rows = [feats] if isinstance(feats, dict) else feats
-    X = np.array([[r[n] for n in head['features']] for r in rows], float)
-    z = ((X - np.array(head['mean'])) / np.array(head['scale'])) @ np.array(head['coef']) + head['intercept']
-    return 1 / (1 + np.exp(-z))
+def predict(head: dict, rows: list[dict]) -> np.ndarray:
+    return np.array([decision_heads.logistic(head, r) for r in rows])
 
 
 def grouped_cv(X, y, groups, names, base='tag_voice_max', folds=5, C=0.05) -> dict:
-    """Held-out AUC of the head vs the raw baseline score (max over tagger class group), same folds."""
+    """Held-out AUC of the head vs the raw baseline score on the same grouped folds."""
     from sklearn.metrics import roc_auc_score
     from sklearn.model_selection import GroupKFold
     out = {'head': [], 'baseline_raw_group_max': []}
@@ -120,22 +88,20 @@ def grouped_cv(X, y, groups, names, base='tag_voice_max', folds=5, C=0.05) -> di
     return {k: [round(v, 4) for v in vs] for k, vs in out.items()}
 
 
-def train(feats: list[dict], labels: dict, splits: dict | None, target: str) -> tuple[dict, dict]:
+def train(feats: list[dict], labels: dict, splits: dict | None, target: str, C: float = 0.05) -> tuple[dict, dict]:
+    from sklearn.metrics import roc_auc_score
     names = sorted(k for k in feats[0] if k != 'ID')
     rows = [(f, labels[f['ID']]) for f in feats if labels.get(f['ID']) is not None]
     tr = [(f, y) for f, y in rows if splits is None or splits.get(f['ID']) == 'train']
-    X = np.array([[f[n] for n in names] for f, _ in tr])
-    y = np.array([v for _, v in tr])
-    base = 'tag_voice_max' if target == 'VOICE_PRESENT' else 'tag_music_max'
-    head = fit(X, y, names)
-    report = {'target': target, 'train_n': len(tr), 'train_pos': int(y.sum())}
-    from sklearn.metrics import roc_auc_score
+    X, y = np.array([[f[n] for n in names] for f, _ in tr]), np.array([v for _, v in tr])
+    head = fit(X, y, names, C)
+    report = {'target': target, 'train_n': len(tr), 'train_pos': int(y.sum()), 'C': C}
     for s in ('val', 'test'):
         ev = [(f, v) for f, v in rows if splits and splits.get(f['ID']) == s]
         ye = np.array([v for _, v in ev])
         if len(set(ye)) == 2:
             report[s] = {'n': len(ev), 'head_auc': round(roc_auc_score(ye, predict(head, [f for f, _ in ev])), 4),
-                         'baseline_auc': round(roc_auc_score(ye, [f[base] for f, _ in ev]), 4)}
+                         'baseline_auc': round(roc_auc_score(ye, [f[BASE[target]] for f, _ in ev]), 4)}
     return head, report
 
 
@@ -144,17 +110,16 @@ def main() -> None:
     ap.add_argument('cmd', choices=['extract', 'train'])
     ap.add_argument('--manifest', type=Path, required=True)
     ap.add_argument('--root', type=Path)
-    ap.add_argument('--panns', type=Path)
+    ap.add_argument('--assets', type=Path)
     ap.add_argument('--feats', type=Path)
     ap.add_argument('--splits', type=Path)
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--per-cell', type=int, default=400, help='rows per (source, presence pattern) to extract')
+    ap.add_argument('--C', type=float, default=0.05)
     a = ap.parse_args()
     rows = [json.loads(l) for l in a.manifest.open()]
     if a.cmd == 'extract':
-        import librosa
-        # deterministic cap per cell keeps GPU time bounded; all presence patterns/sources stay represented
-        cells: dict = {}
+        cells: dict = {}   # deterministic cap per cell keeps GPU time bounded; every source/pattern stays represented
         for r in sorted(rows, key=lambda r: hashlib.sha256(r['ID'].encode()).hexdigest()):
             if r['VOICE_PRESENT'] is None and r['MUSIC_PRESENT'] is None:
                 continue
@@ -163,13 +128,11 @@ def main() -> None:
                 cells[key].append(r)
         todo = [r for rs in cells.values() for r in rs]
         done = {json.loads(l)['ID'] for l in a.out.open()} if a.out.exists() else set()
-        ex = Extractor(a.panns)
+        ex = BaselineExtractor(a.assets)
         with a.out.open('a') as f:
             for i, r in enumerate(todo):
-                if r['ID'] in done:
-                    continue
-                y = librosa.load(a.root / r['path'], sr=SR, mono=True)[0]
-                f.write(json.dumps({'ID': r['ID'], **ex(y)}) + '\n')
+                if r['ID'] not in done:
+                    f.write(json.dumps({'ID': r['ID'], **ex(a.root / r['path'])}) + '\n')
                 if i % 500 == 0:
                     f.flush()
                     print(f'presence feats {i}/{len(todo)}', flush=True)
@@ -179,7 +142,7 @@ def main() -> None:
         splits = {r['ID']: r['split'] for r in csv.DictReader(a.splits.open())} if a.splits else None
         heads, reports = {}, {}
         for t in TARGETS:
-            heads[t], reports[t] = train(feats, {r['ID']: r[t] for r in rows}, splits, t)
+            heads[t], reports[t] = train(feats, {r['ID']: r[t] for r in rows}, splits, t, a.C)
         a.out.write_text(json.dumps(heads, indent=1) + '\n')
         a.out.with_suffix('.report.json').write_text(json.dumps(reports, indent=1) + '\n')
         print(json.dumps(reports, indent=1))
@@ -187,24 +150,20 @@ def main() -> None:
 
 def self_check() -> None:
     rng = np.random.default_rng(0)
-    labels = ['Speech', 'Singing', 'Music', 'Guitar'] + [f'c{i}' for i in range(523)]
-    groups = {'voice': ['Speech', 'Singing'], 'music': ['Music', 'Guitar']}
-    p = rng.random((3, 527))
-    f = tagger_features(p, labels, groups)
-    assert f['tag_voice_max'] == p[:, :2].max() and f['tag_singing_max'] == p[:, 1].max()
-    mix = rng.standard_normal(SR * 9).astype(np.float32)
-    s = stem_features(mix, mix * .5, SR)
-    assert abs(s['stem_vocal_ratio_mean'] - .5) < 1e-3 and s['stem_vocal_frac'] == 1.0
-    assert len(_windows(np.zeros(WIN * 2 + 10))) == 3 and len(_windows(np.zeros(100))) == 1
-    # head must recover a signal the raw baseline score misses (vocals hidden in music)
     n = 400
     vp = rng.integers(0, 2, n)
     X = np.c_[rng.random(n) * .3 + .1 * vp, .2 + .5 * vp + rng.normal(0, .1, n)]    # tag weak, stem strong
     names = ['tag_voice_max', 'stem_vocal_ratio_max']
     h = fit(X, vp, names)
     assert json.loads(json.dumps(h)) == h, 'head must be JSON-serialisable'
+    feat_rows = [dict(zip(names, r)) for r in X[:5]]
+    np.testing.assert_allclose(predict(h, feat_rows), [decision_heads.logistic(h, r) for r in feat_rows])
     cv = grouped_cv(X, vp, np.arange(n) // 4, names)
     assert np.mean(cv['head']) > np.mean(cv['baseline_raw_group_max']) + .1, cv
+    feats = [dict(ID=str(i), **dict(zip(names, r))) for i, r in enumerate(X)]
+    heads = {t: train(feats, {str(i): int(v) for i, v in enumerate(vp)}, None, t)[0] for t in TARGETS}
+    p = decision_heads.presence(heads, feats[0], (0., 0.))
+    assert all(0 < v < 1 for v in p), 'trained heads plug into the runtime decision layer'
     print('presence self-check ok')
 
 
