@@ -26,7 +26,7 @@ LICENSES = {  # model weights / code license, recorded per generated row
     'chatterbox': ('ResembleAI/chatterbox multilingual', 'MIT'),
     'cosyvoice2': ('FunAudioLLM/CosyVoice2-0.5B', 'Apache-2.0'),
     'melo': ('myshell-ai/MeloTTS-Korean', 'MIT'),
-    'seedvc': ('Plachtaa/seed-vc', 'GPL-3.0 code; weights per repo card'),
+    'seedvc': ('Plachta/Seed-VC (code: github Plachtaa/seed-vc)', 'GPL-3.0'),
 }
 
 
@@ -89,7 +89,18 @@ class Backend:
             self.m = TTS(language='KR', device=device)
             self.spk = self.m.hps.data.spk2id['KR']
         elif name == 'seedvc':
-            import subprocess  # seed-vc ships a CLI; model download happens on first call
+            import os
+            import subprocess
+            from huggingface_hub import hf_hub_download
+            # weights pre-fetched by fetch_weights.py (set seedvc, HF cache layout); run fully offline
+            cache = Path(os.environ.get('SEEDVC_HF_CACHE', '/root/data_v4/weights/hf_cache'))
+            get = lambda f: hf_hub_download('Plachta/Seed-VC', f, cache_dir=cache, local_files_only=True)
+            self.ckpt = get('DiT_seed_v2_uvit_whisper_small_wavenet_bigvgan_pruned.pth')
+            self.cfg = get('config_dit_mel_seed_uvit_whisper_small_wavenet.yml')
+            link = work / 'seed-vc' / 'checkpoints'   # seed-vc downloads CAM++ into ./checkpoints (HF cache layout)
+            if not link.exists():
+                link.symlink_to(cache, target_is_directory=True)
+            self.env = {**os.environ, 'HF_HUB_CACHE': str(cache), 'HF_HUB_OFFLINE': '1'}
             self.run = subprocess.run
         else:
             raise SystemExit(f'unknown backend {name}')
@@ -113,7 +124,8 @@ class Backend:
             tmp = out.parent / (out.stem + '_vc')
             self.run([sys.executable, str(self.work / 'seed-vc/inference.py'), '--source', str(src_wav),
                       '--target', str(ref_wav), '--output', str(tmp), '--diffusion-steps', '30',
-                      '--fp16', 'True'], check=True, cwd=self.work / 'seed-vc')
+                      '--fp16', 'True', '--checkpoint', self.ckpt, '--config', self.cfg],
+                     check=True, cwd=self.work / 'seed-vc', env=self.env)
             produced = sorted(tmp.glob('*.wav'))
             if len(produced) != 1:
                 raise RuntimeError(f'seed-vc produced {len(produced)} files')

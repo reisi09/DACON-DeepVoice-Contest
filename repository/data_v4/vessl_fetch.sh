@@ -35,28 +35,5 @@ for src in $SOURCES; do
 done
 
 [ -n "${SKIP_WEIGHTS:-}" ] && { log "finished (weights skipped)"; exit 0; }
-log "weights"
-$PY - "$W" <<'EOF' 2>&1 | tee -a "$LOG/weights.log"
-import json, sys, urllib.request, hashlib
-from pathlib import Path
-from huggingface_hub import HfApi, snapshot_download
-out = Path(sys.argv[1]); api = HfApi()
-REPOS = ['FunAudioLLM/CosyVoice2-0.5B', 'ACE-Step/ACE-Step-v1-3.5B', 'myshell-ai/MeloTTS-Korean', 'kykim/bert-kor-base',
-         'myshell-ai/OpenVoiceV2', 'mispeech/ced-base', 'MIT/ast-finetuned-audioset-10-10-0.4593']
-receipt = {}
-for repo in REPOS:
-    try:
-        sha = api.model_info(repo).sha
-        path = snapshot_download(repo, revision=sha, local_dir=out / repo.replace('/', '__'))
-        receipt[repo] = {'revision': sha, 'bytes': sum(f.stat().st_size for f in Path(path).rglob('*') if f.is_file())}
-    except Exception as exc:  # one missing repo must not block the others
-        receipt[repo] = {'error': f'{type(exc).__name__}: {exc}'[:300]}
-    print(repo, receipt[repo], flush=True)
-url = 'https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th'   # htdemucs (vocal evidence)
-p = out / 'demucs' / url.rsplit('/', 1)[1]; p.parent.mkdir(exist_ok=True)
-if not p.exists():
-    urllib.request.urlretrieve(url, p)
-receipt['htdemucs'] = {'url': url, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest(), 'bytes': p.stat().st_size}
-(out / 'weights_receipt.json').write_text(json.dumps(receipt, indent=1) + '\n')
-EOF
+for set in ${WEIGHTS:-core}; do log "weights $set"; $PY "$CODE/data_v4/fetch_weights.py" "$W" "$set" 2>&1 | tee -a "$LOG/weights.log"; done
 log "finished; archives: $(ls "$ARCH" | tr '\n' ' ')"
