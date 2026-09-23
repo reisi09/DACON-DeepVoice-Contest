@@ -9,7 +9,10 @@
 | `../candidate_data_acquire.py` | 기존 다운로더 재사용. `ACQUIRE_BANK/OUT` 환경변수, OpenSLR·asvspoof.org 호스트, gated HF 토큰, `size-only` 검증 추가 |
 | `generate_speech.py` | 한국어 TTS/VC 자체 생성 (Zeroth 화자·문장과 lineage 연결) |
 | `generate_music.py` | ACE-Step 한국어 노래·반주 자체 생성 (가사는 이 프로젝트에서 새로 쓴 문장) |
-| `build_manifest.py` | ingest → materialize(16 kHz·crop·codec) → vocals(HTDemucs 근거) → mix |
+| `build_manifest.py` | ingest → materialize(16 kHz·crop·codec) → vocals(HTDemucs 근거) → construct(혼합·실제 노래·부분 위조·후처리 실제) |
+| `export_bank.py` | data_v4 manifest+split → 기존 특징 추출기·학습기 CSV (`bank_trainval.csv`, `bank_test.csv`) |
+| `presence.py` | 존재 판정 head (PANNs·stem 피처 → 로지스틱, JSON) |
+| `vessl_fetch.sh` | CPU job: 원천별 checksum 검증 → tar → object volume, 사전학습 가중치 |
 | `split.py` | split 분석 보고서 → 사람이 쓴 규칙 → 결정적 배정 → 누수 검증 |
 | `envs.sh`, `smoke_vessl.sh` | VESSL 생성기 환경, VESSL 첫 실행 점검 |
 
@@ -129,6 +132,29 @@ MLAAD-ko가 XTTS-v2와 Chatterbox를 이미 포함하므로, 자체 생성은 **
 - **component 1:1 짝짓기:** 음성 component 하나는 음악 component 하나와만 섞는다. 혼합이 component들을 사슬처럼 이어 거대 component를 만들지 않게 한다.
 - **코덱:** 혼합물도 같은 코덱 표를 거친다. 혼합물만 FLAC이 되는 지름길을 막는다.
 
+## 6.1 공백 보완 구성 (`construct` 단계)
+
+모두 원본 소스를 기록된 crop 위치에서 다시 읽어(`load_clean`) 만든 뒤 코덱을 **한 번만** 적용한다. 부모의 인코딩본을 섞으면 코덱이 이중으로 걸려 구성물만의 단서가 생기기 때문이다.
+
+| 구성 | 방법 | 라벨 | 기본 수량 |
+|---|---|---|---:|
+| 혼합 | 음성 단독 × 음악 단독, 동시(SNR −5~+15 dB)·순차 | 1/1/성분/성분/OR | 1,500 |
+| **실제 노래** (공백 1) | CSD·VocalSet 실제 무반주 가창 + 보컬 없는 반주, 전 구간 겹침(SNR −3~+6 dB). 반주가 가짜면 1/1/0/1/1 | 1/1/0/0/0 | 400 |
+| **발화 내부 부분 위조** (공백 2) | Zeroth 실제 발화 속에 **같은 화자**의 TTS 1~3초 삽입, 20 ms crossfade, 음량 정합. 삽입 구간은 `fake_voice_segments`로 기록 | 1/0/1/–/1 | 400 |
+| **AI 후처리 실제** (공백 3) | 실제 음성 + MUSAN 실제 잡음(SNR 0~15 dB) → HTDemucs 보컬 추출. 운영진 규칙상 REAL. `ai_postprocessed_real=True` | 1/0/0/–/0 | 300 |
+
+- component 규칙: 음악 component는 한 번만 쓴다. 노래는 CSD가 가수 1명(component 1개)이므로 가수 component당 반주 최대 40개까지 허용한다. 부분 위조는 같은 화자 안에서만 만들어 component가 늘지 않는다.
+- 실제 한국어 통화 녹음은 공개 자료가 없어 시뮬레이션 전화 코덱(20%)과 ASVspoof2021 LA 실측 전송으로 대신한다.
+
+## 6.2 학습 로더: 한 파일의 두 성분을 두 head가 모두 학습
+
+기존 `full_bank_train.read_items`는 행의 `route` 하나로 한 head에만 넣었다. 그래서 노래·혼합 파일의 음성 라벨이 음성 head 학습에 쓰이지 않았다(검토 P1). 특징 캐시에는 이미 음성 stem의 DF-Arena 임베딩과 반주 stem의 MERT 창이 **둘 다** 있으므로 로더만 바꿨다.
+- `head_labels(row)`: route head의 라벨은 기존과 같다. 다른 head는 그 성분이 **존재(=1)하고 라벨이 알려진 경우에만** 추가한다. 부재·마스크 라벨은 학습하지 않는다.
+- 분리된 음성 stem이 무음이면 보조 음성 item을 만들지 않는다(근거 없음).
+- 최적화, 손실 가중치, 체크포인트 형식, 평가기는 바뀌지 않았다. 기존 manifest(보조 라벨 없음)는 결과가 이전과 같다.
+- 검증: `test_full_bank_training.py`에 노래·실제 음성+가짜 반주·부재·마스크 경우를 추가했고, 기존 계약 테스트와 함께 통과한다. `export_bank.py`의 self-check가 export → `head_labels` 연결을 확인한다.
+- 참고: `full_bank_features.py`와 `full_bank_train.py`는 GPU 이름에 `H100`이 있어야 실행된다. A100을 쓰려면 이 검사를 바꿔야 한다.
+
 ## 6.5 존재(presence) 판정: PANNs 교체 대신 학습형 head (`presence.py`)
 
 로컬 실측 (실제 발화 50 / 반주 50 / 가사곡 50, 10 s, 깨끗함·전화 μ-law):
@@ -226,7 +252,8 @@ AudioSet 분류기 교체는 차이가 없다(노래 속 보컬 누락이 공통
 7. **전개 → 파이프라인:**
    - 아카이브 전개
    - `build_manifest.py ingest`(`--existing-csv` 포함)
-   - `materialize --workers 14` → `vocals` → `mix --mixes 1500`
+   - `materialize --workers 14` → `vocals` → `construct` (혼합 1,500 · 노래 400 · 부분 위조 400 · 후처리 실제 300)
+   - `export_bank.py` → `full_bank_features.py`(H100) → `full_bank_train.py` → `presence.py extract/train`
 8. **분석:** `split.py analyze` → 보고서를 로컬로 내려받는다. **여기서 멈추고 규칙을 작성한다.**
 9. **감시와 정지:** 실행 중 5분마다 확인하고, 변화가 없으면 조용히 기다린다. 결과를 내려받아 검증한 뒤 workspace를 정지한다.
 

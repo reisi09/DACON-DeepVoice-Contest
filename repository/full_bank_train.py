@@ -27,6 +27,20 @@ from v6_data import sha256
 
 
 
+def _known(row: Mapping[str, str], name: str) -> bool:
+    return row.get(name, '') in ('0', '1', '0.0', '1.0') and row.get(name + '_mask', '1') not in ('0', '0.0', 'False')
+
+
+def head_labels(row: Mapping[str, str]) -> dict[str, float]:
+    """Every head whose component label is known. The route head keeps its legacy semantics; a mixed row
+    (song, voice+music mix) additionally trains the other head, since the cache holds both stems' features."""
+    heads = {row['route']: float(row['MUSIC_FAKE' if row['route'] == 'music' else 'VOICE_FAKE'])}
+    for head, fake, present in (('music', 'MUSIC_FAKE', 'MUSIC_PRESENT'), ('voice', 'VOICE_FAKE', 'VOICE_PRESENT')):
+        if head not in heads and _known(row, fake) and row.get(present, '') in ('1', '1.0'):
+            heads[head] = float(row[fake])
+    return heads
+
+
 def read_items(manifest: Path, cache: Path) -> list[Item]:
     rows = load_rows(manifest)
     index = json.loads((cache / 'index.json').read_text())
@@ -44,13 +58,17 @@ def read_items(manifest: Path, cache: Path) -> list[Item]:
             raise ValueError('Feature path escapes cache')
         validate_cache(path, row_identity(row, key), entry['sha256'])
         with np.load(path, allow_pickle=False) as data:
-            music = row['route'] == 'music'
-            features = data['mert_windows' if music else 'voice_embeddings'].copy()
-            truth = data['window_truth'].copy() if music else np.full(len(features), np.nan, np.float32)
+            arrays = {k: data[k].copy() for k in ('mert_windows', 'voice_embeddings', 'window_truth')}
             silent = bool(data['voice_silent'])
-        if features.ndim != 2 or not len(features) or not np.isfinite(features).all():
-            raise ValueError(f"Invalid route features: {row['ID']}")
-        result.append(Item(row, features, truth, float(row['MUSIC_FAKE' if music else 'VOICE_FAKE']), silent))
+        for head, label in head_labels(row).items():
+            music = head == 'music'
+            if head != row['route'] and not music and silent:
+                continue  # labelled vocal but empty separated stem: no evidence for the voice head
+            features = arrays['mert_windows' if music else 'voice_embeddings']
+            truth = arrays['window_truth'] if music else np.full(len(features), np.nan, np.float32)
+            if features.ndim != 2 or not len(features) or not np.isfinite(features).all():
+                raise ValueError(f"Invalid {head} features: {row['ID']}")
+            result.append(Item({**row, 'route': head}, features, truth, label, silent))
     return result
 
 

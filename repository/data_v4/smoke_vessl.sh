@@ -15,7 +15,7 @@ for e in libmp3lame libopus libgsm aac pcm_mulaw pcm_alaw flac; do
 done
 [ -z "${miss:-}" ] || echo "WARN: drop missing codecs from CODECS in build_manifest.py before materialize (label-independent table must stay valid)"
 echo "== self-checks"
-for f in sources generate_speech generate_music build_manifest split presence; do
+for f in sources generate_speech generate_music build_manifest split presence export_bank; do
   case $f in sources) "$PY" data_v4/sources.py check ;; *) "$PY" data_v4/$f.py --self-check ;; esac
 done
 python3 candidate_data_acquire.py --self-check
@@ -44,9 +44,37 @@ for m in man:
     assert info is None or info.samplerate == 16000, (m['codec_chain'], info)
 mixes = [bm.mix_one(j, out) for j in bm.plan_mixes(man, 6, 1)]
 assert mixes and all(x['VOICE_PRESENT'] == x['MUSIC_PRESENT'] == 1 for x in mixes)
-split, rep = sp.apply(man + mixes, dict(test_holdout=[], cell_keys=['type', 'FILE_FAKE'], val_fraction=.25))
-assert sp.verify(man + mixes, split)['ok']
-print('e2e ok:', len(man), 'items,', len(mixes), 'mixes, codecs', sorted({m['codec_chain'] for m in man}))
+# gap constructions on the same synthetic pool: singing -> songs, same-speaker TTS splices, enhanced real
+for m in man:
+    if m['source'] == 'synthv':
+        m.update(kind='singing' if m['ID'].endswith(('0', '1')) else None)
+        if m['VOICE_FAKE'] == 0:
+            m['source'] = 'zeroth'
+        else:
+            m.update(source='generated_speech', kind='tts')
+    if m['source'] in ('zeroth', 'generated_speech'):   # utterances 2k (real) and 2k+1 (fake) share a speaker
+        m['group_keys'] = [f"speaker:zeroth:{int(m['ID'].split(':')[1]) // 2}"]
+noise = dict(bm.materialize_one(bm.item('musan_noise', 'n0', t/'m0.flac', bm.lab(0, 0, None, None), 'test', 'test', ['musan_noise:0']), out, 1))
+pool = man + [noise]
+built = [bm.mix_one(j, out) for j in bm.plan_songs(pool, 4, 1)] + [bm.splice_one(j, out) for j in bm.plan_splices(pool, 4, 1)]
+try:
+    from demucs.pretrained import get_model
+    import torch
+    dev = 'cuda' if torch.cuda.is_available() else 'cpu'
+    built += [bm.enhance_one(j, out, get_model('htdemucs').to(dev).eval(), dev) for j in bm.plan_enhanced(pool, 1, 1)]
+except ImportError:
+    print('demucs missing: enhanced construction not exercised')
+kinds = sorted({b['source'] for b in built})
+assert {'constructed_splice'} <= set(kinds), kinds
+for b in built:
+    assert (out / b['path']).exists() and b['sha256'] and b['FILE_FAKE'] in (0, 1)
+    if b['source'] == 'constructed_splice':
+        (s0, s1), = b['fake_voice_segments']; assert 0 < s0 < s1 <= b['crop_len_s'] and b['FILE_FAKE'] == 1
+    if b['source'] == 'constructed_enhanced':
+        assert b['FILE_FAKE'] == 0 and b['ai_postprocessed_real']
+split, rep = sp.apply(man + mixes + built, dict(test_holdout=[], cell_keys=['type', 'FILE_FAKE'], val_fraction=.25))
+assert sp.verify(man + mixes + built, split)['ok']
+print('e2e ok:', len(man), 'items,', len(mixes), 'mixes,', kinds, 'codecs', sorted({m['codec_chain'] for m in man}))
 EOF
 echo "== GPU generators (only envs that exist): one sample each"
 [ -x /root/envs/data/bin/python ] && /root/envs/data/bin/python -c "

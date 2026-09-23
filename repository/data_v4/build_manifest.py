@@ -4,7 +4,7 @@ Stages, in order (run on VESSL, see DESIGN.md §8):
   ingest       RAW/<source>/... -> items.jsonl (labels, masks, evidence, lineage, license)
   materialize  decode -> 16 kHz -> crop -> loudness/channel -> codec chain -> OUT/audio + manifest.jsonl
   vocals       GPU HTDemucs vocal-energy evidence on each materialized music crop (updates manifest)
-  mix          voice x music mixtures from materialized pools, component-paired (DESIGN.md §6)
+  construct    component-paired mixes, real songs, same-speaker partial splices, enhanced real (DESIGN.md §6)
 Label table (DACON rules + operator answers): DESIGN.md §4. None = unknown -> mask 0, never a 0 label.
 """
 from __future__ import annotations
@@ -380,40 +380,121 @@ def components(rows: list[dict]) -> dict[str, str]:
     return {r['ID']: find('id:' + r['ID']) for r in rows}
 
 
-def plan_mixes(rows: list[dict], n: int, seed: int) -> list[dict]:
-    """Pair voice components with music components one-to-one, so a mixture joins exactly two
-    existing components and never chains them into a giant one."""
-    comp = components(rows)
-    voice = [r for r in rows if r['VOICE_PRESENT'] == 1 and r['MUSIC_PRESENT'] == 0 and r['VOICE_FAKE'] is not None]
-    music = [r for r in rows if r['MUSIC_PRESENT'] == 1 and r['VOICE_PRESENT'] == 0 and r['MUSIC_FAKE'] is not None]
-    rng = random.Random(seed)
+def pair_components(voice: list[dict], music: list[dict], comp: dict, rng: random.Random, n: int,
+                    max_partners: int = 1, per_pair: int = 3) -> list[tuple[dict, dict]]:
+    """Each music component is used by at most one voice component, and a voice component takes at most
+    max_partners music components, so constructions never chain components into a giant one."""
     by = lambda rs: {c: [r for r in rs if comp[r['ID']] == c] for c in sorted({comp[r['ID']] for r in rs})}
     vc, mc = by(voice), by(music)
     vkeys, mkeys = list(vc), [k for k in mc if k not in vc]
     rng.shuffle(vkeys)
     rng.shuffle(mkeys)
+    pairs, it = [], iter(mkeys)
+    for v in vkeys:
+        for m in [x for _, x in zip(range(max_partners), it)]:
+            for _ in range(min(per_pair, len(vc[v]), len(mc[m]))):
+                pairs.append((rng.choice(vc[v]), rng.choice(mc[m])))
+                if len(pairs) >= n:
+                    return pairs
+    return pairs
+
+
+def _voice_only(r):
+    return r['VOICE_PRESENT'] == 1 and r['MUSIC_PRESENT'] == 0 and r['VOICE_FAKE'] is not None
+
+
+def _music_only(r):
+    return r['MUSIC_PRESENT'] == 1 and r['VOICE_PRESENT'] == 0 and r['MUSIC_FAKE'] is not None
+
+
+def plan_mixes(rows: list[dict], n: int, seed: int) -> list[dict]:
+    """Speech/voice over or next to music (call with background music, sequential program audio)."""
+    rng = random.Random(seed)
+    pairs = pair_components([r for r in rows if _voice_only(r)], [r for r in rows if _music_only(r)], components(rows), rng, n)
+    return [dict(voice=a, music=b, mode=rng.choice(['simultaneous'] * 3 + ['sequential'] * 2),
+                 snr_db=rng.uniform(-5, 15), voice_first=rng.random() < .5) for a, b in pairs]
+
+
+def plan_songs(rows: list[dict], n: int, seed: int, max_partners: int = 40) -> list[dict]:
+    """Gap 1: real Korean/English songs = real a cappella singing (CSD, VocalSet) over instrumental beds.
+    CSD is one singer (one component), so a singer component may take up to max_partners beds."""
+    rng = random.Random(seed + 1)
+    singing = [r for r in rows if _voice_only(r) and r.get('kind') == 'singing']
+    pairs = pair_components(singing, [r for r in rows if _music_only(r)], components(rows), rng, n, max_partners, 2)
+    return [dict(voice=a, music=b, mode='song', snr_db=rng.uniform(-3, 6), voice_first=True) for a, b in pairs]
+
+
+def plan_splices(rows: list[dict], n: int, seed: int) -> list[dict]:
+    """Gap 2: partial voice fakes = a 1-3 s TTS segment of the *same speaker* inside a real utterance.
+    Same speaker keeps the component unchanged (the generated row is already linked to that speaker)."""
+    rng = random.Random(seed + 2)
+    spk = lambda r: next((k for k in r['group_keys'] if k.startswith('speaker:zeroth:')), None)
+    real = [r for r in rows if _voice_only(r) and r['VOICE_FAKE'] == 0 and r['source'] == 'zeroth']
+    fake = [r for r in rows if _voice_only(r) and r['VOICE_FAKE'] == 1 and r['source'] == 'generated_speech' and r.get('kind') == 'tts']
+    by_spk: dict = {}
+    for r in fake:
+        if spk(r):
+            by_spk.setdefault(spk(r), []).append(r)
     jobs = []
-    for v, m in zip(vkeys, mkeys):
-        for _ in range(min(3, len(vc[v]), len(mc[m]))):
-            a, b = rng.choice(vc[v]), rng.choice(mc[m])
-            jobs.append(dict(voice=a, music=b, mode=rng.choice(['simultaneous'] * 3 + ['sequential'] * 2),
-                             snr_db=rng.uniform(-5, 15), voice_first=rng.random() < .5))
+    for r in sorted(real, key=lambda r: hashlib.sha256(r['ID'].encode()).hexdigest()):
+        pool = by_spk.get(spk(r))
+        if pool and r.get('crop_len_s', 0) >= 4:
+            jobs.append(dict(real=r, fake=rng.choice(pool), seg_s=rng.uniform(1, 3), pos=rng.uniform(.15, .85)))
             if len(jobs) >= n:
-                return jobs
+                break
     return jobs
+
+
+def plan_enhanced(rows: list[dict], n: int, seed: int) -> list[dict]:
+    """Gap 3: AI-post-processed REAL speech = real speech + real noise, then neural separation (HTDemucs).
+    Operator rule: enhancement/denoising of a real source stays REAL. Kept small; adopt only via LB A/B."""
+    rng = random.Random(seed + 3)
+    speech = [r for r in rows if _voice_only(r) and r['VOICE_FAKE'] == 0 and r['source'] in ('zeroth', 'fleurs_ko')]
+    noise = [r for r in rows if r['source'] == 'musan_noise']
+    pairs = pair_components(speech, noise, components(rows), rng, n, 1, 1)
+    return [dict(voice=a, noise=b, snr_db=rng.uniform(0, 15)) for a, b in pairs]
+
+
+def load_clean(row: dict):
+    """Pre-codec audio of a materialized row (original source at its recorded crop): constructions are
+    encoded once, like single items, instead of stacking a second codec on already-encoded parents."""
+    import librosa
+    return librosa.load(row['orig_path'], sr=SR, mono=True, offset=row.get('crop_start_s', 0.),
+                        duration=row.get('crop_len_s'))[0]
+
+
+def finish(y, rid: str, out: Path, sub: str) -> tuple[Path, str, str]:
+    """Same label-independent loudness and codec tables as materialize_one."""
+    import numpy as np
+    import soundfile as sf
+    rng = random.Random(rid)
+    y = y * (10 ** ((-23 + rng.uniform(-6, 4)) / 20) / (float(np.sqrt(np.mean(y ** 2))) + 1e-9))
+    y = (y / max(1., float(np.abs(y).max()) / .97)).astype(np.float32)
+    stem = out / 'audio' / sub / rid.split(':')[1]
+    stem.parent.mkdir(parents=True, exist_ok=True)
+    pcm = stem.with_suffix('.src.wav')
+    sf.write(pcm, y, SR, subtype='FLOAT')
+    codec = draw(rng, usable_codecs())
+    p = encode(pcm, stem, codec)
+    pcm.unlink()
+    return p.relative_to(out), codec, hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def _row(rid, source, p, codec, sha, y_len, parents, labels, **extra) -> dict:
+    return dict(ID=rid, source=source, path=str(p), evidence='construction', codec_chain=codec,
+                crop_len_s=round(y_len / SR, 3), license=' + '.join(sorted({x['license'] for x in parents})),
+                group_keys=sorted({k for x in parents for k in x['group_keys']}), parent_ids=[x['ID'] for x in parents],
+                sha256=sha, **labels, **extra)
 
 
 def mix_one(job: dict, out: Path) -> dict:
     import numpy as np
-    import soundfile as sf
-    import librosa
     v, m = job['voice'], job['music']
-    a = librosa.load(out / v['path'], sr=SR, mono=True)[0]
-    b = librosa.load(out / m['path'], sr=SR, mono=True)[0]
-    if job['mode'] == 'simultaneous':
-        n = max(len(a), min(len(b), len(a) + 4 * SR))
+    a, b = load_clean(v), load_clean(m)
+    if job['mode'] in ('simultaneous', 'song'):
+        n = len(a) if job['mode'] == 'song' else max(len(a), min(len(b), len(a) + 4 * SR))
         b = np.resize(b, n)
-        off = random.Random(v['ID'] + m['ID']).randint(0, n - len(a))
+        off = 0 if job['mode'] == 'song' else random.Random(v['ID'] + m['ID']).randint(0, n - len(a))
         va = np.zeros(n, np.float32)
         va[off:off + len(a)] = a
         pv, pm = np.mean(a ** 2) + 1e-10, np.mean(b ** 2) + 1e-10
@@ -421,21 +502,53 @@ def mix_one(job: dict, out: Path) -> dict:
     else:
         gap = np.zeros(int(.2 * SR), np.float32)
         y = np.concatenate([a, gap, b] if job['voice_first'] else [b, gap, a])
-    y = y / max(1., float(np.abs(y).max()) / .97)
-    rid = 'mix:' + hashlib.sha256((v['ID'] + '|' + m['ID'] + job['mode']).encode()).hexdigest()[:20]
-    stem = out / 'audio' / 'mix' / rid.split(':')[1]
-    stem.parent.mkdir(parents=True, exist_ok=True)
-    pcm = stem.with_suffix('.src.wav')
-    sf.write(pcm, y, SR, subtype='FLOAT')
-    codec = draw(random.Random(rid), usable_codecs())   # same label-independent table as single items
-    p = encode(pcm, stem, codec)
-    pcm.unlink()
-    labels = lab(1, 1, v['VOICE_FAKE'], m['MUSIC_FAKE'])
-    return dict(ID=rid, source='constructed_mix', path=str(p.relative_to(out)), evidence='construction',
-                license=f"{v['license']} + {m['license']}", group_keys=v['group_keys'] + m['group_keys'],
-                parent_ids=[v['ID'], m['ID']], mix_mode=job['mode'], snr_db=round(job['snr_db'], 2),
-                codec_chain=codec, crop_len_s=round(len(y) / SR, 3),
-                sha256=hashlib.sha256(p.read_bytes()).hexdigest(), **labels)
+    kind = 'song' if job['mode'] == 'song' else 'mix'
+    rid = f'{kind}:' + hashlib.sha256((v['ID'] + '|' + m['ID'] + job['mode']).encode()).hexdigest()[:20]
+    p, codec, sha = finish(y, rid, out, kind)
+    return _row(rid, f'constructed_{kind}', p, codec, sha, len(y), [v, m],
+                lab(1, 1, v['VOICE_FAKE'], m['MUSIC_FAKE']), mix_mode=job['mode'], snr_db=round(job['snr_db'], 2),
+                kind='singing' if kind == 'song' else None)
+
+
+def splice_one(job: dict, out: Path) -> dict:
+    import numpy as np
+    r, f = job['real'], job['fake']
+    a, g = load_clean(r), load_clean(f)
+    seg = int(min(job['seg_s'], len(g) / SR * .8) * SR)
+    s0 = (len(g) - seg) // 2
+    ins = g[s0:s0 + seg] * np.sqrt((np.mean(a ** 2) + 1e-10) / (np.mean(g[s0:s0 + seg] ** 2) + 1e-10))
+    fade = int(.02 * SR)
+    ramp = np.linspace(0, 1, fade, dtype=np.float32)
+    ins[:fade] *= ramp
+    ins[-fade:] *= ramp[::-1]
+    pos = int(job['pos'] * len(a))
+    left, right = a[:pos].copy(), a[pos:].copy()
+    left[-fade:] *= ramp[::-1]
+    right[:fade] *= ramp
+    y = np.concatenate([left, ins, right])
+    rid = 'splice:' + hashlib.sha256((r['ID'] + '|' + f['ID']).encode()).hexdigest()[:20]
+    p, codec, sha = finish(y, rid, out, 'splice')
+    return _row(rid, 'constructed_splice', p, codec, sha, len(y), [r, f], lab(1, 0, 1, None),
+                fake_voice_segments=[[round(pos / SR, 3), round((pos + seg) / SR, 3)]], kind='partial_tts')
+
+
+def enhance_one(job: dict, out: Path, sep, device: str) -> dict:
+    import numpy as np
+    import librosa
+    import torch
+    from demucs.apply import apply_model
+    v, nz = job['voice'], job['noise']
+    a = load_clean(v)
+    b = np.resize(load_clean(nz), len(a))
+    y = a + b * np.sqrt((np.mean(a ** 2) + 1e-10) / (np.mean(b ** 2) + 1e-10) / 10 ** (job['snr_db'] / 10))
+    x = torch.from_numpy(librosa.resample(y, orig_sr=SR, target_sr=sep.samplerate)).float()[None].repeat(2, 1)[None].to(device)
+    with torch.inference_mode():
+        voc = apply_model(sep, x, split=True, overlap=.1, progress=False)[0][sep.sources.index('vocals')].mean(0).cpu().numpy()
+    y = librosa.resample(voc, orig_sr=sep.samplerate, target_sr=SR)
+    rid = 'enh:' + hashlib.sha256((v['ID'] + '|' + nz['ID']).encode()).hexdigest()[:20]
+    p, codec, sha = finish(y, rid, out, 'enhanced')
+    return _row(rid, 'constructed_enhanced', p, codec, sha, len(y), [v, nz], lab(1, 0, 0, None),
+                ai_postprocessed_real=True, enhancement='noise+htdemucs_vocals', snr_db=round(job['snr_db'], 2))
 
 
 # ---------------------------------------------------------------- CLI
@@ -445,7 +558,7 @@ def jsonl(path: Path):
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument('stage', choices=['ingest', 'vocals', 'materialize', 'mix'])
+    ap.add_argument('stage', choices=['ingest', 'vocals', 'materialize', 'construct'])
     ap.add_argument('--raw', type=Path, default=Path('/root/data_v4/raw'))
     ap.add_argument('--out', type=Path, default=Path('/root/data_v4/out'))
     ap.add_argument('--existing-csv', type=Path)
@@ -454,6 +567,9 @@ def main() -> None:
     ap.add_argument('--vocal-hi', type=float, default=0.35)
     ap.add_argument('--vocal-lo', type=float, default=0.08)
     ap.add_argument('--mixes', type=int, default=1500)
+    ap.add_argument('--songs', type=int, default=400)
+    ap.add_argument('--splices', type=int, default=400)
+    ap.add_argument('--enhanced', type=int, default=300)
     ap.add_argument('--workers', type=int, default=12)
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
@@ -480,7 +596,7 @@ def main() -> None:
         from demucs.pretrained import get_model
         model = get_model('htdemucs').cuda().eval()
         rows = jsonl(manifest)
-        todo = [r for r in rows if r['MUSIC_PRESENT'] == 1 and r['source'] != 'constructed_mix' and 'vocal_ratio' not in r]
+        todo = [r for r in rows if r['MUSIC_PRESENT'] == 1 and not r['source'].startswith('constructed_') and 'vocal_ratio' not in r]
         with torch.inference_mode():
             for i, r in enumerate(todo):
                 w = librosa.load(a.out / r['path'], sr=model.samplerate, mono=False)[0]
@@ -504,14 +620,29 @@ def main() -> None:
                 if i % 1000 == 0:
                     f.flush()
                     print(f'materialize {i}/{len(todo)}', flush=True)
-    else:
-        rows = [r for r in jsonl(manifest) if r['source'] != 'constructed_mix']
-        done = {r['ID'] for r in jsonl(manifest) if r['source'] == 'constructed_mix'}
+    else:  # construct: mixes, real songs, partial splices, enhanced real (needs vocals stage first)
+        rows = [r for r in jsonl(manifest) if not r['source'].startswith('constructed_')]
+        done = {r['ID'] for r in jsonl(manifest) if r['source'].startswith('constructed_')}
+        jobs = ([(mix_one, j) for j in plan_mixes(rows, a.mixes, a.seed)] + [(mix_one, j) for j in plan_songs(rows, a.songs, a.seed)]
+                + [(splice_one, j) for j in plan_splices(rows, a.splices, a.seed)])
+        enh = plan_enhanced(rows, a.enhanced, a.seed) if a.enhanced else []
+        sep = None
+        if enh:
+            from demucs.pretrained import get_model
+            sep = get_model('htdemucs').cuda().eval()
+        counts = {}
         with manifest.open('a') as f:
-            for job in plan_mixes(rows, a.mixes, a.seed):
-                r = mix_one(job, a.out)
+            for fn, job in jobs + [(None, j) for j in enh]:
+                try:
+                    r = enhance_one(job, a.out, sep, 'cuda') if fn is None else fn(job, a.out)
+                except Exception as exc:
+                    print(f'construct fail: {type(exc).__name__}: {exc}'[:300], flush=True)
+                    continue
                 if r['ID'] not in done:
                     f.write(json.dumps(r, ensure_ascii=False) + '\n')
+                    done.add(r['ID'])
+                    counts[r['source']] = counts.get(r['source'], 0) + 1
+        print(json.dumps(counts, indent=1))
 
 
 def self_check() -> None:
@@ -540,6 +671,19 @@ def self_check() -> None:
     comp = components(rows)
     pairs = {(comp[j['voice']['ID']], comp[j['music']['ID']]) for j in jobs}
     assert len({p[0] for p in pairs}) == len(pairs) == len({p[1] for p in pairs}), 'component pairing must be 1:1'
+    # gap constructions
+    sing = [dict(ID=f's{i}', kind='singing', source='csd', group_keys=['speaker:csd:one'], **lab(1, 0, 0, None)) for i in range(4)]
+    beds = [dict(ID=f'b{i}', source='musan_music', group_keys=[f'trk:{i}'], **lab(0, 1, None, i % 2)) for i in range(10)]
+    songs = plan_songs(sing + beds, 100, 1, max_partners=5)
+    used = [comp_ for comp_ in (components(sing + beds)[j['music']['ID']] for j in songs)]
+    assert len(set(used)) == 5 and all(j['voice']['kind'] == 'singing' for j in songs), 'one singer -> up to max_partners beds'
+    real = [dict(ID=f'z{i}', source='zeroth', crop_len_s=8., group_keys=[f'speaker:zeroth:{i % 2}'], **lab(1, 0, 0, None)) for i in range(6)]
+    gen = [dict(ID=f'g{i}', source='generated_speech', kind='tts', group_keys=[f'speaker:zeroth:{i}'], **lab(1, 0, 1, None)) for i in range(2)]
+    spl = plan_splices(real + gen, 100, 1)
+    assert spl and all(j['real']['group_keys'] == j['fake']['group_keys'] for j in spl), 'splice only within one speaker'
+    noise = [dict(ID=f'n{i}', source='musan_noise', group_keys=[f'musan_noise:{i}'], **lab(0, 0, None, None)) for i in range(3)]
+    enh = plan_enhanced(real + noise, 100, 1)
+    assert len({j['noise']['ID'] for j in enh}) == len(enh) <= 2, 'each noise component used once, one per speaker component'
     print('build_manifest self-check ok')
 
 

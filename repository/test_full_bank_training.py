@@ -174,3 +174,17 @@ if __name__ == '__main__':
     test_monitor_recovers_from_token_failure()
     test_startup_detaches_and_resume_rejects_corruption()
     print('PASS: every-row coverage, no validation optimization, exact MIL/gradients, original fc5 gradients and fake-index mapping, unknown-label masking')
+
+
+def test_head_labels_mixed_rows_train_both_heads():
+    from full_bank_train import head_labels
+    legacy_music = {'route': 'music', 'MUSIC_FAKE': '1', 'VOICE_FAKE': '', 'VOICE_PRESENT': ''}
+    assert head_labels(legacy_music) == {'music': 1.}, 'legacy rows keep single-head behaviour'
+    song = {'route': 'music', 'MUSIC_FAKE': '1', 'VOICE_FAKE': '1', 'VOICE_PRESENT': '1'}
+    assert head_labels(song) == {'music': 1., 'voice': 1.}
+    real_vocal_fake_bed = {'route': 'voice', 'VOICE_FAKE': '0', 'MUSIC_FAKE': '1', 'MUSIC_PRESENT': '1'}
+    assert head_labels(real_vocal_fake_bed) == {'voice': 0., 'music': 1.}
+    absent = {'route': 'music', 'MUSIC_FAKE': '0', 'VOICE_FAKE': '1', 'VOICE_PRESENT': '0'}
+    assert head_labels(absent) == {'music': 0.}, 'absent component never trains its head'
+    masked = {**song, 'VOICE_FAKE_mask': '0'}
+    assert head_labels(masked) == {'music': 1.}, 'masked label never trains'
