@@ -1,0 +1,12 @@
+{
+ "_why": "Written from out/split_analysis.json (post-relabel, 42,947 rows, 19,452 components), not a seed. Test = unseen generator families / unseen real domains per task type, each type with both labels: voice fake VoxCPM family (MLAAD) + OpenVoice (SpeechFake), voice real FLEURS-ko; mixed/unknown fake HAIM Lyria-3 Pro + fx_encoder_style_transfer (also music fake), music+mixed real MUSAN music. Whole components move with a matching row, so constructions built from these sources follow them. Qwen3-TTS 1.7B stays in train: its 0.6B sibling would leak the family. ASVspoof2021 channels are not held out (speakers span channels); legacy rows never match.",
+ "test_holdout": [
+  {"source": ["mlaad"], "generator": ["VoxCPM2", "VoxCPM-0.5B", "VoxCPM-1.5"]},
+  {"source": ["speechfake"], "generator": ["OpenVoice"]},
+  {"source": ["haim"], "generator": ["Lyria-3 Pro", "fx_encoder_style_transfer"]},
+  {"source": ["fleurs_ko", "musan_music"]}
+ ],
+ "cell_keys": ["type", "FILE_FAKE", "source", "generator"],
+ "val_fraction": 0.15,
+ "min_val_components_per_cell": 2
+}

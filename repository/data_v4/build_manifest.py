@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+csv.field_size_limit(2**31 - 1)   # MLAAD meta.csv has fields > 128 KiB
 import hashlib
 import json
 import random
@@ -165,7 +166,11 @@ def ing_haim(raw: Path):
         subset = next((x[:2] for x in js.parts if x[:2] in HAIM_SUBSETS), None)
         if subset is None:
             continue
-        m = json.loads(js.read_text())
+        try:
+            m = json.loads(js.read_text())
+            m['filename'] if 'filename' in m else m['track_id']
+        except (ValueError, KeyError, TypeError):
+            continue   # not a per-track sidecar (e.g. a large index JSON)
         audio = js.with_name(m.get('filename', js.stem + '.mp3'))
         if not audio.exists():
             # sidecar may name .wav while the repo ships .mp3 (B1); never pick up *.download.lock
@@ -252,8 +257,12 @@ def ing_existing(csv_path: Path, audio_root: Path, mapping: Path | None = None):
     mapping = audio_upload.json (ID -> 'audio/<sha256>.<ext>' inside the uploaded zips), else the CSV path."""
     where = {i['ID']: i['path'] for i in json.loads(mapping.read_text())['items']} if mapping else {}
     for r in csv.DictReader(csv_path.open(encoding='utf-8')):
-        v = {n: (int(float(r[n])) if r.get(n) not in (None, '', 'nan') and r.get(n + '_mask', '1') in ('1', '1.0', 'True') else None)
+        # legacy masks are '' (unset) on most rows: a label is known when present and not explicitly masked out
+        v = {n: (int(float(r[n])) if r.get(n) not in (None, '', 'nan') and r.get(n + '_mask', '') not in ('0', '0.0', 'False') else None)
              for n in LABELS}
+        present = {'music': 'MUSIC_PRESENT', 'voice': 'VOICE_PRESENT'}.get(r.get('route', ''))
+        if present and v[present] is None:
+            v[present] = 1   # the legacy route head was trained on this component: it is present (validator rule)
         groups = [f"legacy_component:{r['component_id']}"] if r.get('component_id') else []
         groups += [f"speaker:{r['source']}:{r['speaker_id']}"] if r.get('speaker_id') else []
         groups += [f"artist:{r['source']}:{r['artist_id']}"] if r.get('artist_id') else []
@@ -606,12 +615,25 @@ def enhance_one(job: dict, out: Path, sep, device: str) -> dict:
 DEFAULT_CAP = 400
 CAPS = {  # source -> (cap per cell, extra cell keys). Cell = (source, generator, FILE, VP, MP) + extras.
     'zeroth': (3000, ()), 'fleurs_ko': (1500, ()), 'speechfake': (600, ()),       # Korean real ~ Korean fake
-    'mlaad': (300, ()),                                                            # 12 ko systems + ~500 others
-    'asvspoof2021_la': (30, ('channel',)), 'asvspoof2021_df': (25, ('channel',)),  # attack x transmission/codec
     'openmic': (1200, ()), 'vocalset': (800, ()), 'haim': (300, ('subset',)), 'echoes': (300, ()),
     'musan_music': (700, ()), 'musan_speech': (500, ()), 'musan_noise': (900, ()),
 }
 UNCAPPED = ('generated_speech', 'generated_music', 'csd')
+
+
+def cap_for(r: dict) -> tuple[int, tuple]:
+    """Per-row cap rule. ASVspoof2021: few fakes per attack but real speech kept across every channel/codec
+    condition (111 DF attacks x 27 codecs made one cap per cell select 25k rows). MLAAD: Korean systems in
+    depth, other languages only for generator diversity."""
+    src, real = r['source'], r['FILE_FAKE'] == 0
+    if src == 'asvspoof2021_la':
+        return (60, ('channel',)) if real else (12, ('channel',))
+    if src == 'asvspoof2021_df':
+        return (25, ('channel',)) if real else (20, ())
+    if src == 'mlaad':
+        return (300, ()) if r.get('language') == 'ko' else (25, ())
+    base = src.split(':', 1)[0] if src.startswith('existing:') else src
+    return CAPS.get(base, (DEFAULT_CAP, ()))
 
 
 def select_rows(rows: list[dict]) -> tuple[list[dict], dict]:
@@ -623,8 +645,7 @@ def select_rows(rows: list[dict]) -> tuple[list[dict], dict]:
         if src in UNCAPPED:
             kept.append(r)
             continue
-        base = src.split(':', 1)[0] if src.startswith('existing:') else src
-        cap, extra = CAPS.get(base, (DEFAULT_CAP, ()))
+        cap, extra = cap_for(r)
         key = (src, r.get('generator'), r['FILE_FAKE'], r['VOICE_PRESENT'], r['MUSIC_PRESENT'], *(r.get(k) for k in extra))
         if cells.get(key, 0) < cap:
             cells[key] = cells.get(key, 0) + 1
@@ -642,7 +663,7 @@ def jsonl(path: Path):
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument('stage', choices=['ingest', 'select', 'materialize', 'vocals', 'construct'])
+    ap.add_argument('stage', choices=['ingest', 'select', 'materialize', 'vocals', 'construct', 'relabel-existing'])
     ap.add_argument('--raw', type=Path, default=Path('/root/data_v4/raw'))
     ap.add_argument('--out', type=Path, default=Path('/root/data_v4/out'))
     ap.add_argument('--existing-csv', type=Path)
@@ -683,6 +704,21 @@ def main() -> None:
         (a.out / 'items_selected.jsonl').write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in kept))
         (a.out / 'select_counts.json').write_text(json.dumps({'total': len(kept), **counts}, indent=1) + '\n')
         print(json.dumps({'total': len(kept), **counts}, indent=1))
+    elif a.stage == 'relabel-existing':
+        # re-derive legacy labels in place (materialized audio depends only on ID, not labels); vocal evidence is
+        # dropped for these rows so the vocals stage recomputes it with the corrected presence labels
+        fixed = {r['ID']: r for r in ing_existing(a.existing_csv, a.existing_audio, a.existing_map)}
+        rows, n = jsonl(manifest), 0
+        for r in rows:
+            f = fixed.get(r['ID'])
+            if f:
+                r.pop('vocal_ratio', None)
+                r.update({k: f[k] for k in (*LABELS, 'VOICE_FAKE_IF_PRESENT', 'file_fake_override')})
+                n += 1
+        tmp = manifest.with_suffix('.tmp')
+        tmp.write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows))
+        tmp.replace(manifest)
+        print(json.dumps({'relabelled': n, 'file_unknown_left': sum(r['FILE_FAKE'] is None for r in rows if r['ID'] in fixed)}))
     elif a.stage == 'vocals':
         # runs on the *materialized crop*: the label describes exactly the audio that is trained on
         import torch
@@ -805,7 +841,7 @@ def self_check() -> None:
     many = [dict(ID=f'z{i}', source='asvspoof2021_la', generator='A07', channel=f'C{i % 3}', **lab(1, 0, 1, None)) for i in range(300)]
     many += [dict(ID=f'g{i}', source='generated_speech', generator='cosyvoice2', **lab(1, 0, 1, None)) for i in range(50)]
     kept, counts = select_rows(many)
-    assert counts == {'asvspoof2021_la': 90, 'generated_speech': 50}, counts
+    assert counts == {'asvspoof2021_la': 36, 'generated_speech': 50}, counts   # 12 fakes x 3 channels
     assert select_rows(list(reversed(many)))[0] == kept, 'selection independent of input order'
     with tempfile.TemporaryDirectory() as d:
         dd = Path(d) / 'fake' / 'de' / 'Edge-TTS'
@@ -816,6 +852,12 @@ def self_check() -> None:
         e = Path(d) / 'Echoes' / 'suno' / 'TTA'; e.mkdir(parents=True); (e / 'x1.mp3').write_bytes(b'')
         er = list(ing_echoes(Path(d)))
         assert er[0]['generator'] == 'suno/TTA' and er[0]['FILE_FAKE'] == 1 and er[0]['VOICE_PRESENT'] is None
+    with tempfile.TemporaryDirectory() as d:
+        c = Path(d) / 'a.csv'
+        c.write_text('ID,source,route,path,FILE_FAKE,FILE_FAKE_mask,MUSIC_FAKE,MUSIC_FAKE_mask,MUSIC_PRESENT,VOICE_PRESENT,VOICE_FAKE\n'
+                     'f1,FMA,music,x.mp3,0,,0,,,,\n')
+        ex = list(ing_existing(c, Path(d)))[0]
+        assert ex['FILE_FAKE'] == 0 and ex['MUSIC_FAKE'] == 0 and ex['MUSIC_PRESENT'] == 1, ex
     print('build_manifest self-check ok')
 
 

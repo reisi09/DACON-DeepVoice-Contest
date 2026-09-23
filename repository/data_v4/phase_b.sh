@@ -10,7 +10,9 @@ DATA=${DATA:-/data/data_v4}; OUT=${OUT:-/root/data_v4/out}; BANK=$OUT/bank; TRAI
 PY=/root/envs/data/bin/python; ASSETS=$DATA/assets
 mkdir -p "$TRAIN" "$DATA"
 step() { echo "[$(date -u +%FT%TZ)] == $*" | tee -a "$LOGS/phase_b.steps"; }
-cd "$CODE"
+# run from a local copy: with the object-storage FUSE mount first on sys.path, every import became network
+# lookups and materialize workers sat in d_alloc_parallel for minutes
+rm -rf /data/code && cp -r "$CODE" /data/code && CODE=/data/code && cd "$CODE"
 step split_apply
 $PY data_v4/split.py apply --manifest "$OUT/manifest.jsonl" --rules data_v4/split_rules.json --out "$OUT/splits.csv" > "$LOGS/split_apply.log" 2>&1
 $PY data_v4/split.py verify --manifest "$OUT/manifest.jsonl" --splits "$OUT/splits.csv" >> "$LOGS/split_apply.log" 2>&1

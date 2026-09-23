@@ -9,7 +9,9 @@ DATA=${DATA:-/data/data_v4}; RAW=$DATA/raw; OUT=${OUT:-/root/data_v4/out}; GEN=$
 DEADLINE=${DEADLINE:-$(( $(date +%s) + 2*3600 ))}                    # absolute stop for generation (GPU budget)
 mkdir -p "$LOGS" "$DATA" "$OUT" "$GEN"
 step() { echo "[$(date -u +%FT%TZ)] == $*" | tee -a "$LOGS/phase_a.steps"; }
-cd "$CODE"
+# run from a local copy: with the object-storage FUSE mount first on sys.path, every import became network
+# lookups and materialize workers sat in d_alloc_parallel for minutes
+rm -rf /data/code && cp -r "$CODE" /data/code && CODE=/data/code && cd "$CODE"
 step preflight; { nvidia-smi --query-gpu=name,memory.total --format=csv,noheader; df -h / /root /shared | tail -3; nproc; free -g | head -2; } | tee "$LOGS/preflight.txt"
 command -v ffmpeg >/dev/null && command -v pigz >/dev/null || { apt-get update -qq && apt-get install -y -qq ffmpeg pigz >/dev/null; }
 step envs; bash data_v4/envs.sh data > "$LOGS/env_data.log" 2>&1
@@ -25,7 +27,7 @@ UNPACK=$!
   echo $? > "$LOGS/gen_music.exit" ) &
 GENM=$!
 wait $UNPACK; [ "$(cat "$LOGS/unpack.exit")" = 0 ] || { step "UNPACK FAILED"; exit 1; }
-( set +e
+[ -n "${SKIP_COSYVOICE:-}" ] || ( set +e
   bash data_v4/envs.sh cosyvoice2 > "$LOGS/env_cosyvoice2.log" 2>&1 && source /root/envs/cosyvoice2/pythonpath && \
     /root/envs/cosyvoice2/bin/python data_v4/generate_speech.py --backend cosyvoice2 --zeroth "$RAW/zeroth_korean/data" \
       --out "$GEN/speech" --work /root/gen_models --per-speaker 8 --deadline-epoch "$DEADLINE" > "$LOGS/gen_speech.log" 2>&1
@@ -35,7 +37,7 @@ wait $GENM $GENS || true      # generation failures are tolerated: SpeechFake/ML
 step ingest; $PY data_v4/build_manifest.py ingest --raw "$RAW" --out "$OUT" --existing-csv "$CODE/legacy/all_sources.csv" \
   --existing-audio "$RAW/existing" --existing-map "$CODE/legacy/audio_upload.json" > "$LOGS/ingest.log" 2>&1
 step select; $PY data_v4/build_manifest.py select --out "$OUT" > "$LOGS/select.log" 2>&1
-step materialize; $PY data_v4/build_manifest.py materialize --out "$OUT" --workers "$(( $(nproc) - 1 ))" > "$LOGS/materialize.log" 2>&1
+step materialize; $PY data_v4/build_manifest.py materialize --out "$OUT" --workers "${WORKERS:-14}"   # cgroup quota is 15 CPUs; nproc reports the node (128) and 127 workers thrashed cephfs > "$LOGS/materialize.log" 2>&1
 step vocals; $PY data_v4/build_manifest.py vocals --out "$OUT" > "$LOGS/vocals.log" 2>&1
 step construct; $PY data_v4/build_manifest.py construct --out "$OUT" > "$LOGS/construct.log" 2>&1
 step split_analyze; $PY data_v4/split.py analyze --manifest "$OUT/manifest.jsonl" --report "$OUT/split_analysis" > "$LOGS/split_analyze.log" 2>&1
