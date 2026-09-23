@@ -92,7 +92,7 @@ class Extractor:
 
 
 # ---------------------------------------------------------------- head: standardized logistic regression, JSON
-def fit(X: np.ndarray, y: np.ndarray, names: list[str], C: float = 1.0) -> dict:
+def fit(X: np.ndarray, y: np.ndarray, names: list[str], C: float = 0.05) -> dict:
     from sklearn.linear_model import LogisticRegression
     mu, sd = X.mean(0), X.std(0) + 1e-9
     m = LogisticRegression(C=C, max_iter=5000).fit((X - mu) / sd, y)
@@ -106,7 +106,7 @@ def predict(head: dict, feats: dict | list[dict]) -> np.ndarray:
     return 1 / (1 + np.exp(-z))
 
 
-def grouped_cv(X, y, groups, names, base='tag_voice_max', folds=5, C=1.0) -> dict:
+def grouped_cv(X, y, groups, names, base='tag_voice_max', folds=5, C=0.05) -> dict:
     """Held-out AUC of the head vs the raw baseline score (max over tagger class group), same folds."""
     from sklearn.metrics import roc_auc_score
     from sklearn.model_selection import GroupKFold
