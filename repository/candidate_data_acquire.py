@@ -10,6 +10,7 @@ from __future__ import annotations
 import fcntl
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -24,9 +25,11 @@ from urllib.parse import urlparse
 
 
 ROOT: Final = Path(__file__).resolve().parent
-BANK: Final = ROOT / "_workspace/candidate_acquisition_20260919"
-OUT: Final = ROOT / "results/candidate_acquisition_20260919"
-RESERVE: Final = 30 * 2**30
+BANK: Final = Path(os.environ.get("ACQUIRE_BANK", ROOT / "_workspace/candidate_acquisition_20260919"))
+OUT: Final = Path(os.environ.get("ACQUIRE_OUT", ROOT / "results/candidate_acquisition_20260919"))
+RESERVE: Final = int(os.environ.get("ACQUIRE_RESERVE_GIB", "30")) * 2**30
+HOSTS: Final = {"zenodo.org", "huggingface.co", "openslr.trmal.net", "us.openslr.org",
+                "www.asvspoof.org", "github.com"}
 
 
 @dataclass(frozen=True, slots=True)
@@ -48,7 +51,7 @@ def target_path(job: SourceFile) -> Path:
     if not target.is_relative_to(BANK.resolve()) or target == BANK.resolve():
         raise RuntimeError(f"Output path outside bank: {job.path}")
     parsed = urlparse(job.url)
-    if parsed.scheme != "https" or parsed.hostname not in {"zenodo.org", "huggingface.co"}:
+    if parsed.scheme != "https" or parsed.hostname not in HOSTS:
         raise RuntimeError(f"Unapproved source origin: {job.url}")
     if job.size <= 0:
         raise RuntimeError(f"Invalid upstream byte count: {job.path}")
@@ -60,9 +63,10 @@ def verify_file(path: Path, job: SourceFile) -> str:
     if path.stat().st_size != job.size:
         raise RuntimeError(f"Size mismatch: {job.path}")
     algorithm, expected = job.checksum.split(":", 1)
-    if algorithm not in {"md5", "sha256", "git-sha1"}:
+    if algorithm not in {"md5", "sha256", "git-sha1", "size-only"}:
         raise RuntimeError(f"Unsupported source checksum: {algorithm}")
-    upstream = hashlib.new("sha1" if algorithm == "git-sha1" else algorithm)
+    # size-only: upstream publishes no checksum (OpenSLR, asvspoof.org); sha256 is still recorded.
+    upstream = hashlib.new("sha1" if algorithm == "git-sha1" else "md5" if algorithm == "size-only" else algorithm)
     if algorithm == "git-sha1":
         upstream.update(f"blob {job.size}\0".encode())
     sha = hashlib.sha256()
@@ -70,7 +74,7 @@ def verify_file(path: Path, job: SourceFile) -> str:
         while chunk := stream.read(8 * 2**20):
             upstream.update(chunk)
             sha.update(chunk)
-    if upstream.hexdigest() != expected:
+    if algorithm != "size-only" and upstream.hexdigest() != expected:
         raise RuntimeError(f"Upstream checksum mismatch: {job.path}")
     return sha.hexdigest()
 
@@ -93,9 +97,12 @@ def acquire_locked(job: SourceFile, target: Path) -> dict[str, str | int | bool]
             # A closed connection may leave a complete file; never request its empty tail.
             if partial.exists() and partial.stat().st_size >= job.size:
                 break
+            # Gated HF datasets need the user's token; never sent to other hosts.
+            auth = (["--header", "Authorization: Bearer " + os.environ["HF_TOKEN"]]
+                    if urlparse(job.url).hostname == "huggingface.co" and os.environ.get("HF_TOKEN") else [])
             try:
                 subprocess.run([
-                    "curl", "--fail", "--location", "--silent", "--show-error",
+                    "curl", *auth, "--fail", "--location", "--silent", "--show-error",
                     "--proto", "=https", "--proto-redir", "=https",
                     "--connect-timeout", "30", "--speed-time", "180", "--speed-limit", "1024",
                     "--retry", "0", "--continue-at", "-",

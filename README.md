@@ -7,6 +7,7 @@
 - [전체 실험 기록 — 2026-09-17 기준](docs/EXPERIMENTS_ALL_2026-09-17.md)
 - [최신 Existing9504 구조](docs/PROJECT.md) · [상세 코드 위치](docs/CODE_MAP.md)
 - [실제 소스 파일과 SHA-256](SOURCE_MANIFEST.json)
+- [Data v4 수집·생성·split 설계와 코드 — 2026-09-23](repository/data_v4/DESIGN.md)
 
 ## 최신 완료 실험: Existing9504
 
