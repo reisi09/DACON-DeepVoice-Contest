@@ -21,7 +21,7 @@ for b in "$@"; do case "$b" in
   seedvc)      mk seedvc 3.10;     git -C "$MODELS" clone -q https://github.com/Plachtaa/seed-vc.git || true
                pipi seedvc $TORCH; pipi seedvc -r "$MODELS/seed-vc/requirements.txt" pyarrow ;;
   acestep)     mk acestep 3.10;    pipi acestep $TORCH; pipi acestep "git+https://github.com/ace-step/ACE-Step.git" ;;
-  data)        mk data 3.11;       pipi data $TORCH; pipi data demucs==4.0.1 librosa==0.10.2.post1 soundfile pyarrow \
+  data)        mk data 3.11;       pipi data $TORCH; pipi data demucs==4.0.1 panns-inference==0.1.1 librosa==0.10.2.post1 soundfile pyarrow \
                                      scikit-learn huggingface_hub modelscope ;;
   *) echo "unknown backend $b" >&2; exit 2 ;;
 esac; echo "env ready: $b"; done

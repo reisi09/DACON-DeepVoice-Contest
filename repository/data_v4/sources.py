@@ -135,6 +135,8 @@ def plan_hf(src: Source) -> list[dict]:
     for path in cap_items(list(info), src.per_dir_cap):
         f = info[path]
         checksum = 'sha256:' + f.lfs.sha256 if f.lfs else 'git-sha1:' + f.blob_id
+        if '*' in checksum:  # gated repo listed without access: HF masks hashes -> plan would be unverifiable
+            raise RuntimeError(f'{repo}: masked checksum; set HF_TOKEN with granted access and rebuild')
         rows.append(dict(dataset=src.name, path=f'{src.name}/{path}', size=f.size, checksum=checksum,
                          url=f'https://huggingface.co/datasets/{repo}/resolve/{rev}/{quote(path)}',
                          license=src.license, source_split='unassigned'))

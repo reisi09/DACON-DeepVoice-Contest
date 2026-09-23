@@ -129,6 +129,25 @@ MLAAD-ko가 XTTS-v2와 Chatterbox를 이미 포함하므로, 자체 생성은 **
 - **component 1:1 짝짓기:** 음성 component 하나는 음악 component 하나와만 섞는다. 혼합이 component들을 사슬처럼 이어 거대 component를 만들지 않게 한다.
 - **코덱:** 혼합물도 같은 코덱 표를 거친다. 혼합물만 FLAC이 되는 지름길을 막는다.
 
+## 6.5 존재(presence) 판정: PANNs 교체 대신 학습형 head (`presence.py`)
+
+로컬 실측 (실제 발화 50 / 반주 50 / 가사곡 50, 10 s, 깨끗함·전화 μ-law):
+
+| 방식 | voice AUC 깨끗/전화 | music AUC |
+|---|---|---|
+| PANNs CNN14 (현재) | 0.824 / 0.838 | 0.996 |
+| AST-AudioSet | 0.807 / 0.805 | 0.997 / 0.990 |
+| CED-base | 0.806 / 0.811 | 1.000 / 0.999 |
+| 보컬 stem에 PANNs (깨끗) | 0.825 | — |
+| 보컬 stem에 CED (깨끗) | 0.801 | — |
+| 보컬 stem 에너지 비율 (깨끗) | 0.864 | — |
+
+AudioSet 분류기 교체는 차이가 없다(노래 속 보컬 누락이 공통 원인). 그래서 **고정 모델 피처 위의 작은 head**를 학습한다.
+- 피처: PANNs 클래스 그룹(voice/music/speech/singing/Music)의 창별 max·mean·q90 + HTDemucs 보컬·반주 stem 에너지 비율(3 s 창 max·mean·q90·비율) + 믹스 RMS. 제출 추론에서 이미 돌아가는 두 모델이므로 추가 비용이 거의 없다.
+- 모델: 표준화 + 로지스틱 회귀, JSON 저장(numpy만으로 추론, pickle 없음). VOICE/MUSIC 각각.
+- 학습: data_v4 manifest의 존재 라벨(마스크 제외), split 규칙의 train. val/test에서 raw PANNs 대비 AUC를 보고한다. 추출은 (원천, 존재 패턴) 셀당 400행으로 GPU 시간을 제한한다.
+- 연결: head 출력이 `VOICE/MUSIC_PRESENT_PROB`와 FILE 결합식의 Pv·Pm을 대체한다. 채택은 리더보드 1요인 A/B로 결정한다.
+
 ## 7. Split 방법론 — seed 무작위 배정이 아닌 분석 기반
 
 사용자 지시(09-23): train/val/test는 seed로 나누지 않고 분석해서 정한다.

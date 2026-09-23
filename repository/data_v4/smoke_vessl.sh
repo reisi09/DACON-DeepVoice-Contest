@@ -15,7 +15,7 @@ for e in libmp3lame libopus libgsm aac pcm_mulaw pcm_alaw flac; do
 done
 [ -z "${miss:-}" ] || echo "WARN: drop missing codecs from CODECS in build_manifest.py before materialize (label-independent table must stay valid)"
 echo "== self-checks"
-for f in sources generate_speech generate_music build_manifest split; do
+for f in sources generate_speech generate_music build_manifest split presence; do
   case $f in sources) "$PY" data_v4/sources.py check ;; *) "$PY" data_v4/$f.py --self-check ;; esac
 done
 python3 candidate_data_acquire.py --self-check
