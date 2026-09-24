@@ -10,11 +10,10 @@
   "old_a100_state": "terminating",
   "old_a100_phase": "terminated",
   "portable_audio_export_completed": true,
-  "new_workspace_created": false,
-  "gpu_started": false,
+  "new_workspace_created": true,
+  "gpu_started": true,
   "blockers": [
-    "Prior A100 workspace is terminated; no usable A100 workspace was found. Creating a new one requires explicit exception to the existing-workspace-only instruction",
-    "Stage and preflight the verified portable audio, assets and code on an authorized A100 environment; target Python/CUDA/model loading remains unverified"
+    "Feature extraction, head training and E00/E04 comparison are not complete; see A100_RUN_2026-09-24.md for active run and deadline"
   ],
   "existing_inputs_verified": true,
   "existing_assets_available_on_object_volume": true,
@@ -23,5 +22,12 @@
   "cpu_export_job": "job-3votgz7mfrno",
   "cpu_export_job_final_state": "terminated",
   "cloud_mount_readback_completed": true,
-  "local_direct_full_readback_verified": true
+  "local_direct_full_readback_verified": true,
+  "current_workspace": "wsp-nvxqw1jf9zdv",
+  "new_workspace_authorized": true,
+  "target_environment_verified": true,
+  "target_inputs_preflight_passed": true,
+  "feature_stage_dispatched": true,
+  "feature_outputs_verified": false,
+  "pause_deadline_epoch": 1790256172
 }

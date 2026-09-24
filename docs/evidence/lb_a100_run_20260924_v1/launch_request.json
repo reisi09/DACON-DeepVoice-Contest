@@ -1,0 +1,33 @@
+{
+  "name": "lb-e00-e04-a100-20260924-v1",
+  "cli": [
+    "/Users/choiwuseck/.local/bin/vesslctl",
+    "--org",
+    "qwdkw"
+  ],
+  "object_volume": "objvol-a5gxdg7er70i",
+  "object_prefix": "lb-improvement-20260924/a100-run-v1/",
+  "pause_deadline_epoch": 1790256172,
+  "max_wall_seconds": 3600,
+  "hourly_credit": 1.48,
+  "image": "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+  "bootstrap_zip_sha256": "357f7e387ae6367f29974a3b582fbcb3e874a68b503b4dc42558030dbf7a5162",
+  "create_args": [
+    "workspace",
+    "create",
+    "--name",
+    "lb-e00-e04-a100-20260924-v1",
+    "--cluster",
+    "cluster-betelgeuse",
+    "--resource-spec",
+    "resourcespec-a100x1",
+    "--image",
+    "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+    "--object-volume",
+    "objvol-a5gxdg7er70i:/shared",
+    "--ssh-key",
+    "sshkey-4e5nvee5a6qt",
+    "--init-script",
+    "#!/usr/bin/env bash\nset -euo pipefail\nexport PATH=/opt/conda/bin:$PATH\nexport PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1\nLB_DEADLINE=1790256172\nLB_SHARED=/shared\nLB_PREFIX=lb-improvement-20260924/a100-run-v1/\nLB_WORK=/root/lb-a100-20260924-v1\nLB_BOOT=/tmp/lb-a100-bootstrap-v1\ntest ! -e \"$LB_SHARED/$LB_PREFIX/run_started.json\"\npython - \"$LB_SHARED/$LB_PREFIX/bootstrap_bundle.zip\" \"$LB_BOOT\" <<'PY'\nfrom pathlib import Path,PurePosixPath\nimport hashlib,sys,zipfile,stat\narchive,root=map(Path,sys.argv[1:])\nwith archive.open('rb') as f: actual=hashlib.file_digest(f,'sha256').hexdigest()\nif actual!='357f7e387ae6367f29974a3b582fbcb3e874a68b503b4dc42558030dbf7a5162':raise ValueError('Bootstrap hash differs')\nwith zipfile.ZipFile(archive) as z:\n names=set()\n for i in z.infolist():\n  p=PurePosixPath(i.filename)\n  if i.is_dir() or p.is_absolute() or '..' in p.parts or str(p)!=i.filename or i.filename in names or stat.S_IFMT(i.external_attr>>16) not in (0,stat.S_IFREG):raise ValueError('Unsafe bootstrap member')\n  names.add(i.filename)\n if len(names)!=6:raise ValueError('Wrong bootstrap member count')\n root.mkdir(exist_ok=False)\n z.extractall(root)\nPY\nset +e\nLB_REMAIN=$((LB_DEADLINE - 360 - $(date +%s)))\nif [ \"$LB_REMAIN\" -gt 0 ]; then\n timeout --kill-after=20s \"${LB_REMAIN}s\" python -u \"$LB_BOOT/a100_workspace_bootstrap.py\" run --work \"$LB_WORK\" --shared \"$LB_SHARED\" --prefix \"$LB_PREFIX\" --deadline \"$LB_DEADLINE\"\n LB_RUN_CODE=$?\nelse\n LB_RUN_CODE=124\nfi\nLB_REMAIN=$((LB_DEADLINE - 60 - $(date +%s)))\nif [ \"$LB_REMAIN\" -gt 0 ]; then\n timeout --kill-after=20s \"${LB_REMAIN}s\" python -u \"$LB_BOOT/a100_workspace_bootstrap.py\" export --work \"$LB_WORK\" --shared \"$LB_SHARED\" --prefix \"$LB_PREFIX\" --deadline \"$LB_DEADLINE\"\n LB_EXPORT_CODE=$?\nelse\n LB_EXPORT_CODE=124\nfi\npython - \"$LB_SHARED/$LB_PREFIX/bootstrap_exit.json\" \"$LB_RUN_CODE\" \"$LB_EXPORT_CODE\" \"$LB_DEADLINE\" <<'PY'\nimport json,sys,time\nfrom pathlib import Path\nPath(sys.argv[1]).write_text(json.dumps(dict(run_returncode=int(sys.argv[2]),export_returncode=int(sys.argv[3]),pause_deadline_epoch=int(sys.argv[4]),finished_epoch=time.time()),indent=2))\nPY\nexit \"$LB_RUN_CODE\"\n"
+  ]
+}

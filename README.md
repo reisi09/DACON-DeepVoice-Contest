@@ -2,6 +2,7 @@
 
 지금까지 진행한 딥보이스 탐지 실험의 모델·학습·추론 코드, 노트북, 설정과 결과 기록을 모았습니다. 원래 프로젝트의 상대 경로는 `repository/` 아래에 유지했습니다.
 
+- [새 A100 workspace·E00/E04 특징 추출 시작](docs/A100_RUN_2026-09-24.md)
 - [A100 지원 변경·실행 묶음·음원 이전 검증 완료](docs/A100_PREPARATION_2026-09-24.md)
 - [GPU 학습 사전준비·E00/E04·CPU 검증 완료](docs/GPU_PREPARATION_2026-09-24.md)
 - [대회 규칙 재검토·MLAAD 146개 추가·roles-v6](docs/MLAAD_DECISION_2026-09-24.md)
