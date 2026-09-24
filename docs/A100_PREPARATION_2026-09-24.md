@@ -36,4 +36,10 @@ CPU에서 실제 하위 CLI가 A100 선택을 받는지, GPU가 없을 때 CPU�
 
 object volume의 `lb-improvement-20260924/a100-preparation-v1/README.md`에 묶음 해시와 전체 명령을 기록했다. 입력 배치와 GPU 실행 예산을 승인받은 환경에서 새 묶음을 사용해야 한다. 이전 `prepared-v1`의 H100 전용 코드를 그대로 실행하면 A100 지원 변경이 적용되지 않는다.
 
+## 기존 A100 재시작 요청 결과
+
+사용자가 기존 A100 workspace에서 실험 시작을 요청한 뒤 `qwdkw`의 `jolly-routine` (`wsp-5i3knd3gxeox`)을 다시 조회했다. state=`terminating`, phase=`terminated`였으며 초기 실행 스크립트는 비어 있었다. 실제 `vesslctl --org qwdkw workspace start wsp-5i3knd3gxeox` 요청은 종료 코드 1과 `workspace start failed: Request error: {"message":""}`를 반환했다. 이후 조회에서도 상태는 같았다. 오류 응답에 상세 원인이 없어 실패 원인을 별도로 단정하지 않는다.
+
+실험은 시작되지 않았다. 현재 사용자 범위의 목록에는 해당 A100과 정지 상태의 기존 H100이 있다. 전체 사용자 조회인 `--all`은 API가 `isMyWorkspace` 인자 누락 오류를 반환해 다른 소유자의 workspace까지 확인하지 못했다. 재사용하려는 다른 A100의 이름·ID 또는 조직명이 필요하다. 새 workspace는 만들지 않았다. [재시작 요청·후속 조회 기록](evidence/lb_a100_preparation_20260924/existing_a100_start_attempt.json).
+
 [패키지](evidence/lb_a100_preparation_20260924/package_receipt.json) · [검증 범위](evidence/lb_a100_preparation_20260924/verification.json) · [클라우드 상태](evidence/lb_a100_preparation_20260924/readiness.json) · [이전 완료 기록](evidence/lb_a100_preparation_20260924/transfer_receipt.json) · [직접 다운로드 검증](evidence/lb_a100_preparation_20260924/audio_direct_readback.json) · [CPU 최종 상태](evidence/lb_a100_preparation_20260924/cpu_export_job_final.json) · [최초 CPU 요청안](evidence/lb_a100_preparation_20260924/cpu_export_job_request.json)
