@@ -12,6 +12,9 @@ from panns_adaptation_data import (TARGETS, cache_provenance, identity, load_cac
 
 def load_base(package):
     import torch
+    label_file = Path.home()/'panns_data/class_labels_indices.csv'
+    if not label_file.exists() or sha256(label_file) != sha256(package/'model/assets/baseline/model/panns/class_labels_indices.csv'):
+        raise ValueError('Offline PANNs label table missing or mismatched')
     from panns_inference.models import Cnn14
     base = Cnn14(32000, 1024, 320, 64, 50, 14000, 527)
     record = torch.load(package/'model/assets/baseline/model/panns/Cnn14_mAP=0.431.pth',
@@ -56,7 +59,7 @@ def load_demucs(package):
     return model.cpu().eval().requires_grad_(False)
 
 
-def cache(config):
+def cache(config, resume=False):
     import tempfile
     import torch
     from panns_adaptation import AdaptedCnn14, presence_logits, tag_features
@@ -64,6 +67,12 @@ def cache(config):
     from mert12_submission import pin_torchaudio_loader
     package = validate_config(config)
     torch.set_num_threads(4)
+    device = config.get('cache_device', 'cpu')
+    if device not in ('cpu', 'cuda') or (device == 'cuda' and not torch.cuda.is_available()):
+        raise ValueError('Requested cache device unavailable')
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    torch.backends.cudnn.benchmark = False
     out = Path(config['output'])/'cache'
     out.mkdir(parents=True, exist_ok=True)
     index_path = out/'index.json'
@@ -74,16 +83,29 @@ def cache(config):
         return saved
     rows = {r['ID']: r for r in (json.loads(s) for s in Path(config['rows']).open())}
     selected = [rows[rid] for rid in config['panel_ids']]
-    base = load_base(package)
+    base = load_base(package).to(device)
     model = AdaptedCnn14(base, train_blocks=())
     original = baseline(package)
     pin_torchaudio_loader(original)
-    demucs = load_demucs(package)
+    demucs = load_demucs(package).to(device)
     heads, labels, groups = readout_assets(package)
     entries = []
     start = time.monotonic()
     with Path(config['archive']).open('rb') as archive:
         for row in selected:
+            entry_path = out/(hashlib.sha256(row['ID'].encode()).hexdigest()+'.json')
+            if entry_path.exists():
+                if not resume:
+                    raise FileExistsError('Partial cache exists; use --resume')
+                saved = json.loads(entry_path.read_text())
+                entry = saved['entry']
+                if saved['config_identity'] != config['identity'] or saved['entry_sha256'] != identity(entry):
+                    raise ValueError('Partial cache identity mismatch')
+                if entry['ID'] != row['ID'] or entry['role'] != row['role'] or entry['targets'] != [row[k] for k in TARGETS]:
+                    raise ValueError('Partial cache role/target mismatch')
+                load_cache(entry)
+                entries.append(entry)
+                continue
             t = time.monotonic()
             audio = row['verified_audio']
             if 'local_path' in audio:
@@ -109,17 +131,17 @@ def cache(config):
                 sf.write(normalized, raw, 16000, subtype='FLOAT')
                 stem_start = time.monotonic()
                 with torch.inference_mode():
-                    voice, _ = original.separate_voice_and_music(normalized, demucs, torch.device('cpu'))
+                    voice, _ = original.separate_voice_and_music(normalized, demucs, torch.device(device))
                 voice = np.pad(voice[:len(raw)], (0, max(0, len(raw)-len(voice))))
                 stems = stem_features(raw, voice, 16000)
                 stem_seconds = time.monotonic()-stem_start
             features, reference, adapted = [], [], []
             with torch.no_grad():
                 for segment in segments:
-                    waveform = torch.from_numpy(segment[None])
-                    features.append(model.prefix(waveform))
-                    reference.append(base(waveform)['clipwise_output'])
-                    adapted.append(model.tags_from_block5(features[-1]))
+                    waveform = torch.from_numpy(segment[None]).to(device)
+                    features.append(model.prefix(waveform).cpu())
+                    reference.append(base(waveform)['clipwise_output'].cpu())
+                    adapted.append(model.tags_from_block5(features[-1].to(device)).cpu())
                 features = torch.cat(features)
                 reference, adapted = torch.cat(reference), torch.cat(adapted)
                 tag_error = float((reference-adapted).abs().max())
@@ -129,21 +151,25 @@ def cache(config):
                 old_presence = np.array(presence(heads, numpy_feats | stems, (0., 0.)))
                 new_presence = presence_logits(adapted, stems, heads, labels, groups).sigmoid().numpy()
                 presence_error = float(np.abs(old_presence-new_presence).max())
-            if tag_error > 1e-6 or stats_error > 2*np.finfo(np.float32).eps or presence_error > 1e-6:
+            if tag_error > (1e-6 if device == 'cpu' else 1e-5) or stats_error > 2*np.finfo(np.float32).eps or presence_error > (1e-6 if device == 'cpu' else 1e-5):
                 raise ValueError(f'Initial parity failed: tags={tag_error}, stats={stats_error}, presence={presence_error}')
             key = identity(dict(config=config['identity'], provenance=cache_provenance(), audio=audio['sha256'], starts=starts,
                                 preprocessing='preserved baseline gain .6, soxr_hq', dtype='float32'))
             path = out/(hashlib.sha256(row['ID'].encode()).hexdigest()+'.npz')
             if path.exists():
-                raise FileExistsError('Partial cache requires explicit inspection before replacement')
-            np.savez(path, identity=key, block5=features.numpy(), tags=reference.numpy(), starts=np.array(starts))
+                if not resume:
+                    raise FileExistsError('Orphan cache exists; use --resume to preserve and recompute')
+                path.replace(path.with_suffix('.orphan.'+str(time.time_ns())+'.npz'))
+            with path.with_suffix('.npz.tmp').open('wb') as stream:
+                np.savez(stream, identity=key, block5=features.numpy(), tags=reference.numpy(), starts=np.array(starts))
+            path.with_suffix('.npz.tmp').replace(path)
             entry = dict(ID=row['ID'], role=row['role'], component_id=row['component_id'],
                 path=str(path), sha256=sha256(path), identity=key, stems=stems,
                 targets=[row[k] for k in TARGETS], segments=len(segments), seconds=len(raw)/16000,
                 tag_error=tag_error, stats_error=stats_error, presence_error=presence_error,
                 stem_seconds=stem_seconds, total_seconds=time.monotonic()-t)
             entries.append(entry)
-            write_json(out/'partial_index.json', dict(config_identity=config['identity'], entries=entries))
+            write_json(entry_path, dict(config_identity=config['identity'], entry_sha256=identity(entry), entry=entry))
             print(f'Cached {len(entries)}/{len(selected)}: {len(segments)} segments, {entry["total_seconds"]:.2f}s', flush=True)
     report = dict(config_identity=config['identity'], provenance=cache_provenance(), entries=entries, seconds=time.monotonic()-start,
                   stem_reuse=False, incomplete_types=[f'{v}/{m}' for v, m in ((0,0),(0,1),(1,0),(1,1))
@@ -151,5 +177,3 @@ def cache(config):
     write_json(index_path, report)
     index_path.with_suffix('.sha256').write_text(sha256(index_path)+'\n')
     return report
-
-

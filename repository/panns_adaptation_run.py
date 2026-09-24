@@ -58,9 +58,10 @@ def restore_checkpoint(path, expected_identity, model, optimizer):
 
 def resource_usage(device):
     import resource
+    import sys
     import torch
     driver = torch.mps.driver_allocated_memory() if device == 'mps' else 0
-    return dict(peak_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+    return dict(peak_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * (1 if sys.platform == 'darwin' else 1024),
                 mps_driver_bytes=driver)
 
 
@@ -255,7 +256,10 @@ def main():
     if args.command == 'pilot':
         pilot(config, args.arm, args.device, args.microbatch, resume=args.resume)
     else:
-        {'audit': audit, 'cache': cache}[args.command](config)
+        if args.command == 'cache':
+            cache(config, resume=args.resume)
+        else:
+            audit(config)
 
 
 if __name__ == '__main__':

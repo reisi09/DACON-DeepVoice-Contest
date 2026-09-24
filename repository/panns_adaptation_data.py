@@ -4,6 +4,8 @@ import csv
 import hashlib
 import io
 import json
+import os
+import shutil
 from pathlib import Path, PurePosixPath
 import tarfile
 import numpy as np
@@ -222,14 +224,26 @@ def read_cache_index(config):
 
 
 def load_cache(entry):
-    if sha256(entry['path']) != entry['sha256']:
+    path = Path(entry['path'])
+    local = os.environ.get('PANNS_LOCAL_CACHE')
+    if local:
+        if len(entry['sha256']) != 64 or any(c not in '0123456789abcdef' for c in entry['sha256']):
+            raise ValueError('Invalid cache digest')
+        cached = Path(local)/(entry['sha256']+'.npz')
+        cached.parent.mkdir(parents=True, exist_ok=True)
+        if not cached.exists():
+            temporary = cached.with_suffix('.npz.tmp')
+            shutil.copyfile(path, temporary)
+            if sha256(temporary) != entry['sha256']:
+                raise ValueError('Downloaded activation hash mismatch')
+            temporary.replace(cached)
+        path = cached
+    if sha256(path) != entry['sha256']:
         raise ValueError('Cache hash mismatch')
-    with np.load(entry['path'], allow_pickle=False) as data:
+    with np.load(path, allow_pickle=False) as data:
         if str(data['identity'].item()) != entry['identity']:
             raise ValueError('Cache identity mismatch')
         result = {key: data[key].copy() for key in data.files}
     if result['block5'].dtype != np.float32 or not np.isfinite(result['block5']).all():
         raise ValueError('Invalid cached activations')
     return result
-
-

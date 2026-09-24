@@ -1,0 +1,195 @@
+{
+  "date": "2026-09-25",
+  "status": "awaiting_paid_CPU_environment_approval",
+  "gpu_ready": false,
+  "source_sha256": {
+    "repository/panns_adaptation.py": "53c559982513ee5e2bd1c781a10a8d00ddb579dbdb3ca831d92eddc3967dce98",
+    "repository/panns_adaptation_cache.py": "b30d172edc098635c589ec1435ae07339dd90a397e5771eb986bda8d0abd87e0",
+    "repository/panns_adaptation_data.py": "3820acacf84d75b60d9af4c3f793b8a9b649a7053bc79931177d4d4c6a7908f4",
+    "repository/panns_adaptation_run.py": "c1bdeae52f1cce5da67429255c6b60f999ab3e83afecaec8d714fdde4d71e3c2",
+    "repository/panns_cloud_bundle.py": "df9fd2ec83457285b9ac5f01293656c67cbfffa888dccb9490e687be7f4f1729",
+    "repository/panns_cloud_pipeline.py": "009ec9462ea05b6d75684425d83cd53451d17dfc331e8242644e15962d5b752d",
+    "repository/panns_cloud_prepare.py": "9c10c632a674c15cbca24337bd27193009879402cfcc397e145ec0534d890619",
+    "repository/panns_cloud_report.py": "fc06c2a01db065b9ea4b1716604c664d528df3512498d874d456e8fe363bee6b",
+    "repository/panns_cloud_run.py": "afe0edd3137e7615896aca519361ba465d22136630336c0707070e25e1280f39",
+    "repository/panns_cpu_environment.py": "0e9aa7120aed7f33fb69ff54e057d4ecad37fff1bcdbb91da8e805d2c20cfe5a",
+    "repository/panns_fixed_predictions.py": "32d3b26b05b6f59471f5bb6362a65b333586ea2ae398e988ac745c30c23d04cd",
+    "repository/panns_recover_noise.py": "4b1889e19915197d8eed3ffc11fc2ea12b8ee935a4ad2c5610cc6b9ca8426871",
+    "repository/panns_restore_environment.py": "36fa3588a471575dfd661581e4e9c761cb7c6df734b795afe89e918386317dc0",
+    "repository/panns_stem_probe.py": "cd71daffd85932f69420e05351edfbdb871acd3595fb4fc9fa9bcf56adcbfd4f",
+    "repository/panns_a100_launch.sh": "e77b195199c0d0906d94e5e43f6e6e3628bd1a12448dfdb8c7bb05f2227dcce4",
+    "repository/test_panns_cloud_report.py": "1e05f991b2fbbd17566f8b7cda2b7f607ddf07b58ae41109f3873d14594e9295",
+    "repository/test_panns_environment.py": "852ce19cd6cc8f726783f5c30a0b51cafa097a25130f323666a794fc319aa502"
+  },
+  "workspace": {
+    "slug": "wsp-nvxqw1jf9zdv",
+    "name": "lb-e00-e04-a100-20260924-v1",
+    "state": "stopped",
+    "phase": "standby",
+    "resourceSpecSlug": "resourcespec-a100x1"
+  },
+  "uploads": [
+    {
+      "key": "panns-cnn-v1-20260925/inputs-v3/run_bundle.tar",
+      "sha256": "9356724b1b5ad13d3581c738e8214b39e8101bb303d7a2eadfe585a617c05c3b",
+      "bytes": 167014400,
+      "readback_verified": true
+    },
+    {
+      "key": "panns-cnn-v1-20260925/inputs-v3/launch_lock.json",
+      "sha256": "bef3e98374b733412eeae8bd0bc0a3f32843643f09458e853ede96100a703e46",
+      "bytes": 269,
+      "readback_verified": true
+    },
+    {
+      "key": "panns-cnn-v1-20260925/inputs-v3/panns_a100_launch.sh",
+      "sha256": "e77b195199c0d0906d94e5e43f6e6e3628bd1a12448dfdb8c7bb05f2227dcce4",
+      "bytes": 4603,
+      "readback_verified": true
+    },
+    {
+      "key": "panns-cnn-v1-20260925/inputs-v3/panns_cpu_environment.py",
+      "sha256": "0e9aa7120aed7f33fb69ff54e057d4ecad37fff1bcdbb91da8e805d2c20cfe5a",
+      "bytes": 6283,
+      "readback_verified": true
+    },
+    {
+      "key": "panns-cnn-v1-20260925/inputs/noise-v2.tar",
+      "sha256": "6b871c982dbc63c9cbf159551c4d948cb908e6ff3db2ecc841bf4de6d5516381",
+      "bytes": 272404480,
+      "readback_verified": true
+    }
+  ],
+  "storage": {
+    "before_objects": 1473,
+    "after_objects": 1479,
+    "before_bytes": 175759024281,
+    "after_bytes": 151293095779,
+    "net_reduction_bytes": 24465928502,
+    "accounting_note": "Snapshot after archive cleanup and final inputs upload; excludes subsequent 1505-byte storage receipt.",
+    "original_archives_deleted": [
+      {
+        "key": "existing-only-9504-20260919/assets.zip",
+        "bytes": 6265308398,
+        "backup_sha256": "145ce8892af750562767dab2e934c9b9f33a5201f4124c6b96530b0ea39f5aa1",
+        "absent_after_delete": true
+      },
+      {
+        "key": "data-v4-20260923/archives/musan.tar",
+        "bytes": 11086120960,
+        "backup_sha256": "cd2434d730db7523654c9c59bb1157f4c6d17651c0d97554ff25bef8d6bb9acb",
+        "absent_after_delete": true
+      },
+      {
+        "key": "lb-improvement-20260924/datasets/additional-v1/jamendo-v1.tar",
+        "bytes": 5534842880,
+        "backup_sha256": "43d72b542aa204532ae818a4141f2ac97c08c8cdd1755269500b8399c1482cc8",
+        "absent_after_delete": true
+      },
+      {
+        "key": "lb-improvement-20260924/datasets/additional-v1/music-arena-v1.tar",
+        "bytes": 2019102720,
+        "backup_sha256": "f5c6c37c0bb01046d823e300b992b92fa1a84b501945d477c434dc2c8df3695a",
+        "absent_after_delete": true
+      }
+    ],
+    "staging_deleted": [
+      {
+        "key": "panns-cnn-v1-20260925/inputs/run_bundle.tar",
+        "sha256": "29e0ded0faa27522554f5ac7c6c9b5d44ddf9a8ddd53fd39bc0a7530086e7911",
+        "bytes": 167004160,
+        "readback_verified": true,
+        "absent_after_delete": true
+      },
+      {
+        "key": "panns-cnn-v1-20260925/inputs/launch_lock.json",
+        "sha256": "fee2abd0605a775d675ef6a425fb28f5e389c8e513348803e1ac7bceed50f675",
+        "bytes": 269,
+        "readback_verified": true,
+        "absent_after_delete": true
+      },
+      {
+        "key": "panns-cnn-v1-20260925/inputs-v2/run_bundle.tar",
+        "sha256": "6377d329c3beb856f74dbc53d4c16df01f661ba1012ed25995bc9d7b14d7f36c",
+        "bytes": 167014400,
+        "readback_verified": true,
+        "absent_after_delete": true
+      },
+      {
+        "key": "panns-cnn-v1-20260925/inputs-v2/launch_lock.json",
+        "sha256": "88748cc0aee2cf4088687a222344076366d0f40dad3b149a4a5e61d73b702800",
+        "bytes": 269,
+        "readback_verified": true,
+        "absent_after_delete": true
+      }
+    ],
+    "deletion_proof": "Original four: local backup size and exact multipart ETag; local SHA256 retained. Task staging: prior full readback plus unchanged remote SHA256 metadata and size.",
+    "canonical_audio_and_weights_unchanged": true,
+    "canonical_object_count": 27
+  },
+  "local_validation": {
+    "real_audio_resume": {
+      "real_audio_files": 6,
+      "cache_resume_equal": true,
+      "explicit_resume_required": true,
+      "training_resume_max_abs": 0.0,
+      "frozen_sha256": "6e043e86c2b75b21059c3b2bc758bdb160661848fead30cf8f8505b4f8e1508a",
+      "steps": 3
+    },
+    "frozen_inference_and_evaluation": {
+      "real_frozen_predictions_reused_by_reference_and_audio_hash": 2,
+      "fake_probabilities_unchanged": true,
+      "adapted_presence_changed": true,
+      "bootstrap_draws": 2000,
+      "corrupt_ssd_cache_rejected": true,
+      "independent_quality_claim": false
+    },
+    "launcher_preparation": {
+      "bundle_identity": "5039e63371b13172e8000af46d6f725563e457d581acb28132088f9e9139767c",
+      "run_identity": "5b966d4ebe45f40452b0ffec2ccc300ba5217bf04d42b612a94a0fde7a7d9093",
+      "uploaded_inputs_verified": true,
+      "rows": 42939,
+      "training_steps": 21237,
+      "gpu_started": false
+    },
+    "launcher_exit": 1,
+    "launcher_stop_reason": "Expected existing A100 on Mac; full uploaded-input verification completed first",
+    "pytest": {
+      "exit_code": 0,
+      "passed": 14,
+      "skipped": 0,
+      "log_sha256": "3d739a9c72deeaf93fc2ffe9567c70db8b7bb819b3909b5658dfa5d1a319b822",
+      "protected_failures": [
+        "unknown-label gradient leakage",
+        "reference readout numerical mismatch",
+        "corrupt payload and unsafe archive",
+        "parent source leakage",
+        "changed checkpoint identity",
+        "real adapter gradient and frozen state",
+        "weighted tied ROC mismatch",
+        "environment archive traversal",
+        "corrupted runtime despite matching marker"
+      ]
+    },
+    "syntax_parse": true,
+    "shell_syntax": true,
+    "lsp": "Unavailable: basedpyright not installed, installation previously declined"
+  },
+  "review": {
+    "agent": "panns_cloud_review",
+    "verdict": "CLEAR / APPROVE",
+    "blockers": [],
+    "binding": "source_sha256 map and final bundle SHA; no CUDA validation"
+  },
+  "unrun": [
+    "CPU Linux environment build and archive readback",
+    "Linux offline environment restore",
+    "A100 startup and SSH handoff",
+    "CUDA preflight numerical gate",
+    "full features and 12 training conditions",
+    "full development and selection diagnostics",
+    "independent holdout and model adoption"
+  ],
+  "compute_started": false,
+  "official_submission": false
+}
