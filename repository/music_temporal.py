@@ -68,11 +68,14 @@ class ResidualTemporalBlock(nn.Module):
     """Non-causal temporal convolutions; mask every layer to isolate padding."""
 
     def __init__(self, dilation: int, dropout: float = .2, *, channels: int = 128,
-                 layers: int = 2) -> None:
+                 layers: int = 2, kernel_size: int = 3) -> None:
         super().__init__()
+        if kernel_size not in (1, 3):
+            raise ValueError('Temporal comparison supports kernel 1 or 3')
         self.norms = nn.ModuleList([nn.LayerNorm(channels) for _ in range(layers)])
         self.convs = nn.ModuleList([
-            nn.Conv1d(channels, channels, 3, padding=dilation, dilation=dilation) for _ in range(layers)])
+            nn.Conv1d(channels, channels, kernel_size, padding=dilation * (kernel_size // 2),
+                      dilation=dilation) for _ in range(layers)])
         self.dropout = nn.Dropout(dropout)
 
     def forward(self, hidden: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
