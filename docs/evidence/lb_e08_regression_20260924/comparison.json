@@ -1,0 +1,371 @@
+{
+  "scope": "CPU cached-feature diagnostic only; ordered partial subset, prior-model training overlap not excluded; no official score or independent generalization claim.",
+  "old_archive_sha256_recorded": "05ae786864dc282de6ae750a451bc297a870be34f2d1e971b14429eca0e47419",
+  "rows": 756,
+  "reports": {
+    "selection": {
+      "DataV4_original": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "voice_eer": 0.03762088214482269,
+          "music_eer": 0.11437908496732027,
+          "voice_presence_auc": 1.0,
+          "music_presence_auc": 1.0
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "counts": {
+          "file_eer": 421,
+          "voice_eer": 401,
+          "music_eer": 35,
+          "voice_presence_auc": 418,
+          "music_presence_auc": 421
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 5,
+          "music_eer": 0,
+          "voice_presence_auc": 3,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.9928741092636579,
+          "music_presence_auc": 1.0
+        }
+      },
+      "DataV4_heads_legacy_decision": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.04437123000262263,
+          "voice_eer": 0.03762088214482269,
+          "music_eer": 0.11437908496732027,
+          "voice_presence_auc": 0.998014888337469,
+          "music_presence_auc": 0.9997779422649888
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "counts": {
+          "file_eer": 421,
+          "voice_eer": 401,
+          "music_eer": 35,
+          "voice_presence_auc": 418,
+          "music_presence_auc": 421
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 5,
+          "music_eer": 0,
+          "voice_presence_auc": 3,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.9928741092636579,
+          "music_presence_auc": 1.0
+        }
+      },
+      "E08_original": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.06274586939417784,
+          "voice_eer": 0.05016117619309693,
+          "music_eer": 0.1715686274509804,
+          "voice_presence_auc": 0.998014888337469,
+          "music_presence_auc": 0.9997779422649888
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "counts": {
+          "file_eer": 421,
+          "voice_eer": 401,
+          "music_eer": 35,
+          "voice_presence_auc": 418,
+          "music_presence_auc": 421
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 5,
+          "music_eer": 0,
+          "voice_presence_auc": 3,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.9928741092636579,
+          "music_presence_auc": 1.0
+        }
+      },
+      "E08_with_old_music_legacy_decision": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "voice_eer": 0.05016117619309693,
+          "music_eer": 0.11437908496732027,
+          "voice_presence_auc": 0.998014888337469,
+          "music_presence_auc": 0.9997779422649888
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "counts": {
+          "file_eer": 421,
+          "voice_eer": 401,
+          "music_eer": 35,
+          "voice_presence_auc": 418,
+          "music_presence_auc": 421
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 5,
+          "music_eer": 0,
+          "voice_presence_auc": 3,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.9928741092636579,
+          "music_presence_auc": 1.0
+        }
+      },
+      "E08_with_old_voice_legacy_decision": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "voice_eer": 0.03762088214482269,
+          "music_eer": 0.1715686274509804,
+          "voice_presence_auc": 0.998014888337469,
+          "music_presence_auc": 0.9997779422649888
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "counts": {
+          "file_eer": 421,
+          "voice_eer": 401,
+          "music_eer": 35,
+          "voice_presence_auc": 418,
+          "music_presence_auc": 421
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 5,
+          "music_eer": 0,
+          "voice_presence_auc": 3,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.9928741092636579,
+          "music_presence_auc": 1.0
+        }
+      }
+    },
+    "calibration": {
+      "DataV4_original": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.055970149253731366,
+          "voice_eer": 0.023565891472868243,
+          "music_eer": 0.09307359307359307,
+          "voice_presence_auc": 0.9994906621392191,
+          "music_presence_auc": 1.0
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "counts": {
+          "file_eer": 335,
+          "voice_eer": 308,
+          "music_eer": 43,
+          "voice_presence_auc": 329,
+          "music_presence_auc": 335
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 8,
+          "music_eer": 0,
+          "voice_presence_auc": 6,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.982089552238806,
+          "music_presence_auc": 1.0
+        }
+      },
+      "DataV4_heads_legacy_decision": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.06156716417910449,
+          "voice_eer": 0.023565891472868243,
+          "music_eer": 0.09307359307359307,
+          "voice_presence_auc": 0.9923599320882853,
+          "music_presence_auc": 0.9716470213443738
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "counts": {
+          "file_eer": 335,
+          "voice_eer": 308,
+          "music_eer": 43,
+          "voice_presence_auc": 329,
+          "music_presence_auc": 335
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 8,
+          "music_eer": 0,
+          "voice_presence_auc": 6,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.982089552238806,
+          "music_presence_auc": 1.0
+        }
+      },
+      "E08_original": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.08955223880597016,
+          "voice_eer": 0.061007751937984495,
+          "music_eer": 0.18614718614718614,
+          "voice_presence_auc": 0.9923599320882853,
+          "music_presence_auc": 0.9716470213443738
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "counts": {
+          "file_eer": 335,
+          "voice_eer": 308,
+          "music_eer": 43,
+          "voice_presence_auc": 329,
+          "music_presence_auc": 335
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 8,
+          "music_eer": 0,
+          "voice_presence_auc": 6,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.982089552238806,
+          "music_presence_auc": 1.0
+        }
+      },
+      "E08_with_old_music_legacy_decision": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.07276119402985076,
+          "voice_eer": 0.061007751937984495,
+          "music_eer": 0.09307359307359307,
+          "voice_presence_auc": 0.9923599320882853,
+          "music_presence_auc": 0.9716470213443738
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "counts": {
+          "file_eer": 335,
+          "voice_eer": 308,
+          "music_eer": 43,
+          "voice_presence_auc": 329,
+          "music_presence_auc": 335
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 8,
+          "music_eer": 0,
+          "voice_presence_auc": 6,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.982089552238806,
+          "music_presence_auc": 1.0
+        }
+      },
+      "E08_with_old_voice_legacy_decision": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.08955223880597016,
+          "voice_eer": 0.023565891472868243,
+          "music_eer": 0.18614718614718614,
+          "voice_presence_auc": 0.9923599320882853,
+          "music_presence_auc": 0.9716470213443738
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "counts": {
+          "file_eer": 335,
+          "voice_eer": 308,
+          "music_eer": 43,
+          "voice_presence_auc": 329,
+          "music_presence_auc": 335
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 8,
+          "music_eer": 0,
+          "voice_presence_auc": 6,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.982089552238806,
+          "music_presence_auc": 1.0
+        }
+      }
+    }
+  }
+}
