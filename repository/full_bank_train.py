@@ -42,11 +42,16 @@ def head_labels(row: Mapping[str, str]) -> dict[str, float]:
     return heads
 
 
-def read_items(manifest: Path, cache: Path) -> list[Item]:
+def read_items(manifest: Path, cache: Path, feature_manifest: Path | None = None) -> list[Item]:
     rows = load_rows(manifest)
     index = json.loads((cache / 'index.json').read_text())
-    if index['identity']['manifest_sha256'] != sha256(manifest):
+    if index['identity']['manifest_sha256'] != sha256(feature_manifest or manifest):
         raise ValueError('Feature manifest mismatch')
+    if feature_manifest is not None:
+        union = {row['ID']: row for row in load_rows(feature_manifest)}
+        for row in rows:
+            if union.get(row['ID']) != row:
+                raise ValueError(f"Requested row differs from feature manifest: {row['ID']}")
     for name, digest in index['identity']['implementation'].items():
         if sha256(Path(__file__).parent / name) != digest:
             raise ValueError(f'Feature implementation changed: {name}')
@@ -177,7 +182,8 @@ def train(args: argparse.Namespace) -> None:
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
     args.output.mkdir(parents=True, exist_ok=True)
-    items = read_items(args.manifest, args.cache)
+    feature_manifest = getattr(args, 'feature_manifest', None)
+    items = read_items(args.manifest, args.cache, feature_manifest)
     voice = torch.load(args.cache / 'voice_classifier_initial.pt', map_location='cpu', weights_only=True)
     fake_index = voice['fake_label_index']
     run_identity = {'manifest': sha256(args.manifest), 'cache': sha256(args.cache / 'index.json'),
@@ -189,6 +195,8 @@ def train(args: argparse.Namespace) -> None:
                     'voice_initial': sha256(args.cache / 'voice_classifier_initial.pt'),
                     'max_epochs': args.max_epochs, 'patience': args.patience, 'seeds': config['seeds'], 'config': config,
                     'contract': sha256(Path(__file__).with_name('full_bank_contract.py'))}
+    if feature_manifest is not None:
+        run_identity['feature_manifest'] = sha256(feature_manifest)
     if args.duration_balance:
         run_identity['duration_balance'] = True
         samples = {k: v['samples'] for k, v in json.loads((args.cache / 'index.json').read_text())['items'].items()}
@@ -295,6 +303,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('manifest', 'cache', 'output'):
         parser.add_argument('--'+name, type=Path, required=True)
+    parser.add_argument('--feature-manifest', type=Path,
+                        help='reuse a cache produced from this union manifest; every requested row must match exactly')
     parser.add_argument('--experiment-config', '--config', dest='config', type=Path)
     parser.add_argument('--max-epochs', type=int, default=50)
     parser.add_argument('--patience', type=int, default=5)

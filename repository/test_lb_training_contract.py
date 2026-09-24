@@ -144,3 +144,88 @@ def test_changed_encoder_cache_is_rejected_even_if_its_row_hashes_are_consistent
         validate_feature_contract(run, {**identity, 'assets': {'encoder': 'different'}})
     with pytest.raises(ValueError, match='provenance'):
         validate_feature_contract({}, identity)
+
+
+def test_explicit_union_cache_reuses_exact_rows_and_evaluates_only_requested_selection(tmp_path):
+    """An ablation may omit new data, but cannot change its cached labels, roles or audio."""
+    import csv
+    import hashlib
+    from pathlib import Path
+    from full_bank_contract import feature_contract
+    from full_bank_evaluate import evaluate
+    from full_bank_features import row_identity
+    from full_bank_train import read_items
+    from localization_models import WindowMIL
+    from mert12_submission import WINDOW
+    from v6_data import sha256
+
+    rows = [dict(ID=name, split='val' if name == 'selection' else 'train',
+                 role='selection' if name == 'selection' else 'train', route='music',
+                 component_id=name, path=name + '.wav', audio_sha256=hashlib.sha256(name.encode()).hexdigest(),
+                 MUSIC_FAKE=str(i % 2), MUSIC_PRESENT='1', VOICE_FAKE='', VOICE_PRESENT='0', FILE_FAKE=str(i % 2))
+            for i, name in enumerate(('old', 'selection', 'new'))]
+
+    def write_rows(path, records):
+        with path.open('w', newline='') as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer.writeheader(); writer.writerows(records)
+
+    union, subset = tmp_path / 'union.csv', tmp_path / 'subset.csv'
+    write_rows(union, rows); write_rows(subset, rows[:2])
+    cache = tmp_path / 'cache'; cache.mkdir()
+    identity = dict(manifest_sha256=sha256(union), implementation={'full_bank_features.py': sha256(Path('full_bank_features.py'))})
+    key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
+    index = dict(identity=identity, items={})
+    arrays = {}
+    for i, row in enumerate(rows):
+        arrays[row['ID']] = dict(identity=np.array(row_identity(row, key)), samples=np.array(WINDOW),
+            starts=np.array([0]), valid_samples=np.array([WINDOW]),
+            mert_windows=np.full((1, 1024), i + .25, np.float32),
+            voice_embeddings=np.full((1, 1280), i + .5, np.float32),
+            window_truth=np.array([np.nan], np.float32), voice_silent=np.array(False), presence=np.array([.1, .9]))
+        path = cache / (row['ID'] + '.npz')
+        np.savez(path, **arrays[row['ID']])
+        index['items'][row['ID']] = dict(path=path.name, sha256=sha256(path))
+    (cache / 'index.json').write_text(json.dumps(index))
+
+    with pytest.raises(ValueError, match='Feature manifest mismatch'):
+        read_items(subset, cache)
+    items = read_items(subset, cache, union)
+    assert [x.row['ID'] for x in items] == ['old', 'selection']
+    for item in items:
+        np.testing.assert_array_equal(item.features, arrays[item.row['ID']]['mert_windows'])
+        assert item.label == float(item.row['MUSIC_FAKE'])
+        assert np.isnan(item.truth).all()
+    assert [x.row['ID'] for x in read_items(union, cache)] == [row['ID'] for row in rows]
+
+    output = tmp_path / 'heads'; output.mkdir()
+    config = config_for({'seeds': [41]})
+    run = dict(config=config, manifest=sha256(subset), feature_manifest=sha256(union), feature_contract=feature_contract(identity))
+    (output / 'run_identity.json').write_text(json.dumps(run))
+    for route, model in [('music', WindowMIL(torch.zeros(1024), torch.ones(1024))), ('voice', nn.Linear(1280, 2))]:
+        torch.save(dict(model=model.state_dict(), route=route, seed=41, fake_label_index=1, identity=run), output / f'{route}_41.pt')
+    evaluate(subset, cache, output, 'cpu')
+    with (output / 'validation_predictions.csv').open() as stream:
+        assert [row['ID'] for row in csv.DictReader(stream)] == ['selection']
+    assert json.loads((output / 'candidate_lock.json').read_text())['validation_manifest_sha256'] == sha256(subset)
+
+    for change in ({'ID': 'missing'}, {'MUSIC_FAKE': '1'}, {'role': 'selection', 'split': 'val'},
+                   {'component_id': 'another'}, {'path': 'other.wav'}, {'audio_sha256': 'different'}):
+        write_rows(subset, [{**rows[0], **change}])
+        with pytest.raises(ValueError, match='Requested row differs'):
+            read_items(subset, cache, union)
+    write_rows(subset, [rows[0], rows[0]])
+    with pytest.raises(ValueError, match='unique'):
+        read_items(subset, cache, union)
+    write_rows(subset, [rows[0]])
+    with pytest.raises(ValueError, match='Feature manifest mismatch'):
+        read_items(subset, cache, subset)
+    path = cache / 'old.npz'
+    arrays['old']['mert_windows'][0, 0] = np.inf
+    np.savez(path, **arrays['old'])
+    with pytest.raises(ValueError, match='Cache hash changed'):
+        read_items(subset, cache, union)
+    index['items']['old']['sha256'] = sha256(path)
+    (cache / 'index.json').write_text(json.dumps(index))
+    with pytest.raises(ValueError, match='Invalid MERT windows'):
+        read_items(subset, cache, union)
