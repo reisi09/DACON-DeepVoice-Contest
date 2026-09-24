@@ -10,7 +10,7 @@
 
 **Spec:** [감사 보고서](../../../DACON_LB_IMPROVEMENT_AUDIT_2026-09-24.md), [감사 증거](../../../../docs/evidence/lb_cpu_20260924/audit_findings_ledger.json), 이 문서의 추가 개선 계약 §2·§6. 과거 `data_v4/DESIGN.md`의 실행 상태와 라이선스 해석은 현재 사실로 재사용하지 않는다.
 
-**실행 상태:** 이 문서는 실행 전 계획의 보존본이다. 이후 사용자가 CPU 작업·VESSL 업로드·지정 GitHub push를 승인했다. 현재 수행 결과와 제약은 [CPU 준비 기록](../../../../docs/CPU_PREPARATION_2026-09-24.md)을 따른다.
+**실행 상태:** 이 문서는 실행 전 계획의 보존본이다. 이후 사용자가 CPU 작업·VESSL 업로드·지정 GitHub push를 승인했다. 현재 수행 결과와 제약은 [CPU 준비 기록](../../../../docs/CPU_PREPARATION_2026-09-24.md), [추가 수집 후 검토](../../../../docs/CPU_FOLLOWUP_2026-09-24.md), [신규 데이터 학습 편입](../../../../docs/CPU_ADMISSION_2026-09-24.md)을 따른다.
 
 **계획 당시 상태:** 계획 작성 완료, 구현·수집·학습·제출 미실행. 계획 입력 HEAD는 `9acfce260ad70168df76ebd850c360fdb2ec12eb`이며 작업 트리에 기존 수정 9개가 있다. HEAD만으로 입력 전체를 식별하지 않는다.
 

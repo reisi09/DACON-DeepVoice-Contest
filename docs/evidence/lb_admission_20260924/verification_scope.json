@@ -1,0 +1,18 @@
+{
+  "code_commit": "9c8063cd73391db816f4989685870025948ddc89",
+  "command": "python -m pytest -q test_candidate_admission.py test_candidate_review.py test_lb_data_contract.py",
+  "result": "passed",
+  "validated": [
+    "Original and derived byte/PCM integrity, quantization within half-LSB tolerance",
+    "Prior evaluation linkage and denied rights excluded from training",
+    "Wrong audio/model hashes, incomplete or truncated review records rejected",
+    "Unknown opposite-component authenticity labels remain masked",
+    "Historical manifest and pre-existing user changes preserved"
+  ],
+  "not_proven": [
+    "Perceptual audio quality",
+    "Target-domain detector accuracy",
+    "Leaderboard improvement",
+    "GPU runtime or cache availability"
+  ]
+}

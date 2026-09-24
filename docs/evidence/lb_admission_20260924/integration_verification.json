@@ -1,0 +1,31 @@
+{
+  "admitted_new_rows": 1331,
+  "admitted_sources": {
+    "LibriSpeech": 449,
+    "MusicArena": 882
+  },
+  "preserved_historical_rows": 42947,
+  "historical_audio_label_role_component_unchanged": true,
+  "historical_bank_field_changes": {
+    "historical_component_id_alignment": 72
+  },
+  "actual_trainval_loader_rows": 33528,
+  "actual_development_loader_rows": 9842,
+  "cross_role_components": 0,
+  "candidate_evaluation_rows": 0,
+  "excluded_candidates_absent_from_bank": 1669,
+  "derived_audio_bytes": 638938564,
+  "max_measured_quantization_error": 1.52587890625e-05,
+  "quantization_tolerance": 1.53587890625e-05,
+  "role_counts": {
+    "train": 29650,
+    "development": 10120,
+    "selection": 2435,
+    "calibration": 2073
+  },
+  "all_new_rows_pass_actual_head_label_contract": true,
+  "new_audio_sha_and_pcm_unique": true,
+  "gpu_used": false,
+  "human_listening_completed": 0,
+  "historical_cache_note": "72 historical bank rows have corrected group identifiers; row-bound caches for those rows require identity revalidation. No current full-bank cache availability is claimed."
+}
