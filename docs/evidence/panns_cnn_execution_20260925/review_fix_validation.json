@@ -1,0 +1,147 @@
+{
+  "reviewed_commit": "44eae7bb4d33aa1ac48931296e57cbc158c5e3ba",
+  "review_verdict": "four Important findings; no Critical; fixes verified below, not a new reviewer approval",
+  "fixes": [
+    "force longest real file into first optimizer batch",
+    "bind cache preprocessing helpers and runtime versions",
+    "reject incomplete output unless explicit validated resume",
+    "share update/time/memory budgets with continuation verification"
+  ],
+  "data_audit": {
+    "rows": 44424,
+    "verified": 44416,
+    "missing": 8,
+    "recovered_noise": 900,
+    "recovered_noise_sha256": "eabe5ec250a9798963beb4d877637d923c3eb9e3f1b0b768ca8844495f844b66",
+    "missing_by_source": {
+      "haim": 8
+    },
+    "eligible_D0": 42939,
+    "excluded": {
+      "missing_audio|haim|development": 2,
+      "missing_audio|haim|calibration": 2,
+      "missing_audio|haim|train": 4,
+      "Dplus_not_D0|LibriSpeech|train": 449,
+      "Dplus_not_D0|MusicArena|train": 882,
+      "Dplus_not_D0|MLAAD|train": 146
+    },
+    "known_fraction": [
+      0.9800105950909412,
+      1.0
+    ],
+    "presence_by_role": {
+      "train|0|1": 2926,
+      "development|1|0": 5127,
+      "train|1|0": 20028,
+      "selection|1|0": 1633,
+      "train|0|0": 527,
+      "selection|1|1": 410,
+      "development|0|1": 1833,
+      "calibration|1|0": 1281,
+      "train|None|1": 566,
+      "calibration|0|1": 298,
+      "train|1|1": 4268,
+      "calibration|1|1": 389,
+      "selection|None|1": 55,
+      "development|1|1": 2551,
+      "development|None|1": 331,
+      "selection|0|1": 288,
+      "development|0|0": 276,
+      "calibration|None|1": 55,
+      "calibration|0|0": 48,
+      "selection|0|0": 49
+    },
+    "input_hashes": {
+      "manifest": "65303ce4e00374156a96ba62ee5622390e209c15bc2972fbf65f764531bf17b7",
+      "roles": "1ece1ae44cdf8055b93c64a4466222c6467ffbdd385fd08a2897ccf6202da195"
+    },
+    "archive_sha256": "030ff2d8109cfcb39aa0b7c298d68882a829ea4e21dafd41b4343347d038cfa9",
+    "rows_sha256": "59437c2942b9d9874aab390d1cd8386773b3c0e63f7a27861131c00222a86d22",
+    "complete_presence_panel": true,
+    "independent_evaluation_available": false,
+    "soundfile_version": "0.14.0"
+  },
+  "noise_reproducibility": {
+    "compared": 900,
+    "matching_processed_sha256": 900,
+    "original_processed_byte_identity": false
+  },
+  "real_resume_and_gradients": {
+    "interrupted_vs_uninterrupted_weight_max_abs": 0.0,
+    "interrupted_vs_uninterrupted_probability_max_abs": 0.0,
+    "sampler_identical": true,
+    "cpu_mps_gradients": {
+      "base.conv_block6.conv1.weight": {
+        "relative_l2": 1.0801125740510353e-06,
+        "max_abs": 5.093170329928398e-11
+      },
+      "base.conv_block6.conv2.weight": {
+        "relative_l2": 1.7507277481083e-06,
+        "max_abs": 2.3283064365386963e-10
+      },
+      "se.down.weight": {
+        "relative_l2": 0.0,
+        "max_abs": 0.0
+      },
+      "se.down.bias": {
+        "relative_l2": 0.0,
+        "max_abs": 0.0
+      },
+      "se.up.weight": {
+        "relative_l2": 1.8525225738040971e-06,
+        "max_abs": 7.09405867382884e-11
+      },
+      "se.up.bias": {
+        "relative_l2": 9.837677690612914e-07,
+        "max_abs": 1.2732925824820995e-10
+      }
+    },
+    "CPU_MPS_gradient_relative_l2_max": 1.8525225738040971e-06,
+    "longest_backward_seconds": 69.3125,
+    "longest_backward_ID": "mix:e4cc5b53c37c958304ce",
+    "mps_longest_step_seconds": 0.48495399998500943,
+    "mps_mean_step_seconds": 0.2343930248054676,
+    "mps_conservative_peak_gib": 4.7375030517578125,
+    "frozen_unchanged": true,
+    "quality_evaluation": false
+  },
+  "stem_mps_probe": {
+    "config_identity": "c9ed40fb278c7063c8ecb9c45fa336e04b0d4c2668eca1ba0601b38094a1f639",
+    "cache_index_sha256": "79bef32b11dcf1a2f72fcb6b54217bb907d8810e4aa977061944715220f83d34",
+    "producer_sha256": "cd71daffd85932f69420e05351edfbdb871acd3595fb4fc9fa9bcf56adcbfd4f",
+    "tolerance": 1e-05,
+    "all_presence_within_tolerance": false,
+    "cpu_stem_seconds": 137.09626020782162,
+    "mps_stem_seconds": 23.16386562329717,
+    "total_seconds": 23.82104445801815,
+    "adopted": false,
+    "scope": "engineering panel only; CPU cache unchanged",
+    "files": 43,
+    "presence_max_abs": 3.755445717534833e-05,
+    "failed_files": 1,
+    "speedup": 5.918539782493661
+  },
+  "tests": {
+    "result": "11 passed, 15 warnings",
+    "scope": "masked gradients, actual frozen suffix/SE updates, corrupted payload/cache rejection, role and historical identity protection",
+    "log_sha256": "261f06276610c0d5951adb8013be3b25977f03264a9e53c7d012227874b56932"
+  },
+  "source_sha256": {
+    "panns_adaptation.py": "53c559982513ee5e2bd1c781a10a8d00ddb579dbdb3ca831d92eddc3967dce98",
+    "panns_adaptation_cache.py": "67bbfb171b7f7f9e2f082244ea5e692003134f4c07fa5dc413b021f90001aa45",
+    "panns_adaptation_data.py": "015806fce809a8f8ed22d92738446905f9599d968903a62082a573986d8ef173",
+    "panns_adaptation_run.py": "c646023c96e8836c848a460ada2b4f1781353e9dabd889f87d76c47dc254ba06",
+    "panns_recover_noise.py": "4b1889e19915197d8eed3ffc11fc2ea12b8ee935a4ad2c5610cc6b9ca8426871",
+    "panns_stem_probe.py": "cd71daffd85932f69420e05351edfbdb871acd3595fb4fc9fa9bcf56adcbfd4f",
+    "test_panns_adaptation.py": "8aa1f0bb41967578a121dbd0b061318d4bae8ff079da3d20cdff34a4119f0fb9"
+  },
+  "limitations": [
+    "No full D0 activation/stem cache",
+    "Full training budget not yet locked",
+    "No full arm/seed quality training or ADS/CPS result",
+    "MPS Demucs exceeds numerical tolerance and is not adopted",
+    "Independent final evaluation absent",
+    "Cache currently supports complete reuse, not automatic partial-cache recovery",
+    "LSP unavailable; user previously declined basedpyright installation"
+  ]
+}

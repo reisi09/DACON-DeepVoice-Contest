@@ -140,10 +140,10 @@ def test_real_checkpoint_identity_gradient_and_frozen_state():
 
 
 def test_cache_index_target_or_stem_mutation_is_rejected(tmp_path):
-    from panns_adaptation_run import read_cache_index, sha256
+    from panns_adaptation_run import read_cache_index, sha256, cache_provenance
     directory = tmp_path/'cache'; directory.mkdir()
     path = directory/'index.json'
-    payload = dict(config_identity='locked', entries=[dict(ID='a', role='train', targets=[1, 0], stems={'mix_rms_db': -23})])
+    payload = dict(config_identity='locked', provenance=cache_provenance(), entries=[dict(ID='a', role='train', targets=[1, 0], stems={'mix_rms_db': -23})])
     path.write_text(json.dumps(payload))
     path.with_suffix('.sha256').write_text(sha256(path))
     config = dict(output=str(tmp_path), identity='locked', panel_ids=['a'])
@@ -152,3 +152,50 @@ def test_cache_index_target_or_stem_mutation_is_rejected(tmp_path):
     path.write_text(json.dumps(payload))
     with pytest.raises(ValueError, match='index hash'):
         read_cache_index(config)
+
+
+def test_cache_rejects_changed_preprocessing_runtime(tmp_path):
+    from panns_adaptation_run import cache_provenance, read_cache_index, sha256
+    directory = tmp_path/'cache'; directory.mkdir()
+    path = directory/'index.json'
+    provenance = cache_provenance()
+    provenance['versions']['soundfile'] = 'changed-runtime'
+    path.write_text(json.dumps(dict(config_identity='locked', provenance=provenance, entries=[])))
+    path.with_suffix('.sha256').write_text(sha256(path))
+    with pytest.raises(ValueError, match='provenance'):
+        read_cache_index(dict(output=str(tmp_path), identity='locked', panel_ids=[]))
+
+
+def test_interrupted_namespace_is_preserved_and_budget_counts_replay(tmp_path):
+    from panns_adaptation_run import prepare_pilot_output, check_budget, validate_pilot_steps
+    sentinel = tmp_path/'progress.json'; sentinel.write_text('interrupted')
+    with pytest.raises(FileExistsError, match='incomplete'):
+        prepare_pilot_output(tmp_path, resume=False)
+    assert sentinel.read_text() == 'interrupted'
+    with pytest.raises(ValueError, match='200'):
+        validate_pilot_steps(200)
+    config = dict(memory_limit_bytes=100, pilot_timeout_seconds=60)
+    with pytest.raises(RuntimeError, match='budget'):
+        check_budget(config, 10, dict(peak_rss_bytes=101, mps_driver_bytes=0))
+    with pytest.raises(RuntimeError, match='budget'):
+        check_budget(config, 61, dict(peak_rss_bytes=1, mps_driver_bytes=0))
+
+
+def test_recovered_noise_cannot_change_role_labels_or_historical_hash(tmp_path):
+    from panns_adaptation_data import admit_noise, sha256
+    audio = tmp_path/'noise.wav'
+    sf.write(audio, np.linspace(-.2, .2, 800, dtype=np.float32), 16000)
+    old = dict(ID='noise:a', source='musan_noise', role='development', sha256='original',
+               VOICE_PRESENT=0, MUSIC_PRESENT=0, group_keys=['original-group'])
+    row = old | dict(path='noise.wav', sha256=sha256(audio), bytes=audio.stat().st_size,
+                     original_processed_sha256='original')
+    manifest = tmp_path/'manifest.jsonl'
+    for mutation in ({'role': 'train'}, {'MUSIC_PRESENT': 1}, {'original_processed_sha256': 'wrong'}):
+        manifest.write_text(json.dumps(row | mutation)+'\n')
+        with pytest.raises(ValueError, match='historical'):
+            admit_noise([old], {}, manifest, sha256(manifest))
+    manifest.write_text(json.dumps(row)+'\n')
+    verified = {}
+    result = admit_noise([old], verified, manifest, sha256(manifest))
+    assert result[0]['role'] == 'development' and result[0]['sha256'] == sha256(audio)
+    assert verified['noise:a']['sha256'] == sha256(audio)
