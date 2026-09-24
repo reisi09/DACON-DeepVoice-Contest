@@ -12,11 +12,41 @@ from types import SimpleNamespace
 import pytest
 
 from data_v4.gpu_experiments import (REPOSITORY, check_complete, checked_cache,
-                                     run_bounded, validate_manifests)
+                                     commands, parser, run_bounded, validate_manifests)
 from full_bank_contract import config_for, feature_contract
 from full_bank_features import HOP, WINDOW, load_rows, row_identity
 from v6_data import sha256
 import torch
+
+
+def test_a100_selection_reaches_real_child_entrypoints_without_cpu_fallback(tmp_path):
+    # Exercise the actual parsers and launch wiring, without allocating a GPU.
+    argv = ['--gpu-name', 'A100']
+    for name in ('feature-manifest', 'e00-manifest', 'e04-manifest', 'config', 'input',
+                 'assets', 'asset-hashes', 'cache', 'output'):
+        argv += ['--' + name, str(tmp_path / name)]
+    stages = commands(parser().parse_args(argv))
+    for stage in ('features', 'train-e00', 'train-e04'):
+        result = subprocess.run(stages[stage], capture_output=True, text=True, timeout=30,
+                                env={**os.environ, 'CUDA_VISIBLE_DEVICES': '', 'HF_HUB_OFFLINE': '1'})
+        assert result.returncode != 0 and 'requires the selected A100' in result.stderr
+    assert not (tmp_path / 'output').exists()  # Refusal precedes writes/model execution.
+
+
+def test_gpu_selection_rejects_wrong_allocation_and_missing_native_bf16(monkeypatch):
+    # Driver-query simulation tests the guard, not actual A100 execution or VRAM.
+    from full_bank_features import check_gpu
+    monkeypatch.setattr(torch.cuda, 'is_available', lambda: True)
+    monkeypatch.setattr(torch.cuda, 'get_device_name', lambda _: 'NVIDIA A100-SXM4-80GB')
+    monkeypatch.setattr(torch.cuda, 'get_device_properties', lambda _: SimpleNamespace(total_memory=80 * 1024**3))
+    monkeypatch.setattr(torch.cuda, 'get_device_capability', lambda _: (8, 0))
+    monkeypatch.setattr(torch.cuda, 'is_bf16_supported', lambda **_: True)
+    check_gpu('A100')
+    with pytest.raises(RuntimeError, match='selected H100'):
+        check_gpu('H100')
+    monkeypatch.setattr(torch.cuda, 'is_bf16_supported', lambda **_: False)
+    with pytest.raises(RuntimeError, match='Native BF16'):
+        check_gpu('A100')
 
 
 def write_bank(path, rows):

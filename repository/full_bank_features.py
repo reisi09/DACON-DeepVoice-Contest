@@ -27,6 +27,23 @@ import decision_heads
 from full_bank_contract import role
 
 
+BATCH_CANDIDATES = (1, 2, 4, 8, 16, 32, 64, 128, 256)
+
+
+def check_gpu(expected: str) -> dict:
+    """Reject a different allocation before model loading; record the actual device."""
+    if expected not in ('A100', 'H100'):
+        raise ValueError('Expected GPU must be A100 or H100')
+    if not torch.cuda.is_available() or expected not in torch.cuda.get_device_name(0):
+        raise RuntimeError(f'This runner requires the selected {expected}')
+    if not torch.cuda.is_bf16_supported(including_emulation=False):
+        raise RuntimeError('Native BF16 support is required by the unchanged training recipe')
+    properties = torch.cuda.get_device_properties(0)
+    return dict(expected=expected, name=torch.cuda.get_device_name(0),
+                total_memory=properties.total_memory, capability=list(torch.cuda.get_device_capability(0)),
+                torch=torch.__version__, cuda=torch.version.cuda)
+
+
 def row_identity(row: Mapping[str, str], identity: str) -> str:
     """Bind audio bytes, truth, split, and feature implementation together."""
     return hashlib.sha256((identity + json.dumps(dict(row), sort_keys=True)).encode()).hexdigest()
@@ -142,18 +159,18 @@ def validate_cache(path: Path, expected: str, digest: str) -> None:
 
 def prepare(args: argparse.Namespace) -> None:
     """Bound device batches while visiting every window of every original file."""
+    gpu = check_gpu(getattr(args, 'gpu_name', 'H100'))
     os.environ.update(HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1')
     import librosa
     import soundfile as sf
     from transformers import AutoFeatureExtractor, AutoModel
-    if not torch.cuda.is_available() or 'H100' not in torch.cuda.get_device_name(0):
-        raise RuntimeError('This runner requires the authorized H100')
     torch.set_num_threads(4)
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
     torch.backends.cudnn.benchmark = False
     args.cache.mkdir(parents=True, exist_ok=True)
     args.output.mkdir(parents=True, exist_ok=True)
+    atomic_json(args.output / 'device.json', gpu)
     rows = load_rows(args.manifest)
     asset_hashes = json.loads(args.asset_hashes.read_text())
     for name, expected in asset_hashes.items():
@@ -201,8 +218,8 @@ def prepare(args: argparse.Namespace) -> None:
         values = processor(resampled, sampling_rate=24000, return_tensors='pt', padding=True).input_values.to(device)
         with torch.inference_mode():
             return mert(values, output_hidden_states=True).hidden_states[12].mean(1).float().cpu().numpy()
-    batch_receipt = args.output / 'mert_batch_benchmark.json'
-    batch = json.loads(batch_receipt.read_text())['chosen'] if batch_receipt.exists() else None
+    # A batch measured on another GPU (or under different memory pressure) is not reusable.
+    batch = None
     began = time.time()
     for number, row in enumerate(rows, 1):
         key = row_identity(row, identity_key)
@@ -231,7 +248,7 @@ def prepare(args: argparse.Namespace) -> None:
         vectors = np.empty((0, 1024), np.float32)
         if batch is None:
             sample = windows(backing, np.resize(starts, 256))
-            batch = select_batch(lambda n: mert_batch(sample[:n]), (16, 32, 64, 128, 256),
+            batch = select_batch(lambda n: mert_batch(sample[:n]), BATCH_CANDIDATES,
                                  args.output / 'mert_batch_benchmark.json', float('inf'))
         pieces = []
         for offset in range(0, len(starts), batch):
@@ -282,4 +299,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('manifest', 'input', 'cache', 'output', 'assets', 'asset-hashes'):
         parser.add_argument('--'+name, type=Path, required=True)
+    parser.add_argument('--gpu-name', choices=('A100', 'H100'), default='H100')
     prepare(parser.parse_args())

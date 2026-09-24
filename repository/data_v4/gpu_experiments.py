@@ -1,4 +1,4 @@
-"""CPU preflight by default; explicitly run the bounded E00/E04 H100 comparison.
+"""CPU preflight by default; explicitly run the bounded E00/E04 A100/H100 comparison.
 
 No cloud APIs, dependency installs, model imports, or GPU execution in preflight.
 The existing feature runner loads only the separately reviewed, hash-pinned assets.
@@ -183,11 +183,13 @@ def run_bounded(command, timeout, log, env):
 def commands(args):
     python = sys.executable
     common = ['--cache', str(args.cache), '--feature-manifest', str(args.feature_manifest),
-              '--experiment-config', str(args.config), '--max-epochs', '50', '--patience', '5']
+              '--experiment-config', str(args.config), '--max-epochs', '50', '--patience', '5',
+              '--gpu-name', args.gpu_name]
     return {
         'features': [python, str(REPOSITORY / 'full_bank_features.py'), '--manifest', str(args.feature_manifest),
                      '--input', str(args.input), '--assets', str(args.assets), '--asset-hashes', str(args.asset_hashes),
-                     '--cache', str(args.cache), '--output', str(args.output / 'features')],
+                     '--cache', str(args.cache), '--output', str(args.output / 'features'),
+                     '--gpu-name', args.gpu_name],
         'train-e00': [python, str(REPOSITORY / 'full_bank_train.py'), '--manifest', str(args.e00_manifest),
                       '--output', str(args.output / 'E00'), *common],
         'train-e04': [python, str(REPOSITORY / 'full_bank_train.py'), '--manifest', str(args.e04_manifest),
@@ -207,6 +209,8 @@ def parser():
                  'asset-hashes', 'cache', 'output'):
         result.add_argument('--' + name, type=Path, required=True)
     result.add_argument('--max-seconds', type=int, help='Required for execution; total budget, 1..86400 seconds')
+    result.add_argument('--gpu-name', choices=('A100', 'H100'), default='A100',
+                        help='Required device family for GPU stages; preflight stays CPU-only')
     return result
 
 

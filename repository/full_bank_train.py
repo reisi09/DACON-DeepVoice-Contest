@@ -19,7 +19,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from eight_fixed_io import atomic_json
-from full_bank_features import load_rows, validate_cache, row_identity
+from full_bank_features import BATCH_CANDIDATES, check_gpu, load_rows, validate_cache, row_identity
 from full_bank_batches import Item, epoch_order, loss_weights, groups, duration_balance
 from graph_scoring import _roc_metrics
 from localization_models import WindowMIL
@@ -144,9 +144,11 @@ def benchmark(model: nn.Module, items: Sequence[Item], route: str, fake_index: i
               weights: Mapping[str, float], device: str, config=None) -> tuple[int, int, list[dict]]:
     """Measure real forward/backward on longest training bags, then restore weights."""
     state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+    rng = torch.get_rng_state()
+    cuda_rng = torch.cuda.get_rng_state() if device == 'cuda' else None
     ordered = sorted(items, key=lambda item: len(item.features), reverse=True)
     measurements = []
-    for count in (16, 32, 64, 128, 256):
+    for count in BATCH_CANDIDATES:
         selected = ordered[:count]
         limit = sum(len(x.features) for x in selected)
         gc.collect()
@@ -164,6 +166,9 @@ def benchmark(model: nn.Module, items: Sequence[Item], route: str, fake_index: i
         finally:
             model.load_state_dict(state)
             model.zero_grad(set_to_none=True)
+            torch.set_rng_state(rng)
+            if cuda_rng is not None:
+                torch.cuda.set_rng_state(cuda_rng)
             del optimizer
     safe = [m for m in measurements if m['status'] == 'ok' and m['peak_bytes'] <= .8 * torch.cuda.get_device_properties(0).total_memory]
     if not safe:
@@ -173,8 +178,7 @@ def benchmark(model: nn.Module, items: Sequence[Item], route: str, fake_index: i
 
 
 def train(args: argparse.Namespace) -> None:
-    if not torch.cuda.is_available() or 'H100' not in torch.cuda.get_device_name(0):
-        raise RuntimeError('The authorized H100 is required')
+    gpu = check_gpu(getattr(args, 'gpu_name', 'H100'))
     if args.max_epochs < 1 or args.patience < 1:
         raise ValueError('Convergence safeguards must be positive')
     config = config_for(json.loads(args.config.read_text()) if args.config else None)
@@ -204,6 +208,7 @@ def train(args: argparse.Namespace) -> None:
     if identity_path.exists() and json.loads(identity_path.read_text()) != run_identity:
         raise ValueError('Output directory belongs to a different training run')
     atomic_json(identity_path, run_identity)
+    atomic_json(args.output / 'device.json', gpu)
     results = {}
     for route in ('music', 'voice'):
         training = [x for x in items if x.row['route'] == route and role(x.row) == 'train']
@@ -308,6 +313,7 @@ if __name__ == '__main__':
     parser.add_argument('--experiment-config', '--config', dest='config', type=Path)
     parser.add_argument('--max-epochs', type=int, default=50)
     parser.add_argument('--patience', type=int, default=5)
+    parser.add_argument('--gpu-name', choices=('A100', 'H100'), default='H100')
     parser.add_argument('--duration-balance', action='store_true',
                         help='reweight train rows so both classes share one log-duration histogram (length shortcut control)')
     train(parser.parse_args())

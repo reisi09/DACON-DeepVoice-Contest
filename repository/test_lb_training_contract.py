@@ -12,6 +12,36 @@ from full_bank_features import voice_window_truth
 from full_bank_train import forward, step
 
 
+def test_low_memory_benchmark_uses_single_bag_and_restores_real_optimizer_updates(monkeypatch):
+    # Simulate only the CUDA memory limit; execute real CPU forward/backward/AdamW.
+    import full_bank_train as runner
+    for name in ('empty_cache', 'reset_peak_memory_stats', 'synchronize'):
+        monkeypatch.setattr(torch.cuda, name, lambda: None)
+    monkeypatch.setattr(torch.cuda, 'max_memory_allocated', lambda: 100)
+    from types import SimpleNamespace
+    monkeypatch.setattr(torch.cuda, 'get_device_properties', lambda _: SimpleNamespace(total_memory=1000))
+    torch.manual_seed(41)
+    model = nn.Linear(1280, 2)
+    items = [Item({'ID': str(i), 'split': 'train', 'role': 'train'},
+                  np.random.default_rng(i).normal(size=(3 + i, 1280)).astype('float32'),
+                  np.full(3 + i, np.nan, dtype='float32'), float(i % 2)) for i in range(2)]
+    before = {k: v.clone() for k, v in model.state_dict().items()}
+    rng = torch.get_rng_state().clone()
+    actual_step, updates = runner.step, []
+    def limited_step(model, optimizer, selected, *args, **kwargs):
+        if len(selected) > 1:
+            raise torch.cuda.OutOfMemoryError('simulated capacity')
+        result = actual_step(model, optimizer, selected, *args, **kwargs)
+        updates.append(model.weight.detach().clone())
+        return result
+    monkeypatch.setattr(runner, 'step', limited_step)
+    batch, limit, records = runner.benchmark(model, items, 'voice', 1, {'0': 1., '1': 1.}, 'cpu')
+    assert batch == 1 and limit == 4 and any(r['status'] == 'oom' for r in records)
+    assert updates and not torch.equal(updates[0], before['weight'])
+    assert all(torch.equal(before[k], v) for k, v in model.state_dict().items())
+    assert torch.equal(rng, torch.get_rng_state())
+
+
 def test_repeated_short_voice_uses_repeated_labels_and_unknown_stays_masked():
     row = {'event_intervals': json.dumps([
         dict(component='voice', start=0, end=1, label=0),
