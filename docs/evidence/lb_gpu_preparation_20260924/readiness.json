@@ -1,0 +1,19 @@
+{
+  "workspace": {
+    "slug": "wsp-9683432r72m7",
+    "state": "stopped",
+    "phase": "standby"
+  },
+  "cluster_volume": "clustervol-qgze68bffy6l",
+  "expected_historical_audio_root": "/root/data_v4/out",
+  "historical_audio_current_bytes_verified": false,
+  "full_audio_preflight_completed": false,
+  "feature_cache_available": false,
+  "cache_note": "Current full union features must be extracted or validated after authorized GPU startup; historical MERT-only cache is not eligible.",
+  "reason": "CLI cannot list a stopped cluster volume; no running CPU job has access.",
+  "cpu_verification_resource": "resourcespec-kmswqig4b12w",
+  "cpu_verification_credit_per_hour": 0.3,
+  "cpu_job_created": false,
+  "cpu_job_authorization_pending": true,
+  "new_gpu_started": false
+}

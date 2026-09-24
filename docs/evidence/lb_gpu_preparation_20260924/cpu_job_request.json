@@ -1,0 +1,37 @@
+{
+  "status": "prepared_not_created",
+  "requires_new_paid_cpu_authorization": true,
+  "organization": "qwdkw",
+  "resource": "3 CPU, 13 GiB RAM, no GPU",
+  "credit_per_hour": 0.3,
+  "command_timeout_seconds": 600,
+  "termination_grace_seconds": 30,
+  "cost_note": "600 s compute is 0.05 credit; startup/shutdown time can add cost. No scheduler TTL or enforced read-only mount exposed by CLI.",
+  "effects": [
+    "Add 1477 verified clips without replacing existing audio",
+    "Stage reviewed code and pinned assets in /root/lb-improvement-20260924",
+    "Hash every 43516 input-bank audio and pinned assets",
+    "Write preflight and staging receipts to same project object-volume prefix"
+  ],
+  "argv": [
+    "/Users/choiwuseck/.local/bin/vesslctl",
+    "--org",
+    "qwdkw",
+    "job",
+    "create",
+    "-n",
+    "lb-storage-verify-20260924",
+    "-r",
+    "resourcespec-kmswqig4b12w",
+    "-i",
+    "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+    "--cluster-volume",
+    "clustervol-qgze68bffy6l:/root",
+    "--object-volume",
+    "objvol-a5gxdg7er70i:/shared",
+    "--working-dir",
+    "/tmp",
+    "--cmd",
+    "printf '%s\\n' 'c8e32cea9df326d8ae9ba782a52ffe30065b705d8d505691c74a45e3bd9d05dd  /shared/lb-improvement-20260924/gpu-preparation-v1/prepare_gpu_cpu.sh' | sha256sum -c - && timeout --kill-after=30s 600s bash /shared/lb-improvement-20260924/gpu-preparation-v1/prepare_gpu_cpu.sh /shared/lb-improvement-20260924/gpu-preparation-v1/gpu-preparation.tar.gz 11ff29888fb29041d4789f6386efa3d99b0e0731ebfcf871cbaf57a7de4e21e1"
+  ]
+}
