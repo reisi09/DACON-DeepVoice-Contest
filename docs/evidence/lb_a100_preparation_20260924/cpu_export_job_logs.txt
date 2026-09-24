@@ -1,0 +1,50 @@
+2026-09-24T11:29:09.102Z /shared/lb-improvement-20260924/a100-preparation-v1/export_bank_audio.py: OK
+2026-09-24T11:29:09.400Z /shared/lb-improvement-20260924/a100-preparation-v1/export_a100_audio_cpu.sh: OK
+2026-09-24T11:29:31.557Z {"phase": "export_audio", "files": 1000, "total": 43516}
+2026-09-24T11:29:36.280Z {"phase": "export_audio", "files": 2000, "total": 43516}
+2026-09-24T11:29:40.974Z {"phase": "export_audio", "files": 3000, "total": 43516}
+2026-09-24T11:29:45.590Z {"phase": "export_audio", "files": 4000, "total": 43516}
+2026-09-24T11:29:50.349Z {"phase": "export_audio", "files": 5000, "total": 43516}
+2026-09-24T11:29:54.967Z {"phase": "export_audio", "files": 6000, "total": 43516}
+2026-09-24T11:29:59.798Z {"phase": "export_audio", "files": 7000, "total": 43516}
+2026-09-24T11:30:04.827Z {"phase": "export_audio", "files": 8000, "total": 43516}
+2026-09-24T11:30:09.832Z {"phase": "export_audio", "files": 9000, "total": 43516}
+2026-09-24T11:30:14.760Z {"phase": "export_audio", "files": 10000, "total": 43516}
+2026-09-24T11:30:19.920Z {"phase": "export_audio", "files": 11000, "total": 43516}
+2026-09-24T11:30:25.204Z {"phase": "export_audio", "files": 12000, "total": 43516}
+2026-09-24T11:30:30.806Z {"phase": "export_audio", "files": 13000, "total": 43516}
+2026-09-24T11:30:36.334Z {"phase": "export_audio", "files": 14000, "total": 43516}
+2026-09-24T11:30:41.843Z {"phase": "export_audio", "files": 15000, "total": 43516}
+2026-09-24T11:30:46.917Z {"phase": "export_audio", "files": 16000, "total": 43516}
+2026-09-24T11:30:52.188Z {"phase": "export_audio", "files": 17000, "total": 43516}
+2026-09-24T11:30:57.428Z {"phase": "export_audio", "files": 18000, "total": 43516}
+2026-09-24T11:31:03.039Z {"phase": "export_audio", "files": 19000, "total": 43516}
+2026-09-24T11:31:08.687Z {"phase": "export_audio", "files": 20000, "total": 43516}
+2026-09-24T11:31:18.798Z {"phase": "export_audio", "files": 21000, "total": 43516}
+2026-09-24T11:31:24.385Z {"phase": "export_audio", "files": 22000, "total": 43516}
+2026-09-24T11:31:30.154Z {"phase": "export_audio", "files": 23000, "total": 43516}
+2026-09-24T11:31:36.721Z {"phase": "export_audio", "files": 24000, "total": 43516}
+2026-09-24T11:31:43.371Z {"phase": "export_audio", "files": 25000, "total": 43516}
+2026-09-24T11:31:50.037Z {"phase": "export_audio", "files": 26000, "total": 43516}
+2026-09-24T11:31:56.380Z {"phase": "export_audio", "files": 27000, "total": 43516}
+2026-09-24T11:32:03.354Z {"phase": "export_audio", "files": 28000, "total": 43516}
+2026-09-24T11:32:12.920Z {"phase": "export_audio", "files": 29000, "total": 43516}
+2026-09-24T11:32:20.637Z {"phase": "export_audio", "files": 30000, "total": 43516}
+2026-09-24T11:32:27.500Z {"phase": "export_audio", "files": 31000, "total": 43516}
+2026-09-24T11:32:34.490Z {"phase": "export_audio", "files": 32000, "total": 43516}
+2026-09-24T11:32:41.777Z {"phase": "export_audio", "files": 33000, "total": 43516}
+2026-09-24T11:32:48.388Z {"phase": "export_audio", "files": 34000, "total": 43516}
+2026-09-24T11:32:54.411Z {"phase": "export_audio", "files": 35000, "total": 43516}
+2026-09-24T11:33:00.834Z {"phase": "export_audio", "files": 36000, "total": 43516}
+2026-09-24T11:33:07.482Z {"phase": "export_audio", "files": 37000, "total": 43516}
+2026-09-24T11:33:14.912Z {"phase": "export_audio", "files": 38000, "total": 43516}
+2026-09-24T11:33:21.679Z {"phase": "export_audio", "files": 39000, "total": 43516}
+2026-09-24T11:33:28.139Z {"phase": "export_audio", "files": 40000, "total": 43516}
+2026-09-24T11:33:34.872Z {"phase": "export_audio", "files": 41000, "total": 43516}
+2026-09-24T11:33:46.193Z {"phase": "export_audio", "files": 42000, "total": 43516}
+2026-09-24T11:33:53.195Z {"phase": "export_audio", "files": 43000, "total": 43516}
+2026-09-24T11:33:56.305Z {"phase": "export_audio", "files": 43516, "total": 43516}
+2026-09-24T11:35:00.982Z {"status": "audio_export_complete", "files": 43516, "audio_bytes": 12329271166, "archive_bytes": 12369408000, "archive_sha256": "030ff2d8109cfcb39aa0b7c298d68882a829ea4e21dafd41b4343347d038cfa9", "manifest_sha256": "492bbe454abce816beab07d97baecdcf34e34ec1936d5230d955c2cda8f27906", "gpu_used": false}
+2026-09-24T11:35:01.243Z {"phase": "upload_audio", "bytes": 12369408000}
+2026-09-24T11:38:07.923Z {"phase": "verify_remote_archive"}
+2026-09-24T11:56:12.475Z {"status": "audio_export_complete", "files": 43516, "audio_bytes": 12329271166, "archive_bytes": 12369408000, "archive_sha256": "030ff2d8109cfcb39aa0b7c298d68882a829ea4e21dafd41b4343347d038cfa9", "manifest_sha256": "492bbe454abce816beab07d97baecdcf34e34ec1936d5230d955c2cda8f27906", "gpu_used": false, "remote_archive": "lb-improvement-20260924/a100-preparation-v1/audio/portable-audio.tar", "full_remote_readback_verified": true, "a100_workspace_started": false}

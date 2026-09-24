@@ -1,6 +1,6 @@
 # A100 실험 준비 — 2026-09-24
 
-E00/E04 실행 코드에 A100 지원을 추가하고 별도 실행 묶음을 VESSL에 준비했다. GPU는 시작하지 않았다. 실제 A100 모델 로딩·속도·VRAM 검증은 남아 있으며, 현재 VESSL에서는 음원 이동과 실행 가능한 A100 workspace 확보가 필요하다.
+E00/E04 실행 코드에 A100 지원을 추가하고 별도 실행 묶음을 VESSL에 준비했다. 음원 43,516개를 기존 프로젝트 object volume으로 이전하고 전체 다운로드 해시 검증을 마쳤다. GPU는 시작하지 않았다. 실행 가능한 A100 workspace 확보와 해당 환경에서의 입력 배치·모델 로딩·속도·VRAM 검증은 남아 있다.
 
 ## 코드 변경
 
@@ -26,10 +26,14 @@ CPU에서 실제 하위 CLI가 A100 선택을 받는지, GPU가 없을 때 CPU�
 
 음원 내보내기는 검증된 manifest의 43,516개, 12,329,271,166 bytes만 읽어 새 tar로 묶는다. 복사할 바이트 자체의 SHA-256을 검사하고 기존 원본·기존 export를 덮어쓰지 않는다. 결과는 기존 object volume `objvol-a5gxdg7er70i`의 `lb-improvement-20260924/a100-preparation-v1/audio/`에 저장하고 전체 재읽기 해시를 확인한다. 가중치 등 고정 자산 25개는 이미 같은 object volume에 있으므로 다시 업로드하지 않는다.
 
-이 작업을 위한 CPU 1개 요청안을 준비했다. CPU 3개·RAM 13 GiB, 시간당 0.30 credit, 명령 제한 1,800초와 종료 유예 30초다. 기동·종료 시간은 추가될 수 있으며 0.15 credit는 총비용 상한이 아니다. 새 유료 CPU 인스턴스는 아직 만들지 않았다. 음원 내보내기 완료 후 A100 측에 새 경로로 배치하고, 준비 코드·음원·자산 preflight와 실행 환경을 확인해야 한다.
+사용자 승인 후 CPU 3개·RAM 13 GiB인 작업 `job-3votgz7mfrno` 1개를 실행했다. 시간당 0.30 credit, 명령 제한 1,800초와 종료 유예 30초를 유지했다. 2026-09-24 11:28:50.881748 UTC에 생성됐고 11:56:43.373293 UTC 조회에서 `terminated`를 확인했다. 이 약 28분은 생성부터 종료 상태 확인까지의 관측 시간이며 확정 과금 시간이 아니다. 실제 청구액은 확인하지 않았다.
+
+음원별 SHA-256 검사는 모두 통과했다. 생성한 `portable-audio.tar`는 12,369,408,000 bytes이며 SHA-256은 `030ff2d8109cfcb39aa0b7c298d68882a829ea4e21dafd41b4343347d038cfa9`다. 11:38:07.923 UTC에 복사 후 마운트 재읽기 단계로 들어갔지만 완료 기록이 늦어져, 추가 유료 자원 없이 로컬 CPU에서 VESSL CLI로 전체 파일을 직접 내려받아 해시와 크기가 일치하는지 확인했다. 다운로드와 해시 계산에 490.026초가 걸렸다. 로컬 검증 후 CPU 작업 종료를 요청했고, 이후 최종 로그와 저장소의 `export_receipt.json`을 확인하니 클라우드 재읽기도 11:56:12.475 UTC에 완료돼 있었다. 두 경로 모두 해시와 크기가 일치했다. 작업의 최종 상태는 `terminated`이며 `succeeded`로 보고하지 않는다.
+
+완료 근거는 클라우드 검증의 `audio/export_receipt.json`, 로컬 직접 다운로드 기록, 두 검증과 종료 상태를 합친 `audio/transfer_receipt.json`이다. 최초 CPU 요청안은 당시 준비 기록으로 보존하며 재실행하지 않는다. 원본 음원은 보존했다. A100 측에 새 경로로 배치한 뒤 준비 코드·음원·자산 preflight와 실행 환경을 확인해야 한다.
 
 ## 실행 방법
 
 object volume의 `lb-improvement-20260924/a100-preparation-v1/README.md`에 묶음 해시와 전체 명령을 기록했다. 입력 배치와 GPU 실행 예산을 승인받은 환경에서 새 묶음을 사용해야 한다. 이전 `prepared-v1`의 H100 전용 코드를 그대로 실행하면 A100 지원 변경이 적용되지 않는다.
 
-[패키지](evidence/lb_a100_preparation_20260924/package_receipt.json) · [검증 범위](evidence/lb_a100_preparation_20260924/verification.json) · [클라우드 상태](evidence/lb_a100_preparation_20260924/readiness.json) · [CPU 내보내기 요청안](evidence/lb_a100_preparation_20260924/cpu_export_job_request.json)
+[패키지](evidence/lb_a100_preparation_20260924/package_receipt.json) · [검증 범위](evidence/lb_a100_preparation_20260924/verification.json) · [클라우드 상태](evidence/lb_a100_preparation_20260924/readiness.json) · [이전 완료 기록](evidence/lb_a100_preparation_20260924/transfer_receipt.json) · [직접 다운로드 검증](evidence/lb_a100_preparation_20260924/audio_direct_readback.json) · [CPU 최종 상태](evidence/lb_a100_preparation_20260924/cpu_export_job_final.json) · [최초 CPU 요청안](evidence/lb_a100_preparation_20260924/cpu_export_job_request.json)
