@@ -2,7 +2,8 @@
   "workspace": {
     "slug": "wsp-9683432r72m7",
     "state": "stopped",
-    "phase": "standby"
+    "phase": "standby",
+    "observed_after_cpu_job": true
   },
   "cluster_volume": "clustervol-qgze68bffy6l",
   "expected_historical_audio_root": "/root/data_v4/out",
@@ -10,10 +11,17 @@
   "full_audio_preflight_completed": false,
   "feature_cache_available": false,
   "cache_note": "Current full union features must be extracted or validated after authorized GPU startup; historical MERT-only cache is not eligible.",
-  "reason": "CLI cannot list a stopped cluster volume; no running CPU job has access.",
+  "reason": "CPU instance completed file staging but failed before full preflight receipt; timeout suspected. Verify existing staged inputs without re-copying.",
   "cpu_verification_resource": "resourcespec-kmswqig4b12w",
   "cpu_verification_credit_per_hour": 0.3,
-  "cpu_job_created": false,
-  "cpu_job_authorization_pending": true,
-  "new_gpu_started": false
+  "cpu_job_created": true,
+  "cpu_job_authorization_pending": false,
+  "new_gpu_started": false,
+  "cpu_job_slug": "job-aj1ufwbahfpk",
+  "cpu_job_terminal_state": "failed",
+  "cpu_job_terminal_confirmed": true,
+  "supplemental_audio_staged": 1477,
+  "pinned_asset_files_staged_and_verified": 25,
+  "retry_requires_new_paid_cpu_authorization": true,
+  "execution_evidence": "cpu_job_execution.json"
 }

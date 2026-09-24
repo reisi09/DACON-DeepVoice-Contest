@@ -2,7 +2,7 @@
 
 지금까지 진행한 딥보이스 탐지 실험의 모델·학습·추론 코드, 노트북, 설정과 결과 기록을 모았습니다. 원래 프로젝트의 상대 경로는 `repository/` 아래에 유지했습니다.
 
-- [GPU 학습 사전준비·E00/E04·남은 cloud 검증](docs/GPU_PREPARATION_2026-09-24.md)
+- [GPU 학습 사전준비·E00/E04·CPU 실행 결과](docs/GPU_PREPARATION_2026-09-24.md)
 - [대회 규칙 재검토·MLAAD 146개 추가·roles-v6](docs/MLAAD_DECISION_2026-09-24.md)
 - [CPU 자동 검토·신규 데이터 1,331개 학습 편입 — 2026-09-24](docs/CPU_ADMISSION_2026-09-24.md)
 - [추가 수집 후 CPU 검수·roles-v4·캐시 확인 — 2026-09-24](docs/CPU_FOLLOWUP_2026-09-24.md)
