@@ -109,13 +109,14 @@ def test_configured_seed_loading_agrees_between_evaluator_and_package(tmp_path):
         load_heads(tmp_path, 'cpu')
 
 
-def test_packager_carries_configured_heads_contract_and_preserves_existing_output(tmp_path):
+@pytest.mark.parametrize('legacy', [False, True])
+def test_packager_carries_configured_heads_contract_and_preserves_existing_output(tmp_path, legacy):
     import hashlib
     import zipfile
     from package_datav4_submission import package, REQUIRED_BASE
     from full_bank_submission import load_heads
     from localization_models import WindowMIL
-    config = config_for({'seeds': [41], 'voice_pooling': 'lme'})
+    config = config_for({'seeds': [41], 'voice_pooling': 'topk', 'voice_topk_fraction': .3})
     from pathlib import Path
     members = {name: (Path(name.removeprefix('model/runtime/')).read_bytes() if name.startswith('model/runtime/') and name.endswith('.py') else b'packaging fixture bytes') for name in REQUIRED_BASE}
     members['model/manifest.json'] = b'{}'
@@ -134,6 +135,12 @@ def test_packager_carries_configured_heads_contract_and_preserves_existing_outpu
                           'file_ensemble.json': {'fitted_on': 'calibration', 'weights': {'max': 1}}}.items():
         (heads / name).write_text(json.dumps(content))
     presence = tmp_path / 'presence.json'; presence.write_text('{}')
+    if legacy:
+        (heads / 'file_ensemble.json').unlink()
+        presence = None
+        # A reused base must not silently bring another candidate's fitted decision layer.
+        members['model/trained/file_ensemble.json'] = b'{"stale":true}'
+        members['model/trained/presence_head.json'] = b'{"stale":true}'
     base = tmp_path / 'base.zip'
     with zipfile.ZipFile(base, 'w') as z:
         for name, data in members.items(): z.writestr(name, data)
@@ -145,6 +152,9 @@ def test_packager_carries_configured_heads_contract_and_preserves_existing_outpu
         extracted = tmp_path / 'extracted'; z.extractall(extracted)
         assert z.read('model/runtime/full_bank_contract.py') == __import__('pathlib').Path('full_bank_contract.py').read_bytes()
         assert {n for n in z.namelist() if n.endswith('.pt')} == {'model/trained/music_41.pt', 'model/trained/voice_41.pt'}
+        if legacy:
+            assert not {'model/trained/file_ensemble.json', 'model/trained/presence_head.json'} & set(z.namelist())
+            assert receipt['choice']['file_fusion'] == 'max'
     expected = load_heads(heads, 'cpu')[1][0]
     packaged = load_heads(extracted/'model/trained', 'cpu')[1][0]
     x = torch.randn(5, 1280)
@@ -154,6 +164,12 @@ def test_packager_carries_configured_heads_contract_and_preserves_existing_outpu
         package(heads/'candidate_lock.json', base, output, presence, 'same')
     assert output.read_bytes() == before
     assert receipt['official_l4_validated'] is False
+
+    if legacy:
+        (heads / 'file_ensemble.json').write_text('{"weights":{"max":1}}')
+        with pytest.raises(ValueError, match='cannot discard'):
+            package(heads/'candidate_lock.json', base, tmp_path/'stale.zip', None, 'stale')
+        (heads / 'file_ensemble.json').unlink()
 
     with zipfile.ZipFile(base, 'w') as z:
         for name, data in members.items():

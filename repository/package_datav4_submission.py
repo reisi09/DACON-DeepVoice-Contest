@@ -1,6 +1,8 @@
 """Package the data v4 duration-balanced heads + decision layer on top of the verified Existing9504 archive.
 
   .venv/bin/python package_datav4_submission.py --output NEW/submit.zip
+Use --legacy-decision-layer for candidates evaluated with unmodified PANNs presence and max FILE fusion.
+That mode removes inherited fitted decision heads and packages only the configured candidate checkpoints.
 Frozen assets, FFmpeg, script.py, requirements.txt and the unchanged runtime modules are streamed byte-for-byte
 from submissions/Existing9504_MIL/submit.zip (its recorded SHA-256 is checked first). Replaced: the six head
 checkpoints and their lock/identity/metrics (train_duration_balanced), presence_head.json (phase B),
@@ -37,7 +39,7 @@ REQUIRED_BASE = {'script.py', 'requirements.txt', 'model/runtime/bin/ffmpeg',
         'localization_models.py', 'mert12_submission.py', 'v6_core.py', 'v6_data.py', 'v6_runtime.py')}
 
 
-def replacements(heads: Path, presence: Path, candidate: str) -> tuple[dict[str, bytes], list[str]]:
+def replacements(heads: Path, presence: Path | None, candidate: str) -> tuple[dict[str, bytes], list[str]]:
     lock = json.loads((heads / 'candidate_lock.json').read_text())
     config = saved_config(heads)
     trained = [f'{r}_{seed}.pt' for r in ('music', 'voice') for seed in config['seeds']]
@@ -50,15 +52,21 @@ def replacements(heads: Path, presence: Path, candidate: str) -> tuple[dict[str,
         raise ValueError('Candidate configuration differs from run identity')
     from full_bank_submission import load_heads
     load_heads(heads, 'cpu')  # Reject internally inconsistent or invalid weights before creating an archive.
-    trained += ['candidate_lock.json', 'run_identity.json', 'validation_metrics.json', 'file_ensemble.json']
-    ensemble = json.loads((heads / 'file_ensemble.json').read_text())
-    if ensemble.get('fitted_on') not in ('val', 'calibration') or 'prev' in ensemble['weights']:
-        raise ValueError('file_ensemble must be val-fitted and self-contained (no prev candidate)')
+    trained += ['candidate_lock.json', 'run_identity.json', 'validation_metrics.json']
+    if presence is None:
+        if any((heads / name).exists() for name in ('file_ensemble.json', 'presence_head.json')):
+            raise ValueError('Legacy decision mode cannot discard candidate decision artifacts')
+    else:
+        trained.append('file_ensemble.json')
+        ensemble = json.loads((heads / 'file_ensemble.json').read_text())
+        if ensemble.get('fitted_on') not in ('val', 'calibration') or 'prev' in ensemble['weights']:
+            raise ValueError('file_ensemble must be val-fitted and self-contained (no prev candidate)')
     runtime = (ROOT / 'full_bank_submission.py').read_bytes()
     if runtime.count(OLD_CANDIDATE) != 1:
         raise ValueError('unexpected candidate declaration in full_bank_submission.py')
     out = {'model/trained/' + n: (heads / n).read_bytes() for n in trained}
-    out['model/trained/presence_head.json'] = presence.read_bytes()
+    if presence is not None:
+        out['model/trained/presence_head.json'] = presence.read_bytes()
     out['model/runtime/full_bank_submission.py'] = runtime.replace(OLD_CANDIDATE, f'CANDIDATE = {candidate!r}'.encode())
     out['model/runtime/decision_heads.py'] = (ROOT / 'decision_heads.py').read_bytes()
     out['model/runtime/full_bank_contract.py'] = (ROOT / 'full_bank_contract.py').read_bytes()
@@ -66,7 +74,7 @@ def replacements(heads: Path, presence: Path, candidate: str) -> tuple[dict[str,
 
 
 def package(candidate_lock: Path = HEADS / "candidate_lock.json", base_archive: Path = BASE / "submit.zip",
-            output: Path = OUTPUT, presence: Path = PRESENCE, candidate: str = CANDIDATE) -> dict:
+            output: Path = OUTPUT, presence: Path | None = PRESENCE, candidate: str = CANDIDATE) -> dict:
     heads = candidate_lock.parent
     if candidate_lock.name != 'candidate_lock.json':
         raise ValueError('Candidate lock must be named candidate_lock.json beside its checkpoints')
@@ -104,14 +112,20 @@ def package(candidate_lock: Path = HEADS / "candidate_lock.json", base_archive: 
         expected_members = {'model/assets/' + name: digest for name, digest in producer['assets'].items()}
         expected_members.update({'model/runtime/' + name: digest for name, digest in producer['implementation'].items()
                                  if name != 'full_bank_features.py'})
+        run_identity = json.loads((heads / 'run_identity.json').read_text())
+        for key, name in (('model', 'localization_models.py'), ('head', 'eight_heads.py')):
+            if key in run_identity:
+                expected_members['model/runtime/' + name] = run_identity[key]
         if any(written.get(name) != digest for name, digest in expected_members.items()):
             raise ValueError('Packaged encoder assets or preprocessing differ from training')
         results = json.loads((heads / 'results.json').read_text())
         choice = {'candidate': candidate, 'base_archive_sha256': base_receipt['sha256'],
                   'heads': 'per-route checkpoint selection; see run identity', 'config': saved_config(heads),
                   'split': 'see candidate lock and run identity; independent validation not asserted',
-                  'presence': 'presence_head.json logistic heads over PANNs tag statistics + stem energy',
-                  'file_fusion': json.loads((heads / 'file_ensemble.json').read_text())['weights'],
+                  'presence': ('legacy PANNs max' if presence is None else
+                               'presence_head.json logistic heads over PANNs tag statistics + stem energy'),
+                  'file_fusion': ('max' if presence is None else
+                                  json.loads((heads / 'file_ensemble.json').read_text())['weights']),
                   'val_route_eer': {k: v['eer'] for k, v in results.items() if k.endswith('_ensemble')},
                   'per_file_independent': True, 'inference_gain': 'peak capped at 0.6'}
         manifest = (json.dumps({'choice': choice, 'sha256': written}, indent=2) + '\n').encode()
@@ -144,7 +158,10 @@ if __name__ == '__main__':
     parser.add_argument('--candidate-lock', type=Path, default=HEADS / 'candidate_lock.json')
     parser.add_argument('--base-archive', type=Path, default=BASE / 'submit.zip')
     parser.add_argument('--presence-head', type=Path, default=PRESENCE)
+    parser.add_argument('--legacy-decision-layer', action='store_true',
+                        help='Preserve legacy PANNs presence and max FILE fusion; include no fitted decision heads')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--candidate', default=CANDIDATE)
     args = parser.parse_args()
-    print(json.dumps(package(args.candidate_lock, args.base_archive, args.output, args.presence_head, args.candidate), indent=2))
+    print(json.dumps(package(args.candidate_lock, args.base_archive, args.output,
+                             None if args.legacy_decision_layer else args.presence_head, args.candidate), indent=2))
