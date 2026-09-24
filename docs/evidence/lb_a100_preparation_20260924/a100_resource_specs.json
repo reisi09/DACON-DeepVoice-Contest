@@ -1,0 +1,82 @@
+[
+  {
+    "acceleratorLimit": 1,
+    "acceleratorName": "A100 SXM",
+    "acceleratorOnChipMemoryInGb": 80,
+    "attributes": {
+      "gpuType": "A100 SXM",
+      "region": "us-west-2",
+      "volume": []
+    },
+    "availability": "high",
+    "clusterName": "betelgeuse-na",
+    "clusterSlug": "cluster-betelgeuse",
+    "cpuLimitInMillicore": 11000,
+    "ephemeralStorageLimitInByte": 200000000000,
+    "hourlyCostInMicrocredit": 1480000,
+    "isUsable": true,
+    "memoryLimitInByte": 128000000000,
+    "name": "VESSL A100 SXM \u00d71",
+    "slug": "resourcespec-a100x1"
+  },
+  {
+    "acceleratorLimit": 2,
+    "acceleratorName": "A100 SXM",
+    "acceleratorOnChipMemoryInGb": 80,
+    "attributes": {
+      "gpuType": "A100 SXM",
+      "region": "us-west-2",
+      "volume": []
+    },
+    "availability": "high",
+    "clusterName": "betelgeuse-na",
+    "clusterSlug": "cluster-betelgeuse",
+    "cpuLimitInMillicore": 22000,
+    "ephemeralStorageLimitInByte": 400000000000,
+    "hourlyCostInMicrocredit": 2960000,
+    "isUsable": true,
+    "memoryLimitInByte": 256000000000,
+    "name": "VESSL A100 SXM \u00d72",
+    "slug": "resourcespec-a100x2"
+  },
+  {
+    "acceleratorLimit": 4,
+    "acceleratorName": "A100 SXM",
+    "acceleratorOnChipMemoryInGb": 80,
+    "attributes": {
+      "gpuType": "A100 SXM",
+      "region": "us-west-2",
+      "volume": []
+    },
+    "availability": "high",
+    "clusterName": "betelgeuse-na",
+    "clusterSlug": "cluster-betelgeuse",
+    "cpuLimitInMillicore": 44000,
+    "ephemeralStorageLimitInByte": 800000000000,
+    "hourlyCostInMicrocredit": 5920000,
+    "isUsable": true,
+    "memoryLimitInByte": 512000000000,
+    "name": "VESSL A100 SXM \u00d74",
+    "slug": "resourcespec-a100x4"
+  },
+  {
+    "acceleratorLimit": 8,
+    "acceleratorName": "A100 SXM",
+    "acceleratorOnChipMemoryInGb": 80,
+    "attributes": {
+      "gpuType": "A100 SXM",
+      "region": "us-west-2",
+      "volume": []
+    },
+    "availability": "unavailable",
+    "clusterName": "betelgeuse-na",
+    "clusterSlug": "cluster-betelgeuse",
+    "cpuLimitInMillicore": 88000,
+    "ephemeralStorageLimitInByte": 1600000000000,
+    "hourlyCostInMicrocredit": 11840000,
+    "isUsable": true,
+    "memoryLimitInByte": 1024000000000,
+    "name": "VESSL A100 SXM \u00d78",
+    "slug": "resourcespec-a100x8"
+  }
+]

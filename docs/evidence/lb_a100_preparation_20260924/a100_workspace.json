@@ -1,0 +1,33 @@
+{
+  "slug": "wsp-5i3knd3gxeox",
+  "name": "jolly-routine",
+  "resourceSpecSlug": "resourcespec-a100x1",
+  "clusterSlug": "cluster-betelgeuse",
+  "state": "terminating",
+  "phase": "terminated",
+  "initScript": "",
+  "imageUri": "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+  "clusterVolumes": [
+    {
+      "clusterVolumeSlug": "clustervol-4jnjmzdw5rik",
+      "mountPath": "/root",
+      "volumeName": "main-deleted-20260923025515"
+    }
+  ],
+  "objectVolumes": [
+    {
+      "mountPath": "/root-1",
+      "objectStorageSlug": "object_storage_e322branyapw",
+      "objectVolumeSlug": "objvol-a5gxdg7er70i",
+      "volumeName": "dacon-v6-training"
+    }
+  ],
+  "billing": {
+    "hourlyCreditForCompute": 1.48,
+    "hourlyCreditForStorage": 0,
+    "resourceSpecAcceleratorCount": 1,
+    "resourceSpecAcceleratorName": "A100 SXM",
+    "resourceSpecCpuCount": 11,
+    "resourceSpecMemoryBytes": 128000000000
+  }
+}

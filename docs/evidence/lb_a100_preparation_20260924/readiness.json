@@ -1,0 +1,22 @@
+{
+  "code_ready_for_a100": true,
+  "actual_gpu_execution_verified": false,
+  "target_resource": "resourcespec-a100x1",
+  "target_vram_gb": 80,
+  "target_hourly_credit": 1.48,
+  "source_cluster": "cluster-capella",
+  "target_cluster": "cluster-betelgeuse",
+  "old_a100_workspace": "wsp-5i3knd3gxeox",
+  "old_a100_state": "terminating",
+  "old_a100_phase": "terminated",
+  "portable_audio_export_completed": false,
+  "new_workspace_created": false,
+  "gpu_started": false,
+  "blockers": [
+    "Historical bank audio resides on Capella cluster volume; A100 resource is in Betelgeuse,so current root mount cannot be assumed reusable",
+    "Prior A100 workspace is terminated; no usable A100 workspace was found",
+    "CPU export request is prepared but needs one new paid CPU allocation; creating a new A100 workspace requires explicit exception to existing workspace reuse instruction"
+  ],
+  "existing_inputs_verified": true,
+  "existing_assets_available_on_object_volume": true
+}
