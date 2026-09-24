@@ -2,11 +2,13 @@
 
 지금까지 진행한 딥보이스 탐지 실험의 모델·학습·추론 코드, 노트북, 설정과 결과 기록을 모았습니다. 원래 프로젝트의 상대 경로는 `repository/` 아래에 유지했습니다.
 
-- [현재 계획과 남은 작업](plan.md)
+- [CPU 준비 결과·VESSL 업로드·남은 조건 — 2026-09-24](docs/CPU_PREPARATION_2026-09-24.md)
+- [LB 개선 workflow](repository/docs/superpowers/plans/2026-09-24-dacon-lb-improvement-workflow.md)
+- [기존 계획 기록](plan.md)
 - [실험별 코드 안내](EXPERIMENT_INDEX.md)
 - [전체 실험 기록 — 2026-09-17 기준](docs/EXPERIMENTS_ALL_2026-09-17.md)
 - [최신 Existing9504 구조](docs/PROJECT.md) · [상세 코드 위치](docs/CODE_MAP.md)
-- [실제 소스 파일과 SHA-256](SOURCE_MANIFEST.json)
+- [초기 소스 묶음과 당시 SHA-256](SOURCE_MANIFEST.json)
 - [Data v4 수집·생성·split 설계와 코드 — 2026-09-23](repository/data_v4/DESIGN.md)
 
 ## 최신 완료 실험: Existing9504

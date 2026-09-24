@@ -1,0 +1,44 @@
+{
+  "volume": "objvol-a5gxdg7er70i",
+  "prefix": "lb-improvement-20260924/datasets/roles-v3/",
+  "files": [
+    {
+      "path": "bank/bank_test.csv",
+      "bytes": 4367037,
+      "sha256": "957f2e96645ed0a6af6ff903fcdfbe5f9d53f27b95a27d492aee5c5d01a77b7b"
+    },
+    {
+      "path": "bank/bank_trainval.csv",
+      "bytes": 18036923,
+      "sha256": "3ec23e069b9ba65019280388295d3adc54efc6362b00aab0f483636c4739cb96"
+    },
+    {
+      "path": "bank/skipped.json",
+      "bytes": 99357,
+      "sha256": "93cf82914941a410b231370dc20c480b60dd0ca67c811db5a892c8beec9daf99"
+    },
+    {
+      "path": "manifest.jsonl",
+      "bytes": 45505177,
+      "sha256": "9b7d4e05bc55d4a411376b3327ceba3aab816d4814125606798735578251decd"
+    },
+    {
+      "path": "roles.csv",
+      "bytes": 7722050,
+      "sha256": "d55da3fa9ac8db57e430152ce8a13cda14d3838553398f897970e4906eb640a2"
+    },
+    {
+      "path": "roles_report.json",
+      "bytes": 5032,
+      "sha256": "62f4a911c30f417530fa5c40fdba7fbc25326a1416cea62a34db971b0754e1c1"
+    },
+    {
+      "path": "splits.csv",
+      "bytes": 2041461,
+      "sha256": "30cde57b0be47bdf125acba6830b872d34862748b374f3a2d7737546290dd228"
+    }
+  ],
+  "total_bytes": 77777037,
+  "verification": "every file read back and SHA-256 compared",
+  "supersedes": "roles-v2"
+}

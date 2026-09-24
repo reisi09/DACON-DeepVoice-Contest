@@ -1,0 +1,62 @@
+{
+  "scope": "CPU preparation only; GPU-dependent gates not passed",
+  "steps": {
+    "W00": {
+      "status": "passed",
+      "evidence": "baseline_lock.json",
+      "evidence_sha256": "be32d326c16038eaca9cd36b4bdd93b511971819910c6c56ea914e1dcc8f24d7"
+    },
+    "W01": {
+      "status": "blocked",
+      "reason": "unresolved Echoes canonical aliases quarantined",
+      "evidence": "roles_report.json",
+      "evidence_sha256": "62f4a911c30f417530fa5c40fdba7fbc25326a1416cea62a34db971b0754e1c1"
+    },
+    "W02": {
+      "status": "blocked",
+      "reason": "pilot retained; listening/cross-corpus review and remaining rights/access pending",
+      "evidence": "librispeech_pilot.json",
+      "evidence_sha256": "2f9a4a54930b2547c7104900660202c3f8f5f3623e98a41943a4f184cd312cee"
+    },
+    "W03": {
+      "status": "blocked",
+      "reason": "interval alignment and original cache provenance/data unavailable",
+      "evidence": "verification.json",
+      "evidence_sha256": "2b2e3b5963c1a318f13be7db227063b2b385d49eb2919b96470c904503fe3501"
+    },
+    "W04": {
+      "status": "ready",
+      "scope": "seeds/pooling/local-loss CPU contracts only",
+      "evidence": "verification.json",
+      "evidence_sha256": "2b2e3b5963c1a318f13be7db227063b2b385d49eb2919b96470c904503fe3501"
+    },
+    "W05": {
+      "status": "deferred",
+      "reason": "GPU run or final candidate prerequisite; not authorized now"
+    },
+    "W06": {
+      "status": "deferred",
+      "reason": "GPU run or final candidate prerequisite; not authorized now"
+    },
+    "W07": {
+      "status": "deferred",
+      "reason": "GPU run or final candidate prerequisite; not authorized now"
+    },
+    "W08": {
+      "status": "deferred",
+      "reason": "GPU run or final candidate prerequisite; not authorized now"
+    },
+    "W09": {
+      "status": "deferred",
+      "reason": "GPU run or final candidate prerequisite; not authorized now"
+    },
+    "W10": {
+      "status": "deferred",
+      "reason": "GPU run or final candidate prerequisite; not authorized now"
+    },
+    "W11": {
+      "status": "deferred",
+      "reason": "official submission not requested"
+    }
+  }
+}
