@@ -1,5 +1,7 @@
 # DACON CPU 준비 결과 — 2026-09-24
 
+후속 작업으로 진행한 추가 원본 2,800개 수집은 [추가 데이터 수집 기록](ADDITIONAL_DATA_COLLECTION_2026-09-24.md)에 정리했다.
+
 사용자가 승인한 CPU 구현·자료 정리·VESSL 업로드를 수행했다. GPU 학습과 공식 제출은 실행하지 않았다. 원본 checkout의 기존 수정 9개는 SHA-256으로 보존을 확인했다. 구현 commit은 `ad4a6ad918b8d43df4b2e6923c3cd514decbac66`이다. 지정 GitHub 저장소의 `c157c2fe01f2a0707049fe5a7124c38147a82f84`에서 만든 `cpu/lb-improvement-20260924` 브랜치에 변경을 모았다.
 
 [기존 workflow](../repository/docs/superpowers/plans/2026-09-24-dacon-lb-improvement-workflow.md)는 실행 전 계획의 보존본이다. 이 문서가 현재 수행 결과와 남은 제약을 기록한다.
