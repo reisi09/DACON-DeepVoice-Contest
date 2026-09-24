@@ -29,7 +29,7 @@ BANK: Final = Path(os.environ.get("ACQUIRE_BANK", ROOT / "_workspace/candidate_a
 OUT: Final = Path(os.environ.get("ACQUIRE_OUT", ROOT / "results/candidate_acquisition_20260919"))
 RESERVE: Final = int(os.environ.get("ACQUIRE_RESERVE_GIB", "30")) * 2**30
 HOSTS: Final = {"zenodo.org", "huggingface.co", "openslr.trmal.net", "us.openslr.org",
-                "www.asvspoof.org", "github.com", "files.freemusicarchive.org"}
+                "www.asvspoof.org", "github.com", "files.freemusicarchive.org", "prod-1.storage.jamendo.com"}
 
 
 @dataclass(frozen=True, slots=True)

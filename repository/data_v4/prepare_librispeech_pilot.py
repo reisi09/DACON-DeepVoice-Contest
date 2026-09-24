@@ -19,9 +19,19 @@ def main():
     parser.add_argument('--receipt', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--limit', type=int, default=200)
+    parser.add_argument('--min-seconds', type=float, default=8)
+    parser.add_argument('--max-seconds', type=float, default=35)
+    parser.add_argument('--exclude-sources', type=Path, action='append', default=[])
+    parser.add_argument('--source-split', choices=('dev-other', 'dev-clean', 'test-other'), default='dev-other')
     args = parser.parse_args()
     if args.out.exists() or not 1 <= args.limit <= 500:
         raise ValueError('Use a fresh namespace and limit in [1,500]')
+    if not 0 < args.min_seconds <= args.max_seconds <= 60:
+        raise ValueError('Duration bounds must satisfy 0 < min <= max <= 60')
+    seen = set()
+    for previous in args.exclude_sources:
+        with previous.open() as stream:
+            seen.update(json.loads(line)['sha256'] for line in stream if line.strip())
     receipt = json.loads(args.receipt.read_text().splitlines()[-1])
     digest = hashlib.file_digest(args.archive.open('rb'), 'sha256').hexdigest()
     if receipt.get('status') != 'original_checksum_verified' or receipt.get('sha256') != digest:
@@ -38,7 +48,7 @@ def main():
             raise ValueError('Pilot archive exceeds extraction budget')
         for member in members:
             p = PurePosixPath(member.name)
-            if member.isfile() and p.suffix == '.flac' and len(p.parts) == 5 and p.parts[:2] == ('LibriSpeech', 'dev-other'):
+            if member.isfile() and p.suffix == '.flac' and len(p.parts) == 5 and p.parts[:2] == ('LibriSpeech', args.source_split):
                 candidates[p.parts[2]].append(member)
         for values in candidates.values():
             values.sort(key=lambda m: hashlib.sha256(('20260924|' + m.name).encode()).hexdigest())
@@ -56,17 +66,22 @@ def main():
                 if not candidates[speaker]:
                     del candidates[speaker]
                 raw = content.pop(member.name)
+                audio_digest = hashlib.sha256(raw).hexdigest()
+                if audio_digest in seen:
+                    rejected.append(dict(member=member.name, reason='previously collected or duplicate audio'))
+                    continue
                 audio, rate = sf.read(io.BytesIO(raw), dtype='float32')
                 duration = len(audio) / rate
-                if rate != 16000 or audio.ndim != 1 or not np.isfinite(audio).all() or not 8 <= duration <= 35:
+                if rate != 16000 or audio.ndim != 1 or not np.isfinite(audio).all() or not args.min_seconds <= duration <= args.max_seconds:
                     rejected.append(dict(member=member.name, reason='rate/channels/finite/duration eligibility'))
                     continue
                 path = 'audio/' + PurePosixPath(member.name).name
                 (args.out/'audio').mkdir(exist_ok=True)
                 (args.out/path).write_bytes(raw)
-                rows.append(dict(ID='librispeech:dev-other:' + Path(path).stem, path=path,
-                    archive_member=member.name, sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw),
-                    source='LibriSpeech', source_split='dev-other', source_url=receipt['url'], archive_sha256=digest,
+                seen.add(audio_digest)
+                rows.append(dict(ID='librispeech:' + args.source_split + ':' + Path(path).stem, path=path,
+                    archive_member=member.name, sha256=audio_digest, bytes=len(raw),
+                    source='LibriSpeech', source_split=args.source_split, source_url=receipt['url'], archive_sha256=digest,
                     license='https://creativecommons.org/licenses/by/4.0/', speaker_id=speaker,
                     group_keys=['speaker:librispeech:' + speaker, 'chapter:librispeech:' + PurePosixPath(member.name).parts[3]],
                     duration_seconds=duration, sample_rate=rate, peak=float(np.abs(audio).max()),
@@ -88,6 +103,8 @@ def main():
                   duration_seconds=sum(r['duration_seconds'] for r in rows), archive_sha256=digest,
                   source_checksum=receipt['checksum'], rejected=len(rejected), gpu_used=False,
                   full_audio_decode_verified=True, training_admitted=False, sealed=False,
+                  requested=args.limit, duration_bounds_seconds=[args.min_seconds, args.max_seconds],
+                  excluded_sources_sha256={str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in args.exclude_sources},
                   remaining=['cross-corpus identity review', 'listening quality and component labels',
                              'long-speech and fake-speech coverage', 'role assignment before any construction'])
     (args.out/'pilot_receipt.json').write_text(json.dumps(report,indent=2)+'\n')
