@@ -1,6 +1,22 @@
 # PANNs Cnn14 구조·미세조정 확장 설계
 
-상태: **설계 문서. 새 모델 구현·학습·성능 검증은 아직 하지 않았다.** 사용자의 요청은 PANNs Cnn14 내부 CNN과 미세조정 범위의 확장이다. MERT, DF-Arena, HTDemucs, fake 분류기를 바꾸거나 새 GPU를 시작하는 작업은 포함하지 않는다. 이전 [최소 구조 검토](../../PANNS_CNN_OPUS_REVIEW_2026-09-25.md)를 세 가지 구조 후보와 학습·데이터·평가 계약으로 확장한다.
+상태: **설계 v1.0 확정 — 2026-09-25. 새 모델 구현·학습·성능 검증은 아직 하지 않았다.** 사용자의 “설계를 확정해라” 요청에 따라 아래 구현 기준과 실험 순서를 고정한다. MERT, DF-Arena, HTDemucs, fake 분류기를 바꾸거나 새 GPU를 시작하는 작업은 포함하지 않는다. 이전 [최소 구조 검토](../../PANNS_CNN_OPUS_REVIEW_2026-09-25.md)를 세 가지 구조 후보와 학습·데이터·평가 계약으로 확장한다.
+
+## 확정 결정과 v1 범위
+
+| 항목 | 확정 내용 |
+|---|---|
+| 주 실험 모델 | **R3: Cnn14 block5 뒤 identity-init SE + block6 convolution 미세조정**. 학습 대상은 56,755,264개이며 성능 우승 모델로 미리 채택하는 것은 아니다. |
+| 필수 비교 | R0(보존 기준), R1(block6만), R2(SE만), R3(SE+block6)를 먼저 비교하고, 같은 기준에서 R5(시간 가중 pooling+block6)를 비교한다. |
+| v1 구현 모듈 | A(SE)와 C(시간 가중 pooling), 파일별 masked loss, block5 캐시, 학습·평가·실제 runtime 연결. |
+| 조건부 후속 | R4(block4 gate), R6(검증된 두 모듈 조합), D1/D2(block5+6 미세조정), D+(추가 데이터). 최초 구현에 미리 넣지 않는다. |
+| 동결 대상 | block1~5, 전체 BN·frontend·fc1·527출력층·기존 presence logistic·stem·CDF·다른 모델. R2에서는 block6도 동결한다. |
+| 기준 artifact | 보존 DataV4 패키지와 그 영수증을 해시로 고정한다. 사용자 최고점 제출물과의 정확한 동일성은 미확인이다. |
+| 품질 기준 | 같은 패널의 presence AUC와 고정 CDF의 FILE EER, component 단위 paired 비교. 독립 평가 없이는 개발 후보까지만 선정한다. |
+| 기본 배포 형태 | seed 41의 단일 PANNs. seed 42·43은 변동 확인용이며 가장 좋은 seed를 사후 선택하지 않는다. |
+| 로컬 실행 | CPU 기준 검증 후 Cnn14 자체 MPS forward/backward를 확인한다. 조건당 최대 200 step/60분 파일럿과 메모리 합계 18 GiB 상한을 유지한다. |
+
+설계 확정과 실제 학습 입력·실행 예산 확정은 구분한다. D0 적격 파일·해시, runtime 버전, 본 비교의 총 step 수는 [실행 workflow](../plans/2026-09-25-panns-cnn-v1-workflow.md)의 데이터 검증·파일럿 결과를 받아 학습 전에 run manifest에 고정한다. 이를 측정하지 않고 전체 소요 시간이나 데이터 준비 완료를 선언하지 않는다. 품질 결과를 본 뒤 구조·손실·split·채택 기준을 바꾸려면 새 설계 버전과 비교를 만든다.
 
 ## 1. 목표와 변경 범위
 
@@ -39,7 +55,7 @@ PANNs만 바꾸면 현재 평가 코드의 Voice/Music fake EER은 직접 개선
 
 각 축은 넓은 수용영역을 가진 학습 특징이다. 시간 칸을 정확한 사건 경계, 주파수 칸을 특정 Hz 대역으로 해석하지 않는다. block5의 두 주파수 칸에 복잡한 주파수 attention을 넣는 대신 B는 block4에서 비교한다. block4도 충분한 해상도라는 보장은 없다.
 
-### A. block5 채널 SE — 우선 구현 후보
+### A. block5 채널 SE — v1 주 실험 구조
 
 입력 `X[C=1024,T,F]`를 시간·주파수 평균한 뒤 `1024→64→1024`의 두 선형층과 ReLU를 통과시킨다.
 
@@ -49,7 +65,7 @@ PANNs만 바꾸면 현재 평가 코드의 Voice/Music fake EER은 직접 개선
 
 가설은 사전학습 채널의 상대적 기여를 대회 presence 자료에 맞추면 block6만 학습하는 것보다 도움이 될 수 있다는 것이다. 가창·혼합음 개선을 미리 보장하지 않는다. 채널별 보정의 근거는 [SE](https://arxiv.org/abs/1709.01507)이며, 여기서 쓰는 identity 초기화와 삽입 위치는 프로젝트 설계다.
 
-### B. block4 시간·주파수 gate — 독립 확장 후보
+### B. block4 시간·주파수 gate — 조건부 후속 구조
 
 입력 `X[C=512,T,F]`에서 채널 평균과 채널 최댓값을 구해 `[2,T,F]`로 쌓는다. 이를 `Conv2d(2,1,kernel=3×3,padding=1,bias=True)`에 넣고 `Y=X*2*sigmoid(conv(descriptor))`를 적용한다. convolution의 가중치·bias를 0으로 시작해 초기 gate를 1로 만든다. 신규 파라미터는 **19개**다.
 
@@ -59,7 +75,7 @@ B의 `3×1`·`1×3` 축별 파생 실험은 기본 행렬에서 제외한다. �
 
 block4 캐시를 쓰며 block5는 동결하되 gradient를 통과시킨다. **B 뒤의 block5를 `no_grad()`로 실행하거나 기존 block5 캐시로 대체하면 B가 학습되지 않으므로 금지한다.** A와 비교해 메모리·연산량이 더 들 수 있다.
 
-### C. 시간 가중 평균 — CNN readout 확장 후보
+### C. 시간 가중 평균 — v1 필수 비교 구조
 
 block6의 주파수 평균 후 특징을 `Z[C=2048,T]`라고 한다. `a=softmax(wᵀZ, time)`를 구하고 기존 `max_time(Z)+mean_time(Z)`를 `max_time(Z)+sum_time(a*Z)`로 바꾼다. bias 없는 `w[2048]`를 0으로 초기화한다. 처음에는 균등 가중치라 원래 평균과 수학적으로 같고 신규 파라미터는 **2,048개**다. 부동소수점 연산 순서 차이는 실제 수치 검증 대상이다.
 
@@ -73,7 +89,7 @@ max 경로는 유지한다. 별도 2출력 head나 Transformer를 추가하지 �
 | 첫 비교 | R1 | block6 conv | 미세조정 자체: R1−R0 |
 | 첫 비교 | R2 | A만 | 구조 단독: R2−R0 |
 | 첫 비교 | R3 | A + block6 conv | **우선 비교: R3−R1** |
-| 확장 | R5 | C + block6 conv | R5−R1 |
+| v1 후속 필수 비교 | R5 | C + block6 conv | R5−R1 |
 | 조건부 확장 | R4 | B + block6 conv | R4−R1 |
 | 조건부 | R6 | 단독 효과를 보인 두 모듈 + block6 conv | 각 단독 후보와 비교 |
 | 조건부 | D1/D2 | block5+6 conv / 선택한 단일 모듈 + block5+6 conv | 깊이 효과와 구조 효과 분리 |
@@ -235,7 +251,7 @@ R6에 진입할 개발 후보는 seed 평균 G>0이면서 두 presence AUC의 �
 
 그대로 채택하지 않은 의견도 있다. Opus는 AUC 항이 fake AUC일 가능성을 제기했지만 실제 `graph_scoring.py`에서 두 항은 presence AUC임을 확인했다. “static scale을 convolution이 흡수하므로 R3−R1은 입력 의존성만의 효과”라는 해석도 채택하지 않았다. 파라미터화·최적화 경로·정규화가 함께 달라져 그 효과만 분리한 실험은 아니다. CDF 재적합을 모든 arm의 필수 부가 평가로 넣자는 제안은 이번 최소 비교에서 제외하고 후속 보정 실험으로 유지한다. 현재 평가가 고정 결합기와의 호환성을 포함한다는 한계는 명시한다.
 
-검토 영수증과 코드·산술 확인 범위는 [expanded_design_review.json](../../evidence/panns_cnn_review_20260925/expanded_design_review.json)에 남긴다. Opus가 검토한 초안 해시와 수정 후 최종 문서 해시를 구분한다. 수정한 최종안에 대해 Opus가 별도의 재검증을 마쳤다고 주장하지 않는다. 사람·모델의 검토는 runtime·학습 품질 검증을 대신하지 않는다.
+검토 영수증과 코드·산술 확인 범위는 [expanded_design_review.json](../../evidence/panns_cnn_review_20260925/expanded_design_review.json)에 남긴다. 이 기록의 `final_spec_sha256`은 확장안이 저장된 commit `2e58d9330809b92e28058cf77c80c218c6ff7b1c`의 문서에 해당하며, v1 확정 후 해시로 덮어쓰지 않는다. Opus가 검토한 초안과 수정 후 문서를 구분하며, 확정 요청에서 Opus를 다시 호출하지 않았다. 현재 v1 문서·workflow 해시는 [design_v1_lock.json](../../evidence/panns_cnn_review_20260925/design_v1_lock.json)에 보존한다. 사람·모델의 검토는 runtime·학습 품질 검증을 대신하지 않는다.
 
 ## 11. 이번 설계 작업의 완료 경계
 

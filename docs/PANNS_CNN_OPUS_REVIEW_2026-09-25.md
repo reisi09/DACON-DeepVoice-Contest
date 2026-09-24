@@ -2,7 +2,7 @@
 
 상태: **코드·데이터 조사와 Claude 토의 완료. 아래 구조는 제안이며 아직 구현·학습하지 않았다.** 사용자는 Cnn14 내부 CNN 구조와 미세조정을 포함하고 Claude도 활용하도록 요청했다. 이번 요청은 CNN 구조와 학습 경로를 바꾸는 설계 작업으로 분류한다. 모델 성능 개선이 입증됐다는 뜻은 아니다.
 
-후속 요청에 따른 [확장 설계](superpowers/specs/2026-09-25-panns-cnn-expanded-design.md)가 추가됐다. 채널·시간·주파수 후보와 미세조정 깊이, 데이터·캐시·평가 조건을 명세했다. 아래 내용은 최초 토의 기록으로 보존하며, class weight 등 변경된 결정은 확장 설계를 따른다.
+후속 요청에 따른 [확장 설계 v1.0](superpowers/specs/2026-09-25-panns-cnn-expanded-design.md)를 확정하고 [실행 workflow](superpowers/plans/2026-09-25-panns-cnn-v1-workflow.md)를 정리했다. 채널·시간·주파수 후보와 미세조정 깊이, 데이터·캐시·평가 조건을 명세했다. 아래 내용은 최초 토의 기록으로 보존하며, class weight 등 변경된 결정은 확정 설계를 따른다.
 
 ## 실제 Claude 사용
 
