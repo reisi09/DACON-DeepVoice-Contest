@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/root/lb-a100-20260924-v1/env/venv/bin/python",
+    "/root/lb-a100-20260924-v1/prepared/code/full_bank_train.py",
+    "--manifest",
+    "/root/lb-a100-20260924-v1/runs/partial_training/available_rows.csv",
+    "--feature-manifest",
+    "/root/lb-a100-20260924-v1/prepared/inputs/feature_union.csv",
+    "--cache",
+    "/root/lb-a100-20260924-v1/cache",
+    "--output",
+    "/root/lb-a100-20260924-v1/runs/partial_training/E08_topk",
+    "--config",
+    "/root/lb-a100-20260924-v1/runs/partial_training/E08_topk.json",
+    "--gpu-name",
+    "A100",
+    "--max-epochs",
+    "50",
+    "--patience",
+    "5"
+  ],
+  "timeout_seconds": 1347,
+  "started_epoch": 1790255702.4224386
+}

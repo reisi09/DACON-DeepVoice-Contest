@@ -1,6 +1,6 @@
 {
   "code_ready_for_a100": true,
-  "actual_gpu_execution_verified": false,
+  "actual_gpu_execution_verified": true,
   "target_resource": "resourcespec-a100x1",
   "target_vram_gb": 80,
   "target_hourly_credit": 1.48,
@@ -13,7 +13,7 @@
   "new_workspace_created": true,
   "gpu_started": true,
   "blockers": [
-    "Feature extraction, head training and E00/E04 comparison are not complete; see A100_RUN_2026-09-24.md for active run and deadline"
+    "Full feature extraction and full E00/E04 comparison were superseded by user-requested partial-cache E08/control training; do not infer full-data performance."
   ],
   "existing_inputs_verified": true,
   "existing_assets_available_on_object_volume": true,
@@ -28,6 +28,11 @@
   "target_environment_verified": true,
   "target_inputs_preflight_passed": true,
   "feature_stage_dispatched": true,
-  "feature_outputs_verified": false,
-  "pause_deadline_epoch": 1790256172
+  "feature_outputs_verified": true,
+  "pause_deadline_epoch": 1790257450,
+  "feature_outputs_verified_rows": 5952,
+  "gpu_currently_running": false,
+  "partial_training_completed": true,
+  "workspace_state": "stopped",
+  "workspace_phase": "standby"
 }
