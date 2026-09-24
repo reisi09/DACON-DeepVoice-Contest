@@ -1,0 +1,23 @@
+{
+  "probe": {
+    "voice": {
+      "n": 1000,
+      "auc_folds": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "music": {
+      "status": "NOT_EVALUATED",
+      "n": 0
+    },
+    "mixed": {
+      "status": "NOT_EVALUATED",
+      "n": 0
+    }
+  },
+  "interpretation": "Metadata-only grouped CV; source-derived labels, not detector quality or independent evaluation. Music presence incomplete so music is not evaluated."
+}
