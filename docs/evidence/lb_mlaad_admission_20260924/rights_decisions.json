@@ -1,0 +1,31 @@
+{
+  "review_date": "2026-09-24",
+  "purpose": "Noncommercial detector research and evaluation for DACON236749; GPU disabled",
+  "sources": {
+    "MLAAD": {
+      "training_allowed": true,
+      "status": "allowed_for_scoped_noncommercial_competition_research",
+      "license": "CC-BY-NC-4.0",
+      "revision": "30c3dec763fa4803f11c2df1557d3b0828395366",
+      "scope": "이번 대회용 비상업 탐지 연구·평가",
+      "permission_basis": "project interpretation of official competition rules and publisher license; not explicit publisher approval",
+      "explicit_publisher_approval": false,
+      "commercial_use_allowed": false,
+      "evidence": [
+        "https://dacon.io/competitions/official/236749/overview/rules",
+        "https://dacon.io/competitions/official/236749/overview/description",
+        "https://dacon.io/competitions/official/236749/talkboard/417857",
+        "https://dacon.io/competitions/official/236749/talkboard/417280",
+        "https://huggingface.co/datasets/mueller91/MLAAD/blob/main/README.md",
+        "https://creativecommons.org/licenses/by-nc/4.0/legalcode.en"
+      ],
+      "conditions": [
+        "Publisher license is CC-BY-NC4.0 with strict noncommercial academic research scope.",
+        "Use restricted to this noncommercial competition detector research and evaluation.",
+        "Retain publisher attribution, source revision and license; identify crop, resampling and PCM conversion.",
+        "No separate permission for commercial deployment, licensing or commercial use is asserted.",
+        "No new gated consent, publisher contact, competition submission or GPU execution occurred."
+      ]
+    }
+  }
+}

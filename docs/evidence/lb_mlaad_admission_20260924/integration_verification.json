@@ -1,0 +1,76 @@
+{
+  "historical_rows": 44278,
+  "historical_rows_exactly_unchanged": 44278,
+  "historical_roles_labels_paths_hashes_component_ids_changed": 0,
+  "new_admitted": 146,
+  "new_roles": {
+    "train": 146
+  },
+  "new_generators": 50,
+  "combined_rows": 44424,
+  "combined_role_counts": {
+    "train": 29796,
+    "development": 10120,
+    "selection": 2435,
+    "calibration": 2073
+  },
+  "bank_trainval_rows": 33674,
+  "bank_test_rows": 9842,
+  "real_load_rows_validated": true,
+  "head_labels_voice_only_verified": 146,
+  "new_unknown_music_authenticity_mask_zero": 146,
+  "weak_labels_local_truth_remains_unknown": 146,
+  "cross_role_components": 0,
+  "new_evaluation_rows": 0,
+  "derived_audio_bytes_hash_verified": 146,
+  "source_only_filter_preserved_all_fields": true,
+  "all400_original_audio_hashes_verified": true,
+  "input_candidate_count": 400,
+  "normalized_count": 179,
+  "automatically_reviewed": 179,
+  "disposition_counts": {
+    "excluded": 254,
+    "admitted_train_only": 146
+  },
+  "excluded_reason_counts": {
+    "historical_component_crosses_roles": 214,
+    "prior_evaluation_component": 216,
+    "reference_speaker_unresolved": 5,
+    "source_identity_unresolved": 5,
+    "automated_semantic_confidence_below_0.5": 33
+  },
+  "speech_score_quantiles": [
+    0.0010566163109615445,
+    0.5562706589698792,
+    0.719957709312439,
+    0.8279628753662109,
+    0.9147756695747375
+  ],
+  "derived_duration_seconds": 2190,
+  "derived_bytes": 70086424,
+  "prepared_audio_bytes": 85927876,
+  "max_crop_quantization_abs_error": 1.52587890625e-05,
+  "quantization_abs_tolerance": 1.53587890625e-05,
+  "ast_wall_seconds": 85.6228165840148,
+  "ast_cpu_threads": 8,
+  "ast_per_file_mean_seconds": 0.4593884105912498,
+  "gpu_used": false,
+  "cuda_initialized": false,
+  "human_listening_verified": false,
+  "artifact_sha256": {
+    "rights_decisions.json": "70433f8fee72e555851e854ccf7b0eb07afd6896863adf9c0e778d4a1d807dfa",
+    "candidate_manifest.jsonl": "802648074fd552c3fce9b83973f53ea7e07b556017d954ee2d411541b1836d88",
+    "prepared/normalized_candidates.jsonl": "fd103a293ea85606e6b4ca3cf1e020743cd74c3539477dd4b8a73e342da1536f",
+    "ast_reviews.jsonl": "623b18a866d85198b095a89604962952fbebb6f4550e55f07547a9e7fe9e63f1",
+    "roles-v6/manifest.jsonl": "65303ce4e00374156a96ba62ee5622390e209c15bc2972fbf65f764531bf17b7",
+    "roles-v6/bank_trainval.csv": "c83eacab4143f8ca336d12e24e3cccf75dc1fd5939ab8f20054c5c2a0eb78168",
+    "roles-v6/bank_test.csv": "102aa0a0436dd8c2641ccbfa5152177091ae2cdd536e14d5355ff9fc76b52e14",
+    "roles-v6/dispositions.jsonl": "efe7925b5e98f7910518c57facb69c7813eec574fece4885edbc1ebf83b057cb"
+  },
+  "integration_seconds": 1.2583525830414146,
+  "limitations": [
+    "AST scores validate automated speech-event screening only; authenticity labels are publisher source labels.",
+    "No detector training, new GPU feature extraction, performance measurement, official submission or publication occurred.",
+    "Original acquisition rights_review text is retained as historical metadata; current rights_decision records scoped permission interpretation."
+  ]
+}
