@@ -79,6 +79,8 @@ def validate_predictions(rows: Sequence[Row], expected_ids: Sequence[str]) -> li
 
 
 def _label(row: Row, column: str) -> int | None:
+    if row.get(column + "_mask", "1") in (0, "0", False, "False", "0.0"):
+        return None
     value = row.get(column)
     if value is None or value == "":
         return None

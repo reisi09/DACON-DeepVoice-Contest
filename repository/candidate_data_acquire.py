@@ -29,7 +29,7 @@ BANK: Final = Path(os.environ.get("ACQUIRE_BANK", ROOT / "_workspace/candidate_a
 OUT: Final = Path(os.environ.get("ACQUIRE_OUT", ROOT / "results/candidate_acquisition_20260919"))
 RESERVE: Final = int(os.environ.get("ACQUIRE_RESERVE_GIB", "30")) * 2**30
 HOSTS: Final = {"zenodo.org", "huggingface.co", "openslr.trmal.net", "us.openslr.org",
-                "www.asvspoof.org", "github.com"}
+                "www.asvspoof.org", "github.com", "files.freemusicarchive.org"}
 
 
 @dataclass(frozen=True, slots=True)
@@ -98,24 +98,30 @@ def acquire_locked(job: SourceFile, target: Path) -> dict[str, str | int | bool]
             if partial.exists() and partial.stat().st_size >= job.size:
                 break
             # Gated HF datasets need the user's token; never sent to other hosts.
-            auth = (["--header", "Authorization: Bearer " + os.environ["HF_TOKEN"]]
-                    if urlparse(job.url).hostname == "huggingface.co" and os.environ.get("HF_TOKEN") else [])
-            try:
-                subprocess.run([
-                    "curl", *auth, "--fail", "--location", "--silent", "--show-error",
-                    "--proto", "=https", "--proto-redir", "=https",
-                    "--connect-timeout", "30", "--speed-time", "180", "--speed-limit", "1024",
-                    "--retry", "0", "--continue-at", "-",
-                    # HF redirect bodies can exceed tiny JSON files; final size stays exact-checked.
-                    "--max-filesize", str(max(job.size, 2**20)), "--output", str(partial), job.url,
-                ], check=True)
+            token = os.environ.get("HF_TOKEN", "") if urlparse(job.url).hostname == "huggingface.co" else ""
+            if token and not all(c.isalnum() or c == '_' for c in token):
+                raise RuntimeError("Invalid HF token format")
+            config = f'header = "Authorization: Bearer {token}"\n' if token else ''
+            result = subprocess.run([
+                "curl", "--config", "-", "--fail", "--location", "--silent",
+                "--proto", "=https", "--proto-redir", "=https",
+                "--connect-timeout", "30", "--max-time", "600",
+                "--speed-time", "180", "--speed-limit", "1024",
+                "--retry", "0", "--continue-at", "-",
+                "--max-filesize", str(max(job.size, 2**20)), "--output", str(partial),
+                "--write-out", "%{http_code}", job.url,
+            ], input=config, text=True, capture_output=True)
+            status = result.stdout[-3:]
+            if status in ('401', '403'):
+                return {**asdict(job), "status": "pending_access", "http_status": status,
+                        "training_admitted": False}
+            if result.returncode == 0:
                 break
-            except subprocess.CalledProcessError as error:
-                if error.returncode not in (5, 6, 7, 18, 22, 28, 52, 55, 56) or attempt == 7:
-                    raise
-                retained = partial.stat().st_size if partial.exists() else 0
-                print(f"retry {job.path}: curl={error.returncode}, retained={retained:,} bytes", flush=True)
-                time.sleep(min(60, 15 * (attempt + 1)))
+            if result.returncode not in (5, 6, 7, 18, 22, 28, 52, 55, 56) or attempt == 7 or status == '404':
+                raise RuntimeError(f"Download failed: curl={result.returncode}, HTTP={status}, path={job.path}")
+            retained = partial.stat().st_size if partial.exists() else 0
+            print(f"retry {job.path}: curl={result.returncode}, retained={retained:,} bytes", flush=True)
+            time.sleep(min(60, 15 * (attempt + 1)))
         digest = verify_file(partial, job)
         partial.rename(target)
     else:

@@ -133,14 +133,19 @@ def ing_speechfake(raw: Path):
 
 
 def ing_echoes(raw: Path):
-    """Echoes (HF Octavian97/Echoes): generated music, layout .../<generator>/<TTA|ATA>/... . Vocal presence is
+    """Echoes (HF Octavian97/Echoes): generated music, layout .../<TTA|ATA>/<generator>/... . Vocal presence is
     unknown until the separator check; any vocal is generated with the music (conditional VF=1)."""
     for p in sorted(x for x in raw.rglob('*') if x.suffix.lower() in ('.wav', '.mp3', '.flac', '.ogg')):
         parts = p.relative_to(raw).parts
-        mode = next((x for x in parts if x.upper() in ('TTA', 'ATA')), 'unknown')
-        gen = parts[parts.index(mode) - 1] if mode in parts and parts.index(mode) > 0 else parts[-2]
+        positions = [i for i, part in enumerate(parts[:-1]) if part.upper() in ('TTA', 'ATA')]
+        if len(positions) != 1 or positions[0] + 2 >= len(parts):
+            raise ValueError(f'Unknown Echoes layout: {p.relative_to(raw)}')
+        mode, gen = parts[positions[0]].upper(), parts[positions[0] + 1]
+        marker = f'_{gen}_{mode}_'
+        reference = p.stem.rsplit(marker, 1)[0] if marker in p.stem else p.stem
         yield item('echoes', '/'.join(parts), p, lab(None, 1, 1, 1), 'dataset:all_fake_music', 'CC-BY-SA-4.0',
-                   [f'echoes_item:{mode}:{p.stem}'], generator=f'{gen}/{mode}')
+                   [f'echoes_item:{mode}:{p.stem}', f'echoes_reference:{reference.casefold()}'],
+                   generator=gen, generation_mode=mode)
 
 
 def ing_vocalset(raw: Path):
@@ -431,6 +436,9 @@ def components(rows: list[dict]) -> dict[str, str]:
         return x
     for r in rows:
         keys = ['id:' + r['ID']] + r['group_keys'] + ['id:' + p for p in r.get('parent_ids', [])]
+        for field, prefix in (('sha256', 'audio:'), ('canonical_source_id', 'canonical:')):
+            if r.get(field):
+                keys.append(prefix + r[field])
         for k in keys[1:]:
             a, b = find(keys[0]), find(k)
             if a != b:
@@ -442,6 +450,24 @@ def pair_components(voice: list[dict], music: list[dict], comp: dict, rng: rando
                     max_partners: int = 1, per_pair: int = 3) -> list[tuple[dict, dict]]:
     """Each music component is used by at most one voice component, and a voice component takes at most
     max_partners music components, so constructions never chain components into a giant one."""
+    if not voice or not music or n <= 0:
+        return []
+    roles = {r.get('role') for r in voice + music}
+    if None in roles or not roles <= {'train', 'selection', 'calibration', 'development', 'sealed'}:
+        raise ValueError('Assign valid parent roles before construction')
+    component_roles = {}
+    for row in voice + music:
+        component_roles.setdefault(comp[row['ID']], set()).add(row['role'])
+    for assigned in component_roles.values():
+        if len(assigned) > 1:
+            raise ValueError('Parent component crosses roles')
+    if len(roles) > 1:
+        pairs = []
+        for role in sorted(roles):
+            pairs.extend(pair_components([r for r in voice if r['role'] == role],
+                                         [r for r in music if r['role'] == role], comp, rng,
+                                         n - len(pairs), max_partners, per_pair))
+        return pairs
     by = lambda rs: {c: [r for r in rs if comp[r['ID']] == c] for c in sorted({comp[r['ID']] for r in rs})}
     vc, mc = by(voice), by(music)
     vkeys, mkeys = list(vc), [k for k in mc if k not in vc]
@@ -497,7 +523,9 @@ def plan_splices(rows: list[dict], n: int, seed: int) -> list[dict]:
             by_key.setdefault(key(r), []).append(r)
     jobs = []
     for r in sorted(real, key=lambda r: hashlib.sha256(r['ID'].encode()).hexdigest()):
-        pool = by_key.get(key(r))
+        if not r.get('role'):
+            raise ValueError('Assign parent role before splicing')
+        pool = [f for f in by_key.get(key(r), []) if f.get('role') == r['role']]
         if pool and r.get('crop_len_s', 0) >= 4:
             jobs.append(dict(real=r, fake=rng.choice(pool), seg_s=rng.uniform(1, 3), pos=rng.uniform(.15, .85)))
             if len(jobs) >= n:
@@ -541,10 +569,13 @@ def finish(y, rid: str, out: Path, sub: str) -> tuple[Path, str, str]:
 
 
 def _row(rid, source, p, codec, sha, y_len, parents, labels, **extra) -> dict:
+    roles = {r.get('role') for r in parents}
+    if len(roles) != 1 or None in roles:
+        raise ValueError('Construction parents must share one assigned role')
     return dict(ID=rid, source=source, path=str(p), evidence='construction', codec_chain=codec,
-                crop_len_s=round(y_len / SR, 3), license=' + '.join(sorted({x['license'] for x in parents})),
+                crop_len_s=y_len / SR, license=' + '.join(sorted({x['license'] for x in parents})),
                 group_keys=sorted({k for x in parents for k in x['group_keys']}), parent_ids=[x['ID'] for x in parents],
-                sha256=sha, **labels, **extra)
+                sha256=sha, role=next(iter(roles)), **labels, **extra)
 
 
 def mix_one(job: dict, out: Path) -> dict:
@@ -589,7 +620,8 @@ def splice_one(job: dict, out: Path) -> dict:
     rid = 'splice:' + hashlib.sha256((r['ID'] + '|' + f['ID']).encode()).hexdigest()[:20]
     p, codec, sha = finish(y, rid, out, 'splice')
     return _row(rid, 'constructed_splice', p, codec, sha, len(y), [r, f], lab(1, 0, 1, None),
-                fake_voice_segments=[[round(pos / SR, 3), round((pos + seg) / SR, 3)]], kind='partial_tts')
+                fake_voice_segments=[[pos / SR, (pos + seg) / SR]], kind='partial_tts',
+                voice_intervals_complete=True, interval_alignment_verified=codec in ('pcm_wav', 'flac'))
 
 
 def enhance_one(job: dict, out: Path, sep, device: str) -> dict:
@@ -669,6 +701,7 @@ def main() -> None:
     ap.add_argument('--existing-csv', type=Path)
     ap.add_argument('--existing-audio', type=Path)
     ap.add_argument('--existing-map', type=Path, help='audio_upload.json of the legacy bank')
+    ap.add_argument('--roles', type=Path, help='CSV with original ID and role; required before construct')
     ap.add_argument('--seed', type=int, default=20260923)
     ap.add_argument('--vocal-hi', type=float, default=0.35)
     ap.add_argument('--vocal-lo', type=float, default=0.08)
@@ -753,6 +786,12 @@ def main() -> None:
                     print(f'materialize {i}/{len(todo)}', flush=True)
     else:  # construct: mixes, real songs, partial splices, enhanced real (needs vocals stage first)
         rows = [r for r in jsonl(manifest) if not r['source'].startswith('constructed_')]
+        if a.roles is None:
+            raise ValueError('construct requires --roles assigned before selecting parents')
+        with a.roles.open() as role_file:
+            roles = {r['ID']: r['role'] for r in csv.DictReader(role_file)}
+        for row in rows:
+            row['role'] = roles[row['ID']]
         done = {r['ID'] for r in jsonl(manifest) if r['source'].startswith('constructed_')}
         jobs = ([(mix_one, j) for j in plan_mixes(rows, a.mixes, a.seed)] + [(mix_one, j) for j in plan_songs(rows, a.songs, a.seed)]
                 + [(splice_one, j) for j in plan_splices(rows, a.splices, a.seed)])
@@ -796,28 +835,28 @@ def self_check() -> None:
     assert apply_vocal_evidence(dict(real, **lab(None, 1, 0, 0)), .6, .35, .08)['VOICE_FAKE'] == 0
     rng = random.Random(1)
     assert all(4 <= crop_window(rng, 120)[1] <= 60 for _ in range(200))
-    rows = [dict(ID=f'v{i}', group_keys=[f'spk:{i % 3}'], **lab(1, 0, i % 2, None)) for i in range(12)]
-    rows += [dict(ID=f'm{i}', group_keys=[f'trk:{i % 4}'], **lab(0, 1, None, i % 2)) for i in range(12)]
+    rows = [dict(ID=f'v{i}', role='train', group_keys=[f'spk:{i % 3}'], **lab(1, 0, i % 2, None)) for i in range(12)]
+    rows += [dict(ID=f'm{i}', role='train', group_keys=[f'trk:{i % 4}'], **lab(0, 1, None, i % 2)) for i in range(12)]
     jobs = plan_mixes(rows, 100, 1)
     comp = components(rows)
     pairs = {(comp[j['voice']['ID']], comp[j['music']['ID']]) for j in jobs}
     assert len({p[0] for p in pairs}) == len(pairs) == len({p[1] for p in pairs}), 'component pairing must be 1:1'
     # gap constructions
-    sing = [dict(ID=f's{i}', kind='singing', source='csd', group_keys=['speaker:csd:one'], **lab(1, 0, 0, None)) for i in range(4)]
-    beds = [dict(ID=f'b{i}', source='musan_music', group_keys=[f'trk:{i}'], **lab(0, 1, None, i % 2)) for i in range(10)]
+    sing = [dict(ID=f's{i}', role='train', kind='singing', source='csd', group_keys=['speaker:csd:one'], **lab(1, 0, 0, None)) for i in range(4)]
+    beds = [dict(ID=f'b{i}', role='train', source='musan_music', group_keys=[f'trk:{i}'], **lab(0, 1, None, i % 2)) for i in range(10)]
     songs = plan_songs(sing + beds, 100, 1, max_partners=5)
     used = [comp_ for comp_ in (components(sing + beds)[j['music']['ID']] for j in songs)]
     assert len(set(used)) == 5 and all(j['voice']['kind'] == 'singing' for j in songs), 'one singer -> up to max_partners beds'
-    real = [dict(ID=f'z{i}', source='zeroth', crop_len_s=8., group_keys=[f'speaker:zeroth:{i % 2}'], **lab(1, 0, 0, None)) for i in range(6)]
-    gen = [dict(ID=f'g{i}', source='generated_speech', kind='tts', group_keys=[f'speaker:zeroth:{i}'], **lab(1, 0, 1, None)) for i in range(2)]
+    real = [dict(ID=f'z{i}', role='train', source='zeroth', crop_len_s=8., group_keys=[f'speaker:zeroth:{i % 2}'], **lab(1, 0, 0, None)) for i in range(6)]
+    gen = [dict(ID=f'g{i}', role='train', source='generated_speech', kind='tts', group_keys=[f'speaker:zeroth:{i}'], **lab(1, 0, 1, None)) for i in range(2)]
     spl = plan_splices(real + gen, 100, 1)
     assert spl and all(j['real']['group_keys'] == j['fake']['group_keys'] for j in spl), 'splice only within one speaker'
-    cvr = [dict(ID='cv1', source='speechfake', crop_len_s=6., group_keys=['commonvoice_ko:77'], **lab(1, 0, 0, None))]
-    cvf = [dict(ID='svc1', source='speechfake', generator='SeedVC', group_keys=['commonvoice_ko:77'], **lab(1, 0, 1, None)),
-           dict(ID='cos1', source='speechfake', generator='CosyVoice', group_keys=['speechfake_text:x'], **lab(1, 0, 1, None))]
+    cvr = [dict(ID='cv1', role='train', source='speechfake', crop_len_s=6., group_keys=['commonvoice_ko:77'], **lab(1, 0, 0, None))]
+    cvf = [dict(ID='svc1', role='train', source='speechfake', generator='SeedVC', group_keys=['commonvoice_ko:77'], **lab(1, 0, 1, None)),
+           dict(ID='cos1', role='train', source='speechfake', generator='CosyVoice', group_keys=['speechfake_text:x'], **lab(1, 0, 1, None))]
     sv = plan_splices(cvr + cvf, 10, 1)
     assert [(j['real']['ID'], j['fake']['ID']) for j in sv] == [('cv1', 'svc1')], 'CommonVoice clip + its own SeedVC conversion'
-    noise = [dict(ID=f'n{i}', source='musan_noise', group_keys=[f'musan_noise:{i}'], **lab(0, 0, None, None)) for i in range(3)]
+    noise = [dict(ID=f'n{i}', role='train', source='musan_noise', group_keys=[f'musan_noise:{i}'], **lab(0, 0, None, None)) for i in range(3)]
     enh = plan_enhanced(real + noise, 100, 1)
     assert len({j['noise']['ID'] for j in enh}) == len(enh) <= 2, 'each noise component used once, one per speaker component'
     import tempfile
@@ -849,9 +888,9 @@ def self_check() -> None:
         ml = list(ing_mlaad(Path(d)))
         assert ml[0]['generator'] == 'Edge-TTS' and ml[0]['language'] == 'de' and ml[0]['group_keys'] == ['mailabs_text:dorothy_01_f000004']
     with tempfile.TemporaryDirectory() as d:
-        e = Path(d) / 'Echoes' / 'suno' / 'TTA'; e.mkdir(parents=True); (e / 'x1.mp3').write_bytes(b'')
+        e = Path(d) / 'Echoes' / 'TTA' / 'suno'; e.mkdir(parents=True); (e / 'x1.mp3').write_bytes(b'')
         er = list(ing_echoes(Path(d)))
-        assert er[0]['generator'] == 'suno/TTA' and er[0]['FILE_FAKE'] == 1 and er[0]['VOICE_PRESENT'] is None
+        assert er[0]['generator'] == 'suno' and er[0]['FILE_FAKE'] == 1 and er[0]['VOICE_PRESENT'] is None
     with tempfile.TemporaryDirectory() as d:
         c = Path(d) / 'a.csv'
         c.write_text('ID,source,route,path,FILE_FAKE,FILE_FAKE_mask,MUSIC_FAKE,MUSIC_FAKE_mask,MUSIC_PRESENT,VOICE_PRESENT,VOICE_FAKE\n'

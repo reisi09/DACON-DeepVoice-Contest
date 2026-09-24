@@ -19,6 +19,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import decision_heads as dh  # noqa: E402
+from full_bank_contract import role
 
 
 def eer(y, s) -> float:
@@ -52,6 +53,20 @@ def fit(files: list[dict], y: np.ndarray, step: float = .1, min_gain: float = .0
     return {'weights': chosen, 'tables': tables, 'fitted_on': 'val', 'candidates': names}, report
 
 
+def select_rows(rows, split, intended_role):
+    """An unknown FILE label masks that metric only, never the other four outputs."""
+    return [r for r in rows if r['split'] == split and
+            (role(r) == intended_role if r.get('role') else True)]
+
+
+def known_file_panel(rows, files):
+    if [r['ID'] for r in rows] != [f['ID'] for f in files]:
+        raise ValueError('Prediction IDs do not match labels')
+    known = [(r, f) for r, f in zip(rows, files, strict=True)
+             if r.get('FILE_FAKE_mask', '1') == '1' and r.get('FILE_FAKE') in ('0', '1')]
+    return [f for r, f in known], np.array([int(r['FILE_FAKE']) for r, f in known])
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument('--bank', type=Path, required=True, help='bank_trainval.csv (val rows are used)')
@@ -69,20 +84,30 @@ def main() -> None:
     prev = lambda p: {r['ID']: float(r['FILE_FAKE_PROB']) for r in csv.DictReader(p.open())} if p else {}
 
     def files_for(bank: Path, split: str, prev_scores: dict, cache: Path):
-        rows = [r for r in csv.DictReader(bank.open()) if r['split'] == split and r['FILE_FAKE_mask'] == '1']
+        rows = select_rows(list(csv.DictReader(bank.open())), split, 'calibration' if split == 'val' else 'development')
         out = []
         for s in score_rows(rows, cache, a.train_dir, a.device):
             vp, mp = dh.presence(heads, s['presence_features'], (s['Pv'], s['Pm']))
             out.append({**s, 'Pv_raw': s['Pv'], 'Pm_raw': s['Pm'], 'Pv': vp, 'Pm': mp, 'prev_file': prev_scores.get(s['ID'])})
-        return out, np.array([int(r['FILE_FAKE']) for r in rows]), rows
+        return out, rows
 
-    val, yv, val_rows = files_for(a.bank, 'val', prev(a.prev_val), a.cache)
-    ens, report = fit(val, yv)
-    test, yt, test_rows = files_for(a.test_bank, 'test', prev(a.prev_test), a.test_cache or a.cache)
-    if all(f['prev_file'] is None for f in test) and 'prev' in ens['weights']:
+    val, val_rows = files_for(a.bank, 'val', prev(a.prev_val), a.cache)
+    fit_files, yv = known_file_panel(val_rows, val)
+    if set(yv.tolist()) != {0, 1}:
+        raise ValueError('Calibration needs both FILE classes')
+    ens, report = fit(fit_files, yv)
+    ens['fitted_on'] = 'calibration' if all(r.get('role') == 'calibration' for r in val_rows) else 'val'
+    report['fit_role'] = ens['fitted_on']
+    test, test_rows = files_for(a.test_bank, 'test', prev(a.prev_test), a.test_cache or a.cache)
+    if any(f['prev_file'] is None for f in test) and ens['weights'].get('prev', 0):
         raise SystemExit('prev candidate fitted on val but missing for test; pass --prev-test')
-    report['test_one_shot'] = {'n': len(yt), 'ensemble_eer': round(eer(yt, [dh.file_score(ens, f) for f in test]), 5),
-                               'max_rule_eer': round(eer(yt, [dh.CANDIDATES['max'](f) for f in test]), 5)}
+    test_known, yt = known_file_panel(test_rows, test)
+    if set(yt.tolist()) != {0, 1}:
+        raise ValueError('Development FILE metric needs both classes')
+    if {r['component_id'] for r in val_rows} & {r['component_id'] for r in test_rows}:
+        raise ValueError('Calibration and development components overlap')
+    report['development'] = {'n': len(yt), 'ensemble_eer': round(eer(yt, [dh.file_score(ens, f) for f in test_known]), 5),
+                               'max_rule_eer': round(eer(yt, [dh.CANDIDATES['max'](f) for f in test_known]), 5)}
     # all five columns + official metrics, before (legacy PANNs max, max rule) and after (presence head + ensemble)
     from graph_scoring import official_metrics, SUBMISSION_COLUMNS
     from full_bank_evaluate import five_columns

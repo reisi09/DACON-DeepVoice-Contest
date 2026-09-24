@@ -11,11 +11,12 @@ import numpy as np
 import torch
 from torch import nn
 
-from mert12_submission import (AutoFeatureExtractor, AutoModel, SEEDS, PREDICTION_COLUMNS,
+from mert12_submission import (AutoFeatureExtractor, AutoModel, PREDICTION_COLUMNS,
     SUBMISSION_COLUMNS, baseline_module, pin_torchaudio_loader, windows, window_layout,
     sha256, validate_predictions, SubmissionError)
 from localization_models import WindowMIL
 import decision_heads
+from full_bank_contract import saved_config, check_config, pool_voice
 
 CANDIDATE = 'balanced7144_MERT330M_WindowMIL_DFfc5_8020'
 
@@ -23,11 +24,14 @@ CANDIDATE = 'balanced7144_MERT330M_WindowMIL_DFfc5_8020'
 def load_heads(root: Path, device):
     music, voice = [], []
     fake_index = None
-    for seed in SEEDS:
+    config = saved_config(root)
+    identity = json.loads((root / 'run_identity.json').read_text())
+    for seed in config['seeds']:
         for route, collection in (('music', music), ('voice', voice)):
             record = torch.load(root/f'{route}_{seed}.pt', map_location='cpu', weights_only=True)
             if record['route'] != route or record['seed'] != seed:
                 raise SubmissionError('Checkpoint route or seed mismatch')
+            check_config(record, config, identity)
             state = record['model']
             if not all(torch.isfinite(value).all() for value in state.values()):
                 raise SubmissionError('Nonfinite checkpoint')
@@ -42,6 +46,7 @@ def load_heads(root: Path, device):
 
 class Engine:
     def __init__(self, assets: Path, trained: Path, device, batch=8):
+        self.config = saved_config(trained)
         self.device, self.batch = torch.device(device), batch
         self.base = baseline_module(assets)
         pin_torchaudio_loader(self.base)
@@ -102,7 +107,7 @@ class Engine:
             embeddings.append(self.embedding)
         embeddings = torch.cat(embeddings)
         with torch.autocast('cuda', dtype=torch.bfloat16, enabled=self.device.type == 'cuda'):
-            voices = [float(head(embeddings).float().softmax(-1)[:, self.fake_index].max())
+            voices = [float(pool_voice(head(embeddings), self.fake_index, self.config).sigmoid())
                       for head in self.voice_heads]
         probs = self.panns.inference(self.base.make_panns_segments(raw))[0]   # same segments as the legacy loop
         legacy = decision_heads.legacy_presence(probs, self.panns_labels, self.label_groups)

@@ -6,6 +6,7 @@ from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 
 import numpy as np
+from full_bank_contract import role
 
 @dataclass(frozen=True, slots=True)
 class Item:
@@ -19,7 +20,7 @@ class Item:
 
 def epoch_order(items: Sequence[Item], seed: int, epoch: int) -> np.ndarray:
     """No replacement: balance loss weights, never drop majority-source rows."""
-    if any(item.row['split'] != 'train' for item in items):
+    if any(role(item.row) != 'train' or item.row['split'] != 'train' for item in items):
         raise ValueError('Validation rows cannot enter optimizer batches')
     return np.random.default_rng(seed + epoch * 100003).permutation(len(items))
 

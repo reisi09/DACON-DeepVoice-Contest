@@ -19,7 +19,9 @@ from build_manifest import LABELS, components  # noqa: E402
 
 COLUMNS = ['ID', 'orig_id', 'split', 'route', 'path', 'audio_sha256', 'source_sha256', 'group_id', 'component_id',
            *[c for n in LABELS for c in (n, n + '_mask')], 'source', 'generator', 'language', 'codec_chain',
-           'event_intervals', 'parent_ids', 'variant', 'license', 'historical_development_exposure']
+           'event_intervals', 'parent_ids', 'variant', 'license', 'historical_development_exposure',
+           'role', 'kind', 'pair_id', 'voice_parent_id', 'music_parent_id', 'crop_len_s',
+           'voice_intervals_complete', 'interval_alignment_verified']
 
 
 def safe_id(rid: str) -> str:
@@ -47,6 +49,26 @@ def music_events(r: dict) -> list[dict]:
     return out
 
 
+def voice_events(r: dict) -> list[dict]:
+    """Only verified, aligned splice provenance can label the real carrier around a fake interval."""
+    if r.get('interval_alignment_verified') is not True or not r.get('fake_voice_segments'):
+        return []
+    end = float(r['crop_len_s'])
+    complete = r.get('source') == 'constructed_splice' and r.get('voice_intervals_complete') is True
+    events, cursor = [], 0.
+    for start, stop in sorted(r['fake_voice_segments']):
+        start, stop = float(start), float(stop)
+        if not 0 <= cursor <= start < stop <= end:
+            raise ValueError('Voice intervals overlap or escape the materialized audio')
+        if complete and start > cursor:
+            events.append(dict(component='voice', start=cursor, end=start, label=0))
+        events.append(dict(component='voice', start=start, end=stop, label=1))
+        cursor = stop
+    if complete and cursor < end:
+        events.append(dict(component='voice', start=cursor, end=end, label=0))
+    return events
+
+
 def export(rows: list[dict], split: dict[str, str]) -> tuple[list[dict], list[dict], list[dict]]:
     comp = components(rows)
     out, test, skipped = [], [], []
@@ -60,8 +82,11 @@ def export(rows: list[dict], split: dict[str, str]) -> tuple[list[dict], list[di
                'audio_sha256': r['sha256'], 'source_sha256': r['sha256'], 'group_id': comp[r['ID']],
                'component_id': comp[r['ID']], 'source': r['source'], 'generator': r.get('generator') or '',
                'language': r.get('language') or '', 'codec_chain': r.get('codec_chain', ''),
-               'event_intervals': json.dumps(music_events(r)), 'parent_ids': json.dumps(r.get('parent_ids', [])),
-               'variant': '', 'license': r.get('license', ''), 'historical_development_exposure': r.get('prior_seen') or ''}
+               'event_intervals': json.dumps(music_events(r) + voice_events(r)), 'parent_ids': json.dumps(r.get('parent_ids', [])),
+               'variant': '', 'license': r.get('license', ''), 'historical_development_exposure': json.dumps(r.get('historical_exposure', [])) if 'historical_exposure' in r else r.get('prior_seen') or ''}
+        row.update({key: r.get(key, '') for key in ('kind', 'pair_id', 'voice_parent_id', 'music_parent_id',
+                    'crop_len_s', 'voice_intervals_complete', 'interval_alignment_verified')})
+        row['role'] = r.get('role') or {'train': 'train', 'val': 'selection', 'test': 'development'}[s]
         for n in LABELS:
             row[n] = '' if r[n] is None else str(int(r[n]))
             row[n + '_mask'] = '0' if r[n] is None else '1'

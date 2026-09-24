@@ -24,6 +24,7 @@ from localization_features import select_batch
 from v6_data import sha256
 from v6_runtime import baseline_module
 import decision_heads
+from full_bank_contract import role
 
 
 def row_identity(row: Mapping[str, str], identity: str) -> str:
@@ -50,19 +51,50 @@ def window_truth(row: Mapping[str, str], starts: np.ndarray, valid: np.ndarray) 
     return result
 
 
+def voice_window_truth(row, starts, samples, segment_samples):
+    """Match DF-Arena's repeated short segments; uncovered samples stay unknown."""
+    labels = np.full(samples, np.nan, np.float32)
+    for event in json.loads(row.get('event_intervals') or '[]'):
+        if event.get('component') != 'voice':
+            continue
+        left, right = round(float(event['start']) * 16000), round(float(event['end']) * 16000)
+        if not 0 <= left < right <= samples or event['label'] not in (0, 1):
+            raise ValueError('Invalid voice event interval')
+        if np.isfinite(labels[left:right]).any():
+            raise ValueError('Overlapping voice event intervals')
+        labels[left:right] = float(event['label'])
+    output = np.full(len(starts), np.nan, np.float32)
+    for i, start in enumerate(starts):
+        segment = labels[int(start):int(start) + segment_samples]
+        if len(segment) and np.isfinite(segment).all():
+            output[i] = np.resize(segment, segment_samples).mean()
+    return output
+
+
 def load_rows(path: Path) -> list[dict[str, str]]:
     with path.open(newline='') as stream:
         rows = list(csv.DictReader(stream))
     if not rows or len({r['ID'] for r in rows}) != len(rows):
         raise ValueError('Manifest must contain unique nonempty IDs')
     for row in rows:
-        if row['split'] not in ('train', 'val') or row['route'] not in ('music', 'voice'):
+        if row['split'] not in ('train', 'val', 'test') or row['route'] not in ('music', 'voice'):
             raise ValueError(f"Invalid split/route: {row['ID']}")
         label = row['MUSIC_FAKE' if row['route'] == 'music' else 'VOICE_FAKE']
         if label not in ('0', '1', '0.0', '1.0'):
             raise ValueError(f"Missing supervised route label: {row['ID']}")
         if Path(row['ID']).name != row['ID']:
             raise ValueError('Unsafe cache identifier')
+    assignments = {}
+    for row in rows:
+        assigned = role(row)
+        if assigned not in ('train', 'selection', 'calibration', 'development', 'sealed'):
+            raise ValueError('Unknown data role')
+        expected_split = 'train' if assigned == 'train' else 'val' if assigned in ('selection', 'calibration') else 'test'
+        if row['split'] != expected_split:
+            raise ValueError('Data role conflicts with legacy split')
+        assignments.setdefault(row['component_id'], set()).add(assigned)
+    if any(len(v) > 1 for v in assignments.values()):
+        raise ValueError('Source component crosses roles')
     train = {r['component_id'] for r in rows if r['split'] == 'train'}
     val = {r['component_id'] for r in rows if r['split'] == 'val'}
     if train & val:
@@ -91,6 +123,19 @@ def validate_cache(path: Path, expected: str, digest: str) -> None:
         truth = data['window_truth']
         if np.any(np.isfinite(truth) & ((truth < 0) | (truth > 1))):
             raise ValueError(f'Invalid local occupancy labels: {path}')
+        if 'voice_window_truth' in data.files:
+            segment = int(data['voice_segment_samples'])
+            if segment != 64600:
+                raise ValueError('DF-Arena segment length differs from the baseline contract')
+            last = max(0, samples - segment)
+            expected_starts = list(range(0, last + 1, segment))
+            if expected_starts[-1] != last:
+                expected_starts.append(last)
+            if not np.array_equal(data['voice_starts'], expected_starts) or len(data['voice_embeddings']) != len(expected_starts):
+                raise ValueError('Voice cache timing no longer matches encoder windows')
+            local = data['voice_window_truth']
+            if len(local) != len(expected_starts) or np.isinf(local).any() or np.any(np.isfinite(local) & ((local < 0) | (local > 1))):
+                raise ValueError('Invalid voice local supervision')
         if not len(data['voice_embeddings']):
             raise ValueError(f'Empty voice features: {path}')
 
@@ -116,7 +161,7 @@ def prepare(args: argparse.Namespace) -> None:
             raise ValueError(f'Asset identity mismatch: {name}')
     identity = {'manifest_sha256': sha256(args.manifest), 'assets': asset_hashes,
                 'implementation': {name: sha256(Path(__file__).parent / name) for name in
-                                   ('full_bank_features.py', 'mert12_submission.py', 'v6_runtime.py', 'decision_heads.py')},
+                                   ('full_bank_features.py', 'mert12_submission.py', 'v6_runtime.py', 'decision_heads.py', 'full_bank_contract.py')},
                 'window': WINDOW, 'hop': HOP, 'mert_layer': 12, 'dtype': 'float32',
                 'duration': 'all samples, no crop', 'torch': torch.__version__}
     identity_key = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()
@@ -195,7 +240,8 @@ def prepare(args: argparse.Namespace) -> None:
         captured.clear()
         voice_scores, presence = [], np.zeros(2, np.float32)
         # Original DF-Arena forward accepts one waveform, not a native batched input.
-        for start in base.get_segment_starts(len(raw)):
+        voice_starts = np.asarray(base.get_segment_starts(len(raw)), dtype=np.int64)
+        for start in voice_starts:
             segment = base.extract_segment(voice, start)
             with torch.inference_mode():
                 logits = voice_model(input_values=torch.from_numpy(segment).to(device))['logits']
@@ -208,6 +254,8 @@ def prepare(args: argparse.Namespace) -> None:
         temporary = target.with_suffix('.tmp.npz')
         np.savez(temporary, identity=np.array(key), mert_windows=vectors, starts=starts, valid_samples=valid,
                  window_truth=window_truth(row, starts, valid), voice_embeddings=np.concatenate(captured),
+                 voice_starts=voice_starts, voice_segment_samples=np.array(base.SEGMENT_SAMPLES),
+                 voice_window_truth=voice_window_truth(row, voice_starts, len(raw), base.SEGMENT_SAMPLES),
                  voice_original=np.array(0. if voice_silent else max(voice_scores)),
                  voice_silent=np.array(voice_silent), presence=np.asarray(presence, np.float32),
                  presence_features=np.array(json.dumps(presence_feats)),

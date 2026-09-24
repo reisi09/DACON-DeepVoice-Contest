@@ -24,6 +24,7 @@ from full_bank_batches import Item, epoch_order, loss_weights, groups, duration_
 from graph_scoring import _roc_metrics
 from localization_models import WindowMIL
 from v6_data import sha256
+from full_bank_contract import config_for, pool_odds, role, feature_contract
 
 
 
@@ -60,12 +61,13 @@ def read_items(manifest: Path, cache: Path) -> list[Item]:
         with np.load(path, allow_pickle=False) as data:
             arrays = {k: data[k].copy() for k in ('mert_windows', 'voice_embeddings', 'window_truth')}
             silent = bool(data['voice_silent'])
+            voice_truth = data['voice_window_truth'].copy() if 'voice_window_truth' in data else np.full(len(arrays['voice_embeddings']), np.nan, np.float32)
         for head, label in head_labels(row).items():
             music = head == 'music'
             if head != row['route'] and not music and silent:
                 continue  # labelled vocal but empty separated stem: no evidence for the voice head
             features = arrays['mert_windows' if music else 'voice_embeddings']
-            truth = arrays['window_truth'] if music else np.full(len(features), np.nan, np.float32)
+            truth = arrays['window_truth'] if music else voice_truth
             if features.ndim != 2 or not len(features) or not np.isfinite(features).all():
                 raise ValueError(f"Invalid {head} features: {row['ID']}")
             result.append(Item({**row, 'route': head}, features, truth, label, silent))
@@ -74,8 +76,9 @@ def read_items(manifest: Path, cache: Path) -> list[Item]:
 
 
 def forward(model: nn.Module, items: Sequence[Item], route: str, fake_index: int,
-            device: str) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+            device: str, config=None) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     """Ragged execution is algebraically identical to padded WindowMIL; no truncation."""
+    config = config_for(config)
     sizes = [len(item.features) for item in items]
     features = torch.from_numpy(np.concatenate([item.features for item in items])).to(device)
     if route == 'music':
@@ -87,26 +90,29 @@ def forward(model: nn.Module, items: Sequence[Item], route: str, fake_index: int
         return files, logits[known], truth[known]
     values = model(features).float()
     odds = values[:, fake_index] - values[:, 1-fake_index]
-    files = torch.stack([part.max() for part in odds.split(sizes)])
-    return files, odds[:0], odds[:0]
+    files = torch.stack([pool_odds(part, config) for part in odds.split(sizes)])
+    truth = torch.from_numpy(np.concatenate([item.truth for item in items])).to(device)
+    known = torch.isfinite(truth)
+    return files, odds[known], truth[known]
 
 
 
 def step(model: nn.Module, optimizer: torch.optim.Optimizer, items: Sequence[Item], route: str,
-         fake_index: int, weights: Mapping[str, float], microbatch: int, window_limit: int, device: str) -> float:
-    if any(item.row['split'] != 'train' for item in items):
+         fake_index: int, weights: Mapping[str, float], microbatch: int, window_limit: int, device: str, config=None) -> float:
+    config = config_for(config)
+    if any(role(item.row) != 'train' or item.row['split'] != 'train' for item in items):
         raise ValueError('Validation data passed to optimizer')
     optimizer.zero_grad(set_to_none=True)
     local_count = max(1, sum(np.isfinite(item.truth).sum() for item in items))
     total = 0.
     for group in groups(items, microbatch, window_limit):
         with torch.autocast('cuda', dtype=torch.bfloat16, enabled=device == 'cuda'):
-            logits, local_logits, truth = forward(model, group, route, fake_index, device)
+            logits, local_logits, truth = forward(model, group, route, fake_index, device, config)
             labels = torch.tensor([item.label for item in group], device=device)
             weight = torch.tensor([weights[item.row['ID']] for item in group], device=device)
             loss = (F.binary_cross_entropy_with_logits(logits.float(), labels, reduction='none') * weight).sum() / len(items)
             if local_logits.numel():
-                loss = loss + .25 * F.binary_cross_entropy_with_logits(local_logits.float(), truth.float(), reduction='sum') / local_count
+                loss = loss + config[route + '_local_loss_weight'] * F.binary_cross_entropy_with_logits(local_logits.float(), truth.float(), reduction='sum') / local_count
         if not torch.isfinite(loss):
             raise ValueError('Nonfinite training objective')
         loss.backward()
@@ -118,19 +124,19 @@ def step(model: nn.Module, optimizer: torch.optim.Optimizer, items: Sequence[Ite
 
 @torch.no_grad()
 def predict(model: nn.Module, items: Sequence[Item], route: str, fake_index: int,
-            microbatch: int, window_limit: int, device: str) -> np.ndarray:
+            microbatch: int, window_limit: int, device: str, config=None) -> np.ndarray:
     model.eval()
     output = []
     for group in groups(items, microbatch, window_limit):
         with torch.autocast('cuda', dtype=torch.bfloat16, enabled=device == 'cuda'):
-            logits, _, _ = forward(model, group, route, fake_index, device)
+            logits, _, _ = forward(model, group, route, fake_index, device, config)
         probabilities = logits.float().sigmoid().cpu().tolist()
         output.extend(0. if route == 'voice' and item.silent else score for item, score in zip(group, probabilities, strict=True))
     return np.asarray(output)
 
 
 def benchmark(model: nn.Module, items: Sequence[Item], route: str, fake_index: int,
-              weights: Mapping[str, float], device: str) -> tuple[int, int, list[dict]]:
+              weights: Mapping[str, float], device: str, config=None) -> tuple[int, int, list[dict]]:
     """Measure real forward/backward on longest training bags, then restore weights."""
     state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
     ordered = sorted(items, key=lambda item: len(item.features), reverse=True)
@@ -144,7 +150,7 @@ def benchmark(model: nn.Module, items: Sequence[Item], route: str, fake_index: i
         optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=.01)
         try:
             start = time.monotonic()
-            step(model, optimizer, selected, route, fake_index, weights, count, limit, device)
+            step(model, optimizer, selected, route, fake_index, weights, count, limit, device, config)
             torch.cuda.synchronize()
             measurements.append({'batch': count, 'window_limit': limit, 'status': 'ok',
                                  'peak_bytes': torch.cuda.max_memory_allocated(), 'seconds': time.monotonic()-start})
@@ -166,6 +172,7 @@ def train(args: argparse.Namespace) -> None:
         raise RuntimeError('The authorized H100 is required')
     if args.max_epochs < 1 or args.patience < 1:
         raise ValueError('Convergence safeguards must be positive')
+    config = config_for(json.loads(args.config.read_text()) if args.config else None)
     torch.set_num_threads(4)
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
@@ -174,12 +181,14 @@ def train(args: argparse.Namespace) -> None:
     voice = torch.load(args.cache / 'voice_classifier_initial.pt', map_location='cpu', weights_only=True)
     fake_index = voice['fake_label_index']
     run_identity = {'manifest': sha256(args.manifest), 'cache': sha256(args.cache / 'index.json'),
+                    'feature_contract': feature_contract(json.loads((args.cache / 'index.json').read_text())['identity']),
                     'trainer': sha256(Path(__file__)), 'model': sha256(Path(__file__).with_name('localization_models.py')),
                     'head': sha256(Path(__file__).with_name('eight_heads.py')),
                     'evaluator': sha256(Path(__file__).with_name('full_bank_evaluate.py')),
                     'batches': sha256(Path(__file__).with_name('full_bank_batches.py')),
                     'voice_initial': sha256(args.cache / 'voice_classifier_initial.pt'),
-                    'max_epochs': args.max_epochs, 'patience': args.patience, 'seeds': [41, 42, 43]}
+                    'max_epochs': args.max_epochs, 'patience': args.patience, 'seeds': config['seeds'], 'config': config,
+                    'contract': sha256(Path(__file__).with_name('full_bank_contract.py'))}
     if args.duration_balance:
         run_identity['duration_balance'] = True
         samples = {k: v['samples'] for k, v in json.loads((args.cache / 'index.json').read_text())['items'].items()}
@@ -189,8 +198,8 @@ def train(args: argparse.Namespace) -> None:
     atomic_json(identity_path, run_identity)
     results = {}
     for route in ('music', 'voice'):
-        training = [x for x in items if x.row['route'] == route and x.row['split'] == 'train']
-        validation = [x for x in items if x.row['route'] == route and x.row['split'] == 'val']
+        training = [x for x in items if x.row['route'] == route and role(x.row) == 'train']
+        validation = [x for x in items if x.row['route'] == route and role(x.row) == 'selection']
         if not training or not validation or {x.label for x in validation} != {0., 1.}:
             raise ValueError(f'Incomplete train/validation classes for {route}')
         weights = loss_weights(training)
@@ -201,14 +210,14 @@ def train(args: argparse.Namespace) -> None:
         means = np.stack([x.features.mean(0) for x in training])
         mean, scale = torch.tensor(means.mean(0)), torch.tensor(np.maximum(means.std(0), 1e-6))
         seed_predictions = []
-        for seed in (41, 42, 43):
+        for seed in config['seeds']:
             torch.manual_seed(seed)
             np.random.seed(seed)
             model = WindowMIL(mean, scale) if route == 'music' else nn.Linear(1280, 2)
             if route == 'voice':
                 model.load_state_dict(voice['state_dict'])
             model.to('cuda')
-            microbatch, window_limit, measured = benchmark(model, training, route, fake_index, weights, 'cuda')
+            microbatch, window_limit, measured = benchmark(model, training, route, fake_index, weights, 'cuda', config)
             atomic_json(args.output / f'{route}_{seed}_batch.json', {'microbatch': microbatch,
                         'window_limit': window_limit, 'effective_batch': 256, 'measurements': measured})
             window_limit = max(window_limit, max(len(x.features) for x in validation))
@@ -231,8 +240,8 @@ def train(args: argparse.Namespace) -> None:
                 epoch_loss = 0.
                 for offset in range(0, len(order), 256):
                     batch = [training[i] for i in order[offset:offset+256]]
-                    epoch_loss += step(model, optimizer, batch, route, fake_index, weights, microbatch, window_limit, 'cuda') * len(batch)
-                predictions = predict(model, validation, route, fake_index, microbatch, window_limit, 'cuda')
+                    epoch_loss += step(model, optimizer, batch, route, fake_index, weights, microbatch, window_limit, 'cuda', config) * len(batch)
+                predictions = predict(model, validation, route, fake_index, microbatch, window_limit, 'cuda', config)
                 labels = np.asarray([x.label for x in validation])
                 metrics = _roc_metrics(labels.tolist(), predictions.tolist())
                 eer = float(metrics[0])
@@ -261,7 +270,7 @@ def train(args: argparse.Namespace) -> None:
                 print(f'{route} seed={seed} epoch={epoch} val_eer={eer:.6f} seen={len(order)}', flush=True)
             state = torch.load(checkpoint, map_location='cuda', weights_only=True)
             model.load_state_dict(state['model'])
-            prediction = predict(model, validation, route, fake_index, microbatch, window_limit, 'cuda')
+            prediction = predict(model, validation, route, fake_index, microbatch, window_limit, 'cuda', config)
             seed_predictions.append(prediction)
             results[f'{route}_{seed}'] = {'epoch': state['epoch'], 'validation_eer': state['validation_eer'],
                                         'checkpoint_sha256': sha256(checkpoint), 'epochs_completed': len(history)}
@@ -273,7 +282,7 @@ def train(args: argparse.Namespace) -> None:
         results[route+'_ensemble'] = {'eer': ensemble_eer, 'auc': ensemble_auc}
         with (args.output / f'{route}_validation.csv').open('w', newline='') as stream:
             writer = csv.writer(stream)
-            writer.writerow(['ID', 'label', 'probability', 'seed41', 'seed42', 'seed43'])
+            writer.writerow(['ID', 'label', 'probability', *(f'seed{s}' for s in config['seeds'])])
             for i, item in enumerate(validation):
                 writer.writerow([item.row['ID'], item.label, ensemble[i], *(p[i] for p in seed_predictions)])
     from full_bank_evaluate import evaluate
@@ -286,6 +295,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('manifest', 'cache', 'output'):
         parser.add_argument('--'+name, type=Path, required=True)
+    parser.add_argument('--experiment-config', '--config', dest='config', type=Path)
     parser.add_argument('--max-epochs', type=int, default=50)
     parser.add_argument('--patience', type=int, default=5)
     parser.add_argument('--duration-balance', action='store_true',
