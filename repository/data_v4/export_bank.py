@@ -73,6 +73,9 @@ def export(rows: list[dict], split: dict[str, str]) -> tuple[list[dict], list[di
     comp = components(rows)
     out, test, skipped = [], [], []
     for r in rows:
+        if 'training_admitted' in r and r['training_admitted'] is not True:
+            skipped.append({'ID': r['ID'], 'split': split.get(r['ID']), 'reason': 'admission pending'})
+            continue
         s = split.get(r['ID'])
         head = route(r)
         if s is None or head is None:

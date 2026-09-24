@@ -8,6 +8,24 @@ from data_v4.build_manifest import components, ing_echoes, lab, pair_components
 from data_v4.export_bank import export
 
 
+def test_unadmitted_candidates_cannot_enter_training_or_evaluation_bank():
+    # Given collected candidates with plausible labels and accidentally assigned splits.
+    base = dict(path='original.wav', sha256='a' * 64, group_keys=[],
+                source='candidate', **lab(1, 0, 1, None))
+    rows = [dict(base, ID='pending_train', training_admitted=False),
+            dict(base, ID='pending_eval', training_admitted=False),
+            dict(base, ID='approved', training_admitted=True),
+            dict(base, ID='legacy')]
+    # When the real exporter is given these records.
+    train, test, skipped = export(rows, dict(pending_train='train', pending_eval='test',
+                                            approved='train', legacy='train'))
+    # Then pending candidates cannot be consumed, while approved and legacy data survive.
+    assert {r['orig_id'] for r in train} == {'approved', 'legacy'}
+    assert test == []
+    assert {r['ID'] for r in skipped} == {'pending_train', 'pending_eval'}
+    assert all(r['reason'] == 'admission pending' for r in skipped)
+
+
 def test_echoes_generator_after_mode_and_shared_reference(tmp_path):
     for gen in ('musicgen', 'suno'):
         path = tmp_path / 'Echoes' / 'TTA' / gen / f'Artist_Title_{gen}_TTA_001.wav'
