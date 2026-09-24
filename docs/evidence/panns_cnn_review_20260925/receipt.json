@@ -1,0 +1,66 @@
+{
+  "rounds": [
+    {
+      "round": "round1",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "is_error": false,
+      "duration_ms": 252587,
+      "process_seconds": 253.988043749996,
+      "turns": 1,
+      "cli_sha256": "a922981f6f3b55a251ef9f9dbaa0621a5f99cbcb5ca67f8a797476ccfc83f626",
+      "prompt_sha256": "37bbd5bf133b3bae5375959bc0b4f127e24e749c3fa289c0d76916ccaadbcdd0",
+      "response_sha256": "863b61ba8b10ed03607f45bbd91f817649b305f18d78cbce64785b5b1b900729",
+      "result_sha256": "a3db728c09885a17f7d32733b77be5805e341afd60d1bd7cdbf075574343776b"
+    },
+    {
+      "round": "round2",
+      "model": "claude-opus-5-5",
+      "effort": "high",
+      "is_error": false,
+      "duration_ms": 58526,
+      "process_seconds": 59.89869679202093,
+      "turns": 1,
+      "cli_sha256": "a922981f6f3b55a251ef9f9dbaa0621a5f99cbcb5ca67f8a797476ccfc83f626",
+      "prompt_sha256": "24d764642c5b436048f97b489e516f5044b17143ae3dbd8a88c2870d78c10a56",
+      "response_sha256": "a12d1001cdff212810d8acf7bb159b05df6b5f5321f20a478cc3103ed6f0d1f3",
+      "result_sha256": "aec8a4d5943221a88234247f7a6a04313a8f9cabc9292a9845d7df9232a312c1"
+    }
+  ],
+  "scope": "PANNs Cnn14 architecture and fine-tuning design review only",
+  "implementation_started": false,
+  "training_started": false,
+  "quality_improvement_proven": false,
+  "data_inventory": {
+    "archive_regular_files": 43517,
+    "archive_bytes": 12335192227,
+    "bank_rows": 43516,
+    "matched_paths": 43516,
+    "archive_payload_hashes_checked_this_turn": false,
+    "presence_feature_rows": 8748,
+    "presence_summary_features": 24,
+    "new_train_rows": 1477,
+    "new_known_voice_only": 595,
+    "new_music_present_voice_unknown": 882,
+    "portable_matching_audio_rows": 43516,
+    "full_manifest_rows": 44424,
+    "neither_present_manifest_rows": 900,
+    "neither_present_source": "musan_noise",
+    "neither_present_bank_rows": 0,
+    "neither_present_roles": {
+      "train": 527,
+      "development": 276,
+      "calibration": 48,
+      "selection": 49
+    },
+    "neither_present_audio_available_in_checked_local_paths": false
+  },
+  "auth_diagnostic": {
+    "minimal_env_logged_in": false,
+    "add_USER_logged_in": true,
+    "add_LOGNAME_logged_in": false,
+    "add_CF_encoding_logged_in": false,
+    "credential_values_read": false,
+    "credential_changes": false
+  }
+}
