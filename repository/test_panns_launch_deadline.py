@@ -21,7 +21,7 @@ def test_launcher_timeout_covers_blocked_archive_and_keeps_original_deadline(tmp
         PANNS_PYTHON=sys.executable, PANNS_SHARED=str(tmp_path / 'shared'),
         PANNS_WORK=str(tmp_path / 'work'), PANNS_DEADLINE_STATE=str(state),
         PANNS_DEADLINE_EPOCH=str(epoch))
-    command = ['bash', str(root / 'panns_a100_launch.sh'), '--hours', '1', '--training-hours', '.5']
+    command = ['bash', str(root / 'panns_a100_launch.sh'), '--hours', '1']
     # When: execute the real launcher, never reaching restore or any GPU/API action.
     started = time.monotonic()
     result = subprocess.run(command, env=environment, capture_output=True, text=True, timeout=8)

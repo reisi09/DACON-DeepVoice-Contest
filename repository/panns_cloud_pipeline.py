@@ -34,32 +34,21 @@ def fixed_preflight_config(config):
     return probe
 
 
-def training_phase_deadline(config, session_deadline_epoch, training_hours):
-    if not math.isfinite(training_hours) or not 0 < training_hours <= 72 or not math.isfinite(session_deadline_epoch):
-        raise ValueError('Invalid training deadline contract')
-    path = Path(config['output'])/'training_deadline.json'
-    binding = dict(config_identity=config['identity'], session_deadline_epoch=session_deadline_epoch,
-                   training_hours=training_hours)
-    if path.exists():
-        record = json.loads(path.read_text())
-    else:
-        output = Path(config['output'])
-        if (any((output/name).exists() for name in ('throughput_profile.json', 'training_budget.json', 'training_phase_complete.json'))
-                or any(output.glob('train_*')) or any(output.glob('.checkpoint_profile_*'))):
-            raise FileNotFoundError('Training deadline missing for existing phase; a fresh allowance is refused')
-        started = time.time()
-        record = dict(binding, started_epoch=started,
-                      deadline_epoch=min(session_deadline_epoch, started+training_hours*3600))
-        record['planning_hours'] = (record['deadline_epoch']-started-CHILD_GRACE_SECONDS-CHILD_REAP_SECONDS)/3600
-        record['identity'] = identity(record)
-        write_json(path, record)
-    if (any(record.get(key) != value for key, value in binding.items())
-            or record['identity'] != identity({key: value for key, value in record.items() if key != 'identity'})
-            or not math.isfinite(record['started_epoch'])
-            or record['planning_hours'] != (record['deadline_epoch']-record['started_epoch']-CHILD_GRACE_SECONDS-CHILD_REAP_SECONDS)/3600
-            or record['deadline_epoch'] != min(session_deadline_epoch, record['started_epoch']+training_hours*3600)):
-        raise ValueError('Training deadline contract changed; retain the original allowance and namespace')
-    return record['deadline_epoch']
+def training_phase_binding(config):
+    from panns_cloud_run import training_identity
+    from panns_training_budget import load_budget
+    from panns_training_state import validate_completion
+    output = Path(config['output'])
+    budget, budget_sha = load_budget(config, 'cuda')
+    conditions = {}
+    for arm in config['arms']:
+        for seed in config['seeds']:
+            path = output/f'train_{arm}_{seed}'/'complete.json'
+            done = json.loads(path.read_text())
+            validate_completion(done, training_identity(config, arm, seed, 'cuda'),
+                                sha256(path.with_name('checkpoint.pt')), budget)
+            conditions[str(path.relative_to(output))] = sha256(path)
+    return dict(config_identity=config['identity'], training_budget_sha256=budget_sha, conditions=conditions)
 
 
 def parity(config, bundle):
@@ -161,57 +150,49 @@ def main():
     p.add_argument('--run',type=Path,required=True)
     p.add_argument('--bundle',type=Path,required=True)
     p.add_argument('--hours',type=float,required=True)
-    p.add_argument('--training-hours',type=float,required=True)
     p.add_argument('--deadline-epoch',type=float,required=True)
     p.add_argument('--parity-only',action='store_true')
     a=p.parse_args()
     if not 0<a.hours<=72: p.error('Finite session bound must be between 0 and 72 hours')
-    if not 0<a.training_hours<=72: p.error('Finite aggregate training bound must be between 0 and 72 hours')
     if not math.isfinite(a.deadline_epoch) or not 0<a.deadline_epoch-time.time()<=72*3600:
         p.error('Original absolute deadline must be future and within 72 hours')
     os.environ.update(HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',HF_HUB_DISABLE_TELEMETRY='1',CUBLAS_WORKSPACE_CONFIG=':4096:8')
     config=json.loads(a.run.read_text())
     if a.parity_only:
         parity(config,a.bundle);return
+    if (Path(config['output'])/'training_deadline.json').exists():
+        raise ValueError('Fixed-duration training contract requires a fresh experiment namespace')
     root=Path(__file__).resolve().parent
     start=time.monotonic()
     deadline=min(start+a.hours*3600,start+a.deadline_epoch-time.time())
-    def run(script,*args,cutoff=deadline,cutoff_epoch=a.deadline_epoch):
+    def run(script,*args):
         command=[sys.executable,str(root/script),*map(str,args)]
-        run_command(command,min(deadline,cutoff),deadline_epoch=min(a.deadline_epoch,cutoff_epoch))
+        run_command(command,deadline,deadline_epoch=a.deadline_epoch)
     gold=json.loads((a.bundle/'gold/index.json').read_text())
     probe={**config,'panel_ids':[e['ID'] for e in gold['entries']], 'output':str(Path(config['output'])/'cuda_preflight')}
     probe.pop('identity');probe['identity']=identity(probe)
     probe_path=a.run.with_name('cuda_preflight.json');write_json(probe_path,probe)
     run('panns_cloud_run.py','cache','--run',probe_path,'--device','cuda','--resume')
     run('panns_cloud_pipeline.py','--run',probe_path,'--bundle',a.bundle,'--parity-only',
-        '--hours',a.hours,'--training-hours',a.training_hours,'--deadline-epoch',a.deadline_epoch)
+        '--hours',a.hours,'--deadline-epoch',a.deadline_epoch)
     fixed_probe_path=a.run.with_name('fixed_preflight.json')
     write_json(fixed_probe_path,fixed_preflight_config(config))
     run('panns_fixed_predictions.py','--run',fixed_probe_path,'--device','cuda')
     run('panns_cloud_run.py','cache','--run',a.run,'--device','cuda','--resume')
-    training_epoch=training_phase_deadline(config,a.deadline_epoch,a.training_hours)
-    training_cutoff=min(deadline,time.monotonic()+training_epoch-time.time())
     output=Path(config['output'])
-    planning_hours=json.loads((output/'training_deadline.json').read_text())['planning_hours']
     completed=output/'training_phase_complete.json'
-    condition_paths=[output/f'train_{arm}_{seed}'/'complete.json' for arm in config['arms'] for seed in config['seeds']]
-    phase_binding=dict(config_identity=config['identity'],training_deadline_sha256=sha256(output/'training_deadline.json'))
     if completed.exists():
         record=json.loads(completed.read_text())
-        expected=dict(phase_binding,conditions={str(path.relative_to(output)):sha256(path) for path in condition_paths})
+        expected=training_phase_binding(config)
         if ({key:value for key,value in record.items() if key!='completed_epoch'}!=expected
-                or not 0<record['completed_epoch']<=training_epoch):
+                or not math.isfinite(record['completed_epoch']) or record['completed_epoch']<=0):
             raise ValueError('Completed training phase differs from the locked condition receipts')
     else:
-        run('panns_training_budget.py','--run',a.run,'--device','cuda','--training-hours',planning_hours,
-            cutoff=training_cutoff,cutoff_epoch=training_epoch)
+        run('panns_training_budget.py','--run',a.run,'--device','cuda')
         for arm in config['arms']:
             for seed in config['seeds']:
-                run('panns_cloud_run.py','train','--run',a.run,'--arm',arm,'--seed',seed,'--resume',
-                    cutoff=training_cutoff,cutoff_epoch=training_epoch)
-        write_json(completed,dict(phase_binding,completed_epoch=time.time(),
-            conditions={str(path.relative_to(output)):sha256(path) for path in condition_paths}))
+                run('panns_cloud_run.py','train','--run',a.run,'--arm',arm,'--seed',seed,'--resume')
+        write_json(completed,dict(training_phase_binding(config),completed_epoch=time.time()))
     run('panns_fixed_predictions.py','--run',a.run)
     run('panns_cloud_run.py','evaluate','--run',a.run,'--arm','R0')
     for arm in config['arms']:

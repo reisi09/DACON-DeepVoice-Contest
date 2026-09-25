@@ -72,6 +72,7 @@ def vector(labels,predictions,weights):
 def report(config, repeats=2000):
     from panns_cloud_run import training_identity
     from panns_training_budget import load_budget
+    from panns_training_state import validate_completion
     validate_config(config)
     if sorted(config['seeds']) != [41,42,43] or repeats < 1:
         message='Report requires the three locked seeds and positive bootstrap repeats'
@@ -86,17 +87,20 @@ def report(config, repeats=2000):
     conditions=[('R0',41),*[(arm,seed) for arm in config['arms'] for seed in config['seeds']]]
     expected_ids=[i for i in config['panel_ids'] if rows[i]['role'] in ('development','selection')]
     fixed={p['ID']:p for p in json.loads(Path(config['fixed_predictions']).read_text())['entries']}
+    training_conditions=[]
     for evaluation,(arm,seed) in zip([base,*candidates],conditions,strict=True):
         expected=dict(arm=arm,seed=seed,config_identity=config['identity'],rows_sha256=sha256(config['rows']),
-            fixed_predictions_sha256=sha256(config['fixed_predictions']),run_identity=None,checkpoint_sha256=None)
+            fixed_predictions_sha256=sha256(config['fixed_predictions']),run_identity=None,checkpoint_sha256=None,
+            completion_sha256=None)
         if arm!='R0':
             completed=json.loads((root/f'train_{arm}_{seed}'/'complete.json').read_text())
             budget,_=load_budget(config,evaluation['device'],validate_runtime=False)
             expected.update(run_identity=training_identity(config,arm,seed,evaluation['device'],validate_runtime=False),
-                checkpoint_sha256=sha256(root/f'train_{arm}_{seed}'/'checkpoint.pt'))
-            if completed['steps']!=budget['training_steps'] or any(completed[k]!=expected[k] for k in ('run_identity','checkpoint_sha256')):
-                message='Evaluation does not match a completed locked condition'
-                raise ValueError(message)
+                checkpoint_sha256=sha256(root/f'train_{arm}_{seed}'/'checkpoint.pt'),
+                completion_sha256=sha256(root/f'train_{arm}_{seed}'/'complete.json'))
+            validate_completion(completed, expected['run_identity'], expected['checkpoint_sha256'], budget)
+            training_conditions.append(dict(arm=arm, seed=seed, **{key:completed[key] for key in
+                ('steps','epochs_completed','best_epoch','best_loss','stop_reason','checkpoint_sha256')}))
         if any(evaluation.get(k)!=value for k,value in expected.items()):
             message='Evaluation provenance differs from the locked run'
             raise ValueError(message)
@@ -184,6 +188,9 @@ def report(config, repeats=2000):
                 selected_arm=ranking[0] if ranking else None,deployment_seed=41,
                 r6_module_ranking=r6_ranking,r6_combination=r6_ranking if len(r6_ranking)==2 else [])
     result=dict(roles=results,bootstrap_repeats=repeats,bootstrap_seed=20260925,
+        training_conditions=training_conditions,early_stopping=config['early_stopping'],equal_step_comparison=False,
+        selection_adaptive_reuse=True,
+        selection_warning='Selection controls early stopping and arm ranking; these are adaptive development diagnostics.',
         selection_role='selection',selected_candidate=results.get('selection',{}).get('candidate_selection',{}).get('selected_arm'),
         deployment_seed=41,seed_mean_is_ensemble=False,
         uncertainty_scope='Paired component sampling conditional on seeds 41, 42, 43; development diagnostics only',

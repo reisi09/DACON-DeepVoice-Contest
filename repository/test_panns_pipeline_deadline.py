@@ -24,39 +24,26 @@ def mixed_preflight_inputs(tmp_path):
     return dict(rows=str(path), panel_ids=[row['ID'] for row in rows if row['ID'] != 'outside'])
 
 
-def test_training_deadline_is_immutable_across_resume_and_rejects_changed_contract(tmp_path, monkeypatch):
-    config = dict(identity='locked-run', output=str(tmp_path))
-    monkeypatch.setattr(pipeline.time, 'time', lambda: 1000.)
-    cutoff = pipeline.training_phase_deadline(config, 10000., 1.)
-    path = tmp_path/'training_deadline.json'
-    original = path.read_bytes()
-    monkeypatch.setattr(pipeline.time, 'time', lambda: 2800.)
-    assert pipeline.training_phase_deadline(config, 10000., 1.) == cutoff == 4600.
-    assert path.read_bytes() == original
-    for changed, session, hours in ((dict(config, identity='other'), 10000., 1.),
-                                     (config, 10001., 1.), (config, 10000., 2.)):
-        with pytest.raises(ValueError, match='contract'):
-            pipeline.training_phase_deadline(changed, session, hours)
-        assert path.read_bytes() == original
-    monkeypatch.setattr(pipeline.time, 'time', lambda: 4601.)
-    assert pipeline.training_phase_deadline(config, 10000., 1.) == cutoff
+def test_expired_session_cannot_start_or_modify_a_partial_checkpoint(tmp_path):
+    checkpoint = tmp_path/'checkpoint.pt'
+    checkpoint.write_bytes(b'Existing resumable state')
+    marker = tmp_path/'must_not_start'
+    cutoff = time.time()-1
     with pytest.raises(TimeoutError):
-        pipeline.run_command([sys.executable, '-c', 'raise AssertionError("must not start")'],
-                             time.monotonic()+cutoff-time.time(), deadline_epoch=cutoff)
-    assert path.read_bytes() == original
+        pipeline.run_command([sys.executable, '-c', 'import pathlib,sys; pathlib.Path(sys.argv[1]).touch()', str(marker)],
+                             time.monotonic()-1, deadline_epoch=cutoff)
+    assert not marker.exists()
+    assert checkpoint.read_bytes() == b'Existing resumable state'
 
 
-def test_two_real_stages_share_training_cap_and_cleanup_finishes_inside_it(tmp_path, monkeypatch):
-    monkeypatch.setattr(pipeline, 'CHILD_GRACE_SECONDS', .2, raising=False)
-    monkeypatch.setattr(pipeline, 'CHILD_REAP_SECONDS', .1, raising=False)
-    config = dict(identity='shared-real-stages', output=str(tmp_path))
-    session_epoch = time.time()+120
+def test_two_real_stages_share_session_cap_and_flush_checkpoint_before_cleanup(tmp_path, monkeypatch):
+    monkeypatch.setattr(pipeline, 'CHILD_GRACE_SECONDS', .2)
+    monkeypatch.setattr(pipeline, 'CHILD_REAP_SECONDS', .1)
     started = time.monotonic()
-    epoch = pipeline.training_phase_deadline(config, session_epoch, 1.2/3600)
-    deadline = time.monotonic()+epoch-time.time()
+    epoch = time.time()+1.2
+    deadline = started+1.2
     pipeline.run_command([sys.executable, '-c', 'import time; time.sleep(.3)'], deadline,
                          deadline_epoch=epoch)
-    assert pipeline.training_phase_deadline(config, session_epoch, 1.2/3600) == epoch
     receipt = tmp_path/'checkpoint.json'
     program = ('import pathlib,signal,sys,time\n'
                'def stop(*args):\n'
@@ -72,16 +59,21 @@ def test_two_real_stages_share_training_cap_and_cleanup_finishes_inside_it(tmp_p
     assert time.monotonic()-started < 1.2
 
 
-def test_missing_phase_deadline_cannot_grant_new_time_to_partial_training(tmp_path):
-    config = dict(identity='existing-partial-training', output=str(tmp_path))
+def test_legacy_phase_contract_cannot_be_relabelled_as_early_stopping(tmp_path, monkeypatch):
+    config = dict(identity='legacy-partial-training', output=str(tmp_path))
+    run = tmp_path/'run.json'
+    run.write_text(json.dumps(config))
+    deadline = tmp_path/'training_deadline.json'
+    deadline.write_bytes(b'Original immutable fixed-duration receipt')
     checkpoint = tmp_path/'train_R3_41/checkpoint.pt'
     checkpoint.parent.mkdir()
     checkpoint.write_bytes(b'Existing committed checkpoint must be preserved')
-    before = checkpoint.read_bytes()
-    with pytest.raises(FileNotFoundError, match='deadline'):
-        pipeline.training_phase_deadline(config, time.time()+8*3600, 4.)
-    assert checkpoint.read_bytes() == before
-    assert not (tmp_path/'training_deadline.json').exists()
+    monkeypatch.setattr(sys, 'argv', ['pipeline', '--run', str(run), '--bundle', str(tmp_path),
+                                    '--hours','8','--deadline-epoch',str(time.time()+8*3600)])
+    with pytest.raises(ValueError, match='fresh experiment namespace'):
+        pipeline.main()
+    assert checkpoint.read_bytes() == b'Existing committed checkpoint must be preserved'
+    assert deadline.read_bytes() == b'Original immutable fixed-duration receipt'
 
 
 def test_outer_guard_cannot_orphan_stubborn_separate_session_child(tmp_path):
@@ -118,72 +110,97 @@ def test_outer_guard_cannot_orphan_stubborn_separate_session_child(tmp_path):
     assert pipeline.CHILD_GRACE_SECONDS + pipeline.CHILD_REAP_SECONDS < inspect.signature(supervise).parameters['grace_seconds'].default
 
 
-def test_pipeline_passes_one_training_cutoff_to_pilot_and_all_twelve_conditions(tmp_path, monkeypatch):
-    config = dict(identity='wiring-only', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'], seeds=[41,42,43],
-                  **mixed_preflight_inputs(tmp_path))
+def pipeline_run(tmp_path, monkeypatch):
+    import panns_cloud_run
+    import panns_training_budget
+    policy = dict(max_epochs=200, patience=15, min_delta=1e-4, monitor='selection_presence_bce')
+    config = dict(identity='wiring-only', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'],
+                  seeds=[41,42,43], early_stopping=policy, **mixed_preflight_inputs(tmp_path))
     run = tmp_path/'run.json'
     run.write_text(json.dumps(config))
     (tmp_path/'gold').mkdir()
     (tmp_path/'gold/index.json').write_text(json.dumps(dict(entries=[dict(ID='probe')])))
     session_epoch = time.time()+8*3600
-    calls = []
     monkeypatch.setattr(sys, 'argv', ['pipeline', '--run', str(run), '--bundle', str(tmp_path),
-                                    '--hours','8','--training-hours','4','--deadline-epoch',str(session_epoch)])
+                                    '--hours','8','--deadline-epoch',str(session_epoch)])
+    budget = dict(training_steps=400, steps_per_pass=2, early_stopping=policy)
+    monkeypatch.setattr(panns_training_budget, 'load_budget', lambda *args, **kwargs: (budget, 'budget-sha'))
+    monkeypatch.setattr(panns_cloud_run, 'training_identity', lambda config, arm, seed, device: arm+'-'+str(seed))
+    return config, run, session_epoch
+
+
+def save_condition(config, command):
+    from panns_adaptation_data import sha256
+    arm, seed = command[command.index('--arm')+1], int(command[command.index('--seed')+1])
+    folder = Path(config['output'])/f'train_{arm}_{seed}'
+    folder.mkdir(parents=True, exist_ok=True)
+    checkpoint = folder/'checkpoint.pt'
+    checkpoint.write_bytes((arm+'-'+str(seed)).encode())
+    epochs = 200 if arm == 'R1' else 16
+    record = dict(complete=True, early_stopping=config['early_stopping'], monitor='selection_presence_bce',
+        steps=epochs*2, epochs_completed=epochs, last_validated_epoch=epochs,
+        best_epoch=200 if arm == 'R1' else 1, best_loss=.5, patience_anchor=.5,
+        bad_epochs=0 if arm == 'R1' else 15, stop_reason='max_epochs' if arm == 'R1' else 'early_stopping',
+        run_identity=arm+'-'+str(seed), checkpoint_sha256=sha256(checkpoint))
+    (folder/'complete.json').write_text(json.dumps(record))
+
+
+def test_pipeline_uses_one_session_cutoff_and_accepts_different_terminal_epochs(tmp_path, monkeypatch):
+    config, run, session_epoch = pipeline_run(tmp_path, monkeypatch)
+    calls = []
     def record(command, deadline, **kwargs):
         calls.append((command, deadline, kwargs))
-        if 'train' in command[2:]:
-            arm, seed = command[command.index('--arm')+1], command[command.index('--seed')+1]
-            folder = Path(config['output'])/f'train_{arm}_{seed}'
-            folder.mkdir(parents=True, exist_ok=True)
-            (folder/'complete.json').write_text(json.dumps(dict(arm=arm, seed=seed)))
+        if 'train' in command[2:]: save_condition(config, command)
     monkeypatch.setattr(pipeline, 'run_command', record)
     pipeline.main()
     training = [call for call in calls if Path(call[0][1]).name == 'panns_training_budget.py'
                 or 'train' in call[0][2:]]
-    other = [call for call in calls if call not in training]
-    assert len(training) == 13
-    assert len({call[1] for call in training}) == 1
-    phase = json.loads((tmp_path/'output/training_deadline.json').read_text())
-    assert all(call[2]['deadline_epoch'] == phase['deadline_epoch'] for call in training)
-    assert all(call[1] > training[0][1] for call in other)
-    assert phase['deadline_epoch'] <= session_epoch
+    assert len(training) == 13 and len({call[1] for call in calls}) == 1
+    assert all(call[2]['deadline_epoch'] == session_epoch for call in calls)
+    assert all('--training-hours' not in call[0] for call in calls)
+    phase = json.loads((Path(config['output'])/'training_phase_complete.json').read_text())
+    assert len(phase['conditions']) == 12 and phase['training_budget_sha256'] == 'budget-sha'
+    assert not (Path(config['output'])/'training_deadline.json').exists()
     calls.clear()
-    monkeypatch.setattr(pipeline.time, 'time', lambda: phase['deadline_epoch']+1)
     pipeline.main()
     assert not any(Path(call[0][1]).name == 'panns_training_budget.py' or 'train' in call[0][2:] for call in calls)
-    (Path(config['output'])/'train_R3_41/complete.json').write_text('changed condition')
-    with pytest.raises(ValueError, match='condition receipts'):
-        pipeline.main()
+    path = Path(config['output'])/'train_R3_41/complete.json'
+    changed = json.loads(path.read_text()); changed['complete'] = False; path.write_text(json.dumps(changed))
+    with pytest.raises(ValueError): pipeline.main()
 
 
-def test_profile_uses_fixed_remaining_session_allowance_on_resume(tmp_path, monkeypatch):
-    config = dict(identity='late-cache-completion', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'], seeds=[41,42,43],
-                  **mixed_preflight_inputs(tmp_path))
-    run = tmp_path/'run.json'
-    run.write_text(json.dumps(config))
-    (tmp_path/'gold').mkdir()
-    (tmp_path/'gold/index.json').write_text(json.dumps(dict(entries=[])))
-    now = [1000.]
+def test_training_interruption_never_publishes_phase_or_pipeline_completion(tmp_path, monkeypatch):
+    config, _, _ = pipeline_run(tmp_path, monkeypatch)
+    checkpoint = Path(config['output'])/'train_R1_41/checkpoint.pt'
+    def interrupt(command, deadline, **kwargs):
+        if 'train' in command[2:]:
+            checkpoint.parent.mkdir(parents=True)
+            checkpoint.write_bytes(b'Latest checkpoint with persistent patience state')
+            raise TimeoutError('Authorized session exhausted')
+    monkeypatch.setattr(pipeline, 'run_command', interrupt)
+    with pytest.raises(TimeoutError, match='session exhausted'): pipeline.main()
+    assert checkpoint.read_bytes() == b'Latest checkpoint with persistent patience state'
+    assert not (Path(config['output'])/'training_phase_complete.json').exists()
+    assert not (Path(config['output'])/'pipeline_complete.json').exists()
+
+
+def test_resume_does_not_rederive_policy_from_remaining_session_time(tmp_path, monkeypatch):
+    _, run, session_epoch = pipeline_run(tmp_path, monkeypatch)
+    original = run.read_bytes()
+    now = [session_epoch-8*3600]
     monkeypatch.setattr(pipeline.time, 'time', lambda: now[0])
-    monkeypatch.setattr(sys, 'argv', ['pipeline', '--run', str(run), '--bundle', str(tmp_path),
-                                    '--hours','8','--training-hours','4','--deadline-epoch',str(now[0]+3*3600)])
-    allowances = []
+    profiles = []
     def stop_at_profile(command, deadline, **kwargs):
         if Path(command[1]).name == 'panns_training_budget.py':
-            allowances.append(float(command[command.index('--training-hours')+1]))
-            raise RuntimeError('Pause after profile planning')
+            profiles.append((command, kwargs['deadline_epoch']))
+            raise RuntimeError('Pause at profiling')
     monkeypatch.setattr(pipeline, 'run_command', stop_at_profile)
-    with pytest.raises(RuntimeError, match='Pause after profile'):
-        pipeline.main()
-    path = tmp_path/'output/training_deadline.json'
-    original = path.read_bytes()
-    now[0] += 600
-    with pytest.raises(RuntimeError, match='Pause after profile'):
-        pipeline.main()
-    expected = (3*3600-pipeline.CHILD_GRACE_SECONDS-pipeline.CHILD_REAP_SECONDS)/3600
-    assert allowances == [expected, expected]
-    assert path.read_bytes() == original
-    assert json.loads(original)['training_hours'] == 4.
+    for _ in range(2):
+        with pytest.raises(RuntimeError, match='Pause at profiling'): pipeline.main()
+        now[0] += 600
+    assert profiles[0] == profiles[1]
+    assert '--training-hours' not in profiles[0][0]
+    assert run.read_bytes() == original
 
 
 def test_fixed_engine_preflight_failure_stops_before_full_cache_and_training(tmp_path, monkeypatch):
@@ -196,7 +213,7 @@ def test_fixed_engine_preflight_failure_stops_before_full_cache_and_training(tmp
     (tmp_path/'gold/index.json').write_text(json.dumps(dict(entries=[dict(ID='train')])))
     epoch = time.time()+8*3600
     monkeypatch.setattr(sys, 'argv', ['pipeline', '--run', str(run), '--bundle', str(tmp_path),
-                                    '--hours','8','--training-hours','4','--deadline-epoch',str(epoch)])
+                                    '--hours','8','--deadline-epoch',str(epoch)])
     calls = []
     def fail_engine(command, deadline, **kwargs):
         calls.append((command, deadline, kwargs))

@@ -80,7 +80,7 @@ def test_development_ranking_enforces_gates_and_unrounded_tie_breaks():
 
 def synthetic_run(tmp_path, rows):
     from panns_cloud_run import training_identity
-    from panns_training_budget import budget_steps, profile_binding
+    from panns_training_budget import budget_steps, profile_binding, training_estimate
     rng = np.random.default_rng(41)
     rows_path = tmp_path / 'rows.jsonl'
     rows_path.write_text(''.join(json.dumps(row) + '\n' for row in rows))
@@ -91,7 +91,8 @@ def synthetic_run(tmp_path, rows):
     write_json(tmp_path / 'cache/index.json', dict(synthetic_arithmetic_only=True))
     arms = ['R1', 'R2', 'R3', 'R5']
     seeds = [41, 42, 43]
-    config = dict(output=str(tmp_path), rows=str(rows_path), arms=arms, seeds=seeds, checkpoint_every=100,
+    policy = dict(max_epochs=200, patience=15, min_delta=1e-4, monitor='selection_presence_bce')
+    config = dict(output=str(tmp_path), rows=str(rows_path), arms=arms, seeds=seeds, checkpoint_every=100, early_stopping=policy,
                   panel_ids=[row['ID'] for row in rows], reference=str(reference_path), fixed_predictions=str(fixed_path),
                   inputs={str(rows_path): sha256(rows_path), str(reference_path): sha256(reference_path)})
     config['identity'] = identity(config)
@@ -99,11 +100,14 @@ def synthetic_run(tmp_path, rows):
     seconds = dict(R1=1., R2=2., R3=3., R5=4.)
     profile_path = tmp_path / 'throughput_profile.json'
     writes, hashes = dict.fromkeys(arms, .25), dict.fromkeys(arms, .05)
-    write_json(profile_path, dict(binding=binding, train_files=5, seconds_per_step=seconds,
-        checkpoint_seconds=writes, checkpoint_hash_seconds=hashes, synthetic_arithmetic_only=True))
-    steps = budget_steps(seconds, 5, 1., checkpoint_seconds=writes,
+    profile = dict(binding=binding, train_files=5, seconds_per_step=seconds,
+        checkpoint_seconds=writes, checkpoint_hash_seconds=hashes, synthetic_arithmetic_only=True)
+    write_json(profile_path, profile)
+    steps = budget_steps(seconds, 5, policy['max_epochs'], checkpoint_seconds=writes,
                          checkpoint_hash_seconds=hashes, checkpoint_every=100)
-    budget = dict(binding=binding, profile_sha256=sha256(profile_path), training_hours=1., training_steps=steps, steps_per_pass=2)
+    budget = dict(binding=binding, profile_sha256=sha256(profile_path), early_stopping=policy,
+        training_steps=steps, steps_per_pass=2, validation_time_included=False,
+        estimated_training_seconds=training_estimate(profile, steps, policy['max_epochs'], config['checkpoint_every']))
     budget['identity'] = identity(budget)
     write_json(tmp_path / 'training_budget.json', budget)
     evaluations = {}
@@ -113,17 +117,24 @@ def synthetic_run(tmp_path, rows):
                             VOICE_PRESENT_PROB=float(rng.random()), MUSIC_PRESENT_PROB=float(rng.random()))
                        for row in rows]
         evaluations[arm, seed] = predictions
-        run_identity = checkpoint_sha256 = None
+        run_identity = checkpoint_sha256 = completion_sha256 = None
         if arm != 'R0':
             folder = tmp_path / f'train_{arm}_{seed}'
             folder.mkdir()
             checkpoint = folder / 'checkpoint.pt'
             checkpoint.write_bytes(b'Synthetic hash input; never deserialized as a model.')
             run_identity, checkpoint_sha256 = training_identity(config, arm, seed, 'cpu'), sha256(checkpoint)
-            write_json(folder / 'complete.json', dict(steps=steps, run_identity=run_identity, checkpoint_sha256=checkpoint_sha256))
+            epochs = 200 if arm == 'R1' else 16
+            write_json(folder / 'complete.json', dict(complete=True, early_stopping=policy, monitor=policy['monitor'],
+                steps=epochs*2, epochs_completed=epochs, last_validated_epoch=epochs,
+                best_epoch=200 if arm == 'R1' else 1, best_loss=.5, patience_anchor=.5,
+                bad_epochs=0 if arm == 'R1' else 15, stop_reason='max_epochs' if arm == 'R1' else 'early_stopping',
+                run_identity=run_identity, checkpoint_sha256=checkpoint_sha256))
+            completion_sha256 = sha256(folder/'complete.json')
         write_json(tmp_path / f'evaluation_{arm}_{seed}.json', dict(arm=arm, seed=seed, predictions=predictions,
             device='cpu', config_identity=config['identity'], rows_sha256=sha256(rows_path),
-            fixed_predictions_sha256=sha256(fixed_path), run_identity=run_identity, checkpoint_sha256=checkpoint_sha256))
+            fixed_predictions_sha256=sha256(fixed_path), run_identity=run_identity, checkpoint_sha256=checkpoint_sha256,
+            completion_sha256=completion_sha256))
     write_json(tmp_path / 'run.json', config)
     return config, evaluations
 
@@ -151,6 +162,9 @@ def test_report_uses_official_masks_and_keeps_diagnostics_without_a_g_panel(tmp_
     assert role['complete_G_rows'] == len(panel)
     assert role['excluded_from_G_by_source'] == {'synthetic': len(rows) - len(panel)}
     assert result['deployment_seed'] == 41
+    assert {row['epochs_completed'] for row in result['training_conditions']} == {16, 200}
+    assert {row['stop_reason'] for row in result['training_conditions']} == {'early_stopping', 'max_epochs'}
+    assert result['equal_step_comparison'] is False and result['selection_adaptive_reuse'] is True
     assert result['selected_candidate'] is None
     assert 'candidate_selection' not in role
     assert len(role['structural_contrasts']) == 6
@@ -172,7 +186,7 @@ def test_report_uses_official_masks_and_keeps_diagnostics_without_a_g_panel(tmp_
     assert result['adoption_authorized'] is False
 
 
-@pytest.mark.parametrize('corruption', ['evaluation', 'rows', 'checkpoint', 'fake_head'])
+@pytest.mark.parametrize('corruption', ['evaluation', 'rows', 'checkpoint', 'fake_head', 'completion_metadata'])
 def test_report_rejects_stale_or_changed_run_inputs(tmp_path, corruption):
     rows = [dict(ID=str(i), role='development', source='synthetic', component_id=str(i),
                  FILE_FAKE=i % 2, VOICE_PRESENT=i % 2, MUSIC_PRESENT=i % 2,
@@ -186,6 +200,10 @@ def test_report_rejects_stale_or_changed_run_inputs(tmp_path, corruption):
     elif corruption == 'fake_head':
         evaluation['predictions'][0]['VOICE_FAKE_PROB'] = .9
         write_json(path, evaluation)
+    elif corruption == 'completion_metadata':
+        completion = tmp_path/'train_R3_41/complete.json'
+        record = json.loads(completion.read_text()); record['best_loss'] = .4
+        write_json(completion, record)
     elif corruption == 'rows':
         (tmp_path / 'rows.jsonl').write_text(json.dumps(rows[0]) + '\n')
     else:

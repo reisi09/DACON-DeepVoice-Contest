@@ -9,7 +9,8 @@ import numpy as np
 from panns_adaptation_data import TARGETS, identity, load_cache, read_cache_index, sha256, validate_config, write_json
 from panns_adaptation_cache import cache, readout_assets
 from panns_adaptation_run import frozen_digest, model_for_arm, optimization_step, restore_checkpoint, trainable_state
-from panns_training_state import EpochSampler, accumulate_diagnostics
+from panns_training_state import (EpochSampler, accumulate_diagnostics, record_validation,
+                                  validate_completion, validate_stopping_state)
 from panns_training_budget import load_budget
 from panns_fixed_predictions import configure_numerics, load_fixed_predictions
 
@@ -35,6 +36,42 @@ def save_checkpoint(path, model, optimizer, device, record):
     temporary.replace(path)
 
 
+def selection_metrics(model, entries, heads, labels, groups, device, microbatch, stop_requested):
+    import torch
+    from panns_adaptation import presence_logits
+    if not entries or any(entry['role'] != 'selection' for entry in entries):
+        raise ValueError('Early stopping requires the fixed selection panel only')
+    counts = [sum(entry['targets'][i] is not None for entry in entries) for i in range(2)]
+    if not all(counts):
+        raise ValueError('Selection needs known labels for both presence targets')
+    sums = torch.zeros(2, dtype=torch.float64)
+    with torch.inference_mode():
+        for entry in entries:
+            if stop_requested():
+                return None
+            features = torch.from_numpy(load_cache(entry)['block5'])
+            parts = []
+            for part in features.split(microbatch):
+                if stop_requested():
+                    return None
+                parts.append(model.tags_from_block5(part.to(device)).cpu())
+            logits = presence_logits(torch.cat(parts), entry['stems'], heads, labels, groups)
+            if not torch.isfinite(logits).all():
+                raise ValueError('Nonfinite selection logits')
+            known = torch.tensor([value is not None for value in entry['targets']])
+            targets = torch.tensor([value if value is not None else 0. for value in entry['targets']], dtype=torch.float64)
+            if not torch.isfinite(targets).all() or ((targets < 0) | (targets > 1)).any():
+                raise ValueError('Invalid known selection labels')
+            sums += torch.nn.functional.binary_cross_entropy_with_logits(logits, targets, reduction='none') * known
+    if stop_requested():
+        return None
+    losses = sums / torch.tensor(counts)
+    if not torch.isfinite(losses).all():
+        raise ValueError('Nonfinite selection loss')
+    return dict(selection_presence_bce=float(losses.mean()), voice_bce=float(losses[0]),
+                music_bce=float(losses[1]), known_counts=counts)
+
+
 def train(config, arm, seed, device='cuda', resume=False, stop_after=None):
     import torch
     setup(device)
@@ -43,7 +80,12 @@ def train(config, arm, seed, device='cuda', resume=False, stop_after=None):
         raise ValueError('Training condition outside locked experiment')
     budget, _ = load_budget(config, device)
     steps = budget['training_steps']
-    entries = [r for r in read_cache_index(config)['entries'] if r['role'] == 'train' and any(y is not None for y in r['targets'])]
+    policy = budget['early_stopping']
+    cached = read_cache_index(config)['entries']
+    entries = [r for r in cached if r['role'] == 'train' and any(y is not None for y in r['targets'])]
+    selection = [r for r in cached if r['role'] == 'selection']
+    if not selection or any(not any(row['targets'][i] is not None for row in selection) for i in range(2)):
+        raise ValueError('Selection needs known labels for both presence targets')
     if len(entries) < 4:
         raise ValueError('Need at least four train files')
     if any({r['targets'][i] for r in entries if r['targets'][i] is not None} != {0, 1} for i in range(2)):
@@ -55,8 +97,7 @@ def train(config, arm, seed, device='cuda', resume=False, stop_after=None):
     checkpoint = out/'checkpoint.pt'
     if (out/'complete.json').exists():
         done = json.loads((out/'complete.json').read_text())
-        if done['run_identity'] != run_id or done['steps'] != steps or done['checkpoint_sha256'] != sha256(checkpoint):
-            raise ValueError('Completed training identity/hash mismatch')
+        validate_completion(done, run_id, sha256(checkpoint), budget)
         return done
     existing = set(out.iterdir())
     if existing and not resume:
@@ -78,6 +119,9 @@ def train(config, arm, seed, device='cuda', resume=False, stop_after=None):
     sampler = EpochSampler(len(entries), seed)
     heads, labels, groups = readout_assets(package)
     step, elapsed, diagnostics = 0, 0., {}
+    stopping = dict(policy=policy, best_loss=None, best_epoch=0, patience_anchor=None,
+                    bad_epochs=0, last_validated_epoch=-1, history=[])
+    best_model = {}
     if checkpoint.exists():
         saved = restore_checkpoint(checkpoint, run_id, model, optimizer)
         sampler.load_state_dict(saved['sampler'])
@@ -90,39 +134,70 @@ def train(config, arm, seed, device='cuda', resume=False, stop_after=None):
             raise ValueError('Checkpoint step exceeds locked budget')
         if saved['frozen_sha256'] != frozen:
             raise ValueError('Frozen state differs from checkpoint')
+        stopping, best_model = saved['early_stopping'], saved['best_model']
+        validate_stopping_state(stopping, policy, sampler, step, budget['steps_per_pass'])
+        expected = {name:p for name,p in model.named_parameters() if p.requires_grad}
+        if set(best_model) != set(expected) or any(best_model[name].shape != p.shape
+                or not torch.isfinite(best_model[name]).all() for name,p in expected.items()):
+            raise ValueError('Invalid selected-best checkpoint weights')
     stop = []
     previous = signal.signal(signal.SIGTERM, lambda *_: stop.append(True))
     started = time.monotonic()
-    saved_step = step if checkpoint.exists() else None
+    dirty = False
     def save():
-        nonlocal saved_step
+        nonlocal dirty
         save_checkpoint(checkpoint, model, optimizer, device,
             dict(run_identity=run_id, arm=arm, seed=seed, step=step, sampler=sampler.state_dict(),
-                 diagnostics=diagnostics, frozen_sha256=frozen, elapsed_seconds=elapsed+time.monotonic()-started))
-        saved_step = step
+                 diagnostics=diagnostics, frozen_sha256=frozen, elapsed_seconds=elapsed+time.monotonic()-started,
+                 early_stopping=stopping, best_model=best_model))
+        dirty = False
+    reason = None
     try:
-        while step < steps and not stop:
+        while not stop and not (stop_after and step >= stop_after):
+            if sampler.cursor == sampler.size and stopping['last_validated_epoch'] < sampler.epoch:
+                metrics = selection_metrics(model, selection, heads, labels, groups, device,
+                                            config['microbatch'], lambda: bool(stop))
+                if metrics is None or stop:
+                    break
+                if record_validation(stopping, metrics, sampler.epoch):
+                    best_model = trainable_state(model)
+                dirty = True
+                save()
+                write_json(out/'progress.json', dict(step=step, steps=steps, epoch=sampler.epoch,
+                    early_stopping=stopping, diagnostics=diagnostics, run_identity=run_id))
+                print(json.dumps(dict(arm=arm, seed=seed, step=step, epoch=sampler.epoch, **metrics)), flush=True)
+            if stopping['last_validated_epoch'] == sampler.epoch:
+                reason = ('early_stopping' if stopping['bad_epochs'] >= policy['patience'] else
+                          'max_epochs' if sampler.epoch == policy['max_epochs'] else None)
+                if reason:
+                    break
             selected = [entries[i] for i in sampler.next_batch()]
             record, _ = optimization_step(model, optimizer, selected, heads, labels,
                                           groups, fraction, device, config['microbatch'])
             step += 1
+            dirty = True
             accumulate_diagnostics(diagnostics, record)
-            if step % config['checkpoint_every'] == 0 or step == steps or (stop_after and step >= stop_after):
+            if step % config['checkpoint_every'] == 0 and sampler.cursor != sampler.size:
                 save()
                 write_json(out/'progress.json', dict(step=step, steps=steps, epoch=sampler.epoch,
                     last=record, diagnostics=diagnostics, run_identity=run_id))
                 print(json.dumps(dict(arm=arm, seed=seed, step=step, loss=record['loss'])), flush=True)
-            if stop_after and step >= stop_after:
-                break
-        if saved_step != step:
+        if dirty:
             save()
         if frozen_digest(model) != frozen:
             raise ValueError('Frozen parameter or BN state changed')
-        if step != steps:
+        if not reason or stop or (stop_after and step >= stop_after):
             return dict(complete=False, step=step)
-        done = dict(run_identity=run_id, steps=step, checkpoint_sha256=sha256(checkpoint),
+        done = dict(complete=True, stop_reason=reason, run_identity=run_id, steps=step,
+                    epochs_completed=sampler.epoch, best_epoch=stopping['best_epoch'],
+                    best_loss=stopping['best_loss'], patience_anchor=stopping['patience_anchor'],
+                    bad_epochs=stopping['bad_epochs'], last_validated_epoch=stopping['last_validated_epoch'],
+                    monitor=policy['monitor'], early_stopping=policy, checkpoint_sha256=sha256(checkpoint),
                     frozen_sha256=frozen, elapsed_seconds=elapsed+time.monotonic()-started,
                     diagnostics=diagnostics, independent_evaluation=False)
+        validate_completion(done, run_id, done['checkpoint_sha256'], budget)
+        if stop:
+            return dict(complete=False, step=step)
         write_json(out/'complete.json', done)
         return done
     finally:
@@ -141,19 +216,28 @@ def evaluate(config, arm, seed, device='cuda'):
     fixed = load_fixed_predictions(config, device)
     fake = {r['ID']: r for r in fixed['entries']}
     model = model_for_arm(package, arm, seed, device)
-    run_id, checkpoint_sha = None, None
+    run_id, checkpoint_sha, completion_sha = None, None, None
     if arm != 'R0':
         out = Path(config['output'])/f'train_{arm}_{seed}'
         done = json.loads((out/'complete.json').read_text())
+        completion_sha = sha256(out/'complete.json')
         budget, _ = load_budget(config, device)
         run_id, checkpoint_sha = training_identity(config, arm, seed, device), sha256(out/'checkpoint.pt')
-        if done['run_identity'] != run_id or done['steps'] != budget['training_steps'] or done['checkpoint_sha256'] != checkpoint_sha:
-            raise ValueError('Evaluation requires the exact completed final checkpoint')
+        validate_completion(done, run_id, checkpoint_sha, budget)
         saved = torch.load(out/'checkpoint.pt', map_location='cpu', weights_only=True)
+        state = saved['early_stopping']
+        if (saved['run_identity'] != run_id or saved['step'] != done['steps']
+                or any(state[key] != done[key] for key in ('best_epoch', 'best_loss', 'patience_anchor',
+                                                          'bad_epochs', 'last_validated_epoch'))):
+            raise ValueError('Selected checkpoint metadata differs from its completion receipt')
+        expected = {name:p for name,p in model.named_parameters() if p.requires_grad}
+        if set(saved['best_model']) != set(expected) or any(saved['best_model'][name].shape != p.shape
+                or not torch.isfinite(saved['best_model'][name]).all() for name,p in expected.items()):
+            raise ValueError('Invalid selected-best checkpoint weights')
         with torch.no_grad():
             for name, p in model.named_parameters():
                 if p.requires_grad:
-                    p.copy_(saved['model'][name])
+                    p.copy_(saved['best_model'][name])
     heads, labels, groups = readout_assets(package)
     ensemble = json.loads((package/'model/trained/file_ensemble.json').read_text())
     predictions = []
@@ -177,6 +261,7 @@ def evaluate(config, arm, seed, device='cuda'):
     result = dict(arm=arm, seed=seed, device=device, reports=reports, predictions=predictions,
                   config_identity=config['identity'], rows_sha256=sha256(config['rows']),
                   run_identity=run_id, checkpoint_sha256=checkpoint_sha,
+                  completion_sha256=completion_sha,
                   fixed_predictions_sha256=sha256(config['fixed_predictions']),
                   independent_evaluation=False, adoption_authorized=False)
     write_json(Path(config['output'])/f'evaluation_{arm}_{seed}.json', result)

@@ -18,7 +18,7 @@
 - 실행 Python: `/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python`. 코드 실행 cwd는 위 코드 저장소의 `repository`다.
 - W0~W2는 CPU로 시작한다. W3은 명시적 로컬 CPU/MPS 비교이며 유료 cloud GPU를 기동하지 않는다.
 - AdamW: conv LR=`1e-5`, SE LR=`1e-3`, pooling LR=`1e-4`, weight decay=`1e-4`, effective batch=4 files, parameter group별 gradient norm clip=1.0, pos_weight=1.
-- 파일럿: 조건당 seed 41, 최대 200 optimizer step 또는 60분. 메모리 상한: RSS+MPS driver allocation 18 GiB. 본 학습 step은 파일럿 처리량으로 산정하고 품질 지표를 보기 전에 고정한다.
+- 파일럿: 조건당 seed 41, 최대 200 optimizer step 또는 60분. 메모리 상한: RSS+MPS driver allocation 18 GiB. 본 학습은 최대 200에포크, selection presence BCE 기준 patience=15·min_delta=1e-4로 고정한다. 파일럿 처리량은 소요 시간 추정에만 사용한다.
 - 전체 BN·dropout·SpecAugment는 eval 상태. 미확정 라벨은 mask하며 split·parent·원음·기존 checkpoint를 보존한다.
 - 원음·activation·checkpoint·원본 예측 bulk는 Git 제외 작업 폴더에 둔다. 코드·검토 문서·작은 수치/해시 영수증은 의미 있는 완료 단위로 검증 후 commit·push한다.
 - 이미 수행한 Opus 검토를 반영한다. 아래 구현 결과에 대한 검토와 실제 수치 검증은 아직 하지 않았다.
@@ -53,7 +53,7 @@ W1의 원음 복구와 W2의 순수 모델 구현은 기준 identity를 고정�
 
 모델 interface는 `AdaptedCnn14(base, channel_se=False, temporal_pool=False, train_blocks=(6,))`로 고정한다. `prefix(waveforms_32k)`는 eval/no_grad block1~5 출력, `tags_from_block5(features)`는 A→block6→C→기존 fc의 527 확률을 반환한다. `presence_logits(tags, stem_features, heads, labels, groups)`는 파일의 모든 구간을 집계한 CPU의 두 float64 logit을 반환한다. `masked_file_loss(logits, targets, known, known_fraction)`는 effective file batch에 대한 scalar를 반환한다. 배치 축과 segment 축을 혼용하지 않는다.
 
-driver는 `audit(config)`, `cache(config)`, `pilot(config)`, `train(config)`, `evaluate(config)`를 제공하고 공통 `--run PATH`의 고정 JSON manifest를 받는다. 경로·hash·허용 arm/seed·device·step·output을 manifest로 전달한다. CLI의 `--arm`·`--seed`는 그 목록의 항목을 선택하며 고정 값을 임의로 덮어쓰지 못한다. `audit`만 아직 고정되지 않은 입출력 경로를 읽고 검증 결과를 새 manifest에 쓴다. 나머지는 그 manifest·spec hash가 맞지 않으면 실행을 거부한다. 범용 scheduler나 plugin registry는 만들지 않는다.
+driver는 `audit(config)`, `cache(config)`, `pilot(config)`, `train(config)`, `evaluate(config)`를 제공하고 공통 `--run PATH`의 고정 JSON manifest를 받는다. 경로·hash·허용 arm/seed·device·학습 정책·output을 manifest로 전달한다. CLI의 `--arm`·`--seed`는 그 목록의 항목을 선택하며 고정 값을 임의로 덮어쓰지 못한다. `audit`만 아직 고정되지 않은 입출력 경로를 읽고 검증 결과를 새 manifest에 쓴다. 나머지는 그 manifest·spec hash가 맞지 않으면 실행을 거부한다. 범용 scheduler나 plugin registry는 만들지 않는다.
 
 ## W0. 기준 모델·입력·환경 고정
 
@@ -145,7 +145,7 @@ def masked_file_loss(logits, targets, known, known_fraction):
 
 **완료 기준:** 초기 값만 맞는 것이 아니라 intended optimizer 연결·frozen 상태·file loss·cache 거부 경로가 실제 자료에서 확인된다.
 
-## W3. Mac CPU/MPS 파일럿과 본 비교 예산 고정
+## W3. Mac CPU/MPS 파일럿과 본학습 정책 고정
 
 **Files:** driver `pilot`, tests의 device/replay/resume 검사. **Consumes:** W2 모델·cache. **Produces:** `pilot.json`, resource trace, 고정 `run_manifest.json`.
 
@@ -154,7 +154,7 @@ def masked_file_loss(logits, targets, known, known_fraction):
 - [ ] 파일 segment 수 분포와 직접 autograd 메모리를 확인한다. 실제 긴 파일에서 필요한 경우에만 spec의 두-pass replay를 구현한다. 두 pass의 확률·선택 index가 달라지면 gradient를 버리고 optimizer step을 하지 않는다.
 - [ ] 같은 real file의 direct/replay loss·gradient·update, CPU/MPS 오차를 명세 기준과 비교한다. 허용치를 넘는 MPS 경로는 CPU와 동등하다고 부르지 않는다.
 - [ ] 실행 중단→checkpoint 재개를 실제로 한 번 수행하고 계속 실행한 경우와 sampler 순서·optimizer state·예측을 비교한다. 다른 data/spec hash의 재개는 거부한다.
-- [ ] 처리량으로 본 비교 step·예상 시간·disk와 장치를 산정해 manifest에 고정한다. step은 모든 arm에 동일하게 적용하고 candidate 품질 수치를 보고 늘리거나 줄이지 않는다. 이 예산이 없으면 W4를 시작하지 않는다.
+- [ ] 처리량으로 예상 시간·disk와 장치를 산정한다. 본학습 정책은 최대 200에포크, selection presence BCE, patience 15, min_delta 0.0001로 manifest에 고정한다. 처리량에 맞춰 에포크를 줄이거나 일부 후보에만 다른 조기 종료 기준을 적용하지 않는다.
 - [ ] Mac 처리량이 정한 실행 예산을 충족하지 못해 A100 등 cloud 학습이 필요하면, 같은 코드·data/cache/checkpoint identity를 대상으로 업로드·원격 hash·기존 workspace 상태·실행 비용과 종료 조건을 먼저 확인한다. 현재 workflow 작성은 workspace 기동이나 새 유료 자원 생성을 수행하지 않는다.
 
 **완료 기준:** 선택 장치에서 실음원 gradient/update·재개가 작동하고 메모리 상한 안에서 진행할 본 비교 예산이 있다. CPU 완료는 MPS 완료를 뜻하지 않는다. 200 step 파일럿을 성능 학습 완료라고 보고하지 않는다.
@@ -165,16 +165,16 @@ def masked_file_loss(logits, targets, known, known_fraction):
 
 기본 비교는 R0 추론과 **4개 학습 조건 × 3 seeds = 12회 학습**이다. R0을 seed별로 중복 학습하지 않는다. 후보별 총 비용은 W3에서 측정한 cache·stem 준비 시간과 각 arm의 step 시간으로 합산하며, 과거 작은 fake head 학습 시간을 그대로 적용하지 않는다.
 
-- [ ] R0을 고정 패널에서 재현한다. R1(block6), R2(SE), R3(SE+block6)를 각 seed 41·42·43으로 같은 D0·순서·step에서 학습한다.
-- [ ] R5(시간 가중 pooling+block6)를 같은 조건으로 비교한다. R3 결과가 좋다는 이유로 R5에 더 많은 step이나 다른 데이터 비중을 주지 않는다.
-- [ ] fixed final-step checkpoint만 사용한다. 중단된 arm은 동일 step까지 재개하거나 미완료로 남기고 최종 비교에서 빼되 사유를 보고한다.
+- [ ] R0을 고정 패널에서 재현한다. R1(block6), R2(SE), R3(SE+block6)를 각 seed 41·42·43으로 같은 D0와 최대 에포크·조기 종료 정책으로 학습한다.
+- [ ] R5(시간 가중 pooling+block6)를 같은 조건으로 비교한다. 후보 점수를 보고 특정 조건의 patience나 데이터 비중을 바꾸지 않는다.
+- [ ] epoch 0과 전체 에포크마다 selection 손실을 확인하고 최적 가중치로 평가한다. 현재 optimizer·sampler·RNG와 최적 모델·patience를 함께 저장한다. 시간 만료로 중단된 조건은 재개하거나 미완료로 남기고 완료 조건과의 품질 비교에서 제외한다.
 - [ ] 매 arm에서 frozen tensor hash와 보존 fake 확률을 대조한다. 결과는 독립 출력 경로에 저장하고 이전 모델을 덮어쓰지 않는다.
 
 구현 후 실행 형태는 아래와 같다. `RUN_MANIFEST`는 W3에서 생성·검토한 실제 JSON 경로를 전달한다. 이 명령을 현재 존재하는 명령으로 보고 실행하지 않는다.
 
 ```bash
-/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python panns_adaptation_run.py train --run "$RUN_MANIFEST" --arm R3 --seed 41
-/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python panns_adaptation_run.py evaluate --run "$RUN_MANIFEST" --arm R3 --seed 41
+/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python panns_cloud_run.py train --run "$RUN_MANIFEST" --arm R3 --seed 41 --resume
+/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python panns_cloud_run.py evaluate --run "$RUN_MANIFEST" --arm R3 --seed 41
 ```
 
 **완료 기준:** R0/R1/R2/R3/R5의 비교 가능한 결과가 있고, R3−R1의 구조 추가 효과와 R3−R0의 전체 효과를 구분할 수 있다.
@@ -185,7 +185,7 @@ def masked_file_loss(logits, targets, known, known_fraction):
 
 - [ ] 알려진 target별 presence AUC/Brier/log loss와 고정 CDF FILE EER을 같은 ID·mask에서 비교한다. 현재 fake EER이 그대로인지 확인한다.
 - [ ] 현 평가 코드에서 관련 정답이 모두 알려진 공통 패널을 예측 확인 전에 고정한다. G용 패널 제외 수와 나머지 파일의 알려진 presence coverage를 같이 보고한다.
-- [ ] parent component paired bootstrap 2,000회(seed 20260925)를 실행한다. 같은 재추출을 arm·seed에 적용하고, class가 사라져 계산되지 않은 비율을 기록한다. 과거 노출 selection/calibration은 개발 진단이다.
+- [ ] parent component paired bootstrap 2,000회(seed 20260925)를 실행한다. 같은 재추출을 arm·seed에 적용하고, class가 사라져 계산되지 않은 비율을 기록한다. early stopping에도 사용한 selection과 과거 노출 calibration은 개발 진단이다.
 - [ ] source·presence 조합·실제 annotation이 있는 오류군별 퇴행을 확인한다. 개발상 G>0, 두 AUC 평균 차이≥0 조건과 spec의 불확실성을 보고한다.
 - [ ] 독립 평가 자료의 출처·역할·라벨 적격성을 확인하되, 후보 예측과 품질 지표는 W6까지 모든 개발 선택을 끝낸 후 W7에서 한 번만 연다. 독립 자료가 없으면 개발 결과까지만 보고한다.
 

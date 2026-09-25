@@ -8,31 +8,43 @@ import time
 import pytest
 
 
-def test_budget_covers_whole_passes_with_equal_steps_and_reserve():
+def test_epoch_cap_covers_every_file_without_a_throughput_or_step_cap():
     from panns_training_budget import budget_steps
 
     seconds = {'R1': 1., 'R2': 2., 'R3': 3., 'R5': 4.}
-    steps = budget_steps(seconds, 5, 1.)
-    assert steps == 96
-    assert steps % 2 == 0
-    assert steps * 3 * sum(seconds.values()) <= 3600 * .8
-    assert budget_steps({arm: .001 for arm in seconds}, 9, 72.) == 99999
-    with pytest.raises(ValueError, match='whole pass'):
-        budget_steps(seconds, 5, .001)
-    for invalid in (float('nan'), float('inf'), 0., -1.):
+    assert budget_steps(seconds, 5, 200) == 400
+    assert budget_steps(seconds, 2001, 200) == 100200
+    for timing in (.001, 10000.):
+        assert budget_steps(dict.fromkeys(seconds, timing), 2001, 200,
+                            checkpoint_seconds=dict.fromkeys(seconds, timing),
+                            checkpoint_hash_seconds=dict.fromkeys(seconds, timing),
+                            checkpoint_every=1) == 100200
+
+
+def test_epoch_budget_rejects_invalid_policy_and_timing_inputs():
+    from panns_training_budget import budget_steps
+
+    seconds = {'R1': 1., 'R2': 2., 'R3': 3., 'R5': 4.}
+    for invalid in (float('nan'), float('inf'), 0, -1, 1.5, True):
         with pytest.raises(ValueError):
             budget_steps(seconds, 5, invalid)
+    for invalid in (float('nan'), float('inf'), 0., -1.):
         with pytest.raises(ValueError):
-            budget_steps({**seconds, 'R3': invalid}, 5, 1.)
+            budget_steps({**seconds, 'R3': invalid}, 5, 200)
+    for timings in ({'R1': .1}, {**seconds, 'R2': float('nan')}, {**seconds, 'R2': -1.}):
+        with pytest.raises(ValueError):
+            budget_steps(seconds, 5, 200, checkpoint_seconds=timings)
+        with pytest.raises(ValueError):
+            budget_steps(seconds, 5, 200, checkpoint_hash_seconds=timings)
 
 
-def test_budget_refuses_runtime_drift_and_altered_fixed_steps(tmp_path):
+def budget_artifact(tmp_path):
     from panns_adaptation_data import identity, sha256, write_json
-    from panns_training_budget import load_budget, profile_binding
+    from panns_training_budget import profile_binding, training_estimate
 
-    config = {'identity': 'locked-run', 'output': str(tmp_path), 'checkpoint_every': 100}
-    (tmp_path / 'cache').mkdir()
-    (tmp_path / 'cache/index.json').write_text('{"real": "index bytes"}')
+    config = dict(identity='locked-run', output=str(tmp_path), checkpoint_every=100,
+                  early_stopping=dict(max_epochs=200, patience=15, min_delta=1e-4, monitor='selection_presence_bce'))
+    write_json(tmp_path/'cache/index.json', dict(archived=True))
     binding = profile_binding(config, 'cpu')
     profile = {'binding': binding, 'train_files': 5,
                'checkpoint_seconds': dict.fromkeys(('R1', 'R2', 'R3', 'R5'), .01),
@@ -40,61 +52,76 @@ def test_budget_refuses_runtime_drift_and_altered_fixed_steps(tmp_path):
                'seconds_per_step': {'R1': 1., 'R2': 2., 'R3': 3., 'R5': 4.}}
     write_json(tmp_path / 'throughput_profile.json', profile)
     budget = {'binding': binding, 'profile_sha256': sha256(tmp_path / 'throughput_profile.json'),
-              'training_hours': 1., 'training_steps': 94, 'steps_per_pass': 2}
+              'early_stopping': config['early_stopping'].copy(), 'training_steps': 400, 'steps_per_pass': 2,
+              'estimated_training_seconds': training_estimate(profile, 400, 200, 100),
+              'validation_time_included': False}
     budget['identity'] = identity(budget)
     write_json(tmp_path / 'training_budget.json', budget)
-    assert load_budget(config, 'cpu')[0]['training_steps'] == 94
+    return config, profile, budget
+
+
+def test_budget_refuses_runtime_data_and_profile_drift(tmp_path):
+    from panns_adaptation_data import identity, sha256, write_json
+    from panns_training_budget import load_budget
+
+    config, profile, budget = budget_artifact(tmp_path)
+    assert load_budget(config, 'cpu')[0]['training_steps'] == 400
     with pytest.raises(ValueError, match='device'):
         load_budget(config, 'cuda')
-    (tmp_path / 'cache/index.json').write_text('{"changed": "index bytes"}')
+    write_json(tmp_path/'cache/index.json', dict(corrupted=True))
     with pytest.raises(ValueError, match='binding'):
         load_budget(config, 'cpu')
-    (tmp_path / 'cache/index.json').write_text('{"real": "index bytes"}')
-    budget['training_steps'] = 98
+    write_json(tmp_path/'cache/index.json', dict(archived=True))
+    profile['seconds_per_step']['R1'] = 10.
+    write_json(tmp_path/'throughput_profile.json', profile)
+    with pytest.raises(ValueError, match='profile'):
+        load_budget(config, 'cpu')
+    profile['seconds_per_step']['R1'] = 1.
+    profile['binding'] = profile['binding'] | dict(torch='different-runtime')
+    budget['binding'] = profile['binding']
+    write_json(tmp_path/'throughput_profile.json', profile)
+    budget['profile_sha256'] = sha256(tmp_path/'throughput_profile.json')
     budget['identity'] = identity({k: v for k, v in budget.items() if k != 'identity'})
-    write_json(tmp_path / 'training_budget.json', budget)
-    with pytest.raises(ValueError, match='measured'):
+    write_json(tmp_path/'training_budget.json', budget)
+    with pytest.raises(ValueError, match='binding'):
         load_budget(config, 'cpu')
 
 
-def test_checkpoint_io_is_included_without_spending_the_timing_reserve():
-    from panns_training_budget import budget_steps
+@pytest.mark.parametrize('change', ['max_epochs', 'patience', 'min_delta', 'monitor', 'training_steps'])
+def test_budget_refuses_altered_stopping_policy_or_step_limit(tmp_path, change):
+    from panns_adaptation_data import identity, write_json
+    from panns_training_budget import load_budget
 
-    # Given: expensive checkpoint writes every 100 updates, plus one final hash.
-    seconds = dict(R1=.2, R2=.2, R3=.2, R5=.2)
-    saves = dict(R1=15., R2=15., R3=15., R5=15.)
-    hashes = dict(R1=2., R2=2., R3=2., R5=2.)
-    # When: the budget is frozen for 1,000 files and all 12 conditions.
-    steps = budget_steps(seconds, 1000, 1., checkpoint_seconds=saves,
-                         checkpoint_hash_seconds=hashes, checkpoint_every=100)
-    # Then: exactly two full passes fit; a third would exceed the reserved limit.
-    assert steps == 500
-    assert 12 * (steps*.2 + 5*15 + 2) <= 3600*.8
-    assert 12 * (750*.2 + 8*15 + 2) > 3600*.8
+    config, _, budget = budget_artifact(tmp_path)
+    assert load_budget(config, 'cpu')[0]['training_steps'] == 400
+    if change == 'training_steps':
+        budget['training_steps'] = 398
+        budget['identity'] = identity({k: v for k, v in budget.items() if k != 'identity'})
+        write_json(tmp_path/'training_budget.json', budget)
+    else:
+        config['early_stopping'][change] = dict(max_epochs=201, patience=16, min_delta=2e-4,
+                                                monitor='development_presence_bce')[change]
+    with pytest.raises(ValueError):
+        load_budget(config, 'cpu')
 
 
 def test_offline_budget_read_preserves_identity_without_authorizing_cuda(tmp_path, monkeypatch):
     import torch
     from panns_adaptation_data import identity, sha256, write_json
-    from panns_training_budget import load_budget, profile_binding
+    from panns_training_budget import load_budget
 
-    config = dict(identity='archived-run', output=str(tmp_path), checkpoint_every=100)
-    write_json(tmp_path/'cache/index.json', dict(archived=True))
-    binding = profile_binding(config, 'cpu') | dict(device='cuda', hardware=dict(name='archived A100'),
-                                                  torch='archived-torch', cuda='archived-cuda')
-    profile = dict(binding=binding, train_files=5,
-                   seconds_per_step=dict(R1=1., R2=2., R3=3., R5=4.),
-                   checkpoint_seconds=dict.fromkeys(('R1', 'R2', 'R3', 'R5'), .01),
-                   checkpoint_hash_seconds=dict.fromkeys(('R1', 'R2', 'R3', 'R5'), .01))
+    config, profile, budget = budget_artifact(tmp_path)
+    binding = profile['binding'] | dict(device='cuda', hardware=dict(name='archived A100'),
+                                       torch='archived-torch', cuda='archived-cuda')
+    profile['binding'] = binding
     write_json(tmp_path/'throughput_profile.json', profile)
-    budget = dict(binding=binding, profile_sha256=sha256(tmp_path/'throughput_profile.json'),
-                  training_hours=1., training_steps=94, steps_per_pass=2)
-    budget['identity'] = identity(budget)
+    budget.update(binding=binding, profile_sha256=sha256(tmp_path/'throughput_profile.json'))
+    budget['identity'] = identity({k: v for k, v in budget.items() if k != 'identity'})
     write_json(tmp_path/'training_budget.json', budget)
     def unavailable(*args):
         raise RuntimeError('No CUDA in artifact reader')
     monkeypatch.setattr(torch.cuda, 'current_device', unavailable)
-    assert load_budget(config, 'cuda', validate_runtime=False)[0]['training_steps'] == 94
+    assert load_budget(config, 'cuda', validate_runtime=False)[0]['training_steps'] == 400
     with pytest.raises(RuntimeError, match='No CUDA'):
         load_budget(config, 'cuda')
     with pytest.raises(ValueError, match='device'):
@@ -121,17 +148,22 @@ def training_loop_config(tmp_path, monkeypatch, checkpoint_every=1):
         return dict(loss=float(loss.detach()), gradient_norms=dict(suffix=norm)), None
     config = dict(identity='loop-regression-only', output=str(tmp_path), arms=['R3'], seeds=[41],
                   microbatch=4, checkpoint_every=checkpoint_every)
+    config['early_stopping'] = dict(max_epochs=1, patience=15, min_delta=1e-4, monitor='selection_presence_bce')
     write_json(tmp_path/'cache/index.json', dict(loop_fixture=True))
     monkeypatch.setattr(runner, 'validate_config', lambda c: tmp_path)
-    monkeypatch.setattr(runner, 'load_budget', lambda *args, **kwargs: (dict(training_steps=2), 'budget'))
-    monkeypatch.setattr(runner, 'read_cache_index', lambda c: dict(entries=[dict(role='train', targets=[i%2, i%2]) for i in range(5)]))
+    monkeypatch.setattr(runner, 'load_budget', lambda *args, **kwargs: (
+        dict(training_steps=2, steps_per_pass=2, early_stopping=config['early_stopping']), 'budget'))
+    monkeypatch.setattr(runner, 'read_cache_index', lambda c: dict(entries=[
+        *[dict(role='train', targets=[i%2, i%2]) for i in range(5)], dict(role='selection', targets=[0, 0])]))
     monkeypatch.setattr(runner, 'model_for_arm', lambda *args: SmallSuffix(2, 1))
     monkeypatch.setattr(runner, 'readout_assets', lambda p: (None, None, None))
     monkeypatch.setattr(runner, 'optimization_step', update)
+    monkeypatch.setattr(runner, 'selection_metrics', lambda *args: dict(
+        selection_presence_bce=.5, voice_bce=.5, music_bce=.5, known_counts=[1, 1]))
     return config
 
 
-@pytest.mark.parametrize('checkpoint_every,stop_after,expected_saves', [(1, None, 2), (1, 1, 1), (3, None, 1), (3, 1, 1)])
+@pytest.mark.parametrize('checkpoint_every,stop_after,expected_saves', [(1, None, 3), (1, 1, 2), (3, None, 2), (3, 1, 2)])
 def test_training_persists_each_completed_step_at_most_once(tmp_path, monkeypatch, checkpoint_every, stop_after, expected_saves):
     import torch
     import panns_cloud_run as runner
