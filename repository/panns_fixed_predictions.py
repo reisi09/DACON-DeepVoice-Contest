@@ -3,16 +3,61 @@ from __future__ import annotations
 import argparse
 import hashlib
 import importlib.util
+from importlib.metadata import version
 import json
 from pathlib import Path
+import platform
 import sys
 import tempfile
-from panns_adaptation_data import sha256, validate_config, write_json, identity
+from panns_adaptation_data import cache_provenance, sha256, validate_config, write_json, identity
 from panns_adaptation_cache import load_demucs
+
+
+def configure_numerics(device: str) -> None:
+    import torch
+    if device not in ('cpu', 'cuda') or (device == 'cuda' and not torch.cuda.is_available()):
+        raise ValueError('Requested frozen prediction device unavailable')
+    torch.set_num_threads(4)
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    torch.backends.cudnn.benchmark = False
+    torch.use_deterministic_algorithms(True)
+
+
+def fixed_prediction_contract(config, device):
+    import torch
+    runtime = cache_provenance()
+    runtime['code']['panns_fixed_predictions.py'] = sha256(__file__)
+    runtime['versions'].update({name: version(name) for name in (
+        'transformers', 'safetensors', 'scipy', 'einops', 'huggingface-hub')})
+    runtime.update(python=platform.python_version(), system=platform.system(), architecture=platform.machine(),
+                   cuda=torch.version.cuda, cudnn=torch.backends.cudnn.version())
+    hardware = dict(device=device)
+    if device == 'cuda':
+        hardware.update(name=torch.cuda.get_device_name(), capability=list(torch.cuda.get_device_capability()))
+    return dict(config_identity=config['identity'], reference_sha256=sha256(config['reference']),
+        rows_sha256=sha256(config['rows']), producer_sha256=sha256(__file__), device=device,
+        runtime=runtime, hardware=hardware, preprocessing='preserved Engine gain .6, soxr_hq, Demucs shifts=0',
+        numerics=dict(threads=torch.get_num_threads(), matmul_tf32=torch.backends.cuda.matmul.allow_tf32,
+            cudnn_tf32=torch.backends.cudnn.allow_tf32, cudnn_benchmark=torch.backends.cudnn.benchmark,
+            deterministic=torch.are_deterministic_algorithms_enabled(),
+            fake_head_autocast='bfloat16' if device == 'cuda' else 'disabled'))
+
+
+def load_fixed_predictions(config, device):
+    configure_numerics(device)
+    saved = json.loads(Path(config['fixed_predictions']).read_text())
+    actual = {key: value for key, value in saved.items() if key not in ('entries', 'entries_sha256')}
+    if actual != fixed_prediction_contract(config, device):
+        raise ValueError('Frozen fake predictions have incompatible provenance')
+    if saved.get('entries_sha256') != identity(saved['entries']):
+        raise ValueError('Frozen prediction payload hash mismatch')
+    return saved
 
 
 def fixed_predictions(config, device):
     import torch
+    configure_numerics(device)
     package = validate_config(config)
     reference = json.loads(Path(config['reference']).read_text())
     for name, expected in reference['members'].items():
@@ -20,6 +65,11 @@ def fixed_predictions(config, device):
             raise ValueError('Frozen runtime asset changed: '+name)
     # Only the previously audited, hash-pinned local package is executable.
     runtime = package/'model/runtime'
+    for name, expected in reference['members'].items():
+        if name.startswith('model/runtime/') and name.endswith('.py'):
+            loaded = sys.modules.get(Path(name).stem)
+            if loaded is not None and sha256(loaded.__file__) != expected:
+                raise ValueError('Conflicting already-loaded frozen runtime module: '+name)
     sys.path.insert(0,str(runtime))
     spec = importlib.util.spec_from_file_location('preserved_full_bank', runtime/'full_bank_submission.py')
     module = importlib.util.module_from_spec(spec)
@@ -48,8 +98,7 @@ def fixed_predictions(config, device):
     rows = [r for r in map(json.loads,Path(config['rows']).read_text().splitlines()) if r['role'] in ('development','selection') and r['ID'] in panel]
     out = Path(config['output'])/'fixed_predictions'
     out.mkdir(parents=True,exist_ok=True)
-    contract = dict(reference_sha256=sha256(config['reference']), rows_sha256=sha256(config['rows']),
-                    producer_sha256=sha256(__file__), device=device, torch_version=str(torch.__version__))
+    contract = fixed_prediction_contract(config, device)
     entries=[]
     with Path(config['archive']).open('rb') as archive:
         for row in rows:
@@ -79,7 +128,7 @@ def fixed_predictions(config, device):
             write_json(path,dict(identity=key,entry_sha256=identity(entry),entry=entry))
             entries.append(entry)
             print(json.dumps(dict(fixed_fake_predictions=len(entries),total=len(rows))),flush=True)
-    write_json(config['fixed_predictions'],dict(**contract,entries=entries))
+    write_json(config['fixed_predictions'],dict(**contract,entries=entries,entries_sha256=identity(entries)))
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)

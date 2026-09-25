@@ -83,25 +83,35 @@ def audit_archive(archive, rows):
     return verified, [r['ID'] for r in rows if r['path'] not in seen]
 
 
+def recovered_noise_id(original_id: str, processed_sha256: str) -> str:
+    return f'{original_id}:derived:{processed_sha256}'
+
+
 def admit_noise(rows, verified, manifest, expected_hash):
     manifest = Path(manifest)
     if sha256(manifest) != expected_hash:
         raise ValueError('Recovered manifest hash mismatch')
     recovered = [json.loads(line) for line in manifest.open()]
     old = {r['ID']: r for r in rows if r['source'] == 'musan_noise'}
-    if len(recovered) != len(old) or {r['ID'] for r in recovered} != set(old):
-        raise ValueError('Recovered noise ID coverage mismatch')
-    replacements = {}
+    if len(recovered) != len(old) or {r.get('original_id') for r in recovered} != set(old):
+        raise ValueError('Recovered noise historical ID coverage mismatch')
+    recovered_ids = {r['ID'] for r in recovered}
+    if len(recovered_ids) != len(recovered) or recovered_ids.intersection(r['ID'] for r in rows):
+        raise ValueError('Recovered noise must use unique new derived IDs')
+    admitted = {}
     for row in recovered:
-        original = old[row['ID']]
+        original = old[row['original_id']]
+        if row['ID'] != recovered_noise_id(original['ID'], row['sha256']):
+            raise ValueError('Recovered noise ID does not bind historical ID and derived bytes')
         fields = ('role', 'source', 'VOICE_PRESENT', 'MUSIC_PRESENT', 'VOICE_FAKE', 'MUSIC_FAKE',
-                  'FILE_FAKE', 'parent_ids', 'historical_exposure', 'historical_split',
+                  'FILE_FAKE', 'VOICE_FAKE_IF_PRESENT', 'historical_exposure', 'historical_split',
                   'crop_start_s', 'crop_len_s', 'gain_db', 'channels', 'codec_chain')
         if (any(row.get(k) != original.get(k) for k in fields)
                 or row.get('original_processed_sha256') != original['sha256']
+                or set(row.get('parent_ids', [])) != set(original.get('parent_ids', [])) | {original['ID']}
                 or not set(original['group_keys']).issubset(row['group_keys'])):
             raise ValueError('Recovered audio changed historical identity, role or labels')
-        if row['ID'] in verified or row['VOICE_PRESENT'] != 0 or row['MUSIC_PRESENT'] != 0:
+        if original['ID'] in verified or row['ID'] in verified or row['VOICE_PRESENT'] != 0 or row['MUSIC_PRESENT'] != 0:
             raise ValueError('Recovery must only fill missing, both-absent noise')
         path = (manifest.parent/row['path']).resolve()
         if not path.is_relative_to(manifest.parent.resolve()) or Path(row['path']).is_absolute():
@@ -114,10 +124,10 @@ def admit_noise(rows, verified, manifest, expected_hash):
             signal = source.read(dtype='float32', always_2d=True)
         if not len(signal) or not np.isfinite(signal).all():
             raise ValueError('Invalid recovered waveform')
-        verified[row['ID']] = dict(local_path=str(path), sha256=row['sha256'], bytes=row['bytes'],
+        admitted[row['ID']] = dict(local_path=str(path), sha256=row['sha256'], bytes=row['bytes'],
             sample_rate=16000, decoded_samples=len(signal), channels=signal.shape[1], seconds=len(signal)/16000)
-        replacements[row['ID']] = row
-    return [replacements.get(row['ID'], row) for row in rows]
+    verified.update(admitted)
+    return [*rows, *recovered]
 
 
 def audit(config):
@@ -134,10 +144,9 @@ def audit(config):
     if actual != config['archive_sha256']:
         raise ValueError('Archive hash mismatch')
     verified, missing = audit_archive(config['archive'], rows)
-    original_missing = len(missing)
+    original_verified = len(verified)
     if config.get('recovered_noise_manifest'):
         rows = admit_noise(rows, verified, config['recovered_noise_manifest'], config['recovered_noise_sha256'])
-        missing = [rid for rid in missing if rid not in verified]
     closure = quarantine_roles(rows)
     selected, excluded = [], Counter()
     for row in rows:
@@ -164,7 +173,7 @@ def audit(config):
     rows_path.write_text(''.join(json.dumps(r, ensure_ascii=False)+'\n' for r in selected))
     missing_set = set(missing)
     report = dict(rows=len(rows), verified=len(verified), missing=len(missing),
-        recovered_noise=original_missing-len(missing), recovered_noise_sha256=config.get('recovered_noise_sha256'),
+        recovered_noise=len(verified)-original_verified, recovered_noise_sha256=config.get('recovered_noise_sha256'),
         missing_by_source=dict(Counter(r['source'] for r in rows if r['ID'] in missing_set)),
         eligible_D0=len(selected), excluded=dict(excluded), known_fraction=fraction,
         presence_by_role=dict(Counter(f'{r["role"]}|{r[TARGETS[0]]}|{r[TARGETS[1]]}' for r in selected)),
@@ -191,7 +200,7 @@ def validate_config(config):
     package = Path(reference['package'])
     for name, digest in reference['members'].items():
         if '/panns/' in name or '/htdemucs/' in name or name in (
-                'model/trained/presence_head.json', 'model/assets/baseline/script.py'):
+                'model/trained/presence_head.json', 'model/trained/file_ensemble.json', 'model/assets/baseline/script.py'):
             if sha256(package/name) != digest:
                 raise ValueError(f'Reference asset hash mismatch: {name}')
     return package

@@ -1,0 +1,145 @@
+{
+  "source_sha256": {
+    "panns_recover_noise.py": "9abe3dc8de82de4e5b07e6b43ef934bc813af70e732749724d6118a0a5b1bed2",
+    "panns_cloud_run.py": "cf73255ec67862084f8969bd0a5240c880cce4cf4c9e5f01dcd6d6b5ccea97d2",
+    "panns_training_state.py": "6afc3ea8391c237e0b003959e6810c3cc5965da37ffa5dd8b79c537bc4bf775d",
+    "panns_adaptation.py": "08a95a237bd69ca9ab6f44e404d6777360b067f83d4223876d5ea7112c8dfcc0",
+    "panns_cloud_pipeline.py": "ca49abaf7d50a51fbb8613e384f20c6d0d04c2b6aadd69e4d36e7e138df29870",
+    "panns_adaptation_cache.py": "2fcd37e11284980d8853e42106b380ad1413e5360f7ec007cddc1a5385d01677",
+    "panns_adaptation_data.py": "f7c5904b15b4f25963f5a36181a26c6ae847890e9cd4ac2e6fe146043fdba005",
+    "panns_cloud_report.py": "7c14bd2c2f93870218842d7447e260d2859a41d83ad8fd7dc2d63e877d520835",
+    "panns_cloud_bundle.py": "5f90c2ebd8716ac255e3bc9a9b95325192d4f36b6d4c957177b190b1b292bdb0",
+    "panns_restore_environment.py": "d2ee7e85be113a6c3b7d80679ec8609351f3f3679f5084b184263825e709b123",
+    "panns_adaptation_run.py": "91186e51acde86ce90f850b5177321f6a83dd70d66ae60b497a598d84f9077bd",
+    "panns_stem_probe.py": "cd71daffd85932f69420e05351edfbdb871acd3595fb4fc9fa9bcf56adcbfd4f",
+    "panns_training_budget.py": "b39b41bb84f06262f12d3a7492fd329d358233db5685b9cbaaabcb1dac79f7cb",
+    "panns_cloud_prepare.py": "5c30b6b953fe869e05eea0c564244b16c40e3d7e8353bb364ae0f8d4b2643889",
+    "panns_fixed_predictions.py": "4df65ac01921b33fe4bdbe91ae41603b4e78151bea1dab3983ca17f8b86e938a",
+    "panns_cpu_environment.py": "0e9aa7120aed7f33fb69ff54e057d4ecad37fff1bcdbb91da8e805d2c20cfe5a",
+    "panns_a100_launch.sh": "cd3742c63ce129946a762be75d397e0b4cbc9fb1e6cba9dd43172630a99a9c29"
+  },
+  "cpu": {
+    "real_audio_files": 7,
+    "train_files": 5,
+    "batch_sizes": [
+      4,
+      1
+    ],
+    "profiling_updates": 40,
+    "training_steps_per_checked_arm": 2,
+    "R3_resume_max_abs": 0.0,
+    "frozen_state_unchanged": true,
+    "diagnostics": {
+      "R3": {
+        "steps": 2,
+        "frozen_sha256": "6e043e86c2b75b21059c3b2bc758bdb160661848fead30cf8f8505b4f8e1508a",
+        "diagnostics": {
+          "gradient_norms": {
+            "block6": {
+              "steps": 2,
+              "clipped": 0,
+              "norm_sum": 0.016756424127379432,
+              "norm_max": 0.01642293483018875,
+              "clipping_fraction": 0.0,
+              "mean_preclip_norm": 0.008378212063689716
+            },
+            "se": {
+              "steps": 2,
+              "clipped": 0,
+              "norm_sum": 0.0017043714251485653,
+              "norm_max": 0.0016642453847452998,
+              "clipping_fraction": 0.0,
+              "mean_preclip_norm": 0.0008521857125742827
+            }
+          }
+        },
+        "resume_max_abs": 0.0
+      },
+      "R5": {
+        "steps": 2,
+        "frozen_sha256": "6e043e86c2b75b21059c3b2bc758bdb160661848fead30cf8f8505b4f8e1508a",
+        "diagnostics": {
+          "gradient_norms": {
+            "block6": {
+              "steps": 2,
+              "clipped": 0,
+              "norm_sum": 0.016756703553255647,
+              "norm_max": 0.01642293483018875,
+              "clipping_fraction": 0.0,
+              "mean_preclip_norm": 0.008378351776627824
+            },
+            "temporal_pool": {
+              "steps": 2,
+              "clipped": 0,
+              "norm_sum": 0.00025911103818998527,
+              "norm_max": 0.0002572099620010704,
+              "clipping_fraction": 0.0,
+              "mean_preclip_norm": 0.00012955551909499263
+            }
+          },
+          "attention": {
+            "segments": 5,
+            "entropy_sum": 12.424533424873827,
+            "peak_sum": 0.41667359322309494,
+            "mean_entropy_nats": 2.4849066849747654,
+            "mean_peak_weight": 0.08333471864461899
+          }
+        }
+      }
+    },
+    "real_frozen_evaluation_files": 2,
+    "fake_probabilities_unchanged": true,
+    "incomplete_comparison_rejected": true
+  },
+  "artifacts": {
+    "all_pytest.log": "c5a1bdbd75b787077f38113a3ec362db73d9596737d573db512754ecc6b25353",
+    "real_training_receipt.json": "959be2b52730aa7fea75f92622af059b2475d3ee27d37e49b98c46d8e92a11f9",
+    "real_evaluation_receipt.json": "60b26d75792828fc629b91aece0fda383e3efd68483d009e7f2492f17108d729",
+    "revised_bundle_runtime_proof.json": "b74e931bdf6184e64c57def82e001183d7c077858886807f44c69b4f8288806f",
+    "upload_v4_receipt.json": "eafe1a3bb22124dcadb185c3c12c4033e55e8fff04bb3d287f9dda766397b93e",
+    "launcher.log": "752a29cfbea62026a0d1474adcb668d3828b66130910a50b9fdbae2055e256a2"
+  },
+  "uploads": {
+    "objects": [
+      {
+        "key": "panns-cnn-v1-20260925/inputs-v4/run_bundle.tar",
+        "sha256": "b2f127f6ad4f2f05d0d074b03b270b68458144ac9f136a7edf5fb7cc9937168f",
+        "bytes": 167208960,
+        "readback_verified": true
+      },
+      {
+        "key": "panns-cnn-v1-20260925/inputs-v4/launch_lock.json",
+        "sha256": "6c493591eebbe1932653ac0a295b47cce38ae7902e81d22057c3d6bedc091e20",
+        "bytes": 269,
+        "readback_verified": true
+      },
+      {
+        "key": "panns-cnn-v1-20260925/inputs-v4/panns_a100_launch.sh",
+        "sha256": "cd3742c63ce129946a762be75d397e0b4cbc9fb1e6cba9dd43172630a99a9c29",
+        "bytes": 4628,
+        "readback_verified": true
+      }
+    ],
+    "inventory_objects": 1489,
+    "inventory_bytes": 155950949947,
+    "gpu_started": false
+  },
+  "workspaces": [
+    {
+      "requested_id": "wsp-nvxqw1jf9zdv",
+      "workspace.name": "lb-e00-e04-a100-20260924-v1",
+      "workspace.phase": "standby",
+      "workspace.state": "stopped"
+    },
+    {
+      "requested_id": "wsp-2yoknqpl0k4s",
+      "workspace.name": "panns-env-cpu-20260925",
+      "workspace.phase": "standby",
+      "workspace.state": "stopped"
+    }
+  ],
+  "cuda_executed": false,
+  "independent_evaluation": false,
+  "quality_claim": false,
+  "lsp_available": false
+}

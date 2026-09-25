@@ -14,10 +14,10 @@ if [[ "${PANNS_PAUSE_ON_EXIT:-1}" == 1 ]]; then
   trap '"$PANNS_VESSLCTL" --org qwdkw workspace pause wsp-nvxqw1jf9zdv' EXIT
 fi
 PANNS_SHARED=${PANNS_SHARED:-/shared}
-PANNS_WORK=${PANNS_WORK:-/root/panns-cnn-v1-20260925}
+PANNS_WORK=${PANNS_WORK:-/root/panns-cnn-v1-20260925/application-v4}
 PANNS_OVERRIDE_PYTHON=${PANNS_PYTHON:-}
-PANNS_PYTHON=${PANNS_PYTHON:-$PANNS_WORK/env/venv/bin/python}
-PANNS_INPUT="$PANNS_SHARED/panns-cnn-v1-20260925/inputs-v3"
+PANNS_PYTHON=${PANNS_PYTHON:-/root/panns-cnn-v1-20260925/env/venv/bin/python}
+PANNS_INPUT="$PANNS_SHARED/panns-cnn-v1-20260925/inputs-v4"
 mkdir -p "$PANNS_WORK"
 python3 - "$PANNS_INPUT" "$PANNS_WORK" <<'PY'
 import hashlib,json,sys,tarfile,shutil
@@ -74,4 +74,4 @@ print('A100:',torch.cuda.get_device_name(0),'torch:',torch.__version__)
 PY
 export PATH="$PANNS_WORK/package/model/runtime/bin:$PATH"
 chmod u+x "$PANNS_WORK/package/model/runtime/bin/ffmpeg"
-"$PANNS_PYTHON" "$PANNS_WORK/bundle/code/panns_cloud_pipeline.py" --run "$PANNS_WORK/run.json" --bundle "$PANNS_WORK/bundle" --hours 48
+"$PANNS_PYTHON" "$PANNS_WORK/bundle/code/panns_cloud_pipeline.py" --run "$PANNS_WORK/run.json" --bundle "$PANNS_WORK/bundle" "$@"

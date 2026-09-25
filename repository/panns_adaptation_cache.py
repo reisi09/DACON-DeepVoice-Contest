@@ -59,6 +59,40 @@ def load_demucs(package):
     return model.cpu().eval().requires_grad_(False)
 
 
+def cache_key(config, row, starts):
+    return identity(dict(config=config['identity'], provenance=cache_provenance(),
+        audio=row['verified_audio']['sha256'], starts=starts,
+        preprocessing='preserved baseline gain .6, soxr_hq', dtype='float32'))
+
+
+def validate_cache_numerics(arrays, stems, errors):
+    if (any(not np.isfinite(array).all() for array in arrays)
+            or not np.isfinite(list(stems.values())).all() or not np.isfinite(errors).all()):
+        raise ValueError('Nonfinite cache activations, predictions, stems or parity errors')
+
+
+def validate_cache_entry(config, row, entry):
+    if (entry['ID'] != row['ID'] or entry['role'] != row['role']
+            or entry['component_id'] != row['component_id']
+            or entry['targets'] != [row[k] for k in TARGETS]):
+        raise ValueError('Cache row identity, role or target mismatch')
+    values = load_cache(entry)
+    validate_cache_numerics((values['block5'], values['tags']), entry['stems'],
+        [entry[key] for key in ('tag_error', 'stats_error', 'presence_error')])
+    if entry['identity'] != cache_key(config, row, values['starts'].tolist()):
+        raise ValueError('Incompatible cache key for current audio and runtime')
+    return entry
+
+
+def validate_partial_entry(config, row, saved):
+    if saved.get('provenance') != cache_provenance():
+        raise ValueError('Partial cache preprocessing/runtime provenance mismatch')
+    entry = saved['entry']
+    if saved['config_identity'] != config['identity'] or saved['entry_sha256'] != identity(entry):
+        raise ValueError('Partial cache identity mismatch')
+    return validate_cache_entry(config, row, entry)
+
+
 def cache(config, resume=False):
     import tempfile
     import torch
@@ -76,13 +110,13 @@ def cache(config, resume=False):
     out = Path(config['output'])/'cache'
     out.mkdir(parents=True, exist_ok=True)
     index_path = out/'index.json'
+    rows = {r['ID']: r for r in (json.loads(s) for s in Path(config['rows']).open())}
+    selected = [rows[rid] for rid in config['panel_ids']]
     if index_path.exists():
         saved = read_cache_index(config)
         for entry in saved['entries']:
-            load_cache(entry)
+            validate_cache_entry(config, rows[entry['ID']], entry)
         return saved
-    rows = {r['ID']: r for r in (json.loads(s) for s in Path(config['rows']).open())}
-    selected = [rows[rid] for rid in config['panel_ids']]
     base = load_base(package).to(device)
     model = AdaptedCnn14(base, train_blocks=())
     original = baseline(package)
@@ -97,13 +131,7 @@ def cache(config, resume=False):
             if entry_path.exists():
                 if not resume:
                     raise FileExistsError('Partial cache exists; use --resume')
-                saved = json.loads(entry_path.read_text())
-                entry = saved['entry']
-                if saved['config_identity'] != config['identity'] or saved['entry_sha256'] != identity(entry):
-                    raise ValueError('Partial cache identity mismatch')
-                if entry['ID'] != row['ID'] or entry['role'] != row['role'] or entry['targets'] != [row[k] for k in TARGETS]:
-                    raise ValueError('Partial cache role/target mismatch')
-                load_cache(entry)
+                entry = validate_partial_entry(config, row, json.loads(entry_path.read_text()))
                 entries.append(entry)
                 continue
             t = time.monotonic()
@@ -147,14 +175,15 @@ def cache(config, resume=False):
                 tag_error = float((reference-adapted).abs().max())
                 numpy_feats = tagger_features(reference.numpy(), labels, groups)
                 torch_feats = tag_features(adapted, labels, groups)
-                stats_error = max(abs(numpy_feats[k]-float(torch_feats[k])) for k in numpy_feats)
+                stats_error = float(np.max([abs(numpy_feats[k]-float(torch_feats[k])) for k in numpy_feats]))
                 old_presence = np.array(presence(heads, numpy_feats | stems, (0., 0.)))
                 new_presence = presence_logits(adapted, stems, heads, labels, groups).sigmoid().numpy()
                 presence_error = float(np.abs(old_presence-new_presence).max())
+            validate_cache_numerics((features.numpy(), reference.numpy(), adapted.numpy(), old_presence, new_presence),
+                                   stems, [tag_error, stats_error, presence_error])
             if tag_error > (1e-6 if device == 'cpu' else 1e-5) or stats_error > 2*np.finfo(np.float32).eps or presence_error > (1e-6 if device == 'cpu' else 1e-5):
                 raise ValueError(f'Initial parity failed: tags={tag_error}, stats={stats_error}, presence={presence_error}')
-            key = identity(dict(config=config['identity'], provenance=cache_provenance(), audio=audio['sha256'], starts=starts,
-                                preprocessing='preserved baseline gain .6, soxr_hq', dtype='float32'))
+            key = cache_key(config, row, starts)
             path = out/(hashlib.sha256(row['ID'].encode()).hexdigest()+'.npz')
             if path.exists():
                 if not resume:
@@ -169,7 +198,8 @@ def cache(config, resume=False):
                 tag_error=tag_error, stats_error=stats_error, presence_error=presence_error,
                 stem_seconds=stem_seconds, total_seconds=time.monotonic()-t)
             entries.append(entry)
-            write_json(entry_path, dict(config_identity=config['identity'], entry_sha256=identity(entry), entry=entry))
+            write_json(entry_path, dict(config_identity=config['identity'], provenance=cache_provenance(),
+                                       entry_sha256=identity(entry), entry=entry))
             print(f'Cached {len(entries)}/{len(selected)}: {len(segments)} segments, {entry["total_seconds"]:.2f}s', flush=True)
     report = dict(config_identity=config['identity'], provenance=cache_provenance(), entries=entries, seconds=time.monotonic()-start,
                   stem_reuse=False, incomplete_types=[f'{v}/{m}' for v, m in ((0,0),(0,1),(1,0),(1,1))

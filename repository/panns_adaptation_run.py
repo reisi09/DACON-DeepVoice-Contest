@@ -70,9 +70,18 @@ def optimization_step(model, optimizer, entries, heads, labels, groups, fraction
     from panns_adaptation import masked_file_loss, presence_logits
     optimizer.zero_grad(set_to_none=True)
     loss_sum, predictions = 0., []
+    attention = dict(segments=0, entropy_sum=0., peak_sum=0.)
     for entry in entries:
         features = torch.from_numpy(load_cache(entry)['block5'])
-        tags = torch.cat([model.tags_from_block5(part.to(device)) for part in features.split(microbatch)])
+        parts = []
+        for part in features.split(microbatch):
+            parts.append(model.tags_from_block5(part.to(device)))
+            if model.pool is not None:
+                weights = model.pool.last_attention.double()
+                attention['segments'] += weights.size(0)
+                attention['entropy_sum'] += float(-(weights * weights.clamp_min(1e-300).log()).sum())
+                attention['peak_sum'] += float(weights.max(1).values.sum())
+        tags = torch.cat(parts)
         logits = presence_logits(tags, entry['stems'], heads, labels, groups)
         known = torch.tensor([[y is not None for y in entry['targets']]])
         targets = torch.tensor([[float('nan') if y is None else y for y in entry['targets']]], dtype=torch.float64)
@@ -89,10 +98,11 @@ def optimization_step(model, optimizer, entries, heads, labels, groups, fraction
                 raise ValueError(f'Missing or nonfinite gradient: {name}')
             if capture_gradients:
                 gradients[name] = param.grad.detach().cpu().clone()
-    for group in optimizer.param_groups:
-        torch.nn.utils.clip_grad_norm_(group['params'], 1.)
+    norms = {group['name']: float(torch.nn.utils.clip_grad_norm_(group['params'], 1., error_if_nonfinite=True))
+             for group in optimizer.param_groups}
     optimizer.step()
-    return dict(loss=loss_sum, probabilities=predictions, IDs=[r['ID'] for r in entries]), gradients
+    return dict(loss=loss_sum, probabilities=predictions, IDs=[r['ID'] for r in entries],
+                gradient_norms=norms, attention=attention if attention['segments'] else None), gradients
 
 
 def prepare_pilot_output(out, resume):

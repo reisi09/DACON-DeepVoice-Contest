@@ -182,13 +182,14 @@ def test_interrupted_namespace_is_preserved_and_budget_counts_replay(tmp_path):
 
 
 def test_recovered_noise_cannot_change_role_labels_or_historical_hash(tmp_path):
-    from panns_adaptation_data import admit_noise, sha256
+    from panns_adaptation_data import admit_noise, recovered_noise_id, sha256
     audio = tmp_path/'noise.wav'
     sf.write(audio, np.linspace(-.2, .2, 800, dtype=np.float32), 16000)
     old = dict(ID='noise:a', source='musan_noise', role='development', sha256='original',
                VOICE_PRESENT=0, MUSIC_PRESENT=0, group_keys=['original-group'])
-    row = old | dict(path='noise.wav', sha256=sha256(audio), bytes=audio.stat().st_size,
-                     original_processed_sha256='original')
+    row = old | dict(ID=recovered_noise_id(old['ID'], sha256(audio)), original_id=old['ID'],
+                     parent_ids=[old['ID']], path='noise.wav', sha256=sha256(audio),
+                     bytes=audio.stat().st_size, original_processed_sha256='original')
     manifest = tmp_path/'manifest.jsonl'
     for mutation in ({'role': 'train'}, {'MUSIC_PRESENT': 1}, {'original_processed_sha256': 'wrong'}):
         manifest.write_text(json.dumps(row | mutation)+'\n')
@@ -197,5 +198,5 @@ def test_recovered_noise_cannot_change_role_labels_or_historical_hash(tmp_path):
     manifest.write_text(json.dumps(row)+'\n')
     verified = {}
     result = admit_noise([old], verified, manifest, sha256(manifest))
-    assert result[0]['role'] == 'development' and result[0]['sha256'] == sha256(audio)
-    assert verified['noise:a']['sha256'] == sha256(audio)
+    assert result[0] == old and result[1]['role'] == 'development'
+    assert verified[row['ID']]['sha256'] == sha256(audio) and old['ID'] not in verified

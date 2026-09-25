@@ -53,10 +53,9 @@ def prepare(bundle, volume, work):
         rows.append(row)
     (work/'presence_rows.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in rows))
     config=dict(reference=str(work/'reference.json'),rows=str(work/'presence_rows.jsonl'),archive=str(volume/AUDIO),
-        recovered_audio_root=str(bundle/'noise'),output=str(volume/'panns-cnn-v1-20260925/run-v1'),panel_ids=[r['ID'] for r in rows],
+        recovered_audio_root=str(bundle/'noise'),output=str(volume/'panns-cnn-v1-20260925/run-v2'),panel_ids=[r['ID'] for r in rows],
         arms=['R1','R2','R3','R5'],seeds=[41,42,43],cache_device='cuda',microbatch=4,
-        training_steps=3*((sum(r['role']=='train' for r in rows)+3)//4),training_timeout_seconds=21600,
-        checkpoint_every=100,fixed_predictions=str(volume/'panns-cnn-v1-20260925/run-v1/fixed_predictions.json'),
+        checkpoint_every=100,fixed_predictions=str(volume/'panns-cnn-v1-20260925/run-v2/fixed_predictions.json'),
         inputs={str(work/'presence_rows.jsonl'):sha256(work/'presence_rows.jsonl'),
                 str(work/'reference.json'):sha256(work/'reference.json')})
     for name in ('spec.md','workflow.md','bundle_manifest.json'):
@@ -72,7 +71,7 @@ def prepare(bundle, volume, work):
         raise ValueError('Existing run configuration differs; use a fresh work namespace')
     write_json(path,config)
     write_json(work/'prepared.json',dict(bundle_identity=identity(manifest),run_identity=config['identity'],
-        uploaded_inputs_verified=True,rows=len(rows),training_steps=config['training_steps'],gpu_started=False))
+        uploaded_inputs_verified=True,rows=len(rows),training_budget_status='requires_measured_profile',gpu_started=False))
     return config
 
 if __name__=='__main__':

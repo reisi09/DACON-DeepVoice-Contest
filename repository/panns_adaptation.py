@@ -28,6 +28,7 @@ class TemporalPool(nn.Module):
 
     def forward(self, z):
         attention = torch.softmax((z * self.weight[None, :, None]).sum(1), dim=1)
+        self.last_attention = attention.detach()
         return z.max(2).values + (z * attention[:, None, :]).sum(2)
 
 
@@ -71,11 +72,11 @@ class AdaptedCnn14(nn.Module):
         groups = []
         for number in self.train_blocks:
             block = getattr(self.base, f'conv_block{number}')
-            groups.append(dict(params=[*block.conv1.parameters(), *block.conv2.parameters()], lr=1e-5))
+            groups.append(dict(name=f'block{number}', params=[*block.conv1.parameters(), *block.conv2.parameters()], lr=1e-5))
         if isinstance(self.se, ChannelSE):
-            groups.append(dict(params=list(self.se.parameters()), lr=1e-3))
+            groups.append(dict(name='se', params=list(self.se.parameters()), lr=1e-3))
         if self.pool is not None:
-            groups.append(dict(params=list(self.pool.parameters()), lr=1e-4))
+            groups.append(dict(name='temporal_pool', params=list(self.pool.parameters()), lr=1e-4))
         return groups
 
 

@@ -12,6 +12,7 @@ from pathlib import Path
 import imageio_ffmpeg
 import numpy as np
 import soundfile as sf
+from panns_adaptation_data import recovered_noise_id
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--work', type=Path, required=True, help='Verified raw recovery directory')
@@ -71,7 +72,9 @@ def rebuild(row: dict) -> dict:
     for field in ('crop_start_s','crop_len_s','codec_chain','gain_db','channels'):
         if result[field]!=row[field]:
             raise ValueError(f'Historical preprocessing changed: {row["ID"]} {field}')
-    result.update(original_processed_sha256=row['sha256'], recovered_raw_sha256=rawmeta[row['ID']]['sha256'],
+    result.update(ID=recovered_noise_id(row['ID'], result['sha256']), original_id=row['ID'],
+        parent_ids=sorted(set(row.get('parent_ids', [])) | {row['ID']}),
+        original_processed_sha256=row['sha256'], recovered_raw_sha256=rawmeta[row['ID']]['sha256'],
         recovery_method='seed20260923 with exact historical codec; new processed bytes',
         gsm_encoder='libsndfile GSM610' if row['codec_chain']=='tel_gsm' else None,
         full_audio_decode_verified=True, decoded_seconds=len(signal)/rate)

@@ -21,7 +21,8 @@ def build(data,output,noise_archive):
     runtime=[Path(n).name for n in reference['members'] if n.startswith('model/runtime/') and n.endswith('.py')]
     code=['panns_adaptation.py','panns_adaptation_cache.py','panns_adaptation_data.py','panns_adaptation_run.py',
         'panns_cloud_run.py','panns_cloud_pipeline.py','panns_cloud_prepare.py','panns_cloud_report.py',
-        'panns_fixed_predictions.py','panns_cpu_environment.py','panns_restore_environment.py','panns_a100_launch.sh','data_v4/build_manifest.py',*runtime]
+        'panns_fixed_predictions.py','panns_training_budget.py','panns_training_state.py',
+        'panns_cpu_environment.py','panns_restore_environment.py','panns_a100_launch.sh','data_v4/build_manifest.py',*runtime]
     for name in sorted(set(code)):copy(source/name,'code/'+name)
     for name,expected in reference['members'].items():
         path=package/name
@@ -32,15 +33,23 @@ def build(data,output,noise_archive):
     reference.pop('package');reference.pop('archive')
     write_json(root/'reference.json',reference)
     rows=[]
-    for row in map(json.loads,(task/'audit_v2/presence_rows.jsonl').read_text().splitlines()):
+    for row in map(json.loads,(task/'audit_v3/presence_rows.jsonl').read_text().splitlines()):
         if 'local_path' in row['verified_audio']:
             row['verified_audio']['local_path']='noise/'+row['path']
         rows.append(row)
     (root/'presence_rows.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in rows))
+    previous_rows={row['ID']:row for row in map(json.loads,(task/'audit_v2/presence_rows.jsonl').read_text().splitlines())}
+    derived_rows={row['original_id']:row for row in rows if 'original_id' in row}
     gold=json.loads((task/'review_final/cache/index.json').read_text())
     for entry in gold['entries']:
         path=Path(entry['path'])
         if sha256(path)!=entry['sha256']:raise ValueError('CPU gold cache changed')
+        if entry['ID'] in derived_rows:
+            row=derived_rows[entry['ID']];previous=previous_rows[entry['ID']]
+            if (row['verified_audio']['sha256']!=previous['verified_audio']['sha256']
+                or row['role']!=entry['role'] or [row['VOICE_PRESENT'],row['MUSIC_PRESENT']]!=entry['targets']):
+                raise ValueError('Derived audio no longer matches historical CPU gold')
+            entry['original_id']=entry['ID'];entry['ID']=row['ID'];entry['component_id']=row['component_id']
         copy(path,'gold/'+path.name);entry['path']=path.name
     write_json(root/'gold/index.json',gold)
     copy(source.parent/'docs/superpowers/specs/2026-09-25-panns-cnn-expanded-design.md','spec.md')
