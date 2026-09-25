@@ -14,10 +14,10 @@ if [[ "${PANNS_PAUSE_ON_EXIT:-1}" == 1 ]]; then
   trap '"$PANNS_VESSLCTL" --org qwdkw workspace pause wsp-nvxqw1jf9zdv' EXIT
 fi
 PANNS_SHARED=${PANNS_SHARED:-/shared}
-PANNS_WORK=${PANNS_WORK:-/root/panns-cnn-v1-20260925/application-v4}
+PANNS_WORK=${PANNS_WORK:-/root/panns-cnn-v1-20260925/application-v5}
 PANNS_OVERRIDE_PYTHON=${PANNS_PYTHON:-}
 PANNS_PYTHON=${PANNS_PYTHON:-/root/panns-cnn-v1-20260925/env/venv/bin/python}
-PANNS_INPUT="$PANNS_SHARED/panns-cnn-v1-20260925/inputs-v4"
+PANNS_INPUT="$PANNS_SHARED/panns-cnn-v1-20260925/inputs-v5"
 mkdir -p "$PANNS_WORK"
 python3 - "$PANNS_INPUT" "$PANNS_WORK" <<'PY'
 import hashlib,json,sys,tarfile,shutil

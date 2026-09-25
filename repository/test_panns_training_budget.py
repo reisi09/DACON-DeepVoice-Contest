@@ -88,10 +88,9 @@ while True: time.sleep(.05)
         assert (tmp_path / 'grandchild.term').read_text() == 'terminated'
     finally:
         if parent.poll() is None:
-            parent.kill()
-            parent.wait()
-        for marker in tmp_path.glob('*.ready'):
+            parent.terminate()
             try:
-                os.kill(int(marker.read_text()), signal.SIGTERM)
-            except ProcessLookupError:
-                continue
+                parent.wait(timeout=65)
+            except subprocess.TimeoutExpired:
+                parent.kill()
+                parent.wait()

@@ -77,7 +77,7 @@ def optimization_step(model, optimizer, entries, heads, labels, groups, fraction
         for part in features.split(microbatch):
             parts.append(model.tags_from_block5(part.to(device)))
             if model.pool is not None:
-                weights = model.pool.last_attention.double()
+                weights = model.pool.last_attention.to(device='cpu', dtype=torch.float64)
                 attention['segments'] += weights.size(0)
                 attention['entropy_sum'] += float(-(weights * weights.clamp_min(1e-300).log()).sum())
                 attention['peak_sum'] += float(weights.max(1).values.sum())
