@@ -91,8 +91,8 @@ def report(config, repeats=2000):
             fixed_predictions_sha256=sha256(config['fixed_predictions']),run_identity=None,checkpoint_sha256=None)
         if arm!='R0':
             completed=json.loads((root/f'train_{arm}_{seed}'/'complete.json').read_text())
-            budget,_=load_budget(config,evaluation['device'])
-            expected.update(run_identity=training_identity(config,arm,seed,evaluation['device']),
+            budget,_=load_budget(config,evaluation['device'],validate_runtime=False)
+            expected.update(run_identity=training_identity(config,arm,seed,evaluation['device'],validate_runtime=False),
                 checkpoint_sha256=sha256(root/f'train_{arm}_{seed}'/'checkpoint.pt'))
             if completed['steps']!=budget['training_steps'] or any(completed[k]!=expected[k] for k in ('run_identity','checkpoint_sha256')):
                 message='Evaluation does not match a completed locked condition'

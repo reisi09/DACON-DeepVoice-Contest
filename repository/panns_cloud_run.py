@@ -18,12 +18,21 @@ def setup(device):
     configure_numerics(device)
 
 
-def training_identity(config, arm, seed, device):
-    _, budget_sha = load_budget(config, device)
+def training_identity(config, arm, seed, device, *, validate_runtime=True):
+    _, budget_sha = load_budget(config, device, validate_runtime=validate_runtime)
     return identity(dict(config=config['identity'], arm=arm, seed=seed, device=device,
                          code=sha256(__file__), budget=budget_sha,
                          sampler=sha256(Path(__file__).with_name('panns_training_state.py')),
                          cache=sha256(Path(config['output'])/'cache/index.json')))
+
+
+def save_checkpoint(path, model, optimizer, device, record):
+    import torch
+    temporary = path.with_suffix('.pt.tmp')
+    torch.save(dict(record, model=trainable_state(model), optimizer=optimizer.state_dict(),
+                    torch_rng=torch.get_rng_state(),
+                    cuda_rng=torch.cuda.get_rng_state_all() if device == 'cuda' else []), temporary)
+    temporary.replace(path)
 
 
 def train(config, arm, seed, device='cuda', resume=False, stop_after=None):
@@ -49,10 +58,20 @@ def train(config, arm, seed, device='cuda', resume=False, stop_after=None):
         if done['run_identity'] != run_id or done['steps'] != steps or done['checkpoint_sha256'] != sha256(checkpoint):
             raise ValueError('Completed training identity/hash mismatch')
         return done
-    if any(out.iterdir()) and not resume:
+    existing = set(out.iterdir())
+    if existing and not resume:
         raise FileExistsError('Incomplete training exists; explicit --resume required')
-    if resume and not checkpoint.exists() and any(out.iterdir()):
-        raise FileNotFoundError('No checkpoint for incomplete training')
+    receipt, temporary = out/'run_identity.json', out/'checkpoint.pt.tmp'
+    if receipt in existing and (receipt.is_symlink() or not receipt.is_file()
+                               or json.loads(receipt.read_text()) != dict(run_identity=run_id)):
+        raise ValueError('Training directory run identity mismatch')
+    if resume and not checkpoint.exists() and existing:
+        if (receipt not in existing or not existing <= {receipt, temporary}
+                or any(path.is_symlink() or not path.is_file() for path in existing)):
+            raise FileNotFoundError('No checkpoint for incomplete training; partial ownership is unverified')
+        temporary.unlink(missing_ok=True)
+    if not existing:
+        write_json(receipt, dict(run_identity=run_id))
     model = model_for_arm(package, arm, seed, device)
     frozen = frozen_digest(model)
     optimizer = torch.optim.AdamW(model.optimizer_groups(), weight_decay=1e-4, foreach=False)
@@ -74,12 +93,13 @@ def train(config, arm, seed, device='cuda', resume=False, stop_after=None):
     stop = []
     previous = signal.signal(signal.SIGTERM, lambda *_: stop.append(True))
     started = time.monotonic()
+    saved_step = step if checkpoint.exists() else None
     def save():
-        torch.save(dict(run_identity=run_id, arm=arm, seed=seed, step=step, model=trainable_state(model),
-            optimizer=optimizer.state_dict(), sampler=sampler.state_dict(), diagnostics=diagnostics, torch_rng=torch.get_rng_state(),
-            cuda_rng=torch.cuda.get_rng_state_all() if device == 'cuda' else [], frozen_sha256=frozen,
-            elapsed_seconds=elapsed+time.monotonic()-started), checkpoint.with_suffix('.pt.tmp'))
-        checkpoint.with_suffix('.pt.tmp').replace(checkpoint)
+        nonlocal saved_step
+        save_checkpoint(checkpoint, model, optimizer, device,
+            dict(run_identity=run_id, arm=arm, seed=seed, step=step, sampler=sampler.state_dict(),
+                 diagnostics=diagnostics, frozen_sha256=frozen, elapsed_seconds=elapsed+time.monotonic()-started))
+        saved_step = step
     try:
         while step < steps and not stop:
             selected = [entries[i] for i in sampler.next_batch()]
@@ -94,7 +114,8 @@ def train(config, arm, seed, device='cuda', resume=False, stop_after=None):
                 print(json.dumps(dict(arm=arm, seed=seed, step=step, loss=record['loss'])), flush=True)
             if stop_after and step >= stop_after:
                 break
-        save()
+        if saved_step != step:
+            save()
         if frozen_digest(model) != frozen:
             raise ValueError('Frozen parameter or BN state changed')
         if step != steps:

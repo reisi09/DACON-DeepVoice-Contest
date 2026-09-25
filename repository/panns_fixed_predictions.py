@@ -120,7 +120,7 @@ def fixed_predictions(config, device):
                 archive.seek(audio['tar_offset']);payload=archive.read(audio['bytes'])
             if hashlib.sha256(payload).hexdigest()!=audio['sha256']:
                 raise ValueError('Frozen prediction input hash mismatch')
-            with tempfile.TemporaryDirectory(dir=out) as directory:
+            with tempfile.TemporaryDirectory() as directory:
                 source=Path(directory)/('input'+Path(row['path']).suffix)
                 source.write_bytes(payload)
                 prediction=engine.predict(source)

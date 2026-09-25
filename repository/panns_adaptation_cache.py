@@ -113,16 +113,16 @@ def cache(config, resume=False):
     rows = {r['ID']: r for r in (json.loads(s) for s in Path(config['rows']).open())}
     selected = [rows[rid] for rid in config['panel_ids']]
     if index_path.exists():
-        saved = read_cache_index(config)
-        for entry in saved['entries']:
-            validate_cache_entry(config, rows[entry['ID']], entry)
-        return saved
-    base = load_base(package).to(device)
-    model = AdaptedCnn14(base, train_blocks=())
-    original = baseline(package)
-    pin_torchaudio_loader(original)
-    demucs = load_demucs(package).to(device)
-    heads, labels, groups = readout_assets(package)
+        marker_path = index_path.with_suffix('.sha256')
+        marker = marker_path.read_bytes().strip() if marker_path.exists() else b''
+        if len(marker) == 64 and all(c in b'0123456789abcdef' for c in marker):
+            saved = read_cache_index(config)
+            for entry in saved['entries']:
+                validate_cache_entry(config, rows[entry['ID']], entry)
+            return saved
+        if not resume:
+            raise FileExistsError('Unpublished cache index exists; use --resume')
+    base = None
     entries = []
     start = time.monotonic()
     with Path(config['archive']).open('rb') as archive:
@@ -134,6 +134,13 @@ def cache(config, resume=False):
                 entry = validate_partial_entry(config, row, json.loads(entry_path.read_text()))
                 entries.append(entry)
                 continue
+            if base is None:
+                base = load_base(package).to(device)
+                model = AdaptedCnn14(base, train_blocks=())
+                original = baseline(package)
+                pin_torchaudio_loader(original)
+                demucs = load_demucs(package).to(device)
+                heads, labels, groups = readout_assets(package)
             t = time.monotonic()
             audio = row['verified_audio']
             if 'local_path' in audio:
@@ -146,7 +153,7 @@ def cache(config, resume=False):
                 payload = archive.read(audio['bytes'])
             if hashlib.sha256(payload).hexdigest() != audio['sha256']:
                 raise ValueError('Selected audio hash mismatch')
-            with tempfile.TemporaryDirectory(dir=out) as temporary:
+            with tempfile.TemporaryDirectory(prefix='panns_decode_') as temporary:
                 source = Path(temporary)/('input'+Path(row['path']).suffix)
                 source.write_bytes(payload)
                 raw = original.load_audio(source)
@@ -205,5 +212,8 @@ def cache(config, resume=False):
                   stem_reuse=False, incomplete_types=[f'{v}/{m}' for v, m in ((0,0),(0,1),(1,0),(1,1))
                       if not any(r[TARGETS[0]]==v and r[TARGETS[1]]==m for r in selected)], quality_evaluation=False)
     write_json(index_path, report)
-    index_path.with_suffix('.sha256').write_text(sha256(index_path)+'\n')
+    marker_path = index_path.with_suffix('.sha256')
+    temporary_marker = marker_path.with_suffix('.sha256.tmp')
+    temporary_marker.write_text(sha256(index_path)+'\n')
+    temporary_marker.replace(marker_path)
     return report

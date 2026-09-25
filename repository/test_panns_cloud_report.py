@@ -91,15 +91,18 @@ def synthetic_run(tmp_path, rows):
     write_json(tmp_path / 'cache/index.json', dict(synthetic_arithmetic_only=True))
     arms = ['R1', 'R2', 'R3', 'R5']
     seeds = [41, 42, 43]
-    config = dict(output=str(tmp_path), rows=str(rows_path), arms=arms, seeds=seeds,
+    config = dict(output=str(tmp_path), rows=str(rows_path), arms=arms, seeds=seeds, checkpoint_every=100,
                   panel_ids=[row['ID'] for row in rows], reference=str(reference_path), fixed_predictions=str(fixed_path),
                   inputs={str(rows_path): sha256(rows_path), str(reference_path): sha256(reference_path)})
     config['identity'] = identity(config)
     binding = profile_binding(config, 'cpu')
     seconds = dict(R1=1., R2=2., R3=3., R5=4.)
     profile_path = tmp_path / 'throughput_profile.json'
-    write_json(profile_path, dict(binding=binding, train_files=5, seconds_per_step=seconds, synthetic_arithmetic_only=True))
-    steps = budget_steps(seconds, 5, 1.)
+    writes, hashes = dict.fromkeys(arms, .25), dict.fromkeys(arms, .05)
+    write_json(profile_path, dict(binding=binding, train_files=5, seconds_per_step=seconds,
+        checkpoint_seconds=writes, checkpoint_hash_seconds=hashes, synthetic_arithmetic_only=True))
+    steps = budget_steps(seconds, 5, 1., checkpoint_seconds=writes,
+                         checkpoint_hash_seconds=hashes, checkpoint_every=100)
     budget = dict(binding=binding, profile_sha256=sha256(profile_path), training_hours=1., training_steps=steps, steps_per_pass=2)
     budget['identity'] = identity(budget)
     write_json(tmp_path / 'training_budget.json', budget)
