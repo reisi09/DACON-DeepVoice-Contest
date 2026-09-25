@@ -161,13 +161,14 @@ def test_rejected_request_cannot_mutate_or_overwrite_another_controller(tmp_path
 @pytest.mark.parametrize('show_failures', [1, 2])
 def test_owned_resume_show_failure_still_enters_cleanup(tmp_path, show_failures):
     request, output = setup_request(tmp_path)
-    assert watch.run(request, output) == 0
-    (tmp_path/'state').write_text('running')
+    output.mkdir()
+    controller = watch.Watch(watch.read_request(request), output, [])
+    assert controller.execute() == 0
     config = json.loads((tmp_path/'fixture.json').read_text())
     config['show_failures'] = show_failures
     (tmp_path/'fixture.json').write_text(json.dumps(config))
     assert watch.run(request, output) != 0
-    assert sum('pause' in event for event in calls(tmp_path)) == 2
+    assert sum('pause' in event for event in calls(tmp_path)) == 1
     assert sum('start' in event for event in calls(tmp_path)) == 1
 
 
@@ -257,3 +258,75 @@ def test_monitor_sleep_rechecks_compute_deadline_after_wall_clock_jump(tmp_path,
     controller.sleep(2.)
     # Then: it notices expiry on the next tick rather than waiting the whole polling interval.
     assert time.monotonic()-started < .2
+
+
+@pytest.mark.parametrize('failure', [None, 'payload_changed', 'request_changed', 'ownership_changed',
+                                  'released', 'released_before_final_receipt'])
+def test_expired_cli_restart_only_recovers_unreleased_pinned_ownership(tmp_path, monkeypatch, failure):
+    # Given: an actual controller acquired this workspace before its original deadline.
+    request, output = setup_request(tmp_path)
+    data = json.loads(request.read_text())
+    data['pause_deadline_epoch'] = time.time()+3.5
+    request.write_text(json.dumps(data))
+    config = json.loads((tmp_path/'fixture.json').read_text())
+    config['contract']['deadline_epoch'] = data['pause_deadline_epoch']
+    (tmp_path/'fixture.json').write_text(json.dumps(config))
+    with monkeypatch.context() as scaled:
+        scaled.setattr(watch, 'STOP_RESERVE', 1.5)
+        if failure in ('released', 'released_before_final_receipt'):
+            assert watch.run(request, output) == 0
+            (tmp_path/'state').write_text('running')
+            if failure == 'released_before_final_receipt':
+                (output/'local_receipt.json').unlink()
+        else:
+            output.mkdir()
+            controller = watch.Watch(watch.read_request(request), output, [])
+            assert controller.execute() == 0
+    if failure == 'payload_changed':
+        (tmp_path/'start.py').write_text('changed after ownership was acquired')
+    elif failure == 'request_changed':
+        data['name'] = 'changed request'
+        request.write_text(json.dumps(data))
+    elif failure == 'ownership_changed':
+        (output/'owned_target.json').write_text('{}')
+    original_request = request.read_bytes()
+    original_pin = (output/'controller_contract.json').read_bytes()
+    before = len(calls(tmp_path))
+    time.sleep(max(0., data['pause_deadline_epoch']-time.time())+.05)
+    # When: a fresh CLI process loads the genuinely expired request, twice after rejection.
+    for _ in range(2 if failure else 1):
+        result = subprocess.run([sys.executable, str(Path(watch.__file__)), '--request', str(request),
+            '--output', str(output)], capture_output=True, text=True, timeout=5)
+        assert result.returncode == 2
+    # Then: only the still-owned run can inspect/pause; no expired run starts or probes compute.
+    events = calls(tmp_path)[before:]
+    assert request.read_bytes() == original_request
+    assert (output/'controller_contract.json').read_bytes() == original_pin
+    if failure:
+        assert events == []
+        assert (tmp_path/'state').read_text() == 'running'
+    else:
+        assert sum('pause' in event for event in events) == 1
+        assert all('show' in event or 'pause' in event for event in events)
+        receipt = json.loads((output/'local_receipt.json').read_text())
+        assert receipt['pause_verified'] is True
+        assert receipt['recovery_only'] is True
+        assert receipt['compute_exit_code'] is None
+        assert (tmp_path/'state').read_text() == 'stopped'
+
+
+@pytest.mark.parametrize('missing_marker', [False, True])
+def test_released_controller_cannot_adopt_later_job_before_deadline(tmp_path, missing_marker):
+    request, output = setup_request(tmp_path)
+    assert watch.run(request, output) == 0
+    state = 'stopped' if missing_marker else 'running'
+    (tmp_path/'state').write_text(state)
+    if missing_marker:
+        (output/'owned_target.json').unlink()
+    before = len(calls(tmp_path))
+    original_receipt = (output/'local_receipt.json').read_bytes()
+    for _ in range(2):
+        assert watch.run(request, output) != 0
+    assert calls(tmp_path)[before:] == []
+    assert (tmp_path/'state').read_text() == state
+    assert (output/'local_receipt.json').read_bytes() == original_receipt

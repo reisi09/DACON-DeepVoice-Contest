@@ -17,7 +17,7 @@ PANNS_SHARED=${PANNS_SHARED:-/shared}
 PANNS_WORK=${PANNS_WORK:-/root/panns-cnn-v1-20260925/application-v6}
 PANNS_OVERRIDE_PYTHON=${PANNS_PYTHON:-}
 PANNS_PYTHON=${PANNS_PYTHON:-/root/panns-cnn-v1-20260925/env/venv/bin/python}
-PANNS_INPUT="$PANNS_SHARED/panns-cnn-v1-20260925/inputs-v6"
+PANNS_INPUT="$PANNS_SHARED/panns-cnn-v1-20260925/inputs-v7"
 mkdir -p "$PANNS_WORK"
 python3 - "$PANNS_INPUT" "$PANNS_WORK" <<'PY'
 import hashlib,json,sys,tarfile,shutil,os

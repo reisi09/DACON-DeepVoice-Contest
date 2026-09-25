@@ -12,6 +12,37 @@ import sys
 import time
 from panns_adaptation_data import identity, sha256, write_json
 
+CHILD_GRACE_SECONDS = 45.
+CHILD_REAP_SECONDS = 1.
+
+
+def training_phase_deadline(config, session_deadline_epoch, training_hours):
+    if not math.isfinite(training_hours) or not 0 < training_hours <= 72 or not math.isfinite(session_deadline_epoch):
+        raise ValueError('Invalid training deadline contract')
+    path = Path(config['output'])/'training_deadline.json'
+    binding = dict(config_identity=config['identity'], session_deadline_epoch=session_deadline_epoch,
+                   training_hours=training_hours)
+    if path.exists():
+        record = json.loads(path.read_text())
+    else:
+        output = Path(config['output'])
+        if (any((output/name).exists() for name in ('throughput_profile.json', 'training_budget.json', 'training_phase_complete.json'))
+                or any(output.glob('train_*')) or any(output.glob('.checkpoint_profile_*'))):
+            raise FileNotFoundError('Training deadline missing for existing phase; a fresh allowance is refused')
+        started = time.time()
+        record = dict(binding, started_epoch=started,
+                      deadline_epoch=min(session_deadline_epoch, started+training_hours*3600))
+        record['planning_hours'] = (record['deadline_epoch']-started-CHILD_GRACE_SECONDS-CHILD_REAP_SECONDS)/3600
+        record['identity'] = identity(record)
+        write_json(path, record)
+    if (any(record.get(key) != value for key, value in binding.items())
+            or record['identity'] != identity({key: value for key, value in record.items() if key != 'identity'})
+            or not math.isfinite(record['started_epoch'])
+            or record['planning_hours'] != (record['deadline_epoch']-record['started_epoch']-CHILD_GRACE_SECONDS-CHILD_REAP_SECONDS)/3600
+            or record['deadline_epoch'] != min(session_deadline_epoch, record['started_epoch']+training_hours*3600)):
+        raise ValueError('Training deadline contract changed; retain the original allowance and namespace')
+    return record['deadline_epoch']
+
 
 def parity(config, bundle):
     import torch
@@ -57,42 +88,48 @@ def parity(config, bundle):
         gradient_relative_l2=relative,config_identity=config['identity']))
 
 
-def run_command(command, deadline):
+def run_command(command, deadline, *, deadline_epoch=None):
     stopped = []
     previous = {sig: signal.signal(sig, lambda *_: stopped.append(True))
                 for sig in (signal.SIGTERM, signal.SIGINT, signal.SIGHUP)}
     process = None
+    def remaining():
+        return min(deadline-time.monotonic(), deadline_epoch-time.time() if deadline_epoch is not None else math.inf)
     try:
-        if time.monotonic() >= deadline:
+        if remaining() <= CHILD_GRACE_SECONDS+CHILD_REAP_SECONDS:
             raise TimeoutError('Session budget exhausted')
         process = subprocess.Popen(command, start_new_session=True)
         while True:
             if stopped:
                 raise InterruptedError('Pipeline terminated; stopping active process group')
-            remaining = deadline-time.monotonic()
-            if remaining <= 0:
+            available = remaining()-CHILD_GRACE_SECONDS-CHILD_REAP_SECONDS
+            if available <= 0:
                 raise TimeoutError('Session budget exhausted')
             try:
-                code = process.wait(timeout=min(remaining, .5))
+                code = process.wait(timeout=min(available, .5))
             except subprocess.TimeoutExpired:
                 continue
             if stopped:
                 raise InterruptedError('Pipeline terminated at stage boundary')
             if code:
                 raise RuntimeError(f'{Path(command[1]).name} exited {code}; durable partial outputs retained')
+            with contextlib.suppress(ProcessLookupError):
+                os.killpg(process.pid, signal.SIGKILL)
             break
     except (TimeoutError, KeyboardInterrupt, InterruptedError, RuntimeError):
         if process is not None:
             with contextlib.suppress(ProcessLookupError):
                 os.killpg(process.pid, signal.SIGTERM)
             try:
-                process.wait(timeout=60)
+                process.wait(timeout=min(CHILD_GRACE_SECONDS, max(0., remaining())))
             except subprocess.TimeoutExpired:
-                with contextlib.suppress(ProcessLookupError):
-                    os.killpg(process.pid, signal.SIGKILL)
-                process.wait()
+                print('Checkpoint grace exhausted; killing owned process group', file=sys.stderr)
             with contextlib.suppress(ProcessLookupError):
                 os.killpg(process.pid, signal.SIGKILL)
+            try:
+                process.wait(timeout=min(CHILD_REAP_SECONDS, max(0., remaining())))
+            except subprocess.TimeoutExpired as exc:
+                raise RuntimeError('Owned child did not reap after SIGKILL; workspace pause required') from exc
         raise
     finally:
         for sig, handler in previous.items():
@@ -121,9 +158,9 @@ def main():
     root=Path(__file__).resolve().parent
     start=time.monotonic()
     deadline=min(start+a.hours*3600,start+a.deadline_epoch-time.time())
-    def run(script,*args):
+    def run(script,*args,cutoff=deadline,cutoff_epoch=a.deadline_epoch):
         command=[sys.executable,str(root/script),*map(str,args)]
-        run_command(command,deadline)
+        run_command(command,min(deadline,cutoff),deadline_epoch=min(a.deadline_epoch,cutoff_epoch))
     gold=json.loads((a.bundle/'gold/index.json').read_text())
     probe={**config,'panel_ids':[e['ID'] for e in gold['entries']], 'output':str(Path(config['output'])/'cuda_preflight')}
     probe.pop('identity');probe['identity']=identity(probe)
@@ -132,10 +169,28 @@ def main():
     run('panns_cloud_pipeline.py','--run',probe_path,'--bundle',a.bundle,'--parity-only',
         '--hours',a.hours,'--training-hours',a.training_hours,'--deadline-epoch',a.deadline_epoch)
     run('panns_cloud_run.py','cache','--run',a.run,'--device','cuda','--resume')
-    run('panns_training_budget.py','--run',a.run,'--device','cuda','--training-hours',a.training_hours)
-    for arm in config['arms']:
-        for seed in config['seeds']:
-            run('panns_cloud_run.py','train','--run',a.run,'--arm',arm,'--seed',seed,'--resume')
+    training_epoch=training_phase_deadline(config,a.deadline_epoch,a.training_hours)
+    training_cutoff=min(deadline,time.monotonic()+training_epoch-time.time())
+    output=Path(config['output'])
+    planning_hours=json.loads((output/'training_deadline.json').read_text())['planning_hours']
+    completed=output/'training_phase_complete.json'
+    condition_paths=[output/f'train_{arm}_{seed}'/'complete.json' for arm in config['arms'] for seed in config['seeds']]
+    phase_binding=dict(config_identity=config['identity'],training_deadline_sha256=sha256(output/'training_deadline.json'))
+    if completed.exists():
+        record=json.loads(completed.read_text())
+        expected=dict(phase_binding,conditions={str(path.relative_to(output)):sha256(path) for path in condition_paths})
+        if ({key:value for key,value in record.items() if key!='completed_epoch'}!=expected
+                or not 0<record['completed_epoch']<=training_epoch):
+            raise ValueError('Completed training phase differs from the locked condition receipts')
+    else:
+        run('panns_training_budget.py','--run',a.run,'--device','cuda','--training-hours',planning_hours,
+            cutoff=training_cutoff,cutoff_epoch=training_epoch)
+        for arm in config['arms']:
+            for seed in config['seeds']:
+                run('panns_cloud_run.py','train','--run',a.run,'--arm',arm,'--seed',seed,'--resume',
+                    cutoff=training_cutoff,cutoff_epoch=training_epoch)
+        write_json(completed,dict(phase_binding,completed_epoch=time.time(),
+            conditions={str(path.relative_to(output)):sha256(path) for path in condition_paths}))
     run('panns_fixed_predictions.py','--run',a.run)
     run('panns_cloud_run.py','evaluate','--run',a.run,'--arm','R0')
     for arm in config['arms']:

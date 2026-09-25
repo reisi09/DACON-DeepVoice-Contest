@@ -41,12 +41,18 @@ class Request:
         return dict(org='qwdkw', workspace=self.workspace, deadline_epoch=self.pause_deadline_epoch,
                     run_id=self.run_id, bundle_sha256=self.bundle_sha256, stop_owner='local_panns_workspace_watch')
 
+    def pin(self) -> dict:
+        return {**self.contract(), 'request_sha256': hashlib.sha256(
+            json.dumps(self.__dict__, sort_keys=True).encode()).hexdigest()}
 
-def read_request(path: Path) -> Request:
+
+def read_request(path: Path, *, allow_expired: bool = False) -> Request:
     request = Request(**json.loads(path.read_text()))
     if (type(request.pause_deadline_epoch) not in (int, float)
             or not math.isfinite(request.pause_deadline_epoch)
-            or not 0 < request.pause_deadline_epoch-time.time() <= 72*3600):
+            or request.pause_deadline_epoch <= 0
+            or request.pause_deadline_epoch-time.time() > 72*3600
+            or (not allow_expired and request.pause_deadline_epoch <= time.time())):
         raise ValueError('Invalid original deadline')
     if (request.workspace != WORKSPACE or not isinstance(request.cli, list)
             or len(request.cli) != 3 or request.cli[1:] != ['--org', 'qwdkw']
@@ -152,14 +158,17 @@ class Watch:
 
     def execute(self) -> int:
         contract = self.request.contract()
-        pin = {**contract, 'request_sha256': hashlib.sha256(json.dumps(self.request.__dict__, sort_keys=True).encode()).hexdigest()}
+        pin = self.request.pin()
         saved = self.output/'controller_contract.json'
         resume = saved.exists()
         if resume and json.loads(saved.read_text()) != pin:
             raise ValueError('Resume must retain the original pinned request')
         self.save('controller_contract.json', pin)
         marker = self.output/'owned_target.json'
-        self.owned = resume and marker.exists() and json.loads(marker.read_text()) == contract
+        if resume and marker.exists():
+            self.recover_owned()
+        else:
+            self.require_unreleased()
         idle = self.show()['workspace']['state'] in ('stopped', 'standby')
         if not idle and not self.owned:
             raise ValueError('Refuse to adopt an unowned active workspace')
@@ -207,6 +216,22 @@ class Watch:
             raise RuntimeError('Remote start did not produce a running or finished job')
         return status['exit_code']
 
+    def recover_owned(self) -> None:
+        if (json.loads((self.output/'controller_contract.json').read_text()) != self.request.pin()
+                or json.loads((self.output/'owned_target.json').read_text()) != self.request.contract()):
+            raise ValueError('Recovery requires the original pinned ownership')
+        self.require_unreleased()
+        self.owned = True
+
+    def require_unreleased(self) -> None:
+        for name in ('local_receipt.json', 'pause_receipt.json'):
+            path = self.output/name
+            if path.exists():
+                receipt = json.loads(path.read_text())
+                if (receipt.get('pause_verified') is True or (receipt.get('unverified') is False
+                        and receipt.get('state') in ('stopped', 'standby'))):
+                    raise ValueError('Verified stop already released this controller ownership')
+
     def pause(self) -> bool:
         if not self.owned:
             raise ValueError('Pause requires pinned workspace ownership')
@@ -244,7 +269,7 @@ def run(request_path: Path, output: Path) -> int:
     previous = {sig: signal.signal(sig, lambda number, _: stopped.append(number))
                 for sig in (signal.SIGTERM, signal.SIGINT, signal.SIGHUP)}
     controller = None
-    code, verified = 2, False
+    code, verified, recovery_only = 2, False, False
     with (output/'controller.lock').open('a') as lock:
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -254,8 +279,13 @@ def run(request_path: Path, output: Path) -> int:
             print('CONTROLLER_ALREADY_OWNS_OUTPUT', flush=True)
             return 2
         try:
-            controller = Watch(read_request(request_path), output, stopped)
-            code = controller.execute()
+            controller = Watch(read_request(request_path, allow_expired=True), output, stopped)
+            if controller.deadline <= time.time():
+                recovery_only, code = True, None
+                controller.recover_owned()
+                print('EXPIRED_OWNED_RUN_CLEANUP_ONLY', flush=True)
+            else:
+                code = controller.execute()
         except (KeyError, AttributeError, TypeError, ValueError, RuntimeError, TimeoutError, OSError) as error:
             (output/'controller_error.json').write_text(json.dumps({'type': type(error).__name__,
                 'message': str(error) if isinstance(error, (ValueError, RuntimeError, TimeoutError)) else 'Controller operation failed'})+'\n')
@@ -264,8 +294,9 @@ def run(request_path: Path, output: Path) -> int:
                 verified = controller.pause()
             receipt = {'owned_target': bool(controller and controller.owned), 'pause_verified': verified,
                        'unverified': not verified, 'compute_exit_code': code, 'termination_signals': stopped,
-                       'workspace_state': controller.latest if controller else {}}
-            (output/'local_receipt.json').write_text(json.dumps(receipt)+'\n')
+                       'workspace_state': controller.latest if controller else {}, 'recovery_only': recovery_only}
+            if receipt['owned_target'] or not (output/'local_receipt.json').exists():
+                (output/'local_receipt.json').write_text(json.dumps(receipt)+'\n')
             for sig, handler in previous.items():
                 signal.signal(sig, handler)
     return 0 if code == 0 and verified and not stopped else 2

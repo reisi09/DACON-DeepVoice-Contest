@@ -203,7 +203,7 @@ while True: time.sleep(.05)
     driver = tmp_path / 'driver.py'
     driver.write_text("from panns_cloud_pipeline import run_command\n"
                       "import sys, time\n"
-                      "run_command([sys.executable, sys.argv[1], sys.argv[2], 'child'], time.monotonic()+20)\n")
+                      "run_command([sys.executable, sys.argv[1], sys.argv[2], 'child'], time.monotonic()+120)\n")
     environment = dict(os.environ, PYTHONPATH=str(root))
     parent = subprocess.Popen([sys.executable, str(driver), str(child), str(tmp_path)], env=environment,
                               stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)

@@ -50,6 +50,16 @@ Actual Claude Opus 5.5 xhigh reviews completed, including a final 358.38-second 
 
 The prepared Linux environment contains no VESSL CLI. Therefore the Mac-side pinned controller owns starting the existing A100, polling, and verifying actual stopped state. The remote guard bounds staging, environment restoration and all compute stages. Local controller loss cannot itself guarantee cloud pause; the remote deadline still stops owned compute. No new workspace, package installation, or official submission is performed by the notebook.
 
+## Hard training limits and owned recovery
+
+The timing-derived step budget is now accompanied by a persistent absolute training-phase deadline. The pilot, all twelve training conditions and cleanup share that cutoff; missing state alongside existing training artifacts cannot grant a fresh allowance. A receipt binding all twelve completed conditions permits later evaluation resume without reopening training. The whole-session deadline remains separate. A cap can censor an incomplete comparison and is not proof that every condition fits.
+
+A real scaled process replay confirmed a nested shutdown race: the former equal inner/outer grace periods left a separate-session child alive after the guard exited. The repaired inner 45-second checkpoint grace plus one-second reap fits inside the outer 60 seconds. The same replay reaped the owned child before guard exit. These are local process-control results, not a Linux/FUSE checkpoint timing claim.
+
+Expired controller restart now authenticates the exact request, source hashes and unreleased ownership before permitting inspection/pause only. A verified stop releases ownership even if a marker is later missing, preventing old controllers from adopting later jobs on the reused workspace. Real offline CLI protocol checks covered both expired recovery and released-ownership refusal.
+
+The revised immutable input release is `inputs-v7`; unused `inputs-v6` remains preserved. Linux process/FUSE verification uses a bounded 25-second synthetic notebook-control selfcheck before the actual model notebook. The selfcheck validates cell execution and duplicate/PID/contract rejection; it does not measure model quality.
+
 ## Evidence still required
 
 Revised Linux/CUDA execution, actual cloud lifecycle integration and the A100 experiment outcomes remain incomplete. Historical features do not contain the block5 activations required by the new PANNs experiment. Raw fixed fake predictions also remain necessary because matching-input cached/raw inference parity has not been established. The experiment preserves existing voice/music fake heads and trains only the declared PANNs presence adaptations.
