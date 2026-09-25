@@ -1,8 +1,8 @@
 # PANNs A100 execution preparation
 
-Scope: finish D0 feature extraction, run the fixed PANNs comparison, and produce development diagnostics. This preparation does not start paid compute, submit to DACON, or authorize model adoption.
+Scope: prepare D0 feature extraction, the fixed PANNs comparison and development diagnostics. One explicitly approved CPU-only workspace built and verified the runtime. No GPU or DACON submission was started, and model adoption remains separate.
 
-Current status: code, data uploads and local integration checks are complete. **Not yet GPU-ready:** the CPU-only Linux environment build needs paid-resource approval. The existing A100 is still stopped/standby.
+Current status: code, data uploads, local integration checks and the CPU-only Linux environment build/restore are complete. The final 4.49 GB environment archive passed full object-storage readback SHA-256 verification and an independent local comparison of all 29,410 member hashes/links. Inputs are ready for A100 preflight. The CPU workspace and existing A100 are both stopped/standby. A100 startup, CUDA numerical gates and full training have not run.
 
 ## Execution contract
 
@@ -16,7 +16,7 @@ Current status: code, data uploads and local integration checks are complete. **
 
 ## Pipeline
 
-`panns_a100_launch.sh` verifies both uploaded archive hashes, rejects changed extraction contents, verifies every reference asset and admitted noise file, and creates the immutable run manifest. It restores a CPU-built, hash-verified Python 3.11 environment to `/root/panns-cnn-v1-20260925/env` before GPU work. Missing CPU environment artifacts stop execution. The A100 stage performs no dependency installation or model download. The CPU environment builder uses the existing hash-pinned dependency lock and strips workload credentials from build subprocesses. Its CPU-only instance requires the pending explicit paid-resource approval.
+`panns_a100_launch.sh` verifies both uploaded archive hashes, rejects changed extraction contents, verifies every reference asset and admitted noise file, and creates the immutable run manifest. It restores a CPU-built, hash-verified Python 3.11 environment to `/root/panns-cnn-v1-20260925/env` before GPU work. Missing CPU environment artifacts stop execution. The A100 stage performs no dependency installation or model download. The CPU environment builder uses the existing hash-pinned dependency lock and strips workload credentials from build subprocesses. The user approved the one CPU-only instance used for this preparation.
 
 `panns_cloud_pipeline.py` runs these stages in separate processes:
 
@@ -52,14 +52,18 @@ No command above was used to start a GPU in this preparation. CLI pause/resume b
 
 ## Evidence and limits
 
-See `docs/evidence/panns_cnn_execution_20260925/cloud_preparation.json` for artifact hashes, remote readback and storage receipts. Local real-audio checks cover cache reuse, strict resume, exact continuous/resumed training equality, frozen fake inference, adapted presence evaluation and bootstrap ROC arithmetic. The uploaded launcher is exercised locally through real extraction and complete input/asset verification, then must reject this Mac because it is not an A100.
+See `docs/evidence/panns_cnn_execution_20260925/cloud_preparation.json` for artifact hashes, remote readback and storage receipts, and `cpu_environment_ready.json` in the same directory for the approved CPU build/restore and final archive verification. Local real-audio checks cover cache reuse, strict resume, exact continuous/resumed training equality, frozen fake inference, adapted presence evaluation and bootstrap ROC arithmetic. The uploaded launcher is exercised locally through real extraction and complete input/asset verification, then must reject this Mac because it is not an A100.
 
 Final uploaded bundle SHA-256: `9356724b1b5ad13d3581c738e8214b39e8101bb303d7a2eadfe585a617c05c3b` (167,014,400 bytes). Recovered-noise archive SHA-256: `6b871c982dbc63c9cbf159551c4d948cb908e6ff3db2ecc841bf4de6d5516381` (272,404,480 bytes). Both were fully read back from object storage and hashed. The CPU environment receipt and Linux restorer bind this exact final bundle.
 
-CUDA throughput, CUDA numerical gates and full training have not run. Linux environment materialization/validation is pending CPU resource approval; the prior `/root` environment is not assumed to survive pause. See the [temporary-storage rule](https://docs.cloud.vessl.ai/member/workspace/create). Preparation is not marked GPU-ready until that archive is uploaded and read back. No independent holdout is available: the workflow stops at development diagnostics and does not automatically adopt/package a winner. Conditional W6 expansion and W7 independent evaluation/submission remain gated by the approved design.
+The Linux runtime was built on `wsp-2yoknqpl0k4s` (`panns-env-cpu-20260925`, 3.5 CPU, 14 GB RAM, no GPU). Its 83 installed packages matched the frozen dependency lock. The 4,485,481,689-byte archive is stored at `panns-cnn-v1-20260925/environment/linux-env.tar.gz`, SHA-256 `1778246a643d4ef0381c831bc54f66950e3088731230a4f263c755c584fc5c01`. The job moved the original environment aside, restored the archive to the production path, verified all 29,410 runtime members and ran real Cnn14 suffix inference again. Maximum tag error against CPU gold was `7.450580596923828e-08`, below `1e-5`. The bounded build/restore job exited 0; the workspace is stopped/standby.
+
+CUDA throughput, CUDA numerical gates and full training have not run. The prior `/root` environment is not assumed to survive pause; see the [temporary-storage rule](https://docs.cloud.vessl.ai/member/workspace/create). No independent holdout is available: the workflow stops at development diagnostics and does not automatically adopt/package a winner. Conditional W6 expansion and W7 independent evaluation/submission remain gated by the approved design.
 
 ## Storage retention
 
 Kept canonical audio/weights, role/admission manifests, previous selected checkpoints/results, new uploaded inputs and durable PANNs outputs. Deleted four original redundant archives (24,905,374,958 bytes) only after matching retained local backups by size and multipart ETag. Local SHA-256 and exact backup paths remain in the private cleanup receipt. Also removed four superseded task staging objects (334,019,098 bytes) after validating their retained local copies against the earlier upload/readback receipts. All deletions were followed by absence checks.
 
 The storage snapshot fell from 175,759,024,281 to 151,293,095,779 bytes after final input uploads, a net reduction of 24,465,928,502 bytes. A subsequent 1,505-byte cleanup receipt is outside that snapshot. The 27 canonical audio/weight objects retained their original sizes and ETags. Unverified duplicates and sole source copies remain untouched; deleted objects can be restored from the verified local backups.
+
+After adding the reusable Linux environment and its verification records, the latest snapshot is **155,783,736,090 bytes**, still **19,975,288,191 bytes below** the original inventory. The environment archive is an input needed for offline A100 startup, not a second copy of the training data.

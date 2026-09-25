@@ -1,7 +1,7 @@
 {
   "date": "2026-09-25",
-  "status": "awaiting_paid_CPU_environment_approval",
-  "gpu_ready": false,
+  "status": "pre_gpu_inputs_and_environment_ready",
+  "gpu_ready": true,
   "source_sha256": {
     "repository/panns_adaptation.py": "53c559982513ee5e2bd1c781a10a8d00ddb579dbdb3ca831d92eddc3967dce98",
     "repository/panns_adaptation_cache.py": "b30d172edc098635c589ec1435ae07339dd90a397e5771eb986bda8d0abd87e0",
@@ -125,7 +125,10 @@
     ],
     "deletion_proof": "Original four: local backup size and exact multipart ETag; local SHA256 retained. Task staging: prior full readback plus unchanged remote SHA256 metadata and size.",
     "canonical_audio_and_weights_unchanged": true,
-    "canonical_object_count": 27
+    "canonical_object_count": 27,
+    "after_environment_bytes": 155783736090,
+    "after_environment_objects": 1486,
+    "after_environment_net_reduction_bytes": 19975288191
   },
   "local_validation": {
     "real_audio_resume": {
@@ -182,14 +185,15 @@
     "binding": "source_sha256 map and final bundle SHA; no CUDA validation"
   },
   "unrun": [
-    "CPU Linux environment build and archive readback",
-    "Linux offline environment restore",
     "A100 startup and SSH handoff",
     "CUDA preflight numerical gate",
     "full features and 12 training conditions",
     "full development and selection diagnostics",
     "independent holdout and model adoption"
   ],
-  "compute_started": false,
-  "official_submission": false
+  "compute_started": true,
+  "official_submission": false,
+  "gpu_ready_scope": "Inputs and offline runtime ready for A100 preflight; A100 startup, CUDA parity and full training remain unrun",
+  "cpu_environment_evidence": "cpu_environment_ready.json",
+  "gpu_started": false
 }

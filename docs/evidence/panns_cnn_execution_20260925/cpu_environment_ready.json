@@ -1,0 +1,80 @@
+{
+  "verified_at_utc": "2026-09-25T01:27:59.813137+00:00",
+  "status": "pre_gpu_environment_ready",
+  "user_approved_cpu": {
+    "cpu": 3.5,
+    "memory_bytes": 14000000000,
+    "gpu": 0,
+    "hourly_credit": 0.3,
+    "command_limit_seconds": 1800,
+    "kill_grace_seconds": 60
+  },
+  "workspaces": {
+    "wsp-2yoknqpl0k4s": {
+      "name": "panns-env-cpu-20260925",
+      "state": "stopped",
+      "phase": "standby",
+      "resourceSpecSlug": "resourcespec-a100cpu"
+    },
+    "wsp-nvxqw1jf9zdv": {
+      "name": "lb-e00-e04-a100-20260924-v1",
+      "state": "stopped",
+      "phase": "standby",
+      "resourceSpecSlug": "resourcespec-a100x1"
+    }
+  },
+  "archive": {
+    "key": "panns-cnn-v1-20260925/environment/linux-env.tar.gz",
+    "bytes": 4485481689,
+    "sha256": "1778246a643d4ef0381c831bc54f66950e3088731230a4f263c755c584fc5c01",
+    "full_remote_readback_verified": true,
+    "seconds": 698.190829417028
+  },
+  "member_validation": {
+    "archive_sha256": "1778246a643d4ef0381c831bc54f66950e3088731230a4f263c755c584fc5c01",
+    "runtime_members_verified": 29410,
+    "member_hashes_and_links_match": true,
+    "uncompressed_regular_bytes": 7716699661,
+    "offline_labels_match": true,
+    "archive_paths_safe": true
+  },
+  "restore_validation": {
+    "archive_sha256": "1778246a643d4ef0381c831bc54f66950e3088731230a4f263c755c584fc5c01",
+    "bundle_sha256": "9356724b1b5ad13d3581c738e8214b39e8101bb303d7a2eadfe585a617c05c3b",
+    "restored_member_hashes_verified": true,
+    "probe": {
+      "torch": "2.9.1+cu128",
+      "cpu_gold_tag_max_abs": 7.450580596923828e-08,
+      "gpu_used": false,
+      "bundle_sha256": "9356724b1b5ad13d3581c738e8214b39e8101bb303d7a2eadfe585a617c05c3b"
+    },
+    "restored_prefix": "/root/panns-cnn-v1-20260925/env",
+    "gpu_used": false
+  },
+  "job_exit": {
+    "exit_code": 0,
+    "finished_epoch": 1790293397.6184847,
+    "command_limit_seconds": 1800,
+    "kill_grace_seconds": 60
+  },
+  "exact_package_lock_match": true,
+  "pinned_packages": 83,
+  "producer_sha256": "0e9aa7120aed7f33fb69ff54e057d4ecad37fff1bcdbb91da8e805d2c20cfe5a",
+  "lock_sha256": "83b3d67698d7e96260af3063b54c895127f4432bfc8d4af778f2bc506036f6a7",
+  "bundle_sha256": "9356724b1b5ad13d3581c738e8214b39e8101bb303d7a2eadfe585a617c05c3b",
+  "receipts_sha256": {
+    "environment.json": "db4755f3b15d449015e8802d531623b1af959c78d045482d978539e602d3eb5a",
+    "restore_validation.json": "744dede28079afbb4416df6f5231c5439b4772b6fc32ed718252fb86be1458fd",
+    "cpu_exit.json": "524dfe18843ab3558af05dd5a6d67aa3fb44cadbb6179c537fef331af02bf695",
+    "cpu_build.log": "9d7d338ca819ebf18cd858b24d066f35a1e2ed9724bb1d62f9dd6510f2c76fcc",
+    "cpu_environment_job.sh": "6d982e1ccd26afaa5122519617358aa7600d4500cad7561dff2bd605519dbb71"
+  },
+  "gpu_started": false,
+  "cuda_preflight_run": false,
+  "full_training_run": false,
+  "limits": [
+    "CPU parity does not establish CUDA parity or model quality",
+    "Existing A100 requires explicit startup and manual new launcher selection; historical init guard remains",
+    "Billing API runtime was not used to claim the final charged cost"
+  ]
+}
