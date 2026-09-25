@@ -110,16 +110,24 @@ def test_outer_guard_cannot_orphan_stubborn_separate_session_child(tmp_path):
     assert pipeline.CHILD_GRACE_SECONDS + pipeline.CHILD_REAP_SECONDS < inspect.signature(supervise).parameters['grace_seconds'].default
 
 
+def pin_gold_index(tmp_path, config, rid):
+    from panns_adaptation_data import sha256
+    (tmp_path/'gold').mkdir()
+    (tmp_path/'gold/index.json').write_text(json.dumps(dict(entries=[dict(ID=rid)])))
+    manifest = tmp_path/'bundle_manifest.json'
+    manifest.write_text(json.dumps(dict(sha256={'gold/index.json': sha256(tmp_path/'gold/index.json')})))
+    config['inputs'] = {str(manifest): sha256(manifest)}
+
+
 def pipeline_run(tmp_path, monkeypatch):
     import panns_cloud_run
     import panns_training_budget
     policy = dict(max_epochs=200, patience=15, min_delta=1e-4, monitor='selection_presence_bce')
-    config = dict(identity='wiring-only', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'],
+    config = dict(identity='wiring-only', output=str(tmp_path/'output'), cache_device='cuda', arms=['R1','R2','R3','R5'],
                   seeds=[41,42,43], early_stopping=policy, **mixed_preflight_inputs(tmp_path))
+    pin_gold_index(tmp_path, config, 'probe')
     run = tmp_path/'run.json'
     run.write_text(json.dumps(config))
-    (tmp_path/'gold').mkdir()
-    (tmp_path/'gold/index.json').write_text(json.dumps(dict(entries=[dict(ID='probe')])))
     session_epoch = time.time()+8*3600
     monkeypatch.setattr(sys, 'argv', ['pipeline', '--run', str(run), '--bundle', str(tmp_path),
                                     '--hours','8','--deadline-epoch',str(session_epoch)])
@@ -205,19 +213,18 @@ def test_resume_does_not_rederive_policy_from_remaining_session_time(tmp_path, m
 
 def test_fixed_engine_preflight_failure_stops_before_full_cache_and_training(tmp_path, monkeypatch):
     from panns_adaptation_data import identity
-    config = dict(identity='engine-readiness', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'], seeds=[41,42,43],
+    config = dict(identity='engine-readiness', output=str(tmp_path/'output'), cache_device='cuda', arms=['R1','R2','R3','R5'], seeds=[41,42,43],
                   **mixed_preflight_inputs(tmp_path))
+    pin_gold_index(tmp_path, config, 'train')
     run = tmp_path/'run.json'
     run.write_text(json.dumps(config))
-    (tmp_path/'gold').mkdir()
-    (tmp_path/'gold/index.json').write_text(json.dumps(dict(entries=[dict(ID='train')])))
     epoch = time.time()+8*3600
     monkeypatch.setattr(sys, 'argv', ['pipeline', '--run', str(run), '--bundle', str(tmp_path),
                                     '--hours','8','--deadline-epoch',str(epoch)])
     calls = []
     def fail_engine(command, deadline, **kwargs):
         calls.append((command, deadline, kwargs))
-        if len(calls) < 3:
+        if len(calls) < 4:
             return
         assert Path(command[1]).name == 'panns_fixed_predictions.py', 'Expensive full cache preceded fixed Engine preflight'
         probe = json.loads(Path(command[command.index('--run')+1]).read_text())
@@ -230,8 +237,8 @@ def test_fixed_engine_preflight_failure_stops_before_full_cache_and_training(tmp
     monkeypatch.setattr(pipeline, 'run_command', fail_engine)
     with pytest.raises(RuntimeError, match='Fixed Engine preflight failed'):
         pipeline.main()
-    assert 'cache' in calls[0][0] and '--parity-only' in calls[1][0]
-    assert len(calls) == 3 and len({call[1] for call in calls}) == 1
+    assert 'cache' in calls[0][0] and 'cpu' in calls[0][0] and '--parity-only' in calls[2][0]
+    assert len(calls) == 4 and len({call[1] for call in calls}) == 1
     assert all(call[2]['deadline_epoch'] == epoch for call in calls)
     assert not (Path(config['output'])/'training_deadline.json').exists()
 
@@ -241,3 +248,43 @@ def test_fixed_preflight_refuses_a_train_only_panel(tmp_path):
     config['panel_ids'] = ['train']
     with pytest.raises(ValueError, match='development'):
         pipeline.fixed_preflight_config(config)
+
+
+@pytest.mark.parametrize('failed_stage', ['cpu_reference', 'parity'])
+def test_reference_or_parity_failure_cannot_reach_full_cache_or_training(tmp_path, monkeypatch, failed_stage):
+    config, _, epoch = pipeline_run(tmp_path, monkeypatch)
+    calls = []
+    def fail_preflight(command, deadline, **kwargs):
+        calls.append((command, deadline, kwargs))
+        is_cpu = '--device' in command and command[command.index('--device')+1] == 'cpu'
+        if is_cpu:
+            probe = json.loads(Path(command[command.index('--run')+1]).read_text())
+            assert probe['output'] == str(Path(config['output'])/'cuda_preflight/cpu_reference')
+            assert probe['cache_device'] == 'cpu' and probe['panel_ids'] == ['probe']
+            if failed_stage == 'cpu_reference': raise RuntimeError('CPU reference failed')
+            return
+        if '--parity-only' in command:
+            assert len(calls) == 3
+            raise RuntimeError('Parity failed')
+        if len(calls) == 2 and 'cache' in command and 'cuda' in command: return
+        pytest.fail('Expensive work started before the required CPU reference and parity gate')
+    monkeypatch.setattr(pipeline, 'run_command', fail_preflight)
+    with pytest.raises(RuntimeError, match='CPU reference failed|Parity failed'):
+        pipeline.main()
+    assert len(calls) == (1 if failed_stage == 'cpu_reference' else 3)
+    assert all(call[2]['deadline_epoch'] == epoch for call in calls)
+    assert not (Path(config['output'])/'pipeline_complete.json').exists()
+
+
+def test_resume_refuses_changed_probe_platform_before_any_child(tmp_path, monkeypatch):
+    config, run, _ = pipeline_run(tmp_path, monkeypatch)
+    probe_path = run.with_name('cuda_preflight.json')
+    previous = dict(config, parity_runtime=dict(system='Linux', architecture='previous-architecture', python='3.11'))
+    probe_path.write_text(json.dumps(previous))
+    before = probe_path.read_bytes()
+    def forbid_child(*args, **kwargs):
+        pytest.fail('Changed producer runtime reached a cache child')
+    monkeypatch.setattr(pipeline, 'run_command', forbid_child)
+    with pytest.raises(ValueError, match='Existing parity probe config differs'):
+        pipeline.main()
+    assert probe_path.read_bytes() == before

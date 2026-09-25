@@ -6,6 +6,7 @@ import json
 import math
 import os
 from pathlib import Path
+import platform
 import signal
 import subprocess
 import sys
@@ -51,48 +52,136 @@ def training_phase_binding(config):
     return dict(config_identity=config['identity'], training_budget_sha256=budget_sha, conditions=conditions)
 
 
+def parity_runtime():
+    return dict(system=platform.system(), architecture=platform.machine(), python=platform.python_version())
+
+
+def cpu_reference_config(config):
+    if config.get('cache_device') != 'cuda' or config.get('parity_runtime') != parity_runtime():
+        raise ValueError('Parity probe device or producer platform mismatch')
+    cpu = dict(config, output=str(Path(config['output'])/'cpu_reference'), cache_device='cpu')
+    cpu.pop('identity')
+    cpu['identity'] = identity(cpu)
+    return cpu
+
+
+def gold_index(config, bundle):
+    manifest_path = bundle/'bundle_manifest.json'
+    if config['inputs'].get(str(manifest_path)) != sha256(manifest_path):
+        raise ValueError('Bundled Mac gold manifest is not pinned')
+    manifest = json.loads(manifest_path.read_text())['sha256']
+    path = bundle/'gold/index.json'
+    if sha256(path) != manifest['gold/index.json']:
+        raise ValueError('Bundled Mac gold index hash mismatch')
+    return json.loads(path.read_text()), manifest
+
+
+def parity_indexes(config, bundle):
+    from panns_adaptation_cache import validate_cache_entry
+    from panns_adaptation_data import read_cache_index, validate_config
+    cpu_config = cpu_reference_config(config)
+    indexes = []
+    rows = {row['ID']: row for row in map(json.loads, Path(config['rows']).read_text().splitlines())}
+    for current in (cpu_config, config):
+        validate_config(current)
+        index = read_cache_index(current)
+        for entry in index['entries']:
+            validate_cache_entry(current, rows[entry['ID']], entry)
+            threshold = 1e-6 if current['cache_device'] == 'cpu' else 1e-5
+            if (entry['tag_error'] > threshold or entry['presence_error'] > threshold
+                    or entry['stats_error'] > 2*2**-23):
+                raise ValueError('Cached original-forward/readout parity exceeds device threshold')
+        indexes.append(index)
+    gold, manifest = gold_index(config, bundle)
+    ids = [entry['ID'] for entry in gold['entries']]
+    if not ids or len(ids) != len(set(ids)) or ids != config['panel_ids']:
+        raise ValueError('Parity requires the exact ordered bundled gold panel')
+    for entry in gold['entries']:
+        path = bundle/'gold'/Path(entry['path']).name
+        if manifest[str(path.relative_to(bundle))] != entry['sha256'] or sha256(path) != entry['sha256']:
+            raise ValueError('Bundled Mac gold activation hash mismatch')
+        entry['path'] = str(path)
+    return cpu_config, indexes[0], indexes[1], gold
+
+
+class ParityLayoutMismatch(ValueError):
+    """Authenticated caches cannot be paired segment for segment."""
+
+
+def prediction_errors(reference, actual, assets):
+    import numpy as np
+    import torch
+    from panns_adaptation import presence_logits
+    from panns_adaptation_data import load_cache
+    if [entry['ID'] for entry in reference['entries']] != [entry['ID'] for entry in actual['entries']]:
+        raise ValueError('Parity cache panel IDs or order mismatch')
+    tag_error = presence_error = 0.
+    for left, right in zip(reference['entries'], actual['entries'], strict=True):
+        cpu, gpu = load_cache(left), load_cache(right)
+        if (not np.isfinite(cpu['tags']).all() or not np.isfinite(gpu['tags']).all()
+                or not np.isfinite(list(left['stems'].values())).all()
+                or not np.isfinite(list(right['stems'].values())).all()):
+            raise ValueError('Nonfinite parity tags or stems')
+        if (not np.array_equal(cpu['starts'], gpu['starts'])
+                or cpu['tags'].shape != gpu['tags'].shape or cpu['block5'].shape != gpu['block5'].shape
+                or cpu['tags'].ndim != 2 or len(cpu['tags']) != len(cpu['starts'])
+                or len(cpu['tags']) != left['segments'] or left['segments'] != right['segments']):
+            raise ParityLayoutMismatch('Parity segment starts, counts or tensor shapes mismatch')
+        tag_error = max(tag_error, float(np.abs(cpu['tags']-gpu['tags']).max()))
+        old = presence_logits(torch.from_numpy(cpu['tags']), left['stems'], *assets).sigmoid()
+        new = presence_logits(torch.from_numpy(gpu['tags']), right['stems'], *assets).sigmoid()
+        if not torch.isfinite(old).all() or not torch.isfinite(new).all():
+            raise ValueError('Nonfinite parity presence probabilities')
+        presence_error = max(presence_error, float((old-new).abs().max()))
+    return dict(tag_max_abs=tag_error, presence_max_abs=presence_error)
+
+
+def cross_platform_errors(gold, cpu, assets):
+    try:
+        errors = prediction_errors(gold, cpu, assets)
+    except ParityLayoutMismatch as exc:
+        return dict(comparable=False, reason=str(exc), within_legacy_tolerance=None)
+    return dict(errors, comparable=True, within_legacy_tolerance=all(v <= 1e-5 for v in errors.values()))
+
+
 def parity(config, bundle):
     import torch
-    import numpy as np
-    from panns_adaptation import presence_logits
     from panns_adaptation_cache import readout_assets
-    from panns_adaptation_data import load_cache
     from panns_adaptation_run import model_for_arm, optimization_step
     from panns_cloud_run import setup
     setup('cuda')
-    reference=json.loads(Path(config['reference']).read_text())
-    package=Path(reference['package'])
-    heads,labels,groups=readout_assets(package)
-    gold=json.loads((bundle/'gold/index.json').read_text())
-    actual=json.loads((Path(config['output'])/'cache/index.json').read_text())
-    by_id={e['ID']:e for e in actual['entries']}
-    tag_error=presence_error=0.
-    for entry in gold['entries']:
-        entry['path']=str(bundle/'gold'/Path(entry['path']).name)
-        cpu=load_cache(entry); gpu=load_cache(by_id[entry['ID']])
-        if not np.isfinite(cpu['tags']).all() or not np.isfinite(gpu['tags']).all():
-            raise ValueError('Nonfinite CPU/CUDA tags')
-        tag_error=max(tag_error,float(np.abs(cpu['tags']-gpu['tags']).max()))
-        old=presence_logits(torch.from_numpy(cpu['tags']),entry['stems'],heads,labels,groups).sigmoid()
-        new=presence_logits(torch.from_numpy(gpu['tags']),by_id[entry['ID']]['stems'],heads,labels,groups).sigmoid()
-        if not torch.isfinite(old).all() or not torch.isfinite(new).all():
-            raise ValueError('Nonfinite CPU/CUDA presence probabilities')
-        presence_error=max(presence_error,float((old-new).abs().max()))
-    if tag_error>1e-5 or presence_error>1e-5:
-        raise ValueError(f'CPU/CUDA preprocessing parity failed: tags={tag_error}, presence={presence_error}')
-    entries=sorted(actual['entries'],key=lambda e:e['seconds'],reverse=True)[:4]
-    gradients=[]
-    for device in ('cpu','cuda'):
-        model=model_for_arm(package,'R3',41,device)
-        optimizer=torch.optim.AdamW(model.optimizer_groups(),weight_decay=1e-4,foreach=False)
-        _,grad=optimization_step(model,optimizer,entries,heads,labels,groups,[1.,1.],device,4,True)
+    cpu_config, cpu, actual, gold = parity_indexes(config, bundle)
+    package = Path(json.loads(Path(config['reference']).read_text())['package'])
+    assets = readout_assets(package)
+    output = Path(config['output'])
+    binding = dict(reference_kind='same_runtime_cpu_original_forward', config_identity=config['identity'],
+        cpu_config_identity=cpu_config['identity'], cpu_config_canonical_sha256=identity(cpu_config),
+        cuda_config_canonical_sha256=identity(config), runtime=config['parity_runtime'],
+        provenance=actual['provenance'], cpu_cache_sha256=sha256(Path(cpu_config['output'])/'cache/index.json'),
+        cuda_cache_sha256=sha256(output/'cache/index.json'), panel_ids=config['panel_ids'])
+    cross_platform = cross_platform_errors(gold, cpu, assets)
+    write_json(output/'cross_platform_diagnostic.json', dict(cross_platform,
+        reference_kind='bundled_mac_gold_vs_same_runtime_cpu', gold_index_sha256=sha256(bundle/'gold/index.json'),
+        cpu_reference=binding, legacy_tolerance=1e-5,
+        gates_training=False, quality_evaluation=False))
+    errors = prediction_errors(cpu, actual, assets)
+    if any(error > 1e-5 for error in errors.values()):
+        raise ValueError(f'Same-runtime CPU/CUDA preprocessing parity failed: {errors}')
+    entries = sorted(actual['entries'], key=lambda entry: entry['seconds'], reverse=True)[:4]
+    gradients = []
+    for device in ('cpu', 'cuda'):
+        model = model_for_arm(package, 'R3', 41, device)
+        optimizer = torch.optim.AdamW(model.optimizer_groups(), weight_decay=1e-4, foreach=False)
+        _, grad = optimization_step(model, optimizer, entries, *assets, [1.,1.], device, 4, True)
         gradients.append(grad)
-        del model,optimizer
-    relative=max(float((gradients[0][k]-gradients[1][k]).double().norm()/gradients[0][k].double().norm().clamp_min(1e-12)) for k in gradients[0])
-    if not math.isfinite(relative) or relative>1e-3:
+        del model, optimizer
+    relative = max(float((gradients[0][key]-gradients[1][key]).double().norm()/gradients[0][key].double().norm().clamp_min(1e-12)) for key in gradients[0])
+    if not math.isfinite(relative) or relative > 1e-3:
         raise ValueError('CPU/CUDA gradient parity failed')
-    write_json(Path(config['output'])/'cuda_parity.json',dict(tag_max_abs=tag_error,presence_max_abs=presence_error,
-        gradient_relative_l2=relative,config_identity=config['identity']))
+    write_json(output/'cuda_parity.json', dict(binding, **errors, gradient_relative_l2=relative,
+        tag_presence_tolerance=1e-5, gradient_tolerance=1e-3,
+        gradient_scope='R3 seed41 same CUDA cache, four longest files; suffix/backward only',
+        cpu_stem_reused_files=cpu['stem_reused_files'], cuda_stem_reused_files=actual['stem_reused_files']))
 
 
 def run_command(command, deadline, *, deadline_epoch=None):
@@ -168,10 +257,17 @@ def main():
     def run(script,*args):
         command=[sys.executable,str(root/script),*map(str,args)]
         run_command(command,deadline,deadline_epoch=a.deadline_epoch)
-    gold=json.loads((a.bundle/'gold/index.json').read_text())
-    probe={**config,'panel_ids':[e['ID'] for e in gold['entries']], 'output':str(Path(config['output'])/'cuda_preflight')}
+    gold,_=gold_index(config,a.bundle)
+    probe={**config,'panel_ids':[e['ID'] for e in gold['entries']], 'output':str(Path(config['output'])/'cuda_preflight'),
+           'parity_runtime':parity_runtime()}
     probe.pop('identity');probe['identity']=identity(probe)
-    probe_path=a.run.with_name('cuda_preflight.json');write_json(probe_path,probe)
+    probe_path=a.run.with_name('cuda_preflight.json')
+    cpu_probe_path=a.run.with_name('cpu_reference.json')
+    for path, value in ((probe_path,probe),(cpu_probe_path,cpu_reference_config(probe))):
+        if path.exists() and json.loads(path.read_text()) != value:
+            raise ValueError('Existing parity probe config differs; use a fresh experiment namespace')
+        if not path.exists(): write_json(path,value)
+    run('panns_cloud_run.py','cache','--run',cpu_probe_path,'--device','cpu','--resume')
     run('panns_cloud_run.py','cache','--run',probe_path,'--device','cuda','--resume')
     run('panns_cloud_pipeline.py','--run',probe_path,'--bundle',a.bundle,'--parity-only',
         '--hours',a.hours,'--deadline-epoch',a.deadline_epoch)
