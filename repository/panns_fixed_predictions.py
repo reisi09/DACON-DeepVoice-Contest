@@ -53,6 +53,12 @@ def load_fixed_predictions(config, device):
         raise ValueError('Frozen fake predictions have incompatible provenance')
     if saved.get('entries_sha256') != identity(saved['entries']):
         raise ValueError('Frozen prediction payload hash mismatch')
+    from graph_scoring import validate_predictions
+    panel = set(config['panel_ids'])
+    expected_ids = [row['ID'] for row in map(json.loads, Path(config['rows']).read_text().splitlines())
+                    if row['role'] in ('development', 'selection') and row['ID'] in panel]
+    validate_predictions([{key: value for key, value in entry.items() if key != 'audio_sha256'}
+                          for entry in saved['entries']], expected_ids)
     return saved
 
 
@@ -110,6 +116,7 @@ def fixed_predictions(config, device):
                 saved=json.loads(path.read_text())
                 if saved['identity']!=key or saved['entry_sha256'] != identity(saved['entry']):
                     raise ValueError('Frozen prediction resume identity mismatch')
+                module.validate_predictions([{name:value for name,value in saved['entry'].items() if name!='audio_sha256'}], [row['ID']])
                 entries.append(saved['entry'])
                 continue
             audio=row['verified_audio']
@@ -127,6 +134,7 @@ def fixed_predictions(config, device):
                 source.write_bytes(payload)
                 prediction=engine.predict(source)
             entry=dict(ID=row['ID'],audio_sha256=audio['sha256'],**prediction)
+            module.validate_predictions([{name:value for name,value in entry.items() if name!='audio_sha256'}], [row['ID']])
             write_json(path,dict(identity=key,entry_sha256=identity(entry),entry=entry))
             entries.append(entry)
             print(json.dumps(dict(fixed_fake_predictions=len(entries),total=len(rows))),flush=True)

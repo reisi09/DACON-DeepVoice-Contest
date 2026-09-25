@@ -60,7 +60,7 @@ Expired controller restart now authenticates the exact request, source hashes an
 
 The revised immutable input release is `inputs-v7`; unused `inputs-v6` remains preserved. Linux process/FUSE verification uses a bounded 25-second synthetic notebook-control selfcheck before the actual model notebook. The selfcheck validates cell execution and duplicate/PID/contract rejection; it does not measure model quality.
 
-## Evidence still required
+## Evidence still required before the first A100 attempt
 
 Revised Linux/CUDA execution, actual cloud lifecycle integration and the A100 experiment outcomes remain incomplete. Historical features do not contain the block5 activations required by the new PANNs experiment. Raw fixed fake predictions also remain necessary because matching-input cached/raw inference parity has not been established. The experiment preserves existing voice/music fake heads and trains only the declared PANNs presence adaptations.
 
@@ -77,3 +77,7 @@ The cloud pipeline now runs those two actual fixed Engine rows after strict CUDA
 The saved 32 CUDA rows also exposed a separate numerical gate failure: maximum tag difference from CPU gold is `1.806020736694336e-5`, exceeding the unchanged `1e-5` limit; maximum presence difference is `2.123993032288052e-6`. Three rows fail across eight tag coordinates. CPU suffix replay on GPU prefix features differs from the actual GPU suffix by at most `5.36e-7`, while fresh CPU extraction from all three failing raw files reproduces the old CPU gold exactly. The discrepancy is therefore upstream of block6; its backend cause remains unresolved. Full 43-row parity and gradient parity have not passed. No tolerance was relaxed and no new model was adopted.
 
 Repaired production artifacts reserve fresh `inputs-v8`, `application-v7` and `run-v5` namespaces. Previous releases and partial CUDA evidence remain immutable. Any further attempt must retain the original overall cutoff, `2026-09-25T23:57:26.534354Z`; this repair does not grant a new eight-hour allowance.
+
+Follow-up review found that two actual launcher failure checks still used the old `inputs-v7` fixture path. They failed before reaching the intended blocked-archive timeout and bundle-contract rejection. Both fixtures now use `inputs-v8` and exercise those original failure modes. The fixed prediction wrapper also reuses the preserved probability validator before publishing new values, accepting resumed entries, or returning an aggregate. Fault injection demonstrated rejection of NaN, out-of-range probabilities and incorrect IDs, including hash-consistent invalid records; this is an injected boundary check, not real-model integration.
+
+The final wrapper then ran the same two real CPU Engine inputs in 40.30 seconds, with four threads, about 7.89 GiB peak RSS and no CUDA initialization. The strict WAV decoder was called twice and the preserved validator three times. Predictions exactly matched the earlier real run (maximum absolute difference 0), audio SHA metadata was retained and all frozen reference members remained unchanged. Linux numerical diagnosis remains separate from these CPU results.

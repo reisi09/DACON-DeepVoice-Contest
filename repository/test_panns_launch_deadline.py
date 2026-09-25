@@ -11,7 +11,7 @@ import pytest
 def test_launcher_timeout_covers_blocked_archive_and_keeps_original_deadline(tmp_path):
     # Given: the actual launcher's first archive read blocks on a real FIFO.
     root = Path(__file__).resolve().parent
-    inputs = tmp_path / 'shared/panns-cnn-v1-20260925/inputs-v7'
+    inputs = tmp_path / 'shared/panns-cnn-v1-20260925/inputs-v8'
     inputs.mkdir(parents=True)
     (inputs / 'launch_lock.json').write_text('{"workspace":"wsp-nvxqw1jf9zdv","sha256":{"run_bundle.tar":"unused"}}')
     os.mkfifo(inputs / 'run_bundle.tar')
@@ -203,7 +203,7 @@ def test_external_controller_contract_runs_without_remote_cli_and_cannot_drift(t
 def test_launcher_refuses_external_controller_bundle_mismatch(tmp_path):
     # Given: the actual launcher lock and controller declare different bundle identities.
     root = Path(__file__).resolve().parent
-    inputs = tmp_path / 'shared/panns-cnn-v1-20260925/inputs-v7'
+    inputs = tmp_path / 'shared/panns-cnn-v1-20260925/inputs-v8'
     inputs.mkdir(parents=True)
     (inputs / 'launch_lock.json').write_text(json.dumps(dict(workspace='wsp-nvxqw1jf9zdv',
         sha256={'run_bundle.tar': 'a'*64})))
