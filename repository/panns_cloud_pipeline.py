@@ -16,6 +16,24 @@ CHILD_GRACE_SECONDS = 45.
 CHILD_REAP_SECONDS = 1.
 
 
+def fixed_preflight_config(config):
+    panel = set(config['panel_ids'])
+    rows = [row for row in map(json.loads, Path(config['rows']).read_text().splitlines())
+            if row['ID'] in panel and row['VOICE_PRESENT'] == row['MUSIC_PRESENT'] == 1]
+    selected = []
+    for role in ('development', 'selection'):
+        row = min((row for row in rows if row['role'] == role),
+                  key=lambda row: (row['verified_audio']['seconds'], row['ID']), default=None)
+        if row is None:
+            raise ValueError('Fixed Engine preflight requires a mixed-presence '+role+' row in the locked panel')
+        selected.append(row['ID'])
+    output = Path(config['output'])/'fixed_preflight'
+    probe = dict(config, panel_ids=selected, output=str(output), fixed_predictions=str(output/'fixed_predictions.json'))
+    probe.pop('identity')
+    probe['identity'] = identity(probe)
+    return probe
+
+
 def training_phase_deadline(config, session_deadline_epoch, training_hours):
     if not math.isfinite(training_hours) or not 0 < training_hours <= 72 or not math.isfinite(session_deadline_epoch):
         raise ValueError('Invalid training deadline contract')
@@ -168,6 +186,9 @@ def main():
     run('panns_cloud_run.py','cache','--run',probe_path,'--device','cuda','--resume')
     run('panns_cloud_pipeline.py','--run',probe_path,'--bundle',a.bundle,'--parity-only',
         '--hours',a.hours,'--training-hours',a.training_hours,'--deadline-epoch',a.deadline_epoch)
+    fixed_probe_path=a.run.with_name('fixed_preflight.json')
+    write_json(fixed_probe_path,fixed_preflight_config(config))
+    run('panns_fixed_predictions.py','--run',fixed_probe_path,'--device','cuda')
     run('panns_cloud_run.py','cache','--run',a.run,'--device','cuda','--resume')
     training_epoch=training_phase_deadline(config,a.deadline_epoch,a.training_hours)
     training_cutoff=min(deadline,time.monotonic()+training_epoch-time.time())

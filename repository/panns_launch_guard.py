@@ -84,7 +84,7 @@ def launch(stopped: list[int]) -> int:
     pause = os.environ.get('PANNS_PAUSE_ON_EXIT', '1') == '1' and not external
     shared = Path(os.environ.get('PANNS_SHARED', '/shared'))
     state = Path(os.environ.get('PANNS_DEADLINE_STATE',
-        str(shared/'panns-cnn-v1-20260925/run-v4/launch_deadline.json')))
+        str(shared/'panns-cnn-v1-20260925/run-v5/launch_deadline.json')))
     receipt = {'status': 'launch_failed', 'pause_status': 'external_controller_unvalidated' if external
                else 'pending' if pause else 'disabled_local_qa'}
     code = 2

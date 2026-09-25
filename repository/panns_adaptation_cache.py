@@ -1,13 +1,38 @@
 """Pinned reference loading and CPU prefix/stem extraction."""
+from __future__ import annotations
 import csv
 import hashlib
 import json
 from pathlib import Path
 import time
+from types import ModuleType
+from typing import TYPE_CHECKING, Final
 import numpy as np
 import soundfile as sf
 from panns_adaptation_data import (TARGETS, cache_provenance, identity, load_cache,
     read_cache_index, sha256, validate_config, write_json)
+
+if TYPE_CHECKING:
+    import torch
+
+NORMALIZED_WAV_DECODER: Final = 'soundfile.float32:WAV/FLOAT/mono/16000+demucs.audio.convert_audio'
+
+
+def load_normalized_wav(path: Path, channels: int, sample_rate: int) -> torch.Tensor:
+    import torch
+    from demucs.audio import convert_audio
+    with sf.SoundFile(path) as source:
+        if (source.format, source.subtype, source.channels, source.samplerate) != ('WAV', 'FLOAT', 1, 16000):
+            raise ValueError('Demucs adapter requires mono 16 kHz FLOAT WAV input')
+        samples = source.read(dtype='float32', always_2d=True)
+        source_rate = source.samplerate
+    if not len(samples) or not np.isfinite(samples).all():
+        raise ValueError('Invalid normalized Demucs audio')
+    return convert_audio(torch.from_numpy(samples.T.copy()), source_rate, sample_rate, channels)
+
+
+def pin_normalized_wav_loader(base: ModuleType) -> None:
+    base.load_track = load_normalized_wav
 
 
 def load_base(package):
@@ -127,7 +152,6 @@ def cache(config, resume=False):
     import torch
     from panns_adaptation import AdaptedCnn14, presence_logits, tag_features
     from decision_heads import stem_features, tagger_features, presence
-    from mert12_submission import pin_torchaudio_loader
     package = validate_config(config)
     torch.set_num_threads(4)
     device = config.get('cache_device', 'cpu')
@@ -168,7 +192,7 @@ def cache(config, resume=False):
                 base = load_base(package).to(device)
                 model = AdaptedCnn14(base, train_blocks=())
                 original = baseline(package)
-                pin_torchaudio_loader(original)
+                pin_normalized_wav_loader(original)
                 heads, labels, groups = readout_assets(package)
             t = time.monotonic()
             audio = row['verified_audio']
@@ -247,6 +271,7 @@ def cache(config, resume=False):
             print(f'Cached {len(entries)}/{len(selected)}: {len(segments)} segments, {entry["total_seconds"]:.2f}s', flush=True)
     reused_count = sum(e.get('stem_origin') == 'legacy_cache' for e in entries)
     report = dict(config_identity=config['identity'], provenance=cache_provenance(), entries=entries, seconds=time.monotonic()-start,
+                  demucs_input_decoder=NORMALIZED_WAV_DECODER,
                   stem_reuse=bool(reused_count), stem_reused_files=reused_count, stem_computed_files=len(entries)-reused_count,
                   incomplete_types=[f'{v}/{m}' for v, m in ((0,0),(0,1),(1,0),(1,1))
                       if not any(r[TARGETS[0]]==v and r[TARGETS[1]]==m for r in selected)], quality_evaluation=False)

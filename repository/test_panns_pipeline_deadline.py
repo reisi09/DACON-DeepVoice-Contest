@@ -13,6 +13,17 @@ import pytest
 import panns_cloud_pipeline as pipeline
 
 
+def mixed_preflight_inputs(tmp_path):
+    rows = [dict(ID=rid, role=role, VOICE_PRESENT=voice, MUSIC_PRESENT=music, verified_audio=dict(seconds=seconds))
+            for rid, role, voice, music, seconds in (
+                ('train', 'train', 1, 1, .1), ('dev-b', 'development', 1, 1, 2.),
+                ('dev-a', 'development', 1, 1, 2.), ('sel-a', 'selection', 1, 1, 3.),
+                ('sel-no-voice', 'selection', 0, 1, .1), ('outside', 'selection', 1, 1, .1))]
+    path = tmp_path/'rows.jsonl'
+    path.write_text(''.join(json.dumps(row)+'\n' for row in rows))
+    return dict(rows=str(path), panel_ids=[row['ID'] for row in rows if row['ID'] != 'outside'])
+
+
 def test_training_deadline_is_immutable_across_resume_and_rejects_changed_contract(tmp_path, monkeypatch):
     config = dict(identity='locked-run', output=str(tmp_path))
     monkeypatch.setattr(pipeline.time, 'time', lambda: 1000.)
@@ -108,7 +119,8 @@ def test_outer_guard_cannot_orphan_stubborn_separate_session_child(tmp_path):
 
 
 def test_pipeline_passes_one_training_cutoff_to_pilot_and_all_twelve_conditions(tmp_path, monkeypatch):
-    config = dict(identity='wiring-only', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'], seeds=[41,42,43])
+    config = dict(identity='wiring-only', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'], seeds=[41,42,43],
+                  **mixed_preflight_inputs(tmp_path))
     run = tmp_path/'run.json'
     run.write_text(json.dumps(config))
     (tmp_path/'gold').mkdir()
@@ -145,7 +157,8 @@ def test_pipeline_passes_one_training_cutoff_to_pilot_and_all_twelve_conditions(
 
 
 def test_profile_uses_fixed_remaining_session_allowance_on_resume(tmp_path, monkeypatch):
-    config = dict(identity='late-cache-completion', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'], seeds=[41,42,43])
+    config = dict(identity='late-cache-completion', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'], seeds=[41,42,43],
+                  **mixed_preflight_inputs(tmp_path))
     run = tmp_path/'run.json'
     run.write_text(json.dumps(config))
     (tmp_path/'gold').mkdir()
@@ -171,3 +184,43 @@ def test_profile_uses_fixed_remaining_session_allowance_on_resume(tmp_path, monk
     assert allowances == [expected, expected]
     assert path.read_bytes() == original
     assert json.loads(original)['training_hours'] == 4.
+
+
+def test_fixed_engine_preflight_failure_stops_before_full_cache_and_training(tmp_path, monkeypatch):
+    from panns_adaptation_data import identity
+    config = dict(identity='engine-readiness', output=str(tmp_path/'output'), arms=['R1','R2','R3','R5'], seeds=[41,42,43],
+                  **mixed_preflight_inputs(tmp_path))
+    run = tmp_path/'run.json'
+    run.write_text(json.dumps(config))
+    (tmp_path/'gold').mkdir()
+    (tmp_path/'gold/index.json').write_text(json.dumps(dict(entries=[dict(ID='train')])))
+    epoch = time.time()+8*3600
+    monkeypatch.setattr(sys, 'argv', ['pipeline', '--run', str(run), '--bundle', str(tmp_path),
+                                    '--hours','8','--training-hours','4','--deadline-epoch',str(epoch)])
+    calls = []
+    def fail_engine(command, deadline, **kwargs):
+        calls.append((command, deadline, kwargs))
+        if len(calls) < 3:
+            return
+        assert Path(command[1]).name == 'panns_fixed_predictions.py', 'Expensive full cache preceded fixed Engine preflight'
+        probe = json.loads(Path(command[command.index('--run')+1]).read_text())
+        assert probe['panel_ids'] == ['dev-a', 'sel-a']
+        assert probe['rows'] == config['rows']
+        assert probe['output'] == str(Path(config['output'])/'fixed_preflight')
+        assert probe['fixed_predictions'] == str(Path(probe['output'])/'fixed_predictions.json')
+        assert probe['identity'] == identity({key:value for key,value in probe.items() if key != 'identity'})
+        raise RuntimeError('Fixed Engine preflight failed')
+    monkeypatch.setattr(pipeline, 'run_command', fail_engine)
+    with pytest.raises(RuntimeError, match='Fixed Engine preflight failed'):
+        pipeline.main()
+    assert 'cache' in calls[0][0] and '--parity-only' in calls[1][0]
+    assert len(calls) == 3 and len({call[1] for call in calls}) == 1
+    assert all(call[2]['deadline_epoch'] == epoch for call in calls)
+    assert not (Path(config['output'])/'training_deadline.json').exists()
+
+
+def test_fixed_preflight_refuses_a_train_only_panel(tmp_path):
+    config = dict(identity='train-only-gold', output=str(tmp_path/'output'), **mixed_preflight_inputs(tmp_path))
+    config['panel_ids'] = ['train']
+    with pytest.raises(ValueError, match='development'):
+        pipeline.fixed_preflight_config(config)

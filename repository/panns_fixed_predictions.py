@@ -10,7 +10,7 @@ import platform
 import sys
 import tempfile
 from panns_adaptation_data import cache_provenance, sha256, validate_config, write_json, identity
-from panns_adaptation_cache import load_demucs
+from panns_adaptation_cache import NORMALIZED_WAV_DECODER, load_demucs, pin_normalized_wav_loader
 
 
 def configure_numerics(device: str) -> None:
@@ -38,6 +38,7 @@ def fixed_prediction_contract(config, device):
     return dict(config_identity=config['identity'], reference_sha256=sha256(config['reference']),
         rows_sha256=sha256(config['rows']), producer_sha256=sha256(__file__), device=device,
         runtime=runtime, hardware=hardware, preprocessing='preserved Engine gain .6, soxr_hq, Demucs shifts=0',
+        demucs_input_decoder=NORMALIZED_WAV_DECODER,
         numerics=dict(threads=torch.get_num_threads(), matmul_tf32=torch.backends.cuda.matmul.allow_tf32,
             cudnn_tf32=torch.backends.cudnn.allow_tf32, cudnn_benchmark=torch.backends.cudnn.benchmark,
             deterministic=torch.are_deterministic_algorithms_enabled(),
@@ -85,6 +86,7 @@ def fixed_predictions(config, device):
         base.prepare_panns_labels = verified_labels
         return base
     module.baseline_module = safe_base
+    module.pin_torchaudio_loader = pin_normalized_wav_loader
     original_load = torch.load
     def restricted_load(*args, **kwargs):
         kwargs['weights_only'] = True
