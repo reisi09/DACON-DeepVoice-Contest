@@ -8,22 +8,27 @@ elif [[ -n "${PANNS_PYTHON:-}" || "${PANNS_PAUSE_ON_EXIT:-1}" != 1 ]]; then
   echo 'Production requires the verified offline environment and automatic pause' >&2
   exit 2
 fi
-# Disable only for a local packaging check; the production default pauses compute.
-if [[ "${PANNS_PAUSE_ON_EXIT:-1}" == 1 ]]; then
-  PANNS_VESSLCTL=$(command -v vesslctl) || { echo 'vesslctl required for automatic workspace pause' >&2; exit 2; }
-  trap '"$PANNS_VESSLCTL" --org qwdkw workspace pause wsp-nvxqw1jf9zdv' EXIT
+if [[ "${PANNS_GUARD_PID:-}" != "$PPID" ]]; then
+  exec python3 "$(dirname "${BASH_SOURCE[0]}")/panns_launch_guard.py" "$0" "$@"
 fi
+# Retain the owned group leader until children finish their TERM checkpoint flush.
+trap 'wait; exit 130' TERM INT HUP
 PANNS_SHARED=${PANNS_SHARED:-/shared}
-PANNS_WORK=${PANNS_WORK:-/root/panns-cnn-v1-20260925/application-v5}
+PANNS_WORK=${PANNS_WORK:-/root/panns-cnn-v1-20260925/application-v6}
 PANNS_OVERRIDE_PYTHON=${PANNS_PYTHON:-}
 PANNS_PYTHON=${PANNS_PYTHON:-/root/panns-cnn-v1-20260925/env/venv/bin/python}
-PANNS_INPUT="$PANNS_SHARED/panns-cnn-v1-20260925/inputs-v5"
+PANNS_INPUT="$PANNS_SHARED/panns-cnn-v1-20260925/inputs-v6"
 mkdir -p "$PANNS_WORK"
 python3 - "$PANNS_INPUT" "$PANNS_WORK" <<'PY'
-import hashlib,json,sys,tarfile,shutil
+import hashlib,json,sys,tarfile,shutil,os
 from pathlib import Path,PurePosixPath
 source,work=map(Path,sys.argv[1:])
 lock=json.loads((source/'launch_lock.json').read_text())
+if lock['workspace']!='wsp-nvxqw1jf9zdv':raise ValueError('Launch lock workspace differs from verified transport target')
+if 'PANNS_CONTROLLER_CONTRACT' in os.environ:
+    contract=json.loads(os.environ['PANNS_CONTROLLER_CONTRACT'])
+    if contract['workspace']!=lock['workspace'] or contract['bundle_sha256']!=lock['sha256']['run_bundle.tar']:
+        raise ValueError('Controller contract does not identify the uploaded bundle')
 for name,target_name in [('run_bundle.tar','bundle'),('noise-v2.tar','bundle/noise')]:
     archive=(source.parent/'inputs'/name) if name=='noise-v2.tar' else source/name
     with archive.open('rb') as f:actual=hashlib.file_digest(f,'sha256').hexdigest()
@@ -74,4 +79,4 @@ print('A100:',torch.cuda.get_device_name(0),'torch:',torch.__version__)
 PY
 export PATH="$PANNS_WORK/package/model/runtime/bin:$PATH"
 chmod u+x "$PANNS_WORK/package/model/runtime/bin/ffmpeg"
-"$PANNS_PYTHON" "$PANNS_WORK/bundle/code/panns_cloud_pipeline.py" --run "$PANNS_WORK/run.json" --bundle "$PANNS_WORK/bundle" "$@"
+"$PANNS_PYTHON" "$PANNS_WORK/bundle/code/panns_cloud_pipeline.py" --run "$PANNS_WORK/run.json" --bundle "$PANNS_WORK/bundle" "$@" --deadline-epoch "$PANNS_COMPUTE_DEADLINE_EPOCH"

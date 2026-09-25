@@ -59,7 +59,8 @@ def parity(config, bundle):
 
 def run_command(command, deadline):
     stopped = []
-    previous = signal.signal(signal.SIGTERM, lambda *_: stopped.append(True))
+    previous = {sig: signal.signal(sig, lambda *_: stopped.append(True))
+                for sig in (signal.SIGTERM, signal.SIGINT, signal.SIGHUP)}
     process = None
     try:
         if time.monotonic() >= deadline:
@@ -94,7 +95,8 @@ def run_command(command, deadline):
                 os.killpg(process.pid, signal.SIGKILL)
         raise
     finally:
-        signal.signal(signal.SIGTERM, previous)
+        for sig, handler in previous.items():
+            signal.signal(sig, handler)
     if stopped:
         raise InterruptedError('Pipeline termination requested; no further stage may start')
 
@@ -105,26 +107,30 @@ def main():
     p.add_argument('--bundle',type=Path,required=True)
     p.add_argument('--hours',type=float,required=True)
     p.add_argument('--training-hours',type=float,required=True)
+    p.add_argument('--deadline-epoch',type=float,required=True)
     p.add_argument('--parity-only',action='store_true')
     a=p.parse_args()
     if not 0<a.hours<=72: p.error('Finite session bound must be between 0 and 72 hours')
     if not 0<a.training_hours<=72: p.error('Finite aggregate training bound must be between 0 and 72 hours')
+    if not math.isfinite(a.deadline_epoch) or not 0<a.deadline_epoch-time.time()<=72*3600:
+        p.error('Original absolute deadline must be future and within 72 hours')
     os.environ.update(HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',HF_HUB_DISABLE_TELEMETRY='1',CUBLAS_WORKSPACE_CONFIG=':4096:8')
     config=json.loads(a.run.read_text())
     if a.parity_only:
         parity(config,a.bundle);return
     root=Path(__file__).resolve().parent
     start=time.monotonic()
+    deadline=min(start+a.hours*3600,start+a.deadline_epoch-time.time())
     def run(script,*args):
         command=[sys.executable,str(root/script),*map(str,args)]
-        run_command(command,start+a.hours*3600)
+        run_command(command,deadline)
     gold=json.loads((a.bundle/'gold/index.json').read_text())
     probe={**config,'panel_ids':[e['ID'] for e in gold['entries']], 'output':str(Path(config['output'])/'cuda_preflight')}
     probe.pop('identity');probe['identity']=identity(probe)
     probe_path=a.run.with_name('cuda_preflight.json');write_json(probe_path,probe)
     run('panns_cloud_run.py','cache','--run',probe_path,'--device','cuda','--resume')
     run('panns_cloud_pipeline.py','--run',probe_path,'--bundle',a.bundle,'--parity-only',
-        '--hours',a.hours,'--training-hours',a.training_hours)
+        '--hours',a.hours,'--training-hours',a.training_hours,'--deadline-epoch',a.deadline_epoch)
     run('panns_cloud_run.py','cache','--run',a.run,'--device','cuda','--resume')
     run('panns_training_budget.py','--run',a.run,'--device','cuda','--training-hours',a.training_hours)
     for arm in config['arms']:
@@ -137,6 +143,7 @@ def main():
             run('panns_cloud_run.py','evaluate','--run',a.run,'--arm',arm,'--seed',seed)
     run('panns_cloud_report.py','--run',a.run)
     write_json(Path(config['output'])/'pipeline_complete.json',dict(run_identity=config['identity'],
-        seconds=time.monotonic()-start,independent_evaluation=False,adoption_authorized=False))
+        seconds=time.monotonic()-start,deadline_epoch=a.deadline_epoch,
+        independent_evaluation=False,adoption_authorized=False))
 
 if __name__=='__main__':main()

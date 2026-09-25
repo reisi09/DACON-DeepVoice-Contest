@@ -93,6 +93,35 @@ def validate_partial_entry(config, row, saved):
     return validate_cache_entry(config, row, entry)
 
 
+def read_stem_cache(config, rows):
+    if 'stem_cache' not in config:
+        return {}
+    path = Path(config['stem_cache'])
+    if config['inputs'].get(str(path)) != sha256(path):
+        raise ValueError('Stem cache must be pinned in config inputs')
+    saved = json.loads(path.read_text())
+    row_identity = identity(sorted([[r['ID'], r['verified_audio']['sha256']] for r in rows.values()]))
+    if saved['version'] != 1 or saved['rows_audio_identity'] != row_identity:
+        raise ValueError('Stem cache row/audio identity mismatch')
+    assets = saved['source_receipt']['assets']
+    reference = json.loads(Path(config['reference']).read_text())['members']
+    if not assets or any(reference.get(name) != digest for name, digest in assets.items()):
+        raise ValueError('Stem cache reference assets mismatch')
+    from decision_heads import stem_features
+    unit = np.ones(1, np.float32)
+    expected = stem_features(unit, unit, 16000).keys()
+    for rid, entry in saved['entries'].items():
+        if rid not in rows or entry['audio_sha256'] != rows[rid]['verified_audio']['sha256']:
+            raise ValueError('Stem cache entry audio identity mismatch')
+        if (entry['stems'].keys() != expected or any(type(v) not in (int, float) or not np.isfinite(v)
+                for v in entry['stems'].values())):
+            raise ValueError('Stem cache requires the exact finite scalar feature set')
+        digest = entry['source_sha256']
+        if len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
+            raise ValueError('Stem cache source digest is invalid')
+    return saved['entries']
+
+
 def cache(config, resume=False):
     import tempfile
     import torch
@@ -112,6 +141,7 @@ def cache(config, resume=False):
     index_path = out/'index.json'
     rows = {r['ID']: r for r in (json.loads(s) for s in Path(config['rows']).open())}
     selected = [rows[rid] for rid in config['panel_ids']]
+    stem_cache = read_stem_cache(config, rows)
     if index_path.exists():
         marker_path = index_path.with_suffix('.sha256')
         marker = marker_path.read_bytes().strip() if marker_path.exists() else b''
@@ -122,7 +152,7 @@ def cache(config, resume=False):
             return saved
         if not resume:
             raise FileExistsError('Unpublished cache index exists; use --resume')
-    base = None
+    base = demucs = None
     entries = []
     start = time.monotonic()
     with Path(config['archive']).open('rb') as archive:
@@ -139,7 +169,6 @@ def cache(config, resume=False):
                 model = AdaptedCnn14(base, train_blocks=())
                 original = baseline(package)
                 pin_torchaudio_loader(original)
-                demucs = load_demucs(package).to(device)
                 heads, labels, groups = readout_assets(package)
             t = time.monotonic()
             audio = row['verified_audio']
@@ -162,13 +191,19 @@ def cache(config, resume=False):
                     raw = (raw * (.6/peak)).astype(np.float32)
                 segments = original.make_panns_segments(raw)
                 starts = original.get_segment_starts(len(raw))
-                normalized = Path(temporary)/'normalized.wav'
-                sf.write(normalized, raw, 16000, subtype='FLOAT')
                 stem_start = time.monotonic()
-                with torch.inference_mode():
-                    voice, _ = original.separate_voice_and_music(normalized, demucs, torch.device(device))
-                voice = np.pad(voice[:len(raw)], (0, max(0, len(raw)-len(voice))))
-                stems = stem_features(raw, voice, 16000)
+                reused = stem_cache.get(row['ID'])
+                if reused is not None:
+                    stems = reused['stems']
+                else:
+                    if demucs is None:
+                        demucs = load_demucs(package).to(device)
+                    normalized = Path(temporary)/'normalized.wav'
+                    sf.write(normalized, raw, 16000, subtype='FLOAT')
+                    with torch.inference_mode():
+                        voice, _ = original.separate_voice_and_music(normalized, demucs, torch.device(device))
+                    voice = np.pad(voice[:len(raw)], (0, max(0, len(raw)-len(voice))))
+                    stems = stem_features(raw, voice, 16000)
                 stem_seconds = time.monotonic()-stem_start
             features, reference, adapted = [], [], []
             with torch.no_grad():
@@ -203,13 +238,17 @@ def cache(config, resume=False):
                 path=str(path), sha256=sha256(path), identity=key, stems=stems,
                 targets=[row[k] for k in TARGETS], segments=len(segments), seconds=len(raw)/16000,
                 tag_error=tag_error, stats_error=stats_error, presence_error=presence_error,
+                stem_origin='legacy_cache' if reused is not None else 'demucs',
+                stem_source_sha256=reused['source_sha256'] if reused is not None else None,
                 stem_seconds=stem_seconds, total_seconds=time.monotonic()-t)
             entries.append(entry)
             write_json(entry_path, dict(config_identity=config['identity'], provenance=cache_provenance(),
                                        entry_sha256=identity(entry), entry=entry))
             print(f'Cached {len(entries)}/{len(selected)}: {len(segments)} segments, {entry["total_seconds"]:.2f}s', flush=True)
+    reused_count = sum(e.get('stem_origin') == 'legacy_cache' for e in entries)
     report = dict(config_identity=config['identity'], provenance=cache_provenance(), entries=entries, seconds=time.monotonic()-start,
-                  stem_reuse=False, incomplete_types=[f'{v}/{m}' for v, m in ((0,0),(0,1),(1,0),(1,1))
+                  stem_reuse=bool(reused_count), stem_reused_files=reused_count, stem_computed_files=len(entries)-reused_count,
+                  incomplete_types=[f'{v}/{m}' for v, m in ((0,0),(0,1),(1,0),(1,1))
                       if not any(r[TARGETS[0]]==v and r[TARGETS[1]]==m for r in selected)], quality_evaluation=False)
     write_json(index_path, report)
     marker_path = index_path.with_suffix('.sha256')

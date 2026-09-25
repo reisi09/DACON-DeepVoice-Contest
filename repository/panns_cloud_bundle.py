@@ -8,7 +8,7 @@ import tarfile
 from panns_adaptation_data import sha256, write_json
 
 
-def build(data,output,noise_archive):
+def build(data,output,noise_archive,stem_cache=None):
     source=Path(__file__).resolve().parent
     task=data/'_workspace/panns_cnn_v1'
     reference=json.loads((task/'reference_lock.json').read_text())
@@ -22,8 +22,11 @@ def build(data,output,noise_archive):
     code=['panns_adaptation.py','panns_adaptation_cache.py','panns_adaptation_data.py','panns_adaptation_run.py',
         'panns_cloud_run.py','panns_cloud_pipeline.py','panns_cloud_prepare.py','panns_cloud_report.py',
         'panns_fixed_predictions.py','panns_training_budget.py','panns_training_state.py',
-        'panns_cpu_environment.py','panns_restore_environment.py','panns_a100_launch.sh','data_v4/build_manifest.py',*runtime]
+        'panns_cpu_environment.py','panns_restore_environment.py','panns_a100_launch.sh','panns_launch_guard.py',
+        'DACON_PANNs_ADS_CPU_A100.ipynb','data_v4/build_manifest.py',*runtime]
     for name in sorted(set(code)):copy(source/name,'code/'+name)
+    if stem_cache is not None:
+        copy(stem_cache,'stem_cache.json')
     for name,expected in reference['members'].items():
         path=package/name
         if sha256(path)!=expected:raise ValueError('Reference package changed: '+name)
@@ -70,4 +73,6 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--data-root',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--noise-archive',type=Path,required=True)
-    a=p.parse_args();print(json.dumps(build(a.data_root.resolve(),a.output.resolve(),a.noise_archive.resolve())))
+    p.add_argument('--stem-cache',type=Path)
+    a=p.parse_args();print(json.dumps(build(a.data_root.resolve(),a.output.resolve(),a.noise_archive.resolve(),
+        a.stem_cache.resolve() if a.stem_cache is not None else None)))
