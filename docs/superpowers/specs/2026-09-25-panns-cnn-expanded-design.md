@@ -112,7 +112,7 @@ block6 conv 파라미터는 **56,623,104개**, block5는 **14,155,776개**, 합�
 
 2026-09-26 원인 재현에서 확인한 3개 파일·18개 구간은 Mac과 Linux의 16 kHz 정규화 음원·구간 시작점이 같았지만, 32 kHz 리샘플링 결과는 최대 6.705522537231445e-8 달랐다. 같은 CPU 모델에서 Linux 입력으로만 바꾸어도 기존 tag 오차가 재현됐고, 과거 CUDA 출력과의 잔여 오차는 8.643e-7 미만이었다. 이 결과를 전체 파일의 검증 통과로 확대하지 않는다.
 
-A100 실행 전에는 같은 Linux runtime에서 같은 43개 파일의 CPU 기준 cache를 생성한다. 각 장치에서 보존된 원본 Cnn14 forward와 adapted prefix/suffix·readout의 일치 검사를 유지하고, 그 뒤 CPU와 CUDA를 tag·presence 최대 절대 오차 1e-5 및 gradient 상대 L2 오차 1e-3으로 비교한다. 두 adapted 경로의 일치만으로 통과시키지 않는다. 기존 Mac gold는 그대로 보존하고 플랫폼 간 차이를 별도 진단으로 기록한다. 원본 전처리나 허용 오차를 바꾸지 않으며, 전체 검증을 통과하기 전에는 본학습을 시작하지 않는다.
+A100 실행 전에는 같은 Linux runtime에서 같은 43개 파일의 CPU 기준 cache를 생성한다. 각 장치에서 보존된 원본 Cnn14 forward와 adapted prefix/suffix·readout의 일치 검사를 유지하고, 그 뒤 CPU와 CUDA를 tag·presence 최대 절대 오차 1e-5 및 gradient 상대 L2 오차 1e-3으로 비교한다. 두 adapted 경로의 일치만으로 통과시키지 않는다. 기존 Mac gold는 그대로 보존하고 플랫폼 간 수치 차이를 별도 진단으로 기록한다. Mac과 Linux의 구간 시작점·구간 수·tensor shape가 다르면 미세한 수치 차이로 취급하지 않고 학습을 차단한다. 원본 전처리나 허용 오차를 바꾸지 않으며, 전체 검증을 통과하기 전에는 본학습을 시작하지 않는다.
 
 파일별 두 presence logit에 **masked BCEWithLogits**를 적용한다. 음성·음악은 독립 target이며 서로 배타적인 softmax를 사용하지 않는다. file 양성을 모든 segment 양성으로 복제하지 않는다. 미확정 라벨은 0이 아니며 손실에서 제외한다.
 

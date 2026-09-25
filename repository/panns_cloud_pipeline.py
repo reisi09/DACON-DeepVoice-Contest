@@ -126,7 +126,7 @@ def prediction_errors(reference, actual, assets):
                 or cpu['tags'].shape != gpu['tags'].shape or cpu['block5'].shape != gpu['block5'].shape
                 or cpu['tags'].ndim != 2 or len(cpu['tags']) != len(cpu['starts'])
                 or len(cpu['tags']) != left['segments'] or left['segments'] != right['segments']):
-            raise ParityLayoutMismatch('Parity segment starts, counts or tensor shapes mismatch')
+            raise ParityLayoutMismatch(f"Parity segment starts, counts or tensor shapes mismatch: {left['ID']}")
         tag_error = max(tag_error, float(np.abs(cpu['tags']-gpu['tags']).max()))
         old = presence_logits(torch.from_numpy(cpu['tags']), left['stems'], *assets).sigmoid()
         new = presence_logits(torch.from_numpy(gpu['tags']), right['stems'], *assets).sigmoid()
@@ -137,10 +137,7 @@ def prediction_errors(reference, actual, assets):
 
 
 def cross_platform_errors(gold, cpu, assets):
-    try:
-        errors = prediction_errors(gold, cpu, assets)
-    except ParityLayoutMismatch as exc:
-        return dict(comparable=False, reason=str(exc), within_legacy_tolerance=None)
+    errors = prediction_errors(gold, cpu, assets)
     return dict(errors, comparable=True, within_legacy_tolerance=all(v <= 1e-5 for v in errors.values()))
 
 

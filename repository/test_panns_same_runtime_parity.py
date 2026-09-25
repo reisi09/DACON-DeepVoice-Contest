@@ -54,10 +54,11 @@ def test_separate_mac_drift_does_not_change_same_runtime_reference(tmp_path):
     # When both independently bound cache indexes and their real NPZ payloads are read.
     cpu_config, cpu, cuda, gold = pipeline.parity_indexes(config, tmp_path)
     same_runtime = pipeline.prediction_errors(cpu, cuda, assets)
-    cross_platform = pipeline.prediction_errors(gold, cpu, assets)
+    cross_platform = pipeline.cross_platform_errors(gold, cpu, assets)
     # Then device parity is exact while the historical cross-platform failure stays visible.
     assert same_runtime == dict(tag_max_abs=0., presence_max_abs=0.)
     assert cross_platform['tag_max_abs'] > 1e-5
+    assert cross_platform['comparable'] is True and cross_platform['within_legacy_tolerance'] is False
     assert cpu_config['identity'] != config['identity']
     assert before == (sha256(tmp_path/'gold/index.json'), sha256(tmp_path/'gold/a.npz'))
 
@@ -99,17 +100,18 @@ def test_broadcastable_segment_mismatch_cannot_pass_zero_tag_error(tmp_path):
         pipeline.prediction_errors(cpu, cuda, assets)
 
 
-def test_mac_layout_diagnostic_is_noncomparable_but_integrity_still_required(tmp_path):
+def test_mac_layout_mismatch_blocks_even_when_same_runtime_tags_match(tmp_path):
     config, assets = parity_fixture(tmp_path)
     _, cpu, cuda, gold = pipeline.parity_indexes(config, tmp_path)
     entry = gold['entries'][0]; path = Path(entry['path'])
     with np.load(path, allow_pickle=False) as saved:
         values = {key: saved[key].copy() for key in saved.files}
-    values['starts'] = np.array([1])
-    np.savez(path, **values); entry['sha256'] = sha256(path)
-    diagnostic = pipeline.cross_platform_errors(gold, cpu, assets)
-    assert diagnostic['comparable'] is False and diagnostic['within_legacy_tolerance'] is None
     assert pipeline.prediction_errors(cpu, cuda, assets)['tag_max_abs'] == 0.
+    for starts in (np.array([1]), np.array([0, 1])):
+        values['starts'] = starts
+        np.savez(path, **values); entry['sha256'] = sha256(path)
+        with pytest.raises(pipeline.ParityLayoutMismatch, match='source:a'):
+            pipeline.cross_platform_errors(gold, cpu, assets)
     entry['sha256'] = '0'*64
     with pytest.raises(ValueError, match='Cache hash mismatch'):
         pipeline.cross_platform_errors(gold, cpu, assets)
