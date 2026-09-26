@@ -98,7 +98,7 @@ class Engine(frozen.Engine):
 
         from demucs.htdemucs import HTDemucs
         allowed = [HTDemucs, np.dtype, Fraction,
-                   (np._core.multiarray.scalar, 'numpy.core.multiarray.scalar'), type(np.dtype('float64'))]
+                   (np.core.multiarray.scalar, 'numpy.core.multiarray.scalar'), type(np.dtype('float64'))]
         frozen.baseline_module, frozen.pin_torchaudio_loader = safe_base, pin_normalized_wav_loader
         torch.load = restricted_load
         try:
