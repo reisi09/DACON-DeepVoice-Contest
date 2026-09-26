@@ -25,23 +25,6 @@ from mert12_submission import AutoFeatureExtractor, AutoModel, baseline_module, 
 from antideepfake_runtime import AntiDeepfake  # noqa: E402
 
 LAYERS = (3, 6, 9, 12, 15, 18, 21, 24)   # hidden_states index; 12 = the current music feature
-AD_WINDOW, AD_HOP = 64600, 32300
-
-
-@torch.inference_mode()
-def ad_windows(model: AntiDeepfake, audio: np.ndarray, device, batch: int = 16) -> tuple[np.ndarray, np.ndarray]:
-    """Same windowing and pooling as AntiDeepfake.predict, returning the pooled embedding the classifier sees."""
-    audio = audio if len(audio) >= 400 else np.pad(audio, (0, 400 - len(audio)))
-    starts = list(range(0, max(1, len(audio) - AD_WINDOW + 1), AD_HOP))
-    if len(audio) > AD_WINDOW and starts[-1] != len(audio) - AD_WINDOW:
-        starts.append(len(audio) - AD_WINDOW)
-    emb, prob = [], []
-    for offset in range(0, len(starts), batch):
-        clips = torch.from_numpy(np.stack([audio[s:s + AD_WINDOW] for s in starts[offset:offset + batch]])).to(device)
-        hidden = model.encoder(torch.nn.functional.layer_norm(clips, clips.shape[-1:])).last_hidden_state.mean(1)
-        emb.append(hidden.half().cpu().numpy())
-        prob.append(model.classifier(hidden).softmax(-1)[:, 0].float().cpu().numpy())
-    return np.concatenate(emb), np.concatenate(prob)
 
 
 def main() -> None:
@@ -84,7 +67,8 @@ def main() -> None:
             voice, backing = base.separate_voice_and_music(normalized, demucs, device)
         voice = np.pad(voice[:len(raw)], (0, max(0, len(raw) - len(voice)))).astype(np.float32)
         backing = np.pad(backing[:len(raw)], (0, max(0, len(raw) - len(backing)))).astype(np.float32)
-        emb, prob = ad_windows(detector, voice, device)
+        emb, prob = detector.windows(voice)
+        emb = emb.astype(np.float16)
         starts = window_layout(len(raw))
         layers = []
         with torch.inference_mode():

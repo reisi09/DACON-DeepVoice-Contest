@@ -1,0 +1,58 @@
+{
+ "baseline (DF-Arena voice, MERT-12 music)": {
+  "val": {
+   "file_eer": 0.0691,
+   "voice_eer": 0.0509,
+   "music_eer": 0.1252,
+   "ads": 0.91773
+  },
+  "test": {
+   "file_eer": 0.1089,
+   "voice_eer": 0.1195,
+   "music_eer": 0.1908,
+   "ads": 0.86438
+  }
+ },
+ "music MERT-6+12": {
+  "val": {
+   "file_eer": 0.068,
+   "voice_eer": 0.0509,
+   "music_eer": 0.1119,
+   "ads": 0.92222
+  },
+  "test": {
+   "file_eer": 0.1064,
+   "voice_eer": 0.1195,
+   "music_eer": 0.1847,
+   "ads": 0.86748
+  }
+ },
+ "music MERT-6+12 + voice fusion AD-head w=0.5": {
+  "val": {
+   "file_eer": 0.0596,
+   "voice_eer": 0.0376,
+   "music_eer": 0.1119,
+   "ads": 0.92912
+  },
+  "test": {
+   "file_eer": 0.0996,
+   "voice_eer": 0.1106,
+   "music_eer": 0.1847,
+   "ads": 0.87267
+  }
+ },
+ "music MERT-6+12 + voice fusion AD-head w=1": {
+  "val": {
+   "file_eer": 0.0585,
+   "voice_eer": 0.0366,
+   "music_eer": 0.1119,
+   "ads": 0.92984
+  },
+  "test": {
+   "file_eer": 0.1,
+   "voice_eer": 0.1125,
+   "music_eer": 0.1847,
+   "ads": 0.87209
+  }
+ }
+}

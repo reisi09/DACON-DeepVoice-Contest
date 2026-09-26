@@ -47,6 +47,11 @@ def replacements() -> dict[str, bytes]:
     if runtime.count(OLD_CANDIDATE) != 1:
         raise ValueError('unexpected candidate declaration in full_bank_submission.py')
     out = {'model/trained/' + n: (HEADS / n).read_bytes() for n in TRAINED}
+    for n in [f'voice_ad_{s}.pt' for s in (41, 42, 43)] + ['music_layers.json']:   # optional new-backbone heads
+        if (HEADS / n).exists():
+            if n.endswith('.pt') and lock['checkpoints'].get(n) != sha256(HEADS / n):
+                raise ValueError(f'checkpoint differs from its candidate lock: {n}')
+            out['model/trained/' + n] = (HEADS / n).read_bytes()
     out['model/trained/presence_head.json'] = PRESENCE.read_bytes()
     out['model/runtime/full_bank_submission.py'] = runtime.replace(OLD_CANDIDATE, f'CANDIDATE = {CANDIDATE!r}'.encode())
     out['model/runtime/decision_heads.py'] = (ROOT / 'decision_heads.py').read_bytes()

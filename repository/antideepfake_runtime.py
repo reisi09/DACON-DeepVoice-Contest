@@ -89,6 +89,24 @@ class AntiDeepfake(torch.nn.Module):
         return [max(probabilities), float(np.mean(top)), *probabilities]
 
 
+    @torch.inference_mode()
+    def windows(self, audio: np.ndarray, window: int = 64600, batch: int = 16) -> tuple[np.ndarray, np.ndarray]:
+        """Pooled last hidden state (the classifier input, float32 [windows, hidden]) and fake prob per window, with the
+        predict() windowing; shared by data_v4/extract_backbones.py (training features) and the submission runtime."""
+        audio = audio if len(audio) >= 400 else np.pad(audio, (0, 400 - len(audio)))
+        starts = list(range(0, max(1, len(audio) - window + 1), window // 2))
+        if len(audio) > window and starts[-1] != len(audio) - window:
+            starts.append(len(audio) - window)
+        device = next(self.parameters()).device
+        emb, prob = [], []
+        for offset in range(0, len(starts), batch):
+            clips = torch.from_numpy(np.stack([audio[s:s + window] for s in starts[offset:offset + batch]])).to(device)
+            hidden = self.encoder(torch.nn.functional.layer_norm(clips, clips.shape[-1:])).last_hidden_state.mean(1)
+            emb.append(hidden.float().cpu().numpy())
+            prob.append(self.classifier(hidden).softmax(-1)[:, 0].float().cpu().numpy())
+        return np.concatenate(emb), np.concatenate(prob)
+
+
 def verify_native(directory: Path, device: str = 'cpu') -> dict:
     """Protect class polarity, tensor mapping, normalization and pooling parity."""
     reference = json.loads((directory/'native_reference.json').read_text())

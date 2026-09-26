@@ -1,0 +1,34 @@
+{
+ "protocol": "P1 refit: data v4 train + held-out test as train, val early stopping",
+ "rows": {
+  "train_with_backbone": 27590,
+  "val_with_backbone": 3680
+ },
+ "voice_ours": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/_workspace/p1_refit_cpu",
+ "music_layers": [
+  6,
+  12
+ ],
+ "ad_weight": 0.5,
+ "file_ensemble": {
+  "candidates_alone": {
+   "max": 0.05769,
+   "noisy_or": 0.05604,
+   "max_nopresence": 0.07072
+  },
+  "equal_weights_eer": 0.05852,
+  "grid_best_eer": 0.05438,
+  "grid_best_weights": {
+   "max": 0,
+   "max_nopresence": 1,
+   "noisy_or": 9
+  },
+  "chosen_weights": {
+   "max": 0,
+   "max_nopresence": 1,
+   "noisy_or": 9
+  },
+  "chosen_rule": "grid",
+  "val_n": 3676
+ }
+}
