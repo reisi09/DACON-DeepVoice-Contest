@@ -21,7 +21,7 @@ from panns_adaptation_data import identity, load_cache, read_cache_index, sha256
 from panns_adaptation_run import model_for_arm
 from panns_cached_fake import before_deadline
 from panns_fixed_predictions import configure_numerics
-from panns_submission import Selection
+from panns_submission_selection import Selection
 
 
 def choose_model(reports) -> str:

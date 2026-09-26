@@ -158,7 +158,7 @@ def test_package_stream_preserves_members_and_rejects_changed_inputs(tmp_path):
     deploy = tmp_path/'deploy'
     deploy.mkdir()
     root = Path(__file__).resolve().parent
-    for name in ('package_panns_submission.py', 'panns_submission.py'):
+    for name in ('package_panns_submission.py', 'panns_submission.py', 'panns_submission_selection.py'):
         shutil.copyfile(root/name, deploy/name)
     subprocess.run([sys.executable, str(deploy/'package_panns_submission.py'), '--reference', str(reference),
         '--export', str(export), '--output', str(tmp_path/'deployed.zip')], cwd=deploy,
@@ -169,3 +169,22 @@ def test_package_stream_preserves_members_and_rejects_changed_inputs(tmp_path):
     with pytest.raises(SubmissionError, match='input changed'):
         make_package(reference, export, tmp_path/'changed.zip')
     assert not (tmp_path/'changed.zip').exists()
+
+
+def test_orchestration_cli_imports_with_frozen_bundle_without_submission_engine(tmp_path):
+    workspace = os.environ.get('PANNS_TEST_WORKSPACE')
+    if workspace is None:
+        pytest.skip('Set PANNS_TEST_WORKSPACE to the actual frozen cloud bundle')
+    frozen = Path(workspace)/'notebook_execution_20260925/cloud_v12/final_package/bundle/code'
+    assert not (frozen/'full_bank_contract.py').exists()
+    root = Path(__file__).resolve().parent
+    scripts = ('panns_submission_train.py', 'panns_cached_fake.py', 'panns_submission_evaluate.py',
+               'package_panns_submission.py', 'panns_submission_verify.py', 'panns_submission_workflow.py')
+    for name in (*scripts, 'panns_submission.py', 'panns_submission_selection.py', 'panns_fast_step.py'):
+        shutil.copyfile(root/name, tmp_path/name)
+    program = ("import runpy,sys; sys.modules['full_bank_submission']=None; "
+               "script=sys.argv[1]; sys.argv=[script,'--help']; runpy.run_path(script,run_name='__main__')")
+    for name in scripts:
+        subprocess.run([sys.executable, '-c', program, str(tmp_path/name)], cwd=tmp_path,
+            env=dict(os.environ, PYTHONPATH=os.pathsep.join((str(tmp_path), str(frozen)))),
+            check=True, capture_output=True, timeout=60)

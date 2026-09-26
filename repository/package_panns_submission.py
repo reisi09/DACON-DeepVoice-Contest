@@ -15,7 +15,8 @@ from pathlib import Path, PurePosixPath
 from typing import Final, TypedDict
 import zipfile
 
-from panns_submission import Selection, SubmissionError, sha256
+from mert12_submission import SubmissionError, sha256
+from panns_submission_selection import Selection
 
 ENTRYPOINT: Final = b"import sys\nfrom pathlib import Path\nROOT=Path(__file__).resolve().parent\nsys.dont_write_bytecode=True\nsys.path.insert(0,str(ROOT/'model/runtime'))\nfrom panns_submission import run\nif __name__=='__main__':\n    run(ROOT)\n"
 
@@ -69,6 +70,7 @@ def package(reference: Path, export: Path | None, output: Path) -> PackageReport
                      'model/trained/panns_best_model.pt': export/'best_model.pt'}
         root = Path(__file__).resolve().parent
         additions['model/runtime/panns_submission.py'] = root/'panns_submission.py'
+        additions['model/runtime/panns_submission_selection.py'] = root/'panns_submission_selection.py'
         additions['model/runtime/panns_adaptation.py'] = Path(import_module('panns_adaptation').__file__)
     if sources.keys() & additions.keys():
         raise SubmissionError('The base already contains a PANNs adaptation')

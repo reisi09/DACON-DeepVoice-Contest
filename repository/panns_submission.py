@@ -2,13 +2,10 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from dataclasses import dataclass
 from fractions import Fraction
-import json
 import os
 from pathlib import Path
 from types import ModuleType
-from typing import Literal
 
 import numpy as np
 import soundfile as sf
@@ -17,32 +14,7 @@ import torch
 import full_bank_submission as frozen
 from mert12_submission import SubmissionError, sha256
 from panns_adaptation import AdaptedCnn14
-
-
-@dataclass(frozen=True, slots=True)
-class Selection:
-    arm: Literal['R1', 'R3']
-    seed: int
-    checkpoint_sha256: str
-    best_epoch: int
-    stop_reason: Literal['early_stopping', 'max_epochs', 'time_budget']
-    run_identity: str
-    config_identity: str
-    weights_sha256: str
-    reference_sha256: str
-
-    @classmethod
-    def read(cls, path: Path) -> Selection:
-        value = cls(**json.loads(path.read_text()))
-        if (value.arm not in ('R1', 'R3') or value.seed != 41
-                or type(value.best_epoch) is not int or value.best_epoch < 0
-                or value.stop_reason not in ('early_stopping', 'max_epochs', 'time_budget')):
-            raise SubmissionError('Invalid selected PANNs experiment')
-        for digest in (value.checkpoint_sha256, value.run_identity, value.config_identity,
-                       value.weights_sha256, value.reference_sha256):
-            if not isinstance(digest, str) or len(digest) != 64 or any(c not in '0123456789abcdef' for c in digest):
-                raise SubmissionError('Invalid selected PANNs identity')
-        return value
+from panns_submission_selection import Selection
 
 
 def apply_adaptation(base: torch.nn.Module, state: Mapping[str, torch.Tensor], arm: str) -> AdaptedCnn14:
