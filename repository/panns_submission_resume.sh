@@ -50,8 +50,8 @@ with Path(sys.argv[1]).open('rb') as stream:
         raise ValueError('Original training configuration changed during recovery')
 print('Original training configuration restored',flush=True)
 PY
-"$PANNS_PYTHON" - "$PANNS_WORK" <<'PY'
-import sys
+"$PANNS_PYTHON" - "$PANNS_WORK" "$PANNS_RESUME_ROOT" <<'PY'
+import json,sys
 from pathlib import Path
 import torch
 work=Path(sys.argv[1])
@@ -61,6 +61,15 @@ if labels.read_bytes()!=(Path.home()/'panns_data/class_labels_indices.csv').read
 if not torch.cuda.is_available() or 'A100' not in torch.cuda.get_device_name(0):
     raise RuntimeError('Expected the authorized existing A100')
 print('Offline labels and existing A100 verified',flush=True)
+release=Path(sys.argv[2])
+sys.path.insert(0,str(release))
+sys.path.append(str(work/'bundle/code'))
+from panns_submission_workflow import completed_training
+workflow=json.loads((release/'workflow_request.json').read_text())
+config=json.loads((work/'run.json').read_text())
+request=json.loads(Path(workflow['trainer_request']).read_text())
+print(json.dumps({'completed_training_verified':{
+    arm:completed_training(config,request,arm) for arm in ('R1','R3')}}),flush=True)
 PY
 chmod u+x "$PANNS_WORK/package/model/runtime/bin/ffmpeg"
 PANNS_PREFETCH_DEADLINE=$(python3 - <<'PY'
