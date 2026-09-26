@@ -5,9 +5,9 @@ import hashlib
 import io
 import json
 import os
-import shutil
 from pathlib import Path, PurePosixPath
 import tarfile
+import zipfile
 import numpy as np
 import soundfile as sf
 from data_v4.build_manifest import components
@@ -234,6 +234,15 @@ def read_cache_index(config):
 
 def load_cache(entry):
     path = Path(entry['path'])
+    def read_payload():
+        if 'member' not in entry:
+            return path.read_bytes()
+        with zipfile.ZipFile(path) as archive:
+            info = archive.getinfo(entry['member'])
+            if (info.compress_type != zipfile.ZIP_STORED or not 0 < info.file_size <= 64*1024**2
+                    or archive.namelist().count(entry['member']) != 1):
+                raise ValueError('Invalid stored cache member')
+            return archive.read(info)
     local = os.environ.get('PANNS_LOCAL_CACHE')
     if local:
         if len(entry['sha256']) != 64 or any(c not in '0123456789abcdef' for c in entry['sha256']):
@@ -242,14 +251,16 @@ def load_cache(entry):
         cached.parent.mkdir(parents=True, exist_ok=True)
         if not cached.exists():
             temporary = cached.with_suffix('.npz.tmp')
-            shutil.copyfile(path, temporary)
+            temporary.write_bytes(read_payload())
             if sha256(temporary) != entry['sha256']:
                 raise ValueError('Downloaded activation hash mismatch')
             temporary.replace(cached)
-        path = cached
-    if sha256(path) != entry['sha256']:
+        payload = cached.read_bytes()
+    else:
+        payload = read_payload()
+    if hashlib.sha256(payload).hexdigest() != entry['sha256']:
         raise ValueError('Cache hash mismatch')
-    with np.load(path, allow_pickle=False) as data:
+    with np.load(io.BytesIO(payload), allow_pickle=False) as data:
         if str(data['identity'].item()) != entry['identity']:
             raise ValueError('Cache identity mismatch')
         result = {key: data[key].copy() for key in data.files}

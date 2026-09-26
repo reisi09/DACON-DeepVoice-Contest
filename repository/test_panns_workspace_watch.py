@@ -26,6 +26,8 @@ if 'workspace' in sys.argv:
         state.write_text('running')
     elif action == 'pause':
         state.write_text(c.get('pause_state', 'stopped'))
+        c['show_failures'] = c.get('show_failures_after_pause', 0)
+        (p/'fixture.json').write_text(json.dumps(c))
     else:
         if c.get('show_payloads'):
             payload = c['show_payloads'].pop(0)
@@ -49,6 +51,10 @@ else:
         time.sleep(60)
     elif c.get('bad_probe'):
         print('PANNS_STATUS {}')
+    elif (p/'started').exists() and c.get('probe_failures_after_start', 0):
+        c['probe_failures_after_start'] -= 1
+        (p/'fixture.json').write_text(json.dumps(c))
+        sys.exit(6)
     else:
         started = (p/'started').exists()
         print('PANNS_STATUS '+json.dumps({**c['contract'],
@@ -158,8 +164,8 @@ def test_rejected_request_cannot_mutate_or_overwrite_another_controller(tmp_path
         assert (output/'local_receipt.json').read_text() == original
 
 
-@pytest.mark.parametrize('show_failures', [1, 2])
-def test_owned_resume_show_failure_still_enters_cleanup(tmp_path, show_failures):
+@pytest.mark.parametrize('show_failures', [1, 2, 3])
+def test_owned_resume_retries_one_show_failure_then_cleans_up(tmp_path, show_failures):
     request, output = setup_request(tmp_path)
     output.mkdir()
     controller = watch.Watch(watch.read_request(request), output, [])
@@ -167,9 +173,24 @@ def test_owned_resume_show_failure_still_enters_cleanup(tmp_path, show_failures)
     config = json.loads((tmp_path/'fixture.json').read_text())
     config['show_failures'] = show_failures
     (tmp_path/'fixture.json').write_text(json.dumps(config))
-    assert watch.run(request, output) != 0
+    assert (watch.run(request, output) == 0) is (show_failures == 1)
     assert sum('pause' in event for event in calls(tmp_path)) == 1
     assert sum('start' in event for event in calls(tmp_path)) == 1
+
+
+@pytest.mark.parametrize('changes', [dict(probe_failures_after_start=1),
+                                    dict(show_failures_after_pause=3)])
+def test_transient_status_failure_preserves_single_start_and_verified_pause(tmp_path, changes):
+    request, output = setup_request(tmp_path, **changes)
+    original_request = request.read_bytes()
+    assert watch.run(request, output) == 0
+    events = calls(tmp_path)
+    assert sum(event[-1].endswith('/start.py') for event in events) == 1
+    assert sum('start' in event for event in events) == 1
+    assert sum('pause' in event for event in events) == 1
+    receipt = json.loads((output/'local_receipt.json').read_text())
+    assert receipt['compute_exit_code'] == 0 and receipt['pause_verified'] is True
+    assert request.read_bytes() == original_request
 
 
 def test_deadline_kills_blocked_transport_and_stopping_is_unverified(tmp_path, monkeypatch):

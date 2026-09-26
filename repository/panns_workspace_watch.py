@@ -125,8 +125,21 @@ class Watch:
             if process.stdout:
                 process.stdout.close()
 
+    def read_status(self, argv: list[str], timeout: float) -> str:
+        if argv not in (self.request.cli+['workspace', 'show', WORKSPACE, '-o', 'json'],
+                        self.request.transport+[self.request.probe_code]):
+            raise ValueError('Status retries permit only pinned read operations')
+        try:
+            return self.call(argv, timeout)
+        except (RuntimeError, TimeoutError, OSError):
+            if self.remaining() <= 1. or (self.stopped and not self.cleaning):
+                raise
+            print('READ_ONLY_STATUS_RETRY', flush=True)
+            self.sleep(.5)
+        return self.call(argv, timeout)
+
     def show(self, timeout: float = 5.) -> dict:
-        detail = json.loads(self.call(self.request.cli+['workspace', 'show', WORKSPACE, '-o', 'json'], timeout))
+        detail = json.loads(self.read_status(self.request.cli+['workspace', 'show', WORKSPACE, '-o', 'json'], timeout))
         workspace = detail['workspace']
         if (workspace['slug'] != WORKSPACE or workspace['name'] != self.request.name
                 or workspace['resourceSpecSlug'] != self.request.resource_spec_slug):
@@ -136,7 +149,7 @@ class Watch:
         return detail
 
     def probe(self, timeout: float = 75.) -> dict:
-        result = self.call(self.request.transport+[self.request.probe_code], timeout)
+        result = self.read_status(self.request.transport+[self.request.probe_code], timeout)
         lines = [line.removeprefix('PANNS_STATUS ') for line in result.splitlines() if line.startswith('PANNS_STATUS ')]
         if len(lines) != 1:
             raise ValueError('Expected one remote status record')
@@ -251,11 +264,14 @@ class Watch:
                 except (RuntimeError, TimeoutError, OSError):
                     print('PAUSE_REQUEST_OUTCOME_UNVERIFIED', flush=True)
                 while self.remaining() > 0:
-                    self.show()
-                    if self.latest['state'] in ('stopped', 'standby'):
+                    try:
+                        self.show()
+                    except (json.JSONDecodeError, KeyError, TypeError, AttributeError, RuntimeError, TimeoutError, OSError):
+                        print('PAUSE_VERIFICATION_RETRY', flush=True)
+                    if self.latest.get('state') in ('stopped', 'standby'):
                         break
                     self.sleep(.5)
-            verified = self.latest['state'] in ('stopped', 'standby')
+            verified = self.latest.get('state') in ('stopped', 'standby')
         except (KeyError, TypeError, ValueError, RuntimeError, TimeoutError, OSError):
             print('PAUSE_REQUIRES_IMMEDIATE_ATTENTION', flush=True)
         finally:

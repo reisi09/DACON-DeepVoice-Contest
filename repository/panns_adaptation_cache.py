@@ -2,9 +2,11 @@
 from __future__ import annotations
 import csv
 import hashlib
+import io
 import json
 from pathlib import Path
 import time
+import zipfile
 from types import ModuleType
 from typing import TYPE_CHECKING, Final
 import numpy as np
@@ -147,6 +149,62 @@ def read_stem_cache(config, rows):
     return saved['entries']
 
 
+def write_cache_shard(config, number, pending, resume):
+    path = Path(config['output'])/'cache'/f'part_{number:05}.zip'
+    receipt = path.with_suffix('.json')
+    if receipt.exists():
+        raise FileExistsError('Published cache shard already exists')
+    if path.exists():
+        if not resume:
+            raise FileExistsError('Unpublished cache shard exists; use --resume')
+        path.replace(path.with_suffix('.orphan.'+str(time.time_ns())+'.zip'))
+    entries = []
+    temporary = path.with_suffix('.zip.tmp')
+    with zipfile.ZipFile(temporary, 'w', compression=zipfile.ZIP_STORED) as archive:
+        for original, arrays in pending:
+            member = hashlib.sha256(original['ID'].encode()).hexdigest()+'.npz'
+            if member in archive.namelist():
+                raise ValueError('Duplicate cache shard ID')
+            stream = io.BytesIO()
+            np.savez(stream, **arrays)
+            payload = stream.getvalue()
+            if len(payload) > 64*1024**2:
+                raise ValueError('Activation payload exceeds 64 MiB')
+            archive.writestr(member, payload)
+            entries.append(dict(original, path=str(path), member=member,
+                                sha256=hashlib.sha256(payload).hexdigest()))
+    temporary.replace(path)
+    write_json(receipt, dict(config_identity=config['identity'], provenance=cache_provenance(),
+        archive_sha256=sha256(path), entries_sha256=identity(entries), entries=entries))
+    return entries
+
+
+def read_cache_shards(config, rows, resume):
+    entries = []
+    number = 0
+    while True:
+        path = Path(config['output'])/'cache'/f'part_{number:05}.zip'
+        receipt = path.with_suffix('.json')
+        if not receipt.exists():
+            return entries, number
+        if not resume:
+            raise FileExistsError('Partial cache shards exist; use --resume')
+        saved = json.loads(receipt.read_text())
+        if saved['config_identity'] != config['identity'] or saved['provenance'] != cache_provenance():
+            raise ValueError('Cache shard config or provenance mismatch')
+        if sha256(path) != saved['archive_sha256'] or identity(saved['entries']) != saved['entries_sha256']:
+            raise ValueError('Cache hash mismatch for shard')
+        ids = [entry['ID'] for entry in saved['entries']]
+        if not ids or ids != config['panel_ids'][len(entries):len(entries)+len(ids)]:
+            raise ValueError('Cache shard panel order mismatch')
+        for entry in saved['entries']:
+            if entry['path'] != str(path) or entry['member'] != hashlib.sha256(entry['ID'].encode()).hexdigest()+'.npz':
+                raise ValueError('Cache shard member mismatch')
+            validate_cache_entry(config, rows[entry['ID']], entry)
+        entries.extend(saved['entries'])
+        number += 1
+
+
 def cache(config, resume=False):
     import tempfile
     import torch
@@ -177,17 +235,12 @@ def cache(config, resume=False):
         if not resume:
             raise FileExistsError('Unpublished cache index exists; use --resume')
     base = demucs = None
-    entries = []
+    entries, shard_number = read_cache_shards(config, rows, resume)
+    pending = []
+    pending_bytes = 0
     start = time.monotonic()
     with Path(config['archive']).open('rb') as archive:
-        for row in selected:
-            entry_path = out/(hashlib.sha256(row['ID'].encode()).hexdigest()+'.json')
-            if entry_path.exists():
-                if not resume:
-                    raise FileExistsError('Partial cache exists; use --resume')
-                entry = validate_partial_entry(config, row, json.loads(entry_path.read_text()))
-                entries.append(entry)
-                continue
+        for row in selected[len(entries):]:
             if base is None:
                 base = load_base(package).to(device)
                 model = AdaptedCnn14(base, train_blocks=())
@@ -250,27 +303,24 @@ def cache(config, resume=False):
             if tag_error > (1e-6 if device == 'cpu' else 1e-5) or stats_error > 2*np.finfo(np.float32).eps or presence_error > (1e-6 if device == 'cpu' else 1e-5):
                 raise ValueError(f'Initial parity failed: tags={tag_error}, stats={stats_error}, presence={presence_error}')
             key = cache_key(config, row, starts)
-            path = out/(hashlib.sha256(row['ID'].encode()).hexdigest()+'.npz')
-            if path.exists():
-                if not resume:
-                    raise FileExistsError('Orphan cache exists; use --resume to preserve and recompute')
-                path.replace(path.with_suffix('.orphan.'+str(time.time_ns())+'.npz'))
-            with path.with_suffix('.npz.tmp').open('wb') as stream:
-                np.savez(stream, identity=key, block5=features.numpy(), tags=reference.numpy(), starts=np.array(starts))
-            path.with_suffix('.npz.tmp').replace(path)
             entry = dict(ID=row['ID'], role=row['role'], component_id=row['component_id'],
-                path=str(path), sha256=sha256(path), identity=key, stems=stems,
+                identity=key, stems=stems,
                 targets=[row[k] for k in TARGETS], segments=len(segments), seconds=len(raw)/16000,
                 tag_error=tag_error, stats_error=stats_error, presence_error=presence_error,
                 stem_origin='legacy_cache' if reused is not None else 'demucs',
                 stem_source_sha256=reused['source_sha256'] if reused is not None else None,
                 stem_seconds=stem_seconds, total_seconds=time.monotonic()-t)
-            entries.append(entry)
-            write_json(entry_path, dict(config_identity=config['identity'], provenance=cache_provenance(),
-                                       entry_sha256=identity(entry), entry=entry))
-            print(f'Cached {len(entries)}/{len(selected)}: {len(segments)} segments, {entry["total_seconds"]:.2f}s', flush=True)
+            arrays = dict(identity=np.array(key), block5=features.numpy(), tags=reference.numpy(), starts=np.array(starts))
+            pending.append((entry, arrays))
+            pending_bytes += sum(value.nbytes for value in arrays.values())
+            if len(pending) >= 128 or pending_bytes >= 64*1024**2 or row['ID'] == selected[-1]['ID']:
+                entries.extend(write_cache_shard(config, shard_number, pending, resume))
+                shard_number += 1
+                pending, pending_bytes = [], 0
+                print(f'Cached {len(entries)}/{len(selected)}: {shard_number} durable shards', flush=True)
     reused_count = sum(e.get('stem_origin') == 'legacy_cache' for e in entries)
     report = dict(config_identity=config['identity'], provenance=cache_provenance(), entries=entries, seconds=time.monotonic()-start,
+                  storage='stored_zip_shards', shard_count=shard_number, row_timing='compute_before_shard_publication',
                   demucs_input_decoder=NORMALIZED_WAV_DECODER,
                   stem_reuse=bool(reused_count), stem_reused_files=reused_count, stem_computed_files=len(entries)-reused_count,
                   incomplete_types=[f'{v}/{m}' for v, m in ((0,0),(0,1),(1,0),(1,1))

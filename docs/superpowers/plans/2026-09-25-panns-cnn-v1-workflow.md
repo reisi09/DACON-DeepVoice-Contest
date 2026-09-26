@@ -227,6 +227,12 @@ gain = (0.45 * (base['file_eer'] - new['file_eer'])
 
 ## 진행 기록·검토·Git
 
+### Object volume 캐시 저장
+
+block5 캐시는 ZIP_STORED 묶음에 NPZ로 저장한다. 128행 또는 배열 64 MiB에 도달하면 묶음을 닫고 SHA-256과 행별 identity를 기록한다. 마지막 행까지 저장한 뒤에만 전체 index를 발행한다. 공개된 묶음은 재개 시 해시·라벨·순서·전처리 identity를 다시 검증한다. 중단된 미공개 묶음은 보존하고 다시 계산하며, 메모리에만 남은 최대 127행은 재개 시 다시 계산할 수 있다. 학습의 로컬 캐시도 각 NPZ 해시를 확인한다.
+
+이 변경은 object volume에서 음원마다 NPZ와 JSON을 rename하던 병목을 줄인다. 특징 dtype과 값, 학습식, parity 허용오차는 유지한다. 실제 처리 시간은 묶음 저장을 적용한 A100 실행에서 다시 측정한다.
+
 각 단계 종료 시 `실제로 끝낸 작업 / 측정 근거 / 남은 제한 / 다음 단계 진입 여부`를 보고한다. 새로운 코드의 meaningful check가 통과한 완료점에서 해당 파일만 stage하고 전체 staged diff를 검토해 commit·push한다. 원본 데이터·checkpoint와 무관한 변경은 포함하지 않는다. 실패한 검사를 삭제하거나 형식 검사로 바꾸지 않는다.
 
 계획 자체는 spec 각 항목을 W0~W7에 연결하고, 현재 존재하는 경로와 앞으로 만들 경로를 구분해 자체 검토한다. 설계 해시와 workflow 해시는 [v1 고정 기록](../../evidence/panns_cnn_review_20260925/design_v1_lock.json)에 저장한다. 이 문서 작성으로 어떤 체크박스도 자동 완료되지 않는다.

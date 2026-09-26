@@ -6,10 +6,10 @@ import numpy as np
 import pytest
 
 import panns_adaptation_cache as producer
-from panns_adaptation_data import cache_provenance, identity, read_cache_index, sha256, write_json
+from panns_adaptation_data import cache_provenance, identity, load_cache, read_cache_index, sha256, write_json
 
 
-def unpublished_cache(tmp_path: Path):
+def unpublished_cache(tmp_path: Path, packed=True):
     row = dict(ID='audio:a', role='train', component_id='parent:a', VOICE_PRESENT=1,
                MUSIC_PRESENT=0, verified_audio=dict(sha256='audio-hash'))
     rows = tmp_path/'rows.jsonl'
@@ -29,8 +29,8 @@ def unpublished_cache(tmp_path: Path):
     entry = dict(ID=row['ID'], role=row['role'], component_id=row['component_id'],
                  targets=[1, 0], identity=key, path=str(path), sha256=sha256(path),
                  stems=dict(mix_rms_db=-23.), tag_error=0., stats_error=0., presence_error=0.)
-    write_json(path.with_suffix('.json'), dict(config_identity=config['identity'],
-        provenance=cache_provenance(), entry_sha256=identity(entry), entry=entry))
+    if packed:
+        entry = producer.write_cache_shard(config, 0, [(entry, load_cache(entry))], False)[0]
     index = path.parent/'index.json'
     write_json(index, dict(config_identity=config['identity'], provenance=cache_provenance(), entries=[entry]))
     return config, entry, index
@@ -41,14 +41,14 @@ def test_resume_rebuilds_unpublished_index_without_recomputing(tmp_path, monkeyp
     config, entry, index = unpublished_cache(tmp_path)
     if marker is not None:
         index.with_suffix('.sha256').write_text(marker)
-    before = {p.name: (sha256(p), p.stat().st_mtime_ns) for p in index.parent.iterdir() if p != index and p.suffix in ('.npz', '.json')}
+    before = {p.name: (sha256(p), p.stat().st_mtime_ns) for p in index.parent.iterdir() if p != index and p.suffix in ('.npz', '.zip', '.json')}
     def forbid_model_load(_package):
         pytest.fail('Verified receipts must recover without loading extraction models')
     monkeypatch.setattr(producer, 'load_base', forbid_model_load)
     recovered = producer.cache(config, resume=True)
     assert recovered['entries'] == [entry]
     assert read_cache_index(config) == recovered
-    assert before == {p.name: (sha256(p), p.stat().st_mtime_ns) for p in index.parent.iterdir() if p != index and p.suffix in ('.npz', '.json')}
+    assert before == {p.name: (sha256(p), p.stat().st_mtime_ns) for p in index.parent.iterdir() if p != index and p.suffix in ('.npz', '.zip', '.json')}
 
 
 def test_resume_rejects_finalized_index_hash_mismatch(tmp_path):
