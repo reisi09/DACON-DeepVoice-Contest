@@ -51,9 +51,18 @@ else:
         time.sleep(60)
     elif c.get('bad_probe'):
         print('PANNS_STATUS {}')
-    elif (p/'started').exists() and c.get('probe_failures_after_start', 0):
+    elif ((p/'started').exists() or c.get('fail_before_start')) and c.get('probe_failures_after_start', 0):
         c['probe_failures_after_start'] -= 1
         (p/'fixture.json').write_text(json.dumps(c))
+        if c.get('probe_failure_kind') == 'transient':
+            print('TypeError: fetch failed; https://fixture/?token=SECRET', file=sys.stderr)
+        elif c.get('probe_failure_kind') == 'domain':
+            print(json.dumps(dict(error='ValueError', value='SECRET identity mismatch')))
+            print('TypeError: fetch failed; token=SECRET', file=sys.stderr)
+        elif c.get('probe_failure_kind') == 'output_limit':
+            sys.stderr.write('SECRET'*12000)
+        elif c.get('probe_failure_kind') == 'auth':
+            print('Error: Kernel HTTP 403; token=SECRET', file=sys.stderr)
         sys.exit(6)
     else:
         started = (p/'started').exists()
@@ -191,6 +200,43 @@ def test_transient_status_failure_preserves_single_start_and_verified_pause(tmp_
     receipt = json.loads((output/'local_receipt.json').read_text())
     assert receipt['compute_exit_code'] == 0 and receipt['pause_verified'] is True
     assert request.read_bytes() == original_request
+
+
+@pytest.mark.parametrize('kind,failures,success', [('transient', 3, True), ('transient', 100, False),
+                                                ('domain', 3, False), ('output_limit', 3, False)])
+def test_probe_outage_recovery_is_bounded_and_never_exposes_child_diagnostics(tmp_path, monkeypatch, kind, failures, success):
+    request, output = setup_request(tmp_path, probe_failures_after_start=failures, probe_failure_kind=kind)
+    original_request = request.read_bytes()
+    monkeypatch.setattr(watch, 'PROBE_OUTAGE_SECONDS', .6, raising=False)
+    monkeypatch.setattr(watch, 'PROBE_RETRY_SECONDS', .02, raising=False)
+    began = time.monotonic()
+    assert (watch.run(request, output) == 0) is success
+    assert time.monotonic()-began < 3
+    events = calls(tmp_path)
+    assert sum(event[-1].endswith('/start.py') for event in events) == 1
+    assert sum('pause' in event for event in events) == 1
+    assert request.read_bytes() == original_request
+    assert json.loads((output/'pause_receipt.json').read_text())['unverified'] is False
+    if kind in ('domain', 'output_limit'):
+        assert sum(event[-1].endswith('/probe.py') for event in events) == 2
+    diagnostics = ''.join(path.read_text() for path in output.glob('*.json'))
+    assert 'SECRET' not in diagnostics and 'https://' not in diagnostics
+    if kind != 'output_limit':
+        diagnostic = json.loads((output/'child_failure.json').read_text())
+        assert diagnostic['category'] == ('fetch_failed' if kind == 'transient' else 'remote_error')
+        assert diagnostic['exit_code'] == 6 and diagnostic['stderr_bytes'] > 0
+
+
+@pytest.mark.parametrize('kind', ['domain', 'auth'])
+def test_startup_rejects_remote_domain_or_authorization_failure_without_retrying(tmp_path, kind):
+    request, output = setup_request(tmp_path, fail_before_start=True,
+        probe_failures_after_start=3, probe_failure_kind=kind)
+    assert watch.run(request, output) != 0
+    events = calls(tmp_path)
+    assert sum(event[-1].endswith('/probe.py') for event in events) == 1
+    assert not any(event[-1].endswith('/start.py') for event in events)
+    assert sum('pause' in event for event in events) == 1
+    assert json.loads((output/'pause_receipt.json').read_text())['unverified'] is False
 
 
 def test_deadline_kills_blocked_transport_and_stopping_is_unverified(tmp_path, monkeypatch):

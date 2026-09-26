@@ -19,6 +19,36 @@ from urllib.parse import urlparse
 WORKSPACE = 'wsp-nvxqw1jf9zdv'
 STOP_RESERVE = 30.
 POLL_SECONDS = 300.
+PROBE_OUTAGE_SECONDS = 300.
+PROBE_RETRY_SECONDS = 15.
+
+
+class ChildOperationError(RuntimeError):
+    def __init__(self, category: str) -> None:
+        self.category = category
+        super().__init__('Child operation failed: '+category)
+
+
+def child_error_category(stdout: bytes, stderr: bytes) -> str:
+    for line in stdout.splitlines():
+        try:
+            record = json.loads(line)
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            continue
+        if isinstance(record, dict) and 'error' in record:
+            return 'remote_error'
+    detail = stderr.decode('utf-8', errors='replace')
+    http = re.search(r'Error: Kernel HTTP ([1-5][0-9]{2})\b', detail)
+    if http:
+        return 'kernel_http_'+http.group(1)
+    if (re.search(r'(?:^|\n)(?:DOMException \[(?:TimeoutError|AbortError)\]|TimeoutError):', detail)
+            or 'Error: Execution timeout' in detail):
+        return 'transport_timeout'
+    if 'Error: Workspace WebSocket failed' in detail:
+        return 'websocket_failed'
+    if 'TypeError: fetch failed' in detail:
+        return 'fetch_failed'
+    return 'child_exit'
 
 
 @dataclass(frozen=True)
@@ -100,20 +130,28 @@ class Watch:
         end = time.monotonic()+min(timeout, self.remaining()-1.)
         if end <= time.monotonic() or (self.stopped and not self.cleaning):
             raise TimeoutError('Deadline or termination signal')
-        process = subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, start_new_session=True)
+        process = subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
         try:
             while True:
                 remaining = min(end-time.monotonic(), self.remaining())
-                if remaining <= 0 or (self.stopped and not self.cleaning):
+                if self.remaining() <= 0 or (self.stopped and not self.cleaning):
                     raise TimeoutError('Deadline or termination signal')
+                if remaining <= 0:
+                    raise TimeoutError('Child operation timed out')
                 try:
-                    stdout, _ = process.communicate(timeout=min(.1, remaining))
-                    if process.returncode or len(stdout) > 1024*1024:
-                        raise RuntimeError('Child operation failed or exceeded output limit')
+                    stdout, stderr = process.communicate(timeout=min(.1, remaining))
+                    if len(stdout) > 1024*1024 or len(stderr) > 64*1024:
+                        raise ValueError('Child output limit exceeded')
+                    if process.returncode:
+                        category = child_error_category(stdout, stderr)
+                        self.save('child_failure.json', dict(category=category, exit_code=process.returncode,
+                            probe=argv == self.request.transport+[self.request.probe_code], observed_epoch=time.time(),
+                            stdout_bytes=len(stdout), stderr_bytes=len(stderr)))
+                        raise ChildOperationError(category)
                     return stdout.decode('utf-8')
                 except subprocess.TimeoutExpired as error:
-                    if error.output and len(error.output) > 1024*1024:
-                        raise RuntimeError('Child output limit exceeded') from None
+                    if len(error.output or b'') > 1024*1024 or len(error.stderr or b'') > 64*1024:
+                        raise ValueError('Child output limit exceeded') from None
         finally:
             if process.poll() is None:
                 with contextlib.suppress(ProcessLookupError):
@@ -124,19 +162,39 @@ class Watch:
                 print('OWNED_CHILD_REAP_UNVERIFIED', flush=True)
             if process.stdout:
                 process.stdout.close()
+            if process.stderr:
+                process.stderr.close()
 
     def read_status(self, argv: list[str], timeout: float) -> str:
         if argv not in (self.request.cli+['workspace', 'show', WORKSPACE, '-o', 'json'],
                         self.request.transport+[self.request.probe_code]):
             raise ValueError('Status retries permit only pinned read operations')
-        try:
-            return self.call(argv, timeout)
-        except (RuntimeError, TimeoutError, OSError):
-            if self.remaining() <= 1. or (self.stopped and not self.cleaning):
-                raise
-            print('READ_ONLY_STATUS_RETRY', flush=True)
-            self.sleep(.5)
-        return self.call(argv, timeout)
+        probe = argv == self.request.transport+[self.request.probe_code]
+        outage_end = time.monotonic()+PROBE_OUTAGE_SECONDS
+        attempts = 0
+        while True:
+            try:
+                return self.call(argv, min(timeout, outage_end-time.monotonic()) if probe else timeout)
+            except (ChildOperationError, TimeoutError, OSError) as error:
+                if self.remaining() <= 1. or (self.stopped and not self.cleaning):
+                    raise
+                category = error.category if isinstance(error, ChildOperationError) else (
+                    'operation_timeout' if isinstance(error, TimeoutError) else 'os_error')
+                transient = (category in ('transport_timeout', 'operation_timeout', 'websocket_failed', 'fetch_failed', 'kernel_http_429')
+                             or category.startswith('kernel_http_5'))
+                if not transient and category not in ('child_exit', 'os_error'):
+                    raise ValueError('Status operation rejected: '+category) from None
+                if probe and transient:
+                    delay = PROBE_RETRY_SECONDS
+                    if time.monotonic()+delay >= outage_end:
+                        raise
+                else:
+                    delay = .5
+                    if attempts:
+                        raise
+                print('READ_ONLY_STATUS_RETRY '+category, flush=True)
+                self.sleep(delay)
+                attempts += 1
 
     def show(self, timeout: float = 5.) -> dict:
         detail = json.loads(self.read_status(self.request.cli+['workspace', 'show', WORKSPACE, '-o', 'json'], timeout))
