@@ -108,7 +108,7 @@ class ParityLayoutMismatch(ValueError):
     """Authenticated caches cannot be paired segment for segment."""
 
 
-def prediction_errors(reference, actual, assets):
+def prediction_errors(reference, actual, assets, *, shared_actual_stems=False):
     import numpy as np
     import torch
     from panns_adaptation import presence_logits
@@ -128,7 +128,8 @@ def prediction_errors(reference, actual, assets):
                 or len(cpu['tags']) != left['segments'] or left['segments'] != right['segments']):
             raise ParityLayoutMismatch(f"Parity segment starts, counts or tensor shapes mismatch: {left['ID']}")
         tag_error = max(tag_error, float(np.abs(cpu['tags']-gpu['tags']).max()))
-        old = presence_logits(torch.from_numpy(cpu['tags']), left['stems'], *assets).sigmoid()
+        stems = right['stems'] if shared_actual_stems else left['stems']
+        old = presence_logits(torch.from_numpy(cpu['tags']), stems, *assets).sigmoid()
         new = presence_logits(torch.from_numpy(gpu['tags']), right['stems'], *assets).sigmoid()
         if not torch.isfinite(old).all() or not torch.isfinite(new).all():
             raise ValueError('Nonfinite parity presence probabilities')
@@ -161,9 +162,14 @@ def parity(config, bundle):
         reference_kind='bundled_mac_gold_vs_same_runtime_cpu', gold_index_sha256=sha256(bundle/'gold/index.json'),
         cpu_reference=binding, legacy_tolerance=1e-5,
         gates_training=False, quality_evaluation=False))
-    errors = prediction_errors(cpu, actual, assets)
+    frontend_errors = prediction_errors(cpu, actual, assets)
+    write_json(output/'frozen_frontend_diagnostic.json', dict(frontend_errors,
+        reference_kind='same_runtime_cpu_vs_cuda_independent_frozen_stems', cpu_reference=binding,
+        within_legacy_tolerance=all(error <= 1e-5 for error in frontend_errors.values()),
+        legacy_tolerance=1e-5, gates_training=False, quality_evaluation=False))
+    errors = prediction_errors(cpu, actual, assets, shared_actual_stems=True)
     if any(error > 1e-5 for error in errors.values()):
-        raise ValueError(f'Same-runtime CPU/CUDA preprocessing parity failed: {errors}')
+        raise ValueError(f'Same-runtime PANNs CPU/CUDA parity with shared frozen stems failed: {errors}')
     entries = sorted(actual['entries'], key=lambda entry: entry['seconds'], reverse=True)[:4]
     gradients = []
     for device in ('cpu', 'cuda'):
@@ -177,6 +183,8 @@ def parity(config, bundle):
         raise ValueError('CPU/CUDA gradient parity failed')
     write_json(output/'cuda_parity.json', dict(binding, **errors, gradient_relative_l2=relative,
         tag_presence_tolerance=1e-5, gradient_tolerance=1e-3,
+        presence_scope='CPU/CUDA PANNs tags with identical frozen stems from the target CUDA cache',
+        independent_demucs_parity=False,
         gradient_scope='R3 seed41 same CUDA cache, four longest files; suffix/backward only',
         cpu_stem_reused_files=cpu['stem_reused_files'], cuda_stem_reused_files=actual['stem_reused_files']))
 

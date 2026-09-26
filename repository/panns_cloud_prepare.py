@@ -69,10 +69,10 @@ def prepare(bundle, volume, work):
         rows.append(row)
     (work/'presence_rows.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in rows))
     config=dict(reference=str(work/'reference.json'),rows=str(work/'presence_rows.jsonl'),archive=str(volume/AUDIO),
-        recovered_audio_root=str(bundle/'noise'),output=str(volume/'panns-cnn-v1-20260925/run-v7'),panel_ids=[r['ID'] for r in rows],
+        recovered_audio_root=str(bundle/'noise'),output=str(volume/'panns-cnn-v1-20260925/run-v8'),panel_ids=[r['ID'] for r in rows],
         arms=['R1','R2','R3','R5'],seeds=[41,42,43],cache_device='cuda',microbatch=4,
         early_stopping=dict(max_epochs=200,patience=15,min_delta=1e-4,monitor='selection_presence_bce'),
-        checkpoint_every=100,fixed_predictions=str(volume/'panns-cnn-v1-20260925/run-v7/fixed_predictions.json'),
+        checkpoint_every=100,fixed_predictions=str(volume/'panns-cnn-v1-20260925/run-v8/fixed_predictions.json'),
         inputs={str(work/'presence_rows.jsonl'):sha256(work/'presence_rows.jsonl'),
                 str(work/'reference.json'):sha256(work/'reference.json')})
     for name in ('spec.md','workflow.md','bundle_manifest.json'):

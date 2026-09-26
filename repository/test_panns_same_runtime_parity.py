@@ -100,6 +100,30 @@ def test_broadcastable_segment_mismatch_cannot_pass_zero_tag_error(tmp_path):
         pipeline.prediction_errors(cpu, cuda, assets)
 
 
+def test_panns_gate_fixes_frozen_stems_but_still_detects_tag_drift(tmp_path):
+    config, _ = parity_fixture(tmp_path)
+    _, cpu, cuda, _ = pipeline.parity_indexes(config, tmp_path)
+    labels = list(dict.fromkeys([*VOICE_CORE, *SINGING, 'Music']))
+    head = dict(features=['tag_voice_max', 'stem_vocal_ratio_max'], mean=[0., 0.],
+                scale=[1., 1.], coef=[1., 1.], intercept=0.)
+    assets = (dict(VOICE_PRESENT=head, MUSIC_PRESENT=head), labels,
+              dict(voice=list(VOICE_CORE)+list(SINGING), music=['Music']))
+    cpu['entries'][0]['stems'] = {'stem_vocal_ratio_max': .2}
+    cuda['entries'][0]['stems'] = {'stem_vocal_ratio_max': .201}
+    before = json.dumps([cpu, cuda], sort_keys=True)
+    assert pipeline.prediction_errors(cpu, cuda, assets)['presence_max_abs'] > 1e-5
+    assert pipeline.prediction_errors(cpu, cuda, assets, shared_actual_stems=True) == dict(
+        tag_max_abs=0., presence_max_abs=0.)
+    assert json.dumps([cpu, cuda], sort_keys=True) == before
+    entry = cuda['entries'][0]; path = Path(entry['path'])
+    with np.load(path, allow_pickle=False) as saved:
+        values = {key: saved[key].copy() for key in saved.files}
+    values['tags'] += np.float32(.01)
+    np.savez(path, **values); entry['sha256'] = sha256(path)
+    errors = pipeline.prediction_errors(cpu, cuda, assets, shared_actual_stems=True)
+    assert errors['tag_max_abs'] > 1e-5 and errors['presence_max_abs'] > 1e-5
+
+
 def test_mac_layout_mismatch_blocks_even_when_same_runtime_tags_match(tmp_path):
     config, assets = parity_fixture(tmp_path)
     _, cpu, cuda, gold = pipeline.parity_indexes(config, tmp_path)

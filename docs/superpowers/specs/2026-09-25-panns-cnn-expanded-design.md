@@ -114,6 +114,8 @@ block6 conv 파라미터는 **56,623,104개**, block5는 **14,155,776개**, 합�
 
 A100 실행 전에는 같은 Linux runtime에서 같은 43개 파일의 CPU 기준 cache를 생성한다. 각 장치에서 보존된 원본 Cnn14 forward와 adapted prefix/suffix·readout의 일치 검사를 유지하고, 그 뒤 CPU와 CUDA를 tag·presence 최대 절대 오차 1e-5 및 gradient 상대 L2 오차 1e-3으로 비교한다. 두 adapted 경로의 일치만으로 통과시키지 않는다. 기존 Mac gold는 그대로 보존하고 플랫폼 간 수치 차이를 별도 진단으로 기록한다. Mac과 Linux의 구간 시작점·구간 수·tensor shape가 다르면 미세한 수치 차이로 취급하지 않고 학습을 차단한다. 원본 전처리나 허용 오차를 바꾸지 않으며, 전체 검증을 통과하기 전에는 본학습을 시작하지 않는다.
 
+위 장치 비교에서 frozen stem 입력은 실제 학습·선택·평가에 쓰는 CUDA cache 값으로 고정한다. 2026-09-26 저장된 43개 파일·137개 구간을 재생한 결과, 독립 CPU/CUDA stem을 쓸 때 presence 최대 오차는 9.821374400675875e-5였지만 동일한 CUDA stem을 쓰면 9.665041580259048e-8이었다. tag 최대 오차는 7.748603820800781e-7이었다. 독립 Demucs 추출 차이는 `frozen_frontend_diagnostic.json`에 보존하며 PANNs 학습 차단 기준과 분리한다. 이 검사는 동결 stem을 입력받는 PANNs 경로를 검증하며 전체 Engine이나 독립 CPU/CUDA Demucs 출력의 일치를 뜻하지 않는다. 기존 tag·presence·gradient 허용 오차와 원본 forward 검사는 유지한다.
+
 파일별 두 presence logit에 **masked BCEWithLogits**를 적용한다. 음성·음악은 독립 target이며 서로 배타적인 softmax를 사용하지 않는다. file 양성을 모든 segment 양성으로 복제하지 않는다. 미확정 라벨은 0이 아니며 손실에서 제외한다.
 
 두 target 모두 미확정인 파일은 supervised sampler에서 제외한다. 나머지 train 파일을 균등하게 섞어 순회한다. target k의 알려진 비율 `r_k=N_known_k/N_train`을 해당 고정 train 자료에서 계산하고, 실제 effective batch 파일 수를 B라고 할 때 `L=(1/(2B))*sum_k(sum_i(mask_ik*BCE(logit_ik,y_ik))/r_k)`를 사용한다. mask 자체가 달라져도 batch마다 알려진 파일 수로 나누지 않는다. 특정 파일의 가중치가 함께 뽑힌 미확정 파일 수에 따라 달라지는 문제를 줄이기 위한 정규화다. 한 batch에서 알려진 target이 없으면 해당 항은 0이며, train에 알려진 양·음성이 없으면 해당 target 학습을 시작하지 않는다.

@@ -125,7 +125,7 @@ class TemporalPool(torch.nn.Module):
 ```
 
 - [ ] block1~5 prefix만 `no_grad()`로 처리하고, A·block6·C·동결 fc를 통한 gradient는 유지한다. 전체 BN affine/buffer/counter는 고정한다. R2도 동결 block6를 gradient 경로 안에서 실행한다.
-- [ ] `decision_heads.py`의 tag max/mean/q90·특징 순서·scale·logistic을 기준 dtype으로 재현한다. stem 값은 identity가 확인된 행만 재사용하며 다른 행은 고정 HTDemucs CPU 추출 비용을 별도로 기록한다.
+- [ ] `decision_heads.py`의 tag max/mean/q90·특징 순서·scale·logistic을 기준 dtype으로 재현한다. stem 값은 identity가 확인된 행만 재사용하며 다른 행은 고정 HTDemucs로 추출한다. 로컬 기준 cache는 CPU, 클라우드 학습 cache는 CUDA를 사용하며 추출 비용을 별도로 기록한다. PANNs 장치 비교에는 실제 학습에 쓰는 CUDA cache의 동일한 stem 값을 입력한다. 독립 CPU/CUDA Demucs 추출 차이는 별도 진단으로 보존한다.
 - [ ] 미확정 target을 안전하게 치환한 뒤 mask된 loss를 계산한다. `NaN * 0`으로 미확정을 처리하지 않는다.
 
 ```python
