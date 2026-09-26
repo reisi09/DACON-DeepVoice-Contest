@@ -29,6 +29,27 @@ class ChildOperationError(RuntimeError):
         super().__init__('Child operation failed: '+category)
 
 
+def transport_diagnostics(stderr: bytes) -> list[dict]:
+    records = []
+    for line in stderr.splitlines():
+        event, separator, payload = line.partition(b' ')
+        if event not in (b'PANNS_TRANSPORT_ERROR', b'PANNS_TRANSPORT_WARNING') or not separator:
+            continue
+        try:
+            value = json.loads(payload)
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            continue
+        if (isinstance(value, dict) and set(value) == {'phase', 'kind', 'code', 'http_status'}
+                and value['phase'] in ('payload_read', 'workspace_lookup', 'workspace_identity', 'kernel_create', 'execute', 'kernel_cleanup')
+                and value['kind'] in ('Error', 'TypeError', 'SyntaxError', 'TimeoutError', 'AbortError', 'UnknownError',
+                    'timeout', 'network_error', 'identity_error', 'http_error', 'protocol_error', 'remote_error', 'websocket_error')
+                and value['code'] in (None, 'ENOENT', 'EACCES', 'EPERM', 'EMFILE', 'ENFILE', 'ENOSPC', 'ETIMEDOUT',
+                    'ECONNRESET', 'ECONNREFUSED', 'ENOTFOUND', 'EAI_AGAIN', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_SOCKET')
+                and (value['http_status'] is None or type(value['http_status']) is int and 100 <= value['http_status'] <= 599)):
+            records.append(dict(event=event.decode('ascii'), **value))
+    return records
+
+
 def child_error_category(stdout: bytes, stderr: bytes) -> str:
     for line in stdout.splitlines():
         try:
@@ -36,6 +57,15 @@ def child_error_category(stdout: bytes, stderr: bytes) -> str:
         except (json.JSONDecodeError, UnicodeDecodeError):
             continue
         if isinstance(record, dict) and 'error' in record:
+            return 'remote_error'
+    for record in transport_diagnostics(stderr):
+        if record['event'] != 'PANNS_TRANSPORT_ERROR':
+            continue
+        if record['kind'] == 'http_error' and record['http_status'] is not None:
+            return 'kernel_http_'+str(record['http_status'])
+        if record['kind'] in ('timeout', 'network_error', 'websocket_error'):
+            return {'timeout': 'transport_timeout', 'network_error': 'fetch_failed', 'websocket_error': 'websocket_failed'}[record['kind']]
+        if record['kind'] in ('identity_error', 'protocol_error', 'remote_error') or record['phase'] == 'workspace_identity':
             return 'remote_error'
     detail = stderr.decode('utf-8', errors='replace')
     http = re.search(r'Error: Kernel HTTP ([1-5][0-9]{2})\b', detail)
@@ -150,11 +180,15 @@ class Watch:
                     stdout, stderr = process.communicate(timeout=min(.1, remaining))
                     if len(stdout) > 1024*1024 or len(stderr) > 64*1024:
                         raise ValueError('Child output limit exceeded')
+                    records = transport_diagnostics(stderr)
+                    if records:
+                        self.save('transport_diagnostic.json', dict(records=records,
+                            stderr_sha256=hashlib.sha256(stderr).hexdigest(), observed_epoch=time.time()))
                     if process.returncode:
                         category = child_error_category(stdout, stderr)
                         self.save('child_failure.json', dict(category=category, exit_code=process.returncode,
                             probe=argv == self.request.transport+[self.request.probe_code], observed_epoch=time.time(),
-                            stdout_bytes=len(stdout), stderr_bytes=len(stderr)))
+                            stdout_bytes=len(stdout), stderr_bytes=len(stderr), stderr_sha256=hashlib.sha256(stderr).hexdigest()))
                         raise ChildOperationError(category)
                     return stdout.decode('utf-8')
                 except subprocess.TimeoutExpired as error:

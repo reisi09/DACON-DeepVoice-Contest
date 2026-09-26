@@ -98,6 +98,70 @@ def calls(tmp_path):
     return [json.loads(line) for line in (tmp_path/'calls').read_text().splitlines()]
 
 
+@pytest.mark.parametrize('scenario,category', [('success', None), ('cleanup', None), ('cleanup_http', None), ('identity', 'remote_error'), ('cli', 'child_exit'),
+    ('post', 'kernel_http_503'), ('execute', 'websocket_failed'), ('domain', 'remote_error'), ('foreign_reply', 'transport_timeout')])
+def test_versioned_transport_classifies_failures_and_preserves_verified_reply(tmp_path, scenario, category):
+    request_path, output = setup_request(tmp_path)
+    request_data = json.loads(request_path.read_text())
+    status = dict(watch.read_request(request_path).contract(), state='finished', exit_code=0)
+    transport = Path(watch.__file__).with_name('panns_jupyter_transport.mjs')
+    wrapper = tmp_path/'transport_fixture.mjs'
+    wrapper.write_text('const scenario = '+json.dumps(scenario)+'; const status = '+json.dumps(status)+';\n'+'''
+import child from 'node:child_process';
+import {syncBuiltinESMExports} from 'node:module';
+child.execFileSync = () => {
+  if (scenario === 'cli') throw Object.assign(new Error('SECRET'), {code:'ENOENT'});
+  return JSON.stringify({workspace:{slug:scenario === 'identity' ? 'wsp-other' : 'wsp-nvxqw1jf9zdv'}, endpoints:[{name:'jupyter',
+    httpUrl:'https://jupyter-wsp-nvxqw1jf9zdv.betelgeuse.cloud.vessl.ai/?token=SECRET'}]});
+};
+syncBuiltinESMExports();
+const realTimeout = setTimeout;
+globalThis.setTimeout = (callback, delay) => realTimeout(callback, delay === 40000 ? 40 : delay);
+globalThis.fetch = async (_, options) => {
+  if (options.method === 'DELETE') {
+    if (scenario === 'cleanup') throw Object.assign(new TypeError('fetch failed'), {cause:{code:'ECONNRESET',secret:'SECRET'}});
+    if (scenario === 'cleanup_http') return {ok:false,status:503};
+    return {ok:true,status:204};
+  }
+  if (scenario === 'post') return {ok:false,status:503};
+  return {ok:true,json:async()=>({id:'fixture-kernel'})};
+};
+globalThis.WebSocket = class {
+  constructor() { setImmediate(()=>this.onopen()); }
+  send(payload) {
+    if (scenario === 'execute') { this.onerror(); return; }
+    const request = JSON.parse(payload);
+    const parent_header = {msg_id:scenario === 'foreign_reply' ? 'foreign' : request.header.msg_id};
+    const send = (channel,msg_type,content) => this.onmessage({data:JSON.stringify({channel,header:{msg_type},parent_header,content})});
+    if (scenario === 'domain') send('iopub','error',{ename:'ValueError',evalue:'SECRET'});
+    else send('iopub','stream',{text:'PANNS_STATUS '+JSON.stringify(status)+'\\n'});
+    send('shell','execute_reply',{status:scenario === 'domain' ? 'error' : 'ok'});
+    send('iopub','status',{execution_state:'idle'});
+  }
+  close() {}
+};
+await import('''+json.dumps(transport.as_uri())+');\n')
+    request_data.update(transport=['/opt/homebrew/bin/node', str(wrapper)],
+        transport_sha256=hashlib.sha256(wrapper.read_bytes()).hexdigest())
+    request_path.write_text(json.dumps(request_data))
+    output.mkdir()
+    controller = watch.Watch(watch.read_request(request_path), output, [])
+    if category is None:
+        assert controller.probe(timeout=5) == status
+    else:
+        with pytest.raises(watch.ChildOperationError) as failure:
+            controller.call(controller.request.transport+[controller.request.probe_code], timeout=5)
+        assert failure.value.category == category
+    diagnostics = ''.join(path.read_text() for path in output.glob('*.json'))
+    assert 'SECRET' not in diagnostics and 'https://' not in diagnostics
+    if scenario != 'success':
+        record = json.loads((output/'transport_diagnostic.json').read_text())['records'][0]
+        assert record['phase'] == {'cli':'workspace_lookup','post':'kernel_create',
+            'execute':'execute','domain':'execute','foreign_reply':'execute','cleanup':'kernel_cleanup',
+            'cleanup_http':'kernel_cleanup','identity':'workspace_identity'}[scenario]
+        assert record['event'] == ('PANNS_TRANSPORT_WARNING' if scenario.startswith('cleanup') else 'PANNS_TRANSPORT_ERROR')
+
+
 @pytest.mark.parametrize('changes', [{}, {'ambiguous': True}, {'exit_code': 9}, {'bad_probe': True}])
 def test_compute_outcome_and_ambiguous_start_always_pause_owned_target(tmp_path, changes):
     # Given: the CLI and transport are real local children implementing only the protocol.
