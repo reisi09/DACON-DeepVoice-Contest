@@ -41,7 +41,8 @@ def head_labels(row: Mapping[str, str]) -> dict[str, float]:
     return heads
 
 
-def read_items(manifest: Path, cache: Path) -> list[Item]:
+def read_items(manifest: Path, cache: Path, force_split: str | None = None) -> list[Item]:
+    """force_split reassigns rows only after their cache identity is verified against the original row."""
     rows = load_rows(manifest)
     index = json.loads((cache / 'index.json').read_text())
     if index['identity']['manifest_sha256'] != sha256(manifest):
@@ -68,7 +69,7 @@ def read_items(manifest: Path, cache: Path) -> list[Item]:
             truth = arrays['window_truth'] if music else np.full(len(features), np.nan, np.float32)
             if features.ndim != 2 or not len(features) or not np.isfinite(features).all():
                 raise ValueError(f"Invalid {head} features: {row['ID']}")
-            result.append(Item({**row, 'route': head}, features, truth, label, silent))
+            result.append(Item({**row, 'route': head, **({'split': force_split} if force_split else {})}, features, truth, label, silent))
     return result
 
 
@@ -162,7 +163,8 @@ def benchmark(model: nn.Module, items: Sequence[Item], route: str, fake_index: i
 
 
 def train(args: argparse.Namespace) -> None:
-    if not torch.cuda.is_available() or 'H100' not in torch.cuda.get_device_name(0):
+    device = args.device
+    if device == 'cuda' and (not torch.cuda.is_available() or 'H100' not in torch.cuda.get_device_name(0)):
         raise RuntimeError('The authorized H100 is required')
     if args.max_epochs < 1 or args.patience < 1:
         raise ValueError('Convergence safeguards must be positive')
@@ -171,6 +173,13 @@ def train(args: argparse.Namespace) -> None:
     torch.backends.cudnn.allow_tf32 = False
     args.output.mkdir(parents=True, exist_ok=True)
     items = read_items(args.manifest, args.cache)
+    extra = [x for manifest, cache in args.extra_train for x in read_items(Path(manifest), Path(cache), 'train')]
+    val_components = {x.row['component_id'] for x in items if x.row['split'] == 'val'}
+    if any(x.row['component_id'] in val_components for x in extra):
+        raise ValueError('Extra training rows share components with validation')
+    if {x.row['ID'] for x in extra} & {x.row['ID'] for x in items}:
+        raise ValueError('Extra training rows duplicate primary IDs')
+    items += extra
     voice = torch.load(args.cache / 'voice_classifier_initial.pt', map_location='cpu', weights_only=True)
     fake_index = voice['fake_label_index']
     run_identity = {'manifest': sha256(args.manifest), 'cache': sha256(args.cache / 'index.json'),
@@ -180,9 +189,13 @@ def train(args: argparse.Namespace) -> None:
                     'batches': sha256(Path(__file__).with_name('full_bank_batches.py')),
                     'voice_initial': sha256(args.cache / 'voice_classifier_initial.pt'),
                     'max_epochs': args.max_epochs, 'patience': args.patience, 'seeds': [41, 42, 43]}
+    if args.extra_train or device != 'cuda':
+        run_identity['extra_train'] = [[sha256(Path(m)), sha256(Path(c) / 'index.json')] for m, c in args.extra_train]
+        run_identity['device'] = device
     if args.duration_balance:
         run_identity['duration_balance'] = True
-        samples = {k: v['samples'] for k, v in json.loads((args.cache / 'index.json').read_text())['items'].items()}
+        samples = {k: v['samples'] for c in [args.cache, *(Path(c) for _, c in args.extra_train)]
+                   for k, v in json.loads((Path(c) / 'index.json').read_text())['items'].items()}
     identity_path = args.output / 'run_identity.json'
     if identity_path.exists() and json.loads(identity_path.read_text()) != run_identity:
         raise ValueError('Output directory belongs to a different training run')
@@ -207,8 +220,12 @@ def train(args: argparse.Namespace) -> None:
             model = WindowMIL(mean, scale) if route == 'music' else nn.Linear(1280, 2)
             if route == 'voice':
                 model.load_state_dict(voice['state_dict'])
-            model.to('cuda')
-            microbatch, window_limit, measured = benchmark(model, training, route, fake_index, weights, 'cuda')
+            model.to(device)
+            if device == 'cuda':
+                microbatch, window_limit, measured = benchmark(model, training, route, fake_index, weights, 'cuda')
+            else:  # ponytail: no VRAM to measure off-GPU; fixed 256-bag microbatch sized to the longest bags
+                longest = sorted(training, key=lambda x: len(x.features), reverse=True)[:256]
+                microbatch, window_limit, measured = 256, sum(len(x.features) for x in longest), [{'device': device, 'fixed': True}]
             atomic_json(args.output / f'{route}_{seed}_batch.json', {'microbatch': microbatch,
                         'window_limit': window_limit, 'effective_batch': 256, 'measurements': measured})
             window_limit = max(window_limit, max(len(x.features) for x in validation))
@@ -217,7 +234,7 @@ def train(args: argparse.Namespace) -> None:
             resume = args.output / f'{route}_{seed}_resume.pt'
             best, stale, first_epoch, history = (float('inf'), float('inf')), 0, 1, []
             if resume.exists():
-                state = torch.load(resume, map_location='cuda', weights_only=False)
+                state = torch.load(resume, map_location=device, weights_only=False)
                 if state['identity'] != run_identity:
                     raise ValueError('Training resume belongs to a different run')
                 model.load_state_dict(state['model'])
@@ -231,8 +248,8 @@ def train(args: argparse.Namespace) -> None:
                 epoch_loss = 0.
                 for offset in range(0, len(order), 256):
                     batch = [training[i] for i in order[offset:offset+256]]
-                    epoch_loss += step(model, optimizer, batch, route, fake_index, weights, microbatch, window_limit, 'cuda') * len(batch)
-                predictions = predict(model, validation, route, fake_index, microbatch, window_limit, 'cuda')
+                    epoch_loss += step(model, optimizer, batch, route, fake_index, weights, microbatch, window_limit, device) * len(batch)
+                predictions = predict(model, validation, route, fake_index, microbatch, window_limit, device)
                 labels = np.asarray([x.label for x in validation])
                 metrics = _roc_metrics(labels.tolist(), predictions.tolist())
                 eer = float(metrics[0])
@@ -259,15 +276,16 @@ def train(args: argparse.Namespace) -> None:
                 atomic_json(args.output / 'progress.json', {'stage': 'train', 'route': route, 'seed': seed, **record})
                 atomic_json(args.output / f'{route}_{seed}_history.json', history)
                 print(f'{route} seed={seed} epoch={epoch} val_eer={eer:.6f} seen={len(order)}', flush=True)
-            state = torch.load(checkpoint, map_location='cuda', weights_only=True)
+            state = torch.load(checkpoint, map_location=device, weights_only=True)
             model.load_state_dict(state['model'])
-            prediction = predict(model, validation, route, fake_index, microbatch, window_limit, 'cuda')
+            prediction = predict(model, validation, route, fake_index, microbatch, window_limit, device)
             seed_predictions.append(prediction)
             results[f'{route}_{seed}'] = {'epoch': state['epoch'], 'validation_eer': state['validation_eer'],
                                         'checkpoint_sha256': sha256(checkpoint), 'epochs_completed': len(history)}
             del model, optimizer
             gc.collect()
-            torch.cuda.empty_cache()
+            if device == 'cuda':
+                torch.cuda.empty_cache()
         ensemble = np.mean(seed_predictions, axis=0)
         ensemble_eer, ensemble_auc = _roc_metrics([int(x.label) for x in validation], ensemble.tolist())
         results[route+'_ensemble'] = {'eer': ensemble_eer, 'auc': ensemble_auc}
@@ -277,7 +295,7 @@ def train(args: argparse.Namespace) -> None:
             for i, item in enumerate(validation):
                 writer.writerow([item.row['ID'], item.label, ensemble[i], *(p[i] for p in seed_predictions)])
     from full_bank_evaluate import evaluate
-    evaluate(args.manifest, args.cache, args.output)
+    evaluate(args.manifest, args.cache, args.output, device)
     atomic_json(args.output / 'results.json', results)
     atomic_json(args.output / 'complete.json', {'identity': run_identity, 'results_sha256': sha256(args.output / 'results.json')})
 
@@ -288,6 +306,9 @@ if __name__ == '__main__':
         parser.add_argument('--'+name, type=Path, required=True)
     parser.add_argument('--max-epochs', type=int, default=50)
     parser.add_argument('--patience', type=int, default=5)
+    parser.add_argument('--device', default='cuda', help='cuda (authorized H100 only), cpu or mps')
+    parser.add_argument('--extra-train', nargs=2, action='append', default=[], metavar=('MANIFEST', 'CACHE'),
+                        help='rows verified against their own cache, then used as train only')
     parser.add_argument('--duration-balance', action='store_true',
                         help='reweight train rows so both classes share one log-duration histogram (length shortcut control)')
     train(parser.parse_args())

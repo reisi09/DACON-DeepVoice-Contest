@@ -55,6 +55,16 @@ class Engine:
         # optional per-file decision layer (decision_heads); absent files -> legacy PANNs max and FILE = max rule
         read = lambda name: json.loads((trained / name).read_text()) if (trained / name).exists() else None
         self.presence_heads, self.ensemble = read('presence_head.json'), read('file_ensemble.json')
+        # optional component fusion (component_fusion.json): zero-shot members fused with our heads by val CDFs
+        self.fusion, self.detectors, self.sonics = read('component_fusion.json'), {}, None
+        self.fusion_deadline = float('inf')   # run() sets it from the 60-minute competition limit
+        if self.fusion:
+            from antideepfake_runtime import AntiDeepfake
+            names = {n.rsplit('_', 1)[0] for n in self.fusion['voice']['weights'] if n not in ('ours', 'df0')}
+            self.detectors = {n: AntiDeepfake(assets/'antideepfake'/n, str(self.device)) for n in sorted(names)}
+            if self.fusion['music']['weights'].get('sonics'):
+                from sonics.models.hf_model import HFAudioClassifier   # vendored (with timm) in model/runtime
+                self.sonics = HFAudioClassifier.from_pretrained(str(assets/'sonics')).to(self.device).eval()
         self.processor = AutoFeatureExtractor.from_pretrained(assets/'mert', local_files_only=True)
         self.mert, info = AutoModel.from_pretrained(assets/'mert', trust_remote_code=True,
                                                   local_files_only=True, output_loading_info=True)
@@ -91,26 +101,35 @@ class Engine:
             values = self.processor(audio, sampling_rate=24000, return_tensors='pt', padding=True).input_values.to(self.device)
             features.append(self.mert(values, output_hidden_states=True).hidden_states[12].mean(1).float())
         features = torch.cat(features)
-        music = []
-        with torch.autocast('cuda', dtype=torch.bfloat16, enabled=self.device.type == 'cuda'):
-            for head in self.music_heads:
-                logits, _ = head.head((features-head.mean)/head.scale)
-                music.append(float((logits.float().logsumexp(0)-np.log(len(features))).sigmoid()))
+        music = []   # heads in fp32, as trained and as the fusion tables were fitted
+        for head in self.music_heads:
+            logits, _ = head.head((features-head.mean)/head.scale)
+            music.append(float((logits.float().logsumexp(0)-np.log(len(features))).sigmoid()))
         embeddings = []
         for start in self.base.get_segment_starts(len(raw)):
             self.df(input_values=torch.from_numpy(self.base.extract_segment(voice, start)).to(self.device))
             embeddings.append(self.embedding)
         embeddings = torch.cat(embeddings)
-        with torch.autocast('cuda', dtype=torch.bfloat16, enabled=self.device.type == 'cuda'):
-            voices = [float(head(embeddings).float().softmax(-1)[:, self.fake_index].max())
-                      for head in self.voice_heads]
+        voices = [float(head(embeddings).float().softmax(-1)[:, self.fake_index].max())
+                  for head in self.voice_heads]
         probs = self.panns.inference(self.base.make_panns_segments(raw))[0]   # same segments as the legacy loop
         legacy = decision_heads.legacy_presence(probs, self.panns_labels, self.label_groups)
         feats = (decision_heads.presence_features(probs, self.panns_labels, self.label_groups, raw, voice)
                  if self.presence_heads else None)
         vp, mp = decision_heads.presence(self.presence_heads, feats, legacy)
-        vf = 0. if self.base.calculate_rms(voice) < self.base.SILENCE_RMS else float(np.mean(voices))
+        silent = self.base.calculate_rms(voice) < self.base.SILENCE_RMS
+        vf = 0. if silent else float(np.mean(voices))
         mf = float(np.mean(music))
+        if self.fusion:
+            import component_fusion as cf
+            fc5 = self.df.backbone.conformer.fc5
+            members = {'ours': vf, 'df0': float(fc5(embeddings).softmax(-1)[:, self.fake_index].max())}
+            within = time.monotonic() < self.fusion_deadline   # ponytail: past the budget, later files fall back to ours+df0
+            for name, detector in self.detectors.items() if within else ():
+                stem = voice if len(voice) >= 400 else np.pad(voice, (0, 400-len(voice)))
+                members.update(cf.detector_members(name, detector.predict(stem, float('inf'))))
+            vf = 0. if silent else cf.fuse(self.fusion['voice'], members)
+            mf = cf.fuse(self.fusion['music'], {'ours': mf, **({'sonics': cf.sonics_prob(self.sonics, raw, self.device)} if self.sonics and within else {})})
         file = decision_heads.file_score(self.ensemble, dict(Pv=vp, Pm=mp, Fv=vf, Fm=mf))
         return dict(zip(PREDICTION_COLUMNS, (file, vf, mf, vp, mp), strict=True))
 
@@ -139,6 +158,7 @@ def run(root: Path):
         raise SubmissionError('Unexpected submission columns')
     files = base.order_audio_files(base.find_audio_files(args.test_dir), rows)
     engine = Engine(root/'model/assets', root/'model/trained', device)
+    engine.fusion_deadline = started + 48*60   # leaves ~12 min of the 60-min limit for the rest without fusion members
     predictions = [dict(ID=path.stem, **engine.predict(path)) for path in files]
     predictions = validate_predictions(predictions, [path.stem for path in files])
     import csv

@@ -28,8 +28,8 @@ class AntiDeepfake(torch.nn.Module):
         config._attn_implementation = 'eager'
         with torch.device('meta'):
             self.encoder = Wav2Vec2Model(config)
-            self.classifier = torch.nn.Linear(1280, 2)
-        native = load_file(str(directory/'model.safetensors'))
+            self.classifier = torch.nn.Linear(config.hidden_size, 2)   # 1280 (1B) / 1920 (2B)
+        native = {k: v.float() for k, v in load_file(str(directory/'model.safetensors')).items()}   # fp16 storage -> fp32 compute
         converted, unused = {}, []
         for name, value in native.items():
             if name.startswith('proj_fc.'):
@@ -68,7 +68,7 @@ class AntiDeepfake(torch.nn.Module):
         hidden = self.encoder(waveform).last_hidden_state
         return self.classifier(hidden.mean(dim=1))
 
-    def predict(self, audio: np.ndarray, deadline: float, window: int = 64600) -> list[float]:
+    def predict(self, audio: np.ndarray, deadline: float, window: int = 64600, batch: int = 16) -> list[float]:
         from math import ceil
         if not np.isfinite(audio).all() or len(audio) < 400:
             raise ValueError('Invalid decoded waveform')
@@ -78,12 +78,13 @@ class AntiDeepfake(torch.nn.Module):
         probabilities = []
         device = next(self.parameters()).device
         with torch.inference_mode():
-            for start in starts:
+            for offset in range(0, len(starts), batch):
                 if time.time() >= deadline:
                     raise TimeoutError('AntiDeepfake inference deadline reached')
-                # No batch padding: native Fairseq pooling includes every feature frame.
-                clip = torch.from_numpy(audio[start:start+window].copy()).to(device)[None]
-                probabilities.append(float(self(clip).softmax(-1)[0, 0]))
+                # Windows share one length (only a sub-window file has a single shorter clip): no batch padding,
+                # so native Fairseq pooling still includes every feature frame.
+                clips = torch.from_numpy(np.stack([audio[s:s+window] for s in starts[offset:offset+batch]])).to(device)
+                probabilities += self(clips).softmax(-1)[:, 0].tolist()
         top = sorted(probabilities, reverse=True)[:max(1, ceil(.3*len(probabilities)))]
         return [max(probabilities), float(np.mean(top)), *probabilities]
 

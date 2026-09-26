@@ -92,4 +92,9 @@ def main() -> None:
 
 
 if __name__ == '__main__':
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--out', type=Path, default=OUT, help='directory holding submit.zip and submit.json')
+    OUT = ap.parse_args().out.resolve()
+    QA = OUT / 'qa'
     main()
