@@ -218,13 +218,34 @@ paired component bootstrap (1,000 resamples, unit `component_id`) against the DB
   `VOICE_PRESENT=1`, `VOICE_FAKE` unknown, source ∈ {`existing:SONICS`, `existing:suno`, `existing:udio`} → `VOICE_FAKE=1`
   (a fully generated song's vocal is generated). Exclude HAIM (partial/edited), FakeMusicCaps and Echoes (vocal presence
   uncertain) unless their stem vocal ratio ≥ 0.35.
-- Implementation location: a new script that copies `full_bank_train.read_items` but applies the override before
-  `head_labels` (pattern already used by `data_v4/train_backbone_heads.py:items_for`), then reuses `full_bank_train.step/predict`;
-  `--max-epochs 100 --patience 10` for voice. Music heads: reuse DB's files unchanged.
-- Report: pooled Voice EER; subsets speech-only, voice+music, Lyria/fx singing, real singing (vocalset, constructed_song);
-  real-singing FPR at the val EER threshold; FILE EER through DB's `file_ensemble.json`.
-- **Accept:** pooled held-out Voice EER −0.010 or better with bootstrap CI excluding 0 **and** speech-only EER not worse by
-  > 0.003 **and** real-singing FPR not higher. **Reject** otherwise; stop V-SING.
+- Implemented: `repository/data_v4/sing_relabel_screen.py`. It wraps `full_bank_train.head_labels` during
+  `read_items`, so every cache identity check still applies and the manifests are untouched. It reuses
+  `full_bank_train.step/predict` (voice route, duration balance, 3 seeds, `--max-epochs 100 --patience 10`), copies the
+  incumbent music heads, refits `file_ensemble.json` on val, and runs `full_bank_evaluate.evaluate`. The output dir
+  therefore packages with `package_datav4_submission.py --heads OUT`. Held-out labels are never completed.
+- Run three arms (CPU):
+
+  ```sh
+  B=<bank dir>; TV=<cache_tv>; TE=<cache_test>; INC=<DB heads dir, e.g. _keep_best_20260926/train_duration_balanced>
+  P=results/data_v4_20260923/data_v4_results_20260923T1639Z/train/presence_head.json
+  A="--primary $B/bank_trainval.csv $TV --heldout $B/bank_test_as_val.csv $TE --incumbent $INC --presence $P"
+  python data_v4/sing_relabel_screen.py $A --out _workspace/vsing/control --no-completion
+  python data_v4/sing_relabel_screen.py $A --out _workspace/vsing/completion --control _workspace/vsing/control/sing_screen_report.json
+  # only if the completion gate accepts, and with the P1 heads dir as --incumbent if P1 won on the LB:
+  python data_v4/sing_relabel_screen.py $A --out _workspace/vsing/refit --refit
+  ```
+
+  `bank_test_as_val.csv` is the held-out manifest the test cache was built from (split `val`; recorded in the S2a run
+  identity). Pass the manifest whose sha matches `cache_test/index.json`.
+- Report (`sing_screen_report.json`): official held-out metrics for both head sets; pooled, voice-only and with-music
+  Voice EER; real-with-music FPR at the pooled EER operating point; paired component bootstrap for ΔVoice and ΔFILE EER.
+- **Accept:** pooled held-out Voice EER −0.010 or better with bootstrap CI excluding 0, **and** pooled below the control
+  arm, **and** voice-only EER not worse than incumbent or control by > 0.003, **and** real-with-music FPR not higher.
+  **Reject** otherwise and stop V-SING.
+- Verified in this session only on a synthetic cache in the exact on-disk schema, under torch 2.7.1 / NumPy 1.26.4 /
+  transformers 4.57.6 / sklearn 1.8.0. That run exercised identity checks, training, `score_rows`, `evaluate`, the
+  ensemble refit, the bootstrap and refit output against the packager's checks. It is wiring evidence, not performance
+  evidence. In that run the control-arm check caught a completion arm that bought singing accuracy with speech accuracy.
 - Cost: minutes on CPU (the whole 8-run learning-curve audit, including the 24,623-row voice run, finished at 1.3 min on
   its cumulative timer; `results/audit_20260927/learning_curve.json`).
 
