@@ -1,5 +1,25 @@
 # PANNs v1 execution record
 
+## Latest observed submission result — 2026-09-26
+
+The user supplied a DACON submission-history screenshot for submission **104224**, displayed as `sumbit.zip`, submitted at `2026-09-26 21:13:14`, with a displayed duration of **26 minutes 16 seconds**. The screenshot shows a scored submission; this record was transcribed from the supplied image, not a fresh authenticated page query.
+
+| Metric | Submission 104224 | Earlier user-reported Opus best | Change |
+| --- | ---: | ---: | ---: |
+| Total | 0.7901426243 | — | — |
+| ADS | 0.7674603175 | 0.7683174603 | -0.0008571428 |
+| CPS | 0.9942833862 | 0.9976771958 | -0.0033938096 |
+
+This result does **not** improve either component over the user's earlier best. The component-weighted change is approximately -0.00111081; the earlier weighted total 0.79125343385 is calculated from the reported components, not independently read from this screenshot. The rounded displayed components reproduce the new total within 1e-10.
+
+The conversation associates this result with the corrected R3 package `PANNs_R3_submit_20260926_fix1.zip` (SHA-256 `6efcb0186b36a08f4e47653097f8972bc310da08761fa245f4c6edfcc123468b`, source commit `5a7a1bf`). However, the screenshot uses a different filename and does not expose a server-side archive hash. This association is contextual, not verified byte identity. Equivalence between the preserved DataV4 baseline and the earlier Opus-best archive also remains unconfirmed, so the score difference cannot be attributed solely to PANNs adaptation.
+
+The observed score supersedes any expectation that the internal known-label selection ADS near 0.923 would transfer to the leaderboard. It does not by itself distinguish validation bias, insufficient data diversity, or model changes. No new training, submission, or final-submission selection was performed while recording this result.
+
+Evidence: [transcribed scores, screenshot hash, package association and exact decimal comparisons](evidence/panns_leaderboard_20260926/result.json). The source screenshot and model ZIP remain outside Git. The earlier milestones below are historical.
+
+## Initial engineering milestone
+
 The finalized workflow is being executed. This milestone validates the trainable architecture and file-level loss; it does not establish improved ADS/CPS, select a candidate, or finish W4-W7.
 
 - W0: DataV4 archive SHA-256 `05ae786864dc282de6ae750a451bc297a870be34f2d1e971b14429eca0e47419`, every archive member, and the existing extracted package reverified against the receipt. Equivalence to the user's leaderboard-best submission remains unconfirmed.

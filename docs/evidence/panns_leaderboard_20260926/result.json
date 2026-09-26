@@ -1,0 +1,56 @@
+{
+  "competition_id": 236749,
+  "source": {
+    "kind": "user_supplied_submission_history_screenshot",
+    "screenshot_sha256": "76a7660713598649eb2f05c7b6bcc1e5a53be390fb1702cbf7a05a454a6ec5ef",
+    "live_authenticated_submission_page_checked": false,
+    "url": "https://dacon.io/competitions/official/236749/leaderboard"
+  },
+  "submission": {
+    "id": 104224,
+    "displayed_filename": "sumbit.zip",
+    "displayed_timestamp": "2026-09-26 21:13:14",
+    "timestamp_timezone_verified": false,
+    "scores_displayed": {
+      "total": "0.7901426243",
+      "ads": "0.7674603175",
+      "cps": "0.9942833862"
+    },
+    "displayed_duration": "26분 16초",
+    "duration_seconds": 1576,
+    "interpretation": "scored submission; numeric scores are visible"
+  },
+  "candidate_context": {
+    "local_filename": "PANNs_R3_submit_20260926_fix1.zip",
+    "local_sha256": "6efcb0186b36a08f4e47653097f8972bc310da08761fa245f4c6edfcc123468b",
+    "code_commit": "5a7a1bfe6850606bab3eafa5aca35330fbda78e1",
+    "association": "inferred from conversation after the fix; screenshot filename differs",
+    "server_archive_hash_verified": false
+  },
+  "comparison": {
+    "reference": "earlier user-reported Claude/Opus best",
+    "reference_scores": {
+      "ads": "0.7683174603",
+      "cps": "0.9976771958"
+    },
+    "reference_submission_id": null,
+    "reference_archive_equivalence_verified": false,
+    "new_minus_reference": {
+      "ads": "-0.0008571428",
+      "cps": "-0.0033938096"
+    },
+    "reference_weighted_total_from_displayed_components": "0.79125343385",
+    "new_weighted_total_from_displayed_components": "0.79014262437",
+    "weighted_delta_from_displayed_components": "-0.00111080948"
+  },
+  "conclusions": [
+    "ADS and CPS are both below the earlier user-reported best.",
+    "The screenshot establishes a scored submission, not the exact server-side archive hash.",
+    "The result alone cannot separate validation bias, data coverage, or model-change effects.",
+    "Internal selection diagnostics must not be reported as predicted leaderboard scores."
+  ],
+  "actions": {
+    "official_submission_performed_by_agent": false,
+    "new_training_started": false
+  }
+}
