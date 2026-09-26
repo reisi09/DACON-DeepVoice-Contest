@@ -66,6 +66,8 @@ class Request:
     start_code_sha256: str
     probe_code: str
     probe_code_sha256: str
+    handoff_receipt: str | None = None
+    handoff_receipt_sha256: str | None = None
 
     def contract(self) -> dict:
         return dict(org='qwdkw', workspace=self.workspace, deadline_epoch=self.pause_deadline_epoch,
@@ -73,7 +75,8 @@ class Request:
 
     def pin(self) -> dict:
         return {**self.contract(), 'request_sha256': hashlib.sha256(
-            json.dumps(self.__dict__, sort_keys=True).encode()).hexdigest()}
+            json.dumps({key: value for key, value in self.__dict__.items()
+                if key not in ('handoff_receipt', 'handoff_receipt_sha256') or value is not None}, sort_keys=True).encode()).hexdigest()}
 
 
 def read_request(path: Path, *, allow_expired: bool = False) -> Request:
@@ -100,6 +103,11 @@ def read_request(path: Path, *, allow_expired: bool = False) -> Request:
                              (request.probe_code, request.probe_code_sha256)):
         if hashlib.sha256(Path(filename).read_bytes()).hexdigest() != digest:
             raise ValueError('Pinned code changed')
+    if request.handoff_receipt is not None or request.handoff_receipt_sha256 is not None:
+        receipt = Path(request.handoff_receipt or '')
+        if (not receipt.is_absolute() or receipt.is_symlink() or not receipt.is_file()
+                or hashlib.sha256(receipt.read_bytes()).hexdigest() != request.handoff_receipt_sha256):
+            raise ValueError('Pinned handoff receipt changed or missing')
     return request
 
 
@@ -227,6 +235,38 @@ class Watch:
         while time.monotonic() < end and self.remaining() > 0 and (self.cleaning or not self.stopped):
             time.sleep(min(.1, max(0., end-time.monotonic())))
 
+    def verify_handoff(self) -> None:
+        if not self.request.handoff_receipt or self.latest.get('state') != 'running':
+            raise ValueError('Refuse to adopt an unowned active workspace')
+        raw = Path(self.request.handoff_receipt).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != self.request.handoff_receipt_sha256:
+            raise ValueError('Pinned handoff receipt changed')
+        receipt = json.loads(raw)
+        old_path, output = Path(receipt['predecessor_request']), Path(receipt['predecessor_output'])
+        remote_path = Path(receipt['remote_request_path'])
+        if (receipt['version'] != 1 or not all(path.is_absolute() for path in (old_path, output, remote_path))
+                or hashlib.sha256(old_path.read_bytes()).hexdigest() != receipt['predecessor_request_sha256']
+                or hashlib.sha256(remote_path.read_bytes()).hexdigest() != receipt['remote_request_sha256']):
+            raise ValueError('Predecessor handoff identity mismatch')
+        old = read_request(old_path, allow_expired=True)
+        if (old.workspace, old.name, old.resource_spec_slug) != (self.request.workspace, self.request.name, self.request.resource_spec_slug):
+            raise ValueError('Handoff workspace identity mismatch')
+        Watch(old, output, []).recover_owned()
+        remote, finished, predecessor = json.loads(remote_path.read_text()), receipt['remote_finished'], receipt['predecessor_watch']
+        expected_command = f"{output.parent/'panns_workspace_watch.py'} --request {old_path} --output {output}"
+        if (remote['contract'] != old.contract() or finished['contract'] != old.contract()
+                or finished['request_sha256'] != receipt['remote_request_sha256']
+                or finished['notebook_sha256'] != remote['sha256']['notebook'] or type(finished['exit_code']) is not int
+                or type(predecessor['pid']) is not int or predecessor['pid'] <= 1
+                or not isinstance(predecessor['start'], str) or not predecessor['start'].strip()
+                or not isinstance(predecessor['command'], str) or not predecessor['command'].endswith(' '+expected_command)):
+            raise ValueError('Handoff predecessor or finished-job binding mismatch')
+        try:
+            os.kill(predecessor['pid'], 0)
+        except ProcessLookupError:
+            return
+        raise ValueError('Handoff predecessor is still alive')
+
     def execute(self) -> int:
         contract = self.request.contract()
         pin = self.request.pin()
@@ -242,7 +282,7 @@ class Watch:
             self.require_unreleased()
         idle = self.show()['workspace']['state'] in ('stopped', 'standby')
         if not idle and not self.owned:
-            raise ValueError('Refuse to adopt an unowned active workspace')
+            self.verify_handoff()
         self.save('owned_target.json', contract)
         self.owned = True
         print(json.dumps(contract), flush=True)
