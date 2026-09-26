@@ -72,4 +72,4 @@ PY
   --index /shared/panns-cnn-v1-20260925/run-v9/cache/index.json \
   --sha256 e9b651cbf1b55045a2f1a74bdbebc659655f3ee2691626755ef2b79f1db6b5db \
   --destination "$PANNS_WORK/cache_local" --deadline-epoch "$PANNS_PREFETCH_DEADLINE"
-exec /bin/bash /shared/panns-cnn-v1-20260925/submission12h-inputs-v2/panns_submission_launch.sh
+exec /bin/bash "$PANNS_RESUME_ROOT/panns_submission_launch.sh"

@@ -10,7 +10,7 @@ let phase = 'payload_read';
 function diagnostic(error, location) {
   const name = ['Error', 'TypeError', 'SyntaxError', 'TimeoutError', 'AbortError'].includes(error?.name) ? error.name : 'UnknownError';
   const nativeCode = error?.code ?? error?.cause?.code;
-  const kind = ['timeout', 'network_error', 'identity_error', 'http_error', 'protocol_error', 'remote_error', 'websocket_error'].includes(error?.transportKind)
+  const kind = ['timeout', 'network_error', 'identity_error', 'endpoint_unavailable', 'http_error', 'protocol_error', 'remote_error', 'websocket_error'].includes(error?.transportKind)
     ? error.transportKind : (name === 'TimeoutError' || name === 'AbortError' || nativeCode === 'ETIMEDOUT'
     ? 'timeout' : name === 'TypeError' && error.message === 'fetch failed' ? 'network_error' : name);
   return {phase: location, kind, code: codes.has(nativeCode) ? nativeCode : null,
@@ -29,11 +29,13 @@ try {
     {encoding: 'utf8', timeout: 10000, maxBuffer: 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe']}));
   phase = 'workspace_identity';
   const endpoints = detail.endpoints.filter(item => item.name === 'jupyter');
-  if (detail.workspace.slug !== workspace || endpoints.length !== 1) throw failure('identity_error');
+  if (detail.workspace.slug !== workspace || endpoints.length > 1) throw failure('identity_error');
+  if (endpoints.length === 0) throw failure('endpoint_unavailable');
   const endpoint = new URL(endpoints[0].httpUrl);
   const token = endpoint.searchParams.get('token');
   if (endpoint.protocol !== 'https:' || endpoint.hostname !== 'jupyter-' + workspace + '.betelgeuse.cloud.vessl.ai'
-      || endpoint.username || endpoint.password || (endpoint.port && endpoint.port !== '443') || !token) throw failure('identity_error');
+      || endpoint.username || endpoint.password || (endpoint.port && endpoint.port !== '443')) throw failure('identity_error');
+  if (!token) throw failure('endpoint_unavailable');
   const base = endpoint.origin;
   const headers = {Authorization: 'token ' + token, 'Content-Type': 'application/json'};
   phase = 'kernel_create';

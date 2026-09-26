@@ -42,7 +42,7 @@ def transport_diagnostics(stderr: bytes) -> list[dict]:
         if (isinstance(value, dict) and set(value) == {'phase', 'kind', 'code', 'http_status'}
                 and value['phase'] in ('payload_read', 'workspace_lookup', 'workspace_identity', 'kernel_create', 'execute', 'kernel_cleanup')
                 and value['kind'] in ('Error', 'TypeError', 'SyntaxError', 'TimeoutError', 'AbortError', 'UnknownError',
-                    'timeout', 'network_error', 'identity_error', 'http_error', 'protocol_error', 'remote_error', 'websocket_error')
+                    'timeout', 'network_error', 'identity_error', 'endpoint_unavailable', 'http_error', 'protocol_error', 'remote_error', 'websocket_error')
                 and value['code'] in (None, 'ENOENT', 'EACCES', 'EPERM', 'EMFILE', 'ENFILE', 'ENOSPC', 'ETIMEDOUT',
                     'ECONNRESET', 'ECONNREFUSED', 'ENOTFOUND', 'EAI_AGAIN', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_SOCKET')
                 and (value['http_status'] is None or type(value['http_status']) is int and 100 <= value['http_status'] <= 599)):
@@ -63,6 +63,8 @@ def child_error_category(stdout: bytes, stderr: bytes) -> str:
             continue
         if record['kind'] == 'http_error' and record['http_status'] is not None:
             return 'kernel_http_'+str(record['http_status'])
+        if record['kind'] == 'endpoint_unavailable':
+            return 'endpoint_unavailable'
         if record['kind'] in ('timeout', 'network_error', 'websocket_error'):
             return {'timeout': 'transport_timeout', 'network_error': 'fetch_failed', 'websocket_error': 'websocket_failed'}[record['kind']]
         if record['kind'] in ('identity_error', 'protocol_error', 'remote_error') or record['phase'] == 'workspace_identity':
@@ -222,7 +224,7 @@ class Watch:
                     raise
                 category = error.category if isinstance(error, ChildOperationError) else (
                     'operation_timeout' if isinstance(error, TimeoutError) else 'os_error')
-                transient = (category in ('transport_timeout', 'operation_timeout', 'websocket_failed', 'fetch_failed', 'kernel_http_429')
+                transient = (category in ('transport_timeout', 'operation_timeout', 'websocket_failed', 'fetch_failed', 'endpoint_unavailable', 'kernel_http_429')
                              or category.startswith('kernel_http_5'))
                 if not transient and category not in ('child_exit', 'os_error'):
                     raise ValueError('Status operation rejected: '+category) from None

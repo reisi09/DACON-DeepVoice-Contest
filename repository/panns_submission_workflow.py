@@ -87,6 +87,31 @@ def run_jobs(jobs: list[tuple[str, list[str], float]], output: Path) -> None:
             signal.signal(sig, handler)
 
 
+def completed_training(config: dict, request: dict, arm: str) -> bool:
+    out = Path(request['output'])/f'train_{arm}_41'
+    terminal = out/'terminal.json'
+    if not terminal.exists():
+        return False
+    result = json.loads(terminal.read_text())
+    if result.get('export_ready') is not True:
+        return False
+    from panns_submission_train import condition
+    from panns_submission_selection import Selection
+    _, run_id, _ = condition(config, request, arm)
+    selected = Selection.read(out/'export/selection.json')
+    if (result['arm'] != arm or result['seed'] != 41
+            or result['run_identity'] != run_id or selected.run_identity != run_id
+            or selected.arm != arm or selected.config_identity != config['identity']
+            or selected.best_epoch != result['best_epoch'] or selected.stop_reason != result['stop_reason']
+            or result['deadline_epoch'] != request['deadlines'][arm]
+            or selected.checkpoint_sha256 != result['checkpoint_sha256']
+            or digest(out/'checkpoint.pt') != selected.checkpoint_sha256
+            or digest(out/'export/best_model.pt') != selected.weights_sha256
+            or digest(Path(config['reference'])) != selected.reference_sha256):
+        raise ValueError('Completed training identity or artifact changed: '+arm)
+    return True
+
+
 def workflow(path: Path) -> None:
     request = json.loads(path.read_text())
     began, deadline = request['started_epoch'], request['deadline_epoch']
@@ -114,7 +139,8 @@ def workflow(path: Path) -> None:
     def command(script: str, *args: object) -> list[str]:
         return [sys.executable, '-u', str(root/script), *map(str, args)]
     jobs = [(arm, command('panns_submission_train.py', '--run', original, '--request', train_request,
-                         '--arm', arm), train['deadlines'][arm] + 90) for arm in ('R1', 'R3')]
+                         '--arm', arm), train['deadlines'][arm] + 90) for arm in ('R1', 'R3')
+            if not completed_training(config, train, arm)]
     jobs.append(('fixed', command('panns_cached_fake.py', '--run', original,
         '--legacy-tar', request['legacy_tar'], '--output', out/'fixed', '--role', 'selection',
         '--device', 'cuda', '--deadline-epoch', began+8*3600-90), began+8*3600-45))

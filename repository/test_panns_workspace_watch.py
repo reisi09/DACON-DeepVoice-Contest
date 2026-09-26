@@ -56,6 +56,8 @@ else:
         (p/'fixture.json').write_text(json.dumps(c))
         if c.get('probe_failure_kind') == 'transient':
             print('TypeError: fetch failed; https://fixture/?token=SECRET', file=sys.stderr)
+        elif c.get('probe_failure_kind') == 'endpoint_unavailable':
+            print('PANNS_TRANSPORT_ERROR '+json.dumps(dict(phase='workspace_identity', kind='endpoint_unavailable', code=None, http_status=None)), file=sys.stderr)
         elif c.get('probe_failure_kind') == 'domain':
             print(json.dumps(dict(error='ValueError', value='SECRET identity mismatch')))
             print('TypeError: fetch failed; token=SECRET', file=sys.stderr)
@@ -99,6 +101,8 @@ def calls(tmp_path):
 
 
 @pytest.mark.parametrize('scenario,category', [('success', None), ('cleanup', None), ('cleanup_http', None), ('identity', 'remote_error'), ('cli', 'child_exit'),
+    ('missing_endpoint', 'endpoint_unavailable'), ('missing_token', 'endpoint_unavailable'),
+    ('wrong_slug_empty', 'remote_error'), ('wrong_host_no_token', 'remote_error'), ('duplicates', 'remote_error'),
     ('post', 'kernel_http_503'), ('execute', 'websocket_failed'), ('domain', 'remote_error'), ('foreign_reply', 'transport_timeout')])
 def test_versioned_transport_classifies_failures_and_preserves_verified_reply(tmp_path, scenario, category):
     request_path, output = setup_request(tmp_path)
@@ -111,8 +115,10 @@ import child from 'node:child_process';
 import {syncBuiltinESMExports} from 'node:module';
 child.execFileSync = () => {
   if (scenario === 'cli') throw Object.assign(new Error('SECRET'), {code:'ENOENT'});
-  return JSON.stringify({workspace:{slug:scenario === 'identity' ? 'wsp-other' : 'wsp-nvxqw1jf9zdv'}, endpoints:[{name:'jupyter',
-    httpUrl:'https://jupyter-wsp-nvxqw1jf9zdv.betelgeuse.cloud.vessl.ai/?token=SECRET'}]});
+  const endpoint = {name:'jupyter', httpUrl:scenario === 'wrong_host_no_token' ? 'https://untrusted.invalid/' :
+    'https://jupyter-wsp-nvxqw1jf9zdv.betelgeuse.cloud.vessl.ai/' + (scenario === 'missing_token' ? '' : '?token=SECRET')};
+  return JSON.stringify({workspace:{slug:['identity','wrong_slug_empty'].includes(scenario) ? 'wsp-other' : 'wsp-nvxqw1jf9zdv'},
+    endpoints:['missing_endpoint','wrong_slug_empty'].includes(scenario) ? [] : scenario === 'duplicates' ? [endpoint,endpoint] : [endpoint]});
 };
 syncBuiltinESMExports();
 const realTimeout = setTimeout;
@@ -158,7 +164,9 @@ await import('''+json.dumps(transport.as_uri())+');\n')
         record = json.loads((output/'transport_diagnostic.json').read_text())['records'][0]
         assert record['phase'] == {'cli':'workspace_lookup','post':'kernel_create',
             'execute':'execute','domain':'execute','foreign_reply':'execute','cleanup':'kernel_cleanup',
-            'cleanup_http':'kernel_cleanup','identity':'workspace_identity'}[scenario]
+            'cleanup_http':'kernel_cleanup','identity':'workspace_identity',
+            'wrong_slug_empty':'workspace_identity','wrong_host_no_token':'workspace_identity','duplicates':'workspace_identity',
+            'missing_endpoint':'workspace_identity','missing_token':'workspace_identity'}[scenario]
         assert record['event'] == ('PANNS_TRANSPORT_WARNING' if scenario.startswith('cleanup') else 'PANNS_TRANSPORT_ERROR')
 
 
@@ -267,6 +275,7 @@ def test_transient_status_failure_preserves_single_start_and_verified_pause(tmp_
 
 
 @pytest.mark.parametrize('kind,failures,success', [('transient', 3, True), ('transient', 100, False),
+                                                ('endpoint_unavailable', 3, True), ('endpoint_unavailable', 100, False),
                                                 ('domain', 3, False), ('output_limit', 3, False)])
 def test_probe_outage_recovery_is_bounded_and_never_exposes_child_diagnostics(tmp_path, monkeypatch, kind, failures, success):
     request, output = setup_request(tmp_path, probe_failures_after_start=failures, probe_failure_kind=kind)
@@ -287,7 +296,7 @@ def test_probe_outage_recovery_is_bounded_and_never_exposes_child_diagnostics(tm
     assert 'SECRET' not in diagnostics and 'https://' not in diagnostics
     if kind != 'output_limit':
         diagnostic = json.loads((output/'child_failure.json').read_text())
-        assert diagnostic['category'] == ('fetch_failed' if kind == 'transient' else 'remote_error')
+        assert diagnostic['category'] == {'transient':'fetch_failed', 'endpoint_unavailable':'endpoint_unavailable'}.get(kind, 'remote_error')
         assert diagnostic['exit_code'] == 6 and diagnostic['stderr_bytes'] > 0
 
 

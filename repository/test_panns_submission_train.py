@@ -109,6 +109,20 @@ def test_parent_hash_mismatch_rejects_before_loading_or_creating_output(tmp_path
     assert calls == [] and not Path(request['output']).exists()
 
 
+def test_workflow_reuses_completed_export_and_rejects_changed_weights(tmp_path, monkeypatch):
+    import panns_submission_workflow as workflow
+    config, request, _, _, calls, _ = fixture(tmp_path, monkeypatch)
+    subject.train(config, request, 'R1')
+    assert workflow.completed_training(config, request, 'R1') is True
+    assert workflow.completed_training(config, request, 'R3') is False
+    assert len(calls) == 1
+    weights = Path(request['output'])/'train_R1_41/export/best_model.pt'
+    with weights.open('ab') as stream:
+        stream.write(b'corruption')
+    with pytest.raises(ValueError, match='Completed training'):
+        workflow.completed_training(config, request, 'R1')
+
+
 def test_sigterm_continuation_preserves_optimizer_and_next_file_batch(tmp_path, monkeypatch):
     config, request, sampler, _, calls, clock = fixture(tmp_path, monkeypatch)
     original_step = subject.optimization_step
