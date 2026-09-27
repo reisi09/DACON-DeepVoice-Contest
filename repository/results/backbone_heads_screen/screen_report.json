@@ -1,0 +1,67 @@
+{
+ "rows_with_cache": {
+  "voice": {
+   "train": 18260,
+   "val": 2845,
+   "test": 3841
+  }
+ },
+ "voice_dfarena": {
+  "val_eer": 0.05088,
+  "epochs": 37,
+  "test_eer_route": 0.12027
+ },
+ "voice_ad": {
+  "val_eer": 0.0485,
+  "epochs": 40,
+  "test_eer_route": 0.13953
+ },
+ "music_L3": {
+  "val_eer": 0.16014,
+  "test_eer_route": 0.18944,
+  "epochs": 21,
+  "train_rows": 6981
+ },
+ "music_L6": {
+  "val_eer": 0.13135,
+  "test_eer_route": 0.18843,
+  "epochs": 22,
+  "train_rows": 6981
+ },
+ "music_L9": {
+  "val_eer": 0.13685,
+  "test_eer_route": 0.1987,
+  "epochs": 24,
+  "train_rows": 6981
+ },
+ "music_L12": {
+  "val_eer": 0.13458,
+  "test_eer_route": 0.20622,
+  "epochs": 20,
+  "train_rows": 6981
+ },
+ "music_L15": {
+  "val_eer": 0.13458,
+  "test_eer_route": 0.20897,
+  "epochs": 22,
+  "train_rows": 6981
+ },
+ "music_L18": {
+  "val_eer": 0.15011,
+  "test_eer_route": 0.20007,
+  "epochs": 22,
+  "train_rows": 6981
+ },
+ "music_L21": {
+  "val_eer": 0.16564,
+  "test_eer_route": 0.20246,
+  "epochs": 19,
+  "train_rows": 6981
+ },
+ "music_L24": {
+  "val_eer": 0.16952,
+  "test_eer_route": 0.21172,
+  "epochs": 22,
+  "train_rows": 6981
+ }
+}

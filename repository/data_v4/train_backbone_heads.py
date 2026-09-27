@@ -39,7 +39,9 @@ PRESENCE = ROOT / 'results/data_v4_20260923/data_v4_results_20260923T1639Z/train
 AD = ROOT / '_workspace/models/xls-r-1b-anti-deepfake'
 
 
-def items_for(rows, cache: Path, layers, route_filter):
+def items_for(rows, cache: Path, layers, route_filter, dfarena=False):
+    """dfarena=True: the current DF-Arena voice features from the old cache, restricted to rows with a backbone npz
+    (matched-row baseline for the new voice head)."""
     out = []
     for r in rows:
         p = cache / f"{r['ID']}.npz"
@@ -50,8 +52,11 @@ def items_for(rows, cache: Path, layers, route_filter):
             feats = {'voice': d['ad_embeddings'].astype(np.float32),
                      'music': d['mert_layers'][:, [L.index(k) for k in layers]].reshape(len(d['mert_layers']), -1).astype(np.float32)}
             samples = int(d['samples'])
+        if dfarena:
+            with np.load(OLD[r.get('cache_split', r['split'])] / f"{r['ID']}.npz") as o:
+                feats['voice'], silent = o['voice_embeddings'].astype(np.float32), bool(o['voice_silent'])
         truth = np.full(len(feats['music']), np.nan, np.float32)
-        with np.load(OLD[r['split']] / f"{r['ID']}.npz") as o:   # same runtime windows (checked on parity files)
+        with np.load(OLD[r.get('cache_split', r['split'])] / f"{r['ID']}.npz") as o:   # same runtime windows (parity-checked)
             if len(o['window_truth']) == len(truth):
                 truth = o['window_truth'].astype(np.float32)
         for head, label in T.head_labels(r).items():
@@ -62,7 +67,7 @@ def items_for(rows, cache: Path, layers, route_filter):
     return out
 
 
-def train(route, training, validation, init=None, seed=41, max_epochs=50, patience=5):
+def train(route, training, validation, init=None, fake_index=0, seed=41, max_epochs=50, patience=5):
     items = [x for x, _ in training]
     weights = loss_weights(items)
     ids = [x.row['ID'] for x in items]
@@ -87,8 +92,8 @@ def train(route, training, validation, init=None, seed=41, max_epochs=50, patien
         model.train()
         order = epoch_order(items, seed, epoch)
         for offset in range(0, len(order), 256):
-            T.step(model, optimizer, [items[i] for i in order[offset:offset + 256]], route, 0, weights, 256, limit, 'cpu')
-        pred = T.predict(model, val, route, 0, 256, limit, 'cpu')
+            T.step(model, optimizer, [items[i] for i in order[offset:offset + 256]], route, fake_index, weights, 256, limit, 'cpu')
+        pred = T.predict(model, val, route, fake_index, 256, limit, 'cpu')
         eer = float(_roc_metrics([int(v) for v in labels], pred.tolist())[0])
         clipped = np.clip(pred, 1e-7, 1 - 1e-7)
         bce = float(-(labels * np.log(clipped) + (1 - labels) * np.log1p(-clipped)).mean())
@@ -106,13 +111,30 @@ def main() -> None:
     ap.add_argument('--cache', type=Path, required=True)
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--layers', type=int, nargs='+', default=[3, 6, 9, 12, 15, 18, 21, 24])
+    ap.add_argument('--final', action='store_true', help='P1 protocol: train+held-out test as train, 3 seeds, packaged heads')
+    ap.add_argument('--music-layers', type=int, nargs='+', default=[6, 12])
+    ap.add_argument('--ours', type=Path, default=ROOT / '_workspace/p1_refit_cpu', help='DF-Arena voice heads kept as "ours"')
+    ap.add_argument('--ad-weight', type=float, default=.5)
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     rows = {s: [r for r in csv.DictReader((BANK / f).open()) if r['split'] == s]
             for s, f in (('train', 'bank_trainval.csv'), ('val', 'bank_trainval.csv'), ('test', 'bank_test.csv'))}
     native = load_file(str(AD / 'model.safetensors'))
     init = {'weight': native['proj_fc.weight'].float(), 'bias': native['proj_fc.bias'].float()}
+    if a.final:
+        return final(a, rows, init)
     report, preds = {'rows_with_cache': {}}, {}
+    # matched-row baseline: current DF-Arena voice head trained on exactly the rows that have a backbone npz
+    old_init = torch.load(OLD['val'] / 'voice_classifier_initial.pt', map_location='cpu', weights_only=True)
+    data = {s: items_for(rows[s], a.cache, [12], 'voice', dfarena=True) for s in rows}
+    model, val_eer, epochs = train('voice', data['train'], data['val'], old_init['state_dict'], old_init['fake_label_index'])
+    for s in ('val', 'test'):
+        p = T.predict(model, [x for x, _ in data[s]], 'voice', old_init['fake_label_index'], 256, 10 ** 6, 'cpu')
+        preds.setdefault('voice_dfarena', {}).update({x.row['ID']: float(v) for (x, _), v in zip(data[s], p)})
+    test_items = [x for x, _ in data['test']]
+    report['voice_dfarena'] = {'val_eer': round(val_eer, 5), 'epochs': epochs, 'test_eer_route': round(float(_roc_metrics(
+        [int(x.label) for x in test_items], [preds['voice_dfarena'][x.row['ID']] for x in test_items])[0]), 5)}
+    print('voice_dfarena (matched baseline)', report['voice_dfarena'], flush=True)
     # new voice head (AntiDeepfake embeddings)
     data = {s: items_for(rows[s], a.cache, [12], 'voice') for s in rows}
     report['rows_with_cache']['voice'] = {s: len(v) for s, v in data.items()}
@@ -120,7 +142,9 @@ def main() -> None:
     for s in ('val', 'test'):
         p = T.predict(model, [x for x, _ in data[s]], 'voice', 0, 256, 10 ** 6, 'cpu')
         preds.setdefault('voice_ad', {}).update({x.row['ID']: float(v) for (x, _), v in zip(data[s], p)})
-    report['voice_ad'] = {'val_eer': round(val_eer, 5), 'epochs': epochs}
+    test_items = [x for x, _ in data['test']]
+    report['voice_ad'] = {'val_eer': round(val_eer, 5), 'epochs': epochs, 'test_eer_route': round(float(_roc_metrics(
+        [int(x.label) for x in test_items], [preds['voice_ad'][x.row['ID']] for x in test_items])[0]), 5)}
     print('voice_ad', report['voice_ad'], report['rows_with_cache']['voice'], flush=True)
     torch.save(model.state_dict(), a.out / 'voice_ad_41.pt')
     # music heads per layer
@@ -138,6 +162,84 @@ def main() -> None:
     with (a.out / 'predictions.json').open('w') as f:
         json.dump(preds, f)
     (a.out / 'screen_report.json').write_text(json.dumps(report, indent=1) + '\n')
+
+
+def final(a, rows, init) -> None:
+    """Heads for the package: new voice_ad_* and music_* (MERT a.music_layers) trained on train + held-out test rows that have
+    a backbone npz (val early stopping, seeds 41/42/43); DF-Arena voice_* copied from a.ours. Writes the component fusion
+    (voice = ours + a.ad_weight * ad, val CDFs), the refitted FILE ensemble and a candidate lock over all nine heads."""
+    import hashlib
+    import shutil
+    rows = {'train': rows['train'] + [{**r, 'split': 'train', 'cache_split': 'test'} for r in rows['test']], 'val': rows['val']}
+    old_fake = torch.load(OLD['val'] / 'voice_classifier_initial.pt', map_location='cpu', weights_only=True)['fake_label_index']
+    sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+    lock, results, val_scores = {}, {}, {}
+    val_rows = [r for r in rows['val'] if (a.cache / f"{r['ID']}.npz").exists()]
+
+    def every_row(model, route, layers):
+        """Runtime semantics: every file gets both scores (voice stem -> AD heads, backing stem -> music heads)."""
+        out = {}
+        with torch.no_grad():
+            for r in val_rows:
+                with np.load(a.cache / f"{r['ID']}.npz") as d:
+                    if route == 'voice':
+                        out[r['ID']] = float(model(torch.from_numpy(d['ad_embeddings'].astype(np.float32))).softmax(-1)[:, 0].max())
+                    else:
+                        L = list(d['layers'])
+                        f = torch.from_numpy(d['mert_layers'][:, [L.index(k) for k in layers]].reshape(len(d['mert_layers']), -1).astype(np.float32))
+                        logits, _ = model.head((f - model.mean) / model.scale)
+                        out[r['ID']] = float((logits.float().logsumexp(0) - np.log(len(f))).sigmoid())
+        return out
+    for route, key, layers in (('voice', 'voice_ad', [12]), ('music', 'music', a.music_layers)):
+        data = {s: items_for(rows[s], a.cache, layers, route) for s in rows}
+        preds, every = [], []
+        for seed in (41, 42, 43):
+            model, val_eer, epochs = train(route, data['train'], data['val'], init if route == 'voice' else None, 0, seed=seed)
+            path = a.out / f'{key}_{seed}.pt'
+            torch.save({'model': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}, 'route': route, 'seed': seed,
+                        'epoch': epochs, 'validation_eer': val_eer, 'fake_label_index': 0 if route == 'voice' else old_fake,
+                        'features': 'antideepfake_xlsr1b_pooled' if route == 'voice' else f'mert_layers_{layers}',
+                        'train_ids': [x.row['ID'] for x, _ in data['train']]}, path)
+            lock[path.name] = sha(path)
+            preds.append(T.predict(model, [x for x, _ in data['val']], route, 0, 256, 10 ** 6, 'cpu'))
+            every.append(every_row(model.eval(), route, layers))
+            print(key, seed, round(val_eer, 5), epochs, flush=True)
+        mean = np.mean(preds, 0)
+        val_scores[key] = {i: float(np.mean([e[i] for e in every])) for i in every[0]}
+        results[f'{route}_ensemble' if route == 'music' else 'voice_ad_ensemble'] = {'eer': float(_roc_metrics([int(x.label) for x, _ in data['val']], mean.tolist())[0])}
+    for seed in (41, 42, 43):
+        shutil.copy(a.ours / f'voice_{seed}.pt', a.out / f'voice_{seed}.pt')
+        lock[f'voice_{seed}.pt'] = sha(a.out / f'voice_{seed}.pt')
+    results['voice_ensemble'] = json.loads((a.ours / 'results.json').read_text())['voice_ensemble']
+    # fusion tables and FILE ensemble on val rows that have a backbone npz; ours = the kept DF-Arena voice heads
+    scored = {s['ID']: s for s in score_rows(val_rows, OLD['val'], a.ours, 'cpu')}   # DF-Arena Fv + presence; its Fm is unused
+    presence = json.loads(PRESENCE.read_text())
+    ours = {i: s['Fv'] for i, s in scored.items()}
+    spec = {'weights': {'ours': 1, 'ad': a.ad_weight},
+            'tables': {'ours': dh.quantile_table([ours[r['ID']] for r in val_rows if ours[r['ID']] > 0]),
+                       'ad': dh.quantile_table([val_scores['voice_ad'][r['ID']] for r in val_rows if ours[r['ID']] > 0])}}
+    files = []
+    for r in val_rows:
+        s = scored[r['ID']]
+        vp, mp = dh.presence(presence, s['presence_features'], (s['Pv'], s['Pm']))
+        fv = 0. if s['Fv'] == 0. else fuse(spec, {'ours': s['Fv'], 'ad': val_scores['voice_ad'][r['ID']]})
+        files.append(({**s, 'Pv': vp, 'Pm': mp, 'Fv': fv, 'Fm': val_scores['music'][r['ID']]}, r))
+    keep = [(f, r) for f, r in files if r['FILE_FAKE_mask'] == '1']
+    ens, ens_report = fit_file([f for f, _ in keep], np.array([int(r['FILE_FAKE']) for _, r in keep]))
+    preds = [{'ID': f['ID'], 'FILE_FAKE_PROB': dh.file_score(ens, f), 'VOICE_FAKE_PROB': f['Fv'], 'MUSIC_FAKE_PROB': f['Fm'],
+              'VOICE_PRESENT_PROB': f['Pv'], 'MUSIC_PRESENT_PROB': f['Pm']} for f, _ in files]
+    metrics = official_metrics([r for _, r in files], preds)
+    (a.out / 'file_ensemble.json').write_text(json.dumps(ens) + '\n')
+    (a.out / 'component_fusion.json').write_text(json.dumps({'voice': spec, 'music': {'weights': {'ours': 1}, 'tables': {}},
+                                                             'fitted_on': 'data v4 val'}) + '\n')
+    (a.out / 'music_layers.json').write_text(json.dumps(a.music_layers) + '\n')
+    (a.out / 'results.json').write_text(json.dumps(results, indent=1) + '\n')
+    (a.out / 'validation_metrics.json').write_text(json.dumps(metrics, indent=1) + '\n')
+    (a.out / 'run_identity.json').write_text(json.dumps({'protocol': 'P1 refit: data v4 train + held-out test as train, val early stopping',
+        'rows': {'train_with_backbone': sum((a.cache / f"{r['ID']}.npz").exists() for r in rows['train']), 'val_with_backbone': len(val_rows)},
+        'voice_ours': str(a.ours), 'music_layers': a.music_layers, 'ad_weight': a.ad_weight, 'file_ensemble': ens_report}, indent=1) + '\n')
+    (a.out / 'candidate_lock.json').write_text(json.dumps({'checkpoints': lock, 'selection': 'val EER then BCE per seed; seed-mean probabilities'}, indent=1) + '\n')
+    print('val official', {k: round(v, 5) for k, v in metrics['metrics'].items() if v is not None}, flush=True)
 
 
 if __name__ == '__main__':

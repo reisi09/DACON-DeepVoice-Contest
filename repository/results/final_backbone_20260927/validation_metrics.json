@@ -1,0 +1,37 @@
+{
+ "score": null,
+ "metrics": {
+  "file_eer": 0.054380927580724756,
+  "voice_eer": 0.036837484035759926,
+  "music_eer": 0.11193926742079974,
+  "voice_presence_auc": 0.9988958662694448,
+  "music_presence_auc": 0.996272433286435
+ },
+ "invalid": {},
+ "partial": {
+  "file_eer": "known subset only; unknown relevant labels: 4",
+  "voice_eer": "known subset only; unknown relevant labels: 317",
+  "voice_presence_auc": "known subset only; unknown relevant labels: 97"
+ },
+ "counts": {
+  "file_eer": 3676,
+  "voice_eer": 2845,
+  "music_eer": 1286,
+  "voice_presence_auc": 3583,
+  "music_presence_auc": 3680
+ },
+ "unknown_counts": {
+  "file_eer": 4,
+  "voice_eer": 317,
+  "music_eer": 0,
+  "voice_presence_auc": 97,
+  "music_presence_auc": 0
+ },
+ "coverage": {
+  "file_eer": 0.9989130434782608,
+  "voice_eer": 0.8997469955724225,
+  "music_eer": 1.0,
+  "voice_presence_auc": 0.9736413043478261,
+  "music_presence_auc": 1.0
+ }
+}
