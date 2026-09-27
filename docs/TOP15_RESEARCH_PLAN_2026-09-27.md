@@ -9,6 +9,60 @@ Full evidence (every slice, verdict, experiment, defect and source): [RESEARCH_R
 Labels used below: **[V]** verified in this investigation against repo code/JSON; **[R]** recorded in the repo but resting on a
 user screenshot or markdown not in the repo; **[I]** inferred; **[U]** unverified external claim (search snippet only).
 
+## Update 2026-09-27 13:23 KST — main moved to `59c2318` (S3 package)
+
+main added three commits: the S3 package (`3753e10`), a results bundle with bank manifests and head checkpoints
+(`0836799`), and an AI-Hub usage record (`59c2318`). This update supersedes the slot order in G and H below; the rest of
+the plan still stands.
+
+**What S3 is.** S3 (`submissions/DataV4_S3_Backbones`, zip `062fc236…`, 8.29 GB) combines, against 102411:
+- P1 voice heads;
+- AntiDeepfake-1B voice-stem embedding heads, fused by val-CDF at w=0.5;
+- music WindowMIL on MERT layers **6+12**;
+- a FILE rule refit by grid on val (noisy_or 9 : max_nopresence 1, val gain 0.0041).
+
+Presence assets, `decision_heads.py`, `script.py` and `requirements.txt` are byte-identical to DB [V].
+
+**Held-out evidence (DB protocol, heads never trained on the rows).** `results/audit_20260927/ads_compare.json` gives ADS
+0.86438 → 0.87267 (+0.0083). The components agree in direction on val and test:
+
+| Component | Val EER | Held-out EER | Consistency |
+|---|---|---|---|
+| Music, MERT [12] → [6,12] | 0.1289 → 0.1167 | 0.1946 → 0.1810 | lower on every one of 3 seeds, in both splits (`music_layer_seeds.json`) |
+| Voice, + AntiDeepfake-head fusion | 0.0509 → 0.0376 | 0.1195 → 0.1106 | same direction in both splits |
+
+The music gain (−0.006 at ensemble level, −0.0136 seed mean) is below the −0.02 M-LAYER gate set in G. The combined
+held-out gain and its consistency across seeds and splits still make S3 the strongest candidate on record [V].
+
+**Checks run in this session on the new commit:**
+- **Feature coverage is uniform, not skewed.** Backbone features cover ~75% of val (3,680/4,931) and held-out
+  (4,822/6,450) rows, flat across every source and every manifest-position decile. The partial extraction was therefore a
+  random subsample, not an E08-style ordered slice [V].
+- **Checkpoints load on the judge stack.** All 21 packaged heads (DB 6, P1 6, S3 9, including `voice_ad_*`) load with
+  `torch.load(weights_only=True)` under NumPy 1.26.4 / torch 2.7.1, and the repo copies equal the zip members byte for byte.
+  `antideepfake_runtime.py` and `component_fusion.py` import under transformers 4.57.6 [V].
+  The AntiDeepfake weights (`model.safetensors`) are not in the repo and were not load-tested.
+- **Epoch caps.** P1 voice heads hit the 50-epoch cap on 1 of 3 seeds (39/44, 24/29, 50/50) [V].
+
+**Open risks for S3:**
+- **Order-dependent fallback.** `full_bank_submission.py` keeps a 48-minute fallback: files scored after 48 min skip
+  the AntiDeepfake member, so their VOICE score depends on processing order (rule 2-4) and two scoring functions get mixed.
+  This matters only if the L4 run exceeds 48 min. CPU QA took 84.9 s for 10 files vs DB's 66.7 s; DB ran 17m32s on L4.
+- **Mild test-informed selection.** Val preferred w=1 (0.92984 vs 0.92912) and layers [3,6,9] (0.1156 vs 0.1167); test
+  preferred the chosen w=0.5 and [6,12]. Both gaps are ≤ 0.0011, so the held-out gain is slightly optimistic.
+- **Not validated on L4.** Runtime adds an AntiDeepfake-1B pass at 50% window overlap.
+- **Bundled change.** S3 bundles P1, which has no leaderboard result yet.
+
+**Revised slot order for 09-27 (3 slots):**
+1. **S3**, after `verify_datav4_submission.py`-style offline QA of the zip. Upload first, so a runtime failure surfaces
+   while there is still time to fix it.
+2. **P1Refit**, the same day. It is the attribution control: S3 − P1 isolates the AntiDeepfake fusion, the MERT layers and
+   the FILE grid; P1 − 102411 isolates the refit.
+3. Reserve.
+
+Then keep the best of S3 / P1 / 102411 as the base for 09-28. V-SING (`data_v4/sing_relabel_screen.py`) should use the
+winning package's heads as `--incumbent`.
+
 ## Decision summary
 
 1. **Incumbent is 0.7912534339, not 0.7396.** Submission 102411 (09-24 02:09:50): total 0.7912534339, ADS 0.7683174603,

@@ -1567,3 +1567,76 @@ the speech fakes do not use.
 - The research agents could not open arxiv/ISCA/IEEE/OpenReview; unverified rows in section 5 rest on search snippets.
 - Status of the 09-27 VESSL multi-layer backbone extraction and the local MPS S2 feature chain is unknown.
 - P1Refit's L4 runtime, NumPy 1.26.4 checkpoint load and per-seed best epochs are unmeasured.
+
+## 8. Update — main `59c2318` (S3 package), checked 2026-09-27 13:23 KST
+
+### 8.1 What changed on main
+
+| Commit | Content |
+|---|---|
+| 3753e10 | S3 package: MERT layers 6+12 music heads; AntiDeepfake-1B embedding voice heads fused with the DF-Arena (P1) heads at w=0.5; FILE grid refit; runtime `music_layers.json` + `voice_ad_*.pt` |
+| 0836799 | Results bundle: `data/data_v4_bank` manifests (no audio, no AI-Hub rows), member scores, head checkpoints for DB / P1 / S2a / S3, screen and comparison JSON |
+| 59c2318 | AI-Hub usage record (metadata only); S3 uses no AI-Hub data |
+
+### 8.2 Held-out evidence for S3 (DB protocol; `results/audit_20260927/ads_compare.json`)
+
+| Configuration | Val File / Voice / Music, ADS | Held-out File / Voice / Music, ADS |
+|---|---|---|
+| baseline (DF-Arena voice, MERT-12 music) | 0.0691 / 0.0509 / 0.1252, 0.91773 | 0.1089 / 0.1195 / 0.1908, 0.86438 |
+| music MERT-6+12 | 0.0680 / 0.0509 / 0.1119, 0.92222 | 0.1064 / 0.1195 / 0.1847, 0.86748 |
+| + voice AD-head fusion w=0.5 (**S3**) | 0.0596 / 0.0376 / 0.1119, 0.92912 | 0.0996 / 0.1106 / 0.1847, **0.87267** |
+| + voice AD-head fusion w=1 | 0.0585 / 0.0366 / 0.1119, 0.92984 | 0.1000 / 0.1125 / 0.1847, 0.87209 |
+
+Music layer seeds (`music_layer_seeds.json`), val / held-out means over seeds 41–43:
+- [12]: 0.1289 / 0.1946
+- [6]: 0.1293 / 0.1849
+- [6,12]: 0.1167 / 0.1810
+- [3,6,9]: 0.1156 / 0.1843
+
+[6,12] is below [12] for every seed in both splits. The single-seed layer screen
+(`backbone_heads_screen/screen_report.json`) puts the lowest held-out route EER at L6 (0.188) and L3 (0.189), versus L12
+(0.206) and L24 (0.212).
+
+### 8.3 Checks run in this session
+
+**Backbone feature coverage.** IDs come from `results/backbone_heads_screen/predictions.json`; sources come from
+`data/data_v4_bank`.
+
+| Split | Covered | Range across sources with ≥ 50 rows | Range across manifest-position deciles |
+|---|---:|---|---|
+| val | 3,680 / 4,931 (0.746) | 0.66–0.78 | 0.72–0.76 |
+| held-out | 4,822 / 6,450 (0.748) | 0.72–0.78 | 0.72–0.77 |
+
+Extraction used strided shards stopped at a deadline, but coverage is flat, so the backbone manifest was shuffled. The
+missing ~25% is a random subsample, not a source-skewed slice.
+
+**Judge-stack checkpoint load** (NumPy 1.26.4, torch 2.7.1, transformers 4.57.6):
+
+| Package | Heads loaded with `weights_only=True` | Repo copy = zip member | Music input width |
+|---|---:|---|---:|
+| DataV4_DurationBalanced | 6 | 6/6 | 1024 |
+| DataV4_P1Refit | 6 | 6/6 | 1024 |
+| DataV4_S3_Backbones | 9 (incl. `voice_ad_*`) | 9/9 | 2048 |
+
+`antideepfake_runtime.py` and `component_fusion.py` import cleanly, and the `component_fusion` self-check passes. The
+AntiDeepfake `model.safetensors` is not in the repo and was not loaded.
+
+**Best epoch / epochs run** (from `*_history.json`):
+
+| Package | Voice seeds 41 / 42 / 43 | Music seeds 41 / 42 / 43 |
+|---|---|---|
+| DB | 50/50, 44/49, 50/50 | 12/17, 11/16, 9/14 |
+| P1 | 39/44, 24/29, 50/50 | 15/20, 16/21, 12/17 |
+| S3 | no histories in repo | no histories in repo |
+
+**Package identity.** S3's presence head, `decision_heads.py`, `script.py` and `requirements.txt` equal DB's. The ZIP is
+8,286,541,720 bytes (< 10 GB). CPU QA: 10 files in 84.9 s (DB: 66.7 s).
+
+### 8.4 Open risks
+
+- **Order-dependent fallback.** The runtime keeps a 48-minute fallback that drops the AntiDeepfake member for files
+  scored after 48 min. This makes VOICE depend on processing order (rule 2-4) if the L4 run is slow.
+- **Mild test-informed selection.** Val preferred w=1 and [3,6,9]; test preferred the chosen w=0.5 and [6,12]. Both gaps
+  are ≤ 0.0011.
+- **Not validated on L4.**
+- **Bundled change.** S3 includes P1, which has no leaderboard result yet.
