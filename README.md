@@ -3,6 +3,7 @@
 지금까지 진행한 딥보이스 탐지 실험의 모델·학습·추론 코드, 노트북, 설정과 결과 기록을 모았습니다. 원래 프로젝트의 상대 경로는 `repository/` 아래에 유지했습니다.
 
 - [Top-15 research plan across all branches — 2026-09-27](docs/TOP15_RESEARCH_PLAN_2026-09-27.md)
+- [Research results across all branches — 2026-09-27](docs/RESEARCH_RESULTS_2026-09-27.md)
 - [현재 계획과 남은 작업](plan.md)
 - [실험별 코드 안내](EXPERIMENT_INDEX.md)
 - [전체 실험 기록 — 2026-09-17 기준](docs/EXPERIMENTS_ALL_2026-09-17.md)

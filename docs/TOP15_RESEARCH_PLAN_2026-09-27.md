@@ -4,6 +4,8 @@ Written 2026-09-27 06:40 KST. Leaderboard submission closes **2026-09-29 10:00 K
 every git ref (main `b6dfcb4`, `cpu/lb-improvement-20260924` `1c08b1b`, `data-v4` and `pull/1` — both already contained in main),
 official rules, and targeted literature. No training, GPU, data acquisition or DACON submission was performed.
 
+Full evidence (every slice, verdict, experiment, defect and source): [RESEARCH_RESULTS_2026-09-27.md](RESEARCH_RESULTS_2026-09-27.md).
+
 Labels used below: **[V]** verified in this investigation against repo code/JSON; **[R]** recorded in the repo but resting on a
 user screenshot or markdown not in the repo; **[I]** inferred; **[U]** unverified external claim (search snippet only).
 
