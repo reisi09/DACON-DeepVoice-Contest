@@ -1,0 +1,170 @@
+{
+ "candidates_alone": {
+  "max": 0.07189,
+  "noisy_or": 0.07327,
+  "max_nopresence": 0.07962
+ },
+ "equal_weights_eer": 0.07127,
+ "grid_best_eer": 0.07065,
+ "grid_best_weights": {
+  "max": 5,
+  "max_nopresence": 5,
+  "noisy_or": 0
+ },
+ "chosen_weights": {
+  "max": 1,
+  "noisy_or": 1,
+  "max_nopresence": 1
+ },
+ "chosen_rule": "equal (grid gain 0.0006 < 0.002)",
+ "val_n": 4927,
+ "test_one_shot": {
+  "n": 6444,
+  "ensemble_eer": 0.05679,
+  "max_rule_eer": 0.06021
+ },
+ "val_official_legacy": {
+  "score": null,
+  "metrics": {
+   "file_eer": 0.0752796632737319,
+   "voice_eer": 0.050964484809966785,
+   "music_eer": 0.11033242917585956,
+   "voice_presence_auc": 0.9882719928264423,
+   "music_presence_auc": 0.9894088278123797
+  },
+  "invalid": {},
+  "partial": {
+   "voice_eer": "known subset only; unknown relevant labels: 437",
+   "voice_presence_auc": "known subset only; unknown relevant labels: 125"
+  },
+  "counts": {
+   "file_eer": 4927,
+   "voice_eer": 3785,
+   "music_eer": 1748,
+   "voice_presence_auc": 4802,
+   "music_presence_auc": 4927
+  },
+  "unknown_counts": {
+   "file_eer": 0,
+   "voice_eer": 437,
+   "music_eer": 0,
+   "voice_presence_auc": 125,
+   "music_presence_auc": 0
+  },
+  "coverage": {
+   "file_eer": 1.0,
+   "voice_eer": 0.8964945523448603,
+   "music_eer": 1.0,
+   "voice_presence_auc": 0.97462959204384,
+   "music_presence_auc": 1.0
+  }
+ },
+ "val_official_decision": {
+  "score": null,
+  "metrics": {
+   "file_eer": 0.07126619115767853,
+   "voice_eer": 0.050964484809966785,
+   "music_eer": 0.11033242917585956,
+   "voice_presence_auc": 0.9987989828225912,
+   "music_presence_auc": 0.9969509934690605
+  },
+  "invalid": {},
+  "partial": {
+   "voice_eer": "known subset only; unknown relevant labels: 437",
+   "voice_presence_auc": "known subset only; unknown relevant labels: 125"
+  },
+  "counts": {
+   "file_eer": 4927,
+   "voice_eer": 3785,
+   "music_eer": 1748,
+   "voice_presence_auc": 4802,
+   "music_presence_auc": 4927
+  },
+  "unknown_counts": {
+   "file_eer": 0,
+   "voice_eer": 437,
+   "music_eer": 0,
+   "voice_presence_auc": 125,
+   "music_presence_auc": 0
+  },
+  "coverage": {
+   "file_eer": 1.0,
+   "voice_eer": 0.8964945523448603,
+   "music_eer": 1.0,
+   "voice_presence_auc": 0.97462959204384,
+   "music_presence_auc": 1.0
+  }
+ },
+ "test_official_legacy": {
+  "score": null,
+  "metrics": {
+   "file_eer": 0.06130662590984551,
+   "voice_eer": 0.10175956376310535,
+   "music_eer": 0.031962243204150365,
+   "voice_presence_auc": 0.9846189558360148,
+   "music_presence_auc": 0.9910965026403331
+  },
+  "invalid": {},
+  "partial": {
+   "voice_eer": "known subset only; unknown relevant labels: 261",
+   "voice_presence_auc": "known subset only; unknown relevant labels: 176"
+  },
+  "counts": {
+   "file_eer": 6444,
+   "voice_eer": 5139,
+   "music_eer": 2849,
+   "voice_presence_auc": 6268,
+   "music_presence_auc": 6444
+  },
+  "unknown_counts": {
+   "file_eer": 0,
+   "voice_eer": 261,
+   "music_eer": 0,
+   "voice_presence_auc": 176,
+   "music_presence_auc": 0
+  },
+  "coverage": {
+   "file_eer": 1.0,
+   "voice_eer": 0.9516666666666667,
+   "music_eer": 1.0,
+   "voice_presence_auc": 0.9726877715704532,
+   "music_presence_auc": 1.0
+  }
+ },
+ "test_official_decision": {
+  "score": null,
+  "metrics": {
+   "file_eer": 0.05679490965393946,
+   "voice_eer": 0.10175956376310535,
+   "music_eer": 0.031962243204150365,
+   "voice_presence_auc": 0.9979462237360157,
+   "music_presence_auc": 0.9986542871104935
+  },
+  "invalid": {},
+  "partial": {
+   "voice_eer": "known subset only; unknown relevant labels: 261",
+   "voice_presence_auc": "known subset only; unknown relevant labels: 176"
+  },
+  "counts": {
+   "file_eer": 6444,
+   "voice_eer": 5139,
+   "music_eer": 2849,
+   "voice_presence_auc": 6268,
+   "music_presence_auc": 6444
+  },
+  "unknown_counts": {
+   "file_eer": 0,
+   "voice_eer": 261,
+   "music_eer": 0,
+   "voice_presence_auc": 176,
+   "music_presence_auc": 0
+  },
+  "coverage": {
+   "file_eer": 1.0,
+   "voice_eer": 0.9516666666666667,
+   "music_eer": 1.0,
+   "voice_presence_auc": 0.9726877715704532,
+   "music_presence_auc": 1.0
+  }
+ }
+}
