@@ -32,13 +32,16 @@ from graph_scoring import official_metrics  # noqa: E402
 HERE = Path(__file__).resolve().parent
 R2 = ROOT / 'research/top15/work/r2/runs'
 NEW = Path(os.environ.get('NEWCACHE', HERE / 'cache'))
+S6 = Path(os.environ.get('S6CACHE', HERE.parent / 's6' / 'cache'))
+BASE_MUSIC_RUN = os.environ.get('BASE_MUSIC_RUN')   # S6 study: baseline music = this runs/ file (S5: music_new__mert6_12+eat16)
 PINNED = set(Path(os.environ.get('ROWS', HERE / 'rows_r2.txt')).read_text().split())
 GATE = float(os.environ.get('ADS_GATE', .002))   # pre-registered .002; override only for plumbing checks
 MUSIC_W, VOICE_W = (.5, 1, 2), (.25, .5, 1)
 music_runs, voice_runs = ([x for x in a.split(',') if x != 'none'] for a in sys.argv[1:3])
 uses_new = any(not n.endswith(('mert6_12', '__ad')) for n in music_runs + voice_runs)
+uses_s6 = any(k in n for n in music_runs + voice_runs for k in ('sslam', 'wavlm', 'hubert'))
 rows = {s: [r for r in csv.DictReader((H.BANK / f).open()) if r['split'] == s and r['ID'] in PINNED
-            and (not uses_new or (NEW / f"{r['ID']}.npz").exists())]
+            and (not uses_new or (NEW / f"{r['ID']}.npz").exists()) and (not uses_s6 or (S6 / f"{r['ID']}.npz").exists())]
         for s, f in (('val', 'bank_trainval.csv'), ('test', 'bank_test.csv'))}
 
 
@@ -49,7 +52,7 @@ def scores(path):
     return out
 
 
-comp = {'df': scores(R2 / 'voice_df__mlp_long.json'), 'ad': scores(R2 / 'voice_ad__resmlp_long.json'), 'mert': scores(R2 / 'music__L6_12.json')}
+comp = {'df': scores(R2 / 'voice_df__mlp_long.json'), 'ad': scores(R2 / 'voice_ad__resmlp_long.json'), 'mert': scores(HERE / 'runs' / f'{BASE_MUSIC_RUN}.json' if BASE_MUSIC_RUN else R2 / 'music__L6_12.json')}
 comp |= {n: scores(HERE / 'runs' / f'{n}.json') for n in music_runs + voice_runs}
 pres = json.loads(H.PRESENCE.read_text())
 P = {}
@@ -95,7 +98,7 @@ for m in music_runs:
     grid |= {f'music fuse {m} w{w}': {'voice': BASE_VOICE, 'music': (['mert', m], [1, w])} for w in MUSIC_W}
 for v in voice_runs:
     grid |= {f'voice add {v} w{w}': {'voice': (['df', 'ad', v], [1, .5, w]), 'music': BASE_MUSIC} for w in VOICE_W}
-tag = '__'.join(a.replace(',', '-') for a in sys.argv[1:3])
+tag = '__'.join(a.replace(',', '-') for a in sys.argv[1:3]) + (f'__base-{BASE_MUSIC_RUN}' if BASE_MUSIC_RUN else '')
 lock_path, report_path = HERE / f'ads_lock__{tag}.json', HERE / f'ads_report__{tag}.json'
 
 # ---- phase 1: val only ----

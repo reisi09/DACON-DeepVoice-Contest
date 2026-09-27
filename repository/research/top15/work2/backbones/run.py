@@ -36,10 +36,14 @@ from localization_models import WindowMIL  # noqa: E402
 CACHE = ROOT / '_workspace/backbone_cache'
 OUT = Path(__file__).resolve().parent / 'runs'
 NEW = Path(os.environ.get('NEWCACHE', Path(__file__).resolve().parent / 'cache'))
+S6 = Path(os.environ.get('S6CACHE', Path(__file__).resolve().parents[1] / 's6' / 'cache'))
 # rows pinned to R2's 31,270 backbone rows (the live backbone_cache keeps growing; R2 components exist only for these)
 PINNED = set(Path(os.environ.get('ROWS', Path(__file__).resolve().parent / 'rows_r2.txt')).read_text().split())
 SOURCES = {'mert': (CACHE, 'mert_layers', 'layers'), 'ad': (CACHE, 'ad_embeddings', None),
-           'muq': (NEW, 'muq_backing', 'muq_layers'), 'muqv': (NEW, 'muq_voice', 'muq_layers'), 'eat': (NEW, 'eat_backing', 'eat_layers')}
+           'muq': (NEW, 'muq_backing', 'muq_layers'), 'muqv': (NEW, 'muq_voice', 'muq_layers'), 'eat': (NEW, 'eat_backing', 'eat_layers'),
+           # S6 candidates (research/top15/work2/s6/extract_s6.py, directory $S6CACHE)
+           'sslampt': (S6, 'sslam_pt_backing', 'sslam_layers'), 'sslamft': (S6, 'sslam_ft_backing', 'sslam_layers'),
+           'wavlm': (S6, 'wavlm_voice', 'wavlm_layers'), 'hubert': (S6, 'hubert_voice', 'hubert_layers')}
 ALL = [3, 6, 9, 12, 15, 18, 21, 24]
 LONG = dict(max_epochs=150, patience=10)
 VARIANTS = {

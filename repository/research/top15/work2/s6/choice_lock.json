@@ -1,0 +1,19 @@
+{
+ "written": "2026-09-27 18:10 KST",
+ "held_out_numbers_seen_by_this_study_before_lock": "none (S6 features do not exist yet)",
+ "baseline": "S5-equivalent under the DB protocol on R2 rows: voice = DF-Arena mlp_long + AD resmlp_long @0.5 (R2 runs), music = runs/music_new__mert6_12+eat16 (backbones study)",
+ "candidates": {
+  "sslampt": "ta012/SSLAM_pretrain rev af71a4b50473c14efdfaeeffc8636e37692576f7, backing stem, blocks 4-9 patch-mean (EAT fbank pipeline)",
+  "sslamft": "ta012/SSLAM_AS2M_Finetuned rev 4500c5d989436b57b0621418fa49a54ca2ed8dff, backing stem, blocks 4-9 patch-mean",
+  "wavlm": "microsoft/wavlm-large rev c1423ed94bb01d80a3f5ce5bc39f6026a0f4828c, voice stem, hidden_states 4,6,8,10,12,16 frame-mean (per-window zero-mean/unit-var input)",
+  "hubert": "facebook/hubert-large-ll60k rev ff022d095678a2995f3c49bab18a96a9e553f782, voice stem, hidden_states 2,4,6,8,10,12 frame-mean"
+ },
+ "features": "runtime window_layout windows of the stored HTDemucs stems (/root/stems, data_v4/dump_stems.py: runtime preprocessing, fp16 storage), fp32 compute, TF32 off, fp16 cache",
+ "rule": {
+  "A1_music": "run.py music_new sslamptK and sslamftK for K in 4..9 (alone); a = best layer of the better SSLAM family by val ens music EER, b = its second-best layer",
+  "A2_music": "variants mert6_12+eat16+sslamX{a}, mert6_12+eat16+sslamX{a}_{b}; control mert6_12+eat16 (existing run). Winner = lowest val ens EER among variants >= 0.002 better than control AND with better mean per-seed val EER; else none",
+  "A3_voice": "run.py voice_new wavlmK / hubertK (R2 mlp, 150/10); best layer per encoder by val ens voice-route EER",
+  "B": "ads.py with BASE_MUSIC=music_new__mert6_12+eat16: music replace by the A2 winner; voice add best wavlm / hubert member at w in {0.25,0.5,1}; adopt a component change only if val ADS >= baseline + 0.002; ties -> fewer encoders",
+  "C": "lock the val choice (ads_lock) before held-out; held-out official ADS once + group bootstrap; ship only if held-out dADS >= +0.005 vs baseline and every seed's component EER improves"
+ }
+}

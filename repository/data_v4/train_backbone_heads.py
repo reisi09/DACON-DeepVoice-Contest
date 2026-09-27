@@ -134,6 +134,7 @@ def main() -> None:
     ap.add_argument('--music-layers', type=int, nargs='+', default=[6, 12])
     ap.add_argument('--music-eat', type=int, nargs='*', default=[], help='EAT blocks appended to the music features (--final)')
     ap.add_argument('--eat-cache', type=Path, nargs='*', default=[], help='dirs with EAT npz (eat_backing)')
+    ap.add_argument('--reuse-voice', type=Path, help='--final: copy voice_* and voice_ad_* from this heads dir instead of retraining')
     ap.add_argument('--ours', type=Path, default=ROOT / '_workspace/p1_refit_cpu', help='DF-Arena voice heads kept as "ours"')
     ap.add_argument('--ad-weight', type=float, default=.5)
     ap.add_argument('--voice-arch', default='copy', choices=('copy', 'linear', 'mlp'), help='DF-Arena voice heads: copy from --ours or retrain')
@@ -202,6 +203,12 @@ def final(a, rows, init) -> None:
     eat = (eat_index(a.eat_cache), a.music_eat) if a.music_eat else None
     val_rows = [r for r in rows['val'] if (a.cache / f"{r['ID']}.npz").exists() and (eat is None or r['ID'] in eat[0])]
 
+    def reused(name):
+        """A voice head of a.reuse_voice, byte-copied (CPU retraining is not bit-reproducible across runs)."""
+        shutil.copy(a.reuse_voice / name, a.out / name)
+        record = torch.load(a.out / name, map_location='cpu', weights_only=True)
+        return voice_heads.load(record).eval(), record['validation_eer'], record['epochs_run']
+
     def every_row(model, route, layers):
         """Runtime semantics: every file gets both scores (voice stem -> AD heads, backing stem -> music heads)."""
         out = {}
@@ -222,9 +229,13 @@ def final(a, rows, init) -> None:
         preds, every = [], []
         for seed in (41, 42, 43):
             extra = dict(arch=a.ad_arch, max_epochs=a.voice_epochs, patience=a.voice_patience) if route == 'voice' else {}
-            model, val_eer, epochs = train(route, data['train'], data['val'], init if route == 'voice' else None, 0, seed=seed, **extra)
             path = a.out / f'{key}_{seed}.pt'
-            torch.save({'model': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}, 'route': route, 'seed': seed,
+            if route == 'voice' and a.reuse_voice:
+                model, val_eer, epochs = reused(path.name)
+            else:
+                model, val_eer, epochs = train(route, data['train'], data['val'], init if route == 'voice' else None, 0, seed=seed, **extra)
+            if not (route == 'voice' and a.reuse_voice):
+                torch.save({'model': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}, 'route': route, 'seed': seed,
                         'arch': a.ad_arch if route == 'voice' else 'mil', 'epoch': getattr(model, 'best_epoch', epochs), 'epochs_run': epochs,
                         'validation_eer': val_eer, 'fake_label_index': 0 if route == 'voice' else old_fake,
                         'features': 'antideepfake_xlsr1b_pooled' if route == 'voice' else f'mert_layers_{layers}' + (f'+eat_blocks_{a.music_eat}' if eat else ''),
@@ -246,10 +257,14 @@ def final(a, rows, init) -> None:
         data = {s: items_for(rows[s], a.cache, [12], 'voice', dfarena=True) for s in rows}
         preds, every = [], []
         for seed in (41, 42, 43):
-            model, val_eer, epochs = train('voice', data['train'], data['val'], old_init['state_dict'] if a.voice_arch == 'linear' else None,
-                                           old_fake, seed=seed, arch=a.voice_arch, max_epochs=a.voice_epochs, patience=a.voice_patience)
             path = a.out / f'voice_{seed}.pt'
-            torch.save({'model': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}, 'route': 'voice', 'seed': seed,
+            if a.reuse_voice:
+                model, val_eer, epochs = reused(path.name)
+            else:
+                model, val_eer, epochs = train('voice', data['train'], data['val'], old_init['state_dict'] if a.voice_arch == 'linear' else None,
+                                               old_fake, seed=seed, arch=a.voice_arch, max_epochs=a.voice_epochs, patience=a.voice_patience)
+            if not a.reuse_voice:
+                torch.save({'model': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}, 'route': 'voice', 'seed': seed,
                         'arch': a.voice_arch, 'epoch': getattr(model, 'best_epoch', epochs), 'epochs_run': epochs, 'validation_eer': val_eer,
                         'fake_label_index': old_fake, 'voice_module': 'backbone.conformer.fc5', 'features': 'dfarena_fc5_input',
                         'train_ids': [x.row['ID'] for x, _ in data['train']]}, path)
@@ -295,6 +310,7 @@ def final(a, rows, init) -> None:
         'rows': {'train_with_backbone': sum((a.cache / f"{r['ID']}.npz").exists() for r in rows['train']), 'val_with_backbone': len(val_rows)},
         'voice_ours': str(a.ours) if a.voice_arch == 'copy' else f'retrained {a.voice_arch}', 'ad_arch': a.ad_arch,
         'voice_epochs': a.voice_epochs, 'voice_patience': a.voice_patience,
+        'voice_heads_reused_from': a.reuse_voice and str(a.reuse_voice),
         'music_layers': a.music_layers, 'music_eat': a.music_eat, 'eat_cache': [str(c) for c in a.eat_cache],
         'music_rows_with_eat': eat and {s: sum(r['ID'] in eat[0] for r in rows[s] if T.head_labels(r).get('music') is not None) for s in rows},
         'ad_weight': a.ad_weight, 'file_ensemble': ens_report}, indent=1) + '\n')

@@ -1,0 +1,49 @@
+{
+ "protocol": "P1 refit: data v4 train + held-out test as train, val early stopping",
+ "rows": {
+  "train_with_backbone": 37108,
+  "val_with_backbone": 4931
+ },
+ "voice_ours": "retrained mlp",
+ "ad_arch": "resmlp",
+ "voice_epochs": 150,
+ "voice_patience": 10,
+ "voice_heads_reused_from": "_workspace/final_s4_20260927",
+ "music_layers": [
+  6,
+  12
+ ],
+ "music_eat": [
+  16
+ ],
+ "eat_cache": [
+  "_workspace/newbackbone_cache",
+  "_workspace/eat_extra_cache"
+ ],
+ "music_rows_with_eat": {
+  "train": 12218,
+  "val": 1752
+ },
+ "ad_weight": 0.5,
+ "file_ensemble": {
+  "candidates_alone": {
+   "max": 0.03509,
+   "noisy_or": 0.03509,
+   "max_nopresence": 0.0453
+  },
+  "equal_weights_eer": 0.03633,
+  "grid_best_eer": 0.03432,
+  "grid_best_weights": {
+   "max": 2,
+   "max_nopresence": 1,
+   "noisy_or": 7
+  },
+  "chosen_weights": {
+   "max": 2,
+   "max_nopresence": 1,
+   "noisy_or": 7
+  },
+  "chosen_rule": "grid",
+  "val_n": 4927
+ }
+}
