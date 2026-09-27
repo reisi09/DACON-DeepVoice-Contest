@@ -1,0 +1,18 @@
+{
+ "written": "2026-09-27 19:12 KST",
+ "held_out_numbers_seen_by_this_study_before_lock": "none (no variant trained yet)",
+ "question": "Do (L) label completion of AI-generated vocals already in data v4 and/or (S) SingMOS-Pro singing clips improve the voice heads under the DB protocol?",
+ "protocol": "DB: R2 pinned rows (research/top15/work2/backbones/rows_r2.txt), train split -> data v4 val early stop -> held-out test reported once. Voice members retrained per variant with the R2 recipes: voice_df mlp_long (DF-Arena fc5 inputs, old cache) and voice_ad resmlp_long (AntiDeepfake embeddings), seeds 41/42/43, seed-mean probabilities. Music = S5 baseline runs/music_new__mert6_12+eat16 (fixed). VOICE = val-CDF fusion ours 1 + ad 0.5; shared presence heads; FILE ensemble refit on val (ads.py semantics).",
+ "variants": {
+  "base": "R2 recipes on the original labels; must reproduce research/top15/work/r2/runs voice_df__mlp_long / voice_ad__resmlp_long predictions (plumbing check, not a selection)",
+  "L": "label completion on TRAIN rows: VOICE_FAKE := 1 (mask 1) where VOICE_PRESENT=1 (mask 1), VOICE_FAKE unknown, MUSIC_FAKE=1 (mask 1), event_intervals empty, and the whole track is generated: sources existing:SONICS, existing:suno, existing:udio, existing:HAIM (acestep, musicgen), existing:Echoes/*/TTA, existing:FakeMusicCaps only when its MusicCaps caption mentions vocals (research/top15/work4/fmc_caption_vocal.json). Excluded: haim crossfade/concat (partial), existing:constructed_music, Echoes ATA (reference-conditioned).",
+  "S": "add SingMOS-Pro (TangRain/SingMOS-Pro rev 9e83332dc481752ce17146ced86aa68da0bd84aa, CC BY 4.0) split=train rows of type gt (VOICE_FAKE 0) / svs, svc (VOICE_FAKE 1) to TRAIN; svr (vocoder/codec resynthesis) excluded as label-ambiguous under the DACON definition; source 'singmos_pro', generator = model_name (gt -> 'bonafide'); features from research/top15/work4/extract_voice_feats.py (runtime voice path). SingMOS split=test rows: in-domain sanity report only.",
+  "LS": "L + S, evaluated only if both L and S pass individually"
+ },
+ "metrics": "held-out official ADS on the ORIGINAL labels + group bootstrap (test group_id, 1000 reps, rng 0) vs base; val official ADS; val_completed = val voice EER after applying rule L to val rows; held-out voice EER on music-context rows (VOICE_PRESENT=1 and MUSIC_PRESENT=1)",
+ "gates": {
+  "L": "non-inferiority: held-out dADS >= -0.001 and bootstrap P(dADS < -0.003) <= 0.05, and val_completed ensemble voice EER lower than base (label completion is justified by the competition definition; the held-out cannot score full-track AI songs because none have vocal labels there)",
+  "S": "held-out dADS >= +0.002 and bootstrap P(dADS > 0) >= 0.90",
+  "LS": "held-out dADS >= the better single variant's dADS"
+ }
+}
