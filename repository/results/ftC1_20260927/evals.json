@@ -1,0 +1,112 @@
+[
+ {
+  "kind": "eval",
+  "step": 0,
+  "epoch": 0.0,
+  "val_eer": 0.11785888938996936,
+  "val_auc": 0.9440813196557389,
+  "val_bce": 0.4750763647777966,
+  "improved": true,
+  "windows": 12883,
+  "seconds": 46.7
+ },
+ {
+  "kind": "eval",
+  "step": 96,
+  "epoch": 0.497,
+  "val_eer": 0.03085577571383358,
+  "val_auc": 0.9950561115011954,
+  "val_bce": 0.08149698246864752,
+  "improved": true,
+  "windows": 12883,
+  "seconds": 44.3
+ },
+ {
+  "kind": "eval",
+  "step": 192,
+  "epoch": 0.995,
+  "val_eer": 0.029066474353241424,
+  "val_auc": 0.9957357415642489,
+  "val_bce": 0.08881384057437901,
+  "improved": true,
+  "windows": 12883,
+  "seconds": 44.3
+ },
+ {
+  "kind": "eval",
+  "step": 288,
+  "epoch": 1.492,
+  "val_eer": 0.029066474353241424,
+  "val_auc": 0.9960677866767146,
+  "val_bce": 0.07834196091520107,
+  "improved": true,
+  "windows": 12883,
+  "seconds": 44.3
+ },
+ {
+  "kind": "eval",
+  "step": 384,
+  "epoch": 1.99,
+  "val_eer": 0.04181041016927006,
+  "val_auc": 0.9900998545597967,
+  "val_bce": 0.17113154013307907,
+  "improved": false,
+  "windows": 12883,
+  "seconds": 44.6
+ },
+ {
+  "kind": "eval",
+  "step": 480,
+  "epoch": 2.487,
+  "val_eer": 0.026676986387736107,
+  "val_auc": 0.9961270917732117,
+  "val_bce": 0.08820338539175694,
+  "improved": true,
+  "windows": 12883,
+  "seconds": 44.3
+ },
+ {
+  "kind": "eval",
+  "step": 576,
+  "epoch": 2.984,
+  "val_eer": 0.02090520508463503,
+  "val_auc": 0.9972510343506548,
+  "val_bce": 0.07099452158416754,
+  "improved": true,
+  "windows": 12883,
+  "seconds": 44.4
+ },
+ {
+  "kind": "eval",
+  "step": 672,
+  "epoch": 3.482,
+  "val_eer": 0.022694506445227133,
+  "val_auc": 0.997381378707125,
+  "val_bce": 0.08462829449683798,
+  "improved": false,
+  "windows": 12883,
+  "seconds": 44.3
+ },
+ {
+  "kind": "eval",
+  "step": 768,
+  "epoch": 3.979,
+  "val_eer": 0.024287498422230734,
+  "val_auc": 0.9969824171488789,
+  "val_bce": 0.07988273612659996,
+  "improved": false,
+  "windows": 12883,
+  "seconds": 44.3
+ },
+ {
+  "kind": "eval",
+  "step": 772,
+  "epoch": 4.0,
+  "val_eer": 0.024287498422230734,
+  "val_auc": 0.9969824171488789,
+  "val_bce": 0.07988273367903681,
+  "improved": false,
+  "windows": 12883,
+  "seconds": 44.3
+ }
+]

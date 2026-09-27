@@ -51,3 +51,11 @@ cache is complete; package; offline + runtime parity verification; hand to user 
   val+test -> music train -> rest.
 - Next: when extraction ends (~17:25 KST) pull /root/newbackbone_cache, run work2/backbones/run.py + ads.py gate
   (locked val rule in work2/backbones/choice_lock.json), build S5 if the gate passes.
+
+## 17:28 KST — ftC1 fine-tune rejected; S5 screens running
+- ftC1 (H100x4, 772 steps, best step 576): val voice EER 0.118 -> 0.021 but held-out member voice EER 0.128
+  (frozen DF-Arena heads 0.090, frozen AD ResMLP 0.117). DB gate option R: held-out dADS -0.0040, P(>0) 0.008 -> FAIL.
+  Fine-tuning learns in-domain source cues; no further FT runs (choosing FT variants by held-out would be snooping).
+- MuQ/EAT extraction ended at the 95-min cap: 19,327/31,270 rows (all val/test, all music-train, 3,844/15,787 voice-only
+  train rows), pulled to _workspace/newbackbone_cache. Both workspaces paused; credit $90.66, burn $0.
+- Running (local CPU): choice_lock A1 music screen (muq0..12, eat4..24) + A3 voice screen (muqv0..12).

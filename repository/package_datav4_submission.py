@@ -32,6 +32,10 @@ TRAINED = [f'{r}_{s}.pt' for r in ('music', 'voice') for s in (41, 42, 43)] + [
 FUSION = None
 DETECTORS: dict[str, Path] = {}
 SONICS = ROOT / '_workspace/models/sonics-spectttra-alpha-120s'
+# EAT-large (backing stem) for heads with music_eat_layers.json: the fp16 weight file the training features were extracted with
+EAT = ROOT / 'research/top15/work2/backbones/ckpt/EAT-large_epoch20_finetune_AS2M'
+EAT_SHA = '36833579b39c6858bacf369df077c567f22130d327a594ac4bb70de31755de27'
+EAT_CODE = ROOT / 'research/top15/work2/backbones/vendor/eat_core'
 VENDORED = {'sonics': ROOT / '_workspace/models/sonics-main/sonics', 'timm': ROOT / '.venv/lib/python3.11/site-packages/timm'}
 
 
@@ -47,12 +51,19 @@ def replacements() -> dict[str, bytes]:
     if runtime.count(OLD_CANDIDATE) != 1:
         raise ValueError('unexpected candidate declaration in full_bank_submission.py')
     out = {'model/trained/' + n: (HEADS / n).read_bytes() for n in TRAINED}
-    for n in [f'voice_ad_{s}.pt' for s in (41, 42, 43)] + ['music_layers.json']:   # optional new-backbone heads
+    for n in [f'voice_ad_{s}.pt' for s in (41, 42, 43)] + ['music_layers.json', 'music_eat_layers.json']:   # optional new-backbone heads
         if (HEADS / n).exists():
             if n.endswith('.pt') and lock['checkpoints'].get(n) != sha256(HEADS / n):
                 raise ValueError(f'checkpoint differs from its candidate lock: {n}')
             out['model/trained/' + n] = (HEADS / n).read_bytes()
     out['model/trained/presence_head.json'] = PRESENCE.read_bytes()
+    if (HEADS / 'music_eat_layers.json').exists():
+        if sha256(EAT / 'model_fp16.safetensors') != EAT_SHA:
+            raise ValueError('EAT fp16 weights differ from the file the training features were extracted with')
+        for f in ('config.json', 'model_fp16.safetensors'):
+            out[f'model/assets/eat/{f}'] = (EAT / f).read_bytes()
+        for f in sorted(EAT_CODE.glob('*.py')):
+            out[f'model/runtime/eat_core/{f.name}'] = f.read_bytes()
     out['model/runtime/full_bank_submission.py'] = runtime.replace(OLD_CANDIDATE, f'CANDIDATE = {CANDIDATE!r}'.encode())
     out['model/runtime/decision_heads.py'] = (ROOT / 'decision_heads.py').read_bytes()
     out['model/runtime/voice_heads.py'] = (ROOT / 'voice_heads.py').read_bytes()   # imported by full_bank_submission

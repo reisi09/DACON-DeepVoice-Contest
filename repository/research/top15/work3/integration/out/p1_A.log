@@ -1,0 +1,39 @@
+{
+ "option": "A",
+ "weights": {
+  "ours": 1,
+  "ad": 0.5,
+  "ft": 0.5
+ },
+ "val_rows": 4931,
+ "non_silent": 4931,
+ "file_ensemble": {
+  "candidates_alone": {
+   "max": 0.06106,
+   "noisy_or": 0.06153,
+   "max_nopresence": 0.07265
+  },
+  "equal_weights_eer": 0.06029,
+  "grid_best_eer": 0.06029,
+  "grid_best_weights": {
+   "max": 2,
+   "max_nopresence": 4,
+   "noisy_or": 4
+  },
+  "chosen_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "chosen_rule": "equal (grid gain 0.0000 < 0.002)",
+  "val_n": 4927
+ },
+ "val_official": {
+  "file_eer": 0.06029,
+  "voice_eer": 0.03385,
+  "music_eer": 0.10621,
+  "voice_presence_auc": 0.9988,
+  "music_presence_auc": 0.99696
+ },
+ "val_ads": 0.93122
+}

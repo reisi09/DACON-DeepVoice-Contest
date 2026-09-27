@@ -19,6 +19,7 @@ import decision_heads
 import voice_heads
 
 CANDIDATE = 'balanced7144_MERT330M_WindowMIL_DFfc5_8020'
+EAT_MEAN, EAT_STD = -4.268, 4.569   # EAT-large model card fbank normalisation (as extract_new_backbones.py)
 
 
 def load_heads(root: Path, device):
@@ -75,6 +76,17 @@ class Engine:
         if any(info.values()):
             raise SubmissionError('MERT weights did not load exactly')
         self.mert.to(self.device).eval().requires_grad_(False)
+        # optional: EAT-large blocks of the backing stem appended to the MERT music features (music_eat_layers.json)
+        self.eat_blocks, self.eat = read('music_eat_layers.json') or [], None
+        if self.eat_blocks:
+            from safetensors.torch import load_file
+            from eat_core import EAT, EATConfig
+            config = json.loads((assets/'eat'/'config.json').read_text())
+            self.eat = EAT(EATConfig(**{k: v for k, v in config.items() if k not in (
+                'architectures', 'auto_map', 'model_type', 'torch_dtype', 'transformers_version')}))
+            state = {k.removeprefix('model.'): v.float() for k, v in load_file(str(assets/'eat'/'model_fp16.safetensors')).items()}
+            self.eat.load_state_dict(state, strict=True)
+            self.eat.to(self.device).eval().requires_grad_(False)
         self.music_heads, self.voice_heads, self.fake_index = load_heads(trained, self.device)
         if original_fake != self.fake_index:
             raise SubmissionError('DF-Arena fake label mapping changed')
@@ -106,6 +118,8 @@ class Engine:
             hidden = self.mert(values, output_hidden_states=True).hidden_states
             features.append(torch.cat([hidden[k].mean(1).float() for k in self.music_layers], -1))
         features = torch.cat(features)
+        if self.eat is not None:
+            features = torch.cat([features, self.eat_features(windows(backing, starts))], -1)
         music = []   # heads in fp32, as trained and as the fusion tables were fitted
         for head in self.music_heads:
             logits, _ = head.head((features-head.mean)/head.scale)
@@ -134,6 +148,29 @@ class Engine:
             vf = cf.fuse(self.fusion['voice'], members)
         file = decision_heads.file_score(self.ensemble, dict(Pv=vp, Pm=mp, Fv=vf, Fm=mf))
         return dict(zip(PREDICTION_COLUMNS, (file, vf, mf, vp, mp), strict=True))
+
+
+    def eat_features(self, chunks):
+        """(n, 64600) 16 kHz backing windows -> (n, 1024 * len(eat_blocks)): mean over patch tokens (CLS excluded) of the
+        listed EAT blocks, the extract_new_backbones.py features the music heads were trained on."""
+        import torchaudio
+        model, out = self.eat, []
+        for offset in range(0, len(chunks), self.batch):
+            mels = []
+            for x in torch.from_numpy(np.asarray(chunks[offset:offset+self.batch], dtype=np.float32)).to(self.device):
+                mel = torchaudio.compliance.kaldi.fbank((x-x.mean())[None], htk_compat=True, sample_frequency=16000, use_energy=False,
+                                                        window_type='hanning', num_mel_bins=128, dither=0.0, frame_shift=10)
+                mels.append((mel[:len(mel)//16*16]-EAT_MEAN)/(EAT_STD*2))   # whole 16-frame patches
+            x = model.local_encoder(torch.stack(mels)[:, None])
+            x = x+model.fixed_positional_encoder(x, None)[:, :x.size(1), :]
+            x = model.pos_drop(model.pre_norm(torch.cat((model.extra_tokens.expand(len(x), -1, -1), x), 1)))
+            blocks = {}
+            for index, block in enumerate(model.blocks[:max(self.eat_blocks)], 1):
+                x, _ = block(x)
+                if index in self.eat_blocks:
+                    blocks[index] = x[:, 1:].mean(1)
+            out.append(torch.cat([blocks[k] for k in self.eat_blocks], -1).float())
+        return torch.cat(out)
 
 
 def run(root: Path):

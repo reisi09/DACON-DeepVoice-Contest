@@ -1,0 +1,46 @@
+{
+ "best": {
+  "kind": "eval",
+  "step": 576,
+  "epoch": 2.984,
+  "val_eer": 0.02090520508463503,
+  "val_auc": 0.9972510343506548,
+  "val_bce": 0.07099452158416754,
+  "improved": true,
+  "windows": 12883,
+  "seconds": 44.4
+ },
+ "zero_shot": {
+  "kind": "eval",
+  "step": 0,
+  "epoch": 0.0,
+  "val_eer": 0.11785888938996936,
+  "val_auc": 0.9440813196557389,
+  "val_bce": 0.4750763647777966,
+  "improved": true,
+  "windows": 12883,
+  "seconds": 46.7
+ },
+ "steps": 772,
+ "total_steps": 772,
+ "stopped_early": false,
+ "train_windows": 98816,
+ "train_loop_seconds": 123.0,
+ "wall_seconds": 709.3,
+ "eval_seconds": 445.8,
+ "peak_gpu_gb": 35.28,
+ "params": {
+  "trainable_tensors": 260,
+  "changed_tensors": 260,
+  "changed_outside_trainable": [],
+  "trainable_unchanged": []
+ },
+ "roundtrip": {
+  "weights_exact": true,
+  "files": 16,
+  "windows": 47,
+  "max_abs_prob_diff_vs_fp32": 0.001761019229888916,
+  "ok": false,
+  "unused_training_only": 7
+ }
+}

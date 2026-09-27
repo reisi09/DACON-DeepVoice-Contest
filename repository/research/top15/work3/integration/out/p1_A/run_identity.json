@@ -1,0 +1,50 @@
+{
+ "protocol": "P1 refit: data v4 train + held-out test as train, val early stopping",
+ "rows": {
+  "train_with_backbone": 37108,
+  "val_with_backbone": 4931
+ },
+ "voice_ours": "retrained mlp",
+ "ad_arch": "resmlp",
+ "voice_epochs": 150,
+ "voice_patience": 10,
+ "music_layers": [
+  6,
+  12
+ ],
+ "ad_weight": 0.5,
+ "file_ensemble": {
+  "candidates_alone": {
+   "max": 0.06106,
+   "noisy_or": 0.06153,
+   "max_nopresence": 0.07265
+  },
+  "equal_weights_eer": 0.06029,
+  "grid_best_eer": 0.06029,
+  "grid_best_weights": {
+   "max": 2,
+   "max_nopresence": 4,
+   "noisy_or": 4
+  },
+  "chosen_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "chosen_rule": "equal (grid gain 0.0000 < 0.002)",
+  "val_n": 4927
+ },
+ "voice_fusion": {
+  "ours": 1,
+  "ad": 0.5,
+  "ft": 0.5
+ },
+ "ft": {
+  "files": [
+   "standin/ft_val.csv"
+  ],
+  "column": "ft_max",
+  "definition": "fine-tuned AntiDeepfake-1B window-max fake prob on the voice stem (DB-protocol checkpoint)"
+ },
+ "fit": "research/top15/work3/integration/fit_ft_fusion.py p1"
+}

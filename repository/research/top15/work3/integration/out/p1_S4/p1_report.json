@@ -1,0 +1,46 @@
+{
+ "option": "S4",
+ "weights": {
+  "ours": 1,
+  "ad": 0.5
+ },
+ "val_rows": 4931,
+ "non_silent": 4931,
+ "file_ensemble": {
+  "candidates_alone": {
+   "max": 0.04869,
+   "noisy_or": 0.04807,
+   "max_nopresence": 0.06044
+  },
+  "equal_weights_eer": 0.04792,
+  "grid_best_eer": 0.0473,
+  "grid_best_weights": {
+   "max": 0,
+   "max_nopresence": 4,
+   "noisy_or": 6
+  },
+  "chosen_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "chosen_rule": "equal (grid gain 0.0006 < 0.002)",
+  "val_n": 4927
+ },
+ "val_official": {
+  "file_eer": 0.04792,
+  "voice_eer": 0.02429,
+  "music_eer": 0.10621,
+  "voice_presence_auc": 0.9988,
+  "music_presence_auc": 0.99696
+ },
+ "val_ads": 0.93932,
+ "s4_reproduction_max_abs": {
+  "voice_table_ours": 0.0,
+  "voice_table_ad": 0.0,
+  "file_table_max": 0.0,
+  "file_table_noisy_or": 0.0,
+  "file_table_max_nopresence": 0.0,
+  "file_weights_equal": true
+ }
+}

@@ -1,0 +1,14 @@
+WARNING: feature_extractor_cqt requires the libray 'nnAudio'
+WARNING: feature_extractor_cqt requires the libray 'nnAudio'
+{
+ "stored_dtypes": [
+  "torch.float16"
+ ],
+ "loaded_params_not_fp32": [],
+ "state_tensors_unequal": [],
+ "n_state_tensors": 403,
+ "hidden_6_12_max_abs_diff": 0.0,
+ "transformers": "4.57.6",
+ "torch": "2.7.1"
+}
+check_mert_fp16 ok

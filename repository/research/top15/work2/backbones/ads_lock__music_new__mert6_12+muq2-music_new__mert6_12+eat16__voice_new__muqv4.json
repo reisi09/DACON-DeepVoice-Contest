@@ -1,0 +1,86 @@
+{
+ "written": "2026-09-27 17:33:05 KST",
+ "rule": "choice_lock.json rule B (gate 0.002 val ADS; EAT only if +0.002 over MuQ-only; ties -> simpler)",
+ "rows": {
+  "val": 3680,
+  "test": 4822
+ },
+ "choice": {
+  "music": "music replace music_new__mert6_12+eat16",
+  "voice": null
+ },
+ "val": {
+  "baseline": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  },
+  "music replace music_new__mert6_12+muq2": {
+   "file_eer": 0.03804,
+   "voice_eer": 0.02147,
+   "music_eer": 0.08088,
+   "ads": 0.95242
+  },
+  "music fuse music_new__mert6_12+muq2 w0.5": {
+   "file_eer": 0.04487,
+   "voice_eer": 0.02147,
+   "music_eer": 0.09868,
+   "ads": 0.94367
+  },
+  "music fuse music_new__mert6_12+muq2 w1": {
+   "file_eer": 0.04238,
+   "voice_eer": 0.02147,
+   "music_eer": 0.09479,
+   "ads": 0.94608
+  },
+  "music fuse music_new__mert6_12+muq2 w2": {
+   "file_eer": 0.04053,
+   "voice_eer": 0.02147,
+   "music_eer": 0.09026,
+   "ads": 0.94836
+  },
+  "music replace music_new__mert6_12+eat16": {
+   "file_eer": 0.03804,
+   "voice_eer": 0.02147,
+   "music_eer": 0.07311,
+   "ads": 0.95475
+  },
+  "music fuse music_new__mert6_12+eat16 w0.5": {
+   "file_eer": 0.04219,
+   "voice_eer": 0.02147,
+   "music_eer": 0.09479,
+   "ads": 0.94617
+  },
+  "music fuse music_new__mert6_12+eat16 w1": {
+   "file_eer": 0.04033,
+   "voice_eer": 0.02147,
+   "music_eer": 0.08703,
+   "ads": 0.94943
+  },
+  "music fuse music_new__mert6_12+eat16 w2": {
+   "file_eer": 0.03784,
+   "voice_eer": 0.02147,
+   "music_eer": 0.077,
+   "ads": 0.95368
+  },
+  "voice add voice_new__muqv4 w0.25": {
+   "file_eer": 0.0457,
+   "voice_eer": 0.02359,
+   "music_eer": 0.11194,
+   "ads": 0.93885
+  },
+  "voice add voice_new__muqv4 w0.5": {
+   "file_eer": 0.04921,
+   "voice_eer": 0.02915,
+   "music_eer": 0.11194,
+   "ads": 0.93598
+  },
+  "voice add voice_new__muqv4 w1": {
+   "file_eer": 0.05687,
+   "voice_eer": 0.03896,
+   "music_eer": 0.11194,
+   "ads": 0.93019
+  }
+ }
+}

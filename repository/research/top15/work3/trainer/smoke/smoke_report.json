@@ -1,0 +1,128 @@
+{
+ "augment": {
+  "lowpass3400_1k_db": -6.3162216974888e-05,
+  "lowpass3400_6k_db": -54.097320556640625,
+  "lowpass8000_identity_err": 2.384185791015625e-07,
+  "tel_1k_db": 0.0021536960266530514,
+  "tel_100_db": -62.027626037597656,
+  "tel_5k_db": -45.041404724121094,
+  "snr20_white_db": 20.0,
+  "snr20_pink_db": 20.0,
+  "augment_shape_ok": true
+ },
+ "freeze_flops": {
+  "trainable_tensors": 260,
+  "trainable_params": 314844162,
+  "total_params": 962499970,
+  "fwd_gflops_per_window": 414.672382976,
+  "train_gflops_per_window": 674.208224256
+ },
+ "train_run": {
+  "seconds": 93.8
+ },
+ "train": {
+  "setup": {
+   "train_items": 6,
+   "train_fake": 3.0,
+   "val_items": 7,
+   "val_fake": 3.0,
+   "missing_stems": [
+    0,
+    1
+   ],
+   "trainable_params": 39360002,
+   "trainable_tensors": 36
+  },
+  "losses": [
+   4.268270492553711,
+   0.9465807676315308,
+   0.024768192321062088,
+   1.04290771484375,
+   0.6390693783760071,
+   0.17287030816078186,
+   0.2116832286119461,
+   0.3021751344203949
+  ],
+  "evals": [
+   [
+    0,
+    0.2916666666666667,
+    2.1751858066216534
+   ],
+   [
+    8,
+    0.0,
+    0.3739885122694321
+   ],
+   [
+    16,
+    0.0,
+    0.12801536910861838
+   ]
+  ],
+  "result": {
+   "best": {
+    "kind": "eval",
+    "step": 16,
+    "epoch": 8.0,
+    "val_eer": 0.0,
+    "val_auc": 1.0,
+    "val_bce": 0.12801536910861838,
+    "improved": true,
+    "windows": 29,
+    "seconds": 12.0
+   },
+   "zero_shot": {
+    "kind": "eval",
+    "step": 0,
+    "epoch": 0.0,
+    "val_eer": 0.2916666666666667,
+    "val_auc": 0.75,
+    "val_bce": 2.1751858066216534,
+    "improved": true,
+    "windows": 29,
+    "seconds": 12.1
+   },
+   "steps": 16,
+   "total_steps": 16,
+   "stopped_early": false,
+   "train_windows": 64,
+   "train_loop_seconds": 29.2,
+   "wall_seconds": 78.9,
+   "eval_seconds": 36.3,
+   "peak_gpu_gb": null,
+   "params": {
+    "trainable_tensors": 36,
+    "changed_tensors": 36,
+    "changed_outside_trainable": [],
+    "trainable_unchanged": []
+   },
+   "roundtrip": {
+    "weights_exact": true,
+    "files": 3,
+    "windows": 4,
+    "max_abs_prob_diff_vs_fp32": 0.0001741647720336914,
+    "ok": true,
+    "unused_training_only": 7
+   }
+  }
+ },
+ "score_run": {
+  "seconds": 33.4
+ },
+ "score": {
+  "rows": 17,
+  "max_abs_vs_runtime_predict": 2.266140654683113e-06,
+  "max_abs_fp16ckpt_vs_prefp16_val_best_nonsilent": 0.00023823976516723633,
+  "all_zero_silent_stem_drift (runtime scores it 0)": 0.0013678371906280518,
+  "best_step": 16
+ },
+ "h100_estimate": {
+  "train_tflop_per_step_per_gpu": 21.574663176192,
+  "steps_per_s_per_gpu_at_mfu": {
+   "0.25": 11.46,
+   "0.4": 18.34
+  },
+  "note": "H100 SXM dense bf16 peak 989 TFLOP/s; eager attention + elementwise CNN/LN ops not in the FLOP count"
+ }
+}

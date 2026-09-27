@@ -115,16 +115,16 @@ def main() -> None:
     ap.add_argument('--manifest', type=Path, required=True)
     ap.add_argument('--input', type=Path, required=True)
     ap.add_argument('--assets', type=Path, required=True, help='needs baseline/ (HTDemucs)')
-    ap.add_argument('--muq', type=Path, required=True)
+    ap.add_argument('--muq', type=Path, default=None, help='omit to skip MuQ (EAT-only rows)')
     ap.add_argument('--eat', type=Path, default=None, help='omit to skip EAT-large')
     ap.add_argument('--out', type=Path, required=True)
-    ap.add_argument('--code-root', type=Path, default=HERE.parents[3], help='project root (mert12_submission.py)')
+    ap.add_argument('--code-root', type=Path, default=None, help='project root (mert12_submission.py); default: this checkout')
     ap.add_argument('--shard', type=int, default=0)
     ap.add_argument('--shards', type=int, default=1)
     ap.add_argument('--device', default='cuda')
     ap.add_argument('--deadline', type=float, default=float('inf'), help='unix time; stop cleanly after it')
     a = ap.parse_args()
-    sys.path.insert(0, str(a.code_root))
+    sys.path.insert(0, str(a.code_root or HERE.parents[3]))
     from mert12_submission import baseline_module, pin_torchaudio_loader, window_layout, windows
     torch.backends.cuda.matmul.allow_tf32 = False   # runtime (full_bank_submission.run) computes without TF32
     torch.backends.cudnn.allow_tf32 = False
@@ -134,10 +134,10 @@ def main() -> None:
     base = baseline_module(a.assets)
     pin_torchaudio_loader(base)
     demucs = base.load_htdemucs_model().to(device).eval().requires_grad_(False)
-    muq = load_muq(a.muq, device)
+    muq = load_muq(a.muq, device) if a.muq else None
     eat = load_eat(a.eat, device) if a.eat else None
     if a.shard == 0:
-        (a.out / 'weights.json').write_text(json.dumps({'muq': sha256(fp16_weights(a.muq)), 'eat': a.eat and sha256(fp16_weights(a.eat)),
+        (a.out / 'weights.json').write_text(json.dumps({'muq': a.muq and sha256(fp16_weights(a.muq)), 'eat': a.eat and sha256(fp16_weights(a.eat)),
                                                         'muq_layers': MUQ_LAYERS, 'eat_layers': EAT_LAYERS}, indent=1))
     seconds, done, started = {'load_demucs': 0., 'muq': 0., 'eat': 0.}, 0, time.time()
     for i, row in enumerate(rows):
@@ -161,8 +161,8 @@ def main() -> None:
         starts = window_layout(len(raw))
         seconds['load_demucs'] += time.time() - t
         t = time.time()
-        extra = {'muq_backing': muq_features(muq, windows(backing, starts), device),
-                 'muq_voice': muq_features(muq, windows(voice, starts), device)}
+        extra = {} if muq is None else {'muq_backing': muq_features(muq, windows(backing, starts), device),
+                                        'muq_voice': muq_features(muq, windows(voice, starts), device)}
         seconds['muq'] += time.time() - t
         if eat is not None:
             t = time.time()

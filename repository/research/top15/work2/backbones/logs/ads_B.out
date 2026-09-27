@@ -1,0 +1,31 @@
+val choice {'music': 'music replace music_new__mert6_12+eat16', 'voice': None} {'baseline': 0.93845, 'music replace music_new__mert6_12+muq2': 0.95242, 'music fuse music_new__mert6_12+muq2 w0.5': 0.94367, 'music fuse music_new__mert6_12+muq2 w1': 0.94608, 'music fuse music_new__mert6_12+muq2 w2': 0.94836, 'music replace music_new__mert6_12+eat16': 0.95475, 'music fuse music_new__mert6_12+eat16 w0.5': 0.94617, 'music fuse music_new__mert6_12+eat16 w1': 0.94943, 'music fuse music_new__mert6_12+eat16 w2': 0.95368, 'voice add voice_new__muqv4 w0.25': 0.93885, 'voice add voice_new__muqv4 w0.5': 0.93598, 'voice add voice_new__muqv4 w1': 0.93019}
+{
+ "choice": {
+  "music": "music replace music_new__mert6_12+eat16",
+  "voice": null
+ },
+ "test": {
+  "baseline": {
+   "file_eer": 0.08343,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18467,
+   "ads": 0.88643
+  },
+  "music-only": {
+   "file_eer": 0.07928,
+   "voice_eer": 0.08227,
+   "music_eer": 0.1545,
+   "ads": 0.89755
+  }
+ },
+ "delta_vs_baseline_test": {
+  "music-only": {
+   "ads": 0.01112,
+   "ci95": [
+    0.00437,
+    0.01876
+   ],
+   "p_le_0": 0.0
+  }
+ }
+}
