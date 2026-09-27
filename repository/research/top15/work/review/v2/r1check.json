@@ -1,0 +1,126 @@
+{
+ "n_test": 6450,
+ "a_ensemble_test_ads": {
+  "control": 0.86348,
+  "max|mean": 0.86743,
+  "lme|lme": 0.86442,
+  "lme|mean": 0.86837
+ },
+ "b_single_seed": {
+  "41": {
+   "ads": {
+    "control": 0.85977,
+    "max|mean": 0.8686,
+    "lme|lme": 0.86106,
+    "lme|mean": 0.87128
+   },
+   "max|mean-control": 0.00884,
+   "lme|lme-control": 0.00129,
+   "lme|mean-control": 0.01151,
+   "music_eer_mean_minus_lme": -0.0214,
+   "voice_eer_lme_minus_max": -0.00097
+  },
+  "42": {
+   "ads": {
+    "control": 0.8578,
+    "max|mean": 0.85711,
+    "lme|lme": 0.85819,
+    "lme|mean": 0.85711
+   },
+   "max|mean-control": -0.0007,
+   "lme|lme-control": 0.00039,
+   "lme|mean-control": -0.0007,
+   "music_eer_mean_minus_lme": 0.0018,
+   "voice_eer_lme_minus_max": 0.0
+  },
+  "43": {
+   "ads": {
+    "control": 0.86503,
+    "max|mean": 0.8686,
+    "lme|lme": 0.86585,
+    "lme|mean": 0.86949
+   },
+   "max|mean-control": 0.00357,
+   "lme|lme-control": 0.00082,
+   "lme|mean-control": 0.00446,
+   "music_eer_mean_minus_lme": -0.01084,
+   "voice_eer_lme_minus_max": -0.00137
+  }
+ },
+ "b_summary": {
+  "max|mean-control": {
+   "mean": 0.0039,
+   "sd": 0.00478,
+   "n_gt0": 2
+  },
+  "lme|lme-control": {
+   "mean": 0.00083,
+   "sd": 0.00045,
+   "n_gt0": 3
+  },
+  "lme|mean-control": {
+   "mean": 0.00509,
+   "sd": 0.00613,
+   "n_gt0": 2
+  },
+  "music_eer_mean_minus_lme": {
+   "mean": -0.01015,
+   "sd": 0.01162,
+   "n_gt0": 1
+  },
+  "voice_eer_lme_minus_max": {
+   "mean": -0.00078,
+   "sd": 0.0007,
+   "n_gt0": 0
+  }
+ },
+ "c_test_group_bootstrap": {
+  "max|mean": {
+   "point": 0.00395,
+   "boot_mean": 0.00374,
+   "sd": 0.00277,
+   "pct_ci95": [
+    -0.00147,
+    0.00909
+   ],
+   "basic_ci95": [
+    -0.00119,
+    0.00937
+   ],
+   "p_gt0": 0.911,
+   "n": 1000
+  },
+  "lme|lme": {
+   "point": 0.00094,
+   "boot_mean": 0.0012,
+   "sd": 0.00081,
+   "pct_ci95": [
+    -0.0003,
+    0.00295
+   ],
+   "basic_ci95": [
+    -0.00107,
+    0.00218
+   ],
+   "p_gt0": 0.938,
+   "n": 1000
+  },
+  "lme|mean": {
+   "point": 0.00489,
+   "boot_mean": 0.00497,
+   "sd": 0.00286,
+   "pct_ci95": [
+    -0.00049,
+    0.0109
+   ],
+   "basic_ci95": [
+    -0.00112,
+    0.01027
+   ],
+   "p_gt0": 0.964,
+   "n": 1000
+  }
+ },
+ "test_groups": 2730,
+ "seconds": 13
+}

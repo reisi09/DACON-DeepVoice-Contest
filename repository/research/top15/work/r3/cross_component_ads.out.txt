@@ -1,0 +1,4 @@
+val voice EER top-5: [(0.031, (1, 0.5, 'hard')), (0.031, (1, 0.5, 'soft')), (0.0313, (1, 1, 'hard')), (0.0313, (1, 1, 'soft')), (0.0323, (0.5, 0.25, 'hard'))]
+S3 config (a=.5, no music member) {'val': {'file_eer': 0.0596, 'voice_eer': 0.0376, 'music_eer': 0.1119, 'ads': 0.92912}, 'test': {'file_eer': 0.0996, 'voice_eer': 0.1106, 'music_eer': 0.1847, 'ads': 0.87267}}
+song-aware VOICE val-best (1, 0.5, 'soft') {'val': {'file_eer': 0.0604, 'voice_eer': 0.031, 'music_eer': 0.1119, 'ads': 0.93003}, 'test': {'file_eer': 0.1021, 'voice_eer': 0.0875, 'music_eer': 0.1847, 'ads': 0.87605}}
+song-aware VOICE output only, FILE decoupled (1, 0.5, 'soft') {'val': {'file_eer': 0.0596, 'voice_eer': 0.031, 'music_eer': 0.1119, 'ads': 0.93044}, 'test': {'file_eer': 0.0996, 'voice_eer': 0.0875, 'music_eer': 0.1847, 'ads': 0.87731}}

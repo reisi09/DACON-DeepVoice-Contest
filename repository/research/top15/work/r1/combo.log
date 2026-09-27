@@ -1,0 +1,33 @@
+DB_3seed {'file': 0.07003, 'voice': 0.05096, 'music': 0.12015, 'ADS': 0.91875} {'file': 0.1094, 'voice': 0.11071, 'music': 0.20005, 'ADS': 0.86314} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1} None
+ctrl_1seed {'file': 0.07141, 'voice': 0.05077, 'music': 0.12183, 'ADS': 0.91759} {'file': 0.11314, 'voice': 0.10974, 'music': 0.20572, 'ADS': 0.85977} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1} None
+music_mean {'file': 0.06864, 'voice': 0.05077, 'music': 0.11153, 'ADS': 0.92207} {'file': 0.1083, 'voice': 0.10974, 'music': 0.18432, 'ADS': 0.86861} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1} {'file': {'ci95': [-0.01074, 0.00033], 'p_le_0': 0.964}, 'voice': {'ci95': [0.0, 0.0], 'p_le_0': 1.0}, 'music': {'ci95': [-0.03594, -0.0062], 'p_le_0': 0.997}}
+voice_mean {'file': 0.07127, 'voice': 0.05017, 'music': 0.12183, 'ADS': 0.91778} {'file': 0.11391, 'voice': 0.10724, 'music': 0.20572, 'ADS': 0.85988} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1} {'file': {'ci95': [-0.00713, 0.00475], 'p_le_0': 0.56}, 'voice': {'ci95': [-0.0101, 0.00215], 'p_le_0': 0.888}, 'music': {'ci95': [0.0, 0.0], 'p_le_0': 1.0}}
+voice_lme {'file': 0.07017, 'voice': 0.04918, 'music': 0.12183, 'ADS': 0.91853} {'file': 0.11095, 'voice': 0.10877, 'music': 0.20572, 'ADS': 0.86105} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1} {'file': {'ci95': [-0.00505, 0.00097], 'p_le_0': 0.926}, 'voice': {'ci95': [-0.0068, 0.00255], 'p_le_0': 0.839}, 'music': {'ci95': [0.0, 0.0], 'p_le_0': 1.0}}
+both_mean {'file': 0.06678, 'voice': 0.05017, 'music': 0.11153, 'ADS': 0.92312} {'file': 0.10444, 'voice': 0.10724, 'music': 0.18432, 'ADS': 0.87104} {'max': 0, 'max_nopresence': 2, 'noisy_or': 8} {'file': {'ci95': [-0.01821, -0.00068], 'p_le_0': 0.979}, 'voice': {'ci95': [-0.0101, 0.00215], 'p_le_0': 0.888}, 'music': {'ci95': [-0.03594, -0.0062], 'p_le_0': 0.997}}
+voice_lme_music_mean {'file': 0.0643, 'voice': 0.04918, 'music': 0.11153, 'ADS': 0.92456} {'file': 0.10334, 'voice': 0.10877, 'music': 0.18432, 'ADS': 0.87128} {'max': 2, 'max_nopresence': 2, 'noisy_or': 6} {'file': {'ci95': [-0.01647, -0.00374], 'p_le_0': 0.998}, 'voice': {'ci95': [-0.0068, 0.00255], 'p_le_0': 0.839}, 'music': {'ci95': [-0.03594, -0.0062], 'p_le_0': 0.997}}
+music lme k1 eer 0.2057 mixed 0.11455 r8f1 0.2553 FPR k1..8 [0.2056, 0.2895, 0.3333, 0.3665, 0.3973, 0.4092, 0.4092, 0.4272] FNR [0.2058, 0.068, 0.0272, 0.0227, 0.0204, 0.0217, 0.0207, 0.0223]
+file max k1 eer 0.1131 mixed 0.05753 r8f1 0.15502 FPR k1..8 [0.1131, 0.1763, 0.2266, 0.267, 0.2939, 0.3103, 0.3183, 0.325] FNR [0.1132, 0.0252, 0.0105, 0.0071, 0.007, 0.0064, 0.0057, 0.0065]
+music mean k1 eer 0.1843 mixed 0.07897 r8f1 0.12916 FPR k1..8 [0.1842, 0.1246, 0.0808, 0.0643, 0.0519, 0.0513, 0.0493, 0.0495] FNR [0.1845, 0.1068, 0.0693, 0.0583, 0.0531, 0.0524, 0.0531, 0.0479]
+file max k1 eer 0.1083 mixed 0.05157 r8f1 0.11447 FPR k1..8 [0.1084, 0.1083, 0.114, 0.1257, 0.13, 0.1339, 0.1294, 0.1271] FNR [0.1082, 0.0353, 0.0201, 0.0132, 0.0116, 0.0113, 0.0111, 0.0109]
+music mean k1 eer 0.1843 mixed 0.07897 r8f1 0.12916 FPR k1..8 [0.1842, 0.1246, 0.0808, 0.0643, 0.0519, 0.0513, 0.0493, 0.0495] FNR [0.1845, 0.1068, 0.0693, 0.0583, 0.0531, 0.0524, 0.0531, 0.0479]
+file mean_logit k1 eer 0.1044 mixed 0.04257 r8f1 0.06937 FPR k1..8 [0.1045, 0.0706, 0.0485, 0.0409, 0.0383, 0.0318, 0.031, 0.0299] FNR [0.1044, 0.0541, 0.0343, 0.0246, 0.0229, 0.0225, 0.0203, 0.0202]
+music mean k1 eer 0.1843 mixed 0.07897 r8f1 0.12916 FPR k1..8 [0.1842, 0.1246, 0.0808, 0.0643, 0.0519, 0.0513, 0.0493, 0.0495] FNR [0.1845, 0.1068, 0.0693, 0.0583, 0.0531, 0.0524, 0.0531, 0.0479]
+file lme k1 eer 0.1037 mixed 0.04164 r8f1 0.08748 FPR k1..8 [0.1037, 0.0922, 0.0734, 0.0682, 0.0658, 0.062, 0.061, 0.0579] FNR [0.1037, 0.0382, 0.022, 0.014, 0.0121, 0.0122, 0.0118, 0.0118]
+       48.33 real        47.99 user         0.26 sys
+           387022848  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               59697  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                9962  involuntary context switches
+       1020552070258  instructions retired
+        210826395094  cycles elapsed
+           329073432  peak memory footprint

@@ -1,0 +1,121 @@
+{
+ "file": {
+  "base": 0.1094,
+  "type_platt": 0.11778,
+  "ORACLE_type_platt": 0.11017,
+  "type_llr": 0.1201,
+  "ORACLE_type_llr": 0.12242,
+  "dur_only": 0.10817,
+  "ORACLE_dur_only": 0.10817,
+  "type_dur_llr": 0.11701,
+  "ORACLE_type_dur_llr": 0.11778,
+  "gain_ci95_vs_base": {
+   "type_platt": [
+    -0.0127,
+    -0.0031
+   ],
+   "type_llr": [
+    -0.015,
+    -0.0047
+   ],
+   "dur_only": [
+    -0.0023,
+    0.0051
+   ],
+   "type_dur_llr": [
+    -0.0126,
+    -0.0019
+   ]
+  },
+  "n_test": 6444,
+  "type_counts_test": {
+   "2": 3585,
+   "3": 1655,
+   "1": 1190,
+   "0": 14
+  }
+ },
+ "voice": {
+  "base": 0.11071,
+  "type_platt": 0.10684,
+  "ORACLE_type_platt": 0.09458,
+  "type_llr": 0.1049,
+  "ORACLE_type_llr": 0.10022,
+  "dur_only": 0.11014,
+  "ORACLE_dur_only": 0.11111,
+  "type_dur_llr": 0.09789,
+  "ORACLE_type_dur_llr": 0.08934,
+  "gain_ci95_vs_base": {
+   "type_platt": [
+    0.0004,
+    0.0076
+   ],
+   "type_llr": [
+    0.0025,
+    0.0116
+   ],
+   "dur_only": [
+    -0.0012,
+    0.0026
+   ],
+   "type_dur_llr": [
+    0.007,
+    0.0186
+   ]
+  },
+  "n_test": 5139,
+  "type_counts_test": {
+   "2": 3584,
+   "3": 1516,
+   "1": 37,
+   "0": 2
+  }
+ },
+ "music": {
+  "base": 0.20005,
+  "type_platt": 0.20289,
+  "ORACLE_type_platt": 0.20289,
+  "type_llr": 0.20109,
+  "ORACLE_type_llr": 0.20392,
+  "dur_only": 0.20572,
+  "ORACLE_dur_only": 0.19619,
+  "type_dur_llr": 0.20882,
+  "ORACLE_type_dur_llr": 0.20882,
+  "gain_ci95_vs_base": {
+   "type_platt": [
+    -0.0146,
+    0.0069
+   ],
+   "type_llr": [
+    -0.012,
+    0.0076
+   ],
+   "dur_only": [
+    -0.0119,
+    0.0019
+   ],
+   "type_dur_llr": [
+    -0.019,
+    0.0005
+   ]
+  },
+  "n_test": 2849,
+  "type_counts_test": {
+   "3": 1606,
+   "1": 1190,
+   "2": 40,
+   "0": 13
+  }
+ },
+ "ADS": {
+  "base": 0.86314,
+  "type_platt": 0.85888,
+  "ORACLE_type_platt": 0.86513,
+  "type_llr": 0.85864,
+  "ORACLE_type_llr": 0.85757,
+  "dur_only": 0.86217,
+  "ORACLE_dur_only": 0.86484,
+  "type_dur_llr": 0.85927,
+  "ORACLE_type_dur_llr": 0.8606
+ }
+}

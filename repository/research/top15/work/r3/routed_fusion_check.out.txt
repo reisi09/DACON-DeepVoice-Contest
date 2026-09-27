@@ -1,0 +1,25 @@
+rows val/test 2845 3841 | test music-context share 0.304
+ours only                                     val voice EER 0.0509  test voice EER 0.1195  [test speech-ctx 0.0478, music-ctx 0.2175]
+global w=0.5 (S3)                             val voice EER 0.0376  test voice EER 0.1106  [test speech-ctx 0.0348, music-ctx 0.2123]
+global w=1                                    val voice EER 0.0366  test voice EER 0.1125  [test speech-ctx 0.0359, music-ctx 0.2269]
+routed val-best w_speech=1 w_music=4          val voice EER 0.0358  test voice EER 0.1171  [test speech-ctx 0.0359, music-ctx 0.2389]
+test voice EER gain routed vs global 0.5 (positive = routed better): median -0.0069, 95% CI [-0.0161, 0.0022], 2112 groups
+ADS equivalent = 0.2 x voice EER gain (+ indirect FILE effect not modelled)
+        1.40 real         1.28 user         0.10 sys
+           283459584  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               36239  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                 182  involuntary context switches
+         22440187735  instructions retired
+          5920717837  cycles elapsed
+           234554064  peak memory footprint

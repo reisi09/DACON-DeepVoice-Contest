@@ -1,0 +1,37 @@
+train 9363 val 1752 load 19s
+lme epoch 1 val_eer 0.25633 bce 0.4974 20s
+lme epoch 2 val_eer 0.19976 bce 0.4141 20s
+lme epoch 3 val_eer 0.19403 bce 0.4141 20s
+lme epoch 4 val_eer 0.17351 bce 0.3717 20s
+lme epoch 5 val_eer 0.15918 bce 0.3540 20s
+lme epoch 6 val_eer 0.16491 bce 0.3569 21s
+lme epoch 7 val_eer 0.13866 bce 0.3349 21s
+lme epoch 8 val_eer 0.15012 bce 0.3316 21s
+lme epoch 9 val_eer 0.13413 bce 0.3253 21s
+lme epoch 10 val_eer 0.15465 bce 0.3527 22s
+lme epoch 11 val_eer 0.13699 bce 0.3188 22s
+lme epoch 12 val_eer 0.12220 bce 0.3135 22s
+lme epoch 13 val_eer 0.13819 bce 0.3301 22s
+lme epoch 14 val_eer 0.13866 bce 0.3322 23s
+lme epoch 15 val_eer 0.13293 bce 0.3279 23s
+lme epoch 16 val_eer 0.12960 bce 0.3178 23s
+lme epoch 17 val_eer 0.13246 bce 0.3167 23s
+done lme 12 0.12220009955201593 25s
+       27.06 real        23.84 user         3.84 sys
+          1552203776  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              133891  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 263  voluntary context switches
+               63097  involuntary context switches
+        407824623337  instructions retired
+        117427814625  cycles elapsed
+          1352189776  peak memory footprint

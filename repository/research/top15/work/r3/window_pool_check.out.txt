@@ -1,0 +1,30 @@
+rows val/test 3785 5139 | windows median val/test 2.0 3.0
+max     val EER 0.0510  test EER 0.1107  test len-bias rho(real) +0.240  test long(>=15s) EER 0.2163 (n 837)
+top2    val EER 0.0452  test EER 0.1060  test len-bias rho(real) +0.260  test long(>=15s) EER 0.2115 (n 837)
+top3    val EER 0.0460  test EER 0.1031  test len-bias rho(real) +0.186  test long(>=15s) EER 0.2139 (n 837)
+lme0.5  val EER 0.0502  test EER 0.1115  test len-bias rho(real) +0.160  test long(>=15s) EER 0.2163 (n 837)
+lme1    val EER 0.0492  test EER 0.1097  test len-bias rho(real) +0.124  test long(>=15s) EER 0.2222 (n 837)
+lme2    val EER 0.0502  test EER 0.1101  test len-bias rho(real) +0.095  test long(>=15s) EER 0.2353 (n 837)
+lme4    val EER 0.0526  test EER 0.1111  test len-bias rho(real) +0.077  test long(>=15s) EER 0.2401 (n 837)
+median  val EER 0.0623  test EER 0.1403  test len-bias rho(real) +0.008  test long(>=15s) EER 0.2832 (n 837)
+mean    val EER 0.0555  test EER 0.1148  test len-bias rho(real) +0.058  test long(>=15s) EER 0.2449 (n 837)
+val-selected pooling: top2
+test EER gain val-selected vs max: median 0.0043 95% CI [-0.0009, 0.0104]
+        3.31 real         2.98 user         0.32 sys
+           442449920  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               50609  page reclaims
+                   3  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                 275  involuntary context switches
+         52091563136  instructions retired
+         14186530020  cycles elapsed
+           357598144  peak memory footprint

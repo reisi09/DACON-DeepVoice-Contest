@@ -1,0 +1,139 @@
+{
+ "DB": {
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.07003,
+   "voice": 0.05096,
+   "music": 0.12015,
+   "ADS": 0.91875
+  },
+  "val_music_eer_per_seed": [
+   0.12303,
+   0.12757,
+   0.12878
+  ],
+  "test": {
+   "file": 0.1094,
+   "voice": 0.11071,
+   "music": 0.20005,
+   "ADS": 0.86314
+  },
+  "test_music_eer_per_seed": [
+   0.20572,
+   0.21269,
+   0.19619
+  ],
+  "len_rho_within_source_test": {
+   "music_real": 0.116,
+   "music_fake": 0.141,
+   "file_real": 0.218,
+   "file_fake": 0.265
+  }
+ },
+ "lme3": {
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.07003,
+   "voice": 0.05096,
+   "music": 0.12015,
+   "ADS": 0.91875
+  },
+  "val_music_eer_per_seed": [
+   0.12183,
+   0.12757,
+   0.12878
+  ],
+  "test": {
+   "file": 0.1094,
+   "voice": 0.11071,
+   "music": 0.20005,
+   "ADS": 0.86314
+  },
+  "test_music_eer_per_seed": [
+   0.20572,
+   0.21269,
+   0.19619
+  ],
+  "len_rho_within_source_test": {
+   "music_real": 0.116,
+   "music_fake": 0.141,
+   "file_real": 0.218,
+   "file_fake": 0.265
+  }
+ },
+ "mean3": {
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.06554,
+   "voice": 0.05096,
+   "music": 0.11441,
+   "ADS": 0.92271
+  },
+  "val_music_eer_per_seed": [
+   0.11153,
+   0.12757,
+   0.12303
+  ],
+  "test": {
+   "file": 0.10676,
+   "voice": 0.11071,
+   "music": 0.19129,
+   "ADS": 0.86709
+  },
+  "test_music_eer_per_seed": [
+   0.18432,
+   0.21448,
+   0.18535
+  ],
+  "len_rho_within_source_test": {
+   "music_real": 0.007,
+   "music_fake": -0.002,
+   "file_real": 0.151,
+   "file_fake": 0.215
+  },
+  "boot_delta_test_vs_lme3": {
+   "music": {
+    "ci95": [
+     -0.02141,
+     0.00351
+    ],
+    "p_le_0": 0.927
+   },
+   "file": {
+    "ci95": [
+     -0.00766,
+     0.00228
+    ],
+    "p_le_0": 0.845
+   }
+  },
+  "boot_delta_val_vs_lme3": {
+   "music": {
+    "ci95": [
+     -0.02247,
+     0.00414
+    ],
+    "p_le_0": 0.922
+   },
+   "file": {
+    "ci95": [
+     -0.00966,
+     0.00015
+    ],
+    "p_le_0": 0.974
+   }
+  }
+ }
+}

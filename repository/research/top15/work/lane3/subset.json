@@ -1,0 +1,455 @@
+{
+ "bb_rows": 31270,
+ "share": 0.7438,
+ "by_split": {
+  "test": {
+   "sum": 4822,
+   "count": 6450,
+   "mean": 0.748
+  },
+  "train": {
+   "sum": 22768,
+   "count": 30658,
+   "mean": 0.743
+  },
+  "val": {
+   "sum": 3680,
+   "count": 4931,
+   "mean": 0.746
+  }
+ },
+ "by_route": {
+  "test": {
+   "music": 0.753,
+   "voice": 0.744
+  },
+  "train": {
+   "music": 0.746,
+   "voice": 0.741
+  },
+  "val": {
+   "music": 0.734,
+   "voice": 0.753
+  }
+ },
+ "by_file_label": {
+  "test": {
+   "": 0.5,
+   "0": 0.757,
+   "1": 0.735
+  },
+  "train": {
+   "": 0.789,
+   "0": 0.736,
+   "1": 0.746
+  },
+  "val": {
+   "": 1.0,
+   "0": 0.752,
+   "1": 0.743
+  }
+ },
+ "sources_zero_coverage": [],
+ "sources_full_coverage": [
+  "existing:Echoes/mubert/TTA"
+ ],
+ "by_source_test": {
+  "asvspoof2021_df": {
+   "sum": 1,
+   "count": 1
+  },
+  "asvspoof2021_la": {
+   "sum": 4,
+   "count": 5
+  },
+  "constructed_enhanced": {
+   "sum": 215,
+   "count": 276
+  },
+  "constructed_mix": {
+   "sum": 393,
+   "count": 518
+  },
+  "constructed_song": {
+   "sum": 298,
+   "count": 400
+  },
+  "constructed_splice": {
+   "sum": 2,
+   "count": 2
+  },
+  "echoes": {
+   "sum": 40,
+   "count": 52
+  },
+  "existing:librispeech_test-clean": {
+   "sum": 5,
+   "count": 6
+  },
+  "fleurs_ko": {
+   "sum": 1143,
+   "count": 1500
+  },
+  "generated_music": {
+   "sum": 40,
+   "count": 56
+  },
+  "haim": {
+   "sum": 593,
+   "count": 792
+  },
+  "mlaad": {
+   "sum": 451,
+   "count": 630
+  },
+  "musan_music": {
+   "sum": 503,
+   "count": 645
+  },
+  "openmic": {
+   "sum": 278,
+   "count": 386
+  },
+  "sonics": {
+   "sum": 4,
+   "count": 6
+  },
+  "speechfake": {
+   "sum": 503,
+   "count": 691
+  },
+  "vocalset": {
+   "sum": 277,
+   "count": 385
+  },
+  "zeroth": {
+   "sum": 72,
+   "count": 99
+  }
+ },
+ "by_source": {
+  "asvspoof2021_df": {
+   "sum": 2147,
+   "count": 2875,
+   "mean": 0.747
+  },
+  "asvspoof2021_la": {
+   "sum": 2710,
+   "count": 3672,
+   "mean": 0.738
+  },
+  "constructed_enhanced": {
+   "sum": 234,
+   "count": 300,
+   "mean": 0.78
+  },
+  "constructed_mix": {
+   "sum": 1116,
+   "count": 1500,
+   "mean": 0.744
+  },
+  "constructed_song": {
+   "sum": 298,
+   "count": 400,
+   "mean": 0.745
+  },
+  "constructed_splice": {
+   "sum": 92,
+   "count": 121,
+   "mean": 0.76
+  },
+  "csd": {
+   "sum": 158,
+   "count": 200,
+   "mean": 0.79
+  },
+  "echoes": {
+   "sum": 445,
+   "count": 594,
+   "mean": 0.749
+  },
+  "existing:Echoes/acestep/TTA": {
+   "sum": 34,
+   "count": 48,
+   "mean": 0.708
+  },
+  "existing:Echoes/audioldm/ATA": {
+   "sum": 32,
+   "count": 43,
+   "mean": 0.744
+  },
+  "existing:Echoes/audioldm/TTA": {
+   "sum": 34,
+   "count": 47,
+   "mean": 0.723
+  },
+  "existing:Echoes/brev/TTA": {
+   "sum": 34,
+   "count": 42,
+   "mean": 0.81
+  },
+  "existing:Echoes/diffrhythm/ATA": {
+   "sum": 28,
+   "count": 45,
+   "mean": 0.622
+  },
+  "existing:Echoes/diffrhythm/TTA": {
+   "sum": 42,
+   "count": 50,
+   "mean": 0.84
+  },
+  "existing:Echoes/elevenlabs/TTA": {
+   "sum": 31,
+   "count": 42,
+   "mean": 0.738
+  },
+  "existing:Echoes/mubert/TTA": {
+   "sum": 6,
+   "count": 6,
+   "mean": 1.0
+  },
+  "existing:Echoes/musicgen/ATA": {
+   "sum": 32,
+   "count": 43,
+   "mean": 0.744
+  },
+  "existing:Echoes/musicgen/TTA": {
+   "sum": 37,
+   "count": 49,
+   "mean": 0.755
+  },
+  "existing:Echoes/producer/ATA": {
+   "sum": 17,
+   "count": 20,
+   "mean": 0.85
+  },
+  "existing:Echoes/producer/TTA": {
+   "sum": 16,
+   "count": 23,
+   "mean": 0.696
+  },
+  "existing:Echoes/songgen/ATA": {
+   "sum": 37,
+   "count": 42,
+   "mean": 0.881
+  },
+  "existing:Echoes/songgen/TTA": {
+   "sum": 38,
+   "count": 49,
+   "mean": 0.776
+  },
+  "existing:Echoes/stableaudio/TTA": {
+   "sum": 4,
+   "count": 6,
+   "mean": 0.667
+  },
+  "existing:Echoes/suno/TTA": {
+   "sum": 29,
+   "count": 44,
+   "mean": 0.659
+  },
+  "existing:Echoes/udio/TTA": {
+   "sum": 33,
+   "count": 45,
+   "mean": 0.733
+  },
+  "existing:FMA": {
+   "sum": 300,
+   "count": 400,
+   "mean": 0.75
+  },
+  "existing:FMA/FMA": {
+   "sum": 40,
+   "count": 55,
+   "mean": 0.727
+  },
+  "existing:FakeMusicCaps": {
+   "sum": 1476,
+   "count": 2000,
+   "mean": 0.738
+  },
+  "existing:HAIM": {
+   "sum": 583,
+   "count": 800,
+   "mean": 0.729
+  },
+  "existing:JamendoMaxCaps": {
+   "sum": 302,
+   "count": 400,
+   "mean": 0.755
+  },
+  "existing:SONICS": {
+   "sum": 600,
+   "count": 800,
+   "mean": 0.75
+  },
+  "existing:asvspoof2019_la": {
+   "sum": 1806,
+   "count": 2400,
+   "mean": 0.752
+  },
+  "existing:constructed_music": {
+   "sum": 89,
+   "count": 128,
+   "mean": 0.695
+  },
+  "existing:librispeech_test-clean": {
+   "sum": 285,
+   "count": 400,
+   "mean": 0.712
+  },
+  "existing:suno": {
+   "sum": 17,
+   "count": 24,
+   "mean": 0.708
+  },
+  "existing:udio": {
+   "sum": 18,
+   "count": 24,
+   "mean": 0.75
+  },
+  "fleurs_ko": {
+   "sum": 1143,
+   "count": 1500,
+   "mean": 0.762
+  },
+  "generated_music": {
+   "sum": 368,
+   "count": 500,
+   "mean": 0.736
+  },
+  "haim": {
+   "sum": 1124,
+   "count": 1492,
+   "mean": 0.753
+  },
+  "mlaad": {
+   "sum": 6522,
+   "count": 8775,
+   "mean": 0.743
+  },
+  "musan_music": {
+   "sum": 503,
+   "count": 645,
+   "mean": 0.78
+  },
+  "musan_speech": {
+   "sum": 329,
+   "count": 426,
+   "mean": 0.772
+  },
+  "openmic": {
+   "sum": 2044,
+   "count": 2764,
+   "mean": 0.74
+  },
+  "sonics": {
+   "sum": 609,
+   "count": 800,
+   "mean": 0.761
+  },
+  "speechfake": {
+   "sum": 2655,
+   "count": 3600,
+   "mean": 0.738
+  },
+  "vocalset": {
+   "sum": 577,
+   "count": 800,
+   "mean": 0.721
+  },
+  "zeroth": {
+   "sum": 2196,
+   "count": 3000,
+   "mean": 0.732
+  }
+ },
+ "by_id_first_hex": {
+  "0": 0.742,
+  "1": 0.74,
+  "2": 0.751,
+  "3": 0.739,
+  "4": 0.744,
+  "5": 0.765,
+  "6": 0.748,
+  "7": 0.738,
+  "8": 0.751,
+  "9": 0.748,
+  "a": 0.736,
+  "b": 0.736,
+  "c": 0.748,
+  "d": 0.767,
+  "e": 0.768,
+  "f": 0.717
+ },
+ "dur_quantiles": {
+  "test_False": [
+   4.55,
+   6.38,
+   9.27,
+   12.98,
+   21.84
+  ],
+  "test_True": [
+   4.89,
+   6.79,
+   9.69,
+   13.87,
+   25.54
+  ],
+  "train_False": [
+   2.38,
+   3.9,
+   6.46,
+   10.0,
+   14.54
+  ],
+  "train_True": [
+   2.32,
+   3.88,
+   6.55,
+   10.0,
+   15.78
+  ],
+  "val_False": [
+   2.82,
+   4.5,
+   7.51,
+   10.0,
+   15.91
+  ],
+  "val_True": [
+   2.76,
+   4.61,
+   7.48,
+   10.0,
+   16.24
+  ]
+ },
+ "source_mix_tvd_subset_vs_full": {
+  "test": 0.013,
+  "train": 0.006,
+  "val": 0.014
+ },
+ "db_heads_full_test": {
+  "file_eer": 0.1094,
+  "voice_eer": 0.1107,
+  "music_eer": 0.2001,
+  "ads": 0.86314,
+  "n": 6444
+ },
+ "db_heads_bb_subset": {
+  "file_eer": 0.1089,
+  "voice_eer": 0.1119,
+  "music_eer": 0.1999,
+  "ads": 0.86317,
+  "n": 4819
+ },
+ "db_heads_non_bb": {
+  "file_eer": 0.112,
+  "voice_eer": 0.1024,
+  "music_eer": 0.2046,
+  "ads": 0.86212,
+  "n": 1625
+ }
+}

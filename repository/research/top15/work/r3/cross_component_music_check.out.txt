@@ -1,0 +1,6 @@
+music rows val/test 1286 2149 | with voice evidence val/test 451 1168
+music head only          val music EER 0.1119  test music EER 0.1847
+val-best a=0.25 b=0      val music EER 0.1113  test music EER 0.1898
+test music EER gain: median -0.0056 95% CI [-0.0132, 0.0032], 684 groups
+head  real-music+fake-voice FPR 0.210 (n 214); fake-music+real-voice miss 0.326 (n 86)
+cross real-music+fake-voice FPR 0.332 (n 214); fake-music+real-voice miss 0.384 (n 86)

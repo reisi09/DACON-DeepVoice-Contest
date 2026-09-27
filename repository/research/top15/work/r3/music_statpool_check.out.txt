@@ -1,0 +1,42 @@
+music rows by split {'train': 6981, 'test': 2149, 'val': 1286} X (10416, 8, 1024)
+layers (6, 12)                      std 0 C 0.1: val EER 0.1081 test EER 0.1936
+layers (3, 6, 9, 12)                std 0 C 0.01: val EER 0.1081 test EER 0.1884
+layers (6, 12)                      std 0 C 0.01: val EER 0.1136 test EER 0.1884
+layers (6,)                         std 0 C 0.01: val EER 0.1136 test EER 0.1894
+layers (3, 6, 9, 12)                std 0 C 0.1: val EER 0.1136 test EER 0.1908
+layers (3, 6, 9, 12)                std 0 C 1: val EER 0.1174 test EER 0.1997
+layers (6,)                         std 0 C 0.1: val EER 0.1197 test EER 0.1843
+layers (3, 6, 9, 12)                std 0 C 0.001: val EER 0.1236 test EER 0.1959
+layers (12,)                        std 0 C 0.1: val EER 0.1291 test EER 0.2080
+layers (6, 12)                      std 0 C 1: val EER 0.1314 test EER 0.2062
+layers (12,)                        std 0 C 0.01: val EER 0.1330 test EER 0.2042
+layers (6, 12)                      std 0 C 0.001: val EER 0.1368 test EER 0.2014
+layers (12,)                        std 0 C 1: val EER 0.1368 test EER 0.2107
+layers (6,)                         std 0 C 1: val EER 0.1368 test EER 0.1946
+layers (6,)                         std 0 C 0.001: val EER 0.1462 test EER 0.2062
+layers (12,)                        std 0 C 0.001: val EER 0.1695 test EER 0.2169
+layers (3, 6, 9, 12)                std 0 C 0.0001: val EER 0.1695 test EER 0.2127
+layers (6, 12)                      std 0 C 0.0001: val EER 0.1889 test EER 0.2220
+layers (6,)                         std 0 C 0.0001: val EER 0.2100 test EER 0.2271
+layers (12,)                        std 0 C 0.0001: val EER 0.2349 test EER 0.2638
+
+val-selected: ((6, 12), False, 0.1) val 0.1081 test 0.1936
+WindowMIL MERT 6+12 (DB protocol, ads_compare_scores) test EER on the same test rows with a score: 0.1847 (n 2149 of 2149)
+        5.38 real         4.92 user         0.43 sys
+          1608318976  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              122457  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                 922  involuntary context switches
+         44286017096  instructions retired
+         22704708720  cycles elapsed
+          1420854928  peak memory footprint

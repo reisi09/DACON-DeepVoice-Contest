@@ -1,0 +1,46 @@
+{
+ "file_eer_refit_runtime": 0.05438,
+ "chosen_runtime": {
+  "max": 0,
+  "max_nopresence": 1,
+  "noisy_or": 9
+ },
+ "candidates_alone_runtime": {
+  "max": 0.05769,
+  "noisy_or": 0.05604,
+  "max_nopresence": 0.07072
+ },
+ "file_eer_refit_screen": 0.05769,
+ "chosen_screen": {
+  "max": 1,
+  "noisy_or": 1,
+  "max_nopresence": 1
+ },
+ "candidates_alone_screen": {
+  "max": 0.05624,
+  "noisy_or": 0.05935,
+  "max_nopresence": 0.05687
+ },
+ "spearman_score_vs_samples_real_voice": {
+  "n": 928,
+  "ours_max": 0.204,
+  "ad_max": 0.131,
+  "fused": 0.206
+ },
+ "spearman_score_vs_samples_fake_voice": {
+  "n": 1917,
+  "ours_max": -0.022,
+  "ad_max": -0.002,
+  "fused": -0.007
+ },
+ "spearman_score_vs_samples_real_music_LME": {
+  "n": 519,
+  "Fm": 0.115
+ },
+ "val_duration_s": {
+  "p50": 7.48,
+  "p90": 16.24,
+  "max": 59.6,
+  "frac_gt_30s": 0.0361
+ }
+}

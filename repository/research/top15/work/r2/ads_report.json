@@ -1,0 +1,84 @@
+{
+ "reproduction_max_abs_diff": {
+  "voice_df": 0.0,
+  "voice_ad": 0.0,
+  "music_6_12": 6.562471389770508e-05
+ },
+ "choice": {
+  "fullvoice_db": "long_lr3e-4",
+  "fullvoice_p1": "base",
+  "music": "L6_12",
+  "voice_ad": "resmlp_long",
+  "voice_df": "mlp_long"
+ },
+ "S3-like baseline (ads_compare components)": {
+  "val": {
+   "file_eer": 0.0596,
+   "voice_eer": 0.0376,
+   "music_eer": 0.1119,
+   "ads": 0.92912
+  },
+  "test": {
+   "file_eer": 0.0996,
+   "voice_eer": 0.1106,
+   "music_eer": 0.1847,
+   "ads": 0.87267
+  }
+ },
+ "R2 chosen voice_df": {
+  "val": {
+   "file_eer": 0.0459,
+   "voice_eer": 0.0249,
+   "music_eer": 0.1119,
+   "ads": 0.93849
+  },
+  "test": {
+   "file_eer": 0.0882,
+   "voice_eer": 0.0945,
+   "music_eer": 0.1847,
+   "ads": 0.88161
+  }
+ },
+ "R2 chosen voice_ad": {
+  "val": {
+   "file_eer": 0.0604,
+   "voice_eer": 0.0334,
+   "music_eer": 0.1119,
+   "ads": 0.92955
+  },
+  "test": {
+   "file_eer": 0.0975,
+   "voice_eer": 0.1073,
+   "music_eer": 0.1847,
+   "ads": 0.87438
+  }
+ },
+ "R2 chosen music": {
+  "val": {
+   "file_eer": 0.0596,
+   "voice_eer": 0.0376,
+   "music_eer": 0.1119,
+   "ads": 0.92912
+  },
+  "test": {
+   "file_eer": 0.0996,
+   "voice_eer": 0.1106,
+   "music_eer": 0.1847,
+   "ads": 0.87267
+  }
+ },
+ "R2 all chosen": {
+  "val": {
+   "file_eer": 0.0474,
+   "voice_eer": 0.0215,
+   "music_eer": 0.1119,
+   "ads": 0.93845
+  },
+  "test": {
+   "file_eer": 0.0834,
+   "voice_eer": 0.0823,
+   "music_eer": 0.1847,
+   "ads": 0.88643
+  }
+ }
+}

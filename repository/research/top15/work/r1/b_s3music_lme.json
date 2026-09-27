@@ -1,0 +1,67 @@
+{
+ "music|lme": {
+  "1": {
+   "fpr_real": 0.1846,
+   "fnr_fake": 0.1844,
+   "eer_k": 0.1845,
+   "mean_windows": 8.3141,
+   "cells_group_fallback": 0.0
+  },
+  "2": {
+   "fpr_real": 0.2641,
+   "fnr_fake": 0.0515,
+   "eer_k": 0.1246,
+   "mean_windows": 15.3198,
+   "cells_group_fallback": 0.0
+  },
+  "3": {
+   "fpr_real": 0.3127,
+   "fnr_fake": 0.0203,
+   "eer_k": 0.0878,
+   "mean_windows": 20.3565,
+   "cells_group_fallback": 0.0
+  },
+  "4": {
+   "fpr_real": 0.3593,
+   "fnr_fake": 0.0126,
+   "eer_k": 0.0668,
+   "mean_windows": 23.7136,
+   "cells_group_fallback": 0.0
+  },
+  "5": {
+   "fpr_real": 0.3849,
+   "fnr_fake": 0.0095,
+   "eer_k": 0.0712,
+   "mean_windows": 25.8133,
+   "cells_group_fallback": 0.0019
+  },
+  "6": {
+   "fpr_real": 0.3932,
+   "fnr_fake": 0.0134,
+   "eer_k": 0.0685,
+   "mean_windows": 27.2182,
+   "cells_group_fallback": 0.0019
+  },
+  "7": {
+   "fpr_real": 0.4024,
+   "fnr_fake": 0.0126,
+   "eer_k": 0.0676,
+   "mean_windows": 28.2317,
+   "cells_group_fallback": 0.0019
+  },
+  "8": {
+   "fpr_real": 0.4205,
+   "fnr_fake": 0.0147,
+   "eer_k": 0.0722,
+   "mean_windows": 28.8496,
+   "cells_group_fallback": 0.0019
+  },
+  "mixed_k_uniform_eer": 0.10483,
+  "eer_real_k8_fake_k1": 0.25103,
+  "eer_real_k1_fake_k8": 0.05887,
+  "n": [
+   1376,
+   770
+  ]
+ }
+}

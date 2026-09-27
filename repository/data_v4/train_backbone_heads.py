@@ -26,6 +26,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'data_v4'))
 import decision_heads as dh  # noqa: E402
 import full_bank_train as T  # noqa: E402
+import voice_heads  # noqa: E402
 from component_fusion import fuse  # noqa: E402
 from file_ensemble import fit as fit_file  # noqa: E402
 from full_bank_batches import Item, duration_balance, epoch_order, loss_weights  # noqa: E402
@@ -67,7 +68,7 @@ def items_for(rows, cache: Path, layers, route_filter, dfarena=False):
     return out
 
 
-def train(route, training, validation, init=None, fake_index=0, seed=41, max_epochs=50, patience=5):
+def train(route, training, validation, init=None, fake_index=0, seed=41, max_epochs=50, patience=5, arch='linear'):
     items = [x for x, _ in training]
     weights = loss_weights(items)
     ids = [x.row['ID'] for x in items]
@@ -78,9 +79,9 @@ def train(route, training, validation, init=None, fake_index=0, seed=41, max_epo
     if route == 'music':
         means = np.stack([x.features.mean(0) for x in items])
         model = WindowMIL(torch.tensor(means.mean(0)), torch.tensor(np.maximum(means.std(0), 1e-6)))
-    else:
-        model = nn.Linear(1280, 2)
-        model.load_state_dict(init)
+    else:   # voice_heads: linear (init = classifier weights), mlp, resmlp (standardized on training file means)
+        means = np.stack([x.features.mean(0) for x in items])
+        model = voice_heads.build(arch, init, torch.tensor(means.mean(0)), torch.tensor(np.maximum(means.std(0), 1e-6)))
     val = [x for x, _ in validation]
     limit = max(sum(len(x.features) for x in sorted(items, key=lambda x: len(x.features), reverse=True)[:256]), 10 ** 6)
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3 if route == 'music' else 1e-4, weight_decay=.01)
@@ -100,6 +101,7 @@ def train(route, training, validation, init=None, fake_index=0, seed=41, max_epo
         epochs = epoch
         if (eer, bce) < best:
             best, stale, state = (eer, bce), 0, {k: v.detach().clone() for k, v in model.state_dict().items()}
+            model.best_epoch = epoch
         else:
             stale += 1
     model.load_state_dict(state)
@@ -115,6 +117,10 @@ def main() -> None:
     ap.add_argument('--music-layers', type=int, nargs='+', default=[6, 12])
     ap.add_argument('--ours', type=Path, default=ROOT / '_workspace/p1_refit_cpu', help='DF-Arena voice heads kept as "ours"')
     ap.add_argument('--ad-weight', type=float, default=.5)
+    ap.add_argument('--voice-arch', default='copy', choices=('copy', 'linear', 'mlp'), help='DF-Arena voice heads: copy from --ours or retrain')
+    ap.add_argument('--ad-arch', default='linear', choices=('linear', 'mlp', 'resmlp'))
+    ap.add_argument('--voice-epochs', type=int, default=50)
+    ap.add_argument('--voice-patience', type=int, default=5)
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     rows = {s: [r for r in csv.DictReader((BANK / f).open()) if r['split'] == s]
@@ -194,10 +200,12 @@ def final(a, rows, init) -> None:
         data = {s: items_for(rows[s], a.cache, layers, route) for s in rows}
         preds, every = [], []
         for seed in (41, 42, 43):
-            model, val_eer, epochs = train(route, data['train'], data['val'], init if route == 'voice' else None, 0, seed=seed)
+            extra = dict(arch=a.ad_arch, max_epochs=a.voice_epochs, patience=a.voice_patience) if route == 'voice' else {}
+            model, val_eer, epochs = train(route, data['train'], data['val'], init if route == 'voice' else None, 0, seed=seed, **extra)
             path = a.out / f'{key}_{seed}.pt'
             torch.save({'model': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}, 'route': route, 'seed': seed,
-                        'epoch': epochs, 'validation_eer': val_eer, 'fake_label_index': 0 if route == 'voice' else old_fake,
+                        'arch': a.ad_arch if route == 'voice' else 'mil', 'epoch': getattr(model, 'best_epoch', epochs), 'epochs_run': epochs,
+                        'validation_eer': val_eer, 'fake_label_index': 0 if route == 'voice' else old_fake,
                         'features': 'antideepfake_xlsr1b_pooled' if route == 'voice' else f'mert_layers_{layers}',
                         'train_ids': [x.row['ID'] for x, _ in data['train']]}, path)
             lock[path.name] = sha(path)
@@ -207,14 +215,39 @@ def final(a, rows, init) -> None:
         mean = np.mean(preds, 0)
         val_scores[key] = {i: float(np.mean([e[i] for e in every])) for i in every[0]}
         results[f'{route}_ensemble' if route == 'music' else 'voice_ad_ensemble'] = {'eer': float(_roc_metrics([int(x.label) for x, _ in data['val']], mean.tolist())[0])}
-    for seed in (41, 42, 43):
-        shutil.copy(a.ours / f'voice_{seed}.pt', a.out / f'voice_{seed}.pt')
-        lock[f'voice_{seed}.pt'] = sha(a.out / f'voice_{seed}.pt')
-    results['voice_ensemble'] = json.loads((a.ours / 'results.json').read_text())['voice_ensemble']
+    if a.voice_arch == 'copy':
+        for seed in (41, 42, 43):
+            shutil.copy(a.ours / f'voice_{seed}.pt', a.out / f'voice_{seed}.pt')
+            lock[f'voice_{seed}.pt'] = sha(a.out / f'voice_{seed}.pt')
+        results['voice_ensemble'] = json.loads((a.ours / 'results.json').read_text())['voice_ensemble']
+    else:   # DF-Arena fc5-input voice heads retrained with a.voice_arch on the same P1 rows (old cache features)
+        old_init = torch.load(OLD['val'] / 'voice_classifier_initial.pt', map_location='cpu', weights_only=True)
+        data = {s: items_for(rows[s], a.cache, [12], 'voice', dfarena=True) for s in rows}
+        preds, every = [], []
+        for seed in (41, 42, 43):
+            model, val_eer, epochs = train('voice', data['train'], data['val'], old_init['state_dict'] if a.voice_arch == 'linear' else None,
+                                           old_fake, seed=seed, arch=a.voice_arch, max_epochs=a.voice_epochs, patience=a.voice_patience)
+            path = a.out / f'voice_{seed}.pt'
+            torch.save({'model': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}, 'route': 'voice', 'seed': seed,
+                        'arch': a.voice_arch, 'epoch': getattr(model, 'best_epoch', epochs), 'epochs_run': epochs, 'validation_eer': val_eer,
+                        'fake_label_index': old_fake, 'voice_module': 'backbone.conformer.fc5', 'features': 'dfarena_fc5_input',
+                        'train_ids': [x.row['ID'] for x, _ in data['train']]}, path)
+            lock[path.name] = sha(path)
+            preds.append(T.predict(model, [x for x, _ in data['val']], 'voice', old_fake, 256, 10 ** 6, 'cpu'))
+            model.eval()
+            with torch.no_grad():
+                sc = {}
+                for r in val_rows:
+                    with np.load(OLD['val'] / f"{r['ID']}.npz") as o:
+                        sc[r['ID']] = 0. if bool(o['voice_silent']) else float(model(torch.from_numpy(o['voice_embeddings'].astype(np.float32))).softmax(-1)[:, old_fake].max())
+            every.append(sc)
+            print('voice', a.voice_arch, seed, round(val_eer, 5), getattr(model, 'best_epoch', epochs), flush=True)
+        val_scores['voice_ours'] = {i: float(np.mean([e[i] for e in every])) for i in every[0]}
+        results['voice_ensemble'] = {'eer': float(_roc_metrics([int(x.label) for x, _ in data['val']], np.mean(preds, 0).tolist())[0])}
     # fusion tables and FILE ensemble on val rows that have a backbone npz; ours = the kept DF-Arena voice heads
     scored = {s['ID']: s for s in score_rows(val_rows, OLD['val'], a.ours, 'cpu')}   # DF-Arena Fv + presence; its Fm is unused
     presence = json.loads(PRESENCE.read_text())
-    ours = {i: s['Fv'] for i, s in scored.items()}
+    ours = val_scores.get('voice_ours') or {i: s['Fv'] for i, s in scored.items()}
     spec = {'weights': {'ours': 1, 'ad': a.ad_weight},
             'tables': {'ours': dh.quantile_table([ours[r['ID']] for r in val_rows if ours[r['ID']] > 0]),
                        'ad': dh.quantile_table([val_scores['voice_ad'][r['ID']] for r in val_rows if ours[r['ID']] > 0])}}
@@ -222,7 +255,7 @@ def final(a, rows, init) -> None:
     for r in val_rows:
         s = scored[r['ID']]
         vp, mp = dh.presence(presence, s['presence_features'], (s['Pv'], s['Pm']))
-        fv = 0. if s['Fv'] == 0. else fuse(spec, {'ours': s['Fv'], 'ad': val_scores['voice_ad'][r['ID']]})
+        fv = 0. if ours[r['ID']] == 0. else fuse(spec, {'ours': ours[r['ID']], 'ad': val_scores['voice_ad'][r['ID']]})
         files.append(({**s, 'Pv': vp, 'Pm': mp, 'Fv': fv, 'Fm': val_scores['music'][r['ID']]}, r))
     keep = [(f, r) for f, r in files if r['FILE_FAKE_mask'] == '1']
     ens, ens_report = fit_file([f for f, _ in keep], np.array([int(r['FILE_FAKE']) for _, r in keep]))
@@ -237,7 +270,9 @@ def final(a, rows, init) -> None:
     (a.out / 'validation_metrics.json').write_text(json.dumps(metrics, indent=1) + '\n')
     (a.out / 'run_identity.json').write_text(json.dumps({'protocol': 'P1 refit: data v4 train + held-out test as train, val early stopping',
         'rows': {'train_with_backbone': sum((a.cache / f"{r['ID']}.npz").exists() for r in rows['train']), 'val_with_backbone': len(val_rows)},
-        'voice_ours': str(a.ours), 'music_layers': a.music_layers, 'ad_weight': a.ad_weight, 'file_ensemble': ens_report}, indent=1) + '\n')
+        'voice_ours': str(a.ours) if a.voice_arch == 'copy' else f'retrained {a.voice_arch}', 'ad_arch': a.ad_arch,
+        'voice_epochs': a.voice_epochs, 'voice_patience': a.voice_patience,
+        'music_layers': a.music_layers, 'ad_weight': a.ad_weight, 'file_ensemble': ens_report}, indent=1) + '\n')
     (a.out / 'candidate_lock.json').write_text(json.dumps({'checkpoints': lock, 'selection': 'val EER then BCE per seed; seed-mean probabilities'}, indent=1) + '\n')
     print('val official', {k: round(v, 5) for k, v in metrics['metrics'].items() if v is not None}, flush=True)
 

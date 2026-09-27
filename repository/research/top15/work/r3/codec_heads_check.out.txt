@@ -1,0 +1,51 @@
+held-out voice rows with both members: 3841 real 2285
+voice_df: EER 0.1195 thr 0.1712
+voice_ad: EER 0.1408 thr 0.2339
+
+REAL voice FPR at EER threshold, by codec_chain:
+            voice_df_flag        voice_ad_flag       
+                     size   mean          size   mean
+codec_chain                                          
+aac_96                104  0.106           104  0.154
+flac                  327  0.095           327  0.122
+mp3_128               266  0.105           266  0.135
+mp3_192               145  0.145           145  0.124
+mp3_64                147  0.116           147  0.088
+opus_32               120  0.175           120  0.158
+pcm_wav               683  0.120           683  0.158
+tel_alaw              118  0.051           118  0.034
+tel_gsm               112  0.152           112  0.143
+tel_opus8              80  0.300            80  0.412
+tel_ulaw              183  0.082           183  0.104
+
+REAL voice FPR by source:
+                                voice_df_flag        voice_ad_flag       
+                                         size   mean          size   mean
+source                                                                   
+asvspoof2021_df                             1  0.000             1  0.000
+asvspoof2021_la                             4  0.000             4  0.000
+constructed_enhanced                      215  0.242           215  0.158
+constructed_mix                           116  0.207           116  0.250
+constructed_song                          298  0.060           298  0.121
+existing:librispeech_test-clean             5  0.000             5  0.000
+fleurs_ko                                1143  0.114          1143  0.127
+haim                                        1  0.000             1  0.000
+musan_music                               141  0.326           141  0.426
+speechfake                                 12  0.083            12  0.083
+vocalset                                  277  0.007           277  0.061
+zeroth                                     72  0.000            72  0.000
+
+FAKE voice miss rate by codec_chain:
+             voice_df_flag  voice_ad_flag
+codec_chain                              
+aac_96               0.101          0.152
+flac                 0.074          0.124
+mp3_128              0.101          0.107
+mp3_192              0.101          0.128
+mp3_64               0.087          0.155
+opus_32              0.103          0.115
+pcm_wav              0.112          0.133
+tel_alaw             0.202          0.226
+tel_gsm              0.221          0.191
+tel_opus8            0.196          0.179
+tel_ulaw             0.176          0.151

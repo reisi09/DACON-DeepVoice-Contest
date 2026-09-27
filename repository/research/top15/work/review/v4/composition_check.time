@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/research/top15/work/review/v4/composition_check.py", line 14, in <module>
+    assert len(d) == len(b) == len(p), (len(d), len(b), len(p))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (6444, 6450, 6444)
+        1.15 real         0.79 user         0.17 sys
+           197705728  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               30144  page reclaims
+                  86  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1249  voluntary context switches
+                3726  involuntary context switches
+          9803010920  instructions retired
+          4058153966  cycles elapsed
+           148832904  peak memory footprint

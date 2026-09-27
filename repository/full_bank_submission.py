@@ -16,6 +16,7 @@ from mert12_submission import (AutoFeatureExtractor, AutoModel, SEEDS, PREDICTIO
     sha256, validate_predictions, SubmissionError)
 from localization_models import WindowMIL
 import decision_heads
+import voice_heads
 
 CANDIDATE = 'balanced7144_MERT330M_WindowMIL_DFfc5_8020'
 
@@ -31,7 +32,7 @@ def load_heads(root: Path, device):
             state = record['model']
             if not all(torch.isfinite(value).all() for value in state.values()):
                 raise SubmissionError('Nonfinite checkpoint')
-            model = WindowMIL(state['mean'], state['scale']) if route == 'music' else nn.Linear(1280, 2)
+            model = WindowMIL(state['mean'], state['scale']) if route == 'music' else voice_heads.build(record.get('arch', 'linear'))
             model.load_state_dict(state, strict=True)
             collection.append(model.to(device).eval().requires_grad_(False))
             if fake_index is not None and record['fake_label_index'] != fake_index:
@@ -68,9 +69,7 @@ class Engine:
                 record = torch.load(trained/f'voice_ad_{seed}.pt', map_location='cpu', weights_only=True)
                 if record['route'] != 'voice' or record['seed'] != seed or record['fake_label_index'] != 0:
                     raise SubmissionError('AntiDeepfake head mismatch')
-                head = nn.Linear(1280, 2)
-                head.load_state_dict(record['model'], strict=True)
-                self.ad_heads.append(head.to(self.device).eval().requires_grad_(False))
+                self.ad_heads.append(voice_heads.load(record).to(self.device).eval().requires_grad_(False))
         self.processor = AutoFeatureExtractor.from_pretrained(assets/'mert', local_files_only=True)
         self.mert, info = AutoModel.from_pretrained(assets/'mert', trust_remote_code=True,
                                                   local_files_only=True, output_loading_info=True)

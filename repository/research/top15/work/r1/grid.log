@@ -1,0 +1,32 @@
+voice_max|music_lme val {'file': 0.07017, 'voice': 0.05096, 'music': 0.12015, 'ADS': 0.91868} test {'file': 0.10895, 'voice': 0.11014, 'music': 0.20005, 'ADS': 0.86348} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1}
+voice_max|music_mean val {'file': 0.06492, 'voice': 0.05096, 'music': 0.11441, 'ADS': 0.92302} test {'file': 0.1063, 'voice': 0.11014, 'music': 0.19129, 'ADS': 0.86743} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1}
+voice_lme|music_lme val {'file': 0.06802, 'voice': 0.04937, 'music': 0.12015, 'ADS': 0.92007} test {'file': 0.10785, 'voice': 0.10821, 'music': 0.20005, 'ADS': 0.86442} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1}
+voice_lme|music_mean val {'file': 0.06353, 'voice': 0.04937, 'music': 0.11441, 'ADS': 0.92404} test {'file': 0.10521, 'voice': 0.10821, 'music': 0.19129, 'ADS': 0.86837} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1}
+voice_mean|music_lme val {'file': 0.07003, 'voice': 0.05415, 'music': 0.12015, 'ADS': 0.91811} test {'file': 0.11049, 'voice': 0.11288, 'music': 0.20005, 'ADS': 0.86216} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1}
+voice_mean|music_mean val {'file': 0.0674, 'voice': 0.05415, 'music': 0.11441, 'ADS': 0.92115} test {'file': 0.11049, 'voice': 0.11288, 'music': 0.19129, 'ADS': 0.86479} {'max': 1, 'noisy_or': 1, 'max_nopresence': 1}
+voice max k1 eer 0.1101 mixed 0.08431 r8f1 0.17551 FPR k1..8 [0.1101, 0.2022, 0.2773, 0.3359, 0.3711, 0.3916, 0.3873, 0.3881] FNR [0.1102, 0.0358, 0.022, 0.0182, 0.018, 0.019, 0.0174, 0.0196]
+file max k1 eer 0.1094 mixed 0.05183 r8f1 0.15358 FPR k1..8 [0.1094, 0.175, 0.2209, 0.2531, 0.2737, 0.2893, 0.2954, 0.3002] FNR [0.1094, 0.0239, 0.0099, 0.0064, 0.0064, 0.0064, 0.0047, 0.0057]
+voice max k1 eer 0.1101 mixed 0.08431 r8f1 0.17551 FPR k1..8 [0.1101, 0.2022, 0.2773, 0.3359, 0.3711, 0.3916, 0.3873, 0.3881] FNR [0.1102, 0.0358, 0.022, 0.0182, 0.018, 0.019, 0.0174, 0.0196]
+file max k1 eer 0.1068 mixed 0.05426 r8f1 0.11877 FPR k1..8 [0.1068, 0.1103, 0.1213, 0.1339, 0.1395, 0.1451, 0.1417, 0.1387] FNR [0.1067, 0.0353, 0.0198, 0.014, 0.013, 0.0137, 0.0127, 0.0124]
+voice lme k1 eer 0.1082 mixed 0.07531 r8f1 0.12713 FPR k1..8 [0.1081, 0.1407, 0.1609, 0.1728, 0.175, 0.1857, 0.1748, 0.1794] FNR [0.1083, 0.0479, 0.0336, 0.033, 0.0325, 0.0322, 0.0297, 0.033]
+file lme k1 eer 0.1055 mixed 0.04268 r8f1 0.09135 FPR k1..8 [0.1055, 0.0908, 0.0765, 0.0687, 0.0656, 0.0632, 0.064, 0.0602] FNR [0.1056, 0.04, 0.0236, 0.0165, 0.0152, 0.0149, 0.0144, 0.0138]
+voice lme k1 eer 0.1082 mixed 0.07531 r8f1 0.12713 FPR k1..8 [0.1081, 0.1407, 0.1609, 0.1728, 0.175, 0.1857, 0.1748, 0.1794] FNR [0.1083, 0.0479, 0.0336, 0.033, 0.0325, 0.0322, 0.0297, 0.033]
+file lme k1 eer 0.1082 mixed 0.04801 r8f1 0.13531 FPR k1..8 [0.1081, 0.1538, 0.1786, 0.1914, 0.2031, 0.2132, 0.2207, 0.2239] FNR [0.1082, 0.0274, 0.0122, 0.0067, 0.0071, 0.007, 0.0052, 0.0061]
+       77.55 real        77.10 user         0.37 sys
+           391806976  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               59792  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   7  voluntary context switches
+                7676  involuntary context switches
+       1598154385526  instructions retired
+        342379429092  cycles elapsed
+           337822488  peak memory footprint

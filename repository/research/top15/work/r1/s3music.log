@@ -1,0 +1,74 @@
+{'train': 6981, 'val': 1286, 'test': 2149} load 3s
+lme 41 epochs 26 val 0.11905 test 0.18192 8s
+lme 42 epochs 25 val 0.11517 test 0.18054 13s
+lme 43 epochs 25 val 0.11582 test 0.18054 18s
+mean 41 epochs 17 val 0.1197 test 0.20658 21s
+mean 42 epochs 39 val 0.10417 test 0.18806 27s
+mean 43 epochs 23 val 0.11129 test 0.1843 32s
+music lme k1 eer 0.1845 mixed 0.10483 r8f1 0.25103 FPR k1..8 [0.1846, 0.2641, 0.3127, 0.3593, 0.3849, 0.3932, 0.4024, 0.4205] FNR [0.1844, 0.0515, 0.0203, 0.0126, 0.0095, 0.0134, 0.0126, 0.0147]
+music mean k1 eer 0.1831 mixed 0.08494 r8f1 0.12346 FPR k1..8 [0.1831, 0.1141, 0.0879, 0.0567, 0.0535, 0.048, 0.0431, 0.0472] FNR [0.1831, 0.113, 0.0844, 0.0645, 0.0636, 0.058, 0.0667, 0.0727]
+{
+ "lme": {
+  "per_seed_val": [
+   0.11905,
+   0.11517,
+   0.11582
+  ],
+  "per_seed_test": [
+   0.18192,
+   0.18054,
+   0.18054
+  ],
+  "ens_val": 0.11194,
+  "ens_test": 0.18467
+ },
+ "mean": {
+  "per_seed_val": [
+   0.1197,
+   0.10417,
+   0.11129
+  ],
+  "per_seed_test": [
+   0.20658,
+   0.18806,
+   0.1843
+  ],
+  "ens_val": 0.10579,
+  "ens_test": 0.18329
+ },
+ "boot_delta_test_mean_minus_lme": {
+  "ci95": [
+   -0.01227,
+   0.01528
+  ],
+  "p_le_0": 0.513
+ },
+ "n": {
+  "val": [
+   519,
+   767
+  ],
+  "test": [
+   1379,
+   770
+  ]
+ }
+}
+       37.21 real        43.05 user         2.55 sys
+          1815461888  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              163409  page reclaims
+                  80  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1013  voluntary context switches
+              378678  involuntary context switches
+        646992449870  instructions retired
+        195334189630  cycles elapsed
+          1668679768  peak memory footprint

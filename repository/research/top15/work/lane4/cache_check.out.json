@@ -1,0 +1,178 @@
+{
+ "coverage_split": {
+  "train": [
+   30658,
+   22768,
+   0.743
+  ],
+  "test": [
+   6450,
+   4822,
+   0.748
+  ],
+  "val": [
+   4931,
+   3680,
+   0.746
+  ]
+ },
+ "coverage_route_label": {
+  "(False, 'voice', '1')": [
+   16551,
+   12286,
+   0.742
+  ],
+  "(False, 'voice', '0')": [
+   8339,
+   6174,
+   0.74
+  ],
+  "(False, 'music', '1')": [
+   6638,
+   4973,
+   0.749
+  ],
+  "(False, 'music', '0')": [
+   5580,
+   4157,
+   0.745
+  ],
+  "(True, 'voice', '1')": [
+   2197,
+   1653,
+   0.752
+  ],
+  "(True, 'music', '1')": [
+   1066,
+   767,
+   0.72
+  ],
+  "(True, 'voice', '0')": [
+   982,
+   741,
+   0.755
+  ],
+  "(True, 'music', '0')": [
+   686,
+   519,
+   0.757
+  ]
+ },
+ "coverage_source_extremes": {},
+ "coverage_source_n": 47,
+ "coverage_duration_bin(<2,2-4,4-8,8-16,16-30,30-60,>60 s)": {
+  "2": [
+   14242,
+   10497,
+   0.737
+  ],
+  "3": [
+   13910,
+   10352,
+   0.744
+  ],
+  "1": [
+   6921,
+   5097,
+   0.736
+  ],
+  "4": [
+   2730,
+   2099,
+   0.769
+  ],
+  "0": [
+   2299,
+   1755,
+   0.763
+  ],
+  "5": [
+   1930,
+   1465,
+   0.759
+  ],
+  "6": [
+   7,
+   5,
+   0.714
+  ]
+ },
+ "parity_sample": {
+  "samples_equal": 400,
+  "windows_equal": 400,
+  "silent_equal": 400,
+  "gain_capped_rows": 102,
+  "n": 400,
+  "max_abs_l12_vs_v4": 0.0623626708984375,
+  "median_abs_l12_vs_v4": 0.04909515380859375,
+  "max_fp16_rounding_of_v4": 0.0623626708984375,
+  "max_rel_l2_l12_vs_v4": 0.000263781490502879,
+  "min_abs_l6_vs_v4": 17.34912109375,
+  "median_abs_l6_vs_v4": 39.868995666503906
+ },
+ "window_truth": {
+  "music_rows": 10416,
+  "truth_len_mismatch": 0,
+  "rows_with_known_truth": 449
+ },
+ "antideepfake_index0_zero_shot": {
+  "n": 5067,
+  "eer_max_window": 0.12433288799440023,
+  "auc": 0.9471696554261428
+ },
+ "val_repro": {
+  "n": 3680,
+  "reproduced": {
+   "file_eer": 0.054381,
+   "voice_eer": 0.036837,
+   "music_eer": 0.111939,
+   "voice_presence_auc": 0.998896,
+   "music_presence_auc": 0.996272,
+   "ADS": 0.93186
+  },
+  "recorded": {
+   "file_eer": 0.054381,
+   "voice_eer": 0.036837,
+   "music_eer": 0.111939,
+   "voice_presence_auc": 0.998896,
+   "music_presence_auc": 0.996272
+  }
+ },
+ "val_fallback_no_ad_all_files": {
+  "file_eer": 0.063892,
+  "voice_eer": 0.048242,
+  "music_eer": 0.111939,
+  "voice_presence_auc": 0.998896,
+  "music_presence_auc": 0.996272,
+  "ADS": 0.924824
+ },
+ "val_equal_weight_file_ensemble": {
+  "file_eer": 0.058523,
+  "voice_eer": 0.036837,
+  "music_eer": 0.111939,
+  "voice_presence_auc": 0.998896,
+  "music_presence_auc": 0.996272,
+  "ADS": 0.929789
+ },
+ "val_partial_fallback_30pct": {
+  "file_eer": 0.057695,
+  "voice_eer": 0.040818,
+  "music_eer": 0.111939,
+  "voice_presence_auc": 0.998896,
+  "music_presence_auc": 0.996272,
+  "ADS": 0.929407
+ },
+ "val_fp16_dequant_noise": {
+  "file_eer": 0.054381,
+  "voice_eer": 0.036837,
+  "music_eer": 0.111939,
+  "voice_presence_auc": 0.998896,
+  "music_presence_auc": 0.996272,
+  "ADS": 0.93186,
+  "max_abs_dFm": 0.0007834533850352154,
+  "max_abs_dFv": 0.0002349714579297224,
+  "max_abs_dFILE": 0.0005687107301164118
+ },
+ "val_silent_voice_rows": 0,
+ "seconds": 17.5
+}

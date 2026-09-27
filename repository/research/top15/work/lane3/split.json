@@ -1,0 +1,68 @@
+{
+ "rows": 42039,
+ "splits": {
+  "train": 30658,
+  "test": 6450,
+  "val": 4931
+ },
+ "dur_missing": 0,
+ "ID_multi_split": 0,
+ "ID_dup_rows_within_split": 0,
+ "orig_id_multi_split": 0,
+ "orig_id_dup_rows_within_split": 0,
+ "audio_sha256_multi_split": 0,
+ "audio_sha256_dup_rows_within_split": 0,
+ "source_sha256_multi_split": 0,
+ "source_sha256_dup_rows_within_split": 0,
+ "group_id_multi_split": 0,
+ "group_id_dup_rows_within_split": 23187,
+ "component_id_multi_split": 0,
+ "component_id_dup_rows_within_split": 23187,
+ "rows_with_parents": 2321,
+ "parent_refs_resolving_to_bank_rows": 4342,
+ "parent_refs_in_other_split": 0,
+ "parent_refs_in_other_group": 0,
+ "parent_items_used_in_multiple_splits": 0,
+ "coarse_keys_multi_split": 46,
+ "coarse_keys_multi_split_by_prefix": {
+  "speechfake_spk": 46
+ },
+ "coarse_examples": {
+  "speechfake_spk:6081": [
+   "test",
+   "train",
+   "val"
+  ],
+  "speechfake_spk:173": [
+   "test",
+   "train",
+   "val"
+  ],
+  "speechfake_spk:216": [
+   "test",
+   "train"
+  ],
+  "speechfake_spk:185": [
+   "test",
+   "train"
+  ],
+  "speechfake_spk:198": [
+   "test",
+   "train",
+   "val"
+  ],
+  "speechfake_spk:189": [
+   "test",
+   "train"
+  ],
+  "speechfake_spk:205": [
+   "test",
+   "train"
+  ],
+  "speechfake_spk:209": [
+   "test",
+   "train",
+   "val"
+  ]
+ }
+}

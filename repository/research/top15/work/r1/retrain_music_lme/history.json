@@ -1,0 +1,111 @@
+{
+ "history": [
+  {
+   "epoch": 1,
+   "val_eer": 0.2563286638697291,
+   "val_bce": 0.4974219578412069,
+   "improved": true
+  },
+  {
+   "epoch": 2,
+   "val_eer": 0.1997604187748538,
+   "val_bce": 0.41405067363363973,
+   "improved": true
+  },
+  {
+   "epoch": 3,
+   "val_eer": 0.1940307079679902,
+   "val_bce": 0.41406175476538853,
+   "improved": true
+  },
+  {
+   "epoch": 4,
+   "val_eer": 0.17350767699199754,
+   "val_bce": 0.3716968210629698,
+   "improved": true
+  },
+  {
+   "epoch": 5,
+   "val_eer": 0.1591833999748385,
+   "val_bce": 0.3539556761924162,
+   "improved": true
+  },
+  {
+   "epoch": 6,
+   "val_eer": 0.16491311078170212,
+   "val_bce": 0.35688011109638024,
+   "improved": false
+  },
+  {
+   "epoch": 7,
+   "val_eer": 0.13866036899884587,
+   "val_bce": 0.33490361940456476,
+   "improved": true
+  },
+  {
+   "epoch": 8,
+   "val_eer": 0.15011979061257308,
+   "val_bce": 0.33158622401123694,
+   "improved": false
+  },
+  {
+   "epoch": 9,
+   "val_eer": 0.13412856431771314,
+   "val_bce": 0.3253109211136577,
+   "improved": true
+  },
+  {
+   "epoch": 10,
+   "val_eer": 0.1546515952937058,
+   "val_bce": 0.35271956407874844,
+   "improved": false
+  },
+  {
+   "epoch": 11,
+   "val_eer": 0.13699341972114493,
+   "val_bce": 0.31884960128066075,
+   "improved": false
+  },
+  {
+   "epoch": 12,
+   "val_eer": 0.12220009955201593,
+   "val_bce": 0.31348303485825085,
+   "improved": true
+  },
+  {
+   "epoch": 13,
+   "val_eer": 0.13819132584687588,
+   "val_bce": 0.3301073113018759,
+   "improved": false
+  },
+  {
+   "epoch": 14,
+   "val_eer": 0.13866036899884587,
+   "val_bce": 0.332248943893334,
+   "improved": false
+  },
+  {
+   "epoch": 15,
+   "val_eer": 0.13293065819198224,
+   "val_bce": 0.3278893982197399,
+   "improved": false
+  },
+  {
+   "epoch": 16,
+   "val_eer": 0.12959675963658043,
+   "val_bce": 0.317831240185098,
+   "improved": false
+  },
+  {
+   "epoch": 17,
+   "val_eer": 0.13246161504001225,
+   "val_bce": 0.3166589114622937,
+   "improved": false
+  }
+ ],
+ "best_epoch": 12,
+ "best_val_eer": 0.12220009955201593,
+ "n_train": 9363,
+ "n_val": 1752,
+ "seconds": 23.317340850830078
+}

@@ -1,0 +1,19 @@
+music-context voice rows val/test: 606 1544 | with music score: {'test': 1168, 'val': 451}
+
+VOICE_FAKE x MUSIC_FAKE (music-context voice rows):
+MUSIC_FAKE        0.0  1.0
+split VOICE_FAKE          
+test  0.0         621  107
+      1.0         286  530
+val   0.0         251    5
+      1.0         122  228
+ours                                 val EER 0.1552  test EER 0.2175
+ours+ad 0.5 (S3)                     val EER 0.1442  test EER 0.2123
+music member only-ish (b=4,a=0)      val EER 0.2415  test EER 0.2825
+val-best a=1 b=1                     val EER 0.0863  test EER 0.1653
+
+ALL held-out voice rows n=3841: voice EER S3-rule 0.1106 -> cross-component 0.0862
+gain (positive = better) median 0.0245 95% CI [0.0128, 0.0390], 2112 groups
+S3     real-voice+fake-music FPR 0.105 (n 86); fake-voice+real-music miss 0.084 (n 214); concordant music-ctx FPR 0.162
+cross  real-voice+fake-music FPR 0.337 (n 86); fake-voice+real-music miss 0.238 (n 214); concordant music-ctx FPR 0.126
+discordant sources (test): {('constructed_mix', 0.0): 21, ('constructed_mix', 1.0): 214, ('constructed_song', 0.0): 65}

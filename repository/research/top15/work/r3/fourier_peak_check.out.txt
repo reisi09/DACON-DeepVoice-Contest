@@ -1,0 +1,23 @@
+{'lyria_fake': (120, 3585), 'sonicmaster_real': (120, 3585), 'fma_real': (64, 3585)}
+lyria_fake vs fma_real: 5-fold CV AUC 0.992 (n 120/64)
+lyria_fake vs sonicmaster_real: 5-fold CV AUC 1.000 (n 120/120)
+top Lyria-excess bins (Hz, dB): [(1044, 2.0), (1046, 2.46), (1048, 2.38), (1050, 1.85), (7886, 2.42), (7888, 1.86), (7921, 1.87), (7953, 2.05), (7955, 3.22), (7957, 3.93), (7958, 3.2), (7960, 3.06)]
+max class-mean residual excess dB: 3.93  median: -0.95
+       10.07 real         8.86 user         0.57 sys
+           273874944  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               36626  page reclaims
+                 143  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                2415  voluntary context switches
+               30966  involuntary context switches
+        131602178150  instructions retired
+         36764615885  cycles elapsed
+           223150800  peak memory footprint

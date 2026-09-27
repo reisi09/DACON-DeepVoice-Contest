@@ -1,0 +1,58 @@
+n voice rows 8924 real 4253 ref thr (median fake xlsr1b_max) 0.9999
+
+REAL voice by source (split val+test):
+                                    n   mean  frac_ge_thr
+source                                                   
+existing:librispeech_test-clean    65  0.014        0.000
+zeroth                            535  0.017        0.000
+fleurs_ko                        1500  0.056        0.000
+speechfake                        107  0.057        0.000
+asvspoof2021_df                   107  0.063        0.000
+asvspoof2021_la                   221  0.113        0.000
+constructed_enhanced              283  0.247        0.004
+openmic                           178  0.531        0.006
+constructed_mix                   160  0.560        0.025
+constructed_song                  400  0.633        0.005
+vocalset                          451  0.654        0.000
+existing:FMA                       26  0.659        0.000
+existing:FMA/FMA                    4  0.722        0.000
+musan_music                       187  0.799        0.005
+existing:JamendoMaxCaps            14  0.885        0.000
+haim                               15  0.900        0.000
+
+REAL voice by codec_chain:
+                n   mean  frac_ge_thr
+codec_chain                          
+tel_ulaw      335  0.193        0.000
+tel_alaw      197  0.223        0.000
+mp3_128       506  0.231        0.002
+mp3_192       277  0.248        0.007
+flac          629  0.255        0.003
+pcm_wav      1268  0.266        0.002
+opus_32       223  0.266        0.004
+tel_gsm       200  0.278        0.005
+aac_96        196  0.280        0.000
+mp3_64        255  0.287        0.000
+tel_opus8     167  0.562        0.000
+
+AUC(real constructed_enhanced vs other real, higher=more fake-like): 0.530 (n=283 vs 3970)
+
+AUC(enhanced real vs zeroth+fleurs_ko real): 0.748  median 0.021 vs 0.001; frac>0.5: 0.233 vs 0.038
+
+speech-only REAL (zeroth, fleurs_ko) by codec_chain, frac>0.5:
+             size  median  <lambda_0>
+codec_chain                          
+aac_96         92   0.001       0.033
+flac          305   0.000       0.033
+mp3_128       256   0.000       0.035
+mp3_192       121   0.000       0.000
+mp3_64        119   0.000       0.008
+opus_32       117   0.001       0.051
+pcm_wav       584   0.001       0.026
+tel_alaw       89   0.000       0.000
+tel_gsm        98   0.002       0.031
+tel_opus8      76   0.230       0.408
+tel_ulaw      178   0.000       0.000
+
+singing/music-context REAL (vocalset, constructed_song, musan_music, openmic, haim) frac>0.5: 0.677
+FAKE voice frac>0.5: 0.886 n 4671

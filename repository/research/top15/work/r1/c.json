@@ -1,0 +1,373 @@
+{
+ "train=max|infer=max": {
+  "best_epoch": 50,
+  "epochs_run": 50,
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.07079,
+   "voice": 0.05077,
+   "music": 0.12015,
+   "ADS": 0.91841
+  },
+  "test": {
+   "file": 0.11095,
+   "voice": 0.10974,
+   "music": 0.20005,
+   "ADS": 0.86256
+  },
+  "len_rho_within_source_test": {
+   "voice_real": 0.24,
+   "voice_fake": 0.299,
+   "file_real": 0.217,
+   "file_fake": 0.264
+  }
+ },
+ "train=max|infer=lme": {
+  "best_epoch": 50,
+  "epochs_run": 50,
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.07528,
+   "voice": 0.04997,
+   "music": 0.12015,
+   "ADS": 0.91632
+  },
+  "test": {
+   "file": 0.11172,
+   "voice": 0.10974,
+   "music": 0.20005,
+   "ADS": 0.86218
+  },
+  "len_rho_within_source_test": {
+   "voice_real": 0.124,
+   "voice_fake": 0.22,
+   "file_real": 0.179,
+   "file_fake": 0.226
+  },
+  "boot_delta_test_vs_max_control": {
+   "voice": {
+    "ci95": [
+     -0.00581,
+     0.00473
+    ],
+    "p_le_0": 0.642
+   },
+   "file": {
+    "ci95": [
+     -0.00239,
+     0.00612
+    ],
+    "p_le_0": 0.191
+   }
+  }
+ },
+ "train=max|infer=mean_logit": {
+  "best_epoch": 50,
+  "epochs_run": 50,
+  "file_weights": {
+   "max": 0,
+   "max_nopresence": 1,
+   "noisy_or": 9
+  },
+  "val": {
+   "file": 0.08177,
+   "voice": 0.05415,
+   "music": 0.12015,
+   "ADS": 0.91224
+  },
+  "test": {
+   "file": 0.1212,
+   "voice": 0.11539,
+   "music": 0.20005,
+   "ADS": 0.85631
+  },
+  "len_rho_within_source_test": {
+   "voice_real": 0.058,
+   "voice_fake": 0.073,
+   "file_real": 0.156,
+   "file_fake": 0.148
+  },
+  "boot_delta_test_vs_max_control": {
+   "voice": {
+    "ci95": [
+     -0.00132,
+     0.01208
+    ],
+    "p_le_0": 0.075
+   },
+   "file": {
+    "ci95": [
+     0.00229,
+     0.01699
+    ],
+    "p_le_0": 0.008
+   }
+  }
+ },
+ "train=lme|infer=lme": {
+  "best_epoch": 48,
+  "epochs_run": 50,
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.06879,
+   "voice": 0.04918,
+   "music": 0.12015,
+   "ADS": 0.91972
+  },
+  "test": {
+   "file": 0.10863,
+   "voice": 0.10877,
+   "music": 0.20005,
+   "ADS": 0.86392
+  },
+  "len_rho_within_source_test": {
+   "voice_real": 0.137,
+   "voice_fake": 0.228,
+   "file_real": 0.177,
+   "file_fake": 0.233
+  },
+  "boot_delta_test_vs_max_control": {
+   "voice": {
+    "ci95": [
+     -0.0068,
+     0.00255
+    ],
+    "p_le_0": 0.839
+   },
+   "file": {
+    "ci95": [
+     -0.00444,
+     0.00066
+    ],
+    "p_le_0": 0.943
+   }
+  }
+ },
+ "train=lme|infer=max": {
+  "best_epoch": 48,
+  "epochs_run": 50,
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.06802,
+   "voice": 0.05176,
+   "music": 0.12015,
+   "ADS": 0.91959
+  },
+  "test": {
+   "file": 0.11049,
+   "voice": 0.10877,
+   "music": 0.20005,
+   "ADS": 0.86299
+  },
+  "len_rho_within_source_test": {
+   "voice_real": 0.245,
+   "voice_fake": 0.304,
+   "file_real": 0.22,
+   "file_fake": 0.272
+  },
+  "boot_delta_test_vs_max_control": {
+   "voice": {
+    "ci95": [
+     -0.0049,
+     0.00191
+    ],
+    "p_le_0": 0.768
+   },
+   "file": {
+    "ci95": [
+     -0.00483,
+     0.00505
+    ],
+    "p_le_0": 0.47
+   }
+  }
+ },
+ "train=lme|infer=mean_logit": {
+  "best_epoch": 48,
+  "epochs_run": 50,
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.07652,
+   "voice": 0.05176,
+   "music": 0.12015,
+   "ADS": 0.91534
+  },
+  "test": {
+   "file": 0.11701,
+   "voice": 0.11208,
+   "music": 0.20005,
+   "ADS": 0.85906
+  },
+  "len_rho_within_source_test": {
+   "voice_real": 0.07,
+   "voice_fake": 0.081,
+   "file_real": 0.158,
+   "file_fake": 0.154
+  },
+  "boot_delta_test_vs_max_control": {
+   "voice": {
+    "ci95": [
+     -0.00531,
+     0.00746
+    ],
+    "p_le_0": 0.392
+   },
+   "file": {
+    "ci95": [
+     -0.0011,
+     0.01171
+    ],
+    "p_le_0": 0.048
+   }
+  }
+ },
+ "train=mean|infer=mean_logit": {
+  "best_epoch": 48,
+  "epochs_run": 50,
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.07079,
+   "voice": 0.05017,
+   "music": 0.12015,
+   "ADS": 0.91853
+  },
+  "test": {
+   "file": 0.1094,
+   "voice": 0.10724,
+   "music": 0.20005,
+   "ADS": 0.86384
+  },
+  "len_rho_within_source_test": {
+   "voice_real": 0.089,
+   "voice_fake": 0.097,
+   "file_real": 0.154,
+   "file_fake": 0.161
+  },
+  "boot_delta_test_vs_max_control": {
+   "voice": {
+    "ci95": [
+     -0.0101,
+     0.00215
+    ],
+    "p_le_0": 0.888
+   },
+   "file": {
+    "ci95": [
+     -0.00639,
+     0.00342
+    ],
+    "p_le_0": 0.695
+   }
+  }
+ },
+ "train=mean|infer=max": {
+  "best_epoch": 48,
+  "epochs_run": 50,
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.06616,
+   "voice": 0.05096,
+   "music": 0.12015,
+   "ADS": 0.92068
+  },
+  "test": {
+   "file": 0.11236,
+   "voice": 0.10877,
+   "music": 0.20005,
+   "ADS": 0.86205
+  },
+  "len_rho_within_source_test": {
+   "voice_real": 0.256,
+   "voice_fake": 0.311,
+   "file_real": 0.225,
+   "file_fake": 0.28
+  },
+  "boot_delta_test_vs_max_control": {
+   "voice": {
+    "ci95": [
+     -0.00723,
+     0.00292
+    ],
+    "p_le_0": 0.776
+   },
+   "file": {
+    "ci95": [
+     -0.00568,
+     0.00856
+    ],
+    "p_le_0": 0.377
+   }
+  }
+ },
+ "train=mean|infer=lme": {
+  "best_epoch": 48,
+  "epochs_run": 50,
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file": 0.06616,
+   "voice": 0.04918,
+   "music": 0.12015,
+   "ADS": 0.92104
+  },
+  "test": {
+   "file": 0.10785,
+   "voice": 0.10877,
+   "music": 0.20005,
+   "ADS": 0.86431
+  },
+  "len_rho_within_source_test": {
+   "voice_real": 0.155,
+   "voice_fake": 0.243,
+   "file_real": 0.178,
+   "file_fake": 0.243
+  },
+  "boot_delta_test_vs_max_control": {
+   "voice": {
+    "ci95": [
+     -0.00775,
+     0.00327
+    ],
+    "p_le_0": 0.789
+   },
+   "file": {
+    "ci95": [
+     -0.00792,
+     0.00236
+    ],
+    "p_le_0": 0.867
+   }
+  }
+ }
+}

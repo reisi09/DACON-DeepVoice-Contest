@@ -1,0 +1,15 @@
+n {'lyria': 200, 'suno': 88, 'udio': 24, 'acestep': 168, 'musicgen': 168, 'audioldm': 40, 'elevenlabs': 24} reals_train 384 reals_test(sonicmaster) 200
+held-out generator lyria     : AUC vs SonicMaster reals 0.579
+held-out generator suno      : AUC vs SonicMaster reals 0.660
+held-out generator udio      : AUC vs SonicMaster reals 0.410
+held-out generator acestep   : AUC vs SonicMaster reals 0.383
+held-out generator musicgen  : AUC vs SonicMaster reals 0.416
+held-out generator audioldm  : AUC vs SonicMaster reals 0.010
+held-out generator elevenlabs: AUC vs SonicMaster reals 0.502
+held-out generator lyria     : AUC vs held-out jamendo/FMA reals 0.852
+held-out generator suno      : AUC vs held-out jamendo/FMA reals 0.928
+held-out generator udio      : AUC vs held-out jamendo/FMA reals 0.892
+held-out generator acestep   : AUC vs held-out jamendo/FMA reals 0.824
+held-out generator musicgen  : AUC vs held-out jamendo/FMA reals 0.714
+held-out generator audioldm  : AUC vs held-out jamendo/FMA reals 0.159
+held-out generator elevenlabs: AUC vs held-out jamendo/FMA reals 0.927

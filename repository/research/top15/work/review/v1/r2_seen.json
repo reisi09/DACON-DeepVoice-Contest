@@ -1,0 +1,236 @@
+{
+ "all": {
+  "n": 4822,
+  "groups": 2215,
+  "point": {
+   "voice_df|voice_ad|music_6_12": {
+    "file": 0.0996,
+    "voice": 0.11063,
+    "music": 0.18467,
+    "ads": 0.87267
+   },
+   "voice_df_r2|voice_ad|music_6_12": {
+    "file": 0.08819,
+    "voice": 0.0945,
+    "music": 0.18467,
+    "ads": 0.88161
+   },
+   "voice_df|voice_ad_r2|music_6_12": {
+    "file": 0.09753,
+    "voice": 0.10727,
+    "music": 0.18467,
+    "ads": 0.87438
+   },
+   "voice_df|voice_ad|music_6_12_r2": {
+    "file": 0.0996,
+    "voice": 0.11063,
+    "music": 0.18467,
+    "ads": 0.87267
+   },
+   "voice_df_r2|voice_ad_r2|music_6_12_r2": {
+    "file": 0.08343,
+    "voice": 0.08227,
+    "music": 0.18467,
+    "ads": 0.88643
+   }
+  },
+  "delta_vs_S3like": {
+   "voice_df_r2|voice_ad|music_6_12": {
+    "ads": 0.00893,
+    "voice_eer": -0.01613,
+    "file_eer": -0.01141,
+    "ci95": [
+     0.00532,
+     0.01228
+    ],
+    "p_le_0": 0.0
+   },
+   "voice_df|voice_ad_r2|music_6_12": {
+    "ads": 0.00171,
+    "voice_eer": -0.00336,
+    "file_eer": -0.00208,
+    "ci95": [
+     -0.00034,
+     0.00448
+    ],
+    "p_le_0": 0.056
+   },
+   "voice_df|voice_ad|music_6_12_r2": {
+    "ads": 0.0,
+    "voice_eer": 0.0,
+    "file_eer": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_le_0": 0.997
+   },
+   "voice_df_r2|voice_ad_r2|music_6_12_r2": {
+    "ads": 0.01376,
+    "voice_eer": -0.02836,
+    "file_eer": -0.01617,
+    "ci95": [
+     0.00922,
+     0.01736
+    ],
+    "p_le_0": 0.0
+   }
+  }
+ },
+ "unseen": {
+  "n": 2706,
+  "groups": 1054,
+  "point": {
+   "voice_df|voice_ad|music_6_12": {
+    "file": 0.10654,
+    "voice": 0.12376,
+    "music": 0.17609,
+    "ads": 0.86915
+   },
+   "voice_df_r2|voice_ad|music_6_12": {
+    "file": 0.1047,
+    "voice": 0.10642,
+    "music": 0.17609,
+    "ads": 0.87354
+   },
+   "voice_df|voice_ad_r2|music_6_12": {
+    "file": 0.1047,
+    "voice": 0.10642,
+    "music": 0.17609,
+    "ads": 0.87354
+   },
+   "voice_df|voice_ad|music_6_12_r2": {
+    "file": 0.10654,
+    "voice": 0.12376,
+    "music": 0.17609,
+    "ads": 0.86915
+   },
+   "voice_df_r2|voice_ad_r2|music_6_12_r2": {
+    "file": 0.10064,
+    "voice": 0.07345,
+    "music": 0.17609,
+    "ads": 0.88216
+   }
+  },
+  "delta_vs_S3like": {
+   "voice_df_r2|voice_ad|music_6_12": {
+    "ads": 0.00438,
+    "voice_eer": -0.01734,
+    "file_eer": -0.00183,
+    "ci95": [
+     -0.00127,
+     0.00693
+    ],
+    "p_le_0": 0.08
+   },
+   "voice_df|voice_ad_r2|music_6_12": {
+    "ads": 0.00438,
+    "voice_eer": -0.01734,
+    "file_eer": -0.00183,
+    "ci95": [
+     0.00153,
+     0.00891
+    ],
+    "p_le_0": 0.005
+   },
+   "voice_df|voice_ad|music_6_12_r2": {
+    "ads": 0.0,
+    "voice_eer": 0.0,
+    "file_eer": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_le_0": 0.992
+   },
+   "voice_df_r2|voice_ad_r2|music_6_12_r2": {
+    "ads": 0.01301,
+    "voice_eer": -0.05031,
+    "file_eer": -0.0059,
+    "ci95": [
+     0.00861,
+     0.01707
+    ],
+    "p_le_0": 0.0
+   }
+  }
+ },
+ "seen": {
+  "n": 2116,
+  "groups": 1290,
+  "point": {
+   "voice_df|voice_ad|music_6_12": {
+    "file": 0.08082,
+    "voice": 0.07761,
+    "music": 0.25231,
+    "ads": 0.86837
+   },
+   "voice_df_r2|voice_ad|music_6_12": {
+    "file": 0.06464,
+    "voice": 0.06057,
+    "music": 0.25231,
+    "ads": 0.87987
+   },
+   "voice_df|voice_ad_r2|music_6_12": {
+    "file": 0.0837,
+    "voice": 0.08199,
+    "music": 0.25231,
+    "ads": 0.86606
+   },
+   "voice_df|voice_ad|music_6_12_r2": {
+    "file": 0.08082,
+    "voice": 0.07761,
+    "music": 0.25231,
+    "ads": 0.86837
+   },
+   "voice_df_r2|voice_ad_r2|music_6_12_r2": {
+    "file": 0.06286,
+    "voice": 0.06202,
+    "music": 0.25231,
+    "ads": 0.88047
+   }
+  },
+  "delta_vs_S3like": {
+   "voice_df_r2|voice_ad|music_6_12": {
+    "ads": 0.0115,
+    "voice_eer": -0.01705,
+    "file_eer": -0.01618,
+    "ci95": [
+     0.0056,
+     0.01932
+    ],
+    "p_le_0": 0.0
+   },
+   "voice_df|voice_ad_r2|music_6_12": {
+    "ads": -0.00231,
+    "voice_eer": 0.00437,
+    "file_eer": 0.00288,
+    "ci95": [
+     -0.00607,
+     0.00365
+    ],
+    "p_le_0": 0.653
+   },
+   "voice_df|voice_ad|music_6_12_r2": {
+    "ads": 0.0,
+    "voice_eer": 0.0,
+    "file_eer": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_le_0": 1.0
+   },
+   "voice_df_r2|voice_ad_r2|music_6_12_r2": {
+    "ads": 0.0121,
+    "voice_eer": -0.01559,
+    "file_eer": -0.01796,
+    "ci95": [
+     0.00482,
+     0.02198
+    ],
+    "p_le_0": 0.001
+   }
+  }
+ }
+}

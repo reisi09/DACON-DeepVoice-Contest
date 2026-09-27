@@ -1,0 +1,192 @@
+{
+ "n_cells": {
+  "voice|v0|mNA": 2287,
+  "voice|v1|mNA": 1308,
+  "music|vNA|m0": 851,
+  "mixed|v0|m0": 621,
+  "mixed|v1|m1": 530,
+  "mixed|v1|m0": 286,
+  "music|vNA|m1": 193,
+  "?|vNA|m1": 115,
+  "mixed|v0|m1": 107,
+  "mixed|vNA|m1": 85,
+  "?|vNA|m0": 61
+ },
+ "natural": {
+  "file": 0.1094,
+  "voice": 0.11071,
+  "music": 0.20005,
+  "ADS": 0.86314
+ },
+ "thirds_factorial_mixed": {
+  "file": 0.13585,
+  "voice": 0.12093,
+  "music": 0.19234,
+  "ADS": 0.85018
+ },
+ "thirds_concordant_mixed": {
+  "file": 0.12717,
+  "voice": 0.15786,
+  "music": 0.17344,
+  "ADS": 0.85281
+ },
+ "thirds_mixed_no_realvoice_aimusic": {
+  "file": 0.12575,
+  "voice": 0.12818,
+  "music": 0.17242,
+  "ADS": 0.85977
+ },
+ "voice_heavy_60_20_20_factorial": {
+  "file": 0.10229,
+  "voice": 0.08624,
+  "music": 0.19234,
+  "ADS": 0.8739
+ },
+ "music_heavy_20_40_40_factorial": {
+  "file": 0.15617,
+  "voice": 0.14316,
+  "music": 0.19234,
+  "ADS": 0.83558
+ },
+ "mixed_heavy_20_20_60_factorial": {
+  "file": 0.16065,
+  "voice": 0.15378,
+  "music": 0.20371,
+  "ADS": 0.82781
+ },
+ "voice_only": {
+  "file": 0.04977,
+  "voice": 0.04425,
+  "music": NaN,
+  "ADS": NaN
+ },
+ "per_cell_error_at_pooled_threshold": {
+  "file": {
+   "thr": 0.3347401773061819,
+   "eer": 0.10939954188481675,
+   "cells": {
+    "?|vNA|m0|y0": [
+     0.213,
+     61
+    ],
+    "?|vNA|m1|y1": [
+     0.6,
+     115
+    ],
+    "mixed|v0|m0|y0": [
+     0.29,
+     621
+    ],
+    "mixed|v0|m1|y1": [
+     0.262,
+     107
+    ],
+    "mixed|v1|m0|y1": [
+     0.157,
+     286
+    ],
+    "mixed|v1|m1|y1": [
+     0.072,
+     530
+    ],
+    "mixed|vNA|m1|y1": [
+     0.024,
+     85
+    ],
+    "music|vNA|m0|y0": [
+     0.153,
+     851
+    ],
+    "music|vNA|m1|y1": [
+     0.171,
+     193
+    ],
+    "voice|v0|mNA|y0": [
+     0.042,
+     2287
+    ],
+    "voice|v1|mNA|y1": [
+     0.055,
+     1308
+    ]
+   }
+  },
+  "voice": {
+   "thr": 0.1912508159875869,
+   "eer": 0.11070986873541894,
+   "cells": {
+    "mixed|v0|m0|y0": [
+     0.15,
+     621
+    ],
+    "mixed|v0|m1|y0": [
+     0.14,
+     107
+    ],
+    "mixed|v1|m0|y1": [
+     0.101,
+     286
+    ],
+    "mixed|v1|m1|y1": [
+     0.343,
+     530
+    ],
+    "voice|v0|mNA|y0": [
+     0.099,
+     2287
+    ],
+    "voice|v1|mNA|y1": [
+     0.018,
+     1308
+    ]
+   }
+  },
+  "music": {
+   "thr": 0.4913932780424754,
+   "eer": 0.20005497526113247,
+   "cells": {
+    "?|vNA|m0|y0": [
+     0.213,
+     61
+    ],
+    "?|vNA|m1|y1": [
+     0.609,
+     115
+    ],
+    "mixed|v0|m0|y0": [
+     0.248,
+     621
+    ],
+    "mixed|v0|m1|y1": [
+     0.28,
+     107
+    ],
+    "mixed|v1|m0|y0": [
+     0.231,
+     286
+    ],
+    "mixed|v1|m1|y1": [
+     0.138,
+     530
+    ],
+    "mixed|vNA|m1|y1": [
+     0.024,
+     85
+    ],
+    "music|vNA|m0|y0": [
+     0.154,
+     851
+    ],
+    "music|vNA|m1|y1": [
+     0.161,
+     193
+    ]
+   }
+  }
+ },
+ "file_eer_within_type": {
+  "voice": 0.04977,
+  "music": 0.1608,
+  "mixed": 0.18535
+ }
+}

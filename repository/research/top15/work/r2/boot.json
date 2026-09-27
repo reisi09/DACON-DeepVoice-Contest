@@ -1,0 +1,277 @@
+{
+ "n_groups": 2215,
+ "point": {
+  "voice_df|voice_ad|music_6_12": {
+   "ads": 0.87267,
+   "voice_eer": 0.11063
+  },
+  "voice_df_r2|voice_ad|music_6_12": {
+   "ads": 0.88161,
+   "voice_eer": 0.0945
+  },
+  "voice_df|voice_ad_r2|music_6_12": {
+   "ads": 0.87438,
+   "voice_eer": 0.10727
+  },
+  "voice_df|voice_ad|music_6_12_r2": {
+   "ads": 0.87267,
+   "voice_eer": 0.11063
+  },
+  "voice_df_r2|voice_ad_r2|music_6_12_r2": {
+   "ads": 0.88643,
+   "voice_eer": 0.08227
+  }
+ },
+ "delta_vs_base": {
+  "voice_df_r2|voice_ad|music_6_12": {
+   "ads_delta": 0.00893,
+   "ads_ci95": [
+    0.00532,
+    0.01228
+   ],
+   "p_ads_le_0": 0.0,
+   "voice_eer_delta": -0.01613,
+   "voice_ci95": [
+    -0.0241,
+    -0.00842
+   ]
+  },
+  "voice_df|voice_ad_r2|music_6_12": {
+   "ads_delta": 0.00171,
+   "ads_ci95": [
+    -0.00034,
+    0.00448
+   ],
+   "p_ads_le_0": 0.056,
+   "voice_eer_delta": -0.00336,
+   "voice_ci95": [
+    -0.01117,
+    0.00272
+   ]
+  },
+  "voice_df|voice_ad|music_6_12_r2": {
+   "ads_delta": 0.0,
+   "ads_ci95": [
+    0.0,
+    0.0
+   ],
+   "p_ads_le_0": 0.997,
+   "voice_eer_delta": 0.0,
+   "voice_ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "voice_df_r2|voice_ad_r2|music_6_12_r2": {
+   "ads_delta": 0.01376,
+   "ads_ci95": [
+    0.00922,
+    0.01736
+   ],
+   "p_ads_le_0": 0.0,
+   "voice_eer_delta": -0.02836,
+   "voice_ci95": [
+    -0.03891,
+    -0.01905
+   ]
+  }
+ },
+ "voice_route_error_by_source": {
+  "voice_df__base": {
+   "eer": 0.11951,
+   "cells": {
+    "constructed_enhanced|real": [
+     215,
+     0.2419
+    ],
+    "constructed_mix|real": [
+     116,
+     0.2069
+    ],
+    "constructed_mix|fake": [
+     277,
+     0.1047
+    ],
+    "constructed_song|real": [
+     298,
+     0.0604
+    ],
+    "fleurs_ko|real": [
+     1143,
+     0.1137
+    ],
+    "haim|fake": [
+     335,
+     0.409
+    ],
+    "mlaad|fake": [
+     451,
+     0.0443
+    ],
+    "musan_music|real": [
+     141,
+     0.3262
+    ],
+    "speechfake|fake": [
+     491,
+     0.0
+    ],
+    "vocalset|real": [
+     277,
+     0.0072
+    ],
+    "zeroth|real": [
+     72,
+     0.0
+    ]
+   }
+  },
+  "voice_df__mlp_long": {
+   "eer": 0.09006,
+   "cells": {
+    "constructed_enhanced|real": [
+     215,
+     0.1349
+    ],
+    "constructed_mix|real": [
+     116,
+     0.1034
+    ],
+    "constructed_mix|fake": [
+     277,
+     0.1264
+    ],
+    "constructed_song|real": [
+     298,
+     0.0436
+    ],
+    "fleurs_ko|real": [
+     1143,
+     0.0962
+    ],
+    "haim|fake": [
+     335,
+     0.2806
+    ],
+    "mlaad|fake": [
+     451,
+     0.0244
+    ],
+    "musan_music|real": [
+     141,
+     0.2766
+    ],
+    "speechfake|fake": [
+     491,
+     0.0
+    ],
+    "vocalset|real": [
+     277,
+     0.0072
+    ],
+    "zeroth|real": [
+     72,
+     0.0
+    ]
+   }
+  },
+  "voice_ad__base": {
+   "eer": 0.14083,
+   "cells": {
+    "constructed_enhanced|real": [
+     215,
+     0.1581
+    ],
+    "constructed_mix|real": [
+     116,
+     0.25
+    ],
+    "constructed_mix|fake": [
+     277,
+     0.1191
+    ],
+    "constructed_song|real": [
+     298,
+     0.1208
+    ],
+    "fleurs_ko|real": [
+     1143,
+     0.1269
+    ],
+    "haim|fake": [
+     335,
+     0.4866
+    ],
+    "mlaad|fake": [
+     451,
+     0.051
+    ],
+    "musan_music|real": [
+     141,
+     0.4255
+    ],
+    "speechfake|fake": [
+     491,
+     0.0
+    ],
+    "vocalset|real": [
+     277,
+     0.0614
+    ],
+    "zeroth|real": [
+     72,
+     0.0
+    ]
+   }
+  },
+  "voice_ad__resmlp_long": {
+   "eer": 0.11713,
+   "cells": {
+    "constructed_enhanced|real": [
+     215,
+     0.1395
+    ],
+    "constructed_mix|real": [
+     116,
+     0.2328
+    ],
+    "constructed_mix|fake": [
+     277,
+     0.1552
+    ],
+    "constructed_song|real": [
+     298,
+     0.0369
+    ],
+    "fleurs_ko|real": [
+     1143,
+     0.1479
+    ],
+    "haim|fake": [
+     335,
+     0.3761
+    ],
+    "mlaad|fake": [
+     451,
+     0.0288
+    ],
+    "musan_music|real": [
+     141,
+     0.1986
+    ],
+    "speechfake|fake": [
+     491,
+     0.0
+    ],
+    "vocalset|real": [
+     277,
+     0.0072
+    ],
+    "zeroth|real": [
+     72,
+     0.0
+    ]
+   }
+  }
+ }
+}

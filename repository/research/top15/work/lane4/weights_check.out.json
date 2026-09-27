@@ -1,0 +1,130 @@
+{
+ "voice": {
+  "N": 22101,
+  "cells": 384,
+  "cells_per_class": {
+   "1.0": 364,
+   "0.0": 20
+  },
+  "smallest_cells": [
+   [
+    7,
+    [
+     "0.0",
+     "existing:FMA/FMA",
+     ""
+    ]
+   ],
+   [
+    8,
+    [
+     "0.0",
+     "existing:constructed_music",
+     "REAL"
+    ]
+   ],
+   [
+    9,
+    [
+     "1.0",
+     "asvspoof2021_df",
+     "A18"
+    ]
+   ],
+   [
+    10,
+    [
+     "1.0",
+     "asvspoof2021_df",
+     "A16"
+    ]
+   ],
+   [
+    10,
+    [
+     "1.0",
+     "asvspoof2021_df",
+     "Task1-team32"
+    ]
+   ]
+  ],
+  "class_source_generator_weights": {
+   "max": 78.93,
+   "min": 0.036,
+   "mean": 1.0,
+   "kish_ess": 3773,
+   "top1pct_weight_share": 0.121
+  },
+  "after_duration_balance": {
+   "max": 105.94,
+   "min": 0.0267,
+   "mean": 1.0,
+   "kish_ess": 4732,
+   "top1pct_weight_share": 0.11
+  }
+ },
+ "music": {
+  "N": 9130,
+  "cells": 52,
+  "cells_per_class": {
+   "1.0": 41,
+   "0.0": 11
+  },
+  "smallest_cells": [
+   [
+    4,
+    [
+     "1.0",
+     "existing:Echoes/stableaudio/TTA",
+     "stableaudio"
+    ]
+   ],
+   [
+    4,
+    [
+     "1.0",
+     "existing:Echoes/mubert/TTA",
+     "mubert"
+    ]
+   ],
+   [
+    13,
+    [
+     "1.0",
+     "existing:Echoes/producer/TTA",
+     "producer"
+    ]
+   ],
+   [
+    15,
+    [
+     "1.0",
+     "existing:Echoes/producer/ATA",
+     "producer"
+    ]
+   ],
+   [
+    17,
+    [
+     "1.0",
+     "existing:suno",
+     "suno"
+    ]
+   ]
+  ],
+  "class_source_generator_weights": {
+   "max": 27.84,
+   "min": 0.2347,
+   "mean": 1.0,
+   "kish_ess": 1927,
+   "top1pct_weight_share": 0.152
+  },
+  "after_duration_balance": {
+   "max": 30.98,
+   "min": 0.1882,
+   "mean": 1.0,
+   "kish_ess": 1777,
+   "top1pct_weight_share": 0.174
+  }
+ }
+}

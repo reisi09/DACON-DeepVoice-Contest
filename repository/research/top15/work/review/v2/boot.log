@@ -1,0 +1,41 @@
+loaded 3680 4822 2s
+points reproduce ads_compare / R2 ads_report; official_metrics agrees 3s
+Q1 done 12s
+Q2 done 180s
+Q1 s3-base {'point': 0.00829, 'boot_mean': 0.00921, 'pct_ci95': [np.float64(0.00253), np.float64(0.01586)], 'basic_ci95': [np.float64(0.00072), np.float64(0.01405)], 'p_gt0': 0.9965}
+Q1 m612-base {'point': 0.0031, 'boot_mean': 0.00432, 'pct_ci95': [np.float64(-0.00177), np.float64(0.01069)], 'basic_ci95': [np.float64(-0.0045), np.float64(0.00797)], 'p_gt0': 0.921}
+Q1 s3-m612 (voice AD fusion part) {'point': 0.00519, 'boot_mean': 0.00488, 'pct_ci95': [np.float64(0.0024), np.float64(0.00748)], 'basic_ci95': [np.float64(0.0029), np.float64(0.00798)], 'p_gt0': 1.0}
+Q1 s3(w.5)-s3(w1) {'point': 0.00058, 'boot_mean': 6e-05, 'pct_ci95': [np.float64(-0.00182), np.float64(0.00202)], 'basic_ci95': [np.float64(-0.00085), np.float64(0.00299)], 'p_gt0': 0.529}
+Q1 r2_df-r2_base {'point': 0.00893, 'boot_mean': 0.0087, 'pct_ci95': [np.float64(0.00531), np.float64(0.01226)], 'basic_ci95': [np.float64(0.00561), np.float64(0.01256)], 'p_gt0': 1.0}
+Q1 r2_all-r2_base {'point': 0.01376, 'boot_mean': 0.01347, 'pct_ci95': [np.float64(0.00957), np.float64(0.01742)], 'basic_ci95': [np.float64(0.01009), np.float64(0.01794)], 'p_gt0': 1.0}
+Q2 s3-base {'point': 0.00829, 'boot_mean': 0.00901, 'pct_ci95': [np.float64(0.00264), np.float64(0.01577)], 'basic_ci95': [np.float64(0.00081), np.float64(0.01394)], 'p_gt0': 0.996}
+Q2 m612-base {'point': 0.0031, 'boot_mean': 0.00407, 'pct_ci95': [np.float64(-0.00203), np.float64(0.01084)], 'basic_ci95': [np.float64(-0.00465), np.float64(0.00823)], 'p_gt0': 0.899}
+Q2 s3-m612 (voice AD fusion part) {'point': 0.00519, 'boot_mean': 0.00493, 'pct_ci95': [np.float64(0.00236), np.float64(0.00772)], 'basic_ci95': [np.float64(0.00266), np.float64(0.00802)], 'p_gt0': 1.0}
+Q2 s3(w.5)-s3(w1) {'point': 0.00058, 'boot_mean': 0.0001, 'pct_ci95': [np.float64(-0.00215), np.float64(0.00216)], 'basic_ci95': [np.float64(-0.001), np.float64(0.00331)], 'p_gt0': 0.55}
+Q2 r2_df-r2_base {'point': 0.00893, 'boot_mean': 0.0089, 'pct_ci95': [np.float64(0.00545), np.float64(0.01243)], 'basic_ci95': [np.float64(0.00544), np.float64(0.01242)], 'p_gt0': 1.0}
+Q2 r2_all-r2_base {'point': 0.01376, 'boot_mean': 0.01346, 'pct_ci95': [np.float64(0.00942), np.float64(0.01767)], 'basic_ci95': [np.float64(0.00984), np.float64(0.01809)], 'p_gt0': 1.0}
+Q3 s3-base {'point': 0.00829, 'boot_mean': 0.00857, 'pct_ci95': [np.float64(-0.00042), np.float64(0.01604)], 'basic_ci95': [np.float64(0.00053), np.float64(0.017)], 'p_gt0': 0.967}
+Q3 m612-base {'point': 0.0031, 'boot_mean': 0.00368, 'pct_ci95': [np.float64(-0.00601), np.float64(0.01099)], 'basic_ci95': [np.float64(-0.00479), np.float64(0.0122)], 'p_gt0': 0.8245}
+Q3 s3-m612 (voice AD fusion part) {'point': 0.00519, 'boot_mean': 0.00489, 'pct_ci95': [np.float64(0.00035), np.float64(0.01018)], 'basic_ci95': [np.float64(0.0002), np.float64(0.01003)], 'p_gt0': 0.9825}
+Q3 s3(w.5)-s3(w1) {'point': 0.00058, 'boot_mean': 0.00014, 'pct_ci95': [np.float64(-0.00219), np.float64(0.00251)], 'basic_ci95': [np.float64(-0.00134), np.float64(0.00335)], 'p_gt0': 0.5505}
+Q3 r2_df-r2_base {'point': 0.00893, 'boot_mean': 0.00846, 'pct_ci95': [np.float64(0.00169), np.float64(0.01829)], 'basic_ci95': [np.float64(-0.00043), np.float64(0.01618)], 'p_gt0': 0.996}
+Q3 r2_all-r2_base {'point': 0.01376, 'boot_mean': 0.01328, 'pct_ci95': [np.float64(0.00297), np.float64(0.02448)], 'basic_ci95': [np.float64(0.00303), np.float64(0.02455)], 'p_gt0': 0.994}
+LOSO min/max {'s3-base': [0.00668, 0.01073], 'm612-base': [0.00075, 0.00629], 's3-m612 (voice AD fusion part)': [0.00223, 0.0063], 's3(w.5)-s3(w1)': [-0.00088, 0.00149], 'r2_df-r2_base': [0.00297, 0.01214], 'r2_all-r2_base': [0.00848, 0.01698]} seconds 188
+      190.47 real       186.94 user         1.35 sys
+           514392064  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               92038  page reclaims
+                   5  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+               10520  voluntary context switches
+              158008  involuntary context switches
+       2755218493687  instructions retired
+        801540276812  cycles elapsed
+           423625712  peak memory footprint

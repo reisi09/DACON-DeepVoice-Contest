@@ -13,6 +13,7 @@ from eight_fixed_io import atomic_json
 from full_bank_features import load_rows
 from graph_scoring import PREDICTION_COLUMNS, SUBMISSION_COLUMNS, official_metrics, validate_predictions
 from localization_models import WindowMIL
+import voice_heads as voice_heads_module
 from v6_data import sha256
 import decision_heads
 
@@ -26,8 +27,7 @@ def load_selected_heads(output: Path, device: str):
         head.load_state_dict(music['model'])
         music_heads.append(head.to(device).eval())
         voice = torch.load(output / f'voice_{seed}.pt', map_location='cpu', weights_only=True)
-        head = nn.Linear(1280, 2)
-        head.load_state_dict(voice['model'])
+        head = voice_heads_module.load(voice)   # Linear, MLP or ResMLP by the record's 'arch'
         voice_heads.append(head.to(device).eval())
         if fake_index is not None and fake_index != voice['fake_label_index']:
             raise ValueError('Voice fake-label mapping differs across seeds')
