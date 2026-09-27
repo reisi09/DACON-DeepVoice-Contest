@@ -43,3 +43,11 @@ cache is complete; package; offline + runtime parity verification; hand to user 
 - Backbone cache complete (42,039). S4 trained on 100% rows (P1 protocol), packaged `submissions/DataV4_S4_MLPHeads`
   (sha beeda9a6), time fallback removed, CPU verification + runtime parity PASS (max |d| 3.4e-4). Ready for 09-28 slot 1.
 - VESSL paused, credit $5.57.
+
+## 16:00 KST — workflow 2 done (wf_0a21e0e7-a05; result work2/wf2_result.json)
+- depth: no ship (held-out -0.0002); all-row DF MLP +0.0021 (already in S4). diversity: not the limiter; no data adds.
+  stacking: S5 = S4. backbones: MuQ-large-msd-iter (+EAT-large) chosen; extraction running on VESSL from /root/newbb
+  (FUSE mount served a stale script; local copy used), 95-min deadline, ~2.6 files/s, manifest = R2 31,270 rows ordered
+  val+test -> music train -> rest.
+- Next: when extraction ends (~17:25 KST) pull /root/newbackbone_cache, run work2/backbones/run.py + ads.py gate
+  (locked val rule in work2/backbones/choice_lock.json), build S5 if the gate passes.

@@ -1,0 +1,31 @@
+val choice {'music': 'music fuse music__L3_6_9 w1', 'voice': None} {'baseline': 0.93845, 'music replace music__L3_6_9_12': 0.93786, 'music fuse music__L3_6_9_12 w0.5': 0.94029, 'music fuse music__L3_6_9_12 w1': 0.93961, 'music fuse music__L3_6_9_12 w2': 0.93871, 'music replace music__L3_6_9': 0.9371, 'music fuse music__L3_6_9 w0.5': 0.93986, 'music fuse music__L3_6_9 w1': 0.94112, 'music fuse music__L3_6_9 w2': 0.94112, 'music replace music__concat8': 0.93395, 'music fuse music__concat8 w0.5': 0.94029, 'music fuse music__concat8 w1': 0.94102, 'music fuse music__concat8 w2': 0.94029, 'music replace music__sls8': 0.92872, 'music fuse music__sls8 w0.5': 0.9391, 'music fuse music__sls8 w1': 0.93614, 'music fuse music__sls8 w2': 0.93329, 'voice add voice_df__resmlp_long w0.25': 0.93782, 'voice add voice_df__resmlp_long w0.5': 0.93746, 'voice add voice_df__resmlp_long w1': 0.93687, 'voice add voice_ad__mlp_long w0.25': 0.93923, 'voice add voice_ad__mlp_long w0.5': 0.93928, 'voice add voice_ad__mlp_long w1': 0.9397}
+{
+ "choice": {
+  "music": "music fuse music__L3_6_9 w1",
+  "voice": null
+ },
+ "test": {
+  "baseline": {
+   "file_eer": 0.08343,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18467,
+   "ads": 0.88643
+  },
+  "music-only": {
+   "file_eer": 0.08551,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18054,
+   "ads": 0.88663
+  }
+ },
+ "delta_vs_baseline_test": {
+  "music-only": {
+   "ads": 0.0002,
+   "ci95": [
+    -0.00312,
+    0.00402
+   ],
+   "p_le_0": 0.449
+  }
+ }
+}

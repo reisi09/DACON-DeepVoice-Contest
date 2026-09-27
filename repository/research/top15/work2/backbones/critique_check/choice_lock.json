@@ -1,0 +1,8 @@
+{
+ "written": "2026-09-27 15:45:35 KST",
+ "question": "Null test of the study's pre-registered val gate (ads.py grid, GATE 0.002): does a candidate that adds NO new encoder pass it? If yes, the gate measures 'second head / fusion' gains, and MuQ must be compared against a MERT-only fusion control, not only against the baseline.",
+ "null_candidates": {"music": ["music__L3_6_9_12", "music__L3_6_9", "music__concat8", "music__sls8"], "voice": ["voice_df__resmlp_long", "voice_ad__mlp_long"]},
+ "note": "all are existing R2 run files (same 31,270 pinned rows, 3 seeds, DB protocol); none were chosen by held-out",
+ "rule": "run the study's ads.py unchanged (copy; only HERE differs; NEWCACHE=_workspace/backbone_cache so the row filter is a no-op). Its own phase-1 val choice is written to ads_lock__*.json before phase 2. Verdict (val only): gate admits nulls if any null config reaches val ADS >= 0.93845 + 0.002. Held-out numbers of the val-chosen null config are reported once, as a transfer diagnostic, not used to choose anything.",
+ "held_out_numbers_seen_before_lock": "none for these null fusions (R2 reported held-out EER per single head in its table, not these fused ADS configs)"
+}
