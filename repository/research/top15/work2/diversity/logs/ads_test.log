@@ -1,0 +1,46 @@
+CTRL_constructed_enhanced {'file_eer': 0.09441, 'voice_eer': 0.0919, 'music_eer': 0.18192, 'ads': 0.87984} 0.0919 0.18192
+CTRL_fleurs_ko {'file_eer': 0.09485, 'voice_eer': 0.0984, 'music_eer': 0.18192, 'ads': 0.87832} 0.0984 0.18192
+CTRL_haim {'file_eer': 0.09753, 'voice_eer': 0.08617, 'music_eer': 0.19595, 'ads': 0.87522} 0.08617 0.19595
+CTRL_mlaad {'file_eer': 0.0907, 'voice_eer': 0.08227, 'music_eer': 0.18192, 'ads': 0.88362} 0.08227 0.18192
+CTRL_real_music {'file_eer': 0.10003, 'voice_eer': 0.08801, 'music_eer': 0.19595, 'ads': 0.8736} 0.08801 0.19595
+CTRL_speechfake {'file_eer': 0.09277, 'voice_eer': 0.08541, 'music_eer': 0.18192, 'ads': 0.88196} 0.08541 0.18192
+D25_d1 {'file_eer': 0.11767, 'voice_eer': 0.1325, 'music_eer': 0.21447, 'ads': 0.85032} 0.1325 0.21447
+D25_d2 {'file_eer': 0.11871, 'voice_eer': 0.12005, 'music_eer': 0.21823, 'ads': 0.85117} 0.12005 0.21823
+D25_d3 {'file_eer': 0.1073, 'voice_eer': 0.10338, 'music_eer': 0.20145, 'ads': 0.86524} 0.10338 0.20145
+D50_d1 {'file_eer': 0.10021, 'voice_eer': 0.11637, 'music_eer': 0.19118, 'ads': 0.86927} 0.11637 0.19118
+D50_d2 {'file_eer': 0.10833, 'voice_eer': 0.11247, 'music_eer': 0.20796, 'ads': 0.86095} 0.11247 0.20796
+D50_d3 {'file_eer': 0.09856, 'voice_eer': 0.10414, 'music_eer': 0.18293, 'ads': 0.87501} 0.10414 0.18293
+D75_d1 {'file_eer': 0.09753, 'voice_eer': 0.10024, 'music_eer': 0.18944, 'ads': 0.87436} 0.10024 0.18944
+D75_d2 {'file_eer': 0.10211, 'voice_eer': 0.10597, 'music_eer': 0.18329, 'ads': 0.87276} 0.10597 0.18329
+D75_d3 {'file_eer': 0.09381, 'voice_eer': 0.0893, 'music_eer': 0.18568, 'ads': 0.87953} 0.0893 0.18568
+LOFO_constructed_enhanced {'file_eer': 0.10021, 'voice_eer': 0.11767, 'music_eer': 0.18192, 'ads': 0.87179} 0.11767 0.18192
+LOFO_fleurs_ko {'file_eer': 0.09856, 'voice_eer': 0.10543, 'music_eer': 0.18192, 'ads': 0.87506} 0.10543 0.18192
+LOFO_haim {'file_eer': 0.09649, 'voice_eer': 0.10727, 'music_eer': 0.18843, 'ads': 0.87377} 0.10727 0.18843
+LOFO_mlaad {'file_eer': 0.10436, 'voice_eer': 0.0906, 'music_eer': 0.18192, 'ads': 0.87513} 0.0906 0.18192
+LOFO_real_music {'file_eer': 0.11162, 'voice_eer': 0.10024, 'music_eer': 0.22098, 'ads': 0.85785} 0.10024 0.22098
+LOFO_speechfake {'file_eer': 0.09485, 'voice_eer': 0.08617, 'music_eer': 0.18192, 'ads': 0.88077} 0.08617 0.18192
+Q25_d0 {'file_eer': 0.10522, 'voice_eer': 0.09764, 'music_eer': 0.20383, 'ads': 0.86671} 0.09764 0.20383
+Q50_d0 {'file_eer': 0.10418, 'voice_eer': 0.10338, 'music_eer': 0.19631, 'ads': 0.86834} 0.10338 0.19631
+Q75_d0 {'file_eer': 0.09796, 'voice_eer': 0.0945, 'music_eer': 0.18944, 'ads': 0.87529} 0.0945 0.18944
+full {'file_eer': 0.09338, 'voice_eer': 0.0906, 'music_eer': 0.18192, 'ads': 0.88062} 0.0906 0.18192
+Q25-full {'delta': -0.0139, 'ci95': [-0.02258, -0.0058], 'p_le_0': 1.0}
+Dmean25-full {'delta': -0.02504, 'ci95': [-0.03213, -0.01666], 'p_le_0': 1.0}
+Q25-Dmean25 {'delta': 0.01113, 'ci95': [0.00202, 0.01897], 'p_le_0': 0.005}
+Q50-full {'delta': -0.01228, 'ci95': [-0.02055, -0.00371], 'p_le_0': 0.998}
+Dmean50-full {'delta': -0.0122, 'ci95': [-0.01745, -0.00569], 'p_le_0': 1.0}
+Q50-Dmean50 {'delta': -7e-05, 'ci95': [-0.00826, 0.00633], 'p_le_0': 0.566}
+Q75-full {'delta': -0.00533, 'ci95': [-0.01203, 0.00253], 'p_le_0': 0.893}
+Dmean75-full {'delta': -0.00507, 'ci95': [-0.01007, 3e-05], 'p_le_0': 0.972}
+Q75-Dmean75 {'delta': -0.00026, 'ci95': [-0.00546, 0.00613], 'p_le_0': 0.471}
+LOFO_haim-full {'delta': -0.00684, 'ci95': [-0.0159, 0.00238], 'p_le_0': 0.924}
+LOFO_haim-CTRL_haim {'delta': -0.00145, 'ci95': [-0.01145, 0.00633], 'p_le_0': 0.676}
+LOFO_real_music-full {'delta': -0.02277, 'ci95': [-0.02923, -0.01597], 'p_le_0': 1.0}
+LOFO_real_music-CTRL_real_music {'delta': -0.01575, 'ci95': [-0.02371, -0.00904], 'p_le_0': 1.0}
+LOFO_fleurs_ko-full {'delta': -0.00556, 'ci95': [-0.00925, -0.00294], 'p_le_0': 1.0}
+LOFO_fleurs_ko-CTRL_fleurs_ko {'delta': -0.00327, 'ci95': [-0.00649, -0.00074], 'p_le_0': 0.995}
+LOFO_constructed_enhanced-full {'delta': -0.00883, 'ci95': [-0.01178, -0.00489], 'p_le_0': 1.0}
+LOFO_constructed_enhanced-CTRL_constructed_enhanced {'delta': -0.00805, 'ci95': [-0.01087, -0.00535], 'p_le_0': 1.0}
+LOFO_mlaad-full {'delta': -0.00549, 'ci95': [-0.00975, -0.00189], 'p_le_0': 1.0}
+LOFO_mlaad-CTRL_mlaad {'delta': -0.0085, 'ci95': [-0.01214, -0.005], 'p_le_0': 1.0}
+LOFO_speechfake-full {'delta': 0.00015, 'ci95': [-0.00161, 0.00225], 'p_le_0': 0.363}
+LOFO_speechfake-CTRL_speechfake {'delta': -0.00119, 'ci95': [-0.00249, 0.00087], 'p_le_0': 0.813}

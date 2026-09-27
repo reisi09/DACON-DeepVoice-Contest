@@ -1,3 +1,7 @@
+> SUPERSEDED IN PART (2026-09-27 14:50 KST): written before S3 scored LB ADS 0.7853015873 and before the time-only GPU
+> budget directive. C.4, C.5, C.7, E and F are stale (credit-based rejections, S3-not-yet-scored, gap arithmetic from P1).
+> Current verdicts were returned to the orchestrator; new evidence here: ad2b_check.py/.out.txt, rank_check.py/.out.txt.
+
 # Review v3: feasibility, compliance, deadline (2026-09-27 14:35 KST)
 
 Read-only review. Nothing outside this folder was modified. `pkg/` holds small runtime/table files extracted from

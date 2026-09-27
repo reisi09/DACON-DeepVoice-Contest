@@ -1,0 +1,72 @@
+{
+ "per_seed_test_route_eer": {
+  "base": [
+   0.08876,
+   0.09504,
+   0.08801
+  ],
+  "plus_arena": [
+   0.07913,
+   0.0932,
+   0.08541
+  ]
+ },
+ "per_seed_val_eer": {
+  "base": [
+   0.03233,
+   0.03127,
+   0.0334
+  ],
+  "plus_arena": [
+   0.02809,
+   0.03366,
+   0.03446
+  ]
+ },
+ "official_base_3seed": {
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file_eer": 0.05501,
+   "voice_eer": 0.03127,
+   "music_eer": 0.11905,
+   "ads": 0.93052
+  },
+  "test": {
+   "file_eer": 0.09381,
+   "voice_eer": 0.09006,
+   "music_eer": 0.18192,
+   "ads": 0.88051
+  }
+ },
+ "official_plus_arena_3seed": {
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file_eer": 0.05521,
+   "voice_eer": 0.03127,
+   "music_eer": 0.11905,
+   "ads": 0.93042
+  },
+  "test": {
+   "file_eer": 0.09338,
+   "voice_eer": 0.07837,
+   "music_eer": 0.18192,
+   "ads": 0.88306
+  }
+ },
+ "ads_delta_3seed": {
+  "point": 0.00255,
+  "ci95": [
+   0.0003,
+   0.00392
+  ],
+  "p_le_0": 0.009
+ }
+}

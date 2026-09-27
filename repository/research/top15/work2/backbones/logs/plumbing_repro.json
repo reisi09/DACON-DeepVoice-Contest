@@ -1,0 +1,70 @@
+{
+ "music_new__mert6_12": {
+  "ref": "music__L6_12",
+  "same_ids": true,
+  "n": [
+   {
+    "train": 6981,
+    "val": 1286,
+    "test": 2149
+   },
+   {
+    "train": 6981,
+    "val": 1286,
+    "test": 2149
+   }
+  ],
+  "max_abs_val_pred_diff": 0.0,
+  "max_abs_test_pred_diff": 0.0,
+  "val_ens_eer": [
+   0.11194,
+   0.11194
+  ],
+  "best_epochs": [
+   [
+    21,
+    20,
+    20
+   ],
+   [
+    21,
+    20,
+    20
+   ]
+  ]
+ },
+ "voice_new__ad": {
+  "ref": "voice_ad__mlp_long",
+  "same_ids": true,
+  "n": [
+   {
+    "train": 18260,
+    "val": 2845,
+    "test": 3841
+   },
+   {
+    "train": 18260,
+    "val": 2845,
+    "test": 3841
+   }
+  ],
+  "max_abs_val_pred_diff": 0.0,
+  "max_abs_test_pred_diff": 0.0,
+  "val_ens_eer": [
+   0.02783,
+   0.02783
+  ],
+  "best_epochs": [
+   [
+    28,
+    37,
+    29
+   ],
+   [
+    28,
+    37,
+    29
+   ]
+  ]
+ }
+}

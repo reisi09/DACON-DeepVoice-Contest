@@ -1,0 +1,56 @@
+--- full_bank_submission.py	2026-09-27 15:24:38
++++ full_bank_submission.py	2026-09-27 15:25:00
+@@ -133,8 +133,15 @@
+                 emb = torch.from_numpy(self.detector.windows(voice)[0]).to(self.device)
+                 members['ad'] = float(np.mean([float(h(emb).softmax(-1)[:, 0].max()) for h in self.ad_heads]))
+             vf = cf.fuse(self.fusion['voice'], members)
++        vout = vf   # VOICE_FAKE_PROB; FILE keeps the plain fused vf unless song_aware.coupled
++        sa = self.fusion['voice'].get('song_aware') if self.fusion and not silent else None
++        if sa:   # song-aware VOICE: the file's own music-head score joins the voice CDF fusion, gated by MUSIC presence
++            g = mp if sa['gate'] == 'soft' else float(mp >= .5)
++            vout = cf.fuse({'weights': {**self.fusion['voice']['weights'], 'mu': sa['b'] * g},
++                            'tables': self.fusion['voice']['tables']}, {**members, 'mu': mf})
++            vf = vout if sa['coupled'] else vf
+         file = decision_heads.file_score(self.ensemble, dict(Pv=vp, Pm=mp, Fv=vf, Fm=mf))
+-        return dict(zip(PREDICTION_COLUMNS, (file, vf, mf, vp, mp), strict=True))
++        return dict(zip(PREDICTION_COLUMNS, (file, vout, mf, vp, mp), strict=True))
+ 
+ 
+ def run(root: Path):
+--- data_v4/train_backbone_heads.py	2026-09-27 15:24:38
++++ data_v4/train_backbone_heads.py	2026-09-27 15:25:00
+@@ -117,6 +117,8 @@
+     ap.add_argument('--music-layers', type=int, nargs='+', default=[6, 12])
+     ap.add_argument('--ours', type=Path, default=ROOT / '_workspace/p1_refit_cpu', help='DF-Arena voice heads kept as "ours"')
+     ap.add_argument('--ad-weight', type=float, default=.5)
++    ap.add_argument('--song-aware', type=float, default=0., help='weight b of the gated music member in VOICE fusion (0 = off)')
++    ap.add_argument('--song-gate', default='soft', choices=('soft', 'hard'))
+     ap.add_argument('--voice-arch', default='copy', choices=('copy', 'linear', 'mlp'), help='DF-Arena voice heads: copy from --ours or retrain')
+     ap.add_argument('--ad-arch', default='linear', choices=('linear', 'mlp', 'resmlp'))
+     ap.add_argument('--voice-epochs', type=int, default=50)
+@@ -251,15 +253,23 @@
+     spec = {'weights': {'ours': 1, 'ad': a.ad_weight},
+             'tables': {'ours': dh.quantile_table([ours[r['ID']] for r in val_rows if ours[r['ID']] > 0]),
+                        'ad': dh.quantile_table([val_scores['voice_ad'][r['ID']] for r in val_rows if ours[r['ID']] > 0])}}
++    if a.song_aware:   # decoupled: FILE keeps the plain fused Fv (stacking study val choice), VOICE output is song-aware
++        spec['tables']['mu'] = dh.quantile_table([val_scores['music'][r['ID']] for r in val_rows if ours[r['ID']] > 0])
++        spec['song_aware'] = {'b': a.song_aware, 'gate': a.song_gate, 'coupled': False}
+     files = []
+     for r in val_rows:
+         s = scored[r['ID']]
+         vp, mp = dh.presence(presence, s['presence_features'], (s['Pv'], s['Pm']))
+         fv = 0. if ours[r['ID']] == 0. else fuse(spec, {'ours': ours[r['ID']], 'ad': val_scores['voice_ad'][r['ID']]})
+-        files.append(({**s, 'Pv': vp, 'Pm': mp, 'Fv': fv, 'Fm': val_scores['music'][r['ID']]}, r))
++        mf, sv = val_scores['music'][r['ID']], fv
++        if a.song_aware and ours[r['ID']] > 0:
++            g = mp if a.song_gate == 'soft' else float(mp >= .5)
++            sv = fuse({'weights': {**spec['weights'], 'mu': a.song_aware * g}, 'tables': spec['tables']},
++                      {'ours': ours[r['ID']], 'ad': val_scores['voice_ad'][r['ID']], 'mu': mf})
++        files.append(({**s, 'Pv': vp, 'Pm': mp, 'Fv': fv, 'Fv_song': sv, 'Fm': mf}, r))
+     keep = [(f, r) for f, r in files if r['FILE_FAKE_mask'] == '1']
+     ens, ens_report = fit_file([f for f, _ in keep], np.array([int(r['FILE_FAKE']) for _, r in keep]))
+-    preds = [{'ID': f['ID'], 'FILE_FAKE_PROB': dh.file_score(ens, f), 'VOICE_FAKE_PROB': f['Fv'], 'MUSIC_FAKE_PROB': f['Fm'],
++    preds = [{'ID': f['ID'], 'FILE_FAKE_PROB': dh.file_score(ens, f), 'VOICE_FAKE_PROB': f['Fv_song'], 'MUSIC_FAKE_PROB': f['Fm'],
+               'VOICE_PRESENT_PROB': f['Pv'], 'MUSIC_PRESENT_PROB': f['Pm']} for f, _ in files]
+     metrics = official_metrics([r for _, r in files], preds)
+     (a.out / 'file_ensemble.json').write_text(json.dumps(ens) + '\n')

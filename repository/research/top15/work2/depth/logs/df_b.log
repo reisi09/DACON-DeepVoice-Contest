@@ -1,0 +1,31 @@
+fullvoice_db loaded {'train': 24623, 'val': 3785, 'test': 5139} 17.9 s
+fullvoice_db resln 41 {'val_eer': 0.02747348237623788, 'best_epoch': 20, 'epochs_run': 30, 'train_seconds': 49.4, 'n_params': 1710594, 'peak_rss_gb': 1.5}
+fullvoice_db resln 42 {'val_eer': 0.02568418101564578, 'best_epoch': 30, 'epochs_run': 40, 'train_seconds': 92.6, 'n_params': 1710594, 'peak_rss_gb': 1.5}
+fullvoice_db resln 43 {'val_eer': 0.026676986387736107, 'best_epoch': 20, 'epochs_run': 30, 'train_seconds': 71.9, 'n_params': 1710594, 'peak_rss_gb': 1.5}
+fullvoice_db resln val_ens_eer 0.02429
+fullvoice_db resln_d1 41 {'val_eer': 0.02747348237623788, 'best_epoch': 23, 'epochs_run': 33, 'train_seconds': 79.3, 'n_params': 1710594, 'peak_rss_gb': 1.5}
+fullvoice_db resln_d1 42 {'val_eer': 0.028269978364739653, 'best_epoch': 13, 'epochs_run': 23, 'train_seconds': 55.9, 'n_params': 1710594, 'peak_rss_gb': 1.5}
+fullvoice_db resln_d1 43 {'val_eer': 0.026676986387736107, 'best_epoch': 28, 'epochs_run': 38, 'train_seconds': 79.1, 'n_params': 1710594, 'peak_rss_gb': 1.5}
+fullvoice_db resln_d1 val_ens_eer 0.02588
+fullvoice_db resln_d3 41 {'val_eer': 0.02747348237623788, 'best_epoch': 36, 'epochs_run': 46, 'train_seconds': 85.9, 'n_params': 1710594, 'peak_rss_gb': 1.5}
+fullvoice_db resln_d3 42 {'val_eer': 0.02926278373682998, 'best_epoch': 17, 'epochs_run': 27, 'train_seconds': 49.7, 'n_params': 1710594, 'peak_rss_gb': 1.5}
+fullvoice_db resln_d3 43 {'val_eer': 0.028269978364739653, 'best_epoch': 28, 'epochs_run': 38, 'train_seconds': 68.5, 'n_params': 1710594, 'peak_rss_gb': 1.5}
+fullvoice_db resln_d3 val_ens_eer 0.02747
+      658.70 real       695.56 user        66.20 sys
+          1605533696  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              844720  page reclaims
+                 312  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+              116031  voluntary context switches
+            12099367  involuntary context switches
+       7413048671574  instructions retired
+       2926762588751  cycles elapsed
+          1615136832  peak memory footprint

@@ -1,0 +1,24 @@
+reproduction max |diff| {'ref_df vs r2 fullvoice_db mlp_long': 0.0, 'ref_ad vs r2 voice_ad resmlp_long': 0.0, 'ref_mu vs r2 music L6_12': 0.0}
+A R2 both-MLP ('r2_df', 'r2_ad', 'r2_mu') {'val': {'file_eer': 0.0474, 'voice_eer': 0.0215, 'music_eer': 0.1119, 'ads': 0.93845, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 21, 'MUSIC_FAKE_PROB': 2}}, 'test': {'file_eer': 0.0834, 'voice_eer': 0.0823, 'music_eer': 0.1847, 'ads': 0.88643, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 15, 'MUSIC_FAKE_PROB': 0}}}
+B depth all-row reference ('ref_df', 'ref_ad', 'ref_mu') {'val': {'file_eer': 0.0449, 'voice_eer': 0.0217, 'music_eer': 0.1119, 'ads': 0.93964, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 32, 'MUSIC_FAKE_PROB': 2}}, 'test': {'file_eer': 0.0834, 'voice_eer': 0.0719, 'music_eer': 0.1847, 'ads': 0.88851, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 34, 'MUSIC_FAKE_PROB': 0}}}
+C depth chosen ('ch_df', 'ch_ad', 'ch_mu') {'val': {'file_eer': 0.0414, 'voice_eer': 0.0164, 'music_eer': 0.1119, 'ads': 0.94245, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 0, 'MUSIC_FAKE_PROB': 2}}, 'test': {'file_eer': 0.0855, 'voice_eer': 0.0778, 'music_eer': 0.1847, 'ads': 0.88628, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 0, 'MUSIC_FAKE_PROB': 0}}}
+B + chosen fullvoice_db (resln) ('ch_df', 'ref_ad', 'ref_mu') {'val': {'file_eer': 0.0422, 'voice_eer': 0.0172, 'music_eer': 0.1119, 'ads': 0.94188, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 0, 'MUSIC_FAKE_PROB': 2}}, 'test': {'file_eer': 0.0861, 'voice_eer': 0.0739, 'music_eer': 0.1847, 'ads': 0.88676, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 0, 'MUSIC_FAKE_PROB': 0}}}
+B + chosen voice_ad (resln_d1) ('ref_df', 'ch_ad', 'ref_mu') {'val': {'file_eer': 0.044, 'voice_eer': 0.0193, 'music_eer': 0.1119, 'ads': 0.94053, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 21, 'MUSIC_FAKE_PROB': 2}}, 'test': {'file_eer': 0.0855, 'voice_eer': 0.0747, 'music_eer': 0.1847, 'ads': 0.88691, 'n_exact_1': {'FILE_FAKE_PROB': 0, 'VOICE_FAKE_PROB': 6, 'MUSIC_FAKE_PROB': 0}}}
+       13.97 real        11.38 user         1.50 sys
+           534282240  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               93748  page reclaims
+                   2  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                9272  voluntary context switches
+              136871  involuntary context switches
+        244710542755  instructions retired
+         54430830059  cycles elapsed
+           441386016  peak memory footprint

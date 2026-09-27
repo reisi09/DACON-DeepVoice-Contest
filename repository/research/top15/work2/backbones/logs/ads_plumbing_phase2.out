@@ -1,0 +1,31 @@
+val choice {'music': 'music replace music_new__mert6_12', 'voice': None} {'baseline': 0.93845, 'music replace music_new__mert6_12': 0.93845, 'music fuse music_new__mert6_12 w0.5': 0.93845, 'music fuse music_new__mert6_12 w1': 0.93845, 'music fuse music_new__mert6_12 w2': 0.93845}
+{
+ "choice": {
+  "music": "music replace music_new__mert6_12",
+  "voice": null
+ },
+ "test": {
+  "baseline": {
+   "file_eer": 0.08343,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18467,
+   "ads": 0.88643
+  },
+  "music-only": {
+   "file_eer": 0.08343,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18467,
+   "ads": 0.88643
+  }
+ },
+ "delta_vs_baseline_test": {
+  "music-only": {
+   "ads": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_le_0": 1.0
+  }
+ }
+}

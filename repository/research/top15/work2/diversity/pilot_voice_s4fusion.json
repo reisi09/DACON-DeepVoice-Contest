@@ -1,0 +1,41 @@
+{
+ "base": {
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file_eer": 0.05087,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11905,
+   "ads": 0.93456
+  },
+  "test": {
+   "file_eer": 0.08551,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18192,
+   "ads": 0.88622
+  }
+ },
+ "plus_arena": {
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "val": {
+   "file_eer": 0.0517,
+   "voice_eer": 0.02359,
+   "music_eer": 0.11905,
+   "ads": 0.93372
+  },
+  "test": {
+   "file_eer": 0.08655,
+   "voice_eer": 0.07837,
+   "music_eer": 0.18192,
+   "ads": 0.88648
+  }
+ },
+ "delta_test_ads": 0.00026
+}

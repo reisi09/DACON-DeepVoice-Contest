@@ -1,0 +1,34 @@
+val choice {'music': None, 'voice': None} {'baseline': 0.93845, 'music replace music_new__mert6_12': 0.93845, 'music fuse music_new__mert6_12 w0.5': 0.93845, 'music fuse music_new__mert6_12 w1': 0.93845, 'music fuse music_new__mert6_12 w2': 0.93845, 'voice add voice_new__ad w0.25': 0.93923, 'voice add voice_new__ad w0.5': 0.93928, 'voice add voice_new__ad w1': 0.9397}
+{
+ "choice": {
+  "music": null,
+  "voice": null
+ },
+ "test": {
+  "baseline": {
+   "file_eer": 0.08343,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18467,
+   "ads": 0.88643
+  }
+ },
+ "delta_vs_baseline_test": {}
+}
+       19.05 real        16.86 user         1.47 sys
+           518078464  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               59365  page reclaims
+                  79  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                7443  voluntary context switches
+              132964  involuntary context switches
+        370416961762  instructions retired
+         76583816541  cycles elapsed
+           425001992  peak memory footprint

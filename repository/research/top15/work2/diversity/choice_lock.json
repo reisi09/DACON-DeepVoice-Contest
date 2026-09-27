@@ -1,0 +1,161 @@
+{
+ "written": "2026-09-27 15:23:25 KST",
+ "protocol": "DB: R2 val-chosen head designs (voice = DF-Arena fc5 MLP mlp_long alone, music = MERT 6+12 WindowMIL) trained on train subsets of the frozen R2 row universe (31,270 backbone rows); full val for early stopping, FILE refit and CDF tables; 2 seeds (41, 42) averaged; held-out test scored once after this lock; group bootstrap 1000 reps over test group_id with models fixed.",
+ "rules": {
+  "exp1": "Primary contrast = 50% rows: diversity is a limiter iff held-out ADS(Q50) - mean over 3 draws ADS(D50) > 0 with 95% group CI excluding 0; same test at 25%/75% reported as secondary. Quantity is a limiter at f iff ADS(full) - ADS(Qf) > 0 with CI excluding 0. Val numbers are the locked expectation; held-out can confirm or contradict them but nothing is re-selected on held-out.",
+  "exp2": "A family depends on its nearest train relatives iff error(LOFO) - error(CTRL) on the family error class (miss for fakes, FPR for reals, at each head's own held-out route-EER threshold) >= +0.05 absolute with the family-group bootstrap CI excluding 0. Relatives fixed in relatives.json before any held-out prediction was read.",
+  "exp3": "Held-out error concentrates on unseen generators iff miss(unseen) - miss(seen) > 0 with group CI excluding 0 (per component, 100% heads).",
+  "pilot": "R2 rule: +music_arena chosen iff val route ens EER improves by >= 0.002 AND the per-seed mean val EER improves; else base. Held-out reported regardless of the choice."
+ },
+ "val": {
+  "exp1_ads": {
+   "full": 0.93052,
+   "25%": {
+    "Q": 0.90798,
+    "D_draws": [
+     0.87795,
+     0.89752,
+     0.89895
+    ],
+    "D_mean": 0.89147,
+    "Q_minus_Dmean": 0.01651,
+    "full_minus_Q": 0.02254
+   },
+   "50%": {
+    "Q": 0.91437,
+    "D_draws": [
+     0.90874,
+     0.91336,
+     0.91479
+    ],
+    "D_mean": 0.9123,
+    "Q_minus_Dmean": 0.00207,
+    "full_minus_Q": 0.01615
+   },
+   "75%": {
+    "Q": 0.92545,
+    "D_draws": [
+     0.92654,
+     0.92824,
+     0.92199
+    ],
+    "D_mean": 0.92559,
+    "Q_minus_Dmean": -0.00014,
+    "full_minus_Q": 0.00507
+   }
+  },
+  "exp2": {
+   "constructed_enhanced": {
+    "LOFO_val_ads": 0.92839,
+    "CTRL_val_ads": 0.92849,
+    "LOFO_val_route_eer": {
+     "voice_df": 0.03472,
+     "music": 0.11905
+    },
+    "CTRL_val_route_eer": {
+     "voice_df": 0.03472,
+     "music": 0.11905
+    }
+   },
+   "fleurs_ko": {
+    "LOFO_val_ads": 0.93064,
+    "CTRL_val_ads": 0.92782,
+    "LOFO_val_route_eer": {
+     "voice_df": 0.03021,
+     "music": 0.11905
+    },
+    "CTRL_val_route_eer": {
+     "voice_df": 0.03552,
+     "music": 0.11905
+    }
+   },
+   "haim": {
+    "LOFO_val_ads": 0.92051,
+    "CTRL_val_ads": 0.92736,
+    "LOFO_val_route_eer": {
+     "voice_df": 0.0379,
+     "music": 0.12908
+    },
+    "CTRL_val_route_eer": {
+     "voice_df": 0.0334,
+     "music": 0.12682
+    }
+   },
+   "mlaad": {
+    "LOFO_val_ads": 0.92595,
+    "CTRL_val_ads": 0.93034,
+    "LOFO_val_route_eer": {
+     "voice_df": 0.03658,
+     "music": 0.11905
+    },
+    "CTRL_val_route_eer": {
+     "voice_df": 0.02915,
+     "music": 0.11905
+    }
+   },
+   "real_music": {
+    "LOFO_val_ads": 0.91074,
+    "CTRL_val_ads": 0.92146,
+    "LOFO_val_route_eer": {
+     "voice_df": 0.03472,
+     "music": 0.15238
+    },
+    "CTRL_val_route_eer": {
+     "voice_df": 0.03366,
+     "music": 0.13458
+    }
+   },
+   "speechfake": {
+    "LOFO_val_ads": 0.9295,
+    "CTRL_val_ads": 0.93074,
+    "LOFO_val_route_eer": {
+     "voice_df": 0.03127,
+     "music": 0.11905
+    },
+    "CTRL_val_route_eer": {
+     "voice_df": 0.03021,
+     "music": 0.11905
+    }
+   }
+  }
+ },
+ "choice": {
+  "exp1_val_verdict": {
+   "25%": "diversity costs more than quantity",
+   "50%": "diversity costs more than quantity",
+   "75%": "no difference on val"
+  },
+  "pilot": {
+   "music": "base",
+   "voice": "base"
+  },
+  "pilot_detail": {
+   "music": {
+    "base": "pilot_music__base",
+    "candidate": "pilot_music__plus_arena",
+    "val_ens_eer": [
+     0.1252,
+     0.12747
+    ],
+    "val_seed_mean_eer": [
+     0.12887,
+     0.13426
+    ],
+    "choice": "base"
+   },
+   "voice": {
+    "base": "voice_df__full",
+    "candidate": "pilot_voice__plus_arena",
+    "val_ens_eer": [
+     0.03127,
+     0.03021
+    ],
+    "val_seed_mean_eer": [
+     0.0318,
+     0.03087
+    ],
+    "choice": "base"
+   }
+  }
+ }
+}

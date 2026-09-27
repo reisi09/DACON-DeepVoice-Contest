@@ -1,0 +1,55 @@
+voice_df loaded {'train': 18260, 'val': 2845, 'test': 3841} 44.3 s; configs ['LOFO_haim', 'CTRL_haim', 'LOFO_real_music', 'CTRL_real_music', 'LOFO_fleurs_ko', 'CTRL_fleurs_ko', 'LOFO_constructed_enhanced', 'CTRL_constructed_enhanced', 'LOFO_mlaad', 'CTRL_mlaad', 'LOFO_speechfake', 'CTRL_speechfake']
+voice_df LOFO_haim 41 {'val_eer': 0.035777042523339256, 'best_epoch': 26, 'epochs_run': 36, 'train_seconds': 24.4, 'n_train': 17721}
+voice_df LOFO_haim 42 {'val_eer': 0.03763710134369434, 'best_epoch': 23, 'epochs_run': 33, 'train_seconds': 18.9, 'n_train': 17721}
+voice_df LOFO_haim val_ens_eer 0.0379
+voice_df CTRL_haim 41 {'val_eer': 0.031013628064684384, 'best_epoch': 42, 'epochs_run': 52, 'train_seconds': 25.9, 'n_train': 17622}
+voice_df CTRL_haim 42 {'val_eer': 0.0323348937815912, 'best_epoch': 37, 'epochs_run': 47, 'train_seconds': 24.2, 'n_train': 17622}
+voice_df CTRL_haim val_ens_eer 0.0334
+voice_df LOFO_real_music 41 {'val_eer': 0.03551621831885311, 'best_epoch': 19, 'epochs_run': 29, 'train_seconds': 15.2, 'n_train': 16626}
+voice_df LOFO_real_music 42 {'val_eer': 0.03657665983127373, 'best_epoch': 15, 'epochs_run': 25, 'train_seconds': 13.1, 'n_train': 16626}
+voice_df LOFO_real_music val_ens_eer 0.03472
+voice_df CTRL_real_music 41 {'val_eer': 0.039757984368535636, 'best_epoch': 5, 'epochs_run': 15, 'train_seconds': 7.9, 'n_train': 16899}
+voice_df CTRL_real_music 42 {'val_eer': 0.03445577680643249, 'best_epoch': 48, 'epochs_run': 58, 'train_seconds': 24.5, 'n_train': 16899}
+voice_df CTRL_real_music val_ens_eer 0.03366
+voice_df LOFO_fleurs_ko 41 {'val_eer': 0.028093127731908675, 'best_epoch': 64, 'epochs_run': 74, 'train_seconds': 31.5, 'n_train': 16143}
+voice_df LOFO_fleurs_ko 42 {'val_eer': 0.032074069577105055, 'best_epoch': 41, 'epochs_run': 51, 'train_seconds': 24.9, 'n_train': 16143}
+voice_df LOFO_fleurs_ko val_ens_eer 0.03021
+voice_df CTRL_fleurs_ko 41 {'val_eer': 0.03445577680643249, 'best_epoch': 19, 'epochs_run': 29, 'train_seconds': 12.7, 'n_train': 16143}
+voice_df CTRL_fleurs_ko 42 {'val_eer': 0.03339533529401181, 'best_epoch': 30, 'epochs_run': 40, 'train_seconds': 16.5, 'n_train': 16143}
+voice_df CTRL_fleurs_ko val_ens_eer 0.03552
+voice_df LOFO_constructed_enhanced 41 {'val_eer': 0.03445577680643249, 'best_epoch': 23, 'epochs_run': 33, 'train_seconds': 12.9, 'n_train': 16131}
+voice_df LOFO_constructed_enhanced 42 {'val_eer': 0.034716601010918634, 'best_epoch': 21, 'epochs_run': 31, 'train_seconds': 12.2, 'n_train': 16131}
+voice_df LOFO_constructed_enhanced val_ens_eer 0.03472
+voice_df CTRL_constructed_enhanced 41 {'val_eer': 0.03127445226917058, 'best_epoch': 58, 'epochs_run': 68, 'train_seconds': 25.7, 'n_train': 16131}
+voice_df CTRL_constructed_enhanced 42 {'val_eer': 0.034716601010918634, 'best_epoch': 19, 'epochs_run': 29, 'train_seconds': 10.3, 'n_train': 16131}
+voice_df CTRL_constructed_enhanced val_ens_eer 0.03472
+voice_df LOFO_mlaad 41 {'val_eer': 0.03551621831885311, 'best_epoch': 17, 'epochs_run': 27, 'train_seconds': 8.9, 'n_train': 14491}
+voice_df LOFO_mlaad 42 {'val_eer': 0.036837484035759926, 'best_epoch': 19, 'epochs_run': 29, 'train_seconds': 9.3, 'n_train': 14491}
+voice_df LOFO_mlaad val_ens_eer 0.03658
+voice_df CTRL_mlaad 41 {'val_eer': 0.03551621831885311, 'best_epoch': 16, 'epochs_run': 26, 'train_seconds': 8.5, 'n_train': 14491}
+voice_df CTRL_mlaad 42 {'val_eer': 0.02995318655226377, 'best_epoch': 101, 'epochs_run': 111, 'train_seconds': 36.3, 'n_train': 14491}
+voice_df CTRL_mlaad val_ens_eer 0.02915
+voice_df LOFO_speechfake 41 {'val_eer': 0.0325957179860774, 'best_epoch': 35, 'epochs_run': 45, 'train_seconds': 16.4, 'n_train': 16337}
+voice_df LOFO_speechfake 42 {'val_eer': 0.031013628064684384, 'best_epoch': 68, 'epochs_run': 78, 'train_seconds': 27.8, 'n_train': 16337}
+voice_df LOFO_speechfake val_ens_eer 0.03127
+voice_df CTRL_speechfake 41 {'val_eer': 0.029153569244329346, 'best_epoch': 69, 'epochs_run': 79, 'train_seconds': 28.9, 'n_train': 16337}
+voice_df CTRL_speechfake 42 {'val_eer': 0.0323348937815912, 'best_epoch': 31, 'epochs_run': 41, 'train_seconds': 15.8, 'n_train': 16337}
+voice_df CTRL_speechfake val_ens_eer 0.03021
+      509.31 real       499.98 user        42.13 sys
+           984137728  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              516405  page reclaims
+                1651  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+               64868  voluntary context switches
+             6403940  involuntary context switches
+       5336920830266  instructions retired
+       2010395599784  cycles elapsed
+          1286719240  peak memory footprint

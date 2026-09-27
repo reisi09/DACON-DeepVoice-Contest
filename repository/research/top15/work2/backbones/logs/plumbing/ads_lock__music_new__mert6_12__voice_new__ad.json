@@ -1,0 +1,62 @@
+{
+ "written": "2026-09-27 15:32:30 KST",
+ "rule": "choice_lock.json rule B (gate 0.002 val ADS; EAT only if +0.002 over MuQ-only; ties -> simpler)",
+ "rows": {
+  "val": 3680,
+  "test": 4822
+ },
+ "choice": {
+  "music": null,
+  "voice": null
+ },
+ "val": {
+  "baseline": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  },
+  "music replace music_new__mert6_12": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  },
+  "music fuse music_new__mert6_12 w0.5": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  },
+  "music fuse music_new__mert6_12 w1": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  },
+  "music fuse music_new__mert6_12 w2": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  },
+  "voice add voice_new__ad w0.25": {
+   "file_eer": 0.04653,
+   "voice_eer": 0.01961,
+   "music_eer": 0.11194,
+   "ads": 0.93923
+  },
+  "voice add voice_new__ad w0.5": {
+   "file_eer": 0.04653,
+   "voice_eer": 0.01935,
+   "music_eer": 0.11194,
+   "ads": 0.93928
+  },
+  "voice add voice_new__ad w1": {
+   "file_eer": 0.0457,
+   "voice_eer": 0.01935,
+   "music_eer": 0.11194,
+   "ads": 0.9397
+  }
+ }
+}

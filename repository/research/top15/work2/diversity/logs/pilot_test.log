@@ -1,0 +1,52 @@
+music {
+ "base": {
+  "val_ens_eer": 0.1252,
+  "test_route_eer": 0.19081,
+  "haim_fake_miss": 0.175,
+  "non_haim_fake_miss": 0.2275,
+  "real_fp": 0.1907,
+  "haim_fake_auc_vs_all_reals": 0.9043
+ },
+ "plus_arena": {
+  "val_ens_eer": 0.12747,
+  "test_route_eer": 0.19356,
+  "haim_fake_miss": 0.1713,
+  "non_haim_fake_miss": 0.2446,
+  "real_fp": 0.1936,
+  "haim_fake_auc_vs_all_reals": 0.9117
+ },
+ "delta_test_route_eer": {
+  "point": 0.00275,
+  "ci95": [
+   -0.01134,
+   0.00903
+  ],
+  "p_le_0": 0.501
+ }
+}
+voice {
+ "base": {
+  "val_ens_eer": 0.03127,
+  "test_route_eer": 0.0906,
+  "haim_fake_miss": 0.2746,
+  "non_haim_fake_miss": 0.0401,
+  "real_fp": 0.0906,
+  "haim_fake_auc_vs_all_reals": 0.9058
+ },
+ "plus_arena": {
+  "val_ens_eer": 0.03021,
+  "test_route_eer": 0.07783,
+  "haim_fake_miss": 0.2269,
+  "non_haim_fake_miss": 0.0369,
+  "real_fp": 0.0779,
+  "haim_fake_auc_vs_all_reals": 0.9286
+ },
+ "delta_test_route_eer": {
+  "point": -0.01277,
+  "ci95": [
+   -0.01769,
+   -0.00695
+  ],
+  "p_le_0": 1.0
+ }
+}

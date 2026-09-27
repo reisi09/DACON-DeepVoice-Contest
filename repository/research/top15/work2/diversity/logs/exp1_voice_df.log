@@ -1,0 +1,58 @@
+voice_df loaded {'train': 18260, 'val': 2845, 'test': 3841} 33.1 s; configs ['full', 'Q25_d0', 'D25_d1', 'D25_d2', 'D25_d3', 'Q50_d0', 'D50_d1', 'D50_d2', 'D50_d3', 'Q75_d0', 'D75_d1', 'D75_d2', 'D75_d3']
+voice_df full 41 {'val_eer': 0.0323348937815912, 'best_epoch': 32, 'epochs_run': 42, 'train_seconds': 22.3, 'n_train': 18260}
+voice_df full 42 {'val_eer': 0.03127445226917058, 'best_epoch': 60, 'epochs_run': 70, 'train_seconds': 37.8, 'n_train': 18260}
+voice_df full val_ens_eer 0.03127
+voice_df Q25_d0 41 {'val_eer': 0.03789792554818054, 'best_epoch': 47, 'epochs_run': 57, 'train_seconds': 8.5, 'n_train': 4706}
+voice_df Q25_d0 42 {'val_eer': 0.04081842588095625, 'best_epoch': 53, 'epochs_run': 63, 'train_seconds': 8.9, 'n_train': 4706}
+voice_df Q25_d0 val_ens_eer 0.03976
+voice_df D25_d1 41 {'val_eer': 0.059106755796593115, 'best_epoch': 1, 'epochs_run': 11, 'train_seconds': 1.5, 'n_train': 4689}
+voice_df D25_d1 42 {'val_eer': 0.06254890453834117, 'best_epoch': 5, 'epochs_run': 15, 'train_seconds': 2.1, 'n_train': 4689}
+voice_df D25_d1 val_ens_eer 0.06043
+voice_df D25_d2 41 {'val_eer': 0.05698587277175182, 'best_epoch': 17, 'epochs_run': 27, 'train_seconds': 3.9, 'n_train': 4555}
+voice_df D25_d2 42 {'val_eer': 0.05168366520964868, 'best_epoch': 40, 'epochs_run': 50, 'train_seconds': 6.0, 'n_train': 4555}
+voice_df D25_d2 val_ens_eer 0.0538
+voice_df D25_d3 41 {'val_eer': 0.04532101613512492, 'best_epoch': 16, 'epochs_run': 26, 'train_seconds': 3.6, 'n_train': 4721}
+voice_df D25_d3 42 {'val_eer': 0.04532101613512492, 'best_epoch': 21, 'epochs_run': 31, 'train_seconds': 5.7, 'n_train': 4721}
+voice_df D25_d3 val_ens_eer 0.04506
+voice_df Q50_d0 41 {'val_eer': 0.035777042523339256, 'best_epoch': 31, 'epochs_run': 41, 'train_seconds': 10.6, 'n_train': 9225}
+voice_df Q50_d0 42 {'val_eer': 0.03763710134369434, 'best_epoch': 26, 'epochs_run': 36, 'train_seconds': 9.3, 'n_train': 9225}
+voice_df Q50_d0 val_ens_eer 0.0387
+voice_df D50_d1 41 {'val_eer': 0.04850234067238683, 'best_epoch': 10, 'epochs_run': 20, 'train_seconds': 4.7, 'n_train': 8952}
+voice_df D50_d1 42 {'val_eer': 0.04956278218480745, 'best_epoch': 14, 'epochs_run': 24, 'train_seconds': 5.7, 'n_train': 8952}
+voice_df D50_d1 val_ens_eer 0.0485
+voice_df D50_d2 41 {'val_eer': 0.0442605746227043, 'best_epoch': 36, 'epochs_run': 46, 'train_seconds': 10.2, 'n_train': 8886}
+voice_df D50_d2 42 {'val_eer': 0.04213969159786307, 'best_epoch': 32, 'epochs_run': 42, 'train_seconds': 9.0, 'n_train': 8886}
+voice_df D50_d2 val_ens_eer 0.044
+voice_df D50_d3 41 {'val_eer': 0.03869754285611496, 'best_epoch': 18, 'epochs_run': 28, 'train_seconds': 6.3, 'n_train': 9326}
+voice_df D50_d3 42 {'val_eer': 0.039757984368535636, 'best_epoch': 26, 'epochs_run': 36, 'train_seconds': 8.3, 'n_train': 9326}
+voice_df D50_d3 val_ens_eer 0.0387
+voice_df Q75_d0 41 {'val_eer': 0.032074069577105055, 'best_epoch': 46, 'epochs_run': 56, 'train_seconds': 20.9, 'n_train': 13839}
+voice_df Q75_d0 42 {'val_eer': 0.03551621831885311, 'best_epoch': 16, 'epochs_run': 26, 'train_seconds': 9.3, 'n_train': 13839}
+voice_df Q75_d0 val_ens_eer 0.03366
+voice_df D75_d1 41 {'val_eer': 0.03763710134369434, 'best_epoch': 26, 'epochs_run': 36, 'train_seconds': 10.7, 'n_train': 13891}
+voice_df D75_d1 42 {'val_eer': 0.03763710134369434, 'best_epoch': 23, 'epochs_run': 33, 'train_seconds': 9.9, 'n_train': 13891}
+voice_df D75_d1 val_ens_eer 0.03684
+voice_df D75_d2 41 {'val_eer': 0.03365615949849801, 'best_epoch': 106, 'epochs_run': 116, 'train_seconds': 40.9, 'n_train': 13644}
+voice_df D75_d2 42 {'val_eer': 0.03869754285611496, 'best_epoch': 38, 'epochs_run': 48, 'train_seconds': 22.0, 'n_train': 13644}
+voice_df D75_d2 val_ens_eer 0.03658
+voice_df D75_d3 41 {'val_eer': 0.03127445226917058, 'best_epoch': 53, 'epochs_run': 63, 'train_seconds': 32.0, 'n_train': 13852}
+voice_df D75_d3 42 {'val_eer': 0.03339533529401181, 'best_epoch': 43, 'epochs_run': 53, 'train_seconds': 24.4, 'n_train': 13852}
+voice_df D75_d3 val_ens_eer 0.0326
+      375.97 real       359.48 user        31.09 sys
+          1119485952  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              492051  page reclaims
+                1392  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+               51531  voluntary context switches
+             4675531  involuntary context switches
+       3745657798453  instructions retired
+       1441208685857  cycles elapsed
+          1636026432  peak memory footprint

@@ -1,0 +1,11 @@
+val all n 3785 xlsr1b_max EER 0.1181 AUC 0.9441 xlsr2b_max EER 0.1236 AUC 0.9496
+val unseen n 1351 xlsr1b_max EER 0.0585 AUC 0.9853 xlsr2b_max EER 0.0704 AUC 0.9831
+test all n 5139 xlsr1b_max EER 0.1878 AUC 0.9015 xlsr2b_max EER 0.1874 AUC 0.9098
+test unseen n 2327 xlsr1b_max EER 0.1805 AUC 0.9075 xlsr2b_max EER 0.1556 AUC 0.9226
+seconds column vs bank duration corr: None
+        2.74 real         2.36 user         0.36 sys
+           574603264  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+           482870328  peak memory footprint

@@ -55,6 +55,7 @@ def replacements() -> dict[str, bytes]:
     out['model/trained/presence_head.json'] = PRESENCE.read_bytes()
     out['model/runtime/full_bank_submission.py'] = runtime.replace(OLD_CANDIDATE, f'CANDIDATE = {CANDIDATE!r}'.encode())
     out['model/runtime/decision_heads.py'] = (ROOT / 'decision_heads.py').read_bytes()
+    out['model/runtime/voice_heads.py'] = (ROOT / 'voice_heads.py').read_bytes()   # imported by full_bank_submission
     if FUSION:
         fusion = json.loads((FUSION / 'component_fusion.json').read_text())
         if fusion.get('fitted_on') != 'data v4 val' or json.loads((FUSION / 'file_ensemble.json').read_text()).get('fitted_on') != 'val':

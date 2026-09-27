@@ -1,0 +1,27 @@
+{
+ "written": "2026-09-27 15:21:34 KST",
+ "held_out_numbers_seen_by_this_study_before_lock": "none (no new-encoder features exist yet; audio is only on VESSL)",
+ "choice": {
+  "rank1": "MuQ-large-msd-iter (OpenMuQ, rev 0562a57814f6), frozen, on BOTH HTDemucs stems: backing -> music heads, voice -> singing-voice member",
+  "rank2": "EAT-large_epoch20_finetune_AS2M (worstchan, rev 53b1251196e3), frozen, backing stem only; extracted in the same pass, admitted only by rule B3",
+  "basis": "primary sources (sources/, NOTES.md) + offline/2-file CPU smoke (logs/smoke.json, logs/checks_*.json); no held-out or val data used",
+  "cache": {
+   "windows": "runtime window_layout (64600 samples @16 kHz, hop 32300, exact tail, right-zero-padded) = the MERT windows",
+   "muq_backing / muq_voice": "time-mean of MuQ hidden_states [0,2,4,6,8,10,12] per window, 24 kHz soxr_hq resample, fp16, shape (n_win, 7, 1024)",
+   "eat_backing": "mean over patch tokens (CLS excluded) of EAT blocks [4,8,12,16,20,24] per window, 16 kHz Kaldi fbank-128 (400 frames), fp16, shape (n_win, 6, 1024)",
+   "weights": "fp16 safetensors written once from the HF fp32 file (sha256 in weights.json), fp32 compute, TF32 off",
+   "rows": "the 31,270 _workspace/backbone_cache rows (manifest_backbone_rows.csv) so every delta is on R2 matched rows"
+  }
+ },
+ "rule": {
+  "protocol": "DB (train split -> val early stop -> held-out reported once), seeds 41/42/43, 3-seed-mean probability, backbone rows with a new-cache npz; R2 objective/weights/duration balance/optimizer/selection unchanged",
+  "A1_music_screen": "run.py music_new muqK for K in 0,2,4,6,8,10,12 and eatK for K in 4..24 (WindowMIL, R2 music base config 50/5 lr 1e-3); rank layers by val ens music-route EER",
+  "A2_music_combos": "with a=best, b=second MuQ layer and e=best EAT layer: muq{a}, muq{a}_{b}, mert6_12+muq{a}, eat{e}, mert6_12+eat{e}, mert6_12+muq{a}+eat{e}; plus control mert6_12 (must reproduce R2 music__L6_12). Winner per encoder family = lowest val ens EER among variants passing the R2 gate vs the control (>=0.002 better AND mean per-seed val EER better); else control",
+  "A3_voice_screen": "run.py voice_new muqvK for K in 0,2,...,12 (voice route, R2 mlp arch on 1024-d, 150/10, lr 1e-4); best layer by val ens voice-route EER (no gate: B decides admission)",
+  "B_ads_val": "ads.py (ads_compare pipeline: shared presence, FILE ensemble refit on val, voice CDF fusion). Baseline = R2 all-chosen (voice_df mlp_long + voice_ad resmlp_long @0.5 + music L6_12). Music options: replace by A2 MuQ winner; CDF fusion ours(MERT head) 1 + MuQ-winner w in {0.5,1,2}. Voice options: add muqv member w in {0.25,0.5,1}. Pick by val official ADS",
+  "B_gate": "a component change is adopted only if val ADS >= baseline + 0.002; ties/within-gate keep the simpler config (fewer encoders, replace before fusion)",
+  "B3_eat": "EAT (second encoder: +0.62 GB package, extra L4 minutes) is adopted only if the best EAT-including config beats the best MuQ-only config by >= 0.002 val ADS",
+  "C_heldout": "ads.py writes ads_lock.json (timestamp) with the val choice BEFORE computing held-out ADS; held-out official ADS then reported once for baseline, music-only, voice-only and joint choice; boot.py-style group bootstrap (1000 reps) for deltas vs baseline"
+ },
+ "plumbing_check_before_features": "run.py music_new mert6_12 and voice_new ad (mlp_long) must reproduce R2 music__L6_12 / voice_ad__mlp_long predictions; ads.py on those must reproduce R2 ADS 0.88643 held-out / 0.93845 val. These are reproductions of already-reported R2 numbers, not selections."
+}

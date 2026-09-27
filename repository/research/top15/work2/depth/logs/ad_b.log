@@ -1,0 +1,39 @@
+voice_ad loaded {'train': 18260, 'val': 2845, 'test': 3841} 31.9 s
+voice_ad resln 41 {'val_eer': 0.024911803194646823, 'best_epoch': 19, 'epochs_run': 29, 'train_seconds': 50.8, 'n_params': 1710594, 'peak_rss_gb': 1.37}
+voice_ad resln 42 {'val_eer': 0.023851361682226204, 'best_epoch': 17, 'epochs_run': 27, 'train_seconds': 41.3, 'n_params': 1710594, 'peak_rss_gb': 1.37}
+voice_ad resln 43 {'val_eer': 0.022530095965319387, 'best_epoch': 31, 'epochs_run': 41, 'train_seconds': 60.7, 'n_params': 1710594, 'peak_rss_gb': 1.37}
+voice_ad resln val_ens_eer 0.02279
+voice_ad resln_d1 41 {'val_eer': 0.021469654452898772, 'best_epoch': 34, 'epochs_run': 44, 'train_seconds': 70.1, 'n_params': 1710594, 'peak_rss_gb': 1.37}
+voice_ad resln_d1 42 {'val_eer': 0.021469654452898772, 'best_epoch': 41, 'epochs_run': 51, 'train_seconds': 77.7, 'n_params': 1710594, 'peak_rss_gb': 1.37}
+voice_ad resln_d1 43 {'val_eer': 0.024650978990160624, 'best_epoch': 23, 'epochs_run': 33, 'train_seconds': 57.2, 'n_params': 1710594, 'peak_rss_gb': 1.37}
+voice_ad resln_d1 val_ens_eer 0.02041
+voice_ad resln_d3 41 {'val_eer': 0.023590537477740006, 'best_epoch': 35, 'epochs_run': 45, 'train_seconds': 82.9, 'n_params': 1710594, 'peak_rss_gb': 1.37}
+voice_ad resln_d3 42 {'val_eer': 0.021730478657384915, 'best_epoch': 36, 'epochs_run': 46, 'train_seconds': 79.6, 'n_params': 1710594, 'peak_rss_gb': 1.37}
+voice_ad resln_d3 43 {'val_eer': 0.023851361682226204, 'best_epoch': 35, 'epochs_run': 45, 'train_seconds': 79.8, 'n_params': 1710594, 'peak_rss_gb': 1.37}
+voice_ad resln_d3 val_ens_eer 0.02253
+voice_ad res_mlp3 41 {'val_eer': 0.02571142050258124, 'best_epoch': 32, 'epochs_run': 42, 'train_seconds': 38.4, 'n_params': 790276, 'peak_rss_gb': 1.37}
+voice_ad res_mlp3 42 {'val_eer': 0.024911803194646823, 'best_epoch': 37, 'epochs_run': 47, 'train_seconds': 40.0, 'n_params': 790276, 'peak_rss_gb': 1.37}
+voice_ad res_mlp3 43 {'val_eer': 0.025972244707067438, 'best_epoch': 32, 'epochs_run': 42, 'train_seconds': 32.0, 'n_params': 790276, 'peak_rss_gb': 1.37}
+voice_ad res_mlp3 val_ens_eer 0.02597
+voice_ad res_resln_d1 41 {'val_eer': 0.02571142050258124, 'best_epoch': 20, 'epochs_run': 30, 'train_seconds': 50.3, 'n_params': 1713156, 'peak_rss_gb': 1.37}
+voice_ad res_resln_d1 42 {'val_eer': 0.024911803194646823, 'best_epoch': 22, 'epochs_run': 32, 'train_seconds': 38.7, 'n_params': 1713156, 'peak_rss_gb': 1.37}
+voice_ad res_resln_d1 43 {'val_eer': 0.025972244707067438, 'best_epoch': 27, 'epochs_run': 37, 'train_seconds': 51.1, 'n_params': 1713156, 'peak_rss_gb': 1.37}
+voice_ad res_resln_d1 val_ens_eer 0.02359
+      891.51 real       989.31 user        78.58 sys
+          1467547648  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              527965  page reclaims
+                 590  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+              149897  voluntary context switches
+            15033561  involuntary context switches
+      12182446045024  instructions retired
+       4284899081634  cycles elapsed
+          1585009392  peak memory footprint

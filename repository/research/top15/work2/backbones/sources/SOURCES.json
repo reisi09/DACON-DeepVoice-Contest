@@ -1,0 +1,104 @@
+[
+ {
+  "claim": "MuQ model card + config (CC-BY-NC-4.0 weights, MIT code, ~300M, 24 kHz, 12 Conformer layers, hop 240, 25 Hz tokens)",
+  "url": "https://huggingface.co/OpenMuQ/MuQ-large-msd-iter",
+  "access": "fetched: sources/muq_README.md, muq_config.json, API json",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "MuQ paper: Mel-RVQ SSL, 310M, 25 Hz, MARBLE avg 77.0 (MuQ_iter 160k h) vs MERT-330M 74.4; acoustic tasks best at lower layers; probes on 30 s clips; open checkpoint trained on MSD only",
+  "url": "https://arxiv.org/html/2501.01108",
+  "access": "fetched",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "MuQ code (inference path imports: torch, torchaudio, einops, transformers Wav2Vec2ConformerEncoder, easydict; commit 28847ea5)",
+  "url": "https://github.com/tencent-ailab/MuQ",
+  "access": "fetched: sources/muq_src",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "Sofia (frozen MuQ + MERT + Fx-Encoder++ + Wav2Vec2 on vocals; MUSIC8K-O F1 full 97.2, w/o MuQ 93.9, w/o MERT 94.6, w/o Wav2Vec2 90.3; MuQ last_hidden_state time-mean)",
+  "url": "https://arxiv.org/html/2606.16612",
+  "access": "fetched",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "AT-ADD challenge summary: T2 #1 frozen BEATs router + EAT-large-AASIST non-speech branches; #2 EAT-large + XLSR-300M learnable layer weights; #3 XLSR(3,11,24)+BEATs(3,6,9)",
+  "url": "https://arxiv.org/html/2608.14249v1",
+  "access": "fetched (freezing status of #1 as paraphrased by the fetch tool: UNVERIFIED)",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "EAT-large AS2M fine-tuned model card (MIT, 309M, 16 kHz Kaldi fbank-128, norm -4.268/4.569, 1024 frames = 10 s); code imports timm",
+  "url": "https://huggingface.co/worstchan/EAT-large_epoch20_finetune_AS2M",
+  "access": "fetched: sources/eat_src",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "Phukan et al. (ICASSP 2025 subm.): speaker-recognition SFM best single for SVDD; x-vector + MERT-v1-330M fusion EER 13.74",
+  "url": "https://arxiv.org/abs/2409.14131",
+  "access": "fetched (abstract)",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "Probing token spaces under generator shift (X-Codec best Udio-restricted, MERT k-means best Suno-restricted)",
+  "url": "https://arxiv.org/html/2606.08663",
+  "access": "fetched",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "AntiDeepfake model cards (CC BY-NC-SA 4.0; zero-shot EER: DF-Eval-2024 XLS-R-1B 26.76, MMS-1B 27.70, XLS-R-2B 27.76, MMS-300M 32.84, W2V2-Large 33.36, HuBERT-XL 34.10)",
+  "url": "https://huggingface.co/nii-yamagishilab/mms-300m-anti-deepfake",
+  "access": "fetched: sources/*_README.md",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "MERT-v1-95M card (CC-BY-NC-4.0, 95M, 20k h, 5 s context, 75 Hz, 24 kHz)",
+  "url": "https://huggingface.co/m-a-p/MERT-v1-95M",
+  "access": "fetched (README table)",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "LAION CLAP larger_clap_music (Apache-2.0, 48 kHz, 10 s rand_trunc/repeatpad)",
+  "url": "https://huggingface.co/laion/larger_clap_music",
+  "access": "fetched (preprocessor_config, API)",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "BEATs README (MIT unilm; iter3+ AS2M checkpoints on OneDrive; torch/torchaudio-only code)",
+  "url": "https://github.com/microsoft/unilm/tree/master/beats",
+  "access": "fetched",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "WavLM-Large card (16 kHz, 94k h; license pointer to UniSpeech LICENSE, not fetched)",
+  "url": "https://huggingface.co/microsoft/wavlm-large",
+  "access": "fetched",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "Whisper-large-v3 config (Apache-2.0; encoder 32x1280, 128 mel, 1500 positions = 30 s)",
+  "url": "https://huggingface.co/openai/whisper-large-v3",
+  "access": "fetched (config, API)",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "HuBERT-XL ll60k (Apache-2.0, ~1B, 3.85 GB fp32)",
+  "url": "https://huggingface.co/facebook/hubert-xlarge-ll60k",
+  "access": "API only",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "Evaluation server packages (torch 2.7.1, torchaudio 2.7.1, transformers 4.57.6, huggingface-hub 0.34.4, safetensors 0.6.2, einops 0.8.1; no timm/easydict/muq)",
+  "url": "/tmp/dacon_evaluation.json",
+  "access": "local official page dump",
+  "accessed": "2026-09-27 KST"
+ },
+ {
+  "claim": "Earlier studies reused: R2 heads/ADS pipeline, R3 sources S16-S22, review/v3 package size 8,286,541,720 B",
+  "url": "research/top15/work/{r2,r3,review/v3}",
+  "access": "local",
+  "accessed": "2026-09-27 KST"
+ }
+]

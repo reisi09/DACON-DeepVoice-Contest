@@ -1,0 +1,24 @@
+{
+ "file_eer_natural": 0.1094,
+ "thr": 0.3347401773061819,
+ "max_abs_reproduction_err": 2.361444373377708e-13,
+ "n_song_voice_donors": 438,
+ "song_donor_sources": {
+  "haim": 438
+ },
+ "n_real_music_donors": 851,
+ "real_music_sources": {
+  "musan_music": 397,
+  "openmic": 386,
+  "haim": 68
+ },
+ "cover_miss_at_natural_thr": [
+  0.4818,
+  0.0134
+ ],
+ "same_rows_as_ai_song_miss_at_natural_thr": 0.0799,
+ "voice_stem_alone_Fv_below_voice_thr_0.1913": 0.3973,
+ "file_eer_if_covers_5pct_of_fakes": 0.11992,
+ "file_eer_if_covers_10pct_of_fakes": 0.13066,
+ "file_eer_if_covers_20pct_of_fakes": 0.15177
+}

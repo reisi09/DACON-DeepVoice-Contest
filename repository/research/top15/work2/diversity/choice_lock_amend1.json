@@ -1,0 +1,18 @@
+{
+ "written": "2026-09-27 15:31:21 KST",
+ "amends": "choice_lock.json (15:23:25 KST); written after pilot fits, before any held-out number of this pilot",
+ "pilot": "music MERT-12 WindowMIL + 500 cached AI-Hub 71470 rows (Korean traditional music, REAL, local-only) added to train; seeds 41/42/43",
+ "rule": "R2 rule: chosen iff val route ens EER improves by >= 0.002 AND per-seed mean val EER improves; held-out reported regardless",
+ "also_declared": "post-lock pilot_voice seed-43 replication (15:2x KST) was a pre-specified extra seed of the same two configs, not a selection",
+ "val": {
+  "val_ens_eer": [
+   0.1252,
+   0.12908
+  ],
+  "val_seed_mean": [
+   0.12887,
+   0.13351
+  ]
+ },
+ "choice": "base"
+}

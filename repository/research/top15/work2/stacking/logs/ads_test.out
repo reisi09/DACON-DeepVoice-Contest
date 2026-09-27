@@ -1,0 +1,1031 @@
+{
+ "S4_AC_test_vs_R2": {
+  "r2": {
+   "file_eer": 0.0834,
+   "voice_eer": 0.0823,
+   "music_eer": 0.1847,
+   "ads": 0.88643
+  },
+  "here": {
+   "file_eer": 0.08343,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18467,
+   "ads": 0.88643
+  }
+ },
+ "boot": {
+  "RT": {
+   "S4+POOL_v": {
+    "delta": 0.00067,
+    "ci95": [
+     -0.00095,
+     0.00292
+    ],
+    "p_le_0": 0.206
+   },
+   "S4+POOL_m": {
+    "delta": -0.00136,
+    "ci95": [
+     -0.00804,
+     0.00476
+    ],
+    "p_le_0": 0.64
+   },
+   "S4+SA": {
+    "delta": 0.00463,
+    "ci95": [
+     0.0026,
+     0.00681
+    ],
+    "p_le_0": 0.0
+   },
+   "S4+W1": {
+    "delta": -0.00095,
+    "ci95": [
+     -0.00289,
+     0.00081
+    ],
+    "p_le_0": 0.878
+   },
+   "S4+FILE": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_le_0": 1.0
+   },
+   "S4+POOL_v+POOL_m": {
+    "delta": -0.00337,
+    "ci95": [
+     -0.01017,
+     0.00259
+    ],
+    "p_le_0": 0.863
+   },
+   "S4+POOL_v+SA": {
+    "delta": 0.00474,
+    "ci95": [
+     0.00129,
+     0.00962
+    ],
+    "p_le_0": 0.005
+   },
+   "S4+POOL_v+W1": {
+    "delta": -0.00011,
+    "ci95": [
+     -0.00236,
+     0.00261
+    ],
+    "p_le_0": 0.518
+   },
+   "S4+POOL_v+FILE": {
+    "delta": 0.00067,
+    "ci95": [
+     -0.00095,
+     0.00292
+    ],
+    "p_le_0": 0.206
+   },
+   "S4+POOL_m+SA": {
+    "delta": 0.00265,
+    "ci95": [
+     -0.00377,
+     0.00883
+    ],
+    "p_le_0": 0.19
+   },
+   "S4+POOL_m+W1": {
+    "delta": -0.0024,
+    "ci95": [
+     -0.00944,
+     0.00359
+    ],
+    "p_le_0": 0.768
+   },
+   "S4+POOL_m+FILE": {
+    "delta": -0.00374,
+    "ci95": [
+     -0.01036,
+     0.00214
+    ],
+    "p_le_0": 0.884
+   },
+   "S4+SA+W1": {
+    "delta": 0.00468,
+    "ci95": [
+     0.0021,
+     0.00691
+    ],
+    "p_le_0": 0.0
+   },
+   "S4+SA+FILE": {
+    "delta": 0.00463,
+    "ci95": [
+     0.0026,
+     0.00681
+    ],
+    "p_le_0": 0.0
+   },
+   "S4+W1+FILE": {
+    "delta": -0.00095,
+    "ci95": [
+     -0.00289,
+     0.00081
+    ],
+    "p_le_0": 0.878
+   },
+   "S5=S4": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_le_0": 1.0
+   }
+  },
+  "AC": {
+   "S4+POOL_v": {
+    "delta": 0.00022,
+    "ci95": [
+     -0.00101,
+     0.00284
+    ],
+    "p_le_0": 0.207
+   },
+   "S4+POOL_m": {
+    "delta": -0.0027,
+    "ci95": [
+     -0.00979,
+     0.00341
+    ],
+    "p_le_0": 0.805
+   },
+   "S4+SA": {
+    "delta": 0.00437,
+    "ci95": [
+     0.00245,
+     0.00576
+    ],
+    "p_le_0": 0.0
+   },
+   "S4+W1": {
+    "delta": -0.00182,
+    "ci95": [
+     -0.00364,
+     0.0004
+    ],
+    "p_le_0": 0.945
+   },
+   "S4+FILE": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_le_0": 1.0
+   },
+   "S4+POOL_v+POOL_m": {
+    "delta": -0.00196,
+    "ci95": [
+     -0.00908,
+     0.00418
+    ],
+    "p_le_0": 0.72
+   },
+   "S4+POOL_v+SA": {
+    "delta": 0.00392,
+    "ci95": [
+     0.00162,
+     0.00768
+    ],
+    "p_le_0": 0.001
+   },
+   "S4+POOL_v+W1": {
+    "delta": -0.00089,
+    "ci95": [
+     -0.00232,
+     0.00184
+    ],
+    "p_le_0": 0.687
+   },
+   "S4+POOL_v+FILE": {
+    "delta": 0.00022,
+    "ci95": [
+     -0.00101,
+     0.00284
+    ],
+    "p_le_0": 0.207
+   },
+   "S4+POOL_m+SA": {
+    "delta": 0.00131,
+    "ci95": [
+     -0.006,
+     0.00689
+    ],
+    "p_le_0": 0.406
+   },
+   "S4+POOL_m+W1": {
+    "delta": -0.00482,
+    "ci95": [
+     -0.01137,
+     0.00177
+    ],
+    "p_le_0": 0.917
+   },
+   "S4+POOL_m+FILE": {
+    "delta": -0.0027,
+    "ci95": [
+     -0.00979,
+     0.00341
+    ],
+    "p_le_0": 0.805
+   },
+   "S4+SA+W1": {
+    "delta": 0.00292,
+    "ci95": [
+     0.00082,
+     0.0053
+    ],
+    "p_le_0": 0.002
+   },
+   "S4+SA+FILE": {
+    "delta": 0.00437,
+    "ci95": [
+     0.00245,
+     0.00576
+    ],
+    "p_le_0": 0.0
+   },
+   "S4+W1+FILE": {
+    "delta": -0.00182,
+    "ci95": [
+     -0.00364,
+     0.0004
+    ],
+    "p_le_0": 0.945
+   },
+   "S5=S4": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_le_0": 1.0
+   }
+  }
+ },
+ "interaction": {
+  "RT": {
+   "POOL_vxPOOL_m": {
+    "test": -0.00268,
+    "ci95": [
+     -0.00567,
+     -0.00077
+    ],
+    "val": -0.00104
+   },
+   "POOL_vxSA": {
+    "test": -0.00056,
+    "ci95": [
+     -0.00293,
+     0.00248
+    ],
+    "val": 0.00158
+   },
+   "POOL_vxW1": {
+    "test": 0.00017,
+    "ci95": [
+     -0.00191,
+     0.00224
+    ],
+    "val": 0.00064
+   },
+   "POOL_vxFILE": {
+    "test": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "val": 0.0
+   },
+   "POOL_mxSA": {
+    "test": -0.00062,
+    "ci95": [
+     -0.00137,
+     0.0003
+    ],
+    "val": 0.00042
+   },
+   "POOL_mxW1": {
+    "test": -9e-05,
+    "ci95": [
+     -0.0024,
+     0.00177
+    ],
+    "val": -0.0001
+   },
+   "POOL_mxFILE": {
+    "test": -0.00238,
+    "ci95": [
+     -0.00439,
+     -0.00085
+    ],
+    "val": -0.00135
+   },
+   "SAxW1": {
+    "test": 0.001,
+    "ci95": [
+     -0.00032,
+     0.00196
+    ],
+    "val": 0.00043
+   },
+   "SAxFILE": {
+    "test": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "val": 0.0
+   },
+   "W1xFILE": {
+    "test": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "val": 0.0
+   }
+  },
+  "AC": {
+   "POOL_vxPOOL_m": {
+    "test": 0.00052,
+    "ci95": [
+     -0.0022,
+     0.00214
+    ],
+    "val": 0.0
+   },
+   "POOL_vxSA": {
+    "test": -0.00067,
+    "ci95": [
+     -0.00141,
+     0.00101
+    ],
+    "val": 0.00048
+   },
+   "POOL_vxW1": {
+    "test": 0.00071,
+    "ci95": [
+     -0.00154,
+     0.00253
+    ],
+    "val": -0.00016
+   },
+   "POOL_vxFILE": {
+    "test": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "val": 0.0
+   },
+   "POOL_mxSA": {
+    "test": -0.00036,
+    "ci95": [
+     -0.00118,
+     0.00036
+    ],
+    "val": 0.00043
+   },
+   "POOL_mxW1": {
+    "test": -0.0003,
+    "ci95": [
+     -0.00221,
+     0.00203
+    ],
+    "val": 0.0001
+   },
+   "POOL_mxFILE": {
+    "test": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "val": 0.0
+   },
+   "SAxW1": {
+    "test": 0.00037,
+    "ci95": [
+     -0.00073,
+     0.00162
+    ],
+    "val": -0.00042
+   },
+   "SAxFILE": {
+    "test": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "val": 0.0
+   },
+   "W1xFILE": {
+    "test": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "val": 0.0
+   }
+  }
+ },
+ "diagnostics": {
+  "S4": {
+   "voice_cells_at_own_eer_thr": {
+    "voice_fake|music_fake": [
+     398,
+     0.2387
+    ],
+    "voice_fake|music_none": [
+     944,
+     0.0074
+    ],
+    "voice_fake|music_real": [
+     214,
+     0.1215
+    ],
+    "voice_real|music_fake": [
+     86,
+     0.0698
+    ],
+    "voice_real|music_none": [
+     1729,
+     0.0769
+    ],
+    "voice_real|music_real": [
+     470,
+     0.1043
+    ]
+   },
+   "file_len_rho_within_source_reals": 0.2281,
+   "file_fpr_by_duration": {
+    "<8s": 0.0511,
+    "8-15s": 0.0805,
+    "15-30s": 0.1401,
+    ">=30s": 0.1941
+   },
+   "file_fnr_by_duration": {
+    "<8s": 0.068,
+    "8-15s": 0.1019,
+    "15-30s": 0.1209,
+    ">=30s": 0.0825
+   },
+   "file_err_by_source_at_own_eer_thr": {
+    "constructed_enhanced|real": [
+     215,
+     0.0884
+    ],
+    "constructed_mix|fake": [
+     298,
+     0.1376
+    ],
+    "constructed_mix|real": [
+     95,
+     0.2211
+    ],
+    "constructed_song|fake": [
+     65,
+     0.3385
+    ],
+    "constructed_song|real": [
+     233,
+     0.1674
+    ],
+    "echoes|fake": [
+     40,
+     0.25
+    ],
+    "fleurs_ko|real": [
+     1143,
+     0.028
+    ],
+    "generated_music|fake": [
+     40,
+     0.175
+    ],
+    "haim|fake": [
+     537,
+     0.1434
+    ],
+    "haim|real": [
+     53,
+     0.1321
+    ],
+    "mlaad|fake": [
+     451,
+     0.0222
+    ],
+    "musan_music|real": [
+     503,
+     0.1571
+    ],
+    "openmic|real": [
+     278,
+     0.1187
+    ],
+    "speechfake|fake": [
+     491,
+     0.0
+    ],
+    "vocalset|real": [
+     277,
+     0.0758
+    ],
+    "zeroth|real": [
+     72,
+     0.0
+    ]
+   }
+  },
+  "S4+SA": {
+   "voice_cells_at_own_eer_thr": {
+    "voice_fake|music_fake": [
+     398,
+     0.1256
+    ],
+    "voice_fake|music_none": [
+     944,
+     0.0085
+    ],
+    "voice_fake|music_real": [
+     214,
+     0.1589
+    ],
+    "voice_real|music_fake": [
+     86,
+     0.1163
+    ],
+    "voice_real|music_none": [
+     1729,
+     0.0463
+    ],
+    "voice_real|music_real": [
+     470,
+     0.0957
+    ]
+   },
+   "file_len_rho_within_source_reals": 0.2281,
+   "file_fpr_by_duration": {
+    "<8s": 0.0511,
+    "8-15s": 0.0805,
+    "15-30s": 0.1401,
+    ">=30s": 0.1941
+   },
+   "file_fnr_by_duration": {
+    "<8s": 0.068,
+    "8-15s": 0.1019,
+    "15-30s": 0.1209,
+    ">=30s": 0.0825
+   },
+   "file_err_by_source_at_own_eer_thr": {
+    "constructed_enhanced|real": [
+     215,
+     0.0884
+    ],
+    "constructed_mix|fake": [
+     298,
+     0.1376
+    ],
+    "constructed_mix|real": [
+     95,
+     0.2211
+    ],
+    "constructed_song|fake": [
+     65,
+     0.3385
+    ],
+    "constructed_song|real": [
+     233,
+     0.1674
+    ],
+    "echoes|fake": [
+     40,
+     0.25
+    ],
+    "fleurs_ko|real": [
+     1143,
+     0.028
+    ],
+    "generated_music|fake": [
+     40,
+     0.175
+    ],
+    "haim|fake": [
+     537,
+     0.1434
+    ],
+    "haim|real": [
+     53,
+     0.1321
+    ],
+    "mlaad|fake": [
+     451,
+     0.0222
+    ],
+    "musan_music|real": [
+     503,
+     0.1571
+    ],
+    "openmic|real": [
+     278,
+     0.1187
+    ],
+    "speechfake|fake": [
+     491,
+     0.0
+    ],
+    "vocalset|real": [
+     277,
+     0.0758
+    ],
+    "zeroth|real": [
+     72,
+     0.0
+    ]
+   }
+  },
+  "S4+POOL_v": {
+   "voice_cells_at_own_eer_thr": {
+    "voice_fake|music_fake": [
+     398,
+     0.2236
+    ],
+    "voice_fake|music_none": [
+     944,
+     0.0053
+    ],
+    "voice_fake|music_real": [
+     214,
+     0.1262
+    ],
+    "voice_real|music_fake": [
+     86,
+     0.0581
+    ],
+    "voice_real|music_none": [
+     1729,
+     0.0758
+    ],
+    "voice_real|music_real": [
+     470,
+     0.0894
+    ]
+   },
+   "file_len_rho_within_source_reals": 0.1861,
+   "file_fpr_by_duration": {
+    "<8s": 0.0558,
+    "8-15s": 0.0805,
+    "15-30s": 0.1329,
+    ">=30s": 0.1941
+   },
+   "file_fnr_by_duration": {
+    "<8s": 0.0658,
+    "8-15s": 0.1002,
+    "15-30s": 0.1282,
+    ">=30s": 0.0928
+   },
+   "file_err_by_source_at_own_eer_thr": {
+    "constructed_enhanced|real": [
+     215,
+     0.0698
+    ],
+    "constructed_mix|fake": [
+     298,
+     0.1544
+    ],
+    "constructed_mix|real": [
+     95,
+     0.2211
+    ],
+    "constructed_song|fake": [
+     65,
+     0.3385
+    ],
+    "constructed_song|real": [
+     233,
+     0.1717
+    ],
+    "echoes|fake": [
+     40,
+     0.25
+    ],
+    "fleurs_ko|real": [
+     1143,
+     0.0245
+    ],
+    "generated_music|fake": [
+     40,
+     0.175
+    ],
+    "haim|fake": [
+     537,
+     0.1397
+    ],
+    "haim|real": [
+     53,
+     0.1321
+    ],
+    "mlaad|fake": [
+     451,
+     0.0177
+    ],
+    "musan_music|real": [
+     503,
+     0.161
+    ],
+    "openmic|real": [
+     278,
+     0.1295
+    ],
+    "speechfake|fake": [
+     491,
+     0.0
+    ],
+    "vocalset|real": [
+     277,
+     0.0866
+    ],
+    "zeroth|real": [
+     72,
+     0.0
+    ]
+   }
+  },
+  "S4+POOL_m": {
+   "voice_cells_at_own_eer_thr": {
+    "voice_fake|music_fake": [
+     398,
+     0.2387
+    ],
+    "voice_fake|music_none": [
+     944,
+     0.0074
+    ],
+    "voice_fake|music_real": [
+     214,
+     0.1215
+    ],
+    "voice_real|music_fake": [
+     86,
+     0.0698
+    ],
+    "voice_real|music_none": [
+     1729,
+     0.0769
+    ],
+    "voice_real|music_real": [
+     470,
+     0.1043
+    ]
+   },
+   "file_len_rho_within_source_reals": 0.1561,
+   "file_fpr_by_duration": {
+    "<8s": 0.0629,
+    "8-15s": 0.0922,
+    "15-30s": 0.128,
+    ">=30s": 0.1235
+   },
+   "file_fnr_by_duration": {
+    "<8s": 0.0533,
+    "8-15s": 0.1002,
+    "15-30s": 0.1612,
+    ">=30s": 0.134
+   },
+   "file_err_by_source_at_own_eer_thr": {
+    "constructed_enhanced|real": [
+     215,
+     0.0884
+    ],
+    "constructed_mix|fake": [
+     298,
+     0.1208
+    ],
+    "constructed_mix|real": [
+     95,
+     0.2737
+    ],
+    "constructed_song|fake": [
+     65,
+     0.3385
+    ],
+    "constructed_song|real": [
+     233,
+     0.2017
+    ],
+    "echoes|fake": [
+     40,
+     0.225
+    ],
+    "fleurs_ko|real": [
+     1143,
+     0.042
+    ],
+    "generated_music|fake": [
+     40,
+     0.175
+    ],
+    "haim|fake": [
+     537,
+     0.1713
+    ],
+    "haim|real": [
+     53,
+     0.0943
+    ],
+    "mlaad|fake": [
+     451,
+     0.0177
+    ],
+    "musan_music|real": [
+     503,
+     0.1392
+    ],
+    "openmic|real": [
+     278,
+     0.1151
+    ],
+    "speechfake|fake": [
+     491,
+     0.0
+    ],
+    "vocalset|real": [
+     277,
+     0.0505
+    ],
+    "zeroth|real": [
+     72,
+     0.0
+    ]
+   }
+  },
+  "S4+POOL_v+POOL_m": {
+   "voice_cells_at_own_eer_thr": {
+    "voice_fake|music_fake": [
+     398,
+     0.2236
+    ],
+    "voice_fake|music_none": [
+     944,
+     0.0053
+    ],
+    "voice_fake|music_real": [
+     214,
+     0.1262
+    ],
+    "voice_real|music_fake": [
+     86,
+     0.0581
+    ],
+    "voice_real|music_none": [
+     1729,
+     0.0758
+    ],
+    "voice_real|music_real": [
+     470,
+     0.0894
+    ]
+   },
+   "file_len_rho_within_source_reals": 0.0899,
+   "file_fpr_by_duration": {
+    "<8s": 0.0843,
+    "8-15s": 0.0969,
+    "15-30s": 0.1184,
+    ">=30s": 0.1
+   },
+   "file_fnr_by_duration": {
+    "<8s": 0.0533,
+    "8-15s": 0.1054,
+    "15-30s": 0.1722,
+    ">=30s": 0.1598
+   },
+   "file_err_by_source_at_own_eer_thr": {
+    "constructed_enhanced|real": [
+     215,
+     0.0791
+    ],
+    "constructed_mix|fake": [
+     298,
+     0.1477
+    ],
+    "constructed_mix|real": [
+     95,
+     0.2316
+    ],
+    "constructed_song|fake": [
+     65,
+     0.3077
+    ],
+    "constructed_song|real": [
+     233,
+     0.2017
+    ],
+    "echoes|fake": [
+     40,
+     0.225
+    ],
+    "fleurs_ko|real": [
+     1143,
+     0.0437
+    ],
+    "generated_music|fake": [
+     40,
+     0.15
+    ],
+    "haim|fake": [
+     537,
+     0.1825
+    ],
+    "haim|real": [
+     53,
+     0.0943
+    ],
+    "mlaad|fake": [
+     451,
+     0.0177
+    ],
+    "musan_music|real": [
+     503,
+     0.1272
+    ],
+    "openmic|real": [
+     278,
+     0.1187
+    ],
+    "speechfake|fake": [
+     491,
+     0.0
+    ],
+    "vocalset|real": [
+     277,
+     0.1444
+    ],
+    "zeroth|real": [
+     72,
+     0.0
+    ]
+   }
+  }
+ }
+}
+S4 RT 0.93773 {'file_eer': 0.08715, 'voice_eer': 0.08227, 'music_eer': 0.18467, 'ads': 0.88457} AC 0.88643
+S4+POOL_v RT 0.93756 {'file_eer': 0.08758, 'voice_eer': 0.07783, 'music_eer': 0.18467, 'ads': 0.88524} AC 0.88665
+S4+POOL_m RT 0.94175 {'file_eer': 0.0907, 'voice_eer': 0.08227, 'music_eer': 0.18329, 'ads': 0.88321} AC 0.88373
+S4+SA RT 0.93725 {'file_eer': 0.08715, 'voice_eer': 0.0591, 'music_eer': 0.18467, 'ads': 0.8892} AC 0.8908
+S4+W1 RT 0.93824 {'file_eer': 0.08655, 'voice_eer': 0.08855, 'music_eer': 0.18467, 'ads': 0.88362} AC 0.88461
+S4+FILE RT 0.93773 {'file_eer': 0.08715, 'voice_eer': 0.08227, 'music_eer': 0.18467, 'ads': 0.88457} AC 0.88643
+S4+POOL_v+POOL_m RT 0.94054 {'file_eer': 0.09649, 'voice_eer': 0.07783, 'music_eer': 0.18329, 'ads': 0.8812} AC 0.88447
+S4+POOL_v+SA RT 0.93866 {'file_eer': 0.08776, 'voice_eer': 0.05705, 'music_eer': 0.18467, 'ads': 0.88931} AC 0.89035
+S4+POOL_v+W1 RT 0.93871 {'file_eer': 0.08655, 'voice_eer': 0.08433, 'music_eer': 0.18467, 'ads': 0.88446} AC 0.88554
+S4+POOL_v+FILE RT 0.93756 {'file_eer': 0.08758, 'voice_eer': 0.07783, 'music_eer': 0.18467, 'ads': 0.88524} AC 0.88665
+S4+POOL_m+SA RT 0.94169 {'file_eer': 0.0907, 'voice_eer': 0.06224, 'music_eer': 0.18329, 'ads': 0.88722} AC 0.88773
+S4+POOL_m+W1 RT 0.94216 {'file_eer': 0.09026, 'voice_eer': 0.08855, 'music_eer': 0.18329, 'ads': 0.88217} AC 0.88161
+S4+POOL_m+FILE RT 0.9404 {'file_eer': 0.09545, 'voice_eer': 0.08227, 'music_eer': 0.18329, 'ads': 0.88083} AC 0.88373
+S4+SA+W1 RT 0.93819 {'file_eer': 0.08655, 'voice_eer': 0.0604, 'music_eer': 0.18467, 'ads': 0.88925} AC 0.88935
+S4+SA+FILE RT 0.93725 {'file_eer': 0.08715, 'voice_eer': 0.0591, 'music_eer': 0.18467, 'ads': 0.8892} AC 0.8908
+S4+W1+FILE RT 0.93824 {'file_eer': 0.08655, 'voice_eer': 0.08855, 'music_eer': 0.18467, 'ads': 0.88362} AC 0.88461
+S4+POOL_v+POOL_m+SA RT 0.94201 {'file_eer': 0.09606, 'voice_eer': 0.06116, 'music_eer': 0.18329, 'ads': 0.88475} AC 0.88754
+S4+POOL_v+POOL_m+W1 RT 0.94117 {'file_eer': 0.09692, 'voice_eer': 0.08433, 'music_eer': 0.18329, 'ads': 0.87969} AC 0.88284
+S4+POOL_v+POOL_m+FILE RT 0.94054 {'file_eer': 0.09649, 'voice_eer': 0.07783, 'music_eer': 0.18329, 'ads': 0.8812} AC 0.88447
+S4+POOL_v+SA+W1 RT 0.93876 {'file_eer': 0.08655, 'voice_eer': 0.0617, 'music_eer': 0.18467, 'ads': 0.88899} AC 0.88966
+S4+POOL_v+SA+FILE RT 0.93824 {'file_eer': 0.08758, 'voice_eer': 0.05705, 'music_eer': 0.18467, 'ads': 0.8894} AC 0.89035
+S4+POOL_v+W1+FILE RT 0.93757 {'file_eer': 0.08758, 'voice_eer': 0.08433, 'music_eer': 0.18467, 'ads': 0.88394} AC 0.88554
+S4+POOL_m+SA+W1 RT 0.94237 {'file_eer': 0.09026, 'voice_eer': 0.06484, 'music_eer': 0.18329, 'ads': 0.88691} AC 0.88598
+S4+POOL_m+SA+FILE RT 0.94035 {'file_eer': 0.09545, 'voice_eer': 0.06224, 'music_eer': 0.18329, 'ads': 0.88484} AC 0.88773
+S4+POOL_m+W1+FILE RT 0.94082 {'file_eer': 0.09502, 'voice_eer': 0.08855, 'music_eer': 0.18329, 'ads': 0.87979} AC 0.88161
+S4+SA+W1+FILE RT 0.93819 {'file_eer': 0.08655, 'voice_eer': 0.0604, 'music_eer': 0.18467, 'ads': 0.88925} AC 0.88935
+S4+POOL_v+POOL_m+SA+W1 RT 0.94143 {'file_eer': 0.09692, 'voice_eer': 0.06224, 'music_eer': 0.18329, 'ads': 0.8841} AC 0.88706
+S4+POOL_v+POOL_m+SA+FILE RT 0.94139 {'file_eer': 0.09649, 'voice_eer': 0.06116, 'music_eer': 0.18329, 'ads': 0.88454} AC 0.88754
+S4+POOL_v+POOL_m+W1+FILE RT 0.94117 {'file_eer': 0.09692, 'voice_eer': 0.08433, 'music_eer': 0.18329, 'ads': 0.87969} AC 0.88284
+S4+POOL_v+SA+W1+FILE RT 0.93762 {'file_eer': 0.08758, 'voice_eer': 0.0617, 'music_eer': 0.18467, 'ads': 0.88847} AC 0.88966
+S4+POOL_m+SA+W1+FILE RT 0.94103 {'file_eer': 0.09502, 'voice_eer': 0.06484, 'music_eer': 0.18329, 'ads': 0.88453} AC 0.88598
+S4+POOL_v+POOL_m+SA+W1+FILE RT 0.94143 {'file_eer': 0.09692, 'voice_eer': 0.06224, 'music_eer': 0.18329, 'ads': 0.8841} AC 0.88706
+      203.72 real       198.17 user         2.16 sys
+           748847104  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               73633  page reclaims
+                  21  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+               20392  voluntary context switches
+              170238  involuntary context switches
+       4693572602559  instructions retired
+        756951043307  cycles elapsed
+           657786032  peak memory footprint

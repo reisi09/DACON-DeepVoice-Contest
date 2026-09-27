@@ -1,0 +1,51 @@
+music loaded {'train': 6981, 'val': 1286, 'test': 2149} 29.9 s
+music mil128_r2 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 26, 'train_seconds': 8.1, 'n_params': 262401, 'peak_rss_gb': 1.26}
+music mil128_r2 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 8.0, 'n_params': 262401, 'peak_rss_gb': 1.27}
+music mil128_r2 43 {'val_eer': 0.11582172114159964, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 7.7, 'n_params': 262401, 'peak_rss_gb': 1.27}
+music mil128_r2 val_ens_eer 0.11194
+music mil128 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 31, 'train_seconds': 8.9, 'n_params': 262401, 'peak_rss_gb': 1.27}
+music mil128 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 30, 'train_seconds': 9.3, 'n_params': 262401, 'peak_rss_gb': 1.27}
+music mil128 43 {'val_eer': 0.11582172114159964, 'best_epoch': 20, 'epochs_run': 30, 'train_seconds': 9.4, 'n_params': 262401, 'peak_rss_gb': 1.27}
+music mil128 val_ens_eer 0.11194
+music wide512 41 {'val_eer': 0.11582172114159964, 'best_epoch': 26, 'epochs_run': 36, 'train_seconds': 15.5, 'n_params': 1049601, 'peak_rss_gb': 1.27}
+music wide512 42 {'val_eer': 0.1151698306592007, 'best_epoch': 24, 'epochs_run': 34, 'train_seconds': 16.8, 'n_params': 1049601, 'peak_rss_gb': 1.27}
+music wide512 43 {'val_eer': 0.11743700276080019, 'best_epoch': 24, 'epochs_run': 34, 'train_seconds': 14.6, 'n_params': 1049601, 'peak_rss_gb': 1.27}
+music wide512 val_ens_eer 0.11129
+music deep 41 {'val_eer': 0.12520191020240007, 'best_epoch': 13, 'epochs_run': 23, 'train_seconds': 10.0, 'n_params': 1114881, 'peak_rss_gb': 1.27}
+music deep 42 {'val_eer': 0.12520191020240007, 'best_epoch': 8, 'epochs_run': 18, 'train_seconds': 7.5, 'n_params': 1114881, 'peak_rss_gb': 1.27}
+music deep 43 {'val_eer': 0.12358662858319958, 'best_epoch': 13, 'epochs_run': 23, 'train_seconds': 10.0, 'n_params': 1114881, 'peak_rss_gb': 1.27}
+music deep val_ens_eer 0.11582
+music deep_d1 41 {'val_eer': 0.11743700276080019, 'best_epoch': 14, 'epochs_run': 24, 'train_seconds': 13.0, 'n_params': 1114881, 'peak_rss_gb': 1.27}
+music deep_d1 42 {'val_eer': 0.12681719182160053, 'best_epoch': 13, 'epochs_run': 23, 'train_seconds': 12.9, 'n_params': 1114881, 'peak_rss_gb': 1.27}
+music deep_d1 43 {'val_eer': 0.1151698306592007, 'best_epoch': 25, 'epochs_run': 35, 'train_seconds': 21.5, 'n_params': 1114881, 'peak_rss_gb': 1.27}
+music deep_d1 val_ens_eer 0.11905
+music deep_d3 41 {'val_eer': 0.12746908230399953, 'best_epoch': 17, 'epochs_run': 27, 'train_seconds': 15.8, 'n_params': 1114881, 'peak_rss_gb': 1.27}
+music deep_d3 42 {'val_eer': 0.11582172114159964, 'best_epoch': 22, 'epochs_run': 32, 'train_seconds': 16.3, 'n_params': 1114881, 'peak_rss_gb': 1.27}
+music deep_d3 43 {'val_eer': 0.12131945648160009, 'best_epoch': 24, 'epochs_run': 34, 'train_seconds': 18.2, 'n_params': 1114881, 'peak_rss_gb': 1.27}
+music deep_d3 val_ens_eer 0.11744
+music resln 41 {'val_eer': 0.14234700670480038, 'best_epoch': 11, 'epochs_run': 21, 'train_seconds': 21.0, 'n_params': 2103297, 'peak_rss_gb': 1.27}
+music resln 42 {'val_eer': 0.13846455298400043, 'best_epoch': 17, 'epochs_run': 27, 'train_seconds': 36.6, 'n_params': 2103297, 'peak_rss_gb': 1.27}
+music resln 43 {'val_eer': 0.12908436392320002, 'best_epoch': 20, 'epochs_run': 30, 'train_seconds': 37.1, 'n_params': 2103297, 'peak_rss_gb': 1.27}
+music resln val_ens_eer 0.11744
+music resln_d1 41 {'val_eer': 0.12746908230399953, 'best_epoch': 20, 'epochs_run': 30, 'train_seconds': 33.2, 'n_params': 2103297, 'peak_rss_gb': 1.27}
+music resln_d1 42 {'val_eer': 0.13684927136479996, 'best_epoch': 31, 'epochs_run': 41, 'train_seconds': 39.1, 'n_params': 2103297, 'peak_rss_gb': 1.31}
+music resln_d1 43 {'val_eer': 0.13458209926320047, 'best_epoch': 32, 'epochs_run': 42, 'train_seconds': 42.0, 'n_params': 2103297, 'peak_rss_gb': 1.34}
+music resln_d1 val_ens_eer 0.11194
+      469.56 real       541.09 user        30.37 sys
+          1437532160  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              253733  page reclaims
+                   2  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+              176746  voluntary context switches
+             5006024  involuntary context switches
+       7381637381282  instructions retired
+       2315198572644  cycles elapsed
+          1278314248  peak memory footprint

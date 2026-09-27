@@ -1,0 +1,230 @@
+voice {
+ "distinct_fake_generators": {
+  "train": 334,
+  "test": 112,
+  "test_unseen_in_train": 6
+ },
+ "fake_rows": {
+  "train": 12772,
+  "test": 1556,
+  "test_from_unseen_generators": 1089
+ },
+ "unseen_generators_top": [
+  [
+   "openvoice",
+   472
+  ],
+  [
+   "voxcpm2",
+   250
+  ],
+  [
+   "lyria3pro",
+   168
+  ],
+  [
+   "fxencoderstyletransfer",
+   167
+  ],
+  [
+   "voxcpm15",
+   17
+  ],
+  [
+   "voxcpm05b",
+   15
+  ]
+ ],
+ "full_head_route_eer": 0.0906,
+ "threshold": 0.2887430414557457,
+ "miss_rate": {
+  "unseen": [
+   1089,
+   0.1038
+  ],
+  "seen": [
+   467,
+   0.06
+  ],
+  "unseen_minus_seen_ci95": [
+   0.0119,
+   0.0765
+  ]
+ },
+ "share_of_fake_errors_from_unseen": 0.8014,
+ "share_of_all_route_errors_from_unseen_fakes": 0.3247,
+ "fake_errors_by_generator": {
+  "lyria3pro": [
+   168,
+   0.399,
+   "unseen"
+  ],
+  "fxencoderstyletransfer": [
+   167,
+   0.15,
+   "unseen"
+  ],
+  "voxcpm2": [
+   250,
+   0.064,
+   "unseen"
+  ],
+  "openvoice": [
+   472,
+   0.008,
+   "unseen"
+  ],
+  "melotts": [
+   43,
+   0.023,
+   "seen"
+  ],
+  "minimaxspeech02turbo": [
+   35,
+   0.029,
+   "seen"
+  ],
+  "seedvc": [
+   36,
+   0.028,
+   "seen"
+  ],
+  "cosyvoice": [
+   27,
+   0.0,
+   "seen"
+  ]
+ },
+ "real_fp_by_source": {
+  "fleurs_ko|unseen": [
+   1143,
+   0.101
+  ],
+  "musan_music|unseen": [
+   141,
+   0.255
+  ],
+  "constructed_enhanced|seen": [
+   215,
+   0.126
+  ],
+  "constructed_song|unseen": [
+   298,
+   0.044
+  ],
+  "constructed_mix|seen": [
+   116,
+   0.103
+  ],
+  "vocalset|seen": [
+   277,
+   0.011
+  ],
+  "zeroth|seen": [
+   72,
+   0.0
+  ]
+ },
+ "errors_total": {
+  "fake_miss": 141,
+  "real_fp": 207
+ }
+}
+music {
+ "distinct_fake_generators": {
+  "train": 23,
+  "test": 18,
+  "test_unseen_in_train": 2
+ },
+ "fake_rows": {
+  "train": 4203,
+  "test": 770,
+  "test_from_unseen_generators": 495
+ },
+ "unseen_generators_top": [
+  [
+   "fxencoderstyletransfer",
+   263
+  ],
+  [
+   "lyria3pro",
+   232
+  ]
+ ],
+ "full_head_route_eer": 0.18192,
+ "threshold": 0.5267648100852966,
+ "miss_rate": {
+  "unseen": [
+   495,
+   0.1859
+  ],
+  "seen": [
+   275,
+   0.1745
+  ],
+  "unseen_minus_seen_ci95": [
+   -0.0513,
+   0.0754
+  ]
+ },
+ "share_of_fake_errors_from_unseen": 0.6571,
+ "share_of_all_route_errors_from_unseen_fakes": 0.2353,
+ "fake_errors_by_generator": {
+  "lyria3pro": [
+   232,
+   0.25,
+   "unseen"
+  ],
+  "fxencoderstyletransfer": [
+   263,
+   0.129,
+   "unseen"
+  ],
+  "acestep": [
+   59,
+   0.169,
+   "seen"
+  ],
+  "crossfade": [
+   50,
+   0.12,
+   "seen"
+  ],
+  "echoes:audioldm": [
+   31,
+   0.032,
+   "seen"
+  ],
+  "concat": [
+   54,
+   0.019,
+   "seen"
+  ]
+ },
+ "real_fp_by_source": {
+  "musan_music|unseen": [
+   503,
+   0.155
+  ],
+  "constructed_mix|seen": [
+   309,
+   0.217
+  ],
+  "constructed_song|unseen": [
+   233,
+   0.206
+  ],
+  "openmic|seen": [
+   278,
+   0.169
+  ],
+  "haim|seen": [
+   56,
+   0.196
+  ]
+ },
+ "errors_total": {
+  "fake_miss": 140,
+  "real_fp": 251
+ }
+}

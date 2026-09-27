@@ -1,0 +1,199 @@
+{
+ "all": {
+  "n": 4822,
+  "dADS": 0.00463
+ },
+ "sources": {
+  "fleurs_ko": {
+   "rows": 1143,
+   "groups": 943,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 1143
+  },
+  "haim": {
+   "rows": 593,
+   "groups": 478,
+   "voice_rows_fake": 335,
+   "voice_rows_real": 1
+  },
+  "speechfake": {
+   "rows": 503,
+   "groups": 451,
+   "voice_rows_fake": 491,
+   "voice_rows_real": 12
+  },
+  "musan_music": {
+   "rows": 503,
+   "groups": 73,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 141
+  },
+  "mlaad": {
+   "rows": 451,
+   "groups": 298,
+   "voice_rows_fake": 451,
+   "voice_rows_real": 0
+  },
+  "constructed_mix": {
+   "rows": 393,
+   "groups": 181,
+   "voice_rows_fake": 277,
+   "voice_rows_real": 116
+  },
+  "constructed_song": {
+   "rows": 298,
+   "groups": 10,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 298
+  },
+  "openmic": {
+   "rows": 278,
+   "groups": 99,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 0
+  },
+  "vocalset": {
+   "rows": 277,
+   "groups": 10,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 277
+  },
+  "constructed_enhanced": {
+   "rows": 215,
+   "groups": 213,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 215
+  },
+  "zeroth": {
+   "rows": 72,
+   "groups": 4,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 72
+  },
+  "echoes": {
+   "rows": 40,
+   "groups": 19,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 0
+  },
+  "generated_music": {
+   "rows": 40,
+   "groups": 9,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 0
+  },
+  "existing:librispeech_test-clean": {
+   "rows": 5,
+   "groups": 1,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 5
+  },
+  "asvspoof2021_la": {
+   "rows": 4,
+   "groups": 1,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 4
+  },
+  "sonics": {
+   "rows": 4,
+   "groups": 4,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 0
+  },
+  "constructed_splice": {
+   "rows": 2,
+   "groups": 2,
+   "voice_rows_fake": 2,
+   "voice_rows_real": 0
+  },
+  "asvspoof2021_df": {
+   "rows": 1,
+   "groups": 1,
+   "voice_rows_fake": 0,
+   "voice_rows_real": 1
+  }
+ },
+ "drop_one_source": {
+  "fleurs_ko": {
+   "dADS": 0.00297,
+   "dVoiceEER": -0.01483
+  },
+  "haim": {
+   "dADS": -0.00063,
+   "dVoiceEER": 0.00317
+  },
+  "speechfake": {
+   "dADS": 0.00436,
+   "dVoiceEER": -0.0218
+  },
+  "musan_music": {
+   "dADS": 0.00438,
+   "dVoiceEER": -0.02189
+  },
+  "mlaad": {
+   "dADS": 0.00449,
+   "dVoiceEER": -0.02247
+  },
+  "constructed_mix": {
+   "dADS": 0.00643,
+   "dVoiceEER": -0.03216
+  },
+  "constructed_song": {
+   "dADS": 0.00525,
+   "dVoiceEER": -0.02626
+  },
+  "openmic": {
+   "dADS": 0.00463,
+   "dVoiceEER": -0.02317
+  },
+  "vocalset": {
+   "dADS": 0.00544,
+   "dVoiceEER": -0.02719
+  },
+  "constructed_enhanced": {
+   "dADS": 0.00441,
+   "dVoiceEER": -0.02204
+  },
+  "zeroth": {
+   "dADS": 0.00477,
+   "dVoiceEER": -0.02386
+  },
+  "echoes": {
+   "dADS": 0.00463,
+   "dVoiceEER": -0.02317
+  },
+  "generated_music": {
+   "dADS": 0.00463,
+   "dVoiceEER": -0.02317
+  },
+  "existing:librispeech_test-clean": {
+   "dADS": 0.00464,
+   "dVoiceEER": -0.02319
+  },
+  "asvspoof2021_la": {
+   "dADS": 0.00464,
+   "dVoiceEER": -0.02319
+  },
+  "sonics": {
+   "dADS": 0.00463,
+   "dVoiceEER": -0.02317
+  },
+  "constructed_splice": {
+   "dADS": 0.00464,
+   "dVoiceEER": -0.02318
+  },
+  "asvspoof2021_df": {
+   "dADS": 0.00463,
+   "dVoiceEER": -0.02317
+  }
+ },
+ "source_bootstrap": {
+  "n_sources": 18,
+  "n_valid_reps": 993,
+  "ci95": [
+   -0.00224,
+   0.01111
+  ],
+  "p_le_0": 0.35347432024169184
+ }
+}

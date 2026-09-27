@@ -1,0 +1,23 @@
+{
+ "written": "2026-09-27 15:04:25 KST",
+ "status": "pre-registered before any stacking training run or evaluation",
+ "baseline_S4": "R2 val-chosen heads, DB protocol, backbone-cache rows: voice_df mlp_long (DF-Arena fc5 -> MLP, 150/10), voice_ad resmlp_long (AD-1B emb -> ResMLP, 150/10), music L6_12 (MERT 6+12 WindowMIL, log-mean-exp, 50/5); voice window max; VOICE = val-CDF fusion ours 1 : ad 0.5; FILE = file_ensemble.fit default (equal weights unless the 0.1-step grid gains >= 0.002 val FILE EER); shared presence heads. Seeds 41/42/43, seed-mean probabilities.",
+ "add_ons": {
+  "POOL_v": "voice heads (both DF MLP and AD ResMLP) retrained AND scored with log-mean-exp window pooling of fake-vs-real odds (R1)",
+  "POOL_m": "music heads (MERT 6+12 WindowMIL) retrained AND scored with mean window-logit pooling (R1)",
+  "SA": "song-aware VOICE (R3): VOICE = CDF-mean(ours 1, ad w, music b*g(Pm)); b in {.25,.5,1,2}, gate g in {soft: Pm, hard: 1[Pm>=.5]} chosen by val VOICE EER; then coupling in {coupled: FILE sees the song-aware Fv, decoupled: FILE keeps the plain fused Fv} chosen by val ADS",
+  "W1": "AD fusion weight 1 instead of 0.5",
+  "FILE": "FILE rule option in {default, equal, grid (min_gain 0), max, noisy_or, max_nopresence}, chosen by 5-fold group-CV out-of-fold FILE EER on val (in-sample val FILE EER favours the grid); option then refit on full val"
+ },
+ "protocols": {
+  "RT (primary, decides)": "runtime semantics: every val/test row with a backbone npz gets every head's score (voice = 0 when the old-cache voice stem is silent, as full_bank_submission.py); fusion CDF tables on non-silent val rows (train_backbone_heads.final); song-aware music member present for every non-silent row, gated by runtime Pm",
+  "AC (secondary, R2-comparable)": "exact R2 ads.py / ads_compare.py pipeline: label-conditioned component scores, missing -> 0, tables on val rows of each component; song-aware music member only where a music score exists (as R3)"
+ },
+ "choice_rule": [
+  "1. Metric: val official ADS (0.5(1-FILE)+0.2(1-VOICE)+0.3(1-MUSIC)), RT protocol, FILE refit on val per configuration.",
+  "2. Single add-on gate on top of S4: an add-on passes if val dADS >= +0.0010 AND val group-bootstrap (val group_id, 1000 reps, rng 0, predictions fixed) P(dADS <= 0) <= 0.10. For FILE the same gate is applied to the out-of-fold val FILE EER converted to ADS (0.5 * dEER).",
+  "3. Stack: full factorial of the passing add-ons evaluated on val (SA internal parameters re-chosen per combination as defined; FILE option fixed from step 2). S5 = highest val ADS; any combination with fewer add-ons within 0.0005 val ADS of the best is preferred (fewest add-ons, then highest val ADS). No passing add-on -> S5 = S4.",
+  "4. The choice is written to choice_lock.json with a timestamp BEFORE any held-out (test) number is computed. Held-out numbers are then reported for every configuration but never revise the choice.",
+  "5. Held-out report: official ADS (RT and AC), group bootstrap over test group_id (1000 reps, rng 0) for S5 vs S4, every single add-on vs S4, and pairwise interactions; discordant-cell voice error rates for SA; within-source length Spearman for POOL."
+ ]
+}

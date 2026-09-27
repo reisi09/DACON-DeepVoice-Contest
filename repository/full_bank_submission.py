@@ -61,7 +61,6 @@ class Engine:
         # voice-stem embeddings (voice_ad_*.pt)
         self.music_layers = read('music_layers.json') or [12]
         self.fusion, self.detector, self.ad_heads = read('component_fusion.json'), None, []
-        self.fusion_deadline = float('inf')   # run() sets it from the 60-minute competition limit
         if self.fusion and self.fusion['voice']['weights'].get('ad'):
             from antideepfake_runtime import AntiDeepfake
             self.detector = AntiDeepfake(assets/'antideepfake'/'ad', str(self.device))
@@ -129,7 +128,7 @@ class Engine:
         if self.fusion and not silent:
             import component_fusion as cf
             members = {'ours': vf}
-            if self.detector and time.monotonic() < self.fusion_deadline:   # ponytail: past the budget, later files use ours
+            if self.detector:   # every file gets every member: outputs never depend on elapsed time (rule 2-4, reply 417885)
                 emb = torch.from_numpy(self.detector.windows(voice)[0]).to(self.device)
                 members['ad'] = float(np.mean([float(h(emb).softmax(-1)[:, 0].max()) for h in self.ad_heads]))
             vf = cf.fuse(self.fusion['voice'], members)
@@ -161,7 +160,6 @@ def run(root: Path):
         raise SubmissionError('Unexpected submission columns')
     files = base.order_audio_files(base.find_audio_files(args.test_dir), rows)
     engine = Engine(root/'model/assets', root/'model/trained', device)
-    engine.fusion_deadline = started + 48*60   # leaves ~12 min of the 60-min limit for the rest without fusion members
     predictions = [dict(ID=path.stem, **engine.predict(path)) for path in files]
     predictions = validate_predictions(predictions, [path.stem for path in files])
     import csv

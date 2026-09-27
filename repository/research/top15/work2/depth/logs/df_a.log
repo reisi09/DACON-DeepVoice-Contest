@@ -1,0 +1,35 @@
+fullvoice_db loaded {'train': 24623, 'val': 3785, 'test': 5139} 16.5 s
+fullvoice_db mlp256 41 {'val_eer': 0.029066474353241424, 'best_epoch': 75, 'epochs_run': 85, 'train_seconds': 49.0, 'n_params': 328450, 'peak_rss_gb': 1.09}
+fullvoice_db mlp256 42 {'val_eer': 0.03085577571383358, 'best_epoch': 42, 'epochs_run': 52, 'train_seconds': 26.6, 'n_params': 328450, 'peak_rss_gb': 1.12}
+fullvoice_db mlp256 43 {'val_eer': 0.03324526367933896, 'best_epoch': 25, 'epochs_run': 35, 'train_seconds': 18.2, 'n_params': 328450, 'peak_rss_gb': 1.12}
+fullvoice_db mlp256 val_ens_eer 0.03165
+fullvoice_db mlp512 41 {'val_eer': 0.03244876769083713, 'best_epoch': 16, 'epochs_run': 26, 'train_seconds': 14.4, 'n_params': 656898, 'peak_rss_gb': 1.12}
+fullvoice_db mlp512 42 {'val_eer': 0.0330489542957504, 'best_epoch': 26, 'epochs_run': 36, 'train_seconds': 24.0, 'n_params': 656898, 'peak_rss_gb': 1.12}
+fullvoice_db mlp512 43 {'val_eer': 0.03244876769083713, 'best_epoch': 24, 'epochs_run': 34, 'train_seconds': 26.0, 'n_params': 656898, 'peak_rss_gb': 1.12}
+fullvoice_db mlp512 val_ens_eer 0.03305
+fullvoice_db mlp3 41 {'val_eer': 0.02846628774832821, 'best_epoch': 38, 'epochs_run': 48, 'train_seconds': 44.2, 'n_params': 787714, 'peak_rss_gb': 1.12}
+fullvoice_db mlp3 42 {'val_eer': 0.033845450284252176, 'best_epoch': 11, 'epochs_run': 21, 'train_seconds': 18.6, 'n_params': 787714, 'peak_rss_gb': 1.12}
+fullvoice_db mlp3 43 {'val_eer': 0.030659466330245026, 'best_epoch': 20, 'epochs_run': 30, 'train_seconds': 27.1, 'n_params': 787714, 'peak_rss_gb': 1.12}
+fullvoice_db mlp3 val_ens_eer 0.02926
+fullvoice_db mlp4 41 {'val_eer': 0.03225245830724863, 'best_epoch': 17, 'epochs_run': 27, 'train_seconds': 36.8, 'n_params': 1050370, 'peak_rss_gb': 1.12}
+fullvoice_db mlp4 42 {'val_eer': 0.02747348237623788, 'best_epoch': 57, 'epochs_run': 67, 'train_seconds': 98.5, 'n_params': 1050370, 'peak_rss_gb': 1.12}
+fullvoice_db mlp4 43 {'val_eer': 0.02926278373682998, 'best_epoch': 17, 'epochs_run': 27, 'train_seconds': 35.0, 'n_params': 1050370, 'peak_rss_gb': 1.12}
+fullvoice_db mlp4 val_ens_eer 0.02986
+      443.45 real       466.93 user        39.83 sys
+          1216888832  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              798211  page reclaims
+                1033  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+               87762  voluntary context switches
+             6689474  involuntary context switches
+       5755641695384  instructions retired
+       2067675980131  cycles elapsed
+          1521469408  peak memory footprint

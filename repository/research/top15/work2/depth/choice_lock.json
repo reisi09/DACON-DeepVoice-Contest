@@ -1,0 +1,1225 @@
+{
+ "written": "2026-09-27 15:33:05 KST",
+ "rule": "Per group, metric = val route EER of the 3-seed-mean probability (val ens, unrounded). E* = min over the group's variants. Candidates = variants with val ens <= E* + 0.002. Choose the candidate with the fewest trainable parameters; equal parameter counts go to the R2 incumbent (fullvoice_db mlp256, voice_ad resmlp, music mil128_r2). Written to choice_lock.json with timestamp before any held-out EER/ADS is computed; held-out numbers are never used to revise it.",
+ "amendment": "added 15:23:45 KST, after some val results, before any held-out number: equal-size non-incumbent candidates are ordered by lower val ens (the rule left this unspecified)",
+ "missing": {
+  "fullvoice_db": [],
+  "voice_ad": [],
+  "music": []
+ },
+ "choice": {
+  "fullvoice_db": "resln",
+  "music": "mil128_r2",
+  "voice_ad": "resln_d1"
+ },
+ "candidates": {
+  "fullvoice_db": {
+   "best_val_ens": 0.024287498422230734,
+   "threshold": 0.026287498422230736,
+   "within": [
+    "resln",
+    "resln_d1"
+   ]
+  },
+  "music": {
+   "best_val_ens": 0.11128737693840074,
+   "threshold": 0.11328737693840074,
+   "within": [
+    "mil128",
+    "mil128_r2",
+    "resln_d1",
+    "wide512"
+   ]
+  },
+  "voice_ad": {
+   "best_val_ens": 0.020409212940478098,
+   "threshold": 0.022409212940478096,
+   "within": [
+    "resln_d1"
+   ]
+  }
+ },
+ "table": {
+  "fullvoice_db": {
+   "mlp256": {
+    "ens": 0.03165,
+    "ens_raw": 0.03165227170233535,
+    "seed_mean": 0.03106,
+    "seed_sd": 0.0021,
+    "per_seed": [
+     0.02907,
+     0.03086,
+     0.03325
+    ],
+    "saturation": {
+     "per_seed": [
+      1704,
+      921,
+      233
+     ],
+     "seed_mean": 233,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9996379415194193,
+     "n": 3785
+    },
+    "n_params": 328450,
+    "best_epochs": [
+     75,
+     42,
+     25
+    ],
+    "epochs_run": [
+     85,
+     52,
+     35
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     49.0,
+     26.6,
+     18.2
+    ],
+    "sec_per_epoch": [
+     0.58,
+     0.51,
+     0.52
+    ],
+    "peak_rss_gb": 1.12,
+    "n_train": 24623,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [256], 0.0)}"
+   },
+   "mlp3": {
+    "ens": 0.02926,
+    "ens_raw": 0.02926278373682998,
+    "seed_mean": 0.03099,
+    "seed_sd": 0.0027,
+    "per_seed": [
+     0.02847,
+     0.03385,
+     0.03066
+    ],
+    "saturation": {
+     "per_seed": [
+      2050,
+      200,
+      1481
+     ],
+     "seed_mean": 200,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9979983965555826,
+     "n": 3785
+    },
+    "n_params": 787714,
+    "best_epochs": [
+     38,
+     11,
+     20
+    ],
+    "epochs_run": [
+     48,
+     21,
+     30
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     44.2,
+     18.6,
+     27.1
+    ],
+    "sec_per_epoch": [
+     0.92,
+     0.88,
+     0.9
+    ],
+    "peak_rss_gb": 1.12,
+    "n_train": 24623,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512, 256], 0.0)}"
+   },
+   "mlp4": {
+    "ens": 0.02986,
+    "ens_raw": 0.029862970341743254,
+    "seed_mean": 0.02966,
+    "seed_sd": 0.00241,
+    "per_seed": [
+     0.03225,
+     0.02747,
+     0.02926
+    ],
+    "saturation": {
+     "per_seed": [
+      1819,
+      2314,
+      1883
+     ],
+     "seed_mean": 1804,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9999999205271403,
+     "n": 3785
+    },
+    "n_params": 1050370,
+    "best_epochs": [
+     17,
+     57,
+     17
+    ],
+    "epochs_run": [
+     27,
+     67,
+     27
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     36.8,
+     98.5,
+     35.0
+    ],
+    "sec_per_epoch": [
+     1.36,
+     1.47,
+     1.3
+    ],
+    "peak_rss_gb": 1.12,
+    "n_train": 24623,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512, 512, 256], 0.0)}"
+   },
+   "mlp512": {
+    "ens": 0.03305,
+    "ens_raw": 0.0330489542957504,
+    "seed_mean": 0.03265,
+    "seed_sd": 0.00035,
+    "per_seed": [
+     0.03245,
+     0.03305,
+     0.03245
+    ],
+    "saturation": {
+     "per_seed": [
+      149,
+      672,
+      472
+     ],
+     "seed_mean": 148,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9978601336479187,
+     "n": 3785
+    },
+    "n_params": 656898,
+    "best_epochs": [
+     16,
+     26,
+     24
+    ],
+    "epochs_run": [
+     26,
+     36,
+     34
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     14.4,
+     24.0,
+     26.0
+    ],
+    "sec_per_epoch": [
+     0.55,
+     0.67,
+     0.76
+    ],
+    "peak_rss_gb": 1.12,
+    "n_train": 24623,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512], 0.0)}"
+   },
+   "resln": {
+    "ens": 0.02429,
+    "ens_raw": 0.024287498422230734,
+    "seed_mean": 0.02661,
+    "seed_sd": 0.0009,
+    "per_seed": [
+     0.02747,
+     0.02568,
+     0.02668
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      0,
+      0
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9999965031941732,
+     "n": 3785
+    },
+    "n_params": 1710594,
+    "best_epochs": [
+     20,
+     30,
+     20
+    ],
+    "epochs_run": [
+     30,
+     40,
+     30
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     49.4,
+     92.6,
+     71.9
+    ],
+    "sec_per_epoch": [
+     1.65,
+     2.32,
+     2.4
+    ],
+    "peak_rss_gb": 1.5,
+    "n_train": 24623,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('resln', None, 0.0)}"
+   },
+   "resln_d1": {
+    "ens": 0.02588,
+    "ens_raw": 0.02588049039923428,
+    "seed_mean": 0.02747,
+    "seed_sd": 0.0008,
+    "per_seed": [
+     0.02747,
+     0.02827,
+     0.02668
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      0,
+      0
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9999930461247762,
+     "n": 3785
+    },
+    "n_params": 1710594,
+    "best_epochs": [
+     23,
+     13,
+     28
+    ],
+    "epochs_run": [
+     33,
+     23,
+     38
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     79.3,
+     55.9,
+     79.1
+    ],
+    "sec_per_epoch": [
+     2.4,
+     2.43,
+     2.08
+    ],
+    "peak_rss_gb": 1.5,
+    "n_train": 24623,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('resln', None, 0.1)}"
+   },
+   "resln_d3": {
+    "ens": 0.02747,
+    "ens_raw": 0.02747348237623788,
+    "seed_mean": 0.02834,
+    "seed_sd": 0.0009,
+    "per_seed": [
+     0.02747,
+     0.02926,
+     0.02827
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      0,
+      0
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9998603065808614,
+     "n": 3785
+    },
+    "n_params": 1710594,
+    "best_epochs": [
+     36,
+     17,
+     28
+    ],
+    "epochs_run": [
+     46,
+     27,
+     38
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     85.9,
+     49.7,
+     68.5
+    ],
+    "sec_per_epoch": [
+     1.87,
+     1.84,
+     1.8
+    ],
+    "peak_rss_gb": 1.5,
+    "n_train": 24623,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('resln', None, 0.3)}"
+   }
+  },
+  "music": {
+   "deep": {
+    "ens": 0.11582,
+    "ens_raw": 0.11582172114159964,
+    "seed_mean": 0.12466,
+    "seed_sd": 0.00093,
+    "per_seed": [
+     0.1252,
+     0.1252,
+     0.12359
+    ],
+    "saturation": {
+     "per_seed": [
+      56,
+      3,
+      58
+     ],
+     "seed_mean": 2,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9997251431147257,
+     "n": 1286
+    },
+    "n_params": 1114881,
+    "best_epochs": [
+     13,
+     8,
+     13
+    ],
+    "epochs_run": [
+     23,
+     18,
+     23
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     10.0,
+     7.5,
+     10.0
+    ],
+    "sec_per_epoch": [
+     0.44,
+     0.42,
+     0.43
+    ],
+    "peak_rss_gb": 1.27,
+    "n_train": 6981,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512, 128], 0.0)}"
+   },
+   "deep_d1": {
+    "ens": 0.11905,
+    "ens_raw": 0.11905228438000066,
+    "seed_mean": 0.11981,
+    "seed_sd": 0.00618,
+    "per_seed": [
+     0.11744,
+     0.12682,
+     0.11517
+    ],
+    "saturation": {
+     "per_seed": [
+      31,
+      61,
+      160
+     ],
+     "seed_mean": 29,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.999789277712504,
+     "n": 1286
+    },
+    "n_params": 1114881,
+    "best_epochs": [
+     14,
+     13,
+     25
+    ],
+    "epochs_run": [
+     24,
+     23,
+     35
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     13.0,
+     12.9,
+     21.5
+    ],
+    "sec_per_epoch": [
+     0.54,
+     0.56,
+     0.61
+    ],
+    "peak_rss_gb": 1.27,
+    "n_train": 6981,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512, 128], 0.1)}"
+   },
+   "deep_d3": {
+    "ens": 0.11744,
+    "ens_raw": 0.11743700276080019,
+    "seed_mean": 0.12154,
+    "seed_sd": 0.00583,
+    "per_seed": [
+     0.12747,
+     0.11582,
+     0.12132
+    ],
+    "saturation": {
+     "per_seed": [
+      50,
+      63,
+      58
+     ],
+     "seed_mean": 32,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9999711513519287,
+     "n": 1286
+    },
+    "n_params": 1114881,
+    "best_epochs": [
+     17,
+     22,
+     24
+    ],
+    "epochs_run": [
+     27,
+     32,
+     34
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     15.8,
+     16.3,
+     18.2
+    ],
+    "sec_per_epoch": [
+     0.59,
+     0.51,
+     0.53
+    ],
+    "peak_rss_gb": 1.27,
+    "n_train": 6981,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512, 128], 0.3)}"
+   },
+   "mil128": {
+    "ens": 0.11194,
+    "ens_raw": 0.11193926742079974,
+    "seed_mean": 0.11668,
+    "seed_sd": 0.00208,
+    "per_seed": [
+     0.11905,
+     0.11517,
+     0.11582
+    ],
+    "saturation": {
+     "per_seed": [
+      7,
+      3,
+      5
+     ],
+     "seed_mean": 2,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9997517069180807,
+     "n": 1286
+    },
+    "n_params": 262401,
+    "best_epochs": [
+     21,
+     20,
+     20
+    ],
+    "epochs_run": [
+     31,
+     30,
+     30
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     8.9,
+     9.3,
+     9.4
+    ],
+    "sec_per_epoch": [
+     0.29,
+     0.31,
+     0.31
+    ],
+    "peak_rss_gb": 1.27,
+    "n_train": 6981,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('r2mil', None, 0.0)}"
+   },
+   "mil128_r2": {
+    "ens": 0.11194,
+    "ens_raw": 0.11193926742079974,
+    "seed_mean": 0.11668,
+    "seed_sd": 0.00208,
+    "per_seed": [
+     0.11905,
+     0.11517,
+     0.11582
+    ],
+    "saturation": {
+     "per_seed": [
+      7,
+      3,
+      5
+     ],
+     "seed_mean": 2,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9997517069180807,
+     "n": 1286
+    },
+    "n_params": 262401,
+    "best_epochs": [
+     21,
+     20,
+     20
+    ],
+    "epochs_run": [
+     26,
+     25,
+     25
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     8.1,
+     8.0,
+     7.7
+    ],
+    "sec_per_epoch": [
+     0.31,
+     0.32,
+     0.31
+    ],
+    "peak_rss_gb": 1.27,
+    "n_train": 6981,
+    "config": "{'arch': ('r2mil', None, 0.0)}"
+   },
+   "resln": {
+    "ens": 0.11744,
+    "ens_raw": 0.11743700276080019,
+    "seed_mean": 0.13663,
+    "seed_sd": 0.00682,
+    "per_seed": [
+     0.14235,
+     0.13846,
+     0.12908
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      0,
+      0
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9987196326255798,
+     "n": 1286
+    },
+    "n_params": 2103297,
+    "best_epochs": [
+     11,
+     17,
+     20
+    ],
+    "epochs_run": [
+     21,
+     27,
+     30
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     21.0,
+     36.6,
+     37.1
+    ],
+    "sec_per_epoch": [
+     1.0,
+     1.35,
+     1.24
+    ],
+    "peak_rss_gb": 1.27,
+    "n_train": 6981,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('resln', None, 0.0)}"
+   },
+   "resln_d1": {
+    "ens": 0.11194,
+    "ens_raw": 0.11193926742079974,
+    "seed_mean": 0.13297,
+    "seed_sd": 0.00489,
+    "per_seed": [
+     0.12747,
+     0.13685,
+     0.13458
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      0,
+      0
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9985512693723043,
+     "n": 1286
+    },
+    "n_params": 2103297,
+    "best_epochs": [
+     20,
+     31,
+     32
+    ],
+    "epochs_run": [
+     30,
+     41,
+     42
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     33.2,
+     39.1,
+     42.0
+    ],
+    "sec_per_epoch": [
+     1.11,
+     0.95,
+     1.0
+    ],
+    "peak_rss_gb": 1.34,
+    "n_train": 6981,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('resln', None, 0.1)}"
+   },
+   "wide512": {
+    "ens": 0.11129,
+    "ens_raw": 0.11128737693840074,
+    "seed_mean": 0.11614,
+    "seed_sd": 0.00117,
+    "per_seed": [
+     0.11582,
+     0.11517,
+     0.11744
+    ],
+    "saturation": {
+     "per_seed": [
+      35,
+      19,
+      19
+     ],
+     "seed_mean": 16,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9998432397842407,
+     "n": 1286
+    },
+    "n_params": 1049601,
+    "best_epochs": [
+     26,
+     24,
+     24
+    ],
+    "epochs_run": [
+     36,
+     34,
+     34
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     15.5,
+     16.8,
+     14.6
+    ],
+    "sec_per_epoch": [
+     0.43,
+     0.49,
+     0.43
+    ],
+    "peak_rss_gb": 1.27,
+    "n_train": 6981,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512], 0.0)}"
+   }
+  },
+  "voice_ad": {
+   "mlp256": {
+    "ens": 0.02783,
+    "ens_raw": 0.027832303527422532,
+    "seed_mean": 0.02748,
+    "seed_sd": 0.00061,
+    "per_seed": [
+     0.02783,
+     0.02677,
+     0.02783
+    ],
+    "saturation": {
+     "per_seed": [
+      3,
+      58,
+      13
+     ],
+     "seed_mean": 3,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.970515251159668,
+     "n": 2845
+    },
+    "n_params": 328450,
+    "best_epochs": [
+     28,
+     37,
+     29
+    ],
+    "epochs_run": [
+     38,
+     47,
+     39
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     20.0,
+     24.6,
+     24.0
+    ],
+    "sec_per_epoch": [
+     0.53,
+     0.52,
+     0.61
+    ],
+    "peak_rss_gb": 1.07,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [256], 0.0)}"
+   },
+   "mlp3": {
+    "ens": 0.02597,
+    "ens_raw": 0.025972244707067438,
+    "seed_mean": 0.02544,
+    "seed_sd": 0.00148,
+    "per_seed": [
+     0.02677,
+     0.02385,
+     0.02571
+    ],
+    "saturation": {
+     "per_seed": [
+      1278,
+      1324,
+      1255
+     ],
+     "seed_mean": 1217,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9985064665476481,
+     "n": 2845
+    },
+    "n_params": 787714,
+    "best_epochs": [
+     34,
+     40,
+     34
+    ],
+    "epochs_run": [
+     44,
+     50,
+     44
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     33.3,
+     41.3,
+     35.9
+    ],
+    "sec_per_epoch": [
+     0.76,
+     0.83,
+     0.82
+    ],
+    "peak_rss_gb": 1.07,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512, 256], 0.0)}"
+   },
+   "mlp4": {
+    "ens": 0.02359,
+    "ens_raw": 0.023590537477740006,
+    "seed_mean": 0.02403,
+    "seed_sd": 0.0016,
+    "per_seed": [
+     0.02385,
+     0.02253,
+     0.02571
+    ],
+    "saturation": {
+     "per_seed": [
+      1621,
+      1691,
+      1571
+     ],
+     "seed_mean": 1554,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9999663432439169,
+     "n": 2845
+    },
+    "n_params": 1050370,
+    "best_epochs": [
+     36,
+     44,
+     31
+    ],
+    "epochs_run": [
+     46,
+     54,
+     41
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     74.3,
+     73.0,
+     54.8
+    ],
+    "sec_per_epoch": [
+     1.61,
+     1.35,
+     1.34
+    ],
+    "peak_rss_gb": 1.08,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512, 512, 256], 0.0)}"
+   },
+   "mlp512": {
+    "ens": 0.02597,
+    "ens_raw": 0.025972244707067438,
+    "seed_mean": 0.02589,
+    "seed_sd": 0.00199,
+    "per_seed": [
+     0.02783,
+     0.02385,
+     0.02597
+    ],
+    "saturation": {
+     "per_seed": [
+      12,
+      770,
+      127
+     ],
+     "seed_mean": 12,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.8808446923891703,
+     "n": 2845
+    },
+    "n_params": 656898,
+    "best_epochs": [
+     22,
+     49,
+     31
+    ],
+    "epochs_run": [
+     32,
+     59,
+     41
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     27.8,
+     47.3,
+     30.0
+    ],
+    "sec_per_epoch": [
+     0.87,
+     0.8,
+     0.73
+    ],
+    "peak_rss_gb": 1.07,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('mlp', [512], 0.0)}"
+   },
+   "res_mlp3": {
+    "ens": 0.02597,
+    "ens_raw": 0.025972244707067438,
+    "seed_mean": 0.02553,
+    "seed_sd": 0.00055,
+    "per_seed": [
+     0.02571,
+     0.02491,
+     0.02597
+    ],
+    "saturation": {
+     "per_seed": [
+      1026,
+      1201,
+      883
+     ],
+     "seed_mean": 850,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9951741298039755,
+     "n": 2845
+    },
+    "n_params": 790276,
+    "best_epochs": [
+     32,
+     37,
+     32
+    ],
+    "epochs_run": [
+     42,
+     47,
+     42
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     38.4,
+     40.0,
+     32.0
+    ],
+    "sec_per_epoch": [
+     0.91,
+     0.85,
+     0.76
+    ],
+    "peak_rss_gb": 1.37,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('res', ('mlp', [512, 256], 0.0), 0.0)}"
+   },
+   "res_resln_d1": {
+    "ens": 0.02359,
+    "ens_raw": 0.023590537477740006,
+    "seed_mean": 0.02553,
+    "seed_sd": 0.00055,
+    "per_seed": [
+     0.02571,
+     0.02491,
+     0.02597
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      0,
+      0
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9924383958180746,
+     "n": 2845
+    },
+    "n_params": 1713156,
+    "best_epochs": [
+     20,
+     22,
+     27
+    ],
+    "epochs_run": [
+     30,
+     32,
+     37
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     50.3,
+     38.7,
+     51.1
+    ],
+    "sec_per_epoch": [
+     1.68,
+     1.21,
+     1.38
+    ],
+    "peak_rss_gb": 1.37,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('res', ('resln', None, 0.1), 0.0)}"
+   },
+   "resln": {
+    "ens": 0.02279,
+    "ens_raw": 0.02279092016980553,
+    "seed_mean": 0.02376,
+    "seed_sd": 0.00119,
+    "per_seed": [
+     0.02491,
+     0.02385,
+     0.02253
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      0,
+      127
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9913914203643799,
+     "n": 2845
+    },
+    "n_params": 1710594,
+    "best_epochs": [
+     19,
+     17,
+     31
+    ],
+    "epochs_run": [
+     29,
+     27,
+     41
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     50.8,
+     41.3,
+     60.7
+    ],
+    "sec_per_epoch": [
+     1.75,
+     1.53,
+     1.48
+    ],
+    "peak_rss_gb": 1.37,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('resln', None, 0.0)}"
+   },
+   "resln_d1": {
+    "ens": 0.02041,
+    "ens_raw": 0.020409212940478098,
+    "seed_mean": 0.02253,
+    "seed_sd": 0.00184,
+    "per_seed": [
+     0.02147,
+     0.02147,
+     0.02465
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      993,
+      0
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9993436137835184,
+     "n": 2845
+    },
+    "n_params": 1710594,
+    "best_epochs": [
+     34,
+     41,
+     23
+    ],
+    "epochs_run": [
+     44,
+     51,
+     33
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     70.1,
+     77.7,
+     57.2
+    ],
+    "sec_per_epoch": [
+     1.59,
+     1.52,
+     1.73
+    ],
+    "peak_rss_gb": 1.37,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('resln', None, 0.1)}"
+   },
+   "resln_d3": {
+    "ens": 0.02253,
+    "ens_raw": 0.022530095965319387,
+    "seed_mean": 0.02306,
+    "seed_sd": 0.00116,
+    "per_seed": [
+     0.02359,
+     0.02173,
+     0.02385
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      148,
+      12
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.999889055887858,
+     "n": 2845
+    },
+    "n_params": 1710594,
+    "best_epochs": [
+     35,
+     36,
+     35
+    ],
+    "epochs_run": [
+     45,
+     46,
+     45
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     82.9,
+     79.6,
+     79.8
+    ],
+    "sec_per_epoch": [
+     1.84,
+     1.73,
+     1.77
+    ],
+    "peak_rss_gb": 1.37,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('resln', None, 0.3)}"
+   },
+   "resmlp": {
+    "ens": 0.02571,
+    "ens_raw": 0.02571142050258124,
+    "seed_mean": 0.02474,
+    "seed_sd": 0.00107,
+    "per_seed": [
+     0.02571,
+     0.02491,
+     0.02359
+    ],
+    "saturation": {
+     "per_seed": [
+      0,
+      156,
+      332
+     ],
+     "seed_mean": 0,
+     "seed_mean_reals": 0,
+     "max_seed_mean_reals": 0.9718958934148153,
+     "n": 2845
+    },
+    "n_params": 331012,
+    "best_epochs": [
+     47,
+     79,
+     80
+    ],
+    "epochs_run": [
+     57,
+     89,
+     90
+    ],
+    "hit_cap": 0,
+    "train_s": [
+     27.9,
+     45.8,
+     44.6
+    ],
+    "sec_per_epoch": [
+     0.49,
+     0.51,
+     0.5
+    ],
+    "peak_rss_gb": 1.07,
+    "n_train": 18260,
+    "config": "{'max_epochs': 150, 'patience': 10, 'arch': ('r2resmlp', None, 0.0)}"
+   }
+  }
+ }
+}

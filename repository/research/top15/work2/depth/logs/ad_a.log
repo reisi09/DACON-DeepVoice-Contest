@@ -1,0 +1,39 @@
+voice_ad loaded {'train': 18260, 'val': 2845, 'test': 3841} 32.4 s
+voice_ad resmlp 41 {'val_eer': 0.02571142050258124, 'best_epoch': 47, 'epochs_run': 57, 'train_seconds': 27.9, 'n_params': 331012, 'peak_rss_gb': 1.02}
+voice_ad resmlp 42 {'val_eer': 0.024911803194646823, 'best_epoch': 79, 'epochs_run': 89, 'train_seconds': 45.8, 'n_params': 331012, 'peak_rss_gb': 1.07}
+voice_ad resmlp 43 {'val_eer': 0.023590537477740006, 'best_epoch': 80, 'epochs_run': 90, 'train_seconds': 44.6, 'n_params': 331012, 'peak_rss_gb': 1.07}
+voice_ad resmlp val_ens_eer 0.02571
+voice_ad mlp256 41 {'val_eer': 0.027832303527422532, 'best_epoch': 28, 'epochs_run': 38, 'train_seconds': 20.0, 'n_params': 328450, 'peak_rss_gb': 1.07}
+voice_ad mlp256 42 {'val_eer': 0.026771862015001913, 'best_epoch': 37, 'epochs_run': 47, 'train_seconds': 24.6, 'n_params': 328450, 'peak_rss_gb': 1.07}
+voice_ad mlp256 43 {'val_eer': 0.027832303527422532, 'best_epoch': 29, 'epochs_run': 39, 'train_seconds': 24.0, 'n_params': 328450, 'peak_rss_gb': 1.07}
+voice_ad mlp256 val_ens_eer 0.02783
+voice_ad mlp512 41 {'val_eer': 0.027832303527422532, 'best_epoch': 22, 'epochs_run': 32, 'train_seconds': 27.8, 'n_params': 656898, 'peak_rss_gb': 1.07}
+voice_ad mlp512 42 {'val_eer': 0.023851361682226204, 'best_epoch': 49, 'epochs_run': 59, 'train_seconds': 47.3, 'n_params': 656898, 'peak_rss_gb': 1.07}
+voice_ad mlp512 43 {'val_eer': 0.025972244707067438, 'best_epoch': 31, 'epochs_run': 41, 'train_seconds': 30.0, 'n_params': 656898, 'peak_rss_gb': 1.07}
+voice_ad mlp512 val_ens_eer 0.02597
+voice_ad mlp3 41 {'val_eer': 0.026771862015001913, 'best_epoch': 34, 'epochs_run': 44, 'train_seconds': 33.3, 'n_params': 787714, 'peak_rss_gb': 1.07}
+voice_ad mlp3 42 {'val_eer': 0.023851361682226204, 'best_epoch': 40, 'epochs_run': 50, 'train_seconds': 41.3, 'n_params': 787714, 'peak_rss_gb': 1.07}
+voice_ad mlp3 43 {'val_eer': 0.02571142050258124, 'best_epoch': 34, 'epochs_run': 44, 'train_seconds': 35.9, 'n_params': 787714, 'peak_rss_gb': 1.07}
+voice_ad mlp3 val_ens_eer 0.02597
+voice_ad mlp4 41 {'val_eer': 0.023851361682226204, 'best_epoch': 36, 'epochs_run': 46, 'train_seconds': 74.3, 'n_params': 1050370, 'peak_rss_gb': 1.07}
+voice_ad mlp4 42 {'val_eer': 0.022530095965319387, 'best_epoch': 44, 'epochs_run': 54, 'train_seconds': 73.0, 'n_params': 1050370, 'peak_rss_gb': 1.07}
+voice_ad mlp4 43 {'val_eer': 0.02571142050258124, 'best_epoch': 31, 'epochs_run': 41, 'train_seconds': 54.8, 'n_params': 1050370, 'peak_rss_gb': 1.08}
+voice_ad mlp4 val_ens_eer 0.02359
+      645.58 real       683.08 user        48.51 sys
+          1167802368  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              845236  page reclaims
+                3894  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+              171230  voluntary context switches
+             7644018  involuntary context switches
+       7540462933773  instructions retired
+       2830099576170  cycles elapsed
+          1487606392  peak memory footprint

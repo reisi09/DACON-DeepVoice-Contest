@@ -1,0 +1,159 @@
+{
+ "S4_val": {
+  "AC": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  },
+  "RT": {
+   "file_eer": 0.04921,
+   "voice_eer": 0.02041,
+   "music_eer": 0.11194,
+   "ads": 0.93773
+  }
+ },
+ "S4_AC_val_vs_R2": {
+  "r2": {
+   "file_eer": 0.0474,
+   "voice_eer": 0.0215,
+   "music_eer": 0.1119,
+   "ads": 0.93845
+  },
+  "here": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  }
+ },
+ "file_cv": {
+  "RT": {
+   "options": {
+    "default": {
+     "oof_eer": 0.05004,
+     "fold_mean_eer": 0.0527
+    },
+    "equal": {
+     "oof_eer": 0.04901,
+     "fold_mean_eer": 0.052
+    },
+    "grid": {
+     "oof_eer": 0.04921,
+     "fold_mean_eer": 0.05132
+    },
+    "max": {
+     "oof_eer": 0.04921,
+     "fold_mean_eer": 0.05137
+    },
+    "noisy_or": {
+     "oof_eer": 0.04901,
+     "fold_mean_eer": 0.05136
+    },
+    "max_nopresence": {
+     "oof_eer": 0.06555,
+     "fold_mean_eer": 0.06603
+    }
+   },
+   "best": "equal",
+   "ads_gain_vs_default": 0.00052,
+   "ci95": [
+    -0.0007,
+    0.00139
+   ],
+   "p_le_0": 0.272
+  },
+  "AC": {
+   "options": {
+    "default": {
+     "oof_eer": 0.04736,
+     "fold_mean_eer": 0.0477
+    },
+    "equal": {
+     "oof_eer": 0.04736,
+     "fold_mean_eer": 0.0477
+    },
+    "grid": {
+     "oof_eer": 0.04755,
+     "fold_mean_eer": 0.04789
+    },
+    "max": {
+     "oof_eer": 0.04736,
+     "fold_mean_eer": 0.04919
+    },
+    "noisy_or": {
+     "oof_eer": 0.04818,
+     "fold_mean_eer": 0.049
+    },
+    "max_nopresence": {
+     "oof_eer": 0.04818,
+     "fold_mean_eer": 0.04861
+    }
+   },
+   "best": "default",
+   "ads_gain_vs_default": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_le_0": 1.0
+  }
+ },
+ "passing": []
+}
+POOL_v {'RT': (0.93756, np.float64(-0.00017), 0.501, None, None), 'AC': (0.93797, np.float64(-0.00048), 0.659, None, None)}
+POOL_m {'RT': (0.94175, np.float64(0.00402), 0.127, None, None), 'AC': (0.94195, np.float64(0.0035), 0.151, None, None)}
+SA {'RT': (0.93725, np.float64(-0.00048), 0.729, (0.25, 'soft'), False), 'AC': (0.93887, np.float64(0.00042), 0.216, (0.25, 'soft'), False)}
+W1 {'RT': (0.93824, np.float64(0.00051), 0.114, None, None), 'AC': (0.9395, np.float64(0.00105), 0.12, None, None)}
+FILE {'RT': (0.93773, np.float64(0.0), 1.0, None, None), 'AC': (0.93845, np.float64(0.0), 1.0, None, None)}
+S4 {'file_eer': 0.04921, 'voice_eer': 0.02041, 'music_eer': 0.11194, 'ads': 0.93773} 0.93845
+S4+POOL_v {'file_eer': 0.04818, 'voice_eer': 0.02385, 'music_eer': 0.11194, 'ads': 0.93756} 0.93797
+S4+POOL_m {'file_eer': 0.04487, 'voice_eer': 0.02041, 'music_eer': 0.10579, 'ads': 0.94175} 0.94195
+S4+SA {'file_eer': 0.04921, 'voice_eer': 0.02279, 'music_eer': 0.11194, 'ads': 0.93725} 0.93887
+S4+W1 {'file_eer': 0.04818, 'voice_eer': 0.02041, 'music_eer': 0.11194, 'ads': 0.93824} 0.9395
+S4+FILE {'file_eer': 0.04921, 'voice_eer': 0.02041, 'music_eer': 0.11194, 'ads': 0.93773} 0.93845
+S4+POOL_v+POOL_m {'file_eer': 0.0459, 'voice_eer': 0.02385, 'music_eer': 0.10579, 'ads': 0.94054} 0.94147
+S4+POOL_v+SA {'file_eer': 0.04736, 'voice_eer': 0.02041, 'music_eer': 0.11194, 'ads': 0.93866} 0.93887
+S4+POOL_v+W1 {'file_eer': 0.04673, 'voice_eer': 0.02173, 'music_eer': 0.11194, 'ads': 0.93871} 0.93886
+S4+POOL_v+FILE {'file_eer': 0.04818, 'voice_eer': 0.02385, 'music_eer': 0.11194, 'ads': 0.93756} 0.93797
+S4+POOL_m+SA {'file_eer': 0.04487, 'voice_eer': 0.02067, 'music_eer': 0.10579, 'ads': 0.94169} 0.9428
+S4+POOL_m+W1 {'file_eer': 0.04404, 'voice_eer': 0.02041, 'music_eer': 0.10579, 'ads': 0.94216} 0.9431
+S4+POOL_m+FILE {'file_eer': 0.04755, 'voice_eer': 0.02041, 'music_eer': 0.10579, 'ads': 0.9404} 0.94195
+S4+SA+W1 {'file_eer': 0.04818, 'voice_eer': 0.02067, 'music_eer': 0.11194, 'ads': 0.93819} 0.9395
+S4+SA+FILE {'file_eer': 0.04921, 'voice_eer': 0.02279, 'music_eer': 0.11194, 'ads': 0.93725} 0.93887
+S4+W1+FILE {'file_eer': 0.04818, 'voice_eer': 0.02041, 'music_eer': 0.11194, 'ads': 0.93824} 0.9395
+S4+POOL_v+POOL_m+SA {'file_eer': 0.04467, 'voice_eer': 0.01961, 'music_eer': 0.10579, 'ads': 0.94201} 0.94258
+S4+POOL_v+POOL_m+W1 {'file_eer': 0.0455, 'voice_eer': 0.02173, 'music_eer': 0.10579, 'ads': 0.94117} 0.94246
+S4+POOL_v+POOL_m+FILE {'file_eer': 0.0459, 'voice_eer': 0.02385, 'music_eer': 0.10579, 'ads': 0.94054} 0.94147
+S4+POOL_v+SA+W1 {'file_eer': 0.04673, 'voice_eer': 0.02147, 'music_eer': 0.11194, 'ads': 0.93876} 0.9395
+S4+POOL_v+SA+FILE {'file_eer': 0.04818, 'voice_eer': 0.02041, 'music_eer': 0.11194, 'ads': 0.93824} 0.93887
+S4+POOL_v+W1+FILE {'file_eer': 0.04901, 'voice_eer': 0.02173, 'music_eer': 0.11194, 'ads': 0.93757} 0.93886
+S4+POOL_m+SA+W1 {'file_eer': 0.04404, 'voice_eer': 0.01935, 'music_eer': 0.10579, 'ads': 0.94237} 0.94331
+S4+POOL_m+SA+FILE {'file_eer': 0.04755, 'voice_eer': 0.02067, 'music_eer': 0.10579, 'ads': 0.94035} 0.9428
+S4+POOL_m+W1+FILE {'file_eer': 0.04673, 'voice_eer': 0.02041, 'music_eer': 0.10579, 'ads': 0.94082} 0.9431
+S4+SA+W1+FILE {'file_eer': 0.04818, 'voice_eer': 0.02067, 'music_eer': 0.11194, 'ads': 0.93819} 0.9395
+S4+POOL_v+POOL_m+SA+W1 {'file_eer': 0.0455, 'voice_eer': 0.02041, 'music_eer': 0.10579, 'ads': 0.94143} 0.94289
+S4+POOL_v+POOL_m+SA+FILE {'file_eer': 0.0459, 'voice_eer': 0.01961, 'music_eer': 0.10579, 'ads': 0.94139} 0.94258
+S4+POOL_v+POOL_m+W1+FILE {'file_eer': 0.0455, 'voice_eer': 0.02173, 'music_eer': 0.10579, 'ads': 0.94117} 0.94246
+S4+POOL_v+SA+W1+FILE {'file_eer': 0.04901, 'voice_eer': 0.02147, 'music_eer': 0.11194, 'ads': 0.93762} 0.9395
+S4+POOL_m+SA+W1+FILE {'file_eer': 0.04673, 'voice_eer': 0.01935, 'music_eer': 0.10579, 'ads': 0.94103} 0.94331
+S4+POOL_v+POOL_m+SA+W1+FILE {'file_eer': 0.0455, 'voice_eer': 0.02041, 'music_eer': 0.10579, 'ads': 0.94143} 0.94289
+CHOICE {'name': 'S4', 'addons': [], 'cfg': {'pv': 'max', 'pm': 'lme', 'w': 0.5, 'sa': False, 'file': 'default'}, 'sa_choice': None, 'coupled': None, 'file_weights': {'max': 1, 'noisy_or': 1, 'max_nopresence': 1}, 'val_RT': {'file_eer': 0.04921, 'voice_eer': 0.02041, 'music_eer': 0.11194, 'ads': 0.93773}}
+      208.77 real       199.84 user         2.84 sys
+           572309504  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              114366  page reclaims
+                2422  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                5545  voluntary context switches
+              422186  involuntary context switches
+       3934911912151  instructions retired
+        673099270296  cycles elapsed
+           499303432  peak memory footprint

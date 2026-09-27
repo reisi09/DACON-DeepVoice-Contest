@@ -1,0 +1,540 @@
+{
+ "haim": {
+  "n_family_test_rows": 593,
+  "lineage_cells": [
+   "mixed|0|haim|sonicmaster",
+   "mixed|1|existing:HAIM|acestep",
+   "mixed|1|existing:HAIM|musicgen",
+   "mixed|1|haim|concat",
+   "mixed|1|haim|crossfade",
+   "mixed|None|haim|concat",
+   "mixed|None|haim|crossfade",
+   "music|0|haim|concat",
+   "music|0|haim|crossfade",
+   "music|0|haim|sonicmaster",
+   "music|1|existing:HAIM|acestep",
+   "music|1|existing:HAIM|musicgen",
+   "music|1|haim|concat",
+   "music|1|haim|crossfade",
+   "unknown_presence|0|haim|sonicmaster",
+   "unknown_presence|1|existing:HAIM|acestep",
+   "unknown_presence|1|existing:HAIM|musicgen",
+   "unknown_presence|1|haim|concat",
+   "unknown_presence|1|haim|crossfade",
+   "unknown_presence|None|haim|concat",
+   "unknown_presence|None|haim|crossfade"
+  ],
+  "nn": {
+   "voice|1": {
+    "n_family": 335,
+    "nn_cells": [
+     "mixed|1|sonics|udio",
+     "mixed|1|sonics|suno"
+    ],
+    "covered": 0.504,
+    "top_tally": [
+     [
+      "mixed|1|sonics|udio",
+      92
+     ],
+     [
+      "mixed|1|sonics|suno",
+      77
+     ],
+     [
+      "mixed|1|generated_music|acestep",
+      70
+     ],
+     [
+      "mixed|1|echoes|Echoes/ATA",
+      55
+     ],
+     [
+      "mixed|1|echoes|Echoes/TTA",
+      35
+     ],
+     [
+      "voice|1|mlaad|tts_models_en_ek1_tacotron2",
+      6
+     ]
+    ]
+   },
+   "music|1": {
+    "n_family": 537,
+    "nn_cells": [
+     "mixed|1|existing:HAIM|acestep",
+     "mixed|1|sonics|suno",
+     "mixed|1|haim|crossfade",
+     "mixed|1|existing:SONICS|suno"
+    ],
+    "covered": 0.51,
+    "top_tally": [
+     [
+      "mixed|1|existing:HAIM|acestep",
+      144
+     ],
+     [
+      "mixed|1|sonics|suno",
+      48
+     ],
+     [
+      "mixed|1|haim|crossfade",
+      46
+     ],
+     [
+      "mixed|1|existing:SONICS|suno",
+      36
+     ],
+     [
+      "mixed|1|sonics|udio",
+      27
+     ],
+     [
+      "mixed|1|existing:SONICS|udio",
+      22
+     ]
+    ]
+   }
+  },
+  "rows_removed": 1664,
+  "removed_share_by_stratum": {
+   "mixed|0": [
+    57,
+    0.055
+   ],
+   "mixed|1": [
+    1116,
+    0.405
+   ],
+   "mixed|None": [
+    9,
+    1.0
+   ],
+   "music|0": [
+    93,
+    0.094
+   ],
+   "music|1": [
+    309,
+    0.188
+   ],
+   "unknown_presence|0": [
+    24,
+    0.094
+   ],
+   "unknown_presence|1": [
+    50,
+    0.177
+   ],
+   "unknown_presence|None": [
+    6,
+    1.0
+   ]
+  }
+ },
+ "real_music": {
+  "n_family_test_rows": 1045,
+  "lineage_cells": [
+   "mixed|0|constructed_mix|None",
+   "mixed|0|existing:constructed_music|REAL",
+   "music|0|existing:constructed_music|REAL",
+   "unknown_presence|0|existing:constructed_music|REAL"
+  ],
+  "nn": {
+   "voice|0": {
+    "n_family": 469,
+    "nn_cells": [
+     "mixed|0|openmic|None",
+     "voice|0|vocalset|None"
+    ],
+    "covered": 0.525,
+    "top_tally": [
+     [
+      "mixed|0|openmic|None",
+      140
+     ],
+     [
+      "voice|0|vocalset|None",
+      106
+     ],
+     [
+      "mixed|0|existing:FMA|REAL",
+      51
+     ],
+     [
+      "mixed|0|constructed_mix|None",
+      50
+     ],
+     [
+      "mixed|0|existing:JamendoMaxCaps|REAL",
+      36
+     ],
+     [
+      "voice|0|csd|None",
+      25
+     ]
+    ]
+   },
+   "music|0": {
+    "n_family": 1045,
+    "nn_cells": [
+     "music|0|openmic|None",
+     "mixed|0|openmic|None",
+     "mixed|1|constructed_mix|None"
+    ],
+    "covered": 0.63,
+    "top_tally": [
+     [
+      "music|0|openmic|None",
+      220
+     ],
+     [
+      "mixed|0|openmic|None",
+      219
+     ],
+     [
+      "mixed|1|constructed_mix|None",
+      219
+     ],
+     [
+      "music|0|existing:JamendoMaxCaps|REAL",
+      66
+     ],
+     [
+      "mixed|0|existing:FMA|REAL",
+      60
+     ],
+     [
+      "music|0|existing:FMA|REAL",
+      43
+     ]
+    ]
+   }
+  },
+  "rows_removed": 2263,
+  "removed_share_by_stratum": {
+   "mixed|0": [
+    808,
+    0.778
+   ],
+   "mixed|1": [
+    572,
+    0.208
+   ],
+   "music|0": [
+    622,
+    0.627
+   ],
+   "unknown_presence|0": [
+    7,
+    0.027
+   ],
+   "voice|0": [
+    254,
+    0.057
+   ]
+  }
+ },
+ "fleurs_ko": {
+  "n_family_test_rows": 1143,
+  "lineage_cells": [],
+  "nn": {
+   "voice|0": {
+    "n_family": 1143,
+    "nn_cells": [
+     "voice|0|musan_speech|None",
+     "voice|0|zeroth|None"
+    ],
+    "covered": 0.72,
+    "top_tally": [
+     [
+      "voice|0|musan_speech|None",
+      416
+     ],
+     [
+      "voice|0|zeroth|None",
+      407
+     ],
+     [
+      "voice|0|speechfake|bonafide",
+      124
+     ],
+     [
+      "mixed|0|constructed_mix|None",
+      101
+     ],
+     [
+      "voice|0|asvspoof2021_la|bonafide",
+      38
+     ],
+     [
+      "voice|0|csd|None",
+      18
+     ]
+    ]
+   }
+  },
+  "rows_removed": 2117,
+  "removed_share_by_stratum": {
+   "voice|0": [
+    2117,
+    0.476
+   ]
+  }
+ },
+ "constructed_enhanced": {
+  "n_family_test_rows": 215,
+  "lineage_cells": [
+   "voice|0|constructed_enhanced|None"
+  ],
+  "nn": {
+   "voice|0": {
+    "n_family": 215,
+    "nn_cells": [
+     "voice|0|zeroth|None",
+     "voice|0|musan_speech|None"
+    ],
+    "covered": 0.549,
+    "top_tally": [
+     [
+      "voice|0|zeroth|None",
+      70
+     ],
+     [
+      "voice|0|musan_speech|None",
+      48
+     ],
+     [
+      "voice|0|speechfake|bonafide",
+      33
+     ],
+     [
+      "mixed|0|constructed_mix|None",
+      27
+     ],
+     [
+      "mixed|0|openmic|None",
+      16
+     ],
+     [
+      "mixed|0|existing:FMA|REAL",
+      7
+     ]
+    ]
+   }
+  },
+  "rows_removed": 2129,
+  "removed_share_by_stratum": {
+   "voice|0": [
+    2129,
+    0.479
+   ]
+  }
+ },
+ "mlaad": {
+  "n_family_test_rows": 451,
+  "lineage_cells": [
+   "voice|1|mlaad|Ava-82M",
+   "voice|1|mlaad|Azzurra-Voice",
+   "voice|1|mlaad|ChatTTS",
+   "voice|1|mlaad|Chatterbox Multilingual",
+   "voice|1|mlaad|DeepGram",
+   "voice|1|mlaad|Echo-TTS",
+   "voice|1|mlaad|ElevenLabs-v2-Multilingual",
+   "voice|1|mlaad|ElevenLabs-v3",
+   "voice|1|mlaad|Fish-S2-Pro",
+   "voice|1|mlaad|FreyaTTS",
+   "voice|1|mlaad|GLM-TTS",
+   "voice|1|mlaad|GPA-v1.5",
+   "voice|1|mlaad|GPT-SoVITS",
+   "voice|1|mlaad|Gemini-3.1-Flash-TTS",
+   "voice|1|mlaad|Higgs-Audio-V2",
+   "voice|1|mlaad|Index-TTS-2.0",
+   "voice|1|mlaad|Indri-TTS-0.1",
+   "voice|1|mlaad|Inflect-Nano-v1",
+   "voice|1|mlaad|Inflect-Nano-v2",
+   "voice|1|mlaad|Inworld-TTS-2",
+   "voice|1|mlaad|Kartoffelbox",
+   "voice|1|mlaad|KugelAudio",
+   "voice|1|mlaad|LFM2.5-Audio",
+   "voice|1|mlaad|Llasa-3B",
+   "voice|1|mlaad|Llasa-8B",
+   "voice|1|mlaad|LongCat-AudioDiT",
+   "voice|1|mlaad|MOSS-TTS-1.7B",
+   "voice|1|mlaad|MOSS-TTS-8B",
+   "voice|1|mlaad|MatchaTTS",
+   "voice|1|mlaad|Maya1 TTS",
+   "voice|1|mlaad|MegaTTS3",
+   "voice|1|mlaad|MeloTTS",
+   "voice|1|mlaad|Microsoft VibeVoice Large",
+   "voice|1|mlaad|MingTTS",
+   "voice|1|mlaad|MiniCPM-o-2.6",
+   "voice|1|mlaad|MiraTTS",
+   "voice|1|mlaad|NVidia Magpie-TTS Multilingual",
+   "voice|1|mlaad|Nari Dia-1.6B",
+   "voice|1|mlaad|Nari Dia2",
+   "voice|1|mlaad|OmniVoice",
+   "voice|1|mlaad|OpenAI TTS-1 HD",
+   "voice|1|mlaad|Qwen3-TTS-12Hz-0.6B-Base",
+   "voice|1|mlaad|Qwen3-TTS-12Hz-1.7B-Base",
+   "voice|1|mlaad|Qwen3-TTS-CustomVoice",
+   "voice|1|mlaad|Soprano11",
+   "voice|1|mlaad|SopranoTTS",
+   "voice|1|mlaad|Supertonic",
+   "voice|1|mlaad|TADA-3B-ML",
+   "voice|1|mlaad|Tsukasa_Speech",
+   "voice|1|mlaad|VoiceCore",
+   "voice|1|mlaad|Voxtral",
+   "voice|1|mlaad|Voxtream",
+   "voice|1|mlaad|WavTTS",
+   "voice|1|mlaad|WhisperSpeech",
+   "voice|1|mlaad|dots.tts-soar",
+   "voice|1|mlaad|e2-tts",
+   "voice|1|mlaad|f5-tts",
+   "voice|1|mlaad|facebook_mms-tts-eng",
+   "voice|1|mlaad|facebook_mms-tts-fin",
+   "voice|1|mlaad|facebook_mms-tts-hun",
+   "voice|1|mlaad|griffin_lim",
+   "voice|1|mlaad|microsoft_speecht5_tts",
+   "voice|1|mlaad|minimax/speech-02-turbo",
+   "voice|1|mlaad|minimax_speech-02-turbo",
+   "voice|1|mlaad|parler_tts_mini_v0.1",
+   "voice|1|mlaad|parler_tts_mini_v1",
+   "voice|1|mlaad|sesame_csm",
+   "voice|1|mlaad|supertonic-3",
+   "voice|1|mlaad|tts_models/multilingual/multi-dataset/bark",
+   "voice|1|mlaad|tts_models/multilingual/multi-dataset/xtts_v2",
+   "voice|1|mlaad|tts_models_bn_custom_vits-female",
+   "voice|1|mlaad|tts_models_da_cv_vits",
+   "voice|1|mlaad|tts_models_de_thorsten_tacotron2-DDC",
+   "voice|1|mlaad|tts_models_en_blizzard2013_capacitron-t2-c50",
+   "voice|1|mlaad|tts_models_en_jenny_jenny",
+   "voice|1|mlaad|tts_models_en_ljspeech_glow-tts",
+   "voice|1|mlaad|tts_models_en_ljspeech_neural_hmm",
+   "voice|1|mlaad|tts_models_en_ljspeech_tacotron2-DCA",
+   "voice|1|mlaad|tts_models_en_ljspeech_vits--neon",
+   "voice|1|mlaad|tts_models_en_multi-dataset_tortoise-v2",
+   "voice|1|mlaad|tts_models_en_sam_tacotron-DDC",
+   "voice|1|mlaad|tts_models_es_css10_vits",
+   "voice|1|mlaad|tts_models_es_mai_tacotron2-DDC",
+   "voice|1|mlaad|tts_models_fi_css10_vits",
+   "voice|1|mlaad|tts_models_fr_css10_vits",
+   "voice|1|mlaad|tts_models_fr_mai_tacotron2-DDC",
+   "voice|1|mlaad|tts_models_it_mai_female_vits",
+   "voice|1|mlaad|tts_models_lt_cv_vits",
+   "voice|1|mlaad|tts_models_multilingual_multi-dataset_bark",
+   "voice|1|mlaad|tts_models_multilingual_multi-dataset_xtts_v2",
+   "voice|1|mlaad|tts_models_sk_cv_vits",
+   "voice|1|mlaad|tts_models_sv_cv_vits",
+   "voice|1|mlaad|tts_models_tr_common-voice_glow-tts",
+   "voice|1|mlaad|tts_models_uk_mai_glow-tts",
+   "voice|1|mlaad|tts_models_zh-CN_baker_tacotron2-DDC-GST",
+   "voice|1|mlaad|zonosTTS-v0.1"
+  ],
+  "nn": {
+   "voice|1": {
+    "n_family": 451,
+    "nn_cells": [
+     "voice|1|mlaad|MOSS-TTS-1.7B",
+     "voice|1|mlaad|MOSS-TTS-8B",
+     "voice|1|speechfake|CosyVoice",
+     "voice|1|mlaad|Qwen3-TTS-12Hz-0.6B-Base",
+     "voice|1|mlaad|minimax_speech-02-turbo",
+     "voice|1|mlaad|Qwen3-TTS-12Hz-1.7B-Base",
+     "voice|1|mlaad|Fish-S2-Pro"
+    ],
+    "covered": 0.501,
+    "top_tally": [
+     [
+      "voice|1|mlaad|MOSS-TTS-1.7B",
+      56
+     ],
+     [
+      "voice|1|mlaad|MOSS-TTS-8B",
+      42
+     ],
+     [
+      "voice|1|speechfake|CosyVoice",
+      38
+     ],
+     [
+      "voice|1|mlaad|Qwen3-TTS-12Hz-0.6B-Base",
+      32
+     ],
+     [
+      "voice|1|mlaad|minimax_speech-02-turbo",
+      21
+     ],
+     [
+      "voice|1|mlaad|Qwen3-TTS-12Hz-1.7B-Base",
+      19
+     ]
+    ]
+   }
+  },
+  "rows_removed": 3769,
+  "removed_share_by_stratum": {
+   "voice|1": [
+    3769,
+    0.332
+   ]
+  }
+ },
+ "speechfake": {
+  "n_family_test_rows": 503,
+  "lineage_cells": [
+   "voice|0|speechfake|bonafide",
+   "voice|1|constructed_splice|None",
+   "voice|1|speechfake|CosyVoice",
+   "voice|1|speechfake|EdgeTTS",
+   "voice|1|speechfake|MeloTTS",
+   "voice|1|speechfake|SeedVC"
+  ],
+  "nn": {
+   "voice|1": {
+    "n_family": 491,
+    "nn_cells": [
+     "voice|1|speechfake|MeloTTS"
+    ],
+    "covered": 0.921,
+    "top_tally": [
+     [
+      "voice|1|speechfake|MeloTTS",
+      452
+     ],
+     [
+      "voice|1|speechfake|CosyVoice",
+      18
+     ],
+     [
+      "voice|1|speechfake|SeedVC",
+      17
+     ],
+     [
+      "voice|1|existing:asvspoof2019_la|A07",
+      1
+     ],
+     [
+      "voice|1|speechfake|EdgeTTS",
+      1
+     ],
+     [
+      "voice|1|asvspoof2021_la|A17",
+      1
+     ]
+    ]
+   }
+  },
+  "rows_removed": 1923,
+  "removed_share_by_stratum": {
+   "voice|0": [
+    360,
+    0.081
+   ],
+   "voice|1": [
+    1563,
+    0.138
+   ]
+  }
+ }
+}

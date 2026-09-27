@@ -1,0 +1,37 @@
+{
+ "protocol": "P1 refit: data v4 train + held-out test as train, val early stopping",
+ "rows": {
+  "train_with_backbone": 37108,
+  "val_with_backbone": 4931
+ },
+ "voice_ours": "retrained mlp",
+ "ad_arch": "resmlp",
+ "voice_epochs": 150,
+ "voice_patience": 10,
+ "music_layers": [
+  6,
+  12
+ ],
+ "ad_weight": 0.5,
+ "file_ensemble": {
+  "candidates_alone": {
+   "max": 0.04869,
+   "noisy_or": 0.04807,
+   "max_nopresence": 0.06044
+  },
+  "equal_weights_eer": 0.04792,
+  "grid_best_eer": 0.0473,
+  "grid_best_weights": {
+   "max": 0,
+   "max_nopresence": 4,
+   "noisy_or": 6
+  },
+  "chosen_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "chosen_rule": "equal (grid gain 0.0006 < 0.002)",
+  "val_n": 4927
+ }
+}

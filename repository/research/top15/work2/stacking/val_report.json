@@ -1,0 +1,1492 @@
+{
+ "n_val_rows": 3680,
+ "n_val_groups": 2208,
+ "S4_val": {
+  "AC": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  },
+  "RT": {
+   "file_eer": 0.04921,
+   "voice_eer": 0.02041,
+   "music_eer": 0.11194,
+   "ads": 0.93773
+  }
+ },
+ "S4_file_weights": {
+  "AC": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "RT": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  }
+ },
+ "S4_AC_val_vs_R2": {
+  "r2": {
+   "file_eer": 0.0474,
+   "voice_eer": 0.0215,
+   "music_eer": 0.1119,
+   "ads": 0.93845
+  },
+  "here": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  }
+ },
+ "S4_member_val_maxabs_vs_R2_runs": {
+  "voice_df__mlp_long": 0.0,
+  "voice_ad__resmlp_long": 0.0,
+  "music__L6_12": 0.0
+ },
+ "file_cv": {
+  "RT": {
+   "options": {
+    "default": {
+     "oof_eer": 0.05004,
+     "fold_mean_eer": 0.0527
+    },
+    "equal": {
+     "oof_eer": 0.04901,
+     "fold_mean_eer": 0.052
+    },
+    "grid": {
+     "oof_eer": 0.04921,
+     "fold_mean_eer": 0.05132
+    },
+    "max": {
+     "oof_eer": 0.04921,
+     "fold_mean_eer": 0.05137
+    },
+    "noisy_or": {
+     "oof_eer": 0.04901,
+     "fold_mean_eer": 0.05136
+    },
+    "max_nopresence": {
+     "oof_eer": 0.06555,
+     "fold_mean_eer": 0.06603
+    }
+   },
+   "best": "equal",
+   "ads_gain_vs_default": 0.00052,
+   "ci95": [
+    -0.0007,
+    0.00139
+   ],
+   "p_le_0": 0.272
+  },
+  "AC": {
+   "options": {
+    "default": {
+     "oof_eer": 0.04736,
+     "fold_mean_eer": 0.0477
+    },
+    "equal": {
+     "oof_eer": 0.04736,
+     "fold_mean_eer": 0.0477
+    },
+    "grid": {
+     "oof_eer": 0.04755,
+     "fold_mean_eer": 0.04789
+    },
+    "max": {
+     "oof_eer": 0.04736,
+     "fold_mean_eer": 0.04919
+    },
+    "noisy_or": {
+     "oof_eer": 0.04818,
+     "fold_mean_eer": 0.049
+    },
+    "max_nopresence": {
+     "oof_eer": 0.04818,
+     "fold_mean_eer": 0.04861
+    }
+   },
+   "best": "default",
+   "ads_gain_vs_default": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_le_0": 1.0
+  }
+ },
+ "single": {
+  "POOL_v": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04818,
+     "voice_eer": 0.02385,
+     "music_eer": 0.11194,
+     "ads": 0.93756
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    },
+    "val_boot_vs_S4": {
+     "delta": -0.00017,
+     "ci95": [
+      -0.00118,
+      0.00144
+     ],
+     "p_le_0": 0.501
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.02385,
+     "music_eer": 0.11194,
+     "ads": 0.93797
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    },
+    "val_boot_vs_S4": {
+     "delta": -0.00048,
+     "ci95": [
+      -0.00158,
+      0.00127
+     ],
+     "p_le_0": 0.659
+    }
+   }
+  },
+  "POOL_m": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04487,
+     "voice_eer": 0.02041,
+     "music_eer": 0.10579,
+     "ads": 0.94175
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 0,
+     "max_nopresence": 0,
+     "noisy_or": 10
+    },
+    "val_boot_vs_S4": {
+     "delta": 0.00402,
+     "ci95": [
+      -0.00263,
+      0.01
+     ],
+     "p_le_0": 0.127
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.02147,
+     "music_eer": 0.10579,
+     "ads": 0.94195
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    },
+    "val_boot_vs_S4": {
+     "delta": 0.0035,
+     "ci95": [
+      -0.00297,
+      0.00976
+     ],
+     "p_le_0": 0.151
+    }
+   }
+  },
+  "SA": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04921,
+     "voice_eer": 0.02279,
+     "music_eer": 0.11194,
+     "ads": 0.93725
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    },
+    "val_boot_vs_S4": {
+     "delta": -0.00048,
+     "ci95": [
+      -0.00119,
+      0.00078
+     ],
+     "p_le_0": 0.729
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.01935,
+     "music_eer": 0.11194,
+     "ads": 0.93887
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    },
+    "val_boot_vs_S4": {
+     "delta": 0.00042,
+     "ci95": [
+      -0.0004,
+      0.0011
+     ],
+     "p_le_0": 0.216
+    }
+   }
+  },
+  "W1": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04818,
+     "voice_eer": 0.02041,
+     "music_eer": 0.11194,
+     "ads": 0.93824
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    },
+    "val_boot_vs_S4": {
+     "delta": 0.00051,
+     "ci95": [
+      -0.00036,
+      0.00195
+     ],
+     "p_le_0": 0.114
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04653,
+     "voice_eer": 0.01829,
+     "music_eer": 0.11194,
+     "ads": 0.9395
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    },
+    "val_boot_vs_S4": {
+     "delta": 0.00105,
+     "ci95": [
+      -0.00059,
+      0.00206
+     ],
+     "p_le_0": 0.12
+    }
+   }
+  },
+  "FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04921,
+     "voice_eer": 0.02041,
+     "music_eer": 0.11194,
+     "ads": 0.93773
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    },
+    "val_boot_vs_S4": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_le_0": 1.0
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.02147,
+     "music_eer": 0.11194,
+     "ads": 0.93845
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    },
+    "val_boot_vs_S4": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_le_0": 1.0
+    }
+   }
+  }
+ },
+ "passing": [],
+ "factorial": {
+  "S4": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04921,
+     "voice_eer": 0.02041,
+     "music_eer": 0.11194,
+     "ads": 0.93773
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.02147,
+     "music_eer": 0.11194,
+     "ads": 0.93845
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04818,
+     "voice_eer": 0.02385,
+     "music_eer": 0.11194,
+     "ads": 0.93756
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.02385,
+     "music_eer": 0.11194,
+     "ads": 0.93797
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_m": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04487,
+     "voice_eer": 0.02041,
+     "music_eer": 0.10579,
+     "ads": 0.94175
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 0,
+     "max_nopresence": 0,
+     "noisy_or": 10
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.02147,
+     "music_eer": 0.10579,
+     "ads": 0.94195
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+SA": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04921,
+     "voice_eer": 0.02279,
+     "music_eer": 0.11194,
+     "ads": 0.93725
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.01935,
+     "music_eer": 0.11194,
+     "ads": 0.93887
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+W1": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04818,
+     "voice_eer": 0.02041,
+     "music_eer": 0.11194,
+     "ads": 0.93824
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04653,
+     "voice_eer": 0.01829,
+     "music_eer": 0.11194,
+     "ads": 0.9395
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04921,
+     "voice_eer": 0.02041,
+     "music_eer": 0.11194,
+     "ads": 0.93773
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.02147,
+     "music_eer": 0.11194,
+     "ads": 0.93845
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+POOL_m": {
+   "RT": {
+    "val": {
+     "file_eer": 0.0459,
+     "voice_eer": 0.02385,
+     "music_eer": 0.10579,
+     "ads": 0.94054
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.02385,
+     "music_eer": 0.10579,
+     "ads": 0.94147
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+SA": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.02041,
+     "music_eer": 0.11194,
+     "ads": 0.93866
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": true,
+    "file_weights": {
+     "max": 10,
+     "max_nopresence": 0,
+     "noisy_or": 0
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.01935,
+     "music_eer": 0.11194,
+     "ads": 0.93887
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+W1": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04673,
+     "voice_eer": 0.02173,
+     "music_eer": 0.11194,
+     "ads": 0.93871
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 3,
+     "max_nopresence": 2,
+     "noisy_or": 5
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04653,
+     "voice_eer": 0.02147,
+     "music_eer": 0.11194,
+     "ads": 0.93886
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04818,
+     "voice_eer": 0.02385,
+     "music_eer": 0.11194,
+     "ads": 0.93756
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.02385,
+     "music_eer": 0.11194,
+     "ads": 0.93797
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_m+SA": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04487,
+     "voice_eer": 0.02067,
+     "music_eer": 0.10579,
+     "ads": 0.94169
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 0,
+     "max_nopresence": 0,
+     "noisy_or": 10
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.01723,
+     "music_eer": 0.10579,
+     "ads": 0.9428
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_m+W1": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.02041,
+     "music_eer": 0.10579,
+     "ads": 0.94216
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 0,
+     "max_nopresence": 0,
+     "noisy_or": 10
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04301,
+     "voice_eer": 0.01829,
+     "music_eer": 0.10579,
+     "ads": 0.9431
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_m+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04755,
+     "voice_eer": 0.02041,
+     "music_eer": 0.10579,
+     "ads": 0.9404
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.02147,
+     "music_eer": 0.10579,
+     "ads": 0.94195
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+SA+W1": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04818,
+     "voice_eer": 0.02067,
+     "music_eer": 0.11194,
+     "ads": 0.93819
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04653,
+     "voice_eer": 0.01829,
+     "music_eer": 0.11194,
+     "ads": 0.9395
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+SA+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04921,
+     "voice_eer": 0.02279,
+     "music_eer": 0.11194,
+     "ads": 0.93725
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.01935,
+     "music_eer": 0.11194,
+     "ads": 0.93887
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+W1+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04818,
+     "voice_eer": 0.02041,
+     "music_eer": 0.11194,
+     "ads": 0.93824
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04653,
+     "voice_eer": 0.01829,
+     "music_eer": 0.11194,
+     "ads": 0.9395
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+POOL_m+SA": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04467,
+     "voice_eer": 0.01961,
+     "music_eer": 0.10579,
+     "ads": 0.94201
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": true,
+    "file_weights": {
+     "max": 2,
+     "max_nopresence": 2,
+     "noisy_or": 6
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.01829,
+     "music_eer": 0.10579,
+     "ads": 0.94258
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+POOL_m+W1": {
+   "RT": {
+    "val": {
+     "file_eer": 0.0455,
+     "voice_eer": 0.02173,
+     "music_eer": 0.10579,
+     "ads": 0.94117
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04301,
+     "voice_eer": 0.02147,
+     "music_eer": 0.10579,
+     "ads": 0.94246
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+POOL_m+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.0459,
+     "voice_eer": 0.02385,
+     "music_eer": 0.10579,
+     "ads": 0.94054
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.02385,
+     "music_eer": 0.10579,
+     "ads": 0.94147
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+SA+W1": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04673,
+     "voice_eer": 0.02147,
+     "music_eer": 0.11194,
+     "ads": 0.93876
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 3,
+     "max_nopresence": 2,
+     "noisy_or": 5
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04653,
+     "voice_eer": 0.01829,
+     "music_eer": 0.11194,
+     "ads": 0.9395
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+SA+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04818,
+     "voice_eer": 0.02041,
+     "music_eer": 0.11194,
+     "ads": 0.93824
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04736,
+     "voice_eer": 0.01935,
+     "music_eer": 0.11194,
+     "ads": 0.93887
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+W1+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04901,
+     "voice_eer": 0.02173,
+     "music_eer": 0.11194,
+     "ads": 0.93757
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04653,
+     "voice_eer": 0.02147,
+     "music_eer": 0.11194,
+     "ads": 0.93886
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_m+SA+W1": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.01935,
+     "music_eer": 0.10579,
+     "ads": 0.94237
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 0,
+     "max_nopresence": 0,
+     "noisy_or": 10
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04301,
+     "voice_eer": 0.01723,
+     "music_eer": 0.10579,
+     "ads": 0.94331
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_m+SA+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04755,
+     "voice_eer": 0.02067,
+     "music_eer": 0.10579,
+     "ads": 0.94035
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.01723,
+     "music_eer": 0.10579,
+     "ads": 0.9428
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_m+W1+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04673,
+     "voice_eer": 0.02041,
+     "music_eer": 0.10579,
+     "ads": 0.94082
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04301,
+     "voice_eer": 0.01829,
+     "music_eer": 0.10579,
+     "ads": 0.9431
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+SA+W1+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04818,
+     "voice_eer": 0.02067,
+     "music_eer": 0.11194,
+     "ads": 0.93819
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04653,
+     "voice_eer": 0.01829,
+     "music_eer": 0.11194,
+     "ads": 0.9395
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+POOL_m+SA+W1": {
+   "RT": {
+    "val": {
+     "file_eer": 0.0455,
+     "voice_eer": 0.02041,
+     "music_eer": 0.10579,
+     "ads": 0.94143
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04301,
+     "voice_eer": 0.01935,
+     "music_eer": 0.10579,
+     "ads": 0.94289
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+POOL_m+SA+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.0459,
+     "voice_eer": 0.01961,
+     "music_eer": 0.10579,
+     "ads": 0.94139
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04404,
+     "voice_eer": 0.01829,
+     "music_eer": 0.10579,
+     "ads": 0.94258
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+POOL_m+W1+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.0455,
+     "voice_eer": 0.02173,
+     "music_eer": 0.10579,
+     "ads": 0.94117
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04301,
+     "voice_eer": 0.02147,
+     "music_eer": 0.10579,
+     "ads": 0.94246
+    },
+    "sa_choice": null,
+    "coupled": null,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+SA+W1+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04901,
+     "voice_eer": 0.02147,
+     "music_eer": 0.11194,
+     "ads": 0.93762
+    },
+    "sa_choice": [
+     0.25,
+     "soft"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04653,
+     "voice_eer": 0.01829,
+     "music_eer": 0.11194,
+     "ads": 0.9395
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_m+SA+W1+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.04673,
+     "voice_eer": 0.01935,
+     "music_eer": 0.10579,
+     "ads": 0.94103
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04301,
+     "voice_eer": 0.01723,
+     "music_eer": 0.10579,
+     "ads": 0.94331
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  },
+  "S4+POOL_v+POOL_m+SA+W1+FILE": {
+   "RT": {
+    "val": {
+     "file_eer": 0.0455,
+     "voice_eer": 0.02041,
+     "music_eer": 0.10579,
+     "ads": 0.94143
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   },
+   "AC": {
+    "val": {
+     "file_eer": 0.04301,
+     "voice_eer": 0.01935,
+     "music_eer": 0.10579,
+     "ads": 0.94289
+    },
+    "sa_choice": [
+     0.25,
+     "hard"
+    ],
+    "coupled": false,
+    "file_weights": {
+     "max": 1,
+     "noisy_or": 1,
+     "max_nopresence": 1
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,55 @@
+music loaded {'train': 6981, 'val': 1286, 'test': 2149} 44.3 s; configs ['LOFO_haim', 'CTRL_haim', 'LOFO_real_music', 'CTRL_real_music', 'LOFO_fleurs_ko', 'CTRL_fleurs_ko', 'LOFO_constructed_enhanced', 'CTRL_constructed_enhanced', 'LOFO_mlaad', 'CTRL_mlaad', 'LOFO_speechfake', 'CTRL_speechfake']
+music LOFO_haim 41 {'val_eer': 0.12746908230399953, 'best_epoch': 12, 'epochs_run': 17, 'train_seconds': 7.5, 'n_train': 5317}
+music LOFO_haim 42 {'val_eer': 0.13684927136479996, 'best_epoch': 9, 'epochs_run': 14, 'train_seconds': 5.5, 'n_train': 5317}
+music LOFO_haim val_ens_eer 0.12908
+music CTRL_haim 41 {'val_eer': 0.12908436392320002, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 9.9, 'n_train': 5317}
+music CTRL_haim 42 {'val_eer': 0.12746908230399953, 'best_epoch': 11, 'epochs_run': 16, 'train_seconds': 6.0, 'n_train': 5317}
+music CTRL_haim val_ens_eer 0.12682
+music LOFO_real_music 41 {'val_eer': 0.15399436786720022, 'best_epoch': 10, 'epochs_run': 15, 'train_seconds': 5.4, 'n_train': 4972}
+music LOFO_real_music 42 {'val_eer': 0.16014399368959964, 'best_epoch': 13, 'epochs_run': 18, 'train_seconds': 6.1, 'n_train': 4972}
+music LOFO_real_music val_ens_eer 0.15238
+music CTRL_real_music 41 {'val_eer': 0.13296681764399998, 'best_epoch': 16, 'epochs_run': 21, 'train_seconds': 6.6, 'n_train': 4972}
+music CTRL_real_music 42 {'val_eer': 0.13523398974559941, 'best_epoch': 10, 'epochs_run': 15, 'train_seconds': 4.3, 'n_train': 4972}
+music CTRL_real_music val_ens_eer 0.13458
+music LOFO_fleurs_ko 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 26, 'train_seconds': 10.4, 'n_train': 6981}
+music LOFO_fleurs_ko 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 11.0, 'n_train': 6981}
+music LOFO_fleurs_ko val_ens_eer 0.11905
+music CTRL_fleurs_ko 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 26, 'train_seconds': 10.8, 'n_train': 6981}
+music CTRL_fleurs_ko 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 10.7, 'n_train': 6981}
+music CTRL_fleurs_ko val_ens_eer 0.11905
+music LOFO_constructed_enhanced 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 26, 'train_seconds': 11.8, 'n_train': 6981}
+music LOFO_constructed_enhanced 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 11.5, 'n_train': 6981}
+music LOFO_constructed_enhanced val_ens_eer 0.11905
+music CTRL_constructed_enhanced 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 26, 'train_seconds': 11.7, 'n_train': 6981}
+music CTRL_constructed_enhanced 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 10.8, 'n_train': 6981}
+music CTRL_constructed_enhanced val_ens_eer 0.11905
+music LOFO_mlaad 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 26, 'train_seconds': 8.9, 'n_train': 6981}
+music LOFO_mlaad 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 8.2, 'n_train': 6981}
+music LOFO_mlaad val_ens_eer 0.11905
+music CTRL_mlaad 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 26, 'train_seconds': 8.9, 'n_train': 6981}
+music CTRL_mlaad 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 8.6, 'n_train': 6981}
+music CTRL_mlaad val_ens_eer 0.11905
+music LOFO_speechfake 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 26, 'train_seconds': 9.1, 'n_train': 6981}
+music LOFO_speechfake 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 10.5, 'n_train': 6981}
+music LOFO_speechfake val_ens_eer 0.11905
+music CTRL_speechfake 41 {'val_eer': 0.11905228438000066, 'best_epoch': 21, 'epochs_run': 26, 'train_seconds': 11.6, 'n_train': 6981}
+music CTRL_speechfake 42 {'val_eer': 0.1151698306592007, 'best_epoch': 20, 'epochs_run': 25, 'train_seconds': 9.8, 'n_train': 6981}
+music CTRL_speechfake val_ens_eer 0.11905
+      270.80 real       254.58 user        20.85 sys
+           937574400  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              387976  page reclaims
+                 494  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+              129619  voluntary context switches
+             2101758  involuntary context switches
+       2212499943877  instructions retired
+        948875620420  cycles elapsed
+          1287915344  peak memory footprint

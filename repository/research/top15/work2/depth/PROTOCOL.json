@@ -1,0 +1,22 @@
+{
+ "written": "2026-09-27 15:03:41 KST (before any depth-study training run)",
+ "protocol": "DB: heads trained on data v4 train split only; early stop on val by (val route EER, val BCE) lexicographic (R2 run.py train unchanged); held-out test predictions saved but not scored until choice_lock.json exists. Seeds 41/42/43. Loss weights, duration balance, AdamW wd .01, clip 1, 256 files/update, lr 1e-4 voice / 1e-3 music unchanged. 150 epochs / patience 10 for every variant except music mil128_r2 (R2 L6_12 exact, 50/5).",
+ "groups": {
+  "fullvoice_db": "DF-Arena fc5 inputs, old cache_v4, all rows (r2/full_voice.py db item semantics)",
+  "voice_ad": "AntiDeepfake-1B window embeddings, backbone-cache rows (r2 run.py voice_ad)",
+  "music": "MERT layers 6+12 concatenated (2048-d) windows, WindowMIL log-mean-exp, backbone-cache rows"
+ },
+ "variants": {
+  "voice (both groups)": {"mlp256": "std->1280->256->GELU->2 (R2 mlp, reference)", "mlp512": "std->1280->512->GELU->2",
+    "mlp3": "std->1280->512->GELU->256->GELU->2", "mlp4": "std->1280->512->GELU->512->GELU->256->GELU->2",
+    "resln / resln_d1 / resln_d3": "std->Linear(1280,512)-> 2 pre-LN residual blocks [x + W2(drop(GELU(W1(LN x))))] width 512 -> LN -> Linear(512,2); dropout 0 / 0.1 / 0.3"},
+  "voice_ad extra": {"resmlp": "R2 ResMLP (AD pretrained Linear + zero-init 256 branch; R2 choice, reference)",
+    "res_mlp3": "AD pretrained Linear + zero-init mlp3 branch", "res_resln_d1": "AD pretrained Linear + zero-init resln_d1 branch"},
+  "music": {"mil128_r2": "FrozenHead mlp 2048->128->1, 50/5 (R2 L6_12 exact, reference)", "mil128": "same, 150/10",
+    "wide512": "2048->512->GELU->1", "deep / deep_d1 / deep_d3": "2048->512->GELU->128->GELU->1, dropout after each GELU 0 / 0.1 / 0.3",
+    "resln / resln_d1": "Linear(2048,512) -> 2 pre-LN residual blocks width 512 -> LN -> Linear(512,1); dropout 0 / 0.1"}
+ },
+ "choice_rule": "Per group, metric = val route EER of the 3-seed-mean probability (val ens, unrounded). E* = min over the group's variants. Candidates = variants with val ens <= E* + 0.002. Choose the candidate with the fewest trainable parameters; equal parameter counts go to the R2 incumbent (fullvoice_db mlp256, voice_ad resmlp, music mil128_r2). Written to choice_lock.json with timestamp before any held-out EER/ADS is computed; held-out numbers are never used to revise it.",
+ "held_out_once": "After the lock: held-out route EERs for all variants (report only); official ADS (r2 ads.py pipeline: shared presence, FILE ensemble refit on val, voice CDF fusion ours 1 : ad 0.5, backbone-cache rows) for (a) R2 both-MLP (must reproduce 0.88643), (b) all-row reference (DF mlp256 all rows + AD resmlp + music mil128_r2), (c) chosen full configuration, plus one-component swaps of (c) into (b); group bootstrap (group_id, 1000 reps) of ADS deltas vs (a) and vs (b).",
+ "also_reported": "trainable parameter count, train seconds, best epoch / epochs run, cap hits, number of exact 1.0 outputs (per seed and seed mean, val and held-out)"
+}

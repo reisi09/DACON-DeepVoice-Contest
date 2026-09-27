@@ -1,0 +1,25 @@
+{
+ "base": {
+  "val_ens_eer": 0.1252,
+  "test_route_eer": 0.19081,
+  "real_fp_all": 0.1907,
+  "fake_miss_all": 0.1909,
+  "real_music_family_fp": 0.1952,
+  "haim_fake_miss": 0.175
+ },
+ "plus_aihub71470": {
+  "val_ens_eer": 0.12908,
+  "test_route_eer": 0.19081,
+  "real_fp_all": 0.1907,
+  "fake_miss_all": 0.1909,
+  "real_music_family_fp": 0.1971,
+  "haim_fake_miss": 0.1825
+ },
+ "delta_test_route_eer": {
+  "point": 0.0,
+  "ci95": [
+   -0.01128,
+   0.0093
+  ]
+ }
+}

@@ -1,0 +1,980 @@
+{
+ "n": {
+  "all": 4822,
+  "unseen": 2706,
+  "seen": 2116
+ },
+ "screen|baseline": {
+  "val": {
+   "file_eer": 0.06906,
+   "voice_eer": 0.05088,
+   "music_eer": 0.1252,
+   "ads": 0.91773
+  },
+  "file_weights": {
+   "max": 7,
+   "max_nopresence": 1,
+   "noisy_or": 2
+  },
+  "test_all": {
+   "file_eer": 0.10894,
+   "voice_eer": 0.11951,
+   "music_eer": 0.19081,
+   "ads": 0.86438
+  },
+  "test_unseen": {
+   "file_eer": 0.11838,
+   "voice_eer": 0.12376,
+   "music_eer": 0.18472,
+   "ads": 0.86064
+  },
+  "test_seen": {
+   "file_eer": 0.10166,
+   "voice_eer": 0.10083,
+   "music_eer": 0.25672,
+   "ads": 0.85199
+  }
+ },
+ "screen|music_6_12": {
+  "val": {
+   "file_eer": 0.06803,
+   "voice_eer": 0.05088,
+   "music_eer": 0.11194,
+   "ads": 0.92222
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.10643,
+   "voice_eer": 0.11951,
+   "music_eer": 0.18467,
+   "ads": 0.86748
+  },
+  "test_unseen": {
+   "file_eer": 0.10619,
+   "voice_eer": 0.12376,
+   "music_eer": 0.17609,
+   "ads": 0.86933
+  },
+  "test_seen": {
+   "file_eer": 0.10166,
+   "voice_eer": 0.10083,
+   "music_eer": 0.25231,
+   "ads": 0.85331
+  }
+ },
+ "screen|voicefusion_only": {
+  "val": {
+   "file_eer": 0.06286,
+   "voice_eer": 0.03764,
+   "music_eer": 0.1252,
+   "ads": 0.92348
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.10125,
+   "voice_eer": 0.11063,
+   "music_eer": 0.19081,
+   "ads": 0.87001
+  },
+  "test_unseen": {
+   "file_eer": 0.11764,
+   "voice_eer": 0.12376,
+   "music_eer": 0.18472,
+   "ads": 0.86101
+  },
+  "test_seen": {
+   "file_eer": 0.08047,
+   "voice_eer": 0.07761,
+   "music_eer": 0.25672,
+   "ads": 0.86722
+  }
+ },
+ "screen|S3": {
+  "val": {
+   "file_eer": 0.05955,
+   "voice_eer": 0.03764,
+   "music_eer": 0.11194,
+   "ads": 0.92912
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.0996,
+   "voice_eer": 0.11063,
+   "music_eer": 0.18467,
+   "ads": 0.87267
+  },
+  "test_unseen": {
+   "file_eer": 0.10654,
+   "voice_eer": 0.12376,
+   "music_eer": 0.17609,
+   "ads": 0.86915
+  },
+  "test_seen": {
+   "file_eer": 0.08082,
+   "voice_eer": 0.07761,
+   "music_eer": 0.25231,
+   "ads": 0.86837
+  }
+ },
+ "screen|S3+voice_df_mlp": {
+  "val": {
+   "file_eer": 0.0459,
+   "voice_eer": 0.02491,
+   "music_eer": 0.11194,
+   "ads": 0.93849
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.08819,
+   "voice_eer": 0.0945,
+   "music_eer": 0.18467,
+   "ads": 0.88161
+  },
+  "test_unseen": {
+   "file_eer": 0.1047,
+   "voice_eer": 0.10642,
+   "music_eer": 0.17609,
+   "ads": 0.87354
+  },
+  "test_seen": {
+   "file_eer": 0.06464,
+   "voice_eer": 0.06057,
+   "music_eer": 0.25231,
+   "ads": 0.87987
+  }
+ },
+ "screen|S3+voice_ad_resmlp": {
+  "val": {
+   "file_eer": 0.06038,
+   "voice_eer": 0.0334,
+   "music_eer": 0.11194,
+   "ads": 0.92955
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.09753,
+   "voice_eer": 0.10727,
+   "music_eer": 0.18467,
+   "ads": 0.87438
+  },
+  "test_unseen": {
+   "file_eer": 0.1047,
+   "voice_eer": 0.10642,
+   "music_eer": 0.17609,
+   "ads": 0.87354
+  },
+  "test_seen": {
+   "file_eer": 0.0837,
+   "voice_eer": 0.08199,
+   "music_eer": 0.25231,
+   "ads": 0.86606
+  }
+ },
+ "screen|S3+voice_df_mlp+voice_ad_resmlp": {
+  "val": {
+   "file_eer": 0.04736,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93845
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.08343,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18467,
+   "ads": 0.88643
+  },
+  "test_unseen": {
+   "file_eer": 0.10064,
+   "voice_eer": 0.07345,
+   "music_eer": 0.17609,
+   "ads": 0.88216
+  },
+  "test_seen": {
+   "file_eer": 0.06286,
+   "voice_eer": 0.06202,
+   "music_eer": 0.25231,
+   "ads": 0.88047
+  }
+ },
+ "runtime|baseline": {
+  "val": {
+   "file_eer": 0.07155,
+   "voice_eer": 0.05088,
+   "music_eer": 0.1252,
+   "ads": 0.91649
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.11041,
+   "voice_eer": 0.11951,
+   "music_eer": 0.19081,
+   "ads": 0.86365
+  },
+  "test_unseen": {
+   "file_eer": 0.11912,
+   "voice_eer": 0.12376,
+   "music_eer": 0.18472,
+   "ads": 0.86027
+  },
+  "test_seen": {
+   "file_eer": 0.10166,
+   "voice_eer": 0.10083,
+   "music_eer": 0.25672,
+   "ads": 0.85199
+  }
+ },
+ "runtime|music_6_12": {
+  "val": {
+   "file_eer": 0.06989,
+   "voice_eer": 0.05088,
+   "music_eer": 0.11194,
+   "ads": 0.9213
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.11309,
+   "voice_eer": 0.11951,
+   "music_eer": 0.18467,
+   "ads": 0.86415
+  },
+  "test_unseen": {
+   "file_eer": 0.11174,
+   "voice_eer": 0.12376,
+   "music_eer": 0.17609,
+   "ads": 0.86655
+  },
+  "test_seen": {
+   "file_eer": 0.10344,
+   "voice_eer": 0.10083,
+   "music_eer": 0.25231,
+   "ads": 0.85242
+  }
+ },
+ "runtime|voicefusion_only": {
+  "val": {
+   "file_eer": 0.06306,
+   "voice_eer": 0.03764,
+   "music_eer": 0.1252,
+   "ads": 0.92338
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.10271,
+   "voice_eer": 0.11063,
+   "music_eer": 0.19081,
+   "ads": 0.86927
+  },
+  "test_unseen": {
+   "file_eer": 0.11987,
+   "voice_eer": 0.12376,
+   "music_eer": 0.18472,
+   "ads": 0.8599
+  },
+  "test_seen": {
+   "file_eer": 0.0837,
+   "voice_eer": 0.07761,
+   "music_eer": 0.25672,
+   "ads": 0.86561
+  }
+ },
+ "runtime|S3": {
+  "val": {
+   "file_eer": 0.05872,
+   "voice_eer": 0.03764,
+   "music_eer": 0.11194,
+   "ads": 0.92953
+  },
+  "file_weights": {
+   "max": 9,
+   "max_nopresence": 1,
+   "noisy_or": 0
+  },
+  "test_all": {
+   "file_eer": 0.10418,
+   "voice_eer": 0.11063,
+   "music_eer": 0.18467,
+   "ads": 0.87038
+  },
+  "test_unseen": {
+   "file_eer": 0.11283,
+   "voice_eer": 0.12376,
+   "music_eer": 0.17609,
+   "ads": 0.86601
+  },
+  "test_seen": {
+   "file_eer": 0.08404,
+   "voice_eer": 0.07761,
+   "music_eer": 0.25231,
+   "ads": 0.86676
+  }
+ },
+ "runtime|S3+voice_df_mlp": {
+  "val": {
+   "file_eer": 0.04653,
+   "voice_eer": 0.02491,
+   "music_eer": 0.11194,
+   "ads": 0.93817
+  },
+  "file_weights": {
+   "max": 4,
+   "max_nopresence": 1,
+   "noisy_or": 5
+  },
+  "test_all": {
+   "file_eer": 0.0913,
+   "voice_eer": 0.0945,
+   "music_eer": 0.18467,
+   "ads": 0.88005
+  },
+  "test_unseen": {
+   "file_eer": 0.10802,
+   "voice_eer": 0.10642,
+   "music_eer": 0.17609,
+   "ads": 0.87188
+  },
+  "test_seen": {
+   "file_eer": 0.0643,
+   "voice_eer": 0.06057,
+   "music_eer": 0.25231,
+   "ads": 0.88004
+  }
+ },
+ "runtime|S3+voice_ad_resmlp": {
+  "val": {
+   "file_eer": 0.06018,
+   "voice_eer": 0.0334,
+   "music_eer": 0.11194,
+   "ads": 0.92965
+  },
+  "file_weights": {
+   "max": 8,
+   "max_nopresence": 2,
+   "noisy_or": 0
+  },
+  "test_all": {
+   "file_eer": 0.10271,
+   "voice_eer": 0.10727,
+   "music_eer": 0.18467,
+   "ads": 0.87179
+  },
+  "test_unseen": {
+   "file_eer": 0.10877,
+   "voice_eer": 0.10642,
+   "music_eer": 0.17609,
+   "ads": 0.87151
+  },
+  "test_seen": {
+   "file_eer": 0.0898,
+   "voice_eer": 0.08199,
+   "music_eer": 0.25231,
+   "ads": 0.86301
+  }
+ },
+ "runtime|S3+voice_df_mlp+voice_ad_resmlp": {
+  "val": {
+   "file_eer": 0.04921,
+   "voice_eer": 0.02147,
+   "music_eer": 0.11194,
+   "ads": 0.93752
+  },
+  "file_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "test_all": {
+   "file_eer": 0.08776,
+   "voice_eer": 0.08227,
+   "music_eer": 0.18467,
+   "ads": 0.88427
+  },
+  "test_unseen": {
+   "file_eer": 0.10396,
+   "voice_eer": 0.07345,
+   "music_eer": 0.17609,
+   "ads": 0.8805
+  },
+  "test_seen": {
+   "file_eer": 0.06286,
+   "voice_eer": 0.06202,
+   "music_eer": 0.25231,
+   "ads": 0.88047
+  }
+ },
+ "screen|S3 comps + baseline FILE ens": {
+  "file_eer": 0.10003,
+  "voice_eer": 0.11063,
+  "music_eer": 0.18467,
+  "ads": 0.87246
+ },
+ "screen|baseline comps + S3 FILE ens": {
+  "file_eer": 0.10937,
+  "voice_eer": 0.11951,
+  "music_eer": 0.19081,
+  "ads": 0.86417
+ },
+ "runtime|S3 comps + baseline FILE ens": {
+  "file_eer": 0.10522,
+  "voice_eer": 0.11063,
+  "music_eer": 0.18467,
+  "ads": 0.86986
+ },
+ "runtime|baseline comps + S3 FILE ens": {
+  "file_eer": 0.11102,
+  "voice_eer": 0.11951,
+  "music_eer": 0.19081,
+  "ads": 0.86335
+ },
+ "bootstrap": {
+  "all: screen|music_6_12 - screen|baseline": {
+   "point": 0.0031,
+   "ci95": [
+    -0.00141,
+    0.0108
+   ],
+   "p_le_0": 0.065,
+   "groups": 2215
+  },
+  "all: screen|voicefusion_only - screen|baseline": {
+   "point": 0.00562,
+   "ci95": [
+    0.00238,
+    0.00802
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: screen|S3 - screen|baseline": {
+   "point": 0.00829,
+   "ci95": [
+    0.00278,
+    0.01609
+   ],
+   "p_le_0": 0.001,
+   "groups": 2215
+  },
+  "all: screen|S3+voice_df_mlp - screen|baseline": {
+   "point": 0.01722,
+   "ci95": [
+    0.01128,
+    0.02474
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: screen|S3+voice_ad_resmlp - screen|baseline": {
+   "point": 0.01,
+   "ci95": [
+    0.00534,
+    0.01769
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: screen|S3+voice_df_mlp+voice_ad_resmlp - screen|baseline": {
+   "point": 0.02204,
+   "ci95": [
+    0.01565,
+    0.02953
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: runtime|music_6_12 - runtime|baseline": {
+   "point": 0.0005,
+   "ci95": [
+    -0.0041,
+    0.00903
+   ],
+   "p_le_0": 0.286,
+   "groups": 2215
+  },
+  "all: runtime|voicefusion_only - runtime|baseline": {
+   "point": 0.00562,
+   "ci95": [
+    0.00243,
+    0.00751
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: runtime|S3 - runtime|baseline": {
+   "point": 0.00673,
+   "ci95": [
+    0.00168,
+    0.01526
+   ],
+   "p_le_0": 0.008,
+   "groups": 2215
+  },
+  "all: runtime|S3+voice_df_mlp - runtime|baseline": {
+   "point": 0.0164,
+   "ci95": [
+    0.01086,
+    0.02444
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: runtime|S3+voice_ad_resmlp - runtime|baseline": {
+   "point": 0.00814,
+   "ci95": [
+    0.00323,
+    0.01671
+   ],
+   "p_le_0": 0.002,
+   "groups": 2215
+  },
+  "all: runtime|S3+voice_df_mlp+voice_ad_resmlp - runtime|baseline": {
+   "point": 0.02062,
+   "ci95": [
+    0.0148,
+    0.02935
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: screen|S3+voice_df_mlp - screen|S3": {
+   "point": 0.00893,
+   "ci95": [
+    0.00532,
+    0.01228
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: screen|S3+voice_ad_resmlp - screen|S3": {
+   "point": 0.00171,
+   "ci95": [
+    -0.00034,
+    0.00448
+   ],
+   "p_le_0": 0.056,
+   "groups": 2215
+  },
+  "all: screen|S3+voice_df_mlp+voice_ad_resmlp - screen|S3": {
+   "point": 0.01376,
+   "ci95": [
+    0.00922,
+    0.01736
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: runtime|S3+voice_df_mlp - runtime|S3": {
+   "point": 0.00967,
+   "ci95": [
+    0.00562,
+    0.01266
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: runtime|S3+voice_ad_resmlp - runtime|S3": {
+   "point": 0.00141,
+   "ci95": [
+    -0.00131,
+    0.00376
+   ],
+   "p_le_0": 0.154,
+   "groups": 2215
+  },
+  "all: runtime|S3+voice_df_mlp+voice_ad_resmlp - runtime|S3": {
+   "point": 0.01389,
+   "ci95": [
+    0.01005,
+    0.01736
+   ],
+   "p_le_0": 0.0,
+   "groups": 2215
+  },
+  "all: runtime|S3 - screen|S3": {
+   "point": -0.00229,
+   "ci95": [
+    -0.00403,
+    0.0001
+   ],
+   "p_le_0": 0.97,
+   "groups": 2215
+  },
+  "unseen: screen|music_6_12 - screen|baseline": {
+   "point": 0.00868,
+   "ci95": [
+    0.00253,
+    0.01709
+   ],
+   "p_le_0": 0.004,
+   "groups": 1054
+  },
+  "unseen: screen|voicefusion_only - screen|baseline": {
+   "point": 0.00037,
+   "ci95": [
+    -0.00234,
+    0.0041
+   ],
+   "p_le_0": 0.306,
+   "groups": 1054
+  },
+  "unseen: screen|S3 - screen|baseline": {
+   "point": 0.00851,
+   "ci95": [
+    0.00214,
+    0.01719
+   ],
+   "p_le_0": 0.006,
+   "groups": 1054
+  },
+  "unseen: screen|S3+voice_df_mlp - screen|baseline": {
+   "point": 0.0129,
+   "ci95": [
+    0.00429,
+    0.02192
+   ],
+   "p_le_0": 0.003,
+   "groups": 1054
+  },
+  "unseen: screen|S3+voice_ad_resmlp - screen|baseline": {
+   "point": 0.0129,
+   "ci95": [
+    0.0071,
+    0.0228
+   ],
+   "p_le_0": 0.0,
+   "groups": 1054
+  },
+  "unseen: screen|S3+voice_df_mlp+voice_ad_resmlp - screen|baseline": {
+   "point": 0.02152,
+   "ci95": [
+    0.01447,
+    0.03131
+   ],
+   "p_le_0": 0.0,
+   "groups": 1054
+  },
+  "unseen: runtime|music_6_12 - runtime|baseline": {
+   "point": 0.00628,
+   "ci95": [
+    -0.00072,
+    0.01523
+   ],
+   "p_le_0": 0.044,
+   "groups": 1054
+  },
+  "unseen: runtime|voicefusion_only - runtime|baseline": {
+   "point": -0.00037,
+   "ci95": [
+    -0.00302,
+    0.00337
+   ],
+   "p_le_0": 0.468,
+   "groups": 1054
+  },
+  "unseen: runtime|S3 - runtime|baseline": {
+   "point": 0.00574,
+   "ci95": [
+    -0.00081,
+    0.01505
+   ],
+   "p_le_0": 0.038,
+   "groups": 1054
+  },
+  "unseen: runtime|S3+voice_df_mlp - runtime|baseline": {
+   "point": 0.01161,
+   "ci95": [
+    0.0024,
+    0.01985
+   ],
+   "p_le_0": 0.007,
+   "groups": 1054
+  },
+  "unseen: runtime|S3+voice_ad_resmlp - runtime|baseline": {
+   "point": 0.01124,
+   "ci95": [
+    0.00478,
+    0.02118
+   ],
+   "p_le_0": 0.0,
+   "groups": 1054
+  },
+  "unseen: runtime|S3+voice_df_mlp+voice_ad_resmlp - runtime|baseline": {
+   "point": 0.02023,
+   "ci95": [
+    0.01231,
+    0.02977
+   ],
+   "p_le_0": 0.0,
+   "groups": 1054
+  },
+  "unseen: screen|S3+voice_df_mlp - screen|S3": {
+   "point": 0.00438,
+   "ci95": [
+    -0.00127,
+    0.00693
+   ],
+   "p_le_0": 0.08,
+   "groups": 1054
+  },
+  "unseen: screen|S3+voice_ad_resmlp - screen|S3": {
+   "point": 0.00438,
+   "ci95": [
+    0.00153,
+    0.00891
+   ],
+   "p_le_0": 0.005,
+   "groups": 1054
+  },
+  "unseen: screen|S3+voice_df_mlp+voice_ad_resmlp - screen|S3": {
+   "point": 0.01301,
+   "ci95": [
+    0.00861,
+    0.01707
+   ],
+   "p_le_0": 0.0,
+   "groups": 1054
+  },
+  "unseen: runtime|S3+voice_df_mlp - runtime|S3": {
+   "point": 0.00587,
+   "ci95": [
+    -0.00051,
+    0.00783
+   ],
+   "p_le_0": 0.047,
+   "groups": 1054
+  },
+  "unseen: runtime|S3+voice_ad_resmlp - runtime|S3": {
+   "point": 0.0055,
+   "ci95": [
+    0.00237,
+    0.00926
+   ],
+   "p_le_0": 0.0,
+   "groups": 1054
+  },
+  "unseen: runtime|S3+voice_df_mlp+voice_ad_resmlp - runtime|S3": {
+   "point": 0.0145,
+   "ci95": [
+    0.00914,
+    0.0183
+   ],
+   "p_le_0": 0.0,
+   "groups": 1054
+  },
+  "unseen: runtime|S3 - screen|S3": {
+   "point": -0.00315,
+   "ci95": [
+    -0.00534,
+    -0.00047
+   ],
+   "p_le_0": 0.994,
+   "groups": 1054
+  },
+  "seen: screen|music_6_12 - screen|baseline": {
+   "point": 0.00132,
+   "ci95": [
+    -0.01616,
+    0.01514
+   ],
+   "p_le_0": 0.455,
+   "groups": 1290
+  },
+  "seen: screen|voicefusion_only - screen|baseline": {
+   "point": 0.01523,
+   "ci95": [
+    0.00858,
+    0.02089
+   ],
+   "p_le_0": 0.0,
+   "groups": 1290
+  },
+  "seen: screen|S3 - screen|baseline": {
+   "point": 0.01638,
+   "ci95": [
+    -0.00348,
+    0.02996
+   ],
+   "p_le_0": 0.049,
+   "groups": 1290
+  },
+  "seen: screen|S3+voice_df_mlp - screen|baseline": {
+   "point": 0.02788,
+   "ci95": [
+    0.01003,
+    0.04283
+   ],
+   "p_le_0": 0.001,
+   "groups": 1290
+  },
+  "seen: screen|S3+voice_ad_resmlp - screen|baseline": {
+   "point": 0.01407,
+   "ci95": [
+    -0.00295,
+    0.02749
+   ],
+   "p_le_0": 0.054,
+   "groups": 1290
+  },
+  "seen: screen|S3+voice_df_mlp+voice_ad_resmlp - screen|baseline": {
+   "point": 0.02848,
+   "ci95": [
+    0.0098,
+    0.04415
+   ],
+   "p_le_0": 0.0,
+   "groups": 1290
+  },
+  "seen: runtime|music_6_12 - runtime|baseline": {
+   "point": 0.00043,
+   "ci95": [
+    -0.01833,
+    0.01423
+   ],
+   "p_le_0": 0.535,
+   "groups": 1290
+  },
+  "seen: runtime|voicefusion_only - runtime|baseline": {
+   "point": 0.01362,
+   "ci95": [
+    0.00768,
+    0.02026
+   ],
+   "p_le_0": 0.0,
+   "groups": 1290
+  },
+  "seen: runtime|S3 - runtime|baseline": {
+   "point": 0.01477,
+   "ci95": [
+    -0.00399,
+    0.02868
+   ],
+   "p_le_0": 0.062,
+   "groups": 1290
+  },
+  "seen: runtime|S3+voice_df_mlp - runtime|baseline": {
+   "point": 0.02805,
+   "ci95": [
+    0.0102,
+    0.04252
+   ],
+   "p_le_0": 0.001,
+   "groups": 1290
+  },
+  "seen: runtime|S3+voice_ad_resmlp - runtime|baseline": {
+   "point": 0.01102,
+   "ci95": [
+    -0.00549,
+    0.02475
+   ],
+   "p_le_0": 0.098,
+   "groups": 1290
+  },
+  "seen: runtime|S3+voice_df_mlp+voice_ad_resmlp - runtime|baseline": {
+   "point": 0.02848,
+   "ci95": [
+    0.00958,
+    0.04346
+   ],
+   "p_le_0": 0.001,
+   "groups": 1290
+  },
+  "seen: screen|S3+voice_df_mlp - screen|S3": {
+   "point": 0.0115,
+   "ci95": [
+    0.0056,
+    0.01932
+   ],
+   "p_le_0": 0.0,
+   "groups": 1290
+  },
+  "seen: screen|S3+voice_ad_resmlp - screen|S3": {
+   "point": -0.00231,
+   "ci95": [
+    -0.00607,
+    0.00365
+   ],
+   "p_le_0": 0.653,
+   "groups": 1290
+  },
+  "seen: screen|S3+voice_df_mlp+voice_ad_resmlp - screen|S3": {
+   "point": 0.0121,
+   "ci95": [
+    0.00482,
+    0.02198
+   ],
+   "p_le_0": 0.001,
+   "groups": 1290
+  },
+  "seen: runtime|S3+voice_df_mlp - runtime|S3": {
+   "point": 0.01328,
+   "ci95": [
+    0.00626,
+    0.02011
+   ],
+   "p_le_0": 0.0,
+   "groups": 1290
+  },
+  "seen: runtime|S3+voice_ad_resmlp - runtime|S3": {
+   "point": -0.00375,
+   "ci95": [
+    -0.00801,
+    0.00191
+   ],
+   "p_le_0": 0.856,
+   "groups": 1290
+  },
+  "seen: runtime|S3+voice_df_mlp+voice_ad_resmlp - runtime|S3": {
+   "point": 0.01371,
+   "ci95": [
+    0.00564,
+    0.02213
+   ],
+   "p_le_0": 0.001,
+   "groups": 1290
+  },
+  "seen: runtime|S3 - screen|S3": {
+   "point": -0.00161,
+   "ci95": [
+    -0.00336,
+    0.00092
+   ],
+   "p_le_0": 0.867,
+   "groups": 1290
+  }
+ }
+}
