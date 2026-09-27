@@ -95,10 +95,11 @@ base = {'voice': BASE_VOICE, 'music': BASE_MUSIC}
 grid = {'baseline': base}
 for m in music_runs:
     grid[f'music replace {m}'] = {'voice': BASE_VOICE, 'music': ([m], [1])}
-    grid |= {f'music fuse {m} w{w}': {'voice': BASE_VOICE, 'music': (['mert', m], [1, w])} for w in MUSIC_W}
+    if os.environ.get('MUSIC_FUSE', '1') == '1':   # S6 lock rule B: replace only (MUSIC_FUSE=0)
+        grid |= {f'music fuse {m} w{w}': {'voice': BASE_VOICE, 'music': (['mert', m], [1, w])} for w in MUSIC_W}
 for v in voice_runs:
     grid |= {f'voice add {v} w{w}': {'voice': (['df', 'ad', v], [1, .5, w]), 'music': BASE_MUSIC} for w in VOICE_W}
-tag = '__'.join(a.replace(',', '-') for a in sys.argv[1:3]) + (f'__base-{BASE_MUSIC_RUN}' if BASE_MUSIC_RUN else '')
+tag = '__'.join(a.replace(',', '-') for a in sys.argv[1:3]) + (f'__base-{BASE_MUSIC_RUN}' if BASE_MUSIC_RUN else '') + ('__replace' if os.environ.get('MUSIC_FUSE', '1') == '0' else '')
 lock_path, report_path = HERE / f'ads_lock__{tag}.json', HERE / f'ads_report__{tag}.json'
 
 # ---- phase 1: val only ----

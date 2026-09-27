@@ -4,7 +4,7 @@
 set -euo pipefail
 PY=/root/envs/data/bin/python; W=/root/work4; OUT=/root/singmos_feats; LOG=/root/work4_logs
 A=/root/dacon_existing9504_h100_20260920/assets   # baseline/ with HTDemucs + DF-Arena (sha-checked against the package assets)
-N=${N:-6}
+N=${N:-3}
 mkdir -p $LOG $OUT
 ls /root/singmos_pro/wav | wc -l > $LOG/wav_count.txt
 head -3 $W/singmos_manifest.csv > $LOG/smoke.csv

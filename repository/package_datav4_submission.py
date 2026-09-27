@@ -36,6 +36,11 @@ SONICS = ROOT / '_workspace/models/sonics-spectttra-alpha-120s'
 EAT = ROOT / 'research/top15/work2/backbones/ckpt/EAT-large_epoch20_finetune_AS2M'
 EAT_SHA = '36833579b39c6858bacf369df077c567f22130d327a594ac4bb70de31755de27'
 EAT_CODE = ROOT / 'research/top15/work2/backbones/vendor/eat_core'
+# S7 encoders: fp16 copies of the extraction weights (every weight fp16-exact, features verified identical)
+SSLAM = ROOT / '_workspace/models/s6/sslam_pt'        # ta012/SSLAM_pretrain @af71a4b (MIT)
+SSLAM_SHA = '6f751cfc84c2243aed26a1e91dd0ad144b1c429b35b152359b57563bd760fadf'
+WAVLM = ROOT / '_workspace/models/s6/wavlm_pkg'       # microsoft/wavlm-large @c1423ed (UniSpeech license)
+WAVLM_SHA = '534a047c26c824b1f5d3637efc9908f30b414912b06c0cc7c9dae0763ed75652'
 VENDORED = {'sonics': ROOT / '_workspace/models/sonics-main/sonics', 'timm': ROOT / '.venv/lib/python3.11/site-packages/timm'}
 
 
@@ -51,7 +56,8 @@ def replacements() -> dict[str, bytes]:
     if runtime.count(OLD_CANDIDATE) != 1:
         raise ValueError('unexpected candidate declaration in full_bank_submission.py')
     out = {'model/trained/' + n: (HEADS / n).read_bytes() for n in TRAINED}
-    for n in [f'voice_ad_{s}.pt' for s in (41, 42, 43)] + ['music_layers.json', 'music_eat_layers.json']:   # optional new-backbone heads
+    for n in ([f'voice_ad_{s}.pt' for s in (41, 42, 43)] + [f'wavlm_{s}.pt' for s in (41, 42, 43)]
+              + ['music_layers.json', 'music_eat_layers.json', 'music_sslam_layers.json', 'voice_wavlm_layer.json']):   # optional new-backbone heads
         if (HEADS / n).exists():
             if n.endswith('.pt') and lock['checkpoints'].get(n) != sha256(HEADS / n):
                 raise ValueError(f'checkpoint differs from its candidate lock: {n}')
@@ -64,6 +70,14 @@ def replacements() -> dict[str, bytes]:
             out[f'model/assets/eat/{f}'] = (EAT / f).read_bytes()
         for f in sorted(EAT_CODE.glob('*.py')):
             out[f'model/runtime/eat_core/{f.name}'] = f.read_bytes()
+    for layers, folder, src, digest in (('music_sslam_layers.json', 'sslam_pt', SSLAM, SSLAM_SHA), ('voice_wavlm_layer.json', 'wavlm', WAVLM, WAVLM_SHA)):
+        if (HEADS / layers).exists():
+            if sha256(src / 'model_fp16.safetensors') != digest:
+                raise ValueError(f'{folder} fp16 weights differ from the verified file')
+            for f in ('config.json', 'model_fp16.safetensors'):
+                out[f'model/assets/{folder}/{f}'] = (src / f).read_bytes()
+    if (HEADS / 'voice_wavlm_layer.json').exists() and not all((HEADS / f'wavlm_{s}.pt').exists() for s in (41, 42, 43)):
+        raise ValueError('voice_wavlm_layer.json without wavlm_{41,42,43}.pt')
     out['model/runtime/full_bank_submission.py'] = runtime.replace(OLD_CANDIDATE, f'CANDIDATE = {CANDIDATE!r}'.encode())
     out['model/runtime/decision_heads.py'] = (ROOT / 'decision_heads.py').read_bytes()
     out['model/runtime/voice_heads.py'] = (ROOT / 'voice_heads.py').read_bytes()   # imported by full_bank_submission

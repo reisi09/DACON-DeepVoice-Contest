@@ -51,14 +51,62 @@ def eat_features(path: Path, layers) -> np.ndarray:
         return d['eat_backing'][:, [L.index(k) for k in layers]].reshape(len(d['eat_backing']), -1).astype(np.float32)
 
 
-def items_for(rows, cache: Path, layers, route_filter, dfarena=False, eat=None):
+def sslam_features(path: Path, layers) -> np.ndarray:
+    """SSLAM pretrain blocks of the backing stem (research/top15/work2/s6/extract_s6.py, key sslam_pt_backing)."""
+    with np.load(path) as d:
+        L = list(d['sslam_layers'])
+        return d['sslam_pt_backing'][:, [L.index(k) for k in layers]].reshape(len(d['sslam_pt_backing']), -1).astype(np.float32)
+
+
+def wavlm_items(rows, index, layer):
+    """Voice-route items on the WavLM-Large hidden state `layer` (frame mean per runtime window) of the voice stem
+    (research/top15/work2/s6 cache); research/top15/work2/backbones/run.py new_items semantics: voice label known,
+    silent non-voice-route rows skipped."""
+    out = []
+    for r in rows:
+        p = index.get(r['ID'])
+        if p is None:
+            continue
+        with np.load(p) as d:
+            L = list(d['wavlm_layers'])
+            f = d['wavlm_voice'][:, [L.index(layer)]].reshape(len(d['wavlm_voice']), -1).astype(np.float32)
+            silent, samples = bool(d['voice_silent']), int(d['samples'])
+        label = T.head_labels(r).get('voice')
+        if label is None or (r['route'] != 'voice' and silent):
+            continue
+        out.append((Item({**r, 'route': 'voice'}, f, np.full(len(f), np.nan, np.float32), label, silent), samples))
+    return out
+
+
+def extra_voice_items(manifest: Path, feats: Path, dfarena: bool):
+    """Voice-route items from an external a cappella manifest (research/top15/work4/singmos_manifest.csv: type gt -> real,
+    svs/svc -> fake, other types skipped) with research/top15/work4/extract_voice_feats.py features. A listed row without
+    features raises: a package must not silently train on fewer rows than its study."""
+    out = []
+    for m in csv.DictReader(manifest.open()):
+        if m['type'] not in ('gt', 'svs', 'svc'):
+            continue
+        with np.load(feats / f"{m['ID']}.npz") as d:
+            f = (d['voice_embeddings'] if dfarena else d['ad_embeddings']).astype(np.float32)
+            silent, samples = bool(d['voice_silent']), int(d['samples'])
+        fake = 0 if m['type'] == 'gt' else 1
+        row = {'ID': m['ID'], 'split': 'train', 'route': 'voice', 'source': 'singmos_pro',
+               'generator': 'bonafide' if fake == 0 else m['model_name'], 'group_id': f"singmos:{m['raw_wav_id']}",
+               'VOICE_PRESENT': '1', 'VOICE_PRESENT_mask': '1', 'VOICE_FAKE': str(fake), 'VOICE_FAKE_mask': '1',
+               'MUSIC_PRESENT': '0', 'MUSIC_PRESENT_mask': '1', 'MUSIC_FAKE': '', 'MUSIC_FAKE_mask': '0',
+               'FILE_FAKE': str(fake), 'FILE_FAKE_mask': '1'}
+        out.append((Item(row, f, np.full(len(f), np.nan, np.float32), float(fake), silent), samples))
+    return out
+
+
+def items_for(rows, cache: Path, layers, route_filter, dfarena=False, eat=None, sslam=None):
     """dfarena=True: the current DF-Arena voice features from the old cache, restricted to rows with a backbone npz
     (matched-row baseline for the new voice head). eat=(index, layers): music features = MERT layers + EAT blocks
     (the runtime order), rows without an EAT npz skipped."""
     out = []
     for r in rows:
         p = cache / f"{r['ID']}.npz"
-        if not p.exists() or (eat and route_filter == 'music' and r['ID'] not in eat[0]):
+        if not p.exists() or (route_filter == 'music' and ((eat and r['ID'] not in eat[0]) or (sslam and r['ID'] not in sslam[0]))):
             continue
         with np.load(p) as d:
             silent, L = bool(d['voice_silent']), list(d['layers'])
@@ -69,6 +117,11 @@ def items_for(rows, cache: Path, layers, route_filter, dfarena=False, eat=None):
             e = eat_features(eat[0][r['ID']], eat[1])
             if len(e) != len(feats['music']):
                 raise ValueError(f"EAT/MERT window counts differ for {r['ID']}: {len(e)} vs {len(feats['music'])}")
+            feats['music'] = np.concatenate([feats['music'], e], 1)
+        if sslam and route_filter == 'music':
+            e = sslam_features(sslam[0][r['ID']], sslam[1])
+            if len(e) != len(feats['music']):
+                raise ValueError(f"SSLAM/MERT window counts differ for {r['ID']}: {len(e)} vs {len(feats['music'])}")
             feats['music'] = np.concatenate([feats['music'], e], 1)
         if dfarena:
             with np.load(OLD[r.get('cache_split', r['split'])] / f"{r['ID']}.npz") as o:
@@ -98,7 +151,7 @@ def train(route, training, validation, init=None, fake_index=0, seed=41, max_epo
         model = WindowMIL(torch.tensor(means.mean(0)), torch.tensor(np.maximum(means.std(0), 1e-6)))
     else:   # voice_heads: linear (init = classifier weights), mlp, resmlp (standardized on training file means)
         means = np.stack([x.features.mean(0) for x in items])
-        model = voice_heads.build(arch, init, torch.tensor(means.mean(0)), torch.tensor(np.maximum(means.std(0), 1e-6)))
+        model = voice_heads.build(arch, init, torch.tensor(means.mean(0)), torch.tensor(np.maximum(means.std(0), 1e-6)), width=means.shape[1])
     val = [x for x, _ in validation]
     limit = max(sum(len(x.features) for x in sorted(items, key=lambda x: len(x.features), reverse=True)[:256]), 10 ** 6)
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3 if route == 'music' else 1e-4, weight_decay=.01)
@@ -135,6 +188,14 @@ def main() -> None:
     ap.add_argument('--music-eat', type=int, nargs='*', default=[], help='EAT blocks appended to the music features (--final)')
     ap.add_argument('--eat-cache', type=Path, nargs='*', default=[], help='dirs with EAT npz (eat_backing)')
     ap.add_argument('--reuse-voice', type=Path, help='--final: copy voice_* and voice_ad_* from this heads dir instead of retraining')
+    ap.add_argument('--music-sslam', type=int, nargs='*', default=[], help='SSLAM pretrain blocks appended after EAT (--final)')
+    ap.add_argument('--sslam-cache', type=Path, nargs='*', default=[], help='dirs with S6 npz (sslam_pt_backing)')
+    ap.add_argument('--voice-wavlm', type=int, help='--final: add a WavLM-Large member on this hidden state (voice stem)')
+    ap.add_argument('--wavlm-cache', type=Path, nargs='*', default=[], help='dirs with S6 npz (wavlm_voice)')
+    ap.add_argument('--wavlm-weight', type=float, default=1., help='fusion weight of the WavLM member')
+    ap.add_argument('--reuse-music', type=Path, help='--final: copy music_* from this heads dir instead of retraining')
+    ap.add_argument('--label-completion', action='store_true', help='--final: data_v4/label_rules.py rule L on the training rows')
+    ap.add_argument('--extra-voice', type=Path, nargs=2, metavar=('MANIFEST', 'FEATS'), help='--final: external voice rows added to voice training')
     ap.add_argument('--ours', type=Path, default=ROOT / '_workspace/p1_refit_cpu', help='DF-Arena voice heads kept as "ours"')
     ap.add_argument('--ad-weight', type=float, default=.5)
     ap.add_argument('--voice-arch', default='copy', choices=('copy', 'linear', 'mlp'), help='DF-Arena voice heads: copy from --ours or retrain')
@@ -197,17 +258,33 @@ def final(a, rows, init) -> None:
     import hashlib
     import shutil
     rows = {'train': rows['train'] + [{**r, 'split': 'train', 'cache_split': 'test'} for r in rows['test']], 'val': rows['val']}
+    assert not (a.reuse_voice and (a.label_completion or a.extra_voice)), 'reused voice heads cannot see new voice labels/rows'
+    completed = 0
+    if a.label_completion:
+        import label_rules
+        completed = sum(label_rules.completes(r) for r in rows['train'])
+        rows['train'] = [label_rules.complete(r) for r in rows['train']]
     old_fake = torch.load(OLD['val'] / 'voice_classifier_initial.pt', map_location='cpu', weights_only=True)['fake_label_index']
     sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
     lock, results, val_scores = {}, {}, {}
     eat = (eat_index(a.eat_cache), a.music_eat) if a.music_eat else None
-    val_rows = [r for r in rows['val'] if (a.cache / f"{r['ID']}.npz").exists() and (eat is None or r['ID'] in eat[0])]
+    sslam = (eat_index(a.sslam_cache), a.music_sslam) if a.music_sslam else None
+    wavlm = eat_index(a.wavlm_cache) if a.voice_wavlm is not None else None
+    val_rows = [r for r in rows['val'] if (a.cache / f"{r['ID']}.npz").exists() and (eat is None or r['ID'] in eat[0])
+                and (sslam is None or r['ID'] in sslam[0]) and (wavlm is None or r['ID'] in wavlm)]
 
     def reused(name):
         """A voice head of a.reuse_voice, byte-copied (CPU retraining is not bit-reproducible across runs)."""
         shutil.copy(a.reuse_voice / name, a.out / name)
         record = torch.load(a.out / name, map_location='cpu', weights_only=True)
         return voice_heads.load(record).eval(), record['validation_eer'], record['epochs_run']
+
+    def reused_music(name):
+        shutil.copy(a.reuse_music / name, a.out / name)
+        record = torch.load(a.out / name, map_location='cpu', weights_only=True)
+        model = WindowMIL(record['model']['mean'], record['model']['scale'])
+        model.load_state_dict(record['model'], strict=True)
+        return model.eval(), record['validation_eer'], record['epochs_run']
 
     def every_row(model, route, layers):
         """Runtime semantics: every file gets both scores (voice stem -> AD heads, backing stem -> music heads)."""
@@ -220,25 +297,29 @@ def final(a, rows, init) -> None:
                     else:
                         L = list(d['layers'])
                         f = d['mert_layers'][:, [L.index(k) for k in layers]].reshape(len(d['mert_layers']), -1).astype(np.float32)
-                        f = torch.from_numpy(np.concatenate([f, eat_features(eat[0][r['ID']], eat[1])], 1) if eat else f)
+                        f = np.concatenate([f, eat_features(eat[0][r['ID']], eat[1])], 1) if eat else f
+                        f = torch.from_numpy(np.concatenate([f, sslam_features(sslam[0][r['ID']], sslam[1])], 1) if sslam else f)
                         logits, _ = model.head((f - model.mean) / model.scale)
                         out[r['ID']] = float((logits.float().logsumexp(0) - np.log(len(f))).sigmoid())
         return out
     for route, key, layers in (('voice', 'voice_ad', [12]), ('music', 'music', a.music_layers)):
-        data = {s: items_for(rows[s], a.cache, layers, route, eat=eat) for s in rows}
+        data = {s: items_for(rows[s], a.cache, layers, route, eat=eat, sslam=sslam) for s in rows}
+        if route == 'voice' and a.extra_voice:
+            data['train'] = data['train'] + extra_voice_items(*a.extra_voice, dfarena=False)
+        copied = a.reuse_voice if route == 'voice' else a.reuse_music
         preds, every = [], []
         for seed in (41, 42, 43):
             extra = dict(arch=a.ad_arch, max_epochs=a.voice_epochs, patience=a.voice_patience) if route == 'voice' else {}
             path = a.out / f'{key}_{seed}.pt'
-            if route == 'voice' and a.reuse_voice:
-                model, val_eer, epochs = reused(path.name)
+            if copied:
+                model, val_eer, epochs = (reused if route == 'voice' else reused_music)(path.name)
             else:
                 model, val_eer, epochs = train(route, data['train'], data['val'], init if route == 'voice' else None, 0, seed=seed, **extra)
-            if not (route == 'voice' and a.reuse_voice):
+            if not copied:
                 torch.save({'model': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}, 'route': route, 'seed': seed,
                         'arch': a.ad_arch if route == 'voice' else 'mil', 'epoch': getattr(model, 'best_epoch', epochs), 'epochs_run': epochs,
                         'validation_eer': val_eer, 'fake_label_index': 0 if route == 'voice' else old_fake,
-                        'features': 'antideepfake_xlsr1b_pooled' if route == 'voice' else f'mert_layers_{layers}' + (f'+eat_blocks_{a.music_eat}' if eat else ''),
+                        'features': 'antideepfake_xlsr1b_pooled' if route == 'voice' else f'mert_layers_{layers}' + (f'+eat_blocks_{a.music_eat}' if eat else '') + (f'+sslam_blocks_{a.music_sslam}' if sslam else ''),
                         'train_ids': [x.row['ID'] for x, _ in data['train']]}, path)
             lock[path.name] = sha(path)
             preds.append(T.predict(model, [x for x, _ in data['val']], route, 0, 256, 10 ** 6, 'cpu'))
@@ -255,6 +336,8 @@ def final(a, rows, init) -> None:
     else:   # DF-Arena fc5-input voice heads retrained with a.voice_arch on the same P1 rows (old cache features)
         old_init = torch.load(OLD['val'] / 'voice_classifier_initial.pt', map_location='cpu', weights_only=True)
         data = {s: items_for(rows[s], a.cache, [12], 'voice', dfarena=True) for s in rows}
+        if a.extra_voice:
+            data['train'] = data['train'] + extra_voice_items(*a.extra_voice, dfarena=True)
         preds, every = [], []
         for seed in (41, 42, 43):
             path = a.out / f'voice_{seed}.pt'
@@ -280,6 +363,31 @@ def final(a, rows, init) -> None:
             print('voice', a.voice_arch, seed, round(val_eer, 5), getattr(model, 'best_epoch', epochs), flush=True)
         val_scores['voice_ours'] = {i: float(np.mean([e[i] for e in every])) for i in every[0]}
         results['voice_ensemble'] = {'eer': float(_roc_metrics([int(x.label) for x, _ in data['val']], np.mean(preds, 0).tolist())[0])}
+    if wavlm is not None:   # WavLM-Large voice member (mlp on the frame-mean hidden state), fused with weight a.wavlm_weight
+        data = {s: wavlm_items(rows[s], wavlm, a.voice_wavlm) for s in rows}
+        preds, every = [], []
+        for seed in (41, 42, 43):
+            model, val_eer, epochs = train('voice', data['train'], data['val'], None, 0, seed=seed, arch='mlp',
+                                           max_epochs=a.voice_epochs, patience=a.voice_patience)
+            path = a.out / f'wavlm_{seed}.pt'
+            torch.save({'model': {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}, 'route': 'voice', 'seed': seed,
+                        'arch': 'mlp', 'width': int(data['train'][0][0].features.shape[1]), 'epoch': getattr(model, 'best_epoch', epochs),
+                        'epochs_run': epochs, 'validation_eer': val_eer, 'fake_label_index': 0,
+                        'features': f'wavlm_large_hidden_{a.voice_wavlm}_mean', 'train_ids': [x.row['ID'] for x, _ in data['train']]}, path)
+            lock[path.name] = sha(path)
+            preds.append(T.predict(model, [x for x, _ in data['val']], 'voice', 0, 256, 10 ** 6, 'cpu'))
+            model.eval()
+            with torch.no_grad():
+                sc = {}
+                for r in val_rows:
+                    with np.load(wavlm[r['ID']]) as d:
+                        L = list(d['wavlm_layers'])
+                        f = torch.from_numpy(d['wavlm_voice'][:, [L.index(a.voice_wavlm)]].reshape(len(d['wavlm_voice']), -1).astype(np.float32))
+                    sc[r['ID']] = float(model(f).softmax(-1)[:, 0].max())
+            every.append(sc)
+            print('voice_wavlm', seed, round(val_eer, 5), getattr(model, 'best_epoch', epochs), flush=True)
+        val_scores['voice_wavlm'] = {i: float(np.mean([e[i] for e in every])) for i in every[0]}
+        results['voice_wavlm_ensemble'] = {'eer': float(_roc_metrics([int(x.label) for x, _ in data['val']], np.mean(preds, 0).tolist())[0])}
     # fusion tables and FILE ensemble on val rows that have a backbone npz; ours = the kept DF-Arena voice heads
     scored = {s['ID']: s for s in score_rows(val_rows, OLD['val'], a.ours, 'cpu')}   # DF-Arena Fv + presence; its Fm is unused
     presence = json.loads(PRESENCE.read_text())
@@ -287,11 +395,15 @@ def final(a, rows, init) -> None:
     spec = {'weights': {'ours': 1, 'ad': a.ad_weight},
             'tables': {'ours': dh.quantile_table([ours[r['ID']] for r in val_rows if ours[r['ID']] > 0]),
                        'ad': dh.quantile_table([val_scores['voice_ad'][r['ID']] for r in val_rows if ours[r['ID']] > 0])}}
+    if wavlm is not None:
+        spec['weights']['wavlm'] = a.wavlm_weight
+        spec['tables']['wavlm'] = dh.quantile_table([val_scores['voice_wavlm'][r['ID']] for r in val_rows if ours[r['ID']] > 0])
     files = []
     for r in val_rows:
         s = scored[r['ID']]
         vp, mp = dh.presence(presence, s['presence_features'], (s['Pv'], s['Pm']))
-        fv = 0. if ours[r['ID']] == 0. else fuse(spec, {'ours': ours[r['ID']], 'ad': val_scores['voice_ad'][r['ID']]})
+        members = {'ours': ours[r['ID']], 'ad': val_scores['voice_ad'][r['ID']], **({'wavlm': val_scores['voice_wavlm'][r['ID']]} if wavlm is not None else {})}
+        fv = 0. if ours[r['ID']] == 0. else fuse(spec, members)
         files.append(({**s, 'Pv': vp, 'Pm': mp, 'Fv': fv, 'Fm': val_scores['music'][r['ID']]}, r))
     keep = [(f, r) for f, r in files if r['FILE_FAKE_mask'] == '1']
     ens, ens_report = fit_file([f for f, _ in keep], np.array([int(r['FILE_FAKE']) for _, r in keep]))
@@ -304,14 +416,22 @@ def final(a, rows, init) -> None:
     (a.out / 'music_layers.json').write_text(json.dumps(a.music_layers) + '\n')
     if eat:
         (a.out / 'music_eat_layers.json').write_text(json.dumps(a.music_eat) + '\n')
+    if sslam:
+        (a.out / 'music_sslam_layers.json').write_text(json.dumps(a.music_sslam) + '\n')
+    if wavlm is not None:
+        (a.out / 'voice_wavlm_layer.json').write_text(json.dumps([a.voice_wavlm]) + '\n')
     (a.out / 'results.json').write_text(json.dumps(results, indent=1) + '\n')
     (a.out / 'validation_metrics.json').write_text(json.dumps(metrics, indent=1) + '\n')
     (a.out / 'run_identity.json').write_text(json.dumps({'protocol': 'P1 refit: data v4 train + held-out test as train, val early stopping',
         'rows': {'train_with_backbone': sum((a.cache / f"{r['ID']}.npz").exists() for r in rows['train']), 'val_with_backbone': len(val_rows)},
         'voice_ours': str(a.ours) if a.voice_arch == 'copy' else f'retrained {a.voice_arch}', 'ad_arch': a.ad_arch,
         'voice_epochs': a.voice_epochs, 'voice_patience': a.voice_patience,
-        'voice_heads_reused_from': a.reuse_voice and str(a.reuse_voice),
+        'voice_heads_reused_from': a.reuse_voice and str(a.reuse_voice), 'music_heads_reused_from': a.reuse_music and str(a.reuse_music),
+        'label_completion': a.label_completion and {'rule': 'data_v4/label_rules.py', 'train_rows_completed': completed},
+        'extra_voice': a.extra_voice and [str(x) for x in a.extra_voice],
         'music_layers': a.music_layers, 'music_eat': a.music_eat, 'eat_cache': [str(c) for c in a.eat_cache],
+        'music_sslam': a.music_sslam, 'sslam_cache': [str(c) for c in a.sslam_cache],
+        'voice_wavlm': a.voice_wavlm, 'wavlm_weight': a.wavlm_weight if a.voice_wavlm is not None else None,
         'music_rows_with_eat': eat and {s: sum(r['ID'] in eat[0] for r in rows[s] if T.head_labels(r).get('music') is not None) for s in rows},
         'ad_weight': a.ad_weight, 'file_ensemble': ens_report}, indent=1) + '\n')
     (a.out / 'candidate_lock.json').write_text(json.dumps({'checkpoints': lock, 'selection': 'val EER then BCE per seed; seed-mean probabilities'}, indent=1) + '\n')

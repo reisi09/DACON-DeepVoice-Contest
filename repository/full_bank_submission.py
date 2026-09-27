@@ -22,6 +22,19 @@ CANDIDATE = 'balanced7144_MERT330M_WindowMIL_DFfc5_8020'
 EAT_MEAN, EAT_STD = -4.268, 4.569   # EAT-large model card fbank normalisation (as extract_new_backbones.py)
 
 
+def load_eat_family(folder: Path, device):
+    """EAT-architecture encoder (vendored eat_core: EAT-large, SSLAM) from config.json + fp16 safetensors whose weights are
+    fp16-exact, computed in fp32 like the training extractors."""
+    from safetensors.torch import load_file
+    from eat_core import EAT, EATConfig
+    config = json.loads((folder/'config.json').read_text())
+    model = EAT(EATConfig(**{k: v for k, v in config.items() if k not in (
+        'architectures', 'auto_map', 'model_type', 'torch_dtype', 'transformers_version')}))
+    state = {k.removeprefix('model.'): v.float() for k, v in load_file(str(folder/'model_fp16.safetensors')).items()}
+    model.load_state_dict(state, strict=True)
+    return model.to(device).eval().requires_grad_(False)
+
+
 def load_heads(root: Path, device):
     music, voice = [], []
     fake_index = None
@@ -76,17 +89,25 @@ class Engine:
         if any(info.values()):
             raise SubmissionError('MERT weights did not load exactly')
         self.mert.to(self.device).eval().requires_grad_(False)
-        # optional: EAT-large blocks of the backing stem appended to the MERT music features (music_eat_layers.json)
-        self.eat_blocks, self.eat = read('music_eat_layers.json') or [], None
-        if self.eat_blocks:
+        # optional EAT-architecture encoders of the backing stem, appended to the MERT music features in this order (the
+        # training concatenation): EAT-large blocks (music_eat_layers.json, assets/eat), SSLAM blocks (music_sslam_layers.json)
+        self.eat_family = [(load_eat_family(assets/folder, self.device), blocks)
+                           for name, folder in (('music_eat_layers.json', 'eat'), ('music_sslam_layers.json', 'sslam_pt'))
+                           if (blocks := read(name))]
+        # optional WavLM-Large voice member (component_fusion.json weight 'wavlm', voice_wavlm_layer.json, wavlm_*.pt)
+        self.wavlm, self.wavlm_layer, self.wavlm_heads = None, None, []
+        if self.fusion and self.fusion['voice']['weights'].get('wavlm'):
             from safetensors.torch import load_file
-            from eat_core import EAT, EATConfig
-            config = json.loads((assets/'eat'/'config.json').read_text())
-            self.eat = EAT(EATConfig(**{k: v for k, v in config.items() if k not in (
-                'architectures', 'auto_map', 'model_type', 'torch_dtype', 'transformers_version')}))
-            state = {k.removeprefix('model.'): v.float() for k, v in load_file(str(assets/'eat'/'model_fp16.safetensors')).items()}
-            self.eat.load_state_dict(state, strict=True)
-            self.eat.to(self.device).eval().requires_grad_(False)
+            from transformers import AutoConfig
+            (self.wavlm_layer,) = read('voice_wavlm_layer.json')
+            self.wavlm = AutoModel.from_config(AutoConfig.from_pretrained(assets/'wavlm', local_files_only=True))
+            self.wavlm.load_state_dict({k: v.float() for k, v in load_file(str(assets/'wavlm'/'model_fp16.safetensors')).items()}, strict=True)
+            self.wavlm.to(self.device).eval().requires_grad_(False)
+            for seed in SEEDS:
+                record = torch.load(trained/f'wavlm_{seed}.pt', map_location='cpu', weights_only=True)
+                if record['route'] != 'voice' or record['seed'] != seed or record['fake_label_index'] != 0:
+                    raise SubmissionError('WavLM head mismatch')
+                self.wavlm_heads.append(voice_heads.load(record).to(self.device).eval().requires_grad_(False))
         self.music_heads, self.voice_heads, self.fake_index = load_heads(trained, self.device)
         if original_fake != self.fake_index:
             raise SubmissionError('DF-Arena fake label mapping changed')
@@ -118,8 +139,9 @@ class Engine:
             hidden = self.mert(values, output_hidden_states=True).hidden_states
             features.append(torch.cat([hidden[k].mean(1).float() for k in self.music_layers], -1))
         features = torch.cat(features)
-        if self.eat is not None:
-            features = torch.cat([features, self.eat_features(windows(backing, starts))], -1)
+        if self.eat_family:
+            chunks = windows(backing, starts)
+            features = torch.cat([features, *(self.eat_features(model, blocks, chunks) for model, blocks in self.eat_family)], -1)
         music = []   # heads in fp32, as trained and as the fusion tables were fitted
         for head in self.music_heads:
             logits, _ = head.head((features-head.mean)/head.scale)
@@ -145,16 +167,20 @@ class Engine:
             if self.detector:   # every file gets every member: outputs never depend on elapsed time (rule 2-4, reply 417885)
                 emb = torch.from_numpy(self.detector.windows(voice)[0]).to(self.device)
                 members['ad'] = float(np.mean([float(h(emb).softmax(-1)[:, 0].max()) for h in self.ad_heads]))
-            vf = cf.fuse(self.fusion['voice'], members)
+            if self.wavlm is not None:
+                emb = self.wavlm_features(windows(voice, starts))
+                members['wavlm'] = float(np.mean([float(h(emb).softmax(-1)[:, 0].max()) for h in self.wavlm_heads]))
+            vf = cf.fuse(self.fusion['voice'], members)   # raises if a weighted member is missing
         file = decision_heads.file_score(self.ensemble, dict(Pv=vp, Pm=mp, Fv=vf, Fm=mf))
         return dict(zip(PREDICTION_COLUMNS, (file, vf, mf, vp, mp), strict=True))
 
 
-    def eat_features(self, chunks):
-        """(n, 64600) 16 kHz backing windows -> (n, 1024 * len(eat_blocks)): mean over patch tokens (CLS excluded) of the
-        listed EAT blocks, the extract_new_backbones.py features the music heads were trained on."""
+    def eat_features(self, model, eat_blocks, chunks):
+        """(n, 64600) 16 kHz backing windows -> (n, width * len(eat_blocks)): mean over patch tokens (CLS excluded) of the
+        listed blocks of an EAT-architecture encoder, the features the music heads were trained on
+        (research/top15/work2/backbones/extract_new_backbones.py, research/top15/work2/s6/extract_s6.py)."""
         import torchaudio
-        model, out = self.eat, []
+        out = []
         for offset in range(0, len(chunks), self.batch):
             mels = []
             for x in torch.from_numpy(np.asarray(chunks[offset:offset+self.batch], dtype=np.float32)).to(self.device):
@@ -165,11 +191,21 @@ class Engine:
             x = x+model.fixed_positional_encoder(x, None)[:, :x.size(1), :]
             x = model.pos_drop(model.pre_norm(torch.cat((model.extra_tokens.expand(len(x), -1, -1), x), 1)))
             blocks = {}
-            for index, block in enumerate(model.blocks[:max(self.eat_blocks)], 1):
+            for index, block in enumerate(model.blocks[:max(eat_blocks)], 1):
                 x, _ = block(x)
-                if index in self.eat_blocks:
+                if index in eat_blocks:
                     blocks[index] = x[:, 1:].mean(1)
-            out.append(torch.cat([blocks[k] for k in self.eat_blocks], -1).float())
+            out.append(torch.cat([blocks[k] for k in eat_blocks], -1).float())
+        return torch.cat(out)
+
+    def wavlm_features(self, chunks):
+        """(n, 64600) voice-stem windows -> (n, hidden): frame mean of WavLM hidden_states[wavlm_layer] after per-window
+        zero-mean / unit-variance normalisation (Wav2Vec2FeatureExtractor do_normalize), as research/top15/work2/s6/extract_s6.py."""
+        out = []
+        for offset in range(0, len(chunks), self.batch):
+            x = torch.from_numpy(np.asarray(chunks[offset:offset+self.batch], dtype=np.float32)).to(self.device)
+            x = (x-x.mean(1, keepdim=True))/torch.sqrt(x.var(1, unbiased=False, keepdim=True)+1e-7)
+            out.append(self.wavlm(x, output_hidden_states=True).hidden_states[self.wavlm_layer].mean(1).float())
         return torch.cat(out)
 
 

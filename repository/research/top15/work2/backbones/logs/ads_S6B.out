@@ -1,0 +1,59 @@
+val choice {'music': 'music replace music_new__mert6_12+eat16+sslampt5', 'voice': 'voice add voice_new__wavlm8 w1'} {'baseline': 0.95475, 'music replace music_new__mert6_12+eat16+sslampt5': 0.9601, 'voice add voice_new__wavlm8 w0.25': 0.95709, 'voice add voice_new__wavlm8 w0.5': 0.95797, 'voice add voice_new__wavlm8 w1': 0.95818, 'voice add voice_new__hubert8 w0.25': 0.9576, 'voice add voice_new__hubert8 w0.5': 0.95807, 'voice add voice_new__hubert8 w1': 0.95786, 'joint': 0.96343}
+{
+ "choice": {
+  "music": "music replace music_new__mert6_12+eat16+sslampt5",
+  "voice": "voice add voice_new__wavlm8 w1"
+ },
+ "test": {
+  "baseline": {
+   "file_eer": 0.07928,
+   "voice_eer": 0.08227,
+   "music_eer": 0.1545,
+   "ads": 0.89755
+  },
+  "music-only": {
+   "file_eer": 0.07617,
+   "voice_eer": 0.08227,
+   "music_eer": 0.13635,
+   "ads": 0.90456
+  },
+  "voice-only": {
+   "file_eer": 0.07574,
+   "voice_eer": 0.07783,
+   "music_eer": 0.1545,
+   "ads": 0.90021
+  },
+  "joint": {
+   "file_eer": 0.07306,
+   "voice_eer": 0.07783,
+   "music_eer": 0.13635,
+   "ads": 0.907
+  }
+ },
+ "delta_vs_baseline_test": {
+  "music-only": {
+   "ads": 0.00701,
+   "ci95": [
+    0.00192,
+    0.01138
+   ],
+   "p_le_0": 0.001
+  },
+  "voice-only": {
+   "ads": 0.00266,
+   "ci95": [
+    0.00021,
+    0.00557
+   ],
+   "p_le_0": 0.02
+  },
+  "joint": {
+   "ads": 0.00945,
+   "ci95": [
+    0.0039,
+    0.01501
+   ],
+   "p_le_0": 0.0
+  }
+ }
+}

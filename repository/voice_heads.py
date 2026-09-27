@@ -56,7 +56,7 @@ def build(arch: str, init: dict | None = None, mean: torch.Tensor | None = None,
 
 
 def load(record: dict) -> nn.Module:
-    m = build(record.get('arch', 'linear'))
+    m = build(record.get('arch', 'linear'), width=record.get('width', 1280))
     m.load_state_dict(record['model'], strict=True)
     return m
 
@@ -67,6 +67,9 @@ if __name__ == '__main__':
         m = build(arch, None, x.mean(0), x.std(0))
         again = load({'arch': arch, 'model': m.state_dict()})
         assert torch.allclose(m(x), again(x)), arch
+    y = torch.randn(4, 1024)
+    m = build('mlp', None, y.mean(0), y.std(0), width=1024)
+    assert torch.allclose(m(y), load({'arch': 'mlp', 'width': 1024, 'model': m.state_dict()})(y)), 'width round trip'
     init = {'weight': torch.randn(2, 1280), 'bias': torch.randn(2)}
     r = build('resmlp', init, x.mean(0), x.std(0))
     assert torch.allclose(r(x), x @ init['weight'].T + init['bias'], atol=1e-5), 'resmlp equals Linear at init'

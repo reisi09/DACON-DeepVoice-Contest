@@ -1,0 +1,68 @@
+{
+ "written": "2026-09-28 00:51:21 KST",
+ "rule": "choice_lock.json rule B (gate 0.002 val ADS; EAT only if +0.002 over MuQ-only; ties -> simpler)",
+ "rows": {
+  "val": 3680,
+  "test": 4822
+ },
+ "choice": {
+  "music": "music replace music_new__mert6_12+eat16+sslampt5",
+  "voice": "voice add voice_new__wavlm8 w1"
+ },
+ "val": {
+  "baseline": {
+   "file_eer": 0.03804,
+   "voice_eer": 0.02147,
+   "music_eer": 0.07311,
+   "ads": 0.95475
+  },
+  "music replace music_new__mert6_12+eat16+sslampt5": {
+   "file_eer": 0.03433,
+   "voice_eer": 0.02147,
+   "music_eer": 0.06147,
+   "ads": 0.9601
+  },
+  "voice add voice_new__wavlm8 w0.25": {
+   "file_eer": 0.03453,
+   "voice_eer": 0.01855,
+   "music_eer": 0.07311,
+   "ads": 0.95709
+  },
+  "voice add voice_new__wavlm8 w0.5": {
+   "file_eer": 0.03287,
+   "voice_eer": 0.01829,
+   "music_eer": 0.07311,
+   "ads": 0.95797
+  },
+  "voice add voice_new__wavlm8 w1": {
+   "file_eer": 0.03287,
+   "voice_eer": 0.01723,
+   "music_eer": 0.07311,
+   "ads": 0.95818
+  },
+  "voice add voice_new__hubert8 w0.25": {
+   "file_eer": 0.0335,
+   "voice_eer": 0.01855,
+   "music_eer": 0.07311,
+   "ads": 0.9576
+  },
+  "voice add voice_new__hubert8 w0.5": {
+   "file_eer": 0.03268,
+   "voice_eer": 0.01829,
+   "music_eer": 0.07311,
+   "ads": 0.95807
+  },
+  "voice add voice_new__hubert8 w1": {
+   "file_eer": 0.03268,
+   "voice_eer": 0.01935,
+   "music_eer": 0.07311,
+   "ads": 0.95786
+  },
+  "joint": {
+   "file_eer": 0.02936,
+   "voice_eer": 0.01723,
+   "music_eer": 0.06147,
+   "ads": 0.96343
+  }
+ }
+}

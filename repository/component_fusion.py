@@ -13,9 +13,13 @@ from decision_heads import to_cdf
 
 def fuse(spec: dict, values: dict) -> float:
     """Weighted mean of member val CDFs, mapped back onto our head's score scale (inverse of its val CDF) so the FILE
-    rules keep their calibrated inputs; monotone, so the component EER is that of the CDF mean. Members missing from
-    values (runtime time-budget fallback) are skipped; 'ours' is always present; ours alone passes through unchanged."""
-    w = {n: x for n, x in spec['weights'].items() if x and n in values}
+    rules keep their calibrated inputs; monotone, so the component EER is that of the CDF mean. Every member with a
+    nonzero weight must be in values: a missing one raises (a runtime member must never drop out silently and change
+    VOICE without an error); ours alone passes through unchanged."""
+    missing = [n for n, x in spec['weights'].items() if x and n not in values]
+    if missing:
+        raise KeyError(f'fusion members missing from values: {missing}')
+    w = {n: x for n, x in spec['weights'].items() if x}
     if set(w) == {'ours'}:
         return values['ours']
     c = sum(x * to_cdf(spec['tables'][n], values[n]) for n, x in w.items()) / sum(w.values())
@@ -42,7 +46,12 @@ if __name__ == '__main__':
     t = list(np.linspace(0, 1, 1001))
     spec = {'weights': {'ours': 1, 'b': 3, 'c': 0}, 'tables': {'ours': [x ** 2 for x in t], 'b': t}}
     assert abs(fuse(spec, {'ours': .25, 'b': .6, 'c': 9}) - ((.5 + 3 * .6) / 4) ** 2) < 1e-3, 'CDF mean mapped to ours scale'
-    assert fuse(spec, {'ours': .25}) == .25, 'missing member skipped, ours alone unchanged'
+    try:
+        fuse(spec, {'ours': .25})
+        raise AssertionError('a missing weighted member must raise')
+    except KeyError:
+        pass
+    assert fuse({'weights': {'ours': 1, 'c': 0}, 'tables': {'ours': t}}, {'ours': .25}) == .25, 'zero-weight member may be absent'
     assert fuse({'weights': {'ours': 1}, 'tables': {'ours': t}}, {'ours': .37}) == .37
     assert detector_members('x', [.9, .8, .1, .9]) == {'x_max': .9, 'x_top30': .8, 'x_mean': .5}
     sat = {'weights': {'ours': 1, 'b': 1}, 'tables': {'ours': [x + i * 1e-12 for i, x in enumerate([0.] * 5 + [1.] * 6)], 'b': t}}

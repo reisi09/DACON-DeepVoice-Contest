@@ -1,0 +1,663 @@
+S5 {'all': 0.89673, 'unseen-gen fakes + all reals': 0.89589, 'seen-gen fakes + all reals': 0.89853, 'unseen-source rows + seen-source fakes': 0.89446}
+S5+SSLAM {'all': 0.9027, 'unseen-gen fakes + all reals': 0.90235, 'seen-gen fakes + all reals': 0.90574, 'unseen-source rows + seen-source fakes': 0.90162}
+S5+WavLM {'all': 0.90011, 'unseen-gen fakes + all reals': 0.89806, 'seen-gen fakes + all reals': 0.90325, 'unseen-source rows + seen-source fakes': 0.89783}
+S5+both {'all': 0.90607, 'unseen-gen fakes + all reals': 0.90451, 'seen-gen fakes + all reals': 0.9098, 'unseen-source rows + seen-source fakes': 0.90474}
+S6 {'all': 0.89877, 'unseen-gen fakes + all reals': 0.9017, 'seen-gen fakes + all reals': 0.89418, 'unseen-source rows + seen-source fakes': 0.89685}
+S6+SSLAM {'all': 0.90452, 'unseen-gen fakes + all reals': 0.90767, 'seen-gen fakes + all reals': 0.90206, 'unseen-source rows + seen-source fakes': 0.90323}
+S6+WavLM {'all': 0.90251, 'unseen-gen fakes + all reals': 0.90384, 'seen-gen fakes + all reals': 0.90125, 'unseen-source rows + seen-source fakes': 0.90116}
+S6+both {'all': 0.90921, 'unseen-gen fakes + all reals': 0.90942, 'seen-gen fakes + all reals': 0.90913, 'unseen-source rows + seen-source fakes': 0.90832}
+{
+ "train_fake_generators": 346,
+ "unseen_generators_in_test": [
+  "fx_encoder_style_transfer",
+  "lyria-3 pro",
+  "openvoice",
+  "voxcpm-0.5b",
+  "voxcpm-1.5",
+  "voxcpm2"
+ ],
+ "configs": {
+  "S5": {
+   "all": {
+    "ads": 0.89673,
+    "file": [
+     0.08093,
+     4819,
+     1928
+    ],
+    "voice": [
+     0.08227,
+     3841,
+     1556
+    ],
+    "music": [
+     0.1545,
+     2149,
+     770
+    ]
+   },
+   "unseen-gen fakes + all reals": {
+    "ads": 0.89589,
+    "file": [
+     0.07751,
+     4026,
+     1135
+    ],
+    "voice": [
+     0.08871,
+     3301,
+     1016
+    ],
+    "music": [
+     0.1587,
+     1833,
+     454
+    ]
+   },
+   "seen-gen fakes + all reals": {
+    "ads": 0.89853,
+    "file": [
+     0.08709,
+     3684,
+     793
+    ],
+    "voice": [
+     0.06659,
+     2825,
+     540
+    ],
+    "music": [
+     0.1487,
+     1695,
+     316
+    ]
+   },
+   "unseen-source rows + seen-source fakes": {
+    "ads": 0.89446,
+    "file": [
+     0.0809,
+     3807,
+     1928
+    ],
+    "voice": [
+     0.08541,
+     3138,
+     1556
+    ],
+    "music": [
+     0.16003,
+     1506,
+     770
+    ]
+   }
+  },
+  "S5+SSLAM": {
+   "all": {
+    "ads": 0.9027,
+    "file": [
+     0.07989,
+     4819,
+     1928
+    ],
+    "voice": [
+     0.08227,
+     3841,
+     1556
+    ],
+    "music": [
+     0.13635,
+     2149,
+     770
+    ]
+   },
+   "unseen-gen fakes + all reals": {
+    "ads": 0.90235,
+    "file": [
+     0.07402,
+     4026,
+     1135
+    ],
+    "voice": [
+     0.08871,
+     3301,
+     1016
+    ],
+    "music": [
+     0.14301,
+     1833,
+     454
+    ]
+   },
+   "seen-gen fakes + all reals": {
+    "ads": 0.90574,
+    "file": [
+     0.08444,
+     3684,
+     793
+    ],
+    "voice": [
+     0.06659,
+     2825,
+     540
+    ],
+    "music": [
+     0.12905,
+     1695,
+     316
+    ]
+   },
+   "unseen-source rows + seen-source fakes": {
+    "ads": 0.90162,
+    "file": [
+     0.07933,
+     3807,
+     1928
+    ],
+    "voice": [
+     0.08541,
+     3138,
+     1556
+    ],
+    "music": [
+     0.13877,
+     1506,
+     770
+    ]
+   }
+  },
+  "S5+WavLM": {
+   "all": {
+    "ads": 0.90011,
+    "file": [
+     0.07678,
+     4819,
+     1928
+    ],
+    "voice": [
+     0.07577,
+     3841,
+     1556
+    ],
+    "music": [
+     0.1545,
+     2149,
+     770
+    ]
+   },
+   "unseen-gen fakes + all reals": {
+    "ads": 0.89806,
+    "file": [
+     0.07402,
+     4026,
+     1135
+    ],
+    "voice": [
+     0.08663,
+     3301,
+     1016
+    ],
+    "music": [
+     0.1587,
+     1833,
+     454
+    ]
+   },
+   "seen-gen fakes + all reals": {
+    "ads": 0.90325,
+    "file": [
+     0.08197,
+     3684,
+     793
+    ],
+    "voice": [
+     0.05579,
+     2825,
+     540
+    ],
+    "music": [
+     0.1487,
+     1695,
+     316
+    ]
+   },
+   "unseen-source rows + seen-source fakes": {
+    "ads": 0.89783,
+    "file": [
+     0.0767,
+     3807,
+     1928
+    ],
+    "voice": [
+     0.07903,
+     3138,
+     1556
+    ],
+    "music": [
+     0.16003,
+     1506,
+     770
+    ]
+   }
+  },
+  "S5+both": {
+   "all": {
+    "ads": 0.90607,
+    "file": [
+     0.07574,
+     4819,
+     1928
+    ],
+    "voice": [
+     0.07577,
+     3841,
+     1556
+    ],
+    "music": [
+     0.13635,
+     2149,
+     770
+    ]
+   },
+   "unseen-gen fakes + all reals": {
+    "ads": 0.90451,
+    "file": [
+     0.07052,
+     4026,
+     1135
+    ],
+    "voice": [
+     0.08663,
+     3301,
+     1016
+    ],
+    "music": [
+     0.14301,
+     1833,
+     454
+    ]
+   },
+   "seen-gen fakes + all reals": {
+    "ads": 0.9098,
+    "file": [
+     0.08065,
+     3684,
+     793
+    ],
+    "voice": [
+     0.05579,
+     2825,
+     540
+    ],
+    "music": [
+     0.12905,
+     1695,
+     316
+    ]
+   },
+   "unseen-source rows + seen-source fakes": {
+    "ads": 0.90474,
+    "file": [
+     0.07565,
+     3807,
+     1928
+    ],
+    "voice": [
+     0.07903,
+     3138,
+     1556
+    ],
+    "music": [
+     0.13877,
+     1506,
+     770
+    ]
+   }
+  },
+  "S6": {
+   "all": {
+    "ads": 0.89877,
+    "file": [
+     0.083,
+     4819,
+     1928
+    ],
+    "voice": [
+     0.0669,
+     3841,
+     1556
+    ],
+    "music": [
+     0.1545,
+     2149,
+     770
+    ]
+   },
+   "unseen-gen fakes + all reals": {
+    "ads": 0.9017,
+    "file": [
+     0.07655,
+     4026,
+     1135
+    ],
+    "voice": [
+     0.06208,
+     3301,
+     1016
+    ],
+    "music": [
+     0.1587,
+     1833,
+     454
+    ]
+   },
+   "seen-gen fakes + all reals": {
+    "ads": 0.89418,
+    "file": [
+     0.09335,
+     3684,
+     793
+    ],
+    "voice": [
+     0.07265,
+     2825,
+     540
+    ],
+    "music": [
+     0.1487,
+     1695,
+     316
+    ]
+   },
+   "unseen-source rows + seen-source fakes": {
+    "ads": 0.89685,
+    "file": [
+     0.08301,
+     3807,
+     1928
+    ],
+    "voice": [
+     0.0682,
+     3138,
+     1556
+    ],
+    "music": [
+     0.16003,
+     1506,
+     770
+    ]
+   }
+  },
+  "S6+SSLAM": {
+   "all": {
+    "ads": 0.90452,
+    "file": [
+     0.0824,
+     4819,
+     1928
+    ],
+    "voice": [
+     0.0669,
+     3841,
+     1556
+    ],
+    "music": [
+     0.13635,
+     2149,
+     770
+    ]
+   },
+   "unseen-gen fakes + all reals": {
+    "ads": 0.90767,
+    "file": [
+     0.07402,
+     4026,
+     1135
+    ],
+    "voice": [
+     0.06208,
+     3301,
+     1016
+    ],
+    "music": [
+     0.14301,
+     1833,
+     454
+    ]
+   },
+   "seen-gen fakes + all reals": {
+    "ads": 0.90206,
+    "file": [
+     0.08939,
+     3684,
+     793
+    ],
+    "voice": [
+     0.07265,
+     2825,
+     540
+    ],
+    "music": [
+     0.12905,
+     1695,
+     316
+    ]
+   },
+   "unseen-source rows + seen-source fakes": {
+    "ads": 0.90323,
+    "file": [
+     0.08301,
+     3807,
+     1928
+    ],
+    "voice": [
+     0.0682,
+     3138,
+     1556
+    ],
+    "music": [
+     0.13877,
+     1506,
+     770
+    ]
+   }
+  },
+  "S6+WavLM": {
+   "all": {
+    "ads": 0.90251,
+    "file": [
+     0.07781,
+     4819,
+     1928
+    ],
+    "voice": [
+     0.06116,
+     3841,
+     1556
+    ],
+    "music": [
+     0.1545,
+     2149,
+     770
+    ]
+   },
+   "unseen-gen fakes + all reals": {
+    "ads": 0.90384,
+    "file": [
+     0.07227,
+     4026,
+     1135
+    ],
+    "voice": [
+     0.06208,
+     3301,
+     1016
+    ],
+    "music": [
+     0.1587,
+     1833,
+     454
+    ]
+   },
+   "seen-gen fakes + all reals": {
+    "ads": 0.90125,
+    "file": [
+     0.08462,
+     3684,
+     793
+    ],
+    "voice": [
+     0.05917,
+     2825,
+     540
+    ],
+    "music": [
+     0.1487,
+     1695,
+     316
+    ]
+   },
+   "unseen-source rows + seen-source fakes": {
+    "ads": 0.90116,
+    "file": [
+     0.07617,
+     3807,
+     1928
+    ],
+    "voice": [
+     0.06373,
+     3138,
+     1556
+    ],
+    "music": [
+     0.16003,
+     1506,
+     770
+    ]
+   }
+  },
+  "S6+both": {
+   "all": {
+    "ads": 0.90921,
+    "file": [
+     0.07531,
+     4819,
+     1928
+    ],
+    "voice": [
+     0.06116,
+     3841,
+     1556
+    ],
+    "music": [
+     0.13635,
+     2149,
+     770
+    ]
+   },
+   "unseen-gen fakes + all reals": {
+    "ads": 0.90942,
+    "file": [
+     0.07052,
+     4026,
+     1135
+    ],
+    "voice": [
+     0.06208,
+     3301,
+     1016
+    ],
+    "music": [
+     0.14301,
+     1833,
+     454
+    ]
+   },
+   "seen-gen fakes + all reals": {
+    "ads": 0.90913,
+    "file": [
+     0.08065,
+     3684,
+     793
+    ],
+    "voice": [
+     0.05917,
+     2825,
+     540
+    ],
+    "music": [
+     0.12905,
+     1695,
+     316
+    ]
+   },
+   "unseen-source rows + seen-source fakes": {
+    "ads": 0.90832,
+    "file": [
+     0.0746,
+     3807,
+     1928
+    ],
+    "voice": [
+     0.06373,
+     3138,
+     1556
+    ],
+    "music": [
+     0.13877,
+     1506,
+     770
+    ]
+   }
+  }
+ },
+ "boot": {
+  "S5+SSLAM vs S5": {
+   "delta": 0.00597,
+   "ci95": [
+    0.00125,
+    0.01041
+   ],
+   "p_gt_0": 0.996
+  },
+  "S5+WavLM vs S5": {
+   "delta": 0.00337,
+   "ci95": [
+    0.00081,
+    0.00596
+   ],
+   "p_gt_0": 0.994
+  },
+  "S5+both vs S5": {
+   "delta": 0.00934,
+   "ci95": [
+    0.00358,
+    0.01434
+   ],
+   "p_gt_0": 0.999
+  },
+  "S6+SSLAM vs S6": {
+   "delta": 0.00575,
+   "ci95": [
+    0.00078,
+    0.01022
+   ],
+   "p_gt_0": 0.989
+  },
+  "S6+WavLM vs S6": {
+   "delta": 0.00374,
+   "ci95": [
+    0.00126,
+    0.00677
+   ],
+   "p_gt_0": 0.998
+  },
+  "S6+both vs S6": {
+   "delta": 0.01044,
+   "ci95": [
+    0.00427,
+    0.01523
+   ],
+   "p_gt_0": 1.0
+  }
+ }
+}

@@ -46,8 +46,11 @@ def read_ft(paths, col):
 
 
 def bank_rows(bank: Path, split: str, keep=None):
-    f = bank / ('bank_trainval.csv' if split == 'val' else 'bank_test.csv')
-    return [r for r in csv.DictReader(f.open()) if r['split'] == split and (keep is None or r['ID'] in keep)]
+    f = bank / {'train': 'bank_trainval.csv', 'val': 'bank_trainval.csv', 'test': 'bank_test.csv'}[split]
+    rows = [r for r in csv.DictReader(f.open()) if r['split'] == split and (keep is None or r['ID'] in keep)]
+    if not rows:   # 'train' used to read bank_test.csv and silently return []
+        raise ValueError(f'no {split} rows in {f}')
+    return rows
 
 
 def lab(r, c):

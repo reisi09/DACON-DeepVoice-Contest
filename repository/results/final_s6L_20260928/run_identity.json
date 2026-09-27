@@ -1,0 +1,55 @@
+{
+ "protocol": "P1 refit: data v4 train + held-out test as train, val early stopping",
+ "rows": {
+  "train_with_backbone": 37108,
+  "val_with_backbone": 4931
+ },
+ "voice_ours": "retrained mlp",
+ "ad_arch": "resmlp",
+ "voice_epochs": 150,
+ "voice_patience": 10,
+ "voice_heads_reused_from": null,
+ "music_heads_reused_from": "_workspace/final_s5_20260927",
+ "label_completion": {
+  "rule": "data_v4/label_rules.py",
+  "train_rows_completed": 1364
+ },
+ "extra_voice": null,
+ "music_layers": [
+  6,
+  12
+ ],
+ "music_eat": [
+  16
+ ],
+ "eat_cache": [
+  "_workspace/newbackbone_cache",
+  "_workspace/eat_extra_cache"
+ ],
+ "music_rows_with_eat": {
+  "train": 12218,
+  "val": 1752
+ },
+ "ad_weight": 0.5,
+ "file_ensemble": {
+  "candidates_alone": {
+   "max": 0.03633,
+   "noisy_or": 0.03757,
+   "max_nopresence": 0.04545
+  },
+  "equal_weights_eer": 0.03633,
+  "grid_best_eer": 0.03571,
+  "grid_best_weights": {
+   "max": 0,
+   "max_nopresence": 2,
+   "noisy_or": 8
+  },
+  "chosen_weights": {
+   "max": 1,
+   "noisy_or": 1,
+   "max_nopresence": 1
+  },
+  "chosen_rule": "equal (grid gain 0.0006 < 0.002)",
+  "val_n": 4927
+ }
+}
