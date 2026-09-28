@@ -35,10 +35,11 @@ with zipfile.ZipFile(h) as z, torch.no_grad():
         with np.load(A / 's6_parity' / f"{s['file_stem']}.npz") as d6:
             S_ = list(d6['sslam_layers']); f = torch.from_numpy(np.concatenate([f, d6['sslam_pt_backing'][:, [S_.index(k) for k in sslam_layers]].reshape(len(f), -1).astype(np.float32)], 1))
             W_ = list(d6['wavlm_layers']); ew = torch.from_numpy(d6['wavlm_voice'][:, W_.index(wl)].astype(np.float32))
-        fv = 0. if bool(ref['voice_silent']) else float(np.mean([float(v(e).softmax(-1)[:, fi].max()) for v in voice]))
+        silent = bool(ref['voice_silent'])
+        fv = 0. if silent else float(np.mean([float(v(e).softmax(-1)[:, fi].max()) for v in voice]))
         fa = float(np.mean([float(m(torch.from_numpy(bb['ad_embeddings'].astype(np.float32))).softmax(-1)[:, 0].max()) for m in ad]))
         fw = float(np.mean([float(m(ew).softmax(-1)[:, 0].max()) for m in wav]))
-        fv = 0. if fv == 0. else fuse(spec, {'ours': fv, 'ad': fa, 'wavlm': fw})
+        fv = 0. if silent else fuse(spec, {'ours': fv, 'ad': fa, 'wavlm': fw})   # as Engine.predict: only silence skips fusion
         fm = float(np.mean([float((m.head((f - m.mean) / m.scale)[0].logsumexp(0) - np.log(len(f))).sigmoid()) for m in music]))
         r = runtime[s['ID']]
         vals = [float(r[k]) for k in ('FILE_FAKE_PROB', 'VOICE_FAKE_PROB', 'MUSIC_FAKE_PROB', 'VOICE_PRESENT_PROB', 'MUSIC_PRESENT_PROB')]

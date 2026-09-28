@@ -12,7 +12,8 @@ scp -q -P $PORT root@capella.cloud.vessl.ai:/root/proj/_workspace/final_${N}_202
   --split-note "train 30,658 + held-out 6,450 + new rows (research/top15/work5/newdata/rows) / val 4,931" --fusion $H \
   --antideepfake ad=_workspace/models/xls-r-1b-anti-deepfake-fp16 > $O.package.log 2>&1
 grep -E '"(sha256|bytes)"' $O.package.log | head -2
-.venv/bin/python verify_datav4_submission.py --out $O > $O/verify.log 2>&1 && echo "cpu verify ok"
+.venv/bin/python verify_datav4_submission.py --out $O > $O/verify.log 2>&1   # set -e stops here on failure (an && list would not)
+echo "cpu verify ok"
 OMP_NUM_THREADS=6 HEADS=$H VERIFICATION=$O/qa/verification.json RECEIPT=$O/submit.json .venv/bin/python research/top15/work5/w/w_runtime_parity.py 2>&1 | grep -v -i warn > $O/runtime_parity.txt
 tail -1 $O/runtime_parity.txt
 rm -rf $S && mkdir -p $S/changed && .venv/bin/python - "$O" "$S/changed" <<'EOF'
