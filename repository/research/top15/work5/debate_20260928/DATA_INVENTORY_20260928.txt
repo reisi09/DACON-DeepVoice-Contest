@@ -1,0 +1,80 @@
+# Training data inventory (source -> rows). No AI-Hub rows are in these banks; AI-Hub E3 (257 Korean real) stays on the Mac.
+
+## S7 bank bank_trainval.csv: 35589 rows (route / label mix per source)
+mlaad                                 8145  FILE_FAKE=1:8145 VOICE_FAKE=1:8145 route=voice:8145
+asvspoof2021_la                       3667  FILE_FAKE=0:1015 FILE_FAKE=1:2652 VOICE_FAKE=0:1015 VOICE_FAKE=1:2652 route=voice:3667
+speechfake                            2909  FILE_FAKE=0:585 FILE_FAKE=1:2324 VOICE_FAKE=0:585 VOICE_FAKE=1:2324 route=voice:2909
+zeroth                                2901  FILE_FAKE=0:2901 VOICE_FAKE=0:2901 route=voice:2901
+asvspoof2021_df                       2874  FILE_FAKE=0:674 FILE_FAKE=1:2200 VOICE_FAKE=0:674 VOICE_FAKE=1:2200 route=voice:2874
+existing:asvspoof2019_la              2400  FILE_FAKE=0:400 FILE_FAKE=1:2000 VOICE_FAKE=0:400 VOICE_FAKE=1:2000 route=voice:2400
+openmic                               2378  FILE_FAKE=0:2378 MUSIC_FAKE=0:2378 VOICE_FAKE=0:1190 route=music:2378
+existing:FakeMusicCaps                2000  FILE_FAKE=1:2000 MUSIC_FAKE=1:2000 route=music:2000
+constructed_mix                        982  FILE_FAKE=0:69 FILE_FAKE=1:913 MUSIC_FAKE=0:832 MUSIC_FAKE=1:150 VOICE_FAKE=0:79 VOICE_FAKE=1:903 route=music:982
+existing:HAIM                          800  FILE_FAKE=1:800 MUSIC_FAKE=1:800 route=music:800
+existing:SONICS                        800  FILE_FAKE=1:800 MUSIC_FAKE=1:800 route=music:800
+sonics                                 794  FILE_FAKE=1:794 MUSIC_FAKE=1:794 VOICE_FAKE=1:743 route=music:794
+haim                                   700  FILE_FAKE=0:289 FILE_FAKE=1:388 MUSIC_FAKE=0:312 MUSIC_FAKE=1:388 VOICE_FAKE=0:93 route=music:700
+echoes                                 542  FILE_FAKE=1:542 MUSIC_FAKE=1:542 VOICE_FAKE=1:345 route=music:542
+generated_music                        444  FILE_FAKE=1:444 MUSIC_FAKE=1:444 VOICE_FAKE=1:287 route=music:444
+musan_speech                           426  FILE_FAKE=0:426 VOICE_FAKE=0:426 route=voice:426
+vocalset                               415  FILE_FAKE=0:415 VOICE_FAKE=0:415 route=voice:415
+existing:FMA                           400  FILE_FAKE=0:400 MUSIC_FAKE=0:400 VOICE_FAKE=0:175 route=music:400
+existing:JamendoMaxCaps                400  FILE_FAKE=0:400 MUSIC_FAKE=0:400 VOICE_FAKE=0:93 route=music:400
+existing:librispeech_test-clean        394  FILE_FAKE=0:394 VOICE_FAKE=0:394 route=voice:394
+csd                                    200  FILE_FAKE=0:200 VOICE_FAKE=0:200 route=voice:200
+existing:constructed_music             128  FILE_FAKE=0:64 FILE_FAKE=1:64 MUSIC_FAKE=0:64 MUSIC_FAKE=1:64 VOICE_FAKE=0:13 route=music:128
+constructed_splice                     119  FILE_FAKE=1:119 VOICE_FAKE=1:119 route=voice:119
+existing:FMA/FMA                        55  FILE_FAKE=0:55 MUSIC_FAKE=0:55 VOICE_FAKE=0:13 route=music:55
+existing:Echoes/diffrhythm/TTA          50  FILE_FAKE=1:50 MUSIC_FAKE=1:50 route=music:50
+existing:Echoes/songgen/TTA             49  FILE_FAKE=1:49 MUSIC_FAKE=1:49 route=music:49
+existing:Echoes/musicgen/TTA            49  FILE_FAKE=1:49 MUSIC_FAKE=1:49 route=music:49
+existing:Echoes/acestep/TTA             48  FILE_FAKE=1:48 MUSIC_FAKE=1:48 route=music:48
+existing:Echoes/audioldm/TTA            47  FILE_FAKE=1:47 MUSIC_FAKE=1:47 route=music:47
+existing:Echoes/udio/TTA                45  FILE_FAKE=1:45 MUSIC_FAKE=1:45 route=music:45
+existing:Echoes/diffrhythm/ATA          45  FILE_FAKE=1:45 MUSIC_FAKE=1:45 route=music:45
+existing:Echoes/suno/TTA                44  FILE_FAKE=1:44 MUSIC_FAKE=1:44 route=music:44
+existing:Echoes/musicgen/ATA            43  FILE_FAKE=1:43 MUSIC_FAKE=1:43 route=music:43
+existing:Echoes/audioldm/ATA            43  FILE_FAKE=1:43 MUSIC_FAKE=1:43 route=music:43
+existing:Echoes/brev/TTA                42  FILE_FAKE=1:42 MUSIC_FAKE=1:42 route=music:42
+existing:Echoes/songgen/ATA             42  FILE_FAKE=1:42 MUSIC_FAKE=1:42 route=music:42
+existing:Echoes/elevenlabs/TTA          42  FILE_FAKE=1:42 MUSIC_FAKE=1:42 route=music:42
+existing:udio                           24  FILE_FAKE=1:24 MUSIC_FAKE=1:24 route=music:24
+existing:suno                           24  FILE_FAKE=1:24 MUSIC_FAKE=1:24 route=music:24
+constructed_enhanced                    24  FILE_FAKE=0:24 VOICE_FAKE=0:24 route=voice:24
+existing:Echoes/producer/TTA            23  FILE_FAKE=1:23 MUSIC_FAKE=1:23 route=music:23
+existing:Echoes/producer/ATA            20  FILE_FAKE=1:20 MUSIC_FAKE=1:20 route=music:20
+existing:Echoes/stableaudio/TTA          6  FILE_FAKE=1:6 MUSIC_FAKE=1:6 route=music:6
+existing:Echoes/mubert/TTA               6  FILE_FAKE=1:6 MUSIC_FAKE=1:6 route=music:6
+
+## S7 bank bank_test.csv: 6450 rows (route / label mix per source)
+fleurs_ko                             1500  FILE_FAKE=0:1500 VOICE_FAKE=0:1500 route=voice:1500
+haim                                   792  FILE_FAKE=0:69 FILE_FAKE=1:717 MUSIC_FAKE=0:75 MUSIC_FAKE=1:717 VOICE_FAKE=0:1 VOICE_FAKE=1:438 route=music:792
+speechfake                             691  FILE_FAKE=0:15 FILE_FAKE=1:676 VOICE_FAKE=0:15 VOICE_FAKE=1:676 route=voice:691
+musan_music                            645  FILE_FAKE=0:645 MUSIC_FAKE=0:645 VOICE_FAKE=0:187 route=music:645
+mlaad                                  630  FILE_FAKE=1:630 VOICE_FAKE=1:630 route=voice:630
+constructed_mix                        518  FILE_FAKE=0:117 FILE_FAKE=1:401 MUSIC_FAKE=0:403 MUSIC_FAKE=1:115 VOICE_FAKE=0:140 VOICE_FAKE=1:378 route=music:518
+constructed_song                       400  FILE_FAKE=0:316 FILE_FAKE=1:84 MUSIC_FAKE=0:316 MUSIC_FAKE=1:84 VOICE_FAKE=0:400 route=music:400
+openmic                                386  FILE_FAKE=0:386 MUSIC_FAKE=0:386 route=music:386
+vocalset                               385  FILE_FAKE=0:385 VOICE_FAKE=0:385 route=voice:385
+constructed_enhanced                   276  FILE_FAKE=0:276 VOICE_FAKE=0:276 route=voice:276
+zeroth                                  99  FILE_FAKE=0:99 VOICE_FAKE=0:99 route=voice:99
+generated_music                         56  FILE_FAKE=1:56 MUSIC_FAKE=1:56 route=music:56
+echoes                                  52  FILE_FAKE=1:52 MUSIC_FAKE=1:52 route=music:52
+existing:librispeech_test-clean          6  FILE_FAKE=0:6 VOICE_FAKE=0:6 route=voice:6
+sonics                                   6  FILE_FAKE=1:6 MUSIC_FAKE=1:6 route=music:6
+asvspoof2021_la                          5  FILE_FAKE=0:5 VOICE_FAKE=0:5 route=voice:5
+constructed_splice                       2  FILE_FAKE=1:2 VOICE_FAKE=1:2 route=voice:2
+asvspoof2021_df                          1  FILE_FAKE=0:1 VOICE_FAKE=0:1 route=voice:1
+source,dataset,route,license,newtest_fake,newtest_real,newval_fake,newval_real,train_fake,train_real,total
+atadd_singing,atadd,voice,AT-ADD-NC-research,2500,1000,929,273,5071,2727,12500
+atadd_speech,atadd,voice,AT-ADD-NC-research,2000,1000,762,293,4238,2707,11000
+atadd_music,atadd,music,AT-ADD-NC-research,2000,1500,590,414,3410,2586,10500
+gtsinger_ko,gtsinger_ko,voice,CC-BY-NC-SA-4.0+GTSinger-terms,0,880,0,0,0,257,1137
+haim_b6,haim_b6,music,CC-BY-NC-4.0,327,0,111,0,562,0,1000
+haim_b3,haim_b3,music,CC-BY-NC-4.0,209,0,107,0,384,0,700
+haim_b4,haim_b4,music,CC-BY-NC-4.0,209,0,107,0,384,0,700
+remix_d1,remix_d1,music,derived-NC-research,0,0,0,0,515,121,636
+openbmat,openbmat,music,AI-OpenBMAT,71,90,48,46,181,164,600
+gtsinger_ko_speech,gtsinger_ko_speech,voice,CC-BY-NC-SA-4.0+GTSinger-terms,0,383,0,0,0,120,503
+sdrr,sdrr,music,CC BY-NC-SA,0,146,0,71,0,279,496
+musdb,musdb,music,MUSDB18-HQ-research-NC,0,111,0,90,0,249,450

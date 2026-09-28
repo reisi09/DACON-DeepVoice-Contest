@@ -113,5 +113,7 @@ open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_S7_SSLAMWavLM/submit.zi
   Mac CPU QA 시간(273초)을 L4 전체 시간으로 환산하지 않는다.
 - **DB와 LB의 괴리**: S8은 DB에서 +0.0043(유의)이었는데 LB에서는 −0.0034였다. 이번 후보는 데이터 변경이고 세 평가셋이 같은 방향이지만, LB에서 뒤집힐 가능성은 남아 있다.
 - **라이선스 (2차 평가)**: AT-ADD(비상업 학술 목적 한정, YouTube 원천 포함)와 MUSDB18-HQ(재배포 조건 불명확)의 위험이 있다. top-15가 우선이라 감수하기로 했다(`LICENSES.md`).
-- **검증 한계**: E2의 80%가 AT-ADD다. E3는 real만 있어 한국어 fake 탐지는 측정하지 못한다. 한국어 fake 음성·노래 데이터는 여전히 0이다.
+- **검증 한계**: E2의 80%가 AT-ADD다. E3는 real만 있어 한국어 fake 탐지는 측정하지 못한다. (정정 2026-09-28 18:05) 한국어 fake 음성은 0이 아니다.
+  기존 bank에 MLAAD-ko 3,830, SpeechFake-ko 3,000, generated_music-ko 222행이 있다. 부족한 것은 생성기 계열의 다양성,
+  전화 채널을 거친 fake, 음성 복제(VC), 한국어 fake 노래다.
 - **선택 사항**: AT-ADD Track 1 eval(real·fake 각 1,000개)로 음성 회귀를 확인할 수 있다. HF 로그인이 다시 필요하고, 23시까지 끝나지 않으면 생략한다.
