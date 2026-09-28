@@ -2,6 +2,10 @@
 
 지금까지 진행한 딥보이스 탐지 실험의 모델·학습·추론 코드, 노트북, 설정과 결과 기록을 모았습니다. 원래 프로젝트의 상대 경로는 `repository/` 아래에 유지했습니다.
 
+- [협업 문서: 모델·데이터·검증 요약 — 2026-09-28](repository/docs/collab/README.md)
+- [Top-15 research plan across all branches — 2026-09-27](docs/TOP15_RESEARCH_PLAN_2026-09-27.md)
+- [Research results across all branches — 2026-09-27](docs/RESEARCH_RESULTS_2026-09-27.md)
+- [현재 계획과 남은 작업](plan.md)
 - [E08 성능 하락 진단·기존 DataV4와 CPU 비교](docs/E08_REGRESSION_2026-09-24.md)
 - [E08 제출 ZIP 생성·실제 음원 CPU 추론 검증](docs/E08_SUBMISSION_2026-09-24.md)
 - [완료 캐시 5,952개 보존·E08/기준선 학습 완료](docs/A100_PARTIAL_TRAINING_2026-09-24.md)
