@@ -15,6 +15,9 @@ fixed before any X2 result. Candidate CAND vs control CTRL, both DB protocol (sa
   (E3 Korean real FPR is scored on the Mac with score_e3.py and checked there: FPR increase <= 0.01.)
   MODE=x1 (X1 FILE rule, candidate 'CONFIG@B'): the target is the music-absent real FILE FPR at the candidate-specific
   old-val TPR-95 threshold, decrease >= 0.01 with group-bootstrap CI upper < 0, instead of T1/T2 (no bpanel needed).
+  MODE=x3 (X3 SONICS songs, fixed before any X3 result): T3 = FILE EER on E1 files with voice and music, decrease >= 0.01
+  with group CI upper < 0; T1 is a guard (dJ <= +0.02); P adds the real-song FILE FPR; AT-ADD singing (11 real singers)
+  passes with increase <= +0.010 in the full slice and in every leave-one-group-out subset of the smaller class.
   python x2_gates.py RUNS CTRL CAND NEW_ROWS BPANEL_RUNS BPANEL_ROWS INTEGRITY_JSON LINKED_JSON OUT_JSON"""
 import csv
 import itertools
@@ -233,6 +236,8 @@ res['P'] = {
     'singing_VOICE_EER': slice_eer([t for t in e2 if t[0]['source'] == 'atadd_singing'], 'VOICE'),
     'phone_FILE_EER': slice_eer([t for t in nat if t[0].get('codec_chain', '').startswith('tel')], 'FILE'),
     'sequential': 'N/A (no rows in any development set)'}
+if MODE == 'x3':   # X3 adds fake songs only: real songs must not turn fake (fixed before any result, review round 5)
+    res['P']['real_song_FILE_FPR'] = rate(mixed, 'FILE', 0, thr[CTRL]['FILE'], thr[CAND]['FILE'])
 
 
 def verdict_rate(x, lim=.01):
@@ -259,6 +264,21 @@ if MODE == 'x2':
     else:
         V_['T1'] = 'PASS' if res['T1']['delta'] <= -.02 and res['T1']['ci95'][1] < 0 else 'FAIL'
     V_['T2'] = 'PASS' if res['T2'] and res['T2']['delta'] is not None and res['T2']['delta'] <= -.02 else 'FAIL'
+elif MODE == 'x3':
+    # X3 (SONICS songs, fixed 2026-09-28 23:50 before any result): primary target = FILE EER on E1 files with both voice
+    # and music (songs / mixed), decrease >= 0.01 with group-bootstrap CI upper < 0; T1 broadcast is a guard (dJ <= +0.02)
+    songs = [t for t in e1 if V(t[0]) and Mu(t[0])]
+    fe = lambda rows, preds: eer(rows, preds, 'FILE')
+    res['T3'] = boot(songs, fe)
+    cg = defaultdict(set)
+    for t in songs:
+        cg[lab(t[0], 'FILE_FAKE')].add(t[0]['group_id'])
+    res['T3']['groups_per_class'] = {str(k): len(v) for k, v in cg.items()}
+    if res['T3']['ci95'] is None or res['T3']['delta'] is None or min(res['T3']['groups_per_class'].values() or [0]) < 20:
+        V_['T3'] = 'HOLD'
+    else:
+        V_['T3'] = 'PASS' if res['T3']['delta'] <= -.01 and res['T3']['ci95'][1] < 0 else 'FAIL'
+    V_['T1_guard'] = 'PASS' if res['T1']['delta'] is not None and res['T1']['delta'] <= .02 else 'FAIL'
 else:
     ta, tb = thr[CTRL]['FILE'], thr[CAND]['FILE']
     nm = [t for t in no_music_real if lab(t[0], 'FILE_FAKE') == 0]
@@ -284,6 +304,20 @@ for k, x in res['P'].items():
         V_[k] = verdict_eer(x)
     else:
         V_[k] = verdict_rate(x)
+if MODE == 'x3':
+    # AT-ADD singing has 11 real singers for every candidate, so the 20-group rule would HOLD by construction (review
+    # round 5, fixed before any X3 result): the increase must stay <= +0.010 in the full slice and with each group of the
+    # smaller class left out (jackknife)
+    sing = [t for t in e2 if t[0]['source'] == 'atadd_singing']
+    for comp in ('FILE', 'VOICE'):
+        k, x = f'singing_{comp}_EER', res['P'][f'singing_{comp}_EER']
+        if V_[k] != 'HOLD' or x['increase'] is None:
+            continue
+        small = min(x['groups_per_class'], key=x['groups_per_class'].get)
+        gs = sorted({t[0]['group_id'] for t in sing if keep(t[0], comp) and lab(t[0], COMP[comp][0]) == small})
+        jk = [slice_eer([t for t in sing if t[0]['group_id'] != gid], comp)['increase'] for gid in gs]
+        x['jackknife'] = {'left_out_class': small, 'n': len(jk), 'max_increase': None if None in jk else max(jk)}
+        V_[k] = 'PASS' if x['increase'] <= .010 and None not in jk and max(jk) <= .010 else 'FAIL'
 
 
 # S: per-seed paired comparison (each seed's members alone, same CDF/FILE procedure), target statistic of the mode
@@ -309,6 +343,10 @@ for k in range(3):
         obk = [t for t in e2k if t[0]['source'] == 'openbmat']
         rows_k = [t[0] for t in obk]
         seed_d.append(J(rows_k, [t[2] for t in obk]) - J(rows_k, [t[1] for t in obk]))
+    elif MODE == 'x3':
+        sk = [t for t in e1k if V(t[0]) and Mu(t[0])]
+        rows_k = [t[0] for t in sk]
+        seed_d.append(eer(rows_k, [t[2] for t in sk], 'FILE') - eer(rows_k, [t[1] for t in sk], 'FILE'))
     else:
         g_prev = g
         g = gk
