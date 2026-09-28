@@ -13,7 +13,7 @@ scp -q -P $PORT root@capella.cloud.vessl.ai:/root/proj/_workspace/final_${N}_202
   --antideepfake ad=_workspace/models/xls-r-1b-anti-deepfake-fp16 > $O.package.log 2>&1
 grep -E '"(sha256|bytes)"' $O.package.log | head -2
 .venv/bin/python verify_datav4_submission.py --out $O > $O/verify.log 2>&1 && echo "cpu verify ok"
-OMP_NUM_THREADS=6 HEADS=$H VERIFICATION=$O/qa/verification.json .venv/bin/python research/top15/work5/w/w_runtime_parity.py 2>&1 | grep -v -i warn > $O/runtime_parity.txt
+OMP_NUM_THREADS=6 HEADS=$H VERIFICATION=$O/qa/verification.json RECEIPT=$O/submit.json .venv/bin/python research/top15/work5/w/w_runtime_parity.py 2>&1 | grep -v -i warn > $O/runtime_parity.txt
 tail -1 $O/runtime_parity.txt
 rm -rf $S && mkdir -p $S/changed && .venv/bin/python - "$O" "$S/changed" <<'EOF'
 import json, sys, zipfile

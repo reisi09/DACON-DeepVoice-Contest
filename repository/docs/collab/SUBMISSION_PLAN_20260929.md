@@ -1,6 +1,6 @@
 # 2026-09-29 제출 계획과 판단 기준
 
-작성 2026-09-28 16:40 KST. 남은 제출은 3번이고, 마감은 09-29 10:00 KST다.
+작성 2026-09-28 16:40 KST, 수정 17:45 KST(Codex 15–21라운드 합의 반영). 남은 제출은 3번이고, 마감은 09-29 10:00 KST다.
 최종 점수는 대회 종료 시점의 최고 점수 하나다(Private = 종료 시점 Public). 따라서 낮게 나온 제출은 손해가 없고,
 쓰지 않은 제출은 마감과 함께 사라진다.
 
@@ -17,9 +17,9 @@
 | 순서 | 패키지 | 경로 | sha256 | 검증 상태 |
 |---|---|---|---|---|
 | ① | s7_new (S7 가중치 + 새 데이터 40,214행) | `submissions/DataV4_s7_new/submit.zip` | `fcdd86913360e4dc31caaaa8fa4ee801360f1b7a6e8d901020d324f7597e5162` | Mac CPU, 출력 일치(V 0.00018 / M 0.00089 / F 0.00011), VESSL CUDA 통과 |
-| ② | W_new (W 가중치 + 같은 새 데이터) | `submissions/DataV4_W_new/submit.zip` | `58e7e3bd460cde93b6cb65aae02da6985b9e2d5c17c5f9f88622f58df04d1c68` | Mac CPU, 출력 일치(V 0.00064 / M 0.00102 / F 0.0002), VESSL CUDA 통과 |
-| ③ 1순위 | W_newB (W_new + 조기 종료 val에 newval 추가) | `submissions/DataV4_W_newB/` (18시 전후 완료) | 완료 후 기록 | 자동 검증 진행 중 |
-| ③ 예비 | s7_new_ob (s7_new + AI-OpenBMAT 400행) | `submissions/DataV4_s7_new_ob/` | 완료 후 기록 | 자동 검증 진행 중 |
+| ② | W_newB (W_new + 조기 종료 val에 newval 추가) | `submissions/DataV4_W_newB/submit.zip` | `8d3b62d3ec80a84c6f89d93098b202a22d700f2efea82315304ae2bfd0a5f353` | Mac CPU, 출력 일치(V 0.00055 / M 0.00101 / F 0.00021), VESSL CUDA 통과 |
+| ③ 2순위 | s7_new_ob (s7_new + AI-OpenBMAT 400행) | `submissions/DataV4_s7_new_ob/submit.zip` | `e4205dcecbc32989ba899fe445cb455ff510882aade659605232e1fae4ea1070` | Mac CPU, 출력 일치(V 0.00018 / M 0.00028 / F 0.0001). **VESSL CUDA 미실행**(x1 정지 중) |
+| ③ 3순위 | W_new (W 가중치 + 같은 새 데이터) | `submissions/DataV4_W_new/submit.zip` | `58e7e3bd460cde93b6cb65aae02da6985b9e2d5c17c5f9f88622f58df04d1c68` | Mac CPU, 출력 일치(V 0.00064 / M 0.00102 / F 0.0002), VESSL CUDA 통과 |
 
 - 모든 패키지는 인코더와 실행 코드가 S7과 같고 head만 다르다. L4 실행 시간(약 30분)과 GPU 메모리도 S7과 같다.
 - FILE 규칙은 모두 0/9/1로 고정했다.
@@ -39,59 +39,50 @@
 - 가중치만 바꾼 W(새 데이터 없음)는 모든 평가셋에서 S7보다 나빠 후보에서 뺐다.
 - 원본 결과: `research/top15/work5/newdata/new_eval_newtest.json`, `leak_check.txt`, `e2_subsets.txt`, `new_eval_e3.json`.
 
-## 4. 첫 제출(s7_new)로 확인할 것
+## 4. 제출 순서와 결과 읽는 법 (Codex 15–21라운드 합의, 2026-09-28 17:45 KST)
 
-### 4.0 딱 하나만 본다면: 채점기의 fake가 우리 기존 학습 데이터에 없던 최신 생성기 위주인가
+순서는 LB 결과와 무관하게 고정한다. LB 점수로 레시피를 바꾸거나 새 학습을 하지 않는다.
 
-왜 이 하나인가:
-- DB와 LB의 0.07 차이(0.909 대 0.837)를 설명할 가장 유력한 가설이다. DB는 학습과 같은 계열의 생성기로 채점하고,
-  LB는 그렇지 않을 수 있다.
-- 오늘 밤 행동을 바꿀 수 있는 유일한 특징이다. 성분별 약점이나 한국어 fake 비중은 알아도 지금 고칠 데이터와 시간이 없다.
-  이 특징은 곧바로 남은 두 번의 선택으로 이어진다. 맞으면 새 생성기에 가장 강한 W_new, W_newB로 밀고, 아니면 s7 계열을 유지한다.
+| 순서 | 패키지 | 조건 |
+|---|---|---|
+| ① | s7_new | 없음 |
+| ② | W_newB | 없음 |
+| ③ 1순위 | mix: 음성 s7_new / 음악 W_new | presence 보완 검정 통과 + 패키지 검증 통과 (GPU 승인 필요) |
+| ③ 2순위 | s7_new_ob | VESSL CUDA 검증 통과 (GPU 승인 필요) |
+| ③ 3순위 | W_new | 위 둘이 없을 때. 이미 검증 완료 |
 
-어떻게 보나: s7_new 한 번이면 된다.
-- s7_new는 S7과 구조, 인코더, FILE 규칙이 같고 **학습 데이터만** 다르다.
-- P1에 추가한 새 행 40,214개 중 34,000개(약 85%)가 AT-ADD의 최신 생성기(TTS·SVC·TTM) 데이터다.
-  그래서 사실상 "최신 생성기 데이터를 넣으면 채점기 점수가 오르는가"만 바꾼 실험이다.
+- ③ 분기: mix가 통과하면 s7_new_ob 검증은 생략한다. mix가 탈락했을 때만 s7_new_ob를 검증하고, 실패하거나 GPU 상한
+  (모든 추가 작업 합계 0.5 H100시간)을 넘으면 W_new를 낸다. 검증을 통과한 mix를 다른 후보로 바꾸지 않는다.
+  보완 검정은 통과했지만 mix 패키지 검증이 실패하면, s7_new_ob 검증 없이 W_new를 낸다(0.57시간이 되어 상한 초과).
+- ①을 s7_new로 두는 이유: 두 후보 모두 오프라인 E2 향상이 +0.022를 넘고, s7_new가 E1 향상(+0.0064)이 크고
+  E3 한국어 real 오탐이 낮다(0.027 대 0.040). 실제 top-15 도달 확률은 알 수 없다.
 
-판정 (S7 ADS 0.8374 대비):
+결과 읽는 법 (S7 ADS 0.8373968254 대비):
+- ① s7_new − S7: 데이터 추가(40,214행), 재학습, CDF 재적합을 포함한 P1 레시피의 LB 차이.
+  생성기, 언어, real 구성 효과를 분리하지 못한다.
+- W_newB − s7_new: 가중치와 조기 종료(newval 추가) 변경의 합산 효과.
+- ③ − s7_new: s7_new_ob면 AI-OpenBMAT 400행 추가 효과, mix면 음악 레시피 교체 효과. W_new면 W_newB와 조기 종료만 다르다.
+- 참고: ADS 0.845는 S7 대비 +0.0076이다. top-15에는 약 +0.022가 필요하다.
 
-| s7_new − S7 | 뜻 |
-|---|---|
-| +0.02 이상 | 채점기 fake가 최신 생성기 위주다. 오프라인 E2(AT-ADD, +0.035)가 채점기를 잘 대변한다 |
-| +0.003~+0.01 | 기존 영역과 비슷하다. E1(+0.0064)이 채점기를 대변한다 |
-| 0 이하 | 최신 생성기와도 기존 영역과도 다른 제3의 분포다(예: 한국어 fake, 최신 상용 서비스). 우리 평가셋 어느 것도 채점기를 대변하지 못한다 |
-
-첫 제출은 점수 도전과 이 특징의 측정을 동시에 한다. 이보다 정보가 많은 정상 모델 제출은 없다.
-
-### 4.1 결과별 다음 제출
-
-핵심 질문은 **"실제 채점기가 E1(기존 영역)과 E2(새 생성기) 중 어느 쪽과 닮았나"**다.
-
-- 후보의 순위가 평가셋마다 뒤집힌다. E1에서는 s7_new가 1위이고, E2에서는 W_newB와 W_new가 1위다.
-- s7_new는 S7과 **학습 데이터만 다르다**. 그래서 LB 변화폭이 E1형(+0.006)에 가까운지 E2형(+0.03)에 가까운지로 채점기의 성격이 드러난다.
-- 덤으로, 오프라인 평가 중 어느 것을 모델 선택 기준으로 믿어야 하는지가 처음으로 실측된다.
-
-| s7_new ADS (S7 0.8374 대비) | 해석 | ② | ③ |
-|---|---|---|---|
-| 0.845 이상 (+0.008 이상) | 새 데이터가 확실히 통함. 채점기가 새 생성기(E2형) 쪽 | W_new | W_newB |
-| 0.838~0.845 | 조금 통함. 기존 영역(E1형)에 가까움 | W_new (가중치 효과 확인) | ①② 중 이긴 방향의 다음 단계 |
-| 0.834~0.838 | 차이 없음 (오차 범위) | W_newB (새 데이터를 가장 강하게 반영) | 결과를 보고 결정 |
-| 0.834 미만 | 새 데이터가 채점기에서 역효과. E2를 선택 기준으로 믿으면 안 됨 | 새 데이터가 아닌 방향으로 재검토 | 재검토 |
-
-②③의 점수도 모두 차이값으로 읽는다. ② − ① = 가중치 효과, ③ − ② = newval 조기 종료나 AI-OpenBMAT 보강의 효과.
+철회한 해석: 16:40 판의 4.0절은 "s7_new 한 번으로 채점기 fake가 최신 생성기 위주인지 판별한다"고 적었다.
+AT-ADD 34,000행은 fake 21,500 + real 12,500이고, 데이터 추가는 real 구성과 학습 가중치도 함께 바꾼다.
+그래서 LB 변화폭만으로 채점기의 성격을 판별할 수 없다. 4.1절의 LB 구간별 분기표도 같은 이유로 폐기했다.
 
 ## 5. 일정
 
 | 시각 (KST) | 할 일 |
 |---|---|
-| 09-28 18시 전후 | ③ 후보(W_newB, s7_new_ob) 패키징과 검증 완료. x1 자동 정지 |
+| 09-28 17:35 | 후보 zip 4개의 sha256 재확인 완료(receipt와 일치). GPU·CPU 워크스페이스 모두 정지 |
 | 09-29 00:00 | ① s7_new 제출 (업로드 9.75 GB) |
-| 약 00:40 | ① 결과 확인. 4절 표로 ②를 결정 |
-| ① 결과 직후 | ② 제출 |
-| ② 결과 직후 | ③ 제출. 늦어도 09:00 전에 업로드 시작 |
+| 약 00:40 | ① 결과 확인. 결과와 관계없이 ②는 W_newB |
+| ① 채점 완료 직후 | ② 제출. LB 해석 때문에 기다리지 않는다 |
+| ② 채점 완료 직후 | ③ 제출. 목표는 07:30 이전 업로드. 09:00은 목표가 아니라 위험한 최후 시각이다 |
 
 오늘(09-28) 제출 3번은 S6, S7, S8로 이미 썼다. 화면에 남은 횟수가 없으면 00:00 이후에 제출한다.
+
+업로드 직전 확인(매번): 파일 경로, 전체 sha256(5.1절 명령), 그 sha256의 검증 기록(submit.json, verify.log,
+runtime_parity.txt)을 대조한다. 제출 후 화면에서 파일명과 접수 상태를 확인하고 나서 재시도 여부를 정한다.
+가장 큰 zip도 9,745,305,856 bytes로, 10,000,000,000 bytes까지 254,694,144 bytes 여유가 있다.
 
 
 ## 5.1 제출 파일 열기 (Mac 터미널)
@@ -102,18 +93,24 @@ Finder에서 zip이 선택된 상태로 열린다. 업로드 전에 sha256을 �
 # ① s7_new
 open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_s7_new/submit.zip
 shasum -a 256 ~/Documents/ChatGPT/데이콘/submissions/DataV4_s7_new/submit.zip   # fcdd86913360e4dc31caaaa8fa4ee801360f1b7a6e8d901020d324f7597e5162
-# ② W_new
+# ② W_newB
+open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_W_newB/submit.zip
+shasum -a 256 ~/Documents/ChatGPT/데이콘/submissions/DataV4_W_newB/submit.zip   # 8d3b62d3ec80a84c6f89d93098b202a22d700f2efea82315304ae2bfd0a5f353
+# ③ s7_new_ob (CUDA 검증을 통과한 경우만)
+open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_s7_new_ob/submit.zip
+shasum -a 256 ~/Documents/ChatGPT/데이콘/submissions/DataV4_s7_new_ob/submit.zip  # e4205dcecbc32989ba899fe445cb455ff510882aade659605232e1fae4ea1070
+# ③ W_new (mix와 s7_new_ob가 없을 때)
 open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_W_new/submit.zip
 shasum -a 256 ~/Documents/ChatGPT/데이콘/submissions/DataV4_W_new/submit.zip    # 58e7e3bd460cde93b6cb65aae02da6985b9e2d5c17c5f9f88622f58df04d1c68
-# ③ W_newB (1순위) / s7_new_ob (예비): 완성 후 submit.json의 sha256과 대조
-open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_W_newB/submit.zip
-open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_s7_new_ob/submit.zip
 # 현재 최고 S7
 open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_S7_SSLAMWavLM/submit.zip
 ```
 
 ## 6. 남은 위험
 
+- **L4 실행 시간·메모리 (60분, 22.4 GiB)**: 같은 인코더와 Engine을 쓰는 S7이 실제로 채점됐고, 새 패키지는 head
+  가중치와 표만 다르다(변경 member 19개). 그래서 위험은 낮다고 본다. 다만 새 zip 각각을 L4에서 직접 측정하지는 않았다.
+  Mac CPU QA 시간(273초)을 L4 전체 시간으로 환산하지 않는다.
 - **DB와 LB의 괴리**: S8은 DB에서 +0.0043(유의)이었는데 LB에서는 −0.0034였다. 이번 후보는 데이터 변경이고 세 평가셋이 같은 방향이지만, LB에서 뒤집힐 가능성은 남아 있다.
 - **라이선스 (2차 평가)**: AT-ADD(비상업 학술 목적 한정, YouTube 원천 포함)와 MUSDB18-HQ(재배포 조건 불명확)의 위험이 있다. top-15가 우선이라 감수하기로 했다(`LICENSES.md`).
 - **검증 한계**: E2의 80%가 AT-ADD다. E3는 real만 있어 한국어 fake 탐지는 측정하지 못한다. 한국어 fake 음성·노래 데이터는 여전히 0이다.

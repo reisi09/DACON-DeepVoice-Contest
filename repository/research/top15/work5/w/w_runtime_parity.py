@@ -17,8 +17,10 @@ for s in (41, 42, 43):
 spec = json.loads((F / 'component_fusion.json').read_text())['voice']; layers = json.loads((F / 'music_layers.json').read_text()); eat_layers = json.loads((F / 'music_eat_layers.json').read_text()); sslam_layers = json.loads((F / 'music_sslam_layers.json').read_text()); (wl,) = json.loads((F / 'voice_wavlm_layer.json').read_text())
 wav = [voice_heads.load(torch.load(F / f'wavlm_{s}.pt', weights_only=True)).eval() for s in (41, 42, 43)]
 ver = json.loads(Path(os.environ.get('VERIFICATION', 'submissions/DataV4_S7_SSLAMWavLM/qa/verification.json')).read_text())
-if os.environ.get('RECEIPT'):   # the runtime predictions must come from exactly this package
-    assert ver['submission_sha256'] == json.loads(Path(os.environ['RECEIPT']).read_text())['sha256'], 'verification is of another package'
+assert os.environ.get('RECEIPT'), 'RECEIPT (the package submit.json) is required'
+assert ver['submission_sha256'] == json.loads(Path(os.environ['RECEIPT']).read_text())['sha256'], 'verification is of another package'
+assert ver.get('device', 'cpu') == os.environ.get('DEVICE_EXPECTED', 'cpu'), f"verification device {ver.get('device')}"
+
 runtime = {r['ID']: r for r in ver['predictions']}
 import decision_heads
 ensemble = json.loads((F / 'file_ensemble.json').read_text())
@@ -42,6 +44,7 @@ with zipfile.ZipFile(h) as z, torch.no_grad():
         vals = [float(r[k]) for k in ('FILE_FAKE_PROB', 'VOICE_FAKE_PROB', 'MUSIC_FAKE_PROB', 'VOICE_PRESENT_PROB', 'MUSIC_PRESENT_PROB')]
         assert all(np.isfinite(vals)), s['ID']
         ff = decision_heads.file_score(ensemble, dict(Pv=float(r['VOICE_PRESENT_PROB']), Pm=float(r['MUSIC_PRESENT_PROB']), Fv=fv, Fm=fm))
+        assert all(np.isfinite([fv, fm, ff])), f"nonfinite offline reference for {s['ID']}"
         dv, dm, df = abs(fv - float(r['VOICE_FAKE_PROB'])), abs(fm - float(r['MUSIC_FAKE_PROB'])), abs(ff - float(r['FILE_FAKE_PROB']))
         worst = {'voice': max(worst['voice'], dv), 'music': max(worst['music'], dm), 'file': max(worst['file'], df)}
         print(f"{s['ID'][:34]:34s} voice offline {fv:.4f} runtime {float(r['VOICE_FAKE_PROB']):.4f} | music offline {fm:.4f} runtime {float(r['MUSIC_FAKE_PROB']):.4f}")
