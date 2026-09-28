@@ -1,0 +1,168 @@
+{
+ "ctrl": "s7_new",
+ "cand": "s7_new@B",
+ "n_e1": 4822,
+ "n_e2_clean": 12336,
+ "n_bpanel": 0,
+ "T1": {
+  "delta": 0.01256,
+  "n_rows": 82,
+  "n_groups": 79,
+  "ci95": [
+   -0.02524,
+   0.03084
+  ],
+  "undefined_resamples": 0
+ },
+ "T2": null,
+ "N1": {
+  "delta": -0.00152,
+  "n_rows": 17158,
+  "n_groups": 11568,
+  "ci95": [
+   -0.00337,
+   0.0002
+  ],
+  "undefined_resamples": 0
+ },
+ "N2": {
+  "min": -0.00181,
+  "max": 0.00106,
+  "n_points": 45,
+  "finite": true,
+  "worst_marginal_error": 0.3
+ },
+ "P": {
+  "music_absent_real_FILE_FPR": {
+   "ctrl": 0.0179,
+   "cand": 0.0136,
+   "increase": -0.0042,
+   "n": 4982,
+   "groups": 1619
+  },
+  "mixed_FILE_EER": {
+   "ctrl": 0.07803976486297248,
+   "cand": 0.07938398658220835,
+   "increase": 0.0013,
+   "n": 1651,
+   "groups_per_class": {
+    "0": 151,
+    "1": 704
+   }
+  },
+  "lowPm_le0.1_FILE_FNR": {
+   "ctrl": 0.4419,
+   "cand": 0.4419,
+   "increase": 0.0,
+   "n": 43,
+   "groups": 43
+  },
+  "lowPm_0.1_0.5_FILE_FNR": {
+   "ctrl": 0.4366,
+   "cand": 0.5915,
+   "increase": 0.1549,
+   "n": 71,
+   "groups": 62
+  },
+  "realV_fakeM_FILE_FNR": {
+   "ctrl": 0.3721,
+   "cand": 0.3721,
+   "increase": 0.0,
+   "n": 86,
+   "groups": 23
+  },
+  "realV_fakeM_MUSIC_FNR": {
+   "ctrl": 0.2558,
+   "cand": 0.2558,
+   "increase": 0.0,
+   "n": 86,
+   "groups": 23
+  },
+  "realV_fakeM_VOICE_FPR": {
+   "ctrl": 0.0233,
+   "cand": 0.0233,
+   "increase": 0.0,
+   "n": 86,
+   "groups": 23
+  },
+  "music_only_FILE_EER": {
+   "ctrl": 0.09941914572703064,
+   "cand": 0.09941914572703064,
+   "increase": 0.0,
+   "n": 804,
+   "groups_per_class": {
+    "0": 163,
+    "1": 57
+   }
+  },
+  "singing_FILE_EER": {
+   "ctrl": 0.15090000000000003,
+   "cand": 0.14999999999999997,
+   "increase": -0.0009,
+   "n": 3500,
+   "groups_per_class": {
+    "0": 11,
+    "1": 2500
+   }
+  },
+  "singing_VOICE_EER": {
+   "ctrl": 0.06109999999999999,
+   "cand": 0.06109999999999999,
+   "increase": 0.0,
+   "n": 3500,
+   "groups_per_class": {
+    "0": 11,
+    "1": 2500
+   }
+  },
+  "phone_FILE_EER": {
+   "ctrl": 0.08662851955039708,
+   "cand": 0.088719114787005,
+   "increase": 0.0021,
+   "n": 1005,
+   "groups_per_class": {
+    "0": 356,
+    "1": 289
+   }
+  },
+  "sequential": "N/A (no rows in any development set)"
+ },
+ "X1_target": {
+  "ctrl_fpr": 0.0179,
+  "cand_fpr": 0.0136,
+  "delta": -0.0042,
+  "ci95": [
+   -0.016,
+   0.0018
+  ],
+  "n_rows": 4982,
+  "n_groups": 1619
+ },
+ "S": {
+  "per_seed_delta": [
+   -0.00462,
+   -0.00321,
+   -0.00442
+  ]
+ },
+ "verdicts": {
+  "X1_target": "FAIL",
+  "N1": "FAIL",
+  "N2": "FAIL",
+  "music_absent_real_FILE_FPR": "PASS",
+  "mixed_FILE_EER": "PASS",
+  "lowPm_le0.1_FILE_FNR": "PASS",
+  "lowPm_0.1_0.5_FILE_FNR": "FAIL",
+  "realV_fakeM_FILE_FNR": "PASS",
+  "realV_fakeM_MUSIC_FNR": "PASS",
+  "realV_fakeM_VOICE_FPR": "PASS",
+  "music_only_FILE_EER": "PASS",
+  "singing_FILE_EER": "HOLD",
+  "singing_VOICE_EER": "HOLD",
+  "phone_FILE_EER": "PASS",
+  "sequential": "N/A",
+  "S": "PASS"
+ },
+ "offline_gates_pass": false,
+ "adoption": "rejected"
+}

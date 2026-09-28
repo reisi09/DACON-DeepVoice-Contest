@@ -1,0 +1,37 @@
+E1 rows 4822
+s7_ref E1 ADS 0.90899
+s7_new E1 ADS 0.9154
+W_newB E1 ADS 0.91221
+
+== by type  (FILE / VOICE / MUSIC EER; "-" = single-class or absent)
+  voice                        n= 2673 | s7_ref 0.015/0.015/- | s7_new 0.013/0.012/- | W_newB 0.016/0.016/-
+  mixed                        n= 1228 | s7_ref 0.115/0.121/0.123 | s7_new 0.107/0.106/0.112 | W_newB 0.094/0.115/0.111
+  music                        n=  921 | s7_ref 0.195/-/0.191 | s7_new 0.199/-/0.194 | W_newB 0.182/-/0.177
+
+== by channel  (FILE / VOICE / MUSIC EER; "-" = single-class or absent)
+  nontel                       n= 3817 | s7_ref 0.068/0.053/0.127 | s7_new 0.062/0.055/0.118 | W_newB 0.069/0.069/0.105
+  tel                          n= 1005 | s7_ref 0.092/0.083/0.168 | s7_new 0.087/0.089/0.188 | W_newB 0.082/0.094/0.161
+
+== by lang  (FILE / VOICE / MUSIC EER; "-" = single-class or absent)
+  other                        n= 2802 | s7_ref 0.113/0.094/0.139 | s7_new 0.105/0.086/0.130 | W_newB 0.103/0.098/0.122
+  ko                           n= 2020 | s7_ref 0.008/0.008/- | s7_new 0.006/0.006/- | W_newB 0.007/0.008/-
+
+== by source  (FILE / VOICE / MUSIC EER; "-" = single-class or absent)
+  fleurs_ko                    n= 1143 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  haim                         n=  593 | s7_ref 0.113/0.042/0.123 | s7_new 0.113/0.027/0.128 | W_newB 0.113/0.037/0.142
+  speechfake                   n=  503 | s7_ref 0.000/0.000/- | s7_new 0.000/0.000/- | W_newB 0.000/0.000/-
+  musan_music                  n=  503 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  mlaad                        n=  451 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  constructed_mix              n=  393 | s7_ref 0.137/0.104/0.178 | s7_new 0.129/0.102/0.121 | W_newB 0.117/0.104/0.152
+  constructed_song             n=  298 | s7_ref 0.201/-/0.201 | s7_new 0.215/-/0.203 | W_newB 0.215/-/0.182
+  openmic                      n=  278 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  vocalset                     n=  277 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  constructed_enhanced         n=  215 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  zeroth                       n=   72 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  echoes                       n=   40 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  generated_music              n=   40 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  existing:librispeech_test-clean n=    5 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  asvspoof2021_la              n=    4 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  sonics                       n=    4 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  constructed_splice           n=    2 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-
+  asvspoof2021_df              n=    1 | s7_ref -/-/- | s7_new -/-/- | W_newB -/-/-

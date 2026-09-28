@@ -1,0 +1,17 @@
+{
+ "created_kst": "2026-09-28 22:21",
+ "n": 800,
+ "ids_sha256": "c767fc86f1aec7749046474a9b0341c354bad607fe6ba065301144793319b9e6",
+ "audio_sha256_of_sorted": "bcc83630fa8c18fa15592a473b6d62d716038d313c3671b9d5ccf67284736914",
+ "labels_sha256": "fdfff8d0e1fc98844d1c1b2df507c0dde07e9a4c4696a74e51517005fcb2c455",
+ "counts": {
+  "atadd_speech|FILE=1": 150,
+  "atadd_speech|FILE=0": 150,
+  "atadd_singing|FILE=1": 100,
+  "atadd_music|FILE=1": 100,
+  "atadd_music|FILE=0": 100,
+  "openbmat|FILE=1": 100,
+  "openbmat|FILE=0": 100
+ },
+ "rule": "score once after the final candidate is fixed"
+}

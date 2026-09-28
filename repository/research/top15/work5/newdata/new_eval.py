@@ -25,6 +25,8 @@ RUNS, REF = Path(sys.argv[1]), sys.argv[2]
 CONFIGS = sys.argv[3:] or sorted(p.name for p in RUNS.iterdir() if p.is_dir())
 FILES = {'df': 'voice_df__L.json', 'ad': 'voice_ad__L.json', 'wavlm': 'voice_new__wavlm8.json', 'music': 'music_new__mert6_12+eat16+sslampt5.json'}
 S7_FILE = {'max': 0., 'noisy_or': 9., 'max_nopresence': 1.}
+# X1 (design 2026-09-28): a config named 'CONFIG@B' is CONFIG's heads with FILE rule B (noisy_or only, no max_nopresence)
+FILE_RULES = {'B': {'max': 0., 'noisy_or': 1., 'max_nopresence': 0.}}
 NEW = {r['ID']: r for f in os.environ['NEW_ROWS'].split(',') for r in csv.DictReader(open(f))}
 val, test = E.rows['val'], E.rows['test']
 EVAL = os.environ.get('EVAL_SPLITS', 'newtest').split(',')
@@ -58,7 +60,7 @@ def predictions(c):
                   'Fv': 0. if silent[r['ID']] else E.fuse(spec, {key(n): M[n][r['ID']] for n in voice})}
                  for r in rows] for s, rows in (('val', val), ('test', test), ('newtest', newtest))}
     ens = F.file_preds({'val': files['val']}, val)[0]
-    ens = {**ens, 'weights': dict(S7_FILE)}
+    ens = {**ens, 'weights': dict(FILE_RULES[c.rsplit('@', 1)[1]] if '@' in c else S7_FILE)}
     return {s: [{'ID': f['ID'], 'FILE_FAKE_PROB': dh.file_score(ens, f), 'VOICE_FAKE_PROB': f['Fv'], 'MUSIC_FAKE_PROB': f['Fm'],
                  'VOICE_PRESENT_PROB': f['Pv'], 'MUSIC_PRESENT_PROB': f['Pm']} for f in fs] for s, fs in files.items()}
 

@@ -58,6 +58,9 @@ def lab(r, c):
 
 
 def eer(t, s):
+    """EER; NaN when t holds a single class (EER is undefined there)."""
+    if len(np.unique(t)) < 2:
+        return float('nan')
     from sklearn.metrics import roc_curve
     fpr, tpr, _ = roc_curve(t, s, drop_intermediate=False)
     i = np.argmin(np.abs(fpr - (1 - tpr)))
@@ -105,10 +108,14 @@ class Boot:
         return .5 * (1 - e['file']) + .2 * (1 - e['voice']) + .3 * (1 - e['music'])
 
     def delta(self, a, b):
-        """ADS(b) - ADS(a) with its group-bootstrap distribution."""
+        """ADS(b) - ADS(a) with its group-bootstrap distribution. Resamples where an EER is undefined (one class) are
+        dropped and counted; an undefined point estimate is reported as None, never as p_gt_0 = 0."""
         d = np.array([self.ads(b, i) - self.ads(a, i) for i in self.idx])
-        return {'delta': round(self.ads(b) - self.ads(a), 5), 'ci95': np.percentile(d, [2.5, 97.5]).round(5).tolist(),
-                'p_gt_0': float((d > 0).mean())}
+        ok, point = np.isfinite(d), self.ads(b) - self.ads(a)
+        if not np.isfinite(point) or not ok.any():
+            return {'delta': None, 'ci95': None, 'p_gt_0': None, 'undefined_resamples': int((~ok).sum())}
+        return {'delta': round(point, 5), 'ci95': np.percentile(d[ok], [2.5, 97.5]).round(5).tolist(),
+                'p_gt_0': float((d[ok] > 0).mean()), 'undefined_resamples': int((~ok).sum())}
 
 
 # ------------------------------------------------------------------------------------------------ DB protocol gate

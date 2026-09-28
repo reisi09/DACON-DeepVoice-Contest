@@ -1,0 +1,25 @@
+atadd speech fake 150 from {'BigVGAN': 19790, 'ChatTTS': 3916, 'CosyVoice2': 3803, 'CosyVoice3': 3867, 'DiffGANTTS': 7920, 'E2TTS': 3848, 'F5TTS': 3851, 'FireRedTTS2': 3692, 'Fish': 3440, 'GPTSoVITS': 3920, 'HiFiGAN': 11847, 'IndexTTS1.5': 3855, 'IndexTTS2': 3187, 'Llasa3B': 3860, 'Llasa8B': 3873, 'MBMelGAN': 3893, 'OpenVoice2': 3920, 'ParallelWaveGAN': 3888, 'SeedVC1': 3920, 'SparkTTS': 3723, 'StepAudioTTS': 3213, 'StyleMelGAN': 3892, 'StyleSpeech': 3864, 'StyleTTS2': 3838, 'VITS': 2385}
+atadd speech real 150 from {'3D-Speaker': 629, 'Common Voice': 4782, 'EchoFake': 1410, 'LibriTTS-R': 67, 'Others': 2847}
+atadd singing fake 100 from {'Free-SVC': 4500, 'KNN-SVC': 4500, 'RVC-FSD': 253, 'So-VITS-SVC-FSD': 3079, 'VEVO1.5': 4500}
+atadd singing real 0 from {}
+atadd music fake 100 from {'ACE-Step': 4906, 'Musictango': 5021, 'SSM-TTM': 5021, 'Uniaudio2': 4926}
+atadd music real 100 from {'FMA': 4478, 'FortisAVQA': 4481, 'MusicCaps': 37}
+openbmat ai 100 from 300 clean of 1647
+openbmat human 100 from 314 clean of 1647
+{
+ "created_kst": "2026-09-28 22:21",
+ "n": 800,
+ "ids_sha256": "c767fc86f1aec7749046474a9b0341c354bad607fe6ba065301144793319b9e6",
+ "audio_sha256_of_sorted": "bcc83630fa8c18fa15592a473b6d62d716038d313c3671b9d5ccf67284736914",
+ "labels_sha256": "fdfff8d0e1fc98844d1c1b2df507c0dde07e9a4c4696a74e51517005fcb2c455",
+ "counts": {
+  "atadd_speech|FILE=1": 150,
+  "atadd_speech|FILE=0": 150,
+  "atadd_singing|FILE=1": 100,
+  "atadd_music|FILE=1": 100,
+  "atadd_music|FILE=0": 100,
+  "openbmat|FILE=1": 100,
+  "openbmat|FILE=0": 100
+ },
+ "rule": "score once after the final candidate is fixed"
+}

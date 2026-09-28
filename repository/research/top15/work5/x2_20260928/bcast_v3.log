@@ -1,0 +1,5 @@
+train speakers 310 real music 893 fake music 1443 generators ['Echoes/ATA', 'Echoes/TTA', 'MusicGen_medium', 'acestep', 'audioldm', 'audioldm2', 'brev', 'diffrhythm', 'elevenlabs', 'mubert', 'musicgen', 'musicldm', 'mustango', 'producer', 'songgen', 'stable_audio_open', 'stableaudio', 'suno', 'udio']
+panel speakers 487 real music 546 fake music 96 generators ['Echoes/ATA', 'Echoes/TTA', 'Lyria-3 Pro', 'acestep', 'fx_encoder_style_transfer', 'suno', 'udio']
+pairs per cell {('train', -20, 2.0): 100, ('train', -20, 6.0): 100, ('train', -15, 2.0): 100, ('train', -15, 6.0): 100, ('train', -10, 2.0): 100, ('train', -10, 6.0): 100, ('bpanel', -20, 2.0): 30, ('bpanel', -20, 6.0): 30, ('bpanel', -15, 2.0): 30, ('bpanel', -15, 6.0): 30, ('bpanel', -10, 2.0): 30, ('bpanel', -10, 6.0): 30}
+components train 9 panel 3
+rows 1560
