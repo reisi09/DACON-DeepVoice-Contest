@@ -1,0 +1,44 @@
+{
+  "status": "verified_real_multi_member_range",
+  "range": [
+    2683602,
+    6876401
+  ],
+  "expected_and_received_bytes": 4192800,
+  "original_archive_total_bytes": 7640952520,
+  "selected_members": [
+    {
+      "member": "LA/ASVspoof2019_LA_train/flac/LA_T_4436477.flac",
+      "source_bytes": 53653,
+      "source_sha256": "2970dc5f0b6313973393e5dd0848ea12579b55485075444f3aa55f6c3ccb359f",
+      "pcm_sha256": "a98ec8f0128b7d0d72be19def7567a45bb9050aca55b22d96161620a83f65163"
+    },
+    {
+      "member": "LA/ASVspoof2019_LA_train/flac/LA_T_7880477.flac",
+      "source_bytes": 56661,
+      "source_sha256": "faef8b0a08df35c6e0bd5202a1d4c4f16e671d746f5b05d82d8da2e2405ebcf0",
+      "pcm_sha256": "fa94e0baba95ebae36a996d72645f96a798a1482676cd8c91b95aecf2355fff2"
+    },
+    {
+      "member": "LA/ASVspoof2019_LA_train/flac/LA_T_2457740.flac",
+      "source_bytes": 64672,
+      "source_sha256": "c0142a98c5846813e4998bf14d8f1ddd14a9400476c9b15cf09d57596ae9d10b",
+      "pcm_sha256": "f72350594855d779a12614f9d63d495c7974dd8a57d97bf3b741751cf5aea021"
+    },
+    {
+      "member": "LA/ASVspoof2019_LA_train/flac/LA_T_3352782.flac",
+      "source_bytes": 36417,
+      "source_sha256": "2b645700d1bbdad3dad5eef3a61dd9b735dfe8cda7640a7dd26e8ab09bc39d5c",
+      "pcm_sha256": "ec3e25c70189c010b8c11d329fcc766c99cd99faca4ed222d7831fbd117d6572"
+    },
+    {
+      "member": "LA/ASVspoof2019_LA_train/flac/LA_T_8756841.flac",
+      "source_bytes": 61788,
+      "source_sha256": "a34d9742006430066419d3d86411f1610a9a7f6c4179ca9778cca172c85dba78",
+      "pcm_sha256": "5b34059ad1eb19458f5dff9ff87e90affc6b1f699d4c91f69a83bfc2198f4c9b"
+    }
+  ],
+  "member_crc_verified": true,
+  "full_native_and_canonical_decoder_parity": true,
+  "unselected_gap_bytes_retained": false
+}

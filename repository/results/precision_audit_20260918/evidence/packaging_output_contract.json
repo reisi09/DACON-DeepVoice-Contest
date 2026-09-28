@@ -1,0 +1,106 @@
+{
+  "scope": "Fresh CPU checks execute packaged-baseline-identical CSV functions and current archived-identical scoring validator; no model inference. Fresh recomputation of saved A100 CSV/hash/parity evidence.",
+  "contract_checks": {
+    "sample_order_overrides_filename_sort": true,
+    "duplicate_sample_id": {
+      "rejected": true,
+      "reason": "Duplicate ID in sample submission: B"
+    },
+    "missing_audio_id": {
+      "rejected": true,
+      "reason": "Test audio and sample submission IDs do not match. Missing: ['B'], Extra: []"
+    },
+    "unexpected_audio_id": {
+      "rejected": true,
+      "reason": "Test audio and sample submission IDs do not match. Missing: [], Extra: ['C']"
+    },
+    "duplicate_audio_stems": {
+      "rejected": true,
+      "reason": "Audio IDs must be unique"
+    },
+    "reordered_predictions": {
+      "rejected": true,
+      "reason": "Prediction IDs must match the expected unique IDs in order"
+    },
+    "nonfinite_probability": {
+      "rejected": true,
+      "reason": "Probability outside finite [0, 1] for B/MUSIC_FAKE_PROB"
+    },
+    "out_of_range_probability": {
+      "rejected": true,
+      "reason": "Probability outside finite [0, 1] for B/FILE_FAKE_PROB"
+    },
+    "extra_prediction_column": {
+      "rejected": true,
+      "reason": "Prediction B must have exactly the six submission columns"
+    },
+    "saved_exact_schema_order": true
+  },
+  "saved_a100_outputs_reverified": {
+    "final_smoke_original": {
+      "columns_exact": true,
+      "rows": 4,
+      "IDs": [
+        "core_000209f68a0dc6367dcb_base",
+        "core_2d2bc674537639d1d836_base",
+        "core_80692bf518679d1acdbb_base",
+        "core_ffccfbb2f7762a614a08_base"
+      ],
+      "finite_range_and_unique_ids": true,
+      "csv_hash_matches_runtime_receipt": true,
+      "manifest_matches_final_zip": true,
+      "max_same_id_probability_error": null,
+      "seconds": 52.37208762206137,
+      "peak_gpu_allocated_bytes": 6556092416
+    },
+    "final_smoke_permuted": {
+      "columns_exact": true,
+      "rows": 4,
+      "IDs": [
+        "core_ffccfbb2f7762a614a08_base",
+        "core_80692bf518679d1acdbb_base",
+        "core_2d2bc674537639d1d836_base",
+        "core_000209f68a0dc6367dcb_base"
+      ],
+      "finite_range_and_unique_ids": true,
+      "csv_hash_matches_runtime_receipt": true,
+      "manifest_matches_final_zip": true,
+      "max_same_id_probability_error": 0.0,
+      "seconds": 32.56300185294822,
+      "peak_gpu_allocated_bytes": 6556092416
+    },
+    "final_smoke_subset": {
+      "columns_exact": true,
+      "rows": 2,
+      "IDs": [
+        "core_000209f68a0dc6367dcb_base",
+        "core_2d2bc674537639d1d836_base"
+      ],
+      "finite_range_and_unique_ids": true,
+      "csv_hash_matches_runtime_receipt": true,
+      "manifest_matches_final_zip": true,
+      "max_same_id_probability_error": 0.0,
+      "seconds": 31.39791004685685,
+      "peak_gpu_allocated_bytes": 6556092416
+    },
+    "final_supplemental_qa": {
+      "columns_exact": true,
+      "rows": 3,
+      "IDs": [
+        "qa_silence_4s",
+        "qa_real_stereo_60s",
+        "qa_codec_mp3_6s"
+      ],
+      "finite_range_and_unique_ids": true,
+      "csv_hash_matches_runtime_receipt": true,
+      "manifest_matches_final_zip": true,
+      "max_same_id_probability_error": null,
+      "seconds": 33.32471755100414,
+      "peak_gpu_allocated_bytes": 6555433472
+    }
+  },
+  "cached_raw_error_initial": 0.00019127128483675815,
+  "cached_raw_error_final": 3.971516315814938e-08,
+  "fixed_tolerance": 1e-05,
+  "initial_failed_final_passes": true
+}

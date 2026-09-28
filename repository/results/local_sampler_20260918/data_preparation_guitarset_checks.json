@@ -1,0 +1,25 @@
+{
+  "retained_parent_check": {
+    "command": ".venv/bin/python new_panel_data_guitarset.py --verify",
+    "protects_against": [
+      "Retained WAV mutation or decoded-content mismatch",
+      "Duplicate parent content or splitting matched variants into independent performers",
+      "Unknown voice authenticity incorrectly converted to real voice",
+      "Transfer receipts claiming a successful full-body response as a byte range"
+    ]
+  },
+  "negative_network_checks": {
+    "executed": true,
+    "result": "PASS",
+    "ignored_range": "Injected status-200 response into the opener; fetch raised DataIntegrityError and response.read.assert_not_called() passed.",
+    "redirect": "Called DirectResponseOnly.http_error_302 with a BytesIO redirect body and Location header; handler declined with None and body.tell() remained zero.",
+    "initial_check_correction": "The first test incorrectly expected HTTPError directly from the redirect handler. urllib's opener owns that final error; the corrected check verifies declined redirect and unread body."
+  },
+  "independent_review": {
+    "finding": "urllib default redirect handler may consume an unmetered redirect body.",
+    "fix": "DirectResponseOnly disables automatic redirect following before body consumption.",
+    "remaining_actionable_findings": 0
+  },
+  "code_audit": "programming/check-no-excuse-rules.py: no violations in 1 file",
+  "scope": "No GPU execution, model training, model evaluation, official score, or independent audio listening."
+}

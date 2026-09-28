@@ -1,0 +1,6824 @@
+{
+  "status": "budget_stop",
+  "epochs_completed": 6,
+  "updates": 300,
+  "seconds": 855.4896735340003,
+  "best_path": "/content/dacon_v5/trials/B2_voice/best.pt",
+  "final_path": null,
+  "epoch_metrics": [
+    {
+      "epoch": 1,
+      "updates": 50,
+      "train_loss": 0.671299624973908,
+      "seconds": 140.6913359240002,
+      "source_exposures": {
+        "mlaad:pink_fairy_book_33_f000072": 2,
+        "mlaad:wives_and_daughters_20_f000117": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000217": 2,
+        "mlaad:hunters_space_02_f000017": 2,
+        "mlaad:rinkitink_baum_07_64kb_f000059": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000103": 2,
+        "mlaad:jane_eyre_01_f000093": 2,
+        "mlaad:northandsouth_25_f000030": 2,
+        "mlaad:jane_eyre_05_f000186": 2,
+        "mlaad:wives_and_daughters_52_f000098": 2,
+        "mlaad:pink_fairy_book_13_f000137": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000206": 2,
+        "mlaad:jane_eyre_30_f000198": 2,
+        "mlaad:poisoned_pen_07_f000388": 2,
+        "mlaad:jane_eyre_15_f000215": 2,
+        "mlaad:hunters_space_03_f000076": 2,
+        "mlaad:wives_and_daughters_29_f000092": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000036": 2,
+        "mlaad:poisoned_pen_06_f000019": 2,
+        "mlaad:northandsouth_16_f000112": 2,
+        "mlaad:northandsouth_35_f000262": 2,
+        "mlaad:midnight_passenger_06_f000078": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000030": 2,
+        "mlaad:pink_fairy_book_29_f000036": 2,
+        "mlaad:emerald_city_of_oz_14_f000084": 2,
+        "mlaad:jane_eyre_34_f000126": 2,
+        "mlaad:wives_and_daughters_39_f000098": 2,
+        "mlaad:pink_fairy_book_31_f000105": 2,
+        "mlaad:dorothy_and_wizard_oz_18_f000014": 2,
+        "mlaad:jane_eyre_27_f000167": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000128": 2,
+        "mlaad:dorothy_and_wizard_oz_08_f000005": 2,
+        "mlaad:pink_fairy_book_14_f000090": 2,
+        "mlaad:jane_eyre_15_f000223": 2,
+        "mlaad:midnight_passenger_04_f000042": 2,
+        "mlaad:emerald_city_of_oz_20_f000104": 2,
+        "mlaad:midnight_passenger_08_f000059": 2,
+        "mlaad:dorothy_and_wizard_oz_14_f000119": 2,
+        "mlaad:midnight_passenger_05_f000214": 2,
+        "mlaad:wives_and_daughters_47_f000218": 2,
+        "mlaad:skyisland_11_baum_64kb_f000054": 2,
+        "mlaad:emerald_city_of_oz_11_f000026": 2,
+        "mlaad:skyisland_30_baum_64kb_f000049": 2,
+        "mlaad:poisoned_pen_07_f000386": 2,
+        "mlaad:northandsouth_42_f000101": 2,
+        "mlaad:jane_eyre_37_f000258": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000137": 2,
+        "mlaad:emerald_city_of_oz_10_f000128": 2,
+        "mlaad:silent_bullet_13_f000280": 2,
+        "mlaad:silent_bullet_08_f000314": 2,
+        "mlaad:wives_and_daughters_22_f000007": 2,
+        "mlaad:jane_eyre_34_f000271": 2,
+        "mlaad:midnight_passenger_06_f000063": 2,
+        "mlaad:jane_eyre_29_f000047": 2,
+        "mlaad:the_sea_fairies_07_f000053": 2,
+        "mlaad:ozma_of_oz_01_f000053": 2,
+        "mlaad:wives_and_daughters_49_f000179": 2,
+        "mlaad:jane_eyre_28_f000177": 2,
+        "mlaad:hunters_space_14_f000057": 2,
+        "mlaad:jane_eyre_01_f000039": 2,
+        "mlaad:hunters_space_08_f000069": 2,
+        "mlaad:wives_and_daughters_29_f000036": 2,
+        "mlaad:jane_eyre_14_f000079": 2,
+        "mlaad:jane_eyre_17_f000113": 2,
+        "mlaad:wives_and_daughters_38_f000061": 2,
+        "mlaad:jane_eyre_21_f000268": 2,
+        "mlaad:pink_fairy_book_30_f000084": 2,
+        "mlaad:emerald_city_of_oz_05_f000091": 2,
+        "mlaad:ozma_of_oz_20_f000010": 2,
+        "mlaad:skyisland_07_baum_64kb_f000017": 2,
+        "mlaad:northandsouth_04_f000095": 2,
+        "mlaad:pink_fairy_book_22_f000104": 2,
+        "mlaad:jane_eyre_27_f000510": 2,
+        "mlaad:wives_and_daughters_36_f000050": 2,
+        "mlaad:poisoned_pen_03_f000161": 2,
+        "mlaad:jane_eyre_05_f000072": 2,
+        "mlaad:skyisland_12_baum_64kb_f000071": 2,
+        "mlaad:pink_fairy_book_22_f000040": 2,
+        "mlaad:pink_fairy_book_10_f000124": 2,
+        "mlaad:poisoned_pen_11_f000335": 2,
+        "mlaad:wives_and_daughters_04_f000195": 2,
+        "mlaad:northandsouth_10_f000159": 2,
+        "mlaad:wives_and_daughters_58_f000172": 2,
+        "mlaad:wives_and_daughters_28_f000194": 2,
+        "mlaad:northandsouth_39_f000118": 2,
+        "mlaad:silent_bullet_08_f000005": 2,
+        "mlaad:midnight_passenger_09_f000132": 2,
+        "mlaad:jane_eyre_16_f000156": 2,
+        "mlaad:midnight_passenger_04_f000292": 2,
+        "mlaad:the_master_key_10_f000082": 2,
+        "mlaad:skyisland_17_baum_64kb_f000012": 2,
+        "mlaad:jane_eyre_27_f000392": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000112": 2,
+        "mlaad:wives_and_daughters_12_f000039": 2,
+        "mlaad:silent_bullet_06_f000153": 2,
+        "mlaad:the_master_key_08_f000030": 2,
+        "mlaad:rinkitink_baum_09_64kb_f000008": 2,
+        "mlaad:northandsouth_41_f000208": 2,
+        "mlaad:pink_fairy_book_23_f000049": 2,
+        "mlaad:jane_eyre_27_f000507": 2,
+        "mlaad:silent_bullet_02_f000003": 2,
+        "mlaad:jane_eyre_16_f000057": 2,
+        "mlaad:wives_and_daughters_32_f000182": 2,
+        "mlaad:the_master_key_03_f000082": 2,
+        "mlaad:wives_and_daughters_10_f000108": 2,
+        "mlaad:jane_eyre_27_f000155": 2,
+        "mlaad:pink_fairy_book_38_f000065": 2,
+        "mlaad:midnight_passenger_01_f000075": 2,
+        "mlaad:skyisland_07_baum_64kb_f000068": 2,
+        "mlaad:wives_and_daughters_54_f000126": 2,
+        "mlaad:midnight_passenger_04_f000229": 2,
+        "mlaad:poisoned_pen_10_f000122": 2,
+        "mlaad:hunters_space_12_f000017": 2,
+        "mlaad:poisoned_pen_05_f000096": 2,
+        "mlaad:the_sea_fairies_05_f000068": 2,
+        "mlaad:northandsouth_20_f000074": 2,
+        "mlaad:wives_and_daughters_56_f000019": 2,
+        "mlaad:northandsouth_02_f000127": 2,
+        "mlaad:rinkitink_baum_01_64kb_f000091": 2,
+        "mlaad:poisoned_pen_09_f000313": 2,
+        "mlaad:midnight_passenger_15_f000019": 2,
+        "mlaad:pink_fairy_book_10_f000104": 2,
+        "mlaad:northandsouth_19_f000056": 2,
+        "mlaad:wives_and_daughters_49_f000161": 2,
+        "mlaad:skyisland_13_baum_64kb_f000001": 2,
+        "mlaad:poisoned_pen_11_f000228": 2,
+        "mlaad:ozma_of_oz_16_f000033": 2,
+        "mlaad:silent_bullet_03_f000267": 2,
+        "mlaad:northandsouth_35_f000228": 2,
+        "mlaad:hunters_space_08_f000076": 2,
+        "mlaad:wives_and_daughters_11_f000256": 2,
+        "mlaad:poisoned_pen_05_f000265": 2,
+        "mlaad:jane_eyre_30_f000075": 2,
+        "mlaad:hunters_space_16_f000003": 2,
+        "mlaad:midnight_passenger_14_f000079": 2,
+        "mlaad:poisoned_pen_05_f000283": 2,
+        "mlaad:northandsouth_21_f000086": 2,
+        "mlaad:northandsouth_25_f000110": 2,
+        "mlaad:poisoned_pen_09_f000049": 2,
+        "mlaad:midnight_passenger_08_f000062": 2,
+        "mlaad:hunters_space_02_f000038": 2,
+        "mlaad:emerald_city_of_oz_28_f000068": 2,
+        "mlaad:jane_eyre_27_f000390": 2,
+        "mlaad:poisoned_pen_12_f000439": 2,
+        "mlaad:ozma_of_oz_06_f000085": 2,
+        "mlaad:hunters_space_12_f000054": 2,
+        "mlaad:piratesofersatz_08_leinster_64kb_f000166": 2,
+        "mlaad:midnight_passenger_13_f000102": 2,
+        "mlaad:poisoned_pen_04_f000178": 2,
+        "mlaad:ozma_of_oz_04_f000065": 2,
+        "mlaad:wives_and_daughters_12_f000018": 2,
+        "mlaad:midnight_passenger_07_f000151": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000078": 2,
+        "mlaad:poisoned_pen_12_f000071": 2,
+        "mlaad:jane_eyre_28_f000360": 2,
+        "mlaad:wives_and_daughters_02_f000217": 2,
+        "mlaad:silent_bullet_11_f000313": 2,
+        "mlaad:jane_eyre_07_f000014": 2,
+        "mlaad:piratesofersatz_12_leinster_64kb_f000044": 2,
+        "mlaad:midnight_passenger_01_f000169": 2,
+        "mlaad:jane_eyre_10_f000223": 2,
+        "mlaad:poisoned_pen_05_f000165": 2,
+        "mlaad:wives_and_daughters_55_f000144": 2,
+        "mlaad:jane_eyre_25_f000101": 2,
+        "mlaad:skyisland_17_baum_64kb_f000077": 2,
+        "mlaad:northandsouth_31_f000169": 2,
+        "mlaad:pink_fairy_book_32_f000050": 2,
+        "mlaad:northandsouth_18_f000017": 2,
+        "mlaad:northandsouth_51_f000043": 2,
+        "mlaad:dorothy_and_wizard_oz_06_f000021": 2,
+        "mlaad:poisoned_pen_10_f000016": 2,
+        "mlaad:the_sea_fairies_12_f000133": 2,
+        "mlaad:wives_and_daughters_38_f000008": 2,
+        "mlaad:northandsouth_05_f000222": 2,
+        "mlaad:rinkitink_baum_19_64kb_f000011": 2,
+        "mlaad:wives_and_daughters_59_f000029": 2,
+        "mlaad:midnight_passenger_03_f000259": 2,
+        "mlaad:northandsouth_36_f000214": 2,
+        "mlaad:wives_and_daughters_37_f000280": 2,
+        "mlaad:silent_bullet_09_f000237": 2,
+        "mlaad:northandsouth_22_f000072": 2,
+        "mlaad:poisoned_pen_01_f000235": 2,
+        "mlaad:skyisland_27_baum_64kb_f000041": 2,
+        "mlaad:silent_bullet_05_f000127": 2,
+        "mlaad:poisoned_pen_09_f000072": 2,
+        "mlaad:emerald_city_of_oz_08_f000059": 2,
+        "mlaad:jane_eyre_35_f000025": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000005": 2,
+        "mlaad:midnight_passenger_12_f000043": 2,
+        "mlaad:silent_bullet_03_f000035": 2,
+        "mlaad:pink_fairy_book_01_f000016": 2,
+        "mlaad:wives_and_daughters_17_f000077": 2,
+        "mlaad:wives_and_daughters_18_f000013": 2,
+        "mlaad:midnight_passenger_03_f000175": 2,
+        "mlaad:rinkitink_baum_08_64kb_f000094": 2,
+        "mlaad:the_sea_fairies_17_f000026": 2,
+        "mlaad:jane_eyre_35_f000105": 2,
+        "mlaad:jane_eyre_17_f000120": 2,
+        "mlaad:wives_and_daughters_55_f000006": 2,
+        "mlaad:jane_eyre_06_f000142": 2
+      },
+      "dev": {
+        "predictions": [
+          [
+            "026d2b69ddab8e865520ea63",
+            [
+              0.04179445281624794
+            ]
+          ],
+          [
+            "03113856d67938f52875a986",
+            [
+              0.8780085444450378
+            ]
+          ],
+          [
+            "0326a05a93bd5024f98b56bf",
+            [
+              0.6459063291549683
+            ]
+          ],
+          [
+            "04793716bed09f6dfd7f5ded",
+            [
+              0.37996456027030945
+            ]
+          ],
+          [
+            "056bebbb70a7af3ac33cff87",
+            [
+              0.27011847496032715
+            ]
+          ],
+          [
+            "05f73981c29179262f740a0e",
+            [
+              0.03983832150697708
+            ]
+          ],
+          [
+            "0843700cf46b01388464ed78",
+            [
+              0.757680356502533
+            ]
+          ],
+          [
+            "0a5ac9fdf89539525e49a8d5",
+            [
+              0.9653933644294739
+            ]
+          ],
+          [
+            "0b52f07622d395ee008422d3",
+            [
+              0.8875341415405273
+            ]
+          ],
+          [
+            "0d4698769067dfdaa03e5b8f",
+            [
+              0.9856228232383728
+            ]
+          ],
+          [
+            "17212bf4d60297555520a9e3",
+            [
+              0.13723841309547424
+            ]
+          ],
+          [
+            "1806d27aaeb6873905841ea2",
+            [
+              0.6888701319694519
+            ]
+          ],
+          [
+            "1a2c93e53b2c6a93228a9bea",
+            [
+              0.16268493235111237
+            ]
+          ],
+          [
+            "1dddfba0b99c6525c60711a4",
+            [
+              0.6362157464027405
+            ]
+          ],
+          [
+            "1e5292ef102b2bbe2055beab",
+            [
+              0.2691965103149414
+            ]
+          ],
+          [
+            "20f85207c60a197443122242",
+            [
+              0.9743509292602539
+            ]
+          ],
+          [
+            "23222cc3d797f2cf29bb0b6d",
+            [
+              0.5119484663009644
+            ]
+          ],
+          [
+            "24008b1fad9ae9a569e0a903",
+            [
+              0.050069037824869156
+            ]
+          ],
+          [
+            "2a3327b485992d39f2f3ee8f",
+            [
+              0.0369841605424881
+            ]
+          ],
+          [
+            "2a865d99290c987c8a654bd6",
+            [
+              0.9737458229064941
+            ]
+          ],
+          [
+            "33a72730a569f9a8bec482c8",
+            [
+              0.4834023714065552
+            ]
+          ],
+          [
+            "34b582b2088fa70e4253d0b7",
+            [
+              0.9939680099487305
+            ]
+          ],
+          [
+            "358e8da9be73b38fd6895b87",
+            [
+              0.7175925374031067
+            ]
+          ],
+          [
+            "3f22ddb3802828c052c3ddca",
+            [
+              0.28396788239479065
+            ]
+          ],
+          [
+            "448f96585e19665bc779d741",
+            [
+              0.5524538159370422
+            ]
+          ],
+          [
+            "4708f6be98d331c48c42cbd7",
+            [
+              0.9871106147766113
+            ]
+          ],
+          [
+            "48a7f97d06402409a0d68f25",
+            [
+              0.9964085221290588
+            ]
+          ],
+          [
+            "4d045cd66794b6b522195168",
+            [
+              0.8669926524162292
+            ]
+          ],
+          [
+            "51dd8f061a44f32c180f99b2",
+            [
+              0.7569659352302551
+            ]
+          ],
+          [
+            "525761809c638e7cf61824ed",
+            [
+              0.7068378329277039
+            ]
+          ],
+          [
+            "570e5140c29c71f3c7eccb0d",
+            [
+              0.6383118033409119
+            ]
+          ],
+          [
+            "6006ba4a0f06630c894552ef",
+            [
+              0.9699260592460632
+            ]
+          ],
+          [
+            "62454f0d918533bea4baff84",
+            [
+              0.6671878695487976
+            ]
+          ],
+          [
+            "63cb308fcd49df7779a6590a",
+            [
+              0.9872115254402161
+            ]
+          ],
+          [
+            "659b7930ccb887d2ac9dee1c",
+            [
+              0.9888600707054138
+            ]
+          ],
+          [
+            "6a82adc6291d89631b9f88fe",
+            [
+              0.33454132080078125
+            ]
+          ],
+          [
+            "6b68e11d862cc51bfe97aed9",
+            [
+              0.6101608872413635
+            ]
+          ],
+          [
+            "6c8e62ca42b55e7ebcd63446",
+            [
+              0.07378944009542465
+            ]
+          ],
+          [
+            "6e7fdf6e13cb014601947292",
+            [
+              0.8698439598083496
+            ]
+          ],
+          [
+            "73db091a0f9560aed5b8bff5",
+            [
+              0.9909294247627258
+            ]
+          ],
+          [
+            "74b39fc8ad3b0c402a270775",
+            [
+              0.9878502488136292
+            ]
+          ],
+          [
+            "75e347b1e91779ef2d3766a3",
+            [
+              0.9804869294166565
+            ]
+          ],
+          [
+            "76854e4d0a88fd9e9ee640fa",
+            [
+              0.962372362613678
+            ]
+          ],
+          [
+            "76cd3dd20d88fd1f0034dc9a",
+            [
+              0.9742226004600525
+            ]
+          ],
+          [
+            "79d89b1f653ffa82eebad153",
+            [
+              0.4281458258628845
+            ]
+          ],
+          [
+            "7c70af6d3b6f430d9a75e2a3",
+            [
+              0.9823624491691589
+            ]
+          ],
+          [
+            "7cb3c69acff66589b0d31082",
+            [
+              0.8353310823440552
+            ]
+          ],
+          [
+            "7ce0f0abeb43047aa028e3ae",
+            [
+              0.800993800163269
+            ]
+          ],
+          [
+            "7e710449a19be285f82e38d4",
+            [
+              0.04721882939338684
+            ]
+          ],
+          [
+            "7f2c09f77ab818b2dec970b7",
+            [
+              0.23935946822166443
+            ]
+          ],
+          [
+            "7f2c7ba0a0997ffe8651d7be",
+            [
+              0.2454981803894043
+            ]
+          ],
+          [
+            "808e97735a28bc7b2e0d0d93",
+            [
+              0.8363755941390991
+            ]
+          ],
+          [
+            "80ba540335b3ae936a446f95",
+            [
+              0.5505834817886353
+            ]
+          ],
+          [
+            "890a38aba365bec00552c541",
+            [
+              0.7545897960662842
+            ]
+          ],
+          [
+            "8a10e9335a4cbce2f3fa8fc3",
+            [
+              0.42526891827583313
+            ]
+          ],
+          [
+            "8fa10beaaba7af48e79df985",
+            [
+              0.8913120031356812
+            ]
+          ],
+          [
+            "9335f994e9e15dfa8b2edd29",
+            [
+              0.5216805338859558
+            ]
+          ],
+          [
+            "96530dabe3361c5b46e27376",
+            [
+              0.041309475898742676
+            ]
+          ],
+          [
+            "97aabe125db3af66ef30550e",
+            [
+              0.04684541001915932
+            ]
+          ],
+          [
+            "97d4628ada187be52e0d6c96",
+            [
+              0.35257765650749207
+            ]
+          ],
+          [
+            "9e528d3fc2f53af3743894ba",
+            [
+              0.5884662866592407
+            ]
+          ],
+          [
+            "a0ca27421e1fe1cad9917427",
+            [
+              0.9816628098487854
+            ]
+          ],
+          [
+            "a40540ae437ed69019b4a3c2",
+            [
+              0.41830748319625854
+            ]
+          ],
+          [
+            "a629ebcc903ea53ddc6764de",
+            [
+              0.9592476487159729
+            ]
+          ],
+          [
+            "a7579bd07d2a9fa450783741",
+            [
+              0.9996278285980225
+            ]
+          ],
+          [
+            "ab5df548478adeb5610cbfc2",
+            [
+              0.8630098700523376
+            ]
+          ],
+          [
+            "b1355bb04e4dcfd7251b2887",
+            [
+              0.9627038836479187
+            ]
+          ],
+          [
+            "b59089a2dd27572d85176e48",
+            [
+              0.3150927722454071
+            ]
+          ],
+          [
+            "ba96617ed470afd6ed3ca255",
+            [
+              0.8214176893234253
+            ]
+          ],
+          [
+            "bb58ba9e563b9f9acca8f42c",
+            [
+              0.0677965059876442
+            ]
+          ],
+          [
+            "be56f426d2a8d64e88968133",
+            [
+              0.9972655773162842
+            ]
+          ],
+          [
+            "bf01c52c339120acfd831e9b",
+            [
+              0.7275822162628174
+            ]
+          ],
+          [
+            "bfaabb3bef02012330444afe",
+            [
+              0.5136082172393799
+            ]
+          ],
+          [
+            "c0be5c2c52d12ca43e7d0a09",
+            [
+              0.9938150644302368
+            ]
+          ],
+          [
+            "c1f8fd3739e56379be555a78",
+            [
+              0.5733708739280701
+            ]
+          ],
+          [
+            "c389017fbd2f4c7b89627119",
+            [
+              0.9992282390594482
+            ]
+          ],
+          [
+            "c46abf09aec7849d25476f5e",
+            [
+              0.06473274528980255
+            ]
+          ],
+          [
+            "c7c484bec4ac3dee3a30eb99",
+            [
+              0.905948281288147
+            ]
+          ],
+          [
+            "ca169eb8def4a4444f883110",
+            [
+              0.07749471068382263
+            ]
+          ],
+          [
+            "cc38100a5dd518d557b3bae7",
+            [
+              0.6306896209716797
+            ]
+          ],
+          [
+            "cd84ed71e1ba18aabaa5502a",
+            [
+              0.7267565727233887
+            ]
+          ],
+          [
+            "d0eae12426c4ce3d8ea8eb7b",
+            [
+              0.039479970932006836
+            ]
+          ],
+          [
+            "d2127c4b30b7d7fa7c1c5724",
+            [
+              0.3814487159252167
+            ]
+          ],
+          [
+            "d3352a96271d4f6ae3c7426d",
+            [
+              0.9523617625236511
+            ]
+          ],
+          [
+            "d38c37a2c1da1d0ceb58d1d1",
+            [
+              0.30912235379219055
+            ]
+          ],
+          [
+            "d45489caf5f3a3f77e87770c",
+            [
+              0.8052486181259155
+            ]
+          ],
+          [
+            "d7cd60ed8300e516557ed614",
+            [
+              0.9988433122634888
+            ]
+          ],
+          [
+            "d82532a6dfa2586741b22314",
+            [
+              0.7427743077278137
+            ]
+          ],
+          [
+            "d929c13b1d060683574762bc",
+            [
+              0.734682023525238
+            ]
+          ],
+          [
+            "dab7f746184a83c2aacb1498",
+            [
+              0.6945226788520813
+            ]
+          ],
+          [
+            "dc0a08574d263dd0117c4e0f",
+            [
+              0.999365508556366
+            ]
+          ],
+          [
+            "df692db69e26d0a33c9296b8",
+            [
+              0.6239805221557617
+            ]
+          ],
+          [
+            "e2d11e22927c4764adaef492",
+            [
+              0.7104673981666565
+            ]
+          ],
+          [
+            "e6ec377d99528b5f85fbc3a7",
+            [
+              0.603116512298584
+            ]
+          ],
+          [
+            "ec7f35f742ec3f951b55ee5f",
+            [
+              0.9228802919387817
+            ]
+          ],
+          [
+            "ed2185960da3c4c0907733f1",
+            [
+              0.9978068470954895
+            ]
+          ],
+          [
+            "f8103145cd0db5d24b6a5150",
+            [
+              0.07543490082025528
+            ]
+          ],
+          [
+            "fa317f48568ab3f3dff29216",
+            [
+              0.058425143361091614
+            ]
+          ],
+          [
+            "fce2dabe33e22114aea4cafc",
+            [
+              0.9929565191268921
+            ]
+          ],
+          [
+            "fd073377632714b643ecf29a",
+            [
+              0.9683946371078491
+            ]
+          ]
+        ],
+        "window_starts": [
+          [
+            "026d2b69ddab8e865520ea63",
+            [
+              0,
+              46422
+            ]
+          ],
+          [
+            "03113856d67938f52875a986",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0326a05a93bd5024f98b56bf",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "04793716bed09f6dfd7f5ded",
+            [
+              0,
+              12840
+            ]
+          ],
+          [
+            "056bebbb70a7af3ac33cff87",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "05f73981c29179262f740a0e",
+            [
+              0,
+              64600,
+              91734
+            ]
+          ],
+          [
+            "0843700cf46b01388464ed78",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0a5ac9fdf89539525e49a8d5",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0b52f07622d395ee008422d3",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0d4698769067dfdaa03e5b8f",
+            [
+              0,
+              31400
+            ]
+          ],
+          [
+            "17212bf4d60297555520a9e3",
+            [
+              0,
+              23190
+            ]
+          ],
+          [
+            "1806d27aaeb6873905841ea2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "1a2c93e53b2c6a93228a9bea",
+            [
+              0,
+              37510
+            ]
+          ],
+          [
+            "1dddfba0b99c6525c60711a4",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "1e5292ef102b2bbe2055beab",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "20f85207c60a197443122242",
+            [
+              0,
+              60200
+            ]
+          ],
+          [
+            "23222cc3d797f2cf29bb0b6d",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "24008b1fad9ae9a569e0a903",
+            [
+              0,
+              52885
+            ]
+          ],
+          [
+            "2a3327b485992d39f2f3ee8f",
+            [
+              0,
+              35398
+            ]
+          ],
+          [
+            "2a865d99290c987c8a654bd6",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "33a72730a569f9a8bec482c8",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "34b582b2088fa70e4253d0b7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "358e8da9be73b38fd6895b87",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "3f22ddb3802828c052c3ddca",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "448f96585e19665bc779d741",
+            [
+              0,
+              14118
+            ]
+          ],
+          [
+            "4708f6be98d331c48c42cbd7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "48a7f97d06402409a0d68f25",
+            [
+              0,
+              15080
+            ]
+          ],
+          [
+            "4d045cd66794b6b522195168",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "51dd8f061a44f32c180f99b2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "525761809c638e7cf61824ed",
+            [
+              0,
+              33960
+            ]
+          ],
+          [
+            "570e5140c29c71f3c7eccb0d",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6006ba4a0f06630c894552ef",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "62454f0d918533bea4baff84",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "63cb308fcd49df7779a6590a",
+            [
+              0,
+              49931
+            ]
+          ],
+          [
+            "659b7930ccb887d2ac9dee1c",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6a82adc6291d89631b9f88fe",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6b68e11d862cc51bfe97aed9",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6c8e62ca42b55e7ebcd63446",
+            [
+              0,
+              64600,
+              73158
+            ]
+          ],
+          [
+            "6e7fdf6e13cb014601947292",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "73db091a0f9560aed5b8bff5",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "74b39fc8ad3b0c402a270775",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "75e347b1e91779ef2d3766a3",
+            [
+              0,
+              10600
+            ]
+          ],
+          [
+            "76854e4d0a88fd9e9ee640fa",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "76cd3dd20d88fd1f0034dc9a",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "79d89b1f653ffa82eebad153",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7c70af6d3b6f430d9a75e2a3",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7cb3c69acff66589b0d31082",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7ce0f0abeb43047aa028e3ae",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7e710449a19be285f82e38d4",
+            [
+              0,
+              64600,
+              103190
+            ]
+          ],
+          [
+            "7f2c09f77ab818b2dec970b7",
+            [
+              0,
+              64600,
+              108518
+            ]
+          ],
+          [
+            "7f2c7ba0a0997ffe8651d7be",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "808e97735a28bc7b2e0d0d93",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "80ba540335b3ae936a446f95",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "890a38aba365bec00552c541",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "8a10e9335a4cbce2f3fa8fc3",
+            [
+              0,
+              4038
+            ]
+          ],
+          [
+            "8fa10beaaba7af48e79df985",
+            [
+              0,
+              64600,
+              76200
+            ]
+          ],
+          [
+            "9335f994e9e15dfa8b2edd29",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "96530dabe3361c5b46e27376",
+            [
+              0,
+              64600,
+              121958
+            ]
+          ],
+          [
+            "97aabe125db3af66ef30550e",
+            [
+              0,
+              34598
+            ]
+          ],
+          [
+            "97d4628ada187be52e0d6c96",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "9e528d3fc2f53af3743894ba",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "a0ca27421e1fe1cad9917427",
+            [
+              0,
+              28383
+            ]
+          ],
+          [
+            "a40540ae437ed69019b4a3c2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "a629ebcc903ea53ddc6764de",
+            [
+              0,
+              36520
+            ]
+          ],
+          [
+            "a7579bd07d2a9fa450783741",
+            [
+              0,
+              29869
+            ]
+          ],
+          [
+            "ab5df548478adeb5610cbfc2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "b1355bb04e4dcfd7251b2887",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "b59089a2dd27572d85176e48",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ba96617ed470afd6ed3ca255",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "bb58ba9e563b9f9acca8f42c",
+            [
+              0,
+              33126
+            ]
+          ],
+          [
+            "be56f426d2a8d64e88968133",
+            [
+              0,
+              17238
+            ]
+          ],
+          [
+            "bf01c52c339120acfd831e9b",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "bfaabb3bef02012330444afe",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c0be5c2c52d12ca43e7d0a09",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c1f8fd3739e56379be555a78",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c389017fbd2f4c7b89627119",
+            [
+              0,
+              10920
+            ]
+          ],
+          [
+            "c46abf09aec7849d25476f5e",
+            [
+              0,
+              47526
+            ]
+          ],
+          [
+            "c7c484bec4ac3dee3a30eb99",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ca169eb8def4a4444f883110",
+            [
+              0,
+              40518
+            ]
+          ],
+          [
+            "cc38100a5dd518d557b3bae7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "cd84ed71e1ba18aabaa5502a",
+            [
+              0,
+              26280
+            ]
+          ],
+          [
+            "d0eae12426c4ce3d8ea8eb7b",
+            [
+              0,
+              37205
+            ]
+          ],
+          [
+            "d2127c4b30b7d7fa7c1c5724",
+            [
+              0,
+              9158
+            ]
+          ],
+          [
+            "d3352a96271d4f6ae3c7426d",
+            [
+              0,
+              61077
+            ]
+          ],
+          [
+            "d38c37a2c1da1d0ceb58d1d1",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d45489caf5f3a3f77e87770c",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d7cd60ed8300e516557ed614",
+            [
+              0,
+              37800
+            ]
+          ],
+          [
+            "d82532a6dfa2586741b22314",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d929c13b1d060683574762bc",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "dab7f746184a83c2aacb1498",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "dc0a08574d263dd0117c4e0f",
+            [
+              0,
+              30120
+            ]
+          ],
+          [
+            "df692db69e26d0a33c9296b8",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "e2d11e22927c4764adaef492",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "e6ec377d99528b5f85fbc3a7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ec7f35f742ec3f951b55ee5f",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ed2185960da3c4c0907733f1",
+            [
+              0,
+              23720
+            ]
+          ],
+          [
+            "f8103145cd0db5d24b6a5150",
+            [
+              0,
+              64600,
+              96678
+            ]
+          ],
+          [
+            "fa317f48568ab3f3dff29216",
+            [
+              0,
+              64600,
+              68198
+            ]
+          ],
+          [
+            "fce2dabe33e22114aea4cafc",
+            [
+              0,
+              44520
+            ]
+          ],
+          [
+            "fd073377632714b643ecf29a",
+            [
+              0,
+              42920
+            ]
+          ]
+        ],
+        "heads": [
+          {
+            "name": "voice_fake",
+            "count": 100,
+            "loss": 0.3994046747684479,
+            "eer": 0.19999999999999998,
+            "auc": 0.9075
+          }
+        ],
+        "loss": 0.3994046747684479,
+        "selection_metric": 0.8
+      }
+    },
+    {
+      "epoch": 2,
+      "updates": 100,
+      "train_loss": 0.5803847917541861,
+      "seconds": 142.12437872600003,
+      "source_exposures": {
+        "mlaad:northandsouth_36_f000214": 2,
+        "mlaad:emerald_city_of_oz_05_f000091": 2,
+        "mlaad:jane_eyre_25_f000101": 2,
+        "mlaad:wives_and_daughters_39_f000098": 2,
+        "mlaad:northandsouth_05_f000222": 2,
+        "mlaad:the_sea_fairies_12_f000133": 2,
+        "mlaad:jane_eyre_27_f000392": 2,
+        "mlaad:jane_eyre_05_f000072": 2,
+        "mlaad:poisoned_pen_05_f000096": 2,
+        "mlaad:pink_fairy_book_30_f000084": 2,
+        "mlaad:wives_and_daughters_58_f000172": 2,
+        "mlaad:ozma_of_oz_16_f000033": 2,
+        "mlaad:wives_and_daughters_20_f000117": 2,
+        "mlaad:northandsouth_10_f000159": 2,
+        "mlaad:pink_fairy_book_10_f000124": 2,
+        "mlaad:northandsouth_21_f000086": 2,
+        "mlaad:wives_and_daughters_56_f000019": 2,
+        "mlaad:rinkitink_baum_01_64kb_f000091": 2,
+        "mlaad:wives_and_daughters_12_f000018": 2,
+        "mlaad:the_sea_fairies_07_f000053": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000137": 2,
+        "mlaad:skyisland_07_baum_64kb_f000068": 2,
+        "mlaad:northandsouth_42_f000101": 2,
+        "mlaad:silent_bullet_13_f000280": 2,
+        "mlaad:jane_eyre_21_f000268": 2,
+        "mlaad:rinkitink_baum_09_64kb_f000008": 2,
+        "mlaad:pink_fairy_book_33_f000072": 2,
+        "mlaad:jane_eyre_29_f000047": 2,
+        "mlaad:hunters_space_12_f000054": 2,
+        "mlaad:wives_and_daughters_49_f000179": 2,
+        "mlaad:poisoned_pen_11_f000335": 2,
+        "mlaad:jane_eyre_28_f000360": 2,
+        "mlaad:wives_and_daughters_38_f000008": 2,
+        "mlaad:jane_eyre_30_f000198": 2,
+        "mlaad:wives_and_daughters_28_f000194": 2,
+        "mlaad:rinkitink_baum_08_64kb_f000094": 2,
+        "mlaad:ozma_of_oz_04_f000065": 2,
+        "mlaad:wives_and_daughters_02_f000217": 2,
+        "mlaad:jane_eyre_30_f000075": 2,
+        "mlaad:northandsouth_39_f000118": 2,
+        "mlaad:skyisland_11_baum_64kb_f000054": 2,
+        "mlaad:poisoned_pen_05_f000283": 2,
+        "mlaad:pink_fairy_book_38_f000065": 2,
+        "mlaad:northandsouth_18_f000017": 2,
+        "mlaad:jane_eyre_35_f000105": 2,
+        "mlaad:skyisland_12_baum_64kb_f000071": 2,
+        "mlaad:northandsouth_31_f000169": 2,
+        "mlaad:jane_eyre_05_f000186": 2,
+        "mlaad:pink_fairy_book_14_f000090": 2,
+        "mlaad:wives_and_daughters_29_f000036": 2,
+        "mlaad:hunters_space_08_f000076": 2,
+        "mlaad:jane_eyre_27_f000507": 2,
+        "mlaad:jane_eyre_16_f000057": 2,
+        "mlaad:pink_fairy_book_10_f000104": 2,
+        "mlaad:midnight_passenger_03_f000259": 2,
+        "mlaad:poisoned_pen_06_f000019": 2,
+        "mlaad:jane_eyre_15_f000215": 2,
+        "mlaad:silent_bullet_06_f000153": 2,
+        "mlaad:poisoned_pen_05_f000265": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000128": 2,
+        "mlaad:skyisland_07_baum_64kb_f000017": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000078": 2,
+        "mlaad:silent_bullet_05_f000127": 2,
+        "mlaad:the_sea_fairies_17_f000026": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000217": 2,
+        "mlaad:hunters_space_14_f000057": 2,
+        "mlaad:hunters_space_16_f000003": 2,
+        "mlaad:the_master_key_10_f000082": 2,
+        "mlaad:jane_eyre_06_f000142": 2,
+        "mlaad:midnight_passenger_14_f000079": 2,
+        "mlaad:hunters_space_12_f000017": 2,
+        "mlaad:midnight_passenger_08_f000062": 2,
+        "mlaad:midnight_passenger_04_f000229": 2,
+        "mlaad:midnight_passenger_01_f000169": 2,
+        "mlaad:midnight_passenger_15_f000019": 2,
+        "mlaad:pink_fairy_book_32_f000050": 2,
+        "mlaad:poisoned_pen_07_f000386": 2,
+        "mlaad:jane_eyre_27_f000167": 2,
+        "mlaad:wives_and_daughters_55_f000006": 2,
+        "mlaad:pink_fairy_book_22_f000104": 2,
+        "mlaad:pink_fairy_book_23_f000049": 2,
+        "mlaad:skyisland_17_baum_64kb_f000012": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000005": 2,
+        "mlaad:poisoned_pen_09_f000072": 2,
+        "mlaad:midnight_passenger_04_f000042": 2,
+        "mlaad:dorothy_and_wizard_oz_14_f000119": 2,
+        "mlaad:jane_eyre_34_f000271": 2,
+        "mlaad:the_sea_fairies_05_f000068": 2,
+        "mlaad:jane_eyre_17_f000120": 2,
+        "mlaad:wives_and_daughters_04_f000195": 2,
+        "mlaad:midnight_passenger_03_f000175": 2,
+        "mlaad:jane_eyre_01_f000093": 2,
+        "mlaad:silent_bullet_11_f000313": 2,
+        "mlaad:jane_eyre_28_f000177": 2,
+        "mlaad:midnight_passenger_01_f000075": 2,
+        "mlaad:emerald_city_of_oz_28_f000068": 2,
+        "mlaad:hunters_space_08_f000069": 2,
+        "mlaad:northandsouth_04_f000095": 2,
+        "mlaad:dorothy_and_wizard_oz_06_f000021": 2,
+        "mlaad:wives_and_daughters_38_f000061": 2,
+        "mlaad:poisoned_pen_07_f000388": 2,
+        "mlaad:wives_and_daughters_17_f000077": 2,
+        "mlaad:poisoned_pen_12_f000439": 2,
+        "mlaad:emerald_city_of_oz_20_f000104": 2,
+        "mlaad:silent_bullet_02_f000003": 2,
+        "mlaad:midnight_passenger_12_f000043": 2,
+        "mlaad:piratesofersatz_12_leinster_64kb_f000044": 2,
+        "mlaad:jane_eyre_27_f000155": 2,
+        "mlaad:midnight_passenger_05_f000214": 2,
+        "mlaad:poisoned_pen_03_f000161": 2,
+        "mlaad:pink_fairy_book_22_f000040": 2,
+        "mlaad:wives_and_daughters_54_f000126": 2,
+        "mlaad:northandsouth_16_f000112": 2,
+        "mlaad:poisoned_pen_05_f000165": 2,
+        "mlaad:wives_and_daughters_10_f000108": 2,
+        "mlaad:jane_eyre_15_f000223": 2,
+        "mlaad:rinkitink_baum_07_64kb_f000059": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000103": 2,
+        "mlaad:northandsouth_35_f000262": 2,
+        "mlaad:wives_and_daughters_11_f000256": 2,
+        "mlaad:midnight_passenger_09_f000132": 2,
+        "mlaad:northandsouth_02_f000127": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000206": 2,
+        "mlaad:jane_eyre_37_f000258": 2,
+        "mlaad:wives_and_daughters_29_f000092": 2,
+        "mlaad:skyisland_13_baum_64kb_f000001": 2,
+        "mlaad:poisoned_pen_09_f000049": 2,
+        "mlaad:northandsouth_20_f000074": 2,
+        "mlaad:poisoned_pen_11_f000228": 2,
+        "mlaad:emerald_city_of_oz_10_f000128": 2,
+        "mlaad:jane_eyre_10_f000223": 2,
+        "mlaad:northandsouth_35_f000228": 2,
+        "mlaad:northandsouth_19_f000056": 2,
+        "mlaad:jane_eyre_27_f000510": 2,
+        "mlaad:wives_and_daughters_32_f000182": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000036": 2,
+        "mlaad:ozma_of_oz_01_f000053": 2,
+        "mlaad:northandsouth_51_f000043": 2,
+        "mlaad:silent_bullet_03_f000035": 2,
+        "mlaad:jane_eyre_16_f000156": 2,
+        "mlaad:jane_eyre_01_f000039": 2,
+        "mlaad:rinkitink_baum_19_64kb_f000011": 2,
+        "mlaad:emerald_city_of_oz_11_f000026": 2,
+        "mlaad:the_master_key_03_f000082": 2,
+        "mlaad:silent_bullet_09_f000237": 2,
+        "mlaad:jane_eyre_07_f000014": 2,
+        "mlaad:wives_and_daughters_59_f000029": 2,
+        "mlaad:jane_eyre_35_f000025": 2,
+        "mlaad:skyisland_27_baum_64kb_f000041": 2,
+        "mlaad:poisoned_pen_10_f000016": 2,
+        "mlaad:wives_and_daughters_22_f000007": 2,
+        "mlaad:midnight_passenger_06_f000078": 2,
+        "mlaad:emerald_city_of_oz_14_f000084": 2,
+        "mlaad:wives_and_daughters_37_f000280": 2,
+        "mlaad:poisoned_pen_10_f000122": 2,
+        "mlaad:northandsouth_25_f000110": 2,
+        "mlaad:pink_fairy_book_13_f000137": 2,
+        "mlaad:poisoned_pen_01_f000235": 2,
+        "mlaad:northandsouth_41_f000208": 2,
+        "mlaad:ozma_of_oz_20_f000010": 2,
+        "mlaad:silent_bullet_08_f000314": 2,
+        "mlaad:dorothy_and_wizard_oz_08_f000005": 2,
+        "mlaad:the_master_key_08_f000030": 2,
+        "mlaad:midnight_passenger_13_f000102": 2,
+        "mlaad:midnight_passenger_07_f000151": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000030": 2,
+        "mlaad:silent_bullet_08_f000005": 2,
+        "mlaad:dorothy_and_wizard_oz_18_f000014": 2,
+        "mlaad:skyisland_17_baum_64kb_f000077": 2,
+        "mlaad:emerald_city_of_oz_08_f000059": 2,
+        "mlaad:silent_bullet_03_f000267": 2,
+        "mlaad:midnight_passenger_08_f000059": 2,
+        "mlaad:hunters_space_02_f000038": 2,
+        "mlaad:hunters_space_03_f000076": 2,
+        "mlaad:northandsouth_22_f000072": 2,
+        "mlaad:poisoned_pen_04_f000178": 2,
+        "mlaad:wives_and_daughters_49_f000161": 2,
+        "mlaad:wives_and_daughters_36_f000050": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000112": 2,
+        "mlaad:wives_and_daughters_18_f000013": 2,
+        "mlaad:wives_and_daughters_52_f000098": 2,
+        "mlaad:wives_and_daughters_12_f000039": 2,
+        "mlaad:wives_and_daughters_55_f000144": 2,
+        "mlaad:midnight_passenger_04_f000292": 2,
+        "mlaad:pink_fairy_book_31_f000105": 2,
+        "mlaad:piratesofersatz_08_leinster_64kb_f000166": 2,
+        "mlaad:ozma_of_oz_06_f000085": 2,
+        "mlaad:pink_fairy_book_01_f000016": 2,
+        "mlaad:midnight_passenger_06_f000063": 2,
+        "mlaad:jane_eyre_34_f000126": 2,
+        "mlaad:jane_eyre_14_f000079": 2,
+        "mlaad:wives_and_daughters_47_f000218": 2,
+        "mlaad:skyisland_30_baum_64kb_f000049": 2,
+        "mlaad:pink_fairy_book_29_f000036": 2,
+        "mlaad:northandsouth_25_f000030": 2,
+        "mlaad:jane_eyre_27_f000390": 2,
+        "mlaad:hunters_space_02_f000017": 2,
+        "mlaad:jane_eyre_17_f000113": 2,
+        "mlaad:poisoned_pen_12_f000071": 2,
+        "mlaad:poisoned_pen_09_f000313": 2
+      },
+      "dev": {
+        "predictions": [
+          [
+            "026d2b69ddab8e865520ea63",
+            [
+              0.03875302895903587
+            ]
+          ],
+          [
+            "03113856d67938f52875a986",
+            [
+              0.9844685196876526
+            ]
+          ],
+          [
+            "0326a05a93bd5024f98b56bf",
+            [
+              0.806746780872345
+            ]
+          ],
+          [
+            "04793716bed09f6dfd7f5ded",
+            [
+              0.9180887341499329
+            ]
+          ],
+          [
+            "056bebbb70a7af3ac33cff87",
+            [
+              0.29394516348838806
+            ]
+          ],
+          [
+            "05f73981c29179262f740a0e",
+            [
+              0.03491474315524101
+            ]
+          ],
+          [
+            "0843700cf46b01388464ed78",
+            [
+              0.8658353686332703
+            ]
+          ],
+          [
+            "0a5ac9fdf89539525e49a8d5",
+            [
+              0.9851069450378418
+            ]
+          ],
+          [
+            "0b52f07622d395ee008422d3",
+            [
+              0.940717875957489
+            ]
+          ],
+          [
+            "0d4698769067dfdaa03e5b8f",
+            [
+              0.9972545504570007
+            ]
+          ],
+          [
+            "17212bf4d60297555520a9e3",
+            [
+              0.16936860978603363
+            ]
+          ],
+          [
+            "1806d27aaeb6873905841ea2",
+            [
+              0.7411447167396545
+            ]
+          ],
+          [
+            "1a2c93e53b2c6a93228a9bea",
+            [
+              0.18173763155937195
+            ]
+          ],
+          [
+            "1dddfba0b99c6525c60711a4",
+            [
+              0.7431139945983887
+            ]
+          ],
+          [
+            "1e5292ef102b2bbe2055beab",
+            [
+              0.25625160336494446
+            ]
+          ],
+          [
+            "20f85207c60a197443122242",
+            [
+              0.9974404573440552
+            ]
+          ],
+          [
+            "23222cc3d797f2cf29bb0b6d",
+            [
+              0.5431541800498962
+            ]
+          ],
+          [
+            "24008b1fad9ae9a569e0a903",
+            [
+              0.04423430562019348
+            ]
+          ],
+          [
+            "2a3327b485992d39f2f3ee8f",
+            [
+              0.033981356769800186
+            ]
+          ],
+          [
+            "2a865d99290c987c8a654bd6",
+            [
+              0.9977959394454956
+            ]
+          ],
+          [
+            "33a72730a569f9a8bec482c8",
+            [
+              0.5875499248504639
+            ]
+          ],
+          [
+            "34b582b2088fa70e4253d0b7",
+            [
+              0.9987170696258545
+            ]
+          ],
+          [
+            "358e8da9be73b38fd6895b87",
+            [
+              0.7873240113258362
+            ]
+          ],
+          [
+            "3f22ddb3802828c052c3ddca",
+            [
+              0.2625516951084137
+            ]
+          ],
+          [
+            "448f96585e19665bc779d741",
+            [
+              0.8909344673156738
+            ]
+          ],
+          [
+            "4708f6be98d331c48c42cbd7",
+            [
+              0.9975515007972717
+            ]
+          ],
+          [
+            "48a7f97d06402409a0d68f25",
+            [
+              0.9995774626731873
+            ]
+          ],
+          [
+            "4d045cd66794b6b522195168",
+            [
+              0.9503979086875916
+            ]
+          ],
+          [
+            "51dd8f061a44f32c180f99b2",
+            [
+              0.9069023132324219
+            ]
+          ],
+          [
+            "525761809c638e7cf61824ed",
+            [
+              0.9598804116249084
+            ]
+          ],
+          [
+            "570e5140c29c71f3c7eccb0d",
+            [
+              0.7486752271652222
+            ]
+          ],
+          [
+            "6006ba4a0f06630c894552ef",
+            [
+              0.9984546899795532
+            ]
+          ],
+          [
+            "62454f0d918533bea4baff84",
+            [
+              0.6890005469322205
+            ]
+          ],
+          [
+            "63cb308fcd49df7779a6590a",
+            [
+              0.9990033507347107
+            ]
+          ],
+          [
+            "659b7930ccb887d2ac9dee1c",
+            [
+              0.9985637068748474
+            ]
+          ],
+          [
+            "6a82adc6291d89631b9f88fe",
+            [
+              0.4162086248397827
+            ]
+          ],
+          [
+            "6b68e11d862cc51bfe97aed9",
+            [
+              0.8034875988960266
+            ]
+          ],
+          [
+            "6c8e62ca42b55e7ebcd63446",
+            [
+              0.09377776831388474
+            ]
+          ],
+          [
+            "6e7fdf6e13cb014601947292",
+            [
+              0.9305554032325745
+            ]
+          ],
+          [
+            "73db091a0f9560aed5b8bff5",
+            [
+              0.998643696308136
+            ]
+          ],
+          [
+            "74b39fc8ad3b0c402a270775",
+            [
+              0.9965417981147766
+            ]
+          ],
+          [
+            "75e347b1e91779ef2d3766a3",
+            [
+              0.9980204105377197
+            ]
+          ],
+          [
+            "76854e4d0a88fd9e9ee640fa",
+            [
+              0.9909971952438354
+            ]
+          ],
+          [
+            "76cd3dd20d88fd1f0034dc9a",
+            [
+              0.9963573813438416
+            ]
+          ],
+          [
+            "79d89b1f653ffa82eebad153",
+            [
+              0.5457299947738647
+            ]
+          ],
+          [
+            "7c70af6d3b6f430d9a75e2a3",
+            [
+              0.9961283206939697
+            ]
+          ],
+          [
+            "7cb3c69acff66589b0d31082",
+            [
+              0.9078661799430847
+            ]
+          ],
+          [
+            "7ce0f0abeb43047aa028e3ae",
+            [
+              0.9620301723480225
+            ]
+          ],
+          [
+            "7e710449a19be285f82e38d4",
+            [
+              0.045471251010894775
+            ]
+          ],
+          [
+            "7f2c09f77ab818b2dec970b7",
+            [
+              0.3689965307712555
+            ]
+          ],
+          [
+            "7f2c7ba0a0997ffe8651d7be",
+            [
+              0.3127267062664032
+            ]
+          ],
+          [
+            "808e97735a28bc7b2e0d0d93",
+            [
+              0.8975218534469604
+            ]
+          ],
+          [
+            "80ba540335b3ae936a446f95",
+            [
+              0.6405423283576965
+            ]
+          ],
+          [
+            "890a38aba365bec00552c541",
+            [
+              0.8214684128761292
+            ]
+          ],
+          [
+            "8a10e9335a4cbce2f3fa8fc3",
+            [
+              0.48537173867225647
+            ]
+          ],
+          [
+            "8fa10beaaba7af48e79df985",
+            [
+              0.9864800572395325
+            ]
+          ],
+          [
+            "9335f994e9e15dfa8b2edd29",
+            [
+              0.6706758737564087
+            ]
+          ],
+          [
+            "96530dabe3361c5b46e27376",
+            [
+              0.0363704077899456
+            ]
+          ],
+          [
+            "97aabe125db3af66ef30550e",
+            [
+              0.03795322775840759
+            ]
+          ],
+          [
+            "97d4628ada187be52e0d6c96",
+            [
+              0.35009387135505676
+            ]
+          ],
+          [
+            "9e528d3fc2f53af3743894ba",
+            [
+              0.6024524569511414
+            ]
+          ],
+          [
+            "a0ca27421e1fe1cad9917427",
+            [
+              0.9960022568702698
+            ]
+          ],
+          [
+            "a40540ae437ed69019b4a3c2",
+            [
+              0.4077763557434082
+            ]
+          ],
+          [
+            "a629ebcc903ea53ddc6764de",
+            [
+              0.9916900396347046
+            ]
+          ],
+          [
+            "a7579bd07d2a9fa450783741",
+            [
+              0.9998769760131836
+            ]
+          ],
+          [
+            "ab5df548478adeb5610cbfc2",
+            [
+              0.9620540142059326
+            ]
+          ],
+          [
+            "b1355bb04e4dcfd7251b2887",
+            [
+              0.9807007312774658
+            ]
+          ],
+          [
+            "b59089a2dd27572d85176e48",
+            [
+              0.27439969778060913
+            ]
+          ],
+          [
+            "ba96617ed470afd6ed3ca255",
+            [
+              0.8617485165596008
+            ]
+          ],
+          [
+            "bb58ba9e563b9f9acca8f42c",
+            [
+              0.08071253448724747
+            ]
+          ],
+          [
+            "be56f426d2a8d64e88968133",
+            [
+              0.9993520379066467
+            ]
+          ],
+          [
+            "bf01c52c339120acfd831e9b",
+            [
+              0.84669029712677
+            ]
+          ],
+          [
+            "bfaabb3bef02012330444afe",
+            [
+              0.8019008636474609
+            ]
+          ],
+          [
+            "c0be5c2c52d12ca43e7d0a09",
+            [
+              0.9983689188957214
+            ]
+          ],
+          [
+            "c1f8fd3739e56379be555a78",
+            [
+              0.7796589136123657
+            ]
+          ],
+          [
+            "c389017fbd2f4c7b89627119",
+            [
+              0.9997639060020447
+            ]
+          ],
+          [
+            "c46abf09aec7849d25476f5e",
+            [
+              0.126942440867424
+            ]
+          ],
+          [
+            "c7c484bec4ac3dee3a30eb99",
+            [
+              0.947705864906311
+            ]
+          ],
+          [
+            "ca169eb8def4a4444f883110",
+            [
+              0.07358531653881073
+            ]
+          ],
+          [
+            "cc38100a5dd518d557b3bae7",
+            [
+              0.8475717902183533
+            ]
+          ],
+          [
+            "cd84ed71e1ba18aabaa5502a",
+            [
+              0.9350250363349915
+            ]
+          ],
+          [
+            "d0eae12426c4ce3d8ea8eb7b",
+            [
+              0.040920477360486984
+            ]
+          ],
+          [
+            "d2127c4b30b7d7fa7c1c5724",
+            [
+              0.6665192246437073
+            ]
+          ],
+          [
+            "d3352a96271d4f6ae3c7426d",
+            [
+              0.9917883276939392
+            ]
+          ],
+          [
+            "d38c37a2c1da1d0ceb58d1d1",
+            [
+              0.4256726801395416
+            ]
+          ],
+          [
+            "d45489caf5f3a3f77e87770c",
+            [
+              0.8349125981330872
+            ]
+          ],
+          [
+            "d7cd60ed8300e516557ed614",
+            [
+              0.9995896220207214
+            ]
+          ],
+          [
+            "d82532a6dfa2586741b22314",
+            [
+              0.9315041899681091
+            ]
+          ],
+          [
+            "d929c13b1d060683574762bc",
+            [
+              0.903980553150177
+            ]
+          ],
+          [
+            "dab7f746184a83c2aacb1498",
+            [
+              0.7792553901672363
+            ]
+          ],
+          [
+            "dc0a08574d263dd0117c4e0f",
+            [
+              0.999772846698761
+            ]
+          ],
+          [
+            "df692db69e26d0a33c9296b8",
+            [
+              0.6522135138511658
+            ]
+          ],
+          [
+            "e2d11e22927c4764adaef492",
+            [
+              0.8352922797203064
+            ]
+          ],
+          [
+            "e6ec377d99528b5f85fbc3a7",
+            [
+              0.7606737613677979
+            ]
+          ],
+          [
+            "ec7f35f742ec3f951b55ee5f",
+            [
+              0.9776918888092041
+            ]
+          ],
+          [
+            "ed2185960da3c4c0907733f1",
+            [
+              0.9995105266571045
+            ]
+          ],
+          [
+            "f8103145cd0db5d24b6a5150",
+            [
+              0.0725681260228157
+            ]
+          ],
+          [
+            "fa317f48568ab3f3dff29216",
+            [
+              0.047088541090488434
+            ]
+          ],
+          [
+            "fce2dabe33e22114aea4cafc",
+            [
+              0.9991917014122009
+            ]
+          ],
+          [
+            "fd073377632714b643ecf29a",
+            [
+              0.9971465468406677
+            ]
+          ]
+        ],
+        "window_starts": [
+          [
+            "026d2b69ddab8e865520ea63",
+            [
+              0,
+              46422
+            ]
+          ],
+          [
+            "03113856d67938f52875a986",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0326a05a93bd5024f98b56bf",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "04793716bed09f6dfd7f5ded",
+            [
+              0,
+              12840
+            ]
+          ],
+          [
+            "056bebbb70a7af3ac33cff87",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "05f73981c29179262f740a0e",
+            [
+              0,
+              64600,
+              91734
+            ]
+          ],
+          [
+            "0843700cf46b01388464ed78",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0a5ac9fdf89539525e49a8d5",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0b52f07622d395ee008422d3",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0d4698769067dfdaa03e5b8f",
+            [
+              0,
+              31400
+            ]
+          ],
+          [
+            "17212bf4d60297555520a9e3",
+            [
+              0,
+              23190
+            ]
+          ],
+          [
+            "1806d27aaeb6873905841ea2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "1a2c93e53b2c6a93228a9bea",
+            [
+              0,
+              37510
+            ]
+          ],
+          [
+            "1dddfba0b99c6525c60711a4",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "1e5292ef102b2bbe2055beab",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "20f85207c60a197443122242",
+            [
+              0,
+              60200
+            ]
+          ],
+          [
+            "23222cc3d797f2cf29bb0b6d",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "24008b1fad9ae9a569e0a903",
+            [
+              0,
+              52885
+            ]
+          ],
+          [
+            "2a3327b485992d39f2f3ee8f",
+            [
+              0,
+              35398
+            ]
+          ],
+          [
+            "2a865d99290c987c8a654bd6",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "33a72730a569f9a8bec482c8",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "34b582b2088fa70e4253d0b7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "358e8da9be73b38fd6895b87",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "3f22ddb3802828c052c3ddca",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "448f96585e19665bc779d741",
+            [
+              0,
+              14118
+            ]
+          ],
+          [
+            "4708f6be98d331c48c42cbd7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "48a7f97d06402409a0d68f25",
+            [
+              0,
+              15080
+            ]
+          ],
+          [
+            "4d045cd66794b6b522195168",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "51dd8f061a44f32c180f99b2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "525761809c638e7cf61824ed",
+            [
+              0,
+              33960
+            ]
+          ],
+          [
+            "570e5140c29c71f3c7eccb0d",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6006ba4a0f06630c894552ef",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "62454f0d918533bea4baff84",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "63cb308fcd49df7779a6590a",
+            [
+              0,
+              49931
+            ]
+          ],
+          [
+            "659b7930ccb887d2ac9dee1c",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6a82adc6291d89631b9f88fe",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6b68e11d862cc51bfe97aed9",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6c8e62ca42b55e7ebcd63446",
+            [
+              0,
+              64600,
+              73158
+            ]
+          ],
+          [
+            "6e7fdf6e13cb014601947292",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "73db091a0f9560aed5b8bff5",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "74b39fc8ad3b0c402a270775",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "75e347b1e91779ef2d3766a3",
+            [
+              0,
+              10600
+            ]
+          ],
+          [
+            "76854e4d0a88fd9e9ee640fa",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "76cd3dd20d88fd1f0034dc9a",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "79d89b1f653ffa82eebad153",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7c70af6d3b6f430d9a75e2a3",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7cb3c69acff66589b0d31082",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7ce0f0abeb43047aa028e3ae",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7e710449a19be285f82e38d4",
+            [
+              0,
+              64600,
+              103190
+            ]
+          ],
+          [
+            "7f2c09f77ab818b2dec970b7",
+            [
+              0,
+              64600,
+              108518
+            ]
+          ],
+          [
+            "7f2c7ba0a0997ffe8651d7be",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "808e97735a28bc7b2e0d0d93",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "80ba540335b3ae936a446f95",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "890a38aba365bec00552c541",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "8a10e9335a4cbce2f3fa8fc3",
+            [
+              0,
+              4038
+            ]
+          ],
+          [
+            "8fa10beaaba7af48e79df985",
+            [
+              0,
+              64600,
+              76200
+            ]
+          ],
+          [
+            "9335f994e9e15dfa8b2edd29",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "96530dabe3361c5b46e27376",
+            [
+              0,
+              64600,
+              121958
+            ]
+          ],
+          [
+            "97aabe125db3af66ef30550e",
+            [
+              0,
+              34598
+            ]
+          ],
+          [
+            "97d4628ada187be52e0d6c96",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "9e528d3fc2f53af3743894ba",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "a0ca27421e1fe1cad9917427",
+            [
+              0,
+              28383
+            ]
+          ],
+          [
+            "a40540ae437ed69019b4a3c2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "a629ebcc903ea53ddc6764de",
+            [
+              0,
+              36520
+            ]
+          ],
+          [
+            "a7579bd07d2a9fa450783741",
+            [
+              0,
+              29869
+            ]
+          ],
+          [
+            "ab5df548478adeb5610cbfc2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "b1355bb04e4dcfd7251b2887",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "b59089a2dd27572d85176e48",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ba96617ed470afd6ed3ca255",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "bb58ba9e563b9f9acca8f42c",
+            [
+              0,
+              33126
+            ]
+          ],
+          [
+            "be56f426d2a8d64e88968133",
+            [
+              0,
+              17238
+            ]
+          ],
+          [
+            "bf01c52c339120acfd831e9b",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "bfaabb3bef02012330444afe",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c0be5c2c52d12ca43e7d0a09",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c1f8fd3739e56379be555a78",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c389017fbd2f4c7b89627119",
+            [
+              0,
+              10920
+            ]
+          ],
+          [
+            "c46abf09aec7849d25476f5e",
+            [
+              0,
+              47526
+            ]
+          ],
+          [
+            "c7c484bec4ac3dee3a30eb99",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ca169eb8def4a4444f883110",
+            [
+              0,
+              40518
+            ]
+          ],
+          [
+            "cc38100a5dd518d557b3bae7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "cd84ed71e1ba18aabaa5502a",
+            [
+              0,
+              26280
+            ]
+          ],
+          [
+            "d0eae12426c4ce3d8ea8eb7b",
+            [
+              0,
+              37205
+            ]
+          ],
+          [
+            "d2127c4b30b7d7fa7c1c5724",
+            [
+              0,
+              9158
+            ]
+          ],
+          [
+            "d3352a96271d4f6ae3c7426d",
+            [
+              0,
+              61077
+            ]
+          ],
+          [
+            "d38c37a2c1da1d0ceb58d1d1",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d45489caf5f3a3f77e87770c",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d7cd60ed8300e516557ed614",
+            [
+              0,
+              37800
+            ]
+          ],
+          [
+            "d82532a6dfa2586741b22314",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d929c13b1d060683574762bc",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "dab7f746184a83c2aacb1498",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "dc0a08574d263dd0117c4e0f",
+            [
+              0,
+              30120
+            ]
+          ],
+          [
+            "df692db69e26d0a33c9296b8",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "e2d11e22927c4764adaef492",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "e6ec377d99528b5f85fbc3a7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ec7f35f742ec3f951b55ee5f",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ed2185960da3c4c0907733f1",
+            [
+              0,
+              23720
+            ]
+          ],
+          [
+            "f8103145cd0db5d24b6a5150",
+            [
+              0,
+              64600,
+              96678
+            ]
+          ],
+          [
+            "fa317f48568ab3f3dff29216",
+            [
+              0,
+              64600,
+              68198
+            ]
+          ],
+          [
+            "fce2dabe33e22114aea4cafc",
+            [
+              0,
+              44520
+            ]
+          ],
+          [
+            "fd073377632714b643ecf29a",
+            [
+              0,
+              42920
+            ]
+          ]
+        ],
+        "heads": [
+          {
+            "name": "voice_fake",
+            "count": 100,
+            "loss": 0.45213577151298523,
+            "eer": 0.17916666666666667,
+            "auc": 0.92
+          }
+        ],
+        "loss": 0.45213577151298523,
+        "selection_metric": 0.8208333333333333
+      }
+    },
+    {
+      "epoch": 3,
+      "updates": 150,
+      "train_loss": 0.5489241750349174,
+      "seconds": 124.42281656000023,
+      "source_exposures": {
+        "mlaad:midnight_passenger_05_f000214": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000112": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000103": 2,
+        "mlaad:hunters_space_14_f000057": 2,
+        "mlaad:skyisland_13_baum_64kb_f000001": 2,
+        "mlaad:poisoned_pen_06_f000019": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000128": 2,
+        "mlaad:emerald_city_of_oz_20_f000104": 2,
+        "mlaad:pink_fairy_book_33_f000072": 2,
+        "mlaad:the_master_key_10_f000082": 2,
+        "mlaad:northandsouth_41_f000208": 2,
+        "mlaad:pink_fairy_book_31_f000105": 2,
+        "mlaad:jane_eyre_30_f000075": 2,
+        "mlaad:wives_and_daughters_36_f000050": 2,
+        "mlaad:northandsouth_04_f000095": 2,
+        "mlaad:rinkitink_baum_07_64kb_f000059": 2,
+        "mlaad:northandsouth_21_f000086": 2,
+        "mlaad:jane_eyre_27_f000155": 2,
+        "mlaad:emerald_city_of_oz_11_f000026": 2,
+        "mlaad:northandsouth_35_f000262": 2,
+        "mlaad:jane_eyre_10_f000223": 2,
+        "mlaad:jane_eyre_15_f000215": 2,
+        "mlaad:poisoned_pen_05_f000283": 2,
+        "mlaad:jane_eyre_17_f000113": 2,
+        "mlaad:jane_eyre_15_f000223": 2,
+        "mlaad:rinkitink_baum_19_64kb_f000011": 2,
+        "mlaad:hunters_space_08_f000076": 2,
+        "mlaad:wives_and_daughters_39_f000098": 2,
+        "mlaad:northandsouth_02_f000127": 2,
+        "mlaad:northandsouth_25_f000110": 2,
+        "mlaad:jane_eyre_07_f000014": 2,
+        "mlaad:emerald_city_of_oz_14_f000084": 2,
+        "mlaad:dorothy_and_wizard_oz_14_f000119": 2,
+        "mlaad:skyisland_17_baum_64kb_f000012": 2,
+        "mlaad:jane_eyre_27_f000510": 2,
+        "mlaad:jane_eyre_35_f000025": 2,
+        "mlaad:skyisland_07_baum_64kb_f000068": 2,
+        "mlaad:poisoned_pen_09_f000313": 2,
+        "mlaad:silent_bullet_06_f000153": 2,
+        "mlaad:pink_fairy_book_10_f000104": 2,
+        "mlaad:ozma_of_oz_20_f000010": 2,
+        "mlaad:jane_eyre_25_f000101": 2,
+        "mlaad:wives_and_daughters_58_f000172": 2,
+        "mlaad:skyisland_30_baum_64kb_f000049": 2,
+        "mlaad:skyisland_07_baum_64kb_f000017": 2,
+        "mlaad:midnight_passenger_08_f000062": 2,
+        "mlaad:midnight_passenger_04_f000292": 2,
+        "mlaad:midnight_passenger_01_f000169": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000005": 2,
+        "mlaad:northandsouth_18_f000017": 2,
+        "mlaad:hunters_space_12_f000054": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000078": 2,
+        "mlaad:wives_and_daughters_37_f000280": 2,
+        "mlaad:piratesofersatz_12_leinster_64kb_f000044": 2,
+        "mlaad:jane_eyre_34_f000126": 2,
+        "mlaad:jane_eyre_27_f000507": 2,
+        "mlaad:northandsouth_51_f000043": 2,
+        "mlaad:hunters_space_02_f000038": 2,
+        "mlaad:pink_fairy_book_30_f000084": 2,
+        "mlaad:poisoned_pen_05_f000096": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000036": 2,
+        "mlaad:jane_eyre_28_f000360": 2,
+        "mlaad:midnight_passenger_09_f000132": 2,
+        "mlaad:pink_fairy_book_10_f000124": 2,
+        "mlaad:midnight_passenger_01_f000075": 2,
+        "mlaad:skyisland_27_baum_64kb_f000041": 2,
+        "mlaad:wives_and_daughters_38_f000008": 2,
+        "mlaad:the_sea_fairies_17_f000026": 2,
+        "mlaad:rinkitink_baum_01_64kb_f000091": 2,
+        "mlaad:dorothy_and_wizard_oz_08_f000005": 2,
+        "mlaad:the_sea_fairies_12_f000133": 2,
+        "mlaad:rinkitink_baum_08_64kb_f000094": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000206": 2,
+        "mlaad:jane_eyre_27_f000167": 2,
+        "mlaad:midnight_passenger_04_f000229": 2,
+        "mlaad:wives_and_daughters_12_f000039": 2,
+        "mlaad:northandsouth_19_f000056": 2,
+        "mlaad:jane_eyre_06_f000142": 2,
+        "mlaad:jane_eyre_16_f000057": 2,
+        "mlaad:wives_and_daughters_32_f000182": 2,
+        "mlaad:skyisland_12_baum_64kb_f000071": 2,
+        "mlaad:wives_and_daughters_11_f000256": 2,
+        "mlaad:silent_bullet_11_f000313": 2,
+        "mlaad:silent_bullet_08_f000314": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000030": 2,
+        "mlaad:hunters_space_02_f000017": 2,
+        "mlaad:pink_fairy_book_22_f000104": 2,
+        "mlaad:wives_and_daughters_52_f000098": 2,
+        "mlaad:midnight_passenger_08_f000059": 2,
+        "mlaad:midnight_passenger_15_f000019": 2,
+        "mlaad:wives_and_daughters_59_f000029": 2,
+        "mlaad:ozma_of_oz_16_f000033": 2,
+        "mlaad:poisoned_pen_09_f000049": 2,
+        "mlaad:jane_eyre_01_f000039": 2,
+        "mlaad:midnight_passenger_13_f000102": 2,
+        "mlaad:pink_fairy_book_13_f000137": 2,
+        "mlaad:wives_and_daughters_02_f000217": 2,
+        "mlaad:wives_and_daughters_38_f000061": 2,
+        "mlaad:jane_eyre_21_f000268": 2,
+        "mlaad:pink_fairy_book_14_f000090": 2,
+        "mlaad:poisoned_pen_04_f000178": 2,
+        "mlaad:hunters_space_08_f000069": 2,
+        "mlaad:northandsouth_22_f000072": 2,
+        "mlaad:silent_bullet_13_f000280": 2,
+        "mlaad:wives_and_daughters_10_f000108": 2,
+        "mlaad:the_sea_fairies_05_f000068": 2,
+        "mlaad:poisoned_pen_01_f000235": 2,
+        "mlaad:poisoned_pen_07_f000386": 2,
+        "mlaad:northandsouth_05_f000222": 2,
+        "mlaad:jane_eyre_17_f000120": 2,
+        "mlaad:dorothy_and_wizard_oz_06_f000021": 2,
+        "mlaad:northandsouth_35_f000228": 2,
+        "mlaad:poisoned_pen_10_f000016": 2,
+        "mlaad:ozma_of_oz_04_f000065": 2,
+        "mlaad:hunters_space_16_f000003": 2,
+        "mlaad:wives_and_daughters_47_f000218": 2,
+        "mlaad:poisoned_pen_05_f000265": 2,
+        "mlaad:emerald_city_of_oz_05_f000091": 2,
+        "mlaad:wives_and_daughters_54_f000126": 2,
+        "mlaad:northandsouth_25_f000030": 2,
+        "mlaad:poisoned_pen_07_f000388": 2,
+        "mlaad:northandsouth_36_f000214": 2,
+        "mlaad:wives_and_daughters_04_f000195": 2,
+        "mlaad:silent_bullet_09_f000237": 2,
+        "mlaad:hunters_space_12_f000017": 2,
+        "mlaad:jane_eyre_16_f000156": 2,
+        "mlaad:pink_fairy_book_38_f000065": 2,
+        "mlaad:northandsouth_20_f000074": 2,
+        "mlaad:midnight_passenger_07_f000151": 2,
+        "mlaad:jane_eyre_05_f000072": 2,
+        "mlaad:jane_eyre_01_f000093": 2,
+        "mlaad:jane_eyre_14_f000079": 2,
+        "mlaad:poisoned_pen_05_f000165": 2,
+        "mlaad:jane_eyre_27_f000392": 2,
+        "mlaad:wives_and_daughters_12_f000018": 2,
+        "mlaad:hunters_space_03_f000076": 2,
+        "mlaad:silent_bullet_08_f000005": 2,
+        "mlaad:pink_fairy_book_32_f000050": 2,
+        "mlaad:silent_bullet_03_f000035": 2,
+        "mlaad:wives_and_daughters_29_f000036": 2,
+        "mlaad:the_master_key_03_f000082": 2,
+        "mlaad:ozma_of_oz_06_f000085": 2,
+        "mlaad:poisoned_pen_10_f000122": 2,
+        "mlaad:wives_and_daughters_17_f000077": 2,
+        "mlaad:ozma_of_oz_01_f000053": 2,
+        "mlaad:jane_eyre_35_f000105": 2,
+        "mlaad:poisoned_pen_12_f000071": 2,
+        "mlaad:poisoned_pen_11_f000228": 2,
+        "mlaad:skyisland_11_baum_64kb_f000054": 2,
+        "mlaad:wives_and_daughters_55_f000144": 2,
+        "mlaad:midnight_passenger_12_f000043": 2,
+        "mlaad:wives_and_daughters_18_f000013": 2,
+        "mlaad:emerald_city_of_oz_10_f000128": 2,
+        "mlaad:poisoned_pen_11_f000335": 2,
+        "mlaad:pink_fairy_book_01_f000016": 2,
+        "mlaad:midnight_passenger_14_f000079": 2,
+        "mlaad:silent_bullet_03_f000267": 2,
+        "mlaad:wives_and_daughters_56_f000019": 2,
+        "mlaad:rinkitink_baum_09_64kb_f000008": 2,
+        "mlaad:northandsouth_39_f000118": 2,
+        "mlaad:midnight_passenger_04_f000042": 2,
+        "mlaad:pink_fairy_book_29_f000036": 2,
+        "mlaad:pink_fairy_book_22_f000040": 2,
+        "mlaad:midnight_passenger_03_f000259": 2,
+        "mlaad:piratesofersatz_08_leinster_64kb_f000166": 2,
+        "mlaad:the_master_key_08_f000030": 2,
+        "mlaad:northandsouth_31_f000169": 2,
+        "mlaad:silent_bullet_02_f000003": 2,
+        "mlaad:poisoned_pen_12_f000439": 2,
+        "mlaad:midnight_passenger_03_f000175": 2,
+        "mlaad:wives_and_daughters_28_f000194": 2,
+        "mlaad:jane_eyre_27_f000390": 2,
+        "mlaad:emerald_city_of_oz_28_f000068": 2,
+        "mlaad:jane_eyre_30_f000198": 2,
+        "mlaad:midnight_passenger_06_f000063": 2,
+        "mlaad:northandsouth_42_f000101": 2,
+        "mlaad:pink_fairy_book_23_f000049": 2,
+        "mlaad:wives_and_daughters_20_f000117": 2,
+        "mlaad:poisoned_pen_03_f000161": 2,
+        "mlaad:jane_eyre_37_f000258": 2,
+        "mlaad:wives_and_daughters_55_f000006": 2,
+        "mlaad:wives_and_daughters_22_f000007": 2,
+        "mlaad:skyisland_17_baum_64kb_f000077": 2,
+        "mlaad:wives_and_daughters_49_f000161": 2,
+        "mlaad:jane_eyre_29_f000047": 2,
+        "mlaad:poisoned_pen_09_f000072": 2,
+        "mlaad:wives_and_daughters_49_f000179": 2,
+        "mlaad:silent_bullet_05_f000127": 2,
+        "mlaad:northandsouth_10_f000159": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000217": 2,
+        "mlaad:emerald_city_of_oz_08_f000059": 2,
+        "mlaad:midnight_passenger_06_f000078": 2,
+        "mlaad:jane_eyre_34_f000271": 2,
+        "mlaad:jane_eyre_05_f000186": 2,
+        "mlaad:dorothy_and_wizard_oz_18_f000014": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000137": 2,
+        "mlaad:northandsouth_16_f000112": 2,
+        "mlaad:wives_and_daughters_29_f000092": 2,
+        "mlaad:the_sea_fairies_07_f000053": 2,
+        "mlaad:jane_eyre_28_f000177": 2
+      },
+      "dev": null
+    },
+    {
+      "epoch": 4,
+      "updates": 200,
+      "train_loss": 0.49010046065814095,
+      "seconds": 140.82820430500033,
+      "source_exposures": {
+        "mlaad:wives_and_daughters_38_f000008": 2,
+        "mlaad:the_sea_fairies_07_f000053": 2,
+        "mlaad:silent_bullet_06_f000153": 2,
+        "mlaad:midnight_passenger_06_f000078": 2,
+        "mlaad:midnight_passenger_08_f000059": 2,
+        "mlaad:hunters_space_16_f000003": 2,
+        "mlaad:skyisland_17_baum_64kb_f000077": 2,
+        "mlaad:ozma_of_oz_01_f000053": 2,
+        "mlaad:poisoned_pen_09_f000049": 2,
+        "mlaad:wives_and_daughters_02_f000217": 2,
+        "mlaad:rinkitink_baum_07_64kb_f000059": 2,
+        "mlaad:hunters_space_12_f000017": 2,
+        "mlaad:dorothy_and_wizard_oz_14_f000119": 2,
+        "mlaad:the_sea_fairies_12_f000133": 2,
+        "mlaad:the_master_key_10_f000082": 2,
+        "mlaad:ozma_of_oz_06_f000085": 2,
+        "mlaad:wives_and_daughters_22_f000007": 2,
+        "mlaad:midnight_passenger_03_f000175": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000206": 2,
+        "mlaad:midnight_passenger_04_f000292": 2,
+        "mlaad:silent_bullet_09_f000237": 2,
+        "mlaad:wives_and_daughters_59_f000029": 2,
+        "mlaad:wives_and_daughters_17_f000077": 2,
+        "mlaad:jane_eyre_15_f000223": 2,
+        "mlaad:skyisland_27_baum_64kb_f000041": 2,
+        "mlaad:dorothy_and_wizard_oz_08_f000005": 2,
+        "mlaad:northandsouth_25_f000110": 2,
+        "mlaad:jane_eyre_01_f000039": 2,
+        "mlaad:poisoned_pen_12_f000439": 2,
+        "mlaad:silent_bullet_02_f000003": 2,
+        "mlaad:silent_bullet_08_f000314": 2,
+        "mlaad:jane_eyre_17_f000120": 2,
+        "mlaad:jane_eyre_05_f000072": 2,
+        "mlaad:wives_and_daughters_36_f000050": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000030": 2,
+        "mlaad:midnight_passenger_06_f000063": 2,
+        "mlaad:hunters_space_14_f000057": 2,
+        "mlaad:northandsouth_16_f000112": 2,
+        "mlaad:jane_eyre_10_f000223": 2,
+        "mlaad:jane_eyre_37_f000258": 2,
+        "mlaad:jane_eyre_34_f000126": 2,
+        "mlaad:dorothy_and_wizard_oz_06_f000021": 2,
+        "mlaad:poisoned_pen_10_f000016": 2,
+        "mlaad:midnight_passenger_14_f000079": 2,
+        "mlaad:poisoned_pen_03_f000161": 2,
+        "mlaad:pink_fairy_book_10_f000124": 2,
+        "mlaad:midnight_passenger_01_f000075": 2,
+        "mlaad:midnight_passenger_05_f000214": 2,
+        "mlaad:poisoned_pen_11_f000335": 2,
+        "mlaad:ozma_of_oz_16_f000033": 2,
+        "mlaad:emerald_city_of_oz_28_f000068": 2,
+        "mlaad:jane_eyre_01_f000093": 2,
+        "mlaad:poisoned_pen_07_f000388": 2,
+        "mlaad:jane_eyre_25_f000101": 2,
+        "mlaad:jane_eyre_15_f000215": 2,
+        "mlaad:jane_eyre_35_f000025": 2,
+        "mlaad:jane_eyre_35_f000105": 2,
+        "mlaad:wives_and_daughters_47_f000218": 2,
+        "mlaad:poisoned_pen_05_f000283": 2,
+        "mlaad:northandsouth_31_f000169": 2,
+        "mlaad:jane_eyre_30_f000075": 2,
+        "mlaad:pink_fairy_book_30_f000084": 2,
+        "mlaad:jane_eyre_27_f000155": 2,
+        "mlaad:jane_eyre_30_f000198": 2,
+        "mlaad:jane_eyre_14_f000079": 2,
+        "mlaad:wives_and_daughters_37_f000280": 2,
+        "mlaad:poisoned_pen_04_f000178": 2,
+        "mlaad:hunters_space_08_f000076": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000128": 2,
+        "mlaad:wives_and_daughters_49_f000161": 2,
+        "mlaad:emerald_city_of_oz_10_f000128": 2,
+        "mlaad:piratesofersatz_12_leinster_64kb_f000044": 2,
+        "mlaad:emerald_city_of_oz_14_f000084": 2,
+        "mlaad:wives_and_daughters_20_f000117": 2,
+        "mlaad:jane_eyre_27_f000167": 2,
+        "mlaad:wives_and_daughters_54_f000126": 2,
+        "mlaad:emerald_city_of_oz_08_f000059": 2,
+        "mlaad:jane_eyre_17_f000113": 2,
+        "mlaad:northandsouth_42_f000101": 2,
+        "mlaad:midnight_passenger_04_f000042": 2,
+        "mlaad:pink_fairy_book_22_f000104": 2,
+        "mlaad:wives_and_daughters_32_f000182": 2,
+        "mlaad:hunters_space_12_f000054": 2,
+        "mlaad:wives_and_daughters_18_f000013": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000137": 2,
+        "mlaad:jane_eyre_27_f000507": 2,
+        "mlaad:skyisland_30_baum_64kb_f000049": 2,
+        "mlaad:rinkitink_baum_19_64kb_f000011": 2,
+        "mlaad:wives_and_daughters_55_f000006": 2,
+        "mlaad:poisoned_pen_09_f000313": 2,
+        "mlaad:northandsouth_18_f000017": 2,
+        "mlaad:midnight_passenger_08_f000062": 2,
+        "mlaad:piratesofersatz_08_leinster_64kb_f000166": 2,
+        "mlaad:pink_fairy_book_01_f000016": 2,
+        "mlaad:poisoned_pen_10_f000122": 2,
+        "mlaad:northandsouth_04_f000095": 2,
+        "mlaad:pink_fairy_book_31_f000105": 2,
+        "mlaad:northandsouth_41_f000208": 2,
+        "mlaad:pink_fairy_book_33_f000072": 2,
+        "mlaad:northandsouth_35_f000228": 2,
+        "mlaad:emerald_city_of_oz_11_f000026": 2,
+        "mlaad:wives_and_daughters_10_f000108": 2,
+        "mlaad:the_master_key_08_f000030": 2,
+        "mlaad:emerald_city_of_oz_05_f000091": 2,
+        "mlaad:pink_fairy_book_32_f000050": 2,
+        "mlaad:jane_eyre_21_f000268": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000078": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000103": 2,
+        "mlaad:wives_and_daughters_29_f000036": 2,
+        "mlaad:wives_and_daughters_11_f000256": 2,
+        "mlaad:poisoned_pen_07_f000386": 2,
+        "mlaad:northandsouth_21_f000086": 2,
+        "mlaad:hunters_space_02_f000038": 2,
+        "mlaad:skyisland_07_baum_64kb_f000017": 2,
+        "mlaad:poisoned_pen_05_f000265": 2,
+        "mlaad:rinkitink_baum_08_64kb_f000094": 2,
+        "mlaad:northandsouth_05_f000222": 2,
+        "mlaad:poisoned_pen_01_f000235": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000005": 2,
+        "mlaad:pink_fairy_book_13_f000137": 2,
+        "mlaad:wives_and_daughters_12_f000039": 2,
+        "mlaad:silent_bullet_11_f000313": 2,
+        "mlaad:ozma_of_oz_20_f000010": 2,
+        "mlaad:jane_eyre_16_f000057": 2,
+        "mlaad:wives_and_daughters_52_f000098": 2,
+        "mlaad:jane_eyre_28_f000360": 2,
+        "mlaad:poisoned_pen_09_f000072": 2,
+        "mlaad:northandsouth_35_f000262": 2,
+        "mlaad:midnight_passenger_04_f000229": 2,
+        "mlaad:midnight_passenger_09_f000132": 2,
+        "mlaad:jane_eyre_06_f000142": 2,
+        "mlaad:ozma_of_oz_04_f000065": 2,
+        "mlaad:poisoned_pen_12_f000071": 2,
+        "mlaad:poisoned_pen_05_f000165": 2,
+        "mlaad:wives_and_daughters_56_f000019": 2,
+        "mlaad:northandsouth_39_f000118": 2,
+        "mlaad:the_master_key_03_f000082": 2,
+        "mlaad:jane_eyre_27_f000392": 2,
+        "mlaad:silent_bullet_08_f000005": 2,
+        "mlaad:silent_bullet_03_f000267": 2,
+        "mlaad:wives_and_daughters_04_f000195": 2,
+        "mlaad:skyisland_12_baum_64kb_f000071": 2,
+        "mlaad:northandsouth_19_f000056": 2,
+        "mlaad:pink_fairy_book_14_f000090": 2,
+        "mlaad:skyisland_13_baum_64kb_f000001": 2,
+        "mlaad:skyisland_17_baum_64kb_f000012": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000112": 2,
+        "mlaad:jane_eyre_28_f000177": 2,
+        "mlaad:northandsouth_20_f000074": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000217": 2,
+        "mlaad:hunters_space_03_f000076": 2,
+        "mlaad:poisoned_pen_11_f000228": 2,
+        "mlaad:pink_fairy_book_38_f000065": 2,
+        "mlaad:pink_fairy_book_29_f000036": 2,
+        "mlaad:midnight_passenger_07_f000151": 2,
+        "mlaad:pink_fairy_book_10_f000104": 2,
+        "mlaad:midnight_passenger_01_f000169": 2,
+        "mlaad:rinkitink_baum_01_64kb_f000091": 2,
+        "mlaad:jane_eyre_34_f000271": 2,
+        "mlaad:jane_eyre_27_f000390": 2,
+        "mlaad:wives_and_daughters_28_f000194": 2,
+        "mlaad:wives_and_daughters_58_f000172": 2,
+        "mlaad:northandsouth_36_f000214": 2,
+        "mlaad:jane_eyre_29_f000047": 2,
+        "mlaad:skyisland_07_baum_64kb_f000068": 2,
+        "mlaad:dorothy_and_wizard_oz_18_f000014": 2,
+        "mlaad:wives_and_daughters_29_f000092": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000036": 2,
+        "mlaad:jane_eyre_27_f000510": 2,
+        "mlaad:the_sea_fairies_17_f000026": 2,
+        "mlaad:midnight_passenger_12_f000043": 2,
+        "mlaad:the_sea_fairies_05_f000068": 2,
+        "mlaad:pink_fairy_book_23_f000049": 2,
+        "mlaad:northandsouth_10_f000159": 2,
+        "mlaad:wives_and_daughters_55_f000144": 2,
+        "mlaad:silent_bullet_13_f000280": 2,
+        "mlaad:pink_fairy_book_22_f000040": 2,
+        "mlaad:rinkitink_baum_09_64kb_f000008": 2,
+        "mlaad:jane_eyre_07_f000014": 2,
+        "mlaad:northandsouth_25_f000030": 2,
+        "mlaad:skyisland_11_baum_64kb_f000054": 2,
+        "mlaad:emerald_city_of_oz_20_f000104": 2,
+        "mlaad:jane_eyre_16_f000156": 2,
+        "mlaad:silent_bullet_03_f000035": 2,
+        "mlaad:wives_and_daughters_12_f000018": 2,
+        "mlaad:jane_eyre_05_f000186": 2,
+        "mlaad:northandsouth_51_f000043": 2,
+        "mlaad:midnight_passenger_03_f000259": 2,
+        "mlaad:wives_and_daughters_39_f000098": 2,
+        "mlaad:northandsouth_02_f000127": 2,
+        "mlaad:wives_and_daughters_49_f000179": 2,
+        "mlaad:poisoned_pen_05_f000096": 2,
+        "mlaad:midnight_passenger_13_f000102": 2,
+        "mlaad:silent_bullet_05_f000127": 2,
+        "mlaad:hunters_space_02_f000017": 2,
+        "mlaad:midnight_passenger_15_f000019": 2,
+        "mlaad:hunters_space_08_f000069": 2,
+        "mlaad:northandsouth_22_f000072": 2,
+        "mlaad:wives_and_daughters_38_f000061": 2,
+        "mlaad:poisoned_pen_06_f000019": 2
+      },
+      "dev": {
+        "predictions": [
+          [
+            "026d2b69ddab8e865520ea63",
+            [
+              0.03160719946026802
+            ]
+          ],
+          [
+            "03113856d67938f52875a986",
+            [
+              0.9975541234016418
+            ]
+          ],
+          [
+            "0326a05a93bd5024f98b56bf",
+            [
+              0.8189249634742737
+            ]
+          ],
+          [
+            "04793716bed09f6dfd7f5ded",
+            [
+              0.9979633092880249
+            ]
+          ],
+          [
+            "056bebbb70a7af3ac33cff87",
+            [
+              0.23768168687820435
+            ]
+          ],
+          [
+            "05f73981c29179262f740a0e",
+            [
+              0.01937614195048809
+            ]
+          ],
+          [
+            "0843700cf46b01388464ed78",
+            [
+              0.9870216250419617
+            ]
+          ],
+          [
+            "0a5ac9fdf89539525e49a8d5",
+            [
+              0.9965513944625854
+            ]
+          ],
+          [
+            "0b52f07622d395ee008422d3",
+            [
+              0.9850801825523376
+            ]
+          ],
+          [
+            "0d4698769067dfdaa03e5b8f",
+            [
+              0.9994655251502991
+            ]
+          ],
+          [
+            "17212bf4d60297555520a9e3",
+            [
+              0.26314374804496765
+            ]
+          ],
+          [
+            "1806d27aaeb6873905841ea2",
+            [
+              0.758449137210846
+            ]
+          ],
+          [
+            "1a2c93e53b2c6a93228a9bea",
+            [
+              0.20623911917209625
+            ]
+          ],
+          [
+            "1dddfba0b99c6525c60711a4",
+            [
+              0.9682769179344177
+            ]
+          ],
+          [
+            "1e5292ef102b2bbe2055beab",
+            [
+              0.20512747764587402
+            ]
+          ],
+          [
+            "20f85207c60a197443122242",
+            [
+              0.9995706677436829
+            ]
+          ],
+          [
+            "23222cc3d797f2cf29bb0b6d",
+            [
+              0.6187077760696411
+            ]
+          ],
+          [
+            "24008b1fad9ae9a569e0a903",
+            [
+              0.048564013093709946
+            ]
+          ],
+          [
+            "2a3327b485992d39f2f3ee8f",
+            [
+              0.03333627060055733
+            ]
+          ],
+          [
+            "2a865d99290c987c8a654bd6",
+            [
+              0.9995976090431213
+            ]
+          ],
+          [
+            "33a72730a569f9a8bec482c8",
+            [
+              0.630966305732727
+            ]
+          ],
+          [
+            "34b582b2088fa70e4253d0b7",
+            [
+              0.9996795654296875
+            ]
+          ],
+          [
+            "358e8da9be73b38fd6895b87",
+            [
+              0.816138505935669
+            ]
+          ],
+          [
+            "3f22ddb3802828c052c3ddca",
+            [
+              0.20622870326042175
+            ]
+          ],
+          [
+            "448f96585e19665bc779d741",
+            [
+              0.9957500696182251
+            ]
+          ],
+          [
+            "4708f6be98d331c48c42cbd7",
+            [
+              0.9993804693222046
+            ]
+          ],
+          [
+            "48a7f97d06402409a0d68f25",
+            [
+              0.9998819828033447
+            ]
+          ],
+          [
+            "4d045cd66794b6b522195168",
+            [
+              0.9804620742797852
+            ]
+          ],
+          [
+            "51dd8f061a44f32c180f99b2",
+            [
+              0.9735985398292542
+            ]
+          ],
+          [
+            "525761809c638e7cf61824ed",
+            [
+              0.9989953637123108
+            ]
+          ],
+          [
+            "570e5140c29c71f3c7eccb0d",
+            [
+              0.9477695822715759
+            ]
+          ],
+          [
+            "6006ba4a0f06630c894552ef",
+            [
+              0.9998014569282532
+            ]
+          ],
+          [
+            "62454f0d918533bea4baff84",
+            [
+              0.6711840033531189
+            ]
+          ],
+          [
+            "63cb308fcd49df7779a6590a",
+            [
+              0.9998059868812561
+            ]
+          ],
+          [
+            "659b7930ccb887d2ac9dee1c",
+            [
+              0.999695897102356
+            ]
+          ],
+          [
+            "6a82adc6291d89631b9f88fe",
+            [
+              0.5362553596496582
+            ]
+          ],
+          [
+            "6b68e11d862cc51bfe97aed9",
+            [
+              0.7592906951904297
+            ]
+          ],
+          [
+            "6c8e62ca42b55e7ebcd63446",
+            [
+              0.20254361629486084
+            ]
+          ],
+          [
+            "6e7fdf6e13cb014601947292",
+            [
+              0.9703332781791687
+            ]
+          ],
+          [
+            "73db091a0f9560aed5b8bff5",
+            [
+              0.9996942281723022
+            ]
+          ],
+          [
+            "74b39fc8ad3b0c402a270775",
+            [
+              0.9991056323051453
+            ]
+          ],
+          [
+            "75e347b1e91779ef2d3766a3",
+            [
+              0.9996141195297241
+            ]
+          ],
+          [
+            "76854e4d0a88fd9e9ee640fa",
+            [
+              0.9989920258522034
+            ]
+          ],
+          [
+            "76cd3dd20d88fd1f0034dc9a",
+            [
+              0.9994199275970459
+            ]
+          ],
+          [
+            "79d89b1f653ffa82eebad153",
+            [
+              0.7807420492172241
+            ]
+          ],
+          [
+            "7c70af6d3b6f430d9a75e2a3",
+            [
+              0.9993143081665039
+            ]
+          ],
+          [
+            "7cb3c69acff66589b0d31082",
+            [
+              0.9299261569976807
+            ]
+          ],
+          [
+            "7ce0f0abeb43047aa028e3ae",
+            [
+              0.9954156875610352
+            ]
+          ],
+          [
+            "7e710449a19be285f82e38d4",
+            [
+              0.051356568932533264
+            ]
+          ],
+          [
+            "7f2c09f77ab818b2dec970b7",
+            [
+              0.6803304553031921
+            ]
+          ],
+          [
+            "7f2c7ba0a0997ffe8651d7be",
+            [
+              0.3936949670314789
+            ]
+          ],
+          [
+            "808e97735a28bc7b2e0d0d93",
+            [
+              0.9484136700630188
+            ]
+          ],
+          [
+            "80ba540335b3ae936a446f95",
+            [
+              0.7985352277755737
+            ]
+          ],
+          [
+            "890a38aba365bec00552c541",
+            [
+              0.9248232245445251
+            ]
+          ],
+          [
+            "8a10e9335a4cbce2f3fa8fc3",
+            [
+              0.6956401467323303
+            ]
+          ],
+          [
+            "8fa10beaaba7af48e79df985",
+            [
+              0.9991210103034973
+            ]
+          ],
+          [
+            "9335f994e9e15dfa8b2edd29",
+            [
+              0.7257184386253357
+            ]
+          ],
+          [
+            "96530dabe3361c5b46e27376",
+            [
+              0.038049712777137756
+            ]
+          ],
+          [
+            "97aabe125db3af66ef30550e",
+            [
+              0.03177537024021149
+            ]
+          ],
+          [
+            "97d4628ada187be52e0d6c96",
+            [
+              0.33574414253234863
+            ]
+          ],
+          [
+            "9e528d3fc2f53af3743894ba",
+            [
+              0.761009156703949
+            ]
+          ],
+          [
+            "a0ca27421e1fe1cad9917427",
+            [
+              0.9994695782661438
+            ]
+          ],
+          [
+            "a40540ae437ed69019b4a3c2",
+            [
+              0.36364394426345825
+            ]
+          ],
+          [
+            "a629ebcc903ea53ddc6764de",
+            [
+              0.9992375373840332
+            ]
+          ],
+          [
+            "a7579bd07d2a9fa450783741",
+            [
+              0.9999426603317261
+            ]
+          ],
+          [
+            "ab5df548478adeb5610cbfc2",
+            [
+              0.9870043396949768
+            ]
+          ],
+          [
+            "b1355bb04e4dcfd7251b2887",
+            [
+              0.9936453104019165
+            ]
+          ],
+          [
+            "b59089a2dd27572d85176e48",
+            [
+              0.2553322911262512
+            ]
+          ],
+          [
+            "ba96617ed470afd6ed3ca255",
+            [
+              0.9546620845794678
+            ]
+          ],
+          [
+            "bb58ba9e563b9f9acca8f42c",
+            [
+              0.11118701100349426
+            ]
+          ],
+          [
+            "be56f426d2a8d64e88968133",
+            [
+              0.9998239874839783
+            ]
+          ],
+          [
+            "bf01c52c339120acfd831e9b",
+            [
+              0.8999860286712646
+            ]
+          ],
+          [
+            "bfaabb3bef02012330444afe",
+            [
+              0.9728249311447144
+            ]
+          ],
+          [
+            "c0be5c2c52d12ca43e7d0a09",
+            [
+              0.9995717406272888
+            ]
+          ],
+          [
+            "c1f8fd3739e56379be555a78",
+            [
+              0.8966028094291687
+            ]
+          ],
+          [
+            "c389017fbd2f4c7b89627119",
+            [
+              0.9999125003814697
+            ]
+          ],
+          [
+            "c46abf09aec7849d25476f5e",
+            [
+              0.6751982569694519
+            ]
+          ],
+          [
+            "c7c484bec4ac3dee3a30eb99",
+            [
+              0.9782235026359558
+            ]
+          ],
+          [
+            "ca169eb8def4a4444f883110",
+            [
+              0.06989459693431854
+            ]
+          ],
+          [
+            "cc38100a5dd518d557b3bae7",
+            [
+              0.9828948974609375
+            ]
+          ],
+          [
+            "cd84ed71e1ba18aabaa5502a",
+            [
+              0.9974912405014038
+            ]
+          ],
+          [
+            "d0eae12426c4ce3d8ea8eb7b",
+            [
+              0.06779797375202179
+            ]
+          ],
+          [
+            "d2127c4b30b7d7fa7c1c5724",
+            [
+              0.954531729221344
+            ]
+          ],
+          [
+            "d3352a96271d4f6ae3c7426d",
+            [
+              0.9992159605026245
+            ]
+          ],
+          [
+            "d38c37a2c1da1d0ceb58d1d1",
+            [
+              0.4287565350532532
+            ]
+          ],
+          [
+            "d45489caf5f3a3f77e87770c",
+            [
+              0.8020161986351013
+            ]
+          ],
+          [
+            "d7cd60ed8300e516557ed614",
+            [
+              0.9998581409454346
+            ]
+          ],
+          [
+            "d82532a6dfa2586741b22314",
+            [
+              0.9898967742919922
+            ]
+          ],
+          [
+            "d929c13b1d060683574762bc",
+            [
+              0.9894579648971558
+            ]
+          ],
+          [
+            "dab7f746184a83c2aacb1498",
+            [
+              0.8420567512512207
+            ]
+          ],
+          [
+            "dc0a08574d263dd0117c4e0f",
+            [
+              0.9999066591262817
+            ]
+          ],
+          [
+            "df692db69e26d0a33c9296b8",
+            [
+              0.7048618793487549
+            ]
+          ],
+          [
+            "e2d11e22927c4764adaef492",
+            [
+              0.9474815130233765
+            ]
+          ],
+          [
+            "e6ec377d99528b5f85fbc3a7",
+            [
+              0.8861930966377258
+            ]
+          ],
+          [
+            "ec7f35f742ec3f951b55ee5f",
+            [
+              0.9949632883071899
+            ]
+          ],
+          [
+            "ed2185960da3c4c0907733f1",
+            [
+              0.9998655319213867
+            ]
+          ],
+          [
+            "f8103145cd0db5d24b6a5150",
+            [
+              0.08611341565847397
+            ]
+          ],
+          [
+            "fa317f48568ab3f3dff29216",
+            [
+              0.02639312669634819
+            ]
+          ],
+          [
+            "fce2dabe33e22114aea4cafc",
+            [
+              0.9998080134391785
+            ]
+          ],
+          [
+            "fd073377632714b643ecf29a",
+            [
+              0.9995812773704529
+            ]
+          ]
+        ],
+        "window_starts": [
+          [
+            "026d2b69ddab8e865520ea63",
+            [
+              0,
+              46422
+            ]
+          ],
+          [
+            "03113856d67938f52875a986",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0326a05a93bd5024f98b56bf",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "04793716bed09f6dfd7f5ded",
+            [
+              0,
+              12840
+            ]
+          ],
+          [
+            "056bebbb70a7af3ac33cff87",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "05f73981c29179262f740a0e",
+            [
+              0,
+              64600,
+              91734
+            ]
+          ],
+          [
+            "0843700cf46b01388464ed78",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0a5ac9fdf89539525e49a8d5",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0b52f07622d395ee008422d3",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0d4698769067dfdaa03e5b8f",
+            [
+              0,
+              31400
+            ]
+          ],
+          [
+            "17212bf4d60297555520a9e3",
+            [
+              0,
+              23190
+            ]
+          ],
+          [
+            "1806d27aaeb6873905841ea2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "1a2c93e53b2c6a93228a9bea",
+            [
+              0,
+              37510
+            ]
+          ],
+          [
+            "1dddfba0b99c6525c60711a4",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "1e5292ef102b2bbe2055beab",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "20f85207c60a197443122242",
+            [
+              0,
+              60200
+            ]
+          ],
+          [
+            "23222cc3d797f2cf29bb0b6d",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "24008b1fad9ae9a569e0a903",
+            [
+              0,
+              52885
+            ]
+          ],
+          [
+            "2a3327b485992d39f2f3ee8f",
+            [
+              0,
+              35398
+            ]
+          ],
+          [
+            "2a865d99290c987c8a654bd6",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "33a72730a569f9a8bec482c8",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "34b582b2088fa70e4253d0b7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "358e8da9be73b38fd6895b87",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "3f22ddb3802828c052c3ddca",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "448f96585e19665bc779d741",
+            [
+              0,
+              14118
+            ]
+          ],
+          [
+            "4708f6be98d331c48c42cbd7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "48a7f97d06402409a0d68f25",
+            [
+              0,
+              15080
+            ]
+          ],
+          [
+            "4d045cd66794b6b522195168",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "51dd8f061a44f32c180f99b2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "525761809c638e7cf61824ed",
+            [
+              0,
+              33960
+            ]
+          ],
+          [
+            "570e5140c29c71f3c7eccb0d",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6006ba4a0f06630c894552ef",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "62454f0d918533bea4baff84",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "63cb308fcd49df7779a6590a",
+            [
+              0,
+              49931
+            ]
+          ],
+          [
+            "659b7930ccb887d2ac9dee1c",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6a82adc6291d89631b9f88fe",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6b68e11d862cc51bfe97aed9",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6c8e62ca42b55e7ebcd63446",
+            [
+              0,
+              64600,
+              73158
+            ]
+          ],
+          [
+            "6e7fdf6e13cb014601947292",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "73db091a0f9560aed5b8bff5",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "74b39fc8ad3b0c402a270775",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "75e347b1e91779ef2d3766a3",
+            [
+              0,
+              10600
+            ]
+          ],
+          [
+            "76854e4d0a88fd9e9ee640fa",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "76cd3dd20d88fd1f0034dc9a",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "79d89b1f653ffa82eebad153",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7c70af6d3b6f430d9a75e2a3",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7cb3c69acff66589b0d31082",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7ce0f0abeb43047aa028e3ae",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7e710449a19be285f82e38d4",
+            [
+              0,
+              64600,
+              103190
+            ]
+          ],
+          [
+            "7f2c09f77ab818b2dec970b7",
+            [
+              0,
+              64600,
+              108518
+            ]
+          ],
+          [
+            "7f2c7ba0a0997ffe8651d7be",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "808e97735a28bc7b2e0d0d93",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "80ba540335b3ae936a446f95",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "890a38aba365bec00552c541",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "8a10e9335a4cbce2f3fa8fc3",
+            [
+              0,
+              4038
+            ]
+          ],
+          [
+            "8fa10beaaba7af48e79df985",
+            [
+              0,
+              64600,
+              76200
+            ]
+          ],
+          [
+            "9335f994e9e15dfa8b2edd29",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "96530dabe3361c5b46e27376",
+            [
+              0,
+              64600,
+              121958
+            ]
+          ],
+          [
+            "97aabe125db3af66ef30550e",
+            [
+              0,
+              34598
+            ]
+          ],
+          [
+            "97d4628ada187be52e0d6c96",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "9e528d3fc2f53af3743894ba",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "a0ca27421e1fe1cad9917427",
+            [
+              0,
+              28383
+            ]
+          ],
+          [
+            "a40540ae437ed69019b4a3c2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "a629ebcc903ea53ddc6764de",
+            [
+              0,
+              36520
+            ]
+          ],
+          [
+            "a7579bd07d2a9fa450783741",
+            [
+              0,
+              29869
+            ]
+          ],
+          [
+            "ab5df548478adeb5610cbfc2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "b1355bb04e4dcfd7251b2887",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "b59089a2dd27572d85176e48",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ba96617ed470afd6ed3ca255",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "bb58ba9e563b9f9acca8f42c",
+            [
+              0,
+              33126
+            ]
+          ],
+          [
+            "be56f426d2a8d64e88968133",
+            [
+              0,
+              17238
+            ]
+          ],
+          [
+            "bf01c52c339120acfd831e9b",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "bfaabb3bef02012330444afe",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c0be5c2c52d12ca43e7d0a09",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c1f8fd3739e56379be555a78",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c389017fbd2f4c7b89627119",
+            [
+              0,
+              10920
+            ]
+          ],
+          [
+            "c46abf09aec7849d25476f5e",
+            [
+              0,
+              47526
+            ]
+          ],
+          [
+            "c7c484bec4ac3dee3a30eb99",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ca169eb8def4a4444f883110",
+            [
+              0,
+              40518
+            ]
+          ],
+          [
+            "cc38100a5dd518d557b3bae7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "cd84ed71e1ba18aabaa5502a",
+            [
+              0,
+              26280
+            ]
+          ],
+          [
+            "d0eae12426c4ce3d8ea8eb7b",
+            [
+              0,
+              37205
+            ]
+          ],
+          [
+            "d2127c4b30b7d7fa7c1c5724",
+            [
+              0,
+              9158
+            ]
+          ],
+          [
+            "d3352a96271d4f6ae3c7426d",
+            [
+              0,
+              61077
+            ]
+          ],
+          [
+            "d38c37a2c1da1d0ceb58d1d1",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d45489caf5f3a3f77e87770c",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d7cd60ed8300e516557ed614",
+            [
+              0,
+              37800
+            ]
+          ],
+          [
+            "d82532a6dfa2586741b22314",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d929c13b1d060683574762bc",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "dab7f746184a83c2aacb1498",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "dc0a08574d263dd0117c4e0f",
+            [
+              0,
+              30120
+            ]
+          ],
+          [
+            "df692db69e26d0a33c9296b8",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "e2d11e22927c4764adaef492",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "e6ec377d99528b5f85fbc3a7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ec7f35f742ec3f951b55ee5f",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ed2185960da3c4c0907733f1",
+            [
+              0,
+              23720
+            ]
+          ],
+          [
+            "f8103145cd0db5d24b6a5150",
+            [
+              0,
+              64600,
+              96678
+            ]
+          ],
+          [
+            "fa317f48568ab3f3dff29216",
+            [
+              0,
+              64600,
+              68198
+            ]
+          ],
+          [
+            "fce2dabe33e22114aea4cafc",
+            [
+              0,
+              44520
+            ]
+          ],
+          [
+            "fd073377632714b643ecf29a",
+            [
+              0,
+              42920
+            ]
+          ]
+        ],
+        "heads": [
+          {
+            "name": "voice_fake",
+            "count": 100,
+            "loss": 0.5941475033760071,
+            "eer": 0.15000000000000002,
+            "auc": 0.9266666666666666
+          }
+        ],
+        "loss": 0.5941475033760071,
+        "selection_metric": 0.85
+      }
+    },
+    {
+      "epoch": 5,
+      "updates": 250,
+      "train_loss": 0.46347141873222425,
+      "seconds": 124.13265550100004,
+      "source_exposures": {
+        "mlaad:wives_and_daughters_38_f000061": 2,
+        "mlaad:midnight_passenger_07_f000151": 2,
+        "mlaad:the_sea_fairies_17_f000026": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000137": 2,
+        "mlaad:midnight_passenger_12_f000043": 2,
+        "mlaad:poisoned_pen_05_f000265": 2,
+        "mlaad:pink_fairy_book_10_f000104": 2,
+        "mlaad:pink_fairy_book_30_f000084": 2,
+        "mlaad:pink_fairy_book_10_f000124": 2,
+        "mlaad:dorothy_and_wizard_oz_18_f000014": 2,
+        "mlaad:hunters_space_12_f000017": 2,
+        "mlaad:northandsouth_51_f000043": 2,
+        "mlaad:dorothy_and_wizard_oz_06_f000021": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000217": 2,
+        "mlaad:silent_bullet_08_f000314": 2,
+        "mlaad:poisoned_pen_06_f000019": 2,
+        "mlaad:poisoned_pen_11_f000228": 2,
+        "mlaad:dorothy_and_wizard_oz_14_f000119": 2,
+        "mlaad:northandsouth_22_f000072": 2,
+        "mlaad:the_sea_fairies_05_f000068": 2,
+        "mlaad:rinkitink_baum_01_64kb_f000091": 2,
+        "mlaad:wives_and_daughters_47_f000218": 2,
+        "mlaad:piratesofersatz_12_leinster_64kb_f000044": 2,
+        "mlaad:jane_eyre_27_f000392": 2,
+        "mlaad:northandsouth_02_f000127": 2,
+        "mlaad:jane_eyre_05_f000186": 2,
+        "mlaad:wives_and_daughters_12_f000039": 2,
+        "mlaad:hunters_space_08_f000076": 2,
+        "mlaad:poisoned_pen_09_f000072": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000036": 2,
+        "mlaad:poisoned_pen_03_f000161": 2,
+        "mlaad:wives_and_daughters_56_f000019": 2,
+        "mlaad:wives_and_daughters_22_f000007": 2,
+        "mlaad:midnight_passenger_04_f000229": 2,
+        "mlaad:silent_bullet_08_f000005": 2,
+        "mlaad:the_master_key_10_f000082": 2,
+        "mlaad:jane_eyre_27_f000510": 2,
+        "mlaad:jane_eyre_01_f000093": 2,
+        "mlaad:jane_eyre_14_f000079": 2,
+        "mlaad:silent_bullet_05_f000127": 2,
+        "mlaad:jane_eyre_29_f000047": 2,
+        "mlaad:jane_eyre_30_f000198": 2,
+        "mlaad:wives_and_daughters_12_f000018": 2,
+        "mlaad:emerald_city_of_oz_05_f000091": 2,
+        "mlaad:emerald_city_of_oz_14_f000084": 2,
+        "mlaad:ozma_of_oz_06_f000085": 2,
+        "mlaad:midnight_passenger_05_f000214": 2,
+        "mlaad:wives_and_daughters_39_f000098": 2,
+        "mlaad:hunters_space_02_f000038": 2,
+        "mlaad:emerald_city_of_oz_28_f000068": 2,
+        "mlaad:jane_eyre_17_f000120": 2,
+        "mlaad:poisoned_pen_10_f000122": 2,
+        "mlaad:pink_fairy_book_29_f000036": 2,
+        "mlaad:skyisland_17_baum_64kb_f000012": 2,
+        "mlaad:wives_and_daughters_36_f000050": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000005": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000206": 2,
+        "mlaad:hunters_space_03_f000076": 2,
+        "mlaad:midnight_passenger_08_f000062": 2,
+        "mlaad:jane_eyre_01_f000039": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000030": 2,
+        "mlaad:jane_eyre_16_f000057": 2,
+        "mlaad:wives_and_daughters_37_f000280": 2,
+        "mlaad:wives_and_daughters_38_f000008": 2,
+        "mlaad:northandsouth_42_f000101": 2,
+        "mlaad:the_sea_fairies_12_f000133": 2,
+        "mlaad:wives_and_daughters_29_f000036": 2,
+        "mlaad:midnight_passenger_03_f000175": 2,
+        "mlaad:poisoned_pen_12_f000071": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000128": 2,
+        "mlaad:wives_and_daughters_49_f000161": 2,
+        "mlaad:jane_eyre_17_f000113": 2,
+        "mlaad:pink_fairy_book_32_f000050": 2,
+        "mlaad:poisoned_pen_10_f000016": 2,
+        "mlaad:wives_and_daughters_52_f000098": 2,
+        "mlaad:wives_and_daughters_20_f000117": 2,
+        "mlaad:poisoned_pen_09_f000313": 2,
+        "mlaad:skyisland_11_baum_64kb_f000054": 2,
+        "mlaad:jane_eyre_25_f000101": 2,
+        "mlaad:jane_eyre_16_f000156": 2,
+        "mlaad:skyisland_30_baum_64kb_f000049": 2,
+        "mlaad:pink_fairy_book_38_f000065": 2,
+        "mlaad:jane_eyre_28_f000177": 2,
+        "mlaad:jane_eyre_15_f000215": 2,
+        "mlaad:silent_bullet_09_f000237": 2,
+        "mlaad:poisoned_pen_07_f000386": 2,
+        "mlaad:wives_and_daughters_10_f000108": 2,
+        "mlaad:wives_and_daughters_29_f000092": 2,
+        "mlaad:jane_eyre_15_f000223": 2,
+        "mlaad:pink_fairy_book_01_f000016": 2,
+        "mlaad:silent_bullet_13_f000280": 2,
+        "mlaad:wives_and_daughters_49_f000179": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000112": 2,
+        "mlaad:northandsouth_25_f000030": 2,
+        "mlaad:dorothy_and_wizard_oz_08_f000005": 2,
+        "mlaad:poisoned_pen_05_f000283": 2,
+        "mlaad:hunters_space_02_f000017": 2,
+        "mlaad:northandsouth_35_f000262": 2,
+        "mlaad:midnight_passenger_04_f000042": 2,
+        "mlaad:ozma_of_oz_04_f000065": 2,
+        "mlaad:northandsouth_16_f000112": 2,
+        "mlaad:skyisland_07_baum_64kb_f000017": 2,
+        "mlaad:rinkitink_baum_07_64kb_f000059": 2,
+        "mlaad:wives_and_daughters_55_f000006": 2,
+        "mlaad:the_master_key_08_f000030": 2,
+        "mlaad:jane_eyre_27_f000507": 2,
+        "mlaad:northandsouth_25_f000110": 2,
+        "mlaad:midnight_passenger_14_f000079": 2,
+        "mlaad:jane_eyre_21_f000268": 2,
+        "mlaad:rinkitink_baum_08_64kb_f000094": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000078": 2,
+        "mlaad:midnight_passenger_06_f000063": 2,
+        "mlaad:northandsouth_41_f000208": 2,
+        "mlaad:emerald_city_of_oz_10_f000128": 2,
+        "mlaad:jane_eyre_34_f000126": 2,
+        "mlaad:hunters_space_08_f000069": 2,
+        "mlaad:wives_and_daughters_04_f000195": 2,
+        "mlaad:wives_and_daughters_58_f000172": 2,
+        "mlaad:skyisland_27_baum_64kb_f000041": 2,
+        "mlaad:poisoned_pen_05_f000096": 2,
+        "mlaad:hunters_space_16_f000003": 2,
+        "mlaad:wives_and_daughters_17_f000077": 2,
+        "mlaad:midnight_passenger_09_f000132": 2,
+        "mlaad:jane_eyre_06_f000142": 2,
+        "mlaad:pink_fairy_book_31_f000105": 2,
+        "mlaad:poisoned_pen_05_f000165": 2,
+        "mlaad:pink_fairy_book_33_f000072": 2,
+        "mlaad:wives_and_daughters_54_f000126": 2,
+        "mlaad:skyisland_12_baum_64kb_f000071": 2,
+        "mlaad:the_sea_fairies_07_f000053": 2,
+        "mlaad:northandsouth_10_f000159": 2,
+        "mlaad:wives_and_daughters_28_f000194": 2,
+        "mlaad:midnight_passenger_15_f000019": 2,
+        "mlaad:poisoned_pen_09_f000049": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000103": 2,
+        "mlaad:jane_eyre_10_f000223": 2,
+        "mlaad:poisoned_pen_07_f000388": 2,
+        "mlaad:hunters_space_14_f000057": 2,
+        "mlaad:northandsouth_20_f000074": 2,
+        "mlaad:jane_eyre_05_f000072": 2,
+        "mlaad:northandsouth_21_f000086": 2,
+        "mlaad:poisoned_pen_11_f000335": 2,
+        "mlaad:jane_eyre_07_f000014": 2,
+        "mlaad:jane_eyre_35_f000105": 2,
+        "mlaad:midnight_passenger_08_f000059": 2,
+        "mlaad:jane_eyre_30_f000075": 2,
+        "mlaad:ozma_of_oz_16_f000033": 2,
+        "mlaad:poisoned_pen_04_f000178": 2,
+        "mlaad:midnight_passenger_03_f000259": 2,
+        "mlaad:wives_and_daughters_18_f000013": 2,
+        "mlaad:emerald_city_of_oz_20_f000104": 2,
+        "mlaad:silent_bullet_03_f000035": 2,
+        "mlaad:wives_and_daughters_55_f000144": 2,
+        "mlaad:skyisland_17_baum_64kb_f000077": 2,
+        "mlaad:northandsouth_19_f000056": 2,
+        "mlaad:jane_eyre_34_f000271": 2,
+        "mlaad:emerald_city_of_oz_11_f000026": 2,
+        "mlaad:pink_fairy_book_22_f000104": 2,
+        "mlaad:northandsouth_05_f000222": 2,
+        "mlaad:silent_bullet_03_f000267": 2,
+        "mlaad:rinkitink_baum_09_64kb_f000008": 2,
+        "mlaad:jane_eyre_27_f000390": 2,
+        "mlaad:midnight_passenger_01_f000169": 2,
+        "mlaad:skyisland_07_baum_64kb_f000068": 2,
+        "mlaad:wives_and_daughters_11_f000256": 2,
+        "mlaad:northandsouth_04_f000095": 2,
+        "mlaad:jane_eyre_28_f000360": 2,
+        "mlaad:pink_fairy_book_22_f000040": 2,
+        "mlaad:northandsouth_35_f000228": 2,
+        "mlaad:northandsouth_31_f000169": 2,
+        "mlaad:midnight_passenger_04_f000292": 2,
+        "mlaad:silent_bullet_02_f000003": 2,
+        "mlaad:ozma_of_oz_01_f000053": 2,
+        "mlaad:silent_bullet_11_f000313": 2,
+        "mlaad:pink_fairy_book_14_f000090": 2,
+        "mlaad:northandsouth_39_f000118": 2,
+        "mlaad:poisoned_pen_01_f000235": 2,
+        "mlaad:jane_eyre_35_f000025": 2,
+        "mlaad:ozma_of_oz_20_f000010": 2,
+        "mlaad:wives_and_daughters_02_f000217": 2,
+        "mlaad:midnight_passenger_06_f000078": 2,
+        "mlaad:poisoned_pen_12_f000439": 2,
+        "mlaad:midnight_passenger_01_f000075": 2,
+        "mlaad:jane_eyre_37_f000258": 2,
+        "mlaad:wives_and_daughters_32_f000182": 2,
+        "mlaad:silent_bullet_06_f000153": 2,
+        "mlaad:piratesofersatz_08_leinster_64kb_f000166": 2,
+        "mlaad:wives_and_daughters_59_f000029": 2,
+        "mlaad:skyisland_13_baum_64kb_f000001": 2,
+        "mlaad:pink_fairy_book_13_f000137": 2,
+        "mlaad:hunters_space_12_f000054": 2,
+        "mlaad:jane_eyre_27_f000155": 2,
+        "mlaad:midnight_passenger_13_f000102": 2,
+        "mlaad:emerald_city_of_oz_08_f000059": 2,
+        "mlaad:northandsouth_18_f000017": 2,
+        "mlaad:the_master_key_03_f000082": 2,
+        "mlaad:jane_eyre_27_f000167": 2,
+        "mlaad:northandsouth_36_f000214": 2,
+        "mlaad:pink_fairy_book_23_f000049": 2,
+        "mlaad:rinkitink_baum_19_64kb_f000011": 2
+      },
+      "dev": null
+    },
+    {
+      "epoch": 6,
+      "updates": 300,
+      "train_loss": 0.3918343833705876,
+      "seconds": 140.1744864389998,
+      "source_exposures": {
+        "mlaad:dorothy_and_wizard_oz_18_f000014": 2,
+        "mlaad:wives_and_daughters_12_f000018": 2,
+        "mlaad:poisoned_pen_09_f000049": 2,
+        "mlaad:jane_eyre_34_f000126": 2,
+        "mlaad:northandsouth_36_f000214": 2,
+        "mlaad:poisoned_pen_06_f000019": 2,
+        "mlaad:jane_eyre_01_f000093": 2,
+        "mlaad:wives_and_daughters_36_f000050": 2,
+        "mlaad:wives_and_daughters_47_f000218": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000005": 2,
+        "mlaad:rinkitink_baum_09_64kb_f000008": 2,
+        "mlaad:poisoned_pen_05_f000283": 2,
+        "mlaad:silent_bullet_05_f000127": 2,
+        "mlaad:midnight_passenger_08_f000059": 2,
+        "mlaad:pink_fairy_book_10_f000104": 2,
+        "mlaad:wives_and_daughters_11_f000256": 2,
+        "mlaad:rinkitink_baum_07_64kb_f000059": 2,
+        "mlaad:northandsouth_22_f000072": 2,
+        "mlaad:midnight_passenger_01_f000075": 2,
+        "mlaad:wives_and_daughters_49_f000161": 2,
+        "mlaad:jane_eyre_27_f000155": 2,
+        "mlaad:midnight_passenger_03_f000259": 2,
+        "mlaad:northandsouth_20_f000074": 2,
+        "mlaad:jane_eyre_27_f000167": 2,
+        "mlaad:pink_fairy_book_13_f000137": 2,
+        "mlaad:jane_eyre_37_f000258": 2,
+        "mlaad:silent_bullet_03_f000035": 2,
+        "mlaad:poisoned_pen_09_f000313": 2,
+        "mlaad:jane_eyre_05_f000072": 2,
+        "mlaad:emerald_city_of_oz_10_f000128": 2,
+        "mlaad:northandsouth_05_f000222": 2,
+        "mlaad:emerald_city_of_oz_05_f000091": 2,
+        "mlaad:northandsouth_19_f000056": 2,
+        "mlaad:wives_and_daughters_12_f000039": 2,
+        "mlaad:poisoned_pen_12_f000071": 2,
+        "mlaad:the_sea_fairies_07_f000053": 2,
+        "mlaad:wives_and_daughters_52_f000098": 2,
+        "mlaad:wives_and_daughters_10_f000108": 2,
+        "mlaad:wives_and_daughters_56_f000019": 2,
+        "mlaad:silent_bullet_09_f000237": 2,
+        "mlaad:pink_fairy_book_22_f000104": 2,
+        "mlaad:hunters_space_08_f000069": 2,
+        "mlaad:poisoned_pen_12_f000439": 2,
+        "mlaad:ozma_of_oz_04_f000065": 2,
+        "mlaad:jane_eyre_34_f000271": 2,
+        "mlaad:hunters_space_03_f000076": 2,
+        "mlaad:dorothy_and_wizard_oz_06_f000021": 2,
+        "mlaad:pink_fairy_book_23_f000049": 2,
+        "mlaad:jane_eyre_35_f000105": 2,
+        "mlaad:poisoned_pen_10_f000016": 2,
+        "mlaad:midnight_passenger_03_f000175": 2,
+        "mlaad:hunters_space_14_f000057": 2,
+        "mlaad:rinkitink_baum_19_64kb_f000011": 2,
+        "mlaad:midnight_passenger_04_f000042": 2,
+        "mlaad:northandsouth_10_f000159": 2,
+        "mlaad:midnight_passenger_04_f000292": 2,
+        "mlaad:jane_eyre_27_f000507": 2,
+        "mlaad:emerald_city_of_oz_20_f000104": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000112": 2,
+        "mlaad:poisoned_pen_05_f000096": 2,
+        "mlaad:northandsouth_39_f000118": 2,
+        "mlaad:emerald_city_of_oz_08_f000059": 2,
+        "mlaad:jane_eyre_16_f000057": 2,
+        "mlaad:skyisland_11_baum_64kb_f000054": 2,
+        "mlaad:northandsouth_21_f000086": 2,
+        "mlaad:wives_and_daughters_02_f000217": 2,
+        "mlaad:silent_bullet_03_f000267": 2,
+        "mlaad:wives_and_daughters_39_f000098": 2,
+        "mlaad:piratesofersatz_12_leinster_64kb_f000044": 2,
+        "mlaad:wives_and_daughters_55_f000144": 2,
+        "mlaad:the_sea_fairies_12_f000133": 2,
+        "mlaad:northandsouth_04_f000095": 2,
+        "mlaad:wives_and_daughters_59_f000029": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000030": 2,
+        "mlaad:pink_fairy_book_22_f000040": 2,
+        "mlaad:northandsouth_42_f000101": 2,
+        "mlaad:the_sea_fairies_05_f000068": 2,
+        "mlaad:midnight_passenger_15_f000019": 2,
+        "mlaad:jane_eyre_06_f000142": 2,
+        "mlaad:northandsouth_31_f000169": 2,
+        "mlaad:wives_and_daughters_37_f000280": 2,
+        "mlaad:jane_eyre_27_f000510": 2,
+        "mlaad:poisoned_pen_04_f000178": 2,
+        "mlaad:the_master_key_10_f000082": 2,
+        "mlaad:poisoned_pen_10_f000122": 2,
+        "mlaad:pink_fairy_book_31_f000105": 2,
+        "mlaad:midnight_passenger_09_f000132": 2,
+        "mlaad:piratesofersatz_08_leinster_64kb_f000166": 2,
+        "mlaad:jane_eyre_14_f000079": 2,
+        "mlaad:silent_bullet_13_f000280": 2,
+        "mlaad:jane_eyre_30_f000075": 2,
+        "mlaad:northandsouth_16_f000112": 2,
+        "mlaad:wives_and_daughters_18_f000013": 2,
+        "mlaad:wives_and_daughters_38_f000008": 2,
+        "mlaad:midnight_passenger_05_f000214": 2,
+        "mlaad:wives_and_daughters_54_f000126": 2,
+        "mlaad:northandsouth_35_f000262": 2,
+        "mlaad:wives_and_daughters_32_f000182": 2,
+        "mlaad:wives_and_daughters_29_f000092": 2,
+        "mlaad:hunters_space_08_f000076": 2,
+        "mlaad:midnight_passenger_01_f000169": 2,
+        "mlaad:wives_and_daughters_28_f000194": 2,
+        "mlaad:poisoned_pen_07_f000386": 2,
+        "mlaad:pink_fairy_book_14_f000090": 2,
+        "mlaad:poisoned_pen_03_f000161": 2,
+        "mlaad:midnight_passenger_06_f000063": 2,
+        "mlaad:wives_and_daughters_49_f000179": 2,
+        "mlaad:poisoned_pen_07_f000388": 2,
+        "mlaad:northandsouth_18_f000017": 2,
+        "mlaad:poisoned_pen_11_f000335": 2,
+        "mlaad:hunters_space_12_f000054": 2,
+        "mlaad:poisoned_pen_11_f000228": 2,
+        "mlaad:jane_eyre_01_f000039": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000078": 2,
+        "mlaad:poisoned_pen_05_f000265": 2,
+        "mlaad:jane_eyre_15_f000215": 2,
+        "mlaad:the_master_key_03_f000082": 2,
+        "mlaad:midnight_passenger_06_f000078": 2,
+        "mlaad:jane_eyre_29_f000047": 2,
+        "mlaad:jane_eyre_27_f000392": 2,
+        "mlaad:emerald_city_of_oz_14_f000084": 2,
+        "mlaad:wives_and_daughters_58_f000172": 2,
+        "mlaad:the_sea_fairies_17_f000026": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000137": 2,
+        "mlaad:silent_bullet_11_f000313": 2,
+        "mlaad:poisoned_pen_09_f000072": 2,
+        "mlaad:silent_bullet_06_f000153": 2,
+        "mlaad:pink_fairy_book_33_f000072": 2,
+        "mlaad:jane_eyre_27_f000390": 2,
+        "mlaad:skyisland_27_baum_64kb_f000041": 2,
+        "mlaad:the_master_key_08_f000030": 2,
+        "mlaad:hunters_space_02_f000017": 2,
+        "mlaad:ozma_of_oz_16_f000033": 2,
+        "mlaad:silent_bullet_08_f000005": 2,
+        "mlaad:skyisland_07_baum_64kb_f000068": 2,
+        "mlaad:wives_and_daughters_20_f000117": 2,
+        "mlaad:jane_eyre_30_f000198": 2,
+        "mlaad:ozma_of_oz_20_f000010": 2,
+        "mlaad:midnight_passenger_12_f000043": 2,
+        "mlaad:northandsouth_25_f000030": 2,
+        "mlaad:skyisland_13_baum_64kb_f000001": 2,
+        "mlaad:pink_fairy_book_32_f000050": 2,
+        "mlaad:hunters_space_02_f000038": 2,
+        "mlaad:hunters_space_12_f000017": 2,
+        "mlaad:rinkitink_baum_08_64kb_f000094": 2,
+        "mlaad:northandsouth_02_f000127": 2,
+        "mlaad:dorothy_and_wizard_oz_14_f000119": 2,
+        "mlaad:pink_fairy_book_29_f000036": 2,
+        "mlaad:piratesofersatz_10_leinster_64kb_f000036": 2,
+        "mlaad:northandsouth_51_f000043": 2,
+        "mlaad:pink_fairy_book_01_f000016": 2,
+        "mlaad:wives_and_daughters_29_f000036": 2,
+        "mlaad:jane_eyre_17_f000120": 2,
+        "mlaad:dorothy_and_wizard_oz_08_f000005": 2,
+        "mlaad:piratesofersatz_02_leinster_64kb_f000206": 2,
+        "mlaad:ozma_of_oz_06_f000085": 2,
+        "mlaad:midnight_passenger_14_f000079": 2,
+        "mlaad:pink_fairy_book_10_f000124": 2,
+        "mlaad:poisoned_pen_05_f000165": 2,
+        "mlaad:skyisland_30_baum_64kb_f000049": 2,
+        "mlaad:jane_eyre_15_f000223": 2,
+        "mlaad:jane_eyre_35_f000025": 2,
+        "mlaad:wives_and_daughters_38_f000061": 2,
+        "mlaad:midnight_passenger_13_f000102": 2,
+        "mlaad:pink_fairy_book_38_f000065": 2,
+        "mlaad:wives_and_daughters_22_f000007": 2,
+        "mlaad:silent_bullet_02_f000003": 2,
+        "mlaad:northandsouth_35_f000228": 2,
+        "mlaad:rinkitink_baum_01_64kb_f000091": 2,
+        "mlaad:jane_eyre_10_f000223": 2,
+        "mlaad:northandsouth_25_f000110": 2,
+        "mlaad:pink_fairy_book_30_f000084": 2,
+        "mlaad:jane_eyre_28_f000177": 2,
+        "mlaad:jane_eyre_17_f000113": 2,
+        "mlaad:piratesofersatz_03_leinster_64kb_f000103": 2,
+        "mlaad:emerald_city_of_oz_28_f000068": 2,
+        "mlaad:midnight_passenger_04_f000229": 2,
+        "mlaad:hunters_space_16_f000003": 2,
+        "mlaad:midnight_passenger_08_f000062": 2,
+        "mlaad:jane_eyre_07_f000014": 2,
+        "mlaad:wives_and_daughters_55_f000006": 2,
+        "mlaad:piratesofersatz_01_leinster_64kb_f000217": 2,
+        "mlaad:skyisland_17_baum_64kb_f000012": 2,
+        "mlaad:poisoned_pen_01_f000235": 2,
+        "mlaad:jane_eyre_16_f000156": 2,
+        "mlaad:jane_eyre_28_f000360": 2,
+        "mlaad:midnight_passenger_07_f000151": 2,
+        "mlaad:silent_bullet_08_f000314": 2,
+        "mlaad:skyisland_07_baum_64kb_f000017": 2,
+        "mlaad:northandsouth_41_f000208": 2,
+        "mlaad:jane_eyre_25_f000101": 2,
+        "mlaad:skyisland_12_baum_64kb_f000071": 2,
+        "mlaad:emerald_city_of_oz_11_f000026": 2,
+        "mlaad:wives_and_daughters_17_f000077": 2,
+        "mlaad:jane_eyre_21_f000268": 2,
+        "mlaad:wives_and_daughters_04_f000195": 2,
+        "mlaad:ozma_of_oz_01_f000053": 2,
+        "mlaad:jane_eyre_05_f000186": 2,
+        "mlaad:skyisland_17_baum_64kb_f000077": 2,
+        "mlaad:piratesofersatz_05_leinster_64kb_f000128": 2
+      },
+      "dev": {
+        "predictions": [
+          [
+            "026d2b69ddab8e865520ea63",
+            [
+              0.004362255800515413
+            ]
+          ],
+          [
+            "03113856d67938f52875a986",
+            [
+              0.9996367692947388
+            ]
+          ],
+          [
+            "0326a05a93bd5024f98b56bf",
+            [
+              0.9044449925422668
+            ]
+          ],
+          [
+            "04793716bed09f6dfd7f5ded",
+            [
+              0.9996483325958252
+            ]
+          ],
+          [
+            "056bebbb70a7af3ac33cff87",
+            [
+              0.15988463163375854
+            ]
+          ],
+          [
+            "05f73981c29179262f740a0e",
+            [
+              0.003325076773762703
+            ]
+          ],
+          [
+            "0843700cf46b01388464ed78",
+            [
+              0.9985439777374268
+            ]
+          ],
+          [
+            "0a5ac9fdf89539525e49a8d5",
+            [
+              0.9996063113212585
+            ]
+          ],
+          [
+            "0b52f07622d395ee008422d3",
+            [
+              0.9981653094291687
+            ]
+          ],
+          [
+            "0d4698769067dfdaa03e5b8f",
+            [
+              0.9998369216918945
+            ]
+          ],
+          [
+            "17212bf4d60297555520a9e3",
+            [
+              0.17824801802635193
+            ]
+          ],
+          [
+            "1806d27aaeb6873905841ea2",
+            [
+              0.8621091246604919
+            ]
+          ],
+          [
+            "1a2c93e53b2c6a93228a9bea",
+            [
+              0.1503935307264328
+            ]
+          ],
+          [
+            "1dddfba0b99c6525c60711a4",
+            [
+              0.9982398748397827
+            ]
+          ],
+          [
+            "1e5292ef102b2bbe2055beab",
+            [
+              0.07173855602741241
+            ]
+          ],
+          [
+            "20f85207c60a197443122242",
+            [
+              0.9998661279678345
+            ]
+          ],
+          [
+            "23222cc3d797f2cf29bb0b6d",
+            [
+              0.6798765659332275
+            ]
+          ],
+          [
+            "24008b1fad9ae9a569e0a903",
+            [
+              0.010986714623868465
+            ]
+          ],
+          [
+            "2a3327b485992d39f2f3ee8f",
+            [
+              0.0054091825149953365
+            ]
+          ],
+          [
+            "2a865d99290c987c8a654bd6",
+            [
+              0.9998887777328491
+            ]
+          ],
+          [
+            "33a72730a569f9a8bec482c8",
+            [
+              0.5735193490982056
+            ]
+          ],
+          [
+            "34b582b2088fa70e4253d0b7",
+            [
+              0.9998911619186401
+            ]
+          ],
+          [
+            "358e8da9be73b38fd6895b87",
+            [
+              0.8792441487312317
+            ]
+          ],
+          [
+            "3f22ddb3802828c052c3ddca",
+            [
+              0.14064450562000275
+            ]
+          ],
+          [
+            "448f96585e19665bc779d741",
+            [
+              0.9992984533309937
+            ]
+          ],
+          [
+            "4708f6be98d331c48c42cbd7",
+            [
+              0.9998407363891602
+            ]
+          ],
+          [
+            "48a7f97d06402409a0d68f25",
+            [
+              0.9999507665634155
+            ]
+          ],
+          [
+            "4d045cd66794b6b522195168",
+            [
+              0.9964795708656311
+            ]
+          ],
+          [
+            "51dd8f061a44f32c180f99b2",
+            [
+              0.993796706199646
+            ]
+          ],
+          [
+            "525761809c638e7cf61824ed",
+            [
+              0.9998308420181274
+            ]
+          ],
+          [
+            "570e5140c29c71f3c7eccb0d",
+            [
+              0.9936122298240662
+            ]
+          ],
+          [
+            "6006ba4a0f06630c894552ef",
+            [
+              0.9999555349349976
+            ]
+          ],
+          [
+            "62454f0d918533bea4baff84",
+            [
+              0.6869606375694275
+            ]
+          ],
+          [
+            "63cb308fcd49df7779a6590a",
+            [
+              0.9999122619628906
+            ]
+          ],
+          [
+            "659b7930ccb887d2ac9dee1c",
+            [
+              0.9999101161956787
+            ]
+          ],
+          [
+            "6a82adc6291d89631b9f88fe",
+            [
+              0.648018479347229
+            ]
+          ],
+          [
+            "6b68e11d862cc51bfe97aed9",
+            [
+              0.7208795547485352
+            ]
+          ],
+          [
+            "6c8e62ca42b55e7ebcd63446",
+            [
+              0.06525581330060959
+            ]
+          ],
+          [
+            "6e7fdf6e13cb014601947292",
+            [
+              0.995976984500885
+            ]
+          ],
+          [
+            "73db091a0f9560aed5b8bff5",
+            [
+              0.9999158382415771
+            ]
+          ],
+          [
+            "74b39fc8ad3b0c402a270775",
+            [
+              0.9998086094856262
+            ]
+          ],
+          [
+            "75e347b1e91779ef2d3766a3",
+            [
+              0.9998955726623535
+            ]
+          ],
+          [
+            "76854e4d0a88fd9e9ee640fa",
+            [
+              0.9997939467430115
+            ]
+          ],
+          [
+            "76cd3dd20d88fd1f0034dc9a",
+            [
+              0.9998747110366821
+            ]
+          ],
+          [
+            "79d89b1f653ffa82eebad153",
+            [
+              0.945672869682312
+            ]
+          ],
+          [
+            "7c70af6d3b6f430d9a75e2a3",
+            [
+              0.9998319149017334
+            ]
+          ],
+          [
+            "7cb3c69acff66589b0d31082",
+            [
+              0.9769601821899414
+            ]
+          ],
+          [
+            "7ce0f0abeb43047aa028e3ae",
+            [
+              0.999362051486969
+            ]
+          ],
+          [
+            "7e710449a19be285f82e38d4",
+            [
+              0.013064572587609291
+            ]
+          ],
+          [
+            "7f2c09f77ab818b2dec970b7",
+            [
+              0.6671121120452881
+            ]
+          ],
+          [
+            "7f2c7ba0a0997ffe8651d7be",
+            [
+              0.46833935379981995
+            ]
+          ],
+          [
+            "808e97735a28bc7b2e0d0d93",
+            [
+              0.971370279788971
+            ]
+          ],
+          [
+            "80ba540335b3ae936a446f95",
+            [
+              0.9625704288482666
+            ]
+          ],
+          [
+            "890a38aba365bec00552c541",
+            [
+              0.9874777793884277
+            ]
+          ],
+          [
+            "8a10e9335a4cbce2f3fa8fc3",
+            [
+              0.8234198689460754
+            ]
+          ],
+          [
+            "8fa10beaaba7af48e79df985",
+            [
+              0.9998286962509155
+            ]
+          ],
+          [
+            "9335f994e9e15dfa8b2edd29",
+            [
+              0.6856944561004639
+            ]
+          ],
+          [
+            "96530dabe3361c5b46e27376",
+            [
+              0.005047240294516087
+            ]
+          ],
+          [
+            "97aabe125db3af66ef30550e",
+            [
+              0.0053297048434615135
+            ]
+          ],
+          [
+            "97d4628ada187be52e0d6c96",
+            [
+              0.23525972664356232
+            ]
+          ],
+          [
+            "9e528d3fc2f53af3743894ba",
+            [
+              0.9512885808944702
+            ]
+          ],
+          [
+            "a0ca27421e1fe1cad9917427",
+            [
+              0.9998863935470581
+            ]
+          ],
+          [
+            "a40540ae437ed69019b4a3c2",
+            [
+              0.3148384392261505
+            ]
+          ],
+          [
+            "a629ebcc903ea53ddc6764de",
+            [
+              0.9997091889381409
+            ]
+          ],
+          [
+            "a7579bd07d2a9fa450783741",
+            [
+              0.9999680519104004
+            ]
+          ],
+          [
+            "ab5df548478adeb5610cbfc2",
+            [
+              0.9982354640960693
+            ]
+          ],
+          [
+            "b1355bb04e4dcfd7251b2887",
+            [
+              0.997911274433136
+            ]
+          ],
+          [
+            "b59089a2dd27572d85176e48",
+            [
+              0.07880177348852158
+            ]
+          ],
+          [
+            "ba96617ed470afd6ed3ca255",
+            [
+              0.993463933467865
+            ]
+          ],
+          [
+            "bb58ba9e563b9f9acca8f42c",
+            [
+              0.02610452100634575
+            ]
+          ],
+          [
+            "be56f426d2a8d64e88968133",
+            [
+              0.9999408721923828
+            ]
+          ],
+          [
+            "bf01c52c339120acfd831e9b",
+            [
+              0.9724503755569458
+            ]
+          ],
+          [
+            "bfaabb3bef02012330444afe",
+            [
+              0.9962623715400696
+            ]
+          ],
+          [
+            "c0be5c2c52d12ca43e7d0a09",
+            [
+              0.9998661279678345
+            ]
+          ],
+          [
+            "c1f8fd3739e56379be555a78",
+            [
+              0.9579813480377197
+            ]
+          ],
+          [
+            "c389017fbd2f4c7b89627119",
+            [
+              0.999955415725708
+            ]
+          ],
+          [
+            "c46abf09aec7849d25476f5e",
+            [
+              0.8146883249282837
+            ]
+          ],
+          [
+            "c7c484bec4ac3dee3a30eb99",
+            [
+              0.9914507269859314
+            ]
+          ],
+          [
+            "ca169eb8def4a4444f883110",
+            [
+              0.008760298602283001
+            ]
+          ],
+          [
+            "cc38100a5dd518d557b3bae7",
+            [
+              0.9985361099243164
+            ]
+          ],
+          [
+            "cd84ed71e1ba18aabaa5502a",
+            [
+              0.9996874332427979
+            ]
+          ],
+          [
+            "d0eae12426c4ce3d8ea8eb7b",
+            [
+              0.010229717008769512
+            ]
+          ],
+          [
+            "d2127c4b30b7d7fa7c1c5724",
+            [
+              0.9883753061294556
+            ]
+          ],
+          [
+            "d3352a96271d4f6ae3c7426d",
+            [
+              0.9998546838760376
+            ]
+          ],
+          [
+            "d38c37a2c1da1d0ceb58d1d1",
+            [
+              0.5086961984634399
+            ]
+          ],
+          [
+            "d45489caf5f3a3f77e87770c",
+            [
+              0.8544700741767883
+            ]
+          ],
+          [
+            "d7cd60ed8300e516557ed614",
+            [
+              0.9999359846115112
+            ]
+          ],
+          [
+            "d82532a6dfa2586741b22314",
+            [
+              0.9990491271018982
+            ]
+          ],
+          [
+            "d929c13b1d060683574762bc",
+            [
+              0.9989739656448364
+            ]
+          ],
+          [
+            "dab7f746184a83c2aacb1498",
+            [
+              0.9521257877349854
+            ]
+          ],
+          [
+            "dc0a08574d263dd0117c4e0f",
+            [
+              0.9999532699584961
+            ]
+          ],
+          [
+            "df692db69e26d0a33c9296b8",
+            [
+              0.7807953953742981
+            ]
+          ],
+          [
+            "e2d11e22927c4764adaef492",
+            [
+              0.990542471408844
+            ]
+          ],
+          [
+            "e6ec377d99528b5f85fbc3a7",
+            [
+              0.9494031071662903
+            ]
+          ],
+          [
+            "ec7f35f742ec3f951b55ee5f",
+            [
+              0.9994342923164368
+            ]
+          ],
+          [
+            "ed2185960da3c4c0907733f1",
+            [
+              0.9999462366104126
+            ]
+          ],
+          [
+            "f8103145cd0db5d24b6a5150",
+            [
+              0.01209617406129837
+            ]
+          ],
+          [
+            "fa317f48568ab3f3dff29216",
+            [
+              0.004202245734632015
+            ]
+          ],
+          [
+            "fce2dabe33e22114aea4cafc",
+            [
+              0.9999228715896606
+            ]
+          ],
+          [
+            "fd073377632714b643ecf29a",
+            [
+              0.9998593330383301
+            ]
+          ]
+        ],
+        "window_starts": [
+          [
+            "026d2b69ddab8e865520ea63",
+            [
+              0,
+              46422
+            ]
+          ],
+          [
+            "03113856d67938f52875a986",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0326a05a93bd5024f98b56bf",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "04793716bed09f6dfd7f5ded",
+            [
+              0,
+              12840
+            ]
+          ],
+          [
+            "056bebbb70a7af3ac33cff87",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "05f73981c29179262f740a0e",
+            [
+              0,
+              64600,
+              91734
+            ]
+          ],
+          [
+            "0843700cf46b01388464ed78",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0a5ac9fdf89539525e49a8d5",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0b52f07622d395ee008422d3",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "0d4698769067dfdaa03e5b8f",
+            [
+              0,
+              31400
+            ]
+          ],
+          [
+            "17212bf4d60297555520a9e3",
+            [
+              0,
+              23190
+            ]
+          ],
+          [
+            "1806d27aaeb6873905841ea2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "1a2c93e53b2c6a93228a9bea",
+            [
+              0,
+              37510
+            ]
+          ],
+          [
+            "1dddfba0b99c6525c60711a4",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "1e5292ef102b2bbe2055beab",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "20f85207c60a197443122242",
+            [
+              0,
+              60200
+            ]
+          ],
+          [
+            "23222cc3d797f2cf29bb0b6d",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "24008b1fad9ae9a569e0a903",
+            [
+              0,
+              52885
+            ]
+          ],
+          [
+            "2a3327b485992d39f2f3ee8f",
+            [
+              0,
+              35398
+            ]
+          ],
+          [
+            "2a865d99290c987c8a654bd6",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "33a72730a569f9a8bec482c8",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "34b582b2088fa70e4253d0b7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "358e8da9be73b38fd6895b87",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "3f22ddb3802828c052c3ddca",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "448f96585e19665bc779d741",
+            [
+              0,
+              14118
+            ]
+          ],
+          [
+            "4708f6be98d331c48c42cbd7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "48a7f97d06402409a0d68f25",
+            [
+              0,
+              15080
+            ]
+          ],
+          [
+            "4d045cd66794b6b522195168",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "51dd8f061a44f32c180f99b2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "525761809c638e7cf61824ed",
+            [
+              0,
+              33960
+            ]
+          ],
+          [
+            "570e5140c29c71f3c7eccb0d",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6006ba4a0f06630c894552ef",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "62454f0d918533bea4baff84",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "63cb308fcd49df7779a6590a",
+            [
+              0,
+              49931
+            ]
+          ],
+          [
+            "659b7930ccb887d2ac9dee1c",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6a82adc6291d89631b9f88fe",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6b68e11d862cc51bfe97aed9",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "6c8e62ca42b55e7ebcd63446",
+            [
+              0,
+              64600,
+              73158
+            ]
+          ],
+          [
+            "6e7fdf6e13cb014601947292",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "73db091a0f9560aed5b8bff5",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "74b39fc8ad3b0c402a270775",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "75e347b1e91779ef2d3766a3",
+            [
+              0,
+              10600
+            ]
+          ],
+          [
+            "76854e4d0a88fd9e9ee640fa",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "76cd3dd20d88fd1f0034dc9a",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "79d89b1f653ffa82eebad153",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7c70af6d3b6f430d9a75e2a3",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7cb3c69acff66589b0d31082",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7ce0f0abeb43047aa028e3ae",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "7e710449a19be285f82e38d4",
+            [
+              0,
+              64600,
+              103190
+            ]
+          ],
+          [
+            "7f2c09f77ab818b2dec970b7",
+            [
+              0,
+              64600,
+              108518
+            ]
+          ],
+          [
+            "7f2c7ba0a0997ffe8651d7be",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "808e97735a28bc7b2e0d0d93",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "80ba540335b3ae936a446f95",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "890a38aba365bec00552c541",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "8a10e9335a4cbce2f3fa8fc3",
+            [
+              0,
+              4038
+            ]
+          ],
+          [
+            "8fa10beaaba7af48e79df985",
+            [
+              0,
+              64600,
+              76200
+            ]
+          ],
+          [
+            "9335f994e9e15dfa8b2edd29",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "96530dabe3361c5b46e27376",
+            [
+              0,
+              64600,
+              121958
+            ]
+          ],
+          [
+            "97aabe125db3af66ef30550e",
+            [
+              0,
+              34598
+            ]
+          ],
+          [
+            "97d4628ada187be52e0d6c96",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "9e528d3fc2f53af3743894ba",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "a0ca27421e1fe1cad9917427",
+            [
+              0,
+              28383
+            ]
+          ],
+          [
+            "a40540ae437ed69019b4a3c2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "a629ebcc903ea53ddc6764de",
+            [
+              0,
+              36520
+            ]
+          ],
+          [
+            "a7579bd07d2a9fa450783741",
+            [
+              0,
+              29869
+            ]
+          ],
+          [
+            "ab5df548478adeb5610cbfc2",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "b1355bb04e4dcfd7251b2887",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "b59089a2dd27572d85176e48",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ba96617ed470afd6ed3ca255",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "bb58ba9e563b9f9acca8f42c",
+            [
+              0,
+              33126
+            ]
+          ],
+          [
+            "be56f426d2a8d64e88968133",
+            [
+              0,
+              17238
+            ]
+          ],
+          [
+            "bf01c52c339120acfd831e9b",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "bfaabb3bef02012330444afe",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c0be5c2c52d12ca43e7d0a09",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c1f8fd3739e56379be555a78",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "c389017fbd2f4c7b89627119",
+            [
+              0,
+              10920
+            ]
+          ],
+          [
+            "c46abf09aec7849d25476f5e",
+            [
+              0,
+              47526
+            ]
+          ],
+          [
+            "c7c484bec4ac3dee3a30eb99",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ca169eb8def4a4444f883110",
+            [
+              0,
+              40518
+            ]
+          ],
+          [
+            "cc38100a5dd518d557b3bae7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "cd84ed71e1ba18aabaa5502a",
+            [
+              0,
+              26280
+            ]
+          ],
+          [
+            "d0eae12426c4ce3d8ea8eb7b",
+            [
+              0,
+              37205
+            ]
+          ],
+          [
+            "d2127c4b30b7d7fa7c1c5724",
+            [
+              0,
+              9158
+            ]
+          ],
+          [
+            "d3352a96271d4f6ae3c7426d",
+            [
+              0,
+              61077
+            ]
+          ],
+          [
+            "d38c37a2c1da1d0ceb58d1d1",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d45489caf5f3a3f77e87770c",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d7cd60ed8300e516557ed614",
+            [
+              0,
+              37800
+            ]
+          ],
+          [
+            "d82532a6dfa2586741b22314",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "d929c13b1d060683574762bc",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "dab7f746184a83c2aacb1498",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "dc0a08574d263dd0117c4e0f",
+            [
+              0,
+              30120
+            ]
+          ],
+          [
+            "df692db69e26d0a33c9296b8",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "e2d11e22927c4764adaef492",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "e6ec377d99528b5f85fbc3a7",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ec7f35f742ec3f951b55ee5f",
+            [
+              0,
+              64600,
+              95400
+            ]
+          ],
+          [
+            "ed2185960da3c4c0907733f1",
+            [
+              0,
+              23720
+            ]
+          ],
+          [
+            "f8103145cd0db5d24b6a5150",
+            [
+              0,
+              64600,
+              96678
+            ]
+          ],
+          [
+            "fa317f48568ab3f3dff29216",
+            [
+              0,
+              64600,
+              68198
+            ]
+          ],
+          [
+            "fce2dabe33e22114aea4cafc",
+            [
+              0,
+              44520
+            ]
+          ],
+          [
+            "fd073377632714b643ecf29a",
+            [
+              0,
+              42920
+            ]
+          ]
+        ],
+        "heads": [
+          {
+            "name": "voice_fake",
+            "count": 100,
+            "loss": 0.7561098337173462,
+            "eer": 0.15000000000000002,
+            "auc": 0.9320833333333334
+          }
+        ],
+        "loss": 0.7561098337173462,
+        "selection_metric": 0.85
+      }
+    }
+  ],
+  "first_step_audit": {
+    "gradient_norms": {
+      "encoder": 65.31872123541541,
+      "head": 15.308468632449934
+    },
+    "parameter_deltas": {
+      "encoder": 1.0132789611816406e-06,
+      "head": 2.998858690261841e-06
+    }
+  },
+  "milestones": [
+    {
+      "epoch": 10,
+      "status": "censored"
+    },
+    {
+      "epoch": 30,
+      "status": "censored"
+    },
+    {
+      "epoch": 60,
+      "status": "censored"
+    }
+  ]
+}

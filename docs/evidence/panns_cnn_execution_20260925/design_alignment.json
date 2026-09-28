@@ -1,0 +1,154 @@
+{
+  "source_sha256": {
+    "panns_a100_launch.sh": "d75ab84c334b716568ec7c444131f4a63fbadb6b4ba48ad11994b3a7e4136331",
+    "panns_adaptation.py": "08a95a237bd69ca9ab6f44e404d6777360b067f83d4223876d5ea7112c8dfcc0",
+    "panns_adaptation_cache.py": "2fcd37e11284980d8853e42106b380ad1413e5360f7ec007cddc1a5385d01677",
+    "panns_adaptation_data.py": "f7c5904b15b4f25963f5a36181a26c6ae847890e9cd4ac2e6fe146043fdba005",
+    "panns_adaptation_run.py": "d9daf4f0d33cddb02c9c1ef476dc343aa258a7926bea27bed606bab28d09a158",
+    "panns_cloud_bundle.py": "5f90c2ebd8716ac255e3bc9a9b95325192d4f36b6d4c957177b190b1b292bdb0",
+    "panns_cloud_pipeline.py": "ca49abaf7d50a51fbb8613e384f20c6d0d04c2b6aadd69e4d36e7e138df29870",
+    "panns_cloud_prepare.py": "8f6010f6e361d6f479df0f54673dd291c0e0f7d19992241481b61ca516bdf724",
+    "panns_cloud_report.py": "7c14bd2c2f93870218842d7447e260d2859a41d83ad8fd7dc2d63e877d520835",
+    "panns_cloud_run.py": "cf73255ec67862084f8969bd0a5240c880cce4cf4c9e5f01dcd6d6b5ccea97d2",
+    "panns_cpu_environment.py": "0e9aa7120aed7f33fb69ff54e057d4ecad37fff1bcdbb91da8e805d2c20cfe5a",
+    "panns_fixed_predictions.py": "4df65ac01921b33fe4bdbe91ae41603b4e78151bea1dab3983ca17f8b86e938a",
+    "panns_recover_noise.py": "9abe3dc8de82de4e5b07e6b43ef934bc813af70e732749724d6118a0a5b1bed2",
+    "panns_restore_environment.py": "d2ee7e85be113a6c3b7d80679ec8609351f3f3679f5084b184263825e709b123",
+    "panns_stem_probe.py": "cd71daffd85932f69420e05351edfbdb871acd3595fb4fc9fa9bcf56adcbfd4f",
+    "panns_training_budget.py": "b39b41bb84f06262f12d3a7492fd329d358233db5685b9cbaaabcb1dac79f7cb",
+    "panns_training_state.py": "6afc3ea8391c237e0b003959e6810c3cc5965da37ffa5dd8b79c537bc4bf775d"
+  },
+  "cpu": {
+    "real_audio_files": 7,
+    "train_files": 5,
+    "batch_sizes": [
+      4,
+      1
+    ],
+    "profiling_updates": 40,
+    "training_steps_per_checked_arm": 2,
+    "R3_resume_max_abs": 0.0,
+    "frozen_state_unchanged": true,
+    "diagnostics": {
+      "R3": {
+        "steps": 2,
+        "frozen_sha256": "6e043e86c2b75b21059c3b2bc758bdb160661848fead30cf8f8505b4f8e1508a",
+        "diagnostics": {
+          "gradient_norms": {
+            "block6": {
+              "steps": 2,
+              "clipped": 0,
+              "norm_sum": 0.016756424127379432,
+              "norm_max": 0.01642293483018875,
+              "clipping_fraction": 0.0,
+              "mean_preclip_norm": 0.008378212063689716
+            },
+            "se": {
+              "steps": 2,
+              "clipped": 0,
+              "norm_sum": 0.0017043714251485653,
+              "norm_max": 0.0016642453847452998,
+              "clipping_fraction": 0.0,
+              "mean_preclip_norm": 0.0008521857125742827
+            }
+          }
+        },
+        "resume_max_abs": 0.0
+      },
+      "R5": {
+        "steps": 2,
+        "frozen_sha256": "6e043e86c2b75b21059c3b2bc758bdb160661848fead30cf8f8505b4f8e1508a",
+        "diagnostics": {
+          "gradient_norms": {
+            "block6": {
+              "steps": 2,
+              "clipped": 0,
+              "norm_sum": 0.016756703553255647,
+              "norm_max": 0.01642293483018875,
+              "clipping_fraction": 0.0,
+              "mean_preclip_norm": 0.008378351776627824
+            },
+            "temporal_pool": {
+              "steps": 2,
+              "clipped": 0,
+              "norm_sum": 0.00025911103818998527,
+              "norm_max": 0.0002572099620010704,
+              "clipping_fraction": 0.0,
+              "mean_preclip_norm": 0.00012955551909499263
+            }
+          },
+          "attention": {
+            "segments": 5,
+            "entropy_sum": 12.424533424873827,
+            "peak_sum": 0.41667359322309494,
+            "mean_entropy_nats": 2.4849066849747654,
+            "mean_peak_weight": 0.08333471864461899
+          }
+        }
+      }
+    },
+    "real_frozen_evaluation_files": 2,
+    "fake_probabilities_unchanged": true,
+    "incomplete_comparison_rejected": true
+  },
+  "artifacts": {
+    "all_pytest.log": "cce899eabd8b0fb2e2095008946498de56659fad108497b493917e3b865f2f2e",
+    "real_training_receipt.json": "3a0006b9b9adf578bd814e8136d297968dbc485e16e841583f890939ffcd00a8",
+    "real_evaluation_receipt.json": "cb8187ced5a1a406253b92d7df2783b92ad2383b658a5e3dc8deb60b99488c72",
+    "revised_bundle_runtime_proof.json": "a402baed657c672193b0f59fa77a8c6ba4742d08cd5e2dbd7ba697db3e0e876e",
+    "upload_v5_receipt.json": "d86d121e38a132d73540ae5f621d8fb852693c89abb17d2cbd05ee42186f057b",
+    "launcher.log": "752a29cfbea62026a0d1474adcb668d3828b66130910a50b9fdbae2055e256a2",
+    "real_frozen.log": "c982755c0b0be182213f678f714559fc47329dfa877735d664e8573ed2b6cb72"
+  },
+  "uploads": {
+    "objects": [
+      {
+        "key": "panns-cnn-v1-20260925/inputs-v5/run_bundle.tar",
+        "sha256": "7feb15575fd025724cc99d610898645e383e7b60939f4694b72ae54444a5c527",
+        "bytes": 167208960,
+        "readback_verified": true
+      },
+      {
+        "key": "panns-cnn-v1-20260925/inputs-v5/launch_lock.json",
+        "sha256": "7fc3fc0093822970f73cdc21db7b1368689bf799d988f51730ff50f40114fba7",
+        "bytes": 269,
+        "readback_verified": true
+      },
+      {
+        "key": "panns-cnn-v1-20260925/inputs-v5/panns_a100_launch.sh",
+        "sha256": "d75ab84c334b716568ec7c444131f4a63fbadb6b4ba48ad11994b3a7e4136331",
+        "bytes": 4628,
+        "readback_verified": true
+      }
+    ],
+    "inventory_objects": 1492,
+    "inventory_bytes": 156118163804,
+    "gpu_started": false
+  },
+  "workspaces": [
+    {
+      "requested_id": "wsp-nvxqw1jf9zdv",
+      "workspace.name": "lb-e00-e04-a100-20260924-v1",
+      "workspace.phase": "standby",
+      "workspace.state": "stopped"
+    },
+    {
+      "requested_id": "wsp-2yoknqpl0k4s",
+      "workspace.name": "panns-env-cpu-20260925",
+      "workspace.phase": "standby",
+      "workspace.state": "stopped"
+    }
+  ],
+  "cuda_executed": false,
+  "independent_evaluation": false,
+  "quality_claim": false,
+  "lsp_available": false,
+  "artifact_directory": "_workspace/panns_cnn_v1/cloud/design_fix_v5",
+  "workspace_observation": "Before the inputs-v5 upload; upload used object storage only.",
+  "mps_reexecuted": false,
+  "revised_code_executed_on_linux": false,
+  "review_fixes": [
+    "R5 attention diagnostics transfer to CPU before float64 calculations",
+    "Cancellation-test cleanup uses its owned parent process, not stale child PID markers"
+  ]
+}

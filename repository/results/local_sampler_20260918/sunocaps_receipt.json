@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "origin": "https://www.kaggle.com/datasets/miguelcivit/sunocaps",
+  "dataset_version": 7,
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "selected_prompt_groups": 64,
+  "kaggle_card_sha256": "8fbb4cb8f38fab67a15713df6fe48ec45b4a5ecc426a0d1cb84b53390aee077a",
+  "metadata_sha256": "ee967f72ff97a9b435e7cea2b1e82cc75dad760b0641788e486d02367cb61e73",
+  "history_sha256": "31a6309d0bf066c573db10e9ee4b9d822206514dda4905fe942f2eb3d46f6ef0",
+  "script_sha256": "a0510280a17cc9e59f3c58ff038a28386c9fe2e6c7106210128d405ebf9d3927",
+  "selection": "variant 1 per unique original MusicCaps prompt; no predictions used",
+  "source_annotation_only": true,
+  "independent_listening": false,
+  "voice_labels_known": false,
+  "new_generator": false,
+  "evaluated": false,
+  "limitations": [
+    "SunoCaps supplies MusicCaps prompt IDs, not per-file Suno platform UUIDs; cross-corpus UUID identity cannot be proved.",
+    "Exact original-byte and decoded-PCM checks do not detect every lossy re-encoding or near-duplicate."
+  ],
+  "rows": 64,
+  "unique_prompt_groups": 64,
+  "source_bytes": 149962752,
+  "history_or_confirmation_exact_hash_overlap": 0,
+  "within_cohort_exact_hash_duplicates": 0,
+  "manifest_sha256": "402bef5cb6791bdc497a8e3211ed86bfef0a582909d2fdb147595a5b69ae9480",
+  "sources_sha256": "7b5cb4635d4ca0aae229ae751f4f7bff75a20bb23cfcb5ff8ee31db64915117a",
+  "retained_rows": 64
+}

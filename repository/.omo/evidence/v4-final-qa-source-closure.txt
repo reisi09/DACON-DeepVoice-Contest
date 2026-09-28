@@ -1,0 +1,30 @@
+V4 final QA independent source closure receipt
+Review checkout: /tmp/dacon-v4-review-a01a50e
+Commit: a01a50e0c774f181c20238109127c5b81cc95dc1
+
+Invocation:
+  python3 (read-only script) parsed DACON_236749_trainable_v4.ipynb, compiled every %%writefile payload, and compared each payload byte-for-byte with its pinned checkout source.
+
+Results:
+  notebook bytes: 248788
+  notebook sha256: 9e40c7c58bdc262f98699e0fef351ed15a01a8b8be7b296760bdfeead51a413c
+  expected receipt sha256: 9e40c7c58bdc262f98699e0fef351ed15a01a8b8be7b296760bdfeead51a413c
+  embedded source cells: 19
+  exact embedded/local matches: 19/19
+  embedded payload compilation: 19/19 PASS
+  TRAINING_SOURCES entries present in checkout: 19/19 PASS
+
+Control-flow checks:
+  bootstrap and Drive mount precede source materialization: PASS
+  A100 guard before runner: PASS
+  subprocess runner invokes train_v4.py: PASS
+  run writes source_hashes.json: PASS
+  run captures executed_notebook: PASS
+  run requests runtime.unassign in finally: PASS
+  sealed-open marker precedes load_manifest(..., "sealed"): PASS
+
+Drive source receipt cross-check:
+  Root run folder source_hashes.json read via Google Drive connector matches the 19 local hashes above, including train_v4.py fc399dfa456f34f12ccf25851c6a4213f4fb2beaa6a5bc1e849f01c2a488bc3a and v4_training_refit.py 6ccd87831ac23bca015960bbac80bfa5921c9a8a4539b773a7a3885bd9381b72.
+
+Scope boundary:
+  No Colab UI action, GPU allocation, production mutation, or sealed data read was performed by this QA audit.

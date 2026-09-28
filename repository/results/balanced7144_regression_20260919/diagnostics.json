@@ -1,0 +1,1035 @@
+{
+  "scope": "Local diagnostic validation, not an independent test or causal attribution",
+  "threshold_note": "0.5 counts are diagnostic and are not official EER operating points",
+  "source_hashes": {
+    "results/balanced7144_20260919/selected.csv": "512dff11a9ebd9555fefe8791c21f3f46abab7d8a0c36591d2591ed24f2397c2",
+    "results/balanced7144_h100_20260919/downloaded/unpacked/output/train/validation_predictions.csv": "acb968e43d01918e8ce01e67360c57f246f40f32fb449416d5e2cbbe52818c29",
+    "results/expanded_h100_20260918/downloaded/unpacked/output/dataset_manifest.csv": "f9c8db0bdd1d8dcc15c9a3cba0e93f0da414d4efc1c590f0e3c5e8f3fce54f8b"
+  },
+  "counts": {
+    "train:voice:1": 1064,
+    "train:voice:0": 1652,
+    "val:voice:1": 266,
+    "val:voice:0": 412,
+    "train:music:0": 1206,
+    "val:music:0": 302,
+    "val:music:1": 448,
+    "train:music:1": 1794
+  },
+  "all_file": {
+    "rows": 1428,
+    "real": 714,
+    "fake": 714,
+    "eer": 0.0938375350140056,
+    "auc": 0.9600624563550956,
+    "real_fp_at_0.5": 70,
+    "fake_fn_at_0.5": 64
+  },
+  "oracle_route_only": {
+    "rows": 1428,
+    "real": 714,
+    "fake": 714,
+    "eer": 0.06162464985994398,
+    "auc": 0.9815534056760057,
+    "real_fp_at_0.5": 18,
+    "fake_fn_at_0.5": 64
+  },
+  "routes": {
+    "music": {
+      "head": {
+        "rows": 750,
+        "real": 302,
+        "fake": 448,
+        "eer": 0.08657314333017974,
+        "auc": 0.9689791272469256,
+        "real_fp_at_0.5": 25,
+        "fake_fn_at_0.5": 40
+      },
+      "file": {
+        "rows": 750,
+        "real": 302,
+        "fake": 448,
+        "eer": 0.15871127010406816,
+        "auc": 0.9073512890255451,
+        "real_fp_at_0.5": 70,
+        "fake_fn_at_0.5": 57
+      },
+      "oracle_route": {
+        "rows": 750,
+        "real": 302,
+        "fake": 448,
+        "eer": 0.10266378902554398,
+        "auc": 0.9544628074739835,
+        "real_fp_at_0.5": 18,
+        "fake_fn_at_0.5": 57
+      },
+      "real_voice_only_fp_at_0.5": 52
+    },
+    "voice": {
+      "head": {
+        "rows": 678,
+        "real": 412,
+        "fake": 266,
+        "eer": 0.010493466676399723,
+        "auc": 0.9995620118256807,
+        "real_fp_at_0.5": 1,
+        "fake_fn_at_0.5": 5
+      },
+      "file": {
+        "rows": 678,
+        "real": 412,
+        "fake": 266,
+        "eer": 0.007400175195269755,
+        "auc": 0.9995163880575225,
+        "real_fp_at_0.5": 0,
+        "fake_fn_at_0.5": 7
+      },
+      "oracle_route": {
+        "rows": 678,
+        "real": 412,
+        "fake": 266,
+        "eer": 0.007400175195269755,
+        "auc": 0.9995163880575225,
+        "real_fp_at_0.5": 0,
+        "fake_fn_at_0.5": 7
+      },
+      "real_voice_only_fp_at_0.5": 0
+    }
+  },
+  "source_slices": {
+    "music:Echoes/acestep/TTA": {
+      "rows": 10,
+      "real": 0,
+      "fake": 10,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music:Echoes/audioldm/ATA": {
+      "rows": 9,
+      "real": 0,
+      "fake": 9,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music:Echoes/audioldm/TTA": {
+      "rows": 9,
+      "real": 0,
+      "fake": 9,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 3
+    },
+    "music:Echoes/brev/TTA": {
+      "rows": 8,
+      "real": 0,
+      "fake": 8,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 2
+    },
+    "music:Echoes/diffrhythm/ATA": {
+      "rows": 9,
+      "real": 0,
+      "fake": 9,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music:Echoes/diffrhythm/TTA": {
+      "rows": 10,
+      "real": 0,
+      "fake": 10,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 1
+    },
+    "music:Echoes/elevenlabs/TTA": {
+      "rows": 8,
+      "real": 0,
+      "fake": 8,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 3
+    },
+    "music:Echoes/mubert/TTA": {
+      "rows": 1,
+      "real": 0,
+      "fake": 1,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music:Echoes/musicgen/ATA": {
+      "rows": 9,
+      "real": 0,
+      "fake": 9,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 1
+    },
+    "music:Echoes/musicgen/TTA": {
+      "rows": 10,
+      "real": 0,
+      "fake": 10,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music:Echoes/producer/ATA": {
+      "rows": 4,
+      "real": 0,
+      "fake": 4,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 2
+    },
+    "music:Echoes/producer/TTA": {
+      "rows": 5,
+      "real": 0,
+      "fake": 5,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music:Echoes/songgen/ATA": {
+      "rows": 8,
+      "real": 0,
+      "fake": 8,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music:Echoes/songgen/TTA": {
+      "rows": 10,
+      "real": 0,
+      "fake": 10,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music:Echoes/stableaudio/TTA": {
+      "rows": 1,
+      "real": 0,
+      "fake": 1,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 1
+    },
+    "music:Echoes/suno/TTA": {
+      "rows": 9,
+      "real": 0,
+      "fake": 9,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 5
+    },
+    "music:Echoes/udio/TTA": {
+      "rows": 9,
+      "real": 0,
+      "fake": 9,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 3
+    },
+    "music:FMA": {
+      "rows": 120,
+      "real": 120,
+      "fake": 0,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 13,
+      "fake_fn_at_0.5": 0
+    },
+    "music:FMA/FMA": {
+      "rows": 11,
+      "real": 11,
+      "fake": 0,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 1,
+      "fake_fn_at_0.5": 0
+    },
+    "music:FakeMusicCaps": {
+      "rows": 104,
+      "real": 0,
+      "fake": 104,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 8
+    },
+    "music:HAIM": {
+      "rows": 103,
+      "real": 0,
+      "fake": 103,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 10
+    },
+    "music:JamendoMaxCaps": {
+      "rows": 171,
+      "real": 171,
+      "fake": 0,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 11,
+      "fake_fn_at_0.5": 0
+    },
+    "music:SONICS": {
+      "rows": 102,
+      "real": 0,
+      "fake": 102,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 1
+    },
+    "music:suno": {
+      "rows": 5,
+      "real": 0,
+      "fake": 5,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music:udio": {
+      "rows": 5,
+      "real": 0,
+      "fake": 5,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "voice:asvspoof2019_la": {
+      "rows": 472,
+      "real": 206,
+      "fake": 266,
+      "eer": 0.014800350390539455,
+      "auc": 0.9991970216804147,
+      "real_fp_at_0.5": 1,
+      "fake_fn_at_0.5": 5
+    },
+    "voice:librispeech_test-clean": {
+      "rows": 206,
+      "real": 206,
+      "fake": 0,
+      "eer": null,
+      "auc": null,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    }
+  },
+  "source_only_baseline": {
+    "music": {
+      "rows": 750,
+      "real": 302,
+      "fake": 448,
+      "eer": 0.0,
+      "auc": 1.0,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "music_duration_only": {
+      "eer": 0.21475875118259224,
+      "auc": 0.8867446192052989,
+      "sign_selected_from_training_medians": -1,
+      "note": "Metadata diagnostic only; no waveform or fitted classifier"
+    },
+    "voice": {
+      "rows": 678,
+      "real": 412,
+      "fake": 266,
+      "eer": 0.25,
+      "auc": 0.75,
+      "real_fp_at_0.5": 206,
+      "fake_fn_at_0.5": 0
+    },
+    "voice_duration_only": {
+      "eer": 0.36867654573326525,
+      "auc": 0.6876277465508432,
+      "sign_selected_from_training_medians": -1,
+      "note": "Metadata diagnostic only; no waveform or fitted classifier"
+    }
+  },
+  "weight_mass": {
+    "music": [
+      {
+        "label": "0",
+        "source": "FMA",
+        "generator": "REAL",
+        "rows": 479,
+        "row_fraction": 0.15966666666666668,
+        "loss_fraction": 0.1666666666666648
+      },
+      {
+        "label": "0",
+        "source": "FMA/FMA",
+        "generator": "",
+        "rows": 44,
+        "row_fraction": 0.014666666666666666,
+        "loss_fraction": 0.16666666666666677
+      },
+      {
+        "label": "0",
+        "source": "JamendoMaxCaps",
+        "generator": "REAL",
+        "rows": 683,
+        "row_fraction": 0.22766666666666666,
+        "loss_fraction": 0.16666666666666763
+      },
+      {
+        "label": "1",
+        "source": "Echoes/acestep/TTA",
+        "generator": "acestep",
+        "rows": 38,
+        "row_fraction": 0.012666666666666666,
+        "loss_fraction": 0.017857142857142846
+      },
+      {
+        "label": "1",
+        "source": "Echoes/audioldm/ATA",
+        "generator": "audioldm",
+        "rows": 34,
+        "row_fraction": 0.011333333333333334,
+        "loss_fraction": 0.01785714285714287
+      },
+      {
+        "label": "1",
+        "source": "Echoes/audioldm/TTA",
+        "generator": "audioldm",
+        "rows": 38,
+        "row_fraction": 0.012666666666666666,
+        "loss_fraction": 0.017857142857142846
+      },
+      {
+        "label": "1",
+        "source": "Echoes/brev/TTA",
+        "generator": "brev",
+        "rows": 34,
+        "row_fraction": 0.011333333333333334,
+        "loss_fraction": 0.01785714285714287
+      },
+      {
+        "label": "1",
+        "source": "Echoes/diffrhythm/ATA",
+        "generator": "diffrhythm",
+        "rows": 36,
+        "row_fraction": 0.012,
+        "loss_fraction": 0.017857142857142867
+      },
+      {
+        "label": "1",
+        "source": "Echoes/diffrhythm/TTA",
+        "generator": "diffrhythm",
+        "rows": 40,
+        "row_fraction": 0.013333333333333334,
+        "loss_fraction": 0.017857142857142863
+      },
+      {
+        "label": "1",
+        "source": "Echoes/elevenlabs/TTA",
+        "generator": "elevenlabs",
+        "rows": 34,
+        "row_fraction": 0.011333333333333334,
+        "loss_fraction": 0.01785714285714287
+      },
+      {
+        "label": "1",
+        "source": "Echoes/mubert/TTA",
+        "generator": "mubert",
+        "rows": 5,
+        "row_fraction": 0.0016666666666666668,
+        "loss_fraction": 0.017857142857142856
+      },
+      {
+        "label": "1",
+        "source": "Echoes/musicgen/ATA",
+        "generator": "musicgen",
+        "rows": 34,
+        "row_fraction": 0.011333333333333334,
+        "loss_fraction": 0.01785714285714287
+      },
+      {
+        "label": "1",
+        "source": "Echoes/musicgen/TTA",
+        "generator": "musicgen",
+        "rows": 39,
+        "row_fraction": 0.013,
+        "loss_fraction": 0.017857142857142846
+      },
+      {
+        "label": "1",
+        "source": "Echoes/producer/ATA",
+        "generator": "producer",
+        "rows": 16,
+        "row_fraction": 0.005333333333333333,
+        "loss_fraction": 0.017857142857142853
+      },
+      {
+        "label": "1",
+        "source": "Echoes/producer/TTA",
+        "generator": "producer",
+        "rows": 18,
+        "row_fraction": 0.006,
+        "loss_fraction": 0.017857142857142853
+      },
+      {
+        "label": "1",
+        "source": "Echoes/songgen/ATA",
+        "generator": "songgen",
+        "rows": 34,
+        "row_fraction": 0.011333333333333334,
+        "loss_fraction": 0.01785714285714287
+      },
+      {
+        "label": "1",
+        "source": "Echoes/songgen/TTA",
+        "generator": "songgen",
+        "rows": 39,
+        "row_fraction": 0.013,
+        "loss_fraction": 0.017857142857142846
+      },
+      {
+        "label": "1",
+        "source": "Echoes/stableaudio/TTA",
+        "generator": "stableaudio",
+        "rows": 5,
+        "row_fraction": 0.0016666666666666668,
+        "loss_fraction": 0.017857142857142856
+      },
+      {
+        "label": "1",
+        "source": "Echoes/suno/TTA",
+        "generator": "suno",
+        "rows": 35,
+        "row_fraction": 0.011666666666666667,
+        "loss_fraction": 0.017857142857142856
+      },
+      {
+        "label": "1",
+        "source": "Echoes/udio/TTA",
+        "generator": "udio",
+        "rows": 36,
+        "row_fraction": 0.012,
+        "loss_fraction": 0.017857142857142867
+      },
+      {
+        "label": "1",
+        "source": "FakeMusicCaps",
+        "generator": "MusicGen_medium",
+        "rows": 83,
+        "row_fraction": 0.027666666666666666,
+        "loss_fraction": 0.017857142857142877
+      },
+      {
+        "label": "1",
+        "source": "FakeMusicCaps",
+        "generator": "audioldm2",
+        "rows": 82,
+        "row_fraction": 0.027333333333333334,
+        "loss_fraction": 0.01785714285714285
+      },
+      {
+        "label": "1",
+        "source": "FakeMusicCaps",
+        "generator": "musicldm",
+        "rows": 83,
+        "row_fraction": 0.027666666666666666,
+        "loss_fraction": 0.017857142857142877
+      },
+      {
+        "label": "1",
+        "source": "FakeMusicCaps",
+        "generator": "mustango",
+        "rows": 83,
+        "row_fraction": 0.027666666666666666,
+        "loss_fraction": 0.017857142857142877
+      },
+      {
+        "label": "1",
+        "source": "FakeMusicCaps",
+        "generator": "stable_audio_open",
+        "rows": 83,
+        "row_fraction": 0.027666666666666666,
+        "loss_fraction": 0.017857142857142877
+      },
+      {
+        "label": "1",
+        "source": "HAIM",
+        "generator": "acestep",
+        "rows": 209,
+        "row_fraction": 0.06966666666666667,
+        "loss_fraction": 0.017857142857142794
+      },
+      {
+        "label": "1",
+        "source": "HAIM",
+        "generator": "musicgen",
+        "rows": 206,
+        "row_fraction": 0.06866666666666667,
+        "loss_fraction": 0.017857142857142922
+      },
+      {
+        "label": "1",
+        "source": "SONICS",
+        "generator": "suno",
+        "rows": 206,
+        "row_fraction": 0.06866666666666667,
+        "loss_fraction": 0.017857142857142922
+      },
+      {
+        "label": "1",
+        "source": "SONICS",
+        "generator": "udio",
+        "rows": 206,
+        "row_fraction": 0.06866666666666667,
+        "loss_fraction": 0.017857142857142922
+      },
+      {
+        "label": "1",
+        "source": "suno",
+        "generator": "suno",
+        "rows": 19,
+        "row_fraction": 0.006333333333333333,
+        "loss_fraction": 0.01785714285714285
+      },
+      {
+        "label": "1",
+        "source": "udio",
+        "generator": "udio",
+        "rows": 19,
+        "row_fraction": 0.006333333333333333,
+        "loss_fraction": 0.01785714285714285
+      }
+    ],
+    "voice": [
+      {
+        "label": "0",
+        "source": "asvspoof2019_la",
+        "generator": "original",
+        "rows": 826,
+        "row_fraction": 0.30412371134020616,
+        "loss_fraction": 0.25000000000000394
+      },
+      {
+        "label": "0",
+        "source": "librispeech_test-clean",
+        "generator": "original",
+        "rows": 826,
+        "row_fraction": 0.30412371134020616,
+        "loss_fraction": 0.25000000000000394
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A01",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A02",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A03",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A04",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A05",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A06",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A07",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A08",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A09",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A10",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A11",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A12",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A13",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A14",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A15",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A16",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A17",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A18",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      },
+      {
+        "label": "1",
+        "source": "asvspoof2019_la",
+        "generator": "A19",
+        "rows": 56,
+        "row_fraction": 0.020618556701030927,
+        "loss_fraction": 0.02631578947368422
+      }
+    ]
+  },
+  "exposure_slices": {
+    "music:True": {
+      "rows": 541,
+      "real": 301,
+      "fake": 240,
+      "eer": 0.10898394241417494,
+      "auc": 0.9579457364341091,
+      "real_fp_at_0.5": 25,
+      "fake_fn_at_0.5": 29
+    },
+    "music:False": {
+      "rows": 209,
+      "real": 1,
+      "fake": 208,
+      "eer": 0.0024038461538461453,
+      "auc": 0.9951923076923077,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 11
+    },
+    "voice:True": {
+      "rows": 20,
+      "real": 4,
+      "fake": 16,
+      "eer": 0.0,
+      "auc": 1.0,
+      "real_fp_at_0.5": 0,
+      "fake_fn_at_0.5": 0
+    },
+    "voice:False": {
+      "rows": 658,
+      "real": 408,
+      "fake": 250,
+      "eer": 0.008901960784313729,
+      "auc": 0.9995294117647059,
+      "real_fp_at_0.5": 1,
+      "fake_fn_at_0.5": 5
+    }
+  },
+  "duration_seconds": {
+    "music:0": {
+      "min": 8.0,
+      "p25": 135.61665625,
+      "median": 183.9805,
+      "p75": 274.668375,
+      "max": 784.5416875
+    },
+    "music:1": {
+      "min": 8.0,
+      "p25": 8.0,
+      "median": 10.18,
+      "p75": 96.75,
+      "max": 489.0
+    },
+    "voice:0": {
+      "min": 1.285,
+      "p25": 3.026765625,
+      "median": 4.182499999999999,
+      "p75": 7.62125,
+      "max": 32.88
+    },
+    "voice:1": {
+      "min": 0.776625,
+      "p25": 2.17540625,
+      "median": 3.044625,
+      "p75": 4.162234375,
+      "max": 12.1054375
+    }
+  },
+  "manifest_comparison": {
+    "expanded_music_train": {
+      "rows": 3659,
+      "labels": {
+        "1": 2921,
+        "0": 738
+      },
+      "variants": {
+        "base": 3531,
+        "partial_fake": 64,
+        "sham": 64
+      },
+      "with_explicit_music_intervals": 3659,
+      "known_voice_fake": 0,
+      "duration_median_seconds": 8.0
+    },
+    "balanced_music_train": {
+      "rows": 3000,
+      "labels": {
+        "0": 1206,
+        "1": 1794
+      },
+      "variants": {
+        "": 2403,
+        "base": 597
+      },
+      "with_explicit_music_intervals": 597,
+      "known_voice_fake": 0,
+      "duration_median_seconds": 96.8355
+    }
+  },
+  "historical_exposed_validation_rows": 561,
+  "music_loss_mass_by_source_family": {
+    "FMA": 0.3333333333333316,
+    "JamendoMaxCaps": 0.16666666666666763,
+    "Echoes": 0.30357142857142855,
+    "FakeMusicCaps": 0.08928571428571436,
+    "HAIM": 0.03571428571428571,
+    "SONICS": 0.035714285714285844,
+    "suno": 0.01785714285714285,
+    "udio": 0.01785714285714285
+  },
+  "music_learning_curves": {
+    "41": {
+      "selected_epoch": 11,
+      "completed_epochs": 16,
+      "selected_bce": 0.2249143866374721,
+      "final_bce": 0.24271624585175064,
+      "selected_eer": 0.08934484389782404,
+      "final_eer": 0.09211654446546828
+    },
+    "42": {
+      "selected_epoch": 13,
+      "completed_epochs": 18,
+      "selected_bce": 0.23435824281625897,
+      "final_bce": 0.2479959839140144,
+      "selected_eer": 0.08934484389782404,
+      "final_eer": 0.08934484389782404
+    },
+    "43": {
+      "selected_epoch": 11,
+      "completed_epochs": 16,
+      "selected_bce": 0.22816968243046548,
+      "final_bce": 0.2344184444023474,
+      "selected_eer": 0.08657314333017974,
+      "final_eer": 0.08657314333017974
+    }
+  },
+  "fake_voice_sources": {
+    "asvspoof2019_la": 1330
+  },
+  "fake_voice_speakers": {
+    "train": [
+      "LA_0004",
+      "LA_0006",
+      "LA_0008",
+      "LA_0009",
+      "LA_0010",
+      "LA_0012",
+      "LA_0014",
+      "LA_0016",
+      "LA_0017",
+      "LA_0019",
+      "LA_0020",
+      "LA_0022",
+      "LA_0024",
+      "LA_0026",
+      "LA_0027",
+      "LA_0029",
+      "LA_0031",
+      "LA_0033",
+      "LA_0034",
+      "LA_0035",
+      "LA_0037",
+      "LA_0039",
+      "LA_0041",
+      "LA_0042",
+      "LA_0043",
+      "LA_0045",
+      "LA_0047",
+      "LA_0069",
+      "LA_0072",
+      "LA_0074",
+      "LA_0075",
+      "LA_0077",
+      "LA_0078",
+      "LA_0079",
+      "LA_0080",
+      "LA_0081",
+      "LA_0084",
+      "LA_0085",
+      "LA_0086",
+      "LA_0087",
+      "LA_0088",
+      "LA_0090",
+      "LA_0091",
+      "LA_0097",
+      "LA_0098"
+    ],
+    "val": [
+      "LA_0001",
+      "LA_0002",
+      "LA_0003",
+      "LA_0005",
+      "LA_0007",
+      "LA_0011",
+      "LA_0013",
+      "LA_0015",
+      "LA_0018",
+      "LA_0021",
+      "LA_0023",
+      "LA_0025",
+      "LA_0028",
+      "LA_0030",
+      "LA_0032",
+      "LA_0036",
+      "LA_0038",
+      "LA_0040",
+      "LA_0044",
+      "LA_0046",
+      "LA_0048",
+      "LA_0070",
+      "LA_0071",
+      "LA_0073",
+      "LA_0076",
+      "LA_0082",
+      "LA_0083",
+      "LA_0089",
+      "LA_0092",
+      "LA_0093",
+      "LA_0094",
+      "LA_0095",
+      "LA_0096"
+    ]
+  },
+  "exact_audio_validation_overlap": {
+    "rows": 0,
+    "note": "No comparison of different crops or parent-only matches"
+  },
+  "official_change": {
+    "previous_submission": 92644,
+    "current_submission": 93093,
+    "old_total": "0.7579036931",
+    "new_total": "0.7559347884",
+    "delta_total": "-0.0019689047",
+    "ads_contribution": "-0.00197142858",
+    "cps_contribution": "0.00000252381",
+    "limitation": "Rendered submissions do not expose individual EER values or ZIP hashes; prior Expanded package identity unconfirmed"
+  }
+}

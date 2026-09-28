@@ -1,0 +1,35 @@
+{
+  "archive": "DACON_Chat_Stacking_Input.zip",
+  "sha256": "7adfb7b426c45b0efbb23de581ca1a5a073079d2110f4f4f84cdcf0fca2fc75a",
+  "bytes": 10312407,
+  "members": 134,
+  "expanded_bytes": 61217256,
+  "checks": {
+    "zip_crc_and_all_member_hashes": "PASS",
+    "selected_unique_ids_and_split_counts": {
+      "test": 1426,
+      "train": 6652,
+      "val": 1426
+    },
+    "prediction_id_joins_and_probability_ranges": "PASS",
+    "actual_npz_schema_and_explicit_fixture_id_mapping": "PASS",
+    "head_cache_prediction_members_against_handoff_hashes": 18,
+    "raw_audio_large_weights_nested_archives_excluded": "PASS",
+    "common_credential_pattern_scan": "PASS; bounded scan, not exhaustive",
+    "korean_final_edit": "humanize-korean meaning-preserving final pass applied; no automated edit-rate score claimed"
+  },
+  "not_run": [
+    "new stacking implementation/training",
+    "encoder inference",
+    "new OOD evaluation",
+    "GPU/VESSL operations",
+    "L4 performance",
+    "official competition submission"
+  ],
+  "warnings": [
+    "Historical val/test CSVs are diagnostic only",
+    "Only 10 actual feature cache files included, not 9504",
+    "Upstream pretraining exposure not certified",
+    "Reference rules/licenses are archived, not refreshed this turn"
+  ]
+}

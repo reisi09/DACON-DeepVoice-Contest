@@ -1,0 +1,15 @@
+{
+  "cache_records_verified": 1446,
+  "saved_H100_vs_local_batch128_tune_prediction_absolute_tolerance": 1e-06,
+  "source_group_isolation": "passed for train/tune/test",
+  "batch128_prediction_padding_and_companion_invariance": "passed",
+  "custom_batch_and_partial_batch_actual_training": "passed",
+  "optimizer_update_accounting": "passed",
+  "early_stopping_gradient_and_reload_regressions": "passed",
+  "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv/bin/python -m unittest test_temporal_experiment test_music_temporal test_c3_final test_v7_ablation",
+  "exit_code": 0,
+  "new_cloud_training": false,
+  "workspace_state_verified": "stopped",
+  "workspace_slug": "wsp-yiuufw51tke8",
+  "plot_visually_reviewed": true
+}

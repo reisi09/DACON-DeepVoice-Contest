@@ -1,0 +1,67 @@
+{
+  "file": "M330_MLP_full1206_submit.zip",
+  "sha256": "1f6cfd6c9feacead01d4ebcfd217d10c1796969b1f863ba4b0283d46e7432c7e",
+  "bytes": 6267568297,
+  "expanded_bytes": 6267559961,
+  "choice": {
+    "candidate": "M330_MLP_full1206",
+    "seed": 41,
+    "selected_epoch": 36,
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.1,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true,
+      "temporal_bins": 1,
+      "softmax_output": true,
+      "input_dim": 1024,
+      "mlp_output": true,
+      "cosine_output": false,
+      "label_smoothing": 0.0,
+      "lr_plateau": false
+    },
+    "checkpoint_sha256": "45627f999e3338b58e0382cdb6e18fcfd4d93b97907181c34a0d90e438fe42b9",
+    "parameters": 107234,
+    "full_data_retraining": false,
+    "ensemble": true,
+    "training_mode": "grouped_5fold_early_stopping",
+    "all_data_used_across_folds": true,
+    "files": 1206,
+    "seeds": [
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "parameters_per_head": 107234,
+    "ensemble_parameters": 536170,
+    "selected_epochs": [
+      36,
+      43,
+      40,
+      42,
+      28
+    ],
+    "checkpoints": [
+      "model/trained/c08.pt",
+      "model/trained/fold1.pt",
+      "model/trained/fold2.pt",
+      "model/trained/fold3.pt",
+      "model/trained/fold4.pt"
+    ]
+  },
+  "crc_verified": true,
+  "gpu_end_to_end_verified": false,
+  "official_environment": "Python 3.11, torch 2.7.1 CUDA 12.8",
+  "dependency_source": "https://dacon.io/competitions/official/236749/overview/evaluation"
+}

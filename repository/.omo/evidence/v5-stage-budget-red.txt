@@ -1,0 +1,64 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_slow_separation_can_borrow_unused_stage_time_without_extending_allocation _
+
+tmp_path = PosixPath('/private/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/pytest-of-choiwuseck/pytest-164/test_slow_separation_can_borro0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b798590>
+
+    def test_slow_separation_can_borrow_unused_stage_time_without_extending_allocation(tmp_path, monkeypatch):
+        # The real run aborted at its 35% preparation slice with global time still free.
+        now = [1_000.0]
+        deadline = now[0] + 2_600
+        monkeypatch.setattr(v5_compare.time, 'time', lambda: now[0])
+        def consume(limit, seconds):
+            if now[0] + seconds > limit:
+                raise TimeoutError('Phase stopped although the overall allocation can fit it')
+            now[0] += seconds
+        def prepare(rows, baseline, cache, limit, *, training):
+            consume(limit, 1_170 if training else 260)
+            return {}
+        def encode(model, rows, views, kind, root, limit):
+            consume(limit, 130)
+        model = SimpleNamespace(load_state_dict=lambda *args, **kwargs: None)
+        fusion_calls = []
+        def fuse(train, dev, joint, output, limit, *, epochs):
+            consume(limit, 130)
+            fusion_calls.append(joint)
+            return model, np.array([[.1, .1, .1, .9, .9], [.9, .9, .9, .9, .9]]), {
+                'status': 'complete', 'epochs_completed': 20, 'updates': 20, 'best_epoch': 1}
+        monkeypatch.setattr(v5_compare, 'add_compositions', lambda train, output: (train, []))
+        monkeypatch.setattr(v5_compare, 'prepare_views', prepare)
+        monkeypatch.setattr(v5_compare, 'encode_expert_views', encode)
+        monkeypatch.setattr(v5_compare, 'assemble_features', lambda rows, roots: [])
+        monkeypatch.setattr(v5_compare, 'load_expert', lambda *args: model)
+        monkeypatch.setattr(v5_compare.torch, 'load', lambda *args, **kwargs: {})
+        monkeypatch.setattr(v5_compare, 'release', lambda model: None)
+        monkeypatch.setattr(v5_compare, 'train_fusion', fuse)
+        weight = tmp_path / 'weight.pt'
+        weight.write_bytes(b'isolated scheduling test; encoder behavior tested separately')
+        paths = {('B2', kind): weight for kind in ('voice', 'music', 'presence')}
+        comparison = {}
+        dev = [Example(str(label), tmp_path / f'{label}.wav', (str(label),),
+                       (label, label, label, 1., 1.), 'mixture') for label in (0., 1.)]
+>       v5_compare.run_temporal(tmp_path, tmp_path / 'results', [], dev, deadline, paths, comparison)
+
+test_v5_compare.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+v5_compare.py:151: in run_temporal
+    train_views = prepare_views(train, work / "baseline", work / "views/train", started + remaining * .35, training=True)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_v5_compare.py:38: in prepare
+    consume(limit, 1_170 if training else 260)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+limit = 1910.0, seconds = 1170
+
+    def consume(limit, seconds):
+        if now[0] + seconds > limit:
+>           raise TimeoutError('Phase stopped although the overall allocation can fit it')
+E           TimeoutError: Phase stopped although the overall allocation can fit it
+
+test_v5_compare.py:35: TimeoutError
+=========================== short test summary info ============================
+FAILED test_v5_compare.py::test_slow_separation_can_borrow_unused_stage_time_without_extending_allocation
+1 failed in 0.74s

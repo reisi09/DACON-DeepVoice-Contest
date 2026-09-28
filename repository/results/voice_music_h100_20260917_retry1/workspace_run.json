@@ -1,0 +1,49 @@
+{
+  "workspace": "wsp-9683432r72m7",
+  "object_volume": "objvol-a5gxdg7er70i",
+  "object_prefix": "voice-music-h100-20260917-retry1/",
+  "remote_root": "/root/voice_music_h100_20260917_retry1",
+  "started_epoch": 1789635278,
+  "pause_deadline_epoch": 1789638878,
+  "max_gpu_hours": 1,
+  "monitor_interval_seconds": 300,
+  "status": "stopped",
+  "heartbeat_id": "h100-15",
+  "notebook": "DACON_Voice_Music_H100_Retry.ipynb",
+  "previous_run": "voice_music_h100_20260917",
+  "original_deadline_epoch": 1789631286,
+  "watch_pid": 17162,
+  "heartbeat_status": "PAUSED",
+  "start_requested_epoch": 1789635353.210519,
+  "phase": "standby",
+  "confirmed_gpu": "NVIDIA H100 80GB HBM3",
+  "observed_epoch": 1789635998.171123,
+  "latest_progress": {
+    "additional_seeds": false,
+    "stage": "complete",
+    "time": 1789635644.8832643
+  },
+  "result_status": "complete",
+  "completed_stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "reused_stages": [
+    1
+  ],
+  "executed_stages": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "additional_seeds": false,
+  "training_performed": true,
+  "decoder_fix": "verified on H100; all experiments completed",
+  "stopped_epoch": 1789635661.434038
+}

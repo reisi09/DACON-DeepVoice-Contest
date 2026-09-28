@@ -1,0 +1,55 @@
+{
+  "files": {
+    "input.zip": {
+      "bytes": 2068773,
+      "sha256": "33fd284202cceb9a3127a79329ba057d5235bf5a5f4383cd8dc8ca5034576c0f"
+    },
+    "bootstrap.sh": {
+      "bytes": 11414,
+      "sha256": "9b651c2737d0fe668f204abd7eda16d81aeaf1bfcf9f1b7ac55725ce9aa5a136"
+    }
+  },
+  "member_sha256": {
+    "source/expanded_experiment.py": "ccd51ccdf7e32729dda054d6c9350ebf46d977e723f31b9c307377a9a39d1c50",
+    "source/localization_features.py": "3e1abb11dcc8b5f1b8b118f65f5192d7b40e17be45d66c9930a9a9f950c7285c",
+    "source/localization_export.py": "54e6e52c8fc7005d4eee3cd6ddd504f4484051adc17c859f817f169e88194cf6",
+    "source/eight_contract.py": "9b3131584fe0f3169449ee3c405410a73ba4f21f97a86834276be52ab2c7b94c",
+    "source/localization_models.py": "f0c325d9b654cb0a6fa64740082637a39da89c6137c9d29206c1a376201ec94c",
+    "source/localization_train.py": "d93fda1422e1baf9cbce14c1d18796bca809eda88508b8d80fa4295481f74a61",
+    "source/ast_multitask.py": "2204c7a406f2865a9fc84ea9efb3a7ea3bfeaeb1e894eb15ef80671944c69a6b",
+    "source/eight_fixed_io.py": "2a5267ccb6a77b67b4a1c2bbf22735e129056ff6071f389f9f4576eceb822a69",
+    "source/mert12_submission.py": "30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e",
+    "source/v6_data.py": "e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33",
+    "source/v6_runtime.py": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce",
+    "source/eight_heads.py": "c3e040ad607e0f40046358a7bd6069d0fe389f6c6c6201c39992060838eeba09",
+    "source/graph_scoring.py": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+    "source/eight_metrics.py": "78ea26c579d4f59791956c60a674c00c963334be5ccfebfc82ff445ef6f64d4c",
+    "source/v6_core.py": "b0b0496623f16f815e82d465139449b5258b52cf7d2246f5cad72467037dfd72",
+    "dataset/original_music_ids.json": "4fc6a5fb169b72e2ac75078c51e42d904f69df8d161c2d3648ced9a275b7251d",
+    "dataset/manifest.csv": "f9c8db0bdd1d8dcc15c9a3cba0e93f0da414d4efc1c590f0e3c5e8f3fce54f8b",
+    "dataset/sources.csv": "4554a50413dcfb5b7aa3e34c2e42c680aeeb40675db617208193524fdff6d85c",
+    "split_summary.json": "a0b8ebaf2661379ea2a9a6df40b43db6ca9020e9ff2b2dd85d01327a73322740",
+    "data_preparation.json": "2902d3dfef757394d227cf9237f9f674c34a93502a67015019fbb235216e283c",
+    "audio_upload.json": "eb3e935581763bff0aa3ccd57c59802e1ee9d2047b5a6362e8b356c751a72fd3",
+    "sampling_preflight.json": "6819710eab478e446eb0ba0addde2f0117318e3a134b08b014c28225894b7c8c",
+    "PROTOCOL.md": "60346493e143cf770b63b41cc1a86c1a33124a75d990661b7b81d34ebf763e85",
+    "DACON_Expanded_H100_Experiments.ipynb": "34c5ab2c7a08f4deeb8f86e2ae387f84a1b18aee5b8cb377c70510d1a9f8d035",
+    "asset_hashes.json": "69f588fac806ec2afd0abfebf1555dcee23101a2c1770f3893bb08755fce972b",
+    "ast_assets_receipt.json": "2532754bdd37374944fe657c17824ce00217cde4832a0352c41b154b7846a96a"
+  },
+  "dataset": {
+    "rows": 4627,
+    "new_originals": 3668,
+    "windows": 13660,
+    "ast_prefix_bytes": 25471856640,
+    "manifest_sha256": "f9c8db0bdd1d8dcc15c9a3cba0e93f0da414d4efc1c590f0e3c5e8f3fce54f8b",
+    "source_sha256": "4554a50413dcfb5b7aa3e34c2e42c680aeeb40675db617208193524fdff6d85c",
+    "selection_sha256": "bf4295b0181babbc474b067fb258639d090c4adf2cc254bbb0cbff69e454a3bf",
+    "remote_audio_bytes": 1634223239,
+    "all_shards_readback_verified": true,
+    "local_audio_shards_retained": false,
+    "gpu_started": false
+  },
+  "gpu_started": false,
+  "legacy_bundle_sha256": "00e495257b76e09bcbd91646f98ef9e8286bfc403349679e0018bddaa3dd1c4d"
+}

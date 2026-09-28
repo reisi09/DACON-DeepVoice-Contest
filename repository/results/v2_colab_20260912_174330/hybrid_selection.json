@@ -1,0 +1,120 @@
+{
+  "selected": "G0_AST_MUSIC",
+  "reason": "all_gates_passed",
+  "failed_gates": {},
+  "models": {
+    "G0": {
+      "value": 0.7577972514194441,
+      "proxy_weights": {
+        "file_eer": 0.45,
+        "voice_eer": 0.18,
+        "music_eer": 0.27,
+        "voice_presence_auc": 0.05,
+        "music_presence_auc": 0.05
+      },
+      "metric_report": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.1557112068965517,
+          "voice_eer": 0.030414746543778806,
+          "music_eer": 0.603030303030303,
+          "voice_presence_auc": 1.0,
+          "music_presence_auc": 0.9232026143790858
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 36",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 32"
+        },
+        "counts": {
+          "file_eer": 122,
+          "voice_eer": 66,
+          "music_eer": 68,
+          "voice_presence_auc": 90,
+          "music_presence_auc": 122
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 36,
+          "music_eer": 0,
+          "voice_presence_auc": 32,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.6470588235294118,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.7377049180327869,
+          "music_presence_auc": 1.0
+        }
+      },
+      "is_partial": true
+    },
+    "G0_AST_MUSIC": {
+      "value": 0.884715042778412,
+      "proxy_weights": {
+        "file_eer": 0.45,
+        "voice_eer": 0.18,
+        "music_eer": 0.27,
+        "voice_presence_auc": 0.05,
+        "music_presence_auc": 0.05
+      },
+      "metric_report": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.1557112068965517,
+          "voice_eer": 0.030414746543778806,
+          "music_eer": 0.14718614718614717,
+          "voice_presence_auc": 1.0,
+          "music_presence_auc": 1.0
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 36",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 32"
+        },
+        "counts": {
+          "file_eer": 122,
+          "voice_eer": 66,
+          "music_eer": 68,
+          "voice_presence_auc": 90,
+          "music_presence_auc": 122
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 36,
+          "music_eer": 0,
+          "voice_presence_auc": 32,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.6470588235294118,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.7377049180327869,
+          "music_presence_auc": 1.0
+        }
+      },
+      "is_partial": true,
+      "bootstrap": {
+        "seed": 20260913,
+        "resamples": 2000,
+        "lineage_components": 40,
+        "valid_resamples": 2000,
+        "uncomputable_resamples": 0,
+        "win_rate": 1.0,
+        "p10_delta": 0.08785714285714286
+      },
+      "gates": {
+        "proxy_gain": true,
+        "bootstrap_complete": true,
+        "bootstrap_win_rate": true,
+        "bootstrap_p10": true,
+        "eer_regression": true,
+        "companion_auc_regression": true,
+        "proxy_gain_delta": 0.12691779135896786,
+        "passed": true
+      }
+    }
+  }
+}

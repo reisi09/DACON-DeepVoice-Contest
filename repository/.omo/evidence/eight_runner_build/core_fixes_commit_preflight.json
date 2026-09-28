@@ -1,0 +1,53 @@
+{
+  "scenario": "scoped stable core fixes commit preflight",
+  "base_head": "23c4ebbee2dad071aac5198d96dfa827bd366bf3",
+  "invocations": {
+    "manifest": "git diff --cached --name-only",
+    "allowlist": "python3 exact-path allowlist check over staged manifest",
+    "size": "git diff --cached --name-only -z | xargs -0 stat; reject > 1048576 bytes",
+    "secret_scan": "python3 scan of every staged blob from git show :path",
+    "whitespace": "git diff --cached --check"
+  },
+  "binary_observables": {
+    "staged_count": 25,
+    "allowlist_failures": [],
+    "files_over_1MiB": [],
+    "secret_pattern_hits": 0,
+    "whitespace_check": "PASS",
+    "runner_owned_staged": []
+  },
+  "staged_manifest": [
+    ".omo/evidence/eight-h100-20260917/task-2-next-preflight-feasibility-audit.md",
+    ".omo/evidence/eight-h100-20260917/task-2-pruned-features.json",
+    ".omo/evidence/eight-h100-20260917/task-2-pruned-features.junit.xml",
+    ".omo/evidence/eight-h100-20260917/task-2-role-pruning-audit.md",
+    ".omo/evidence/eight-h100-20260917/task-4-e7-device-hotfix.json",
+    ".omo/evidence/eight_h100_20260917/orchestration.md",
+    ".omo/evidence/eight_heads_build/feature_key_dependency_audit.md",
+    ".omo/evidence/eight_heads_build/e2_postrun_source_sha256.txt",
+    ".omo/evidence/eight_heads_build/music_selector_actual_manifest_receipt.json",
+    ".omo/evidence/eight_heads_build/music_selector_cpu_tests.log",
+    ".omo/evidence/eight_heads_build/music_selector_evidence_index.md",
+    ".omo/evidence/eight_heads_build/music_selector_source_hashes.log",
+    ".omo/evidence/eight_runner_build/core_fixes_commit_preflight.json",
+    ".omo/plans/eight-h100-20260917.md",
+    "antideepfake_runtime.py",
+    "eight_ablation.py",
+    "eight_e2_music_file_analysis.py",
+    "eight_feature_identity.py",
+    "eight_feature_schema.py",
+    "eight_features.py",
+    "eight_lora.py",
+    "eight_probes.py",
+    "test_eight_features.py",
+    "test_eight_fixed.py",
+    "test_eight_lora.py"
+  ],
+  "captured_owner_receipts": {
+    "df1d": ".omo/evidence/eight-h100-20260917/task-2-pruned-features.junit.xml: 27 tests, 0 errors, 0 failures, 0 skipped",
+    "lora_device": ".omo/evidence/eight-h100-20260917/task-4-e7-device-hotfix.json: CPU regression 1 passed and full E7 3 passed",
+    "music_selector": ".omo/evidence/eight_heads_build/music_selector_cpu_tests.log: 12 passed; CPU fixture integration",
+    "actual_manifest": "23c4ebbee2dad071aac5198d96dfa827bd366bf3 contains the actual-manifest audit artifacts"
+  },
+  "remote_or_gpu_actions": "none"
+}

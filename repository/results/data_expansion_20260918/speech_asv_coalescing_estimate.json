@@ -1,0 +1,134 @@
+{
+  "all4000": {
+    "individual": {
+      "requests": 4000,
+      "transferred_bytes": 243070105,
+      "members": 4000,
+      "largest_span_bytes": 245903,
+      "max_members_per_request": 1,
+      "ideal_request_pacing_minutes_at75_per_minute": 53.333333333333336,
+      "saved_requests": 0,
+      "additional_transfer_bytes": 0
+    },
+    "greedy_span_1MiB": {
+      "requests": 2618,
+      "transferred_bytes": 755927580,
+      "members": 4000,
+      "largest_span_bytes": 1048557,
+      "max_members_per_request": 5,
+      "ideal_request_pacing_minutes_at75_per_minute": 34.906666666666666,
+      "saved_requests": 1382,
+      "additional_transfer_bytes": 512857475
+    },
+    "greedy_span_256KiB": {
+      "requests": 3655,
+      "transferred_bytes": 261879182,
+      "members": 4000,
+      "largest_span_bytes": 262143,
+      "max_members_per_request": 3,
+      "ideal_request_pacing_minutes_at75_per_minute": 48.733333333333334,
+      "saved_requests": 345,
+      "additional_transfer_bytes": 18809077
+    },
+    "span1MiB_gap16KiB": {
+      "requests": 3869,
+      "transferred_bytes": 243055040,
+      "members": 4000,
+      "largest_span_bytes": 245903,
+      "max_members_per_request": 3,
+      "ideal_request_pacing_minutes_at75_per_minute": 51.586666666666666,
+      "saved_requests": 131,
+      "additional_transfer_bytes": -15065
+    },
+    "span1MiB_gap64KiB": {
+      "requests": 3785,
+      "transferred_bytes": 247224587,
+      "members": 4000,
+      "largest_span_bytes": 440426,
+      "max_members_per_request": 4,
+      "ideal_request_pacing_minutes_at75_per_minute": 50.46666666666667,
+      "saved_requests": 215,
+      "additional_transfer_bytes": 4154482
+    }
+  },
+  "remaining": {
+    "individual": {
+      "requests": 3919,
+      "transferred_bytes": 238085394,
+      "members": 3919,
+      "largest_span_bytes": 245903,
+      "max_members_per_request": 1,
+      "ideal_request_pacing_minutes_at75_per_minute": 52.25333333333333,
+      "saved_requests": 0,
+      "additional_transfer_bytes": 0
+    },
+    "greedy_span_1MiB": {
+      "requests": 2573,
+      "transferred_bytes": 739480897,
+      "members": 3919,
+      "largest_span_bytes": 1048557,
+      "max_members_per_request": 5,
+      "ideal_request_pacing_minutes_at75_per_minute": 34.306666666666665,
+      "saved_requests": 1346,
+      "additional_transfer_bytes": 501395503
+    },
+    "greedy_span_256KiB": {
+      "requests": 3582,
+      "transferred_bytes": 256617041,
+      "members": 3919,
+      "largest_span_bytes": 262143,
+      "max_members_per_request": 3,
+      "ideal_request_pacing_minutes_at75_per_minute": 47.76,
+      "saved_requests": 337,
+      "additional_transfer_bytes": 18531647
+    },
+    "span1MiB_gap16KiB": {
+      "requests": 3792,
+      "transferred_bytes": 238070789,
+      "members": 3919,
+      "largest_span_bytes": 245903,
+      "max_members_per_request": 3,
+      "ideal_request_pacing_minutes_at75_per_minute": 50.56,
+      "saved_requests": 127,
+      "additional_transfer_bytes": -14605
+    },
+    "span1MiB_gap64KiB": {
+      "requests": 3709,
+      "transferred_bytes": 242192390,
+      "members": 3919,
+      "largest_span_bytes": 440426,
+      "max_members_per_request": 4,
+      "ideal_request_pacing_minutes_at75_per_minute": 49.45333333333333,
+      "saved_requests": 210,
+      "additional_transfer_bytes": 4106996
+    },
+    "greedy_span_4MiB": {
+      "requests": 1241,
+      "transferred_bytes": 3084622890,
+      "members": 3919,
+      "largest_span_bytes": 4192970,
+      "max_members_per_request": 10,
+      "ideal_request_pacing_minutes_at75_per_minute": 16.546666666666667,
+      "saved_requests": 2678,
+      "additional_transfer_bytes": 2846537496
+    }
+  },
+  "scope": "Offline estimate from frozen official ZIP offsets. No network; no changes to frozen selected4000. Padding includes128bytes local extra reserve. HTTP/retry/TLS/decode time excluded. Unselected gap bytes would be discarded, not admitted.",
+  "adopted_plan": {
+    "status": "offline_plan_only_network_waiting",
+    "requests": 1241,
+    "remaining_selected_members": 3919,
+    "planned_transfer_bytes": 3084622890,
+    "selected_original_bytes": 242884605,
+    "max_span_bytes": 4194304,
+    "largest_planned_span_bytes": 4192970,
+    "max_members_per_span": 10,
+    "ideal_request_pacing_minutes_at75_per_minute": 16.546666666666667,
+    "selection_sha256": "59cd45bc6a6d45ce354c5aaa6a01488d150705be9ed009ad6f9857770923b258",
+    "all_remaining_members_covered_exactly_once": true,
+    "unselected_gap_bytes_retained": false,
+    "network_requests_this_check": 0,
+    "live_multi_member_probe_still_pending": true,
+    "script_sha256": "6c3ae1a64a7667727d5f36c2cbe1406e2924120b5d8456b179f195c1c4120137"
+  }
+}

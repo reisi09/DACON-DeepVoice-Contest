@@ -1,0 +1,212 @@
+{
+  "winner": {
+    "name": "AF637_mlp_ls5",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.0,
+      "seed": 41,
+      "dropout": 0.1,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true,
+      "temporal_bins": 1,
+      "softmax_output": true,
+      "input_dim": 1280,
+      "mlp_output": true,
+      "cosine_output": false,
+      "label_smoothing": 0.05,
+      "lr_plateau": false,
+      "alternative_output": ""
+    },
+    "candidates": [
+      "AF637_mlp_ls5_seed41",
+      "AF637_mlp_ls5_seed42",
+      "AF637_mlp_ls5_seed43"
+    ],
+    "music_eer_mean": 0.23232936604323537,
+    "music_eer_std": 0.02078210360057619,
+    "balanced_bce_mean": 0.4781553564299426
+  },
+  "summaries": [
+    {
+      "name": "M330_mlp_ls0",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.1,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": true,
+        "input_dim": 1024,
+        "mlp_output": true,
+        "cosine_output": false,
+        "label_smoothing": 0.0,
+        "lr_plateau": false,
+        "alternative_output": ""
+      },
+      "candidates": [
+        "M330_mlp_ls0_seed41",
+        "M330_mlp_ls0_seed42",
+        "M330_mlp_ls0_seed43"
+      ],
+      "music_eer_mean": 0.25557984508676757,
+      "music_eer_std": 0.013415811598902743,
+      "balanced_bce_mean": 0.5217477695621114
+    },
+    {
+      "name": "M330_mlp_ls5",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.1,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": true,
+        "input_dim": 1024,
+        "mlp_output": true,
+        "cosine_output": false,
+        "label_smoothing": 0.05,
+        "lr_plateau": false,
+        "alternative_output": ""
+      },
+      "candidates": [
+        "M330_mlp_ls5_seed41",
+        "M330_mlp_ls5_seed42",
+        "M330_mlp_ls5_seed43"
+      ],
+      "music_eer_mean": 0.24181577739994062,
+      "music_eer_std": 0.024011428319219572,
+      "balanced_bce_mean": 0.515539553715631
+    },
+    {
+      "name": "AF637_mlp_ls0",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.1,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": true,
+        "input_dim": 1280,
+        "mlp_output": true,
+        "cosine_output": false,
+        "label_smoothing": 0.0,
+        "lr_plateau": false,
+        "alternative_output": ""
+      },
+      "candidates": [
+        "AF637_mlp_ls0_seed41",
+        "AF637_mlp_ls0_seed42",
+        "AF637_mlp_ls0_seed43"
+      ],
+      "music_eer_mean": 0.23232936604323537,
+      "music_eer_std": 0.02078210360057619,
+      "balanced_bce_mean": 0.4812556197617995
+    },
+    {
+      "name": "AF637_mlp_ls5",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.1,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": true,
+        "input_dim": 1280,
+        "mlp_output": true,
+        "cosine_output": false,
+        "label_smoothing": 0.05,
+        "lr_plateau": false,
+        "alternative_output": ""
+      },
+      "candidates": [
+        "AF637_mlp_ls5_seed41",
+        "AF637_mlp_ls5_seed42",
+        "AF637_mlp_ls5_seed43"
+      ],
+      "music_eer_mean": 0.23232936604323537,
+      "music_eer_std": 0.02078210360057619,
+      "balanced_bce_mean": 0.4781553564299426
+    }
+  ],
+  "test_used": false,
+  "frozen_at": 1789516240.1154325,
+  "evaluation_candidates": [
+    "M330_mlp_ls0_seed41",
+    "M330_mlp_ls0_seed42",
+    "M330_mlp_ls0_seed43",
+    "M330_mlp_ls5_seed41",
+    "M330_mlp_ls5_seed42",
+    "M330_mlp_ls5_seed43",
+    "AF637_mlp_ls0_seed41",
+    "AF637_mlp_ls0_seed42",
+    "AF637_mlp_ls0_seed43",
+    "AF637_mlp_ls5_seed41",
+    "AF637_mlp_ls5_seed42",
+    "AF637_mlp_ls5_seed43"
+  ],
+  "comparison_groups": {
+    "M330_mlp_ls0": [
+      "M330_mlp_ls0_seed41",
+      "M330_mlp_ls0_seed42",
+      "M330_mlp_ls0_seed43"
+    ],
+    "M330_mlp_ls5": [
+      "M330_mlp_ls5_seed41",
+      "M330_mlp_ls5_seed42",
+      "M330_mlp_ls5_seed43"
+    ],
+    "AF637_mlp_ls0": [
+      "AF637_mlp_ls0_seed41",
+      "AF637_mlp_ls0_seed42",
+      "AF637_mlp_ls0_seed43"
+    ],
+    "AF637_mlp_ls5": [
+      "AF637_mlp_ls5_seed41",
+      "AF637_mlp_ls5_seed42",
+      "AF637_mlp_ls5_seed43"
+    ]
+  }
+}

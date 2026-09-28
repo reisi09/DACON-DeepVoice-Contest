@@ -1,0 +1,24 @@
+{
+  "failure": "MPS partial LayerNorm backward with frozen input and trainable affine parameters",
+  "control": {
+    "cpu_batch4_gradient_norm": 1.1242202520370483,
+    "mps_unfixed_batch4_gradient_norm": 22.639930725097656,
+    "mps_fixed_batch4_gradient_norm": 1.124355673789978
+  },
+  "isolated_layernorm": {
+    "shape": [
+      8,
+      1214,
+      768
+    ],
+    "cpu_bias_gradient_norm": 2712.0927734375,
+    "mps_partial_bias_gradient_norm": 0.0,
+    "input_gradient_enabled_max_absolute_difference": 0.00040435791015625
+  },
+  "correction": "Enable input gradient at the final trainable block on MPS; frozen prefix remains frozen",
+  "regression": "test_ast_multitask.py::test_mps_last_block_gradient_matches_cpu_with_frozen_prefix",
+  "red": "failed on layernorm_before.weight",
+  "green": "17 relevant tests passed in 6.23 seconds",
+  "failed_attempt": "_workspace/full_refit_20260913",
+  "retry": "_workspace/full_refit_20260913_fixed"
+}

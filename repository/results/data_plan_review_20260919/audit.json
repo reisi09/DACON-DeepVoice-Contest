@@ -1,0 +1,181 @@
+{
+  "scope": "read-only analysis; no source data, split, model, GPU startup, or original plan changes",
+  "plan_sha256": "3a1335f257855fc5862aea1d2cf068a8cce657f931c80f2ec9c78b13fbb84a14",
+  "manifest_sha256": "2cc269dfd1dc98c9585f894f60a7078a80c8f2a3613baa43819d751ddb588a9c",
+  "rows": 16042,
+  "columns": 175,
+  "split_counts": {
+    "train": 12826,
+    "val": 3216
+  },
+  "source_split_counts": {
+    "Echoes/acestep/TTA": {
+      "val": 13,
+      "train": 35
+    },
+    "Echoes/audioldm/ATA": {
+      "train": 32,
+      "val": 11
+    },
+    "Echoes/audioldm/TTA": {
+      "train": 35,
+      "val": 12
+    },
+    "Echoes/brev/TTA": {
+      "train": 38,
+      "val": 4
+    },
+    "Echoes/diffrhythm/ATA": {
+      "train": 34,
+      "val": 11
+    },
+    "Echoes/diffrhythm/TTA": {
+      "train": 39,
+      "val": 11
+    },
+    "Echoes/elevenlabs/TTA": {
+      "train": 37,
+      "val": 5
+    },
+    "Echoes/mubert/TTA": {
+      "val": 2,
+      "train": 4
+    },
+    "Echoes/musicgen/ATA": {
+      "train": 32,
+      "val": 11
+    },
+    "Echoes/musicgen/TTA": {
+      "val": 14,
+      "train": 35
+    },
+    "Echoes/producer/ATA": {
+      "train": 18,
+      "val": 2
+    },
+    "Echoes/producer/TTA": {
+      "train": 19,
+      "val": 4
+    },
+    "Echoes/songgen/ATA": {
+      "val": 10,
+      "train": 32
+    },
+    "Echoes/songgen/TTA": {
+      "val": 13,
+      "train": 36
+    },
+    "Echoes/stableaudio/TTA": {
+      "train": 4,
+      "val": 2
+    },
+    "Echoes/suno/TTA": {
+      "train": 40,
+      "val": 4
+    },
+    "Echoes/udio/TTA": {
+      "train": 40,
+      "val": 5
+    },
+    "FMA": {
+      "train": 579,
+      "val": 20
+    },
+    "FMA/FMA": {
+      "val": 15,
+      "train": 40
+    },
+    "FakeMusicCaps": {
+      "val": 1375,
+      "train": 1185
+    },
+    "HAIM": {
+      "train": 1535,
+      "val": 67
+    },
+    "JamendoMaxCaps": {
+      "train": 574,
+      "val": 280
+    },
+    "SONICS": {
+      "train": 2929,
+      "val": 3
+    },
+    "asvspoof2019_la": {
+      "val": 819,
+      "train": 3181
+    },
+    "constructed_music": {
+      "train": 128
+    },
+    "librispeech_test-clean": {
+      "train": 2117,
+      "val": 503
+    },
+    "suno": {
+      "train": 24
+    },
+    "udio": {
+      "train": 24
+    }
+  },
+  "label_counts": {
+    "music:1": 7850,
+    "music:0": 1572,
+    "voice:1": 2000,
+    "voice:0": 4620
+  },
+  "music_rows_with_blank_voice_labels": 9422,
+  "prior_dev_test_calibration_rows": 640,
+  "prior_including_confirmation_rows": 968,
+  "prior_seen_rows": 5407,
+  "feasible_split_swap": {
+    "applied": false,
+    "val_to_train_ids": [
+      "fakemusiccaps_MusicGen_medium_GNjsxLdSwHI",
+      "fakemusiccaps_audioldm2_GNjsxLdSwHI",
+      "fakemusiccaps_musicldm_GNjsxLdSwHI",
+      "fakemusiccaps_mustango_GNjsxLdSwHI",
+      "fakemusiccaps_stable_audio_open_GNjsxLdSwHI"
+    ],
+    "train_to_val_ids": [
+      "fake_04681_udio_0",
+      "fake_01402_udio_0",
+      "fake_00742_suno_0",
+      "fake_00984_suno_0",
+      "fake_05418_udio_0"
+    ],
+    "totals_routes_labels_preserved": true,
+    "components_preserved": true,
+    "objective_before": 0.1296589193864203,
+    "objective_after": 0.12926308001626588
+  },
+  "plan_arithmetic": {
+    "retained_including_64_outside_manifest": 5059,
+    "retained_from_current_manifest": 4995,
+    "new": 4850,
+    "detailed_total": 9909,
+    "headline_table_total": 9910,
+    "locked_list_approximate_terms_sum": 1314,
+    "manifest_fields": 25
+  },
+  "runtime_readonly_check": {
+    "workspace": "wsp-9683432r72m7",
+    "state": "stopped",
+    "phase": "standby"
+  },
+  "verified_primary_source_urls": [
+    "https://dacon.io/competitions/official/236749/overview/rules",
+    "https://dacon.io/competitions/official/236749/talkboard/417333",
+    "https://huggingface.co/datasets/mippia/HAIM",
+    "https://huggingface.co/Speech-Arena-2025/DF_Arena_1B_V_1",
+    "https://github.com/cosmir/openmic-2018/blob/master/examples/modeling-baseline.ipynb"
+  ],
+  "limits": [
+    "No audio relabeling or listening audit",
+    "No new training or inference",
+    "Not a current leaderboard verification",
+    "No exhaustive candidate license/model-checkpoint review",
+    "Full underlying pretraining corpus is unknown"
+  ]
+}

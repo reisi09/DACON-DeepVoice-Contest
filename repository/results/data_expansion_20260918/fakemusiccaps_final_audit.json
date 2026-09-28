@@ -1,0 +1,47 @@
+{
+  "status": "complete_and_stopped",
+  "verified_at_epoch": 1789710020.570621,
+  "original_audio_files": 2560,
+  "original_audio_bytes": 1652410368,
+  "bank_bytes": 1666541118,
+  "bank_cap_bytes": 1750000000,
+  "prompt_groups": 512,
+  "every_group_has_all_five_generators": true,
+  "by_generator": {
+    "MusicGen_medium": 512,
+    "audioldm2": 512,
+    "musicldm": 512,
+    "mustango": 512,
+    "stable_audio_open": 512
+  },
+  "sample_rates": {
+    "16000": 2560
+  },
+  "channels": {
+    "1": 2560
+  },
+  "duration_seconds": {
+    "10.18": 512,
+    "10.0": 1536,
+    "10.242": 512
+  },
+  "unique_source_hashes": 2560,
+  "unique_native_pcm_hashes": 2560,
+  "unique_canonical_pcm_hashes": 2560,
+  "quality_flags": {},
+  "locked_prompt_overlap": [],
+  "prior_prompt_overlap": [],
+  "whole_archive_md5_verified": false,
+  "shared_pacing_trace_requests": 1753,
+  "maximum_requests_in_any_60_seconds_after_shared_pacing": 65,
+  "owned_download_processes": [],
+  "remaining_owned_partial_files": [],
+  "manifest_sha256": "9b723e85309a902f9b6608d416e91dfa226794295382a61123513538cf7d27c0",
+  "script_sha256": "27e58bcf9bde1795f591f724bf5c92a52374d976655978435d6b5ba710141969",
+  "gpu_or_training_started": false,
+  "no_independent_listening": true,
+  "exact_hash_checks_do_not_exclude_all_near_duplicates": true,
+  "known_haim_duplicate_canonical_hash_match": false,
+  "results_metadata_bytes": 2008831,
+  "bank_plus_results_bytes": 1668549949
+}

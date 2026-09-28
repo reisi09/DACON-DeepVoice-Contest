@@ -1,0 +1,26 @@
+{
+  "scope": "SONICS only",
+  "observed_utc": "2026-09-18T05:12:49.012530+00:00",
+  "operation_status": "stopped_after_completed_local_retention",
+  "active_operations": 0,
+  "network_download_enabled": false,
+  "current_authoritative_receipt": "results/data_expansion_20260918/sonics_retention.json",
+  "current_authoritative_receipt_sha256": "cb0856f7145a95578638ae8052a8dbb93bfb79f6089460c344aeb8cd81037b07",
+  "retained_source_files": 2932,
+  "retained_bank_bytes": 2139236181,
+  "bank_cap_bytes": 2200000000,
+  "user_global_acquisition_cap_bytes_exclusive": 20000000000,
+  "superseded_historical_receipt": {
+    "path": "results/data_expansion_20260918/sonics_download.json",
+    "sha256": "cb6f89563fe25f17b1f111ee385895e3f6cb562c48045c67f8a35024c5f2cd4c",
+    "recorded_status": "running",
+    "recorded_cap_bytes": 35000000000,
+    "current_status_authority": false,
+    "reason": "Historical acquisition was terminated after the user reduced the global budget. Its partial files and complete acquisition archives were subsequently removed under explicit authorization; selected original MP3s and provenance are retained."
+  },
+  "patch_verification_receipt": "results/data_expansion_20260918/sonics_resume_fix_verification.json",
+  "partition": "unassigned_bank",
+  "additional_network_bytes_this_fix": 0,
+  "gpu_or_training_started": false
+}
+

@@ -1,0 +1,46 @@
+[
+  {
+    "acceleratorLimit": 1,
+    "acceleratorName": "A100 SXM",
+    "acceleratorOnChipMemoryInGb": 80,
+    "attributes": {
+      "gpuType": "A100 SXM",
+      "region": "us-west-2",
+      "volume": [
+        "main"
+      ]
+    },
+    "availability": "high",
+    "clusterName": "betelgeuse-na",
+    "clusterSlug": "cluster-betelgeuse",
+    "cpuLimitInMillicore": 11000,
+    "ephemeralStorageLimitInByte": 200000000000,
+    "hourlyCostInMicrocredit": 1480000,
+    "isUsable": true,
+    "memoryLimitInByte": 128000000000,
+    "name": "VESSL A100 SXM \u00d71",
+    "slug": "resourcespec-a100x1"
+  },
+  {
+    "acceleratorLimit": 1,
+    "acceleratorName": "H100 SXM",
+    "acceleratorOnChipMemoryInGb": 80,
+    "attributes": {
+      "gpuType": "H100 SXM",
+      "region": "eu-north1",
+      "volume": [
+        "fullft8-h100-root-20260916"
+      ]
+    },
+    "availability": "high",
+    "clusterName": "capella-emea",
+    "clusterSlug": "cluster-capella",
+    "cpuLimitInMillicore": 15000,
+    "ephemeralStorageLimitInByte": 200000000000,
+    "hourlyCostInMicrocredit": 2980000,
+    "isUsable": true,
+    "memoryLimitInByte": 200000000000,
+    "name": "VESSL H100 SXM \u00d71",
+    "slug": "resourcespec-ch100x1"
+  }
+]

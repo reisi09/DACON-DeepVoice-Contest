@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "scope": "explicit torchaudio.load + demucs.audio.convert_audio fallback, CPU HTDemucs and CPU MERT on four hash-bound smoke WAVs",
+  "versions": {
+    "torch": "2.7.1",
+    "torchaudio": "2.7.1",
+    "transformers": "4.57.6",
+    "librosa": "0.10.2.post1"
+  },
+  "records": [
+    {
+      "ID": "core_000209f68a0dc6367dcb_base",
+      "audio_sha256": "cd1ea301e9adf854ba820e9aafe7c055f4ae0236eb7ef522a845b210f2705393",
+      "artifact": ".omo/evidence/mert12_submission_build/parity_diagnosis/fallback_cpu/core_000209f68a0dc6367dcb_base_torchaudio_fallback.npz",
+      "artifact_sha256": "7528e5dd0e49b1bfd3a596ee08bf2b4d2773921cc049a45c45570d7a4949d9a2",
+      "fallback_backing_vs_a100_ffmpeg_backing": {
+        "max_abs": 0.12433165311813354,
+        "rms": 0.0051407821433099845
+      },
+      "fallback_features_vs_h100_cache": {
+        "max_abs": 0.000274658203125,
+        "rms": 1.4241231811060774e-05
+      },
+      "fallback_features_vs_a100_gpu": {
+        "max_abs": 5.21494197845459,
+        "rms": 0.4803042350231459
+      },
+      "probability": {
+        "fallback_cpu": 0.9999916950861613,
+        "h100_cache": 0.9999916950861613,
+        "a100_ffmpeg_gpu": 0.9999974171320597,
+        "fallback_minus_cache": 0.0,
+        "fallback_abs_cache": 0.0,
+        "a100_abs_cache": 5.7220458984375e-06
+      }
+    },
+    {
+      "ID": "core_2d2bc674537639d1d836_base",
+      "audio_sha256": "c204d5b146a3c4cd1c1237d9562690cb6d2ebc3364ef54bb0c72b20c66b04554",
+      "artifact": ".omo/evidence/mert12_submission_build/parity_diagnosis/fallback_cpu/core_2d2bc674537639d1d836_base_torchaudio_fallback.npz",
+      "artifact_sha256": "2248b6403bbb03865f54f178c6e75db005feab4911d814275635855bc8c09a77",
+      "fallback_backing_vs_a100_ffmpeg_backing": {
+        "max_abs": 0.03870594501495361,
+        "rms": 0.0033545167727408944
+      },
+      "fallback_features_vs_h100_cache": {
+        "max_abs": 0.0001068115234375,
+        "rms": 7.201827745179914e-06
+      },
+      "fallback_features_vs_a100_gpu": {
+        "max_abs": 1.6250715255737305,
+        "rms": 0.15789481616297085
+      },
+      "probability": {
+        "fallback_cpu": 8.678051623671006e-05,
+        "h100_cache": 8.67836182199729e-05,
+        "a100_ffmpeg_gpu": 9.276183360877137e-05,
+        "fallback_minus_cache": -3.1019832628378322e-09,
+        "fallback_abs_cache": 3.1019832628378322e-09,
+        "a100_abs_cache": 5.978215388798474e-06
+      }
+    },
+    {
+      "ID": "core_80692bf518679d1acdbb_base",
+      "audio_sha256": "6a56acd4f1617fa5f33934e90227fb6895c9ad13401cf392b9b2c29a3943efb6",
+      "artifact": ".omo/evidence/mert12_submission_build/parity_diagnosis/fallback_cpu/core_80692bf518679d1acdbb_base_torchaudio_fallback.npz",
+      "artifact_sha256": "8ed08292d974e8a9b8f4489e53ead30c0ee0575b42c1e4f4d7b540238c2dd0c2",
+      "fallback_backing_vs_a100_ffmpeg_backing": {
+        "max_abs": 0.00022894283756613731,
+        "rms": 3.415745586454559e-05
+      },
+      "fallback_features_vs_h100_cache": {
+        "max_abs": 0.0001220703125,
+        "rms": 1.468096175636031e-05
+      },
+      "fallback_features_vs_a100_gpu": {
+        "max_abs": 0.2964644432067871,
+        "rms": 0.03513293114573753
+      },
+      "probability": {
+        "fallback_cpu": 0.9903171261151632,
+        "h100_cache": 0.9903170863787333,
+        "a100_ffmpeg_gpu": 0.9905083974202474,
+        "fallback_minus_cache": 3.9736429924275285e-08,
+        "fallback_abs_cache": 3.9736429924275285e-08,
+        "a100_abs_cache": 0.0001913110415141528
+      }
+    },
+    {
+      "ID": "core_ffccfbb2f7762a614a08_base",
+      "audio_sha256": "1183f69f4180ca899e66efa728c8d8ebee10f4d97101c991d1c0a35d999f9548",
+      "artifact": ".omo/evidence/mert12_submission_build/parity_diagnosis/fallback_cpu/core_ffccfbb2f7762a614a08_base_torchaudio_fallback.npz",
+      "artifact_sha256": "a90f7aa601a0121fbfe81109f6607360e2d9cfdce40d791beb2a2bebec49a674",
+      "fallback_backing_vs_a100_ffmpeg_backing": {
+        "max_abs": 0.012011975049972534,
+        "rms": 0.00038601142519784337
+      },
+      "fallback_features_vs_h100_cache": {
+        "max_abs": 0.0003662109375,
+        "rms": 2.8891020441534928e-05
+      },
+      "fallback_features_vs_a100_gpu": {
+        "max_abs": 0.1811056137084961,
+        "rms": 0.029035685484614472
+      },
+      "probability": {
+        "fallback_cpu": 0.0011111888840484123,
+        "h100_cache": 0.0011113235183681052,
+        "a100_ffmpeg_gpu": 0.0010293757853408654,
+        "fallback_minus_cache": -1.346343196928501e-07,
+        "fallback_abs_cache": 1.346343196928501e-07,
+        "a100_abs_cache": 8.194773302723979e-05
+      }
+    }
+  ],
+  "max_fallback_cache_probability_error": 1.346343196928501e-07,
+  "max_a100_ffmpeg_cache_probability_error": 0.0001913110415141528,
+  "elapsed_seconds": 13.935110833997896
+}

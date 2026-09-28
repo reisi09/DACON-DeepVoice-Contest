@@ -1,0 +1,124 @@
+{
+  "workspace": "wsp-5i3knd3gxeox",
+  "object_volume": "objvol-a5gxdg7er70i",
+  "mount": "/root-1",
+  "prefix": "existing-only-9504-20260919/",
+  "files": {
+    "dataset/manifest.csv": {
+      "key": "existing-only-9504-20260919/dataset/manifest.csv",
+      "bytes": 14398171,
+      "sha256": "96ba67dd2dfdbcfbf041465e883e0e003e6489e14f82e93054df4b42075a9ae3",
+      "etag": "\"1bfb6ffce14df3a5264eafc4d00cc54a\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "audio_upload.json": {
+      "key": "existing-only-9504-20260919/audio_upload.json",
+      "bytes": 2287330,
+      "sha256": "c6e83dcffaff9c87e8e444284cb520dd74c6ba6220ef8b20e5afb5b65993534c",
+      "etag": "\"750f10fd8d81fbb06ce76576d91cf88e\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/selected.csv": {
+      "key": "existing-only-9504-20260919/dataset/selected.csv",
+      "bytes": 13097591,
+      "sha256": "21bb36fb0e7377d986a7c77a466f24ddf473675596effbc57c4bfaac220429fd",
+      "etag": "\"728378ee7aa7ee6e0484fe49720c4802\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/train.csv": {
+      "key": "existing-only-9504-20260919/dataset/train.csv",
+      "bytes": 9028142,
+      "sha256": "ffcd4cb2ddfb13313fa251abdd3b92550d2888c508dc08101d21430abbaeae35",
+      "etag": "\"1d620ab70069541987f27445f0811182\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/val.csv": {
+      "key": "existing-only-9504-20260919/dataset/val.csv",
+      "bytes": 2055613,
+      "sha256": "802d8f5f6e1540f710d11eefdee4d2583e6eec579b00af12f7f5f0aa0e0588c7",
+      "etag": "\"60b47aa488b0f2211294285aa3761563\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/test.csv": {
+      "key": "existing-only-9504-20260919/dataset/test.csv",
+      "bytes": 2019454,
+      "sha256": "39048ccf0cde85e8f0a15e6517e2980b44336ff4f88462378d7a66a75be72638",
+      "etag": "\"75ea24c9a85bb9caf7d61334382e1ca9\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/README.md": {
+      "key": "existing-only-9504-20260919/dataset/README.md",
+      "bytes": 6844,
+      "sha256": "31d98568631c00897cae457e655931dd43acd7337003397d13ff53165b535a0d",
+      "etag": "\"0eebecfd5745f2426778c4937e8f2eb4\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/verification.json": {
+      "key": "existing-only-9504-20260919/dataset/verification.json",
+      "bytes": 1720,
+      "sha256": "0bb9e2ec846fe01fe2f2705326586040bab19202113475d340cecde4d15a5c27",
+      "etag": "\"9ceb12ff633e1e43348fa5899ef1934e\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/audit.json": {
+      "key": "existing-only-9504-20260919/dataset/audit.json",
+      "bytes": 16884,
+      "sha256": "aa5e670881887c202a323525a8591794730a33b9f1b539ac555ddb72f4ab0c5b",
+      "etag": "\"35c5149515d0bc9fde7cbe8334d23a88\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/policy_checks.json": {
+      "key": "existing-only-9504-20260919/dataset/policy_checks.json",
+      "bytes": 327,
+      "sha256": "333417892af7bf039ab21abc2ec670a9fb9c4fcf9ffe8a18ed517a8efb0ffcf2",
+      "etag": "\"f19a93626441e2b6c952c38549787196\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/provenance.json": {
+      "key": "existing-only-9504-20260919/dataset/provenance.json",
+      "bytes": 1035,
+      "sha256": "a8ee22b027f89cdf816a1d3e4d00e4731629f59bfdc10dacd19b25dd6a0311c8",
+      "etag": "\"2fddbde69e18c8f79da3495c57c45a3c\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "dataset/reproducibility.json": {
+      "key": "existing-only-9504-20260919/dataset/reproducibility.json",
+      "bytes": 1029,
+      "sha256": "1fa97c6cced4c0e22fede5b4f97740b092399b94858c323bbe2c1b7df8593203",
+      "etag": "\"ab08d74d7175f68830a4d15780ceeb30\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "assets.zip": {
+      "key": "existing-only-9504-20260919/assets.zip",
+      "bytes": 6265308398,
+      "sha256": "145ce8892af750562767dab2e934c9b9f33a5201f4124c6b96530b0ea39f5aa1",
+      "etag": "\"44a71e863aba8229414553f4e63bf4c1-374\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "asset_hashes.json": {
+      "key": "existing-only-9504-20260919/asset_hashes.json",
+      "bytes": 3039,
+      "sha256": "69f588fac806ec2afd0abfebf1555dcee23101a2c1770f3893bb08755fce972b",
+      "etag": "\"f033f262bcc010ca88e5e2a4d5449c84\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "source.zip": {
+      "key": "existing-only-9504-20260919/source.zip",
+      "bytes": 125605,
+      "sha256": "e859c86969f76386bddab274fccafe12c3939d62ab36d8ddfb61fd74f72eb41e",
+      "etag": "\"15d375d5027d13f0136cff7acbd24126\"",
+      "verification": "S3 ETag matches every uploaded part"
+    }
+  },
+  "rows": 9504,
+  "split_counts": {
+    "train": 6652,
+    "val": 1426,
+    "test": 1426
+  },
+  "selected_sha256": "21bb36fb0e7377d986a7c77a466f24ddf473675596effbc57c4bfaac220429fd",
+  "runtime_manifest_sha256": "96ba67dd2dfdbcfbf041465e883e0e003e6489e14f82e93054df4b42075a9ae3",
+  "gpu_started": false,
+  "training_ready": false,
+  "notebook_review_pending": true
+}

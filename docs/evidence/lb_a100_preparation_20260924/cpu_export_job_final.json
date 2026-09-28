@@ -1,0 +1,27 @@
+{
+  "slug": "job-3votgz7mfrno",
+  "name": "lb-a100-audio-export-20260924",
+  "workloadState": "terminated",
+  "createdDt": "2026-09-24T11:28:50.881748Z",
+  "clusterSlug": "cluster-capella",
+  "resourceSpecSlug": "resourcespec-kmswqig4b12w",
+  "resourceSpecCpuCount": 3,
+  "resourceSpecMemoryBytes": 13958643712,
+  "hourlyCreditForCompute": 0.3,
+  "clusterVolumes": [
+    {
+      "clusterVolumeSlug": "clustervol-qgze68bffy6l",
+      "mountPath": "/root",
+      "volumeName": "fullft8-h100-root-20260916"
+    }
+  ],
+  "objectVolumes": [
+    {
+      "mountPath": "/shared",
+      "objectStorageSlug": "object_storage_e322branyapw",
+      "objectVolumeSlug": "objvol-a5gxdg7er70i",
+      "volumeName": "dacon-v6-training"
+    }
+  ],
+  "observed_at": "2026-09-24T11:56:43.373293+00:00"
+}

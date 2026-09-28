@@ -1,0 +1,5 @@
+PREDICT 1/4 TEST_0000
+PREDICT 2/4 TEST_0001
+PREDICT 3/4 TEST_0002
+PREDICT 4/4 stress_60s
+GPU_DIAGNOSTIC {"cudnn_tf32": false, "matmul_tf32": true, "seconds": 9.567681732999972, "max_allocated_gib": 0.6310925483703613, "max_reserved_gib": 0.806640625}

@@ -1,0 +1,45 @@
+{
+  "anti_native_max_logit_error": 2.956390380859375e-05,
+  "cached": 6,
+  "elapsed_after_engine_init_seconds": 3745.757569551468,
+  "elapsed_seconds": 3759.829563856125,
+  "extracted": 7095,
+  "extracted_windows": 29231,
+  "peak_gpu_bytes": 11026868736,
+  "processed_windows": 29275,
+  "profile_inference": {
+    "core_music_base": {
+      "records": 1321,
+      "seconds": 351.1045424938202,
+      "windows": 3963
+    },
+    "core_music_processed": {
+      "records": 3134,
+      "seconds": 800.0685410499573,
+      "windows": 9402
+    },
+    "core_speech_base": {
+      "records": 511,
+      "seconds": 272.7302236557007,
+      "windows": 1421
+    },
+    "core_speech_processed": {
+      "records": 1323,
+      "seconds": 703.4292159080505,
+      "windows": 3669
+    },
+    "partial": {
+      "records": 647,
+      "seconds": 1436.4881792068481,
+      "windows": 10339
+    },
+    "swap": {
+      "records": 159,
+      "seconds": 89.50198769569397,
+      "windows": 437
+    }
+  },
+  "records": 7101,
+  "requested_windows": 29275,
+  "status": "complete"
+}

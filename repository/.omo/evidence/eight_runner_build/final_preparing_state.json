@@ -1,0 +1,25 @@
+{
+  "scenario": "final attempt4 fresh state stable readback",
+  "binary_observable": {
+    "sha256": "ede2ac2f957642688756d0fb16bce223ca6731e47d8887d477d9df1764d0ee9a",
+    "readbacks": [
+      {
+        "sha256": "ede2ac2f957642688756d0fb16bce223ca6731e47d8887d477d9df1764d0ee9a",
+        "status": "running",
+        "stage": "preparing",
+        "attempt": 4
+      },
+      {
+        "sha256": "ede2ac2f957642688756d0fb16bce223ca6731e47d8887d477d9df1764d0ee9a",
+        "status": "running",
+        "stage": "preparing",
+        "attempt": 4
+      }
+    ],
+    "stable": true,
+    "started_epoch": 1789648960,
+    "resumed_epoch": 1789650933,
+    "deadline_epoch": 1789663360
+  },
+  "artifact": "_workspace/eight_h100_20260917/final_state/run_state.json"
+}

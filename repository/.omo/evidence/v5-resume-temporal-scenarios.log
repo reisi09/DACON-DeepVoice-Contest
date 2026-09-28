@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/choiwuseck/Documents/ChatGPT/데이콘
+collecting ... collected 1 item
+
+test_v5_resume_temporal.py::test_cached_trio_is_reused_only_when_context_rate_and_frames_align PASSED [100%]
+
+============================== 1 passed in 0.77s ===============================

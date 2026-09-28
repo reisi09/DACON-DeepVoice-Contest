@@ -1,0 +1,42 @@
+{
+  "source": "librispeech_test-clean",
+  "source_url": "https://openslr.trmal.net/resources/12/test-clean.tar.gz",
+  "archive_path": "_workspace/local_sampler_20260918/new_data/speech/downloads/test-clean.tar.gz",
+  "archive_bytes": 346663984,
+  "archive_md5": "32fa31d27d2e1cad72775fee3f4849a9",
+  "archive_sha256": "39fde525e59672dc6d1551919b1478f724438a95aa55f874b576be21967e6c23",
+  "official_checksum_verified": true,
+  "license": "CC-BY-4.0",
+  "license_url": "https://www.openslr.org/12/",
+  "manifest": "results/data_expansion_20260918/speech_bank_test-clean.csv",
+  "manifest_sha256": "dc2fa4c3b302f2881f7b1c8177451bae9b9e1d571254b00031b779fe8f02fa4f",
+  "counts": {
+    "rows": 2620,
+    "label:bonafide": 2620,
+    "partition:test-clean": 2620,
+    "gender:M": 1231,
+    "attack:none": 2620,
+    "train_eligible": 2126,
+    "exact_pcm_duplicates": 0,
+    "reserved_panel_narrator_rows": 494,
+    "gender:F": 1389
+  },
+  "distinct_documented_speaker_ids": 40,
+  "hours": 5.403466840277778,
+  "bank_split": "unassigned",
+  "full_audio_extraction": false,
+  "pcm_hash_format": "complete native 16000Hz mono float32 little-endian samples; no resampling or trimming",
+  "df_arena_pretraining": "not_explicitly_listed; shared_LibriVox_possible",
+  "df_arena_model_card": "https://huggingface.co/Speech-Arena-2025/DF_Arena_1B_V_1/blob/fb6ce85/README.md",
+  "evaluation_scope": "training/diagnostic bank; no pretrained-independent evaluation claim",
+  "heldout_speaker_receipt": "results/local_sampler_20260918/data_preparation_speech.json",
+  "elapsed_seconds": 5.80337119102478,
+  "limitations": [
+    "No independent listening or semantic transcription review",
+    "Narrator alias and cross-corpus person identity are not fully resolved",
+    "Unknown authenticity and generator metadata remain masked",
+    "No frame boundaries or local train/dev/test assignment inferred",
+    "No DACON permission or submission result follows from dataset licensing"
+  ]
+}
+

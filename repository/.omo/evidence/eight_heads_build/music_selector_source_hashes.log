@@ -1,0 +1,6 @@
+scenario: source freeze and diff hygiene
+invocation: git diff --check; shasum -a 256 owned sources
+5d6c8fc7b214bcae3701a0ead2798fc97dfc1e1fea34023d37a2a41d10d12246  eight_ablation.py
+7662d8df42197839cb731f93434041f70ecd8554ef2f8ef2dca0fcd66518a189  eight_e2_music_file_analysis.py
+17fe0450208bdd4ff34091603568755976f2005ba261e294891602f0f51c0c65  test_eight_fixed.py
+observable: diff check exit 0 and hashes below

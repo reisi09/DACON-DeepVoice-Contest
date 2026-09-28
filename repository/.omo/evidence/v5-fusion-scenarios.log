@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/choiwuseck/Documents/ChatGPT/데이콘
+collecting ... collected 8 items
+
+test_v5_fusion.py::test_joint_probabilities_are_exact_state_marginals PASSED [ 12%]
+test_v5_fusion.py::test_partial_labels_marginalize_unknown_states_and_backpropagate PASSED [ 25%]
+test_v5_fusion.py::test_padding_cannot_change_a_file_prediction_in_eval_mode PASSED [ 37%]
+test_v5_fusion.py::test_batch_members_never_fuse_across_files PASSED     [ 50%]
+test_v5_fusion.py::test_nonjoint_file_fake_keeps_original_max_identity PASSED [ 62%]
+test_v5_fusion.py::test_window_order_and_timestamps_can_change_learned_fusion PASSED [ 75%]
+test_v5_fusion.py::test_training_consumes_partial_examples_and_packages_best_state PASSED [ 87%]
+test_v5_fusion.py::test_expired_budget_returns_an_explicit_zero_epoch_result PASSED [100%]
+
+============================== 8 passed in 1.45s ===============================

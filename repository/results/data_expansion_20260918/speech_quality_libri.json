@@ -1,0 +1,140 @@
+{
+  "created_at_utc": "2026-09-18T05:45:20.463744+00:00",
+  "status": "complete_full_native_pcm_statistics",
+  "scope": "Review-only signal statistics; no listening or naturalness assessment; eligibility, labels and audio unchanged",
+  "archive_path": "_workspace/local_sampler_20260918/new_data/speech/downloads/test-clean.tar.gz",
+  "bank_path": "results/data_expansion_20260918/speech_bank_test-clean.csv",
+  "bank_sha256": "dc2fa4c3b302f2881f7b1c8177451bae9b9e1d571254b00031b779fe8f02fa4f",
+  "output_csv": "results/data_expansion_20260918/speech_quality_libri.csv",
+  "output_csv_sha256": "c3a4fe0e47cc3329ea6170f82772b2202f1251db23e71716a7a51fc2e071ce14",
+  "expected_bank_rows": 2620,
+  "measured_rows": 2620,
+  "full_coverage": true,
+  "source_hash_matches_bank_count": 2620,
+  "native_pcm_hash_matches_bank_count": 2620,
+  "source_hash_mismatch_count": 0,
+  "native_pcm_hash_mismatch_count": 0,
+  "sample_rates": [
+    16000
+  ],
+  "channels": [
+    1
+  ],
+  "total_native_frames": 311239690,
+  "total_duration_seconds": 19452.48062500003,
+  "calculation": {
+    "decoder": "soundfile full native PCM, float32, always_2d=True; no resampling, truncation or gain normalization",
+    "source_sha256": "SHA256 of original FLAC member bytes",
+    "native_pcm_sha256": "SHA256 of full native float32 little-endian sample bytes",
+    "rms": "sqrt(mean(square(native_pcm.astype(float64)), dtype=float64))",
+    "abs_peak": "max(abs(native_pcm.astype(float64)))",
+    "near_full_scale_fraction": "count(abs(sample) >= 0.999) / sample_count",
+    "exact_zero_fraction": "count(sample == 0.0) / sample_count",
+    "duration_seconds": "native_frames / native_sample_rate",
+    "quantiles": "Across recordings, equal recording weights, numpy.quantile(method=linear)",
+    "numpy_version": "2.4.6",
+    "soundfile_version": "0.14.0"
+  },
+  "review_only_flag_thresholds": {
+    "all_zero_audio": "abs_peak == 0",
+    "near_silent_rms_lt1e-6": "rms < 1e-6",
+    "extremely_short_lt0p25s": "duration_seconds < 0.25",
+    "near_full_scale_fraction_ge0p001": "near_full_scale_fraction >= 0.001, where abs(sample) >= 0.999"
+  },
+  "flag_counts": {
+    "all_zero_audio": 0,
+    "near_silent_rms_lt1e-6": 0,
+    "extremely_short_lt0p25s": 0,
+    "near_full_scale_fraction_ge0p001": 3
+  },
+  "rows_with_any_review_flag": 3,
+  "all_zero_audio_ids": [],
+  "extremely_short_lt0p25s_ids": [],
+  "metrics": {
+    "rms": {
+      "min": 0.013441536908465364,
+      "max": 0.150402464204316,
+      "mean": 0.05783872716575585,
+      "quantiles": {
+        "0": 0.013441536908465364,
+        "0.01": 0.023891217452373433,
+        "0.05": 0.031002828207145755,
+        "0.25": 0.04414753905634193,
+        "0.5": 0.05719285698701153,
+        "0.75": 0.0690475890108885,
+        "0.95": 0.08853241054119036,
+        "0.99": 0.11122502844946695,
+        "1": 0.150402464204316
+      }
+    },
+    "abs_peak": {
+      "min": 0.140655517578125,
+      "max": 1.0,
+      "mean": 0.5255409182483003,
+      "quantiles": {
+        "0": 0.140655517578125,
+        "0.01": 0.22168243408203125,
+        "0.05": 0.2883453369140625,
+        "0.25": 0.415802001953125,
+        "0.5": 0.5118408203125,
+        "0.75": 0.6133270263671875,
+        "0.95": 0.8444885253906247,
+        "0.99": 0.9708596801757812,
+        "1": 1.0
+      }
+    },
+    "near_full_scale_fraction": {
+      "min": 0.0,
+      "max": 0.0013762738147984049,
+      "mean": 1.9449840188336992e-06,
+      "quantiles": {
+        "0": 0.0,
+        "0.01": 0.0,
+        "0.05": 0.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 0.0,
+        "0.95": 0.0,
+        "0.99": 0.0,
+        "1": 0.0013762738147984049
+      }
+    },
+    "exact_zero_fraction": {
+      "min": 0.00010263929618768328,
+      "max": 0.48528225806451614,
+      "mean": 0.012005931433028711,
+      "quantiles": {
+        "0": 0.00010263929618768328,
+        "0.01": 0.0003957879279030738,
+        "0.05": 0.0005808436821138741,
+        "0.25": 0.0013632447173679175,
+        "0.5": 0.002686253734866986,
+        "0.75": 0.006230260717009063,
+        "0.95": 0.06421198400255988,
+        "0.99": 0.18410744284937192,
+        "1": 0.48528225806451614
+      }
+    },
+    "duration_seconds": {
+      "min": 1.285,
+      "max": 34.955,
+      "mean": 7.4246109255725194,
+      "quantiles": {
+        "0": 1.285,
+        "0.01": 1.955,
+        "0.05": 2.31475,
+        "0.25": 3.67875,
+        "0.5": 5.79,
+        "0.75": 9.60125,
+        "0.95": 17.841999999999988,
+        "0.99": 25.475749999999994,
+        "1": 34.955
+      }
+    }
+  },
+  "limitations": [
+    "Flags are review cues, not automatic exclusions",
+    "Near-full-scale samples can be a legitimate source characteristic",
+    "Signal statistics do not establish intelligibility, naturalness, transcript correctness or listening quality"
+  ]
+}

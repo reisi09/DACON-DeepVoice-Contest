@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-09-19T07:11:55.360748+00:00",
+  "status": "provisional_cpu_reconstruction",
+  "gpu_started": false,
+  "training_ready": false,
+  "total_cap": null,
+  "requested_ratios": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "original_manifest_sha256": "2cc269dfd1dc98c9585f894f60a7078a80c8f2a3613baa43819d751ddb588a9c",
+  "selected_sha256": "0011b91ed92b4ba1b86fa44ab4b4afa1bd26fa3b133bf16304db11e0e40f5ccd",
+  "combined_rows": 18042,
+  "admitted_pool_rows": 16879,
+  "selected_rows": 13186,
+  "new_acquired_catalog_rows": 2000,
+  "new_acquired_selected_rows": 785,
+  "pending_download_files": 12,
+  "split_class_counts": {
+    "per_class": 6593,
+    "per_split_per_class": {
+      "train": 4615,
+      "val": 989,
+      "test": 989
+    },
+    "route_class_targets": {
+      "voice_0": 4620,
+      "music_0": 1973,
+      "voice_1": 2000,
+      "music_1": 4593
+    },
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_gap": 0.0
+  },
+  "selected_audio_integrity": {
+    "files_verified": 13186,
+    "audio_bytes": 18021917075
+  },
+  "largest_connected_group": 1444,
+  "historical_exposure_by_split": {
+    "train": 7076,
+    "val": 1610,
+    "test": 1744
+  },
+  "independent_test_claim": false,
+  "gaps": [
+    "new_speech_and_singing_archives_not_yet_admitted",
+    "component_voice_labels_unknown_for_music",
+    "partial_music_requires_matched_real_sham",
+    "A100_16h_runtime_not_measured",
+    "training_loader_and_notebook_not_switched"
+  ],
+  "diagnostic_rows_by_reason": {
+    "legacy_mixture_parent_review": 128,
+    "missing_mtg_parent_identity_or_license": 35,
+    "matched_real_sham_not_ready;segment_outside_decoded_timeline": 458,
+    "matched_real_sham_not_ready": 402,
+    "matched_real_sham_not_ready;missing_mtg_parent_identity_or_license": 57,
+    "matched_real_sham_not_ready;missing_mtg_parent_identity_or_license;segment_outside_decoded_timeline": 83
+  }
+}

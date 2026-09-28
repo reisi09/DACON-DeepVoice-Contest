@@ -1,0 +1,11 @@
+OKAY
+
+workspace_root=/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/dacon-redesign-review-j0rlxfrt/workspace
+runtime_home=/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/dacon-redesign-review-j0rlxfrt/codex-runtime
+target=.omo/plans/dacon-model-redesign-20260917.md
+artifact_identity=plan_sha256
+plan_sha256=afab419bbe9cc0b21851679c28dc82d96393ebc165cc33e5e1a52f0c2333779a
+round_identity=round_id
+round_id=redesign-77ac5fa06f68
+launch_identity=launch_id
+launch_id=2f5e9540a420484498a3727a8686e880

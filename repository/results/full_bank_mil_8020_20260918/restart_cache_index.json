@@ -1,0 +1,2749 @@
+{
+  "identity": {
+    "assets": {
+      "baseline/model/df_arena_1b/.gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+      "baseline/model/df_arena_1b/.gitignore": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baseline/model/df_arena_1b/LICENSE.txt": "903d5ad67a67b3a919981892948e984bdf349053d54f1563c6497f48cdaf75b4",
+      "baseline/model/df_arena_1b/README.md": "0f577f45eea69a99eb55404569c6efa814dfb15b22791bf33bc652c0e134d75a",
+      "baseline/model/df_arena_1b/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baseline/model/df_arena_1b/backbone.py": "397df32fb0b1a1296b292ec698e7edca44f98c5f2afe3655bf182ad01fa5a11c",
+      "baseline/model/df_arena_1b/config.json": "e9f6b651fb2f83d320b5e10b38bc104afdc57641839d16dd1b4921e9eae49a43",
+      "baseline/model/df_arena_1b/configuration_antispoofing.py": "dd4a40789c2383896ce743effdd48cb6cdbd2f01c4bcdd7d4b71d7fb92869cf7",
+      "baseline/model/df_arena_1b/conformer.py": "84651dc9e81aaf4a32b400a621aa37e8f22e656a8207c5f4120cbb6e682c5540",
+      "baseline/model/df_arena_1b/facebook/wav2vec2-xls-r-1b/config.json": "36668778db09d5c64090b62d6afb66ba63057304fe456a45388066ff7dabb997",
+      "baseline/model/df_arena_1b/feature_extraction_antispoofing.py": "f549bce974e527a5bf57fd5544ba793d35d99c5db8047600d1c905308a8aacf7",
+      "baseline/model/df_arena_1b/modeling_antispoofing.py": "a7925c0ba67ef090552e0c337be6e6b3efffd53c3193e2310b30675af968c624",
+      "baseline/model/df_arena_1b/pipeline_antispoofing.py": "a308720d1be9fa6c948bd91648a1ec83a1465a178ae0da29f3cc48fe425170b4",
+      "baseline/model/df_arena_1b/preprocessor_config.json": "e23aafe2a4a2a7c0caaefdc6e4b1e131774137fdeaa50fb5376764b05dacb3c7",
+      "baseline/model/df_arena_1b/pytorch_model.bin": "780bc14fd4c15e65d58efdef728427cf03cd29cd60be528e97badf8c89087988",
+      "baseline/model/htdemucs/955717e8-8726e21a.th": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4",
+      "baseline/model/htdemucs/htdemucs.yaml": "239c445d0b14454d541ad8bd9bb271c9e536d267e8a4625208744cbb2e7bb66c",
+      "baseline/model/panns/Cnn14_mAP=0.431.pth": "0dc499e40e9761ef5ea061ffc77697697f277f6a960894903df3ada000e34b31",
+      "baseline/model/panns/class_labels_indices.csv": "cdd1049833c4b86127c2773ac0d14a2754b6a6d0d1798002ed5c66e699708429",
+      "baseline/model/panns/component_labels.json": "95bdfd3ca12f7ba31a7cb15d4bbe0147d02074a180f92c0177ffa1f0b80f4f33",
+      "baseline/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+      "mert/README.md": "50e8eeec63445c8c76d7052379e038c79f58b8a142d346eac3a3f67c57c1d2e9",
+      "mert/config.json": "a5b40f9db03c84f29e3114abe813a9226178d5437b517d45cd4c2924ac3d0ce0",
+      "mert/configuration_MERT.py": "ae0ec2bab8f59c724ba9878a7c20b67210189536ea62d34a56775968e9decb03",
+      "mert/modeling_MERT.py": "6c3ee73cef6f0c30ef494f88d96f891fa6925ffe663fa391b512f4b57abecc6c",
+      "mert/preprocessor_config.json": "c623b903eb1967474b27522975cfb81638e265df99aa640d2c0bd87a987ab538",
+      "mert/pytorch_model.bin": "0c03774d821a6ad972cb48220b128a10ebea2c790116bd0fd35e5a013f8017f6"
+    },
+    "dtype": "float32",
+    "duration": "all samples, no crop",
+    "hop": 32300,
+    "implementation": {
+      "full_bank_features.py": "59963062eb536d514f8f1a8ea8aa981d65cf2d8f03c7df905597c973d9481116",
+      "mert12_submission.py": "30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e",
+      "v6_runtime.py": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce"
+    },
+    "manifest_sha256": "a3da9c07aaf8765ccfd6d90058b3aa9057490b3d3d854a18d05b297ee839cd63",
+    "mert_layer": 12,
+    "torch": "2.7.1+cu128",
+    "window": 64600
+  },
+  "items": {
+    "haim_acestep_0019": {
+      "identity": "52b86be3f380079b5b917f881341be1ffa60531b797fd3e79b0a882208d6efdc",
+      "path": "haim_acestep_0019.npz",
+      "samples": 1792000,
+      "sha256": "91926efb7e2f708be5e6b9f63971a1b2de7721867b052f451bcba300e532868f",
+      "windows": 55
+    },
+    "haim_acestep_0034": {
+      "identity": "707af444a9993972cac6c97cbe1b4d40e0d38293712ac0f6e12415279f20d717",
+      "path": "haim_acestep_0034.npz",
+      "samples": 3664000,
+      "sha256": "8678eb1e4ef2ab2d68240d4310494eb04c413d518b6ed33a03e060103b149bca",
+      "windows": 113
+    },
+    "haim_acestep_0038": {
+      "identity": "0eff3a06311a18ebecf3887b967d58e4bd5c52d9a9da2f09e250d8d743090433",
+      "path": "haim_acestep_0038.npz",
+      "samples": 2544000,
+      "sha256": "248ac24a27441f1aace2bf4643663952ea45c7495395712ed8e9adfec5d38868",
+      "windows": 78
+    },
+    "haim_acestep_0087": {
+      "identity": "6c8ab324b891cf07b6c5549016fdfd92876ddc6d2aee4d1f3fcdaff0b4e17b62",
+      "path": "haim_acestep_0087.npz",
+      "samples": 192000,
+      "sha256": "652c1ca492b692c9545406b11341957ad25225018aa88dbcc9262e77af777395",
+      "windows": 5
+    },
+    "haim_acestep_01053": {
+      "identity": "d6bb27449ca2b364d9354ac790c6f0d1404d88f40f1442713ea716460deea065",
+      "path": "haim_acestep_01053.npz",
+      "samples": 1824000,
+      "sha256": "d785c1bd5f60f3388d0ffa12160f6ac97f7e435e1e2f6b174f1eb8df4369172b",
+      "windows": 56
+    },
+    "haim_acestep_0107": {
+      "identity": "0786229bf89342786c948fa463574bda764fa7bd6c06070ffb142c1517ddebad",
+      "path": "haim_acestep_0107.npz",
+      "samples": 2784000,
+      "sha256": "45ba6f8747ed0b3946d81798208d8e125011107ff5cd82f0ae16d2d22940d3ea",
+      "windows": 86
+    },
+    "haim_acestep_01081": {
+      "identity": "f81d791809259cbe5337ece82dfa43e02c792e0e25160d86e29f5ba213cc9bcd",
+      "path": "haim_acestep_01081.npz",
+      "samples": 1200000,
+      "sha256": "4d3e75f7bc346020ab1ff4423468e22b628675608f8e0ff9436f4948947dc2c9",
+      "windows": 37
+    },
+    "haim_acestep_01085": {
+      "identity": "4cdad5ac4639497603bf5e5cf6253a22c8a315cae0333489819724d1964030b8",
+      "path": "haim_acestep_01085.npz",
+      "samples": 1216000,
+      "sha256": "4ea6848a83b0e095e5f1171a2e475070ef0bb44a07af16ed1c8c26bbe5638ddc",
+      "windows": 37
+    },
+    "haim_acestep_01173": {
+      "identity": "ec9de7c8fa53cb2714fbffeb0618368a9ad2fc3b51e14442d14755fffe9af7d8",
+      "path": "haim_acestep_01173.npz",
+      "samples": 1552000,
+      "sha256": "26921cc58d922c6465ad8b6775c7596ba93bf900de19ea7e674a97a1f7cb2b10",
+      "windows": 48
+    },
+    "haim_acestep_01177": {
+      "identity": "b11deff96be8d0eb022601c629257c9af8c4857075ef4cbf0f768c80c94b9a5a",
+      "path": "haim_acestep_01177.npz",
+      "samples": 1584000,
+      "sha256": "6c1c85fba96bc22eee227771c96b7a0818ca532591b1e6770f841579cc363c3c",
+      "windows": 49
+    },
+    "haim_acestep_01265": {
+      "identity": "146c21e14c2372b34eb65a1a4953789c1e2cb606c511befd24873b9285398a0e",
+      "path": "haim_acestep_01265.npz",
+      "samples": 1888000,
+      "sha256": "6e7aec21d399144fed6b5e9405ce09133787f3825e41a9635b0004213f4faf32",
+      "windows": 58
+    },
+    "haim_acestep_01316": {
+      "identity": "f2aa3b42876c66b5a711ee482c135ab33f172aec4358f36b51597f2997c579c1",
+      "path": "haim_acestep_01316.npz",
+      "samples": 1712000,
+      "sha256": "09674168bfcb645f1118eeef64237e89dd96e4c66b26902bae0446f03a2fd450",
+      "windows": 53
+    },
+    "haim_acestep_01321": {
+      "identity": "92749ba0bd197d69e04d177af81d9bc176437cd6c92f4ddc6d9cab7a9f050b72",
+      "path": "haim_acestep_01321.npz",
+      "samples": 1712000,
+      "sha256": "9ce03d955f3e142fc9f93e419f21512451cb69a60f7b1f48d9f7466cb6507d34",
+      "windows": 53
+    },
+    "haim_acestep_01347": {
+      "identity": "274d0e8f74ec6b08208562abe8408829eeceef5d2b9717a03962c9e028f8e200",
+      "path": "haim_acestep_01347.npz",
+      "samples": 1488000,
+      "sha256": "6625861fb6ed214946fe058794cdbeae77f68a91b3daca767f903616fda8f57a",
+      "windows": 46
+    },
+    "haim_acestep_01360": {
+      "identity": "ed10f03bb657728a23ad79a722e99f3176cc75893f4e2e89b9c9df88f986a645",
+      "path": "haim_acestep_01360.npz",
+      "samples": 1104000,
+      "sha256": "3708222ba873787570d480ffccd8d686c168fa73299e667914d3479f257ea2a0",
+      "windows": 34
+    },
+    "haim_acestep_01416": {
+      "identity": "35ac5a0b3f32b6fe0016ba973ef585cdbafc3d82189325cfe2ab3365816bf5fd",
+      "path": "haim_acestep_01416.npz",
+      "samples": 1264000,
+      "sha256": "4654a7613b977f0b4471d14b611460a77d0be6ec756fa3571abaa191dd2049e8",
+      "windows": 39
+    },
+    "haim_acestep_01429": {
+      "identity": "c71a8333139c9aefbe1c2aeeaffe7205bf664e8c15fc65e0057f5b0d34465800",
+      "path": "haim_acestep_01429.npz",
+      "samples": 1152000,
+      "sha256": "7feaef53b223e5c0ea21ab37b782013f49446c8e1ebbb86582f26a799b15914a",
+      "windows": 35
+    },
+    "haim_acestep_01453": {
+      "identity": "44fa9eece92d5463a76938668e9504be443e9948067527992898c3e72ae8c826",
+      "path": "haim_acestep_01453.npz",
+      "samples": 1184000,
+      "sha256": "d28ebfb19d37a617448bf08865447a6ab006d571532833ae37252dfb5cdc51fd",
+      "windows": 36
+    },
+    "haim_acestep_01457": {
+      "identity": "cb1641d111caf85b25ccb36d903b0c587c3d05f8d17592f4f54093be7211eea5",
+      "path": "haim_acestep_01457.npz",
+      "samples": 1712000,
+      "sha256": "2dbf8072d37c12e51f7824b07018d29f3d4347e9e1ba129f8e4e6e2c03b2530b",
+      "windows": 53
+    },
+    "haim_acestep_0146": {
+      "identity": "8a731bc35784268c0f4f1eed814e1c33a1635b22c2a67b842afd63698c1cc258",
+      "path": "haim_acestep_0146.npz",
+      "samples": 176000,
+      "sha256": "d8062ebb2b7d116f7156e06843fa96c5db8c0918f004c42f8015d7fd14f16cc9",
+      "windows": 5
+    },
+    "haim_acestep_01509": {
+      "identity": "fd31fdb4465ace01b2e86eba105e9616e2f682a73d691a409caeb075df110c2a",
+      "path": "haim_acestep_01509.npz",
+      "samples": 1024000,
+      "sha256": "c982d052851c3db829a2be68ac5d290bcf466f82954f96d41082d44607c601cc",
+      "windows": 31
+    },
+    "haim_acestep_01531": {
+      "identity": "412952c1f7103a6d4b4e854a5f8428f6fb8c1f83d2f73c4d887aa71e2033fa8b",
+      "path": "haim_acestep_01531.npz",
+      "samples": 1696000,
+      "sha256": "f10fc9e5e36d314d41894e50a25913299c68df8d0fc49a72755965b315abaee7",
+      "windows": 52
+    },
+    "haim_acestep_01558": {
+      "identity": "9c987ed62c9c9faf9cfa1bc57d6c6714287353dcf759aff57d888adf197d3576",
+      "path": "haim_acestep_01558.npz",
+      "samples": 1424000,
+      "sha256": "6bf64d39a2cb1a25307b9e3240d6da3280caf38318ee169418ab233028fd9f8e",
+      "windows": 44
+    },
+    "haim_acestep_01569": {
+      "identity": "8b2cf60cd267af6c3e45668c299ff392e9fd23ea9322a6da59f3ef6430d751cf",
+      "path": "haim_acestep_01569.npz",
+      "samples": 1264000,
+      "sha256": "5ef8034958779d04e2c5efa56819708844c85da2eb11f6c1de29ddaad39b5c0b",
+      "windows": 39
+    },
+    "haim_acestep_01572": {
+      "identity": "e1ca33f933999df33e4ff64ed4eb58b5f4bb262e67397ee4e10e6e566d5119a2",
+      "path": "haim_acestep_01572.npz",
+      "samples": 1664000,
+      "sha256": "ca081996d5a979d9bf740b5b27173ddbda969afa88b35ca9a4078549e54dc61d",
+      "windows": 51
+    },
+    "haim_acestep_01576": {
+      "identity": "79c0ea7624bb8db02de0566f372df406dbb4c22bccfd56cf17ff78290563bbb6",
+      "path": "haim_acestep_01576.npz",
+      "samples": 1440000,
+      "sha256": "238047620e084213861558cc438cc39467955d0ea8ca8085c42f80e3efdd6005",
+      "windows": 44
+    },
+    "haim_acestep_01601": {
+      "identity": "b8687b8914345cd30fe761a9a219e19071b540eda44f5ead0335e4b8640714fa",
+      "path": "haim_acestep_01601.npz",
+      "samples": 1904000,
+      "sha256": "bef1e369593c973e26d8393a33a6ed11c4f4a3425246104471723564a458f07a",
+      "windows": 58
+    },
+    "haim_acestep_01620": {
+      "identity": "261addd9396e3eab70b7ac5d92c235ce28c07c01095d59f25932bd364162a08e",
+      "path": "haim_acestep_01620.npz",
+      "samples": 1344000,
+      "sha256": "650e6c575d0f3cb3f037d4669c1f60bee9f587610c6cf95b12f7ff19507832fb",
+      "windows": 41
+    },
+    "haim_acestep_01629": {
+      "identity": "c5143d142766d655c5f68d319b8396c44c8adfad01634cd44811d81cb3e0c50e",
+      "path": "haim_acestep_01629.npz",
+      "samples": 1056000,
+      "sha256": "bab3631bc926222615c243196041dc578884b1f4a24169ea946d9e518146a886",
+      "windows": 32
+    },
+    "haim_acestep_01647": {
+      "identity": "fecc31d235a9a6ad69bf2096acf48fa0fb8ab0c8cde7e0625bbb5b272d5a7f47",
+      "path": "haim_acestep_01647.npz",
+      "samples": 1504000,
+      "sha256": "b64ceb93a0b2a8333238d83dfd9b6553d5b5880d03ef0097f13b835c006e3f7a",
+      "windows": 46
+    },
+    "haim_acestep_01667": {
+      "identity": "c07c2494f166899718c73ba8c2a7cca056952d6963dcaecbc07e9c551ac4e13d",
+      "path": "haim_acestep_01667.npz",
+      "samples": 1232000,
+      "sha256": "6525bc20a23a8eefaabe00483d786671e6297d02bd99c51bdc52637e306cbe77",
+      "windows": 38
+    },
+    "haim_acestep_01773": {
+      "identity": "535856ce4c37af3513bb78faa11f7312e8199b0ae879d3a3c7ffd28aea64ebdf",
+      "path": "haim_acestep_01773.npz",
+      "samples": 976000,
+      "sha256": "9dc7410f103472bf236929a20ade2e460650436e5282bb1bd55b78055e97225d",
+      "windows": 30
+    },
+    "haim_acestep_0178": {
+      "identity": "4c24b88f31475f95b8010a156f61d0918a5db04e8962de148925e308e027bdf4",
+      "path": "haim_acestep_0178.npz",
+      "samples": 1056000,
+      "sha256": "25c29a043d47deee36ef2133408ac87e87351170c1041e37e46b5f77f5b07b2a",
+      "windows": 32
+    },
+    "haim_acestep_01809": {
+      "identity": "c86a17efddcd52c146d643f4c5731e77a4373ca5d6e8fc8a4256b804e2f2f5b0",
+      "path": "haim_acestep_01809.npz",
+      "samples": 976000,
+      "sha256": "ca26331cb237a9a8b885a58ab8d1178f114f6421db7d4362bf362e3fe27ee1d5",
+      "windows": 30
+    },
+    "haim_acestep_01821": {
+      "identity": "5aedb4eac924c51f3bb4dc8effeb80f007e9f998163aa9eb8e93ad0d4c05ab7d",
+      "path": "haim_acestep_01821.npz",
+      "samples": 1632000,
+      "sha256": "b5a3ee69a5338626c7a3feaa5bc864c8aa9f61916a6d904b894fe556dc188c7b",
+      "windows": 50
+    },
+    "haim_acestep_0189": {
+      "identity": "6a901badac8a6bfc6d275b0cee7ffcf65487c01b78ce5125a3cb67978264507e",
+      "path": "haim_acestep_0189.npz",
+      "samples": 3104000,
+      "sha256": "a6b882e2971b8d22c79f8207929599145f5afd8e1a4166be566f002f43cc9385",
+      "windows": 96
+    },
+    "haim_acestep_0190": {
+      "identity": "8e3e12d28fbe958c7d8b7b3fd10ba82d6d50b2974d54b76d824584dc34e9403a",
+      "path": "haim_acestep_0190.npz",
+      "samples": 2240000,
+      "sha256": "5ac696a5e74da6cf315164d91081e0f05c2e065996d5e98fae315a9a4f4781fe",
+      "windows": 69
+    },
+    "haim_acestep_01919": {
+      "identity": "3a6417a818e4b193ee0e9d0c4ab9aba395ef44092fcaf4065212701e9875c76d",
+      "path": "haim_acestep_01919.npz",
+      "samples": 1776000,
+      "sha256": "8476f03d09faac510fa603ed953327519adbfabe5b8ba736350f343ca6a5deb3",
+      "windows": 54
+    },
+    "haim_acestep_02004": {
+      "identity": "098cec384241c7195707aa0389d282ceb14240cacec54248e9b2668718e50a1c",
+      "path": "haim_acestep_02004.npz",
+      "samples": 1616000,
+      "sha256": "e7e63f428229f4b3eefca1baea76f9f1924a7e01551b30d7280945dcbea2bd26",
+      "windows": 50
+    },
+    "haim_acestep_02029": {
+      "identity": "90499a1dce2b5200076baa102ac7c52e3a861ce61a1d668d83fd09fdf6986bc4",
+      "path": "haim_acestep_02029.npz",
+      "samples": 1408000,
+      "sha256": "32478bf549cac1a0d5746eea45db354cb1ddee85e35ecc4917b70a4a99fa13ee",
+      "windows": 43
+    },
+    "haim_acestep_02040": {
+      "identity": "516f3934a2651e71859352257e061dc503825a9956440a5f5261b93eb695c7bc",
+      "path": "haim_acestep_02040.npz",
+      "samples": 1344000,
+      "sha256": "bbcd91225fbda9dc81d56d16d99b6a1d116e935ff98f9d3d9736bd45748ef53e",
+      "windows": 41
+    },
+    "haim_acestep_02061": {
+      "identity": "f1ca21854d0f2f6c812b72032d753f46bc499edd697017dfbd714c0ff623b2e8",
+      "path": "haim_acestep_02061.npz",
+      "samples": 1360000,
+      "sha256": "75f5cbb5751b6af417be6f641dd3d0611a1bb17fffc0b86cfaba2cdde80bd5b0",
+      "windows": 42
+    },
+    "haim_acestep_02068": {
+      "identity": "3b37fa3f7e285df12e162403fab031558ade10585329ca1bf987f617bf53ebde",
+      "path": "haim_acestep_02068.npz",
+      "samples": 1136000,
+      "sha256": "2d48934fc46cc740daa7c0e3f15ca73cd7500d54c359aa2d8d146fb123c5ace7",
+      "windows": 35
+    },
+    "haim_acestep_02086": {
+      "identity": "697e1ea2ec9ee5ed7e4551812d9eb2b55d916b9e2e600a86dda042ecf1edb116",
+      "path": "haim_acestep_02086.npz",
+      "samples": 1392000,
+      "sha256": "88d8266a64e98ae78e528ec59fd3deeea176ebda63ae0a90b09830f5e950db44",
+      "windows": 43
+    },
+    "haim_acestep_02133": {
+      "identity": "7e369c6fc1227848f56a589713540b677d7839c89afb85cf10d4fa81ea78e2c7",
+      "path": "haim_acestep_02133.npz",
+      "samples": 1408000,
+      "sha256": "60a7a32b18e0c67b741ae8290a853db33ea6cc9f914caef0f3614b855c145208",
+      "windows": 43
+    },
+    "haim_acestep_0217": {
+      "identity": "83c1a63462f2831d7df15931c26c1090e8783e70c2e1a545af98eda175d29769",
+      "path": "haim_acestep_0217.npz",
+      "samples": 400004,
+      "sha256": "99ef9ec3aed97d38dde09be3fad3f1f2cec3d71b3573d4fd3f75f7bb9405db9e",
+      "windows": 12
+    },
+    "haim_acestep_02174": {
+      "identity": "158baa37e8714d8ecc436e60c7aff0789e67bd26ef60f2ecf73dee09a10a3c75",
+      "path": "haim_acestep_02174.npz",
+      "samples": 1072000,
+      "sha256": "62c8032c79f61cebffe9a9524248bd6c30096d7a183933ab27141f54dbfc174a",
+      "windows": 33
+    },
+    "haim_acestep_02203": {
+      "identity": "2abd8a99acfd127dd51fe801862f891ff4c87361dd863f63c9b4094a4b4b53e8",
+      "path": "haim_acestep_02203.npz",
+      "samples": 1760000,
+      "sha256": "a64758c7b8d6d880b692c4a6d0f58c25680d735c69d9177d3803b4a5e8eb2880",
+      "windows": 54
+    },
+    "haim_acestep_02217": {
+      "identity": "e35ddc9194a43333a5202777340f04d7230aa3808f9ae8b370ea30fb9eed1f2b",
+      "path": "haim_acestep_02217.npz",
+      "samples": 1648000,
+      "sha256": "97b7293038ed22a62f3a2de7a667f44c4b6efd0d489c5617c21246c2a2b1b837",
+      "windows": 51
+    },
+    "haim_acestep_02219": {
+      "identity": "9bfdbe1e271ee1b0f179195a65d3c08ea015f1de75ff838877ca788cabbd468c",
+      "path": "haim_acestep_02219.npz",
+      "samples": 1456000,
+      "sha256": "ef5391d9c1b6875f7aedc725c4d07a9c63c3684a0d6f0c90afd4bcd3dc6d501d",
+      "windows": 45
+    },
+    "haim_acestep_02258": {
+      "identity": "8672284f1a11b2c4c9a7ef0368995b361b8694e84f6e8afac1a84baebd7cb5f2",
+      "path": "haim_acestep_02258.npz",
+      "samples": 1456000,
+      "sha256": "587f5c39d8f7047bc9ec1ce2558fda9f6c7af2b6ff059307b56cc4da00393baf",
+      "windows": 45
+    },
+    "haim_acestep_02289": {
+      "identity": "91c2953ca181b4ca48e7ea5c5601867b89404b62ebf79ac106c34760752a8300",
+      "path": "haim_acestep_02289.npz",
+      "samples": 1696000,
+      "sha256": "cf40f64822d63fa1d75a4969fd73fb68b1e7c7515e9b1c4d4bff44f690da8faa",
+      "windows": 52
+    },
+    "haim_acestep_02343": {
+      "identity": "6c524a6ab527908a12678a21d11be386eb56f319d7c218b7cfd6f38eba84e95e",
+      "path": "haim_acestep_02343.npz",
+      "samples": 1536000,
+      "sha256": "145d942c29c3995fe43212f773690e42100af90fbe44751b7a39dadaf4d6cb9b",
+      "windows": 47
+    },
+    "haim_acestep_02362": {
+      "identity": "b8862968242ae6193679fc0a03deaa22c2b00142613f988d2790f517980cf8c4",
+      "path": "haim_acestep_02362.npz",
+      "samples": 1168000,
+      "sha256": "0f9767b115bda11db717da417b9e5e934cb2d33f647fac072eccd74a3ca25b7e",
+      "windows": 36
+    },
+    "haim_acestep_0241": {
+      "identity": "5a35e2d1bfff3061949dc2e41489acd62de11abd5b1de579f096598d81fc2c4f",
+      "path": "haim_acestep_0241.npz",
+      "samples": 704000,
+      "sha256": "f066b73e09144e2b384947c140ebc27c38f123ec18b28dd99774b06e0be6fc1d",
+      "windows": 21
+    },
+    "haim_acestep_02412": {
+      "identity": "b536b5703ebeadb17e627425e5864c2da884d5d71ff2219c536404cb6de44c64",
+      "path": "haim_acestep_02412.npz",
+      "samples": 1616000,
+      "sha256": "ac0fe204b65a22e40829bc3e7f471db7174fa7d2b9187fbbba61e6b6be909507",
+      "windows": 50
+    },
+    "haim_acestep_02442": {
+      "identity": "54441befbeb03220d16c432c7620ee7df022d4bcf9550bb8197b37d8bc4879af",
+      "path": "haim_acestep_02442.npz",
+      "samples": 1520000,
+      "sha256": "f335a3bdf72e756e2e27410614c920dc25bb9803f971211302e632aa35c2d1d4",
+      "windows": 47
+    },
+    "haim_acestep_02448": {
+      "identity": "b998d455f1e1bed441b0f8324df52993ca575aaa30934dd276363c433079d1df",
+      "path": "haim_acestep_02448.npz",
+      "samples": 1648000,
+      "sha256": "062978b21219c32293a9ff9cd47e688916fd8e256dffd5f2e4902eeab4af4b4c",
+      "windows": 51
+    },
+    "haim_acestep_02488": {
+      "identity": "8298b1dba5a134dc4208ec5f301f035692ea186e5d56d63f9ee27e9c0f98fc38",
+      "path": "haim_acestep_02488.npz",
+      "samples": 1856000,
+      "sha256": "364229c48de7b8b6a5c316275c68cc90188195854e764c30851b6022a9bdff8e",
+      "windows": 57
+    },
+    "haim_acestep_02542": {
+      "identity": "9e078987501d64f3de30c41d4bf8c557dccdb054186fc1523a6ea413854f26d0",
+      "path": "haim_acestep_02542.npz",
+      "samples": 1200000,
+      "sha256": "98c3b2798fe93680ab2d2e173adf011b2d86027280065c6b661c6b95d18746c5",
+      "windows": 37
+    },
+    "haim_acestep_02564": {
+      "identity": "536fe7b33ce4b062e7afb23d8c1192e8b919ed5c29096a783672eb846b410d47",
+      "path": "haim_acestep_02564.npz",
+      "samples": 1616000,
+      "sha256": "92e3cda8f4381518ef1bc18d2f11b9e045c2322c7a576844bb6ae38cc789b1ff",
+      "windows": 50
+    },
+    "haim_acestep_02574": {
+      "identity": "08b2fa9f58cbbbae324326f704701f8725e279f7c4b038853128642592f3eab4",
+      "path": "haim_acestep_02574.npz",
+      "samples": 1824000,
+      "sha256": "10d61ea02049085498c4c3f4ae62cf675ce9fb5d2665a29a264993cd4bd41b51",
+      "windows": 56
+    },
+    "haim_acestep_02590": {
+      "identity": "55233c7cb5bed32d629f9f7fc4ea6f1f6b66c29731a1e430955b78ee37b4e6ac",
+      "path": "haim_acestep_02590.npz",
+      "samples": 1856000,
+      "sha256": "2ff9ae1c81e901f163b2d2d2aae74fa3e0d689d6bcb5299729f6ba0efce1f3ad",
+      "windows": 57
+    },
+    "haim_acestep_0260": {
+      "identity": "30ec57ee3f13768f04224cc0b0e3d5023746e4408f0c930c7da31bcdc6749c66",
+      "path": "haim_acestep_0260.npz",
+      "samples": 2064000,
+      "sha256": "c6f7b258545d8ad5aedb90759342784947747ec30d7bba760a1afa005f6b49a2",
+      "windows": 63
+    },
+    "haim_acestep_02604": {
+      "identity": "5a0f1a8c8e7fd60cedd72e53952c50704e5ef5c90f154e95553c708d37918c55",
+      "path": "haim_acestep_02604.npz",
+      "samples": 1536000,
+      "sha256": "09f770844ad69d566dc12749f76dbddaba5a8ba07ab9f6a9a3055ddb6f0db43f",
+      "windows": 47
+    },
+    "haim_acestep_02620": {
+      "identity": "18a8ddb43775d8bc95bc5d8f8a4321c7736ec2f865d9a9478aaef6a1c47a06a3",
+      "path": "haim_acestep_02620.npz",
+      "samples": 1392000,
+      "sha256": "82e65c323ef786e3a93c73748f881bd1e3ae70958194cd3470b2794de1289437",
+      "windows": 43
+    },
+    "haim_acestep_02666": {
+      "identity": "3f0b3579318b6300c7e456e5807487b8fa9104015b35404f2698b2a0be1aabfa",
+      "path": "haim_acestep_02666.npz",
+      "samples": 1792000,
+      "sha256": "957d378ed6b54121308006453277fccf58c1248b51ce59792db8dc588951b93d",
+      "windows": 55
+    },
+    "haim_acestep_02687": {
+      "identity": "60ce87c02a6b3892457e72de2bdfbd9a7c2bcf0bf8d4c1bd17d5b97a6d90f24b",
+      "path": "haim_acestep_02687.npz",
+      "samples": 1824000,
+      "sha256": "2c393cfe235928bd7ef5e5f75fa53215eaf242bc8a5e910bb911af7017ab4dcb",
+      "windows": 56
+    },
+    "haim_acestep_02701": {
+      "identity": "9971d7769deac035f30578dedf0c8afe49f6d19a7e3d5dc5c79f319367f81a71",
+      "path": "haim_acestep_02701.npz",
+      "samples": 1152000,
+      "sha256": "11379b02ff1e694cdf939524d652f6a5dfff17a394756a378f43c5f63a7807f4",
+      "windows": 35
+    },
+    "haim_acestep_02713": {
+      "identity": "724aee9815496919f2115ba83026abe17aa204943353ecec1b2ba97490403429",
+      "path": "haim_acestep_02713.npz",
+      "samples": 1840000,
+      "sha256": "d58bbd62a46790bbd621340d08475f31820ce5fe409ffa45b515af73f4dcb191",
+      "windows": 56
+    },
+    "haim_acestep_02732": {
+      "identity": "cee5da1e46c5a5b20bf7ea4d3f5dde6118a32849b0811cc921b73d6e4be5577c",
+      "path": "haim_acestep_02732.npz",
+      "samples": 1008000,
+      "sha256": "6466a04060a996edb49d1f1eeec9945779524d2aa5c5faeb9a46a59ef0712f3a",
+      "windows": 31
+    },
+    "haim_acestep_02756": {
+      "identity": "1c34cbd92bf34fa23733a13039474b1a8a463552068d7e6fa95e5bb07c87d1cb",
+      "path": "haim_acestep_02756.npz",
+      "samples": 1040000,
+      "sha256": "b1ff7a3622d0ce1e56d999b8f1903d67e230be9fb9c6e3812f31a43b40b67bd2",
+      "windows": 32
+    },
+    "haim_acestep_02801": {
+      "identity": "e1d0ec650dc00d3aff7c9b57a1b66e111aa15e809452766c837faf10e0ec4a91",
+      "path": "haim_acestep_02801.npz",
+      "samples": 1856000,
+      "sha256": "099ad722382866cb1b680425783a9bcd92b58280d2cd08328da20700b5c7fe5d",
+      "windows": 57
+    },
+    "haim_acestep_02829": {
+      "identity": "465aecff96ab259dc0e46879551d3f67c0ecb6dfeeeecd49558f7c62e25c4145",
+      "path": "haim_acestep_02829.npz",
+      "samples": 1520000,
+      "sha256": "8d57aa2568a7e0f33af52c2cacd82a06ccee0e4bde334e31ddf128bcfcb4e07c",
+      "windows": 47
+    },
+    "haim_acestep_02856": {
+      "identity": "85465a0570e80de06a976640a30d66bf503ff828e832673c651f89f7d76e67be",
+      "path": "haim_acestep_02856.npz",
+      "samples": 1888000,
+      "sha256": "8710e0bd549feb711070e5104d9489f521bc0807e6d639df141a8427d9a8ea10",
+      "windows": 58
+    },
+    "haim_acestep_02892": {
+      "identity": "27d10f739b12b7a7fc2a37a879a0915b055ca8edeff674c7e07b63823bccc5d7",
+      "path": "haim_acestep_02892.npz",
+      "samples": 1440000,
+      "sha256": "11e1294b2f2c6ce684d97b725797fbd97fbec0c27546a1846da9124280121bfe",
+      "windows": 44
+    },
+    "haim_acestep_02932": {
+      "identity": "825bfbabf433b98f16c240f42396a2ad407db9d8c8424eb1cb3f9b7ec176024a",
+      "path": "haim_acestep_02932.npz",
+      "samples": 1744000,
+      "sha256": "c81aecb8d7ecdd58ac2357bc258bd690a9530e94760560881c845fc26492f2e3",
+      "windows": 53
+    },
+    "haim_acestep_02935": {
+      "identity": "9868f761fc96add639b108d33e4907df95fe46d38307f2afd21732c92992aa48",
+      "path": "haim_acestep_02935.npz",
+      "samples": 1184000,
+      "sha256": "4fa3c717c9eb49b1e2c2c3e27b5cc342a13d48fa113cdc16224ed4bb2d3f40c9",
+      "windows": 36
+    },
+    "haim_acestep_0298": {
+      "identity": "405b91d0ea573f93c93e70be18c945d7f11900a04de35104fdb26479b06e6f77",
+      "path": "haim_acestep_0298.npz",
+      "samples": 1424004,
+      "sha256": "aa2b224a53cc4d220a1ae73a7da00a5e8aa4ca4633936c18b4bc74ad5996995c",
+      "windows": 44
+    },
+    "haim_acestep_03003": {
+      "identity": "8e74091a601a7ef4e6e93ac592f744b2273063ebe54ac6392dd4f7b8a297d544",
+      "path": "haim_acestep_03003.npz",
+      "samples": 1712000,
+      "sha256": "5e81b699dddd5623735c8544bab5d9395cf5e0e66ae41f23c1ac5c340ccbd183",
+      "windows": 53
+    },
+    "haim_acestep_03065": {
+      "identity": "1a6baa9e59cd133f271f86dd394c123d1e5ab2e003e1317a0db82aa072f41acb",
+      "path": "haim_acestep_03065.npz",
+      "samples": 1616000,
+      "sha256": "059ddbdf854a8cfbdc972cb468b7287aec9a3297ce2d2245adbccdc1b515af9e",
+      "windows": 50
+    },
+    "haim_acestep_03114": {
+      "identity": "11a5782615533e294fed43f97b3e2f43d7d276870a409c71e8999ffc3c40b3b7",
+      "path": "haim_acestep_03114.npz",
+      "samples": 1824000,
+      "sha256": "0b86cd818899d5629ce9cfcfc9ce62946b5f41a20e9456a493767367887c5080",
+      "windows": 56
+    },
+    "haim_acestep_03140": {
+      "identity": "9eae4202ac1a0eb5b5e6214854863283d842355501d7372c2448842f5ddeec07",
+      "path": "haim_acestep_03140.npz",
+      "samples": 1712000,
+      "sha256": "0acd163af0b79507a4c9b8dcbd6e4d67e1240edf02daec72da3e833c81782f1a",
+      "windows": 53
+    },
+    "haim_acestep_03148": {
+      "identity": "8886a04e99569f1e13ae66a26d00df337e8927034a19ecd27eb6d69158e244d2",
+      "path": "haim_acestep_03148.npz",
+      "samples": 1888000,
+      "sha256": "6ee8342b82c343fcf13d13ad4568d67a47ca4cadad2fcfacbe069a56f2745f22",
+      "windows": 58
+    },
+    "haim_acestep_0317": {
+      "identity": "83ce34e620a6160f82e9e72712ab37e93304ffc23c6c6031380ed8a77b36fa60",
+      "path": "haim_acestep_0317.npz",
+      "samples": 2176000,
+      "sha256": "a3760f7aaab6e4db0575f4a8018e6cc74b64c191df8b051de44e4940d96365b9",
+      "windows": 67
+    },
+    "haim_acestep_03233": {
+      "identity": "2e95574aa0f46db21571918b8a5cd8d86495e2a9e60a7258b23d09955643e32b",
+      "path": "haim_acestep_03233.npz",
+      "samples": 1856000,
+      "sha256": "1821c28b1e7b893b2616e0b32737dd3f3b6d7128f520bfd4f7c7bdcbb9d7a369",
+      "windows": 57
+    },
+    "haim_acestep_03243": {
+      "identity": "5d2dac971cb84b711c9d521f2fea8ea1c9ceb07c2c941f8969d67a3be66fe1d8",
+      "path": "haim_acestep_03243.npz",
+      "samples": 1616000,
+      "sha256": "fdb18af560d5a0550490c26b8cf523a3b198b00c245bffc91cedb93a047ce24d",
+      "windows": 50
+    },
+    "haim_acestep_03282": {
+      "identity": "edaedb49a011843721a779d5c27cfe8ca03334e4eab72414d1cdc747f5c0359e",
+      "path": "haim_acestep_03282.npz",
+      "samples": 1776000,
+      "sha256": "b38d0d98e83b10f8dd0b8b1ff88b50cfbf123ce73905c270d4abca30e11e9250",
+      "windows": 54
+    },
+    "haim_acestep_03291": {
+      "identity": "bc78d40609bfdf8c7a6e81ef68470d274b1afd98e1f5d645b7c10cfa073405a6",
+      "path": "haim_acestep_03291.npz",
+      "samples": 1104000,
+      "sha256": "cf08d4f3d14a564c4bc7eddb420f53656a2026a193b10648286436d73fa186e9",
+      "windows": 34
+    },
+    "haim_acestep_03355": {
+      "identity": "ad48d8cd867d5659216d72225b84c25ce5ac8665cdfd90ce60d6538e21d2957b",
+      "path": "haim_acestep_03355.npz",
+      "samples": 1696000,
+      "sha256": "4a531c48408b76a6c6e9c49e813b32052695a9a3ace6dc77d10e4e6da7151f27",
+      "windows": 52
+    },
+    "haim_acestep_03367": {
+      "identity": "f2af225795b71c39978dd578eab19cfb869805938078bd61e69df8128b9ca205",
+      "path": "haim_acestep_03367.npz",
+      "samples": 1808000,
+      "sha256": "455f01d66a8a6ed3a3e5ea066c9fec6ec6dd389fd1d43ceabda900adb0f5cc87",
+      "windows": 55
+    },
+    "haim_acestep_03374": {
+      "identity": "3a9f935c59cf5d4f9061168dd6a7c7ac38fe874e856d61d8329983056aad4af8",
+      "path": "haim_acestep_03374.npz",
+      "samples": 960000,
+      "sha256": "bbed20d3e888b96c07525dfa0b9ca8a039f2e48a6f48b7a07ca99479f7a575d2",
+      "windows": 29
+    },
+    "haim_acestep_03392": {
+      "identity": "0921f2e8d146bf74e2964c38f09229fca6ab39625213c5efbba395270314e8a7",
+      "path": "haim_acestep_03392.npz",
+      "samples": 1824000,
+      "sha256": "b14449ac123d6623ed9a9adaffc43da1b4ae5fd224f964c913adbba4077dd894",
+      "windows": 56
+    },
+    "haim_acestep_03398": {
+      "identity": "d5a301fd4ae96b1f88a9d1cc5e20d66f45fcb36ef738501e18076271f5fbc079",
+      "path": "haim_acestep_03398.npz",
+      "samples": 1072000,
+      "sha256": "61ea8fe006a6048726d1aa88522eec36aabc257c3944881805914df2e613fc19",
+      "windows": 33
+    },
+    "haim_acestep_03402": {
+      "identity": "a94cccba2568f53449d151a15883faf76e9cafa4599a592f1857f6fc83d32de4",
+      "path": "haim_acestep_03402.npz",
+      "samples": 1584000,
+      "sha256": "bbf3b5a2614c4af84f906a81fecde081cb8a02602c57c931a42d8d00c33d9d3d",
+      "windows": 49
+    },
+    "haim_acestep_03428": {
+      "identity": "b24e4725f92aacdcf563dc32af647cd34ac676494ee8a023384c96436013286f",
+      "path": "haim_acestep_03428.npz",
+      "samples": 1408000,
+      "sha256": "846fbe6955c4afb8da2ec7bea3c86ae087aaaf86ee4c18d2719e98ce6bb3e24e",
+      "windows": 43
+    },
+    "haim_acestep_03443": {
+      "identity": "7c993f0495f94c9dd0b8784a44cc45544204908f3f0faf23aa8ca0ff27c1de12",
+      "path": "haim_acestep_03443.npz",
+      "samples": 1584000,
+      "sha256": "0dc356127b182757ad76378b4cf7915eda06ef558dbb7b74040e1c1103f10591",
+      "windows": 49
+    },
+    "haim_acestep_03461": {
+      "identity": "893a7b9eea112e94c128fc99b6333efde1ba5db128e10656fb0286a9feeece0a",
+      "path": "haim_acestep_03461.npz",
+      "samples": 1648000,
+      "sha256": "9e8b72037b3deea838493d492a575584e2857b0c1943b051fb6193aa33a06121",
+      "windows": 51
+    },
+    "haim_acestep_03496": {
+      "identity": "932945a133df85bb126045117e94b580ef714d3e0cc35ffc78805f393f4ea35d",
+      "path": "haim_acestep_03496.npz",
+      "samples": 1504000,
+      "sha256": "b8fe7335db7a16950794fa1c47c171d25224bd77244f156d113b3305857192eb",
+      "windows": 46
+    },
+    "haim_acestep_03545": {
+      "identity": "15cff59fd7dfc0356251743bed626573cd2337944f8a4826fb783fc9da9238da",
+      "path": "haim_acestep_03545.npz",
+      "samples": 1136000,
+      "sha256": "e25f07367ae8a466a0330e25882c8c3bec39bac8a5a0aea1da92d6bb27bb6b29",
+      "windows": 35
+    },
+    "haim_acestep_03567": {
+      "identity": "552b0b535c6d0a3e2effd9d05eec2a91871eb0484f5e6460699ea1dbf912dd40",
+      "path": "haim_acestep_03567.npz",
+      "samples": 1312000,
+      "sha256": "cf81e64b91f0835184f449a4da44ec5c385f65a6edc7d4a5fe31e2ed93a4e6e8",
+      "windows": 40
+    },
+    "haim_acestep_03648": {
+      "identity": "b9d21a91ad07f9ae812451d353c8f441f3949d4d8158df968f41b3030b0d85a2",
+      "path": "haim_acestep_03648.npz",
+      "samples": 960000,
+      "sha256": "594c68adb0b54111122beeda1a9f39dff37661c0b060ffd1c9d0d67f14f655b1",
+      "windows": 29
+    },
+    "haim_acestep_03707": {
+      "identity": "81d7a1017125d61bf305599c8430571feae28ca6b65b0aab574e6d508d584df1",
+      "path": "haim_acestep_03707.npz",
+      "samples": 1776000,
+      "sha256": "b67b6da64797b1610f47177b7cf46487eb040da35bccd4c86be59a2c4a36e704",
+      "windows": 54
+    },
+    "haim_acestep_03716": {
+      "identity": "30c4ce60d41ac1e205e3dc138be391fb0b2e3f0337249d0d727c90a5b9a100ea",
+      "path": "haim_acestep_03716.npz",
+      "samples": 1040000,
+      "sha256": "f689174441a87e0e75be2478bf98277644541b61309001024fb1d585de72135c",
+      "windows": 32
+    },
+    "haim_acestep_03800": {
+      "identity": "044c14b97421b69508809fe2233eb913ac916573095f0896b50b8ed43756faab",
+      "path": "haim_acestep_03800.npz",
+      "samples": 1536000,
+      "sha256": "1a33e72b249be2d6813514d2f9cf3b3b212040522528ec810e0b6d7afbe5a611",
+      "windows": 47
+    },
+    "haim_acestep_03836": {
+      "identity": "62f2d0c4a077c6e60eb39e27a2c36e7d7d4bef0262fab4c314bc00eb341d4cb4",
+      "path": "haim_acestep_03836.npz",
+      "samples": 1440000,
+      "sha256": "f22da125c8c8876af3a807787589f18bb6727c73bd5a49543873214ef0244f3c",
+      "windows": 44
+    },
+    "haim_acestep_03868": {
+      "identity": "b97e52a19d650d7e7f8122f1ce9d984f4dbc363c2c6050d5701b8d17dbb44c13",
+      "path": "haim_acestep_03868.npz",
+      "samples": 1792000,
+      "sha256": "ba9276d214aed9e0046206f5550580514ed5e8a1c92a47563ff55d151c6e8a15",
+      "windows": 55
+    },
+    "haim_acestep_03878": {
+      "identity": "02f3a631cffbbf0f9e0fc8596b609d84779a6690a43e51cfc740f977fde5c48f",
+      "path": "haim_acestep_03878.npz",
+      "samples": 1440000,
+      "sha256": "c9948546b5460825f5f0b2d766fc368e2d091df8ff8c2f0389d5fc498e8abce1",
+      "windows": 44
+    },
+    "haim_acestep_03894": {
+      "identity": "725b039cf2ccbb5434ab628c7e7f548810ae6030ea8b183bd7139ff3d79daa4a",
+      "path": "haim_acestep_03894.npz",
+      "samples": 1440000,
+      "sha256": "233c9843dd1f56e3e36a1936d092d3f3388380ab1b527c4506a0949f7c8df43c",
+      "windows": 44
+    },
+    "haim_acestep_03898": {
+      "identity": "e1c74bf9c04c3d26d814e85e9857f169a8ba56607887b85479f93d4324dacce9",
+      "path": "haim_acestep_03898.npz",
+      "samples": 1840000,
+      "sha256": "fad3570d70ec884ea024d9446ccebb32a22bc9ac37f1adb32f435a527601bda1",
+      "windows": 56
+    },
+    "haim_acestep_03905": {
+      "identity": "9834b440a393612fdd10012a835bbc9e27a2c99ccf4929808d310039fc548cf3",
+      "path": "haim_acestep_03905.npz",
+      "samples": 1840000,
+      "sha256": "abdf53ba64a4d93cdf0c2223693e871347c5d2dac1953bfe81640321c978472a",
+      "windows": 56
+    },
+    "haim_acestep_03918": {
+      "identity": "f1812d3d28c2c2e1844c124c43f9d1e233c1c5accf5e0bb64fd16735e4fb2fa4",
+      "path": "haim_acestep_03918.npz",
+      "samples": 1632000,
+      "sha256": "a7686b4290c15c87c650dd85751940d80f5cdbc8f19edaf4753ac2fc93fa2cc9",
+      "windows": 50
+    },
+    "haim_acestep_0394": {
+      "identity": "052ff95c581538ac37c3bce59c2a02abc9e04b0761cffbad7d7b649a6139db8e",
+      "path": "haim_acestep_0394.npz",
+      "samples": 2560000,
+      "sha256": "ee6c7b6c8713f0d3c4cb92ef828126fdfde970d5639b7647fb833930f3082081",
+      "windows": 79
+    },
+    "haim_acestep_03949": {
+      "identity": "ac33d0e3e8e4b8ce0c18f565b05d1f3e07523b41f9c8b2819de66c882290fcce",
+      "path": "haim_acestep_03949.npz",
+      "samples": 1616000,
+      "sha256": "e1cfc39930712f39ddf20ef3a19c09119b6b753790ebe1c255bff190ee7ee2a9",
+      "windows": 50
+    },
+    "haim_acestep_03966": {
+      "identity": "68975e18ecce6fd789c2fbb9ffdefe33899730dec46b14e8390d050e5feebf74",
+      "path": "haim_acestep_03966.npz",
+      "samples": 1760000,
+      "sha256": "db4a9329f02eb74c49dd93fc58aa14246deb8c7936742d7c25c0a92ac43a9472",
+      "windows": 54
+    },
+    "haim_acestep_04005": {
+      "identity": "4e9dc863ac5fb299be0494a3c1fb54c44ceccba60772ad045bc2814bd6c1e89b",
+      "path": "haim_acestep_04005.npz",
+      "samples": 1760000,
+      "sha256": "74a968051013efc5b24935a36f47b0a1d1c84e790fc745e250e62d461979e04d",
+      "windows": 54
+    },
+    "haim_acestep_04014": {
+      "identity": "5a17442cba274eabdb9b646cde63b528f9b9996707b675854aaf6be983744a47",
+      "path": "haim_acestep_04014.npz",
+      "samples": 1536000,
+      "sha256": "55851a912ca99c674c5415cfa60c04a12133b7e7b2e5d5bdc29d9788553f37ac",
+      "windows": 47
+    },
+    "haim_acestep_04021": {
+      "identity": "fb53d4ffd31d7b5937d8c47068c04a4a663f940c1998b3e40a9f7e32c0bc8349",
+      "path": "haim_acestep_04021.npz",
+      "samples": 1376000,
+      "sha256": "c2e07b7e90cbdaca7030f9f0635e073f7e80e706df3be018f08c295be0e2533b",
+      "windows": 42
+    },
+    "haim_acestep_04042": {
+      "identity": "26fbf04e0e519c2cc41560ef49a6cc620ca51453c0bcecf566f4e77218a32780",
+      "path": "haim_acestep_04042.npz",
+      "samples": 1856000,
+      "sha256": "76d82fde46fae8ff21eae5a38b0dcb324ab13db918d82d879873647bf423a052",
+      "windows": 57
+    },
+    "haim_acestep_04149": {
+      "identity": "f713796ea47083b2e185c608d03e8706619b1172bceb28c29c70e1ddfc6fd360",
+      "path": "haim_acestep_04149.npz",
+      "samples": 1888000,
+      "sha256": "e8c65749549cc2dd958145903a256bfa5e7f4bf7e0306891187af3bc96b95a96",
+      "windows": 58
+    },
+    "haim_acestep_04173": {
+      "identity": "9578fd9424b2ee74d516d06f8d0afe85159c1bcd7e5d1025ee71fd389d3e818c",
+      "path": "haim_acestep_04173.npz",
+      "samples": 1712000,
+      "sha256": "d31542e2744de8baa45b4df32dbb56882903995a0d39e49b1eb1e62e9a8a7527",
+      "windows": 53
+    },
+    "haim_acestep_04183": {
+      "identity": "074e3ed71a249ac13b034d5ee39ee8771bc9366f01869693c7f5822a1351742b",
+      "path": "haim_acestep_04183.npz",
+      "samples": 1088000,
+      "sha256": "bfd650f098f936eebac1df417fe9bd3f041e77c40eea1d37e8ef79cbb32dd5ee",
+      "windows": 33
+    },
+    "haim_acestep_04220": {
+      "identity": "4d4c93715fceea14a02668531c073ee948466d85e03134666170251107ef0fbe",
+      "path": "haim_acestep_04220.npz",
+      "samples": 1920000,
+      "sha256": "84112939df9b880a2865dd707a5d330d0e6cfac031aee6c2dfee06918871a49f",
+      "windows": 59
+    },
+    "haim_acestep_04294": {
+      "identity": "0e85957519453ed02bfa72bdd6cf7b8bf7fa336979a046e2b2728f974beff12b",
+      "path": "haim_acestep_04294.npz",
+      "samples": 1072000,
+      "sha256": "d3aa3b3e84f259a2f1d4a2de8bb370c68974a218dfa187f2adef7e1b27142c1d",
+      "windows": 33
+    },
+    "haim_acestep_04302": {
+      "identity": "d9668674cbfda744af8ef994743fae5cb726caaa59d6e0482ef053b86d155212",
+      "path": "haim_acestep_04302.npz",
+      "samples": 1168000,
+      "sha256": "f096d645afaa81eb4aeaa491bcb4117a8134f54a70f9692d2ca42b091c70cefb",
+      "windows": 36
+    },
+    "haim_acestep_04313": {
+      "identity": "7185451ef823e52938a71e2f372f222990d0b2b477de727bb3af398428434886",
+      "path": "haim_acestep_04313.npz",
+      "samples": 1056000,
+      "sha256": "1550cd5ba6a12fc76973a77fd01edfd6220f2f1cf07b6bea7d467b4c1c8c35ff",
+      "windows": 32
+    },
+    "haim_acestep_04348": {
+      "identity": "f2ce9f385a4c959ceeed2d4e4aaad9e73d0e60fa05af41992838bd779b3d4fb7",
+      "path": "haim_acestep_04348.npz",
+      "samples": 1888000,
+      "sha256": "72195cfc418bfb3b50612ca8bf23dfdb2ca905f3b736fe0669b660f165dbc3d2",
+      "windows": 58
+    },
+    "haim_acestep_04418": {
+      "identity": "00c2d45018500e6be8ca5927092e352126ae34a3de78577d53846f6302f0333f",
+      "path": "haim_acestep_04418.npz",
+      "samples": 1632000,
+      "sha256": "505d2fb2eae4b4ee54e80942f508ce38b105682098c2a9379639de6bb26b7a22",
+      "windows": 50
+    },
+    "haim_acestep_04441": {
+      "identity": "f9a0419b2ee41daf25d202c25724c63c405be56df2a8b7e0600a692370f4a118",
+      "path": "haim_acestep_04441.npz",
+      "samples": 1152000,
+      "sha256": "ea21841285a8f14b9a9d09a8554581f5bb6fbbd30270f070d26a61e125aa9ab5",
+      "windows": 35
+    },
+    "haim_acestep_04489": {
+      "identity": "69a44c4aa5d5b641ba1d082e38a2c055f3cddc25e498fc4860b18ed2596bec06",
+      "path": "haim_acestep_04489.npz",
+      "samples": 1584000,
+      "sha256": "3958b0b33331ea5674a48da0761fbdd1f7cce25a21af46623a22b6ac016b5a93",
+      "windows": 49
+    },
+    "haim_acestep_04492": {
+      "identity": "11952417e9c14bfebef48d164d9ab4ce473133f29652783d120b3c1ffed9cacd",
+      "path": "haim_acestep_04492.npz",
+      "samples": 1072000,
+      "sha256": "8bc3f737dc7f777f331fca493f699b0eba0f5a7e5bb204b375d2c51829d5cd50",
+      "windows": 33
+    },
+    "haim_acestep_04519": {
+      "identity": "f4007f8872e15dafcb90a49592b59db7bbe30ce4cc4f51b78b196b88fe67a164",
+      "path": "haim_acestep_04519.npz",
+      "samples": 1408000,
+      "sha256": "66e8b56d08ed4434bd12c457d6ca3b14333d46d254c4fe89c362d89aba5d98e3",
+      "windows": 43
+    },
+    "haim_acestep_04552": {
+      "identity": "545627e75b338280d60a6022a99ecbd7825f7caa1b87fcee2fb606ed3c597e33",
+      "path": "haim_acestep_04552.npz",
+      "samples": 976000,
+      "sha256": "6a62a7944ddfe94ad0a10798426cd8c9f7c9def62c4b67ba7bfc2eb3e44e1c73",
+      "windows": 30
+    },
+    "haim_acestep_04583": {
+      "identity": "3e3bd3498bfc0207a0ab82fcc8077f0f4f44b7656fa673f71d7da0142ed171ff",
+      "path": "haim_acestep_04583.npz",
+      "samples": 1104000,
+      "sha256": "6a1fae48e13c7c956b4fd0ee8ad6152694c891c44602bebd76e48e2f3ff0413e",
+      "windows": 34
+    },
+    "haim_acestep_0460": {
+      "identity": "fd5208ee0065e932173d03f9b10c318456e8f66e7f818c6fbaf80d3a7d1f1de8",
+      "path": "haim_acestep_0460.npz",
+      "samples": 2400000,
+      "sha256": "a6a1ce927ed63960e3db29f7a231e3a5c4487675fc633e87c51930bb0f004774",
+      "windows": 74
+    },
+    "haim_acestep_04626": {
+      "identity": "ad44ff6e3a526dd8f3323b47476b255bdfa9f2a2cdc0e83e5557d3fe81e62f5e",
+      "path": "haim_acestep_04626.npz",
+      "samples": 1344000,
+      "sha256": "6a46749e2a2aaa859819c3521062ee670e40085b30f436e7513367224312d3a6",
+      "windows": 41
+    },
+    "haim_acestep_04636": {
+      "identity": "17c3826ef21556bd9b2f96b46f7aab98816729f75474978379072e2b5ad5a242",
+      "path": "haim_acestep_04636.npz",
+      "samples": 1744000,
+      "sha256": "fc6b65ed5b9a6d27cd3ba6aa1fd2167b48097c4ebf1353dedd78a7c690372bd2",
+      "windows": 53
+    },
+    "haim_acestep_04673": {
+      "identity": "8246e38ec5f7a2198597eaff3bfd18e0cd1d6c0d0c3ff6bfb35d888192bedeb1",
+      "path": "haim_acestep_04673.npz",
+      "samples": 1520000,
+      "sha256": "40e24bc9a022779ef4856c6afb3e7b85798f24011b15cd320bde230b55de76ff",
+      "windows": 47
+    },
+    "haim_acestep_04684": {
+      "identity": "fafbfaacbcb26e8a1b68794aadd9c81e75f07c9110e6ed5d514e97eeb2377a3f",
+      "path": "haim_acestep_04684.npz",
+      "samples": 1472000,
+      "sha256": "c2ae53136f6f8aa6fb4dee26d0cdb291038aa2d30ec179b87e839d2a2d97dae6",
+      "windows": 45
+    },
+    "haim_acestep_04691": {
+      "identity": "9da71727d05b827cffc76ad67e7ece069b51e7b06525270a082703e2d0b89ad3",
+      "path": "haim_acestep_04691.npz",
+      "samples": 1808000,
+      "sha256": "df925ecd27b8b87f7c53367f2e24d6dca196dff1abf89f8f94c18317c4478175",
+      "windows": 55
+    },
+    "haim_acestep_04716": {
+      "identity": "b97bb447bddc43ae3685b950b2e7bf866197867809c4e1fb20bdbdef62072b21",
+      "path": "haim_acestep_04716.npz",
+      "samples": 1824000,
+      "sha256": "321bafc3feec6340d19d5ff47f48fada1bf50adb41f28f2f59f028732c91ccef",
+      "windows": 56
+    },
+    "haim_acestep_04750": {
+      "identity": "d4326bf8ba0f6d60e32fa67e094d1c1d8ef381fd4b92f417761a3e582eb4258b",
+      "path": "haim_acestep_04750.npz",
+      "samples": 1760000,
+      "sha256": "7a7aa0cf16b7ed38ebae509e652ecb12e1f57aa351c1a85b431b0d423a96722d",
+      "windows": 54
+    },
+    "haim_acestep_04789": {
+      "identity": "68f42cd042adbde6a60f7bdbc9df7be1fefdd053fa392d7be800e4cb3ea6e937",
+      "path": "haim_acestep_04789.npz",
+      "samples": 1552000,
+      "sha256": "50c53160f1fcb9ccccf0881bd8522ecc3ab70343bf89d4f6263581bb078dc43c",
+      "windows": 48
+    },
+    "haim_acestep_04835": {
+      "identity": "a9da8550e5254050572a240a8f711a23886a090a392545e4387c1d51aae3d82f",
+      "path": "haim_acestep_04835.npz",
+      "samples": 1312000,
+      "sha256": "313f8c0866ce829348fa9ac90171e8355e1bc39a74fc43c89b7eb8e02269e1ca",
+      "windows": 40
+    },
+    "haim_acestep_04940": {
+      "identity": "e774519ae0f34f18fff0d7c0deb2685e955ea26d4c124626a265412599da04df",
+      "path": "haim_acestep_04940.npz",
+      "samples": 1072000,
+      "sha256": "3f5450e14d0246f315c242ad317cc48949b822db4fdd7244b55d5bf1e7490c0d",
+      "windows": 33
+    },
+    "haim_acestep_04945": {
+      "identity": "c114e680a6d02f958d8d4ad0f20695d542297a9b3e651a3787e9aab71b8611dd",
+      "path": "haim_acestep_04945.npz",
+      "samples": 1120000,
+      "sha256": "9cb3a5ef335d3c02bfe9dd364d4f38aa3ffdb8da234e0b703efd6a01cabc5e91",
+      "windows": 34
+    },
+    "haim_acestep_04963": {
+      "identity": "1970e271569fd0310d508925d97325068b2e891ef3872cb9ad157bf2984df071",
+      "path": "haim_acestep_04963.npz",
+      "samples": 1600000,
+      "sha256": "9c1eadfa413fa16611615383f9e01bcd43322e414d7b388ddc3b2d8583d640be",
+      "windows": 49
+    },
+    "haim_acestep_04988": {
+      "identity": "95f4db4e767889b48cb4af921d9abad3f3566a84b5046bf4afe6f54abcb6e27e",
+      "path": "haim_acestep_04988.npz",
+      "samples": 1136000,
+      "sha256": "c7bf8209a895c65cb944ba4e7013d7777c40f471fd92126086568e47965558e6",
+      "windows": 35
+    },
+    "haim_acestep_04990": {
+      "identity": "4410cb352eefdeba47426f6c6c2dc680c6b9467e179d484f1d20c89a1366eeb0",
+      "path": "haim_acestep_04990.npz",
+      "samples": 1568000,
+      "sha256": "3aa8ac88573a92c0272948116b0c7065e8e387a1618b720a4d68747c1e3080b2",
+      "windows": 48
+    },
+    "haim_acestep_05016": {
+      "identity": "e09e96aaed59b89bd624b8a242350b24d621b781446f53ef2d7b701435f84b96",
+      "path": "haim_acestep_05016.npz",
+      "samples": 1584000,
+      "sha256": "fee1d5eaafee733b2d7717affa122e85e20b410a22f501eaeb05a09a16692a65",
+      "windows": 49
+    },
+    "haim_acestep_05031": {
+      "identity": "92a4262c7c7f7786a2f164fcc75d29d3ba68314655d530ada451344ee569cae5",
+      "path": "haim_acestep_05031.npz",
+      "samples": 1040000,
+      "sha256": "a28a1f1bfe6380a078fb1f19f80ea88b0c197816860cb2dae20aeba8df8d37a1",
+      "windows": 32
+    },
+    "haim_acestep_05070": {
+      "identity": "21f313ec1a6ab6c5aa635ff805d54ac226dcf3c57799820209d3d753d67489f4",
+      "path": "haim_acestep_05070.npz",
+      "samples": 1008000,
+      "sha256": "082f99786bcd8191c27a496d0f80b64c685b8b09dad036e0db6b756e51f2908d",
+      "windows": 31
+    },
+    "haim_acestep_05073": {
+      "identity": "44d5aa1077116c0b577137a84b0126ea45bdce12bf4458a2512cff19ebc385c9",
+      "path": "haim_acestep_05073.npz",
+      "samples": 1888000,
+      "sha256": "f6d3770e8503156883439057ae5e5d14ee9c741c85c915f9e058d8d4ecc9da3e",
+      "windows": 58
+    },
+    "haim_acestep_0508": {
+      "identity": "0fba3db571770a605f2aff526bd21cd1448d5f1a16651104ffd4d72f89f809b3",
+      "path": "haim_acestep_0508.npz",
+      "samples": 3840000,
+      "sha256": "b89e4dc78eaea01719b635d30ad3a22eb4acedce3fca462c6728966ff382a045",
+      "windows": 118
+    },
+    "haim_acestep_0511": {
+      "identity": "9dc99b9502dfc9cf3e91c02d738c0c9b6247e53a82849da9fec8662bc27efc9a",
+      "path": "haim_acestep_0511.npz",
+      "samples": 2720000,
+      "sha256": "89f7fa48fc87bb5841d414b1eeac34a16eea87226776d2da828bbb65996b5d90",
+      "windows": 84
+    },
+    "haim_acestep_05124": {
+      "identity": "161d31138895c1a5116ffee42b5036072def68a21b5316e6497a34bd006dc732",
+      "path": "haim_acestep_05124.npz",
+      "samples": 1824000,
+      "sha256": "b96d61f685a1f18ab2aedcd06f629a36b6b0aec6bbf5e2354b1b8c6ba85da41e",
+      "windows": 56
+    },
+    "haim_acestep_05163": {
+      "identity": "b77645ef19bf0115cdb16fd7d36210c52207e723b5c622f21530941ed2d4538f",
+      "path": "haim_acestep_05163.npz",
+      "samples": 1760000,
+      "sha256": "a42f9ff9185e39abc755ad695bce8a349a24d4ae2af8e1cff89603810effdd39",
+      "windows": 54
+    },
+    "haim_acestep_05218": {
+      "identity": "9a526dad1fd0acb4bbe74b4057c3aad14150b09ac7c65527c2aefa4f69e26897",
+      "path": "haim_acestep_05218.npz",
+      "samples": 1216000,
+      "sha256": "9750d2ee786d1af155374628a4d51822ecedadd515e8dd8b95dacf3d458cb1fb",
+      "windows": 37
+    },
+    "haim_acestep_05226": {
+      "identity": "f1f2fe15aac5604161743eed0312cd20148ed22ce83de6a33d243b6746fe58b6",
+      "path": "haim_acestep_05226.npz",
+      "samples": 1264000,
+      "sha256": "0d8e7bc630e39325ad39a5c46993b384d01d3a5fb22356cd5b261a245b43b4b3",
+      "windows": 39
+    },
+    "haim_acestep_05246": {
+      "identity": "41535a5b115b73477a99fc2a55452259dee797e7a2fe1ff57df5d8927f3bcf48",
+      "path": "haim_acestep_05246.npz",
+      "samples": 1888000,
+      "sha256": "dae7cb6d184936b3cc96b3c1f87a7571704a71c89595f84573e69d91789ed8ce",
+      "windows": 58
+    },
+    "haim_acestep_05264": {
+      "identity": "cec777a68337ef541c939faa29bfcbe9fe3ab9421320ceea3edcd9f784dcbac3",
+      "path": "haim_acestep_05264.npz",
+      "samples": 1888000,
+      "sha256": "e508fa104d66e8d1cd4179ed3c57fdb7a4777328df729906887643d30f3c6598",
+      "windows": 58
+    },
+    "haim_acestep_05276": {
+      "identity": "1adea5e1fc7a8991d46b7d60d9b60576732fd94d8a3ead28ef2962b12ffe25f3",
+      "path": "haim_acestep_05276.npz",
+      "samples": 1728000,
+      "sha256": "3a727619b05706da62103a9e49c36bca27c0f6a602334e9afe9f7c063021c525",
+      "windows": 53
+    },
+    "haim_acestep_05359": {
+      "identity": "66e1951df31fbe9dbef31615ef5e7cbf3ef9fca17e4a7551435c0149815674bd",
+      "path": "haim_acestep_05359.npz",
+      "samples": 1408000,
+      "sha256": "f95bc0730a138ad621dd48dd00419b8be8fc5cb7581992faf9471a75a4c8bf97",
+      "windows": 43
+    },
+    "haim_acestep_05403": {
+      "identity": "8670f0ecd8b9c122e12d632c720820186c4ad974bf1b8a6b886a902976d2acba",
+      "path": "haim_acestep_05403.npz",
+      "samples": 1552000,
+      "sha256": "5d93f14f3826ba9aee2b850b552a5880c50eda6c52997027f3930d32a9895210",
+      "windows": 48
+    },
+    "haim_acestep_05436": {
+      "identity": "6f19729662a3a101730c8a2cb5d77010ded13f1acc05ebc441ae56655dbadc42",
+      "path": "haim_acestep_05436.npz",
+      "samples": 1280000,
+      "sha256": "20b26705d205d9d8d9dbeec92b4cca76d4503d21203b9af5093efc7747da8feb",
+      "windows": 39
+    },
+    "haim_acestep_05451": {
+      "identity": "81669317da753fa94b53ad21f528ef7c0a24169df774aa8b05fcefcc0b8e1afa",
+      "path": "haim_acestep_05451.npz",
+      "samples": 1584000,
+      "sha256": "4c50c94cc4e724167874a8444ade018b51dabc83525fa24e36bce3c7d6989cb0",
+      "windows": 49
+    },
+    "haim_acestep_05484": {
+      "identity": "0105d3a3cc8e78b86520e1dc73e4d74dbed6ed75730c9fca9e4e9275161d0b23",
+      "path": "haim_acestep_05484.npz",
+      "samples": 1392000,
+      "sha256": "0b730e55eb900b5f48cc4201ced457bc2684ead9ec04898a53ff8dd9c0dd9098",
+      "windows": 43
+    },
+    "haim_acestep_05495": {
+      "identity": "80fcd758ea6fdedb4345458e2779ae9cadb2e0916bb387c1a41e81a214a9d311",
+      "path": "haim_acestep_05495.npz",
+      "samples": 1232000,
+      "sha256": "79388f18d49833fca857e23e341ed23ee3c42a8d1d544bf4162c0f2463cf151e",
+      "windows": 38
+    },
+    "haim_acestep_05502": {
+      "identity": "f3e0d700b57b0821e42f58819419df857a2ec3908cd2fb95dc40ec7e93b9eacc",
+      "path": "haim_acestep_05502.npz",
+      "samples": 1712000,
+      "sha256": "0f121381d318775185ce1fc9ccd54f6443bdfd680353db6fe4fb4df661b2a56a",
+      "windows": 53
+    },
+    "haim_acestep_05522": {
+      "identity": "8ea6eee89d9d43a9cca049f115b43e86091a9a6218d2984cd3cae3f66274f2f2",
+      "path": "haim_acestep_05522.npz",
+      "samples": 1792000,
+      "sha256": "00d26d30527c41d2fb13c9b0353d0b97afb5929122f737f380b7484f5e6608ab",
+      "windows": 55
+    },
+    "haim_acestep_05533": {
+      "identity": "5d566eb5779c9350fc70499deceb0ce5eb4462cc7dc3145ab5f5a4513621b76a",
+      "path": "haim_acestep_05533.npz",
+      "samples": 1392000,
+      "sha256": "2acc8fa328b3b6f3f2058cc1134dd5068b66c1b8d83dce01d1ffd3950b32edef",
+      "windows": 43
+    },
+    "haim_acestep_05554": {
+      "identity": "171b06c1b498f74b63deb15518d273abf25cea266b28f28dde9a1ad59657e4fa",
+      "path": "haim_acestep_05554.npz",
+      "samples": 1120000,
+      "sha256": "cf1205ddc70e479b1002c3e891fb62fc76e6be576d41d227f6614555f1f87ea9",
+      "windows": 34
+    },
+    "haim_acestep_05618": {
+      "identity": "fac42acdcc74c99b6bc203d0fc2a1b0726bac1254dae4bf84f201fb1f963d279",
+      "path": "haim_acestep_05618.npz",
+      "samples": 1840000,
+      "sha256": "62f6bf3179be47100b4aeb538398c363257d9fa7315095a46095a8e02e8ff1fa",
+      "windows": 56
+    },
+    "haim_acestep_05626": {
+      "identity": "d4fa314294b4e2d7833ec8b60a7b7a804a6b69ba1ef4646247941f3a8b892a27",
+      "path": "haim_acestep_05626.npz",
+      "samples": 1232000,
+      "sha256": "4f6d8a2fe4f7f94e45935d025a5215e6e33e9769053e896432dc57d5b95f5d5e",
+      "windows": 38
+    },
+    "haim_acestep_05670": {
+      "identity": "637c57b6f76933b22c031d9a30507d80ac0008509efa44a56489f8b24c53c10f",
+      "path": "haim_acestep_05670.npz",
+      "samples": 1728000,
+      "sha256": "49baacf0a65f1aabc3f6d41bcd97580d2b559f5c151d4202e9ac449b0b27f218",
+      "windows": 53
+    },
+    "haim_acestep_05727": {
+      "identity": "dec3aa99c438947875922133304e8075d7525ae595b45abae1bcb4c3174524d9",
+      "path": "haim_acestep_05727.npz",
+      "samples": 1872000,
+      "sha256": "74c36f73df1d19b172580f937bd56b59052717d3da5dfba63a96b2c1bb809d53",
+      "windows": 57
+    },
+    "haim_acestep_05761": {
+      "identity": "8ac9d69a8559b16265bc9bf8015defc7bff78875e45228e2d562c71b5d7c42aa",
+      "path": "haim_acestep_05761.npz",
+      "samples": 1632000,
+      "sha256": "724d9c7f56e570b253f9b4319498316fb424e4f2c220553e9dbc00fa0cfe5b79",
+      "windows": 50
+    },
+    "haim_acestep_05779": {
+      "identity": "0df4ad0216f1b4f756b7151d4869d51c25d3b3306a1cede53e4b29cfc7d4b2d6",
+      "path": "haim_acestep_05779.npz",
+      "samples": 1264000,
+      "sha256": "8291136ea2007eae707c1ce42c1ea155d7c751f7b4b8515ae075db9bbeb4aacf",
+      "windows": 39
+    },
+    "haim_acestep_05789": {
+      "identity": "dff664d076f2df0d3e83614b5df59dda354b8aafe7ea431a36639d53967497b7",
+      "path": "haim_acestep_05789.npz",
+      "samples": 1744000,
+      "sha256": "372501dc741a116f24ec1f1d93f2d6eeb083768ca7aab033393b17d994dc2459",
+      "windows": 53
+    },
+    "haim_acestep_05919": {
+      "identity": "a1054be8f264ee379b4cc62088e8d300b6fb457fdefac1dc2fd11ad9e7d38c3a",
+      "path": "haim_acestep_05919.npz",
+      "samples": 1568000,
+      "sha256": "72ffe705a1a2fca4b303d94e8821d4b2b24c4ec7dd476b8ece4601dc21a46e2b",
+      "windows": 48
+    },
+    "haim_acestep_05971": {
+      "identity": "121271588bfc51ee8800ea207f1462244e6eb6b4ff5c3fe2ea2c85cb8a7c4da2",
+      "path": "haim_acestep_05971.npz",
+      "samples": 1776000,
+      "sha256": "e7f2872799784d9cd51ca7a72cf5a3791183b97aa32b1ec8d11ce0c5317846d3",
+      "windows": 54
+    },
+    "haim_acestep_0676": {
+      "identity": "d07f8287d246c8305f3cc3cb591daeeb344f89765aab9f193b85105036c547c7",
+      "path": "haim_acestep_0676.npz",
+      "samples": 2144000,
+      "sha256": "6fdcedfda75eb270705f1c624e1455000ca94eca3d37da00e485f8433d215526",
+      "windows": 66
+    },
+    "haim_acestep_0772": {
+      "identity": "a2d5692d98031ffa84df6de901ed3b073d6146a74d1742a9a480db31b8976055",
+      "path": "haim_acestep_0772.npz",
+      "samples": 192000,
+      "sha256": "3807e523c0e269bd280f63d00507ff9d507d2d01c4dd7c44626f4ecce816f5e1",
+      "windows": 5
+    },
+    "haim_acestep_0794": {
+      "identity": "3ff428be25c2550906a3f840fa85c872bf9ca059a96fc21106bebd5084923810",
+      "path": "haim_acestep_0794.npz",
+      "samples": 2512000,
+      "sha256": "a95e934d7a34c8fb77b787b3aa3aa4f0dcc5a2a55795cbd02c2c296629f78b3b",
+      "windows": 77
+    },
+    "haim_acestep_0891": {
+      "identity": "9cace1b5fa359df34250cf0669555ee01d89221c029ac0664ed0795ee496195d",
+      "path": "haim_acestep_0891.npz",
+      "samples": 2496000,
+      "sha256": "9cfe60b2a03601ab2cae2d4017c35f38d777e38188c45b411fc752b1710478ee",
+      "windows": 77
+    },
+    "haim_acestep_0898": {
+      "identity": "23beeeca83f4b96c87ec0b048a0adc400fbf18984e942268de62a5ca851f6a92",
+      "path": "haim_acestep_0898.npz",
+      "samples": 2224000,
+      "sha256": "ce435224e7c2f4f8418c361a9cef91504d271fbcebbb4c130fff9622a7ecc4ed",
+      "windows": 68
+    },
+    "haim_acestep_0912": {
+      "identity": "e93bee9d5f85d5edb2664865c0dc565896c06c356ae3a6e509ff4af71ffebb1f",
+      "path": "haim_acestep_0912.npz",
+      "samples": 2240000,
+      "sha256": "7ee6caaeeb1274dbfa57289e460bd4835d7d0b1919f58e74c99dd7062d03c822",
+      "windows": 69
+    },
+    "haim_acestep_0988": {
+      "identity": "c26614fa8fe45219217ed7520dbfb026d38dc25695828d4e76c3e4e9faa29b2f",
+      "path": "haim_acestep_0988.npz",
+      "samples": 2608000,
+      "sha256": "37dd55329bc729142b866bb69339c96e75813c897fb199ffec5b18c0fa06d8dc",
+      "windows": 80
+    },
+    "haim_musicgen_131da087-4a28-4215-a486-ace346186e17": {
+      "identity": "87f2dd3a2f67aabfe884309f8c487a4115364afa664dd1529357327e94c189de",
+      "path": "haim_musicgen_131da087-4a28-4215-a486-ace346186e17.npz",
+      "samples": 159040,
+      "sha256": "566080c767eb5c5b851f523b719398448be288e5c1b592736fe781b69a5364ca",
+      "windows": 4
+    },
+    "haim_musicgen_1850bb7f-4e96-4922-96f2-9aaa49f734bd": {
+      "identity": "d438e6f9dd52a6b8d00bd00dc3233afec548609d8a23bb07c56d7fb7d861a7e3",
+      "path": "haim_musicgen_1850bb7f-4e96-4922-96f2-9aaa49f734bd.npz",
+      "samples": 159040,
+      "sha256": "9b8bc0563a52ede78248aae6e94e8321a4cea5d9ffedc69e8d7370ccd03287ff",
+      "windows": 4
+    },
+    "haim_musicgen_1f5268b4-eff5-4394-b7bd-9e672fdbc78f": {
+      "identity": "d8f40fc96c7f60a0eced2d9b3fae6b869c7fc31a9843bf62c6d0cfffadf0c4a8",
+      "path": "haim_musicgen_1f5268b4-eff5-4394-b7bd-9e672fdbc78f.npz",
+      "samples": 159040,
+      "sha256": "fd6b7d12e556317c31537e8c666ede72d62931cc8db7867aedb8ed4360da3ef0",
+      "windows": 4
+    },
+    "haim_musicgen_23fdc894-5358-4b3e-b4be-062708f48668": {
+      "identity": "77f74c298a4be93e8ae058f9613776d624f76f082701729be87884d758c26f5a",
+      "path": "haim_musicgen_23fdc894-5358-4b3e-b4be-062708f48668.npz",
+      "samples": 159040,
+      "sha256": "d6ec1204512b649c1a11daabb7e40f7d69ab9ba3327ff51bdc7869643abcae23",
+      "windows": 4
+    },
+    "haim_musicgen_2b3f8b46-d90d-425c-b851-2c26c4055962": {
+      "identity": "af5a80f7af784b4b09b6607b1e4bdbff3a684fcbac79faaa68984adcdda95212",
+      "path": "haim_musicgen_2b3f8b46-d90d-425c-b851-2c26c4055962.npz",
+      "samples": 159040,
+      "sha256": "d915a8ddee01effa8a14bd87a8122a81a52f7df6979b88effad92ab73fb6b2ba",
+      "windows": 4
+    },
+    "haim_musicgen_3520cc2b-a4df-42d6-a1a2-49546d18ac0f": {
+      "identity": "954081b1f41eb24fc4bd9ffbc98c7567e2ff978791645527c1716c01f30956e8",
+      "path": "haim_musicgen_3520cc2b-a4df-42d6-a1a2-49546d18ac0f.npz",
+      "samples": 159040,
+      "sha256": "d2c370a14d4790d21d2f260e3813a7215b9efe708e1cd773a1b03c2d99eae9cf",
+      "windows": 4
+    },
+    "haim_musicgen_467a816b-b437-4335-a12f-ed41b169d300": {
+      "identity": "2220c28fac4e2892067594c2e176585125154447480dcc4bedc9b34ca39be600",
+      "path": "haim_musicgen_467a816b-b437-4335-a12f-ed41b169d300.npz",
+      "samples": 159040,
+      "sha256": "53b1de69abb377e6c39800340a11c99d3338a74db01e934902641983fdab1c9a",
+      "windows": 4
+    },
+    "haim_musicgen_4691a3d1-6fc0-4761-843e-68d2eb463879": {
+      "identity": "c1fa33d02b21c783adacbff5ce4bd38658c6e0a9911b91676aa3de9e680580b4",
+      "path": "haim_musicgen_4691a3d1-6fc0-4761-843e-68d2eb463879.npz",
+      "samples": 159040,
+      "sha256": "5045c1666aa40995006d01c242ee55414c883f40a99b5f1ac3713b8397fd69f9",
+      "windows": 4
+    },
+    "haim_musicgen_55bf0953-f2da-4e4a-90db-0b56a971d99c": {
+      "identity": "aee5177708e254b2e0ae5bef4b229430f4989522a1d61182e9b82f66ddcb5ed7",
+      "path": "haim_musicgen_55bf0953-f2da-4e4a-90db-0b56a971d99c.npz",
+      "samples": 159040,
+      "sha256": "c5da28f00740c938f34cc4b476351d885ef43ea251f5948d19460c858f55a07c",
+      "windows": 4
+    },
+    "haim_musicgen_59419ecc-2697-451f-bf44-7faee27db58b": {
+      "identity": "295bf4f4630b3cc706c9e248fd7943459340f3e8897faad3266e9305af4c0c90",
+      "path": "haim_musicgen_59419ecc-2697-451f-bf44-7faee27db58b.npz",
+      "samples": 159040,
+      "sha256": "10e8f10a2b313e5c4658b8a5f32687af249cea163212f915cd19ef369ad2e56f",
+      "windows": 4
+    },
+    "haim_musicgen_5f63f839-703e-482d-93b5-54ecbd00ed1f": {
+      "identity": "a1f92e547bf5e0c5cf21fae2cfa4e39cf0a8de823e6ee6bcf2e05563cbc3794f",
+      "path": "haim_musicgen_5f63f839-703e-482d-93b5-54ecbd00ed1f.npz",
+      "samples": 159040,
+      "sha256": "fb245ef75fbb45f120a2c97744312625eac184c4d5a29ba3051be3ff0771a11c",
+      "windows": 4
+    },
+    "haim_musicgen_6907a05c-6f4c-4531-b1ac-ce5cf42d683f": {
+      "identity": "dc07332366e45b72fd781853cb827a0f0150f845e32073bec7c4430d6922373e",
+      "path": "haim_musicgen_6907a05c-6f4c-4531-b1ac-ce5cf42d683f.npz",
+      "samples": 159040,
+      "sha256": "4680a21093f2e0243aca65ca327237c5666aa0c379ce8384180575d53e6c1280",
+      "windows": 4
+    },
+    "haim_musicgen_6e4aec30-b996-4f2a-b905-de413b4a2cb5": {
+      "identity": "4197511ddd2669aa520f9eb2bf9ecdeae49907dada5c413d49c0e32e2a625df8",
+      "path": "haim_musicgen_6e4aec30-b996-4f2a-b905-de413b4a2cb5.npz",
+      "samples": 159040,
+      "sha256": "58b9fc5480df4971a129c3f46d10adc5f8d2d5cf6f8c14ba4669f7e14fe71472",
+      "windows": 4
+    },
+    "haim_musicgen_70d79ce1-796d-456a-ab33-f9d5b67b7e50": {
+      "identity": "d028a7076fed550afa6f0b09a70766737117a94ba32f0ad7b9bd8eba0ecddf78",
+      "path": "haim_musicgen_70d79ce1-796d-456a-ab33-f9d5b67b7e50.npz",
+      "samples": 159040,
+      "sha256": "b9d385c02f67130b460dce0ceb4937531b1db84151ba7706aaa2e52618f9e3a6",
+      "windows": 4
+    },
+    "haim_musicgen_719d271f-bd66-4491-93c3-75f82a112c52": {
+      "identity": "b9c1f8f67876b79a0d802610a80edea39dfb4a970790553178f3cd57c0a7d1fd",
+      "path": "haim_musicgen_719d271f-bd66-4491-93c3-75f82a112c52.npz",
+      "samples": 159040,
+      "sha256": "b642af15c8b060ff63811137cf45bf0cb7c424655cddbe47042b1f7366cc92d4",
+      "windows": 4
+    },
+    "haim_musicgen_79063e6c-c0fb-4457-bb09-c0b0e615935f": {
+      "identity": "6ce1dbb4053c42de5c364b9d05c57c59ae856e8454ad1c7c46290ee997154e17",
+      "path": "haim_musicgen_79063e6c-c0fb-4457-bb09-c0b0e615935f.npz",
+      "samples": 159040,
+      "sha256": "c51de2f0e2a270b7ed6a5a126985f9e04ec9f5c2df1c8c289376af0e2f604c02",
+      "windows": 4
+    },
+    "haim_musicgen_83b2c90e-311d-4ffc-a084-51e16f1060ef": {
+      "identity": "9cceb66419af826113481297ac6dd1d0d908e5eacc268c5db2a3069f9e360259",
+      "path": "haim_musicgen_83b2c90e-311d-4ffc-a084-51e16f1060ef.npz",
+      "samples": 159040,
+      "sha256": "0eeacf7ed2969b54f4df3f72e3ab36fb082e304ec78fc18cc31cae9780e927b0",
+      "windows": 4
+    },
+    "haim_musicgen_860bc9ca-154a-45d0-a3c3-2ff8b933f856": {
+      "identity": "8c09cff879bbb6dc7d87fc9d480f36c0fd1b2dfb4d8b291ba880e5e958df1226",
+      "path": "haim_musicgen_860bc9ca-154a-45d0-a3c3-2ff8b933f856.npz",
+      "samples": 159040,
+      "sha256": "7495137db7bb93d637efd15805dd9c8e8e7299f7738578b051b1a6c3d3bbfb63",
+      "windows": 4
+    },
+    "haim_musicgen_95fb1d7f-a367-4d2f-b01e-7c470372b5df": {
+      "identity": "4ad42916138dc4da8c8392e8687bc2963e31e6f449c2d317a346ad3ed5d6c48a",
+      "path": "haim_musicgen_95fb1d7f-a367-4d2f-b01e-7c470372b5df.npz",
+      "samples": 159040,
+      "sha256": "7c327c93ae489b95dacd1ba6a29b740fe1fabdeadda5d90b9af03d4df484f591",
+      "windows": 4
+    },
+    "haim_musicgen_99aa6460-24e7-4983-9ebb-b8a0957919b8": {
+      "identity": "1b9804c90e28e96211c2ba783ab98dd77e980d776d021b8debbac89446e0c085",
+      "path": "haim_musicgen_99aa6460-24e7-4983-9ebb-b8a0957919b8.npz",
+      "samples": 159040,
+      "sha256": "f5342224204682cc3c17c449a7ae0efc7182fccee8a75f23e4e503f6542d91f6",
+      "windows": 4
+    },
+    "haim_musicgen_aebbc635-baff-4537-a9a9-32fe06346983": {
+      "identity": "3a7fb9880f05558ec704abad8271aa9c3a6074710deebd6752d691d4fe3bbc70",
+      "path": "haim_musicgen_aebbc635-baff-4537-a9a9-32fe06346983.npz",
+      "samples": 159040,
+      "sha256": "8761a072275a70df9bda63566d91b2fa116eb9a046707be73773be7eb1fe27e9",
+      "windows": 4
+    },
+    "haim_musicgen_b13a79ea-d047-40e0-a4f2-b088d930d013": {
+      "identity": "7f1be9473e13b20c1eabd6ba6f2c8253de55880268b08d9acfbd41871a3536e6",
+      "path": "haim_musicgen_b13a79ea-d047-40e0-a4f2-b088d930d013.npz",
+      "samples": 159040,
+      "sha256": "1ac41567b5fc3cbaa02f16f680a020ec17c1ddee1393525c4a693f3e134f5c8c",
+      "windows": 4
+    },
+    "haim_musicgen_b34ef7f2-6027-4d10-8437-f23305304c57": {
+      "identity": "bd2f44eeb65c8e0722b2ddffa14cce11bb06651fececf59f7768ed49f659df59",
+      "path": "haim_musicgen_b34ef7f2-6027-4d10-8437-f23305304c57.npz",
+      "samples": 159040,
+      "sha256": "a60ed431bfd9e56199582c1ed93f65ce875fd723d86c88b353275eead54bd641",
+      "windows": 4
+    },
+    "haim_musicgen_bc2f332b-61fa-4bff-9e55-29f14dc65c28": {
+      "identity": "05c65c8e917482336de764297327a205fbfa9c58437c0869b06d360a0197982d",
+      "path": "haim_musicgen_bc2f332b-61fa-4bff-9e55-29f14dc65c28.npz",
+      "samples": 159040,
+      "sha256": "3342aa138fc13942062c5df8e3f571cf5cbb3bda052b3970ade0dd0f32676978",
+      "windows": 4
+    },
+    "haim_musicgen_c1d98114-6f15-4db3-ba53-f8a4190c4541": {
+      "identity": "75ea6f13236ea79aa88917d42141375959e412d96a0d6691d1ca5f18d0521ea7",
+      "path": "haim_musicgen_c1d98114-6f15-4db3-ba53-f8a4190c4541.npz",
+      "samples": 159040,
+      "sha256": "d8f441ddd9f06b235d7c3d9c94e4bfe76d6e24c69d5a001e705d34344b31c801",
+      "windows": 4
+    },
+    "haim_musicgen_cde3d71a-a71a-4ff1-8b52-a76336f026bf": {
+      "identity": "a793744955d67273c2b2ca80d3fbd663096e218bb7c947d91db258d8ce174e7b",
+      "path": "haim_musicgen_cde3d71a-a71a-4ff1-8b52-a76336f026bf.npz",
+      "samples": 159040,
+      "sha256": "670eeb680fe6ac235bc42327a2d6923c7d81d634f3806aa3e569d06f4dca90b5",
+      "windows": 4
+    },
+    "haim_musicgen_d25e6a83-009a-4db8-89a9-5790264d7b4a": {
+      "identity": "fa8632501ced0b500462a00023e1919fd29b7eb7833431f46e18fff0512980c0",
+      "path": "haim_musicgen_d25e6a83-009a-4db8-89a9-5790264d7b4a.npz",
+      "samples": 159040,
+      "sha256": "2195afce7bf415e0f0325d85844df9bc15b1af1368df807a3006915063c51cec",
+      "windows": 4
+    },
+    "haim_musicgen_e8067058-a74e-407e-abd3-8827292b7828": {
+      "identity": "1a47e6bf525439a7d445efa94604ba46639ee619f8e866dc97eaac3798935ed5",
+      "path": "haim_musicgen_e8067058-a74e-407e-abd3-8827292b7828.npz",
+      "samples": 159040,
+      "sha256": "42ddca297653d2badd70f2a665194528286d0073ea16ac0f33249bf45ecfff02",
+      "windows": 4
+    },
+    "haim_musicgen_eb3d12d8-73bf-46f5-ba38-19f4efeec27c": {
+      "identity": "07489a4ffc6787d8aa632e2236759820aa8a1a0588dd397a503f72e3e711b7ed",
+      "path": "haim_musicgen_eb3d12d8-73bf-46f5-ba38-19f4efeec27c.npz",
+      "samples": 159040,
+      "sha256": "bb281df926ddceb746f8e20e2358366d3f7df014c4fe0fbb0296dc6761260405",
+      "windows": 4
+    },
+    "haim_musicgen_f9f92837-903e-4064-aa3c-58dbe02aad18": {
+      "identity": "bcd32cc36d48fb0561c7d0e32afe3a961424128f72f4a9f785135735cdcfdeba",
+      "path": "haim_musicgen_f9f92837-903e-4064-aa3c-58dbe02aad18.npz",
+      "samples": 159040,
+      "sha256": "89e92bcad561470f90756a089258961ad37f670838ec1a40704262a170d15789",
+      "windows": 4
+    },
+    "haim_musicgen_musicgen_large_00052": {
+      "identity": "aec672e82df295b67877850e0dd579a3ad71e216306e66f735be2c8d9f3ceaeb",
+      "path": "haim_musicgen_musicgen_large_00052.npz",
+      "samples": 162880,
+      "sha256": "b110179a2823ffa8a7340558e02cefcbaa220475c1d27858c48ecaa220202ceb",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00071": {
+      "identity": "c8d350bdc6abb68b0085dc2cf1437978073b3e9d8d2054689487fab666ef7199",
+      "path": "haim_musicgen_musicgen_large_00071.npz",
+      "samples": 162880,
+      "sha256": "2d2862fdc1f77cd3488b57ef6c3841914705f378dcc458fa7e2646d384189821",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00106": {
+      "identity": "b7fe2ee32a7300251b3bf2b509c8d32663c53c7bfe607131718d69d0ca02f5a9",
+      "path": "haim_musicgen_musicgen_large_00106.npz",
+      "samples": 162880,
+      "sha256": "a89e8a8e33f3c33248d1bfcdf944fa232ccfeee3d33ff507523794cc97591034",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00171": {
+      "identity": "42cecc01921d1d718b1e2beeeb0aabd10d8efd8e94301dc58a3d187cc2d541b4",
+      "path": "haim_musicgen_musicgen_large_00171.npz",
+      "samples": 162880,
+      "sha256": "8c8a182e772cb391ba49326d1dce95e4b0825a2e525fe962996fab415d76588a",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00176": {
+      "identity": "7db140a2ee75cdb9597660238a1b71f6d193b507a7bd7ae436030d7cc9d4808b",
+      "path": "haim_musicgen_musicgen_large_00176.npz",
+      "samples": 162880,
+      "sha256": "4ea56c6b93d57c6dc67dac88d167413a64279c4c474e1641f457465cdcb6840b",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00315": {
+      "identity": "22e64f914388fa959f3078979e1032cf0900ddb685e3ad00fb1c39b28228044d",
+      "path": "haim_musicgen_musicgen_large_00315.npz",
+      "samples": 162880,
+      "sha256": "aae28e745fd39ec3afd72e76df734268642bf5387a5f3ed12f39e2dec72329ec",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00377": {
+      "identity": "dfe138c7a1e89f41b60150e1fdbedf8a2c10bb118c9d50dcccfe0160155528ff",
+      "path": "haim_musicgen_musicgen_large_00377.npz",
+      "samples": 162880,
+      "sha256": "8697a2e08442934abc8b590b8259fdd044f3d77eb0f44206b5acc99799b736f6",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00455": {
+      "identity": "e7bbcd0a4374892b7203767bad106a82238c3c2bc78c9c0667dd4afa9f4c9ae3",
+      "path": "haim_musicgen_musicgen_large_00455.npz",
+      "samples": 162880,
+      "sha256": "098692d7e0d02a01d2cc8aa4a8a211d49dcb5107351b14e390174c14be3cb235",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00474": {
+      "identity": "c80745c650ade0e8f90ce11bb7448c62b2016368f189444f59bf9a4d14259a4d",
+      "path": "haim_musicgen_musicgen_large_00474.npz",
+      "samples": 162880,
+      "sha256": "4fee94208495143bde5624a1fafb37e7d1a4a8ecb0cba75532f1ad26c8a1dfe0",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00481": {
+      "identity": "4ffda7a1ab07b13236faeb9814481d7692c175429676cd659b680c679db8484c",
+      "path": "haim_musicgen_musicgen_large_00481.npz",
+      "samples": 162880,
+      "sha256": "f665ad8a835c655a66ab58fba534dc13b4cb29c6faf6a540ee7b07df3c7919dc",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_large_00501": {
+      "identity": "83f45e4175d74364c8ce2e7df2334bd947b4b2f11e85476702b9bac38bb42e12",
+      "path": "haim_musicgen_musicgen_large_00501.npz",
+      "samples": 480000,
+      "sha256": "eb5ed8a5b4118c11e4a3e180e769d9ba0878a2d95c91b340ad9af3e61edf2820",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_large_00567": {
+      "identity": "a64e54d40349857c456bafd1b2d0d990f28a331905d9fb7881c2f6d6cfb3e3bb",
+      "path": "haim_musicgen_musicgen_large_00567.npz",
+      "samples": 480000,
+      "sha256": "db73257679a569b6ad7182f14eb30c017b1f8bd2a2a76ab3e942690cdf652abf",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00003": {
+      "identity": "aae0be5dd88d51adcdb11fd50075d2567650ae76bc52a0b828124759110f3437",
+      "path": "haim_musicgen_musicgen_medium_00003.npz",
+      "samples": 162880,
+      "sha256": "fbefd6f3430b51ca2418fe0df3af73461b0a6ed04fbd73f4b11928df7ebf17de",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00029": {
+      "identity": "46c874f9ae8f1569acbeae8520a92eb65978525da73f866d5ed230c00b243231",
+      "path": "haim_musicgen_musicgen_medium_00029.npz",
+      "samples": 162880,
+      "sha256": "e8489e6f84b68828be1461436850ba2b6cb0d7e633d22959005840e933ef89ab",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00045": {
+      "identity": "9d079f38e89b7dcaf18187d1503084d41f932c8c87041d848a9c49d0fa710f3b",
+      "path": "haim_musicgen_musicgen_medium_00045.npz",
+      "samples": 162880,
+      "sha256": "08fee728cd787b514fb9056b9fd8b7743ec69343c6a27adf947618fcc33e22f3",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00075": {
+      "identity": "12dd73e96bcc6ab301dd630302a825168cad885ba497c59295c9e52482c98709",
+      "path": "haim_musicgen_musicgen_medium_00075.npz",
+      "samples": 162880,
+      "sha256": "06b58038d478841fa25875bfbe8ae6cad85566d80cafcaeed6a8a170d92825f8",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00086": {
+      "identity": "572c05bc8479d1d4f4f9c3d75970d12030bc4538e6bfcc53972b32dd17be4c9f",
+      "path": "haim_musicgen_musicgen_medium_00086.npz",
+      "samples": 162880,
+      "sha256": "6e7967b9e02133b069c231e12e62ad825fef87f177656fce9ae84d0dade3d144",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00096": {
+      "identity": "faed0f493e67cbb4205b09426893e60336ff18b7a9d62a1ee16f6764bd4c02e8",
+      "path": "haim_musicgen_musicgen_medium_00096.npz",
+      "samples": 162880,
+      "sha256": "1fb40349ddce95b90a6306052a9fa7195f589b64db9ed580e2f12febd725d071",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00098": {
+      "identity": "178e102079f070553ff374044565e1f6548e4cfbec5d3c9aaf253048645630b8",
+      "path": "haim_musicgen_musicgen_medium_00098.npz",
+      "samples": 162880,
+      "sha256": "dd3094703d7de2da1c5ab73af614675d64105f2b1a9f9ac7861ab6c3b97a3cbf",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00114": {
+      "identity": "6501b231c43a836f89e02f9c0ea967bbc7d6d7b2cad10ab6dfa4ae8477e2e22e",
+      "path": "haim_musicgen_musicgen_medium_00114.npz",
+      "samples": 162880,
+      "sha256": "3ac70b65003fd959eb3f0c4174635a3de768b5d78fd6108c50b8dd30d814d5e1",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00126": {
+      "identity": "32a3579d0c630b34cf5a29d6dfd427ea25a0875b6c529df93ba55f6a2a7c7ce0",
+      "path": "haim_musicgen_musicgen_medium_00126.npz",
+      "samples": 162880,
+      "sha256": "460425598a6b7ec1512513bf674183e6e9abff79c9a90c7eb89dbc5268b2eddb",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00127": {
+      "identity": "5bcb39ec192ea0900bea8350f9562674be6b4142f7d71e076b10ae55ba4dfa0b",
+      "path": "haim_musicgen_musicgen_medium_00127.npz",
+      "samples": 162880,
+      "sha256": "10e2b7ed5ed6657b555b15458553fdc8b0c7ad81023962f16f1a58e0462b0536",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00136": {
+      "identity": "c4a2a4046fc569410767a825cd79b417341e88015022a10ec9e805d7507a6eb8",
+      "path": "haim_musicgen_musicgen_medium_00136.npz",
+      "samples": 162880,
+      "sha256": "1c6e13151dde072af58c139f6c53b0d9fdbfa4575f692b0a4e1e0386581db203",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00141": {
+      "identity": "f73ba87fe3f92a50c7c8253f10eeac2fdd0763f4eb793ab7e21f4810dce68ff4",
+      "path": "haim_musicgen_musicgen_medium_00141.npz",
+      "samples": 162880,
+      "sha256": "969fc51b679329436c70ec15c81e96dcbfdcf5ca71086187bda39a4c8018391a",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00143": {
+      "identity": "033930b29d7346ea12e6b6602e30eb927e62419aa25ca8418340c8b4d458dc2f",
+      "path": "haim_musicgen_musicgen_medium_00143.npz",
+      "samples": 162880,
+      "sha256": "00e6d71fc3c17cbf0f0898b24c433cace7bd69b21b25fe5f58e91a2d01b2e5bb",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00148": {
+      "identity": "933664771b35dc9b7026a2646a03ae9c5f559650cb3f441c03af40bb0693b9d5",
+      "path": "haim_musicgen_musicgen_medium_00148.npz",
+      "samples": 162880,
+      "sha256": "37fadd9b7087286e96c6993447169a19436691c01016b73e4ace310d5288d342",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00178": {
+      "identity": "423794a92a5cc85cd76b355372397aeb399eb22a148f5fcbdfdaff6ff6334d50",
+      "path": "haim_musicgen_musicgen_medium_00178.npz",
+      "samples": 162880,
+      "sha256": "a0e7826cffb87575045575b80824f49f66a959d399dc1bc3f93cc3a4bd48e74b",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00316": {
+      "identity": "3b25ec97ec98a9fcc70a629207d2930fb7c11736b826f5533adffc6906c25aa4",
+      "path": "haim_musicgen_musicgen_medium_00316.npz",
+      "samples": 162880,
+      "sha256": "caba7c41e4b9c7b840aafe5ea837cb16d0783a0133534398a76542be3cea5ed7",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00350": {
+      "identity": "8bdb418a71d99efe9190ad5b0a11d2ab7c2b25da50a4377b9cec3bda68e96f02",
+      "path": "haim_musicgen_musicgen_medium_00350.npz",
+      "samples": 162880,
+      "sha256": "6d915c84b6a913910485527e610c4bf0ca3ff83a9f079dedf80f7893ba255f06",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00393": {
+      "identity": "c3818b4fa12294c7c2156346fb3529d65d021e01cf832a42d89dc968ddb3d919",
+      "path": "haim_musicgen_musicgen_medium_00393.npz",
+      "samples": 162880,
+      "sha256": "9e39a5b274ecebcd5affe86c5b5e9ea6d1dfd85681cbaa87ecabbaebf90769d7",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_medium_00533": {
+      "identity": "3a07ccd5519c3c7b18e5a4e04dc78c31a7640adac86767e1c6c75282ed1f4165",
+      "path": "haim_musicgen_musicgen_medium_00533.npz",
+      "samples": 480000,
+      "sha256": "3d0fbf225f2415e4733905becaf528995b0711669e4dfc2980cb51b327f661ea",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00561": {
+      "identity": "4def4a7893d59a2ec72df4ff6b1608bf03e6c3c082bccfb498423e5ef72e39b7",
+      "path": "haim_musicgen_musicgen_medium_00561.npz",
+      "samples": 480000,
+      "sha256": "9e2ac4bbc4c954ffcc5e6a3beda0092a0f07b9eee23ff495713de493fb07f935",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00568": {
+      "identity": "5c1944005833b3f6a3c6b6b63444ea501b301d660a0a59ff2a921a3f24188916",
+      "path": "haim_musicgen_musicgen_medium_00568.npz",
+      "samples": 480000,
+      "sha256": "99cfb8e278b006153ebdb39d63ec5476d6d6404019def3eb505d6066f67e3825",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00570": {
+      "identity": "cabd6dcdada0711b981631a672dab80aa431dd5231d1c22a01af2be529aa04ae",
+      "path": "haim_musicgen_musicgen_medium_00570.npz",
+      "samples": 480000,
+      "sha256": "04f56f4c93e2c58e7a43fffe7e6b1b73e31094367d274bb123f2bb363e52809b",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00572": {
+      "identity": "a98914f4799851bbe4b856060197696f5931b19857027226512cd6ccae0b42ed",
+      "path": "haim_musicgen_musicgen_medium_00572.npz",
+      "samples": 480000,
+      "sha256": "6bb6dd8f0342ad106f564681369a9c63634c77a6f775c3b320f518354a26f502",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00588": {
+      "identity": "7fcc5b03075dd9f2b17f71fb820ea9c261908f7f703d32fefd82bdc2fa42863d",
+      "path": "haim_musicgen_musicgen_medium_00588.npz",
+      "samples": 480000,
+      "sha256": "03d3abfec70e1f50ba88abb0c3cb40d36cd3125fa8d239e89ef7a9d7b9961a2e",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00614": {
+      "identity": "fdfda2382eed0d09c8268d55a63158e379df03f01330069b7fa013095dd5d2c2",
+      "path": "haim_musicgen_musicgen_medium_00614.npz",
+      "samples": 480000,
+      "sha256": "daa885d23606e284f9ab09dd00c60290e921ebd067056f61c85de71230c4c255",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00655": {
+      "identity": "4fa39dbd1f3e74a4d94dfb4a45a5eeb0764335fb3ec574d70231ae152e65c21e",
+      "path": "haim_musicgen_musicgen_medium_00655.npz",
+      "samples": 480000,
+      "sha256": "8d9fe6551135d697515215dc29fec5b468ac74cd34d66356664a0f815840aa0d",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00694": {
+      "identity": "89c29cb3e5e2cb768eb19ddd3c6615570a25f5014453feb240fb47315188914c",
+      "path": "haim_musicgen_musicgen_medium_00694.npz",
+      "samples": 480000,
+      "sha256": "e7799260f45d3a981a70321bed8281bac2db21785f5fdd73404efdb0efbbfd1e",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00726": {
+      "identity": "e558ed1387a2e442b21243c4c8640b9be64cfb959bbb7b0480aeefb648e621ec",
+      "path": "haim_musicgen_musicgen_medium_00726.npz",
+      "samples": 480000,
+      "sha256": "aa9823afe7dff1d1439d06e1d34f6eb672b7fd4a09e7d9011dc7f3301b804e93",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00757": {
+      "identity": "5c6afdde60e83ac4088381ab95247e09dcc8a61b0ddd2cd09fe97381533984ca",
+      "path": "haim_musicgen_musicgen_medium_00757.npz",
+      "samples": 480000,
+      "sha256": "8c7b5f417533d61b4c9d1a41b479531ee66aef26754ff904df1fcc6d4bfbfb38",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00770": {
+      "identity": "c5e920ccf5df3982a22c8eb8122b5335f8bc7a86fed19b920b5c66759b2ef544",
+      "path": "haim_musicgen_musicgen_medium_00770.npz",
+      "samples": 480000,
+      "sha256": "258b07dbc9ad978cb01cd427d1ccd68f38100ef8ef6d9d235b8147f7e7a7c82e",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00855": {
+      "identity": "45b574d087479d95a1a9d1a73a0d6abf2fb5da505393d8f5c124da48768e106a",
+      "path": "haim_musicgen_musicgen_medium_00855.npz",
+      "samples": 480000,
+      "sha256": "8bb96d041724d115246579fb394914f5932d62fd9e3c81543d5e6f3ec478d06b",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00863": {
+      "identity": "78cce677e6caaf3b8ab745bcb873006b5c9cbb476760dd9a3a403d3eb063bb68",
+      "path": "haim_musicgen_musicgen_medium_00863.npz",
+      "samples": 480000,
+      "sha256": "e879c0fec87e776e681811d8613fbf881efd790b211e6b67f8db18b09ebd8f71",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00887": {
+      "identity": "c57caef2bcb79cd3662e0cd01b369da8ba5a19830ccc88e905217c62d46de78f",
+      "path": "haim_musicgen_musicgen_medium_00887.npz",
+      "samples": 480000,
+      "sha256": "49df91366502aab4e02cd8a82c027e3e400c59e93465d2cb60e6790af87954a6",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00898": {
+      "identity": "a4e21844ab9a5eef75120405550456c933a0e6513804d4c038a776fab3237c95",
+      "path": "haim_musicgen_musicgen_medium_00898.npz",
+      "samples": 480000,
+      "sha256": "24786f7858b0e4ebbfa87984c36466385cf26cbf550821576d5b9803502bb97f",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00903": {
+      "identity": "20c03121f5bba057eec3cec9f6b7931c77fb0819b582dcd697b171715a6f4e36",
+      "path": "haim_musicgen_musicgen_medium_00903.npz",
+      "samples": 480000,
+      "sha256": "f5989de98e99d07a16aadcd91de4b9b9838386dc58d7f7cb2e1e0d0de7f6d5d5",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00906": {
+      "identity": "42d154dae74683fa50f1285aaf19572e825e0f64e681823802f1a81b29b0dcbc",
+      "path": "haim_musicgen_musicgen_medium_00906.npz",
+      "samples": 480000,
+      "sha256": "0ff43a06b3a553c334b68b338ac804c2a83553236391634bc3c13032f99f86a8",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00934": {
+      "identity": "c6f97243b5b75435070195c7865bf607599e49a985f56c96a512eebadb75f9d3",
+      "path": "haim_musicgen_musicgen_medium_00934.npz",
+      "samples": 480000,
+      "sha256": "82c2a6cdf230e9552654f62a8f5e0704b45aa00f4886e350e14b345a6b7d0927",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_00986": {
+      "identity": "c5589e077bb2428e18c840b0023916a83af1f2e2a5c8f9368b97f185d256134d",
+      "path": "haim_musicgen_musicgen_medium_00986.npz",
+      "samples": 480000,
+      "sha256": "cafe7c181931dbc17c618b484248defa500cb96b2e9a68516603d6a28100f086",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01014": {
+      "identity": "a0f2eeeab71c7dac7d19cbb473b5c1992815e47735c9736389d417b53d35834c",
+      "path": "haim_musicgen_musicgen_medium_01014.npz",
+      "samples": 480000,
+      "sha256": "31a0b4fcfd49e5e8e63f1e281e86a8814ac5d2e6aadd572cc01a023a95dd9e92",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01030": {
+      "identity": "e5d5ff7aeb42a95d444c5115c76a78130940c88ceb8f94dc3be9bd08a52a04a8",
+      "path": "haim_musicgen_musicgen_medium_01030.npz",
+      "samples": 480000,
+      "sha256": "7d6e1c6ef4938a375f4ad1bac13c5f2822d5a8a634132866b4587105bfb0ca3f",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01037": {
+      "identity": "203ff0fc614e26b0ea853debb23d438bd837f534d2729e2b1a1107923fc367b1",
+      "path": "haim_musicgen_musicgen_medium_01037.npz",
+      "samples": 480000,
+      "sha256": "6bf268ea0fbe0a13240a27a1ca6668ce5115c4b560f546e0ed7744350b4528c0",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01086": {
+      "identity": "f1b725b8022838374f570516e5531ff64228e333c5888c84331efac4bfa0a5e8",
+      "path": "haim_musicgen_musicgen_medium_01086.npz",
+      "samples": 480000,
+      "sha256": "991f62805c0b95aca9498042fe8303ea20957551deeb7a5d5ed5a6374087e495",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01091": {
+      "identity": "c8280580de015f41ea9808c3eb1b5b6a109b33689ea79616450c8f5029b52239",
+      "path": "haim_musicgen_musicgen_medium_01091.npz",
+      "samples": 480000,
+      "sha256": "46e1b257d261494c2ea78daf7a442d2c34571937377e1d38cd57b9cb3fefb0ea",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01094": {
+      "identity": "a87618ae674a86001280914ab8cb1c1ad889b2ddc6026e1988cdc9a21cb2ccec",
+      "path": "haim_musicgen_musicgen_medium_01094.npz",
+      "samples": 480000,
+      "sha256": "b6e52feb4a27d5c993891caddbca3bad1e1e141fd2b0cb2b621a18499d05fa8d",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01139": {
+      "identity": "bdc9ff6924b9681fafb89d7af29ce69cee7f92656a94124bb505d43ea6c06cd2",
+      "path": "haim_musicgen_musicgen_medium_01139.npz",
+      "samples": 480000,
+      "sha256": "3a491b2ac9408b07f8db4edc3e96e2dc6860c79887d10d92434124b79870ebe4",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01154": {
+      "identity": "bb1a6cfa1859e2ea5b4946ac69fd4e112a89bc8a974782df60ff3844dbccf0a4",
+      "path": "haim_musicgen_musicgen_medium_01154.npz",
+      "samples": 480000,
+      "sha256": "a9ca566ff4396a6464cb366d419f64955c84dc13ff281febc57d80a6ca0a451f",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01206": {
+      "identity": "dc912f06bb6f4c44fc8db72e3764df502bcbffc78d11e2392e6c97ea872a8f28",
+      "path": "haim_musicgen_musicgen_medium_01206.npz",
+      "samples": 480000,
+      "sha256": "8a5ea79c316222bcb3c7621b9b4ca83642661f61219ca8ed77209f14a28264ac",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01219": {
+      "identity": "596c7ee71f689e01e2b66c28130154271f355cf8b866792d3ae71f180c1cb3e8",
+      "path": "haim_musicgen_musicgen_medium_01219.npz",
+      "samples": 480000,
+      "sha256": "ad05d2fa7860cdb502a503cef21dca08952820935f525c66120a6eda533b2a56",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01320": {
+      "identity": "ede64f2f3088941cb5640a2c26025528ef2b7011bab4007cd05e757e104739fe",
+      "path": "haim_musicgen_musicgen_medium_01320.npz",
+      "samples": 480000,
+      "sha256": "1a689745a0e7575050ec8537a13a3c34392371094b7bb4e995f2c8b3da3659d2",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01354": {
+      "identity": "a13119b5e5576980325cfde398642d70d47dd235b04ee230931801d47c1f777a",
+      "path": "haim_musicgen_musicgen_medium_01354.npz",
+      "samples": 480000,
+      "sha256": "033e03a89445aef916a5a0d8db05046efb0aed968235ac3cc739f46c59dd0eda",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01360": {
+      "identity": "6ed761f22fe24d66d9d95667bfc0a5380cabcb8361e4d5257ee93becc52462a3",
+      "path": "haim_musicgen_musicgen_medium_01360.npz",
+      "samples": 480000,
+      "sha256": "bee6be828b2b23b46f2972fe6db997a9596af40499209b653b8276a8bcc3bf66",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01374": {
+      "identity": "7cf49e0451cf2e8ea17b4093e5ece69efb02cb560655958fbd35383449f5891e",
+      "path": "haim_musicgen_musicgen_medium_01374.npz",
+      "samples": 480000,
+      "sha256": "c47265e6395e48886452ff4afc40f578edbf91ed1338cb32c4c82a49c7762252",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01394": {
+      "identity": "6db404bef240e37ab077e9ba394c6934a637413b1990f8fc0e3bfdcb933688fa",
+      "path": "haim_musicgen_musicgen_medium_01394.npz",
+      "samples": 480000,
+      "sha256": "dabac6ed665f37fa135199482dda1f7f4bdde6dfcddd486d6d6e9f9608c6982a",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01398": {
+      "identity": "66bf9398efd166421336290c5d85ae2c2f05326d67a1bc51081f0a2db5a414df",
+      "path": "haim_musicgen_musicgen_medium_01398.npz",
+      "samples": 480000,
+      "sha256": "13e417c0d33b6580ecab411e54f0fa53a994e836ada502a2546312806ef5f983",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01405": {
+      "identity": "9b15f8aeee0b6b6e0807650823b3a6c84933f8d95067d273c2286801ecf27db9",
+      "path": "haim_musicgen_musicgen_medium_01405.npz",
+      "samples": 480000,
+      "sha256": "0224663ca8ab07ce364fabdbc11fc079a21e928bc346d3ebc1632e6914de1445",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01408": {
+      "identity": "549a91ebce36c0b39c37d80afa1b04355bca6b19331713e4cb2cb0bc5072eb9a",
+      "path": "haim_musicgen_musicgen_medium_01408.npz",
+      "samples": 480000,
+      "sha256": "7fc5b8e776ef6897b893e38010d5852c20f0b3f48a992c0402a253dbba2e0e70",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01434": {
+      "identity": "843648034e27eb410e4646d8af1c6c573d8ae608f0f0ab9f2ab303f0aec853cf",
+      "path": "haim_musicgen_musicgen_medium_01434.npz",
+      "samples": 480000,
+      "sha256": "23079e72ed883fd0cfcf595f8407c033264dcd9dda49605bface170a629c2e81",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01460": {
+      "identity": "ae77ca12df2f4324bda1b3187113c5d7dc465697de0056450736d7c5687ff598",
+      "path": "haim_musicgen_musicgen_medium_01460.npz",
+      "samples": 480000,
+      "sha256": "26c80ca833687333923db4a10dfb228f3a9de0c200d4c23503122fbc77badcb8",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01483": {
+      "identity": "fa0da9e4df83e8ce5dd19387e93d00e23508ec2040b2c6c506189598d4c20b89",
+      "path": "haim_musicgen_musicgen_medium_01483.npz",
+      "samples": 480000,
+      "sha256": "d8cf1e9844772fb7ffcaaf17b306eeed1d8e3660b4bb076653a04ae09b7c24a1",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01498": {
+      "identity": "1c6525850b6fcacb9b167265d7856d6d4b554d3fdeb548c9b4f2271932bf41cd",
+      "path": "haim_musicgen_musicgen_medium_01498.npz",
+      "samples": 480000,
+      "sha256": "383dbc39d8ce59ce9ee342a924d37e0b5b1075a95b6974c112b2aeda46bcc2ff",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01502": {
+      "identity": "2a2d7ce49887a5b7861ed6254ecbc03eb285bf169a3bb8444da9cb4752dbbe77",
+      "path": "haim_musicgen_musicgen_medium_01502.npz",
+      "samples": 480000,
+      "sha256": "7a0352a6e769c2c12ba84a8149520088b2f5c138aa07cd21bf56ff8a695ba4d5",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01508": {
+      "identity": "4de033474965acb78c723f0fcf7e26ec149ffb5fa593941db25251981dd1d7eb",
+      "path": "haim_musicgen_musicgen_medium_01508.npz",
+      "samples": 480000,
+      "sha256": "c62b2821f899466dbc90dfe505c6cdded80427d0b1fc45905e44b26efac2a6e0",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01545": {
+      "identity": "fb6bebf26488399e02ba921b29655b6d3ab8edaf2d7d1f622fef91326735d0ab",
+      "path": "haim_musicgen_musicgen_medium_01545.npz",
+      "samples": 480000,
+      "sha256": "12ccda65264fe273ad49f2f479b2fd8911057dbabf303b7a850ddd0fa921304b",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01556": {
+      "identity": "9cdd4d8e16c3f46a747b2c2ba0d9f5dda8ba1157b3a0284ee4af830e073bfbd5",
+      "path": "haim_musicgen_musicgen_medium_01556.npz",
+      "samples": 480000,
+      "sha256": "36a0be0c97239ff1331d49508c3a1c3c4a3fa73b1e94adecfee0890825609225",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01567": {
+      "identity": "5cf64908e9c7bd72d525dfd907479df27ef8c1cc084509a4ec22eb0c2f1ea541",
+      "path": "haim_musicgen_musicgen_medium_01567.npz",
+      "samples": 480000,
+      "sha256": "2976400a2f8c0f0ff9214c51b4f2c76d595398390a3e2c6ff9a692e99d2de714",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01595": {
+      "identity": "275d07c63c115f413d1623323ed6a91bffd2d192c7578d5092e8de8622519fd4",
+      "path": "haim_musicgen_musicgen_medium_01595.npz",
+      "samples": 480000,
+      "sha256": "a5abe33acdbe4eba9ed249e3c9a65f300088c3647adee2a20e77a3e633989cb8",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01605": {
+      "identity": "8fd92a286b8c2b077e60598193549d8e4d27432943c3dce627b52e507a55053a",
+      "path": "haim_musicgen_musicgen_medium_01605.npz",
+      "samples": 480000,
+      "sha256": "9a2d55421d4548ce4efe224bb9e83907f0671beaedf6f075adfec031022c4467",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01610": {
+      "identity": "d2c44c4fd2c09ae018dd4d1a0cd46cece0f2d0af7e9f96148d600d5c7cd4c054",
+      "path": "haim_musicgen_musicgen_medium_01610.npz",
+      "samples": 480000,
+      "sha256": "fe2e2d7ac83c25c3ede3147830a9c675c23db98d529722b3e8bbf64f1118efdb",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01693": {
+      "identity": "1c5be879906cb674d0cc652aa6a2508856006bfff73e8ffde1d67700daf34097",
+      "path": "haim_musicgen_musicgen_medium_01693.npz",
+      "samples": 480000,
+      "sha256": "48882f061345522f1a1b9db2c32b240c9c5f1f9a725845afcdbc7d6913d2cd0a",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01699": {
+      "identity": "3ce08bc2fc8871dd98f6d1c49f78c944abe1b491e72b7fdcc678d6008c835d11",
+      "path": "haim_musicgen_musicgen_medium_01699.npz",
+      "samples": 480000,
+      "sha256": "897975f659f247ef087cb0e055dbbc42b192c0dd6f065dde00dca9dd700657e5",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01717": {
+      "identity": "2dfccc76f5095e7223d60f4e720d0277d22a819d69c4a1396cc2b33d3eaf9e70",
+      "path": "haim_musicgen_musicgen_medium_01717.npz",
+      "samples": 480000,
+      "sha256": "1c686379bd92f1459ba8ffa0ea5d37a438b296759810205c7964f40fdd0eb005",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01721": {
+      "identity": "d81cea7d7df00ae885100a46f13db2fa08cc8b1ffa89253a78f917f044ca7126",
+      "path": "haim_musicgen_musicgen_medium_01721.npz",
+      "samples": 480000,
+      "sha256": "1b217d623e616ff7c9c3205a88db935001982f32a09a2263473054bd5233c765",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01729": {
+      "identity": "2c727edf106c20ade6e7d12cb42f6c1dd6be934650d40dfc42f014cb4a511c8e",
+      "path": "haim_musicgen_musicgen_medium_01729.npz",
+      "samples": 480000,
+      "sha256": "d9615425f3f5f3d50771324706df0770ad1f1fe1266ff87e826cc4224d3d7929",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01766": {
+      "identity": "d9b498f6202a195edc35018942ab9485ecf7634e49449c1c139f4d42d983dff7",
+      "path": "haim_musicgen_musicgen_medium_01766.npz",
+      "samples": 480000,
+      "sha256": "fecaf96d7421027ba11cc51b3545152e17322bcb1cb6f3074e92a575517b1152",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01785": {
+      "identity": "036b6d65f8a5f97d5ec334a7b7b496c38ecd7dc7f3d0dbacf31da50ead51b5c8",
+      "path": "haim_musicgen_musicgen_medium_01785.npz",
+      "samples": 480000,
+      "sha256": "4424e310f29cbcae3f59b1e0f633cfc4e8e63ff4291f4de01ee9436bbf821905",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01798": {
+      "identity": "fe75f4e199b3c332db1c402e23d9114cecb426eb0314a532f6ea482487602f8b",
+      "path": "haim_musicgen_musicgen_medium_01798.npz",
+      "samples": 480000,
+      "sha256": "2fb94367effea8d76930141404f5ec226874da862235e6c0de2ba6e4d16cc8f2",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01807": {
+      "identity": "1b26f04d908568eea98eb45f56b428c6d03b986e85ee3276321485a829f2d6c8",
+      "path": "haim_musicgen_musicgen_medium_01807.npz",
+      "samples": 480000,
+      "sha256": "9f2abd9d7b8e3a7f8213e8479eb33a666c3bf93ace0accd66c577cc012ece3b4",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01809": {
+      "identity": "6294aae58d8000c723cd6992eb251b560b08534841b07c5b61d3878f3943622a",
+      "path": "haim_musicgen_musicgen_medium_01809.npz",
+      "samples": 480000,
+      "sha256": "12b33a33cd81d0e4c018a1792361fd3f552fe78e2113956380cc501f79b87513",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01925": {
+      "identity": "282e3cf6d2034377922c44f6fe68f38ea3e7f385c85fd054847eb52cfb073d6d",
+      "path": "haim_musicgen_musicgen_medium_01925.npz",
+      "samples": 480000,
+      "sha256": "b9c08bc413a39e4aaa375362c84556d87c97620ee063a47a572f7efb4ef1a5c2",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01940": {
+      "identity": "a49cab0fc432af619b4aeb7da3a95f1a4da65bee6bf2b33add0475fd58886f76",
+      "path": "haim_musicgen_musicgen_medium_01940.npz",
+      "samples": 480000,
+      "sha256": "5b1c9c42d9c5c2d6bd49d12bacf644b4f736ee4131197af8f1e280e10d80b61f",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_medium_01987": {
+      "identity": "c4e2bf307d173de261739288d5a735edece3ae203768ebc231bc6dab2c7e9583",
+      "path": "haim_musicgen_musicgen_medium_01987.npz",
+      "samples": 480000,
+      "sha256": "b708c0fb0a0d7919c04fd49c6a22659a7079af0803b52d7f8594b26be3dc87bc",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00003": {
+      "identity": "1f0d978bfed965a484cbad1b883cf74586be99235ac72cf47733d532e5bc5fe1",
+      "path": "haim_musicgen_musicgen_small_00003.npz",
+      "samples": 162880,
+      "sha256": "a1298792a7d5a3293af7805dd0e32e18fc209dbc06fc2c402f2785dc2cca38e0",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00015": {
+      "identity": "2e9b5605532debfb2814a111d89e7c6d18b8315405cd8a76e274bdcd239cfdff",
+      "path": "haim_musicgen_musicgen_small_00015.npz",
+      "samples": 162880,
+      "sha256": "246c87e8c347e9162f4fb8d7c243656a224237b8b0c183ae39d7809ba07564aa",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00061": {
+      "identity": "d44e81979452c1915442685bfe385ebc077e6f2acb2fd901b73eb06df557a686",
+      "path": "haim_musicgen_musicgen_small_00061.npz",
+      "samples": 162880,
+      "sha256": "d749d65e2d4f6cb0b979be62b0291fd9814eaef2d94cab614435af1b34b055b4",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00082": {
+      "identity": "0045e70a5e8ef4523396a670d74adc6045ff3eede10029d5686f1f239882ea71",
+      "path": "haim_musicgen_musicgen_small_00082.npz",
+      "samples": 162880,
+      "sha256": "fb3defff5e9997f1fc37bfac5272d619d625a00df62385c53c66d5100cc6c9ed",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00125": {
+      "identity": "79544e84f8f98957191475171d94d962eef77d9ee6bf8b83106470f4236c6b75",
+      "path": "haim_musicgen_musicgen_small_00125.npz",
+      "samples": 162880,
+      "sha256": "909d7270de2f6779747ce73780625439a49884911140cd56ed924a5f55bd31d1",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00128": {
+      "identity": "3ab03ed213a642cec254caab3516698b9ec54f7cff93d2fd9e1a9f7c317aa395",
+      "path": "haim_musicgen_musicgen_small_00128.npz",
+      "samples": 162880,
+      "sha256": "ae8ff9592e3a93e22ff0838ee2c6c5349521f0ed46c8566283969bc46664219c",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00213": {
+      "identity": "9d6995414b1034d96e09d960585a32e8f33ff86585f130271cb95969bfa5ca80",
+      "path": "haim_musicgen_musicgen_small_00213.npz",
+      "samples": 162880,
+      "sha256": "01b79d4387f278e3f8aff158098b23469dff991bf3c554047784e2138f337c0e",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00244": {
+      "identity": "6322934bb3931ffede936a7510ab49d20df301bbe87c33da5a6f569166c3f559",
+      "path": "haim_musicgen_musicgen_small_00244.npz",
+      "samples": 162880,
+      "sha256": "eb780bc7681656030b4635b7708a124d77593dcbcb212cc2d7641b554ad73b83",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00307": {
+      "identity": "102c1d5fd2adaaeaf870701a22c578126c25acc89bcb81419541d9fd2de7944f",
+      "path": "haim_musicgen_musicgen_small_00307.npz",
+      "samples": 162880,
+      "sha256": "ade11363b1bf3be229314318aff4c1355c3042daa7978f66714eabb84947eb66",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00321": {
+      "identity": "18898806b0d3d88b56fb1c9a0f991b59a7dc89cb18952815c1138a896a7dddf4",
+      "path": "haim_musicgen_musicgen_small_00321.npz",
+      "samples": 162880,
+      "sha256": "2ee9ef781dcec70d68017332c734d04f380a058c461bbccf5e1964115c341e7b",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00374": {
+      "identity": "744b48a4cd40491bd7c93c8e932fe528414e3436104e7c13058871d18b264480",
+      "path": "haim_musicgen_musicgen_small_00374.npz",
+      "samples": 162880,
+      "sha256": "f5995f63abcf97a6cd0e4aeec32d8ecc23e516dbe5cac2e14bfd24068ed1fd8a",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00377": {
+      "identity": "8f4714c9a26090bb00477145f11857b29ad29291a9db1e221a7fc43c82c092d0",
+      "path": "haim_musicgen_musicgen_small_00377.npz",
+      "samples": 162880,
+      "sha256": "49410823577d0439c00b5770e92937b960e373f263c62626c84f0ce37f8d6a66",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00381": {
+      "identity": "a77232880f53e7fd06a221495ea34d34b81ca0c71d508ebbe32d0e2f937a9b83",
+      "path": "haim_musicgen_musicgen_small_00381.npz",
+      "samples": 162880,
+      "sha256": "727bd926a9f58c0264d0d1b3c2b7238ca1fa7d11bf14eb5e949de1713608174e",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00386": {
+      "identity": "a952b5867c20805ccd29c4237cddf9b46fd3950eb624de9d1f7af5bd017909fe",
+      "path": "haim_musicgen_musicgen_small_00386.npz",
+      "samples": 162880,
+      "sha256": "323054ac2a8d2e9b8b7fbe084d2a42db9c546167b29d788229addccb212f6f29",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00393": {
+      "identity": "c097957b3b59956015e1ee7d95517ca6c39d83ecac49340d1bb1cb86eb49e1c8",
+      "path": "haim_musicgen_musicgen_small_00393.npz",
+      "samples": 162880,
+      "sha256": "d66b8dcd1cb18b8e65bcdc9e7ef71a59b74da5c567f78c973bac04094b8f470a",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00489": {
+      "identity": "9f032775a16152fbc80df15b4ae9da9ed2c4435e1502a47be83b2106b4850f97",
+      "path": "haim_musicgen_musicgen_small_00489.npz",
+      "samples": 162880,
+      "sha256": "7658d8aa08d520fbd666d3ca217361dc90330a25b2cc72e1523d9c49e1a012e7",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00492": {
+      "identity": "befd0459eca05a306588109d35089b58b63daef0ae00ce559185800cd303d110",
+      "path": "haim_musicgen_musicgen_small_00492.npz",
+      "samples": 162880,
+      "sha256": "ad6455643bcf273e582b972e719a1c33473f210aac1fa1aa00bcfba6ce19de0e",
+      "windows": 5
+    },
+    "haim_musicgen_musicgen_small_00524": {
+      "identity": "a8e16c1c4d695a8c825134bfee96fa51b3939991128232e6970635eaeb77e866",
+      "path": "haim_musicgen_musicgen_small_00524.npz",
+      "samples": 480000,
+      "sha256": "b9dd9f5c969e1ea683fc8099eb5ec688eb899e318d26870f2ccfd54b30cb2635",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00562": {
+      "identity": "2910b5bfc55b41b933f1a26786c77a661eb1bd71fe48c55899157a582a2869f5",
+      "path": "haim_musicgen_musicgen_small_00562.npz",
+      "samples": 480000,
+      "sha256": "8a5f694e9fc4373f03a0b02627234f778a5f2cb26b094fbb687292c363a42be3",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00566": {
+      "identity": "66883bc0cc0088be375b42609b89f418bc824d870eef1c2cd9f703db14b781f4",
+      "path": "haim_musicgen_musicgen_small_00566.npz",
+      "samples": 480000,
+      "sha256": "3cfdf17910181c9c57154ebdb72694bb7e3bcd96faf9dfb937737e1d2d862cfe",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00570": {
+      "identity": "80c0078c23f7e924300c03e0cacaa7851864d36c6b921dba0e628eb07ab4a111",
+      "path": "haim_musicgen_musicgen_small_00570.npz",
+      "samples": 480000,
+      "sha256": "794015595d5ccc8265caec6b191f24167cb8b5aaf015c8d5767ad64863489c08",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00575": {
+      "identity": "dfdf6ec50b5826c47eb5360ea0919d0447f7ef4e67950fc7a52412b7f4ad398c",
+      "path": "haim_musicgen_musicgen_small_00575.npz",
+      "samples": 480000,
+      "sha256": "2e65d89eac61a62146142c6ad188bf7c8764734eacfdb1634ad3979edd3d5ae3",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00583": {
+      "identity": "936f17994ca828eba4f4f9987b2f35bff606e04fe60e58c2b3558bd433ccd74a",
+      "path": "haim_musicgen_musicgen_small_00583.npz",
+      "samples": 480000,
+      "sha256": "ed1c792bf4ee152406310d7118aca8de76b7f1f58b2003ac7fa46d3c897da364",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00615": {
+      "identity": "c2ec9e7776a507cbe1a334d6f7a27a50b872824244732b0708067690a67f6987",
+      "path": "haim_musicgen_musicgen_small_00615.npz",
+      "samples": 480000,
+      "sha256": "cf4e6e3274dd625764b7ac76cfc0c58ff09aea32962cc8c7cc17f5159f128abc",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00676": {
+      "identity": "3ab2ccc246529af9b999ee76b5274fa5605ab58f31a7efe7a40f759aaf886329",
+      "path": "haim_musicgen_musicgen_small_00676.npz",
+      "samples": 480000,
+      "sha256": "f1281786e4a9be9293aef1db77cec1a777291aa65d84cfff3d40a645aefda567",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00696": {
+      "identity": "2671b2900ec5ff05c0a1d64a876dbf8c4fe7436c3b03b73b50451fd006f2018b",
+      "path": "haim_musicgen_musicgen_small_00696.npz",
+      "samples": 480000,
+      "sha256": "155c518b219c608d6a6a12b5120c19f727c6d39fe736f7844b6f6e83be7a7300",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00703": {
+      "identity": "3929668ec3ec79157988211e55728c2eea8c079fd2b62e10451115694840c33d",
+      "path": "haim_musicgen_musicgen_small_00703.npz",
+      "samples": 480000,
+      "sha256": "d5e84a9072ba30410c6042942e7e3c909c7cbf74d8c99dc123383f2f6157bc14",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00727": {
+      "identity": "f61ee265fcedcbb32ca23c3dc4c60bcd7e055017a6bd48bc120d90619a8e7ca8",
+      "path": "haim_musicgen_musicgen_small_00727.npz",
+      "samples": 480000,
+      "sha256": "f16113283b77a581b3983a5287048d980c3a308a56d21c5332aef407b692cde4",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00804": {
+      "identity": "27d334f12481eca4953998f716534069a932e087391f867d6285b8c06faa31ff",
+      "path": "haim_musicgen_musicgen_small_00804.npz",
+      "samples": 480000,
+      "sha256": "3e310f95868c05836208b771e34a8e7530c7de0ef638073305b159cbd3d13e9b",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00842": {
+      "identity": "0624fc4487a7f8e791fd3a434364384b3638d047f495153c7bae6dbebb8877ec",
+      "path": "haim_musicgen_musicgen_small_00842.npz",
+      "samples": 480000,
+      "sha256": "864019b4e493d3079a1cfa25954a5f90f325ac464fcc47dd804c9f8e4df0bea2",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00849": {
+      "identity": "a00c74d25cab86f1cb8201eccc898dee074299315cdab26a12f300da8498245c",
+      "path": "haim_musicgen_musicgen_small_00849.npz",
+      "samples": 480000,
+      "sha256": "57a5f964aa96e696ab60ca3eab310ae26509cb4fc139ac50d54fa0d0c789c777",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00881": {
+      "identity": "304e26ec3cf6218bb52bd3beff2c7e155dd075749c99f4b5d36ab8772669d97d",
+      "path": "haim_musicgen_musicgen_small_00881.npz",
+      "samples": 480000,
+      "sha256": "1311ec9e8b91ab73329c529fcf316d0e2f3ba30e857301cc21bfb36d429d8e28",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00882": {
+      "identity": "d81777d70e24bf22de206641ba70f763ac4b95155480193508d4069f7a48fe9f",
+      "path": "haim_musicgen_musicgen_small_00882.npz",
+      "samples": 480000,
+      "sha256": "cb03ee80ac31df3c338879438e6c86c140c5452633a8453afe610831598916f4",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00887": {
+      "identity": "fa48fb4072fef7618d9458fa2c0d85cd92dff40d668434f90e1d2a54ac76729d",
+      "path": "haim_musicgen_musicgen_small_00887.npz",
+      "samples": 480000,
+      "sha256": "3af2942e24bba533cd82b266bd84dfb05df8eede7d411b28228db4052e4786b3",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00900": {
+      "identity": "2a89a04e3f8523c385738ceb9f8892426d3bf68da5527586e181da0aa3bf5298",
+      "path": "haim_musicgen_musicgen_small_00900.npz",
+      "samples": 480000,
+      "sha256": "8aedc006e4c092c951758a3037384eccb47c7ec955c27a6404a4567eee53d419",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_00923": {
+      "identity": "fd3e78de1af15cc1f6815ad67c529c895c0d2b4234bc12a504b4374772a95f59",
+      "path": "haim_musicgen_musicgen_small_00923.npz",
+      "samples": 480000,
+      "sha256": "610afcde40718ad8b6cb0bd6228e15eed52136e8526c476500749c4486bd54f5",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01020": {
+      "identity": "d45931553d3663b13e330f2d21a03692524bcbe1d53b9fefec188d4bd1208460",
+      "path": "haim_musicgen_musicgen_small_01020.npz",
+      "samples": 480000,
+      "sha256": "05f8fdbb63c8d10d4b4dae284cfb0f58f4714e29991d6ef1bdc27cb10afe017e",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01040": {
+      "identity": "33577806c4a1d63e9a269575102daab0c071d6c88673665166c3748a0de8f507",
+      "path": "haim_musicgen_musicgen_small_01040.npz",
+      "samples": 480000,
+      "sha256": "28f5ebf6cb9ad47daa85c6f1d0aea165b1c5f1bb905c052c828276069a18b003",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01053": {
+      "identity": "f7fb4f4ce0e2053d2dd823a16b041012148f2fe20077b70b3c1e2b0d3e57932e",
+      "path": "haim_musicgen_musicgen_small_01053.npz",
+      "samples": 480000,
+      "sha256": "449393bb204a19ace4f8cbde70eddeda48a51914f85f395d184d89cb1b01d7ef",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01069": {
+      "identity": "410e2dbdb450b2a0a66596062b84982f97a7ac685cc47ae7a6c9c7c972be79ec",
+      "path": "haim_musicgen_musicgen_small_01069.npz",
+      "samples": 480000,
+      "sha256": "f9499c50ceac25a5f886bd747c796b5d14f523f7e1ec59be97eac38347c6f608",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01070": {
+      "identity": "1fd90811a950613a902fbe02cc0b6c1b7f6666ac80014713156e2ab08a982e86",
+      "path": "haim_musicgen_musicgen_small_01070.npz",
+      "samples": 480000,
+      "sha256": "4a88070ba84551bdb589d5222575508f5bbf93b047232aee589121fe83a5d451",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01097": {
+      "identity": "a960154f69fc7b49d0ce67c92c08b8e0b5b40ba65dc4466078385a8dc8df81a6",
+      "path": "haim_musicgen_musicgen_small_01097.npz",
+      "samples": 480000,
+      "sha256": "d961000dc30fce430632081a95cdb73833d19283a0c56263355124147d5498df",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01107": {
+      "identity": "e943b062b359da44d91071a79fa637a2e5b67d60fc2914f9900ba41a98fd8a60",
+      "path": "haim_musicgen_musicgen_small_01107.npz",
+      "samples": 480000,
+      "sha256": "b4d4d594b35ff91f0d02473017b5152c7c6f2fe58a7a9f2edd831f52219762c0",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01211": {
+      "identity": "049fdf549e826246d80e0614c907fe93d6951b976ed17a5500e15def9ea8c483",
+      "path": "haim_musicgen_musicgen_small_01211.npz",
+      "samples": 480000,
+      "sha256": "990b1a68247d6a65b30bbf29e6200873bd3532dec7d19f76756066656daf1e96",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01217": {
+      "identity": "8c7c83919d6120b49800aecfc35484e787e1c661ba9a52937980b3b240b894dd",
+      "path": "haim_musicgen_musicgen_small_01217.npz",
+      "samples": 480000,
+      "sha256": "be42178824c46aa11f06569b8325a57f090bf5728c50a812bd249cedbc44e4a4",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01230": {
+      "identity": "246d6fcf1694f240479b656f0e1bdbbc061129d730de54cc5ea98b04c193dfb7",
+      "path": "haim_musicgen_musicgen_small_01230.npz",
+      "samples": 480000,
+      "sha256": "ffc098e465e4b912bcdde124982a3f8060307ff20628bf0d64b58b0ff8598f04",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01253": {
+      "identity": "8da6fd33d367b1efa73d268ac01d56f0f8cb9a9c66a3aaf7eccaabca3880656d",
+      "path": "haim_musicgen_musicgen_small_01253.npz",
+      "samples": 480000,
+      "sha256": "3b928b9923f0e645bc26c056fb0f8f4016298687e2ab7ca00d8598dee1d7e18a",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01263": {
+      "identity": "062d96bff49a085a1313353439b9a9b2fd5c6a5dae680f17a4183e9b0cd48a3b",
+      "path": "haim_musicgen_musicgen_small_01263.npz",
+      "samples": 480000,
+      "sha256": "1dfe4ccb0acd4c1c2f6ca2c9d9fb94f662a63a669bcaed4719615a6f5b9827ab",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01290": {
+      "identity": "3d8016da18f22dba959373ccd6c226b883eb0e6c8ef0dfb5d13d0d0806ce671e",
+      "path": "haim_musicgen_musicgen_small_01290.npz",
+      "samples": 480000,
+      "sha256": "a7fb783495ca4f2a9cbdf7c0fe75c66283a530b43057a050ea85dd6cd056bc86",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01308": {
+      "identity": "27bf88b80ff8f4114792310a0852c5522407e9c3b4e664a478337a84df0af806",
+      "path": "haim_musicgen_musicgen_small_01308.npz",
+      "samples": 480000,
+      "sha256": "39ab101aef94c63be1ea69ecc297b2ed268b519fb17c53e09737fba4e495bce0",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01315": {
+      "identity": "eee7493c8b1d0614f036202ef44af4c45b3e4ba277e8df03ae5d2cd6ca2f559a",
+      "path": "haim_musicgen_musicgen_small_01315.npz",
+      "samples": 480000,
+      "sha256": "1ee3dc1315f5cfba40407db901f7041a0b3e8ef6d8e01c35dcc387672083d67c",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01355": {
+      "identity": "702c3ad626c723ebc9078100b985dcda68500c0f6053bf846bcb5f25a143f572",
+      "path": "haim_musicgen_musicgen_small_01355.npz",
+      "samples": 480000,
+      "sha256": "91d2a238d54a80c8421374707c99c89ca917cf7fcc401c51f1a8f1e48eccaaee",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01357": {
+      "identity": "7491c6483297a4254f04ca6185bf999d9274da8071d2a46ecafde672fccca7ca",
+      "path": "haim_musicgen_musicgen_small_01357.npz",
+      "samples": 480000,
+      "sha256": "9ad69ad1c43b236f938186863f3137bf210e411434fec8787a1cb2ccceb17689",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01361": {
+      "identity": "9af67f0c8fd83de9ac0ceacdf3da72f3e5a35c3cfd0731ba1f6083e853a9ffc2",
+      "path": "haim_musicgen_musicgen_small_01361.npz",
+      "samples": 480000,
+      "sha256": "97a844e4bdd1ecc656cc5c85a777f4fa35c786d8cc18282bdf57530b3e762ffb",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01364": {
+      "identity": "f00db0a8679843419d10e56a358c9d07206d4cd138017ffc660d2814fb93de6c",
+      "path": "haim_musicgen_musicgen_small_01364.npz",
+      "samples": 480000,
+      "sha256": "aebcec0dcad1a4265083d2fe98e2b37e621aa20513297a804edda6317a1d3157",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01440": {
+      "identity": "6c266cabf44dfdf254e80545c6692eb000f1e68a039e0684970f6e0bfe38517e",
+      "path": "haim_musicgen_musicgen_small_01440.npz",
+      "samples": 480000,
+      "sha256": "a1cd4ffb3a617b9807809246b5d23d04194cc8e1af78c02ed231a9ddbed21704",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01443": {
+      "identity": "e32fc8740e6148211d6bc2574e0417d328d8e479257e85603aad9f188146c6d7",
+      "path": "haim_musicgen_musicgen_small_01443.npz",
+      "samples": 480000,
+      "sha256": "109de394f675dd9d8b559cd5029b2fbc7acbffbda5a70476cd6f44744bb6ca58",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01445": {
+      "identity": "92a52daa636ddcf794541b67ddb743a8c615347dbdf30d980717a4da3f47f842",
+      "path": "haim_musicgen_musicgen_small_01445.npz",
+      "samples": 480000,
+      "sha256": "9ad72c3ae913ed0a4185ebf3f40275adacec0c5646d55f7b0e7d0b10fca02e90",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01447": {
+      "identity": "dfae494f9208d6672f5a1331b61b0cc19b1f3c7ef73f1e12d059aa98c69610f6",
+      "path": "haim_musicgen_musicgen_small_01447.npz",
+      "samples": 480000,
+      "sha256": "22f0dbd709a81a36f5cf1df8846c61c64fba51d5a2ff2414f949856a11f150bf",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01498": {
+      "identity": "2fd0505a44e193540f16fe82709d98d56bdeff9ff9c5f364437a97bdaeb32a36",
+      "path": "haim_musicgen_musicgen_small_01498.npz",
+      "samples": 480000,
+      "sha256": "2e45e37195b502278ea72af171688f93e421477af4d3533e97bfa1149b39f61d",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01502": {
+      "identity": "381999e6a39594fb8c555f84db3cb83226e0cbaac649193dccd59b4a6af5071b",
+      "path": "haim_musicgen_musicgen_small_01502.npz",
+      "samples": 480000,
+      "sha256": "c8147b9dcff0a077c7f716e34fe5463e886b9547da8e31ad06ffcdc169ce15c5",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01503": {
+      "identity": "0a386067417e878f687838b0dba6e3785bea031911f070d2968cdb49ab303511",
+      "path": "haim_musicgen_musicgen_small_01503.npz",
+      "samples": 480000,
+      "sha256": "9bd164c75840d4e58444c29652824a3bc35312cba1d96b7c80a0052c86bf765c",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01543": {
+      "identity": "920d343e953d304de195a83b913635ba7d7f976ff88c8c2b352953e79efac7b7",
+      "path": "haim_musicgen_musicgen_small_01543.npz",
+      "samples": 480000,
+      "sha256": "8a694cb18bf7ea1c78723dd1bc529e75eeba30d511c6282995b48737e212e148",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01658": {
+      "identity": "a21bd40a9acf63bc502d9b6f8b7560e3536ef854311875c2f9432647f3d87b0c",
+      "path": "haim_musicgen_musicgen_small_01658.npz",
+      "samples": 480000,
+      "sha256": "ef89e2cd4fde1157cf51408d2dfa9ebc60d7b362b7183515d802e4aefc5b098c",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01670": {
+      "identity": "b07f93f06c32af1eba7d92dfc3eeae65cacf55144000c81e149fb1299ee9bd92",
+      "path": "haim_musicgen_musicgen_small_01670.npz",
+      "samples": 480000,
+      "sha256": "aab41f4266cc0b20e149e0184bdf14a75a59e1d7fafb9f00963eb195828813f7",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01734": {
+      "identity": "1408550aac5ed9b75a68892330f9a1f3b955c4c879228f3df67ceafc220167a7",
+      "path": "haim_musicgen_musicgen_small_01734.npz",
+      "samples": 480000,
+      "sha256": "7727f8a7b851430024e8bee197e8b5909a67a6dc6c938b35ff0f13426be71e58",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01741": {
+      "identity": "148a5fbcf13bde65a747d48593e098d44a8c8aaafca6f6e8525648cb98ead477",
+      "path": "haim_musicgen_musicgen_small_01741.npz",
+      "samples": 480000,
+      "sha256": "2892f703da728e2fd976e182f6cd25fb78e5f0fd5788f76e146444dfd64b0235",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01771": {
+      "identity": "55b06414bca9c81577ac0380ff1f802b21a1b36a87a1484d72ee2da7217318b7",
+      "path": "haim_musicgen_musicgen_small_01771.npz",
+      "samples": 480000,
+      "sha256": "8006bd9a9769fe4669f3cabb56fd76eb10c8a10154631188da1477619251a25f",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01784": {
+      "identity": "e9de7760d2d7de974727cede74c47ddf665a5a85a71846540e835445fe787758",
+      "path": "haim_musicgen_musicgen_small_01784.npz",
+      "samples": 480000,
+      "sha256": "1317854bd88c809e1936846e761804630e345d683a5792f229cb48efd8a72ee6",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01799": {
+      "identity": "6c0799d5d59ef9d13924baa1eb7fb704ff336678a72d63d5917938da248b3b45",
+      "path": "haim_musicgen_musicgen_small_01799.npz",
+      "samples": 480000,
+      "sha256": "5d15e02f384fb7808c269675cfa72d8f09c59226fbd0a505c60776e71227bacc",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01836": {
+      "identity": "e74ac0adfa197dd7e9cee2516172571d36382341db7e138255c81ba18840d5a0",
+      "path": "haim_musicgen_musicgen_small_01836.npz",
+      "samples": 480000,
+      "sha256": "f0e1f5445cd9fcfcc40881c2c0eb2bf00d466a0afca9c29312beedf9bd6021f4",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01861": {
+      "identity": "e1fcdccbbb1264864bbd2425db5deeeb340dc87ce12d1856407e823e2368beb8",
+      "path": "haim_musicgen_musicgen_small_01861.npz",
+      "samples": 480000,
+      "sha256": "f1f1e7854d204ddd937c49bcc41cd0df87a5d262031ee8e39ddfbf854fd54bcf",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01887": {
+      "identity": "a003aa59433b56b292905bdd5672fdf7b16e55accfdbf0459d7095f0f0ecf490",
+      "path": "haim_musicgen_musicgen_small_01887.npz",
+      "samples": 480000,
+      "sha256": "c9cc1ed4025760bd4aa0426923fcbeaaba788f958e3190eed0978bd047410ea4",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01961": {
+      "identity": "e8b05fed8644456213c1845988244d0a353353faedd2af77a32c3dbafcdcbb18",
+      "path": "haim_musicgen_musicgen_small_01961.npz",
+      "samples": 480000,
+      "sha256": "63fb84b593ddd5048e353769bd2ba1a20c06d029c110bc49b425a29765d53d88",
+      "windows": 14
+    },
+    "haim_musicgen_musicgen_small_01987": {
+      "identity": "a55bb5fb4b335b39c2ed2f84f975cf89465b9d6c413a51fe16c75e9647b29191",
+      "path": "haim_musicgen_musicgen_small_01987.npz",
+      "samples": 480000,
+      "sha256": "409c028279a0f8a1a8e986cbcf4a405c0c879aa771e2b40ce8b46afa12f0dbe7",
+      "windows": 14
+    }
+  }
+}

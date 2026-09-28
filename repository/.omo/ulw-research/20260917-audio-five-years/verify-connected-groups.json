@@ -1,0 +1,35 @@
+{
+  "all/all": {
+    "rows": 568,
+    "atomic_group_ids": 106,
+    "distinct_group_id_strings": 119,
+    "connected_components": 93
+  },
+  "dev/mix_minus6dB": {
+    "rows": 8,
+    "atomic_group_ids": 4,
+    "distinct_group_id_strings": 3,
+    "connected_components": 1
+  },
+  "test/mix_minus6dB": {
+    "rows": 8,
+    "atomic_group_ids": 4,
+    "distinct_group_id_strings": 3,
+    "connected_components": 1
+  },
+  "dev/base": {
+    "rows": 24,
+    "atomic_group_ids": 17,
+    "distinct_group_id_strings": 17,
+    "connected_components": 17
+  },
+  "test/base": {
+    "rows": 21,
+    "atomic_group_ids": 14,
+    "distinct_group_id_strings": 14,
+    "connected_components": 14
+  },
+  "cross_split_components": 0,
+  "input_sha256": "47217967ff321b0a83c87059de777266f1383904ee191770f3f328ac18404abf",
+  "interpretation": "Independence under existing speaker/source linkage only; unrecorded dependencies and pretraining overlap remain unknown."
+}

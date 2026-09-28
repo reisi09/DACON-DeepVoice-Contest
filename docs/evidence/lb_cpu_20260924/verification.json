@@ -1,0 +1,38 @@
+{
+  "verified_utc": "2026-09-24T05:53:04.325767+00:00",
+  "device": "local CPU",
+  "workspace": "wsp-9683432r72m7",
+  "workspace_state": "stopped",
+  "gpu_jobs_started": 0,
+  "checks": [
+    "historical five-metric reconstruction: maximum absolute difference 0",
+    "42,947-row role integrity: zero cross-role components; prior nine modified files unchanged",
+    "new voice local loss: finite gradients and changed fc5 update; microbatch update atol 1e-7 rtol 1e-6",
+    "train/runtime pooling parity and file order invariance atol 1e-7 rtol 1e-6",
+    "one/three-seed checkpoint loading agreement; changed embedded identity rejected",
+    "per-output masks retain HAIM rows; unknown FILE does not discard other scores",
+    "cache provenance mismatch rejected; package rejects independently valid wrong-encoder archive",
+    "package serialization roundtrip and existing artifact overwrite rejection",
+    "actual original FinalConformer.fc5 gradient and padded/ragged WindowMIL contract",
+    "HTTP403 pending unit regression and token excluded from subprocess argv",
+    "LibriSpeech official archive checksum and 200 full-audio decodes; full VESSL readback for uploaded payloads"
+  ],
+  "quality_claims": false,
+  "not_validated": [
+    "new model EER/LB improvement",
+    "full encoder inference",
+    "L4 resources",
+    "121 historical codec interval alignments",
+    "independent sealed set",
+    "cache promotion"
+  ],
+  "final_review": {
+    "material_findings_remaining": 0,
+    "resolved": [
+      "cache/checkpoint producer contract",
+      "checkpoint internal config validation",
+      "packaged frozen assets and runtime identity"
+    ]
+  },
+  "code_commit": "ad4a6ad918b8d43df4b2e6923c3cd514decbac66"
+}

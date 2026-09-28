@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "split-coverage",
+      "title": "Current 7144 split: coverage gaps and annotation limits",
+      "queries": [
+        {
+          "id": "actual-split-counts",
+          "source": {
+            "label": "Current selected manifest and exposure diagnostics",
+            "files": [
+              {
+                "label": "selected.csv"
+              },
+              {
+                "label": "split_coverage_audit.json"
+              },
+              {
+                "label": "diagnostics.json"
+              }
+            ],
+            "caveats": [
+              "No independent test partition in this manifest; new acquired data is not yet split.",
+              "3750 music rows lack voice presence and authenticity labels; actual vocals may be present.",
+              "Sparse generators each have only one validation row.",
+              "Historical exposure prevents treating current validation as an independent test."
+            ]
+          },
+          "columns": [
+            "route",
+            "label",
+            "train",
+            "val",
+            "test"
+          ],
+          "rows": [
+            {
+              "route": "voice",
+              "label": "0",
+              "train": 1652,
+              "val": 412,
+              "test": 0
+            },
+            {
+              "route": "voice",
+              "label": "1",
+              "train": 1064,
+              "val": 266,
+              "test": 0
+            },
+            {
+              "route": "music",
+              "label": "0",
+              "train": 1206,
+              "val": 302,
+              "test": 0
+            },
+            {
+              "route": "music",
+              "label": "1",
+              "train": 1794,
+              "val": 448,
+              "test": 0
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "Counts recomputed from the exact existing selected CSV. No split was changed."
+          }
+        }
+      ]
+    }
+  ]
+}

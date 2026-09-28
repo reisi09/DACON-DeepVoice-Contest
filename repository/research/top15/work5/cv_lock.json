@@ -1,0 +1,12 @@
+{
+ "written": "2026-09-28 02:45 KST",
+ "held_out_numbers_seen_before_lock": "DB held-out (data v4 test) results of S6/S7 are known; no cross-validation result exists yet",
+ "purpose": "split-luck check for the S6 vs S7 decision (and later G3'/G2'/G11): source-disjoint 5-fold CV on the R2 pinned rows",
+ "universe": "research/top15/work2/backbones/rows_r2.txt (31,270 rows; original train+val+test pooled)",
+ "folds": "K=5 over source components: union-find of sources that share any group_id (lineage kept inside one fold); components shuffled with numpy seed s (s = 0, 1, ... until every test fold has both classes for FILE, VOICE and MUSIC) then assigned greedily largest-first to the fold with the fewest rows",
+ "inner_val": "inside the 4 training folds, 12% of group_ids (numpy seed 0, stratified by source) for early stopping, fusion CDF tables and FILE ensemble fit",
+ "training": "R2/work4 recipes, seeds 41/42/43: DF-Arena mlp_long and AD resmlp_long with label completion L (data_v4/label_rules.py) on training rows; WavLM-L hidden-8 mlp_long on original labels; music WindowMIL mert6_12+eat16 (S6) and mert6_12+eat16+sslampt5 (S7)",
+ "semantics": "RT: every test-fold row scored by every head, VOICE 0 when the old-cache voice stem is silent, CDF tables on non-silent inner-val rows, FILE ensemble refit on inner val (file_ensemble.fit)",
+ "metric": "official ADS on each test fold (original labels); paired delta S7 - S6 per fold",
+ "decision": "CV supports S7 if the mean fold delta >= +0.003 AND at least 4 of 5 folds are positive; otherwise S7 is not submitted automatically (reported to the user)"
+}

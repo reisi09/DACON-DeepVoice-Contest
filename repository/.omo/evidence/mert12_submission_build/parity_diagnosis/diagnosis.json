@@ -1,0 +1,258 @@
+{
+  "attempt5": {
+    "archive_sha256": "f37a2ccf209e0a2a11b8046d2c349aa2a20358a8b91f6da11ef4894bfb00f737",
+    "artifact": "results/mert12_a100_20260918/attempt5/downloaded/unpacked/output/mert12_batch_parity_probe.json",
+    "conclusion": "MERT batch geometry is not the cached/raw probability mismatch",
+    "environment": {
+      "demucs": "4.0.1",
+      "ffmpeg": "7.0.2-static",
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "librosa": "0.10.2.post1",
+      "python": "3.11.15",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.6"
+    },
+    "mert_batch_single_max_abs": 3.0517578125e-05,
+    "mert_batch_single_max_probability_error": 1.57160684466362e-09,
+    "processor_batch_single_max_abs": 0.0
+  },
+  "correction": {
+    "evidence_path": "_workspace/eight_h100_20260917/attempt6_state.AGajao/parity_gpu_strict.json",
+    "precision_after_model_init": {
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "cudnn_benchmark": false,
+      "float32_matmul_precision": "highest"
+    },
+    "reason": "initial review observed framework default before model initialization; actual extraction calls AntiDeepfake initialization first",
+    "supersedes": "initial TF32 live-candidate finding"
+  },
+  "decoder_isolation": {
+    "artifact": ".omo/evidence/mert12_submission_build/parity_diagnosis/fallback_cpu/all_four_receipt.json",
+    "conclusion": "The cached feature behavior is reproduced by the torchaudio/Julius decoder path; the environment-dependent FFmpeg path caused the parity failure",
+    "max_a100_ffmpeg_h100_cache_probability_error": 0.0001913110415141528,
+    "max_fallback_h100_cache_probability_error": 1.346343196928501e-07,
+    "method": "explicit torchaudio.load + demucs.audio.convert_audio (Julius), CPU HTDemucs, CPU MERT, all four files and all windows",
+    "representative_backing_fallback_vs_a100_ffmpeg": {
+      "ID": "core_000209f68a0dc6367dcb_base",
+      "max_abs": 0.12433165311813354,
+      "rms": 0.0051407821433099845
+    }
+  },
+  "environment": {
+    "a100_raw": {
+      "ffmpeg": "system ffmpeg 6.1.1-3ubuntu5",
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "other_library_versions": "not captured in runtime receipt",
+      "python": "3.13.9",
+      "torch": "2.9.1+cu130"
+    },
+    "h100_cache": {
+      "cuda": "12.8",
+      "ffmpeg": "imageio-ffmpeg 0.6.0 static ffmpeg 7.0.2",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "python": "3.11.13",
+      "torch": "2.7.1+cu128"
+    },
+    "official_target": {
+      "cuda": "12.8",
+      "demucs": "4.0.1",
+      "librosa": "0.10.2.post1",
+      "numpy": "1.26.4",
+      "python": "3.11.15",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.57.6"
+    }
+  },
+  "hypothesis_status": [
+    {
+      "evidence": "four audio hashes match; feature extractor, baseline, MERT, and HTDemucs hashes match; starts and valid lengths match",
+      "hypothesis": "wrong input, cache, asset, or window identity",
+      "status": "refuted for checked inputs"
+    },
+    {
+      "evidence": "original equals permuted and strict subset by ID",
+      "hypothesis": "cross-file ordering or RNG changes result",
+      "status": "refuted at 10-decimal CSV output"
+    },
+    {
+      "evidence": "attempt5 same-stem exact-processor batch/single ensemble delta <=1.58e-9",
+      "hypothesis": "MERT batch geometry changes numerical result",
+      "status": "refuted"
+    },
+    {
+      "evidence": "AntiDeepfake initialization runs before H100 extraction and sets both TF32 flags false; attempt6 strict receipt records precision_after_model_init cudnn=false; packaged runtime also sets both false",
+      "hypothesis": "HTDemucs TF32 setting changes backing stem",
+      "status": "refuted for the recorded cache/runtime paths"
+    },
+    {
+      "evidence": "4.51.3 and 4.57.6 CPU feature bitwise equal; CPU/A100 MERT error tiny relative to cache gap; torchaudio/Julius path reproduces cache probabilities",
+      "hypothesis": "runtime/library/accelerator environment changes numerical result",
+      "status": "refuted for Transformers and ordinary MERT device numerics; decoder branch identified"
+    }
+  ],
+  "identity": {
+    "all_audio_hashes_match": true,
+    "all_feature_extractor_hashes_match_current_source": true,
+    "all_windows_same_layout": true,
+    "baseline_script_sha256": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+    "cached_eight_features_sha256": "b0304f4f9aa2d13524d56622f494c4b1fab160b5009e09a51fb77987ed23acac",
+    "current_eight_features_sha256": "b0304f4f9aa2d13524d56622f494c4b1fab160b5009e09a51fb77987ed23acac",
+    "htdemucs_model_sha256": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4",
+    "mert_model_sha256": "0c03774d821a6ad972cb48220b128a10ebea2c790116bd0fd35e5a013f8017f6"
+  },
+  "limitations": [
+    "The new package has local full hash/CRC verification and CPU decoder/cache parity, but its report remains gpu_end_to_end_verified=false until ops runs the new ZIP.",
+    "H100 extraction did not record the literal ffmpeg/ffprobe PATH; numerical reproduction identifies the effective cached preprocessing behavior rather than a direct process-level decoder receipt."
+  ],
+  "observed": {
+    "max_abs_error": 0.00019127128483675815,
+    "max_error_ID": "core_80692bf518679d1acdbb_base",
+    "order_subset_max_error_at_csv_precision": 0.0,
+    "records": [
+      {
+        "ID": "core_000209f68a0dc6367dcb_base",
+        "absolute_error": 5.7220138387492625e-06,
+        "audio_hash_match": true,
+        "audio_sha256": "cd1ea301e9adf854ba820e9aafe7c055f4ae0236eb7ef522a845b210f2705393",
+        "cached_h100_probability": 0.9999916950861613,
+        "feature_sha256": "8dc292163c90b0d11f8e849e2121209884254e994010fba36370f476c524435f",
+        "original_equals_permuted_all_columns": true,
+        "original_equals_subset_all_columns": true,
+        "raw_a100_probability": 0.9999974171,
+        "signed_raw_minus_cached": 5.7220138387492625e-06,
+        "smoke_audio_sha256": "cd1ea301e9adf854ba820e9aafe7c055f4ae0236eb7ef522a845b210f2705393",
+        "starts": [
+          0,
+          32300,
+          63400
+        ],
+        "valid_samples": [
+          64600,
+          64600,
+          64600
+        ]
+      },
+      {
+        "ID": "core_2d2bc674537639d1d836_base",
+        "absolute_error": 5.978384205346306e-06,
+        "audio_hash_match": true,
+        "audio_sha256": "c204d5b146a3c4cd1c1237d9562690cb6d2ebc3364ef54bb0c72b20c66b04554",
+        "cached_h100_probability": 8.67836157946537e-05,
+        "feature_sha256": "9d6695604d0a4c0e2db4461fab9de914977faec70e4fe624a70a74cb42bdebc5",
+        "original_equals_permuted_all_columns": true,
+        "original_equals_subset_all_columns": true,
+        "raw_a100_probability": 9.2762e-05,
+        "signed_raw_minus_cached": 5.978384205346306e-06,
+        "smoke_audio_sha256": "c204d5b146a3c4cd1c1237d9562690cb6d2ebc3364ef54bb0c72b20c66b04554",
+        "starts": [
+          0,
+          32300,
+          63400
+        ],
+        "valid_samples": [
+          64600,
+          64600,
+          64600
+        ]
+      },
+      {
+        "ID": "core_80692bf518679d1acdbb_base",
+        "absolute_error": 0.00019127128483675815,
+        "audio_hash_match": true,
+        "audio_sha256": "6a56acd4f1617fa5f33934e90227fb6895c9ad13401cf392b9b2c29a3943efb6",
+        "cached_h100_probability": 0.9903171261151632,
+        "feature_sha256": "c50417845bab913b65adf2443a9bbbfcd7fb28b678df8351d8cc53f0e1b76dfd",
+        "original_equals_permuted_all_columns": true,
+        "original_equals_subset_all_columns": null,
+        "raw_a100_probability": 0.9905083974,
+        "signed_raw_minus_cached": 0.00019127128483675815,
+        "smoke_audio_sha256": "6a56acd4f1617fa5f33934e90227fb6895c9ad13401cf392b9b2c29a3943efb6",
+        "starts": [
+          0,
+          32300,
+          63400
+        ],
+        "valid_samples": [
+          64600,
+          64600,
+          64600
+        ]
+      },
+      {
+        "ID": "core_ffccfbb2f7762a614a08_base",
+        "absolute_error": 8.195220343194614e-05,
+        "audio_hash_match": true,
+        "audio_sha256": "1183f69f4180ca899e66efa728c8d8ebee10f4d97101c991d1c0a35d999f9548",
+        "cached_h100_probability": 0.001111324003431946,
+        "feature_sha256": "f845da085e191ed3577dbf39ca311873e0f18a04808d013b8e85fa7537be1da0",
+        "original_equals_permuted_all_columns": true,
+        "original_equals_subset_all_columns": null,
+        "raw_a100_probability": 0.0010293718,
+        "signed_raw_minus_cached": -8.195220343194614e-05,
+        "smoke_audio_sha256": "1183f69f4180ca899e66efa728c8d8ebee10f4d97101c991d1c0a35d999f9548",
+        "starts": [
+          0,
+          32300,
+          63400
+        ],
+        "valid_samples": [
+          64600,
+          64600,
+          64600
+        ]
+      }
+    ]
+  },
+  "required_next_probe": {
+    "decision_rule": "No tolerance change; release only after new package GPU QA and hash readback",
+    "gpu_package_qa": "Run packaged raw-audio original/permuted/subset and supplemental scenarios on the new ZIP; require cached music <=1e-5 and order/subset <=1e-7"
+  },
+  "resolution": {
+    "new_package": "submissions/MERT12_full1322_submit.zip",
+    "new_package_bytes": 6268222843,
+    "new_package_gpu_end_to_end_verified": false,
+    "new_package_sha256": "e7bebbded6fef06517db0d42421a575a0440849248de99856796ffc3e5eb5ee5",
+    "regression_test": "real hash-bound smoke WAV decodes to the training-path 44.1 kHz tensor SHA even with PATH empty",
+    "runtime": "pin baseline load_track to torchaudio.load + demucs.audio.convert_audio before separation",
+    "unchanged": [
+      "trained heads",
+      "training receipts",
+      "MERT batching",
+      "probability tolerance",
+      "file fusion",
+      "window pooling"
+    ]
+  },
+  "schema_version": 1,
+  "scope": "CPU-only diagnosis; no GPU run, tolerance change, or runtime change",
+  "source_path_differences": {
+    "cached_mert_call": "per-file windows are processed together (3 windows here; configured maximum 8), processor(list, padding=True), one MERT forward",
+    "cached_tf32": "eight_features._Engine initializes AntiDeepfake before separator/MERT; AntiDeepfake.__init__ sets cuda matmul TF32=false, cudnn TF32=false, cudnn benchmark=false, and highest precision",
+    "implication": "TF32 flags match the packaged runtime after model initialization; TF32 is not a live explanation for this mismatch",
+    "processor_only_cpu_probe": {
+      "array_equal": true,
+      "input_windows": 3,
+      "max_abs": 0.0,
+      "note": "Synthetic equal-length float32 windows in local official-version processor; isolates processor only, not MERT kernels"
+    },
+    "runtime_mert_call": "each window is processed separately, processor(array, no padding argument), three MERT forwards",
+    "runtime_tf32": "mert12_submission.py explicitly sets cuda matmul allow_tf32=false and cudnn allow_tf32=false before HTDemucs/MERT inference"
+  },
+  "transformers_cpu_isolation": {
+    "artifact": ".omo/evidence/mert12_submission_build/parity_diagnosis/transformers_cpu/comparison.json",
+    "conclusion": "Transformers version and ordinary A100 CPU/GPU numerical error are not the upstream mismatch",
+    "cpu_vs_a100_gpu": {
+      "max_abs": 0.000213623046875,
+      "rms": 1.3916423637395319e-05
+    },
+    "cpu_vs_h100_cache": {
+      "max_abs": 2.872678756713867,
+      "rms": 0.35548356638469664
+    },
+    "same_input_transformers_4_51_3_vs_4_57_6": {
+      "max_abs": 0.0,
+      "rms": 0.0
+    }
+  }
+}

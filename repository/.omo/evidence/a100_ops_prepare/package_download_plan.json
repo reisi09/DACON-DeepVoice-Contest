@@ -1,0 +1,31 @@
+{
+  "dry_run_single_target": true,
+  "excludes": [
+    "MERT12_full_submit.json",
+    "cached_mert12_reference.json",
+    "gpu_preflight.json",
+    "gpu_telemetry.csv",
+    "mert12_batch_parity_probe.json",
+    "mert12_batch_parity_probe_arrays",
+    "mert12_batch_parity_probe_arrays/**",
+    "mert12_full",
+    "mert12_full/**",
+    "notebook.log",
+    "recovery_notebook.log",
+    "smoke_original",
+    "smoke_original/**",
+    "smoke_permuted",
+    "smoke_permuted/**",
+    "smoke_subset",
+    "smoke_subset/**"
+  ],
+  "expected_bytes": 6268221960,
+  "expected_sha256": "eb5466d1446e205130f5db1de719260a1b0ecbd4743c4c18d207288970b88a90",
+  "gpu_stopped": true,
+  "local_directory": "results/mert12_a100_20260918/submission_download",
+  "remote_file": "MERT12_full_submit.zip",
+  "remote_prefix": "mert12-a100-20260918/output/",
+  "schema_version": 1,
+  "status": "ready",
+  "workspace": "wsp-5i3knd3gxeox"
+}

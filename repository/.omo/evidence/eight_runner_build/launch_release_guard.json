@@ -1,0 +1,7 @@
+{
+  "scenario": "GPU start cannot occur without root release attribution",
+  "invocation": "eight_h100_launch.start('not-root')",
+  "observable": "RuntimeError before any VESSL call",
+  "rejected": true,
+  "error": "GPU release must be attributed to root"
+}

@@ -1,0 +1,607 @@
+{
+  "candidate": "D_voice_ensemble",
+  "file_relation": "noisy_or",
+  "groups": {
+    "validation-000-observed": [
+      "group-validation-000"
+    ],
+    "validation-001-observed": [
+      "group-validation-001"
+    ],
+    "validation-002-observed": [
+      "group-validation-002"
+    ],
+    "validation-003-observed": [
+      "group-validation-003"
+    ],
+    "validation-004-observed": [
+      "group-validation-004"
+    ],
+    "validation-005-observed": [
+      "group-validation-005"
+    ],
+    "validation-006-observed": [
+      "group-validation-006"
+    ],
+    "validation-007-observed": [
+      "group-validation-007"
+    ],
+    "validation-008-observed": [
+      "group-validation-008"
+    ],
+    "validation-009-observed": [
+      "group-validation-009"
+    ],
+    "validation-010-observed": [
+      "group-validation-010"
+    ],
+    "validation-011-observed": [
+      "group-validation-011"
+    ]
+  },
+  "labels": {
+    "validation-000-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-001-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-002-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-003-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-004-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-005-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-006-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-007-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-008-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-009-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-010-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-011-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    }
+  },
+  "predictions": {
+    "validation-000-observed": {
+      "FILE_FAKE_PROB": 0.4968133570985829,
+      "MUSIC_FAKE_PROB": 0.4247266352176666,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.2500220090150833,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-001-observed": {
+      "FILE_FAKE_PROB": 0.8170516885268382,
+      "MUSIC_FAKE_PROB": 0.5826923251152039,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500223815441132,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-002-observed": {
+      "FILE_FAKE_PROB": 0.4816381654090248,
+      "MUSIC_FAKE_PROB": 0.4020548611879349,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25002266466617584,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-003-observed": {
+      "FILE_FAKE_PROB": 0.8144095713920152,
+      "MUSIC_FAKE_PROB": 0.5741163790225983,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500228583812714,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-004-observed": {
+      "FILE_FAKE_PROB": 0.4979709674119215,
+      "MUSIC_FAKE_PROB": 0.42645664513111115,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.250021293759346,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-005-observed": {
+      "FILE_FAKE_PROB": 0.8146180356056418,
+      "MUSIC_FAKE_PROB": 0.5747933089733124,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500226199626923,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-006-observed": {
+      "FILE_FAKE_PROB": 0.4844459620459832,
+      "MUSIC_FAKE_PROB": 0.40625081956386566,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25002121925354004,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-007-observed": {
+      "FILE_FAKE_PROB": 0.8131974103721227,
+      "MUSIC_FAKE_PROB": 0.5701835751533508,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500218749046326,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-008-observed": {
+      "FILE_FAKE_PROB": 0.4979635474975105,
+      "MUSIC_FAKE_PROB": 0.42644645273685455,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25002019107341766,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-009-observed": {
+      "FILE_FAKE_PROB": 0.8184105659526717,
+      "MUSIC_FAKE_PROB": 0.5871014297008514,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500233054161072,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-010-observed": {
+      "FILE_FAKE_PROB": 0.4843067346093367,
+      "MUSIC_FAKE_PROB": 0.40604372322559357,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.2500201314687729,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-011-observed": {
+      "FILE_FAKE_PROB": 0.8181508622291938,
+      "MUSIC_FAKE_PROB": 0.5862612128257751,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.750021368265152,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    }
+  },
+  "schema_version": 1,
+  "strata": {
+    "validation-000-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-001-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-002-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-003-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-004-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-005-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-006-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-007-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-008-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-009-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-010-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-011-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    }
+  },
+  "upstream_identity": {
+    "base_upstream_family_identity": "86e89b2d2806d6d41c9b5858bd3e72acd54e485ab82f20a8db4dd44e853d4ab0",
+    "checkpoint_sha256": "8c8bdceccb52071c80a7e1e98fcdb10ca37d66875fdcb0c0deb4d792aeeab5f7",
+    "model_recipe_identity": "81096ca1428b002316e34229796fba637d9ae3a569bd281c3aff22d37b4bd97f",
+    "records_identity": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+    "seed_checkpoint_sha256": [
+      "8c8bdceccb52071c80a7e1e98fcdb10ca37d66875fdcb0c0deb4d792aeeab5f7",
+      "ca66e1f94c2c5345a6576c013ad71be895241ec2909acd49613d32c171db8089"
+    ],
+    "seed_model_recipe_identity": [
+      "81096ca1428b002316e34229796fba637d9ae3a569bd281c3aff22d37b4bd97f",
+      "53ff13dd3ad97608f530f7284f43f918db09387726142c932a9a5b814d9c0181"
+    ],
+    "seed_upstream_family_identity": [
+      "2868f89980a1b32b27459ff5ad2f8babe7ea8da09bb662f471ec68213a835a03",
+      "5d69cc4c1af0e6b13dec6e0db3108e3ec7a59f8114ef3365c4e567f88198a51c"
+    ],
+    "seed_voice_checkpoint_sha256": [
+      "bedc49356c12e8f83f3a40fa08b6d8ffd8353c4185a0e069ffa91673c4f768e8",
+      "df03b0fbc6ea1858b59f76b6055b25cdb4e94055b673fcdf4b6f53b7a6a1706d"
+    ],
+    "source_sha256": {
+      "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+      "redesign_fit.py": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906",
+      "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+      "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+      "redesign_predictions.py": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+      "redesign_train.py": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+    },
+    "training_manifest_sha256": "9e4e48bd862a4a3abc3b19e67f0310442f83ad68c8e79da24575267ec7e906d9",
+    "upstream_family_identity": "2eef3f0dce0ca35552bc750d936db12a11d01958aae789a7bf90a2aee06646e8",
+    "upstream_family_payload": {
+      "seed_upstream_family_identity": [
+        "2868f89980a1b32b27459ff5ad2f8babe7ea8da09bb662f471ec68213a835a03",
+        "5d69cc4c1af0e6b13dec6e0db3108e3ec7a59f8114ef3365c4e567f88198a51c"
+      ]
+    },
+    "voice_checkpoint_sha256": "bedc49356c12e8f83f3a40fa08b6d8ffd8353c4185a0e069ffa91673c4f768e8",
+    "voice_recipe_identity": "5e154446c8f3167a2060dda5d55ee7ab191e31430a6d3310cdfaea17d5bda258"
+  },
+  "window_scores": {
+    "validation-000-observed": {
+      "music_fake": [
+        0.4594242721796036,
+        0.4165780693292618,
+        0.44579020142555237
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.2500208169221878,
+        0.25001975893974304,
+        0.2500211000442505
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-001-observed": {
+      "music_fake": [
+        0.5668621957302094,
+        0.5696398615837097,
+        0.5648168921470642
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500206232070923,
+        0.7500223815441132,
+        0.7500205934047699
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-002-observed": {
+      "music_fake": [
+        0.4354091137647629,
+        0.4161336123943329,
+        0.4171331822872162
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.2500208765268326,
+        0.25001969933509827,
+        0.25002188980579376
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-003-observed": {
+      "music_fake": [
+        0.5720046162605286,
+        0.5742607414722443,
+        0.5733684003353119
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500205039978027,
+        0.7500228583812714,
+        0.7500196993350983
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-004-observed": {
+      "music_fake": [
+        0.4648754596710205,
+        0.4159523695707321,
+        0.43726006150245667
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.250021293759346,
+        0.25001969933509827,
+        0.25001926720142365
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-005-observed": {
+      "music_fake": [
+        0.5722316205501556,
+        0.560452401638031,
+        0.5596176087856293
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500200271606445,
+        0.7500221729278564,
+        0.7500210702419281
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-006-observed": {
+      "music_fake": [
+        0.44137395918369293,
+        0.41031335294246674,
+        0.440642386674881
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.2500198632478714,
+        0.25002121925354004,
+        0.2500207722187042
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-007-observed": {
+      "music_fake": [
+        0.5657060444355011,
+        0.5639402568340302,
+        0.5465593636035919
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500195503234863,
+        0.7500207722187042,
+        0.7500214874744415
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-008-observed": {
+      "music_fake": [
+        0.4507833868265152,
+        0.4147554039955139,
+        0.44980837404727936
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25001882016658783,
+        0.25002019107341766,
+        0.2500199228525162
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-009-observed": {
+      "music_fake": [
+        0.5574594736099243,
+        0.5854256749153137,
+        0.558479517698288
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500207722187042,
+        0.750021904706955,
+        0.7500218451023102
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-010-observed": {
+      "music_fake": [
+        0.4475001245737076,
+        0.41642989218235016,
+        0.42640793323516846
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.250019907951355,
+        0.25001974403858185,
+        0.2500193268060684
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-011-observed": {
+      "music_fake": [
+        0.5652982890605927,
+        0.576319009065628,
+        0.5836896002292633
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75002121925354,
+        0.7500211596488953,
+        0.7500206530094147
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    }
+  }
+}

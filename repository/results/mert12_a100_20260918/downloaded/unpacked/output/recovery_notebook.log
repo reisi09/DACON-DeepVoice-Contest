@@ -1,0 +1,149 @@
+[NbConvertApp] Converting notebook /root/mert12_a100_20260918/source/DACON_MERT12_QA_Recovery.ipynb to notebook
+/opt/conda/lib/python3.13/site-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+Traceback (most recent call last):
+  File [35m"/root/mert12_a100_20260918/source/mert12_submission.py"[0m, line [35m258[0m, in [35m<module>[0m
+    [31mcli[0m[1;31m()[0m
+    [31m~~~[0m[1;31m^^[0m
+  File [35m"/root/mert12_a100_20260918/source/mert12_submission.py"[0m, line [35m252[0m, in [35mcli[0m
+    [31mcompare[0m[1;31m(args.reference, args.permuted, args.subset, args.cached_reference, args.output)[0m
+    [31m~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/root/mert12_a100_20260918/source/mert12_submission.py"[0m, line [35m209[0m, in [35mcompare[0m
+    raise SubmissionError(f"Cached/raw-audio MERT12 parity failed: {cached_error}")
+[1;35mSubmissionError[0m: [35mCached/raw-audio MERT12 parity failed: 0.00019127128483675815[0m
+Traceback (most recent call last):
+  File "/opt/conda/bin/jupyter-nbconvert", line 7, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_core/application.py", line 284, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+    app.start()
+    ~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/nbconvertapp.py", line 420, in start
+    self.convert_notebooks()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/nbconvertapp.py", line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/nbconvertapp.py", line 563, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        notebook_filename, resources, input_buffer=input_buffer
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        notebook_filename, resources=resources
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
+    return self.from_notebook_node(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        nbformat.read(file_stream, as_version=4), resources=resources, **kw
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 154, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 353, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+                ~~~~~~~~~~~~^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/preprocessors/execute.py", line 103, in preprocess
+    self.preprocess_cell(cell, resources, index)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/preprocessors/execute.py", line 124, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/conda/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from pathlib import Path
+import gc, hashlib, json, os, shutil, subprocess, sys, time, zipfile
+import torch
+JOB=Path('/root/mert12_a100_20260918'); SOURCE=JOB/'source'; INPUT=JOB/'input'
+OUTPUT=Path('/root-1/mert12-a100-20260918/output'); RUN=OUTPUT/'mert12_full'; DEADLINE_EPOCH=float(os.environ['DEADLINE_EPOCH'])
+PACKAGE=OUTPUT/'MERT12_full_submit.zip'; PACKAGE_RECEIPT=OUTPUT/'MERT12_full_submit.json'
+def sha(path):
+    with path.open('rb') as stream: return hashlib.file_digest(stream,'sha256').hexdigest()
+package=json.loads(PACKAGE_RECEIPT.read_text())
+assert PACKAGE.is_file() and PACKAGE.stat().st_size==package['bytes'] and sha(PACKAGE)==package['sha256']
+training=json.loads((RUN/'full_refit_receipt.json').read_text())
+heads=[RUN/f'head_seed{seed}.pt' for seed in (41,42,43)]
+assert [sha(path) for path in heads]==[item['checkpoint_sha256'] for item in training['checkpoints']]
+for path in [JOB/'smoke_package',JOB/'smoke_inputs',*[OUTPUT/f'smoke_{name}' for name in ('original','permuted','subset')],OUTPUT/'supplemental_qa']:
+    if path.exists(): shutil.rmtree(path)
+with zipfile.ZipFile(PACKAGE) as archive: archive.extractall(JOB/'smoke_package')
+with zipfile.ZipFile(INPUT/'smoke_inputs.zip') as archive: archive.extractall(JOB/'smoke_inputs')
+assert (JOB/'smoke_package/script.py').is_file()
+gc.collect(); torch.cuda.empty_cache(); assert torch.cuda.memory_allocated()==0
+subprocess.run([sys.executable,str(SOURCE/'mert12_submission.py'),'cached-reference','--features',str(INPUT/'features'),'--checkpoints',*[str(p) for p in heads],'--sample-submission',str(JOB/'smoke_inputs/original/sample_submission.csv'),'--output',str(OUTPUT/'cached_mert12_reference.json')],check=True,cwd=SOURCE)
+for name in ('original','permuted','subset'):
+    target=OUTPUT/f'smoke_{name}'; target.mkdir()
+    with (target/'runtime.log').open('w') as log:
+        subprocess.run([sys.executable,str(JOB/'smoke_package/script.py'),'--test-dir',str(JOB/f'smoke_inputs/{name}/test'),'--sample-submission',str(JOB/f'smoke_inputs/{name}/sample_submission.csv'),'--output',str(target/'submission.csv'),'--device','cuda'],check=True,stdout=log,stderr=subprocess.STDOUT)
+subprocess.run([sys.executable,str(SOURCE/'mert12_submission.py'),'compare','--reference',str(OUTPUT/'smoke_original/submission.csv'),'--permuted',str(OUTPUT/'smoke_permuted/submission.csv'),'--subset',str(OUTPUT/'smoke_subset/submission.csv'),'--cached-reference',str(OUTPUT/'cached_mert12_reference.json'),'--output',str(OUTPUT/'submission_smoke.json')],check=True,cwd=SOURCE)
+subprocess.run([sys.executable,str(SOURCE/'mert12_supplemental_qa.py'),'--package-root',str(JOB/'smoke_package'),'--source-audio',str(INPUT/'supplemental_real_source.wav'),'--source-sha256','f11541207692ae85606b95019ab828f2c554bdcd334759f7964c81793b63960e','--output',str(OUTPUT/'supplemental_qa'),'--deadline-epoch',str(DEADLINE_EPOCH),'--runtime-python',sys.executable],check=True,cwd=SOURCE)
+smoke=json.loads((OUTPUT/'submission_smoke.json').read_text()); supplemental=json.loads((OUTPUT/'supplemental_qa/supplemental_qa.json').read_text())
+receipt={'schema_version':1,'status':'complete','recovery':'ffmpeg_environment_only_after_original_notebook_smoke_failure','training_rerun':False,'package_rerun':False,'package_sha256':package['sha256'],'checkpoint_sha256':[sha(p) for p in heads],'original_failed_notebook_log':'output/notebook.log','executed_recovery_notebook':'output/DACON_MERT12_QA_Recovery_Executed.ipynb','smoke_receipt_sha256':sha(OUTPUT/'submission_smoke.json'),'supplemental_receipt_sha256':sha(OUTPUT/'supplemental_qa/supplemental_qa.json'),'finished_at':time.time()}
+(OUTPUT/'recovery_receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+{'status':'complete','training_rerun':False,'package_rerun':False,'package_sha256':package['sha256'],'smoke':smoke,'supplemental':supplemental}
+
+------------------
+
+----- stderr -----
+Traceback (most recent call last):
+  File [35m"/root/mert12_a100_20260918/source/mert12_submission.py"[0m, line [35m258[0m, in [35m<module>[0m
+    [31mcli[0m[1;31m()[0m
+    [31m~~~[0m[1;31m^^[0m
+  File [35m"/root/mert12_a100_20260918/source/mert12_submission.py"[0m, line [35m252[0m, in [35mcli[0m
+    [31mcompare[0m[1;31m(args.reference, args.permuted, args.subset, args.cached_reference, args.output)[0m
+    [31m~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/root/mert12_a100_20260918/source/mert12_submission.py"[0m, line [35m209[0m, in [35mcompare[0m
+    raise SubmissionError(f"Cached/raw-audio MERT12 parity failed: {cached_error}")
+[1;35mSubmissionError[0m: [35mCached/raw-audio MERT12 parity failed: 0.00019127128483675815[0m
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mCalledProcessError[39m                        Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 25[39m
+[32m     21[39m [38;5;28;01mfor[39;00m name [38;5;28;01min[39;00m ([33m'original'[39m,[33m'permuted'[39m,[33m'subset'[39m):
+[32m     22[39m     target=OUTPUT/f'smoke_{name}'; target.mkdir()
+[32m     23[39m     [38;5;28;01mwith[39;00m (target/[33m'runtime.log'[39m).open([33m'w'[39m) [38;5;28;01mas[39;00m log:
+[32m     24[39m         subprocess.run([sys.executable,str(JOB/[33m'smoke_package/script.py'[39m),[33m'--test-dir'[39m,str(JOB/f'smoke_inputs/{name}/test'),[33m'--sample-submission'[39m,str(JOB/f'smoke_inputs/{name}/sample_submission.csv'),[33m'--output'[39m,str(target/[33m'submission.csv'[39m),[33m'--device'[39m,[33m'cuda'[39m],check=[38;5;28;01mTrue[39;00m,stdout=log,stderr=subprocess.STDOUT)
+[32m---> [39m[32m25[39m subprocess.run([sys.executable,str(SOURCE/[33m'mert12_submission.py'[39m),[33m'compare'[39m,[33m'--reference'[39m,str(OUTPUT/[33m'smoke_original/submission.csv'[39m),[33m'--permuted'[39m,str(OUTPUT/[33m'smoke_permuted/submission.csv'[39m),[33m'--subset'[39m,str(OUTPUT/[33m'smoke_subset/submission.csv'[39m),[33m'--cached-reference'[39m,str(OUTPUT/[33m'cached_mert12_reference.json'[39m),[33m'--output'[39m,str(OUTPUT/[33m'submission_smoke.json'[39m)],check=[38;5;28;01mTrue[39;00m,cwd=SOURCE)
+[32m     26[39m subprocess.run([sys.executable,str(SOURCE/[33m'mert12_supplemental_qa.py'[39m),[33m'--package-root'[39m,str(JOB/[33m'smoke_package'[39m),[33m'--source-audio'[39m,str(INPUT/[33m'supplemental_real_source.wav'[39m),[33m'--source-sha256'[39m,[33m'f11541207692ae85606b95019ab828f2c554bdcd334759f7964c81793b63960e'[39m,[33m'--output'[39m,str(OUTPUT/[33m'supplemental_qa'[39m),[33m'--deadline-epoch'[39m,str(DEADLINE_EPOCH),[33m'--runtime-python'[39m,sys.executable],check=[38;5;28;01mTrue[39;00m,cwd=SOURCE)
+[32m     27[39m smoke=json.loads((OUTPUT/[33m'submission_smoke.json'[39m).read_text()); supplemental=json.loads((OUTPUT/[33m'supplemental_qa/supplemental_qa.json'[39m).read_text())
+[32m     28[39m receipt={[33m'schema_version'[39m:[32m1[39m,[33m'status'[39m:[33m'complete'[39m,[33m'recovery'[39m:[33m'ffmpeg_environment_only_after_original_notebook_smoke_failure'[39m,[33m'training_rerun'[39m:[38;5;28;01mFalse[39;00m,[33m'package_rerun'[39m:[38;5;28;01mFalse[39;00m,[33m'package_sha256'[39m:package[[33m'sha256'[39m],[33m'checkpoint_sha256'[39m:[sha(p) [38;5;28;01mfor[39;00m p [38;5;28;01min[39;00m heads],[33m'original_failed_notebook_log'[39m:[33m'output/notebook.log'[39m,[33m'executed_recovery_notebook'[39m:[33m'output/DACON_MERT12_QA_Recovery_Executed.ipynb'[39m,[33m'smoke_receipt_sha256'[39m:sha(OUTPUT/[33m'submission_smoke.json'[39m),[33m'supplemental_receipt_sha256'[39m:sha(OUTPUT/[33m'supplemental_qa/supplemental_qa.json'[39m),[33m'finished_at'[39m:time.time()}
+
+[36mFile [39m[32m~/.local/share/uv/python/cpython-3.13.9-linux-x86_64-gnu/lib/python3.13/subprocess.py:577[39m, in [36mrun[39m[34m(input, capture_output, timeout, check, *popenargs, **kwargs)[39m
+[32m    575[39m     retcode = process.poll()
+[32m    576[39m     [38;5;28;01mif[39;00m check [38;5;129;01mand[39;00m retcode:
+[32m--> [39m[32m577[39m         [38;5;28;01mraise[39;00m CalledProcessError(retcode, process.args,
+[32m    578[39m                                  output=stdout, stderr=stderr)
+[32m    579[39m [38;5;28;01mreturn[39;00m CompletedProcess(process.args, retcode, stdout, stderr)
+
+[31mCalledProcessError[39m: Command '['/root/mert330-a100-venv/bin/python', '/root/mert12_a100_20260918/source/mert12_submission.py', 'compare', '--reference', '/root-1/mert12-a100-20260918/output/smoke_original/submission.csv', '--permuted', '/root-1/mert12-a100-20260918/output/smoke_permuted/submission.csv', '--subset', '/root-1/mert12-a100-20260918/output/smoke_subset/submission.csv', '--cached-reference', '/root-1/mert12-a100-20260918/output/cached_mert12_reference.json', '--output', '/root-1/mert12-a100-20260918/output/submission_smoke.json']' returned non-zero exit status 1.
+

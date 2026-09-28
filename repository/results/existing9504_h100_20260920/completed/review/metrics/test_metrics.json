@@ -1,0 +1,464 @@
+{
+  "baseline_df_arena_original_fc5": {
+    "voice": {
+      "auc": 0.9999783211932015,
+      "eer": 0.0026881720430107516,
+      "n": 744,
+      "positives": 372
+    }
+  },
+  "checkpoints": {
+    "music_41.pt": "37402170d05f13840becc4ae45b1d9755e565d89889c5330fd6fa11bcd0aeb82",
+    "music_42.pt": "3315cd455b2781571e2d0a5ba02388d4335bfa5210222a1e130ecf79f2101609",
+    "music_43.pt": "ef4dae28ef052d74e2cdd236765be5d2b33d220f02bc6f29129b31e3211be540",
+    "voice_41.pt": "c1d00490d79765e422f99022ea2179db19be6eac800c93832fa4ffb5272c705c",
+    "voice_42.pt": "bc394b6bed3cf212f4a09f9811651d8f8b8477efbeeae1a676ba65a9442dd4bb",
+    "voice_43.pt": "31b350e02eb54105dac35bf78a43dc674dffa30af0bc75c9b0f665226ae9185b"
+  },
+  "evaluated_at": "2026-09-19T21:35:56+00:00",
+  "exposure_subsets": {
+    "historical_development_exposure": {
+      "file": {
+        "auc": 0.9819306973007162,
+        "eer": 0.04082901687266012,
+        "n": 1001,
+        "positives": 372
+      },
+      "music": {
+        "auc": null,
+        "eer": null,
+        "n": 257,
+        "note": "single class; EER/AUC undefined",
+        "positives": 0
+      },
+      "rows": 1001,
+      "voice": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "n": 744,
+        "positives": 372
+      }
+    },
+    "no_recorded_exposure": {
+      "file": {
+        "auc": 0.9004329004328996,
+        "eer": 0.14034352744030162,
+        "n": 425,
+        "positives": 341
+      },
+      "music": {
+        "auc": 0.9557673509286407,
+        "eer": 0.09453986873341713,
+        "n": 425,
+        "positives": 341
+      },
+      "rows": 425,
+      "voice": {
+        "auc": null,
+        "eer": null,
+        "n": 0,
+        "note": "single class; EER/AUC undefined",
+        "positives": 0
+      }
+    }
+  },
+  "feature_index_sha256": "cc5eef8284e3682bd5a5128109da49d87514eed09927872c8043eb61fbaf800e",
+  "heads": {
+    "file": {
+      "at_locked_validation_eer_threshold": {
+        "fnr": 0.07012622720897616,
+        "fpr": 0.07713884992987377,
+        "threshold": 0.5389404942162225
+      },
+      "auc": 0.9668115089629756,
+      "bootstrap_eer": {
+        "ci95": [
+          0.0330450385822229,
+          0.17507318184605664
+        ],
+        "components": 535,
+        "resamples": 1000,
+        "unit": "leakage component (component_id), with replacement",
+        "valid": 1000
+      },
+      "eer": 0.07433380084151474,
+      "mask": "FILE_FAKE known",
+      "n": 1426,
+      "positives": 713
+    },
+    "music": {
+      "at_locked_validation_eer_threshold": {
+        "fnr": 0.07038123167155426,
+        "fpr": 0.09970674486803519,
+        "threshold": 0.44072115421295166
+      },
+      "auc": 0.9699864982241303,
+      "bootstrap_eer": {
+        "ci95": [
+          0.06340933013640027,
+          0.11125586204908916
+        ],
+        "components": 534,
+        "resamples": 1000,
+        "unit": "leakage component (component_id), with replacement",
+        "valid": 1000
+      },
+      "eer": 0.09090909090909093,
+      "mask": "MUSIC_FAKE known and MUSIC_PRESENT known == 1",
+      "n": 682,
+      "positives": 341
+    },
+    "voice": {
+      "at_locked_validation_eer_threshold": {
+        "fnr": 0.0,
+        "fpr": 0.0,
+        "threshold": 0.3923856317996979
+      },
+      "auc": 1.0,
+      "bootstrap_eer": {
+        "ci95": null,
+        "components": 1
+      },
+      "eer": 0.0,
+      "mask": "VOICE_FAKE known and VOICE_PRESENT known == 1",
+      "n": 744,
+      "positives": 372
+    }
+  },
+  "interpretation": [
+    "historical development exposure: not an independent test",
+    "no official/L4 score; unknown labels are masked, not imputed",
+    "singing (CtrSVDD) is train-only; no singing evaluation"
+  ],
+  "lock_sha256": "bb50efd693f47c76cafe376c91e28f2fe1c9c29edf30455ca42b30022338097f",
+  "official_style_known_subset": {
+    "counts": {
+      "file_eer": 1426,
+      "music_eer": 682,
+      "music_presence_auc": 1426,
+      "voice_eer": 744,
+      "voice_presence_auc": 744
+    },
+    "coverage": {
+      "file_eer": 1.0,
+      "music_eer": 1.0,
+      "music_presence_auc": 1.0,
+      "voice_eer": 0.5217391304347826,
+      "voice_presence_auc": 0.5217391304347826
+    },
+    "invalid": {
+      "voice_presence_auc": "both positive and negative labels are required"
+    },
+    "metrics": {
+      "file_eer": 0.07433380084151474,
+      "music_eer": 0.09090909090909093,
+      "music_presence_auc": 0.9995782486677389,
+      "voice_eer": 0.0,
+      "voice_presence_auc": null
+    },
+    "partial": {
+      "voice_eer": "known subset only; unknown relevant labels: 682",
+      "voice_presence_auc": "known subset only; unknown relevant labels: 682"
+    },
+    "score": null,
+    "unknown_counts": {
+      "file_eer": 0,
+      "music_eer": 0,
+      "music_presence_auc": 0,
+      "voice_eer": 682,
+      "voice_presence_auc": 682
+    }
+  },
+  "per_seed": {
+    "music_41": {
+      "auc": 0.9677247357693846,
+      "eer": 0.09384164222873902,
+      "n": 682,
+      "positives": 341
+    },
+    "music_42": {
+      "auc": 0.9661939611802457,
+      "eer": 0.0997067448680352,
+      "n": 682,
+      "positives": 341
+    },
+    "music_43": {
+      "auc": 0.9684385239205044,
+      "eer": 0.09384164222873902,
+      "n": 682,
+      "positives": 341
+    },
+    "voice_41": {
+      "auc": 1.0,
+      "eer": 0.0,
+      "n": 744,
+      "positives": 372
+    },
+    "voice_42": {
+      "auc": 1.0,
+      "eer": 0.0,
+      "n": 744,
+      "positives": 372
+    },
+    "voice_43": {
+      "auc": 1.0,
+      "eer": 0.0,
+      "n": 744,
+      "positives": 372
+    }
+  },
+  "predictions_sha256": "f784ba738735233779cba4aaba59d8045e5a373ef99b1d98af31cfb0e0907ca5",
+  "presence": {
+    "music_presence": {
+      "auc": 0.9995782486677389,
+      "eer": 0.004215542521994133,
+      "n": 1426,
+      "positives": 682,
+      "unknown": 0
+    },
+    "voice_presence": {
+      "auc": null,
+      "eer": null,
+      "n": 744,
+      "note": "single class; EER/AUC undefined",
+      "positives": 744,
+      "unknown": 682
+    }
+  },
+  "rows": 1426,
+  "singing_rows": 0,
+  "split": "test",
+  "strata": [
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.35042172384079373,
+      "generator": "REAL",
+      "positives": 0,
+      "route": "music",
+      "route_score_mean": 0.17164353678430277,
+      "rows": 103,
+      "source": "FMA"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.08827837365020237,
+      "generator": "",
+      "positives": 0,
+      "route": "music",
+      "route_score_mean": 0.03991993627996888,
+      "rows": 9,
+      "source": "FMA/FMA"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.6131785756163952,
+      "generator": "MusicGen_medium",
+      "positives": 21,
+      "route": "music",
+      "route_score_mean": 0.7653688659507131,
+      "rows": 21,
+      "source": "FakeMusicCaps"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.5960294935711544,
+      "generator": "audioldm2",
+      "positives": 21,
+      "route": "music",
+      "route_score_mean": 0.7524800388112901,
+      "rows": 21,
+      "source": "FakeMusicCaps"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.5433641055322556,
+      "generator": "musicldm",
+      "positives": 21,
+      "route": "music",
+      "route_score_mean": 0.6609060185710116,
+      "rows": 21,
+      "source": "FakeMusicCaps"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.7533129142966912,
+      "generator": "mustango",
+      "positives": 21,
+      "route": "music",
+      "route_score_mean": 0.8964859668224576,
+      "rows": 21,
+      "source": "FakeMusicCaps"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.5236309619612877,
+      "generator": "stable_audio_open",
+      "positives": 21,
+      "route": "music",
+      "route_score_mean": 0.6251705677381585,
+      "rows": 21,
+      "source": "FakeMusicCaps"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.8870334052676396,
+      "generator": "acestep",
+      "positives": 33,
+      "route": "music",
+      "route_score_mean": 0.987447526719835,
+      "rows": 33,
+      "source": "HAIM"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.6858029205907873,
+      "generator": "lyria-pro3",
+      "positives": 21,
+      "route": "music",
+      "route_score_mean": 0.7536672197637103,
+      "rows": 21,
+      "source": "HAIM"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.7501771625929647,
+      "generator": "musicgen",
+      "positives": 33,
+      "route": "music",
+      "route_score_mean": 0.8726764034216452,
+      "rows": 33,
+      "source": "HAIM"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.2939034541698272,
+      "generator": "sonicmaster_real",
+      "positives": 0,
+      "route": "music",
+      "route_score_mean": 0.20750435596583264,
+      "rows": 84,
+      "source": "HAIM"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.2321606457852416,
+      "generator": "REAL",
+      "positives": 0,
+      "route": "music",
+      "route_score_mean": 0.11017628785287542,
+      "rows": 145,
+      "source": "JamendoMaxCaps"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.8884666652602146,
+      "generator": "suno",
+      "positives": 61,
+      "route": "music",
+      "route_score_mean": 0.982563383266574,
+      "rows": 61,
+      "source": "SONICS"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.8351760615866293,
+      "generator": "udio",
+      "positives": 88,
+      "route": "music",
+      "route_score_mean": 0.9090677380110278,
+      "rows": 88,
+      "source": "SONICS"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.7681988125035758,
+      "generator": "A01",
+      "positives": 62,
+      "route": "voice",
+      "route_score_mean": 0.9995190417894753,
+      "rows": 62,
+      "source": "asvspoof2019_la"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.7599004788607797,
+      "generator": "A02",
+      "positives": 62,
+      "route": "voice",
+      "route_score_mean": 0.9791603520993265,
+      "rows": 62,
+      "source": "asvspoof2019_la"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.712196594092671,
+      "generator": "A03",
+      "positives": 62,
+      "route": "voice",
+      "route_score_mean": 0.9940664313172782,
+      "rows": 62,
+      "source": "asvspoof2019_la"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.7744274141038642,
+      "generator": "A04",
+      "positives": 62,
+      "route": "voice",
+      "route_score_mean": 0.9805111295433455,
+      "rows": 62,
+      "source": "asvspoof2019_la"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.7804478388040799,
+      "generator": "A05",
+      "positives": 62,
+      "route": "voice",
+      "route_score_mean": 0.9700959497882475,
+      "rows": 62,
+      "source": "asvspoof2019_la"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.7767975302894137,
+      "generator": "A06",
+      "positives": 62,
+      "route": "voice",
+      "route_score_mean": 0.9689391886675228,
+      "rows": 62,
+      "source": "asvspoof2019_la"
+    },
+    {
+      "auc": null,
+      "eer": null,
+      "file_score_mean": 0.021654450880828412,
+      "generator": "original",
+      "positives": 0,
+      "route": "voice",
+      "route_score_mean": 0.024715799145236958,
+      "rows": 372,
+      "source": "asvspoof2019_la"
+    }
+  ]
+}

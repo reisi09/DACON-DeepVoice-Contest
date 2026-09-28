@@ -1,0 +1,28 @@
+{
+  "final_recipe_batch_size": 32,
+  "results": [
+    {
+      "batch_size": 32,
+      "draws_per_second": 24262.669310618683,
+      "equal_draws": 8192,
+      "peak_allocated_bytes": 76224512,
+      "seconds": 0.3376380354166031
+    },
+    {
+      "batch_size": 128,
+      "draws_per_second": 95906.2948951743,
+      "equal_draws": 8192,
+      "peak_allocated_bytes": 76339200,
+      "seconds": 0.08541670814156532
+    },
+    {
+      "batch_size": 256,
+      "draws_per_second": 195283.2407858633,
+      "equal_draws": 8192,
+      "peak_allocated_bytes": 76996096,
+      "seconds": 0.0419493243098259
+    }
+  ],
+  "scope": "throwaway frozen-head throughput only; not MERT extraction or quality selection",
+  "warmup_steps": 5
+}

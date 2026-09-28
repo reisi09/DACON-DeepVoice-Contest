@@ -1,0 +1,783 @@
+{
+  "created_utc": "2026-09-17T06:37:15.084141+00:00",
+  "status": "complete",
+  "revision": "3788dca9f9f11ad92e9097ef4b58eee247661e7f",
+  "script_sha256": "c54c553b3dce4694da7d3ab84ea76aa627e22a502904830f7caccb3476bb3d4c",
+  "download_limit_bytes_including_metadata": 250000000,
+  "downloaded_bytes_this_run": 17004892,
+  "requests": [
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2702838239-2702903795",
+      "status": 206,
+      "body_bytes": 65557,
+      "content_range": "bytes 2702838239-2702903795/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2702576074-2702903697",
+      "status": 206,
+      "body_bytes": 327624,
+      "content_range": "bytes 2702576074-2702903697/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1855707463-1855707492",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1855707463-1855707492/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1855707463-1856105825",
+      "status": 206,
+      "body_bytes": 398363,
+      "content_range": "bytes 1855707463-1856105825/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1222797583-1222797612",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1222797583-1222797612/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1222797583-1223171962",
+      "status": 206,
+      "body_bytes": 374380,
+      "content_range": "bytes 1222797583-1223171962/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2213616099-2213616128",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2213616099-2213616128/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2213616099-2214626598",
+      "status": 206,
+      "body_bytes": 1010500,
+      "content_range": "bytes 2213616099-2214626598/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1255094260-1255094289",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1255094260-1255094289/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1255094260-1255614910",
+      "status": 206,
+      "body_bytes": 520651,
+      "content_range": "bytes 1255094260-1255614910/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2350974740-2350974769",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2350974740-2350974769/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2350974740-2351365572",
+      "status": 206,
+      "body_bytes": 390833,
+      "content_range": "bytes 2350974740-2351365572/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2582968894-2582968923",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2582968894-2582968923/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2582968894-2583538011",
+      "status": 206,
+      "body_bytes": 569118,
+      "content_range": "bytes 2582968894-2583538011/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2448451372-2448451401",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2448451372-2448451401/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2448451372-2448827240",
+      "status": 206,
+      "body_bytes": 375869,
+      "content_range": "bytes 2448451372-2448827240/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1976978894-1976978923",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1976978894-1976978923/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1976978894-1977468150",
+      "status": 206,
+      "body_bytes": 489257,
+      "content_range": "bytes 1976978894-1977468150/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2438260811-2438260840",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2438260811-2438260840/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2438260811-2438769595",
+      "status": 206,
+      "body_bytes": 508785,
+      "content_range": "bytes 2438260811-2438769595/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2404326934-2404326963",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2404326934-2404326963/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2404326934-2404825663",
+      "status": 206,
+      "body_bytes": 498730,
+      "content_range": "bytes 2404326934-2404825663/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1677416046-1677416075",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1677416046-1677416075/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1677416046-1677915060",
+      "status": 206,
+      "body_bytes": 499015,
+      "content_range": "bytes 1677416046-1677915060/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2202473820-2202473849",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2202473820-2202473849/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2202473820-2202996513",
+      "status": 206,
+      "body_bytes": 522694,
+      "content_range": "bytes 2202473820-2202996513/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2446220634-2446220663",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2446220634-2446220663/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2446220634-2446788888",
+      "status": 206,
+      "body_bytes": 568255,
+      "content_range": "bytes 2446220634-2446788888/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2275761380-2275761409",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2275761380-2275761409/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2275761380-2276771883",
+      "status": 206,
+      "body_bytes": 1010504,
+      "content_range": "bytes 2275761380-2276771883/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1604686140-1604686169",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1604686140-1604686169/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1604686140-1605068371",
+      "status": 206,
+      "body_bytes": 382232,
+      "content_range": "bytes 1604686140-1605068371/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2076253475-2076253504",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2076253475-2076253504/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2076253475-2076797813",
+      "status": 206,
+      "body_bytes": 544339,
+      "content_range": "bytes 2076253475-2076797813/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2391355190-2391355219",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2391355190-2391355219/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2391355190-2391876218",
+      "status": 206,
+      "body_bytes": 521029,
+      "content_range": "bytes 2391355190-2391876218/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2496595856-2496595885",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2496595856-2496595885/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2496595856-2497104796",
+      "status": 206,
+      "body_bytes": 508941,
+      "content_range": "bytes 2496595856-2497104796/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2511355870-2511355899",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2511355870-2511355899/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2511355870-2511757824",
+      "status": 206,
+      "body_bytes": 401955,
+      "content_range": "bytes 2511355870-2511757824/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1302387725-1302387754",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1302387725-1302387754/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1302387725-1303001229",
+      "status": 206,
+      "body_bytes": 613505,
+      "content_range": "bytes 1302387725-1303001229/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2335116660-2335116689",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2335116660-2335116689/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2335116660-2335712124",
+      "status": 206,
+      "body_bytes": 595465,
+      "content_range": "bytes 2335116660-2335712124/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2542183018-2542183047",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2542183018-2542183047/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2542183018-2542339281",
+      "status": 206,
+      "body_bytes": 156264,
+      "content_range": "bytes 2542183018-2542339281/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2479840364-2479840393",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2479840364-2479840393/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2479840364-2480455345",
+      "status": 206,
+      "body_bytes": 614982,
+      "content_range": "bytes 2479840364-2480455345/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1938783002-1938783031",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1938783002-1938783031/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1938783002-1938929535",
+      "status": 206,
+      "body_bytes": 146534,
+      "content_range": "bytes 1938783002-1938929535/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1308571382-1308571411",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1308571382-1308571411/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1308571382-1308701941",
+      "status": 206,
+      "body_bytes": 130560,
+      "content_range": "bytes 1308571382-1308701941/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2130849958-2130849987",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2130849958-2130849987/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2130849958-2130999612",
+      "status": 206,
+      "body_bytes": 149655,
+      "content_range": "bytes 2130849958-2130999612/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2561419428-2561419457",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2561419428-2561419457/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2561419428-2561577966",
+      "status": 206,
+      "body_bytes": 158539,
+      "content_range": "bytes 2561419428-2561577966/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1959621861-1959621890",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1959621861-1959621890/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1959621861-1959785212",
+      "status": 206,
+      "body_bytes": 163352,
+      "content_range": "bytes 1959621861-1959785212/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2667400181-2667400210",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2667400181-2667400210/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2667400181-2667550766",
+      "status": 206,
+      "body_bytes": 150586,
+      "content_range": "bytes 2667400181-2667550766/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1290920017-1290920046",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1290920017-1290920046/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1290920017-1291052717",
+      "status": 206,
+      "body_bytes": 132701,
+      "content_range": "bytes 1290920017-1291052717/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1732466530-1732466559",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1732466530-1732466559/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1732466530-1733038254",
+      "status": 206,
+      "body_bytes": 571725,
+      "content_range": "bytes 1732466530-1733038254/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2093871536-2093871565",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2093871536-2093871565/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2093871536-2094026629",
+      "status": 206,
+      "body_bytes": 155094,
+      "content_range": "bytes 2093871536-2094026629/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2308945625-2308945654",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2308945625-2308945654/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2308945625-2309497180",
+      "status": 206,
+      "body_bytes": 551556,
+      "content_range": "bytes 2308945625-2309497180/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1220981951-1220981980",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1220981951-1220981980/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1220981951-1221709096",
+      "status": 206,
+      "body_bytes": 727146,
+      "content_range": "bytes 1220981951-1221709096/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1254287611-1254287640",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1254287611-1254287640/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1254287611-1254434321",
+      "status": 206,
+      "body_bytes": 146711,
+      "content_range": "bytes 1254287611-1254434321/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1650421215-1650421244",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1650421215-1650421244/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1650421215-1651054171",
+      "status": 206,
+      "body_bytes": 632957,
+      "content_range": "bytes 1650421215-1651054171/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2065377573-2065377602",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 2065377573-2065377602/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=2065377573-2065542093",
+      "status": 206,
+      "body_bytes": 164521,
+      "content_range": "bytes 2065377573-2065542093/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1752244016-1752244045",
+      "status": 206,
+      "body_bytes": 30,
+      "content_range": "bytes 1752244016-1752244045/2702903796"
+    },
+    {
+      "url": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/fake_songs/part_10.zip?range=1752244016-1752797283",
+      "status": 206,
+      "body_bytes": 553268,
+      "content_range": "bytes 1752244016-1752797283/2702903796"
+    }
+  ],
+  "selected": [
+    {
+      "id": "53641",
+      "filename": "fake_53641_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "53156",
+      "filename": "fake_53156_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "53934",
+      "filename": "fake_53934_suno_1",
+      "source": "suno"
+    },
+    {
+      "id": "53185",
+      "filename": "fake_53185_suno_1",
+      "source": "suno"
+    },
+    {
+      "id": "54051",
+      "filename": "fake_54051_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "54243",
+      "filename": "fake_54243_suno_1",
+      "source": "suno"
+    },
+    {
+      "id": "54133",
+      "filename": "fake_54133_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "53745",
+      "filename": "fake_53745_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "54123",
+      "filename": "fake_54123_suno_1",
+      "source": "suno"
+    },
+    {
+      "id": "54094",
+      "filename": "fake_54094_suno_1",
+      "source": "suno"
+    },
+    {
+      "id": "53512",
+      "filename": "fake_53512_suno_1",
+      "source": "suno"
+    },
+    {
+      "id": "53925",
+      "filename": "fake_53925_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "54131",
+      "filename": "fake_54131_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "53986",
+      "filename": "fake_53986_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "53457",
+      "filename": "fake_53457_suno_1",
+      "source": "suno"
+    },
+    {
+      "id": "53829",
+      "filename": "fake_53829_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "54084",
+      "filename": "fake_54084_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "54173",
+      "filename": "fake_54173_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "54187",
+      "filename": "fake_54187_suno_0",
+      "source": "suno"
+    },
+    {
+      "id": "53223",
+      "filename": "fake_53223_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "54040",
+      "filename": "fake_54040_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "54212",
+      "filename": "fake_54212_udio_0",
+      "source": "udio"
+    },
+    {
+      "id": "54158",
+      "filename": "fake_54158_udio_0",
+      "source": "udio"
+    },
+    {
+      "id": "53714",
+      "filename": "fake_53714_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "53227",
+      "filename": "fake_53227_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "53875",
+      "filename": "fake_53875_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "54229",
+      "filename": "fake_54229_udio_0",
+      "source": "udio"
+    },
+    {
+      "id": "53730",
+      "filename": "fake_53730_udio_0",
+      "source": "udio"
+    },
+    {
+      "id": "54315",
+      "filename": "fake_54315_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "53215",
+      "filename": "fake_53215_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "53554",
+      "filename": "fake_53554_udio_0",
+      "source": "udio"
+    },
+    {
+      "id": "53843",
+      "filename": "fake_53843_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "54015",
+      "filename": "fake_54015_udio_0",
+      "source": "udio"
+    },
+    {
+      "id": "53154",
+      "filename": "fake_53154_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "53182",
+      "filename": "fake_53182_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "53491",
+      "filename": "fake_53491_udio_0",
+      "source": "udio"
+    },
+    {
+      "id": "53820",
+      "filename": "fake_53820_udio_1",
+      "source": "udio"
+    },
+    {
+      "id": "53568",
+      "filename": "fake_53568_udio_0",
+      "source": "udio"
+    }
+  ],
+  "completed": [
+    "fake_53641_suno_0",
+    "fake_53156_suno_0",
+    "fake_53934_suno_1",
+    "fake_53185_suno_1",
+    "fake_54051_suno_0",
+    "fake_54243_suno_1",
+    "fake_54133_suno_0",
+    "fake_53745_suno_0",
+    "fake_54123_suno_1",
+    "fake_54094_suno_1",
+    "fake_53512_suno_1",
+    "fake_53925_suno_0",
+    "fake_54131_suno_0",
+    "fake_53986_suno_0",
+    "fake_53457_suno_1",
+    "fake_53829_suno_0",
+    "fake_54084_suno_0",
+    "fake_54173_suno_0",
+    "fake_54187_suno_0",
+    "fake_53223_udio_1",
+    "fake_54040_udio_1",
+    "fake_54212_udio_0",
+    "fake_54158_udio_0",
+    "fake_53714_udio_1",
+    "fake_53227_udio_1",
+    "fake_53875_udio_1",
+    "fake_54229_udio_0",
+    "fake_53730_udio_0",
+    "fake_54315_udio_1",
+    "fake_53215_udio_1",
+    "fake_53554_udio_0",
+    "fake_53843_udio_1",
+    "fake_54015_udio_0",
+    "fake_53154_udio_1",
+    "fake_53182_udio_1",
+    "fake_53491_udio_0",
+    "fake_53820_udio_1",
+    "fake_53568_udio_0"
+  ],
+  "evaluated": false,
+  "trained": false,
+  "official_score": null,
+  "license": "CC-BY-NC-4.0",
+  "license_source": "https://huggingface.co/datasets/awsaf49/sonics/resolve/3788dca9f9f11ad92e9097ef4b58eee247661e7f/README.md",
+  "limitations": [
+    "Full-fake source labels come from SONICS valid.csv, not independent audio annotation.",
+    "Clip-level voice presence and voice authenticity are unverified and left blank.",
+    "One ID per song; artist, prompt, musical-content and pretraining overlaps remain unknown.",
+    "Fake-only pilot cannot estimate EER or the official total by itself.",
+    "No model outputs were used to select or replace sources."
+  ],
+  "excluded_prior_song_ids": [
+    "53213",
+    "53243",
+    "53254",
+    "53255",
+    "53294",
+    "53303",
+    "53316",
+    "53393",
+    "53467",
+    "53547",
+    "53583",
+    "53586",
+    "53605",
+    "53664",
+    "53690",
+    "53703",
+    "53767",
+    "53773",
+    "53777",
+    "53805",
+    "53890",
+    "53927",
+    "53944",
+    "53954",
+    "53957",
+    "53958",
+    "53960",
+    "53971",
+    "53987",
+    "54034",
+    "54047",
+    "54072",
+    "54099",
+    "54101",
+    "54160",
+    "54196",
+    "54209",
+    "54296",
+    "54335",
+    "54342"
+  ],
+  "metadata_sha256": {
+    "valid.csv": "f6c19177d64d0ff9315ad8b16fb296b2efeee8f537dfb65b1308c43489c6ed39",
+    "archive_tree.json": "0ce921a20537af1b7ce06feab5c0b7981c48f9830aeeb04624c6c313b6efd0b2",
+    "metadata.json": "4924f1582714a9f05cef63aec8d715b1947ee89cd8f9f487fbeb6936889e0fde",
+    "README.md": "1adab4c9c50d83a8ae2d3218c209b793e9f5c3efc804757a24175b6b69c75142"
+  },
+  "prior_source_inputs": {
+    "_workspace/v2_sources/source_inventory.json": "296dfe8fd50fe917933507b274b1e30f7dc2de07a723b8e51a3f32ab296f568e",
+    "recovery_validation/provenance.json": "2f408dacd90b7213f40a016749eb25f3cb7834d73786ae34621d14854a30f0c2",
+    "v4_validation/provenance.json": "2d250402253d292517d823ed1c8de8b789bc684eddb7d7e44689554c4157d00a",
+    "_workspace/validation_sources/music_provenance.json": "49a00165edfb47ef7565b4ae43c668e9171e5fca1dae2315aa2966bbce6b8c6b"
+  },
+  "rows": 38,
+  "independent_song_ids": 38,
+  "source_bytes": 16817148,
+  "duration_seconds": 3672.6750624999977,
+  "prior_exact_source_or_pcm_overlap": 0,
+  "intra_cohort_exact_duplicates": 0,
+  "retained_metadata_bytes": 13063417
+}

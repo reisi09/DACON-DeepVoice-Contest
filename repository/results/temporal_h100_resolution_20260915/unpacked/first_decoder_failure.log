@@ -1,0 +1,116 @@
+Traceback (most recent call last):
+  File "/root/Temporal_Resolution/v7_notebook_runner.py", line 84, in <module>
+    main()
+    ~~~~^^
+  File "/root/Temporal_Resolution/v7_notebook_runner.py", line 45, in main
+    execute_notebook()
+    ~~~~~~~~~~~~~~~~^^
+  File "/root/Temporal_Resolution/v7_notebook_runner.py", line 38, in execute_notebook
+    client.execute()
+    ~~~~~~~~~~~~~~^^
+  File "/root/resolution-venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.13.9-linux-x86_64-gnu/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/root/resolution-venv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/root/resolution-venv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/root/resolution-venv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from temporal_resolution import main
+main()
+------------------
+
+----- stderr -----
+/root/resolution-venv/lib/python3.13/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+----- stdout -----
+WARNING: feature_extractor_cqt requires the libray 'nnAudio'
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mFile [39m[32m~/resolution-venv/lib/python3.13/site-packages/torchaudio/_torchcodec.py:82[39m, in [36mload_with_torchcodec[39m[34m(uri, frame_offset, num_frames, normalize, channels_first, format, buffer_size, backend)[39m
+[32m     81[39m [38;5;28;01mtry[39;00m:
+[32m---> [39m[32m82[39m     [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mtorchcodec[39;00m[34;01m.[39;00m[34;01mdecoders[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m AudioDecoder
+[32m     83[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m e:
+
+[31mModuleNotFoundError[39m: No module named 'torchcodec'
+
+The above exception was the direct cause of the following exception:
+
+[31mImportError[39m                               Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 2[39m
+[32m      1[39m [38;5;28;01mfrom[39;00m temporal_resolution [38;5;28;01mimport[39;00m main
+[32m----> [39m[32m2[39m main()
+
+[36mFile [39m[32m~/Temporal_Resolution/temporal_resolution.py:193[39m, in [36mmain[39m[34m()[39m
+[32m    191[39m write_json(output/[33m'[39m[33msplit.json[39m[33m'[39m,split)
+[32m    192[39m deadline=[38;5;28mfloat[39m(os.environ[[33m'[39m[33mV7_RESUMED_EPOCH[39m[33m'[39m])+[38;5;28mfloat[39m(os.environ[[33m'[39m[33mEXPERIMENT_COMPUTE_HOURS[39m[33m'[39m])*[32m3600[39m-[32m120[39m
+[32m--> [39m[32m193[39m coarse,fine=[30;43mextract_features[39;49m[30;43m([39;49m[30;43mrows[39;49m[30;43m,[39;49m[30;43mPath[39;49m[30;43m([39;49m[30;43m'[39;49m[30;43massets[39;49m[30;43m'[39;49m[30;43m)[39;49m[30;43m,[39;49m[30;43mPath[39;49m[30;43m([39;49m[30;43m'[39;49m[30;43maudio[39;49m[30;43m'[39;49m[30;43m)[39;49m[30;43m,[39;49m[30;43mPath[39;49m[30;43m([39;49m[30;43m'[39;49m[30;43mfeature_cache[39;49m[30;43m'[39;49m[30;43m)[39;49m[30;43m,[39;49m[30;43moutput[39;49m[30;43m,[39;49m[30;43mdeadline[39;49m[30;43m)[39;49m
+[32m    194[39m plan=json.loads(Path([33m'[39m[33mfull_data_plan.json[39m[33m'[39m).read_text())
+[32m    195[39m run_factorial(split[[33m'[39m[33mtrain[39m[33m'[39m],split[[33m'[39m[33mtune[39m[33m'[39m],coarse,fine,plan[[33m'[39m[33mquality[39m[33m'[39m],output,deadline)
+
+[36mFile [39m[32m~/Temporal_Resolution/temporal_resolution.py:99[39m, in [36mextract_features[39m[34m(rows, assets, audio, cache, output, deadline)[39m
+[32m     97[39m starts = np.array(base.get_segment_starts([38;5;28mlen[39m(waveform)))
+[32m     98[39m [38;5;28;01mwith[39;00m torch.inference_mode():
+[32m---> [39m[32m99[39m     _, backing = [30;43mbase[39;49m[30;43m.[39;49m[30;43mseparate_voice_and_music[39;49m[30;43m([39;49m[30;43msource[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mdemucs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mtorch[39;49m[30;43m.[39;49m[30;43mdevice[39;49m[30;43m([39;49m[30;43m'[39;49m[30;43mcuda[39;49m[30;43m'[39;49m[30;43m)[39;49m[30;43m)[39;49m
+[32m    100[39m     backing = np.pad(backing[:[38;5;28mlen[39m(waveform)],([32m0[39m,[38;5;28mmax[39m([32m0[39m,[38;5;28mlen[39m(waveform)-[38;5;28mlen[39m(backing))))
+[32m    101[39m     low, high, times, audible = [], [], [], []
+
+[36mFile [39m[32m~/Temporal_Resolution/assets/baseline/script.py:265[39m, in [36mseparate_voice_and_music[39m[34m(audio_path, model, device)[39m
+[32m    264[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mseparate_voice_and_music[39m(audio_path, model, device):
+[32m--> [39m[32m265[39m     waveform = [30;43mload_track[39;49m[30;43m([39;49m
+[32m    266[39m [30;43m        [39;49m[30;43maudio_path[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mmodel[39;49m[30;43m.[39;49m[30;43maudio_channels[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mmodel[39;49m[30;43m.[39;49m[30;43msamplerate[39;49m
+[32m    267[39m [30;43m    [39;49m[30;43m)[39;49m.float()
+[32m    268[39m     mono_waveform = waveform.mean([32m0[39m)
+[32m    269[39m     mean = mono_waveform.mean()
+
+[36mFile [39m[32m~/resolution-venv/lib/python3.13/site-packages/demucs/separate.py:38[39m, in [36mload_track[39m[34m(track, audio_channels, samplerate)[39m
+[32m     36[39m [38;5;28;01mif[39;00m wav [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m     37[39m     [38;5;28;01mtry[39;00m:
+[32m---> [39m[32m38[39m         wav, sr = [30;43mta[39;49m[30;43m.[39;49m[30;43mload[39;49m[30;43m([39;49m[30;43mstr[39;49m[30;43m([39;49m[30;43mtrack[39;49m[30;43m)[39;49m[30;43m)[39;49m
+[32m     39[39m     [38;5;28;01mexcept[39;00m [38;5;167;01mRuntimeError[39;00m [38;5;28;01mas[39;00m err:
+[32m     40[39m         errors[[33m'[39m[33mtorchaudio[39m[33m'[39m] = err.args[[32m0[39m]
+
+[36mFile [39m[32m~/resolution-venv/lib/python3.13/site-packages/torchaudio/__init__.py:86[39m, in [36mload[39m[34m(uri, frame_offset, num_frames, normalize, channels_first, format, buffer_size, backend)[39m
+[32m     18[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mload[39m(
+[32m     19[39m     uri: Union[BinaryIO, [38;5;28mstr[39m, os.PathLike],
+[32m     20[39m     frame_offset: [38;5;28mint[39m = [32m0[39m,
+[32m   (...)[39m[32m     26[39m     backend: Optional[[38;5;28mstr[39m] = [38;5;28;01mNone[39;00m,
+[32m     27[39m ) -> Tuple[torch.Tensor, [38;5;28mint[39m]:
+[32m     28[39m [38;5;250m    [39m[33;03m"""Load audio data from source using TorchCodec's AudioDecoder.[39;00m
+[32m     29[39m 
+[32m     30[39m [33;03m    .. note::[39;00m
+[32m   (...)[39m[32m     84[39m [33;03m        by TorchCodec.[39;00m
+[32m     85[39m [33;03m    """[39;00m
+[32m---> [39m[32m86[39m     [38;5;28;01mreturn[39;00m [30;43mload_with_torchcodec[39;49m[30;43m([39;49m
+[32m     87[39m [30;43m        [39;49m[30;43muri[39;49m[30;43m,[39;49m
+[32m     88[39m [30;43m        [39;49m[30;43mframe_offset[39;49m[30;43m=[39;49m[30;43mframe_offset[39;49m[30;43m,[39;49m
+[32m     89[39m [30;43m        [39;49m[30;43mnum_frames[39;49m[30;43m=[39;49m[30;43mnum_frames[39;49m[30;43m,[39;49m
+[32m     90[39m [30;43m        [39;49m[30;43mnormalize[39;49m[30;43m=[39;49m[30;43mnormalize[39;49m[30;43m,[39;49m
+[32m     91[39m [30;43m        [39;49m[30;43mchannels_first[39;49m[30;43m=[39;49m[30;43mchannels_first[39;49m[30;43m,[39;49m
+[32m     92[39m [30;43m        [39;49m[30;43mformat[39;49m[30;43m=[39;49m[30;43mformat[39;49m[30;43m,[39;49m
+[32m     93[39m [30;43m        [39;49m[30;43mbuffer_size[39;49m[30;43m=[39;49m[30;43mbuffer_size[39;49m[30;43m,[39;49m
+[32m     94[39m [30;43m        [39;49m[30;43mbackend[39;49m[30;43m=[39;49m[30;43mbackend[39;49m[30;43m,[39;49m
+[32m     95[39m [30;43m    [39;49m[30;43m)[39;49m
+
+[36mFile [39m[32m~/resolution-venv/lib/python3.13/site-packages/torchaudio/_torchcodec.py:84[39m, in [36mload_with_torchcodec[39m[34m(uri, frame_offset, num_frames, normalize, channels_first, format, buffer_size, backend)[39m
+[32m     82[39m     [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mtorchcodec[39;00m[34;01m.[39;00m[34;01mdecoders[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m AudioDecoder
+[32m     83[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m e:
+[32m---> [39m[32m84[39m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
+[32m     85[39m         [33m"[39m[33mTorchCodec is required for load_with_torchcodec. [39m[33m"[39m [33m"[39m[33mPlease install torchcodec to use this function.[39m[33m"[39m
+[32m     86[39m     ) [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01me[39;00m
+[32m     88[39m [38;5;66;03m# Parameter validation and warnings[39;00m
+[32m     89[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m normalize:
+
+[31mImportError[39m: TorchCodec is required for load_with_torchcodec. Please install torchcodec to use this function.
+
+RESULTS_READY Temporal_Resolution_results.zip 5741fb412a4c84062e0421010370250a89ba735547fa73f08828d371097fd372

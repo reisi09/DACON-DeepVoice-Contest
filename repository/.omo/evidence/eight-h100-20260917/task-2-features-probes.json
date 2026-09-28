@@ -1,0 +1,57 @@
+{
+  "status": "cpu_verified_gpu_integration_pending",
+  "scope": [
+    "eight_features.py",
+    "eight_spectral.py",
+    "eight_probes.py",
+    "eight_feature_identity.py",
+    "eight_feature_schema.py",
+    "eight_probe_stats.py",
+    "test_eight_features.py"
+  ],
+  "scenarios": [
+    {
+      "scenario": "Common 64600/32300 windows cover the exact tail once and expose short-record padding",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_features.py",
+      "binary_observable": "test_window_layout_covers_tail_once_without_repeating_audio passed; starts [0,32300,35400], short valid_samples [12345]",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-2-features-probes.junit.xml"
+    },
+    {
+      "scenario": "Fixed 1-7 kHz spectrum localizes a known 1.2 kHz versus 6.2 kHz perturbation",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_features.py",
+      "binary_observable": "test_spectrum_features_localize_known_frequency_perturbation passed; feature width 448, coarse peaks 2 and 55, all finite",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-2-features-probes.junit.xml"
+    },
+    {
+      "scenario": "Sparse insert pooling preserves localized evidence and E5 selection cannot inspect an opposing sealed test",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_features.py",
+      "binary_observable": "pool mean/max/top30 0.14/0.95/0.35; dev selected mean while sealed test favored max; selection lock retained test_used=false",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-2-features-probes.junit.xml"
+    },
+    {
+      "scenario": "E2 reports REAL FPR and FAKE recall changes separately and joins swaps to core vocal parent IDs",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_features.py",
+      "binary_observable": "separate fpr/recall assertions passed; synthetic swap joined all six model/pool views; sealed manifest parent join 160/160 with 20 REAL, 80 FAKE, 60 unknown voice labels",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-2-features-probes.junit.xml"
+    },
+    {
+      "scenario": "Global provenance bridges remain connected after E2/E5 filtering and every parent identity resolves to an exact hash",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_features.py",
+      "binary_observable": "a|b,b|c,c|d collapsed to one component; manifest and sources.csv parent hashes both resolved",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-2-features-probes.junit.xml"
+    },
+    {
+      "scenario": "Python implementation obeys size and prohibited-pattern gates",
+      "invocation": ".venv/bin/python check-no-excuse-rules.py eight_features.py eight_spectral.py eight_probes.py eight_probe_stats.py eight_feature_schema.py eight_feature_identity.py test_eight_features.py && .venv/bin/python -m py_compile ... && git diff --check -- ...",
+      "binary_observable": "no violations in 7 files; compile exit 0; diff-check exit 0; largest module 242 pure LOC",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-2-features-probes.json"
+    }
+  ],
+  "pytest": {
+    "passed": 8,
+    "failed": 0,
+    "seconds": 0.55,
+    "junit_sha256": "08ee913a4db1387aac9e6b89bb4b3f5b6b3ce3941ac5c9c8ce748a3b3487dad0"
+  },
+  "integration_boundary": "No GPU or remote mutation was authorized for this worker. eight_features.preflight(config_path) now creates and validates exactly three real H100 caches (core music, core speech, 60-second partial) before the full extraction pass; execution evidence must be added by the H100 runner."
+}

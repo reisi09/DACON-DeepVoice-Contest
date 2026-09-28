@@ -1,0 +1,23 @@
+V5 expert adapter validation, 2026-09-13 Asia/Seoul
+
+Scenario: corrected DF batch path preserves the original one-dimensional computation and full-depth connectivity.
+Invocation: .venv/bin/pytest -q test_v5_experts.py
+Binary observable: test_voice_batches_original_path_and_updates_relevant_depths passes only when B=2 spoof-minus-bonafide logits equal serial B=1 native logits, SSL checkpointing is enabled, optional pooler and positional weights are excluded, and first/middle/last SSL and Conformer representatives plus fc5 receive gradients and change after SGD.
+Captured result: 4 passed in 2.05s
+
+Scenario: pinned real SONICS adapter preserves native evaluation and supports a real full-encoder update.
+Invocation: .venv/bin/pytest -q test_v5_experts.py
+Binary observable: test_real_sonics_eval_parity_and_encoder_gradient loads the pinned V4 model, pads baseline_original/data/test/TEST_0000.wav to 80000 samples, asserts adapter logits equal the native model at atol=1e-6, accounts for all 17172493 trainable parameters, and verifies gradients plus SGD changes at encoder blocks 0, 6, 11 and classifier.
+Captured result: 4 passed in 2.05s
+
+Scenario: presence adapter maintains the 16 kHz boundary, 32 kHz PANNs path, ordered [voice,music] logits and gradient connectivity.
+Invocation: .venv/bin/pytest -q test_v5_experts.py
+Binary observable: the deterministic adapter test observes 16 input samples becoming 32 samples and nonzero CNN gradients while logits equal head(embedding).
+Captured result: 4 passed in 2.05s
+
+Scenario: source compiles and satisfies focused source-quality gates.
+Invocation: git diff --check -- v5_experts.py test_v5_experts.py; .venv/bin/python -m py_compile v5_experts.py test_v5_experts.py; uvx ruff check v5_experts.py test_v5_experts.py; uv run /Users/choiwuseck/.codex/plugins/cache/sisyphuslabs/omo/4.19.2/skills/programming/scripts/python/check-no-excuse-rules.py v5_experts.py test_v5_experts.py
+Binary observable: every command exits 0.
+Captured result: All checks passed; no violations in 2 files.
+
+Pure LOC: v5_experts.py=243; test_v5_experts.py=202. Both remain below the enforced 250 pure-LOC ceiling.

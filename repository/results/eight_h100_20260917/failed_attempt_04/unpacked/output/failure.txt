@@ -1,0 +1,72 @@
+Traceback (most recent call last):
+  File "/root/eight_h100_20260917/source/eight_h100_run.py", line 88, in main
+    ).execute()
+      ^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import eight_features
+import eight_lora_train
+
+feature_preflight = eight_features.preflight(CONFIG_PATH)
+lora_preflight = eight_lora_train.preflight(CONFIG_PATH)
+{"features": feature_preflight, "lora": lora_preflight}
+------------------
+
+----- stderr -----
+/root/fullft8/.venv/lib/python3.11/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 4[39m
+[32m      1[39m [38;5;28;01mimport[39;00m eight_features
+[32m      2[39m [38;5;28;01mimport[39;00m eight_lora_train
+[32m      3[39m 
+[32m----> [39m[32m4[39m feature_preflight = eight_features.preflight(CONFIG_PATH)
+[32m      5[39m lora_preflight = eight_lora_train.preflight(CONFIG_PATH)
+[32m      6[39m {[33m"features"[39m: feature_preflight, [33m"lora"[39m: lora_preflight}
+
+[36mFile [39m[32m~/eight_h100_20260917/source/eight_features.py:259[39m, in [36mpreflight[39m[34m(config_path)[39m
+[32m    257[39m     [38;5;28;01mraise[39;00m FeatureError([33m"[39m[33mFeature preflight requires core music, core speech, and a 60-second partial probe[39m[33m"[39m)
+[32m    258[39m selected = [row [38;5;28;01mfor[39;00m row [38;5;129;01min[39;00m candidates [38;5;28;01mif[39;00m row [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m]
+[32m--> [39m[32m259[39m extraction = [30;43mextract[39;49m[30;43m([39;49m[30;43mconfig_path[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m[[39;49m[30;43mrow[39;49m[30;43m[[39;49m[30;43m"[39;49m[30;43mID[39;49m[30;43m"[39;49m[30;43m][39;49m[30;43m [39;49m[30;43;01mfor[39;49;00m[30;43m [39;49m[30;43mrow[39;49m[30;43m [39;49m[30;43;01min[39;49;00m[30;43m [39;49m[30;43mselected[39;49m[30;43m][39;49m[30;43m)[39;49m
+[32m    260[39m checked: [38;5;28mlist[39m[[38;5;28mstr[39m] = []
+[32m    261[39m receipts: [38;5;28mdict[39m[[38;5;28mstr[39m, [38;5;28mstr[39m] = {}
+
+[36mFile [39m[32m~/eight_h100_20260917/source/eight_features.py:225[39m, in [36mextract[39m[34m(config_path, row_ids)[39m
+[32m    223[39m [38;5;28;01melse[39;00m:
+[32m    224[39m     [38;5;28;01mif[39;00m engine [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m--> [39m[32m225[39m         engine = [30;43m_Engine[39;49m[30;43m([39;49m[30;43massets[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43manti_path[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mdevice[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mdeadline[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mbatch_size[39;49m[30;43m)[39;49m
+[32m    226[39m     values = engine.extract(source)
+[32m    227[39m     temporary = target.with_suffix([33m"[39m[33m.partial[39m[33m"[39m)
+
+[36mFile [39m[32m~/eight_h100_20260917/source/eight_features.py:78[39m, in [36m_Engine.__init__[39m[34m(self, assets, anti_path, device, deadline, batch_size)[39m
+[32m     76[39m [38;5;28mself[39m.batch_size = batch_size
+[32m     77[39m [38;5;28mself[39m.base = _load_baseline(assets / [33m"[39m[33mbaseline/script.py[39m[33m"[39m)
+[32m---> [39m[32m78[39m parity = [30;43mverify_native[39;49m[30;43m([39;49m[30;43manti_path[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mdevice[39;49m[30;43m)[39;49m
+[32m     79[39m [38;5;28;01mif[39;00m parity[[33m"[39m[33mreal_audio_cases[39m[33m"[39m] < [32m1[39m:
+[32m     80[39m     [38;5;28;01mraise[39;00m FeatureError([33m"[39m[33mAntiDeepfake native parity has no real-audio case[39m[33m"[39m)
+
+[36mFile [39m[32m~/eight_h100_20260917/source/antideepfake_runtime.py:97[39m, in [36mverify_native[39m[34m(directory, device)[39m
+[32m     95[39m         error = [38;5;28mfloat[39m(np.abs(actual-np.asarray(expected)).max())
+[32m     96[39m         [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m np.allclose(actual, expected, rtol=[32m1e-4[39m, atol=[32m3e-4[39m):
+[32m---> [39m[32m97[39m             [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m'[39m[33mNative Fairseq parity failed on [39m[38;5;132;01m{[39;00mname[38;5;132;01m}[39;00m[33m: [39m[38;5;132;01m{[39;00mactual[38;5;132;01m}[39;00m[33m, [39m[38;5;132;01m{[39;00mexpected[38;5;132;01m}[39;00m[33m'[39m)
+[32m     98[39m         errors.append(error)
+[32m     99[39m [38;5;28;01mreturn[39;00m [38;5;28mdict[39m(max_logit_error=[38;5;28mmax[39m(errors), real_audio_cases=[38;5;28mlen[39m(errors), fake_class=[32m0[39m,
+[32m    100[39m             native_revision=REVISION, unused_training_only=model.unused_training_only)
+
+[31mValueError[39m: Native Fairseq parity failed on real: [-3.9105923  4.035076 ], [-3.904057502746582, 4.029045104980469]
+

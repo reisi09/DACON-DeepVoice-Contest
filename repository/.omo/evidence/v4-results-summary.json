@@ -1,0 +1,142 @@
+{
+  "artifact_kind": "local_cpu_analysis_replay",
+  "conditional_refit_train_plus_dev_rows": 1286,
+  "inputs": {
+    ".omo/evidence/v4-matched-P1_terminal.json": "3cf2692768a146936c542d4ea8ba2d2b202c545673940dabc1453ffbbd835205",
+    ".omo/evidence/v4-matched-P1_trial_receipt.json": "06fd59bd75353bfd57717c88e6edebb512ac45bb4fb852a10dfcb666c7b7a34a",
+    ".omo/evidence/v4-matched-P3_terminal.json": "3085607b7952134d63732844f630382a967f46e30b495d86b496ff9cdae059a9",
+    ".omo/evidence/v4-matched-P3_trial_receipt.json": "84a68cef6a955724f7255476d086a1d880e9786fb803d49810097ff178662e10",
+    ".omo/evidence/v4-matched-comparison.json": "3821e5ba6fdc7dffebcf22c61c1ec17d590c42314a7e104bb0eaa82454813e92",
+    ".omo/evidence/v4-matched-drive_receipt.json": "3ad3f928724312a0d4a72b31ea01faf21ec62248c1ef79bfddb1698e1e65a190",
+    ".omo/evidence/v4-matched-notebook_capture.json": "0c13334885951baf8ca18e7253db5fd12ff922063b4fce1742313cae1c6cae47",
+    ".omo/evidence/v4-matched-recheck-dispatch.json": "d71c704482d6bd183043d595317d3b0fded409aa199823aa1b0f836101c5433d",
+    ".omo/evidence/v4-matched-release_requested.json": "8677a7196cbca3bbcdc32bf8d1a451301b5b9e4a66f670bc6a0e45cf684059c9",
+    ".omo/evidence/v4-matched-remedy_contract.json": "3959d2bad09c92ac4a84210a2107fbbbc4b7acd1410ab0405b7e0b005e9ce131",
+    ".omo/evidence/v4-retry-G0_predictions.csv": "ebb664e274311c596660564a721b0afea6a37baa0a2014f66c90fb2d879e627b",
+    ".omo/evidence/v4-retry-G0_predictions.raw.csv": "bd1c27227829f36e9ae6191db7600920bf6649810f0896a791730b10555f0854",
+    ".omo/evidence/v4-retry-P1-terminal.json": "bbb2d8b2a06091bddcab033955766b96350b5e8b92f1dc67a66a050f21c1fa74",
+    ".omo/evidence/v4-retry-P2-terminal.json": "81cf8452fcafc3c538395aec716d27be3dd53ff250c3f2a75071b2b1d8aa14a8",
+    ".omo/evidence/v4-retry-P3-terminal.json": "47edc3c4193bd3333c45f983409ca7d73d8651cfe06043064c3fb34c31cb1254",
+    ".omo/evidence/v4-retry-P4-terminal.json": "094138b83de03d344c5fc72d1c2843109ff4dfa89cbb5923d646e1f270a507fe",
+    ".omo/evidence/v4-retry-finished.json": "8e95508a2b65010786bb4d11497b48fce1fc885ecdff50beb0ed5cc1bf2de3e4",
+    ".omo/evidence/v4-retry-g0-parity.json": "1f6aa437d72abbb484aba9cde1b42eb820b21a7d8494eb1a1fbd79f42dacbd9b",
+    ".omo/evidence/v4-retry-live-run.json": "c79a1c600209a1a5e208a50b8b704e5c5c179f376480eb2a56f2cb2d86de6573",
+    ".omo/evidence/v4-retry-pipeline_status.json": "1a7ab63df435ae257513c178eaf4c9a0607f6c20d949ca670ea86cd8c92fdff2",
+    ".omo/evidence/v4-retry-selection.json": "6463fea6d16ae58637d2fef2c181ebaaeb8e42b18b01e6cde6628d75c9d182d5"
+  },
+  "legacy_p1_p3_causal_valid": false,
+  "matched_recheck": {
+    "cuda_bitwise_equivalence_claimed": false,
+    "epoch10_P3_minus_P1": {
+      "file_eer": 0.0,
+      "music_eer": 0.012142857142857122,
+      "ood_D": 0.0,
+      "rank_score": 0.0,
+      "seen_D": 0.03749999999999999
+    },
+    "epochs_each": 10,
+    "initial_weights_sha256_match": true,
+    "legacy_gpu_P3_excluded": true,
+    "matched_complete": true,
+    "pipelines": [
+      {
+        "completed_epochs": 10,
+        "minimum_overall_file_eer_epoch": 2,
+        "pipeline": "P1",
+        "run_total_updates": 350,
+        "run_total_window_exposures": 11160,
+        "runtime_seconds": 127.96153183800016,
+        "selected_checkpoint_updates": 210,
+        "selected_epoch": 6,
+        "selected_file_eer": 0.37142857142857144,
+        "selected_music_eer": 0.3878571428571429,
+        "selected_ood_D": -0.04499999999999999,
+        "selected_rank_score": -0.04499999999999999,
+        "selected_seen_D": 0.0675
+      },
+      {
+        "completed_epochs": 10,
+        "minimum_overall_file_eer_epoch": 10,
+        "pipeline": "P3",
+        "run_total_updates": 350,
+        "run_total_window_exposures": 11160,
+        "runtime_seconds": 383.17832095799986,
+        "selected_checkpoint_updates": 280,
+        "selected_epoch": 8,
+        "selected_file_eer": 0.33571428571428574,
+        "selected_music_eer": 0.3414285714285714,
+        "selected_ood_D": -0.04499999999999999,
+        "selected_rank_score": -0.04499999999999999,
+        "selected_seen_D": 0.04949999999999999
+      }
+    ],
+    "scheduler": "one_epoch_warmup_then_30_epoch_cosine",
+    "seed": 20260913,
+    "seed_rng_sha256_match": true,
+    "status": "completed_analysis_only_no_automatic_promotion"
+  },
+  "new_training_performed": false,
+  "overall_score": null,
+  "overall_score_reason": "unknown voice labels and single-class known voice-presence labels",
+  "pipelines": [
+    {
+      "gate_passed": false,
+      "minimum_overall_file_eer_epoch": 3,
+      "ood_D": -0.04499999999999999,
+      "pipeline": "P1",
+      "rank_score": -0.04499999999999999,
+      "runtime_seconds": 67.7885858249997,
+      "seen_D": 0.1095,
+      "selected_epoch": 5,
+      "selected_file_eer": 0.34285714285714286,
+      "selected_music_eer": 0.3414285714285714
+    },
+    {
+      "gate_passed": false,
+      "minimum_overall_file_eer_epoch": 9,
+      "ood_D": -0.04499999999999999,
+      "pipeline": "P2",
+      "rank_score": -0.04499999999999999,
+      "runtime_seconds": 398.31263099399985,
+      "seen_D": 0.17700000000000002,
+      "selected_epoch": 4,
+      "selected_file_eer": 0.28928571428571426,
+      "selected_music_eer": 0.3707142857142857
+    },
+    {
+      "gate_passed": false,
+      "minimum_overall_file_eer_epoch": 4,
+      "ood_D": -0.11699999999999998,
+      "pipeline": "P3",
+      "rank_score": -0.11699999999999998,
+      "runtime_seconds": 202.85037077900006,
+      "seen_D": 0.04499999999999999,
+      "selected_epoch": 5,
+      "selected_file_eer": 0.35357142857142854,
+      "selected_music_eer": 0.35857142857142854
+    },
+    {
+      "gate_passed": false,
+      "minimum_overall_file_eer_epoch": 5,
+      "ood_D": -0.04499999999999999,
+      "pipeline": "P4",
+      "rank_score": -0.04499999999999999,
+      "runtime_seconds": 228.44169619800005,
+      "seen_D": 0.1095,
+      "selected_epoch": 2,
+      "selected_file_eer": 0.3678571428571429,
+      "selected_music_eer": 0.4464285714285714
+    }
+  ],
+  "refit_performed": false,
+  "sealed_accessed": false,
+  "search_music_eligible_rows": 1116,
+  "selection": {
+    "reason": "no_candidate_passed",
+    "selected": "G0"
+  },
+  "source_commits": {
+    "first_comparison": "a01a50e0c774f181c20238109127c5b81cc95dc1",
+    "matched_recheck": "d2397ad8cc96667e5bc2e4132d86405afe093f4e"
+  }
+}

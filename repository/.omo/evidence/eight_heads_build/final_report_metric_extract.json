@@ -1,0 +1,1359 @@
+{
+  "E1": {
+    "music": {
+      "dev": {
+        "balanced": {
+          "mean": 0.2411031175059952,
+          "n_seeds": 3,
+          "range": [
+            0.238705035971223,
+            0.24589928057553956
+          ],
+          "std": 0.003391399430151312
+        },
+        "parent": {
+          "mean": 0.2363069544364508,
+          "n_seeds": 3,
+          "range": [
+            0.23510791366906475,
+            0.238705035971223
+          ],
+          "std": 0.001695699715075643
+        }
+      },
+      "holdouts": {
+        "acestep": {
+          "balanced_seed_mean_eer": 0.415,
+          "components": 17,
+          "eval_rows": 37,
+          "parent_seed_mean_eer": 0.3266666666666667
+        },
+        "audioldm": {
+          "balanced_seed_mean_eer": 0.4488888888888889,
+          "components": 17,
+          "eval_rows": 46,
+          "parent_seed_mean_eer": 0.41968253968253966
+        },
+        "brev": {
+          "balanced_seed_mean_eer": 0.5166666666666667,
+          "components": 17,
+          "eval_rows": 31,
+          "parent_seed_mean_eer": 0.49
+        },
+        "diffrhythm": {
+          "balanced_seed_mean_eer": 0.27636363636363637,
+          "components": 17,
+          "eval_rows": 47,
+          "parent_seed_mean_eer": 0.27636363636363637
+        },
+        "elevenlabs": {
+          "balanced_seed_mean_eer": 0.21999999999999997,
+          "components": 17,
+          "eval_rows": 30,
+          "parent_seed_mean_eer": 0.39999999999999997
+        },
+        "mubert": {
+          "balanced_seed_mean_eer": 0.3466666666666667,
+          "components": 17,
+          "eval_rows": 29,
+          "parent_seed_mean_eer": 0.26499999999999996
+        },
+        "musicgen": {
+          "balanced_seed_mean_eer": 0.2536507936507937,
+          "components": 17,
+          "eval_rows": 46,
+          "parent_seed_mean_eer": 0.3625396825396825
+        },
+        "producer": {
+          "balanced_seed_mean_eer": 0.21999999999999997,
+          "components": 17,
+          "eval_rows": 30,
+          "parent_seed_mean_eer": 0.19333333333333327
+        },
+        "songgen": {
+          "balanced_seed_mean_eer": 0.3904761904761904,
+          "components": 17,
+          "eval_rows": 46,
+          "parent_seed_mean_eer": 0.28285714285714286
+        },
+        "stableaudio": {
+          "balanced_seed_mean_eer": 0.6066666666666667,
+          "components": 17,
+          "eval_rows": 26,
+          "parent_seed_mean_eer": 0.12666666666666668
+        },
+        "suno": {
+          "balanced_seed_mean_eer": 0.30717948717948723,
+          "components": 24,
+          "eval_rows": 38,
+          "parent_seed_mean_eer": 0.2353846153846154
+        },
+        "udio": {
+          "balanced_seed_mean_eer": 0.3741666666666666,
+          "components": 20,
+          "eval_rows": 33,
+          "parent_seed_mean_eer": 0.49
+        }
+      },
+      "test": {
+        "arms": {
+          "balanced": {
+            "ensemble_eer": 0.17349498327759194,
+            "seed_eer": [
+              0.17349498327759194,
+              0.17349498327759194,
+              0.17349498327759194
+            ],
+            "seed_mean_eer": 0.17349498327759194
+          },
+          "parent": {
+            "ensemble_eer": 0.17349498327759194,
+            "seed_eer": [
+              0.17349498327759194,
+              0.17349498327759194,
+              0.1686872909698996
+            ],
+            "seed_mean_eer": 0.17189241917502782
+          }
+        },
+        "components": 24,
+        "fake": 104,
+        "n": 127,
+        "real": 23
+      }
+    },
+    "voice": {
+      "dev": {
+        "balanced": {
+          "mean": 0.0,
+          "n_seeds": 3,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        },
+        "parent": {
+          "mean": 0.0,
+          "n_seeds": 3,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        }
+      },
+      "holdouts": {
+        "Cartesia.ai (Sonic-3)": {
+          "balanced_seed_mean_eer": 0.0,
+          "components": 1,
+          "eval_rows": 27,
+          "parent_seed_mean_eer": 0.0
+        },
+        "Chatterbox Multilingual": {
+          "balanced_seed_mean_eer": 0.0,
+          "components": 1,
+          "eval_rows": 28,
+          "parent_seed_mean_eer": 0.0
+        },
+        "FireRedTTS-2.0": {
+          "eval_rows": 24,
+          "status": "data_insufficient"
+        },
+        "Higgs-Audio-V2": {
+          "balanced_seed_mean_eer": 0.0,
+          "components": 1,
+          "eval_rows": 31,
+          "parent_seed_mean_eer": 0.0
+        },
+        "Index-TTS-1.5": {
+          "eval_rows": 24,
+          "status": "data_insufficient"
+        },
+        "Index-TTS-2.0": {
+          "eval_rows": 24,
+          "status": "data_insufficient"
+        },
+        "Kani-TTS-370M": {
+          "balanced_seed_mean_eer": 0.0,
+          "components": 1,
+          "eval_rows": 34,
+          "parent_seed_mean_eer": 0.0
+        },
+        "Llasa-1B-Multilingual": {
+          "eval_rows": 24,
+          "status": "data_insufficient"
+        },
+        "Llasa-8B": {
+          "eval_rows": 24,
+          "status": "data_insufficient"
+        },
+        "Mars5": {
+          "eval_rows": 24,
+          "status": "data_insufficient"
+        },
+        "MeloTTS": {
+          "eval_rows": 24,
+          "status": "data_insufficient"
+        },
+        "VoxCPM-0.5B": {
+          "eval_rows": 24,
+          "status": "data_insufficient"
+        },
+        "original": {
+          "eval_rows": 24,
+          "status": "data_insufficient"
+        }
+      },
+      "test": {
+        "arms": {
+          "balanced": {
+            "ensemble_eer": 0.0,
+            "seed_eer": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "seed_mean_eer": 0.0
+          },
+          "parent": {
+            "ensemble_eer": 0.0,
+            "seed_eer": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "seed_mean_eer": 0.0
+          }
+        },
+        "components": 1,
+        "fake": 24,
+        "n": 48,
+        "real": 24
+      }
+    }
+  },
+  "E2_original": {
+    "claim_limit": "separator shift diagnostic; backing vocal presence is unreviewed and no isolated-backing claim is made",
+    "component_count": 4,
+    "data_limitations": [
+      "unknown_voice rows are reported separately and never assigned a voice truth label",
+      "background vocal presence is not independently reviewed; recovered-vocal changes are not pure backing isolation"
+    ],
+    "label_denominators": {
+      "voice_fake": 1322,
+      "voice_known": 2584,
+      "voice_real": 1262,
+      "voice_unknown": 60
+    },
+    "paired_rows": 15864,
+    "population": 2644
+  },
+  "E2_postrun": {
+    "arms": {
+      "balanced": {
+        "dev": {
+          "already_fake_file": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.30214706048447276,
+            "median": 0.32894367483564824,
+            "pairs": 4,
+            "positive_rate": 1.0,
+            "uncertain": true
+          },
+          "file_real_backing_control": {
+            "ci95": null,
+            "components": 1,
+            "mean": -0.19127171070025678,
+            "median": -0.13811515288162546,
+            "pairs": 4,
+            "positive_rate": 0.0,
+            "uncertain": true
+          },
+          "file_threshold_metrics_truth_changing": {
+            "auc": 0.46875,
+            "decision_threshold": 0.8588860740304459,
+            "eer": 0.5,
+            "fpr": 0.375,
+            "n": 12,
+            "negative_n": 8,
+            "positive_n": 4,
+            "recall": 0.0,
+            "threshold": 0.8127340671955744
+          },
+          "music_real_backing_control": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.23244256487953405,
+            "median": 0.012460837761561039,
+            "pairs": 8,
+            "positive_rate": 0.5,
+            "uncertain": true
+          },
+          "music_response": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.13504849727684132,
+            "median": 0.03285161157449085,
+            "pairs": 8,
+            "positive_rate": 1.0,
+            "uncertain": true
+          },
+          "music_threshold_metrics": {
+            "auc": 0.5234375,
+            "decision_threshold": 0.9998037815093995,
+            "eer": 0.375,
+            "fpr": 0.375,
+            "n": 24,
+            "negative_n": 16,
+            "positive_n": 8,
+            "recall": 0.5,
+            "threshold": 0.9996031920115153
+          },
+          "truth_changing_file": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.026526729197839105,
+            "median": -0.002715508062840377,
+            "pairs": 4,
+            "positive_rate": 0.5,
+            "uncertain": true
+          }
+        },
+        "test": {
+          "already_fake_file": {
+            "ci95": null,
+            "components": 1,
+            "mean": -0.236273335150024,
+            "median": -0.17070612250522288,
+            "pairs": 4,
+            "positive_rate": 0.5,
+            "uncertain": true
+          },
+          "file_real_backing_control": {
+            "ci95": null,
+            "components": 1,
+            "mean": -0.7895761597462123,
+            "median": -0.8058931127666535,
+            "pairs": 4,
+            "positive_rate": 0.0,
+            "uncertain": true
+          },
+          "file_threshold_metrics_truth_changing": {
+            "auc": 0.75,
+            "decision_threshold": 0.8588860740304459,
+            "eer": 0.5,
+            "fpr": 0.0,
+            "n": 12,
+            "negative_n": 8,
+            "positive_n": 4,
+            "recall": 0.5,
+            "threshold": 0.7308590063577207
+          },
+          "music_real_backing_control": {
+            "ci95": null,
+            "components": 1,
+            "mean": -0.38307027043871733,
+            "median": -0.5080517885119965,
+            "pairs": 8,
+            "positive_rate": 0.375,
+            "uncertain": true
+          },
+          "music_response": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.3633816541332635,
+            "median": 0.3746018894016743,
+            "pairs": 8,
+            "positive_rate": 1.0,
+            "uncertain": true
+          },
+          "music_threshold_metrics": {
+            "auc": 0.96875,
+            "decision_threshold": 0.9998037815093995,
+            "eer": 0.125,
+            "fpr": 0.0,
+            "n": 24,
+            "negative_n": 16,
+            "positive_n": 8,
+            "recall": 0.625,
+            "threshold": 0.9993205070495605
+          },
+          "truth_changing_file": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.38154461161219777,
+            "median": 0.38833273408394803,
+            "pairs": 4,
+            "positive_rate": 1.0,
+            "uncertain": true
+          }
+        }
+      },
+      "parent": {
+        "dev": {
+          "already_fake_file": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.36831870560297825,
+            "median": 0.47228243424297556,
+            "pairs": 4,
+            "positive_rate": 1.0,
+            "uncertain": true
+          },
+          "file_real_backing_control": {
+            "ci95": null,
+            "components": 1,
+            "mean": -0.183287114980886,
+            "median": -0.12151549941857226,
+            "pairs": 4,
+            "positive_rate": 0.0,
+            "uncertain": true
+          },
+          "file_threshold_metrics_truth_changing": {
+            "auc": 0.46875,
+            "decision_threshold": 0.8294650166603035,
+            "eer": 0.5,
+            "fpr": 0.5,
+            "n": 12,
+            "negative_n": 8,
+            "positive_n": 4,
+            "recall": 0.0,
+            "threshold": 0.812770920947613
+          },
+          "music_real_backing_control": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.15497300798582125,
+            "median": 0.03595184286435449,
+            "pairs": 8,
+            "positive_rate": 0.75,
+            "uncertain": true
+          },
+          "music_response": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.18411068615137083,
+            "median": 0.03291618327299756,
+            "pairs": 8,
+            "positive_rate": 1.0,
+            "uncertain": true
+          },
+          "music_threshold_metrics": {
+            "auc": 0.578125,
+            "decision_threshold": 0.9997464815775554,
+            "eer": 0.5,
+            "fpr": 0.25,
+            "n": 24,
+            "negative_n": 16,
+            "positive_n": 8,
+            "recall": 0.5,
+            "threshold": 0.9984839757283529
+          },
+          "truth_changing_file": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.02975523627968074,
+            "median": 0.010770329196021222,
+            "pairs": 4,
+            "positive_rate": 0.5,
+            "uncertain": true
+          }
+        },
+        "test": {
+          "already_fake_file": {
+            "ci95": null,
+            "components": 1,
+            "mean": -0.11429207546333048,
+            "median": -0.04907145636011462,
+            "pairs": 4,
+            "positive_rate": 0.5,
+            "uncertain": true
+          },
+          "file_real_backing_control": {
+            "ci95": null,
+            "components": 1,
+            "mean": -0.807170611156646,
+            "median": -0.815832912566846,
+            "pairs": 4,
+            "positive_rate": 0.0,
+            "uncertain": true
+          },
+          "file_threshold_metrics_truth_changing": {
+            "auc": 0.75,
+            "decision_threshold": 0.8294650166603035,
+            "eer": 0.5,
+            "fpr": 0.25,
+            "n": 12,
+            "negative_n": 8,
+            "positive_n": 4,
+            "recall": 0.5,
+            "threshold": 0.7237848843899695
+          },
+          "music_real_backing_control": {
+            "ci95": null,
+            "components": 1,
+            "mean": -0.3981712493356705,
+            "median": -0.6051088586100377,
+            "pairs": 8,
+            "positive_rate": 0.375,
+            "uncertain": true
+          },
+          "music_response": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.4390339631863754,
+            "median": 0.5119006002011399,
+            "pairs": 8,
+            "positive_rate": 1.0,
+            "uncertain": true
+          },
+          "music_threshold_metrics": {
+            "auc": 1.0,
+            "decision_threshold": 0.9997464815775554,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 24,
+            "negative_n": 16,
+            "positive_n": 8,
+            "recall": 0.75,
+            "threshold": 0.998728891213735
+          },
+          "truth_changing_file": {
+            "ci95": null,
+            "components": 1,
+            "mean": 0.38018319154939306,
+            "median": 0.40245537518375535,
+            "pairs": 4,
+            "positive_rate": 1.0,
+            "uncertain": true
+          }
+        }
+      }
+    },
+    "claim_limit": "constructed source-confounded diagnostic; separator and presence effects retained; no official score"
+  },
+  "E3": {
+    "music": {
+      "dev_opus": {
+        "ce": {
+          "mean": 0.34839328537170267,
+          "n_seeds": 3,
+          "range": [
+            0.3182733812949641,
+            0.4014388489208633
+          ],
+          "std": 0.03762369065755169
+        },
+        "consistency": {
+          "mean": 0.3333333333333333,
+          "n_seeds": 3,
+          "range": [
+            0.3182733812949641,
+            0.3598561151079136
+          ],
+          "std": 0.01881184532877581
+        }
+      },
+      "test_opus": {
+        "arms": {
+          "ce": {
+            "ensemble_eer": 0.21927257525083615,
+            "seed_eer": [
+              0.22408026755852845,
+              0.2506270903010034,
+              0.22408026755852845
+            ],
+            "seed_mean_eer": 0.23292920847268675
+          },
+          "consistency": {
+            "ensemble_eer": 0.22408026755852845,
+            "seed_eer": [
+              0.22408026755852845,
+              0.22408026755852845,
+              0.22408026755852845
+            ],
+            "seed_mean_eer": 0.22408026755852842
+          }
+        },
+        "components": 24,
+        "fake": 104,
+        "n": 127,
+        "real": 23
+      }
+    },
+    "voice": {
+      "dev_opus": {
+        "ce": {
+          "mean": 0.0,
+          "n_seeds": 3,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        },
+        "consistency": {
+          "mean": 0.0,
+          "n_seeds": 3,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        }
+      },
+      "test_opus": {
+        "arms": {
+          "ce": {
+            "ensemble_eer": 0.0,
+            "seed_eer": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "seed_mean_eer": 0.0
+          },
+          "consistency": {
+            "ensemble_eer": 0.0,
+            "seed_eer": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "seed_mean_eer": 0.0
+          }
+        },
+        "components": 1,
+        "fake": 24,
+        "n": 48,
+        "real": 24
+      }
+    }
+  },
+  "E4": {
+    "dev": {
+      "fusion": {
+        "seed_eer": [
+          0.24589928057553956,
+          0.238705035971223,
+          0.23510791366906475
+        ],
+        "seed_mean_eer": 0.2399040767386091
+      },
+      "mert": {
+        "seed_eer": [
+          0.24949640287769786,
+          0.2766906474820144,
+          0.28388489208633094
+        ],
+        "seed_mean_eer": 0.27002398081534773
+      },
+      "spectral": {
+        "seed_eer": [
+          0.31467625899280577,
+          0.3218705035971223,
+          0.2802877697841727
+        ],
+        "seed_mean_eer": 0.30561151079136695
+      }
+    },
+    "selected_spectral_weight": {
+      "41": 0.5,
+      "42": 0.75,
+      "43": 0.5
+    },
+    "test": {
+      "fusion": {
+        "seed_eer": [
+          0.26024247491638797,
+          0.2506270903010034,
+          0.21927257525083615
+        ],
+        "seed_mean_eer": 0.24338071348940918
+      },
+      "mert": {
+        "seed_eer": [
+          0.22408026755852845,
+          0.2554347826086957,
+          0.26024247491638797
+        ],
+        "seed_mean_eer": 0.24658584169453737
+      },
+      "spectral": {
+        "seed_eer": [
+          0.26024247491638797,
+          0.26024247491638797,
+          0.30121237458193983
+        ],
+        "seed_mean_eer": 0.2738991081382386
+      }
+    },
+    "test_predictions": {
+      "arms": {
+        "fusion": {
+          "ensemble_eer": 0.21927257525083615,
+          "seed_eer": [
+            0.26024247491638797,
+            0.2506270903010034,
+            0.21927257525083615
+          ],
+          "seed_mean_eer": 0.24338071348940918
+        },
+        "mert": {
+          "ensemble_eer": 0.26024247491638797,
+          "seed_eer": [
+            0.22408026755852845,
+            0.2554347826086957,
+            0.26024247491638797
+          ],
+          "seed_mean_eer": 0.24658584169453737
+        },
+        "spectral": {
+          "ensemble_eer": 0.26024247491638797,
+          "seed_eer": [
+            0.26024247491638797,
+            0.26024247491638797,
+            0.30121237458193983
+          ],
+          "seed_mean_eer": 0.2738991081382386
+        }
+      },
+      "components": 24,
+      "fake": 104,
+      "n": 127,
+      "real": 23
+    }
+  },
+  "E5": {
+    "components": 4,
+    "counts": {
+      "calibration": {
+        "fake": 108,
+        "real": 108
+      },
+      "dev": {
+        "fake": 72,
+        "real": 72
+      },
+      "test": {
+        "fake": 72,
+        "real": 72
+      }
+    },
+    "dev": {
+      "anti_max": {
+        "auc": 0.5093557098765432,
+        "decision_threshold": 0.01479026395827532,
+        "eer": 0.47222222222222227,
+        "fpr": 0.4027777777777778,
+        "n": 144,
+        "negative_n": 72,
+        "positive_n": 72,
+        "recall": 0.375,
+        "threshold": 0.00197591888718307
+      },
+      "df_top30": {
+        "auc": 0.6365740740740741,
+        "decision_threshold": 0.2772336734665765,
+        "eer": 0.40277777777777773,
+        "fpr": 0.16666666666666666,
+        "n": 144,
+        "negative_n": 72,
+        "positive_n": 72,
+        "recall": 0.3055555555555556,
+        "threshold": 0.1634296551346779
+      }
+    },
+    "selected": {
+      "anti": "max",
+      "df": "top30"
+    },
+    "test": {
+      "anti_max": {
+        "auc": 0.5948109567901234,
+        "decision_threshold": 0.01479026395827532,
+        "eer": 0.4305555555555556,
+        "fpr": 0.1111111111111111,
+        "n": 144,
+        "negative_n": 72,
+        "positive_n": 72,
+        "recall": 0.20833333333333334,
+        "threshold": 0.006376340053975582
+      },
+      "df_top30": {
+        "auc": 0.6432291666666666,
+        "decision_threshold": 0.2772336734665765,
+        "eer": 0.43749999999999994,
+        "fpr": 0.0,
+        "n": 144,
+        "negative_n": 72,
+        "positive_n": 72,
+        "recall": 0.09722222222222222,
+        "threshold": 0.10995675250887871
+      }
+    }
+  },
+  "E6": {
+    "Anti": {
+      "dev_mean_eer": {
+        "anti_l12": 0.013888888888888895,
+        "anti_l24": 0.0,
+        "anti_l48": 0.0
+      },
+      "selected": "anti_l24",
+      "test": {
+        "anti_l12": {
+          "seed_eer": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_mean_eer": 0.0
+        },
+        "anti_l24": {
+          "seed_eer": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_mean_eer": 0.0
+        },
+        "anti_l48": {
+          "seed_eer": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_mean_eer": 0.0
+        }
+      }
+    },
+    "MERT": {
+      "dev_mean_eer": {
+        "mert_l12": 0.16153477218225415,
+        "mert_l24": 0.2411031175059952,
+        "mert_l6": 0.21218225419664263
+      },
+      "selected": "mert_l12",
+      "test": {
+        "mert_l12": {
+          "seed_eer": [
+            0.09636287625418055,
+            0.08674749163879597,
+            0.08674749163879597
+          ],
+          "seed_mean_eer": 0.08995261984392416
+        },
+        "mert_l24": {
+          "seed_eer": [
+            0.17349498327759194,
+            0.17349498327759194,
+            0.17349498327759194
+          ],
+          "seed_mean_eer": 0.17349498327759194
+        },
+        "mert_l6": {
+          "seed_eer": [
+            0.12290969899665549,
+            0.12290969899665549,
+            0.12290969899665549
+          ],
+          "seed_mean_eer": 0.12290969899665549
+        }
+      }
+    },
+    "mert12_vs_l24_bootstrap": {
+      "claim_limit": "conditional on fixed fitted heads and existing split; no retraining or reselection",
+      "components": 24,
+      "estimand": "MERT12 minus MERT24 test EER; lower is better",
+      "prediction_file": "results/eight_h100_20260917/downloaded/unpacked/output/predictions_E6_MERT.csv",
+      "rows": 127,
+      "seeds": {
+        "41": {
+          "ci95": [
+            -0.19008557232241444,
+            0.0
+          ],
+          "components": 24,
+          "delta_eer": -0.07713210702341139,
+          "resamples": 1000,
+          "uncertain": false,
+          "valid": 1000
+        },
+        "42": {
+          "ci95": [
+            -0.19835071563579607,
+            -0.006408227848101245
+          ],
+          "components": 24,
+          "delta_eer": -0.08674749163879597,
+          "resamples": 1000,
+          "uncertain": false,
+          "valid": 1000
+        },
+        "43": {
+          "ci95": [
+            -0.2024110425420167,
+            -0.010852928127772912
+          ],
+          "components": 24,
+          "delta_eer": -0.08674749163879597,
+          "resamples": 1000,
+          "uncertain": false,
+          "valid": 1000
+        }
+      },
+      "selection_changed": false,
+      "status": "postrun_fixed_predictions"
+    }
+  },
+  "E7": {
+    "chosen_arm": "head_only_ce",
+    "mean_dev_eer": {
+      "head_only_ce": 0.0,
+      "lora_ce": 0.0,
+      "lora_ce_kl": 0.0
+    },
+    "speakers": {
+      "calibration": 3,
+      "dev": 2,
+      "test": 2,
+      "train": 3
+    },
+    "test": {
+      "frozen": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.020833333333333332,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      },
+      "head_only_ce_seed41": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.041666666666666664,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      },
+      "head_only_ce_seed42": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.041666666666666664,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      },
+      "head_only_ce_seed43": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.041666666666666664,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      },
+      "lora_ce_kl_seed41": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.0,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      },
+      "lora_ce_kl_seed42": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.0,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      },
+      "lora_ce_kl_seed43": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.0,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      },
+      "lora_ce_seed41": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.0,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      },
+      "lora_ce_seed42": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.0,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      },
+      "lora_ce_seed43": {
+        "auc": 1.0,
+        "eer": 0.0,
+        "fpr": 0.0,
+        "negative_n": 48,
+        "positive_n": 48,
+        "recall": 1.0
+      }
+    },
+    "uncertainty": {
+      "ci95": null,
+      "reason": "test contains two speakers"
+    }
+  },
+  "E8": {
+    "calibration_real_rows": 31,
+    "dev": {
+      "auc": 0.5876258992805755,
+      "components": 27,
+      "eer": 0.4014388489208633,
+      "fpr": 0.04,
+      "negative_n": 25,
+      "positive_n": 139,
+      "recall": 0.19424460431654678
+    },
+    "fit_rows": 139,
+    "fixed_updates": null,
+    "test": {
+      "auc": 0.6797658862876254,
+      "components": 24,
+      "eer": 0.3060200668896321,
+      "fpr": 0.13043478260869565,
+      "negative_n": 23,
+      "positive_n": 104,
+      "recall": 0.21153846153846154
+    }
+  },
+  "denominators": {
+    "E1": {
+      "music": {
+        "calibration": {
+          "components": 30,
+          "fake": 169,
+          "real": 31,
+          "rows": 200,
+          "variants": {
+            "base": 200
+          }
+        },
+        "dev": {
+          "components": 27,
+          "fake": 139,
+          "real": 25,
+          "rows": 164,
+          "variants": {
+            "base": 164
+          }
+        },
+        "test": {
+          "components": 24,
+          "fake": 104,
+          "real": 23,
+          "rows": 127,
+          "variants": {
+            "base": 127
+          }
+        },
+        "train": {
+          "components": 175,
+          "fake": 692,
+          "real": 139,
+          "rows": 831,
+          "variants": {
+            "base": 831
+          }
+        }
+      },
+      "voice": {
+        "calibration": {
+          "components": 1,
+          "fake": 102,
+          "real": 102,
+          "rows": 204,
+          "variants": {
+            "base": 204
+          }
+        },
+        "dev": {
+          "components": 1,
+          "fake": 24,
+          "real": 24,
+          "rows": 48,
+          "variants": {
+            "base": 48
+          }
+        },
+        "test": {
+          "components": 1,
+          "fake": 24,
+          "real": 24,
+          "rows": 48,
+          "variants": {
+            "base": 48
+          }
+        },
+        "train": {
+          "components": 1,
+          "fake": 106,
+          "real": 106,
+          "rows": 212,
+          "variants": {
+            "base": 212
+          }
+        }
+      }
+    },
+    "E3": {
+      "music": {
+        "calibration": {
+          "components": 30,
+          "fake": 676,
+          "real": 124,
+          "rows": 800,
+          "variants": {
+            "base": 200,
+            "mp3_32k": 200,
+            "opus_telephone": 200,
+            "telephone": 200
+          }
+        },
+        "dev": {
+          "components": 27,
+          "fake": 556,
+          "real": 100,
+          "rows": 656,
+          "variants": {
+            "base": 164,
+            "mp3_32k": 164,
+            "opus_telephone": 164,
+            "telephone": 164
+          }
+        },
+        "test": {
+          "components": 24,
+          "fake": 416,
+          "real": 92,
+          "rows": 508,
+          "variants": {
+            "base": 127,
+            "mp3_32k": 127,
+            "opus_telephone": 127,
+            "telephone": 127
+          }
+        },
+        "train": {
+          "components": 175,
+          "fake": 2076,
+          "real": 417,
+          "rows": 2493,
+          "variants": {
+            "base": 831,
+            "mp3_32k": 831,
+            "telephone": 831
+          }
+        }
+      },
+      "primary_opus_dev_test": {
+        "music": {
+          "dev": {
+            "components": 27,
+            "fake": 139,
+            "real": 25,
+            "rows": 164,
+            "variants": {
+              "opus_telephone": 164
+            }
+          },
+          "test": {
+            "components": 24,
+            "fake": 104,
+            "real": 23,
+            "rows": 127,
+            "variants": {
+              "opus_telephone": 127
+            }
+          }
+        },
+        "voice": {
+          "dev": {
+            "components": 1,
+            "fake": 24,
+            "real": 24,
+            "rows": 48,
+            "variants": {
+              "opus_telephone": 48
+            }
+          },
+          "test": {
+            "components": 1,
+            "fake": 24,
+            "real": 24,
+            "rows": 48,
+            "variants": {
+              "opus_telephone": 48
+            }
+          }
+        }
+      },
+      "voice": {
+        "calibration": {
+          "components": 1,
+          "fake": 408,
+          "real": 408,
+          "rows": 816,
+          "variants": {
+            "base": 204,
+            "mp3_32k": 204,
+            "opus_telephone": 204,
+            "telephone": 204
+          }
+        },
+        "dev": {
+          "components": 1,
+          "fake": 96,
+          "real": 96,
+          "rows": 192,
+          "variants": {
+            "base": 48,
+            "mp3_32k": 48,
+            "opus_telephone": 48,
+            "telephone": 48
+          }
+        },
+        "test": {
+          "components": 1,
+          "fake": 96,
+          "real": 96,
+          "rows": 192,
+          "variants": {
+            "base": 48,
+            "mp3_32k": 48,
+            "opus_telephone": 48,
+            "telephone": 48
+          }
+        },
+        "train": {
+          "components": 1,
+          "fake": 318,
+          "real": 318,
+          "rows": 636,
+          "variants": {
+            "base": 212,
+            "mp3_32k": 212,
+            "telephone": 212
+          }
+        }
+      }
+    },
+    "E4": {
+      "music": {
+        "dev": {
+          "components": 27,
+          "fake": 139,
+          "real": 25,
+          "rows": 164,
+          "variants": {
+            "base": 164
+          }
+        },
+        "test": {
+          "components": 24,
+          "fake": 104,
+          "real": 23,
+          "rows": 127,
+          "variants": {
+            "base": 127
+          }
+        }
+      }
+    },
+    "E6": {
+      "Anti": {
+        "dev": {
+          "components": 1,
+          "fake": 24,
+          "real": 24,
+          "rows": 48,
+          "variants": {
+            "base": 48
+          }
+        },
+        "test": {
+          "components": 1,
+          "fake": 24,
+          "real": 24,
+          "rows": 48,
+          "variants": {
+            "base": 48
+          }
+        }
+      },
+      "MERT": {
+        "dev": {
+          "components": 27,
+          "fake": 139,
+          "real": 25,
+          "rows": 164,
+          "variants": {
+            "base": 164
+          }
+        },
+        "test": {
+          "components": 24,
+          "fake": 104,
+          "real": 23,
+          "rows": 127,
+          "variants": {
+            "base": 127
+          }
+        }
+      }
+    },
+    "E8": {
+      "dev": {
+        "components": 27,
+        "fake": 139,
+        "real": 25,
+        "rows": 164,
+        "variants": {
+          "base": 164
+        }
+      },
+      "fit_train_real": {
+        "components": 127,
+        "fake": 0,
+        "real": 139,
+        "rows": 139,
+        "variants": {
+          "base": 139
+        }
+      },
+      "test": {
+        "components": 24,
+        "fake": 104,
+        "real": 23,
+        "rows": 127,
+        "variants": {
+          "base": 127
+        }
+      },
+      "threshold_calibration_real": {
+        "components": 19,
+        "fake": 0,
+        "real": 31,
+        "rows": 31,
+        "variants": {
+          "base": 31
+        }
+      }
+    }
+  }
+}

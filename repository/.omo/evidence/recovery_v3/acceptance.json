@@ -1,0 +1,47 @@
+{
+  "success_criteria": [
+    {
+      "scenario": "fresh source acquisition",
+      "invocation": ".venv/bin/python prepare_recovery_data.py --fresh _workspace/recovery_v3/fresh_sources --output recovery_validation --archive _workspace/recovery_v3/recovery_validation.zip",
+      "observable": {
+        "files": 88,
+        "music_artists": 12,
+        "speech_pairs": 20,
+        "music_provider_counts": {
+          "FMA/FMA": 12,
+          "Echoes/suno": 12,
+          "Echoes/udio": 12,
+          "Echoes/elevenlabs": 12
+        }
+      },
+      "artifact": ".omo/evidence/recovery_v3/acquisition_final_stdout.json"
+    },
+    {
+      "scenario": "source, content, labels, PCM, provenance, and ZIP audit",
+      "invocation": "embedded Python verifier recorded in this attempt",
+      "observable": {
+        "all_pcm_verified": 88,
+        "all_source_hashes_present": 88,
+        "archive_wavs": 88,
+        "archive_sha256": "0d3e7d2d5bf1509d941b4651a258938d9eab2bedb4ce2b7a64c182c35523dae0",
+        "archive_bytes": 95530127
+      },
+      "artifact": ".omo/evidence/recovery_v3/integrity_verification.json"
+    },
+    {
+      "scenario": "semantic regression checks",
+      "invocation": ".venv/bin/python -m pytest -q test_prepare_recovery_data.py",
+      "observable": "5 passed",
+      "artifact": ".omo/evidence/recovery_v3/tests_final.log"
+    },
+    {
+      "scenario": "archive CRC verification and ignored audio policy",
+      "invocation": "unzip -t ...; git check-ignore -v recovery_validation/audio/<id>.wav",
+      "observable": "archive tested and audio ignored",
+      "artifact": [
+        ".omo/evidence/recovery_v3/archive_test.log",
+        ".omo/evidence/recovery_v3/audio_ignore.log"
+      ]
+    }
+  ]
+}

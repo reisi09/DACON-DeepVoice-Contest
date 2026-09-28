@@ -1,0 +1,25 @@
+{
+  "archive": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/baseline_original/baseline_submit.zip",
+  "bytes": 4562809110,
+  "sha256": "cc86f143915c95fd958a0066cbf14b0db9f4c41fd213310c3650b9fe870d0c70",
+  "uncompressed_bytes": 5003422551,
+  "crc": "all entries passed",
+  "model_checksums": {
+    "df_arena_1b/pytorch_model.bin": {
+      "expected": "780bc14fd4c15e65d58efdef728427cf03cd29cd60be528e97badf8c89087988",
+      "actual": "780bc14fd4c15e65d58efdef728427cf03cd29cd60be528e97badf8c89087988",
+      "match": true
+    },
+    "htdemucs/955717e8-8726e21a.th": {
+      "expected": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4",
+      "actual": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4",
+      "match": true
+    },
+    "panns/Cnn14_mAP=0.431.pth": {
+      "expected": "0dc499e40e9761ef5ea061ffc77697697f277f6a960894903df3ada000e34b31",
+      "actual": "0dc499e40e9761ef5ea061ffc77697697f277f6a960894903df3ada000e34b31",
+      "match": true
+    }
+  },
+  "local_inference": "not run; official CUDA submission preserved"
+}

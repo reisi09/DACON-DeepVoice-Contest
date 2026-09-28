@@ -1,0 +1,588 @@
+{
+  "candidate": "D_voice_seed41",
+  "groups": {
+    "validation-000-observed": [
+      "group-validation-000"
+    ],
+    "validation-001-observed": [
+      "group-validation-001"
+    ],
+    "validation-002-observed": [
+      "group-validation-002"
+    ],
+    "validation-003-observed": [
+      "group-validation-003"
+    ],
+    "validation-004-observed": [
+      "group-validation-004"
+    ],
+    "validation-005-observed": [
+      "group-validation-005"
+    ],
+    "validation-006-observed": [
+      "group-validation-006"
+    ],
+    "validation-007-observed": [
+      "group-validation-007"
+    ],
+    "validation-008-observed": [
+      "group-validation-008"
+    ],
+    "validation-009-observed": [
+      "group-validation-009"
+    ],
+    "validation-010-observed": [
+      "group-validation-010"
+    ],
+    "validation-011-observed": [
+      "group-validation-011"
+    ]
+  },
+  "labels": {
+    "validation-000-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-001-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-002-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-003-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-004-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-005-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-006-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-007-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-008-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-009-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-010-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-011-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    }
+  },
+  "predictions": {
+    "validation-000-observed": {
+      "FILE_FAKE_PROB": 0.34534744247892135,
+      "MUSIC_FAKE_PROB": 0.40629109740257263,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.2500229775905609,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-001-observed": {
+      "FILE_FAKE_PROB": 0.6375198274856402,
+      "MUSIC_FAKE_PROB": 0.5692219734191895,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500233054161072,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-002-observed": {
+      "FILE_FAKE_PROB": 0.33614453871164685,
+      "MUSIC_FAKE_PROB": 0.395464152097702,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.2500233054161072,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-003-observed": {
+      "FILE_FAKE_PROB": 0.6375198781495897,
+      "MUSIC_FAKE_PROB": 0.5901870131492615,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.750023365020752,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-004-observed": {
+      "FILE_FAKE_PROB": 0.3558383251698807,
+      "MUSIC_FAKE_PROB": 0.4186333119869232,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.2500213384628296,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-005-observed": {
+      "FILE_FAKE_PROB": 0.6375183582311053,
+      "MUSIC_FAKE_PROB": 0.5594890117645264,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500215768814087,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-006-observed": {
+      "FILE_FAKE_PROB": 0.3601586681298272,
+      "MUSIC_FAKE_PROB": 0.42371606826782227,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.2500219941139221,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-007-observed": {
+      "FILE_FAKE_PROB": 0.6375188648706,
+      "MUSIC_FAKE_PROB": 0.5580894351005554,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500221729278564,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-008-observed": {
+      "FILE_FAKE_PROB": 0.3651109931955894,
+      "MUSIC_FAKE_PROB": 0.42954233288764954,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25002071261405945,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-009-observed": {
+      "FILE_FAKE_PROB": 0.6375207901006803,
+      "MUSIC_FAKE_PROB": 0.5838016867637634,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500244379043579,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-010-observed": {
+      "FILE_FAKE_PROB": 0.3503531166834861,
+      "MUSIC_FAKE_PROB": 0.4121801257133484,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.2500208914279938,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-011-observed": {
+      "FILE_FAKE_PROB": 0.6375190168624485,
+      "MUSIC_FAKE_PROB": 0.582779049873352,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.7500223517417908,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    }
+  },
+  "schema_version": 1,
+  "strata": {
+    "validation-000-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-001-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-002-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-003-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-004-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-005-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-006-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-007-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-008-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-009-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-010-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-011-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    }
+  },
+  "upstream_identity": {
+    "base_upstream_family_identity": "064a2789978ddc0e7a65687bb7a664c8b2c74be119e71dee45ce173e9b163dba",
+    "checkpoint_sha256": "0f2d5a70d8cad93c9beebea123c20f793ba006f1c3c06f8866cf72468e9b527a",
+    "model_recipe_identity": "81096ca1428b002316e34229796fba637d9ae3a569bd281c3aff22d37b4bd97f",
+    "records_identity": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+    "source_sha256": {
+      "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+      "redesign_fit.py": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906",
+      "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+      "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+      "redesign_predictions.py": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+      "redesign_train.py": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+    },
+    "training_manifest_sha256": "b8f338a496c91f87ff6f6924372f9447d9532eb01deca5e1869158d1ee548681",
+    "upstream_family_identity": "3a7b176f9eec10d0ab31db8cd0de453128e7f3af10c1ab58276fd2755af73fd1",
+    "upstream_family_payload": {
+      "base_upstream_family_identity": "064a2789978ddc0e7a65687bb7a664c8b2c74be119e71dee45ce173e9b163dba",
+      "voice_recipe_identity": "5e154446c8f3167a2060dda5d55ee7ab191e31430a6d3310cdfaea17d5bda258"
+    },
+    "voice_checkpoint_sha256": "f613ad549b4f08e4aaa26af6241e6f0ec3892f78a89300e8e9c09f1c97b298f8",
+    "voice_recipe_identity": "5e154446c8f3167a2060dda5d55ee7ab191e31430a6d3310cdfaea17d5bda258"
+  },
+  "window_scores": {
+    "validation-000-observed": {
+      "music_fake": [
+        0.4502575993537903,
+        0.3871806859970093,
+        0.430739164352417
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.2500229775905609,
+        0.2500205338001251,
+        0.25002115964889526
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-001-observed": {
+      "music_fake": [
+        0.5765438675880432,
+        0.5609292387962341,
+        0.5879717469215393
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500206828117371,
+        0.7500233054161072,
+        0.7500201463699341
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-002-observed": {
+      "music_fake": [
+        0.41653120517730713,
+        0.39552581310272217,
+        0.4145473837852478
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25001972913742065,
+        0.250019371509552,
+        0.2500233054161072
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-003-observed": {
+      "music_fake": [
+        0.5819830894470215,
+        0.583499550819397,
+        0.6010017395019531
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500216960906982,
+        0.750023365020752,
+        0.7500214576721191
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-004-observed": {
+      "music_fake": [
+        0.4511936902999878,
+        0.39864063262939453,
+        0.43284907937049866
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.2500213384628296,
+        0.25002071261405945,
+        0.2500201463699341
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-005-observed": {
+      "music_fake": [
+        0.5713569521903992,
+        0.5374283790588379,
+        0.5589578747749329
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500196099281311,
+        0.7500206828117371,
+        0.7500215768814087
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-006-observed": {
+      "music_fake": [
+        0.41831862926483154,
+        0.4079678952693939,
+        0.45019564032554626
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.2500196397304535,
+        0.2500219941139221,
+        0.2500216066837311
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-007-observed": {
+      "music_fake": [
+        0.5915340185165405,
+        0.5485955476760864,
+        0.5433738827705383
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500207424163818,
+        0.7500221729278564,
+        0.7500213980674744
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-008-observed": {
+      "music_fake": [
+        0.4526095688343048,
+        0.40201622247695923,
+        0.4488103687763214
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25001928210258484,
+        0.25002071261405945,
+        0.2500205338001251
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-009-observed": {
+      "music_fake": [
+        0.5751472115516663,
+        0.5822471976280212,
+        0.5606826543807983
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.750022292137146,
+        0.7500244379043579,
+        0.7500215172767639
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-010-observed": {
+      "music_fake": [
+        0.43596380949020386,
+        0.38491225242614746,
+        0.4545440673828125
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.2500208914279938,
+        0.2500201165676117,
+        0.2500207722187042
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-011-observed": {
+      "music_fake": [
+        0.5827176570892334,
+        0.5809394717216492,
+        0.5815272927284241
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.7500223517417908,
+        0.7500219345092773,
+        0.7500212788581848
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    }
+  }
+}

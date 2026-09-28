@@ -1,0 +1,45 @@
+{
+  "total_rows": 4627,
+  "new_originals": 3668,
+  "new_split_counts": {
+    "train": 2700,
+    "dev": 240,
+    "calibration": 160,
+    "test": 240,
+    "confirmation_external": 200,
+    "confirmation_presence": 128
+  },
+  "legacy_train": 959,
+  "new_music_labels_by_split": {
+    "train": {
+      "0": 535,
+      "1": 2165
+    },
+    "dev": {
+      "0": 90,
+      "1": 150
+    },
+    "calibration": {
+      "0": 60,
+      "1": 100
+    },
+    "test": {
+      "0": 100,
+      "1": 140
+    },
+    "confirmation_external": {
+      "0": 50,
+      "1": 150
+    }
+  },
+  "selection_sha256": "bf4295b0181babbc474b067fb258639d090c4adf2cc254bbb0cbff69e454a3bf",
+  "group_overlap": false,
+  "new_generator_holdout": "mustango",
+  "pretraining_independence_claimed": false,
+  "speech_scope": "128 ASV diagnostic rows, fixed voice expert; not independent validation",
+  "unresolved": [
+    "HAIM MusicGen prompt identity",
+    "Echoes to MusicCaps crosswalk",
+    "unknown aliases and near duplicates"
+  ]
+}

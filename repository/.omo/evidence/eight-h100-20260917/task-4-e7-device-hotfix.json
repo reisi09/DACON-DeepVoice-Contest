@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-09-17T22:49:34+09:00",
+  "failure_artifact": "_workspace/eight_h100_20260917/attempt5_progress.yDfhou/results.zip::output/admission_bootstrap.log",
+  "root_cause": "LoRALinear constructed lora_a and lora_b with torch defaults on CPU/float32 after the wrapped base projection was already on cuda:0, so the first CUDA matrix multiply rejected mixed devices.",
+  "fix": "Construct both low-rank Linear modules on base.weight.device with base.weight.dtype.",
+  "scenarios": [
+    {
+      "scenario": "A non-default float64 base projection exposes the same placement bug without requiring a GPU.",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_lora.py::test_lora_inherits_base_projection_device_and_dtype",
+      "red_observable": "exit 1; lora parameter dtype torch.float32 != expected torch.float64",
+      "green_observable": "exit 0; 1 passed in 2.28s"
+    },
+    {
+      "scenario": "The complete E7 numerical regression suite still proves adapter gradient flow, frozen-base preservation, exact reload, shared windows, balanced schedules, and placement inheritance.",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_lora.py",
+      "binary_observable": "exit 0; 3 passed in 2.28s"
+    },
+    {
+      "scenario": "The hotfix compiles, passes the project programming audit, and has no whitespace errors.",
+      "invocation": ".venv/bin/python -m py_compile eight_lora.py test_eight_lora.py && check-no-excuse-rules.py eight_lora.py test_eight_lora.py && git diff --check -- eight_lora.py test_eight_lora.py",
+      "binary_observable": "exit 0; no violations in 2 file(s)"
+    }
+  ],
+  "sha256": {
+    "eight_lora.py": "be8828a1eb51dc7a8c8059abfc86ffbd4dda25d27e6b98a0932867a816c1f579",
+    "test_eight_lora.py": "fcfca3c55550250a4e365ef4fe2958005c1d76aad3c8036601863a464c1d95f2"
+  },
+  "real_h100_rerun": "pending in the runner lane; this worker performed no remote/GPU action"
+}

@@ -41,6 +41,9 @@ SSLAM = ROOT / '_workspace/models/s6/sslam_pt'        # ta012/SSLAM_pretrain @af
 SSLAM_SHA = '6f751cfc84c2243aed26a1e91dd0ad144b1c429b35b152359b57563bd760fadf'
 WAVLM = ROOT / '_workspace/models/s6/wavlm_pkg'       # microsoft/wavlm-large @c1423ed (UniSpeech license)
 WAVLM_SHA = '534a047c26c824b1f5d3637efc9908f30b414912b06c0cc7c9dae0763ed75652'
+# S8 encoders (research/top15/work5/s8): make_s8_assets.py output (fp16-exact SSL encoders, fp32 EnCodec) + its sha receipt
+S8_ASSETS = ROOT / '_workspace/models/s8'
+COMPRESSION = zipfile.ZIP_STORED   # --deflate: ZIP_DEFLATED (lossless; frees ~1.1 GB, MERT's fp32 file compresses to ~0.59)
 VENDORED = {'sonics': ROOT / '_workspace/models/sonics-main/sonics', 'timm': ROOT / '.venv/lib/python3.11/site-packages/timm'}
 
 
@@ -78,6 +81,31 @@ def replacements() -> dict[str, bytes]:
                 out[f'model/assets/{folder}/{f}'] = (src / f).read_bytes()
     if (HEADS / 'voice_wavlm_layer.json').exists() and not all((HEADS / f'wavlm_{s}.pt').exists() for s in (41, 42, 43)):
         raise ValueError('voice_wavlm_layer.json without wavlm_{41,42,43}.pt')
+    members = json.loads((HEADS / 'voice_ssl_members.json').read_text()) if (HEADS / 'voice_ssl_members.json').exists() else []
+    extras = json.loads((HEADS / 'music_extra.json').read_text()) if (HEADS / 'music_extra.json').exists() else []
+    for n in ('voice_ssl_members.json', 'music_extra.json'):
+        if (HEADS / n).exists():
+            out['model/trained/' + n] = (HEADS / n).read_bytes()
+    for m in members:   # S8 voice member heads
+        for s in (41, 42, 43):
+            n = f"{m['name']}_{s}.pt"
+            if lock['checkpoints'].get(n) != sha256(HEADS / n):
+                raise ValueError(f'checkpoint differs from its candidate lock: {n}')
+            out['model/trained/' + n] = (HEADS / n).read_bytes()
+    receipt = lambda: json.loads((S8_ASSETS / 'receipt.json').read_text())   # read only when a new S8 asset is packaged
+    for asset in sorted({m['asset'] for m in members} | {e['asset'] for e in extras}):
+        if asset == 'mert':   # base-archive asset (always present)
+            continue
+        if asset in ('wavlm', 'sslam_pt', 'eat'):   # S7 assets, packaged above with their S7 members
+            if f'model/assets/{asset}/model_fp16.safetensors' not in out:
+                raise ValueError(f'{asset} asset needed by an S8 member but its S7 member is absent')
+            continue
+        for f, digest in receipt()[asset].items():
+            if f == 'max_abs_diff':
+                continue
+            if sha256(S8_ASSETS / asset / f) != digest:
+                raise ValueError(f'S8 asset differs from its receipt: {asset}/{f}')
+            out[f'model/assets/{asset}/{f}'] = (S8_ASSETS / asset / f).read_bytes()
     out['model/runtime/full_bank_submission.py'] = runtime.replace(OLD_CANDIDATE, f'CANDIDATE = {CANDIDATE!r}'.encode())
     out['model/runtime/decision_heads.py'] = (ROOT / 'decision_heads.py').read_bytes()
     out['model/runtime/voice_heads.py'] = (ROOT / 'voice_heads.py').read_bytes()   # imported by full_bank_submission
@@ -87,7 +115,7 @@ def replacements() -> dict[str, bytes]:
             raise ValueError('fusion and its refitted file ensemble must be val-fitted')
         out['model/trained/component_fusion.json'] = (FUSION / 'component_fusion.json').read_bytes()
         out['model/trained/file_ensemble.json'] = (FUSION / 'file_ensemble.json').read_bytes()   # refitted on fused components
-        for name in sorted({n.rsplit('_', 1)[0] for n in fusion['voice']['weights'] if n not in ('ours', 'df0')}):
+        for name in sorted({n.rsplit('_', 1)[0] for n in fusion['voice']['weights'] if n not in ('ours', 'df0', 'wavlm')}):   # wavlm assets: below
             for f in ('antideepfake_config.json', 'model.safetensors'):
                 out[f'model/assets/antideepfake/{name}/{f}'] = (DETECTORS[name] / f).read_bytes()
         if fusion['music']['weights'].get('sonics'):   # SONICS and its vendored code (with timm) only when fused
@@ -102,6 +130,12 @@ def replacements() -> dict[str, bytes]:
     return out
 
 
+def zinfo(name: str) -> zipfile.ZipInfo:
+    info = zipfile.ZipInfo(name)   # fixed 1980 timestamp: the archive is a function of its members
+    info.compress_type = COMPRESSION
+    return info
+
+
 def package() -> dict:
     base_receipt = json.loads((BASE / 'submit.json').read_text())
     if sha256(BASE / 'submit.zip') != base_receipt['sha256']:
@@ -110,19 +144,19 @@ def package() -> dict:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     partial = OUTPUT.with_suffix('.partial')
     written = {}
-    with zipfile.ZipFile(BASE / 'submit.zip') as src, zipfile.ZipFile(partial, 'w', zipfile.ZIP_STORED, allowZip64=True) as dst:
+    with zipfile.ZipFile(BASE / 'submit.zip') as src, zipfile.ZipFile(partial, 'w', COMPRESSION, allowZip64=True, compresslevel=6) as dst:
         kept = [n for n in src.namelist() if n != 'model/manifest.json' and n not in new
                 and not (n.startswith('model/trained/') and n.rsplit('/', 1)[1] not in TRAINED)]
         for name in kept:
             digest = hashlib.sha256()
-            with src.open(name) as fin, dst.open(zipfile.ZipInfo(name), 'w', force_zip64=True) as fout:
+            with src.open(name) as fin, dst.open(zinfo(name), 'w', force_zip64=True) as fout:
                 while chunk := fin.read(8 << 20):
                     fout.write(chunk); digest.update(chunk)
             if name in base_receipt['member_sha256'] and digest.hexdigest() != base_receipt['member_sha256'][name]:
                 raise ValueError('base member differs from its receipt: ' + name)
             written[name] = digest.hexdigest()
         for name, data in sorted(new.items()):
-            dst.writestr(zipfile.ZipInfo(name), data)
+            dst.writestr(zinfo(name), data)
             written[name] = hashlib.sha256(data).hexdigest()
         results = json.loads((HEADS / 'results.json').read_text())
         choice = {'candidate': CANDIDATE, 'base_archive_sha256': base_receipt['sha256'],
@@ -137,7 +171,7 @@ def package() -> dict:
             choice['component_fusion'] = {route: fusion[route]['weights'] for route in ('voice', 'music')}
             choice['file_fusion'] = 'file_ensemble.json refitted on val over the fused VOICE/MUSIC scores'
         manifest = (json.dumps({'choice': choice, 'sha256': written}, indent=2) + '\n').encode()
-        dst.writestr(zipfile.ZipInfo('model/manifest.json'), manifest)
+        dst.writestr(zinfo('model/manifest.json'), manifest)
         written['model/manifest.json'] = hashlib.sha256(manifest).hexdigest()
     with zipfile.ZipFile(partial) as z:
         if z.testzip() is not None:
@@ -170,7 +204,9 @@ if __name__ == '__main__':
     ap.add_argument('--split-note', default=SPLIT_NOTE)
     ap.add_argument('--fusion', type=Path, help='fusion_fit.py output dir (component_fusion.json + file_ensemble.json)')
     ap.add_argument('--antideepfake', nargs='*', default=[], help='name=dir with antideepfake_config.json + model.safetensors')
+    ap.add_argument('--deflate', action='store_true', help='ZIP_DEFLATED members (default STORED reproduces earlier archives)')
     a = ap.parse_args()
+    COMPRESSION = zipfile.ZIP_DEFLATED if a.deflate else zipfile.ZIP_STORED
     HEADS, OUTPUT, CANDIDATE, HEADS_NOTE, SPLIT_NOTE = a.heads.resolve(), a.output.resolve(), a.candidate, a.heads_note, a.split_note
     FUSION = a.fusion.resolve() if a.fusion else None
     DETECTORS = {n: Path(d).resolve() for n, d in (s.split('=', 1) for s in a.antideepfake)}

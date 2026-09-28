@@ -1,0 +1,21 @@
+{
+  "status": "audio_transfer_verified",
+  "files": 43516,
+  "audio_bytes": 12329271166,
+  "archive_bytes": 12369408000,
+  "archive_sha256": "030ff2d8109cfcb39aa0b7c298d68882a829ea4e21dafd41b4343347d038cfa9",
+  "manifest_sha256": "492bbe454abce816beab07d97baecdcf34e34ec1936d5230d955c2cda8f27906",
+  "gpu_used": false,
+  "object_volume": "objvol-a5gxdg7er70i",
+  "remote_archive": "lb-improvement-20260924/a100-preparation-v1/audio/portable-audio.tar",
+  "full_remote_readback_verified": true,
+  "verification_method": "Cloud-mounted full archive readback plus independent VESSL CLI download to local CPU; both SHA-256 and sizes matched",
+  "verification_seconds": 490.026,
+  "cloud_mount_readback_completed": true,
+  "source_export_job": "job-3votgz7mfrno",
+  "source_export_job_final_state": "terminated",
+  "termination_reason": "Termination requested after independent local verification; final log and downloaded export_receipt subsequently confirmed cloud readback had also completed",
+  "a100_workspace_started": false,
+  "recorded_at": "2026-09-24T11:57:27.510998+00:00",
+  "cloud_mount_verification_logged_at": "2026-09-24T11:56:12.475Z"
+}

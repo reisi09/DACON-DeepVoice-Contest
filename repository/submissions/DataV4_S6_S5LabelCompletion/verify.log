@@ -1,0 +1,12 @@
+{
+  "submission_sha256": "7429b1830aaf033343f2f08e29e138f12873a8b1b19ce9b7d0bfbac14716de10",
+  "device": "cpu",
+  "files": 10,
+  "seconds": 204.5558442499023,
+  "network_connections_forbidden": true,
+  "file_independence_max_abs_error": 0.0,
+  "presence_shift_vs_legacy_max": 0.9179625869003589,
+  "files_where_file_score_is_not_plain_max_rule": 10,
+  "official_l4_validated": false
+}
+.venv/bin/python verify_datav4_submission.py --out   177.37s user 51.07s system 89% cpu 4:13.98 total

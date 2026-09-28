@@ -1,0 +1,10 @@
+{
+  "scenario": "offline recovery wheel upload and full readback",
+  "invocation": "upload_and_readback(wheel, eight-h100-20260917/offline_wheels/)",
+  "binary_observable": {
+    "sha256": "c7e46fcec401dd990405049d2e2f475e2b397779df2519b544b8aab515195282",
+    "expected_sha256": "c7e46fcec401dd990405049d2e2f475e2b397779df2519b544b8aab515195282",
+    "roundtrip_match": true
+  },
+  "artifact": "_workspace/eight_h100_20260917/offline_wheels/imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl"
+}

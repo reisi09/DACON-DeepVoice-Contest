@@ -1,0 +1,15 @@
+# B raw + stem full-data submission
+
+B music residual ensemble, seeds 41/42/43, fixed 17/17/8 epochs selected before full-data refitting from the preceding diagnostic run. Frozen MERT330 features from raw audio and HTDemucs music stems feed a shared temporal encoder with a gated residual branch. DF-Arena voice and PANNs presence models remain frozen. File probability uses `1 - (1 - voice_presence * voice_fake) * (1 - music_presence * music_fake)`.
+
+All 1,696 unique source files are included in the full-training manifest: former train 1,469, validation 129, sealed 98. All 1,216 music-labeled files have audible music features and contribute to music-head training; music labels on the 480 speech-only files remain unknown and masked. The former held-out panels are now training data. No independent validation score, test improvement, or new leaderboard score is claimed.
+
+The delivered artifact is `submit.zip` with `script.py`, `requirements.txt`, and `model/` at the archive root. It contains the exact 27 frozen assets and three completed B checkpoints; no training audio is included. It reads `data/test/` plus `data/sample_submission.csv` and writes `output/submission.csv`, using each file independently.
+
+The runtime targets the official Python 3.11/CUDA 12.8 environment and its preinstalled packages. Torch/torchaudio/torchvision are pinned together to avoid ABI mismatches. [Official dependency and execution contract](https://dacon.io/competitions/official/236749/overview/evaluation), checked 2026-09-17. This is not a standalone bare-Python environment specification.
+
+Verification evidence is under `results/redesign_full_20260917/`. The completed acceptance check compared actual offline packaged inference on five real source files, 4-second silence, and 60-second stereo music with source predictions at an absolute tolerance of 1e-5, then checked reordered/subset file independence. Both maximum absolute errors were 4.869993297518249e-11; both passed. The seven-file H100 run covered 120 windows in 35.419 seconds (38.884 seconds including the fresh subprocess); peak GPU allocated memory was 20,652,236,800 bytes and peak RSS was 5,623,701,504 bytes. These are integration measurements, not an independent quality score. H100 verification does not establish the official L4 60-minute runtime limit. DACON submission is a separate user action.
+
+Reuse VESSL workspace `wsp-9683432r72m7` for future runs. Do not create new workspaces. Monitoring interval is five minutes; the local watchdog checks every 60 seconds and stops compute after verified result downloads. The original run deadline is 1789625531 and must not be extended.
+
+The completed ZIP is 6,267,071,302 bytes; SHA256 `1fda295b44925d5b255cc1235f9bee57141ace7469370ae3245af113572bfb00`. Its entire archive hash and all 50 member hashes match the ZIP tested on H100. The 22-member result export was verified before VESSL confirmed `standby`. The five-minute heartbeat is paused after completion. The first verification attempt ran out of GPU memory because the training process retained its allocator cache; releasing it fixed the handoff. Both attempt records remain available.

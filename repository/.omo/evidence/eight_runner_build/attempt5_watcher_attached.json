@@ -1,0 +1,33 @@
+{
+  "scenario": "attempt5 watcher attachment before runner bootstrap-last upload and GPU start",
+  "invocation": "python3 subprocess.Popen([.venv/bin/python, -u, eight_h100_watch.py], stdin=DEVNULL, stdout=watch.log, stderr=STDOUT, start_new_session=True, close_fds=True)",
+  "watcher_pid": 51626,
+  "post_tool_ps": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python -u /Users/choiwuseck/Documents/ChatGPT/데이콘/eight_h100_watch.py",
+  "post_tool_state": "Ss",
+  "post_tool_ppid": 1,
+  "alive_after_process_return": true,
+  "pid_file": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/watch_pid.txt",
+  "watch_log": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/watch.log",
+  "attached_at_unix": 1789652323.406228,
+  "workspace_run": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/workspace_run.json",
+    "sha256": "182d800b511db86ff9c0bfcdb901c080b80f2fa708901083c229fb7bdf53f919",
+    "attempt": 5,
+    "status": "running",
+    "pause_deadline_epoch": 1789663360
+  },
+  "current_run_state": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/run_state.json",
+    "sha256": "eda1ec826a5942e1387ac0c5db28aba9b6bb07c9097bb4830a3271326fc1486c",
+    "attempt": 5,
+    "status": "running",
+    "stage": "preparing",
+    "archive_ready": false,
+    "state_sha256": "eda1ec826a5942e1387ac0c5db28aba9b6bb07c9097bb4830a3271326fc1486c"
+  },
+  "workspace": "wsp-9683432r72m7",
+  "object_volume": "objvol-a5gxdg7er70i",
+  "object_prefix": "eight-h100-20260917/",
+  "gpu_start_called_by_this_agent": false,
+  "runner_bootstrap_last_handoff": true
+}

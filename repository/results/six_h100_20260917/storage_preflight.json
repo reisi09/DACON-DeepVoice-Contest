@@ -1,0 +1,31 @@
+{
+  "storage": {
+    "accentColor": "#022C44",
+    "activeWorkspaceCount": 1,
+    "capacityGiB": 10240,
+    "clusterName": "capella-emea",
+    "clusterSlug": "cluster-capella",
+    "name": "Managed storage",
+    "region": "eu-north1",
+    "resourceName": "VESSL H100 SXM \u00d72",
+    "slug": "clusterstorage-6546voolk9f2",
+    "volumeCount": 1
+  },
+  "root_volume": {
+    "clusterName": "capella-emea",
+    "clusterSlug": "cluster-capella",
+    "createdBy": "riwpq",
+    "description": "Persistent workspace files for eight classifiers and train-only HTDemucs remix adaptation",
+    "jobCount": 0,
+    "lastAttached": "2026-09-17T03:10:14.612806Z",
+    "name": "fullft8-h100-root-20260916",
+    "region": "eu-north1",
+    "slug": "clustervol-qgze68bffy6l",
+    "storageSlug": "clusterstorage-6546voolk9f2",
+    "usedBytes": 140073033833,
+    "workspaceCount": 1
+  },
+  "planned_increment_bytes": 5920729717,
+  "within_managed_storage_capacity": true,
+  "runtime_filesystem_free_space_rechecked_before_extraction": true
+}

@@ -1,0 +1,112 @@
+{
+  "created_utc": "2026-09-19T07:44:14.131844+00:00",
+  "status": "provisional_cpu_reconstruction",
+  "gpu_started": false,
+  "training_ready": false,
+  "total_cap": null,
+  "requested_ratios": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "original_manifest_sha256": "2cc269dfd1dc98c9585f894f60a7078a80c8f2a3613baa43819d751ddb588a9c",
+  "selected_sha256": "be4511469a382127d1413fa69e317f7faa557fae326978fe76272e2b9c1f0703",
+  "extra_catalogs": {
+    "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/candidate_acquisition_20260919/ctrsvdd_dev/catalog.csv": "8f0461549e5270912bbdd96b002a613a8bfd2c5c3701e70f270e4acb58e4721a"
+  },
+  "combined_rows": 59770,
+  "admitted_pool_rows": 43603,
+  "selected_rows": 22486,
+  "new_acquired_catalog_rows": 43728,
+  "new_acquired_selected_rows": 13963,
+  "pending_download_files": 10,
+  "split_class_counts": {
+    "per_class": 11243,
+    "per_split_per_class": {
+      "train": 7870,
+      "val": 1686,
+      "test": 1687
+    },
+    "route_class_targets": {
+      "voice_0": 9270,
+      "music_0": 1973,
+      "voice_1": 9270,
+      "music_1": 1973
+    },
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_gap": 0.0028451079165395204
+  },
+  "selected_audio_integrity": {
+    "files_verified": 22486,
+    "audio_bytes": 16588974822
+  },
+  "largest_connected_group": 12821,
+  "historical_exposure_by_split": {
+    "train": 5265,
+    "val": 1236,
+    "test": 807
+  },
+  "independent_test_claim": false,
+  "gaps": [
+    "remaining_corpora_and_svc_parent_review",
+    "cross_singer_song_or_score_identity_not_fully_resolved",
+    "component_voice_labels_unknown_for_music",
+    "partial_music_requires_matched_real_sham",
+    "A100_16h_runtime_not_measured",
+    "training_loader_and_notebook_not_switched"
+  ],
+  "diagnostic_rows_by_reason": {
+    "legacy_mixture_parent_review": 128,
+    "missing_mtg_parent_identity_or_license": 35,
+    "matched_real_sham_not_ready;segment_outside_decoded_timeline": 458,
+    "matched_real_sham_not_ready": 402,
+    "matched_real_sham_not_ready;missing_mtg_parent_identity_or_license": 57,
+    "matched_real_sham_not_ready;missing_mtg_parent_identity_or_license;segment_outside_decoded_timeline": 83,
+    "svc_input_singer_and_recording_unresolved": 14835,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10ddbcc70>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10df795d0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10df94e00>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e08ddf0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e1294e0>": 1,
+    "exact_bytes_duplicate": 125,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e1f3380>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e21de40>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e2fd6c0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e558fe0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e758950>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e88c270>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e9481d0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10e98e200>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10eabb6f0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10eac2c00>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10eac27a0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10ecc0db0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10ee60130>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10eedd120>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10eee18a0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10f201620>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10f688ae0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10f6c14e0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10f7a1300>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10f900720>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10f908310>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10fa12660>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x10ffc0040>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x1100e0180>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x110118b80>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x1101b4310>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x110408950>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x11049a160>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x1105ac270>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x110814bd0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x1108ca3e0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x110aa0360>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x110eba7a0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x110ed71a0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x110f88590>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x110f964d0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x110f9c9f0>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x1110a9300>": 1,
+    "audio_integrity_or_decode:Empty/too short/silent audio: <_io.BytesIO object at 0x111252020>": 1
+  }
+}

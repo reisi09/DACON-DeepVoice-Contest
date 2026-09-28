@@ -1,0 +1,183 @@
+{
+  "status": "collection_verified_and_stopped",
+  "completed_at_utc": "2026-09-18T06:18:21.292888+00:00",
+  "totals": {
+    "records": 15169,
+    "duration": {
+      "seconds": 894132.2524375,
+      "hours": 248.3700701215278
+    },
+    "label_counts": {
+      "FILE_FAKE": {
+        "1": 9094,
+        "0": 6075
+      },
+      "MUSIC_FAKE": {
+        "1": 7094,
+        "0": 1455,
+        "unknown": 6620
+      },
+      "MUSIC_PRESENT": {
+        "1": 8549,
+        "0": 6620
+      },
+      "VOICE_FAKE": {
+        "unknown": 8549,
+        "0": 4620,
+        "1": 2000
+      },
+      "VOICE_PRESENT": {
+        "unknown": 8549,
+        "1": 6620
+      }
+    },
+    "local_technical_candidates_not_final_admission": 14364,
+    "local_technical_candidate_duration": {
+      "seconds": 824067.6298125,
+      "hours": 228.90767494791666
+    },
+    "not_unique_storage_or_independent_samples": true,
+    "new_original_acquisition_records_excluding_reused_assets": 11703,
+    "reused_asset_records": 3466,
+    "reuse_definition": "HAIM256 pilot + Jamendo320 pilot + FMA270 local originals + all2620 members of previously downloaded LibriSpeech archive. Newly inventoried Libri records and new download records are separate concepts.",
+    "local_candidates_with_additional_speech_review_flags": 3,
+    "local_candidates_excluding_additional_speech_review_flags": 14361,
+    "signal_review_subset_is_not_an_admission_decision": true
+  },
+  "bank_counts": {
+    "HAIM": {
+      "records": 1602,
+      "new_records_excluding_pilot": 1346,
+      "reused_records": 256,
+      "local_technical_candidate_records": 1598
+    },
+    "SONICS": {
+      "records": 2932,
+      "new_records_excluding_pilot": 2932,
+      "reused_records": 0,
+      "local_technical_candidate_records": 2932
+    },
+    "Jamendo": {
+      "records": 854,
+      "new_records_excluding_pilot": 534,
+      "reused_records": 320,
+      "local_technical_candidate_records": 755
+    },
+    "FMA": {
+      "records": 601,
+      "new_records_excluding_pilot": 331,
+      "reused_records": 270,
+      "local_technical_candidate_records": 393
+    },
+    "FakeMusicCaps": {
+      "records": 2560,
+      "new_records_excluding_pilot": 2560,
+      "reused_records": 0,
+      "local_technical_candidate_records": 2560
+    },
+    "LibriSpeech": {
+      "records": 2620,
+      "new_records_excluding_pilot": 0,
+      "reused_records": 2620,
+      "local_technical_candidate_records": 2126
+    },
+    "ASVspoof": {
+      "records": 4000,
+      "new_records_excluding_pilot": 4000,
+      "reused_records": 0,
+      "local_technical_candidate_records": 4000
+    }
+  },
+  "storage": {
+    "status": "PASS",
+    "measured_at_utc": "2026-09-18T06:18:21.292888+00:00",
+    "cap_bytes": 20000000000,
+    "scope": "Both acquisition roots; broader check also includes prepared dataset, upload ZIP and results. Historical datasets outside these roots are preserved and excluded.",
+    "hardlinks": "du counts each hardlinked file once across all arguments in one invocation",
+    "measurement": "du KiB totals multiplied by1024; includes directories and symlinks; conservative rounded totals",
+    "measurements": {
+      "apparent": {
+        "roots": [
+          {
+            "root": "_workspace/data_expansion_20260918",
+            "bytes": 12926068736
+          },
+          {
+            "root": "_workspace/local_sampler_20260918/new_data",
+            "bytes": 1931566080
+          },
+          {
+            "root": "_workspace/localization_a100_20260918/dataset",
+            "bytes": 1659950080
+          },
+          {
+            "root": "_workspace/localization_a100_20260918/upload",
+            "bytes": 2022573056
+          },
+          {
+            "root": "results/data_expansion_20260918",
+            "bytes": 38366208
+          }
+        ],
+        "acquisition_and_pilot_bytes": 14857634816,
+        "including_prepared_copies_and_results_bytes": 18578524160
+      },
+      "allocated": {
+        "roots": [
+          {
+            "root": "_workspace/data_expansion_20260918",
+            "bytes": 13686136832
+          },
+          {
+            "root": "_workspace/local_sampler_20260918/new_data",
+            "bytes": 1949429760
+          },
+          {
+            "root": "_workspace/localization_a100_20260918/dataset",
+            "bytes": 1668255744
+          },
+          {
+            "root": "_workspace/localization_a100_20260918/upload",
+            "bytes": 2032091136
+          },
+          {
+            "root": "results/data_expansion_20260918",
+            "bytes": 42065920
+          }
+        ],
+        "acquisition_and_pilot_bytes": 15635566592,
+        "including_prepared_copies_and_results_bytes": 19377979392
+      }
+    },
+    "reproduction_commands": [
+      "du -skA _workspace/data_expansion_20260918 _workspace/local_sampler_20260918/new_data _workspace/localization_a100_20260918/dataset _workspace/localization_a100_20260918/upload results/data_expansion_20260918",
+      "du -sk _workspace/data_expansion_20260918 _workspace/local_sampler_20260918/new_data _workspace/localization_a100_20260918/dataset _workspace/localization_a100_20260918/upload results/data_expansion_20260918"
+    ]
+  },
+  "active_acquisition_processes": [],
+  "incomplete_audio_or_transport_files_in_acquisition_roots": [],
+  "frozen_pilot_manifest_sha256": "daf9317856e63fba6cdba04f8fa28c48afa447fffe9046b246571ddecdbebff4",
+  "gpu": {
+    "verified_at_utc": "2026-09-18T06:18:21.292888+00:00",
+    "workspaces": [
+      {
+        "id": "wsp-5i3knd3gxeox",
+        "state": "stopped",
+        "phase": "standby"
+      },
+      {
+        "id": "wsp-9683432r72m7",
+        "state": "stopped",
+        "phase": "standby"
+      }
+    ],
+    "gpu_started_by_this_task": false,
+    "workspace_run_json_exists": false
+  },
+  "trained": false,
+  "new_split_assigned": false,
+  "new_data_uploaded_for_training": false,
+  "continuation_automation_created": false,
+  "cross_bank_audit_sha256": "1624634e7c58bf1bee78ea15d67526e5e2848c12cd3e34f6962c2a1179743b14",
+  "instruction": "Stop after acquisition and validation; do not continue into training or GPU experiments."
+}

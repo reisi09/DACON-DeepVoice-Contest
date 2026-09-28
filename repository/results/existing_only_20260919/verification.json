@@ -1,0 +1,50 @@
+{
+  "status": "existing_only_reconstruction",
+  "training_ready": false,
+  "gpu_started": false,
+  "new_downloads": false,
+  "input_catalog_sha256": "16666fc0382220597d950e81b993d6c38ba3ae119042ff9db098cb9b57f7ac9c",
+  "selected_sha256": "25196ddc399ff88e4de315441634e020a5133659fbeeedee6c9cce3e70461a0c",
+  "selected_rows": 10198,
+  "combined_rows": 59770,
+  "admitted_pool_rows": 43603,
+  "split_class_counts": {
+    "per_class": 5099,
+    "per_split_per_class": {
+      "train": 3569,
+      "val": 765,
+      "test": 765
+    }
+  },
+  "solver": {
+    "maximum_rows_proven": true,
+    "first_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "first_gap": 0.0,
+    "second_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "second_gap": 0.0
+  },
+  "selected_audio_integrity": {
+    "files_verified": 10198,
+    "audio_bytes": 15074057868
+  },
+  "independent_test_claim": false,
+  "historical_exposure_by_split": {
+    "train": 4513,
+    "val": 633,
+    "test": 724
+  },
+  "policy": {
+    "singing_train_only": true,
+    "fake_speech_retained": true,
+    "subtype_class_balance_per_split": true,
+    "singing_not_above_train_speech": true,
+    "minimum_training_cell": 20
+  },
+  "remaining_gates": [
+    "singing_generalization_not_evaluated",
+    "historical_speech_evaluation_not_independent",
+    "source_duration_bias",
+    "loader_notebook_integration",
+    "A100_runtime_VRAM_not_measured"
+  ]
+}

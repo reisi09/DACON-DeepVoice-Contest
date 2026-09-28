@@ -1,0 +1,3228 @@
+{
+  "results": [
+    {
+      "name": "Official_baseline",
+      "music_eer": 0.5527777777777778,
+      "balanced_bce": 1.0845363868581224,
+      "metrics": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.43205128205128207,
+          "voice_eer": 0.1708333333333333,
+          "music_eer": 0.5527777777777778,
+          "voice_presence_auc": null,
+          "music_presence_auc": 0.9948333333333332
+        },
+        "invalid": {
+          "voice_presence_auc": "both positive and negative labels are required"
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 90",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 70"
+        },
+        "counts": {
+          "file_eer": 190,
+          "voice_eer": 100,
+          "music_eer": 150,
+          "voice_presence_auc": 120,
+          "music_presence_auc": 190
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 90,
+          "music_eer": 0,
+          "voice_presence_auc": 70,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.5263157894736842,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.631578947368421,
+          "music_presence_auc": 1.0
+        }
+      },
+      "panels": {
+        "mixture": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.55,
+            "voice_eer": 0.2125,
+            "music_eer": 0.625,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 80,
+            "voice_eer": 60,
+            "music_eer": 80,
+            "voice_presence_auc": 80,
+            "music_presence_auc": 80
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.75,
+            "music_eer": 1.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_ood": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.4,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_real": {
+          "score": null,
+          "metrics": {
+            "file_eer": null,
+            "voice_eer": null,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "file_eer": "both positive and negative labels are required",
+            "voice_eer": "both positive and negative labels are required",
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 10",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 10"
+          },
+          "counts": {
+            "file_eer": 10,
+            "voice_eer": 0,
+            "music_eer": 10,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 10
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 10,
+            "music_eer": 0,
+            "voice_presence_auc": 10,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_seen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5166666666666666,
+            "voice_eer": null,
+            "music_eer": 0.4166666666666667,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 40",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 40"
+          },
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 0,
+            "music_eer": 40,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "speech": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.0,
+            "voice_eer": 0.0,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {},
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 0,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 1.0,
+            "music_eer": 0.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "splice": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.4,
+            "voice_eer": null,
+            "music_eer": 0.4,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      },
+      "generators": {
+        "acestep": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.6833333333333333,
+            "voice_eer": null,
+            "music_eer": 0.8166666666666667,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "audioldm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.725,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "diffrhythm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.725,
+            "voice_eer": null,
+            "music_eer": 0.725,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "musicgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.55,
+            "voice_eer": null,
+            "music_eer": 0.14999999999999997,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 15",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 15"
+          },
+          "counts": {
+            "file_eer": 15,
+            "voice_eer": 0,
+            "music_eer": 15,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 15
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 15,
+            "music_eer": 0,
+            "voice_presence_auc": 15,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "producer": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.75,
+            "voice_eer": null,
+            "music_eer": 0.2,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 11",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 11"
+          },
+          "counts": {
+            "file_eer": 11,
+            "voice_eer": 0,
+            "music_eer": 11,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 11
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 11,
+            "music_eer": 0,
+            "voice_presence_auc": 11,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "songgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.3666666666666667,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "stableaudio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.4,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "suno": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "udio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.4,
+            "voice_eer": null,
+            "music_eer": 0.45,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      }
+    },
+    {
+      "name": "Linear_same_split",
+      "music_eer": 0.3666666666666667,
+      "balanced_bce": 0.6401666444848451,
+      "metrics": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.3519230769230769,
+          "voice_eer": 0.1708333333333333,
+          "music_eer": 0.3666666666666667,
+          "voice_presence_auc": null,
+          "music_presence_auc": 0.9948333333333332
+        },
+        "invalid": {
+          "voice_presence_auc": "both positive and negative labels are required"
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 90",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 70"
+        },
+        "counts": {
+          "file_eer": 190,
+          "voice_eer": 100,
+          "music_eer": 150,
+          "voice_presence_auc": 120,
+          "music_presence_auc": 190
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 90,
+          "music_eer": 0,
+          "voice_presence_auc": 70,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.5263157894736842,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.631578947368421,
+          "music_presence_auc": 1.0
+        }
+      },
+      "panels": {
+        "mixture": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.44999999999999996,
+            "voice_eer": 0.2125,
+            "music_eer": 0.375,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 80,
+            "voice_eer": 60,
+            "music_eer": 80,
+            "voice_presence_auc": 80,
+            "music_presence_auc": 80
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.75,
+            "music_eer": 1.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_ood": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.30000000000000004,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_real": {
+          "score": null,
+          "metrics": {
+            "file_eer": null,
+            "voice_eer": null,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "file_eer": "both positive and negative labels are required",
+            "voice_eer": "both positive and negative labels are required",
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 10",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 10"
+          },
+          "counts": {
+            "file_eer": 10,
+            "voice_eer": 0,
+            "music_eer": 10,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 10
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 10,
+            "music_eer": 0,
+            "voice_presence_auc": 10,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_seen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.4,
+            "voice_eer": null,
+            "music_eer": 0.30000000000000004,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 40",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 40"
+          },
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 0,
+            "music_eer": 40,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "speech": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.0,
+            "voice_eer": 0.0,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {},
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 0,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 1.0,
+            "music_eer": 0.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "splice": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.4,
+            "voice_eer": null,
+            "music_eer": 0.4,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      },
+      "generators": {
+        "acestep": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.3666666666666667,
+            "voice_eer": null,
+            "music_eer": 0.31666666666666665,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "audioldm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.275,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "diffrhythm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.45,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "musicgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.19999999999999998,
+            "voice_eer": null,
+            "music_eer": 0.0,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 15",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 15"
+          },
+          "counts": {
+            "file_eer": 15,
+            "voice_eer": 0,
+            "music_eer": 15,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 15
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 15,
+            "music_eer": 0,
+            "voice_presence_auc": 15,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "producer": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.05,
+            "voice_eer": null,
+            "music_eer": 0.0,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 11",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 11"
+          },
+          "counts": {
+            "file_eer": 11,
+            "voice_eer": 0,
+            "music_eer": 11,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 11
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 11,
+            "music_eer": 0,
+            "voice_presence_auc": 11,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "songgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.3666666666666667,
+            "voice_eer": null,
+            "music_eer": 0.31666666666666665,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "stableaudio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.30000000000000004,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "suno": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "udio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.45,
+            "voice_eer": null,
+            "music_eer": 0.4,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      }
+    },
+    {
+      "name": "T0",
+      "music_eer": 0.4666666666666667,
+      "balanced_bce": 0.7627485743722588,
+      "metrics": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.367948717948718,
+          "voice_eer": 0.1708333333333333,
+          "music_eer": 0.4666666666666667,
+          "voice_presence_auc": null,
+          "music_presence_auc": 0.9948333333333332
+        },
+        "invalid": {
+          "voice_presence_auc": "both positive and negative labels are required"
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 90",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 70"
+        },
+        "counts": {
+          "file_eer": 190,
+          "voice_eer": 100,
+          "music_eer": 150,
+          "voice_presence_auc": 120,
+          "music_presence_auc": 190
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 90,
+          "music_eer": 0,
+          "voice_presence_auc": 70,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.5263157894736842,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.631578947368421,
+          "music_presence_auc": 1.0
+        }
+      },
+      "panels": {
+        "mixture": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.45833333333333337,
+            "voice_eer": 0.2125,
+            "music_eer": 0.44999999999999996,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 80,
+            "voice_eer": 60,
+            "music_eer": 80,
+            "voice_presence_auc": 80,
+            "music_presence_auc": 80
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.75,
+            "music_eer": 1.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_ood": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.6,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_real": {
+          "score": null,
+          "metrics": {
+            "file_eer": null,
+            "voice_eer": null,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "file_eer": "both positive and negative labels are required",
+            "voice_eer": "both positive and negative labels are required",
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 10",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 10"
+          },
+          "counts": {
+            "file_eer": 10,
+            "voice_eer": 0,
+            "music_eer": 10,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 10
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 10,
+            "music_eer": 0,
+            "voice_presence_auc": 10,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_seen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 40",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 40"
+          },
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 0,
+            "music_eer": 40,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "speech": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.0,
+            "voice_eer": 0.0,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {},
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 0,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 1.0,
+            "music_eer": 0.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "splice": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      },
+      "generators": {
+        "acestep": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.6333333333333333,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "audioldm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.725,
+            "voice_eer": null,
+            "music_eer": 0.725,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "diffrhythm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.55,
+            "voice_eer": null,
+            "music_eer": 0.55,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "musicgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.35,
+            "voice_eer": null,
+            "music_eer": 0.19999999999999998,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 15",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 15"
+          },
+          "counts": {
+            "file_eer": 15,
+            "voice_eer": 0,
+            "music_eer": 15,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 15
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 15,
+            "music_eer": 0,
+            "voice_presence_auc": 15,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "producer": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.15,
+            "voice_eer": null,
+            "music_eer": 0.1,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 11",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 11"
+          },
+          "counts": {
+            "file_eer": 11,
+            "voice_eer": 0,
+            "music_eer": 11,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 11
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 11,
+            "music_eer": 0,
+            "voice_presence_auc": 11,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "songgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.31666666666666665,
+            "voice_eer": null,
+            "music_eer": 0.31666666666666665,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "stableaudio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.6,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "suno": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "udio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      }
+    },
+    {
+      "name": "T0_seed42",
+      "music_eer": 0.6333333333333333,
+      "balanced_bce": 0.7389814973155723,
+      "metrics": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.416025641025641,
+          "voice_eer": 0.1708333333333333,
+          "music_eer": 0.6333333333333333,
+          "voice_presence_auc": null,
+          "music_presence_auc": 0.9948333333333332
+        },
+        "invalid": {
+          "voice_presence_auc": "both positive and negative labels are required"
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 90",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 70"
+        },
+        "counts": {
+          "file_eer": 190,
+          "voice_eer": 100,
+          "music_eer": 150,
+          "voice_presence_auc": 120,
+          "music_presence_auc": 190
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 90,
+          "music_eer": 0,
+          "voice_presence_auc": 70,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.5263157894736842,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.631578947368421,
+          "music_presence_auc": 1.0
+        }
+      },
+      "panels": {
+        "mixture": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.49166666666666664,
+            "voice_eer": 0.2125,
+            "music_eer": 0.725,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 80,
+            "voice_eer": 60,
+            "music_eer": 80,
+            "voice_presence_auc": 80,
+            "music_presence_auc": 80
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.75,
+            "music_eer": 1.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_ood": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.6,
+            "voice_eer": null,
+            "music_eer": 0.6,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_real": {
+          "score": null,
+          "metrics": {
+            "file_eer": null,
+            "voice_eer": null,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "file_eer": "both positive and negative labels are required",
+            "voice_eer": "both positive and negative labels are required",
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 10",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 10"
+          },
+          "counts": {
+            "file_eer": 10,
+            "voice_eer": 0,
+            "music_eer": 10,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 10
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 10,
+            "music_eer": 0,
+            "voice_presence_auc": 10,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_seen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.6,
+            "voice_eer": null,
+            "music_eer": 0.5166666666666666,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 40",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 40"
+          },
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 0,
+            "music_eer": 40,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "speech": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.0,
+            "voice_eer": 0.0,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {},
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 0,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 1.0,
+            "music_eer": 0.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "splice": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.7,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      },
+      "generators": {
+        "acestep": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.6333333333333333,
+            "voice_eer": null,
+            "music_eer": 0.6333333333333333,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "audioldm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.725,
+            "voice_eer": null,
+            "music_eer": 0.725,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "diffrhythm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.55,
+            "voice_eer": null,
+            "music_eer": 0.55,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "musicgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.6,
+            "voice_eer": null,
+            "music_eer": 0.55,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 15",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 15"
+          },
+          "counts": {
+            "file_eer": 15,
+            "voice_eer": 0,
+            "music_eer": 15,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 15
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 15,
+            "music_eer": 0,
+            "voice_presence_auc": 15,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "producer": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.8,
+            "voice_eer": null,
+            "music_eer": 0.75,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 11",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 11"
+          },
+          "counts": {
+            "file_eer": 11,
+            "voice_eer": 0,
+            "music_eer": 11,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 11
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 11,
+            "music_eer": 0,
+            "voice_presence_auc": 11,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "songgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "stableaudio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.6,
+            "voice_eer": null,
+            "music_eer": 0.6,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "suno": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "udio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      }
+    },
+    {
+      "name": "T0_seed43",
+      "music_eer": 0.45277777777777783,
+      "balanced_bce": 0.7129762218209352,
+      "metrics": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.3320512820512821,
+          "voice_eer": 0.1708333333333333,
+          "music_eer": 0.45277777777777783,
+          "voice_presence_auc": null,
+          "music_presence_auc": 0.9948333333333332
+        },
+        "invalid": {
+          "voice_presence_auc": "both positive and negative labels are required"
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 90",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 70"
+        },
+        "counts": {
+          "file_eer": 190,
+          "voice_eer": 100,
+          "music_eer": 150,
+          "voice_presence_auc": 120,
+          "music_presence_auc": 190
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 90,
+          "music_eer": 0,
+          "voice_presence_auc": 70,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.5263157894736842,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.631578947368421,
+          "music_presence_auc": 1.0
+        }
+      },
+      "panels": {
+        "mixture": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.4,
+            "voice_eer": 0.2125,
+            "music_eer": 0.4,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 80,
+            "voice_eer": 60,
+            "music_eer": 80,
+            "voice_presence_auc": 80,
+            "music_presence_auc": 80
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.75,
+            "music_eer": 1.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_ood": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_real": {
+          "score": null,
+          "metrics": {
+            "file_eer": null,
+            "voice_eer": null,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "file_eer": "both positive and negative labels are required",
+            "voice_eer": "both positive and negative labels are required",
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 10",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 10"
+          },
+          "counts": {
+            "file_eer": 10,
+            "voice_eer": 0,
+            "music_eer": 10,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 10
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 10,
+            "music_eer": 0,
+            "voice_presence_auc": 10,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "music_seen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.48333333333333334,
+            "voice_eer": null,
+            "music_eer": 0.4166666666666667,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 40",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 40"
+          },
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 0,
+            "music_eer": 40,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "speech": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.0,
+            "voice_eer": 0.0,
+            "music_eer": null,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "music_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {},
+          "counts": {
+            "file_eer": 40,
+            "voice_eer": 40,
+            "music_eer": 0,
+            "voice_presence_auc": 40,
+            "music_presence_auc": 40
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 0,
+            "music_eer": 0,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 1.0,
+            "music_eer": 0.0,
+            "voice_presence_auc": 1.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "splice": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.4,
+            "voice_eer": null,
+            "music_eer": 0.4,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      },
+      "generators": {
+        "acestep": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "audioldm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.725,
+            "voice_eer": null,
+            "music_eer": 0.725,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "diffrhythm": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.45,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 14",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 14"
+          },
+          "counts": {
+            "file_eer": 14,
+            "voice_eer": 0,
+            "music_eer": 14,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 14
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 14,
+            "music_eer": 0,
+            "voice_presence_auc": 14,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "musicgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.19999999999999998,
+            "voice_eer": null,
+            "music_eer": 0.19999999999999998,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 15",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 15"
+          },
+          "counts": {
+            "file_eer": 15,
+            "voice_eer": 0,
+            "music_eer": 15,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 15
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 15,
+            "music_eer": 0,
+            "voice_presence_auc": 15,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "producer": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.05,
+            "voice_eer": null,
+            "music_eer": 0.05,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 11",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 11"
+          },
+          "counts": {
+            "file_eer": 11,
+            "voice_eer": 0,
+            "music_eer": 11,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 11
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 11,
+            "music_eer": 0,
+            "voice_presence_auc": 11,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "songgen": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.3666666666666667,
+            "voice_eer": null,
+            "music_eer": 0.3666666666666667,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 16",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 16"
+          },
+          "counts": {
+            "file_eer": 16,
+            "voice_eer": 0,
+            "music_eer": 16,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 16
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 16,
+            "music_eer": 0,
+            "voice_presence_auc": 16,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "stableaudio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 20",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+          },
+          "counts": {
+            "file_eer": 20,
+            "voice_eer": 0,
+            "music_eer": 20,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 20
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 20,
+            "music_eer": 0,
+            "voice_presence_auc": 20,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "suno": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        },
+        "udio": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.5,
+            "voice_eer": null,
+            "music_eer": 0.5,
+            "voice_presence_auc": null,
+            "music_presence_auc": null
+          },
+          "invalid": {
+            "voice_eer": "both positive and negative labels are required",
+            "voice_presence_auc": "both positive and negative labels are required",
+            "music_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 12",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 12"
+          },
+          "counts": {
+            "file_eer": 12,
+            "voice_eer": 0,
+            "music_eer": 12,
+            "voice_presence_auc": 0,
+            "music_presence_auc": 12
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 12,
+            "music_eer": 0,
+            "voice_presence_auc": 12,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.0,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.0,
+            "music_presence_auc": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "selection_sha256": "216e253adf2804a04da601dedd907b912b67a251f0d6841f742624bd29904e8e",
+  "checkpoint_reload_tolerance": 1e-06,
+  "limitation": "Historical dev reused; no newly untouched external evaluation or leaderboard proof",
+  "comparison": "Only music probability and baseline file-max combination change; voice/presence fixed"
+}

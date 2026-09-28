@@ -1,0 +1,9 @@
+﻿name,repo,stars,stars_scope,source_url,role,license_notes,note,status
+FMA,mdeff/fma,2664,repository_total,https://github.com/mdeff/fma#data,실제 음악,메타데이터 CC BY 4.0; 음원은 트랙별 조건,기존 사용 원천. artist/track 단위 중복 확인; 보컬 유무 별도 라벨링,catalog_only_audio_not_uploaded
+ASVspoof 2019/2021,asvspoof-challenge/2021,256,repository_total,https://www.asvspoof.org/,실제·합성 음성 / 전화채널,공식 배포별 데이터 조건 확인; 코드 라이선스로 음원 사용권을 추정하지 않음,스타는 2021 baseline 저장소. 기존 2019 학습/선택 노출 확인; 2021도 자동 독립 아님,catalog_only_audio_not_uploaded
+WaveFake,RUB-SysSec/WaveFake,93,repository_total,https://zenodo.org/records/5642694,합성 음성 / vocoder 비교,원본 Zenodo 레코드와 기반 음원 조건 확인,가짜 데이터와 원본 real의 문장·화자를 함께 그룹화,catalog_only_audio_not_uploaded
+SONICS,awsaf49/sonics,58,repository_total,https://huggingface.co/datasets/awsaf49/sonics,AI 생성 노래,데이터 CC BY-NC 4.0; 코드·모델 MIT,배포 음원은 fake만 포함. real_songs.csv의 YouTube ID는 실제 음원 포함을 뜻하지 않음; 기존 노출 점검,catalog_only_audio_not_uploaded
+MUSAN,,,not_applicable,https://openslr.org/17/,음성·음악·잡음 / 강건성,CC BY 4.0,공식 GitHub 스타 없음. fake 라벨 데이터가 아닌 잡음·실제 성분 원천,catalog_only_audio_not_uploaded
+MLAAD-tiny,,,not_applicable,https://huggingface.co/datasets/mueller91/MLAAD-tiny,다양한 TTS와 실제 음성,합성 CC BY-NC 4.0; real은 original/LICENSE,공식 HF 원천. 기존 사용·base encoder 학습 노출 확인; 원문장과 TTS 변형은 같은 그룹,catalog_only_audio_not_uploaded
+AIME,,,not_applicable,https://huggingface.co/datasets/disco-eth/AIME,여러 생성기의 음악,생성 음원 CC BY 4.0; 태그 CC BY-NC-SA 4.0; 실제 트랙별 조건,공식 HF 원천. prompt/generator 단위 중복 확인; 음악 데이터라는 이유로 VOICE_PRESENT=0을 부여하지 않음,catalog_only_audio_not_uploaded
+In-the-Wild,,,not_applicable,https://huggingface.co/datasets/mueller91/In-The-Wild,실제 환경의 음성 위조 평가,HF card CC BY-SA 4.0,공식 저자 배포. 인물·발화 그룹 및 기존 모델의 학습 노출 확인 후 평가 용도 결정,catalog_only_audio_not_uploaded

@@ -1,0 +1,79 @@
+{
+  "packaged_cpu_entrypoint_passed": true,
+  "audio_files": 3,
+  "real_audio_formats": [
+    "MP3",
+    "WAV"
+  ],
+  "cases": [
+    {
+      "ID": "v4_006e7c906f0ead3f8cb43198",
+      "prediction": {
+        "ID": "v4_006e7c906f0ead3f8cb43198",
+        "FILE_FAKE_PROB": 0.32237901448074346,
+        "VOICE_FAKE_PROB": 0.01663835346698761,
+        "MUSIC_FAKE_PROB": 0.38304010033607483,
+        "VOICE_PRESENT_PROB": 0.1392606943845749,
+        "MUSIC_PRESENT_PROB": 0.8416325449943542
+      },
+      "absolute_difference_from_saved_a100_prediction": {
+        "FILE_FAKE_PROB": 0.0001868335258716769,
+        "VOICE_FAKE_PROB": 0.0001087971031665802,
+        "MUSIC_FAKE_PROB": 0.0002219080924987793,
+        "VOICE_PRESENT_PROB": 5.364418029785156e-07,
+        "MUSIC_PRESENT_PROB": 1.7881393432617188e-07
+      }
+    },
+    {
+      "ID": "v4_01063ffb64bac7040a3666d6",
+      "prediction": {
+        "ID": "v4_01063ffb64bac7040a3666d6",
+        "FILE_FAKE_PROB": 0.8127670342128575,
+        "VOICE_FAKE_PROB": 0.04099510982632637,
+        "MUSIC_FAKE_PROB": 0.9637345671653748,
+        "VOICE_PRESENT_PROB": 0.3145425617694855,
+        "MUSIC_PRESENT_PROB": 0.8433515429496765
+      },
+      "absolute_difference_from_saved_a100_prediction": {
+        "FILE_FAKE_PROB": 0.00018927926037193288,
+        "VOICE_FAKE_PROB": 0.00014939531683921814,
+        "MUSIC_FAKE_PROB": 0.00022423267364501953,
+        "VOICE_PRESENT_PROB": 1.7881393432617188e-07,
+        "MUSIC_PRESENT_PROB": 1.7881393432617188e-07
+      }
+    },
+    {
+      "ID": "v4_020402ed6721435604adb277",
+      "prediction": {
+        "ID": "v4_020402ed6721435604adb277",
+        "FILE_FAKE_PROB": 0.2555273582462956,
+        "VOICE_FAKE_PROB": 0.11378247290849686,
+        "MUSIC_FAKE_PROB": 0.2959253489971161,
+        "VOICE_PRESENT_PROB": 0.13371169567108154,
+        "MUSIC_PRESENT_PROB": 0.8634858727455139
+      },
+      "absolute_difference_from_saved_a100_prediction": {
+        "FILE_FAKE_PROB": 0.0004245928425561374,
+        "VOICE_FAKE_PROB": 0.00039937347173690796,
+        "MUSIC_FAKE_PROB": 0.0004916787147521973,
+        "VOICE_PRESENT_PROB": 2.980232238769531e-07,
+        "MUSIC_PRESENT_PROB": 1.1920928955078125e-07
+      }
+    }
+  ],
+  "long_clip_topk_check": {
+    "ID": "v4_020402ed6721435604adb277",
+    "voice_windows": 5,
+    "selected_windows": 2,
+    "cpu_cached_topk": 0.11378604918718338,
+    "cpu_cached_counterfactual_max": 0.21561862528324127,
+    "raw_cpu_vs_cached_abs_tolerance": 0.001,
+    "reason": "Long clip makes accidental max fallback numerically distinguishable; absolute 0.001 allows CPU/CUDA floating-point variation.",
+    "raw_cpu_prediction": 0.11378247290849686,
+    "absolute_difference_from_cpu_cached_topk": 3.5762786865234375e-06,
+    "passed": true
+  },
+  "official_l4_validated": false,
+  "full_test_runtime_validated": false,
+  "scope": "Three original files; exact schema/order/finite probabilities and actual long-clip pooling behavior. Not an accuracy or full-runtime guarantee."
+}

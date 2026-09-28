@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/choiwuseck/Documents/ChatGPT/데이콘
+collecting ... collected 2 items
+
+test_v4_training.py::test_matched_recheck_rejects_changed_real_train_manifest_before_training PASSED [ 50%]
+test_v4_training.py::test_seed_receipt_reproduces_dropout_across_checkpoint_resume PASSED [100%]
+
+============================== 2 passed in 3.94s ===============================

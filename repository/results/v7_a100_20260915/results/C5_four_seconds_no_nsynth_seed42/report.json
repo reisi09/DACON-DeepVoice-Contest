@@ -1,0 +1,99 @@
+{
+  "recipe": {
+    "name": "C5_four_seconds_no_nsynth_seed42",
+    "nsynth_mass": 0.0,
+    "equal_windows": true,
+    "seed": 42,
+    "epochs": 300
+  },
+  "composition": {
+    "files": 739,
+    "windows": 2956,
+    "real_loss_mass": 0.5000000596046448,
+    "fake_loss_mass": 0.4999999403953552
+  },
+  "full": {
+    "score": null,
+    "metrics": {
+      "file_eer": 0.37142857142857144,
+      "voice_eer": 0.4291666666666667,
+      "music_eer": 0.3878571428571429,
+      "voice_presence_auc": null,
+      "music_presence_auc": 0.9954411764705886
+    },
+    "invalid": {
+      "voice_presence_auc": "both positive and negative labels are required"
+    },
+    "partial": {
+      "voice_eer": "known subset only; unknown relevant labels: 110",
+      "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+    },
+    "counts": {
+      "file_eer": 210,
+      "voice_eer": 100,
+      "music_eer": 170,
+      "voice_presence_auc": 120,
+      "music_presence_auc": 210
+    },
+    "unknown_counts": {
+      "file_eer": 0,
+      "voice_eer": 110,
+      "music_eer": 0,
+      "voice_presence_auc": 90,
+      "music_presence_auc": 0
+    },
+    "coverage": {
+      "file_eer": 1.0,
+      "voice_eer": 0.47619047619047616,
+      "music_eer": 1.0,
+      "voice_presence_auc": 0.5714285714285714,
+      "music_presence_auc": 1.0
+    }
+  },
+  "deduplicated": {
+    "score": null,
+    "metrics": {
+      "file_eer": 0.316025641025641,
+      "voice_eer": 0.4291666666666667,
+      "music_eer": 0.35277777777777775,
+      "voice_presence_auc": null,
+      "music_presence_auc": 0.9948333333333336
+    },
+    "invalid": {
+      "voice_presence_auc": "both positive and negative labels are required"
+    },
+    "partial": {
+      "voice_eer": "known subset only; unknown relevant labels: 90",
+      "voice_presence_auc": "known subset only; unknown relevant labels: 70"
+    },
+    "counts": {
+      "file_eer": 190,
+      "voice_eer": 100,
+      "music_eer": 150,
+      "voice_presence_auc": 120,
+      "music_presence_auc": 190
+    },
+    "unknown_counts": {
+      "file_eer": 0,
+      "voice_eer": 90,
+      "music_eer": 0,
+      "voice_presence_auc": 70,
+      "music_presence_auc": 0
+    },
+    "coverage": {
+      "file_eer": 1.0,
+      "voice_eer": 0.5263157894736842,
+      "music_eer": 1.0,
+      "voice_presence_auc": 0.631578947368421,
+      "music_presence_auc": 1.0
+    }
+  },
+  "panels": {
+    "seen": 0.4,
+    "unseen": 0.6,
+    "mixture": 0.4,
+    "splice": 0.5
+  },
+  "initial_loss": 0.6931471824645996,
+  "final_loss": 0.23476499319076538
+}

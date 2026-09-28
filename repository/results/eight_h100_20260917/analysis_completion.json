@@ -1,0 +1,42 @@
+{
+  "all_eight_completed": true,
+  "analysis_complete": true,
+  "automation": {
+    "id": "h100-15",
+    "status": "PAUSED"
+  },
+  "archive_verified_members": 7314,
+  "bootstrap_restored": true,
+  "canonical_aggregation": "results/eight_h100_20260917/corrected_summary/final_aggregation.corrected.json",
+  "completed_epoch": 1789660081.398987,
+  "extra_gpu_training_after_export": false,
+  "fresh_workspace_phase": "standby",
+  "fresh_workspace_state": "stopped",
+  "official_score": null,
+  "report": "results/eight_h100_20260917/FINAL_REPORT.md",
+  "report_sha256": "f5f17283493c015e3e0ce4a00b1b4adff4ad6038474eae2caee699e602c744ee",
+  "reviewed_commit": "3970207e336bae7b72c2c261a4c54129f57ad79c",
+  "reviews": {
+    "code": {
+      "report": ".omo/evidence/eight_h100_20260917/review_final_code.md",
+      "verdict": "PASS"
+    },
+    "context": {
+      "report": ".omo/evidence/eight_h100_20260917/review_final_context.md",
+      "verdict": "PASS"
+    },
+    "goal": {
+      "report": ".omo/evidence/eight_h100_20260917/review_final_goal.md",
+      "verdict": "PASS"
+    },
+    "manual": {
+      "report": ".omo/evidence/eight_h100_20260917/review_final_manual.md",
+      "verdict": "PASS"
+    },
+    "security": {
+      "report": ".omo/evidence/eight_h100_20260917/review_final_security.md",
+      "verdict": "PASS"
+    }
+  },
+  "status": "complete"
+}

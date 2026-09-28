@@ -1,0 +1,54 @@
+{
+  "failure": "libsndfile rejected bank_fma_97601; audioread had no executable fallback on PATH",
+  "source_sha256": "4f6ecece8770e8e1fbee421e3002c652ff6d88fb703d2de55c68db8231a04e1b",
+  "completed_before_failure": 2951,
+  "fix_commit": "fd1d553",
+  "fix": "job-local ffmpeg symlink to existing imageio_ffmpeg binary; add job bin to child PATH",
+  "new_dependencies_installed": false,
+  "original_audio_modified": false,
+  "selected_rows": 7144,
+  "manifest_unchanged": true,
+  "feature_and_training_source_unchanged": {
+    "mert12_submission.py": true,
+    "eight_heads.py": true,
+    "full_bank_train.py": true,
+    "graph_scoring.py": true,
+    "ast_multitask.py": true,
+    "full_bank_features.py": true,
+    "v6_runtime.py": true,
+    "v6_data.py": true,
+    "localization_features.py": true,
+    "full_bank_batches.py": true,
+    "full_bank_evaluate.py": true,
+    "eight_metrics.py": true,
+    "localization_models.py": true,
+    "eight_fixed_io.py": true,
+    "v6_core.py": true
+  },
+  "regression_without_fix": "NoBackendError on actual source with explicit FFmpeg backend",
+  "regression_with_fix": "same source decoded, finite full waveform within 0.05 seconds of audited duration; source SHA unchanged",
+  "deployment_integration": "selected labels, groups, split and source identities preserved",
+  "h100_decoder": {
+    "ffmpeg_sha256": "e7e7fb30477f717e6f55f9180a70386c62677ef8a4d4d1a5d948f4098aa3eb99",
+    "version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers"
+  },
+  "retry_watch_pid": 99375,
+  "remaining_package_checks": [
+    "derive package counts from actual 5716/1428 manifest instead of old hard-coded full-bank counts",
+    "ensure packaged fallback decoder matches training environment and verify actual offline inference including this MP3",
+    "verify separate legacy gain-preserving entries"
+  ],
+  "runtime_recovery": {
+    "checked_at": 1789780454.9717948,
+    "workspace_state": "running",
+    "cache_rows": 3001,
+    "previously_failing_row": {
+      "identity": "b98062ef210f8db93aa25c13c53aaa406ea99cd871d047a33df2b280aa6f3aef",
+      "path": "bank_fma_97601.npz",
+      "samples": 1343321,
+      "sha256": "cc0e86cf080a31a0ebb74a5fa82724915b1e187bd50747ee08cbbfdfe17ac353",
+      "windows": 41
+    }
+  },
+  "actual_failed_source_reprocessed_successfully": true
+}

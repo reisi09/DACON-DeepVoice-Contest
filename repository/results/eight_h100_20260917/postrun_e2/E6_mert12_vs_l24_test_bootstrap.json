@@ -1,0 +1,44 @@
+{
+  "claim_limit": "conditional on fixed fitted heads and existing split; no retraining or reselection",
+  "components": 24,
+  "estimand": "MERT12 minus MERT24 test EER; lower is better",
+  "prediction_file": "results/eight_h100_20260917/downloaded/unpacked/output/predictions_E6_MERT.csv",
+  "rows": 127,
+  "seeds": {
+    "41": {
+      "ci95": [
+        -0.19008557232241444,
+        0.0
+      ],
+      "components": 24,
+      "delta_eer": -0.07713210702341139,
+      "resamples": 1000,
+      "uncertain": false,
+      "valid": 1000
+    },
+    "42": {
+      "ci95": [
+        -0.19835071563579607,
+        -0.006408227848101245
+      ],
+      "components": 24,
+      "delta_eer": -0.08674749163879597,
+      "resamples": 1000,
+      "uncertain": false,
+      "valid": 1000
+    },
+    "43": {
+      "ci95": [
+        -0.2024110425420167,
+        -0.010852928127772912
+      ],
+      "components": 24,
+      "delta_eer": -0.08674749163879597,
+      "resamples": 1000,
+      "uncertain": false,
+      "valid": 1000
+    }
+  },
+  "selection_changed": false,
+  "status": "postrun_fixed_predictions"
+}

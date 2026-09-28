@@ -1,0 +1,35 @@
+{
+  "ASVspoof2019.LA.cm.dev.trl.txt": {
+    "labels": {
+      "bonafide": 2548,
+      "spoof": 22296
+    },
+    "distinct_protocol_speaker_ids": {
+      "bonafide": 20,
+      "spoof": 10
+    },
+    "all_distinct": 20
+  },
+  "ASVspoof2019.LA.cm.eval.trl.txt": {
+    "labels": {
+      "spoof": 63882,
+      "bonafide": 7355
+    },
+    "distinct_protocol_speaker_ids": {
+      "spoof": 48,
+      "bonafide": 67
+    },
+    "all_distinct": 67
+  },
+  "ASVspoof2019.LA.cm.train.trn.txt": {
+    "labels": {
+      "bonafide": 2580,
+      "spoof": 22800
+    },
+    "distinct_protocol_speaker_ids": {
+      "bonafide": 20,
+      "spoof": 20
+    },
+    "all_distinct": 20
+  }
+}

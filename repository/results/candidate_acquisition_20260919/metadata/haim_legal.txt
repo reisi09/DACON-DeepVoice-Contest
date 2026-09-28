@@ -1,0 +1,189 @@
+================================================================================
+Supplementary Material: Legal and Ethical Considerations
+for the HAIM (Human-AI Music) Dataset
+================================================================================
+
+
+1. Overview of Data Distribution
+
+The HAIM dataset contains music from both open-source AI models and commercial
+AI music platforms. Due to differences in licensing, Terms of Service, and
+copyright implications, the dataset is distributed in two forms:
+
+  (a) Audio files included:
+      - ACE-Step 1.5 (6,000 tracks) — open-source model, locally generated
+      - MusicGen (5,000 tracks) — open-source model (Meta), locally generated
+      - Lyria Pro 3 (6,000 tracks) — generated via Google DeepMind API
+      - MTG-Jamendo (6,000 tracks) — Creative Commons licensed human music
+      - All B-category hybrid tracks (32,040 tracks) — derived works
+      - All C-category mix-set tracks (12,000 tracks) — derived works
+
+      These tracks are either generated locally using open-source models,
+      sourced from CC-licensed collections, or are derived works created
+      through our own processing pipelines. We are able to distribute the
+      audio directly.
+
+  (b) Metadata only (JSON with platform URLs):
+      - Suno (20,000 tracks) — commercial platform, scraped
+      - Udio (9,344 tracks) — commercial platform, scraped
+      - Mureka (7,212 tracks) — commercial platform, scraped
+      - B5: AI Vocal + Human Track (2,040 tracks) — YouTube AI vocal covers
+
+      For these sources, we provide structured JSON/CSV files containing
+      track IDs, platform URLs, version information, and other metadata.
+      Audio files are not included. Researchers may independently retrieve
+      the audio using the provided URLs for their own non-commercial use.
+
+
+2. On Terms of Service of Commercial Platforms
+
+The Terms of Service of Suno, Udio, and Mureka each contain provisions that
+restrict or prohibit automated scraping:
+
+  - Suno (User Conduct section) prohibits "data mining, robots, scraping,
+    or similar data gathering or extraction methods."
+  - Udio (Section 5.2) prohibits the use of "robot, spider, crawlers,
+    scraper, or other automatic device" to access or extract data.
+  - Mureka's terms similarly restrict automated collection of content.
+
+We acknowledge that our data collection methods involved systematic crawling
+of publicly available content from these platforms, which may be inconsistent
+with these ToS provisions. However, we emphasize:
+
+  (1) ToS violation does not constitute illegality. Terms of Service define
+      what a service provider deems appropriate use, not what is legal or
+      illegal under applicable law.
+
+  (2) Our use is strictly non-commercial and academic in nature. We do not
+      redistribute the audio content from these platforms. We provide only
+      metadata (track IDs and URLs) that point to publicly accessible pages.
+
+  (3) The metadata we release cannot be used to reconstruct or substitute
+      for the original service. It serves only as a reference for
+      reproducible academic research.
+
+
+3. On Copyright
+
+AI-generated music collected from commercial platforms may incorporate
+copyrighted material through user prompts, training data, or platform
+processing. Several considerations apply:
+
+  (a) Upstream infringement risk: If platform users provided copyrighted
+      lyrics or other protected content as input, the resulting outputs may
+      carry infringement risk. All three platforms (Suno, Udio, Mureka)
+      require users to ensure their inputs do not infringe third-party
+      rights, while disclaiming liability for user-generated content.
+
+  (b) Our research use: Our analysis of this content falls under academic
+      research exceptions. In particular:
+      - EU Directive 2019/790, Article 3 permits Text and Data Mining (TDM)
+        for scientific research purposes, even when the source material is
+        copyrighted.
+      - 17 U.S. Code Section 107 (Fair Use) supports transformative,
+        non-commercial uses for research and education.
+
+  (c) Data release form: For commercial platform content, we release only
+      metadata and URLs — not the audio itself. This approach avoids direct
+      redistribution of potentially copyrighted material while maintaining
+      research reproducibility.
+
+  (d) Use of copyrighted lyrics (B6): The B6 subcategory contains AI-
+      generated audio conditioned on human-written lyrics sourced from
+      the K-Pop Lyric Dataset. Song lyrics are copyrighted literary works
+      under both Korean Copyright Act and international conventions (Berne
+      Convention). We include the generated audio files because:
+      - The audio is a machine-generated output, not a human performance
+        of the lyrics. The copyright status of AI outputs conditioned on
+        copyrighted prompts remains legally unsettled.
+      - Our use is strictly non-commercial and for academic research into
+        AI music detection, not for music consumption or distribution.
+      - The generated audio is transformative in nature — it serves as a
+        research artifact for studying the boundary between human and AI
+        authorship, not as a substitute for the original songs.
+      - EU Directive 2019/790 Article 3 (TDM exception) and 17 U.S.C.
+        Section 107 (Fair Use) support this research use.
+      Nonetheless, we acknowledge that the original lyrics remain the
+      intellectual property of their respective authors and rights holders.
+      The lyrics themselves are not distributed in this dataset; only the
+      AI-generated audio derived from them is included.
+
+  (e) Open-source and CC-licensed content: The locally generated tracks
+      (ACE-Step, MusicGen) are produced by us using open-source models
+      under their respective licenses (MIT, Apache 2.0). The human music
+      baseline (MTG-Jamendo) is distributed under Creative Commons licenses.
+      These can be freely shared for academic purposes.
+
+
+4. On Locally Generated and Derived Content
+
+A significant portion of the HAIM dataset consists of content we generated
+or processed ourselves:
+
+  - A2 (open-source): Generated locally using ACE-Step 1.5 and MusicGen
+    on our own hardware. These outputs are original to our research.
+
+  - A2 (Lyria Pro 3): Generated via the Google DeepMind API. Audio is
+    included as the API terms permit research use of generated outputs.
+
+  - B-category (hybrid): Created by applying mastering, editing, variation,
+    inpainting, and vocal replacement processes to either open-source AI
+    outputs or CC-licensed human music. These are transformative derived
+    works produced through our own pipelines.
+
+  - C-category (mix-set): Created by temporally combining segments of
+    human (MTG-Jamendo) and AI (ACE-Step) music. These are synthetic
+    compositions designed specifically for AI music detection research.
+
+For all derived works, source attribution is preserved through metadata
+files (metadata.jsonl, JSON sidecars) that record the origin of each
+component.
+
+
+5. On Data Privacy
+
+  - No personally identifiable information (PII) is included in the dataset.
+  - User identifiers from commercial platforms have been removed from all
+    metadata. Only track-level identifiers (platform song IDs) are retained
+    for reproducibility.
+  - The MTG-Jamendo subset uses only the track IDs from the original dataset,
+    which do not contain artist PII beyond what is already publicly available
+    in the MTG-Jamendo distribution.
+
+
+6. Intended Use and Restrictions
+
+The HAIM dataset is released exclusively for non-commercial academic research
+purposes, including but not limited to:
+
+  - AI-generated music detection and classification
+  - Analysis of AI music generation quality and characteristics
+  - Study of hybrid human-AI music production workflows
+  - Evaluation of temporal AI content detection in mixed compositions
+    
+The dataset must NOT be used for:
+
+  - Commercial purposes or competitive analysis of AI music platforms
+  - Training commercial AI music generation systems
+  - Redistribution of audio content from commercial platforms
+  - Any purpose that would violate the intellectual property rights of
+    original content creators
+
+
+7. Reproducibility
+
+To ensure full reproducibility of our dataset:
+
+  - For audio-included tracks: Files are provided directly and can be used
+    as-is for research.
+  - For metadata-only tracks: Researchers can retrieve audio using the URLs
+    in the JSON files. We note that platform content may be removed or
+    modified over time, which is an inherent limitation of this approach.
+  - Generation scripts for all locally produced content (ACE-Step, MusicGen,
+    hybrid processing, mix-set creation) are included in the scripts/
+    directory with full parameter documentation.
+
+
+================================================================================
+END OF DOCUMENT
+================================================================================

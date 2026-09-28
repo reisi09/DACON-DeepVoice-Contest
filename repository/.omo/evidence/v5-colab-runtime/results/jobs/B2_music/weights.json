@@ -1,0 +1,17 @@
+{
+  "sha256": "a75d347d1e5c628b33dd893dd15c2bd054602d46278a2064bdb40a3074b9e3bc",
+  "bytes": 69269535,
+  "selected_path": "/content/drive/MyDrive/DACON_236749/runs_compare_v5/20260913_141033/jobs/B2_music/best.pt",
+  "epochs_completed": 5,
+  "updates": 345,
+  "full_finetuning_gradient_audit": {
+    "gradient_norms": {
+      "encoder": 9.991496513479827,
+      "head": 13.229468056300293
+    },
+    "parameter_deltas": {
+      "encoder": 2.968311309814453e-05,
+      "head": 8.996948599815369e-05
+    }
+  }
+}

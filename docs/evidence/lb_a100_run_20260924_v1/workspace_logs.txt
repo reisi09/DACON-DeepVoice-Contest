@@ -1,0 +1,120 @@
+2026-09-24T12:23:10Z [VESSL] Installing vesslctl CLI...
+2026-09-24T12:23:11Z Installing vesslctl v2026.09.22-01 (linux/amd64)...
+2026-09-24T12:23:11Z Downloading binary...
+2026-09-24T12:23:13Z Downloading checksums...
+2026-09-24T12:23:14Z Checksum verified.
+2026-09-24T12:23:14Z
+2026-09-24T12:23:14Z Successfully installed vesslctl to /usr/local/bin/vesslctl
+2026-09-24T12:23:14Z
+2026-09-24T12:23:14Z Get started:
+2026-09-24T12:23:14Z   vesslctl auth login
+2026-09-24T12:23:14Z   vesslctl --help
+2026-09-24T12:23:14Z [VESSL] vesslctl CLI installed successfully (2026.09.22-01)
+2026-09-24T12:23:15Z 2026-09-24 12:23:15,010 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2026-09-24T12:23:15Z 2026-09-24 12:23:15,013 INFO RPC interface 'supervisor' initialized
+2026-09-24T12:23:15Z 2026-09-24 12:23:15,013 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2026-09-24T12:23:15Z 2026-09-24 12:23:15,013 INFO supervisord started with pid 154
+2026-09-24T12:23:16Z 2026-09-24 12:23:16,015 INFO spawned: 'jupyterlab' with pid 155
+2026-09-24T12:23:16Z 2026-09-24 12:23:16,017 INFO spawned: 'main_script' with pid 156
+2026-09-24T12:23:16Z 2026-09-24 12:23:16,019 INFO spawned: 'prepare_ssh' with pid 157
+2026-09-24T12:23:16Z 2026-09-24 12:23:16,021 INFO spawned: 'sshd' with pid 158
+2026-09-24T12:23:16Z 2026-09-24 12:23:16,037 INFO success: main_script entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+2026-09-24T12:23:16Z 2026-09-24 12:23:16,037 INFO success: prepare_ssh entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+2026-09-24T12:23:16Z 2026-09-24 12:23:16,049 INFO exited: prepare_ssh (exit status 0; expected)
+2026-09-24T12:23:17Z 2026-09-24 12:23:17,050 INFO success: jupyterlab entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2026-09-24T12:23:17Z 2026-09-24 12:23:17,050 INFO success: sshd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2026-09-24T12:23:17Z STAGING_VERIFIED_INPUTS
+2026-09-24T12:26:05Z [env] downloading uv 0.8.17 wheel from PyPI
+2026-09-24T12:26:05Z [env] $ /root/lb-a100-20260924-v1/env/bin/uv --version
+2026-09-24T12:26:05Z [env] $ /root/lb-a100-20260924-v1/env/bin/uv python install 3.11.13
+2026-09-24T12:26:07Z [env] $ /root/lb-a100-20260924-v1/env/bin/uv python find --python-preference only-managed 3.11.13
+2026-09-24T12:26:07Z [env] $ /root/lb-a100-20260924-v1/env/bin/uv venv --python /root/lb-a100-20260924-v1/env/python/cpython-3.11.13-linux-x86_64-gnu/bin/python3.11 /root/lb-a100-20260924-v1/env/venv
+2026-09-24T12:26:07Z [env] $ /root/lb-a100-20260924-v1/env/bin/uv pip install --python /root/lb-a100-20260924-v1/env/venv/bin/python --require-hashes --no-deps --strict -r /tmp/lb-a100-bootstrap-v1/requirements.lock.txt
+2026-09-24T12:26:56Z [env] $ /root/lb-a100-20260924-v1/env/bin/uv pip freeze --python /root/lb-a100-20260924-v1/env/venv/bin/python
+2026-09-24T12:26:56Z [env] $ /root/lb-a100-20260924-v1/env/venv/bin/python -c
+2026-09-24T12:26:56Z import importlib, importlib.metadata as md, json, os, subprocess, sys, tempfile, time
+2026-09-24T12:26:56Z expected = sys.argv[1]
+2026-09-24T12:26:56Z report = {"python": sys.version, "executable": sys.executable, "imports": {}}
+2026-09-24T12:26:56Z for name in json.loads(sys.argv[2]):
+2026-09-24T12:26:56Z     try:
+2026-09-24T12:26:56Z         importlib.import_module(name)
+2026-09-24T12:26:56Z         report["imports"][name] = "ok"
+2026-09-24T12:26:56Z     except Exception as error:
+2026-09-24T12:26:56Z         report["imports"][name] = f"{type(error).__name__}: {error}"[:600]
+2026-09-24T12:26:56Z import numpy as np
+2026-09-24T12:26:56Z import torch
+2026-09-24T12:26:56Z report["torch"] = torch.__version__
+2026-09-24T12:26:56Z report["torch_cuda"] = torch.version.cuda
+2026-09-24T12:26:56Z report["cudnn"] = torch.backends.cudnn.version()
+2026-09-24T12:26:56Z report["cuda_available"] = torch.cuda.is_available()
+2026-09-24T12:26:56Z if report["cuda_available"]:
+2026-09-24T12:26:56Z     properties = torch.cuda.get_device_properties(0)
+2026-09-24T12:26:56Z     report["gpu"] = {"name": torch.cuda.get_device_name(0), "count": torch.cuda.device_count(),
+2026-09-24T12:26:56Z                      "capability": list(torch.cuda.get_device_capability(0)),
+2026-09-24T12:26:56Z                      "total_memory": properties.total_memory, "multiprocessors": properties.multi_processor_count}
+2026-09-24T12:26:56Z try:
+2026-09-24T12:26:56Z     import soundfile as sf, torchaudio, torchcodec
+2026-09-24T12:26:56Z     from torchcodec._core import get_ffmpeg_library_versions
+2026-09-24T12:26:56Z     report["ffmpeg_libraries"] = get_ffmpeg_library_versions()
+2026-09-24T12:26:56Z     signal = (np.random.default_rng(0).standard_normal(16000) * 0.1).astype(np.float32)
+2026-09-24T12:26:56Z     with tempfile.TemporaryDirectory() as directory:
+2026-09-24T12:26:56Z         path = os.path.join(directory, "probe.wav")
+2026-09-24T12:26:56Z         sf.write(path, signal, 16000, subtype="FLOAT")
+2026-09-24T12:26:56Z         waveform, rate = torchaudio.load(path)
+2026-09-24T12:26:56Z     report["torchaudio_torchcodec_decode"] = {"ok": rate == 16000 and waveform.shape == (1, 16000)
+2026-09-24T12:26:56Z                                               and float((waveform[0].numpy() - signal).__abs__().max()) == 0.0}
+2026-09-24T12:26:56Z except Exception as error:
+2026-09-24T12:26:56Z     report["torchaudio_torchcodec_decode"] = {"ok": False, "error": f"{type(error).__name__}: {error}"[:1500]}
+2026-09-24T12:26:56Z import imageio_ffmpeg
+2026-09-24T12:26:56Z exe = imageio_ffmpeg.get_ffmpeg_exe()
+2026-09-24T12:26:56Z report["imageio_ffmpeg"] = {"exe": exe, "version": subprocess.run([exe, "-version"], capture_output=True,
+2026-09-24T12:26:56Z                             text=True).stdout.splitlines()[0]}
+2026-09-24T12:26:56Z report["distributions"] = {d.metadata["Name"]: d.version for d in md.distributions()}
+2026-09-24T12:26:56Z print("PROBE_JSON=" + json.dumps(report))
+2026-09-24T12:26:56Z  A100 ["torch", "torchaudio", "torchcodec", "transformers", "librosa", "soundfile", "demucs.apply", "demucs.pretrained", "demucs.separate", "demucs.audio", "panns_inference", "sklearn", "scipy.special", "numpy", "einops", "safetensors", "imageio_ffmpeg", "tqdm"]
+2026-09-24T12:27:03Z [env] $ apt-get -o Acquire::Retries=2 update
+2026-09-24T12:28:44Z [env] $ apt-get install -y --no-install-recommends ffmpeg
+2026-09-24T12:30:50Z [env] $ /root/lb-a100-20260924-v1/env/venv/bin/python -c
+2026-09-24T12:30:50Z import importlib, importlib.metadata as md, json, os, subprocess, sys, tempfile, time
+2026-09-24T12:30:50Z expected = sys.argv[1]
+2026-09-24T12:30:50Z report = {"python": sys.version, "executable": sys.executable, "imports": {}}
+2026-09-24T12:30:50Z for name in json.loads(sys.argv[2]):
+2026-09-24T12:30:50Z     try:
+2026-09-24T12:30:50Z         importlib.import_module(name)
+2026-09-24T12:30:50Z         report["imports"][name] = "ok"
+2026-09-24T12:30:50Z     except Exception as error:
+2026-09-24T12:30:50Z         report["imports"][name] = f"{type(error).__name__}: {error}"[:600]
+2026-09-24T12:30:50Z import numpy as np
+2026-09-24T12:30:50Z import torch
+2026-09-24T12:30:50Z report["torch"] = torch.__version__
+2026-09-24T12:30:50Z report["torch_cuda"] = torch.version.cuda
+2026-09-24T12:30:50Z report["cudnn"] = torch.backends.cudnn.version()
+2026-09-24T12:30:50Z report["cuda_available"] = torch.cuda.is_available()
+2026-09-24T12:30:50Z if report["cuda_available"]:
+2026-09-24T12:30:50Z     properties = torch.cuda.get_device_properties(0)
+2026-09-24T12:30:50Z     report["gpu"] = {"name": torch.cuda.get_device_name(0), "count": torch.cuda.device_count(),
+2026-09-24T12:30:50Z                      "capability": list(torch.cuda.get_device_capability(0)),
+2026-09-24T12:30:50Z                      "total_memory": properties.total_memory, "multiprocessors": properties.multi_processor_count}
+2026-09-24T12:30:50Z try:
+2026-09-24T12:30:50Z     import soundfile as sf, torchaudio, torchcodec
+2026-09-24T12:30:50Z     from torchcodec._core import get_ffmpeg_library_versions
+2026-09-24T12:30:50Z     report["ffmpeg_libraries"] = get_ffmpeg_library_versions()
+2026-09-24T12:30:50Z     signal = (np.random.default_rng(0).standard_normal(16000) * 0.1).astype(np.float32)
+2026-09-24T12:30:50Z     with tempfile.TemporaryDirectory() as directory:
+2026-09-24T12:30:50Z         path = os.path.join(directory, "probe.wav")
+2026-09-24T12:30:50Z         sf.write(path, signal, 16000, subtype="FLOAT")
+2026-09-24T12:30:50Z         waveform, rate = torchaudio.load(path)
+2026-09-24T12:30:50Z     report["torchaudio_torchcodec_decode"] = {"ok": rate == 16000 and waveform.shape == (1, 16000)
+2026-09-24T12:30:50Z                                               and float((waveform[0].numpy() - signal).__abs__().max()) == 0.0}
+2026-09-24T12:30:50Z except Exception as error:
+2026-09-24T12:30:50Z     report["torchaudio_torchcodec_decode"] = {"ok": False, "error": f"{type(error).__name__}: {error}"[:1500]}
+2026-09-24T12:30:50Z import imageio_ffmpeg
+2026-09-24T12:30:50Z exe = imageio_ffmpeg.get_ffmpeg_exe()
+2026-09-24T12:30:50Z report["imageio_ffmpeg"] = {"exe": exe, "version": subprocess.run([exe, "-version"], capture_output=True,
+2026-09-24T12:30:50Z                             text=True).stdout.splitlines()[0]}
+2026-09-24T12:30:50Z report["distributions"] = {d.metadata["Name"]: d.version for d in md.distributions()}
+2026-09-24T12:30:50Z print("PROBE_JSON=" + json.dumps(report))
+2026-09-24T12:30:50Z  A100 ["torch", "torchaudio", "torchcodec", "transformers", "librosa", "soundfile", "demucs.apply", "demucs.pretrained", "demucs.separate", "demucs.audio", "panns_inference", "sklearn", "scipy.special", "numpy", "einops", "safetensors", "imageio_ffmpeg", "tqdm"]
+2026-09-24T12:31:04Z STARTING_E00_E04_PIPELINE
+2026-09-24T12:32:03Z {"added_train_rows": 1477, "asset_hashes_sha256": "bf84fe882561e2e8272149837984ef5dcf5369df5b9bd181ba166a8ec2662b90", "audio_bytes": 12329271166, "audio_files": 43516, "config": {"music_local_loss_weight": 0.25, "seeds": [41], "voice_local_loss_weight": 0.0, "voice_pooling": "max", "voice_topk_fraction": 0.25}, "gpu_started": false, "manifests": {"E00": "61e104a56129b742d38e6761f7b910ca63f88bfe35acfb06780ca899162a6549", "E04": "c83eacab4143f8ca336d12e24e3cccf75dc1fd5939ab8f20054c5c2a0eb78168", "features": "492bbe454abce816beab07d97baecdcf34e34ec1936d5230d955c2cda8f27906"}, "max_epochs": 50, "patience": 5, "pinned_asset_files": 25, "roles": {"E00": {"calibration": 2023, "selection": 2386, "train": 27788}, "E04": {"calibration": 2023, "selection": 2386, "train": 29265}, "features": {"calibration": 2023, "development": 9842, "selection": 2386, "train": 29265}}, "status": "cpu_preflight_passed", "validation_scope": "Input bytes and data/config contracts; no model loading or GPU runtime validation"}
+2026-09-24T12:32:03Z {"stage": "features", "status": "starting"}

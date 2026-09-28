@@ -1,0 +1,9 @@
+OFFLINE_GUARD_ACTIVE
+Checkpoint path: /root/balanced7144_h100_20260919/submission_qa/extracted/model/assets/baseline/model/panns/Cnn14_mAP=0.431.pth
+GPU number: 1
+/root/balanced7144_h100_20260919/submission_qa/extracted/model/assets/baseline/script.py:145: UserWarning: PySoundFile failed. Trying audioread instead.
+  audio, _ = librosa.load(
+/root/fullft8/.venv/lib/python3.11/site-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)

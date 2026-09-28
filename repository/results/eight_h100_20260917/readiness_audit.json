@@ -1,0 +1,118 @@
+{
+  "check_count": 10,
+  "checks": {
+    "antideepfake_assets": {
+      "passed": true,
+      "value": {
+        "model_expected_sha256": "57da6a47234bb8aad0c61b7f575378a12c2734a30f1f395b95bbf97ed4ba5373",
+        "model_match": true,
+        "path": "/root/voice_music_h100_20260917/source/antideepfake",
+        "required_count": 4,
+        "sha256": {
+          "antideepfake_config.json": "8b01fdb60cd491365c626d57b08be2c12031e73eacb01a92bf8da77f16eca2f2",
+          "model.safetensors": "57da6a47234bb8aad0c61b7f575378a12c2734a30f1f395b95bbf97ed4ba5373",
+          "native_reference.json": "facd170d7639fd95db9492cfef0e3c270450615acf0cbaf5fa757a2f3a08c90d",
+          "parity_audio.npz": "31cf96d8555f017999fc623634f81948317d3466b2284edc5dd5631974cf62a3"
+        }
+      }
+    },
+    "asset_manifest_and_members": {
+      "passed": true,
+      "value": {
+        "local_packaging_manifest_sha256": "69f588fac806ec2afd0abfebf1555dcee23101a2c1770f3893bb08755fce972b",
+        "manifest_equal": true,
+        "member_count": 27,
+        "member_hashes_verified": 27,
+        "remote_manifest_sha256": "69f588fac806ec2afd0abfebf1555dcee23101a2c1770f3893bb08755fce972b"
+      }
+    },
+    "config_and_deadline": {
+      "passed": true,
+      "value": {
+        "antideepfake": "/root/voice_music_h100_20260917/source/antideepfake",
+        "assets": "/root/redesign_h100_20260917/assets",
+        "attempt": 4,
+        "pause_deadline_epoch": 1789663360,
+        "remaining_seconds": 12741,
+        "resumed_epoch": 1789650499,
+        "started_epoch": 1789648960
+      }
+    },
+    "disk_headroom": {
+      "passed": true,
+      "value": {
+        "free_bytes": 10822944292864,
+        "minimum_free_bytes": 10000000000,
+        "total_bytes": 10995116277760,
+        "used_bytes": 172171984896
+      }
+    },
+    "ffmpeg": {
+      "passed": true,
+      "value": {
+        "executable": "/root/fullft8/.venv/lib/python3.11/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2",
+        "executable_bit": true,
+        "version_line": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers"
+      }
+    },
+    "frozen_imports": {
+      "passed": true,
+      "value": {
+        "count": 11,
+        "results": {
+          "eight_ablation": "passed",
+          "eight_contract": "passed",
+          "eight_features": "passed",
+          "eight_lora_train": "passed",
+          "eight_probes": "passed",
+          "imageio_ffmpeg": "passed",
+          "ipykernel": "passed",
+          "nbclient": "passed",
+          "nbformat": "passed",
+          "torch": "passed",
+          "transformers": "passed"
+        }
+      }
+    },
+    "gpu_cuda": {
+      "passed": true,
+      "value": {
+        "count": 1,
+        "name": "NVIDIA H100 80GB HBM3",
+        "torch_cuda_available": true,
+        "torch_device_name": "NVIDIA H100 80GB HBM3"
+      }
+    },
+    "kernel_registration": {
+      "error": "kernels=['python3']",
+      "error_type": "RuntimeError",
+      "passed": false
+    },
+    "python_runtime": {
+      "passed": true,
+      "value": {
+        "executable": "/root/fullft8/.venv/bin/python",
+        "python": "3.11.13",
+        "torch": "2.7.1+cu128",
+        "torch_cuda": "12.8"
+      }
+    },
+    "source_integrity": {
+      "passed": true,
+      "value": {
+        "coverage_exact_except_bytecode_cache": true,
+        "manifest_sha256": "c21e12f9fc4b4ad9c29763ef403a8624f8d09d1f7ea43bc1e5e469ba9c0fe2b1",
+        "member_count": 7133,
+        "member_hashes_verified": 7133
+      }
+    }
+  },
+  "completed_unix": 1789650618.6542592,
+  "errors": [
+    "kernel_registration"
+  ],
+  "passed_count": 9,
+  "stage": "readiness_audit",
+  "started_unix": 1789650551.1699903,
+  "status": "blocked"
+}

@@ -1,0 +1,475 @@
+deployment root : /shared/existing-only-9504-h100-20260920
+job root        : /root/dacon_existing9504_h100_20260920
+author code     : /root/dacon_existing9504_h100_20260920/code/5994d3f2e442c572 (sha256 5994d3f2e442c5721eff5e8844b0ca72a61a7ad1253094eb8066241b27d2364e)
+notebook        : /shared/existing-only-9504-h100-20260920/DACON_Existing9504_H100.ipynb
+kernel python   : 3.13.9 (orchestration only; GPU work runs in the isolated venv)
+[15:12:05] === preflight ===
+[15:12:08] GPU NVIDIA H100 80GB HBM3 81559 MiB driver 580.82.07; free 9.8TiB
+[15:12:08] preflight complete in 0h00m04s; elapsed stage total 0h00m04s
+[15:12:10] === stage_inputs ===
+[15:12:10] [stage_inputs] verifying every immutable deployment file (bytes + SHA-256)
+[15:14:35] [stage_inputs] staging frozen assets and original source modules
+deployment root : /shared/existing-only-9504-h100-20260920
+job root        : /root/dacon_existing9504_h100_20260920
+author code     : /root/dacon_existing9504_h100_20260920/code/5994d3f2e442c572 (sha256 5994d3f2e442c5721eff5e8844b0ca72a61a7ad1253094eb8066241b27d2364e)
+notebook        : /shared/existing-only-9504-h100-20260920/DACON_Existing9504_H100.ipynb
+kernel python   : 3.14.6 (orchestration only; GPU work runs in the isolated venv)
+[15:29:53] === preflight ===
+[15:29:57] GPU NVIDIA H100 80GB HBM3 81559 MiB driver 580.82.07; free 9.8TiB
+[15:29:57] preflight complete in 0h00m05s; elapsed stage total 0h00m09s
+[15:29:59] === stage_inputs ===
+[15:29:59] [stage_inputs] verifying every immutable deployment file (bytes + SHA-256)
+[15:31:34] [stage_inputs] staging frozen assets and original source modules
+[15:37:21] [stage_audio] 0/9504 files already present and verified
+[15:37:22] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_000.zip (0.27 GB)
+[15:38:01] [stage_audio] full-bank-mil-8020-20260918/data/audio_000.zip: extracted 38; 38/9504 verified
+[15:38:01] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_001.zip (0.27 GB)
+[15:38:12] [stage_audio] full-bank-mil-8020-20260918/data/audio_001.zip: extracted 49; 87/9504 verified
+[15:38:12] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_002.zip (0.27 GB)
+[15:38:22] [stage_audio] full-bank-mil-8020-20260918/data/audio_002.zip: extracted 51; 138/9504 verified
+[15:38:23] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_003.zip (0.27 GB)
+[15:38:45] [stage_audio] full-bank-mil-8020-20260918/data/audio_003.zip: extracted 57; 195/9504 verified
+[15:38:45] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_004.zip (0.27 GB)
+[15:39:00] [stage_audio] full-bank-mil-8020-20260918/data/audio_004.zip: extracted 52; 247/9504 verified
+[15:39:01] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_005.zip (0.27 GB)
+[15:39:14] [stage_audio] full-bank-mil-8020-20260918/data/audio_005.zip: extracted 45; 292/9504 verified
+[15:39:14] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_006.zip (0.27 GB)
+[15:39:25] [stage_audio] full-bank-mil-8020-20260918/data/audio_006.zip: extracted 56; 348/9504 verified
+[15:39:26] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_007.zip (0.27 GB)
+[15:39:37] [stage_audio] full-bank-mil-8020-20260918/data/audio_007.zip: extracted 56; 404/9504 verified
+[15:39:37] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_008.zip (0.28 GB)
+[15:39:51] [stage_audio] full-bank-mil-8020-20260918/data/audio_008.zip: extracted 33; 437/9504 verified
+[15:39:52] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_009.zip (0.27 GB)
+[15:40:05] [stage_audio] full-bank-mil-8020-20260918/data/audio_009.zip: extracted 34; 471/9504 verified
+[15:40:06] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_010.zip (0.27 GB)
+[15:40:19] [stage_audio] full-bank-mil-8020-20260918/data/audio_010.zip: extracted 35; 506/9504 verified
+[15:40:19] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_011.zip (0.27 GB)
+[15:40:31] [stage_audio] full-bank-mil-8020-20260918/data/audio_011.zip: extracted 29; 535/9504 verified
+[15:40:32] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_012.zip (0.27 GB)
+[15:40:43] [stage_audio] full-bank-mil-8020-20260918/data/audio_012.zip: extracted 39; 574/9504 verified
+[15:40:44] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_013.zip (0.27 GB)
+[15:40:55] [stage_audio] full-bank-mil-8020-20260918/data/audio_013.zip: extracted 40; 614/9504 verified
+[15:40:55] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_014.zip (0.27 GB)
+[15:41:09] [stage_audio] full-bank-mil-8020-20260918/data/audio_014.zip: extracted 40; 654/9504 verified
+[15:41:09] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_015.zip (0.28 GB)
+[15:41:23] [stage_audio] full-bank-mil-8020-20260918/data/audio_015.zip: extracted 59; 713/9504 verified
+[15:41:23] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_016.zip (0.27 GB)
+[15:41:36] [stage_audio] full-bank-mil-8020-20260918/data/audio_016.zip: extracted 59; 772/9504 verified
+[15:41:37] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_017.zip (0.27 GB)
+[15:41:49] [stage_audio] full-bank-mil-8020-20260918/data/audio_017.zip: extracted 60; 832/9504 verified
+[15:41:49] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_018.zip (0.27 GB)
+[15:42:04] [stage_audio] full-bank-mil-8020-20260918/data/audio_018.zip: extracted 58; 890/9504 verified
+[15:42:05] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_019.zip (0.27 GB)
+[15:42:19] [stage_audio] full-bank-mil-8020-20260918/data/audio_019.zip: extracted 60; 950/9504 verified
+[15:42:19] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_020.zip (0.27 GB)
+[15:42:31] [stage_audio] full-bank-mil-8020-20260918/data/audio_020.zip: extracted 60; 1010/9504 verified
+[15:42:32] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_021.zip (0.27 GB)
+[15:42:44] [stage_audio] full-bank-mil-8020-20260918/data/audio_021.zip: extracted 53; 1063/9504 verified
+[15:42:45] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_022.zip (0.27 GB)
+[15:42:56] [stage_audio] full-bank-mil-8020-20260918/data/audio_022.zip: extracted 45; 1108/9504 verified
+[15:42:56] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_023.zip (0.27 GB)
+[15:43:07] [stage_audio] full-bank-mil-8020-20260918/data/audio_023.zip: extracted 48; 1156/9504 verified
+[15:43:07] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_024.zip (0.28 GB)
+[15:43:21] [stage_audio] full-bank-mil-8020-20260918/data/audio_024.zip: extracted 48; 1204/9504 verified
+[15:43:21] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_025.zip (0.27 GB)
+[15:43:40] [stage_audio] full-bank-mil-8020-20260918/data/audio_025.zip: extracted 45; 1249/9504 verified
+[15:43:40] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_026.zip (0.27 GB)
+[15:43:56] [stage_audio] full-bank-mil-8020-20260918/data/audio_026.zip: extracted 48; 1297/9504 verified
+[15:43:57] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_027.zip (0.27 GB)
+[15:44:07] [stage_audio] full-bank-mil-8020-20260918/data/audio_027.zip: extracted 48; 1345/9504 verified
+[15:44:08] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_028.zip (0.27 GB)
+[15:44:20] [stage_audio] full-bank-mil-8020-20260918/data/audio_028.zip: extracted 49; 1394/9504 verified
+[15:44:20] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_029.zip (0.27 GB)
+[15:44:48] [stage_audio] full-bank-mil-8020-20260918/data/audio_029.zip: extracted 46; 1440/9504 verified
+[15:44:49] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_030.zip (0.27 GB)
+[15:45:06] [stage_audio] full-bank-mil-8020-20260918/data/audio_030.zip: extracted 49; 1489/9504 verified
+[15:45:07] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_031.zip (0.27 GB)
+[15:45:20] [stage_audio] full-bank-mil-8020-20260918/data/audio_031.zip: extracted 44; 1533/9504 verified
+[15:45:20] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_032.zip (0.27 GB)
+[15:45:44] [stage_audio] full-bank-mil-8020-20260918/data/audio_032.zip: extracted 51; 1584/9504 verified
+[15:45:45] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_033.zip (0.27 GB)
+[15:46:09] [stage_audio] full-bank-mil-8020-20260918/data/audio_033.zip: extracted 47; 1631/9504 verified
+[15:46:10] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_034.zip (0.27 GB)
+[15:46:24] [stage_audio] full-bank-mil-8020-20260918/data/audio_034.zip: extracted 49; 1680/9504 verified
+[15:46:25] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_035.zip (0.27 GB)
+[15:46:37] [stage_audio] full-bank-mil-8020-20260918/data/audio_035.zip: extracted 51; 1731/9504 verified
+[15:46:37] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_036.zip (0.27 GB)
+[15:46:49] [stage_audio] full-bank-mil-8020-20260918/data/audio_036.zip: extracted 50; 1781/9504 verified
+[15:46:50] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_037.zip (0.28 GB)
+[15:47:02] [stage_audio] full-bank-mil-8020-20260918/data/audio_037.zip: extracted 48; 1829/9504 verified
+[15:47:03] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_038.zip (0.27 GB)
+[15:47:14] [stage_audio] full-bank-mil-8020-20260918/data/audio_038.zip: extracted 92; 1921/9504 verified
+[15:47:15] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_039.zip (0.27 GB)
+[15:47:26] [stage_audio] full-bank-mil-8020-20260918/data/audio_039.zip: extracted 110; 2031/9504 verified
+[15:47:27] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_040.zip (0.27 GB)
+[15:47:38] [stage_audio] full-bank-mil-8020-20260918/data/audio_040.zip: extracted 86; 2117/9504 verified
+[15:47:39] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_041.zip (0.27 GB)
+[15:47:51] [stage_audio] full-bank-mil-8020-20260918/data/audio_041.zip: extracted 83; 2200/9504 verified
+[15:47:51] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_042.zip (0.27 GB)
+[15:48:04] [stage_audio] full-bank-mil-8020-20260918/data/audio_042.zip: extracted 116; 2316/9504 verified
+[15:48:05] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_043.zip (0.27 GB)
+[15:48:16] [stage_audio] full-bank-mil-8020-20260918/data/audio_043.zip: extracted 85; 2401/9504 verified
+[15:48:17] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_044.zip (0.27 GB)
+[15:48:28] [stage_audio] full-bank-mil-8020-20260918/data/audio_044.zip: extracted 77; 2478/9504 verified
+[15:48:28] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_045.zip (0.27 GB)
+[15:48:41] [stage_audio] full-bank-mil-8020-20260918/data/audio_045.zip: extracted 65; 2543/9504 verified
+[15:48:41] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_046.zip (0.27 GB)
+[15:48:52] [stage_audio] full-bank-mil-8020-20260918/data/audio_046.zip: extracted 63; 2606/9504 verified
+[15:48:52] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_047.zip (0.27 GB)
+[15:49:01] [stage_audio] full-bank-mil-8020-20260918/data/audio_047.zip: extracted 57; 2663/9504 verified
+[15:49:01] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_048.zip (0.27 GB)
+[15:49:11] [stage_audio] full-bank-mil-8020-20260918/data/audio_048.zip: extracted 74; 2737/9504 verified
+[15:49:11] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_049.zip (0.27 GB)
+[15:49:22] [stage_audio] full-bank-mil-8020-20260918/data/audio_049.zip: extracted 83; 2820/9504 verified
+[15:49:23] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_050.zip (0.27 GB)
+[15:49:35] [stage_audio] full-bank-mil-8020-20260918/data/audio_050.zip: extracted 73; 2893/9504 verified
+[15:49:35] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_051.zip (0.27 GB)
+[15:49:53] [stage_audio] full-bank-mil-8020-20260918/data/audio_051.zip: extracted 945; 3838/9504 verified
+[15:49:54] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_052.zip (0.27 GB)
+[15:50:27] [stage_audio] full-bank-mil-8020-20260918/data/audio_052.zip: extracted 2164; 6002/9504 verified
+[15:50:28] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_053.zip (0.27 GB)
+[15:50:44] [stage_audio] full-bank-mil-8020-20260918/data/audio_053.zip: extracted 295; 6297/9504 verified
+[15:50:44] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_054.zip (0.27 GB)
+[15:50:56] [stage_audio] full-bank-mil-8020-20260918/data/audio_054.zip: extracted 288; 6585/9504 verified
+[15:50:56] [stage_audio] copy+hash full-bank-mil-8020-20260918/data/audio_055.zip (0.18 GB)
+[15:51:08] [stage_audio] full-bank-mil-8020-20260918/data/audio_055.zip: extracted 300; 6885/9504 verified
+[15:51:08] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_000.zip (0.27 GB)
+[15:51:40] [stage_audio] existing-only-9504-20260919/data/audio_000.zip: extracted 2073; 8958/9504 verified
+[15:51:40] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_001.zip (0.27 GB)
+[15:52:06] [stage_audio] existing-only-9504-20260919/data/audio_001.zip: extracted 69; 9027/9504 verified
+[15:52:06] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_002.zip (0.28 GB)
+[15:52:20] [stage_audio] existing-only-9504-20260919/data/audio_002.zip: extracted 37; 9064/9504 verified
+[15:52:21] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_003.zip (0.28 GB)
+[15:52:34] [stage_audio] existing-only-9504-20260919/data/audio_003.zip: extracted 30; 9094/9504 verified
+[15:52:34] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_004.zip (0.27 GB)
+[15:52:45] [stage_audio] existing-only-9504-20260919/data/audio_004.zip: extracted 31; 9125/9504 verified
+[15:52:46] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_005.zip (0.27 GB)
+[15:52:56] [stage_audio] existing-only-9504-20260919/data/audio_005.zip: extracted 31; 9156/9504 verified
+[15:52:56] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_006.zip (0.27 GB)
+[15:53:11] [stage_audio] existing-only-9504-20260919/data/audio_006.zip: extracted 31; 9187/9504 verified
+[15:53:11] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_007.zip (0.27 GB)
+[15:54:09] [stage_audio] existing-only-9504-20260919/data/audio_007.zip: extracted 28; 9215/9504 verified
+[15:54:10] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_008.zip (0.27 GB)
+[15:54:33] [stage_audio] existing-only-9504-20260919/data/audio_008.zip: extracted 33; 9248/9504 verified
+[15:54:33] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_009.zip (0.27 GB)
+[15:54:49] [stage_audio] existing-only-9504-20260919/data/audio_009.zip: extracted 29; 9277/9504 verified
+[15:54:49] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_010.zip (0.27 GB)
+[15:55:00] [stage_audio] existing-only-9504-20260919/data/audio_010.zip: extracted 25; 9302/9504 verified
+[15:55:00] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_011.zip (0.28 GB)
+[15:55:10] [stage_audio] existing-only-9504-20260919/data/audio_011.zip: extracted 26; 9328/9504 verified
+[15:55:11] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_012.zip (0.27 GB)
+[15:55:23] [stage_audio] existing-only-9504-20260919/data/audio_012.zip: extracted 34; 9362/9504 verified
+[15:55:23] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_013.zip (0.28 GB)
+[15:55:46] [stage_audio] existing-only-9504-20260919/data/audio_013.zip: extracted 25; 9387/9504 verified
+[15:55:46] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_014.zip (0.27 GB)
+[15:55:58] [stage_audio] existing-only-9504-20260919/data/audio_014.zip: extracted 28; 9415/9504 verified
+[15:55:59] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_015.zip (0.28 GB)
+[15:56:08] [stage_audio] existing-only-9504-20260919/data/audio_015.zip: extracted 21; 9436/9504 verified
+[15:56:08] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_016.zip (0.27 GB)
+[15:56:31] [stage_audio] existing-only-9504-20260919/data/audio_016.zip: extracted 29; 9465/9504 verified
+[15:56:32] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_017.zip (0.27 GB)
+[15:56:45] [stage_audio] existing-only-9504-20260919/data/audio_017.zip: extracted 30; 9495/9504 verified
+[15:56:45] [stage_audio] copy+hash existing-only-9504-20260919/data/audio_018.zip (0.07 GB)
+[15:56:51] [stage_audio] existing-only-9504-20260919/data/audio_018.zip: extracted 9; 9504/9504 verified
+[15:56:52] manifest verified: {'test': 1426, 'train': 6652, 'val': 1426} FILE_FAKE {'train': {'1': 3326, '0': 3326}, 'val': {'0': 713, '1': 713}, 'test': {'1': 713, '0': 713}}; exposure {'train': 4176, 'val': 997, 'test': 1001}; singing {'train': 2034, 'val': 0, 'test': 0}
+[15:56:55] stage_inputs complete in 0h26m57s; elapsed stage total 0h27m03s
+[15:56:55] === environment ===
+[15:56:57] [env] downloading uv 0.8.17 wheel from PyPI
+[15:56:58] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/uv --version
+[15:56:58] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/uv python install 3.11.13
+[15:57:01] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/uv python find --python-preference only-managed 3.11.13
+[15:57:01] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/uv venv --python /root/dacon_existing9504_h100_20260920/env/python/cpython-3.11.13-linux-x86_64-gnu/bin/python3.11 /root/dacon_existing9504_h100_20260920/env/venv
+[15:57:02] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/uv pip install --python /root/dacon_existing9504_h100_20260920/env/venv/bin/python --require-hashes --no-deps --strict -r /root/dacon_existing9504_h100_20260920/code/5994d3f2e442c572/dacon9504a100/requirements.lock.txt
+[15:58:06] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/uv pip freeze --python /root/dacon_existing9504_h100_20260920/env/venv/bin/python
+[15:58:06] [env] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -c 
+import importlib, importlib.metadata as md, json, os, subprocess, sys, tempfile, time
+expected = sys.argv[1]
+report = {"python": sys.version, "executable": sys.executable, "imports": {}}
+for name in json.loads(sys.argv[2]):
+    try:
+        importlib.import_module(name)
+        report["imports"][name] = "ok"
+    except Exception as error:
+        report["imports"][name] = f"{type(error).__name__}: {error}"[:600]
+import numpy as np
+import torch
+report["torch"] = torch.__version__
+report["torch_cuda"] = torch.version.cuda
+report["cudnn"] = torch.backends.cudnn.version()
+report["cuda_available"] = torch.cuda.is_available()
+if report["cuda_available"]:
+    properties = torch.cuda.get_device_properties(0)
+    report["gpu"] = {"name": torch.cuda.get_device_name(0), "count": torch.cuda.device_count(),
+                     "capability": list(torch.cuda.get_device_capability(0)),
+                     "total_memory": properties.total_memory, "multiprocessors": properties.multi_processor_count}
+try:
+    import soundfile as sf, torchaudio, torchcodec
+    from torchcodec._core import get_ffmpeg_library_versions
+    report["ffmpeg_libraries"] = get_ffmpeg_library_versions()
+    signal = (np.random.default_rng(0).standard_normal(16000) * 0.1).astype(np.float32)
+    with tempfile.TemporaryDirectory() as directory:
+        path = os.path.join(directory, "probe.wav")
+        sf.write(path, signal, 16000, subtype="FLOAT")
+        waveform, rate = torchaudio.load(path)
+    report["torchaudio_torchcodec_decode"] = {"ok": rate == 16000 and waveform.shape == (1, 16000)
+                                              and float((waveform[0].numpy() - signal).__abs__().max()) == 0.0}
+except Exception as error:
+    report["torchaudio_torchcodec_decode"] = {"ok": False, "error": f"{type(error).__name__}: {error}"[:1500]}
+import imageio_ffmpeg
+exe = imageio_ffmpeg.get_ffmpeg_exe()
+report["imageio_ffmpeg"] = {"exe": exe, "version": subprocess.run([exe, "-version"], capture_output=True,
+                            text=True).stdout.splitlines()[0]}
+report["distributions"] = {d.metadata["Name"]: d.version for d in md.distributions()}
+print("PROBE_JSON=" + json.dumps(report))
+ H100 ["torch", "torchaudio", "torchcodec", "transformers", "librosa", "soundfile", "demucs.apply", "demucs.pretrained", "demucs.separate", "demucs.audio", "panns_inference", "sklearn", "scipy.special", "numpy", "einops", "safetensors", "imageio_ffmpeg", "tqdm"]
+[15:58:14] [env] torchaudio->torchcodec cannot load FFmpeg libraries; provisioning FFmpeg
+{"ok": false, "error": "RuntimeError: Could not load libtorchcodec. Likely causes:\n          1. FFmpeg is not properly installed in your environment. We support\n             versions 4, 5, 6, and 7 on all platforms, and 8 on Mac and Linux.\n          2. The PyTorch version (2.9.1+cu128) is not compatible with\n             this version of TorchCodec. Refer to the version compatibility\n             table:\n             https://github.com/pytorch/torchcodec?tab=readme-ov-file#installing-torchcodec.\n          3. Another runtime dependency; see exceptions below.\n        The following exceptions were raised as we tried to load libtorchcodec:\n        \n[start of libtorchcodec loading traceback]\nFFmpeg version 8: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core8.so\nFFmpeg version 7: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core7.so\nFFmpeg version 6: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core6.so\nFFmpeg version 5: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core5.so\nFFmpeg version 4: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core4.so\n
+[15:58:14] [env] $ apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 update
+[15:58:17] [env] $ apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 install -y --no-install-recommends ffmpeg
+[15:58:35] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/micromamba create -y -p /root/dacon_existing9504_h100_20260920/env/ffmpeg -c conda-forge --override-channels ffmpeg=7.1.*
+[15:58:45] [env] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -c 
+import importlib, importlib.metadata as md, json, os, subprocess, sys, tempfile, time
+expected = sys.argv[1]
+report = {"python": sys.version, "executable": sys.executable, "imports": {}}
+for name in json.loads(sys.argv[2]):
+    try:
+        importlib.import_module(name)
+        report["imports"][name] = "ok"
+    except Exception as error:
+        report["imports"][name] = f"{type(error).__name__}: {error}"[:600]
+import numpy as np
+import torch
+report["torch"] = torch.__version__
+report["torch_cuda"] = torch.version.cuda
+report["cudnn"] = torch.backends.cudnn.version()
+report["cuda_available"] = torch.cuda.is_available()
+if report["cuda_available"]:
+    properties = torch.cuda.get_device_properties(0)
+    report["gpu"] = {"name": torch.cuda.get_device_name(0), "count": torch.cuda.device_count(),
+                     "capability": list(torch.cuda.get_device_capability(0)),
+                     "total_memory": properties.total_memory, "multiprocessors": properties.multi_processor_count}
+try:
+    import soundfile as sf, torchaudio, torchcodec
+    from torchcodec._core import get_ffmpeg_library_versions
+    report["ffmpeg_libraries"] = get_ffmpeg_library_versions()
+    signal = (np.random.default_rng(0).standard_normal(16000) * 0.1).astype(np.float32)
+    with tempfile.TemporaryDirectory() as directory:
+        path = os.path.join(directory, "probe.wav")
+        sf.write(path, signal, 16000, subtype="FLOAT")
+        waveform, rate = torchaudio.load(path)
+    report["torchaudio_torchcodec_decode"] = {"ok": rate == 16000 and waveform.shape == (1, 16000)
+                                              and float((waveform[0].numpy() - signal).__abs__().max()) == 0.0}
+except Exception as error:
+    report["torchaudio_torchcodec_decode"] = {"ok": False, "error": f"{type(error).__name__}: {error}"[:1500]}
+import imageio_ffmpeg
+exe = imageio_ffmpeg.get_ffmpeg_exe()
+report["imageio_ffmpeg"] = {"exe": exe, "version": subprocess.run([exe, "-version"], capture_output=True,
+                            text=True).stdout.splitlines()[0]}
+report["distributions"] = {d.metadata["Name"]: d.version for d in md.distributions()}
+print("PROBE_JSON=" + json.dumps(report))
+ H100 ["torch", "torchaudio", "torchcodec", "transformers", "librosa", "soundfile", "demucs.apply", "demucs.pretrained", "demucs.separate", "demucs.audio", "panns_inference", "sklearn", "scipy.special", "numpy", "einops", "safetensors", "imageio_ffmpeg", "tqdm"]
+[15:59:30] venv 3.11.13 torch 2.9.1+cu128 (CUDA 12.8) on NVIDIA H100 80GB HBM3; ffmpeg libs 6.1.1-3ubuntu5
+[15:59:36] environment complete in 0h02m41s; elapsed stage total 0h29m38s
+[15:59:37] === pilot ===
+[15:59:37] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -m dacon9504a100.features pilot --config /root/dacon_existing9504_h100_20260920/config/run_config.json
+[16:01:43] [pilot] pilot: projected feature extraction 5.23 h for 9504 rows (154.7 h audio)
+[16:01:43] H100 pilot: MERT batch 256; peak VRAM 25.1GiB/79.2GiB; projected features 5.23 h; stages so far 0h29m38s; target 16.0 h (projection only; training/eval time measured later, nothing is dropped)
+[16:01:44] pilot complete in 0h02m08s; elapsed stage total 0h31m45s
+[16:01:47] === features ===
+[16:01:47] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -m dacon9504a100.features full --config /root/dacon_existing9504_h100_20260920/config/run_config.json
+[16:06:53] [features] 1073/9504 rows; ETA 5h19m28s (observed/pilot x1.03); peak VRAM 6.4GiB; last asvspoof2019_la:LA_E_4228242
+[16:11:54] [features] 2219/9504 rows; ETA 5h16m28s (observed/pilot x1.03); peak VRAM 6.4GiB; last asvspoof2019_la:LA_E_9482922
+[16:16:54] [features] 2969/9504 rows; ETA 5h10m11s (observed/pilot x1.03); peak VRAM 16.1GiB; last bank_fma_107086
+[16:21:57] [features] 3014/9504 rows; ETA 5h02m16s (observed/pilot x1.02); peak VRAM 24.0GiB; last bank_fma_115756
+[16:26:57] [features] 3068/9504 rows; ETA 4h56m12s (observed/pilot x1.02); peak VRAM 24.0GiB; last bank_fma_123976
+[16:32:02] [features] 3122/9504 rows; ETA 4h50m15s (observed/pilot x1.01); peak VRAM 24.0GiB; last bank_fma_132347
+[16:37:02] [features] 3170/9504 rows; ETA 4h44m16s (observed/pilot x1.01); peak VRAM 24.0GiB; last bank_fma_141617
+[16:42:03] [features] 3218/9504 rows; ETA 4h38m47s (observed/pilot x1.01); peak VRAM 24.0GiB; last bank_fma_149565
+[16:47:04] [features] 3272/9504 rows; ETA 4h32m46s (observed/pilot x1.00); peak VRAM 24.0GiB; last bank_fma_24321
+[16:52:04] [features] 3327/9504 rows; ETA 4h27m00s (observed/pilot x1.00); peak VRAM 24.0GiB; last bank_fma_38191
+[16:57:05] [features] 3383/9504 rows; ETA 4h21m04s (observed/pilot x1.00); peak VRAM 24.0GiB; last bank_fma_5149
+[17:02:06] [features] 3439/9504 rows; ETA 4h15m39s (observed/pilot x1.00); peak VRAM 25.1GiB; last bank_fma_67162
+[17:07:06] [features] 3504/9504 rows; ETA 4h10m01s (observed/pilot x0.99); peak VRAM 25.1GiB; last bank_fma_85244
+[17:12:07] [features] 3705/9504 rows; ETA 4h04m37s (observed/pilot x0.99); peak VRAM 25.1GiB; last core_691c6723808b8690b7d8_base
+[17:17:06] [features] 4731/9504 rows; ETA 4h02m03s (observed/pilot x1.00); peak VRAM 25.1GiB; last ctrsvdd_CtrSVDD_0059_D_0007259
+[17:22:12] [features] 5673/9504 rows; ETA 3h59m21s (observed/pilot x1.00); peak VRAM 25.1GiB; last ctrsvdd_CtrSVDD_0110_D_0015114
+[17:27:13] [features] 6026/9504 rows; ETA 3h54m32s (observed/pilot x1.00); peak VRAM 25.1GiB; last fake_01436_udio_0
+[17:32:13] [features] 6089/9504 rows; ETA 3h48m18s (observed/pilot x0.99); peak VRAM 25.1GiB; last fake_04468_udio_0
+[17:37:14] [features] 6152/9504 rows; ETA 3h42m28s (observed/pilot x0.99); peak VRAM 25.1GiB; last fake_07706_suno_0
+[17:42:14] [features] 6221/9504 rows; ETA 3h36m21s (observed/pilot x0.99); peak VRAM 25.1GiB; last fake_10591_udio_0
+[17:47:15] [features] 6294/9504 rows; ETA 3h30m29s (observed/pilot x0.98); peak VRAM 25.1GiB; last fake_14255_udio_0
+[17:52:15] [features] 6372/9504 rows; ETA 3h24m42s (observed/pilot x0.98); peak VRAM 25.1GiB; last fake_16900_udio_1
+[17:57:16] [features] 6456/9504 rows; ETA 3h18m59s (observed/pilot x0.98); peak VRAM 25.1GiB; last fake_20517_suno_0
+[18:02:16] [features] 6822/9504 rows; ETA 3h13m42s (observed/pilot x0.98); peak VRAM 25.1GiB; last fakemusiccaps_musicldm_dW4eW0Xreik
+[18:07:17] [features] 7157/9504 rows; ETA 3h08m45s (observed/pilot x0.97); peak VRAM 25.1GiB; last haim_acestep_02118
+[18:12:18] [features] 7253/9504 rows; ETA 3h03m49s (observed/pilot x0.97); peak VRAM 25.1GiB; last haim_acestep_04711
+[18:17:18] [features] 7467/9504 rows; ETA 2h59m22s (observed/pilot x0.97); peak VRAM 25.1GiB; last haim_musicgen_musicgen_small_01643
+[18:22:19] [features] 7523/9504 rows; ETA 2h54m40s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_1085179
+[18:27:19] [features] 7568/9504 rows; ETA 2h49m41s (observed/pilot x0.98); peak VRAM 25.1GiB; last jamendo_1165156
+[18:32:20] [features] 7603/9504 rows; ETA 2h45m00s (observed/pilot x0.98); peak VRAM 25.1GiB; last jamendo_1227726
+[18:37:20] [features] 7639/9504 rows; ETA 2h39m52s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_125674
+[18:42:21] [features] 7686/9504 rows; ETA 2h34m40s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_130446
+[18:47:22] [features] 7723/9504 rows; ETA 2h29m27s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_134477
+[18:52:23] [features] 7760/9504 rows; ETA 2h24m30s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_137326
+[18:57:27] [features] 7801/9504 rows; ETA 2h19m32s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_141502
+[19:02:27] [features] 7839/9504 rows; ETA 2h14m33s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_144306
+[19:07:28] [features] 7877/9504 rows; ETA 2h09m44s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_147913
+[19:12:29] [features] 7916/9504 rows; ETA 2h04m57s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_152462
+[19:17:29] [features] 7950/9504 rows; ETA 2h00m04s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_154534
+[19:22:30] [features] 7991/9504 rows; ETA 1h55m09s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_196101
+[19:27:31] [features] 8026/9504 rows; ETA 1h50m14s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_303393
+[19:32:31] [features] 8066/9504 rows; ETA 1h45m30s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_400704
+[19:37:32] [features] 8102/9504 rows; ETA 1h40m39s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_502613
+[19:42:32] [features] 8139/9504 rows; ETA 1h35m42s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_592676
+[19:47:33] [features] 8177/9504 rows; ETA 1h30m51s (observed/pilot x0.97); peak VRAM 25.1GiB; last jamendo_660332
+[19:52:34] [features] 8219/9504 rows; ETA 1h26m06s (observed/pilot x0.98); peak VRAM 25.1GiB; last jamendo_740456
+[19:57:35] [features] 8257/9504 rows; ETA 1h21m14s (observed/pilot x0.98); peak VRAM 25.1GiB; last jamendo_806688
+[20:02:35] [features] 8301/9504 rows; ETA 1h16m28s (observed/pilot x0.98); peak VRAM 25.1GiB; last jamendo_902772
+[20:07:36] [features] 8337/9504 rows; ETA 1h11m33s (observed/pilot x0.98); peak VRAM 25.1GiB; last jamendo_996511
+[20:12:39] [features] 8929/9504 rows; ETA 1h07m32s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_lyria-pro3_lyria3_00655
+[20:17:40] [features] 8988/9504 rows; ETA 1h02m29s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_lyria-pro3_lyria3_03393
+[20:22:41] [features] 9043/9504 rows; ETA 0h57m36s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_06497_mastered
+[20:27:42] [features] 9082/9504 rows; ETA 0h52m35s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_1092_mastered
+[20:32:41] [features] 9124/9504 rows; ETA 0h47m47s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_117091_mastered
+[20:37:47] [features] 9167/9504 rows; ETA 0h42m47s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_1250683_mastered
+[20:42:48] [features] 9207/9504 rows; ETA 0h37m55s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_1315510_mastered
+[20:47:49] [features] 9251/9504 rows; ETA 0h32m58s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_1353342_mastered
+[20:52:49] [features] 9287/9504 rows; ETA 0h28m06s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_1393825_mastered
+[20:57:50] [features] 9323/9504 rows; ETA 0h23m10s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_159848_mastered
+[21:02:50] [features] 9369/9504 rows; ETA 0h18m21s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_266919_mastered
+[21:07:52] [features] 9402/9504 rows; ETA 0h13m22s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_384151_mastered
+[21:12:52] [features] 9433/9504 rows; ETA 0h08m31s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_507314_mastered
+[21:17:53] [features] 9474/9504 rows; ETA 0h03m34s (observed/pilot x0.98); peak VRAM 25.1GiB; last new_haim_sonicmaster_real_857491_mastered
+deployment root : /shared/existing-only-9504-h100-20260920
+job root        : /root/dacon_existing9504_h100_20260920
+author code     : /root/dacon_existing9504_h100_20260920/code/5994d3f2e442c572 (sha256 5994d3f2e442c5721eff5e8844b0ca72a61a7ad1253094eb8066241b27d2364e)
+notebook        : /shared/existing-only-9504-h100-20260920/DACON_Existing9504_H100.ipynb
+kernel python   : 3.14.6 (orchestration only; GPU work runs in the isolated venv)
+[21:20:51] === preflight ===
+[21:20:54] GPU NVIDIA H100 80GB HBM3 81559 MiB driver 580.82.07; free 9.8TiB
+[21:20:55] preflight complete in 0h00m04s; elapsed stage total 0h31m49s
+[21:20:56] === stage_inputs ===
+[21:20:56] [stage_inputs] verifying every immutable deployment file (bytes + SHA-256)
+[21:23:03] [stage_inputs] staging frozen assets and original source modules
+[21:26:48] [stage_audio] 9504/9504 files already present and verified
+[21:26:49] manifest verified: {'test': 1426, 'train': 6652, 'val': 1426} FILE_FAKE {'train': {'1': 3326, '0': 3326}, 'val': {'0': 713, '1': 713}, 'test': {'1': 713, '0': 713}}; exposure {'train': 4176, 'val': 997, 'test': 1001}; singing {'train': 2034, 'val': 0, 'test': 0}
+[21:26:55] stage_inputs complete in 0h06m00s; elapsed stage total 0h37m44s
+[21:26:56] === environment ===
+[21:26:58] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/uv --version
+[21:26:58] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/uv pip freeze --python /root/dacon_existing9504_h100_20260920/env/venv/bin/python
+[21:26:59] [env] reusing verified virtual environment
+[21:26:59] [env] $ /root/dacon_existing9504_h100_20260920/env/bin/uv pip freeze --python /root/dacon_existing9504_h100_20260920/env/venv/bin/python
+[21:26:59] [env] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -c 
+import importlib, importlib.metadata as md, json, os, subprocess, sys, tempfile, time
+expected = sys.argv[1]
+report = {"python": sys.version, "executable": sys.executable, "imports": {}}
+for name in json.loads(sys.argv[2]):
+    try:
+        importlib.import_module(name)
+        report["imports"][name] = "ok"
+    except Exception as error:
+        report["imports"][name] = f"{type(error).__name__}: {error}"[:600]
+import numpy as np
+import torch
+report["torch"] = torch.__version__
+report["torch_cuda"] = torch.version.cuda
+report["cudnn"] = torch.backends.cudnn.version()
+report["cuda_available"] = torch.cuda.is_available()
+if report["cuda_available"]:
+    properties = torch.cuda.get_device_properties(0)
+    report["gpu"] = {"name": torch.cuda.get_device_name(0), "count": torch.cuda.device_count(),
+                     "capability": list(torch.cuda.get_device_capability(0)),
+                     "total_memory": properties.total_memory, "multiprocessors": properties.multi_processor_count}
+try:
+    import soundfile as sf, torchaudio, torchcodec
+    from torchcodec._core import get_ffmpeg_library_versions
+    report["ffmpeg_libraries"] = get_ffmpeg_library_versions()
+    signal = (np.random.default_rng(0).standard_normal(16000) * 0.1).astype(np.float32)
+    with tempfile.TemporaryDirectory() as directory:
+        path = os.path.join(directory, "probe.wav")
+        sf.write(path, signal, 16000, subtype="FLOAT")
+        waveform, rate = torchaudio.load(path)
+    report["torchaudio_torchcodec_decode"] = {"ok": rate == 16000 and waveform.shape == (1, 16000)
+                                              and float((waveform[0].numpy() - signal).__abs__().max()) == 0.0}
+except Exception as error:
+    report["torchaudio_torchcodec_decode"] = {"ok": False, "error": f"{type(error).__name__}: {error}"[:1500]}
+import imageio_ffmpeg
+exe = imageio_ffmpeg.get_ffmpeg_exe()
+report["imageio_ffmpeg"] = {"exe": exe, "version": subprocess.run([exe, "-version"], capture_output=True,
+                            text=True).stdout.splitlines()[0]}
+report["distributions"] = {d.metadata["Name"]: d.version for d in md.distributions()}
+print("PROBE_JSON=" + json.dumps(report))
+ H100 ["torch", "torchaudio", "torchcodec", "transformers", "librosa", "soundfile", "demucs.apply", "demucs.pretrained", "demucs.separate", "demucs.audio", "panns_inference", "sklearn", "scipy.special", "numpy", "einops", "safetensors", "imageio_ffmpeg", "tqdm"]
+[21:27:29] [env] torchaudio->torchcodec cannot load FFmpeg libraries; provisioning FFmpeg
+{"ok": false, "error": "RuntimeError: Could not load libtorchcodec. Likely causes:\n          1. FFmpeg is not properly installed in your environment. We support\n             versions 4, 5, 6, and 7 on all platforms, and 8 on Mac and Linux.\n          2. The PyTorch version (2.9.1+cu128) is not compatible with\n             this version of TorchCodec. Refer to the version compatibility\n             table:\n             https://github.com/pytorch/torchcodec?tab=readme-ov-file#installing-torchcodec.\n          3. Another runtime dependency; see exceptions below.\n        The following exceptions were raised as we tried to load libtorchcodec:\n        \n[start of libtorchcodec loading traceback]\nFFmpeg version 8: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core8.so\nFFmpeg version 7: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core7.so\nFFmpeg version 6: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core6.so\nFFmpeg version 5: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core5.so\nFFmpeg version 4: Could not load this library: /root/dacon_existing9504_h100_20260920/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core4.so\n
+[21:27:29] [env] $ apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 update
+[21:27:32] [env] $ apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 install -y --no-install-recommends ffmpeg
+[21:27:46] [env] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -c 
+import importlib, importlib.metadata as md, json, os, subprocess, sys, tempfile, time
+expected = sys.argv[1]
+report = {"python": sys.version, "executable": sys.executable, "imports": {}}
+for name in json.loads(sys.argv[2]):
+    try:
+        importlib.import_module(name)
+        report["imports"][name] = "ok"
+    except Exception as error:
+        report["imports"][name] = f"{type(error).__name__}: {error}"[:600]
+import numpy as np
+import torch
+report["torch"] = torch.__version__
+report["torch_cuda"] = torch.version.cuda
+report["cudnn"] = torch.backends.cudnn.version()
+report["cuda_available"] = torch.cuda.is_available()
+if report["cuda_available"]:
+    properties = torch.cuda.get_device_properties(0)
+    report["gpu"] = {"name": torch.cuda.get_device_name(0), "count": torch.cuda.device_count(),
+                     "capability": list(torch.cuda.get_device_capability(0)),
+                     "total_memory": properties.total_memory, "multiprocessors": properties.multi_processor_count}
+try:
+    import soundfile as sf, torchaudio, torchcodec
+    from torchcodec._core import get_ffmpeg_library_versions
+    report["ffmpeg_libraries"] = get_ffmpeg_library_versions()
+    signal = (np.random.default_rng(0).standard_normal(16000) * 0.1).astype(np.float32)
+    with tempfile.TemporaryDirectory() as directory:
+        path = os.path.join(directory, "probe.wav")
+        sf.write(path, signal, 16000, subtype="FLOAT")
+        waveform, rate = torchaudio.load(path)
+    report["torchaudio_torchcodec_decode"] = {"ok": rate == 16000 and waveform.shape == (1, 16000)
+                                              and float((waveform[0].numpy() - signal).__abs__().max()) == 0.0}
+except Exception as error:
+    report["torchaudio_torchcodec_decode"] = {"ok": False, "error": f"{type(error).__name__}: {error}"[:1500]}
+import imageio_ffmpeg
+exe = imageio_ffmpeg.get_ffmpeg_exe()
+report["imageio_ffmpeg"] = {"exe": exe, "version": subprocess.run([exe, "-version"], capture_output=True,
+                            text=True).stdout.splitlines()[0]}
+report["distributions"] = {d.metadata["Name"]: d.version for d in md.distributions()}
+print("PROBE_JSON=" + json.dumps(report))
+ H100 ["torch", "torchaudio", "torchcodec", "transformers", "librosa", "soundfile", "demucs.apply", "demucs.pretrained", "demucs.separate", "demucs.audio", "panns_inference", "sklearn", "scipy.special", "numpy", "einops", "safetensors", "imageio_ffmpeg", "tqdm"]
+[21:28:06] venv 3.11.13 torch 2.9.1+cu128 (CUDA 12.8) on NVIDIA H100 80GB HBM3; ffmpeg libs 6.1.1-3ubuntu5
+[21:28:12] environment complete in 0h01m16s; elapsed stage total 0h38m54s
+[21:28:13] === pilot ===
+[21:28:13] pilot receipt matches current manifest/assets/code/environment/config; reusing it
+[21:28:13] H100 pilot: MERT batch 256; peak VRAM 25.1GiB/79.2GiB; projected features 5.23 h; stages so far 0h38m54s; target 16.0 h (projection only; training/eval time measured later, nothing is dropped)
+[21:28:15] pilot complete in 0h00m03s; elapsed stage total 0h38m55s
+[21:28:16] === features ===
+[21:28:16] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -m dacon9504a100.features full --config /root/dacon_existing9504_h100_20260920/config/run_config.json
+[21:31:28] [features] 9504/9504 rows; ETA 0h00m00s (observed/pilot x1.02); peak VRAM 21.0GiB; last new_haim_sonicmaster_real_997278_mastered
+[21:31:28] features complete in 0h03m13s; elapsed stage total 0h42m07s
+[21:31:31] === train ===
+[21:31:31] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -m dacon9504a100.training --config /root/dacon_existing9504_h100_20260920/config/run_config.json
+[21:35:22] [train] train: locked 6 checkpoints; val metrics written
+[21:35:24] candidate lock bb50efd693f47c76cafe376c91e28f2fe1c9c29edf30455ca42b30022338097f published before test evaluation; test feature files opened before lock: 0
+[21:35:28] train complete in 0h03m59s; elapsed stage total 0h46m02s
+[21:35:29] === test_eval ===
+[21:35:29] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -m dacon9504a100.evaluation test --config /root/dacon_existing9504_h100_20260920/config/run_config.json
+[21:36:04] [test_eval] ===== 2026-09-19T21:35:29+00:00 /root/dacon_existing9504_h100_20260920/env/venv/bin/python -m dacon9504a100.evaluation test --config /root/dacon_existing9504_h100_20260920/config/run_config.json
+[21:36:04] test (masked, not independent): file EER 0.0743; voice EER 0.0000; music EER 0.0909
+[21:36:06] test_eval complete in 0h00m38s; elapsed stage total 0h46m38s
+[21:36:09] === parity ===
+[21:36:09] $ /root/dacon_existing9504_h100_20260920/env/venv/bin/python -m dacon9504a100.parity --config /root/dacon_existing9504_h100_20260920/config/run_config.json
+[21:36:44] [parity] parity fakemusiccaps_mustango_b1j-hD9zs6Q: features=bitwise predictions=bitwise max_diff=0.0
+[21:36:44] raw-audio parity status: bitwise over 10 samples and 24 pilot rows
+[21:36:46] parity complete in 0h00m40s; elapsed stage total 0h47m17s
+[21:36:49] === handoff ===
+[21:45:15] [handoff] /shared/existing-only-9504-h100-20260920/DACON_Existing9504_H100_Handoff.zip sha256=53a3236bbe201ce4ac2fd021800c4b891731c9eee5146fbf9733fae355460a7d (5.9GiB)
+[21:45:17] handoff complete in 0h08m31s; elapsed stage total 0h55m46s

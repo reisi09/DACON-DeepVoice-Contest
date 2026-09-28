@@ -1,0 +1,25 @@
+Observed model: Opus 5 높음
+https://claude.ai/chat/9b127d1e-bde6-43be-a6c6-cb484dc7199a
+텍스트 위험 결함 3개
+																910 내용 목록
+																	911 container
+																		912 AXListMarker 1. 
+																		913 텍스트 C1/C2(concat/crossfade)는 fake 쪽에만 이음매가 있어서, 이음매 자체가 fake 단서가 됩니다.
+																	914 container
+																		915 AXListMarker 2. 
+																		916 text artist_id  하나만으로 그룹을 묶으면 같은 트랙이 B1·C1·C2·기존 Jamendo에 흩어진 경우를 놓칩니다. 반대로 아티스트 단위 거대 그룹이 생기면 70/15/15가 불가능해질 수 있습니다.
+																	917 container
+																		918 AXListMarker 3. 
+																		919 텍스트 ASV5/PartialSpoof/CtrSVDD/VocalSet이 아직 미수집이라 지금 7144를 짜면 음성 fake가 ASV2019 편중인 채로 고정되고, 가창 행은 0개입니다.
+																920 텍스트 작은 수정 3개
+																921 내용 목록
+																	922 container
+																		923 AXListMarker 1. 
+																		924 텍스트 C1/C2와 같은 편집 절차의 real sham(Jamendo끼리 이어 붙임)을 같은 split에 동수로 넣습니다. 준비될 때까지 C1/C2는 보류합니다.
+																	925 container
+																		926 AXListMarker 2. 
+																		927 text 그룹 키를  artist_id ,  track_id , 오디오 해시, acestep ID를 모두 잇는 연결 성분으로 정하고, 분할 전에 최대 그룹 크기를 보고합니다.
+																	928 container
+																		929 AXListMarker 3. 
+																		930 텍스트 이번 구성은 v0 잠정본으로 표시하고 행마다 수집상태 열을 붙입니다. 출처 단독 AUC를 산출하고, 아카이브가 완료되면 MILP를 다시 실행합니다.
+															931 

@@ -1,0 +1,41 @@
+{
+  "status": "blocked_before_benchmark",
+  "benchmark_executed": false,
+  "production_pause_signal_sent": false,
+  "workspace": "wsp-y519wpuarqc0",
+  "checked_at": "2026-09-19T14:55:41+00:00",
+  "feature_progress": {
+    "done": 2978,
+    "total": 9504,
+    "updated_at": "2026-09-19T14:48:41+00:00",
+    "last_id": "bank_fma_108097"
+  },
+  "feature_process": {
+    "pid": 2707,
+    "state": "D (disk sleep)",
+    "wchan": "folio_wait_bit_common",
+    "syscall": 74,
+    "operation": "fsync",
+    "fd": 46,
+    "mount_id": 8185,
+    "mountpoint": "/root",
+    "filesystem": "ceph"
+  },
+  "controller": {
+    "pid": 174,
+    "wchan": "folio_wait_bit_common",
+    "syscall": 74,
+    "operation": "fsync",
+    "fd": 65
+  },
+  "io_pressure": {
+    "full_avg10": 75.75,
+    "full_avg60": 73.42,
+    "some_avg10": 77.24
+  },
+  "memory_pressure": {
+    "full_avg10": 0.0,
+    "some_avg10": 0.0
+  },
+  "interpretation": "The earlier Ceph write/synchronization wait has recurred on the replacement workspace; backend cause remains unproven. No batching benchmark or optimization was applied."
+}

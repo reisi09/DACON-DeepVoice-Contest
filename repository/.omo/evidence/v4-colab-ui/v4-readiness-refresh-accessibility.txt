@@ -1,0 +1,115 @@
+Surface: Aside > existing Colab tab DACON_236749_recovery_v3.ipynb > Resources
+Invocation: sky.get_app_state({app:"at.studio.AsideBrowser"}) while Gmail was foreground; then sky.click({app:"at.studio.AsideBrowser", element_index:783}) and sky.get_app_state({app:"at.studio.AsideBrowser"})
+Timestamp: 2026-09-13T07:06:10.146Z
+
+The following is a diff from the previous accessibility tree for Window: "DACON_236749_recovery_v3.ipynb - Colab" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 28-756
+~0 표준 윈도우 DACON_236749_recovery_v3.ipynb - Colab - Aside, URL: colab.research.google.com/drive/1TdF2g6JiOnryZsD38QyNDrQNWd67m4K8#scrollTo=d8445a03, Secondary Actions: Raise
+~	1 container DACON_236749_recovery_v3.ipynb - Colab - Aside, URL: colab.research.google.com/drive/1TdF2g6JiOnryZsD38QyNDrQNWd67m4K8#scrollTo=d8445a03
+~					8 텍스트 필드 (settable) Description: 주소창 및 검색창, Value: colab.research.google.com/drive/1TdF2g6JiOnryZsD38QyNDrQNWd67m4K8#scrollTo=d8445a03, Placeholder: Google에 물어보거나 URL을 입력하세요.
+~					9 버튼 colab.research.google.com
++				811 HTML 콘텐츠 DACON_236749_recovery_v3.ipynb - Colab, URL: colab.research.google.com/drive/1TdF2g6JiOnryZsD38QyNDrQNWd67m4K8#scrollTo=d8445a03
++					812 container
++						813 container
++							814 link Description: 메인 콘텐츠로 건너뛰기, Value: colab.research.google.com/drive/1TdF2g6JiOnryZsD38QyNDrQNWd67m4K8#notebook-main
++						815 container
++							816 link Description: Colab 홈, Value: colab.research.google.com/
++							817 container
++								818 텍스트 필드 (settable) Description: 노트북 이름, Value: DACON_236749_recovery_v3.ipynb
++								819 버튼 별
++								820 버튼 모든 변경사항이 저장됨
++								821 메뉴 표시줄
++									822 팝업 버튼 파일
++										823 텍스트 파일
++									824 팝업 버튼 수정
++										825 텍스트 수정
++									826 팝업 버튼 보기
++										827 텍스트 보기
++									828 팝업 버튼 삽입
++										829 텍스트 삽입
++									830 팝업 버튼 런타임
++										831 텍스트 런타임
++									832 팝업 버튼 도구
++										833 텍스트 도구
++									834 팝업 버튼 도움말
++										835 텍스트 도움말
++							836 container
++								837 버튼 댓글 창 열기
++								838 버튼 설정 열기
++								839 버튼 노트북 공유
++								840 버튼 Google 계정: 최우석 (gameplayevs@gmail.com), Google 멤버십
++						841 container
++							842 container
++								843 버튼 명령어 명령 팔레트 표시⌘/Ctrl+Shift+P
++									844 텍스트 명령어
++									845 텍스트 명령 팔레트 표시
++									846 텍스트 ⌘/Ctrl+Shift+P
++							847 container
++								848 버튼 코드 아래에 코드 셀 삽입⌘/Ctrl+M B
++									849 텍스트 코드
++									850 텍스트 아래에 코드 셀 삽입
++									851 텍스트 ⌘/Ctrl+M B
++							852 container
++								853 버튼 텍스트 텍스트 셀 추가
++									854 텍스트 텍스트
++									855 텍스트 텍스트 셀 추가
++							856 container
++								857 버튼 모두 실행 노트의 모든 셀 실행
++									858 텍스트 모두 실행
++									859 텍스트 노트의 모든 셀 실행
++							860 팝업 버튼 추가 작업
++							861 container
++								862 버튼 다시 연결 A100 연결하려면 클릭
++									863 텍스트 다시 연결
++									864 텍스트 A100
++									865 텍스트 연결하려면 클릭
++							866 팝업 버튼 추가 연결 옵션
++							867 전환 버튼 Description: 헤더 공개 상태 전환, Value: 0
++						868 container
++							869 container left pane
++								870 툴바
++									871 container 목차
++										872 전환 버튼 Description: 목차, Value: 0
++									873 container 찾기 및 바꾸기
++										874 전환 버튼 Description: 찾기 및 바꾸기, Value: 0
++									875 container 코드 스니펫
++										876 전환 버튼 Description: 코드 스니펫, Value: 0
++									877 container 데이터 검사 도구
++										878 전환 버튼 Description: 데이터 검사 도구, Value: 0
++									879 container 보안 비밀
++										880 전환 버튼 Description: 보안 비밀, Value: 0
++									881 container 파일
++										882 전환 버튼 Description: 파일, Value: 0
++									883 container 데이터 탐색기
++										884 전환 버튼 Description: 데이터 탐색기, Value: 0
++							885 탭 그룹
++								886 container
++									887 tab (settable, integer) 노트북, Value: 0
++										888 텍스트 노트북
++									889 tab (selected) 리소스, Value: 1
++										890 텍스트 리소스
++										891 container 닫기
++											892 버튼 닫기
++							893 팝업 버튼 추가 탭 작업
++							894 버튼 탭 모두 닫기
++							895 container
++								896 텍스트 구독 중이 아닙니다.
++								897 link Description: 자세히 알아보기, Value: colab.research.google.com/signup?utm_source=resource_tab&utm_medium=link&utm_campaign=payg_learn_more
++							898 텍스트 사용 가능: 컴퓨팅 단위 53.34개
++							899 텍스트 사용률: 약 0/시간
++							900 텍스트 활성 세션이 0개 있습니다.
++							901 container
++								902 버튼 세션 관리
++							903 텍스트 런타임에 연결되어 있지 않습니다.
++							904 container
++								905 버튼 런타임 유형 변경
++						906 container 런타임 상태 표시줄
++							907 container
++								908 버튼 변수
++							909 container
++								910 버튼 터미널
++							911 container
++								912 버튼 오후 2:00
+~								783 탭 (selected, settable, boolean) Description: DACON_236749_recovery_v3.ipynb - Colab - 메모리 사용량 - 357MB, Value: on
+~								790 탭 (settable, boolean) Description: 보낸편지함 - gameplayevs@gmail.com - Gmail - 메모리 사용량 - 319MB, Value: off
+The focused UI element is 889 tab (selected) 리소스, Value: 1

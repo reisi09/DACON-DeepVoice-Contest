@@ -1,0 +1,3979 @@
+{
+  "candidate": "B_seed42",
+  "checkpoint_hashes": [
+    "4f8f128cc9e580aabe8310e533259c5657c35b4707f1e07dd1cf30acd981c975",
+    "abf34dbd814a14480ac5a3e62f3d586f178509351815ed43963db55ea8d0db69"
+  ],
+  "folds": [
+    {
+      "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/oof_checkpoints/B/42/fold0/best.pt",
+      "checkpoint_sha256": "4f8f128cc9e580aabe8310e533259c5657c35b4707f1e07dd1cf30acd981c975",
+      "earlystop_groups": [
+        "group-train-000",
+        "group-train-010",
+        "group-train-018",
+        "group-train-032"
+      ],
+      "earlystop_ids": [
+        "train-000-pure",
+        "train-010-pure",
+        "train-018-pure",
+        "train-032-pure"
+      ],
+      "fold": 0,
+      "held_out_groups": [
+        "group-train-001",
+        "group-train-002",
+        "group-train-007",
+        "group-train-008",
+        "group-train-012",
+        "group-train-014",
+        "group-train-015",
+        "group-train-016",
+        "group-train-017",
+        "group-train-019",
+        "group-train-021",
+        "group-train-022",
+        "group-train-023",
+        "group-train-024",
+        "group-train-025",
+        "group-train-026",
+        "group-train-034",
+        "group-train-035",
+        "group-train-037",
+        "group-train-039"
+      ],
+      "held_out_ids": [
+        "train-001-pure",
+        "train-002-pure",
+        "train-007-pure",
+        "train-008-pure",
+        "train-012-pure",
+        "train-014-pure",
+        "train-015-pure",
+        "train-016-pure",
+        "train-017-pure",
+        "train-019-pure",
+        "train-021-pure",
+        "train-022-pure",
+        "train-023-pure",
+        "train-024-pure",
+        "train-025-pure",
+        "train-026-pure",
+        "train-034-pure",
+        "train-035-pure",
+        "train-037-pure",
+        "train-039-pure"
+      ],
+      "selected_epoch": 2,
+      "train_ids": [
+        "train-003-pure",
+        "train-004-pure",
+        "train-005-pure",
+        "train-006-pure",
+        "train-009-pure",
+        "train-011-pure",
+        "train-013-pure",
+        "train-020-pure",
+        "train-027-pure",
+        "train-028-pure",
+        "train-029-pure",
+        "train-030-pure",
+        "train-031-pure",
+        "train-033-pure",
+        "train-036-pure",
+        "train-038-pure"
+      ],
+      "trained_groups": [
+        "group-train-003",
+        "group-train-004",
+        "group-train-005",
+        "group-train-006",
+        "group-train-009",
+        "group-train-011",
+        "group-train-013",
+        "group-train-020",
+        "group-train-027",
+        "group-train-028",
+        "group-train-029",
+        "group-train-030",
+        "group-train-031",
+        "group-train-033",
+        "group-train-036",
+        "group-train-038"
+      ]
+    },
+    {
+      "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/oof_checkpoints/B/42/fold1/best.pt",
+      "checkpoint_sha256": "abf34dbd814a14480ac5a3e62f3d586f178509351815ed43963db55ea8d0db69",
+      "earlystop_groups": [
+        "group-train-001",
+        "group-train-007",
+        "group-train-014",
+        "group-train-023"
+      ],
+      "earlystop_ids": [
+        "train-001-pure",
+        "train-007-pure",
+        "train-014-pure",
+        "train-023-pure"
+      ],
+      "fold": 1,
+      "held_out_groups": [
+        "group-train-000",
+        "group-train-003",
+        "group-train-004",
+        "group-train-005",
+        "group-train-006",
+        "group-train-009",
+        "group-train-010",
+        "group-train-011",
+        "group-train-013",
+        "group-train-018",
+        "group-train-020",
+        "group-train-027",
+        "group-train-028",
+        "group-train-029",
+        "group-train-030",
+        "group-train-031",
+        "group-train-032",
+        "group-train-033",
+        "group-train-036",
+        "group-train-038"
+      ],
+      "held_out_ids": [
+        "train-000-pure",
+        "train-003-pure",
+        "train-004-pure",
+        "train-005-pure",
+        "train-006-pure",
+        "train-009-pure",
+        "train-010-pure",
+        "train-011-pure",
+        "train-013-pure",
+        "train-018-pure",
+        "train-020-pure",
+        "train-027-pure",
+        "train-028-pure",
+        "train-029-pure",
+        "train-030-pure",
+        "train-031-pure",
+        "train-032-pure",
+        "train-033-pure",
+        "train-036-pure",
+        "train-038-pure"
+      ],
+      "selected_epoch": 2,
+      "train_ids": [
+        "train-002-pure",
+        "train-008-pure",
+        "train-012-pure",
+        "train-015-pure",
+        "train-016-pure",
+        "train-017-pure",
+        "train-019-pure",
+        "train-021-pure",
+        "train-022-pure",
+        "train-024-pure",
+        "train-025-pure",
+        "train-026-pure",
+        "train-034-pure",
+        "train-035-pure",
+        "train-037-pure",
+        "train-039-pure"
+      ],
+      "trained_groups": [
+        "group-train-002",
+        "group-train-008",
+        "group-train-012",
+        "group-train-015",
+        "group-train-016",
+        "group-train-017",
+        "group-train-019",
+        "group-train-021",
+        "group-train-022",
+        "group-train-024",
+        "group-train-025",
+        "group-train-026",
+        "group-train-034",
+        "group-train-035",
+        "group-train-037",
+        "group-train-039"
+      ]
+    }
+  ],
+  "groups": {
+    "train-000-pure": [
+      "group-train-000"
+    ],
+    "train-001-pure": [
+      "group-train-001"
+    ],
+    "train-002-pure": [
+      "group-train-002"
+    ],
+    "train-003-pure": [
+      "group-train-003"
+    ],
+    "train-004-pure": [
+      "group-train-004"
+    ],
+    "train-005-pure": [
+      "group-train-005"
+    ],
+    "train-006-pure": [
+      "group-train-006"
+    ],
+    "train-007-pure": [
+      "group-train-007"
+    ],
+    "train-008-pure": [
+      "group-train-008"
+    ],
+    "train-009-pure": [
+      "group-train-009"
+    ],
+    "train-010-pure": [
+      "group-train-010"
+    ],
+    "train-011-pure": [
+      "group-train-011"
+    ],
+    "train-012-pure": [
+      "group-train-012"
+    ],
+    "train-013-pure": [
+      "group-train-013"
+    ],
+    "train-014-pure": [
+      "group-train-014"
+    ],
+    "train-015-pure": [
+      "group-train-015"
+    ],
+    "train-016-pure": [
+      "group-train-016"
+    ],
+    "train-017-pure": [
+      "group-train-017"
+    ],
+    "train-018-pure": [
+      "group-train-018"
+    ],
+    "train-019-pure": [
+      "group-train-019"
+    ],
+    "train-020-pure": [
+      "group-train-020"
+    ],
+    "train-021-pure": [
+      "group-train-021"
+    ],
+    "train-022-pure": [
+      "group-train-022"
+    ],
+    "train-023-pure": [
+      "group-train-023"
+    ],
+    "train-024-pure": [
+      "group-train-024"
+    ],
+    "train-025-pure": [
+      "group-train-025"
+    ],
+    "train-026-pure": [
+      "group-train-026"
+    ],
+    "train-027-pure": [
+      "group-train-027"
+    ],
+    "train-028-pure": [
+      "group-train-028"
+    ],
+    "train-029-pure": [
+      "group-train-029"
+    ],
+    "train-030-pure": [
+      "group-train-030"
+    ],
+    "train-031-pure": [
+      "group-train-031"
+    ],
+    "train-032-pure": [
+      "group-train-032"
+    ],
+    "train-033-pure": [
+      "group-train-033"
+    ],
+    "train-034-pure": [
+      "group-train-034"
+    ],
+    "train-035-pure": [
+      "group-train-035"
+    ],
+    "train-036-pure": [
+      "group-train-036"
+    ],
+    "train-037-pure": [
+      "group-train-037"
+    ],
+    "train-038-pure": [
+      "group-train-038"
+    ],
+    "train-039-pure": [
+      "group-train-039"
+    ]
+  },
+  "held_out_group": {
+    "train-000-pure": [
+      "group-train-000"
+    ],
+    "train-001-pure": [
+      "group-train-001"
+    ],
+    "train-002-pure": [
+      "group-train-002"
+    ],
+    "train-003-pure": [
+      "group-train-003"
+    ],
+    "train-004-pure": [
+      "group-train-004"
+    ],
+    "train-005-pure": [
+      "group-train-005"
+    ],
+    "train-006-pure": [
+      "group-train-006"
+    ],
+    "train-007-pure": [
+      "group-train-007"
+    ],
+    "train-008-pure": [
+      "group-train-008"
+    ],
+    "train-009-pure": [
+      "group-train-009"
+    ],
+    "train-010-pure": [
+      "group-train-010"
+    ],
+    "train-011-pure": [
+      "group-train-011"
+    ],
+    "train-012-pure": [
+      "group-train-012"
+    ],
+    "train-013-pure": [
+      "group-train-013"
+    ],
+    "train-014-pure": [
+      "group-train-014"
+    ],
+    "train-015-pure": [
+      "group-train-015"
+    ],
+    "train-016-pure": [
+      "group-train-016"
+    ],
+    "train-017-pure": [
+      "group-train-017"
+    ],
+    "train-018-pure": [
+      "group-train-018"
+    ],
+    "train-019-pure": [
+      "group-train-019"
+    ],
+    "train-020-pure": [
+      "group-train-020"
+    ],
+    "train-021-pure": [
+      "group-train-021"
+    ],
+    "train-022-pure": [
+      "group-train-022"
+    ],
+    "train-023-pure": [
+      "group-train-023"
+    ],
+    "train-024-pure": [
+      "group-train-024"
+    ],
+    "train-025-pure": [
+      "group-train-025"
+    ],
+    "train-026-pure": [
+      "group-train-026"
+    ],
+    "train-027-pure": [
+      "group-train-027"
+    ],
+    "train-028-pure": [
+      "group-train-028"
+    ],
+    "train-029-pure": [
+      "group-train-029"
+    ],
+    "train-030-pure": [
+      "group-train-030"
+    ],
+    "train-031-pure": [
+      "group-train-031"
+    ],
+    "train-032-pure": [
+      "group-train-032"
+    ],
+    "train-033-pure": [
+      "group-train-033"
+    ],
+    "train-034-pure": [
+      "group-train-034"
+    ],
+    "train-035-pure": [
+      "group-train-035"
+    ],
+    "train-036-pure": [
+      "group-train-036"
+    ],
+    "train-037-pure": [
+      "group-train-037"
+    ],
+    "train-038-pure": [
+      "group-train-038"
+    ],
+    "train-039-pure": [
+      "group-train-039"
+    ]
+  },
+  "labels": {
+    "train-000-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-001-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-002-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-003-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-004-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-005-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-006-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-007-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-008-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-009-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-010-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-011-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-012-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-013-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-014-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-015-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-016-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-017-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-018-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-019-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-020-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-021-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-022-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-023-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-024-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-025-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-026-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-027-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-028-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-029-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-030-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-031-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-032-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-033-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-034-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-035-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-036-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-037-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "train-038-pure": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "train-039-pure": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    }
+  },
+  "oof_proofs": [
+    {
+      "checkpoint_hashes": [
+        "4f8f128cc9e580aabe8310e533259c5657c35b4707f1e07dd1cf30acd981c975",
+        "abf34dbd814a14480ac5a3e62f3d586f178509351815ed43963db55ea8d0db69"
+      ],
+      "folds": [
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/oof_checkpoints/B/42/fold0/best.pt",
+          "checkpoint_sha256": "4f8f128cc9e580aabe8310e533259c5657c35b4707f1e07dd1cf30acd981c975",
+          "earlystop_groups": [
+            "group-train-000",
+            "group-train-010",
+            "group-train-018",
+            "group-train-032"
+          ],
+          "earlystop_ids": [
+            "train-000-pure",
+            "train-010-pure",
+            "train-018-pure",
+            "train-032-pure"
+          ],
+          "fold": 0,
+          "held_out_groups": [
+            "group-train-001",
+            "group-train-002",
+            "group-train-007",
+            "group-train-008",
+            "group-train-012",
+            "group-train-014",
+            "group-train-015",
+            "group-train-016",
+            "group-train-017",
+            "group-train-019",
+            "group-train-021",
+            "group-train-022",
+            "group-train-023",
+            "group-train-024",
+            "group-train-025",
+            "group-train-026",
+            "group-train-034",
+            "group-train-035",
+            "group-train-037",
+            "group-train-039"
+          ],
+          "held_out_ids": [
+            "train-001-pure",
+            "train-002-pure",
+            "train-007-pure",
+            "train-008-pure",
+            "train-012-pure",
+            "train-014-pure",
+            "train-015-pure",
+            "train-016-pure",
+            "train-017-pure",
+            "train-019-pure",
+            "train-021-pure",
+            "train-022-pure",
+            "train-023-pure",
+            "train-024-pure",
+            "train-025-pure",
+            "train-026-pure",
+            "train-034-pure",
+            "train-035-pure",
+            "train-037-pure",
+            "train-039-pure"
+          ],
+          "selected_epoch": 2,
+          "train_ids": [
+            "train-003-pure",
+            "train-004-pure",
+            "train-005-pure",
+            "train-006-pure",
+            "train-009-pure",
+            "train-011-pure",
+            "train-013-pure",
+            "train-020-pure",
+            "train-027-pure",
+            "train-028-pure",
+            "train-029-pure",
+            "train-030-pure",
+            "train-031-pure",
+            "train-033-pure",
+            "train-036-pure",
+            "train-038-pure"
+          ],
+          "trained_groups": [
+            "group-train-003",
+            "group-train-004",
+            "group-train-005",
+            "group-train-006",
+            "group-train-009",
+            "group-train-011",
+            "group-train-013",
+            "group-train-020",
+            "group-train-027",
+            "group-train-028",
+            "group-train-029",
+            "group-train-030",
+            "group-train-031",
+            "group-train-033",
+            "group-train-036",
+            "group-train-038"
+          ]
+        },
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/oof_checkpoints/B/42/fold1/best.pt",
+          "checkpoint_sha256": "abf34dbd814a14480ac5a3e62f3d586f178509351815ed43963db55ea8d0db69",
+          "earlystop_groups": [
+            "group-train-001",
+            "group-train-007",
+            "group-train-014",
+            "group-train-023"
+          ],
+          "earlystop_ids": [
+            "train-001-pure",
+            "train-007-pure",
+            "train-014-pure",
+            "train-023-pure"
+          ],
+          "fold": 1,
+          "held_out_groups": [
+            "group-train-000",
+            "group-train-003",
+            "group-train-004",
+            "group-train-005",
+            "group-train-006",
+            "group-train-009",
+            "group-train-010",
+            "group-train-011",
+            "group-train-013",
+            "group-train-018",
+            "group-train-020",
+            "group-train-027",
+            "group-train-028",
+            "group-train-029",
+            "group-train-030",
+            "group-train-031",
+            "group-train-032",
+            "group-train-033",
+            "group-train-036",
+            "group-train-038"
+          ],
+          "held_out_ids": [
+            "train-000-pure",
+            "train-003-pure",
+            "train-004-pure",
+            "train-005-pure",
+            "train-006-pure",
+            "train-009-pure",
+            "train-010-pure",
+            "train-011-pure",
+            "train-013-pure",
+            "train-018-pure",
+            "train-020-pure",
+            "train-027-pure",
+            "train-028-pure",
+            "train-029-pure",
+            "train-030-pure",
+            "train-031-pure",
+            "train-032-pure",
+            "train-033-pure",
+            "train-036-pure",
+            "train-038-pure"
+          ],
+          "selected_epoch": 2,
+          "train_ids": [
+            "train-002-pure",
+            "train-008-pure",
+            "train-012-pure",
+            "train-015-pure",
+            "train-016-pure",
+            "train-017-pure",
+            "train-019-pure",
+            "train-021-pure",
+            "train-022-pure",
+            "train-024-pure",
+            "train-025-pure",
+            "train-026-pure",
+            "train-034-pure",
+            "train-035-pure",
+            "train-037-pure",
+            "train-039-pure"
+          ],
+          "trained_groups": [
+            "group-train-002",
+            "group-train-008",
+            "group-train-012",
+            "group-train-015",
+            "group-train-016",
+            "group-train-017",
+            "group-train-019",
+            "group-train-021",
+            "group-train-022",
+            "group-train-024",
+            "group-train-025",
+            "group-train-026",
+            "group-train-034",
+            "group-train-035",
+            "group-train-037",
+            "group-train-039"
+          ]
+        }
+      ],
+      "held_out_group": {
+        "train-000-pure": [
+          "group-train-000"
+        ],
+        "train-001-pure": [
+          "group-train-001"
+        ],
+        "train-002-pure": [
+          "group-train-002"
+        ],
+        "train-003-pure": [
+          "group-train-003"
+        ],
+        "train-004-pure": [
+          "group-train-004"
+        ],
+        "train-005-pure": [
+          "group-train-005"
+        ],
+        "train-006-pure": [
+          "group-train-006"
+        ],
+        "train-007-pure": [
+          "group-train-007"
+        ],
+        "train-008-pure": [
+          "group-train-008"
+        ],
+        "train-009-pure": [
+          "group-train-009"
+        ],
+        "train-010-pure": [
+          "group-train-010"
+        ],
+        "train-011-pure": [
+          "group-train-011"
+        ],
+        "train-012-pure": [
+          "group-train-012"
+        ],
+        "train-013-pure": [
+          "group-train-013"
+        ],
+        "train-014-pure": [
+          "group-train-014"
+        ],
+        "train-015-pure": [
+          "group-train-015"
+        ],
+        "train-016-pure": [
+          "group-train-016"
+        ],
+        "train-017-pure": [
+          "group-train-017"
+        ],
+        "train-018-pure": [
+          "group-train-018"
+        ],
+        "train-019-pure": [
+          "group-train-019"
+        ],
+        "train-020-pure": [
+          "group-train-020"
+        ],
+        "train-021-pure": [
+          "group-train-021"
+        ],
+        "train-022-pure": [
+          "group-train-022"
+        ],
+        "train-023-pure": [
+          "group-train-023"
+        ],
+        "train-024-pure": [
+          "group-train-024"
+        ],
+        "train-025-pure": [
+          "group-train-025"
+        ],
+        "train-026-pure": [
+          "group-train-026"
+        ],
+        "train-027-pure": [
+          "group-train-027"
+        ],
+        "train-028-pure": [
+          "group-train-028"
+        ],
+        "train-029-pure": [
+          "group-train-029"
+        ],
+        "train-030-pure": [
+          "group-train-030"
+        ],
+        "train-031-pure": [
+          "group-train-031"
+        ],
+        "train-032-pure": [
+          "group-train-032"
+        ],
+        "train-033-pure": [
+          "group-train-033"
+        ],
+        "train-034-pure": [
+          "group-train-034"
+        ],
+        "train-035-pure": [
+          "group-train-035"
+        ],
+        "train-036-pure": [
+          "group-train-036"
+        ],
+        "train-037-pure": [
+          "group-train-037"
+        ],
+        "train-038-pure": [
+          "group-train-038"
+        ],
+        "train-039-pure": [
+          "group-train-039"
+        ]
+      },
+      "name": "music",
+      "trained_groups": {
+        "train-000-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-001-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-002-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-003-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-004-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-005-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-006-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-007-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-008-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-009-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-010-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-011-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-012-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-013-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-014-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-015-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-016-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-017-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-018-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-019-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-020-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-021-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-022-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-023-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-024-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-025-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-026-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-027-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-028-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-029-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-030-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-031-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-032-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-033-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-034-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-035-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-036-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-037-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ],
+        "train-038-pure": [
+          "group-train-002",
+          "group-train-008",
+          "group-train-012",
+          "group-train-015",
+          "group-train-016",
+          "group-train-017",
+          "group-train-019",
+          "group-train-021",
+          "group-train-022",
+          "group-train-024",
+          "group-train-025",
+          "group-train-026",
+          "group-train-034",
+          "group-train-035",
+          "group-train-037",
+          "group-train-039"
+        ],
+        "train-039-pure": [
+          "group-train-003",
+          "group-train-004",
+          "group-train-005",
+          "group-train-006",
+          "group-train-009",
+          "group-train-011",
+          "group-train-013",
+          "group-train-020",
+          "group-train-027",
+          "group-train-028",
+          "group-train-029",
+          "group-train-030",
+          "group-train-031",
+          "group-train-033",
+          "group-train-036",
+          "group-train-038"
+        ]
+      }
+    }
+  ],
+  "predictions": {
+    "train-000-pure": {
+      "FILE_FAKE_PROB": 0.40231277133963417,
+      "MUSIC_FAKE_PROB": 0.47330912947654724,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-001-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5367984771728516,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-002-pure": {
+      "FILE_FAKE_PROB": 0.3936777091181334,
+      "MUSIC_FAKE_PROB": 0.4631502330303192,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-003-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5316441059112549,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-004-pure": {
+      "FILE_FAKE_PROB": 0.3938942975021611,
+      "MUSIC_FAKE_PROB": 0.463405042886734,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-005-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5257502198219299,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-006-pure": {
+      "FILE_FAKE_PROB": 0.3783921675721942,
+      "MUSIC_FAKE_PROB": 0.4451672434806824,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-007-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5333989262580872,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-008-pure": {
+      "FILE_FAKE_PROB": 0.39095875227335597,
+      "MUSIC_FAKE_PROB": 0.4599514603614807,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-009-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5532198548316956,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-010-pure": {
+      "FILE_FAKE_PROB": 0.41164438687056304,
+      "MUSIC_FAKE_PROB": 0.4842875003814697,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-011-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5540469884872437,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-012-pure": {
+      "FILE_FAKE_PROB": 0.40004966338030457,
+      "MUSIC_FAKE_PROB": 0.4706466495990753,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-013-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5096250772476196,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-014-pure": {
+      "FILE_FAKE_PROB": 0.40457423272060566,
+      "MUSIC_FAKE_PROB": 0.47596967220306396,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-015-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5527174472808838,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-016-pure": {
+      "FILE_FAKE_PROB": 0.4171977890329579,
+      "MUSIC_FAKE_PROB": 0.49082091450691223,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-017-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5041245818138123,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-018-pure": {
+      "FILE_FAKE_PROB": 0.38525262363525314,
+      "MUSIC_FAKE_PROB": 0.4532383680343628,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-019-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.536432683467865,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-020-pure": {
+      "FILE_FAKE_PROB": 0.4022783958499119,
+      "MUSIC_FAKE_PROB": 0.47326868772506714,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-021-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5388619303703308,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-022-pure": {
+      "FILE_FAKE_PROB": 0.39475558464332394,
+      "MUSIC_FAKE_PROB": 0.46441832184791565,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-023-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5507194995880127,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-024-pure": {
+      "FILE_FAKE_PROB": 0.3958051896847046,
+      "MUSIC_FAKE_PROB": 0.4656531512737274,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-025-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5312031507492065,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-026-pure": {
+      "FILE_FAKE_PROB": 0.41013536113529625,
+      "MUSIC_FAKE_PROB": 0.4825121760368347,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-027-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5095375180244446,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-028-pure": {
+      "FILE_FAKE_PROB": 0.38407633338819736,
+      "MUSIC_FAKE_PROB": 0.45185449719429016,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-029-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5211527943611145,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-030-pure": {
+      "FILE_FAKE_PROB": 0.3975883327186338,
+      "MUSIC_FAKE_PROB": 0.4677509665489197,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-031-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5468508005142212,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-032-pure": {
+      "FILE_FAKE_PROB": 0.39141394252746053,
+      "MUSIC_FAKE_PROB": 0.4604869782924652,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-033-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5322023630142212,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-034-pure": {
+      "FILE_FAKE_PROB": 0.3864693437139941,
+      "MUSIC_FAKE_PROB": 0.4546698033809662,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-035-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5364884734153748,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-036-pure": {
+      "FILE_FAKE_PROB": 0.4091469834768624,
+      "MUSIC_FAKE_PROB": 0.481349378824234,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-037-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.543761670589447,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-038-pure": {
+      "FILE_FAKE_PROB": 0.3899814700198583,
+      "MUSIC_FAKE_PROB": 0.4588017165660858,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "train-039-pure": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5516217350959778,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    }
+  },
+  "schema_version": 1,
+  "strata": {
+    "train-000-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-000",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-001-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-001",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-002-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-002",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-003-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-003",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-004-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-004",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-005-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-005",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-006-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-006",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-007-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-007",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-008-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-008",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-009-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-009",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-010-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-010",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-011-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-011",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-012-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-012",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-013-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-013",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-014-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-014",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-015-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-015",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-016-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-016",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-017-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-017",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-018-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-018",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-019-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-019",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-020-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-020",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-021-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-021",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-022-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-022",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-023-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-023",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-024-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-024",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-025-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-025",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-026-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-026",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-027-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-027",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-028-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-028",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-029-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-029",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-030-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-030",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-031-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-031",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-032-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-032",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-033-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-033",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-034-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-034",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-035-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-035",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-036-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-036",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-037-pure": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "pair-037",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-038-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-038",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    },
+    "train-039-pure": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "pair-039",
+      "source": "deterministic-algorithm-fixture",
+      "view": "pure"
+    }
+  },
+  "trained_groups": {
+    "train-000-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-001-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-002-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-003-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-004-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-005-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-006-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-007-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-008-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-009-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-010-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-011-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-012-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-013-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-014-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-015-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-016-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-017-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-018-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-019-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-020-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-021-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-022-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-023-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-024-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-025-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-026-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-027-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-028-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-029-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-030-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-031-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-032-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-033-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-034-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-035-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-036-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-037-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ],
+    "train-038-pure": [
+      "group-train-002",
+      "group-train-008",
+      "group-train-012",
+      "group-train-015",
+      "group-train-016",
+      "group-train-017",
+      "group-train-019",
+      "group-train-021",
+      "group-train-022",
+      "group-train-024",
+      "group-train-025",
+      "group-train-026",
+      "group-train-034",
+      "group-train-035",
+      "group-train-037",
+      "group-train-039"
+    ],
+    "train-039-pure": [
+      "group-train-003",
+      "group-train-004",
+      "group-train-005",
+      "group-train-006",
+      "group-train-009",
+      "group-train-011",
+      "group-train-013",
+      "group-train-020",
+      "group-train-027",
+      "group-train-028",
+      "group-train-029",
+      "group-train-030",
+      "group-train-031",
+      "group-train-033",
+      "group-train-036",
+      "group-train-038"
+    ]
+  },
+  "upstream_identity": {
+    "checkpoint_sha256": "4f8f128cc9e580aabe8310e533259c5657c35b4707f1e07dd1cf30acd981c975",
+    "model_recipe_identity": "143f380cb893157a3263ea2650c0ade460f066093a3c491afe947e5622880bf5",
+    "records_identity": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+    "source_sha256": {
+      "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+      "redesign_fit.py": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906",
+      "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+      "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+      "redesign_predictions.py": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+      "redesign_train.py": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+    },
+    "training_manifest_sha256": "fe2be3aab6e0583aea2f5490e5e1e1f9d33268027bb21d62f662a5fbae8e23a6",
+    "upstream_family_identity": "69628e4568cef982531d4b145c196dd93574f4fefa6a4735334cc899fae7e0aa",
+    "upstream_family_payload": {
+      "model_recipe_identity": "143f380cb893157a3263ea2650c0ade460f066093a3c491afe947e5622880bf5",
+      "records_identity": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+      "source_sha256": {
+        "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+        "redesign_fit.py": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906",
+        "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+        "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+        "redesign_predictions.py": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+        "redesign_train.py": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+      },
+      "training_manifest_sha256": "fe2be3aab6e0583aea2f5490e5e1e1f9d33268027bb21d62f662a5fbae8e23a6"
+    }
+  },
+  "window_scores": {
+    "train-000-pure": {
+      "music_fake": [
+        0.48994940519332886,
+        0.47729212045669556,
+        0.49210861325263977
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-001-pure": {
+      "music_fake": [
+        0.5249913930892944,
+        0.5586990714073181,
+        0.5067574977874756
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-002-pure": {
+      "music_fake": [
+        0.46230486035346985,
+        0.45655858516693115,
+        0.488666296005249
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-003-pure": {
+      "music_fake": [
+        0.5330578684806824,
+        0.531541645526886,
+        0.5239018201828003
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-004-pure": {
+      "music_fake": [
+        0.48763447999954224,
+        0.4648479223251343,
+        0.4936486482620239
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-005-pure": {
+      "music_fake": [
+        0.5337851047515869,
+        0.5243211388587952,
+        0.5313057899475098
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-006-pure": {
+      "music_fake": [
+        0.4857901930809021,
+        0.49146896600723267,
+        0.4479772448539734
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-007-pure": {
+      "music_fake": [
+        0.5134767889976501,
+        0.5319602489471436,
+        0.53275465965271
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-008-pure": {
+      "music_fake": [
+        0.49822092056274414,
+        0.4736654758453369,
+        0.485537052154541
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-009-pure": {
+      "music_fake": [
+        0.5323649644851685,
+        0.5527275800704956,
+        0.5235792994499207
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-010-pure": {
+      "music_fake": [
+        0.4912608563899994,
+        0.501737117767334,
+        0.4820023477077484
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-011-pure": {
+      "music_fake": [
+        0.5353230237960815,
+        0.5500276684761047,
+        0.5472455024719238
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-012-pure": {
+      "music_fake": [
+        0.48013272881507874,
+        0.4812033176422119,
+        0.47266682982444763
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-013-pure": {
+      "music_fake": [
+        0.518635630607605,
+        0.5038790702819824,
+        0.5168517231941223
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-014-pure": {
+      "music_fake": [
+        0.49492672085762024,
+        0.4724772572517395,
+        0.47686687111854553
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-015-pure": {
+      "music_fake": [
+        0.5437870621681213,
+        0.5369895696640015,
+        0.5451010465621948
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-016-pure": {
+      "music_fake": [
+        0.4944764971733093,
+        0.5022820830345154,
+        0.48961570858955383
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-017-pure": {
+      "music_fake": [
+        0.5401878356933594,
+        0.5326959490776062,
+        0.4717656373977661
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-018-pure": {
+      "music_fake": [
+        0.46736836433410645,
+        0.4807860553264618,
+        0.4863930344581604
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-019-pure": {
+      "music_fake": [
+        0.5128849744796753,
+        0.543133556842804,
+        0.524499237537384
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-020-pure": {
+      "music_fake": [
+        0.4881683588027954,
+        0.4699728190898895,
+        0.4883172810077667
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-021-pure": {
+      "music_fake": [
+        0.5212259888648987,
+        0.5624692440032959,
+        0.5214215517044067
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-022-pure": {
+      "music_fake": [
+        0.4984818696975708,
+        0.46209219098091125,
+        0.48874324560165405
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-023-pure": {
+      "music_fake": [
+        0.537626326084137,
+        0.5370362997055054,
+        0.525655210018158
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-024-pure": {
+      "music_fake": [
+        0.48478204011917114,
+        0.4984821677207947,
+        0.4794701635837555
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-025-pure": {
+      "music_fake": [
+        0.49747583270072937,
+        0.5269805788993835,
+        0.5262840986251831
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-026-pure": {
+      "music_fake": [
+        0.4791845679283142,
+        0.4783124327659607,
+        0.4850434958934784
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-027-pure": {
+      "music_fake": [
+        0.5231564044952393,
+        0.49434155225753784,
+        0.514114499092102
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-028-pure": {
+      "music_fake": [
+        0.4784334897994995,
+        0.4804845154285431,
+        0.47147083282470703
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-029-pure": {
+      "music_fake": [
+        0.491281658411026,
+        0.5652044415473938,
+        0.49906229972839355
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-030-pure": {
+      "music_fake": [
+        0.49340659379959106,
+        0.4919855296611786,
+        0.472341924905777
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-031-pure": {
+      "music_fake": [
+        0.5042331218719482,
+        0.5381671190261841,
+        0.5473823547363281
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-032-pure": {
+      "music_fake": [
+        0.4834318161010742,
+        0.48093271255493164,
+        0.4698370397090912
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-033-pure": {
+      "music_fake": [
+        0.51909339427948,
+        0.5485792756080627,
+        0.5323351621627808
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-034-pure": {
+      "music_fake": [
+        0.47461482882499695,
+        0.45921194553375244,
+        0.48167893290519714
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-035-pure": {
+      "music_fake": [
+        0.528903603553772,
+        0.54456627368927,
+        0.5177400708198547
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-036-pure": {
+      "music_fake": [
+        0.4997905194759369,
+        0.4900822639465332,
+        0.48671892285346985
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-037-pure": {
+      "music_fake": [
+        0.5409011840820312,
+        0.5506821870803833,
+        0.504652202129364
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-038-pure": {
+      "music_fake": [
+        0.4823858439922333,
+        0.4892122447490692,
+        0.48507073521614075
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "train-039-pure": {
+      "music_fake": [
+        0.5260598063468933,
+        0.5484045743942261,
+        0.5444328784942627
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    }
+  }
+}

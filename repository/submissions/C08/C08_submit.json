@@ -1,0 +1,34 @@
+{
+  "file": "C08_submit.zip",
+  "sha256": "0c3c328947c2f6d83a07763ac482a945004f2bad0c3df6d6b16bb160b18f9ead",
+  "bytes": 5381446417,
+  "expanded_bytes": 5381438609,
+  "choice": {
+    "candidate": "C08",
+    "seed": 41,
+    "selected_epoch": 12,
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.0,
+      "nsynth_mass": 0.0,
+      "seed": 41,
+      "dropout": 0.0,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true
+    },
+    "checkpoint_sha256": "a32d8b51337e35a3395e83bdcc0d367d28429e7159f015a307db4369559c64b3",
+    "parameters": 88257,
+    "full_data_retraining": false,
+    "ensemble": false
+  },
+  "crc_verified": true,
+  "gpu_end_to_end_verified": false,
+  "official_environment": "Python 3.11, torch 2.7.1 CUDA 12.8",
+  "dependency_source": "https://dacon.io/competitions/official/236749/overview/evaluation"
+}

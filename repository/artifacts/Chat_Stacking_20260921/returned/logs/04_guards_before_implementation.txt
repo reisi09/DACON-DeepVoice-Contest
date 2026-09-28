@@ -1,0 +1,48 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+____________ test_parent_bridges_and_training_exposure_are_refused _____________
+
+    def test_parent_bridges_and_training_exposure_are_refused():
+>       from dacon_stacking.provenance import connected_groups, validate_manifest
+E       ModuleNotFoundError: No module named 'dacon_stacking.provenance'
+
+tests/test_guards.py:15: ModuleNotFoundError
+_____________ test_masked_unknown_is_not_real_and_total_stays_null _____________
+
+    def test_masked_unknown_is_not_real_and_total_stays_null():
+>       from dacon_stacking.evaluation import metrics_report, known_label
+E       ModuleNotFoundError: No module named 'dacon_stacking.evaluation'
+
+tests/test_guards.py:31: ModuleNotFoundError
+___________ test_fold_preprocessing_and_estimator_use_training_only ____________
+
+    def test_fold_preprocessing_and_estimator_use_training_only():
+>       from dacon_stacking.models import fit_estimator, predict_estimator
+E       ModuleNotFoundError: No module named 'dacon_stacking.models'
+
+tests/test_guards.py:44: ModuleNotFoundError
+___________ test_xgb_json_reload_order_and_single_file_independence ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_xgb_json_reload_order_and0')
+
+    def test_xgb_json_reload_order_and_single_file_independence(tmp_path):
+>       from dacon_stacking.models import fit_estimator, predict_estimator, save_bundle, load_bundle
+E       ModuleNotFoundError: No module named 'dacon_stacking.models'
+
+tests/test_guards.py:59: ModuleNotFoundError
+_________________ test_ood_requires_immutable_production_lock __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_ood_requires_immutable_pr0')
+
+    def test_ood_requires_immutable_production_lock(tmp_path):
+>       from dacon_stacking.workflow import verify_ood_lock
+E       ModuleNotFoundError: No module named 'dacon_stacking.workflow'
+
+tests/test_guards.py:77: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_guards.py::test_parent_bridges_and_training_exposure_are_refused - ModuleNotFoundError: No module named 'dacon_stacking.provenance'
+FAILED tests/test_guards.py::test_masked_unknown_is_not_real_and_total_stays_null - ModuleNotFoundError: No module named 'dacon_stacking.evaluation'
+FAILED tests/test_guards.py::test_fold_preprocessing_and_estimator_use_training_only - ModuleNotFoundError: No module named 'dacon_stacking.models'
+FAILED tests/test_guards.py::test_xgb_json_reload_order_and_single_file_independence - ModuleNotFoundError: No module named 'dacon_stacking.models'
+FAILED tests/test_guards.py::test_ood_requires_immutable_production_lock - ModuleNotFoundError: No module named 'dacon_stacking.workflow'
+5 failed in 0.11s

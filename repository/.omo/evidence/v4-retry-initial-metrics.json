@@ -1,0 +1,722 @@
+{
+  "first_probe": {
+    "absolute_metric_delta_candidate_minus_g0": {
+      "file_eer": -0.042857142857142816,
+      "music_eer": -0.12928571428571423,
+      "music_presence_auc": -3.3306690738754696e-16,
+      "voice_eer": 0.0,
+      "voice_presence_auc": null
+    },
+    "absolute_metrics": {
+      "file_eer": 0.37142857142857144,
+      "music_eer": 0.41214285714285714,
+      "music_presence_auc": 0.9954411764705883,
+      "voice_eer": 0.15000000000000002,
+      "voice_presence_auc": null
+    },
+    "absolute_score": null,
+    "controlled_file_eer": {
+      "mixture": {
+        "G0": 0.5583333333333333,
+        "candidate": 0.44999999999999996
+      },
+      "speech": {
+        "G0": 0.0,
+        "candidate": 0.0
+      },
+      "splice": {
+        "G0": 0.4,
+        "candidate": 0.5
+      }
+    },
+    "epochs_completed": 1,
+    "final_fixed_update_rank_score": -0.18899999999999997,
+    "fixed_updates": true,
+    "intermediate_complete_epoch": {
+      "optimizer_steps": 35,
+      "rank_score": -0.16199999999999998
+    },
+    "music_slices": {
+      "music_ood": {
+        "D": -0.18899999999999997,
+        "G0": {
+          "file": {
+            "auc": 0.42,
+            "eer": 0.4,
+            "n": 20,
+            "unknown": 0
+          },
+          "music": {
+            "auc": 0.58,
+            "eer": 0.4,
+            "n": 20,
+            "unknown": 0
+          }
+        },
+        "bootstrap": {
+          "class_group_support": {
+            "0": 10,
+            "1": 10
+          },
+          "lineage_components": 10,
+          "p10_delta": -0.2025,
+          "resamples": 2000,
+          "seed": 20260913,
+          "valid_rate": 1.0,
+          "valid_resamples": 2000,
+          "win_rate": 0.02
+        },
+        "candidate": {
+          "file": {
+            "auc": 0.33999999999999997,
+            "eer": 0.7,
+            "n": 20,
+            "unknown": 0
+          },
+          "music": {
+            "auc": 0.44,
+            "eer": 0.6,
+            "n": 20,
+            "unknown": 0
+          }
+        }
+      },
+      "music_seen": {
+        "D": -0.022499999999999996,
+        "G0": {
+          "file": {
+            "auc": 0.48666666666666664,
+            "eer": 0.5,
+            "n": 40,
+            "unknown": 0
+          },
+          "music": {
+            "auc": 0.5666666666666667,
+            "eer": 0.4,
+            "n": 40,
+            "unknown": 0
+          }
+        },
+        "bootstrap": {
+          "class_group_support": {
+            "0": 10,
+            "1": 10
+          },
+          "lineage_components": 10,
+          "p10_delta": -0.13649999999999998,
+          "resamples": 2000,
+          "seed": 20260913,
+          "valid_rate": 1.0,
+          "valid_resamples": 2000,
+          "win_rate": 0.359
+        },
+        "candidate": {
+          "file": {
+            "auc": 0.54,
+            "eer": 0.5,
+            "n": 40,
+            "unknown": 0
+          },
+          "music": {
+            "auc": 0.5533333333333333,
+            "eer": 0.48333333333333334,
+            "n": 40,
+            "unknown": 0
+          }
+        }
+      }
+    },
+    "name": "probe_sonics_1e-05",
+    "quality_gates_without_resource_forecast": {
+      "mixture_file_eer": true,
+      "ood_bootstrap_p10": false,
+      "ood_bootstrap_valid": true,
+      "ood_bootstrap_win": false,
+      "ood_class_support": true,
+      "ood_file_eer": false,
+      "ood_gain": false,
+      "ood_music_auc": false,
+      "ood_music_eer": false,
+      "seen_bootstrap_p10": false,
+      "seen_bootstrap_valid": true,
+      "seen_bootstrap_win": false,
+      "seen_class_support": true,
+      "seen_file_eer": true,
+      "seen_gain": false,
+      "seen_music_auc": false,
+      "seen_music_eer": false,
+      "speech_file_eer": true
+    },
+    "seconds": 48.49628358100017,
+    "status": "completed",
+    "terminal_contract_sha256": "67e956bd286b1b8c5cb03cbd244665dccfa2f40a70a78670229eb5a740afba6f",
+    "trainable_parameters": 17172493,
+    "updates": 60,
+    "weights_sha256": "4146f6646cb1df03bacbc55aea064997becc329151389d820496c6c32e17bc2a",
+    "window_exposures": 1916
+  },
+  "g0": {
+    "absolute_metrics": {
+      "file_eer": 0.41428571428571426,
+      "music_eer": 0.5414285714285714,
+      "music_presence_auc": 0.9954411764705886,
+      "voice_eer": 0.15000000000000002,
+      "voice_presence_auc": null
+    },
+    "absolute_score": null,
+    "controlled_slices": {
+      "mixture": {
+        "file": {
+          "auc": 0.47,
+          "eer": 0.5583333333333333,
+          "n": 80,
+          "unknown": 0
+        },
+        "music": {
+          "auc": 0.404375,
+          "eer": 0.6,
+          "n": 80,
+          "unknown": 0
+        }
+      },
+      "speech": {
+        "file": {
+          "auc": 1.0,
+          "eer": 0.0,
+          "n": 40,
+          "unknown": 0
+        },
+        "music": {
+          "auc": null,
+          "eer": null,
+          "n": 0,
+          "unknown": 0
+        }
+      },
+      "splice": {
+        "file": {
+          "auc": 0.67,
+          "eer": 0.4,
+          "n": 40,
+          "unknown": 0
+        },
+        "music": {
+          "auc": 0.65,
+          "eer": 0.4,
+          "n": 40,
+          "unknown": 0
+        }
+      }
+    },
+    "counts": {
+      "file_eer": 210,
+      "music_eer": 170,
+      "music_presence_auc": 210,
+      "voice_eer": 100,
+      "voice_presence_auc": 120
+    },
+    "coverage": {
+      "file_eer": 1.0,
+      "music_eer": 1.0,
+      "music_presence_auc": 1.0,
+      "voice_eer": 0.47619047619047616,
+      "voice_presence_auc": 0.5714285714285714
+    },
+    "invalid": {
+      "voice_presence_auc": "both positive and negative labels are required"
+    },
+    "music_slices": {
+      "music_ood": {
+        "file": {
+          "auc": 0.42000000000000004,
+          "eer": 0.4,
+          "n": 20,
+          "unknown": 0
+        },
+        "music": {
+          "auc": 0.58,
+          "eer": 0.4,
+          "n": 20,
+          "unknown": 0
+        }
+      },
+      "music_seen": {
+        "file": {
+          "auc": 0.4866666666666666,
+          "eer": 0.5,
+          "n": 40,
+          "unknown": 0
+        },
+        "music": {
+          "auc": 0.5666666666666667,
+          "eer": 0.4,
+          "n": 40,
+          "unknown": 0
+        }
+      }
+    },
+    "partial": {
+      "voice_eer": "known subset only; unknown relevant labels: 110",
+      "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+    },
+    "unknown_counts": {
+      "file_eer": 0,
+      "music_eer": 0,
+      "music_presence_auc": 0,
+      "voice_eer": 110,
+      "voice_presence_auc": 90
+    }
+  },
+  "inputs": {
+    ".omo/evidence/v4-retry-G0_predictions.csv": "ebb664e274311c596660564a721b0afea6a37baa0a2014f66c90fb2d879e627b",
+    ".omo/evidence/v4-retry-P1-terminal.json": "bbb2d8b2a06091bddcab033955766b96350b5e8b92f1dc67a66a050f21c1fa74",
+    ".omo/evidence/v4-retry-first-probe-terminal.json": "f8cef262d8f85fc13ad9f0b270d365da19cdb74f7e23479b101febfb6bd6e120",
+    ".omo/evidence/v4-retry-live-run.json": "c11a6ba0982b9c73ae7a88e679dd7b83b70ce2ee30a3150474c61657026b58ac",
+    ".omo/evidence/v4-retry-probe_ast_1e-05-terminal.json": "2089967202d4daf7b99126bd89095000bad56bbacf812d830c86f51f1a01a8d5",
+    ".omo/evidence/v4-retry-probe_ast_1e-06-terminal.json": "8654990415cf754dc6e00b40595bb1db910606e21b1a6e3c97c1d9183f35034e",
+    ".omo/evidence/v4-retry-probe_ast_3e-06-terminal.json": "d795948024ab928a14bdf5328ea8cf041466ea0c71bab350430db7649007c056",
+    ".omo/evidence/v4-retry-probe_sonics_1e-04-terminal.json": "5e788e32e1e8ece5d63fdc53df599923091756f78441dc436acf3da693a7d1ed",
+    ".omo/evidence/v4-retry-probe_sonics_3e-05-terminal.json": "af51576c914906a698483a63f367a39b96e4e0cfab416ba96543dece8e0be89b",
+    ".omo/evidence/v4-retry-stage_budget_plan.json": "f53986e0f0f7535c9369a04406666917676f46e00d7fe855d78bf10d3f6b616f",
+    "v4_validation/dev.csv": "f78185faee0578a311eea420a1776256ccea0346d2152e77b2288db477c605d9"
+  },
+  "integrity": {
+    "ids_exact_order": true,
+    "manifest_ids_unique": true,
+    "manifest_rows": 210,
+    "panel_counts": {
+      "mixture": 80,
+      "music_ood": 10,
+      "music_real": 10,
+      "music_seen": 30,
+      "speech": 40,
+      "splice": 40
+    },
+    "prediction_columns": [
+      "ID",
+      "FILE_FAKE_PROB",
+      "VOICE_FAKE_PROB",
+      "MUSIC_FAKE_PROB",
+      "VOICE_PRESENT_PROB",
+      "MUSIC_PRESENT_PROB"
+    ],
+    "prediction_ids_unique": true,
+    "prediction_rows": 210
+  },
+  "limits": [
+    "No overall score is available because relevant voice labels are unknown and voice-presence AUC has only one known class.",
+    "All six probes and P1 are development diagnostics; none passes the full prespecified quality gates.",
+    "P1 is the first main run only. P2-P4, final development selection, refit, weight lock, and sealed evaluation remain pending.",
+    "No candidate prediction CSV was supplied, so protected-column equality was not independently checked row by row.",
+    "No sealed data was accessed."
+  ],
+  "method": ".venv/bin/python using v4_evaluation.evaluate_development and v4_selection._quality_gates",
+  "p1_initial_main": {
+    "absolute_score": null,
+    "best_epoch": 5,
+    "best_evaluation_source": "result.reports[4].evaluation",
+    "epoch_rank_scores": [
+      -0.18899999999999997,
+      -0.14399999999999996,
+      -0.14399999999999996,
+      -0.14399999999999996,
+      -0.04499999999999999
+    ],
+    "epochs_completed": 5,
+    "failed_gates": [
+      "ood_gain",
+      "ood_file_eer",
+      "ood_music_auc",
+      "ood_bootstrap_win",
+      "ood_bootstrap_p10"
+    ],
+    "file_eer": 0.34285714285714286,
+    "forecast_interpretation": "The initial cold forecast capped P1 at five epochs before empirical main-run throughput existed. The completed 67.7886-second run is post-run evidence for a possible prospective extension, which may only be decided before sealed access; this report makes no extension or selection decision.",
+    "gates": {
+      "mixture_file_eer": true,
+      "ood_bootstrap_p10": false,
+      "ood_bootstrap_valid": true,
+      "ood_bootstrap_win": false,
+      "ood_class_support": true,
+      "ood_file_eer": false,
+      "ood_gain": false,
+      "ood_music_auc": false,
+      "ood_music_eer": true,
+      "passed": false,
+      "seen_bootstrap_p10": true,
+      "seen_bootstrap_valid": true,
+      "seen_bootstrap_win": true,
+      "seen_class_support": true,
+      "seen_file_eer": true,
+      "seen_gain": true,
+      "seen_music_auc": true,
+      "seen_music_eer": true,
+      "speech_file_eer": true
+    },
+    "music_eer": 0.3414285714285714,
+    "name": "P1",
+    "ood_D": -0.04499999999999999,
+    "ood_bootstrap_p10_delta": -0.09000000000000001,
+    "ood_bootstrap_win_rate": 0.4125,
+    "ood_music_auc": 0.52,
+    "rank_score": -0.04499999999999999,
+    "seconds": 67.7885858249997,
+    "seen_D": 0.1095,
+    "seen_bootstrap_p10_delta": 0.002999999999999999,
+    "seen_bootstrap_win_rate": 0.9075,
+    "seen_music_auc": 0.74,
+    "source": ".omo/evidence/v4-retry-P1-terminal.json",
+    "status": "completed",
+    "terminal_contract_sha256": "c88a6dea4eea92f5b5dd4b4df89850d5c104e7fc68914d00693d8037808c60f0",
+    "trainable_parameters": 17172493,
+    "updates": 175,
+    "weights_sha256": "5d2e50dbbb2abe0f37bf183d773183e11e43aa04f56792179a37d03b8a995a77",
+    "window_exposures": 5580
+  },
+  "probe_snapshot": {
+    "all_absolute_scores_null": true,
+    "all_completed_60_updates": true,
+    "any_quality_gate_pass": false,
+    "best_observed_rank_probe": "probe_ast_3e-06",
+    "best_observed_rank_score": -0.04499999999999999,
+    "count": 6,
+    "probes": [
+      {
+        "absolute_score": null,
+        "epochs_completed": 1,
+        "failed_gates": [
+          "seen_gain",
+          "seen_music_eer",
+          "seen_music_auc",
+          "seen_bootstrap_win",
+          "seen_bootstrap_p10",
+          "ood_gain",
+          "ood_file_eer",
+          "ood_music_eer",
+          "ood_music_auc",
+          "ood_bootstrap_win",
+          "ood_bootstrap_p10"
+        ],
+        "file_eer": 0.37142857142857144,
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": false,
+          "ood_music_eer": false,
+          "passed": false,
+          "seen_bootstrap_p10": false,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": false,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": false,
+          "seen_music_auc": false,
+          "seen_music_eer": false,
+          "speech_file_eer": true
+        },
+        "music_eer": 0.41214285714285714,
+        "name": "probe_sonics_1e-05",
+        "ood_D": -0.18899999999999997,
+        "ood_bootstrap_p10_delta": -0.2025,
+        "ood_bootstrap_win_rate": 0.02,
+        "ood_music_auc": 0.44,
+        "rank_score": -0.18899999999999997,
+        "seconds": 48.49628358100017,
+        "seen_D": -0.022499999999999996,
+        "seen_bootstrap_p10_delta": -0.13649999999999998,
+        "seen_bootstrap_win_rate": 0.359,
+        "seen_music_auc": 0.5533333333333333,
+        "source": ".omo/evidence/v4-retry-first-probe-terminal.json",
+        "status": "completed",
+        "trainable_parameters": 17172493,
+        "updates": 60
+      },
+      {
+        "absolute_score": null,
+        "epochs_completed": 1,
+        "failed_gates": [
+          "seen_bootstrap_win",
+          "seen_bootstrap_p10",
+          "ood_gain",
+          "ood_file_eer",
+          "ood_music_eer",
+          "ood_music_auc",
+          "ood_bootstrap_win",
+          "ood_bootstrap_p10"
+        ],
+        "file_eer": 0.34285714285714286,
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": false,
+          "ood_music_eer": false,
+          "passed": false,
+          "seen_bootstrap_p10": false,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": false,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": true,
+          "seen_music_auc": true,
+          "seen_music_eer": true,
+          "speech_file_eer": true
+        },
+        "music_eer": 0.35857142857142854,
+        "name": "probe_sonics_3e-05",
+        "ood_D": -0.11699999999999998,
+        "ood_bootstrap_p10_delta": -0.16649999999999993,
+        "ood_bootstrap_win_rate": 0.0985,
+        "ood_music_auc": 0.45999999999999996,
+        "rank_score": -0.11699999999999998,
+        "seconds": 17.34504739399972,
+        "seen_D": 0.04499999999999999,
+        "seen_bootstrap_p10_delta": -0.08099999999999996,
+        "seen_bootstrap_win_rate": 0.637,
+        "seen_music_auc": 0.68,
+        "source": ".omo/evidence/v4-retry-probe_sonics_3e-05-terminal.json",
+        "status": "completed",
+        "trainable_parameters": 17172493,
+        "updates": 60
+      },
+      {
+        "absolute_score": null,
+        "epochs_completed": 1,
+        "failed_gates": [
+          "seen_bootstrap_win",
+          "seen_bootstrap_p10",
+          "ood_gain",
+          "ood_file_eer",
+          "ood_music_eer",
+          "ood_music_auc",
+          "ood_bootstrap_win",
+          "ood_bootstrap_p10"
+        ],
+        "file_eer": 0.3321428571428572,
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": false,
+          "ood_music_eer": false,
+          "passed": false,
+          "seen_bootstrap_p10": false,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": false,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": true,
+          "seen_music_auc": true,
+          "seen_music_eer": true,
+          "speech_file_eer": true
+        },
+        "music_eer": 0.31214285714285717,
+        "name": "probe_sonics_1e-04",
+        "ood_D": -0.14399999999999996,
+        "ood_bootstrap_p10_delta": -0.17099999999999999,
+        "ood_bootstrap_win_rate": 0.2495,
+        "ood_music_auc": 0.52,
+        "rank_score": -0.14399999999999996,
+        "seconds": 16.480443120000018,
+        "seen_D": 0.03749999999999999,
+        "seen_bootstrap_p10_delta": -0.019499999999999997,
+        "seen_bootstrap_win_rate": 0.799,
+        "seen_music_auc": 0.69,
+        "source": ".omo/evidence/v4-retry-probe_sonics_1e-04-terminal.json",
+        "status": "completed",
+        "trainable_parameters": 17172493,
+        "updates": 60
+      },
+      {
+        "absolute_score": null,
+        "epochs_completed": 1,
+        "failed_gates": [
+          "seen_bootstrap_win",
+          "seen_bootstrap_p10",
+          "ood_gain",
+          "ood_file_eer",
+          "ood_music_eer",
+          "ood_bootstrap_win",
+          "ood_bootstrap_p10"
+        ],
+        "file_eer": 0.3107142857142857,
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": true,
+          "ood_music_eer": false,
+          "passed": false,
+          "seen_bootstrap_p10": false,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": false,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": true,
+          "seen_music_auc": true,
+          "seen_music_eer": true,
+          "speech_file_eer": true
+        },
+        "music_eer": 0.30000000000000004,
+        "name": "probe_ast_1e-06",
+        "ood_D": -0.07199999999999998,
+        "ood_bootstrap_p10_delta": -0.12150000000000002,
+        "ood_bootstrap_win_rate": 0.476,
+        "ood_music_auc": 0.5900000000000001,
+        "rank_score": -0.07199999999999998,
+        "seconds": 58.33781882299991,
+        "seen_D": 0.04499999999999999,
+        "seen_bootstrap_p10_delta": -0.11999999999999998,
+        "seen_bootstrap_win_rate": 0.5575,
+        "seen_music_auc": 0.63,
+        "source": ".omo/evidence/v4-retry-probe_ast_1e-06-terminal.json",
+        "status": "completed",
+        "trainable_parameters": 86188033,
+        "updates": 60
+      },
+      {
+        "absolute_score": null,
+        "epochs_completed": 1,
+        "failed_gates": [
+          "ood_gain",
+          "ood_file_eer",
+          "ood_music_auc",
+          "ood_bootstrap_win",
+          "ood_bootstrap_p10"
+        ],
+        "file_eer": 0.34285714285714286,
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": false,
+          "ood_music_eer": true,
+          "passed": false,
+          "seen_bootstrap_p10": true,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": true,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": true,
+          "seen_music_auc": true,
+          "seen_music_eer": true,
+          "speech_file_eer": true
+        },
+        "music_eer": 0.41714285714285715,
+        "name": "probe_ast_3e-06",
+        "ood_D": -0.04499999999999999,
+        "ood_bootstrap_p10_delta": -0.1305,
+        "ood_bootstrap_win_rate": 0.3855,
+        "ood_music_auc": 0.55,
+        "rank_score": -0.04499999999999999,
+        "seconds": 70.9240258750001,
+        "seen_D": 0.11699999999999998,
+        "seen_bootstrap_p10_delta": 0.03899999999999999,
+        "seen_bootstrap_win_rate": 0.9725,
+        "seen_music_auc": 0.8033333333333333,
+        "source": ".omo/evidence/v4-retry-probe_ast_3e-06-terminal.json",
+        "status": "completed",
+        "trainable_parameters": 86188033,
+        "updates": 60
+      },
+      {
+        "absolute_score": null,
+        "epochs_completed": 1,
+        "failed_gates": [
+          "ood_gain",
+          "ood_file_eer",
+          "ood_music_eer",
+          "ood_music_auc",
+          "ood_bootstrap_win",
+          "ood_bootstrap_p10"
+        ],
+        "file_eer": 0.3107142857142857,
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": false,
+          "ood_music_eer": false,
+          "passed": false,
+          "seen_bootstrap_p10": true,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": true,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": true,
+          "seen_music_auc": true,
+          "seen_music_eer": true,
+          "speech_file_eer": true
+        },
+        "music_eer": 0.3878571428571429,
+        "name": "probe_ast_1e-05",
+        "ood_D": -0.14399999999999996,
+        "ood_bootstrap_p10_delta": -0.16649999999999998,
+        "ood_bootstrap_win_rate": 0.14,
+        "ood_music_auc": 0.54,
+        "rank_score": -0.14399999999999996,
+        "seconds": 75.65528229099982,
+        "seen_D": 0.21600000000000005,
+        "seen_bootstrap_p10_delta": 0.12150000000000004,
+        "seen_bootstrap_win_rate": 0.9975,
+        "seen_music_auc": 0.9433333333333334,
+        "source": ".omo/evidence/v4-retry-probe_ast_1e-05-terminal.json",
+        "status": "completed",
+        "trainable_parameters": 86188033,
+        "updates": 60
+      }
+    ]
+  },
+  "reconciliation": {
+    "all_reconciled": true,
+    "probe_embedded_g0_slices_match_independent_evaluator_within_1e-12": {
+      "mixture": {
+        "file": true,
+        "music": true
+      },
+      "music_ood": {
+        "file": true,
+        "music": true
+      },
+      "music_seen": {
+        "file": true,
+        "music": true
+      },
+      "speech": {
+        "file": true,
+        "music": true
+      },
+      "splice": {
+        "file": true,
+        "music": true
+      }
+    }
+  },
+  "source_commit": "a01a50e0c774f181c20238109127c5b81cc95dc1",
+  "status": "initial_live_results_g0_six_probes_and_p1_only_more_main_runs_pending"
+}

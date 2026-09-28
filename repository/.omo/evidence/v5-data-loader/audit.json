@@ -1,0 +1,35 @@
+{
+  "counts": {
+    "dev": 230,
+    "train": 1496,
+    "v4_dev": 210,
+    "v4_train": 1516
+  },
+  "hashes": {
+    "dev_audio_receipt_sha256": "43666cc248a4b9d80344335e386efdf8fd536ee1928da095c39e804251e85b2a",
+    "dev_manifest_sha256": "f78185faee0578a311eea420a1776256ccea0346d2152e77b2288db477c605d9",
+    "dev_unique_audio_sha256": 210,
+    "train_audio_receipt_sha256": "16a29c83c3c45d7f74b1ef2f19a619881d22be067b23e40de6826290abe71554",
+    "train_manifest_sha256": "df5c083d7deee6f5efa195c4fce2c8b4298f2e8ca743f2c7bce7f7129877c07f",
+    "train_unique_audio_sha256": 1496
+  },
+  "nsynth_holdout": {
+    "available_groups": 25,
+    "fraction": 0.2,
+    "groups": [
+      "nsynth_instrument_183",
+      "nsynth_instrument_327",
+      "nsynth_instrument_457",
+      "nsynth_instrument_488",
+      "nsynth_instrument_590"
+    ],
+    "protocol": "v5-nsynth-vp-holdout-v1",
+    "rows": 20
+  },
+  "overlap": {
+    "groups": 0,
+    "paths": 0,
+    "sha256": 0
+  },
+  "protocol": "V4 train/dev only; deterministic pre-label NSynth instrument-group holdout; sealed and V2 excluded"
+}

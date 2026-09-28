@@ -1,0 +1,3854 @@
+{
+  "device": {
+    "capability": [
+      9,
+      0
+    ],
+    "cudnn": 91002,
+    "device": "cuda",
+    "name": "NVIDIA H100 80GB HBM3",
+    "torch": "2.9.1+cu128",
+    "torch_cuda": "12.8",
+    "total_memory": 85017624576
+  },
+  "feature_tolerance": {
+    "mert_windows": 0.001,
+    "normalization_gain": 1e-07,
+    "normalized_rms": 1e-06,
+    "presence": 0.0001,
+    "samples": 0.0,
+    "source_peak": 1e-07,
+    "starts": 0.0,
+    "valid_samples": 0.0,
+    "voice_embeddings": 0.001,
+    "voice_original": 0.0001,
+    "voice_silent": 0.0,
+    "window_truth": 0.0
+  },
+  "finished_at": "2026-09-19T21:36:35+00:00",
+  "lock_sha256": "bb50efd693f47c76cafe376c91e28f2fe1c9c29edf30455ca42b30022338097f",
+  "mert_batch": 256,
+  "pilot_vs_full": [
+    {
+      "ID": "asvspoof2019_la:LA_E_1697481",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 3,
+          "nan_positions_right": 3,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "asvspoof2019_la:LA_E_2466369",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 1,
+          "nan_positions_right": 1,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "asvspoof2019_la:LA_E_4569852",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 1,
+          "nan_positions_right": 1,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "asvspoof2019_la:LA_E_8209350",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 1,
+          "nan_positions_right": 1,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "core_00fa3840f7e8661d9b12_base",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "core_468053d1c0312457f0a6_base",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "core_82b3ccd6cb4fc446e1fe_base",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "core_c7f4818fe05d69a48837_base",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "core_ef7516707efb67dd1d8c_base",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "core_feb95864a2136fcef06f_base",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0000760",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 1,
+          "nan_positions_right": 1,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0002454",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 2,
+          "nan_positions_right": 2,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0005855",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 1,
+          "nan_positions_right": 1,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0006536",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 8,
+          "nan_positions_right": 8,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0110_D_0015521",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 1,
+          "nan_positions_right": 1,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0110_D_0015728",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 3,
+          "nan_positions_right": 3,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "fake_16900_udio_1",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 16,
+          "nan_positions_right": 16,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "fake_21481_udio_0",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 64,
+          "nan_positions_right": 64,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "haim_musicgen_131da087-4a28-4215-a486-ace346186e17",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 4,
+          "nan_positions_right": 4,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "jamendo_139308",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 176,
+          "nan_positions_right": 176,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "librispeech_test-clean:1580-141083-0008",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 2,
+          "nan_positions_right": 2,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "librispeech_test-clean:5142-36377-0014",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 12,
+          "nan_positions_right": 12,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "new_haim_sonicmaster_real_1092339_mastered",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 365,
+          "nan_positions_right": 365,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    },
+    {
+      "ID": "new_haim_sonicmaster_real_1420610_mastered",
+      "comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 106,
+          "nan_positions_right": 106,
+          "status": "compared"
+        }
+      },
+      "status": "bitwise"
+    }
+  ],
+  "prediction_tolerance": 0.001,
+  "samples": [
+    {
+      "ID": "asvspoof2019_la:LA_T_5517266",
+      "audio_path": "audio/d92c4bc79a7df3339229c5a89e719cfa6192a2fc8ad9d42dae1233fdfd231734.flac",
+      "audio_sha256": "d92c4bc79a7df3339229c5a89e719cfa6192a2fc8ad9d42dae1233fdfd231734",
+      "cache_npz_sha256": "96cc3f7b3b2faf13494592ecafdc08bd44380214e6fdc5cf124c3caf0ec065c8",
+      "duration_seconds": 3.526375,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 1,
+          "nan_positions_right": 1,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "asvspoof2019_la_LA_T_5517266__5a374f6261",
+      "input_kind": "original_full_duration",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "96cc3f7b3b2faf13494592ecafdc08bd44380214e6fdc5cf124c3caf0ec065c8",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.7661986801227508,
+        "MUSIC_FAKE_PROB": 0.12784208357334137,
+        "MUSIC_FAKE_PROB_seed41": 0.05921025574207306,
+        "MUSIC_FAKE_PROB_seed42": 0.17328819632530212,
+        "MUSIC_FAKE_PROB_seed43": 0.15102779865264893,
+        "MUSIC_PRESENT_PROB": 0.016763469204306602,
+        "VOICE_FAKE_PROB": 0.9578842918078104,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9975460171699524,
+        "VOICE_FAKE_PROB_seed41": 0.9588471055030823,
+        "VOICE_FAKE_PROB_seed42": 0.9556514620780945,
+        "VOICE_FAKE_PROB_seed43": 0.9591543078422546,
+        "VOICE_PRESENT_PROB": 0.7998864650726318
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.7661986801227508,
+        "MUSIC_FAKE_PROB": 0.12784208357334137,
+        "MUSIC_FAKE_PROB_seed41": 0.05921025574207306,
+        "MUSIC_FAKE_PROB_seed42": 0.17328819632530212,
+        "MUSIC_FAKE_PROB_seed43": 0.15102779865264893,
+        "MUSIC_PRESENT_PROB": 0.016763469204306602,
+        "VOICE_FAKE_PROB": 0.9578842918078104,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9975460171699524,
+        "VOICE_FAKE_PROB_seed41": 0.9588471055030823,
+        "VOICE_FAKE_PROB_seed42": 0.9556514620780945,
+        "VOICE_FAKE_PROB_seed43": 0.9591543078422546,
+        "VOICE_PRESENT_PROB": 0.7998864650726318
+      },
+      "reference_source": "test_predictions.csv",
+      "route": "voice",
+      "split": "test",
+      "stratum": "speech",
+      "timing": {
+        "decode": 0.20177679508924484,
+        "dfarena_panns": 0.1790055800229311,
+        "htdemucs": 0.6249241326004267,
+        "mert": 0.030592182651162148,
+        "total": 1.0362986903637648
+      }
+    },
+    {
+      "ID": "core_63ab76f979000832863b_base",
+      "audio_path": "audio/e10488f8dd17ac721b20dd2b82ee195240367b54837cff2b10c23e4699a4bd16.wav",
+      "audio_sha256": "e10488f8dd17ac721b20dd2b82ee195240367b54837cff2b10c23e4699a4bd16",
+      "cache_npz_sha256": "f5d128d2a21215e1a45d3e855203e4903ec50b58f91267f202333178e5104379",
+      "duration_seconds": 8.0,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "core_63ab76f979000832863b_base__2b1a70e367",
+      "input_kind": "legacy_crop",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "f5d128d2a21215e1a45d3e855203e4903ec50b58f91267f202333178e5104379",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.06343145147161404,
+        "MUSIC_FAKE_PROB": 0.02613483431438605,
+        "MUSIC_FAKE_PROB_seed41": 0.008334832265973091,
+        "MUSIC_FAKE_PROB_seed42": 0.04947984591126442,
+        "MUSIC_FAKE_PROB_seed43": 0.02058982476592064,
+        "MUSIC_PRESENT_PROB": 0.9218627214431763,
+        "VOICE_FAKE_PROB": 0.889618714650472,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9690192937850952,
+        "VOICE_FAKE_PROB_seed41": 0.8921873569488525,
+        "VOICE_FAKE_PROB_seed42": 0.8852352499961853,
+        "VOICE_FAKE_PROB_seed43": 0.8914335370063782,
+        "VOICE_PRESENT_PROB": 0.07130184024572372
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.06343145147161404,
+        "MUSIC_FAKE_PROB": 0.02613483431438605,
+        "MUSIC_FAKE_PROB_seed41": 0.008334832265973091,
+        "MUSIC_FAKE_PROB_seed42": 0.04947984591126442,
+        "MUSIC_FAKE_PROB_seed43": 0.02058982476592064,
+        "MUSIC_PRESENT_PROB": 0.9218627214431763,
+        "VOICE_FAKE_PROB": 0.889618714650472,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9690192937850952,
+        "VOICE_FAKE_PROB_seed41": 0.8921873569488525,
+        "VOICE_FAKE_PROB_seed42": 0.8852352499961853,
+        "VOICE_FAKE_PROB_seed43": 0.8914335370063782,
+        "VOICE_PRESENT_PROB": 0.07130184024572372
+      },
+      "reference_source": "test_predictions.csv",
+      "route": "music",
+      "split": "test",
+      "stratum": "music_legacy_gain_preserved",
+      "timing": {
+        "decode": 0.0020275451242923737,
+        "dfarena_panns": 0.09837852232158184,
+        "htdemucs": 0.20411649718880653,
+        "mert": 0.03443953022360802,
+        "total": 0.33896209485828876
+      }
+    },
+    {
+      "ID": "haim_musicgen_musicgen_small_00029",
+      "audio_path": "audio/1e09cdeb31bac55f4ca2a48622392b69b907974dab2d65c450346ab061854218.mp3",
+      "audio_sha256": "1e09cdeb31bac55f4ca2a48622392b69b907974dab2d65c450346ab061854218",
+      "cache_npz_sha256": "dba7e0f8c6de6b0e2b8e083904c80b98739cab11a6d2f986c505376d57223173",
+      "duration_seconds": 10.18,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 5,
+          "nan_positions_right": 5,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "haim_musicgen_musicgen_small_00029__f7f6acf7a5",
+      "input_kind": "original_full_duration",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "dba7e0f8c6de6b0e2b8e083904c80b98739cab11a6d2f986c505376d57223173",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.34453496128320715,
+        "MUSIC_FAKE_PROB": 0.4325927048921585,
+        "MUSIC_FAKE_PROB_seed41": 0.1361953169107437,
+        "MUSIC_FAKE_PROB_seed42": 0.8262476325035095,
+        "MUSIC_FAKE_PROB_seed43": 0.3353351652622223,
+        "MUSIC_PRESENT_PROB": 0.796441912651062,
+        "VOICE_FAKE_PROB": 0.419600248336792,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.8135406374931335,
+        "VOICE_FAKE_PROB_seed41": 0.4264410138130188,
+        "VOICE_FAKE_PROB_seed42": 0.4119386076927185,
+        "VOICE_FAKE_PROB_seed43": 0.42042112350463867,
+        "VOICE_PRESENT_PROB": 0.036257803440093994
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.34453496128320715,
+        "MUSIC_FAKE_PROB": 0.4325927048921585,
+        "MUSIC_FAKE_PROB_seed41": 0.1361953169107437,
+        "MUSIC_FAKE_PROB_seed42": 0.8262476325035095,
+        "MUSIC_FAKE_PROB_seed43": 0.3353351652622223,
+        "MUSIC_PRESENT_PROB": 0.796441912651062,
+        "VOICE_FAKE_PROB": 0.419600248336792,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.8135406374931335,
+        "VOICE_FAKE_PROB_seed41": 0.4264410138130188,
+        "VOICE_FAKE_PROB_seed42": 0.4119386076927185,
+        "VOICE_FAKE_PROB_seed43": 0.42042112350463867,
+        "VOICE_PRESENT_PROB": 0.036257803440093994
+      },
+      "reference_source": "test_predictions.csv",
+      "route": "music",
+      "split": "test",
+      "stratum": "music_original_peak_capped",
+      "timing": {
+        "decode": 0.003227895125746727,
+        "dfarena_panns": 0.1519137118011713,
+        "htdemucs": 0.21310565806925297,
+        "mert": 0.04690832085907459,
+        "total": 0.4151555858552456
+      }
+    },
+    {
+      "ID": "core_c7f4818fe05d69a48837_base",
+      "audio_path": "audio/b1132c8337d77cb7dd91c69156d195e8a61cef90664572726ffd95f11db6222d.wav",
+      "audio_sha256": "b1132c8337d77cb7dd91c69156d195e8a61cef90664572726ffd95f11db6222d",
+      "cache_npz_sha256": "753bc5e116130138ca20093d30366baf9e20f9d7d8b8fd37b33825517d55de63",
+      "duration_seconds": 8.0,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "core_c7f4818fe05d69a48837_base__e8b587e3ce",
+      "input_kind": "legacy_crop",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "753bc5e116130138ca20093d30366baf9e20f9d7d8b8fd37b33825517d55de63",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.008212967912325139,
+        "MUSIC_FAKE_PROB": 0.000742553723587965,
+        "MUSIC_FAKE_PROB_seed41": 5.440530367195606e-05,
+        "MUSIC_FAKE_PROB_seed42": 0.0020587602630257607,
+        "MUSIC_FAKE_PROB_seed43": 0.0001144956040661782,
+        "MUSIC_PRESENT_PROB": 0.7157484292984009,
+        "VOICE_FAKE_PROB": 0.39639512697855633,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.8322645425796509,
+        "VOICE_FAKE_PROB_seed41": 0.40262696146965027,
+        "VOICE_FAKE_PROB_seed42": 0.3883860111236572,
+        "VOICE_FAKE_PROB_seed43": 0.39817240834236145,
+        "VOICE_PRESENT_PROB": 0.020719144493341446
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.008212967912325139,
+        "MUSIC_FAKE_PROB": 0.000742553723587965,
+        "MUSIC_FAKE_PROB_seed41": 5.440530367195606e-05,
+        "MUSIC_FAKE_PROB_seed42": 0.0020587602630257607,
+        "MUSIC_FAKE_PROB_seed43": 0.0001144956040661782,
+        "MUSIC_PRESENT_PROB": 0.7157484292984009,
+        "VOICE_FAKE_PROB": 0.39639512697855633,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.8322645425796509,
+        "VOICE_FAKE_PROB_seed41": 0.40262696146965027,
+        "VOICE_FAKE_PROB_seed42": 0.3883860111236572,
+        "VOICE_FAKE_PROB_seed43": 0.39817240834236145,
+        "VOICE_PRESENT_PROB": 0.020719144493341446
+      },
+      "reference_source": "locked heads on full-cache features",
+      "route": "music",
+      "split": "train",
+      "stratum": "music_legacy_gain_preserved",
+      "timing": {
+        "decode": 0.0011800657957792282,
+        "dfarena_panns": 0.10255120322108269,
+        "htdemucs": 0.20175626687705517,
+        "mert": 0.02710781618952751,
+        "total": 0.3325953520834446
+      }
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0002454",
+      "audio_path": "audio/d449a52d7246e901144a9651546ca18fa47d43efc6d153efc61ec38746081bdc.flac",
+      "audio_sha256": "d449a52d7246e901144a9651546ca18fa47d43efc6d153efc61ec38746081bdc",
+      "cache_npz_sha256": "78a544e7f86a331098465332f0649a0fbb3297f1b75a0bfeea3e348ef9ff80f3",
+      "duration_seconds": 4.6125,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 2,
+          "nan_positions_right": 2,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "ctrsvdd_CtrSVDD_0059_D_0002454__146540f32b",
+      "input_kind": "original_full_duration",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "78a544e7f86a331098465332f0649a0fbb3297f1b75a0bfeea3e348ef9ff80f3",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.4674090576021902,
+        "MUSIC_FAKE_PROB": 0.4194611807664235,
+        "MUSIC_FAKE_PROB_seed41": 0.5134076476097107,
+        "MUSIC_FAKE_PROB_seed42": 0.47010740637779236,
+        "MUSIC_FAKE_PROB_seed43": 0.2748684883117676,
+        "MUSIC_PRESENT_PROB": 0.30155110359191895,
+        "VOICE_FAKE_PROB": 0.9877425233523051,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9941206574440002,
+        "VOICE_FAKE_PROB_seed41": 0.9879462122917175,
+        "VOICE_FAKE_PROB_seed42": 0.9868786931037903,
+        "VOICE_FAKE_PROB_seed43": 0.9884026646614075,
+        "VOICE_PRESENT_PROB": 0.473209410905838
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.4674090576021902,
+        "MUSIC_FAKE_PROB": 0.4194611807664235,
+        "MUSIC_FAKE_PROB_seed41": 0.5134076476097107,
+        "MUSIC_FAKE_PROB_seed42": 0.47010740637779236,
+        "MUSIC_FAKE_PROB_seed43": 0.2748684883117676,
+        "MUSIC_PRESENT_PROB": 0.30155110359191895,
+        "VOICE_FAKE_PROB": 0.9877425233523051,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9941206574440002,
+        "VOICE_FAKE_PROB_seed41": 0.9879462122917175,
+        "VOICE_FAKE_PROB_seed42": 0.9868786931037903,
+        "VOICE_FAKE_PROB_seed43": 0.9884026646614075,
+        "VOICE_PRESENT_PROB": 0.473209410905838
+      },
+      "reference_source": "locked heads on full-cache features",
+      "route": "voice",
+      "split": "train",
+      "stratum": "singing",
+      "timing": {
+        "decode": 0.0016465764492750168,
+        "dfarena_panns": 0.09960613399744034,
+        "htdemucs": 0.12861511670053005,
+        "mert": 0.031072650104761124,
+        "total": 0.26094047725200653
+      }
+    },
+    {
+      "ID": "fake_16900_udio_1",
+      "audio_path": "audio/e3531ec512c077d5a991d0a4674d82af1d031560cfe0d32c13f3dd3e0f94a5cd.mp3",
+      "audio_sha256": "e3531ec512c077d5a991d0a4674d82af1d031560cfe0d32c13f3dd3e0f94a5cd",
+      "cache_npz_sha256": "29911f6302a54b03abc8fb8f68b86452b80cc3513fddea6afb500ec2eb8e45f1",
+      "duration_seconds": 32.8106875,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 16,
+          "nan_positions_right": 16,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "fake_16900_udio_1__81062a7b5a",
+      "input_kind": "original_full_duration",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "29911f6302a54b03abc8fb8f68b86452b80cc3513fddea6afb500ec2eb8e45f1",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.7525184572666117,
+        "MUSIC_FAKE_PROB": 0.8214438954989115,
+        "MUSIC_FAKE_PROB_seed41": 0.8644504547119141,
+        "MUSIC_FAKE_PROB_seed42": 0.7405775785446167,
+        "MUSIC_FAKE_PROB_seed43": 0.8593036532402039,
+        "MUSIC_PRESENT_PROB": 0.9160923361778259,
+        "VOICE_FAKE_PROB": 0.9440073768297831,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9938862919807434,
+        "VOICE_FAKE_PROB_seed41": 0.9453993439674377,
+        "VOICE_FAKE_PROB_seed42": 0.9412234425544739,
+        "VOICE_FAKE_PROB_seed43": 0.9453993439674377,
+        "VOICE_PRESENT_PROB": 0.1663595587015152
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.7525184572666117,
+        "MUSIC_FAKE_PROB": 0.8214438954989115,
+        "MUSIC_FAKE_PROB_seed41": 0.8644504547119141,
+        "MUSIC_FAKE_PROB_seed42": 0.7405775785446167,
+        "MUSIC_FAKE_PROB_seed43": 0.8593036532402039,
+        "MUSIC_PRESENT_PROB": 0.9160923361778259,
+        "VOICE_FAKE_PROB": 0.9440073768297831,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9938862919807434,
+        "VOICE_FAKE_PROB_seed41": 0.9453993439674377,
+        "VOICE_FAKE_PROB_seed42": 0.9412234425544739,
+        "VOICE_FAKE_PROB_seed43": 0.9453993439674377,
+        "VOICE_PRESENT_PROB": 0.1663595587015152
+      },
+      "reference_source": "locked heads on full-cache features",
+      "route": "music",
+      "split": "train",
+      "stratum": "music_original_peak_capped",
+      "timing": {
+        "decode": 0.010074365884065628,
+        "dfarena_panns": 0.43683072179555893,
+        "htdemucs": 0.5485527347773314,
+        "mert": 0.13024146854877472,
+        "total": 1.1256992910057306
+      }
+    },
+    {
+      "ID": "librispeech_test-clean:1580-141083-0008",
+      "audio_path": "audio/bbb66a67d2298db02e682eb1d352fe3c0ee30c8aa51882135f84edfa043b589a.flac",
+      "audio_sha256": "bbb66a67d2298db02e682eb1d352fe3c0ee30c8aa51882135f84edfa043b589a",
+      "cache_npz_sha256": "2a4ecddde0d4a6cb18c43e186ef2361ac6f19537c5f77bff063b7fafe1ee4a17",
+      "duration_seconds": 4.305,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 2,
+          "nan_positions_right": 2,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "librispeech_test-clean_1580-141083-0008__a832b3a4a5",
+      "input_kind": "original_full_duration",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "2a4ecddde0d4a6cb18c43e186ef2361ac6f19537c5f77bff063b7fafe1ee4a17",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.021680060126939793,
+        "MUSIC_FAKE_PROB": 0.7788066864013672,
+        "MUSIC_FAKE_PROB_seed41": 0.8116949796676636,
+        "MUSIC_FAKE_PROB_seed42": 0.7718650102615356,
+        "MUSIC_FAKE_PROB_seed43": 0.7528600692749023,
+        "MUSIC_PRESENT_PROB": 0.027837537229061127,
+        "VOICE_FAKE_PROB": 0.005166861228644848,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.020367654040455818,
+        "VOICE_FAKE_PROB_seed41": 0.005220125894993544,
+        "VOICE_FAKE_PROB_seed42": 0.005220125894993544,
+        "VOICE_FAKE_PROB_seed43": 0.005060331895947456,
+        "VOICE_PRESENT_PROB": 0.8190321922302246
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.021680060126939793,
+        "MUSIC_FAKE_PROB": 0.7788066864013672,
+        "MUSIC_FAKE_PROB_seed41": 0.8116949796676636,
+        "MUSIC_FAKE_PROB_seed42": 0.7718650102615356,
+        "MUSIC_FAKE_PROB_seed43": 0.7528600692749023,
+        "MUSIC_PRESENT_PROB": 0.027837537229061127,
+        "VOICE_FAKE_PROB": 0.005166861228644848,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.020367654040455818,
+        "VOICE_FAKE_PROB_seed41": 0.005220125894993544,
+        "VOICE_FAKE_PROB_seed42": 0.005220125894993544,
+        "VOICE_FAKE_PROB_seed43": 0.005060331895947456,
+        "VOICE_PRESENT_PROB": 0.8190321922302246
+      },
+      "reference_source": "locked heads on full-cache features",
+      "route": "voice",
+      "split": "train",
+      "stratum": "speech",
+      "timing": {
+        "decode": 0.0015143156051635742,
+        "dfarena_panns": 0.09273897670209408,
+        "htdemucs": 0.11993028782308102,
+        "mert": 0.023852400481700897,
+        "total": 0.23803598061203957
+      }
+    },
+    {
+      "ID": "asvspoof2019_la:LA_E_5923854",
+      "audio_path": "audio/cf11f16c8fa394dead5397f302e2164448da50a7dca886195453f3e09e8dc611.flac",
+      "audio_sha256": "cf11f16c8fa394dead5397f302e2164448da50a7dca886195453f3e09e8dc611",
+      "cache_npz_sha256": "0552fec9faf700f5e51e152445ad362025439623d0bb1969825536183207f816",
+      "duration_seconds": 3.11525,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 1,
+          "nan_positions_right": 1,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "asvspoof2019_la_LA_E_5923854__3148a95d8c",
+      "input_kind": "original_full_duration",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "0552fec9faf700f5e51e152445ad362025439623d0bb1969825536183207f816",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.5890964932626919,
+        "MUSIC_FAKE_PROB": 0.11664729317029317,
+        "MUSIC_FAKE_PROB_seed41": 0.06371499598026276,
+        "MUSIC_FAKE_PROB_seed42": 0.18952108919620514,
+        "MUSIC_FAKE_PROB_seed43": 0.09670579433441162,
+        "MUSIC_PRESENT_PROB": 0.11686477810144424,
+        "VOICE_FAKE_PROB": 0.9995775620142618,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9991621971130371,
+        "VOICE_FAKE_PROB_seed41": 0.9995891451835632,
+        "VOICE_FAKE_PROB_seed42": 0.9995417594909668,
+        "VOICE_FAKE_PROB_seed43": 0.9996017813682556,
+        "VOICE_PRESENT_PROB": 0.5893454551696777
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.5890964932626919,
+        "MUSIC_FAKE_PROB": 0.11664729317029317,
+        "MUSIC_FAKE_PROB_seed41": 0.06371499598026276,
+        "MUSIC_FAKE_PROB_seed42": 0.18952108919620514,
+        "MUSIC_FAKE_PROB_seed43": 0.09670579433441162,
+        "MUSIC_PRESENT_PROB": 0.11686477810144424,
+        "VOICE_FAKE_PROB": 0.9995775620142618,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9991621971130371,
+        "VOICE_FAKE_PROB_seed41": 0.9995891451835632,
+        "VOICE_FAKE_PROB_seed42": 0.9995417594909668,
+        "VOICE_FAKE_PROB_seed43": 0.9996017813682556,
+        "VOICE_PRESENT_PROB": 0.5893454551696777
+      },
+      "reference_source": "val_predictions.csv",
+      "route": "voice",
+      "split": "val",
+      "stratum": "speech",
+      "timing": {
+        "decode": 0.0010724551975727081,
+        "dfarena_panns": 0.04910018667578697,
+        "htdemucs": 0.11673391610383987,
+        "mert": 0.019321253523230553,
+        "total": 0.1862278115004301
+      }
+    },
+    {
+      "ID": "core_9177faa10fc0e78a99e3_base",
+      "audio_path": "audio/e7e3a8b0e56b4bcc2255ea443860de6f2eb7d21e497e4ad6ba843ec4d620f201.wav",
+      "audio_sha256": "e7e3a8b0e56b4bcc2255ea443860de6f2eb7d21e497e4ad6ba843ec4d620f201",
+      "cache_npz_sha256": "6d5490f0c1965800196e10e7089dac1a9ab76af1b30bf9b8dc05ef1b0a247c5f",
+      "duration_seconds": 8.0,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "core_9177faa10fc0e78a99e3_base__84f4864fb9",
+      "input_kind": "legacy_crop",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "6d5490f0c1965800196e10e7089dac1a9ab76af1b30bf9b8dc05ef1b0a247c5f",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.36219539101300313,
+        "MUSIC_FAKE_PROB": 0.7291511297225952,
+        "MUSIC_FAKE_PROB_seed41": 0.7142477035522461,
+        "MUSIC_FAKE_PROB_seed42": 0.6109961867332458,
+        "MUSIC_FAKE_PROB_seed43": 0.8622094988822937,
+        "MUSIC_PRESENT_PROB": 0.49673569202423096,
+        "VOICE_FAKE_PROB": 0.5243489344914755,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9110486507415771,
+        "VOICE_FAKE_PROB_seed41": 0.530722975730896,
+        "VOICE_FAKE_PROB_seed42": 0.5137904286384583,
+        "VOICE_FAKE_PROB_seed43": 0.528533399105072,
+        "VOICE_PRESENT_PROB": 0.0367862842977047
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.36219539101300313,
+        "MUSIC_FAKE_PROB": 0.7291511297225952,
+        "MUSIC_FAKE_PROB_seed41": 0.7142477035522461,
+        "MUSIC_FAKE_PROB_seed42": 0.6109961867332458,
+        "MUSIC_FAKE_PROB_seed43": 0.8622094988822937,
+        "MUSIC_PRESENT_PROB": 0.49673569202423096,
+        "VOICE_FAKE_PROB": 0.5243489344914755,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.9110486507415771,
+        "VOICE_FAKE_PROB_seed41": 0.530722975730896,
+        "VOICE_FAKE_PROB_seed42": 0.5137904286384583,
+        "VOICE_FAKE_PROB_seed43": 0.528533399105072,
+        "VOICE_PRESENT_PROB": 0.0367862842977047
+      },
+      "reference_source": "val_predictions.csv",
+      "route": "music",
+      "split": "val",
+      "stratum": "music_legacy_gain_preserved",
+      "timing": {
+        "decode": 0.0010594706982374191,
+        "dfarena_panns": 0.10065284371376038,
+        "htdemucs": 0.19199525192379951,
+        "mert": 0.027143042534589767,
+        "total": 0.3208506088703871
+      }
+    },
+    {
+      "ID": "fakemusiccaps_mustango_b1j-hD9zs6Q",
+      "audio_path": "audio/6d21acc50723f937796e131968fe2e36d753f0353c5b477857733126c37a96cb.wav",
+      "audio_sha256": "6d21acc50723f937796e131968fe2e36d753f0353c5b477857733126c37a96cb",
+      "cache_npz_sha256": "1609cb5d0b57fe3824533e542ad93777a2afde5182c190486c2a071b90a883e1",
+      "duration_seconds": 10.242,
+      "feature_comparison": {
+        "mert_windows": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalization_gain": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "normalized_rms": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "presence": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "source_peak": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "starts": {
+          "equal": true,
+          "status": "compared"
+        },
+        "valid_samples": {
+          "equal": true,
+          "status": "compared"
+        },
+        "voice_embeddings": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_original": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 0,
+          "nan_positions_right": 0,
+          "status": "compared"
+        },
+        "voice_silent": {
+          "equal": true,
+          "status": "compared"
+        },
+        "window_truth": {
+          "bitwise_equal": true,
+          "infinite_values": 0,
+          "max_abs": 0.0,
+          "nan_mask_mismatches": 0,
+          "nan_positions_left": 5,
+          "nan_positions_right": 5,
+          "status": "compared"
+        }
+      },
+      "feature_status": "bitwise",
+      "file_stem": "fakemusiccaps_mustango_b1j-hD9zs6Q__59053ec13e",
+      "input_kind": "original_full_duration",
+      "prediction_differences": {
+        "FILE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB_seed41": 0.0,
+        "MUSIC_FAKE_PROB_seed42": 0.0,
+        "MUSIC_FAKE_PROB_seed43": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+        "VOICE_FAKE_PROB_seed41": 0.0,
+        "VOICE_FAKE_PROB_seed42": 0.0,
+        "VOICE_FAKE_PROB_seed43": 0.0,
+        "VOICE_PRESENT_PROB": 0.0
+      },
+      "prediction_max_abs_difference": 0.0,
+      "prediction_status": "bitwise",
+      "recomputed_npz_sha256": "1609cb5d0b57fe3824533e542ad93777a2afde5182c190486c2a071b90a883e1",
+      "recomputed_predictions": {
+        "FILE_FAKE_PROB": 0.6832389575106118,
+        "MUSIC_FAKE_PROB": 0.9970094164212545,
+        "MUSIC_FAKE_PROB_seed41": 0.9985400438308716,
+        "MUSIC_FAKE_PROB_seed42": 0.9935831427574158,
+        "MUSIC_FAKE_PROB_seed43": 0.9989050626754761,
+        "MUSIC_PRESENT_PROB": 0.6852883696556091,
+        "VOICE_FAKE_PROB": 0.34725523988405865,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.8081197738647461,
+        "VOICE_FAKE_PROB_seed41": 0.35242462158203125,
+        "VOICE_FAKE_PROB_seed42": 0.3415825068950653,
+        "VOICE_FAKE_PROB_seed43": 0.34775859117507935,
+        "VOICE_PRESENT_PROB": 0.02214733697474003
+      },
+      "reference_predictions": {
+        "FILE_FAKE_PROB": 0.6832389575106118,
+        "MUSIC_FAKE_PROB": 0.9970094164212545,
+        "MUSIC_FAKE_PROB_seed41": 0.9985400438308716,
+        "MUSIC_FAKE_PROB_seed42": 0.9935831427574158,
+        "MUSIC_FAKE_PROB_seed43": 0.9989050626754761,
+        "MUSIC_PRESENT_PROB": 0.6852883696556091,
+        "VOICE_FAKE_PROB": 0.34725523988405865,
+        "VOICE_FAKE_PROB_df_arena_original_fc5": 0.8081197738647461,
+        "VOICE_FAKE_PROB_seed41": 0.35242462158203125,
+        "VOICE_FAKE_PROB_seed42": 0.3415825068950653,
+        "VOICE_FAKE_PROB_seed43": 0.34775859117507935,
+        "VOICE_PRESENT_PROB": 0.02214733697474003
+      },
+      "reference_source": "val_predictions.csv",
+      "route": "music",
+      "split": "val",
+      "stratum": "music_original_peak_capped",
+      "timing": {
+        "decode": 0.001322498545050621,
+        "dfarena_panns": 0.1503110472112894,
+        "htdemucs": 0.21505106985569,
+        "mert": 0.04056203551590443,
+        "total": 0.40724665112793446
+      }
+    }
+  ],
+  "selection": "val/test median-duration row per stratum (<= parity_max_seconds) + one pilot row per stratum",
+  "status": "bitwise"
+}

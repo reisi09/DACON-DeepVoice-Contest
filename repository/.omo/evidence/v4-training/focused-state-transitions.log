@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/choiwuseck/Documents/ChatGPT/데이콘
+collecting ... collected 5 items
+
+test_v4_training.py::test_train_trial_real_update_best_binding_and_terminal_resume PASSED [ 20%]
+test_v4_training.py::test_p4_and_control_have_exact_real_window_exposure PASSED [ 40%]
+test_v4_training.py::test_train_trial_wires_distinct_p4_treatment_and_parent_control PASSED [ 60%]
+test_v4_training.py::test_real_optimizer_resume_matches_uninterrupted_next_updates PASSED [ 80%]
+test_v4_training.py::test_deadline_saves_partial_state_without_success_claim PASSED [100%]
+
+============================== 5 passed in 3.42s ===============================

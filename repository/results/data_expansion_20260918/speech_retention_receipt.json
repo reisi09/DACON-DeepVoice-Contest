@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-09-18T04:55:40.617564+00:00",
+  "files": [
+    {
+      "path": "_workspace/data_expansion_20260918/speech/downloads/train-clean-100.tar.gz",
+      "bytes": 1121734656,
+      "status": "deleted",
+      "reason": "User global additional-data cap strictly below 20,000,000,000 bytes; unfinished archives not admitted; root explicitly authorized deletion",
+      "official_checksum_verified": false,
+      "absent_after_delete": true
+    },
+    {
+      "path": "_workspace/data_expansion_20260918/speech/downloads/ASVspoof2019_LA.zip",
+      "bytes": 185761792,
+      "status": "deleted",
+      "reason": "User global additional-data cap strictly below 20,000,000,000 bytes; unfinished archives not admitted; root explicitly authorized deletion",
+      "official_checksum_verified": false,
+      "absent_after_delete": true
+    }
+  ],
+  "new_downloads_after_cap": 0,
+  "preserve": [
+    "existing verified test-clean archive",
+    "completed speech metadata",
+    "verified test-clean bank CSV and receipt"
+  ],
+  "deleted_bytes": 1307496448,
+  "remaining_new_speech_directory_bytes": 25497238,
+  "reused_test_clean_archive_bytes": 346663984,
+  "deleted_at_utc": "2026-09-18T04:55:40.629935+00:00"
+}

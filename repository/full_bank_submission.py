@@ -22,6 +22,11 @@ CANDIDATE = 'balanced7144_MERT330M_WindowMIL_DFfc5_8020'
 EAT_MEAN, EAT_STD = -4.268, 4.569   # EAT-large model card fbank normalisation (as extract_new_backbones.py)
 
 
+def fp16_round(audio: np.ndarray) -> np.ndarray:
+    """The fp16 storage round trip of data_v4/dump_stems.py (the S6-cache encoders' training input)."""
+    return np.asarray(audio).astype(np.float16).astype(np.float32)
+
+
 def load_eat_family(folder: Path, device):
     """EAT-architecture encoder (vendored eat_core: EAT-large, SSLAM) from config.json + fp16 safetensors whose weights are
     fp16-exact, computed in fp32 like the training extractors."""
@@ -32,6 +37,24 @@ def load_eat_family(folder: Path, device):
         'architectures', 'auto_map', 'model_type', 'torch_dtype', 'transformers_version')}))
     state = {k.removeprefix('model.'): v.float() for k, v in load_file(str(folder/'model_fp16.safetensors')).items()}
     model.load_state_dict(state, strict=True)
+    return model.to(device).eval().requires_grad_(False)
+
+
+def load_ssl(folder: Path, device):
+    """transformers SSL speech encoder (WavLM / HuBERT / data2vec-audio / UniSpeech-SAT) from config.json + fp16-exact
+    safetensors, computed in fp32 like the training extractors."""
+    from safetensors.torch import load_file
+    from transformers import AutoConfig
+    model = AutoModel.from_config(AutoConfig.from_pretrained(folder, local_files_only=True))
+    model.load_state_dict({k: v.float() for k, v in load_file(str(folder/'model_fp16.safetensors')).items()}, strict=True)
+    return model.to(device).eval().requires_grad_(False)
+
+
+def load_encodec(folder: Path, device):
+    from transformers import EncodecModel
+    model, info = EncodecModel.from_pretrained(folder, local_files_only=True, output_loading_info=True)
+    if any(info.values()):
+        raise SubmissionError('EnCodec weights did not load exactly')
     return model.to(device).eval().requires_grad_(False)
 
 
@@ -90,10 +113,15 @@ class Engine:
             raise SubmissionError('MERT weights did not load exactly')
         self.mert.to(self.device).eval().requires_grad_(False)
         # optional EAT-architecture encoders of the backing stem, appended to the MERT music features in this order (the
-        # training concatenation): EAT-large blocks (music_eat_layers.json, assets/eat), SSLAM blocks (music_sslam_layers.json)
-        self.eat_family = [(load_eat_family(assets/folder, self.device), blocks)
-                           for name, folder in (('music_eat_layers.json', 'eat'), ('music_sslam_layers.json', 'sslam_pt'))
-                           if (blocks := read(name))]
+        # training concatenation): EAT-large blocks (music_eat_layers.json, assets/eat), SSLAM blocks (music_sslam_layers.json).
+        # fp16_stem: SSLAM (like WavLM) was trained on features of the fp16-stored stems (data_v4/dump_stems.py ->
+        # research/top15/work2/s6/extract_s6.py) and is sensitive to that rounding, so its input stem is rounded the same way;
+        # EAT/MERT/AD/DF-Arena features were extracted from fresh fp32 stems and stay fp32.
+        self.eat_family, self.eat_models = [], {}
+        for name, folder, fp16_stem in (('music_eat_layers.json', 'eat', False), ('music_sslam_layers.json', 'sslam_pt', True)):
+            if (blocks := read(name)):
+                self.eat_models[folder] = load_eat_family(assets/folder, self.device)
+                self.eat_family.append((self.eat_models[folder], blocks, fp16_stem))
         # optional WavLM-Large voice member (component_fusion.json weight 'wavlm', voice_wavlm_layer.json, wavlm_*.pt)
         self.wavlm, self.wavlm_layer, self.wavlm_heads = None, None, []
         if self.fusion and self.fusion['voice']['weights'].get('wavlm'):
@@ -108,6 +136,37 @@ class Engine:
                 if record['route'] != 'voice' or record['seed'] != seed or record['fake_label_index'] != 0:
                     raise SubmissionError('WavLM head mismatch')
                 self.wavlm_heads.append(voice_heads.load(record).to(self.device).eval().requires_grad_(False))
+        # optional S8 members (research/top15/work5/s8, data_v4/train_backbone_heads.py --voice-ssl / --music-extra):
+        # voice_ssl_members.json = extra SSL voice members fused like 'wavlm' (input voice16 = fp16-rounded voice stem, mix = raw
+        # mix after the peak cap); music_extra.json = features appended after SSLAM in the listed order (input mix | backing16).
+        # Their training features were stored in fp16 (extract_s6.py / extract_s8.py), so every S8 embedding goes through fp16.
+        self.ssl_models, self.ssl_members, self.music_extra = {}, [], []
+        for m in read('voice_ssl_members.json') or []:
+            if m['asset'] not in self.ssl_models:
+                self.ssl_models[m['asset']] = self.wavlm if m['asset'] == 'wavlm' and self.wavlm is not None else load_ssl(assets/m['asset'], self.device)
+            heads = []
+            for seed in SEEDS:
+                record = torch.load(trained/f"{m['name']}_{seed}.pt", map_location='cpu', weights_only=True)
+                if record['route'] != 'voice' or record['seed'] != seed or record['fake_label_index'] != 0:
+                    raise SubmissionError(m['name']+' head mismatch')
+                heads.append(voice_heads.load(record).to(self.device).eval().requires_grad_(False))
+            self.ssl_members.append((m, heads))
+        for asset, model in self.ssl_models.items():   # run only the layers used: hidden_states[k] for k < kept is unchanged
+            if model is not self.wavlm:
+                model.encoder.layers = model.encoder.layers[:max(max(m['layers']) for m, _ in self.ssl_members if m['asset'] == asset)+1]
+        for m in read('music_extra.json') or []:
+            if m['source'] not in ('mixsslam', 'encodec', 'mixeat', 'mixmert'):
+                raise SubmissionError('unknown music extra '+m['source'])
+            # mixsslam shares the backing SSLAM instance (same weights, inference only): no second copy in L4 memory
+            if m['source'] == 'mixsslam':
+                model = self.eat_models.get('sslam_pt') or load_eat_family(assets/'sslam_pt', self.device)
+            elif m['source'] == 'mixeat':   # S9: the backing EAT-large instance on the raw mix
+                model = self.eat_models['eat']
+            elif m['source'] == 'mixmert':   # S9: the backing MERT instance on the raw mix (self.mert / self.processor)
+                model = self.mert
+            else:
+                model = load_encodec(assets/'encodec', self.device)
+            self.music_extra.append((m, model))
         self.music_heads, self.voice_heads, self.fake_index = load_heads(trained, self.device)
         if original_fake != self.fake_index:
             raise SubmissionError('DF-Arena fake label mapping changed')
@@ -140,8 +199,17 @@ class Engine:
             features.append(torch.cat([hidden[k].mean(1).float() for k in self.music_layers], -1))
         features = torch.cat(features)
         if self.eat_family:
-            chunks = windows(backing, starts)
-            features = torch.cat([features, *(self.eat_features(model, blocks, chunks) for model, blocks in self.eat_family)], -1)
+            chunks = {False: windows(backing, starts), True: windows(fp16_round(backing), starts)}
+            features = torch.cat([features, *(self.eat_features(model, blocks, chunks[fp16]) for model, blocks, fp16 in self.eat_family)], -1)
+        for m, model in self.music_extra:   # S8 extras after SSLAM (the training order)
+            chunks = windows(raw, starts) if m['input'] == 'mix' else windows(fp16_round(backing), starts)
+            if m['source'] in ('mixsslam', 'mixeat'):
+                extra = self.eat_features(model, m['layers'], chunks)
+            elif m['source'] == 'mixmert':
+                extra = self.mert_features(m['layers'], chunks)
+            else:
+                extra = self.encodec_features(model, chunks)
+            features = torch.cat([features, extra.half().float()], -1)
         music = []   # heads in fp32, as trained and as the fusion tables were fitted
         for head in self.music_heads:
             logits, _ = head.head((features-head.mean)/head.scale)
@@ -168,8 +236,12 @@ class Engine:
                 emb = torch.from_numpy(self.detector.windows(voice)[0]).to(self.device)
                 members['ad'] = float(np.mean([float(h(emb).softmax(-1)[:, 0].max()) for h in self.ad_heads]))
             if self.wavlm is not None:
-                emb = self.wavlm_features(windows(voice, starts))
+                emb = self.wavlm_features(windows(fp16_round(voice), starts))   # trained on fp16-stored stems
                 members['wavlm'] = float(np.mean([float(h(emb).softmax(-1)[:, 0].max()) for h in self.wavlm_heads]))
+            for m, heads in self.ssl_members:
+                chunks = windows(raw, starts) if m['input'] == 'mix' else windows(fp16_round(voice), starts)
+                emb = self.ssl_features(self.ssl_models[m['asset']], m['layers'], chunks).half().float()
+                members[m['name']] = float(np.mean([float(h(emb).softmax(-1)[:, 0].max()) for h in heads]))
             vf = cf.fuse(self.fusion['voice'], members)   # raises if a weighted member is missing
         file = decision_heads.file_score(self.ensemble, dict(Pv=vp, Pm=mp, Fv=vf, Fm=mf))
         return dict(zip(PREDICTION_COLUMNS, (file, vf, mf, vp, mp), strict=True))
@@ -206,6 +278,37 @@ class Engine:
             x = torch.from_numpy(np.asarray(chunks[offset:offset+self.batch], dtype=np.float32)).to(self.device)
             x = (x-x.mean(1, keepdim=True))/torch.sqrt(x.var(1, unbiased=False, keepdim=True)+1e-7)
             out.append(self.wavlm(x, output_hidden_states=True).hidden_states[self.wavlm_layer].mean(1).float())
+        return torch.cat(out)
+
+    def ssl_features(self, model, layers, chunks):
+        """wavlm_features for any SSL encoder: listed hidden_states frame means, concatenated in the listed order."""
+        out = []
+        for offset in range(0, len(chunks), self.batch):
+            x = torch.from_numpy(np.asarray(chunks[offset:offset+self.batch], dtype=np.float32)).to(self.device)
+            x = (x-x.mean(1, keepdim=True))/torch.sqrt(x.var(1, unbiased=False, keepdim=True)+1e-7)
+            hidden = model(x, output_hidden_states=True).hidden_states
+            out.append(torch.cat([hidden[k].mean(1).float() for k in layers], -1))
+        return torch.cat(out)
+
+    def mert_features(self, layers, chunks):
+        """The backing-stem MERT loop above on any 16 kHz windows: per-window soxr_hq 16->24 kHz, hidden_states frame means."""
+        import librosa
+        out = []
+        for offset in range(0, len(chunks), self.batch):
+            audio = [librosa.resample(np.asarray(x, dtype=np.float32), orig_sr=16000, target_sr=24000, res_type='soxr_hq') for x in chunks[offset:offset+self.batch]]
+            values = self.processor(audio, sampling_rate=24000, return_tensors='pt', padding=True).input_values.to(self.device)
+            hidden = self.mert(values, output_hidden_states=True).hidden_states
+            out.append(torch.cat([hidden[k].mean(1).float() for k in layers], -1))
+        return torch.cat(out)
+
+    def encodec_features(self, model, chunks):
+        """(n, 64600) 16 kHz windows -> (n, 256): EnCodec-24k encoder latent (pre-RVQ) time mean ++ std, as extract_s8.py."""
+        import torchaudio
+        out = []
+        for offset in range(0, len(chunks), self.batch):
+            x = torchaudio.functional.resample(torch.from_numpy(np.asarray(chunks[offset:offset+self.batch], dtype=np.float32)).to(self.device), 16000, 24000)
+            z = model.encoder(x[:, None])
+            out.append(torch.cat([z.mean(-1), z.std(-1)], -1).float())
         return torch.cat(out)
 
 

@@ -1,0 +1,25 @@
+{
+  "winner": {
+    "name": "T0",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 128,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.2
+    },
+    "music_eer": 0.3030119018702939,
+    "balanced_bce": 0.6570957886227808,
+    "selected_epoch": 4,
+    "epochs_completed": 24,
+    "optimizer_steps": 192,
+    "seconds": 23.470889568328857
+  },
+  "criterion": "Tuning music EER, then balanced BCE, then candidate name",
+  "test_used": false,
+  "frozen_at": 1789458200.914939
+}

@@ -1,0 +1,182 @@
+{
+  "winner": {
+    "name": "R8_sigmoid",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.0,
+      "nsynth_mass": 0.0,
+      "seed": 41,
+      "dropout": 0.0,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true,
+      "temporal_bins": 8,
+      "softmax_output": false
+    },
+    "candidates": [
+      "R8_sigmoid_seed41",
+      "R8_sigmoid_seed42",
+      "R8_sigmoid_seed43"
+    ],
+    "music_eer_mean": 0.27641486519310177,
+    "music_eer_std": 0.02147079458608201,
+    "balanced_bce_mean": 0.5337619973881108
+  },
+  "summaries": [
+    {
+      "name": "R1_sigmoid",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.0,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.0,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": false
+      },
+      "candidates": [
+        "R1_sigmoid_seed41",
+        "R1_sigmoid_seed42",
+        "R1_sigmoid_seed43"
+      ],
+      "music_eer_mean": 0.2764148651931018,
+      "music_eer_std": 0.011637073215985925,
+      "balanced_bce_mean": 0.5556821661744126
+    },
+    {
+      "name": "R1_softmax",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.0,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.0,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": true
+      },
+      "candidates": [
+        "R1_softmax_seed41",
+        "R1_softmax_seed42",
+        "R1_softmax_seed43"
+      ],
+      "music_eer_mean": 0.3030119018702939,
+      "music_eer_std": 0.025517584020573407,
+      "balanced_bce_mean": 0.5610393332835889
+    },
+    {
+      "name": "R8_sigmoid",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.0,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.0,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 8,
+        "softmax_output": false
+      },
+      "candidates": [
+        "R8_sigmoid_seed41",
+        "R8_sigmoid_seed42",
+        "R8_sigmoid_seed43"
+      ],
+      "music_eer_mean": 0.27641486519310177,
+      "music_eer_std": 0.02147079458608201,
+      "balanced_bce_mean": 0.5337619973881108
+    },
+    {
+      "name": "R8_softmax",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.0,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.0,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 8,
+        "softmax_output": true
+      },
+      "candidates": [
+        "R8_softmax_seed41",
+        "R8_softmax_seed42",
+        "R8_softmax_seed43"
+      ],
+      "music_eer_mean": 0.28683237524626887,
+      "music_eer_std": 0.04146262336844346,
+      "balanced_bce_mean": 0.5465513246252036
+    }
+  ],
+  "test_used": false,
+  "frozen_at": 1789474501.95269,
+  "evaluation_candidates": [
+    "R1_sigmoid_seed41",
+    "R1_sigmoid_seed42",
+    "R1_sigmoid_seed43",
+    "R1_softmax_seed41",
+    "R1_softmax_seed42",
+    "R1_softmax_seed43",
+    "R8_sigmoid_seed41",
+    "R8_sigmoid_seed42",
+    "R8_sigmoid_seed43",
+    "R8_softmax_seed41",
+    "R8_softmax_seed42",
+    "R8_softmax_seed43"
+  ],
+  "comparison_groups": {
+    "R1_sigmoid": [
+      "R1_sigmoid_seed41",
+      "R1_sigmoid_seed42",
+      "R1_sigmoid_seed43"
+    ],
+    "R1_softmax": [
+      "R1_softmax_seed41",
+      "R1_softmax_seed42",
+      "R1_softmax_seed43"
+    ],
+    "R8_sigmoid": [
+      "R8_sigmoid_seed41",
+      "R8_sigmoid_seed42",
+      "R8_sigmoid_seed43"
+    ],
+    "R8_softmax": [
+      "R8_softmax_seed41",
+      "R8_softmax_seed42",
+      "R8_softmax_seed43"
+    ]
+  }
+}

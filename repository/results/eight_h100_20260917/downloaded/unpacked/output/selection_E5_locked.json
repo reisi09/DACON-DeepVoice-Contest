@@ -1,0 +1,18 @@
+{
+  "experiment": 5,
+  "selected_pool_by_model": {
+    "anti": "max",
+    "df": "top30"
+  },
+  "selection_data": "calibration thresholds then dev recall/fpr only",
+  "test_used": false,
+  "thresholds": {
+    "anti_max": 0.01479026395827532,
+    "anti_mean": 0.0015260266320962861,
+    "anti_top30": 0.004139575234148652,
+    "df_max": 0.7620714306831361,
+    "df_mean": 0.13812067003214157,
+    "df_top30": 0.2772336734665765
+  },
+  "time": 1789657742.5650704
+}

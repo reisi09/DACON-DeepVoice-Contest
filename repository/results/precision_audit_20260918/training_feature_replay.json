@@ -1,0 +1,89 @@
+{
+  "scope": "Read-only replay on training features; in-sample diagnostics only, not validation or generalization evidence. No encoder or head retraining.",
+  "feature_identity_mismatches": [],
+  "feature_extractor_code_hash_counts": {
+    "b0304f4f9aa2d13524d56622f494c4b1fab160b5009e09a51fb77987ed23acac": 1322
+  },
+  "window_count_histogram": {
+    "3": 1322
+  },
+  "rows_with_any_inaudible_window": 0,
+  "inaudible_windows": 0,
+  "normalizers": [
+    {
+      "seed": 41,
+      "mean_max_abs_diff": 0.0,
+      "scale_max_abs_diff": 0.0
+    },
+    {
+      "seed": 42,
+      "mean_max_abs_diff": 0.0,
+      "scale_max_abs_diff": 0.0
+    },
+    {
+      "seed": 43,
+      "mean_max_abs_diff": 0.0,
+      "scale_max_abs_diff": 0.0
+    }
+  ],
+  "checkpoints": [
+    {
+      "seed": 41,
+      "parameter_count": 131329,
+      "checkpoint_sha256": "91f5bd17f786d5c9afccffb7516484cba6b695ba0156dce01c04a11aaca746d0"
+    },
+    {
+      "seed": 42,
+      "parameter_count": 131329,
+      "checkpoint_sha256": "a3dbec68027d686f6465d9144166741a330c80309a0b3538e78300d3d2990d6a"
+    },
+    {
+      "seed": 43,
+      "parameter_count": 131329,
+      "checkpoint_sha256": "a877808bd54326d51e0dedfc2331402a6f204f1534c8cc163db8036b5e895c9c"
+    }
+  ],
+  "mean_feature_vs_mean_window_probability_abs_diff": {
+    "median": 8.45491886138916e-05,
+    "max": 0.38975247740745544,
+    "rows_over_0_01": 148
+  },
+  "in_sample_diagnostics": {
+    "all": {
+      "rows": 1322,
+      "probability_min": 5.927411805828342e-08,
+      "median": 0.9998764395713806,
+      "max": 1.0,
+      "bce": 0.14025164581793262,
+      "errors_at_0_5": 42
+    },
+    "real_formerly_omitted": {
+      "rows": 109,
+      "probability_min": 1.8714450789047987e-06,
+      "median": 0.19000492990016937,
+      "max": 0.9999930262565613,
+      "bce": 1.6916062916414578,
+      "errors_at_0_5": 42
+    },
+    "real_regular": {
+      "rows": 109,
+      "probability_min": 5.927411805828342e-08,
+      "median": 0.0007048868574202061,
+      "max": 0.004294841084629297,
+      "bce": 0.0009352581721445066,
+      "errors_at_0_5": 0
+    },
+    "fake": {
+      "rows": 1104,
+      "probability_min": 0.9823243021965027,
+      "median": 0.9999449849128723,
+      "max": 1.0,
+      "bce": 0.0008384482261089541,
+      "errors_at_0_5": 0
+    }
+  },
+  "redesign_head_parameter_counts": {
+    "A_control": 107234,
+    "B_residual": 115785
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "network_bytes_this_phase": 0,
+  "card_url": "https://huggingface.co/datasets/awsaf49/sonics/blob/3788dca9f9f11ad92e9097ef4b58eee247661e7f/README.md",
+  "local_card_path": "_workspace/data_expansion_20260918/sonics/metadata/README.md",
+  "local_card_sha256": "1adab4c9c50d83a8ae2d3218c209b793e9f5c3efc804757a24175b6b69c75142",
+  "card_evidence": {
+    "lines_32_34": "The authors distinguish end-to-end synthetic SONICS songs from earlier datasets containing synthetic vocals over real instrumental recordings.",
+    "lines_108_114": "The authors identify Suno/Udio generation and assign target1 to full fake, mostly fake and half fake.",
+    "license_scope": "Pinned audio dataset card declares cc-by-nc-4.0; the downloaded archive members are the fake_songs audio identified by this card."
+  },
+  "paper_category_definitions": {
+    "primary_url": "https://openreview.net/notes/edits/attachment?id=IIrXJiOHsU&name=pdf",
+    "evidence_origin": "Primary-paper text retrieved earlier in this task before the zero-network retention phase; no local full-paper snapshot was found.",
+    "full_fake": "Both lyrics and song-style prompts are AI-generated.",
+    "mostly_fake": "Lyrics are generated using features extracted from real lyrics; song-style prompting is derived from real songs.",
+    "half_fake": "Lyrics are directly drawn from real songs; song-style prompting is derived from real songs.",
+    "interpretation_boundary": "These categories describe source inputs and prompting provenance. They are not real/fake audio-segment percentages or timestamp annotations."
+  },
+  "label_policy": {
+    "FILE_FAKE": "1 from source-documented synthetic song generation",
+    "MUSIC_FAKE": "1 from source-documented end-to-end audio generation",
+    "MUSIC_PRESENT": "1 from source song annotation, subject to decode/finite/duration/energy rejection gates",
+    "VOICE_FAKE": "unknown",
+    "VOICE_PRESENT": "unknown",
+    "independent_listening": false
+  },
+  "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "limitations": [
+    "No independent per-song listening, no new generator-family claim, no lyrics-rights audit beyond the dataset author license declaration.",
+    "Suno/Udio are known generator families; exact hashes do not rule out every cross-corpus re-encoding or unknown semantic reference."
+  ]
+}

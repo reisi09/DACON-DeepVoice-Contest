@@ -1,0 +1,48 @@
+{
+  "scenario": "frozen eight H100 operation source commit preflight",
+  "base_head": "2fa9bd3de6870c5655d6c6788273a3b6ab817931",
+  "invocations": {
+    "manifest": "git diff --cached --name-only",
+    "size": "staged file byte sizes; reject any file over 1048576 bytes",
+    "secret_scan": "staged blobs scanned for common API keys and private-key markers",
+    "whitespace": "git diff --cached --check",
+    "runtime_identity": "sha256sum of frozen runtime_sources files compared with receipt.json"
+  },
+  "binary_observables": {
+    "staged_count": 12,
+    "allowlist_failures": [],
+    "files_over_1MiB": [],
+    "secret_pattern_hits": 0,
+    "whitespace_check": "PASS",
+    "runtime_source_receipt_match": "PASS",
+    "gpu_or_api_actions": "none"
+  },
+  "staged_manifest": [
+    ".omo/evidence/eight_runner_build/attempt6_bootstrap_upload.json",
+    ".omo/evidence/eight_runner_build/attempt6_full_overlay_upload.json",
+    ".omo/evidence/eight_runner_build/attempt6_start_sanitized.json",
+    ".omo/evidence/eight_runner_build/attempt6_watcher_attached.json",
+    ".omo/evidence/eight_runner_build/operation_commit_preflight.json",
+    ".omo/start-work/ledger.jsonl",
+    "eight_h100_launch.py",
+    "eight_h100_run.sh",
+    "results/eight_h100_20260917/runtime_sources/config.attempt6.json",
+    "results/eight_h100_20260917/runtime_sources/eight_h100_run_retry.attempt6.sh",
+    "results/eight_h100_20260917/runtime_sources/full_overlay_then_main.attempt6.sh",
+    "results/eight_h100_20260917/runtime_sources/receipt.json"
+  ],
+  "runtime_source_hashes": {
+    "config.attempt6.json": "deae392fdaf8597eb2a66a22a7f2158876a714b99005441280e258e545b49baa",
+    "eight_h100_run_retry.attempt6.sh": "5e26fb775d04f0f6a1986c0fad551eea4af867a180ed9ba96b0bd0f3a164bca6",
+    "full_overlay_then_main.attempt6.sh": "be971b37ae1f836253bff662efc0d20d07c40918231934d8315e33e905966ece"
+  },
+  "scope": {
+    "canonical_code_hashes_edited": false,
+    "runner_frozen": true,
+    "unrelated_dirty_files_preserved": [
+      ".omo/evidence/eight_h100_20260917/actual_manifest_admission.md",
+      ".omo/evidence/v4-training/source-sha256.txt"
+    ],
+    "final_results_commit": "separate follow-up"
+  }
+}

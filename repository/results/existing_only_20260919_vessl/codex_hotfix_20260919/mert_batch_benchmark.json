@@ -1,0 +1,42 @@
+{
+  "chosen": 256,
+  "measurements": [
+    {
+      "batch": 16,
+      "peak_allocated_bytes": 7785219072,
+      "seconds": 0.24220270477235317,
+      "status": "ok",
+      "windows_per_second": 66.06036879331481
+    },
+    {
+      "batch": 32,
+      "peak_allocated_bytes": 9062425600,
+      "seconds": 0.46732872538268566,
+      "status": "ok",
+      "windows_per_second": 68.47428429270182
+    },
+    {
+      "batch": 64,
+      "peak_allocated_bytes": 11613431296,
+      "seconds": 0.9171942099928856,
+      "status": "ok",
+      "windows_per_second": 69.77802443878971
+    },
+    {
+      "batch": 128,
+      "peak_allocated_bytes": 16719569408,
+      "seconds": 1.811618596315384,
+      "status": "ok",
+      "windows_per_second": 70.65504861803512
+    },
+    {
+      "batch": 256,
+      "peak_allocated_bytes": 26930737664,
+      "seconds": 3.6203053295612335,
+      "status": "ok",
+      "windows_per_second": 70.7122678050545
+    }
+  ],
+  "policy": "largest within 90% fastest throughput and 80% VRAM",
+  "reference_id": "new_haim_sonicmaster_real_1092339_mastered"
+}

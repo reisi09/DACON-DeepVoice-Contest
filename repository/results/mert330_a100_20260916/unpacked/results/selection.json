@@ -1,0 +1,116 @@
+{
+  "winner": {
+    "name": "M330_mlp",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.0,
+      "seed": 41,
+      "dropout": 0.1,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true,
+      "temporal_bins": 1,
+      "softmax_output": true,
+      "input_dim": 1024,
+      "mlp_output": true
+    },
+    "candidates": [
+      "M330_mlp_seed41",
+      "M330_mlp_seed42",
+      "M330_mlp_seed43"
+    ],
+    "music_eer_mean": 0.25557984508676757,
+    "music_eer_std": 0.013415811598902743,
+    "balanced_bce_mean": 0.5217477695621114
+  },
+  "summaries": [
+    {
+      "name": "M95_mlp",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.1,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": true,
+        "input_dim": 768,
+        "mlp_output": true
+      },
+      "candidates": [
+        "M95_mlp_seed41",
+        "M95_mlp_seed42",
+        "M95_mlp_seed43"
+      ],
+      "music_eer_mean": 0.27120611016651824,
+      "music_eer_std": 0.013415811598902767,
+      "balanced_bce_mean": 0.5387183530803764
+    },
+    {
+      "name": "M330_mlp",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.1,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": true,
+        "input_dim": 1024,
+        "mlp_output": true
+      },
+      "candidates": [
+        "M330_mlp_seed41",
+        "M330_mlp_seed42",
+        "M330_mlp_seed43"
+      ],
+      "music_eer_mean": 0.25557984508676757,
+      "music_eer_std": 0.013415811598902743,
+      "balanced_bce_mean": 0.5217477695621114
+    }
+  ],
+  "test_used": false,
+  "frozen_at": 1789502690.7056313,
+  "comparison_groups": {
+    "M95_mlp": [
+      "M95_mlp_seed41",
+      "M95_mlp_seed42",
+      "M95_mlp_seed43"
+    ],
+    "M330_mlp": [
+      "M330_mlp_seed41",
+      "M330_mlp_seed42",
+      "M330_mlp_seed43"
+    ]
+  },
+  "evaluation_candidates": [
+    "M95_mlp_seed41",
+    "M95_mlp_seed42",
+    "M95_mlp_seed43",
+    "M330_mlp_seed41",
+    "M330_mlp_seed42",
+    "M330_mlp_seed43"
+  ]
+}

@@ -1,0 +1,6 @@
+Manual QA CA3
+Surface: prior terminal QA machine-readable EER evidence and correction receipt
+Invocation: .venv/bin/python -c 'load terminal_qa.json and correction_receipt.json; assert eer_recompute comparisons=77, max_abs_delta=0, mismatches=[]; assert terminal_qa SHA equals receipt binding'
+Exit code: 0
+Output:
+VALID EER comparisons=77 max_abs_delta=0 mismatches=0 terminal_qa_sha_bound=true

@@ -1,0 +1,43 @@
+{
+  "task": "E7 AntiDeepfake LoRA implementation",
+  "recorded_at": "2026-09-17T21:23:19+09:00",
+  "gpu_execution": "not run; caller explicitly prohibited remote/GPU action in this task",
+  "scenarios": [
+    {
+      "scenario": "A real low-rank backward pass changes LoRA B, leaves every frozen base tensor exact, and an adapter/head-only checkpoint reload reproduces predictions exactly; mutating then restoring the classifier also reproduces the pristine frozen output exactly.",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_lora.py",
+      "binary_observable": "exit 0; 2 passed in 1.75s",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-4-e7-cpu-verification.json"
+    },
+    {
+      "scenario": "Common 64600/32300 windows zero-pad short audio, cover a deduplicated tail, and paired arms receive a deterministic one-REAL/one-FAKE batch at every optimizer step.",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_lora.py",
+      "binary_observable": "exit 0; test_shared_windows_and_schedule_preserve_equal_exposure passed",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-4-e7-cpu-verification.json"
+    },
+    {
+      "scenario": "The real prepared manifest supplies only trusted core speech to E7, with telephone/MP3 restricted to training and Opus restricted to holdout evaluation.",
+      "invocation": ".venv/bin/python - <<'PY' ... load_views({'root':'.'}); assert class/variant/speaker contracts ... PY",
+      "binary_observable": "exit 0; files=1236; train windows=1800, calibration=1132, dev=270, test=246; train labels REAL=318/FAKE=318; speakers train/calibration/dev/test=3/3/2/2",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-4-e7-cpu-verification.json"
+    },
+    {
+      "scenario": "The pinned real AntiDeepfake configuration has 48 layers and hidden size 1280, yielding exactly 96 q/v adapters, 1,966,080 adapter parameters, and a 2,562-parameter classifier.",
+      "invocation": ".venv/bin/python - <<'PY' ... read antideepfake_config.json and assert parameter arithmetic ... PY",
+      "binary_observable": "exit 0; qv_adapter_parameters=1966080; classifier_parameters=2562",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-4-e7-cpu-verification.json"
+    },
+    {
+      "scenario": "All owned Python modules compile, pass the project programming audit, and have no whitespace errors.",
+      "invocation": ".venv/bin/python -m py_compile eight_lora.py eight_lora_runtime.py eight_lora_train.py test_eight_lora.py && .venv/bin/python .../check-no-excuse-rules.py eight_lora.py eight_lora_runtime.py eight_lora_train.py test_eight_lora.py && git diff --check -- eight_lora.py eight_lora_runtime.py eight_lora_train.py test_eight_lora.py",
+      "binary_observable": "exit 0; no violations in 4 file(s)",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-4-e7-cpu-verification.json"
+    },
+    {
+      "scenario": "The H100 admission gate is present and full-run frozen test inference is ordered after writing selection_locked.json and after restoring the pristine adapter/classifier checksum.",
+      "invocation": "rg -n 'def preflight|def run|load_adapter_state_dict\\(model, pristine\\)|selection_locked.json|frozen_test =' eight_lora_train.py",
+      "binary_observable": "exit 0; preflight at line 77; selection lock path at line 195; pristine restore at line 198; frozen test logits at line 201; every trained checkpoint records reloaded_dev_logits_exact",
+      "artifact": ".omo/evidence/eight-h100-20260917/task-4-e7-cpu-verification.json"
+    }
+  ]
+}

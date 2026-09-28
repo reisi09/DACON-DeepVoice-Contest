@@ -1,0 +1,62 @@
+{
+  "track_id": "C1_00000",
+  "filename": "C1_00000.mp3",
+  "method": "concat",
+  "n_segments": 4,
+  "n_boundaries": 3,
+  "segments": [
+    {
+      "source": "939241.mp3",
+      "type": "human",
+      "start_in_source": 102.4,
+      "duration": 31.64,
+      "output_start": 0,
+      "output_end": 31.687
+    },
+    {
+      "source": "05871.mp3",
+      "type": "ai",
+      "start_in_source": 5.43,
+      "duration": 24.35,
+      "output_start": 32.187,
+      "output_end": 56.585
+    },
+    {
+      "source": "1121402.mp3",
+      "type": "human",
+      "start_in_source": 157.23,
+      "duration": 27.34,
+      "output_start": 56.755,
+      "output_end": 84.131
+    },
+    {
+      "source": "0738.mp3",
+      "type": "ai",
+      "start_in_source": 0.09,
+      "duration": 14.05,
+      "output_start": 84.381,
+      "output_end": 98.461
+    }
+  ],
+  "boundaries": [
+    {
+      "position_sec": 31.687,
+      "gap_sec": 0.5,
+      "from_type": "human",
+      "to_type": "ai"
+    },
+    {
+      "position_sec": 56.585,
+      "gap_sec": 0.17,
+      "from_type": "ai",
+      "to_type": "human"
+    },
+    {
+      "position_sec": 84.131,
+      "gap_sec": 0.25,
+      "from_type": "human",
+      "to_type": "ai"
+    }
+  ],
+  "total_duration": 98.461
+}

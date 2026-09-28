@@ -1,0 +1,21 @@
+{
+  "epoch": 32,
+  "train_loss": 0.2232109666801989,
+  "optimizer_steps": 512,
+  "learning_rate": 1.25e-05,
+  "next_learning_rate": 6.25e-06,
+  "augmentation": {
+    "seen": 1008,
+    "cropped": 648,
+    "masked": 302,
+    "crop_eligible": 918,
+    "real_cropped": 47,
+    "fake_cropped": 601,
+    "input_windows": 24555,
+    "output_windows": 11248
+  },
+  "validation_loss": 0.7310231775045395,
+  "best_epoch": 12,
+  "best_validation_loss": 0.608990341424942,
+  "utc": 1789504876.0873053
+}

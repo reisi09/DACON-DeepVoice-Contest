@@ -1,0 +1,6 @@
+[13:30:04] === pilot ===
+[13:30:04] $ /root/dacon_existing9504_a100_20260919/env/venv/bin/python -m dacon9504a100.features pilot --config /root/dacon_existing9504_a100_20260919/config/run_config.json
+[13:33:11] [pilot] pilot: projected feature extraction 7.80 h for 9504 rows (154.7 h audio)
+[13:33:11] A100 pilot: MERT batch 256; peak VRAM 25.1GiB/79.3GiB; projected features 7.80 h; stages so far 0h17m36s; target 16.0 h (projection only; training/eval time measured later, nothing is dropped)
+[13:33:12] pilot complete in 0h03m11s; elapsed stage total 0h20m46s
+PILOT_VERIFIED 256 {'audio_hours': 154.66142695920647, 'by_split_seconds': {'test': 5430.997003564967, 'train': 17270.494061279373, 'val': 5368.186048006099}, 'projected_feature_hours': 7.797132531347267, 'projected_feature_seconds': 28069.67711285016, 'rows': 9504, 'rows_without_duration': 0}

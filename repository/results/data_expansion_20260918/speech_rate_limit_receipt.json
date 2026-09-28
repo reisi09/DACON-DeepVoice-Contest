@@ -1,0 +1,51 @@
+{
+  "network_state": "paused_after_429",
+  "audio_source_files": 81,
+  "source_bytes": 4977714,
+  "server_evidence": {
+    "HTTP": 429,
+    "x-ratelimit-limit": 133,
+    "x-ratelimit-remaining": 0,
+    "Retry-After": 0
+  },
+  "orthogonal_checks": {
+    "bad_zip_or_label_join": "refuted; all4000 rows matched official central directory, CM protocol and VCTK mapping in independent read-only review",
+    "network_unreachable": "refuted; server returned structured HTTP429 headers",
+    "shared_server_quota_exhausted": "confirmed by remaining0; concurrent FakeMusicCaps requests observed, exact per-client quota scope not proven"
+  },
+  "fix": "Removed independent curl retries; all starts/retries share0.8s pacing.429 publishes shared deadline at least60s ahead; sleep occurs outside lock and deadline is rechecked before request reservation. Live retry remains paused for shared-quota coordination.",
+  "full_archive_paths_blocked": true,
+  "gpu_or_training_started": false,
+  "observed_429_windows": [
+    {
+      "response_date": "Fri, 18 Sep 2026 05:04:51 GMT",
+      "reset_unix_seconds": 1789707893,
+      "reset_utc": "2026-09-18T05:04:53+00:00",
+      "retry_after_seconds": 1,
+      "remaining": 0
+    },
+    {
+      "response_date": "Fri, 18 Sep 2026 05:04:55 GMT",
+      "reset_unix_seconds": 1789707896,
+      "reset_utc": "2026-09-18T05:04:56+00:00",
+      "retry_after_seconds": 0,
+      "remaining": 0
+    },
+    {
+      "response_date": "Fri, 18 Sep 2026 05:04:59 GMT",
+      "reset_unix_seconds": 1789707900,
+      "reset_utc": "2026-09-18T05:05:00+00:00",
+      "retry_after_seconds": 0,
+      "remaining": 0
+    },
+    {
+      "response_date": "Fri, 18 Sep 2026 05:05:03 GMT",
+      "reset_unix_seconds": 1789707904,
+      "reset_utc": "2026-09-18T05:05:04+00:00",
+      "retry_after_seconds": 0,
+      "remaining": 0
+    }
+  ],
+  "reset_interpretation": "Each advertised reset was about1\u20132s after response Date, while429 continued. This evidence does not establish a fixed one-minute reset. A60s shared cooldown is a conservative client policy, not a claimed server reset guarantee.",
+  "script_sha256": "885a3256283ebb7958ed246774cf710a4e1edbc204ab2b6f55464e53c85e9b38"
+}

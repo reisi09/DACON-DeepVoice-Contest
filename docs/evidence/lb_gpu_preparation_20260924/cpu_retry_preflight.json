@@ -1,0 +1,44 @@
+{
+  "added_train_rows": 1477,
+  "asset_hashes_sha256": "bf84fe882561e2e8272149837984ef5dcf5369df5b9bd181ba166a8ec2662b90",
+  "audio_bytes": 12329271166,
+  "audio_files": 43516,
+  "config": {
+    "music_local_loss_weight": 0.25,
+    "seeds": [
+      41
+    ],
+    "voice_local_loss_weight": 0.0,
+    "voice_pooling": "max",
+    "voice_topk_fraction": 0.25
+  },
+  "gpu_started": false,
+  "manifests": {
+    "E00": "61e104a56129b742d38e6761f7b910ca63f88bfe35acfb06780ca899162a6549",
+    "E04": "c83eacab4143f8ca336d12e24e3cccf75dc1fd5939ab8f20054c5c2a0eb78168",
+    "features": "492bbe454abce816beab07d97baecdcf34e34ec1936d5230d955c2cda8f27906"
+  },
+  "max_epochs": 50,
+  "patience": 5,
+  "pinned_asset_files": 25,
+  "roles": {
+    "E00": {
+      "calibration": 2023,
+      "selection": 2386,
+      "train": 27788
+    },
+    "E04": {
+      "calibration": 2023,
+      "selection": 2386,
+      "train": 29265
+    },
+    "features": {
+      "calibration": 2023,
+      "development": 9842,
+      "selection": 2386,
+      "train": 29265
+    }
+  },
+  "status": "cpu_preflight_passed",
+  "validation_scope": "Input bytes and data/config contracts; no model loading or GPU runtime validation"
+}

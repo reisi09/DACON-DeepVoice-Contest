@@ -1,0 +1,51 @@
+{
+  "scope": "Existing selected 7144 only. Additional acquisition is not split or admitted.",
+  "selected_sha256": "512dff11a9ebd9555fefe8791c21f3f46abab7d8a0c36591d2591ed24f2397c2",
+  "coverage": [
+    {
+      "route": "voice",
+      "label": "0",
+      "train": 1652,
+      "val": 412,
+      "test": 0
+    },
+    {
+      "route": "voice",
+      "label": "1",
+      "train": 1064,
+      "val": 266,
+      "test": 0
+    },
+    {
+      "route": "music",
+      "label": "0",
+      "train": 1206,
+      "val": 302,
+      "test": 0
+    },
+    {
+      "route": "music",
+      "label": "1",
+      "train": 1794,
+      "val": 448,
+      "test": 0
+    }
+  ],
+  "test_status": "not constructed in this selected manifest; zero is not a missing-file assertion about DACON hidden test",
+  "music_rows_unknown_voice_presence_and_authenticity": 3750,
+  "joint_presence_confirmed_rows": 0,
+  "known_voice_absent_rows": 0,
+  "partial_or_sham_variant_rows": 0,
+  "fake_voice_sources": {
+    "asvspoof2019_la": 1330
+  },
+  "fake_voice_connected_groups": {
+    "train": 2,
+    "val": 2
+  },
+  "sparse_validation_sources": {
+    "Echoes/mubert/TTA": 1,
+    "Echoes/stableaudio/TTA": 1
+  },
+  "warning": "Unannotated does not mean acoustically absent. Existing exposure diagnostics: 561 val rows historically exposed; unexposed music real 1, fake 208. No split changed."
+}

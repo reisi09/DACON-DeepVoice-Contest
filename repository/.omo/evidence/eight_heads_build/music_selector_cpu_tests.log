@@ -1,0 +1,5 @@
+scenario: corrected core-music admission plus E1/E3/E4/E6/E8 and postrun E2 CPU integration
+invocation: .venv/bin/python -m pytest -q test_eight_fixed.py test_eight_e2_music_file_analysis.py test_eight_integration.py
+............                                                             [100%]
+12 passed in 2.35s
+observable: pytest exit 0; actual-manifest selector, empty-selector rejection, lock ordering, checkpoint drift, and all CPU entrypoints passed

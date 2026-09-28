@@ -1,0 +1,30 @@
+{
+  "checkpoint_sha256": [
+    "91f5bd17f786d5c9afccffb7516484cba6b695ba0156dce01c04a11aaca746d0",
+    "a3dbec68027d686f6465d9144166741a330c80309a0b3538e78300d3d2990d6a",
+    "a877808bd54326d51e0dedfc2331402a6f204f1534c8cc163db8036b5e895c9c"
+  ],
+  "deadline_epoch": 1789695277.734545,
+  "decoder": "demucs.separate.load_track",
+  "decoder_audio_sha256": "cd1ea301e9adf854ba820e9aafe7c055f4ae0236eb7ef522a845b210f2705393",
+  "decoder_shape": [
+    2,
+    352800
+  ],
+  "ffmpeg_executable": "/root/mert12_a100_20260918/env311_probe/wheel/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2",
+  "ffmpeg_version": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+  "imageio_ffmpeg": "0.6.0",
+  "package_bytes": 6268221960,
+  "package_rerun": false,
+  "package_sha256": "eb5466d1446e205130f5db1de719260a1b0ecbd4743c4c18d207288970b88a90",
+  "python": "3.11.15",
+  "python_executable": "/root/V6_L40S/.venv/bin/python",
+  "schema_version": 1,
+  "status": "passed",
+  "torch": "2.7.1+cu128",
+  "torch_cuda": "12.8",
+  "torchaudio": "2.7.1+cu128",
+  "torchvision": "0.22.1+cu128",
+  "training_rerun": false,
+  "verified_at": 1789692144.1509511
+}

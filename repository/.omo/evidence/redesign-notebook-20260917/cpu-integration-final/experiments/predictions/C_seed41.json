@@ -1,0 +1,594 @@
+{
+  "candidate": "C_seed41",
+  "groups": {
+    "validation-000-observed": [
+      "group-validation-000"
+    ],
+    "validation-001-observed": [
+      "group-validation-001"
+    ],
+    "validation-002-observed": [
+      "group-validation-002"
+    ],
+    "validation-003-observed": [
+      "group-validation-003"
+    ],
+    "validation-004-observed": [
+      "group-validation-004"
+    ],
+    "validation-005-observed": [
+      "group-validation-005"
+    ],
+    "validation-006-observed": [
+      "group-validation-006"
+    ],
+    "validation-007-observed": [
+      "group-validation-007"
+    ],
+    "validation-008-observed": [
+      "group-validation-008"
+    ],
+    "validation-009-observed": [
+      "group-validation-009"
+    ],
+    "validation-010-observed": [
+      "group-validation-010"
+    ],
+    "validation-011-observed": [
+      "group-validation-011"
+    ]
+  },
+  "labels": {
+    "validation-000-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-001-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-002-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-003-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-004-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-005-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-006-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-007-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-008-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-009-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    },
+    "validation-010-observed": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 0,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 0,
+      "VOICE_PRESENT": 1
+    },
+    "validation-011-observed": {
+      "FILE_FAKE": 1,
+      "MUSIC_FAKE": 1,
+      "MUSIC_PRESENT": 1,
+      "VOICE_FAKE": 1,
+      "VOICE_PRESENT": 1
+    }
+  },
+  "predictions": {
+    "validation-000-observed": {
+      "FILE_FAKE_PROB": 0.34518450721739313,
+      "MUSIC_FAKE_PROB": 0.406099408864975,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-001-observed": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5670027732849121,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-002-observed": {
+      "FILE_FAKE_PROB": 0.3364063446705856,
+      "MUSIC_FAKE_PROB": 0.39577215909957886,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-003-observed": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5870242118835449,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-004-observed": {
+      "FILE_FAKE_PROB": 0.3558102320098939,
+      "MUSIC_FAKE_PROB": 0.41860026121139526,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-005-observed": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5563330054283142,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-006-observed": {
+      "FILE_FAKE_PROB": 0.36117643087895956,
+      "MUSIC_FAKE_PROB": 0.4249134361743927,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-007-observed": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.556047260761261,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-008-observed": {
+      "FILE_FAKE_PROB": 0.36517032068043065,
+      "MUSIC_FAKE_PROB": 0.4296121299266815,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-009-observed": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5829656720161438,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-010-observed": {
+      "FILE_FAKE_PROB": 0.3498303913847245,
+      "MUSIC_FAKE_PROB": 0.4115651547908783,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.25,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    },
+    "validation-011-observed": {
+      "FILE_FAKE_PROB": 0.6375000178813934,
+      "MUSIC_FAKE_PROB": 0.5788450837135315,
+      "MUSIC_PRESENT_PROB": 0.8500000238418579,
+      "VOICE_FAKE_PROB": 0.75,
+      "VOICE_PRESENT_PROB": 0.8500000238418579
+    }
+  },
+  "schema_version": 1,
+  "strata": {
+    "validation-000-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-001-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-002-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-003-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-004-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-005-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-006-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-007-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-008-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-009-observed": {
+      "domain": "natural",
+      "kind": "singing",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-010-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    },
+    "validation-011-observed": {
+      "domain": "telephone",
+      "kind": "speech",
+      "pair_id": "",
+      "source": "deterministic-algorithm-fixture",
+      "view": "observed"
+    }
+  },
+  "upstream_identity": {
+    "checkpoint_sha256": "67989298e8be289f27de2eecfbdbe954e25e63acc37c79bbc2536e6f4dcd5d4f",
+    "model_recipe_identity": "26c774a67dd12f8ba86c81be980905fe1f011d04ba86e2e8a030dfb7ec973c0f",
+    "records_identity": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+    "source_sha256": {
+      "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+      "redesign_fit.py": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906",
+      "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+      "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+      "redesign_predictions.py": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+      "redesign_train.py": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+    },
+    "training_manifest_sha256": "b8f338a496c91f87ff6f6924372f9447d9532eb01deca5e1869158d1ee548681",
+    "upstream_family_identity": "c292db9c6c7c7dc95dee9368fbe9eb636e7be03e651a8b09e7aa5978d6576c0d",
+    "upstream_family_payload": {
+      "model_recipe_identity": "26c774a67dd12f8ba86c81be980905fe1f011d04ba86e2e8a030dfb7ec973c0f",
+      "records_identity": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+      "source_sha256": {
+        "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+        "redesign_fit.py": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906",
+        "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+        "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+        "redesign_predictions.py": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+        "redesign_train.py": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+      },
+      "training_manifest_sha256": "b8f338a496c91f87ff6f6924372f9447d9532eb01deca5e1869158d1ee548681"
+    }
+  },
+  "window_scores": {
+    "validation-000-observed": {
+      "music_fake": [
+        0.450143963098526,
+        0.3837648630142212,
+        0.4282994568347931
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-001-observed": {
+      "music_fake": [
+        0.5740166902542114,
+        0.5584210157394409,
+        0.5872973203659058
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-002-observed": {
+      "music_fake": [
+        0.4165516495704651,
+        0.39256057143211365,
+        0.4141618311405182
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-003-observed": {
+      "music_fake": [
+        0.5818241834640503,
+        0.5817161798477173,
+        0.5991845726966858
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-004-observed": {
+      "music_fake": [
+        0.4493407905101776,
+        0.39544594287872314,
+        0.43103110790252686
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-005-observed": {
+      "music_fake": [
+        0.5704764127731323,
+        0.5348769426345825,
+        0.5587560534477234
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-006-observed": {
+      "music_fake": [
+        0.4173280596733093,
+        0.4044857323169708,
+        0.44810253381729126
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-007-observed": {
+      "music_fake": [
+        0.5901454091072083,
+        0.5466352105140686,
+        0.5420223474502563
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-008-observed": {
+      "music_fake": [
+        0.4528539180755615,
+        0.3993512988090515,
+        0.4468921720981598
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-009-observed": {
+      "music_fake": [
+        0.5751980543136597,
+        0.5813149809837341,
+        0.5604466795921326
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-010-observed": {
+      "music_fake": [
+        0.43654385209083557,
+        0.3824823498725891,
+        0.45161208510398865
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    },
+    "validation-011-observed": {
+      "music_fake": [
+        0.5814570188522339,
+        0.5777878165245056,
+        0.57955002784729
+      ],
+      "music_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ],
+      "voice_fake": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "voice_present": [
+        0.8500000238418579,
+        0.8500000238418579,
+        0.8500000238418579
+      ]
+    }
+  }
+}

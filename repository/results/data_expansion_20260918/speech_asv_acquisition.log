@@ -1,0 +1,60 @@
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+curl: (22) The requested URL returned error: 429
+Traceback (most recent call last):
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 590, in <module>
+    main()
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 508, in main
+    acquire_asv_selection()
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 298, in acquire_asv_selection
+    for number, _ in enumerate(executor.map(acquire, tasks), 1):
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 295, in acquire
+    return fetch_asv_member(info, path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 176, in fetch_asv_member
+    subprocess.run(["curl", "-fLsS", "--connect-timeout", "20", "--max-time", "180",
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['curl', '-fLsS', '--connect-timeout', '20', '--max-time', '180', '--retry', '3', '--retry-delay', '3', '--max-filesize', '54541', '--range', '3034362390-3034416930', '-D', '/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/data_expansion_20260918/speech/asv_originals/LA_D_2051747.flac.headers', 'https://zenodo.org/api/records/6906306/files/LA.zip/content?range=3034362390-3034416930', '-o', '/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/data_expansion_20260918/speech/asv_originals/LA_D_2051747.flac.range']' returned non-zero exit status 22.

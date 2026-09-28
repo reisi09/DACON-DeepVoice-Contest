@@ -1,0 +1,2107 @@
+{
+  "protocol": {
+    "dataset_manifest_sha256": "bcdb0725c0350ac0a2316fe0e2d96d3d7f789d8c8953bb3b823ef4b3d4a61811",
+    "effective_batch": 128,
+    "epochs": 20,
+    "independent_evaluation": false,
+    "music_lr": 0.0003,
+    "seeds": [
+      41,
+      42,
+      43
+    ],
+    "selection": "fixed final epoch",
+    "source_sha256": "af5eaaba3c6a36ad69c0fe1769ce301ca84a5359b55a8f58c4e26ff54d45f9a4",
+    "temporal_source_sha256": "47ec7fdf7bdc8a2cd96107f54df691827cc9fea30f66c93f409c3f1da7c92b2a",
+    "voice_lr": 0.0001
+  },
+  "data": {
+    "added_rows": 1477,
+    "added_rows_cached": 0,
+    "added_sources": {
+      "LibriSpeech": 449,
+      "MLAAD": 146,
+      "MusicArena": 882
+    },
+    "cache_rows": 5952,
+    "cached_bytes": 104830976,
+    "cross_role_audio_hashes": 0,
+    "cross_role_components": 0,
+    "current_roles_disjoint": true,
+    "independent_reference_evaluation": false,
+    "old_exposure": [
+      {
+        "current_role": "calibration",
+        "old_split": "val",
+        "rows": 335
+      },
+      {
+        "current_role": "selection",
+        "old_split": "val",
+        "rows": 421
+      },
+      {
+        "current_role": "train",
+        "old_split": "train",
+        "rows": 5196
+      }
+    ],
+    "roles": {
+      "calibration": 335,
+      "selection": 421,
+      "train": 5196
+    }
+  },
+  "benchmark": {
+    "chosen": {
+      "music": "cpu",
+      "voice": "cpu"
+    },
+    "seconds_per_real_step": {
+      "music": {
+        "cpu": 0.032464599004015326,
+        "mps": 0.11901075524656335
+      },
+      "voice": {
+        "cpu": 0.0009791822521947324,
+        "mps": 0.045619208372954745
+      }
+    },
+    "torch": "2.7.1"
+  },
+  "completion": {
+    "candidates": [
+      "music_k1",
+      "music_k3",
+      "voice_linear",
+      "voice_linear_reweight",
+      "voice_mlp"
+    ],
+    "checkpoint_prediction_replay_exact": true,
+    "completed": true,
+    "elapsed_seconds": 60.394168041006196,
+    "frozen_presence_exact": true,
+    "independent_quality_validated": false,
+    "no_cloud": true,
+    "no_submission": true,
+    "peak_rss_bytes": 1043529728
+  },
+  "comparison": {
+    "music_k1": {
+      "calibration": {
+        "counts": {
+          "file_eer": 335,
+          "music_eer": 43,
+          "music_presence_auc": 335,
+          "voice_eer": 308,
+          "voice_presence_auc": 329
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "voice_presence_auc": 0.982089552238806
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.04477611940298508,
+          "music_eer": 0.13961038961038963,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.023565891472868243,
+          "voice_presence_auc": 0.9994906621392191
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 8,
+          "voice_presence_auc": 6
+        }
+      },
+      "paired_component_uncertainty": {
+        "calibration": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 43,
+          "independent_generalization": false,
+          "interval95": [
+            -0.023809523809523808,
+            0.1396103896103896
+          ],
+          "valid_replicates": 400
+        },
+        "selection": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 35,
+          "independent_generalization": false,
+          "interval95": [
+            -0.14167892156862738,
+            0.08716357655502391
+          ],
+          "valid_replicates": 400
+        }
+      },
+      "seed_metrics": {
+        "calibration": [
+          {
+            "auc": 0.9523809523809524,
+            "eer": 0.13961038961038963,
+            "fake": 21,
+            "real": 22,
+            "rows": 43
+          },
+          {
+            "auc": 0.9718614718614719,
+            "eer": 0.09307359307359307,
+            "fake": 21,
+            "real": 22,
+            "rows": 43
+          },
+          {
+            "auc": 0.974025974025974,
+            "eer": 0.13961038961038963,
+            "fake": 21,
+            "real": 22,
+            "rows": 43
+          }
+        ],
+        "selection": [
+          {
+            "auc": 0.9705882352941176,
+            "eer": 0.11437908496732027,
+            "fake": 17,
+            "real": 18,
+            "rows": 35
+          },
+          {
+            "auc": 0.9607843137254901,
+            "eer": 0.057189542483660136,
+            "fake": 17,
+            "real": 18,
+            "rows": 35
+          },
+          {
+            "auc": 0.9444444444444444,
+            "eer": 0.057189542483660136,
+            "fake": 17,
+            "real": 18,
+            "rows": 35
+          }
+        ]
+      },
+      "selection": {
+        "counts": {
+          "file_eer": 421,
+          "music_eer": 35,
+          "music_presence_auc": 421,
+          "voice_eer": 401,
+          "voice_presence_auc": 418
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "voice_presence_auc": 0.9928741092636579
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "music_eer": 0.057189542483660136,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.03762088214482269,
+          "voice_presence_auc": 1.0
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 5,
+          "voice_presence_auc": 3
+        }
+      },
+      "slices": {}
+    },
+    "music_k3": {
+      "calibration": {
+        "counts": {
+          "file_eer": 335,
+          "music_eer": 43,
+          "music_presence_auc": 335,
+          "voice_eer": 308,
+          "voice_presence_auc": 329
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "voice_presence_auc": 0.982089552238806
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05783582089552239,
+          "music_eer": 0.13961038961038963,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.023565891472868243,
+          "voice_presence_auc": 0.9994906621392191
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 8,
+          "voice_presence_auc": 6
+        }
+      },
+      "paired_component_uncertainty": {
+        "calibration": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 43,
+          "independent_generalization": false,
+          "interval95": [
+            -0.06273097826086955,
+            0.16228212576896786
+          ],
+          "valid_replicates": 400
+        },
+        "selection": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 35,
+          "independent_generalization": false,
+          "interval95": [
+            -0.14167892156862738,
+            0.0005208333333328606
+          ],
+          "valid_replicates": 400
+        }
+      },
+      "seed_metrics": {
+        "calibration": [
+          {
+            "auc": 0.9502164502164503,
+            "eer": 0.13961038961038963,
+            "fake": 21,
+            "real": 22,
+            "rows": 43
+          },
+          {
+            "auc": 0.9675324675324675,
+            "eer": 0.09307359307359307,
+            "fake": 21,
+            "real": 22,
+            "rows": 43
+          },
+          {
+            "auc": 0.9675324675324675,
+            "eer": 0.13961038961038963,
+            "fake": 21,
+            "real": 22,
+            "rows": 43
+          }
+        ],
+        "selection": [
+          {
+            "auc": 0.9705882352941176,
+            "eer": 0.11437908496732027,
+            "fake": 17,
+            "real": 18,
+            "rows": 35
+          },
+          {
+            "auc": 0.9705882352941178,
+            "eer": 0.057189542483660136,
+            "fake": 17,
+            "real": 18,
+            "rows": 35
+          },
+          {
+            "auc": 0.957516339869281,
+            "eer": 0.057189542483660136,
+            "fake": 17,
+            "real": 18,
+            "rows": 35
+          }
+        ]
+      },
+      "selection": {
+        "counts": {
+          "file_eer": 421,
+          "music_eer": 35,
+          "music_presence_auc": 421,
+          "voice_eer": 401,
+          "voice_presence_auc": 418
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "voice_presence_auc": 0.9928741092636579
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "music_eer": 0.057189542483660136,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.03762088214482269,
+          "voice_presence_auc": 1.0
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 5,
+          "voice_presence_auc": 3
+        }
+      },
+      "slices": {}
+    },
+    "reference": {
+      "calibration": {
+        "counts": {
+          "file_eer": 335,
+          "music_eer": 43,
+          "music_presence_auc": 335,
+          "voice_eer": 308,
+          "voice_presence_auc": 329
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "voice_presence_auc": 0.982089552238806
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.055970149253731366,
+          "music_eer": 0.09307359307359307,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.023565891472868243,
+          "voice_presence_auc": 0.9994906621392191
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 8,
+          "voice_presence_auc": 6
+        }
+      },
+      "selection": {
+        "counts": {
+          "file_eer": 421,
+          "music_eer": 35,
+          "music_presence_auc": 421,
+          "voice_eer": 401,
+          "voice_presence_auc": 418
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "voice_presence_auc": 0.9928741092636579
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "music_eer": 0.11437908496732027,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.03762088214482269,
+          "voice_presence_auc": 1.0
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 5,
+          "voice_presence_auc": 3
+        }
+      }
+    },
+    "voice_linear": {
+      "calibration": {
+        "counts": {
+          "file_eer": 335,
+          "music_eer": 43,
+          "music_presence_auc": 335,
+          "voice_eer": 308,
+          "voice_presence_auc": 329
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "voice_presence_auc": 0.982089552238806
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05970149253731341,
+          "music_eer": 0.09307359307359307,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.04131782945736433,
+          "voice_presence_auc": 0.9994906621392191
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 8,
+          "voice_presence_auc": 6
+        }
+      },
+      "paired_component_uncertainty": {
+        "calibration": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 116,
+          "independent_generalization": false,
+          "interval95": [
+            -0.004311913778023819,
+            0.04203606442577031
+          ],
+          "valid_replicates": 400
+        },
+        "selection": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 157,
+          "independent_generalization": false,
+          "interval95": [
+            -0.0025717008866545654,
+            0.02096871883059279
+          ],
+          "valid_replicates": 400
+        }
+      },
+      "seed_metrics": {
+        "calibration": [
+          {
+            "auc": 0.9913953488372094,
+            "eer": 0.04131782945736433,
+            "fake": 258,
+            "real": 50,
+            "rows": 308
+          },
+          {
+            "auc": 0.9913178294573644,
+            "eer": 0.04131782945736433,
+            "fake": 258,
+            "real": 50,
+            "rows": 308
+          },
+          {
+            "auc": 0.9917829457364342,
+            "eer": 0.04131782945736433,
+            "fake": 258,
+            "real": 50,
+            "rows": 308
+          }
+        ],
+        "selection": [
+          {
+            "auc": 0.9934743297429044,
+            "eer": 0.0407264722069345,
+            "fake": 322,
+            "real": 79,
+            "rows": 401
+          },
+          {
+            "auc": 0.9933563959430773,
+            "eer": 0.0407264722069345,
+            "fake": 322,
+            "real": 79,
+            "rows": 401
+          },
+          {
+            "auc": 0.9935529522761224,
+            "eer": 0.0407264722069345,
+            "fake": 322,
+            "real": 79,
+            "rows": 401
+          }
+        ]
+      },
+      "selection": {
+        "counts": {
+          "file_eer": 421,
+          "music_eer": 35,
+          "music_presence_auc": 421,
+          "voice_eer": 401,
+          "voice_presence_auc": 418
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "voice_presence_auc": 0.9928741092636579
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.04437123000262263,
+          "music_eer": 0.11437908496732027,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.0407264722069345,
+          "voice_presence_auc": 1.0
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 5,
+          "voice_presence_auc": 3
+        }
+      },
+      "slices": {
+        "calibration": {
+          "voice_only": {
+            "auc": 0.9951417004048582,
+            "eer": 0.04044084570400361,
+            "fake": 247,
+            "real": 45,
+            "rows": 292
+          },
+          "voice_with_music": {
+            "auc": 0.8181818181818182,
+            "eer": 0.1909090909090909,
+            "fake": 11,
+            "real": 5,
+            "rows": 16
+          }
+        },
+        "selection": {
+          "voice_only": {
+            "auc": 0.9952840300107181,
+            "eer": 0.039292604501607695,
+            "fake": 311,
+            "real": 75,
+            "rows": 386
+          },
+          "voice_with_music": {
+            "auc": 0.8181818181818182,
+            "eer": 0.26136363636363635,
+            "fake": 11,
+            "real": 4,
+            "rows": 15
+          }
+        }
+      }
+    },
+    "voice_linear_reweight": {
+      "calibration": {
+        "counts": {
+          "file_eer": 335,
+          "music_eer": 43,
+          "music_presence_auc": 335,
+          "voice_eer": 308,
+          "voice_presence_auc": 329
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "voice_presence_auc": 0.982089552238806
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05970149253731341,
+          "music_eer": 0.09307359307359307,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.05519379844961239,
+          "voice_presence_auc": 0.9994906621392191
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 8,
+          "voice_presence_auc": 6
+        }
+      },
+      "paired_component_uncertainty": {
+        "calibration": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 116,
+          "independent_generalization": false,
+          "interval95": [
+            -0.002129053237944814,
+            0.05211998348588416
+          ],
+          "valid_replicates": 400
+        },
+        "selection": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 157,
+          "independent_generalization": false,
+          "interval95": [
+            -0.00921313339917993,
+            0.03251499600890012
+          ],
+          "valid_replicates": 400
+        }
+      },
+      "seed_metrics": {
+        "calibration": [
+          {
+            "auc": 0.9915503875968993,
+            "eer": 0.04325581395348836,
+            "fake": 258,
+            "real": 50,
+            "rows": 308
+          },
+          {
+            "auc": 0.9913178294573644,
+            "eer": 0.04325581395348836,
+            "fake": 258,
+            "real": 50,
+            "rows": 308
+          },
+          {
+            "auc": 0.9909302325581395,
+            "eer": 0.057131782945736426,
+            "fake": 258,
+            "real": 50,
+            "rows": 308
+          }
+        ],
+        "selection": [
+          {
+            "auc": 0.9933957072096863,
+            "eer": 0.05016117619309693,
+            "fake": 322,
+            "real": 79,
+            "rows": 401
+          },
+          {
+            "auc": 0.9933957072096863,
+            "eer": 0.05016117619309693,
+            "fake": 322,
+            "real": 79,
+            "rows": 401
+          },
+          {
+            "auc": 0.9933563959430773,
+            "eer": 0.05016117619309693,
+            "fake": 322,
+            "real": 79,
+            "rows": 401
+          }
+        ]
+      },
+      "selection": {
+        "counts": {
+          "file_eer": 421,
+          "music_eer": 35,
+          "music_presence_auc": 421,
+          "voice_eer": 401,
+          "voice_presence_auc": 418
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "voice_presence_auc": 0.9928741092636579
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05127196433254658,
+          "music_eer": 0.11437908496732027,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.05016117619309693,
+          "voice_presence_auc": 1.0
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 5,
+          "voice_presence_auc": 3
+        }
+      },
+      "slices": {
+        "calibration": {
+          "voice_only": {
+            "auc": 0.9949617633828158,
+            "eer": 0.042465137201979336,
+            "fake": 247,
+            "real": 45,
+            "rows": 292
+          },
+          "voice_with_music": {
+            "auc": 0.8181818181818182,
+            "eer": 0.1909090909090909,
+            "fake": 11,
+            "real": 5,
+            "rows": 16
+          }
+        },
+        "selection": {
+          "voice_only": {
+            "auc": 0.9951982851018221,
+            "eer": 0.039292604501607695,
+            "fake": 311,
+            "real": 75,
+            "rows": 386
+          },
+          "voice_with_music": {
+            "auc": 0.7954545454545455,
+            "eer": 0.26136363636363635,
+            "fake": 11,
+            "real": 4,
+            "rows": 15
+          }
+        }
+      }
+    },
+    "voice_mlp": {
+      "calibration": {
+        "counts": {
+          "file_eer": 335,
+          "music_eer": 43,
+          "music_presence_auc": 335,
+          "voice_eer": 308,
+          "voice_presence_auc": 329
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "voice_presence_auc": 0.982089552238806
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05783582089552239,
+          "music_eer": 0.09307359307359307,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.04131782945736433,
+          "voice_presence_auc": 0.9994906621392191
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 8,
+          "voice_presence_auc": 6
+        }
+      },
+      "paired_component_uncertainty": {
+        "calibration": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 116,
+          "independent_generalization": false,
+          "interval95": [
+            -0.006521242677313262,
+            0.04160100833788675
+          ],
+          "valid_replicates": 400
+        },
+        "selection": {
+          "definition": "candidate EER minus reference EER; negative is better",
+          "groups": 157,
+          "independent_generalization": false,
+          "interval95": [
+            -0.001369957097696818,
+            0.02096871883059279
+          ],
+          "valid_replicates": 400
+        }
+      },
+      "seed_metrics": {
+        "calibration": [
+          {
+            "auc": 0.9913178294573644,
+            "eer": 0.04131782945736433,
+            "fake": 258,
+            "real": 50,
+            "rows": 308
+          },
+          {
+            "auc": 0.9910852713178295,
+            "eer": 0.04131782945736433,
+            "fake": 258,
+            "real": 50,
+            "rows": 308
+          },
+          {
+            "auc": 0.9914728682170544,
+            "eer": 0.04131782945736433,
+            "fake": 258,
+            "real": 50,
+            "rows": 308
+          }
+        ],
+        "selection": [
+          {
+            "auc": 0.9930812170768143,
+            "eer": 0.0407264722069345,
+            "fake": 322,
+            "real": 79,
+            "rows": 401
+          },
+          {
+            "auc": 0.9928453494771602,
+            "eer": 0.0407264722069345,
+            "fake": 322,
+            "real": 79,
+            "rows": 401
+          },
+          {
+            "auc": 0.9931205283434232,
+            "eer": 0.0407264722069345,
+            "fake": 322,
+            "real": 79,
+            "rows": 401
+          }
+        ]
+      },
+      "selection": {
+        "counts": {
+          "file_eer": 421,
+          "music_eer": 35,
+          "music_presence_auc": 421,
+          "voice_eer": 401,
+          "voice_presence_auc": 418
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "voice_presence_auc": 0.9928741092636579
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "music_eer": 0.11437908496732027,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.0407264722069345,
+          "voice_presence_auc": 1.0
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 5,
+          "voice_presence_auc": 3
+        }
+      },
+      "slices": {
+        "calibration": {
+          "voice_only": {
+            "auc": 0.9954116059379217,
+            "eer": 0.04044084570400361,
+            "fake": 247,
+            "real": 45,
+            "rows": 292
+          },
+          "voice_with_music": {
+            "auc": 0.8181818181818182,
+            "eer": 0.1909090909090909,
+            "fake": 11,
+            "real": 5,
+            "rows": 16
+          }
+        },
+        "selection": {
+          "voice_only": {
+            "auc": 0.99502679528403,
+            "eer": 0.039292604501607695,
+            "fake": 311,
+            "real": 75,
+            "rows": 386
+          },
+          "voice_with_music": {
+            "auc": 0.8181818181818182,
+            "eer": 0.26136363636363635,
+            "fake": 11,
+            "real": 4,
+            "rows": 15
+          }
+        }
+      }
+    }
+  },
+  "diagnostics": {
+    "oracle": {
+      "music": {
+        "replaced_rows": 78,
+        "reports": {
+          "calibration": {
+            "counts": {
+              "file_eer": 335,
+              "music_eer": 43,
+              "music_presence_auc": 335,
+              "voice_eer": 308,
+              "voice_presence_auc": 329
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "music_eer": 1.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.9746835443037974,
+              "voice_presence_auc": 0.982089552238806
+            },
+            "invalid": {},
+            "metrics": {
+              "file_eer": 0.029850746268656705,
+              "music_eer": 0.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.023565891472868243,
+              "voice_presence_auc": 0.9994906621392191
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 8",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+            },
+            "score": null,
+            "unknown_counts": {
+              "file_eer": 0,
+              "music_eer": 0,
+              "music_presence_auc": 0,
+              "voice_eer": 8,
+              "voice_presence_auc": 6
+            }
+          },
+          "selection": {
+            "counts": {
+              "file_eer": 421,
+              "music_eer": 35,
+              "music_presence_auc": 421,
+              "voice_eer": 401,
+              "voice_presence_auc": 418
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "music_eer": 1.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.9876847290640394,
+              "voice_presence_auc": 0.9928741092636579
+            },
+            "invalid": {},
+            "metrics": {
+              "file_eer": 0.04132244951481775,
+              "music_eer": 0.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.03762088214482269,
+              "voice_presence_auc": 1.0
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 5",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+            },
+            "score": null,
+            "unknown_counts": {
+              "file_eer": 0,
+              "music_eer": 0,
+              "music_presence_auc": 0,
+              "voice_eer": 5,
+              "voice_presence_auc": 3
+            }
+          }
+        },
+        "rule": "only known fake truth in present components; presence unchanged"
+      },
+      "voice": {
+        "replaced_rows": 709,
+        "reports": {
+          "calibration": {
+            "counts": {
+              "file_eer": 335,
+              "music_eer": 43,
+              "music_presence_auc": 335,
+              "voice_eer": 308,
+              "voice_presence_auc": 329
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "music_eer": 1.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.9746835443037974,
+              "voice_presence_auc": 0.982089552238806
+            },
+            "invalid": {},
+            "metrics": {
+              "file_eer": 0.01492537313432838,
+              "music_eer": 0.09307359307359307,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.0,
+              "voice_presence_auc": 0.9994906621392191
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 8",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+            },
+            "score": null,
+            "unknown_counts": {
+              "file_eer": 0,
+              "music_eer": 0,
+              "music_presence_auc": 0,
+              "voice_eer": 8,
+              "voice_presence_auc": 6
+            }
+          },
+          "selection": {
+            "counts": {
+              "file_eer": 421,
+              "music_eer": 35,
+              "music_presence_auc": 421,
+              "voice_eer": 401,
+              "voice_presence_auc": 418
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "music_eer": 1.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.9876847290640394,
+              "voice_presence_auc": 0.9928741092636579
+            },
+            "invalid": {},
+            "metrics": {
+              "file_eer": 0.011473905061631267,
+              "music_eer": 0.11437908496732027,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.0,
+              "voice_presence_auc": 1.0
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 5",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+            },
+            "score": null,
+            "unknown_counts": {
+              "file_eer": 0,
+              "music_eer": 0,
+              "music_presence_auc": 0,
+              "voice_eer": 5,
+              "voice_presence_auc": 3
+            }
+          }
+        },
+        "rule": "only known fake truth in present components; presence unchanged"
+      }
+    },
+    "reference": {
+      "calibration": {
+        "counts": {
+          "file_eer": 335,
+          "music_eer": 43,
+          "music_presence_auc": 335,
+          "voice_eer": 308,
+          "voice_presence_auc": 329
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "voice_presence_auc": 0.982089552238806
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.055970149253731366,
+          "music_eer": 0.09307359307359307,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.023565891472868243,
+          "voice_presence_auc": 0.9994906621392191
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 8,
+          "voice_presence_auc": 6
+        }
+      },
+      "selection": {
+        "counts": {
+          "file_eer": 421,
+          "music_eer": 35,
+          "music_presence_auc": 421,
+          "voice_eer": 401,
+          "voice_presence_auc": 418
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "voice_presence_auc": 0.9928741092636579
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "music_eer": 0.11437908496732027,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.03762088214482269,
+          "voice_presence_auc": 1.0
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 5,
+          "voice_presence_auc": 3
+        }
+      }
+    },
+    "slices": {
+      "calibration": {
+        "music": {
+          "auc": 0.9653679653679654,
+          "eer": 0.09307359307359307,
+          "fake": 21,
+          "real": 22,
+          "rows": 43
+        },
+        "voice_only": {
+          "auc": 0.9961313540260908,
+          "eer": 0.02123256860098964,
+          "fake": 247,
+          "real": 45,
+          "rows": 292
+        },
+        "voice_with_music": {
+          "auc": 0.8545454545454546,
+          "eer": 0.1909090909090909,
+          "fake": 11,
+          "real": 5,
+          "rows": 16
+        }
+      },
+      "selection": {
+        "music": {
+          "auc": 0.9542483660130718,
+          "eer": 0.11437908496732027,
+          "fake": 17,
+          "real": 18,
+          "rows": 35
+        },
+        "voice_only": {
+          "auc": 0.9948981779206861,
+          "eer": 0.039292604501607695,
+          "fake": 311,
+          "real": 75,
+          "rows": 386
+        },
+        "voice_with_music": {
+          "auc": 0.7954545454545455,
+          "eer": 0.26136363636363635,
+          "fake": 11,
+          "real": 4,
+          "rows": 15
+        }
+      }
+    }
+  },
+  "pooling": {
+    "lme": {
+      "calibration": {
+        "counts": {
+          "file_eer": 335,
+          "music_eer": 43,
+          "music_presence_auc": 335,
+          "voice_eer": 308,
+          "voice_presence_auc": 329
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "voice_presence_auc": 0.982089552238806
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.055970149253731366,
+          "music_eer": 0.09307359307359307,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.03744186046511626,
+          "voice_presence_auc": 0.9994906621392191
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 8,
+          "voice_presence_auc": 6
+        }
+      },
+      "selection": {
+        "counts": {
+          "file_eer": 421,
+          "music_eer": 35,
+          "music_presence_auc": 421,
+          "voice_eer": 401,
+          "voice_presence_auc": 418
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "voice_presence_auc": 0.9928741092636579
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "music_eer": 0.11437908496732027,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.03762088214482269,
+          "voice_presence_auc": 1.0
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 5,
+          "voice_presence_auc": 3
+        }
+      }
+    },
+    "topk": {
+      "calibration": {
+        "counts": {
+          "file_eer": 335,
+          "music_eer": 43,
+          "music_presence_auc": 335,
+          "voice_eer": 308,
+          "voice_presence_auc": 329
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9746835443037974,
+          "voice_presence_auc": 0.982089552238806
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.055970149253731366,
+          "music_eer": 0.09307359307359307,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.03550387596899228,
+          "voice_presence_auc": 0.9994906621392191
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 8",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 8,
+          "voice_presence_auc": 6
+        }
+      },
+      "selection": {
+        "counts": {
+          "file_eer": 421,
+          "music_eer": 35,
+          "music_presence_auc": 421,
+          "voice_eer": 401,
+          "voice_presence_auc": 418
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "music_eer": 1.0,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.9876847290640394,
+          "voice_presence_auc": 0.9928741092636579
+        },
+        "invalid": {},
+        "metrics": {
+          "file_eer": 0.05432074482035146,
+          "music_eer": 0.11437908496732027,
+          "music_presence_auc": 1.0,
+          "voice_eer": 0.03762088214482269,
+          "voice_presence_auc": 1.0
+        },
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 5",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+        },
+        "score": null,
+        "unknown_counts": {
+          "file_eer": 0,
+          "music_eer": 0,
+          "music_presence_auc": 0,
+          "voice_eer": 5,
+          "voice_presence_auc": 3
+        }
+      }
+    }
+  },
+  "calibration": {
+    "logit_only": {
+      "coefficients": [
+        [
+          4.253648922396381
+        ]
+      ],
+      "fitted_role": "selection; exposed development diagnostic only",
+      "reports": {
+        "calibration": {
+          "counts": {
+            "file_eer": 335,
+            "music_eer": 43,
+            "music_presence_auc": 335,
+            "voice_eer": 308,
+            "voice_presence_auc": 329
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "music_eer": 1.0,
+            "music_presence_auc": 1.0,
+            "voice_eer": 0.9746835443037974,
+            "voice_presence_auc": 0.982089552238806
+          },
+          "invalid": {},
+          "metrics": {
+            "file_eer": 0.04477611940298508,
+            "music_eer": 0.09307359307359307,
+            "music_presence_auc": 1.0,
+            "voice_eer": 0.023565891472868243,
+            "voice_presence_auc": 0.9994906621392191
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 8",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+          },
+          "score": null,
+          "unknown_counts": {
+            "file_eer": 0,
+            "music_eer": 0,
+            "music_presence_auc": 0,
+            "voice_eer": 8,
+            "voice_presence_auc": 6
+          }
+        },
+        "selection": {
+          "counts": {
+            "file_eer": 421,
+            "music_eer": 35,
+            "music_presence_auc": 421,
+            "voice_eer": 401,
+            "voice_presence_auc": 418
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "music_eer": 1.0,
+            "music_presence_auc": 1.0,
+            "voice_eer": 0.9876847290640394,
+            "voice_presence_auc": 0.9928741092636579
+          },
+          "invalid": {},
+          "metrics": {
+            "file_eer": 0.04284683975872019,
+            "music_eer": 0.11437908496732027,
+            "music_presence_auc": 1.0,
+            "voice_eer": 0.03762088214482269,
+            "voice_presence_auc": 1.0
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 5",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+          },
+          "score": null,
+          "unknown_counts": {
+            "file_eer": 0,
+            "music_eer": 0,
+            "music_presence_auc": 0,
+            "voice_eer": 5,
+            "voice_presence_auc": 3
+          }
+        }
+      }
+    },
+    "logit_plus_singing": {
+      "coefficients": [
+        [
+          4.249157729171587,
+          0.09587722626893132
+        ]
+      ],
+      "fitted_role": "selection; exposed development diagnostic only",
+      "reports": {
+        "calibration": {
+          "counts": {
+            "file_eer": 335,
+            "music_eer": 43,
+            "music_presence_auc": 335,
+            "voice_eer": 308,
+            "voice_presence_auc": 329
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "music_eer": 1.0,
+            "music_presence_auc": 1.0,
+            "voice_eer": 0.9746835443037974,
+            "voice_presence_auc": 0.982089552238806
+          },
+          "invalid": {},
+          "metrics": {
+            "file_eer": 0.04477611940298508,
+            "music_eer": 0.09307359307359307,
+            "music_presence_auc": 1.0,
+            "voice_eer": 0.03744186046511626,
+            "voice_presence_auc": 0.9994906621392191
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 8",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 6"
+          },
+          "score": null,
+          "unknown_counts": {
+            "file_eer": 0,
+            "music_eer": 0,
+            "music_presence_auc": 0,
+            "voice_eer": 8,
+            "voice_presence_auc": 6
+          }
+        },
+        "selection": {
+          "counts": {
+            "file_eer": 421,
+            "music_eer": 35,
+            "music_presence_auc": 421,
+            "voice_eer": 401,
+            "voice_presence_auc": 418
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "music_eer": 1.0,
+            "music_presence_auc": 1.0,
+            "voice_eer": 0.9876847290640394,
+            "voice_presence_auc": 0.9928741092636579
+          },
+          "invalid": {},
+          "metrics": {
+            "file_eer": 0.05432074482035146,
+            "music_eer": 0.11437908496732027,
+            "music_presence_auc": 1.0,
+            "voice_eer": 0.05016117619309693,
+            "voice_presence_auc": 1.0
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 5",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 3"
+          },
+          "score": null,
+          "unknown_counts": {
+            "file_eer": 0,
+            "music_eer": 0,
+            "music_presence_auc": 0,
+            "voice_eer": 5,
+            "voice_presence_auc": 3
+          }
+        }
+      }
+    }
+  },
+  "temporal_vs_pointwise": {
+    "calibration": {
+      "definition": "candidate EER minus reference EER; negative is better",
+      "groups": 43,
+      "independent_generalization": false,
+      "interval95": [
+        -0.04747039473684211,
+        0.11523197816676078
+      ],
+      "valid_replicates": 400
+    },
+    "selection": {
+      "definition": "candidate EER minus reference EER; negative is better",
+      "groups": 35,
+      "independent_generalization": false,
+      "interval95": [
+        -0.08716357655502394,
+        0.0
+      ],
+      "valid_replicates": 400
+    }
+  },
+  "training": {
+    "music_k1": [
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 4.979259458021261,
+        "epochs": 20,
+        "route": "music",
+        "seed": 41,
+        "steps": 60,
+        "train_rows": 373,
+        "trainable_parameters": 80705,
+        "training_ids_sha256": "6d02bf0eecc17714832e850bc829ca6e9923f9bcd3086795204745101cb3a7c9"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 5.024304000020493,
+        "epochs": 20,
+        "route": "music",
+        "seed": 42,
+        "steps": 60,
+        "train_rows": 373,
+        "trainable_parameters": 80705,
+        "training_ids_sha256": "6d02bf0eecc17714832e850bc829ca6e9923f9bcd3086795204745101cb3a7c9"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 5.077022333978675,
+        "epochs": 20,
+        "route": "music",
+        "seed": 43,
+        "steps": 60,
+        "train_rows": 373,
+        "trainable_parameters": 80705,
+        "training_ids_sha256": "6d02bf0eecc17714832e850bc829ca6e9923f9bcd3086795204745101cb3a7c9"
+      }
+    ],
+    "music_k3": [
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 5.4250511249993,
+        "epochs": 20,
+        "route": "music",
+        "seed": 41,
+        "steps": 60,
+        "train_rows": 373,
+        "trainable_parameters": 105281,
+        "training_ids_sha256": "6d02bf0eecc17714832e850bc829ca6e9923f9bcd3086795204745101cb3a7c9"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 5.359636833018158,
+        "epochs": 20,
+        "route": "music",
+        "seed": 42,
+        "steps": 60,
+        "train_rows": 373,
+        "trainable_parameters": 105281,
+        "training_ids_sha256": "6d02bf0eecc17714832e850bc829ca6e9923f9bcd3086795204745101cb3a7c9"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 5.651542917010374,
+        "epochs": 20,
+        "route": "music",
+        "seed": 43,
+        "steps": 60,
+        "train_rows": 373,
+        "trainable_parameters": 105281,
+        "training_ids_sha256": "6d02bf0eecc17714832e850bc829ca6e9923f9bcd3086795204745101cb3a7c9"
+      }
+    ],
+    "voice_linear": [
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 1.6066871249931864,
+        "epochs": 20,
+        "route": "voice",
+        "seed": 41,
+        "steps": 800,
+        "train_rows": 5001,
+        "trainable_parameters": 2562,
+        "training_ids_sha256": "e054e04b678174d5a923c53ea5ac639dea82e7e7d69e418e7c9165feae2c6716"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 1.365965083008632,
+        "epochs": 20,
+        "route": "voice",
+        "seed": 42,
+        "steps": 800,
+        "train_rows": 5001,
+        "trainable_parameters": 2562,
+        "training_ids_sha256": "e054e04b678174d5a923c53ea5ac639dea82e7e7d69e418e7c9165feae2c6716"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 1.3117773749982007,
+        "epochs": 20,
+        "route": "voice",
+        "seed": 43,
+        "steps": 800,
+        "train_rows": 5001,
+        "trainable_parameters": 2562,
+        "training_ids_sha256": "e054e04b678174d5a923c53ea5ac639dea82e7e7d69e418e7c9165feae2c6716"
+      }
+    ],
+    "voice_linear_reweight": [
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 1.6098844169755466,
+        "epochs": 20,
+        "route": "voice",
+        "seed": 41,
+        "steps": 800,
+        "train_rows": 5001,
+        "trainable_parameters": 2562,
+        "training_ids_sha256": "e054e04b678174d5a923c53ea5ac639dea82e7e7d69e418e7c9165feae2c6716"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 1.308085749973543,
+        "epochs": 20,
+        "route": "voice",
+        "seed": 42,
+        "steps": 800,
+        "train_rows": 5001,
+        "trainable_parameters": 2562,
+        "training_ids_sha256": "e054e04b678174d5a923c53ea5ac639dea82e7e7d69e418e7c9165feae2c6716"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 1.347602458030451,
+        "epochs": 20,
+        "route": "voice",
+        "seed": 43,
+        "steps": 800,
+        "train_rows": 5001,
+        "trainable_parameters": 2562,
+        "training_ids_sha256": "e054e04b678174d5a923c53ea5ac639dea82e7e7d69e418e7c9165feae2c6716"
+      }
+    ],
+    "voice_mlp": [
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 2.811822250019759,
+        "epochs": 20,
+        "route": "voice",
+        "seed": 41,
+        "steps": 800,
+        "train_rows": 5001,
+        "trainable_parameters": 166657,
+        "training_ids_sha256": "e054e04b678174d5a923c53ea5ac639dea82e7e7d69e418e7c9165feae2c6716"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 2.955417082994245,
+        "epochs": 20,
+        "route": "voice",
+        "seed": 42,
+        "steps": 800,
+        "train_rows": 5001,
+        "trainable_parameters": 166657,
+        "training_ids_sha256": "e054e04b678174d5a923c53ea5ac639dea82e7e7d69e418e7c9165feae2c6716"
+      },
+      {
+        "choice": "fixed final epoch; no evaluation-based early stopping",
+        "elapsed_seconds": 2.8281424999586307,
+        "epochs": 20,
+        "route": "voice",
+        "seed": 43,
+        "steps": 800,
+        "train_rows": 5001,
+        "trainable_parameters": 166657,
+        "training_ids_sha256": "e054e04b678174d5a923c53ea5ac639dea82e7e7d69e418e7c9165feae2c6716"
+      }
+    ]
+  },
+  "full_proxy": {
+    "inputs_sha256": {
+      "bank_test.csv": "c94d0847000d51f2b705ed28debf0ae60811a71bec4510b8f8b0fe1128c505c1",
+      "test_predictions_decision.csv": "da46ff8befc1ff76a1286eebd086403355e61ad111b2bbda0724dda28a75d5c4",
+      "file_ensemble.json": "3e0056d110d8b1ea6b5a11c60da3747de322bfc1f8bacf415b8bc4adec0af6a4"
+    },
+    "bank_rows": 6450,
+    "predicted_rows": 6444,
+    "missing_prediction_rows": 6,
+    "missing_known_file_labels": 0,
+    "file_combiner_max_abs_replay_error": 1.1102230246251565e-16,
+    "reference": {
+      "score": null,
+      "metrics": {
+        "file_eer": 0.10939954188481675,
+        "voice_eer": 0.11070986873541894,
+        "music_eer": 0.20005497526113247,
+        "voice_presence_auc": 0.9979462237360157,
+        "music_presence_auc": 0.9986542871104935
+      },
+      "invalid": {},
+      "partial": {
+        "voice_eer": "known subset only; unknown relevant labels: 261",
+        "voice_presence_auc": "known subset only; unknown relevant labels: 176"
+      },
+      "counts": {
+        "file_eer": 6444,
+        "voice_eer": 5139,
+        "music_eer": 2849,
+        "voice_presence_auc": 6268,
+        "music_presence_auc": 6444
+      },
+      "unknown_counts": {
+        "file_eer": 0,
+        "voice_eer": 261,
+        "music_eer": 0,
+        "voice_presence_auc": 176,
+        "music_presence_auc": 0
+      },
+      "coverage": {
+        "file_eer": 1.0,
+        "voice_eer": 0.9516666666666667,
+        "music_eer": 1.0,
+        "voice_presence_auc": 0.9726877715704532,
+        "music_presence_auc": 1.0
+      }
+    },
+    "slices": {
+      "voice_only": {
+        "rows": 3595,
+        "real": 2287,
+        "fake": 1308,
+        "eer": 0.04425258307492555,
+        "auc": 0.9920929893601534
+      },
+      "voice_with_music": {
+        "rows": 1544,
+        "real": 728,
+        "fake": 816,
+        "eer": 0.20596315449256627,
+        "auc": 0.8742542690152987
+      },
+      "music": {
+        "rows": 2849,
+        "real": 1819,
+        "fake": 1030,
+        "eer": 0.20005497526113247,
+        "auc": 0.8854331570210952
+      }
+    },
+    "oracles": {
+      "MUSIC": {
+        "replaced_rows": 2849,
+        "reports": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.04454551621759671,
+            "voice_eer": 0.11070986873541894,
+            "music_eer": 0.0,
+            "voice_presence_auc": 0.9979462237360157,
+            "music_presence_auc": 0.9986542871104935
+          },
+          "invalid": {},
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 261",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 176"
+          },
+          "counts": {
+            "file_eer": 6444,
+            "voice_eer": 5139,
+            "music_eer": 2849,
+            "voice_presence_auc": 6268,
+            "music_presence_auc": 6444
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 261,
+            "music_eer": 0,
+            "voice_presence_auc": 176,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.9516666666666667,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.9726877715704532,
+            "music_presence_auc": 1.0
+          }
+        }
+      },
+      "VOICE": {
+        "replaced_rows": 5139,
+        "reports": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.06066374824415781,
+            "voice_eer": 0.0,
+            "music_eer": 0.20005497526113247,
+            "voice_presence_auc": 0.9979462237360157,
+            "music_presence_auc": 0.9986542871104935
+          },
+          "invalid": {},
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 261",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 176"
+          },
+          "counts": {
+            "file_eer": 6444,
+            "voice_eer": 5139,
+            "music_eer": 2849,
+            "voice_presence_auc": 6268,
+            "music_presence_auc": 6444
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 261,
+            "music_eer": 0,
+            "voice_presence_auc": 176,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.9516666666666667,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.9726877715704532,
+            "music_presence_auc": 1.0
+          }
+        }
+      }
+    },
+    "oracle_rule": "Replace one known-present component fake probability with its known 0/1 label; keep both presence outputs and the FILE combiner fixed.",
+    "independent_quality_validated": false,
+    "limitation": "Previously inspected historical proxy, not fresh holdout. Voice-with-music is not a verified singing label. Oracle changes are not attainable improvement forecasts."
+  },
+  "validation": {
+    "regression_returncode": 0,
+    "regression_log": "............................                                     [100%]\n28 passed, 1 deselected, 8 subtests passed in 10.31s\n",
+    "baseline_replay": {
+      "returncode": 0,
+      "elapsed_seconds": 5.267
+    },
+    "review": {
+      "actionable_findings": 0,
+      "scope": "Experiment code and existing execution artifacts; no fresh training by reviewer; agreement is not quality evidence"
+    },
+    "head_process_elapsed_seconds": 65.102
+  },
+  "artifacts_sha256": {
+    "head_comparison/candidate_schedule.json": "4985e23d4311ef619625f8c85e5695ec0491eaa28cc1cbfac1ed3fe8dfcc1350",
+    "head_comparison/comparison.json": "ccef4ec530f677e6e6d0b42a8bd2e1658bcdbd14cf7656c67884626ba34874ed",
+    "head_comparison/completion.json": "97d0875b2b65a2e8aa797f237c1138f5a9f053609284eb41981418227c62e31b",
+    "head_comparison/data_audit.json": "4f459de9f50d87b78c31b6340684c68b8027d23e0d65a9922466cc3da8317bb0",
+    "head_comparison/diagnostics.json": "d0f99d499fb2532267521d8b51c61f79e1e7daa09ad3ffa62071ed673c45a4b1",
+    "head_comparison/local_benchmark.json": "ada87fa168d1a7b81179b209adfccc0d34513f2591f8a2fda453d0bc54d84337",
+    "head_comparison/music_k1_41.json": "6df7324ae6ff975906cbc1ce3bf47805b4511fcbf84326c7aff1d11e184febfb",
+    "head_comparison/music_k1_41.pt": "3d6aa513a2fdd01bdb676fe8cef73a7616156c0722a5f2382427187c1b63e44a",
+    "head_comparison/music_k1_42.json": "9b0f51aa1d60504502e59feecc3e123d420c6998077f7e2c6ecdd1785fb2c20b",
+    "head_comparison/music_k1_42.pt": "8d6119d85973869554ed636af302fdff91d058af8367568f21191adb2f8b045a",
+    "head_comparison/music_k1_43.json": "2076e3e9b19beca6557b05eec1d23aac44af696f3d9e84daa5d20c46ef7ff283",
+    "head_comparison/music_k1_43.pt": "563b303f026aff2bdc955b1e19cc884c574a1b631b2c0858146a6e2b1b392fbe",
+    "head_comparison/music_k1_predictions.npz": "b4e48b01a1b38fc5f7358a1fd1e25b65f151b597db03c9caa79368dde655a852",
+    "head_comparison/music_k3_41.json": "1e54c0c14cb9d12290e87fcadc23fd32de619e0c1f1054b2869d63ce0b3b2e10",
+    "head_comparison/music_k3_41.pt": "cf4d6977f18a9dbd7f71bb87004103a468372b99b0a178b77abf7b5b596ad898",
+    "head_comparison/music_k3_42.json": "0d54181a9e9743839093b82beb7bfa5e8abbff251e65ea2925b342532456789f",
+    "head_comparison/music_k3_42.pt": "c175a3f1c7eda2d6ce48cbf45b818f30f71ba3e46252c9a8b3447d0b7d52a3c4",
+    "head_comparison/music_k3_43.json": "0db0ab0ec619b13e768c0724699be1941e43a7ad0a24c0e981fae8d0c5e2db45",
+    "head_comparison/music_k3_43.pt": "92ab7d09f746215279bc85ec62932002e2425f595ad330f56a4f98e2164f14b4",
+    "head_comparison/music_k3_predictions.npz": "bc4f65d1a53eb348b9673221bf6d6b914ec991f2639c8449912d693d64e8da2c",
+    "head_comparison/pooling_diagnostic.json": "7c4d50cdbe720180ae65475974ada9ae748aa84aefb48c2cc4f220724b16f4e8",
+    "head_comparison/protocol.json": "94e002fec5bc7cfa9cbd52efd5362de21b4a00441c0460b98a39deadfdf61d88",
+    "head_comparison/reference_predictions.npz": "4c6d4bdb46ac00ead130c2c26aedb6479a0a5b2df8358b3ea33dcce204edca77",
+    "head_comparison/temporal_vs_pointwise.json": "409a6da596a7bed3b4ba0910699eb042fef447298d837eb440633db13a61832e",
+    "head_comparison/training_summary.json": "7044ffd4892f25ca5d256054f36c4c2fa9ac3beaabd22faf809a1b522fc9d201",
+    "head_comparison/voice_calibration_diagnostic.json": "694c004a0e8a7a22d72d8f65e3cad0a2071a1934f425732d645192e185b2d1b8",
+    "head_comparison/voice_linear_41.json": "b1c4e54e9dc7193ef7b38d611e97713ffaa9669010f3771526efa228d99cd0a8",
+    "head_comparison/voice_linear_41.pt": "d16b582b6aba363ac4969eba75e8dffd3088f8aafd5a5578df609e4ebd118930",
+    "head_comparison/voice_linear_42.json": "0c59cdda0bc2ba30289a1845e6a287acfc6fec9ee9d59caee2754e8edc44715d",
+    "head_comparison/voice_linear_42.pt": "77e8f859fc29717dd6f2b037d99606e324ba710f71c6750a25270e973c319948",
+    "head_comparison/voice_linear_43.json": "fe21021ad0a4cf61b39521a572f2908970b7ef3a783badf0fba76e71349f9d05",
+    "head_comparison/voice_linear_43.pt": "2d12a007925dbe5d23c2bbe80d7042c2533b40292c7b87b3973107373f999b87",
+    "head_comparison/voice_linear_predictions.npz": "0f4448fff5df4181f1149df0882202e7d9facb0387a110e591e61bd7b966d696",
+    "head_comparison/voice_linear_reweight_41.json": "8265a70b9c824c3e1e1107d966f20b439bd4f7eee1d7a4222ad1dc212724d1c7",
+    "head_comparison/voice_linear_reweight_41.pt": "90e2bdc525c1a09aab889e49910ad2d9f0e6d4750cc81dd9b3004f60149d0b10",
+    "head_comparison/voice_linear_reweight_42.json": "364b5dfdfeabdf97857171476f47dbcd7ff5f32d5641d7061d445d1e6f8bdd1a",
+    "head_comparison/voice_linear_reweight_42.pt": "b05076ff9df812521e6e91bfd0ff8c95a3dfedbc281d5b08eae1aead9258a770",
+    "head_comparison/voice_linear_reweight_43.json": "cbdf02ab89892531697128db212c29e8cd6dd94be9bd3548997b2736aee59217",
+    "head_comparison/voice_linear_reweight_43.pt": "80adf0848cc91d6e938ae36603efce4bbaae93f528f259dbb017fad84d731d45",
+    "head_comparison/voice_linear_reweight_predictions.npz": "2616f05f4add89546b09f70ff4db39df547547e58de309fe36e64c896e025968",
+    "head_comparison/voice_mlp_41.json": "f36a576cb4ff3a6070ce0a34ad2cf6ee8d37129b58f88ccc524da3aaf5435b08",
+    "head_comparison/voice_mlp_41.pt": "3081dc9b1374b8a40f15b66fa05609b782c79900900db47480db2f77984f5cd2",
+    "head_comparison/voice_mlp_42.json": "048c27b41152887a79c6de800e5a6bd8da171aa393508b591cd1de92258fe267",
+    "head_comparison/voice_mlp_42.pt": "988c8f3556d71378186f8ea78e9b7db54a3eb0ecc6477f267e6ef246bf0a1b44",
+    "head_comparison/voice_mlp_43.json": "dd7dd7bc606991e14f7e7ccb334dd648b480298a3b8ce80ea93c0ffd934b0c59",
+    "head_comparison/voice_mlp_43.pt": "5762de260dbd965a1133b984b1b05ce9d581dec17604fd07743e92865ea122f1",
+    "head_comparison/voice_mlp_predictions.npz": "5b09a6b3f8ecbf2d3884750d1e53836042d80c0aa9f76dae3636879235fc4ca8"
+  },
+  "runtime": {
+    "cpu_parity": {
+      "files": 10,
+      "max_abs_error_by_column": {
+        "FILE_FAKE_PROB": 0.0,
+        "VOICE_FAKE_PROB": 0.0,
+        "MUSIC_FAKE_PROB": 0.0,
+        "VOICE_PRESENT_PROB": 0.0,
+        "MUSIC_PRESENT_PROB": 0.0
+      },
+      "tolerance": 1e-05,
+      "passed": true,
+      "reversed_subset_files": 2,
+      "reversed_subset_max_abs_error": 0.0,
+      "output_order_preserved": true
+    },
+    "cpu_all": {
+      "mode": "cpu",
+      "exit_code": 0,
+      "seconds": 95.07890933303861,
+      "timeout_seconds": 600,
+      "network_denied": true,
+      "weights_only_enforced": true
+    },
+    "cpu_reversed": {
+      "mode": "cpu",
+      "exit_code": 0,
+      "seconds": 32.527770125016104,
+      "timeout_seconds": 600,
+      "network_denied": true,
+      "weights_only_enforced": true
+    },
+    "mps_one": {
+      "files": 1,
+      "max_abs_error_by_column": {
+        "FILE_FAKE_PROB": 4.864247321045845e-06,
+        "VOICE_FAKE_PROB": 1.1523564656945595e-06,
+        "MUSIC_FAKE_PROB": 3.849466641780985e-06,
+        "VOICE_PRESENT_PROB": 6.034268640320306e-10,
+        "MUSIC_PRESENT_PROB": 7.107383830778913e-10
+      },
+      "cpu_vs_mps_max_abs_error": 4.864247321045845e-06,
+      "strict_cpu_tolerance": 1e-05,
+      "strict_cpu_tolerance_met": true,
+      "full_mps_pipeline": false,
+      "panns_device": "cpu",
+      "others_requested_device": "mps",
+      "package_cli_supports_mps": false,
+      "engine_probe": true
+    },
+    "mps_all": {
+      "files": 10,
+      "max_abs_error_by_column": {
+        "FILE_FAKE_PROB": 5.375680884933676e-06,
+        "VOICE_FAKE_PROB": 2.6047229766845703e-05,
+        "MUSIC_FAKE_PROB": 1.1841456095396108e-05,
+        "VOICE_PRESENT_PROB": 1.6962222071370547e-07,
+        "MUSIC_PRESENT_PROB": 2.2123493315096e-09
+      },
+      "cpu_vs_mps_max_abs_error": 2.6047229766845703e-05,
+      "strict_cpu_tolerance": 1e-05,
+      "strict_cpu_tolerance_met": false,
+      "engine_seconds": 17.83467416698113,
+      "process_seconds": 23.060819207981694,
+      "per_file_seconds": [
+        1.4685664169955999,
+        1.4364593329955824,
+        1.1589845420094207,
+        0.8818029160029255,
+        0.6954713339800946,
+        3.816088291001506,
+        0.7889992920099758,
+        0.4384285410051234,
+        0.8976220409967937,
+        1.16251779202139
+      ],
+      "peak_sampled_mps_driver_bytes": 8426045440,
+      "peak_rss_bytes": 2589507584,
+      "devices": {
+        "panns_device": "cpu",
+        "demucs_device": "mps:0",
+        "df_device": "mps:0",
+        "mert_device": "mps:0"
+      },
+      "package_cli_supports_mps": false,
+      "engine_probe": true,
+      "full_mps_pipeline": false
+    },
+    "guard_sha256": "6cca376d80c4a1a60770e39cf7ca3f6662c56385d594d57c23394d4afead49d1",
+    "guard_details": {
+      "network_denied": true,
+      "weights_only_enforced": true,
+      "legacy_pickle_allowlist": [
+        "demucs.htdemucs.HTDemucs",
+        "numpy.dtype",
+        "fractions.Fraction",
+        "numpy.core.multiarray.scalar -> numpy._core.multiarray.scalar",
+        "numpy.dtypes.Float64DType"
+      ],
+      "existing_identical_panns_labels_copy_skipped": true,
+      "package_members_verified": 53,
+      "original_assets_unchanged": true
+    }
+  }
+}

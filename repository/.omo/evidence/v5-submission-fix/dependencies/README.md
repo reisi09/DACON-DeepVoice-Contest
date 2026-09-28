@@ -1,0 +1,11 @@
+# Dependency resolver evidence
+
+Real pip 26.2.1 dry runs on macOS, Python 3.11.15 in an isolated temporary environment. Installed distribution metadata was simulated for official torch/torchaudio 2.7.1+cu128, numpy 1.26.4, huggingface_hub 0.34.4, safetensors 0.6.2, PyYAML 6.0.1, tqdm 4.66.4. **No torch binary was installed or executed in this reproduction.** Cross-platform wheel selection used `--only-binary=:all: --platform manylinux2014_x86_64 --platform manylinux_2_28_x86_64 --platform manylinux_2_35_x86_64 --python-version 3.11`. Pip environment markers still reflect the macOS host, so this is proof of the dependency conflict, not a full Linux installation simulation.
+
+- Original `imageio-ffmpeg==0.6.0 timm==1.0.15`: real resolver selects torchvision 0.29.0 and upgrades torch to 2.14.0, while leaving the simulated installed torchaudio 2.7.1+cu128 untouched. See `unpinned-official-metadata-report.json` and log.
+- Add exact `torchvision==0.22.1+cu128 torch==2.7.1+cu128 torchaudio==2.7.1+cu128 --extra-index-url https://download.pytorch.org/whl/cu128`: resolver retains torch/torchaudio and selects only imageio-ffmpeg, timm, matching torchvision, and Pillow. See `cu128-pinned-report.json` and log.
+- Earlier `pinned-report.json` isolates the effect of the torchvision 0.22.1 pin alone: it retains installed torch. Earlier unpinned/pinned runs only simulated torch/torchaudio metadata; their other dependency selections do not represent the complete official environment.
+- `comparison.json` records the real installation plans and executed assertions that unpinned requirements would replace torch without torchaudio, whereas exact CUDA128 pins preserve both.
+- Primary package metadata snapshots were retrieved from PyPI JSON endpoints shown in each `*-pypi-metadata.json`. timm requires unpinned torch and torchvision; torchvision 0.22.1 requires torch==2.7.1 and latest 0.29.0 requires torch==2.14.0.
+
+The temporary simulated environment was removed after reports were saved. This finding explains a plausible and reproduced package-resolution route to the observed libtorchaudio.so loader failure. A successful real packaged Linux inference remains necessary to validate the delivered ZIP.

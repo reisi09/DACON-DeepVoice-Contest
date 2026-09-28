@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "split_policy": "connected parent/artist/speaker groups, deterministic stratified 8:1:1",
+  "provider_grouping": false,
+  "seed": 41,
+  "source_manifest_sha256": "db1bffe6a969571db8eb999ca79548956fd2a0e7ee1e6da2ce57b0710a4175b9",
+  "paired_views": "same pair_id/group/split/duration/music gain; choose pure or mixed, never concatenate exposures",
+  "mix_modes": [
+    "simultaneous",
+    "sequential",
+    "sparse-0.5s"
+  ],
+  "make_mixtures": true,
+  "historical_status": "not declared historical"
+}

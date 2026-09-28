@@ -1,0 +1,1529 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-24",
+  "scope": "Read-only continuation of dacon-lb-improvement-audit; code/training/data/submission unchanged.",
+  "source": {
+    "session_id": "4eb54be1-b92d-4f86-9c9d-e9ad6584bc69",
+    "workflow_id": "wf_e0978135-4f1",
+    "journal_sha256": "e5d12f6542f14845ae861ab383530213012afaf327c22d9455f2aa033a9cf654"
+  },
+  "counts": {
+    "recovered": 87,
+    "prior_reviews": 21,
+    "new_high_critical_reviews": 16,
+    "lower_priority_candidates_not_independently_verified": 50
+  },
+  "interpretation": "Candidate titles and historical text are not current conclusions. The accepted_scope field and final report supersede them. Gains, costs and future schedules are proposals unless tied to an executed measurement. The 21 prior reviews were recovered, not all re-executed.",
+  "findings": [
+    {
+      "id": "ERROR_ANALYSIS-1",
+      "dimension": "error_analysis",
+      "original_severity": "critical",
+      "original_candidate_title": "FILE 오류의 69%는 음악이 들어 있는 파일에서 나오며, 음악 헤드가 FILE·Music 양쪽의 최대 병목임",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "음악 포함 프록시 2,849행이 FILE 오류 705건 중 538건을 차지한다. 오류 건수 비중 76.31%, EER 가중 기여 76.09%다. 음악과 노래 속 보컬을 우선 점검하되 hidden의 오류 구성은 미확인이다.",
+      "historical_corrected_claim": "proxy 테스트(n=6444)에서 이 제출 변형의 File EER 0.1094 가운데 68.3%는 음악 관련 파일에서 나옵니다. real 음악 FP가 0.0423, fake 음악 성분 FN이 0.0324입니다. MUSIC_PRESENT 기준으로 보면 76%인데, 이 파일들은 전체의 44%입니다. 파일당 오류율도 음악 파일이 3–5배 높습니다(real 21.1% 대 4.2%, fake 16.5% 대 5.5%). 오라클로 보면 음악 헤드의 개선 여지(FILE −0.068, ΔADS 약 0.094)는 음성 헤드(FILE −0.049, ΔADS 약 0.047)의 약 2배입니다. 따라서 proxy에서는 음악 헤드가 가장 큰 단일 레버입니다. 다만 Music 오류는 특정 셀에 몰려 있지 않고 넓게 퍼져 있습니다. MUSAN과 OpenMIC은 FPR이 평균(20%)보다 낮은데도 셀이 커서 기여가 클 뿐입니다. real 셀 중 더 나쁜 것은 constructed_song/mix입니다. fake 쪽은 Lyria-3 Pro(FNR 29%)와 fx가 주요 오류입니다. data v4는 Music EER을 0.269에서 0.200으로 크게 낮췄지만, Lyria와 FILE 수준의 real 음악 FP는 개선하지 못했습니다. 또 AI가 부른 보컬(Lyria)에서 음성 헤드가 크게 퇴행했습니다(FNR 0.315→0.631, Voice EER 기여 30%). 그래서 병목은 '노래·음악 콘텐츠'이고 음악 헤드와 음성 헤드가 모두 관련됩니다. hidden LB에서도 음악이 최대 병목인지는 검증할 수 없습니다. 과거 기록상 음악 헤드만 교체한 C08과 M330이 LB에서 +0.04 이상 올랐다는 점은 음악이 유효한 레버라는 방증입니다.",
+      "historical_evidence": [
+        "재실행 위치: <CLAUDE_AUDIT_SCRATCH>/ea1_verify/ 의 inline_checks.py, oracle.py, oracle2.py, cmp.py, valcells.py. 모든 인용 수치가 소수점 4자리까지 일치합니다.",
+        "comp.py: FILE 그룹 (y,MP,MF)별 n/err_rate/contrib는 real·무음악 2287/0.0415/0.0124, real·음악 1533/0.2107/0.0423, fake·무음악 1308/0.0550/0.0137, fake·real음악 286/0.1573/0.0086, fake·fake음악 1030/0.1650/0.0324입니다. 음악 파일 비율은 0.4421이고, MP==1에서 나오는 기여는 0.0832/0.1094(76%)입니다.",
+        "comp.py: MUSIC EER 임계값에서 real FPR 0.2001, fake FNR 0.2000입니다. 셀별 오류율은 constructed_song real 0.237, constructed_mix real 0.231, sonicmaster 0.208, openmic 0.184, musan 0.175, Lyria fake 0.293, Echoes/TTA 0.370, fx 0.143입니다.",
+        "valcells.py: VAL MUSIC EER 0.1202 대비 openmic err_valthr 0.108(평균보다 낮음), VAL FILE EER 0.0700 대비 openmic 0.153입니다.",
+        "cmp.py VOICE: Lyria-3 Pro FNR은 prev 0.3153에서 sub 0.6306이 됐고, 기여는 0.0165에서 0.0330으로 Voice EER 0.1107의 30%입니다. inline_checks.py의 Lyria voice AUC vs FLEURS는 prev 0.945, sub 0.715입니다.",
+        "oracle.py FN causes: voice_ok 68, voice_ok+music_miss 9, voice_miss+music_miss 27, music_miss 130. FP causes: Fm_high 265, Fv_high 102, both 25입니다.",
+        "oracle2.py: Fv=1 on fake-voice 0.0655는 Fm=1 on fake-music 0.0652와 거의 같습니다. FN 쪽에서는 두 헤드의 레버 크기가 같고, 차이는 real 음악 FP(Fm=0 → 0.0793 대 Fv=0 → 0.0961)에서 납니다.",
+        "fus.py: proxy에서 group 5-fold 스태킹을 하면 LR 0.1075, HGB 0.0942로 base 0.1094보다 낮습니다. HGB는 셀 누수가 있어 낙관치입니다.",
+        "EXPERIMENTS_ALL_2026-09-17.md 66–67행과 350행: C08과 M330은 음악 확률만 교체하고 기존 File max 결합을 썼으며, LB는 각각 0.7315, 0.7396(베이스라인 0.6909)입니다. 19행에는 '개발 Music EER의 개선이 공식 총점 개선을 보장하지 않는 문제가 반복됐다'는 기록이 있습니다.",
+        "COMPETITION_CONTRACT.md 17행: 테스트 유형(음성·보컬·혼합·전화채널)은 나열돼 있지만 구성 비율 정보는 없습니다. 'hidden 음악 비중이 더 크다'는 주장은 검증할 수 없습니다.",
+        "compare_report.json counts: file_eer 6444, voice_eer 5139, music_eer 2855. proxy 구성은 split_rules로 정해진 것이라 hidden 구성과는 무관합니다."
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "ERROR_ANALYSIS-2",
+      "dimension": "error_analysis",
+      "original_severity": "critical",
+      "original_candidate_title": "최신 생성기의 AI 기악(보컬 없는 구간)을 놓치고, 보컬 잔여물을 fake 신호로 쓰는 지름길이 있음",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "held-out Lyria의 보컬 비율≤0.05인 77개 기악 구간에서 Music FNR 약0.753이 관측됐다. 모든 최신 생성기의 실패나 분리 잔여물의 인과로 일반화할 수 없다.",
+      "historical_corrected_claim": "held-out proxy에서 미관측 생성기 Lyria-3 Pro의 기악 구간(vocal_ratio≤0.05, n=77, 서로 다른 곡 77개, 가사가 있는 곡에서 잘라낸 기악 구간)은 Music FNR 0.753(median Fm 0.194)입니다. 같은 생성기의 보컬 구간(n=195)은 FNR 0.133입니다. 이 격차는 학습 데이터 구성이 다른 네 변형(prev 0.649, b7144 0.831, new 0.727, sub 0.753)에서 모두 유지됩니다. real 음악은 보컬이 있을 때 FP가 더 높습니다(0.243 vs 0.154, MUSAN 0.278 vs 0.121, real 셀 안에서 Fm과 vocal_ratio의 Spearman +0.19~+0.31). 이는 반주 스템의 보컬 잔여물이 Fm을 올린다는 가설과 부합합니다. 그러나 fake 쪽 학습 분포 생성기에서는 상관이 음수이고(acestep −0.28, concat −0.30), train 라벨은 vp와 거의 독립입니다(P(fake|vp=1)=0.596, P(fake|vp=0)=0.621). 학습 분포 안의 최신 기악(acestep, Echoes)과 held-out fx_encoder 기악(FNR 0.14)은 잘 탐지됩니다. 따라서 이 결함은 '미관측 강한 생성기의 기악에 대한 교차 생성기 일반화 실패'이고, 여기에 보컬 곡 real FP 편향이 더해진 것으로 보는 것이 맞습니다. 최신 생성기 전반의 기악을 놓친다고 일반화할 근거는 생성기 한 종뿐입니다. train vp=0 fake 중 구세대 비중 63%는 사실입니다. 하지만 최신 오픈 모델 기악(acestep, stable_audio_open, diffrhythm, Echoes)을 포함하면 최신 기악은 7.4%가 아니라 약 26%입니다. data v4에서 이런 기악을 늘렸는데도 Lyria 기악 FNR은 개선되지 않았습니다.",
+      "historical_evidence": [
+        "adv_ea2/chk.py (scratchpad/audit): sub Music EER 0.2001 thr 0.491, npos 1030, nneg 1819; Lyria instr FNR prev 0.649/b7144 0.831/new 0.727/sub 0.753; Lyria vocal FNR 0.221/0.251/0.108/0.133; AUC(Lyria instr vs all real) sub 0.592, (Lyria vocal vs all real) sub 0.909",
+        "adv_ea2/chk.py counterfactual: fix half Lyria instr FN -> Music EER -0.0137 (not -0.02); fix all -> -0.0302; real vp1 FP(220) cut 1/3 -> -0.0155; both -> -0.034",
+        "adv_ea2/chk2.py: FILE EER 0.1094; Lyria FILE FN 81 (56 in VPmask0 of 73); fix half Lyria instr FILE FN -> FILE EER -0.0046; Lyria instr = 2.9% of FILE fakes",
+        "adv_ea2/chk.py Spearman(Fm, vocal_ratio) within cell: real musan +0.307, openmic +0.189; fake Lyria +0.347, fx_encoder +0.132, acestep -0.28, haim concat -0.297",
+        "adv_ea2/trc.py: train music-bearing labels P(fake|vp=1)=3019/5067=0.596 vs P(fake|vp=0)=2234/3596=0.621 (no marginal vocal->fake shortcut); SONICS suno/udio fake vp1 ~1494 vs vp0 ~38 (trainval)",
+        "adv_ea2/chk3.py: train fake vp0 also contains acestep 217, stable_audio_open 204, diffrhythm 55, echoes/tta+ata 113 (modern instrumental ~26%, not 7.4%)",
+        "valmusic.py rerun: in-distribution modern instrumental detected well in val: generated acestep vp0 err 0.05 med 0.991, HAIM acestep vp0 err 0.154 med 0.997, Echoes/ATA vp0 err 0.071 med 0.97; but Echoes/TTA vp0 0.25 vs vp1 0.08 (n=20/25)",
+        "adv_ea2/chk4.py: held-out fx_encoder_style_transfer instrumental (vr<=0.05, n=43) FNR 0.14 vs vocal 0.097 -> instrumental per se not missed; 77 Lyria instr crops = 77 distinct groups; FNR high across codecs (pcm_wav 0.83, flac 1.0)",
+        "data_v4/build_manifest.py:184 (HAIM vp=1 when lyrics present) and :300-310 apply_vocal_evidence (disagreement -> VP masked): the 73 masked Lyria crops are instrumental passages of lyric songs, not dedicated instrumental tracks",
+        "adv_ea2/chk5.py: random-crop instrumental yield (vocal_ratio<=0.05) SONICS suno 0.020-0.028, udio 0.018-0.038, acestep 0.362, Echoes/TTA 0.367, HAIM acestep 0.202 -> 1,500-3,000 instrumental rows from owned SONICS songs needs sliding-window search; yield unverified"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "ERROR_ANALYSIS-3",
+      "dimension": "error_analysis",
+      "original_severity": "high",
+      "original_candidate_title": "voice 헤드가 노래 속 AI 보컬을 거의 구분하지 못하며, data v4 이후 Lyria에서 퇴행함",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "기존 검증에서 mixed Voice EER 약0.206, voice-only 약0.044였으며 실제 가창과 AI 가창 판별이 약했다. 음악 점수를 Voice에 넘기는 max 규칙은 혼합 진위에서 퇴행하므로 채택하지 않는다.",
+      "historical_corrected_claim": "proxy 기준으로 Voice EER 0.1107 중 AI 곡 속 fake 보컬의 FN 기여는 0.0428(38.7%)입니다. 이 중 Lyria-3 Pro 한 셀이 0.0330이고, Lyria를 빼면 EER은 0.0763입니다(bootstrap 감소폭 95% CI 0.026–0.046). 유형별 EER은 mixed 0.206, voice-only 0.044입니다. 핵심 결함은 real 노래 보컬과 AI 노래 보컬을 구분하지 못한다는 점입니다. MUSAN 대비 AUC는 prev, b7144, new, sub에서 각각 0.479, 0.532, 0.494, 0.517입니다. 이 결함은 data v4 이전부터 있었습니다. data v4 이후 Lyria FNR이 오른 것(자체 임계값 기준 31.5% → 63.1%)은 노래 판별 능력이 사라져서가 아닙니다. prev의 '노래·음악이면 fake' 지름길(prev MUSAN FPR 0.668, constructed_song FPR 0.32)이 제거되면서 생긴 부산물입니다. 음악이 있는 real 보컬 대비 Lyria AUC는 0.676에서 0.687로 변함이 없고, 음성 전용 real 대비만 떨어졌습니다(FLEURS 0.945 → 0.715). in-domain val에서도 음악이 있는 fake 보컬의 FNR은 21.1%로 음성 전용의 2.5%보다 훨씬 높습니다. 생성기별로는 udio 50%, Echoes 30–44%인데 표본이 25–58개로 작습니다. fx_encoder(HAIM B2)의 VOICE_FAKE 라벨은 타당성을 재확인해야 합니다. 학습 없는 융합 max(Fv, 0.5·Pm·Fm)만으로도 proxy Voice EER이 0.0872로 내려가므로, singing 전용 헤드보다 이 방법을 먼저 검토해야 합니다. 다만 real 보컬과 AI 반주가 섞인 경우의 FP 위험을 확인해야 합니다.",
+      "historical_evidence": [
+        "재실행: audit/error_analysis/inline_checks.py -> VOICE 0.1107 {'fake music comp':0.0428,'real speech-only':0.0375,'real w/ music':0.0179,'fake voice only':0.0125}; Lyria FNR prev 0.315/b7144 0.315/new 0.653/sub 0.631; AUC vs FLEURS 0.945/0.94/0.597/0.715",
+        "audit/adv3/lyria.py: Lyria 대 REAL_w_music AUC prev 0.676 / b7144 0.700 / new 0.647 / sub 0.687; vs musan 0.479/0.532/0.494/0.517; vs constructed_song 0.749/0.781/0.754/0.794; vs zeroth 0.986/0.993/0.722/0.907; vs constructed_enhanced 0.771/0.777/0.5/0.613; ALL_REAL 0.857/0.865/0.639/0.729",
+        "cmp.py: 헤드마다 EER 임계값이 다름: prev 0.5856 vs sub 0.1913. prev FPR musan 0.668, constructed_song 0.320, vocalset 0.143 → sub에서는 0.305, 0.060, 0.016",
+        "adv3/lyria.py: Lyria sub FNR의 vocal_ratio 구간별 값: (0,0.35] 1.0 (n=5), (0.35,0.5] 0.864 (n=22), (0.5,0.7] 0.630 (n=73), (0.7,1] 0.574 (n=122); 전화 코덱 FNR 0.80–0.92 vs 그 외 0.42–0.73",
+        "data_v4/build_manifest.py:184 (Lyria VP는 lyrics 메타데이터 기준), :286-307 (max-3s 보컬 RMS 비율 근거, 회색 구간이면 메타데이터 라벨 유지), :673-674 (vocal-hi 0.35 / vocal-lo 0.08)",
+        "mixed 유형 가짜: constructed_mix 378, Lyria 222, fx_encoder 216; mixed EER w/o Lyria: sub 0.1316, prev 0.2542 (그래서 주장의 목표치 0.13 = Lyria mixed 오류를 전부 제거한 경우)",
+        "manifest orig_path: fx_encoder_style_transfer는 haim/B_hybrid/B2_human_mastered_ai_dsp에서 옴; build_manifest.py:160,195는 B2를 'fake' → VOICE_FAKE=1로 라벨링 (보컬 생성 여부 불확실)",
+        "val (adv3/val.py): VAL voice EER 0.051; valthr 기준 y=1 음악 있음 FNR 0.211 (n=350), 음악 없음 0.025 (n=2197); real 음악 있음 FPR 0.109 vs 음악 없음 0.036 (음악이 있는 경우는 양쪽 클래스 모두 어려움); val mixed EER 0.1635 vs voice 0.0305",
+        "학습 데이터: AI 노래 보컬 train echoes 293 + acestep 232 + suno 302 + udio 330; constructed_mix fake 771; 음악이 있는 real 보컬 1,400 (openmic 1,012)",
+        "audit/fuse_voice.py: 학습 없는 max(Fv, w·Pm·Fm)에서 val이 고른 w=0.5 -> test Voice EER 0.0872 (val 0.0436); Lyria FNR 0.631->0.252, mixed EER 0.206->0.177, constructed_song real FPR 0.06->0.202; val에는 real 보컬+AI 음악 행이 5개뿐",
+        "prev+sub 블렌드: mean 0.1201, geo 0.1134, rank-mean 0.1242, logit w_prev 0.1 -> 0.1101 (이득 없음)",
+        "COMPETITION_CONTRACT.md:17 보컬 = 음성, 보컬+반주 = 혼합 -> 노래 속 AI 보컬은 Voice EER에 들어감 (메커니즘은 hidden test와 관련 있음)"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "ERROR_ANALYSIS-4",
+      "dimension": "error_analysis",
+      "original_severity": "high",
+      "original_candidate_title": "split의 component closure로 실제 음성+음악, denoise된 실제 음성, 실제 노래 구성물이 거의 전부 test로 넘어가 '음악 위 음성 = fake' 지름길이 생김",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "구성 후 component closure를 적용하면서 song400행이 모두 test로 이동했다. 부모 split을 고정하고 split 안에서만 구성물을 생성한다. 분리 bleed의 인과나 예상 LB 이득은 확정하지 않는다.",
+      "historical_corrected_claim": "component closure와 construct 계획 때문에 실제 구성물이 거의 전부 test로 넘어갔습니다.\n- enhanced: test 276개 중 274개가 FLEURS 부모입니다.\n- song: 400개 전부 test입니다. vocalset 가수 한 명이 음악 component 최대 40개와 연결되면서 musan 부모 13개를 통해 연쇄로 끌려갔습니다. 이때 held-out이 아닌 vocalset 385개와 openmic 386개도 함께 test로 빠졌습니다.\n- mix: plan_mixes가 원래 85%를 fake로 만들었고, split이 train 쪽을 92%로 더 치우치게 했습니다. 그래서 train의 실제 simultaneous 음성+음악은 33개뿐입니다.\n\nproxy에서 실제 simultaneous mix와 enhanced 음성은 부모 대비 voice FPR이 각각 0.08에서 0.34, 0.13에서 0.25로 올라갑니다. 다만 같은 조건의 fake mix도 FNR이 0.02에서 0.12로 올라가고, 90%는 부모보다 점수가 낮습니다. v4 mix로 학습하지 않은 이전 모델도 같은 FPR(0.356)을 보입니다. 따라서 이것은 'music=fake' 지름길이 아니라 분리 bleed에 따른 강건성 저하입니다.\n\npaired real 구성물(train 부모)과 다양한 denoise real을 추가하는 것은 합리적인 저비용 보강입니다. 다만 효과는 proxy 기준 약 +0.003–0.004이고 LB에서는 불확실합니다. sonicmaster(train 200개, val FPR 21%)는 이 메커니즘과 무관한 label 모호성 문제로 분리해야 합니다.",
+      "historical_evidence": [
+        "scratchpad/audit/ea4/cons.py: constructed_mix VOICE_FAKE=0은 test 140 / train 59 / val 20(전체 219/1500 = 14.6% real). mlaad voice 부모는 1,015개. mix_mode real은 train simultaneous 33 / sequential 26.",
+        "cons.py: constructed_song 400/400 test, voice 부모 400/400 vocalset. music 부모는 openmic 263, haim 71, echoes 36, musan_music 13 등. constructed_enhanced 부모는 test fleurs_ko 274, zeroth 2이고 train/val 24개는 모두 zeroth.",
+        "check4.py: vocalset split은 test 385 / train 349 / val 66, openmic은 test 386 / train 2018 / val 360(closure 부수 손실). haim sonicmaster는 train 200 / val 47 / test 53.",
+        "check3.py 짝 비교(submitted 모델, VOICE thr 0.191): real simultaneous 자식 err 0.342 vs 부모 0.082. fake simultaneous 자식 FNR 0.122 vs 부모 0.017, 자식>부모 비율 0.096(점수가 낮아짐). prev 모델 real simultaneous err 0.356(v4 mix 학습 전에도 동일).",
+        "check2.py 짝 비교: enhanced voice FPR 부모 0.127 → 자식 0.254. MUSIC constructed_song 부모 0.193 → 자식 0.237, constructed_mix 0.189 → 0.231(대부분 부모 오류를 물려받음).",
+        "check2.py FP 기여만 계산: FILE constructed_mix 0.0045, enhanced 0.0045, song 0.0101. VOICE enhanced 0.0116, musan 0.0095, mix 0.0045. finding의 FILE 0.019는 constructed_mix의 sub_contrib 0.0149(FN 0.0104 포함)를 더한 값.",
+        "check3.py VAL(train 쪽 부모): real simultaneous mix voice FPR 2/9 = 0.222, sequential 0/11, enhanced 1/7. sonicmaster FILE FPR 0.213(n=47), VOICE 0.429(n=14).",
+        "data_v4/build_manifest.py:476-482 plan_songs max_partners=40(연쇄 closure 원인), :468-473 plan_mixes(component 수에 비례해 뽑아 fake가 많아짐), :508-515 plan_enhanced(zeroth와 fleurs_ko에서 음성을 뽑음)",
+        "COMPETITION_CONTRACT.md:17 '보컬은 음성, 보컬+반주는 혼합 ... 잡음 제거·음량 조정 등은 REAL'. 배경음악 위의 말소리는 명시되지 않음."
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "ERROR_ANALYSIS-5",
+      "dimension": "error_analysis",
+      "original_severity": "high",
+      "original_candidate_title": "proxy 낙관의 원인은 구성비가 아니라 도메인 신규성: 형제 생성기·4 s 미만 파일을 빼면 1-ADS 0.137→0.154, LB 전이율 약 63%",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "SpeechFake와 짧은 표본을 제외한 프록시 재가중은 시나리오다. 비교 LB 패키지의 귀속이 불명확하므로 보편적인 63% 전이율이나 하나의 낙관 원인을 채택하지 않는다.",
+      "historical_corrected_claim": "proxy test의 speechfake는 691행(fake 676, bonafide 15)입니다. 제출 모델(sub)과, SpeechFake를 한 번도 학습하지 않은 B7144 모두 fake FN이 0이고, 둘 다 bonafide에서 FP가 1건씩 있습니다. 따라서 이 표본이 쉬운 이유는 train의 형제 생성기 누설이 아니라 생성기 자체가 쉽기 때문입니다. 이 speechfake와 4 s 미만 파일(257개, fake 94%, FP 0, FILE FN 12)을 빼면 sub의 1-ADS는 0.1369에서 0.1540으로 올라갑니다. 다만 LB 0.2317과의 차이를 설명하지 못하고, 구성비 재가중(thirds+unknownVP10%: 0.1859)보다 설명력도 약합니다. 관측된 LB 쌍은 B7144→DataV4 하나뿐입니다(proxy Δ 0.061, LB Δ 0.038). 이 쌍에서 raw proxy는 개선폭의 약 63%만 LB로 이어졌고, bootstrap으로 본 proxy 쪽 범위는 55–74%입니다. 정리된 proxy는 과대평가가 더 심합니다(전이율 56%). 반면 unknownVP(Lyria/fx/MUSAN) 가중을 높인 proxy가 LB를 더 잘 따라갑니다(66–70%). 결론은 두 가지입니다. proxy가 개선폭을 부풀린다는 점은 사실이지만, 원인을 '구성비가 아닌 도메인 신규성'으로 가를 수는 없습니다. 그리고 speechfake와 4 s 미만을 뺀 지표를 선택 기준으로 삼자는 권고는 현재 증거로 뒷받침되지 않습니다.",
+      "historical_evidence": [
+        "results/balanced7144_20260919/source_summary.csv: B7144 음성 학습원은 asvspoof2019_la(20 generator 행)와 librispeech_test-clean뿐, speechfake 없음",
+        "scratchpad/audit/adv5/v2.py: b7144 FILE th 0.3464, VOICE th 0.6651에서 speechfake fake 676개 FN 0, bonafide FP 1. prev(Existing9504) FILE FN 6(CosyVoice 4, OpenVoice 2), VOICE FN 9. sub FILE/VOICE 모두 fake FN 0, bonafide FP 1",
+        "scratchpad/audit/adv5/v1.py: speechfake test 691행(CosyVoice 23, MeloTTS 33, OpenVoice 600, SeedVC 20, bonafide 15). <4s FILE n 257, fake 242, FP 0, FN 12. b7144 no_sf_ge4s 1-ADS 0.2226, prev no_sf_ge4s 0.2236",
+        "scratchpad/audit/adv5/v3.py: raw 전이 0.63, 배율 1.36->1.69 | no_sf_ge4s 0.56, 1.21->1.50 | ge4s_thirds+uVP10 0.70, 1.12->1.25 | clean_thirds+uVP10 0.66, 1.07->1.20 | clean_cell_equal 0.53, 1.17->1.47",
+        "scratchpad/audit/adv5/v3.py: unknownVP 180행 = haim:Lyria-3 Pro 73, fx_encoder_style_transfer 32, musan_music real 61, 기타 10 (모두 held-out 도메인 쪽)",
+        "scratchpad/audit/adv5/v4.py: group bootstrap(200회) proxy Δ(b7144-sub) 95% CI raw 0.0519–0.0698(전이 0.55–0.74), clean 0.0568–0.0783(전이 0.49–0.67). LB 잡음 미포함",
+        "results/balanced7144_regression_20260919/live_submissions.json: 93093(B7144) ADS 0.7299920635, CPS 0.9894193122 실측이므로 CPS 가정 불필요",
+        "results/balanced7144_h100_20260919/RESULTS.md: B7144 파일 점수 = max(presence×fake), compare_runs.py legacy decision과 같은 규칙",
+        "artifacts/Existing9504_All_Source/.../submissions/Existing9504_MIL/README.md:22 'No DACON submission was made' -> proxy·LB 쌍은 B7144와 DataV4 하나뿐 (n=1)",
+        "data_v4/split_rules.json test_holdout: real 도메인 held-out은 fleurs_ko, musan_music뿐 (주장의 이 부분은 맞음)"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "ERROR_ANALYSIS-6",
+      "dimension": "error_analysis",
+      "original_severity": "medium",
+      "original_candidate_title": "길이 편향: max-over-segments 때문에 긴 real 파일의 fake 점수가 오르며, data v4 이후 더 심해짐",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "real 음성의 점수-길이 Spearman은 제출 변형 0.359(prev 0.258)이고, fake는 −0.369입니다. FILE real FPR은 길이별로 4–6 s 6.4%, 6–8 s 8.1%, 8–12 s 11.8%, 12–20 s 10.4%, 20–60 s 19.3%입니다. fake FNR은 6.6–13.4%로 거의 평탄합니다. voice real FPR은 FLEURS에서 4–8 s 3.8–6.8%, 8–60 s 11.3–14.3%이고, MUSAN 보컬 20 s 이상에서 37.0%, enhanced 12–20 s에서 29.6%입니다. Voice 20–60 s 구간은 FPR 26.2%, FNR 27.9%입니다. (유형×label) 안에서 길이를 4–60 s 균등으로 재가중하면 Voice EER이 0.1186에서 0.1515로 오릅니다.",
+      "candidate_evidence": [
+        "<CLAUDE_AUDIT_SCRATCH>/error_analysis/voice.py: real voice spearman(score,dur) sub 0.359 / prev 0.258; fake -0.369",
+        "dims.py FILE by dbin: FPR [4,6) 0.0642, [6,8) 0.0814, [8,12) 0.1176, [12,20) 0.1038, [20,61) 0.1927; VOICE [20,61) FPR 0.2622 FNR 0.2792",
+        "voice.py: fleurs err by dbin [4,6) 0.068 [6,8) 0.038 [8,12) 0.113 [12,20) 0.121 [20,61) 0.143; musan [20,61) 0.370",
+        "durw.py: sub uniform4-60 VOICE 0.1515 vs proxy-like 0.1186"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ERROR_ANALYSIS-7",
+      "dimension": "error_analysis",
+      "original_severity": "medium",
+      "original_candidate_title": "퓨전·보정 문제가 아님: voice가 탐지한 fake 68개가 FILE에서 놓치지만, 성분별 보정이나 후보 교체로는 개선되지 않음",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "FILE FN 287개 중 68개는 Fv가 Voice EER threshold(0.191) 이상인데도 FILE 점수가 0.3347 미만입니다(VoxCPM 38/350, constructed_mix 20, MLAAD 기타 9). 'fake 보컬의 Fv=1' 오라클은 File EER을 0.0655로, VoxCPM만 고치면 0.0968로 낮춥니다. 그러나 val로 fit한 성분별 보정을 test에 적용하면 max(Pv·cdfRealV, Pm·cdfRealM)는 0.1136, Platt-max는 0.1120, Platt noisy-or는 0.1097로 기준 0.1094보다 나아지지 않습니다. 단일 후보도 max 0.1100, noisy_or 0.1075, max_nopresence 0.1303으로 차이가 CI(±0.01) 안에 있습니다. FILE FP 418개 중 Fm이 높은 경우가 311개(74%), Fv가 높은 경우가 135개입니다.",
+      "candidate_evidence": [
+        "<CLAUDE_AUDIT_SCRATCH>/error_analysis/oracle.py FN causes: voice_ok 68 (mlaad:VoxCPM 38, constructed_mix 20, mlaad:other 9), music_miss 130, voice_miss 49; FP causes Fm_high 265, Fv_high 102, both 25, ...",
+        "oracle2.py: Fv=1 on fake-voice 0.0655; fix Fv fake in mlaad:VoxCPM 0.0968",
+        "calib.py test: submitted 0.1094; max(Pv*cdfRealV,Pm*cdfRealM) 0.1136; platt max 0.112; noisyor(platt) 0.1097",
+        "oracle.py single cand: max 0.1100, noisy_or 0.1075, max_nopresence 0.1303"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ERROR_ANALYSIS-8",
+      "dimension": "error_analysis",
+      "original_severity": "medium",
+      "original_candidate_title": "전화 채널: fake 음성 FNR 2배, real 음악 FPR 1.7배(학습 데이터의 코덱 비율은 이미 균형)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "tel_* 코덱 대 광대역 비교 결과입니다. Voice fake FNR 19.1% 대 9.1%, real FPR 12.6% 대 10.7%. Music real FPR 30.4% 대 17.5%. FILE real FPR 15.2% 대 9.8%, FNR 12.0% 대 10.7%. 개별 코덱으로는 tel_opus8의 voice FPR이 30.0%, FNR이 20.5%이고, tel_gsm과 tel_alaw의 voice FNR은 22.9%와 17.8%입니다. 학습 데이터의 tel 비율은 fake와 real이 같습니다(voice 0.204/0.208, music 0.208/0.209). 따라서 데이터 불균형보다는 대역 제한으로 단서가 사라지는 표현 한계로 보입니다(추론). prev 대비로는 tel_opus8 FILE FPR이 46.7%에서 21.9%로 개선되었습니다.",
+      "candidate_evidence": [
+        "inline (voice/tel): VOICE tel=True y=1 err 0.191 vs tel=False 0.091; MUSIC tel y=0 0.304 vs 0.175; FILE tel y=0 0.152 vs 0.098",
+        "<CLAUDE_AUDIT_SCRATCH>/error_analysis/dims.py VOICE by codec: tel_opus8 FPR 0.3000 FNR 0.2048; tel_gsm FNR 0.2289; tel_alaw FNR 0.1776",
+        "train tel share by label: voice {0: 0.208, 1: 0.204}; music {0: 0.209, 1: 0.208}; test tel share 0.203"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ERROR_ANALYSIS-9",
+      "dimension": "error_analysis",
+      "original_severity": "low",
+      "original_candidate_title": "presence는 병목이 아님(AUC 0.998/0.9987, 오라클 presence로 File EER −0.003)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "VOICE_PRESENT AUC는 0.99795(prev 0.98462), MUSIC_PRESENT AUC는 0.99865(prev 0.9911)이고 LB CPS는 0.99768입니다. 오라클 presence는 File EER을 0.1094에서 0.1063으로만 낮춥니다. 남은 오류는 VocalSet 아카펠라의 Pm≥0.5(11.7%), ACE-Step 기악의 Pv≥0.5(7.5%), fx_encoder 기악의 Pv≥0.5(5.8%), 노래 구성물의 Pv<0.5(5.2%)입니다. VOICE_PRESENT_mask=0인 176개(Lyria 73, MUSAN 61, fx 32)는 Voice EER과 CPS에서 제외되지만 FILE에는 포함됩니다(File EER 0.426). 이는 presence 문제가 아니라 음악 헤드의 기악 FN 문제입니다(ERROR_ANALYSIS-2).",
+      "candidate_evidence": [
+        "<CLAUDE_AUDIT_SCRATCH>/error_analysis/presence.py: VOICE_PRESENT AUC sub 0.99795 prev 0.98462; MUSIC_PRESENT AUC sub 0.99865 prev 0.9911; vocalset MUSIC_PRESENT=0 err05 0.117; acestep VOICE_PRESENT=0 err05 0.075",
+        "oracle.py: oracle presence 0.1063",
+        "typeeer.py: FILE unknownVP EER 0.4262"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ERROR_ANALYSIS-10",
+      "dimension": "error_analysis",
+      "original_severity": "medium",
+      "original_candidate_title": "data v4가 개선한 곳과 개선하지 못하거나 퇴행한 곳(셀별 prev 대비)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "개선된 셀(각 모델의 global EER threshold 기준): VoxCPM voice FNR 42.6%→4.6%(Voice 기여 −0.0313), constructed_song voice FPR 32.0%→6.0%, MUSAN 보컬 voice FPR 66.8%→30.5%, FLEURS FILE FPR 13.1%→2.7%(−0.0203), constructed_enhanced FILE FPR 42.4%→12.3%, constructed_mix music FPR 42.9%→23.1%, fx music FNR 26.7%→14.3%. 개선되지 않았거나 퇴행한 셀: MUSAN FILE FPR 16.0%→20.2%, OpenMIC 15.8%→18.1%, sonicmaster 7.5%→20.8%, Lyria voice FNR 31.5%→63.1%, FLEURS voice FPR 5.3%→9.9%, fx voice FNR 8.8%→15.7%, Lyria music FNR 32.3%→29.3%(사실상 정체), Echoes/TTA music FNR 33%→37%. 변화 패턴은 TTS 음성 쪽이 크게 개선되고, real 음악 FP와 AI 노래·기악 쪽은 정체 또는 퇴행입니다. prev 헤드와 평균해도 Voice(0.1201)와 Music(0.2106) 모두 나빠지므로 앙상블로 회복할 수도 없습니다.",
+      "candidate_evidence": [
+        "<CLAUDE_AUDIT_SCRATCH>/error_analysis/cmp.py (FILE/VOICE/MUSIC prev vs dbleg vs sub per cell with d_contrib)",
+        "prev+sub averaging (inline): VOICE mean 0.1201 geo 0.1134; MUSIC mean 0.2106 geo 0.2341",
+        "trcomp.py: real music train sources {'openmic': 2018, 'constructed_mix': 695, 'existing:FMA': 340, 'existing:JamendoMaxCaps': 340, 'haim': 253, ...}"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-1",
+      "dimension": "data_distribution",
+      "original_severity": "critical",
+      "original_candidate_title": "Voice head가 '가창=REAL'을 학습함: 가짜 가창 가중 2.9%, 가짜 a cappella 0행",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "가창/발화와 진위 조합의 가중 불균형, fake a cappella 공백은 점검 대상이다. 부분집합의 데이터 가중만으로 모델이 가창=real 규칙을 학습했다고 입증할 수 없다.",
+      "historical_corrected_claim": "voice head의 (label, source, generator) 셀 균등 가중(full_bank_batches.py:27-35) 때문에 가창 fake는 fake 클래스 가중의 1.5%(duration-balance 후 3.5%)만 받는다. 반면 real 클래스 가중의 47%(38%)가 가창이다. 가창 행 안에서 fake 비율은 행 수로 38%지만 가중으로는 2.9%(8.5%)다. 가짜 V1M0 a cappella는 0행이고, train의 real V1M0 가창은 549행이다. 여기에 더해 legacy fake 노래 V1M1 약 1,000행(ex:SONICS 751 등)은 VOICE_FAKE=null이라 voice 학습에서 빠져 있다. proxy에서는 새 head가 Lyria-3 Pro 보컬을 real speech보다 낮게 매긴다(AUC 0.909→0.705). 그러나 가창 내부 AUC(Lyria 대 real 가창)는 모든 모델에서 0.75~0.78로 가중과 무관하다. 가창 도메인 intercept 보정의 효과도 proxy voice EER −0.005에 그친다. 가중 불균형은 실재하는 기여 요인이지만, 가창 fake 미탐의 주원인은 음성 전용 frozen 특징과 미관측 생성기 일반화로 보인다. 심각도는 critical이 아니라 medium~high로 본다.",
+      "historical_evidence": [
+        "scratchpad/audit/dd/sing_chk.py: 가창 내부 AUC Lyria 대 real 가창: e9504 0.748 / b7144 0.782 / new_leg 0.746 / bal_leg 0.780 / dec 0.780. Lyria 대 real speech: e9504 0.909 → dec 0.705. 가창 subset만의 EER: e9504 0.2559 → dec 0.2262. speech subset: 0.1244 → 0.0689",
+        "scratchpad/audit/dd/sing_chk2.py: 가창 행 logit에 oracle 상수 offset을 더한 결과. proxy test voice EER 0.1107 → 최소 0.1059(delta 1.0~1.5). val EER은 0.0510 → 0.0542(delta 1.0)로 악화. V1M1 전체에 offset을 주면 test 0.0965",
+        "voice_validation.csv(train_duration_balanced): val EER 전체 0.0510 / speech만 0.0343 / 가창만 0.1884. val fake 가창 대 real speech AUC 0.950, 대 real 가창 0.907. 중앙값 echoes 0.306, sonics 0.590, generated_music 0.892",
+        "Lyria를 완벽히 탐지할 때의 proxy 상한: voice EER 0.1107 → 0.0763(Lyria 제외), FILE EER 0.1094 → 0.0968. 총점으로 약 +0.18*0.034 + 0.45*0.0126 ≈ +0.012. Lyria는 proxy voice fake의 10.5%, 가창 fake(Lyria+fx)는 20.6%",
+        "manifest: kind=='singing' V1M0은 vocalset 800(test 385 / train 349 / val 66) + csd 200(train). V1M0 & VOICE_FAKE=1 원천: mlaad 8775, speechfake 3000, asvspoof2021_la 2652, asvspoof2021_df 2200, ex:asvspoof2019_la 2000, constructed_splice 121. 가창 원천 없음",
+        "manifest의 V1M1 & FILE_FAKE=1 legacy 행 VOICE_FAKE=null: ex:SONICS 751, ex:Echoes 224, ex:HAIM 308, ex:suno 18, ex:udio 14, ex:FakeMusicCaps 400. voice head 학습에서 제외됨(full_bank_train.py:37-40 head_labels의 _known 조건)",
+        "results/data_v4_20260923 JSON에 \"sonics\": 10000(ingest)과 \"sonics\": 800(select) 기록. 사용량 sonics 800 + existing:SONICS 800 = 1,600",
+        "a3.py는 read_items의 silent-stem skip(full_bank_train.py:65-66)을 재현하지 않으므로 행 수는 근사값"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-2",
+      "dimension": "data_distribution",
+      "original_severity": "critical",
+      "original_candidate_title": "길이 분포 불일치: 테스트는 4–60초, 학습 음성 fake는 30초 이상 사실상 0",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "길이·원천·발화/가창을 교차 집계해야 한다. 이번 재계산에서 train의 30초 이상 fake voice-only는4행으로, 0이라는 주장은 정정한다. test voice-only에는30초 이상 표본이 없다.",
+      "historical_corrected_claim": "학습 데이터에는 30–60초 음성(speech) 표본이 사실상 없다. 음성 전용 fake 18,748행 중 30초 이상은 0행이고, 한국어 real 20초 이상 51행은 전부 CSD 가창이다. 길이 목표가 무너진 이유는 원본이 짧기 때문이다(fake의 88%가 원본 전체를 사용). 음성 헤드는 학습과 추론 모두 4.04초 세그먼트의 최댓값을 쓰므로, 소스 안에서 길이가 늘면 real 점수가 오른다(FLEURS voice FP: 4–10초 0.073, 10–20초 0.122, 20–26.6초 0.143). 그러나 proxy에는 30초 이상 음성이 없어서 30–60초 음성 구간의 영향은 측정되지 않았다. 소스 비중을 고정하고 길이만 균등화하면 ADS 변화는 +0.003, voice EER 변화는 +0.002다. 기존의 −0.034 추정은 MUSAN 노래와 Lyria 보컬에 가중치가 쏠려 생긴 도메인 효과다. fake 점수도 길이에 따라 오르기 때문에(haim voice FN 0.496→0.206, mlaad file FN 0.122→0.078) 순효과의 방향도 확정되지 않았다. 따라서 이 문제는 critical이 아니라 medium 수준의 데이터 공백 겸 검증 공백이다. 먼저 할 일은 두 가지다. 첫째, 캐시된 세그먼트 임베딩을 같은 화자나 같은 시스템끼리 묶은 가짜 bag, 또는 길이 정규화 풀링을 기존 캐시로 비교한다. 둘째, 길고 자연스러운 real 음성으로 된 held-out 평가셋을 확보한다. 오디오를 이어붙이는 대규모 구성은 그다음이다.",
+      "historical_evidence": [
+        "adv_dd2/v2.py: 균등 길이 재가중에서 musan_music이 real 가중치의 0.537(원래 0.062), haim이 fake 가중치의 0.656(원래 0.206)을 차지한다. 소스 균등 voice EER 0.0957, 소스 균등+소스 내부 길이 균등 0.0980이다.",
+        "adv_dd2/v3.py: as-is ADS 0.8631, 균등 길이 0.8285, 소스 균등 0.8549, 소스 균등+소스 내부 길이 균등 0.8578(file 0.1486 / voice 0.0980 / music 0.1609)이다. 순수 길이 효과는 ADS 약 +0.003이다.",
+        "adv_dd2/a14.py: voice real [30,61) = musan_music 48행(FP 0.438) + constructed_mix 8행(FP 0.000). proxy real speech는 1,902행이고 20초 이상 33행, 30초 이상 0행, 최대 26.6초다. mlaad fake는 [20,30) 2행, 30초 이상 0행이다.",
+        "adv_dd2/v2.py spearman(score, dur): musan_music real 0.226(p=0.002), fleurs 0.254(p=2e-23), haim fake 0.309(p=4e-11). fake 점수도 길이에 따라 오른다.",
+        "adv_dd2/v4.py file 단위 오류(길이 구간 순서): fleurs FP 0.020 → 0.033 → 0.071, mlaad FN 0.122 → 0.078, haim FN 0.195 → 0.185 → 0.172 → 0.100, musan_music FP 0.174 / 0.240 / 0.177 / 0.220(추세 없음)",
+        "adv_dd2/v5.py: V1M0 fake 중 원본 전체 사용 0.881, 원본 30초 이상 0.001. ASVspoof2021 LA/DF와 2019 LA fake 6,852행은 원본 중앙값 2.3–2.9초(테스트 최소 4초 미만)다.",
+        "adv_dd2/v1.py: 한국어 real 20초 이상 51행은 전부 csd다. 가중 dur-only AUC는 w 0.295, wd 0.502다. wd 기준 30초 이상 가중치 비중은 real 0.061, fake 0.0115로 여전히 비대칭이다.",
+        "full_bank_train.py:84-86 음성 bag은 part.max()로 집계한다. :88 음악은 logsumexp−log(N)으로 길이를 정규화한다. full_bank_submission.py:105 추론에서도 .max()를 쓴다.",
+        "logs/env_cosyvoice2.log: 'no version of protobuf==4.25' 오류(uv 인덱스 전략 문제)로 CosyVoice2 생성이 생략된 것을 확인했다.",
+        "COMPETITION_CONTRACT.md:17에는 '4–60초'만 있고 길이 분포는 공개되지 않았다. 균등 분포 가정은 검증할 수 없다."
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-3",
+      "dimension": "data_distribution",
+      "original_severity": "high",
+      "original_candidate_title": "제출 헤드가 train split만 사용: real 3,759행과 모든 held-out 생성기·도메인 미학습",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "현재 train30658/val4931/test6450의 경계를 보존한다. 모든 행 refit은 평가와 calibration을 잃는 비용이 있다. 독립 holdout과 upstream부터 누수 없는 calibration 계획 없이는 공짜 개선으로 취급하지 않는다.",
+      "historical_corrected_claim": "제출된 6개 헤드(와 presence head)는 bank train 30,658행만으로 최적화됐다. val 4,931행은 조기종료와 FILE CDF 적합에만, proxy test 6,450행은 평가에만 쓰였다. test에는 real 3,820행이 있다(FLEURS-ko 1,500, MUSAN music 645, openmic 386, vocalset 385, constructed_song 316, FLEURS 기반 constructed_enhanced 276, constructed_mix 117 등). fake로는 Lyria-3 Pro 300, fx_encoder 300, OpenVoice 600, VoxCPM 계열 350, AI 반주 노래 84가 들어 있다. 이 가운데 vocalset 보컬 기반 constructed_song 400행과 FLEURS 기반 향상 real은 component closure 때문에 전부 test로 갔다. 다만 train에도 real 노래 1,395행(openmic/FMA/Jamendo 등)과 zeroth 기반 향상 real 17행이 있다. OpenVoice(미탐 0%)와 VoxCPM2(4.7%)는 이미 잘 탐지되므로, 실질적인 학습 가치는 Lyria-3 Pro(voice 미탐 63%, music 29%), MUSAN·노래 구성물 real, FLEURS 향상 real 쪽에 있다. 최종 제출용으로 train+test(필요하면 +val)를 고정 epoch로 refit하는 것은 싸고(헤드 학습 약 8분/H100) 타당한 선택지다. 다만 이득은 작고 불확실하며 LB 제출로만 검증할 수 있다.",
+      "historical_evidence": [
+        "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/bank: bank_trainval split counts train 30,658 / val 4,931, bank_test 6,450 (pandas value_counts); manifest splits.csv 31,190/5,030/6,727",
+        "bank crosstab FILE_FAKE by split: test real 3,820 / fake 2,624; train real 9,147 / fake 21,492",
+        "train V1M1 real by source: openmic 1,012, existing:FMA 149+9, JamendoMaxCaps 79, haim 79, constructed_mix 54 => real songs are present in train",
+        "constructed_enhanced manifest split: test 276 / train 17 / val 7; train/val parents are zeroth+musan_noise, test parents fleurs_ko+musan",
+        "constructed_song parents (test): vocalset 400, openmic 263, haim 71, echoes 36, musan_music 13 ... closure pulled all 400 into test",
+        "Per-generator errors at EER threshold (scratchpad/audit/dd3_gen.py on train_duration_balanced/test_predictions_decision.csv): voice Lyria-3 Pro miss 0.631 (n=222), musan_music real FP 0.305, constructed_enhanced real FP 0.254, fleurs_ko real FP 0.099; music Lyria miss 0.293; OpenVoice voice miss 0.000 (n=600), VoxCPM2 0.047",
+        "presence_head.report.json: train_n 5,255 (VOICE) / 5,946 (MUSIC), train split only; LB CPS already 0.99768 so presence refit gain <= ~0.0002 total",
+        "decision_heads.py:78-85 quantile_table/to_cdf are label-free; file_ensemble.report.json chosen_rule 'equal (grid gain 0.0000 < 0.002)', test ensemble_eer 0.1094 vs max_rule 0.11004",
+        "phase_c.steps: train_balanced 16:44:06Z -> file_ensemble 16:51:41Z (~7.5 min H100 for all 6 heads)",
+        "voice_{41,43}_history.json best epoch 50 of max 50 (not converged); music best epochs 9-12",
+        "results/balanced7144_regression_20260919/ANALYSIS.md:13-14: previous data expansion regressed LB 0.7579 -> 0.7559",
+        "memory file: feature caches backed up at /root/data_v4/feature_cache_v4.tar (cephfs); /data/data_v4 persistence after pause not verified"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-4",
+      "dimension": "data_distribution",
+      "original_severity": "high",
+      "original_candidate_title": "(source, generator) 셀 균등 가중이 한국어를 4.6%로 줄이고 ASVspoof와 작은 셀을 키움",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "셀 균등 가중은 작은 원천과 별칭을 확대한다. 현재 한국어 프록시는 쉬운 편이라는 반대 근거가 있어 한국어 비중만으로 가중 증가를 결정하지 않는다.",
+      "historical_corrected_claim": "voice/music head의 (source, generator) 셀 균등 가중(full_bank_batches.py:27-36)은 행 분포를 크게 왜곡하며, 발견의 점유율 수치는 실제 학습 분포와 일치한다(rows_seen 24,623/9,363과 동일).\n- voice fake: MLAAD 65%, ASVspoof 29.6%, 한국어 6.0%, 영어 59.1%(ASVspoof2019 공란 언어를 포함하면)이고 real이 없는 기타 언어가 31.2%다(dur-bal 기준).\n- voice real: 한국어 15.2%다.\n- 작은 real 셀 98행이 real 가중의 19.4%를 가져가고, real ESS는 16.7%다.\n- 별칭 분리도 있다. FMA/FMA와 FMA가 별도 셀이고, MLAAD minimax와 xtts 표기가 여럿이다.\n그러나 val과 proxy test에서 한국어는 가장 오류가 적은 부분집합이다. file EER이 0.017/0.038로, 한국어가 아닌 쪽의 0.091/0.165보다 낮다. 따라서 '한국어 가중 부족 → LB 손실'은 입증되지 않는다. 작은 셀은 규정상 REAL인 hard negative(잡음 제거·real 혼합·real 조작)이고 proxy의 주요 FP 원천이다. 제안된 sqrt(n)+상한 방식은 이 범주의 가중을 1/3~1/6로 줄여 오히려 해로울 수 있다. 확실한 개선은 별칭 정규화와 단일 원천의 중복 셀 병합이다. 한국어 재가중과 작은 셀 축소는 val/proxy A/B로 확인해야 하는 가설이다. 작은 셀은 가중을 낮추기보다 행 수를 늘려야 한다.",
+      "historical_evidence": [
+        "run_identity.json(train_duration_balanced): batches=2159a611… 와 trainer=d7cd7401… 가 현재 full_bank_batches.py/full_bank_train.py의 sha256과 일치하고 duration_balance=true다. 제출 README는 'data v4 train split, --duration-balance'라고 적고 있다.",
+        "voice_41_history.json rows_seen=24623, music_41_history.json rows_seen=9363이다. dd/a3.py의 항목 재구성 행 수와 같다.",
+        "adv_dd4/lang_eer.py 결과: VAL voice EER은 ko 0.0227(n=1412), non-ko 0.0707(n=2373)이다. TEST voice EER은 ko 0.0366(n=2707), non-ko 0.1718(n=2432)이다. 공통 임계값에서 ko fake FNR은 0.016, non-ko fake FNR은 0.210이다.",
+        "adv_dd4/ko_file.py 결과: TEST file EER은 ko 0.0377, non-ko 0.1651이고 VAL file EER은 ko 0.0170, non-ko 0.0908이다. 공통 임계값에서 ko 오류는 42+49=91건, non-ko 오류는 376+238=614건이다.",
+        "adv_dd4/music_src.py(proxy test, 공통 임계값) 주요 오류: voice는 fleurs_ko real FPR 0.099(149건), haim Lyria-3 Pro FNR 0.631(140건), constructed_enhanced real FPR 0.254(70건)다. music은 musan_music real 0.175(113건), constructed_mix real 0.231(93건), constructed_song real 0.237(75건)이다.",
+        "가중 분포의 언어-라벨 교란(ASVspoof2019와 LibriSpeech의 공란 언어를 en으로 처리, wd 기준): real은 en 0.364 / ko 0.152 / 공란 0.485이고, fake는 en 0.591 / ko 0.060 / 기타 언어 0.312 / 공란 0.037이다. 기타 언어에는 real이 0이다.",
+        "Kish ESS(wd 기준): voice real 1,245/7,452, voice fake 6,844/17,171, music real 520/3,755(max/median 134.6), music fake 1,808/5,608이다.",
+        "권고안 시뮬레이션(sqrt(n) 셀 질량 + 행 가중 상한 중앙값 5배): voice real constructed_enhanced 0.059→0.010, FMA/FMA 0.059→0.005다. music real haim crossfade 0.111→0.018, concat 0.111→0.024, zeroth 0.059→0.170, openmic(music) 0.111→0.320이다.",
+        "results/balanced7144_regression_20260919/ANALYSIS.md 4절이 같은 셀 가중 문제(FMA/FMA 44행이 16.67%)를 2026-09-19에 이미 기록했다. 새로 찾은 문제가 아니다.",
+        "COMPETITION_CONTRACT.md에는 한국어나 보이스피싱 언급이 없다. 그 전제는 data_v4/DESIGN.md:23과 DATA_PLAN_236749_2026-09-19.md:47에만 있다.",
+        "ASVspoof2021 DF의 110셀은 VCC2018/2020 팀 시스템(HUB-*, SPO-*, Task1/2-team*)이고 셀당 약 20행이다. 별칭 오류가 아니라 실제 시스템 단위의 세분화다. ASVspoof2019 LA(A01–A19)와 2021 LA(A07–A19)는 같은 공격 알고리즘이 별도 셀로 중복된다."
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-5",
+      "dimension": "data_distribution",
+      "original_severity": "high",
+      "original_candidate_title": "Echoes 어댑터 버그: 전장 Echoes가 생성기 2개로 뭉개지고, 8초 레거시 크롭이 fake-music 가중 50% 차지",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "실제 manifest의 신규 Echoes594행은 Echoes/TTA300, Echoes/ATA294로만 표시된다. 실제 생성기 파싱, 레거시 별칭·중복, cap과 가중을 함께 수정할 계획이며 이번에는 코드 변경을 하지 않았다.",
+      "historical_corrected_claim": "ing_echoes(build_manifest.py:140-141)가 경로를 <gen>/<mode>로 가정한다. 실제 레이아웃은 Echoes/<mode>/<gen>/file이어서 generator가 'Echoes/TTA'와 'Echoes/ATA' 두 값으로만 기록된다. 셀당 300 cap 때문에 ingest된 4,488행 중 600행이 선택됐고 manifest에는 594행이 남았다. 올바른 생성기로 셀을 나눴다면 약 3,670행이 남았을 것으로 추정한다.\n\nmusic train의 fake 가중(38셀)은 다음과 같다. 전장 신규 Echoes는 449행, 2셀로 w 5.3%, wd 6.3%를 받는다. 8초 레거시 원천(orig 8.0 s, 473/582행이 정확히 8.00 s) 582행(10.4%)은 19셀로 w 50.0%, wd 41.4%를 받는다. 다만 duration_balance 이후 real 쪽도 정확히 8.00 s인 98행이 real 가중의 27.6%를 받으므로 8초 길이가 순수한 fake 단서는 아니다.\n\nproxy에서 Echoes가 music EER에 미치는 기여는 무시할 수준이다. Echoes 행을 빼도 0.2000에서 0.2002로 변하고, 미탐 206건 중 13건뿐이다. Echoes 미탐은 표본이 적은 생성기(stableaudio 4/4, udio 2/3, mubert 2/3)에 몰려 있다. 실질적인 개선 경로는 재가중보다 전장 행을 약 3k개 늘려 생성기 다양성과 표본 수를 확보하는 쪽이다.\n\n수정할 때는 다음을 함께 해야 한다.\n- 852행의 self-test를 고친다.\n- group_key를 레퍼런스곡 단위로 묶는다.\n- 레거시 8 s 셀을 제거하거나 병합한다. 그렇지 않으면 Echoes 계열이 fake 셀의 약 65%를 차지한다.\n- 레거시 제거로 과대 가중된 real 8 s 행 98개를 함께 정리한다.",
+      "historical_evidence": [
+        "재계산 스크립트: <CLAUDE_AUDIT_SCRATCH>/adv_echo/e2.py. 실제 loss_weights와 duration_balance를 사용했다. 출력: 'fake music train rows 5608 cells 38', 'legacy rows 582 frac rows 0.104 w 0.500 wd 0.414 ncells 19', 'new echoes rows 449 w 0.053 wd 0.063', 'fake rows dur==8.00 531 w 0.451 wd 0.342'",
+        "adv_echo/e4.py 출력: 'real wd share dur==8.0 0.276'. real 8.00 s 행은 existing:constructed_music 54, existing:FMA/FMA 46이다. duration_balance가 8 s bin을 양쪽 클래스에 나눠 준다",
+        "adv_echo/e1.py 출력: orig_path의 p[-3]은 {'TTA':300,'ATA':294}, p[-2]는 12개 생성기다. 레거시 692행은 orig_duration이 모두 8.0이고 crop_len이 정확히 8.00인 행은 564개다. 레거시 split은 {'train':582,'val':110}이다",
+        "adv_echo/e3.py 출력: proxy music EER 0.2000(thr 0.4914, n=2855), Echoes 제외 시 0.2002. 전체 fake 미탐 206건 중 Echoes 13건, real 오탐 365건. Lyria-3 Pro 미탐 0.293(n=300). Echoes 미탐을 실제 생성기로 나누면 stableaudio 4/4, udio 2/3, mubert 2/3, diffrhythm 2/6",
+        "build_manifest.py:852-854 self-test는 잘못된 레이아웃(Echoes/suno/TTA → 'suno/TTA')을 검증한다. 권고대로 수정하면 이 테스트도 함께 고쳐야 한다",
+        "adv_echo/e5.py 출력: Echoes 레퍼런스곡 273개 중 59개가 여러 split에 걸쳐 있다(test/train 26, train/val 24, test/train/val 7, test/val 2). group_key가 'echoes_item:{mode}:{stem}'이라 원곡 단위로 묶이지 않는다",
+        "adv_echo/e4.py 추정: 샘플 비율 × 4488/594에 (gen, mode) 셀당 300 cap을 적용하면 약 3,670행이 남는다(현재 594행). 권고의 '최대 약 4,000'과 대체로 맞는다",
+        "data_v4/DESIGN.md:46 'echoes ... 8초 레거시 크롭 대체'와 :51 '기존 16,042행 라벨·마스크를 그대로'가 서로 모순된다. 레거시가 남은 원인이다",
+        "split_rules.json의 test_holdout에는 Echoes가 없다. 버그 때문에 held-out split이 깨지지는 않았고, 영향은 val 층화와 per-generator 가중에 한정된다"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-6",
+      "dimension": "data_distribution",
+      "original_severity": "high",
+      "original_candidate_title": "실제 음악이 CC 인디 음원에 편중되고 원천=라벨, 음악 코덱 이력도 라벨과 상관",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed",
+      "accepted_scope": "Music training sources and labels are strongly associated, and original-path extensions differ by class. Under the current source/generator and duration weighting, 86.0942% of fake-music weight and 44.1307% of real-music weight come from source strings containing one label only. The specified train/validation extension calculation reproduces real OGG 65.8908%, MP3 30.8119%, WAV 3.2973% and fake WAV 50.4139%, MP3 49.5861%. HAIM selected subsets are A2/B1/B2/C1/C2, without A1. These facts do not establish that commercial music, Korean songs, or high-quality/lossless masters are absent, nor that production quality or codec history causes hidden-test false positives.",
+      "evidence_locator": "audit_receipt.json#current_reviews/DATA_DISTRIBUTION-6"
+    },
+    {
+      "id": "DATA_DISTRIBUTION-7",
+      "dimension": "data_distribution",
+      "original_severity": "high",
+      "original_candidate_title": "혼합 진위 범주 공백: AI 커버 0, real 보컬+AI 반주 train 5, real 음성+BGM 93% fake",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "real/fake 보컬×real/fake 반주의 네 조합과 가창 변환 표본을 확보하는 계획이 필요하다. 모든 조합의 hidden 비중과 보강 이득은 미측정이다.",
+      "historical_corrected_claim": "train에 AI 변환 가창(SVC/RVC 커버)은 0행이다. real 말소리+AI 음악 믹스는 5행이다. real 말소리+real BGM은 54행이다(constructed_mix의 93%가 VF1). 한편 real 보컬+real 반주 곡은 train에 약 1,400행이 있다. CSD는 train에 a cappella 200행으로 쓰였고, 곡 구성에서만 빠졌다. plan_songs의 max_partners=40과 plan 간 music 재사용 때문에 곡 component 10개가 모두 held-out 행과 연결됐다. 그 결과 곡 400행과 부모 music 약 650행이 test로 이동했다. proxy에서 곡 real의 FP(0.244)는 music head가 원인이다(music FP 0.237, voice FP 0.06). real 보컬+AI 반주의 탐지율(0.75)은 AI 기악 단독과 비슷하다. 혼합 진위 공백으로 확인되는 손실은 real 말소리+BGM의 voice FP 상승(0.099→0.193)뿐이다. AI 커버의 영향은 proxy에 표본이 없어 측정할 수 없다.",
+      "historical_evidence": [
+        "adv_dd7b/b1.py: train V1M1 known-VF 행은 VF0 1,400(1,395+5), VF1 1,928(641+1,287)로 58%가 fake다. real 곡은 openmic 1,012, ex:FMA 158, ex:JamendoMaxCaps 79, haim sonicmaster 79행이다.",
+        "adv_dd7b/b2.py: csd V1M0 VF0 train 200행(evidence=dataset:real_acapella_singing)이 있어 'CSD 미사용'과 모순된다.",
+        "adv_dd7b/b4.py: constructed_song의 component 10개가 모두 held-out 멤버(musan_music/fleurs_ko/haim Lyria·fx_encoder)를 포함한다. 곡 component로 test에 끌려간 music 행은 openmic 264, musan 230, haim 78, generated_music 41, echoes 36, sonics 5행이다.",
+        "adv_dd7b/b6.py(decision, music EER 임계값): constructed_song real의 music FP는 0.237, openmic 단독 0.184, musan_music 단독 0.121이다. constructed_song MF1 탐지는 0.75로 echoes 0.75, generated_music 0.849와 비슷하다.",
+        "adv_dd7b/b6.py(voice EER 임계값 0.191): real 발화 FP는 constructed_mix 0.193, fleurs_ko 단독 0.099다. constructed_song의 real 가창 voice FP는 0.060, vocalset 단독은 0.016이다.",
+        "adv_dd7b/b3.py: 요약의 file FP 수치를 재현했다(mix real 0.2906/117, song real 0.2437/316, song fake 미탐 0.25/84). prev9504에서는 mix real FP가 0.650이었다.",
+        "adv_dd7b/b5.py: RVC 21행과 SeedVC 449행(train)은 모두 말소리다. kind=singing이면서 VOICE_FAKE=1인 행은 0개다.",
+        "results/reconstructed_bank_20260919_ctrsvdd_dev/README.md:18: CtrSVDD dev는 이미 확보돼 있다. 편입 후보가 26,849개이고, SVC A06–A08 14,835개는 부모가 불명확해 보류 중이다. 가짜 가창 데이터를 새로 생성하지 않아도 되는 경로다(라이선스와 부모 문제 확인 필요).",
+        "COMPETITION_CONTRACT.md:17: '보컬+반주는 혼합', '어느 성분이든 AI면 FAKE'라고만 되어 있다. SVC 커버나 말소리+BGM 유형이 은닉 테스트에 있는지는 명시되지 않았다.",
+        "constructed_mix 전체의 real-real 비율은 186/1,500=12.4%다(a6.py 표 합계). 주장의 '약 15%' 추정과 대략 맞는다."
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-8",
+      "dimension": "data_distribution",
+      "original_severity": "medium",
+      "original_candidate_title": "한국어 real 음성이 낭독뿐이고 코퍼스=라벨, 전화채널은 시뮬레이션만(AMR 없음)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "한국어 real은 Zeroth 55화자 낭독 2,465행, CommonVoice-ko 493행, CSD 가창이다. 한국어 fake는 MLAAD-ko 13개 시스템과 SpeechFake로 다른 코퍼스에서 왔다. Zeroth 화자와 lineage를 맞춘 한국어 TTS/VC 약 2,400행은 CosyVoice2 환경 실패(protobuf==4.25 해결 불가)로 만들어지지 않았다(gen_speech.exit=1, splice 121/400). 대화체, 자연발화, 실통화 한국어는 0이다. 전화채널은 클래스와 무관하게 약 20% 시뮬레이션(μ/A-law, GSM, Opus8)이고 계획에 있던 AMR-NB/WB는 없다. 실제 전송 채널은 영어 ASVspoof2021 LA뿐이다.",
+      "candidate_evidence": [
+        "a14/a-ko: 'zeroth speakers 55 rows 2465'; 'ko train by source FF': zeroth 0:2465, speechfake 0:493/1:2009, mlaad 1:2889",
+        "logs/env_cosyvoice2.log: 'No solution found when resolving dependencies ... protobuf==4.25'; logs/gen_speech.exit = 1",
+        "build_manifest.py:316-317 CODECS (tel_ulaw .07, tel_alaw .05, tel_gsm .04, tel_opus8 .04, AMR 없음); DATA_PLAN_236749_2026-09-19.md:221 'AMR-NB 4.75~12.2 kbps'",
+        "a9.py telephony 비율: V1M0 real 0.203 / fake 0.202, V0M1 0.185/0.190 (클래스 독립이라 양호)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-9",
+      "dimension": "data_distribution",
+      "original_severity": "medium",
+      "original_candidate_title": "denoise·향상 REAL 범주가 train 17행뿐이고 SonicMaster(생성형 마스터링)=REAL 라벨이 모호",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "대회 규칙은 '잡음 제거·음량 조정 = REAL'이다. 향상 real 300행 중 276행은 FLEURS와 함께 test로 가서 train에는 17행(HTDemucs 한 방식)만 남았다. 이 17행이 real voice 가중의 5.9%를 받는다(행당 가중 43배). HAIM B1 sonicmaster 300행(music train 200행, real-music 가중 11.1%)은 REAL로 라벨링됐지만 생성형 마스터링 모델의 출력이다.",
+      "candidate_evidence": [
+        "a7.py: constructed_enhanced test 276 / train 17 / val 7; build_manifest.py:508-515 (zeroth, fleurs_ko + MUSAN noise → HTDemucs vocals)",
+        "a4.py per-row mean weight: constructed_enhanced 43.238 vs zeroth 0.300",
+        "proxy voice FP: constructed_enhanced 0.254 (n=276), 길이 10–20초에서 0.286; file FP 0.123",
+        "build_manifest.py:159-160 HAIM_SUBSETS 'B1': 'real_ai_mastered'; a12.py 'haim sonicmaster 200 w 0.111'; proxy sonicmaster file FP 0.208"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-10",
+      "dimension": "data_distribution",
+      "original_severity": "medium",
+      "original_candidate_title": "4초 미만 행 22%가 duration-balance 후 voice 가중의 29%, 테스트에는 없고 np.tile 반복 경계 생성",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "crop 4초 미만은 9,422행(21.9%, fake 7,312 / real 2,110)이다. ASVspoof 2019/2021 real·fake의 68–88%가 4초 미만(median 2.2–3.2초)이다. duration_balance 후 voice head 가중의 29.4%(양 클래스)가 테스트에 없는 4초 미만 오디오에 실린다. 이 행들은 DF-Arena extract_segment에서 np.tile로 반복돼 루프 경계가 생긴다.",
+      "candidate_evidence": [
+        "a1.py crosstab: [0,2) 334/2071, [2,4) 1776/5241 (real/fake)",
+        "a2.py: asvspoof2021_la fake lt4 0.88 med 2.30; asvspoof2021_df fake lt4 0.75; ex:asvspoof2019_la lt4 0.75-0.76",
+        "a4.py: '1.0 wd share<4s 0.294', '0.0 wd share<4s 0.294'",
+        "artifacts/Existing9504_Architecture/.../baseline/script.py:168-172 'repeat_count = SEGMENT_SAMPLES // audio.size + 1; audio = np.tile(audio, repeat_count)'"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-11",
+      "dimension": "data_distribution",
+      "original_severity": "medium",
+      "original_candidate_title": "최신 음악 생성기와 한국어 상용 TTS 커버리지 공백",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "음성: MLAAD 208개 생성기명(ElevenLabs v3, MiniMax 2.6/2.8, OpenAI TTS-1 HD, Gemini-3.1-Flash-TTS, Cartesia Sonic-3, GPT-SoVITS, RVC, VibeVoice, Dia 등)으로 폭은 좋다. 그러나 한국어는 13개 시스템뿐이고 한국어 상용 TTS(Naver Clova, Typecast, Supertone, ElevenLabs-ko)는 0이다. 음악: Suno/Udio는 SONICS(2024년 버전)와 Echoes 셀당 29–38행뿐이다. Lyria-3 Pro는 test에만 있다. MiniMax Music, Mureka, YuE, SongGeneration/LeVo, Stable Audio 2.x는 없다. 한국어 가사 AI 노래는 ACE-Step 186행(train)이고 HAIM B6(K-pop 가사)는 받지 않았다.",
+      "candidate_evidence": [
+        "a5.py 'mlaad ko systems' 13종, 'n mlaad gens 208'",
+        "a5.py sonics {suno 400, udio 400}, ex:Echoes suno 44 / udio 45, haim {'Lyria-3 Pro': 300 (test)}",
+        "a-ko: generated_music ko fake 186 (train)",
+        "a10.py HAIM subset {A2, B1, B2, C1, C2}; DATA_PLAN_236749_2026-09-19.md:11 'B6 K-pop 가사로 생성한 한국어 보컬 노래'"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-12",
+      "dimension": "data_distribution",
+      "original_severity": "low",
+      "original_candidate_title": "FILE CDF 앙상블을 맞춘 val 구성이 음성 전용 63%로 치우침",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "file_ensemble.json의 분위 CDF는 val로 맞췄다. val 구성은 V1M0 63.2%, V0M1 14.1%, V1M1 18.3%, V?M1 2.5%, V0M0 1.9%이다. 은닉 테스트는 음성·보컬·노래·기악 4종이고 구성비는 공개되지 않았다. FILE EER은 모든 유형을 합쳐 순위를 매기므로 유형 간 점수 척도 차이에 민감하다.",
+      "candidate_evidence": [
+        "a-ko 출력: 'val pres share {V1M0: 0.632, V1M1: 0.183, V0M1: 0.141, V?M1: 0.025, V0M0: 0.019}'",
+        "submissions/DataV4_DurationBalanced/README.md 'FILE_FAKE_PROB is the val-fitted CDF mean of three per-file fusion rules'"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_DISTRIBUTION-13",
+      "dimension": "data_distribution",
+      "original_severity": "low",
+      "original_candidate_title": "구성물 흔적: 순차 믹스의 0.2초 디지털 무음(92% fake), 반주 루프 이음",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "순차 믹스는 음성과 음악 사이에 정확히 0.2초짜리 0을 삽입한다. train 순차 믹스의 91.6%(285/311)가 fake 음성이다. 노래·동시 믹스의 반주는 np.resize로 크로스페이드 없이 반복된다. 구성물은 전부 mono다(추론 downmix로 무해). 코덱을 한 번만 적용하는 설계는 올바르다.",
+      "candidate_evidence": [
+        "build_manifest.py:563-564 'gap = np.zeros(int(.2 * SR), np.float32)'",
+        "build_manifest.py:555-556 'b = np.resize(b, n)'",
+        "a6.py sequential train: VF0 26 vs VF1 285",
+        "a2.py constructed_* stereo 0.00"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ARCHITECTURE-1",
+      "dimension": "architecture",
+      "original_severity": "critical",
+      "original_candidate_title": "음성 분기 segment-max 집계와 짧은 학습 bag 때문에 길이 의존 점수 드리프트 발생",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "현재 음성 학습도 max-MIL이다. 원천 내부의 real 길이 의존성은 있으나 긴 fake 탐지에는 유리할 수 있다. pooled 길이 효과를 max의 인과나 LB 격차 설명으로 단정하지 않는다.",
+      "historical_corrected_claim": "VOICE_FAKE_PROB는 겹치지 않는 4.04 s 세그먼트 확률의 max를 seed 평균한 값이고, fc5(Linear 1280→2)도 max-odds로 학습된다. 이 부분은 사실이다. 여러 실제 원천 안에서 nseg와 점수 사이에 약한 양의 상관(rho 0.21–0.32)이 있지만, 원천에 따라 없거나 반대 방향이다(constructed_mix 실제 −0.06, vocalset FPR 평탄). 가짜 점수도 길이에 따라 올라간다(haim 미탐 0.52→0.23). proxy에서 길이에 따른 오류가 커 보이는 현상(mixed 실제 FPR 4%→40%, 균등 길이 재가중 voice EER 0.119→0.246)은 대부분 원천 교란이다. 긴 구간이 held-out 도메인(Lyria-3 Pro 보컬, MUSAN 음악)으로 채워져 있기 때문이다. 두 클래스를 모두 길이 불변으로 만드는 오라클에서도 voice EER은 0.1107→0.1098로 거의 변하지 않는다. 긴 학습 가짜가 거의 없는 것은 음성 전용 TTS에 한한다. mixed 보컬 가짜는 train에 30 s 초과가 315행 있다. 따라서 max 집계가 길이 의존성을 만든다는 점은 맞지만, 현재 LB 격차의 주된 원인이라는 근거는 약하다. hidden test에 긴 실제 음성·노래가 많을 때에만 영향이 커질 수 있는 부차적 위험으로 봐야 한다. 심각도는 critical이 아니라 medium–low가 적절하다.",
+      "historical_evidence": [
+        "[원천 교란] mixed 실제, nseg≤2 n=224: constructed_song 182 / musan_music 36 / constructed_mix 6, FPR 0.04. nseg 9–15 n=52: musan_music 46 / constructed_mix 6, FPR 0.404. 원천 내부로 보면 musan_music 실제 FPR은 nseg≤2 0.22 → 8–15 0.46 (scratchpad/audit/adv_arch1/src_bins.py)",
+        "[원천 교란] 균등 길이 재가중 후 haim+musan_music이 차지하는 가중치: 실제 0.063→0.545, 가짜 0.233→0.671. 두 원천을 빼면 natural 0.0637 / uniform 0.1772이고, bin4–5에는 실제 8행, 가짜 17행만 남는다 (adv_arch1/src_bins.py)",
+        "[가짜도 길이 효과] haim 가짜 미탐률: nseg≤2 0.52(n=77), 3 0.48, 4 0.45, 5–7 0.45, 8–15 0.23(n=145). 가짜 전체: nseg≥9 미탐 0.21(n=138), nseg≤2 미탐 0.06(n=1119) (adv_arch1/src_bins.py, 인라인 확인)",
+        "[반례] 원천 내 rho: constructed_mix 실제 −0.062, mlaad 가짜 −0.003, speechfake 가짜 0.619. vocalset 실제 FPR 0.02/0.01/0.00/0.08(평탄). voice_only 실제 FPR nseg 5에서 0.104(n=125)로 비단조 (key_numbers.py 재실행, src_bins.py)",
+        "[오라클] 긴 파일(nseg>2) 점수를 같은 원천·클래스의 nseg≤2 분포에서 재추출했다. base voice EER 0.1107, 실제만 길이 불변 0.091±0.003(낙관 상한), 양 클래스 길이 불변 0.1098 (adv_arch1/oracle.py, 30회 반복)",
+        "[bin별 EER] 길이 bin별 voice EER: 4–8s 0.060, 8–12s 0.115, 12–20s 0.153, 20–30s 0.295, 30–45s 0.279, 45–61s 0.324. 20 s 이상 구간의 실제는 musan_music+constructed_mix, 가짜는 haim+constructed_mix가 대부분이다 (adv_arch1/bins.py)",
+        "[학습 분포] train voice-head mixed 가짜 1,928행: 길이 q50/q90/q99 14.8/39.5/58.7 s, >20s 638, >30s 315(sonics 337, echoes 164, generated_music 74 등). voice_only 가짜 15,243행: >30s 4행 (인라인 bank_trainval+manifest join)",
+        "[File 경로] proxy File FP 418건 중 music이 주도 306, voice가 주도 112 (key_numbers.py [3])",
+        "[사후 보정] exp_len.py 재실행: test 자연 EER은 a=0에서 최저(0.1186). 균등 재가중 EER은 a=1.5에서 0.2366(a=0은 0.2455)으로 소폭 개선에 그친다",
+        "[hidden 분포] COMPETITION_CONTRACT.md:17은 '4–60초' 범위만 명시하고 분포는 공개되지 않았다. 음성 집계 방식을 바꾼 LB 실험 기록은 EXPERIMENTS_ALL/REVIEW 문서에서 찾지 못했다(grep 결과 없음)",
+        "[코드] full_bank_train.py:207 `nn.Linear(1280, 2)`; full_bank_submission.py:100-106 max 집계; script.py:157-165 nseg=ceil(L/64600), 60 s → 15"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "ARCHITECTURE-2",
+      "dimension": "architecture",
+      "original_severity": "high",
+      "original_candidate_title": "음악 분기가 Demucs 반주 stem만 봄 → 실제 노래 오탐, FILE 오탐의 73%가 음악 분기",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "음악 경로는 Demucs 반주 stem의 MERT L12 특징을 사용한다. 실제 부모 반주의 오탐도 상속하며 raw 경로가 과거 항상 우세하지 않았다. 분리 잔여물만을 주원인으로 확정하지 않는다.",
+      "historical_corrected_claim": "MUSIC_FAKE_PROB는 Demucs 반주 stem의 MERT L12 임베딩만 씁니다(사실). proxy에서 실제 노래(mixed)의 FILE FPR은 29%로 voice_only 4.2%보다 높고, FILE 오탐 418건 중 음악 분기 주도가 306건입니다. 다만 그중 보컬이 있는 실제 노래는 145건(35%)뿐이고, 143건은 순수 기악 실제 음악의 오탐입니다. 같은 반주에 실제 보컬을 더하는 쌍대 비교에서 음악 FP율은 +4~6pp(약 1.2~1.35배)만 오릅니다. 실제 노래 오탐의 대부분은 부모 반주 음악 자체의 오탐을 물려받은 것입니다(P(FP|부모 FP)=0.61 대 0.15). 따라서 주원인은 반주 stem 속 분리 잔여물보다 실제 음악(openmic/MUSAN 등 held-out 도메인)에 대한 음악 head의 일반화 부족입니다. 보컬로 인한 추가 오탐을 완전히 없앨 때 proxy 이득은 총점 +0.003~0.006 수준입니다. raw 뷰는 과거 소규모 실험(E31/E32/E06)에서 stem보다 나쁘거나 같았고, 가짜 음성이 Music 점수로 새어 드는 crosstalk 위험도 있습니다. 그래서 raw 뷰 추가는 낮은 우선순위의 실험 후보로 두는 것이 맞습니다.",
+      "historical_evidence": [
+        "재현: .venv/bin/python scratchpad/audit/arch/key_numbers.py -> 'FILE FP drivers {music:306, voice:112} real-mixed file FPR 0.29', 'musan real music FPR by ctype {mixed: 187:0.278, music_only: 458:0.133}'",
+        "scratchpad/audit/arch/adv_arch2_a.py: 음악 분기가 주도한 FILE 오탐의 ctype 분해 = mixed 145, music_only 143(openmic 70, musan_music 61, haim 12), voice_only 18(vocalset). 실제 파일 FILE FPR은 mixed 0.290(n=621), music_only 0.157(n=912), voice_only 0.042(n=2287)",
+        "scratchpad/audit/arch/adv_arch2_b.py: MUSAN 하위 컬렉션별 음악 FPR은 fma mixed 0.268(n=56) 대 music_only 0.152(n=66), jamendo 0.228(114) 대 0.138(94), fma-western-art 0.647(17) 대 0.250(76). crop 길이 중앙값 19.7 s 대 20.1 s",
+        "scratchpad/audit/arch/adv_arch2_c.py(부모 반주 쌍대 비교): constructed_song 실제 n=316, FP 0.237 대 부모 0.193, 차 중앙값 0.0039, P(FP|부모FP)=0.607, P(FP|부모 비FP)=0.149. constructed_mix 실제 음성 n=117, FP 0.231 대 0.171. constructed_mix 가짜 TTS n=286, FP 0.231 대 0.196. SNR<=0 구간만 0.328 대 0.197",
+        "adv_arch2_c.py: 음악 분기가 주도한 실제 mixed FILE 오탐 145건 중 부모 있음 94건(이 중 49건은 부모 반주만으로 음악 임계 이상), 부모 없는 자연 곡 51건(모두 musan_music)",
+        "scratchpad/audit/arch/adv_a2e.py(fusion 재계산, 오차 2.4e-13): base wEER 0.1369. 실제 mixed Fm=0 oracle이면 music 0.1341, file 0.0972, wEER 0.1109(총점 +0.023). 부모 반주 점수로 치환하면 wEER 0.1332(+0.0033). 평균 이동이면 +0.0010. 부모 치환 + MUSAN/HAIM quantile 매핑이면 wEER 0.1301(+0.0061). 주장한 File 0.0888은 실제 mixed의 FILE 점수를 직접 0으로 둔 값",
+        "EXPERIMENTS_ALL_2026-09-17.md §16 [E31]: test Music EER stem 대 raw = 원본 .114536 대 .159900, NSynth 제외 .148214 대 .248810, 새 혼합 .250000 대 .400000. §17 [E32]: gated raw+stem = stem = .081155. §7.1 [E06]: SONICS_RAW는 SONICS_STEM보다 나쁨",
+        "REVIEW_236749_2026-09-17.md:70,141: raw/stem 2회 MERT 통과는 L4 60분 예산 위험이 있어 '금지'로 기록됨. 현재 제출 17m32s라 여유는 있으나 +3~5 min 추정은 실측되지 않음",
+        "val(bank_trainval + val_predictions_decision.csv): openmic mixed FPR 0.124(n=178) 대 music_only 0.093(n=182), val 임계 0.586. 학습 데이터의 실제 mixed 음악은 train 2,048, val 375건이고, 가짜 mixed 음악은 train 3,019건"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "ARCHITECTURE-3",
+      "dimension": "architecture",
+      "original_severity": "high",
+      "original_candidate_title": "노래 속 AI 보컬을 speech anti-spoof(DF-Arena + 선형 fc5)가 판정 → mixed 음성 EER 0.206",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "가창 판별은 약하지만, 음악 점수를 추가해 얻은 pooled 이득은 혼합 진위의 성분 오탐을 가릴 수 있다. 공동 특징 헤드는 실제 성분 라벨과 네 혼합 조합을 보존해 비교한다.",
+      "historical_corrected_claim": "VOICE_FAKE_PROB는 Demucs 보컬 스템에 DF-Arena fc5만 적용한 값이고, 음악 분기의 증거는 쓰지 않는다(확인). 가창 보컬의 판별력은 약하다. 가창 EER은 약 0.22–0.26으로 비가창의 0.07–0.12보다 나쁘다. 그런데 이 수준은 CtrSVDD로 학습한 Existing9504도 같았으므로 이번 데이터 구성만의 문제가 아니다. 현재 시스템의 추가 문제는 가창 점수가 전반적으로 낮게 밀린 것이다(실제 가창 FPR 6%, Lyria FNR 63%). 이 때문에 proxy mixed voice EER이 0.206까지 올라갔고, 그 절반가량은 held-out 생성기 Lyria-3 Pro 하나에서 나온다. val 적합 스태커는 proxy voice EER을 0.0185 낮춘다. 다만 이 이득은 전적으로 '음성·음악이 모두 가짜인 AI 노래'에서 Fm을 가져다 쓴 결과이고, 부분 가짜(AI 음성 + 실제 음악, 실제 보컬 + AI 음악, AI 커버)에서는 오류가 늘어난다.",
+      "historical_evidence": [
+        "재현: arch/key_numbers.py, arch/exp_stack.py 출력이 finding 수치와 일치(0.206/0.0443, Lyria 0.0863·140/222, stacker 0.1107→0.0922, len 0.0885). 스크립트 위치: <CLAUDE_AUDIT_SCRATCH>/arch/",
+        "adv_a3v2.py: test mixed의 가짜 보컬은 HAIM 두 계열뿐(Lyria-3 Pro 222에서 오류 140, fx_encoder_style_transfer 216에서 오류 34). constructed_song은 VOICE_FAKE=0만 있음(400)",
+        "adv_a3v5.py: Lyria만 완벽하게 맞히면 voice EER 0.1107→0.0716. HAIM 제외 시 stacker 0.0645→0.0687(악화). 완전 가짜 노래 제외 시 0.0621→0.0685. mixed 부분 가짜 대 실제 0.1261→0.150. 그룹 부트스트랩 Δ 95% CI [-0.0295,-0.0111]",
+        "adv_a3v4.py: stacker 계수 fv 0.958, fm 1.104, fm*pv -0.934. 오류 변화 Lyria 140→86, constructed_mix VF1/MF0 29→50, constructed_song VF0/MF1 10→22, VoxCPM2 14→22, fleurs_ko 실제 149→120. mixed의 VOICE_FAKE~MUSIC_FAKE 상관은 train 0.673, val 0.642, test 0.51(train의 VF0/MF1은 5행)",
+        "adv_a3v8.py: 가창만 본 EER은 new 0.2262, Existing9504 0.2559, Balanced7144 0.2192. Lyria 대 실제 가창 AUC는 0.7798, 0.7481, 0.7824. 비가창 EER은 0.0689, 0.1244, 0.1322",
+        "adv_a3v7.py: Existing9504(임계값 0.586)는 Lyria 누락 70/222, constructed_song 실제 오탐 128/400, musan_music 125/187. 새 시스템(임계값 0.191)은 Lyria 140/222, constructed_song 24/400, musan 57/187. 판별력 차이보다 오프셋 차이",
+        "results/existing_only_20260919_final/composition.csv: CtrSVDD train label0 1017, label1 1017(Existing9504는 가창 가짜로 학습됨)",
+        "adv_a3v3.py: train에서 voice head 행 중 mixed 가짜 가창은 sonics 632, echoes 293, acestep 232. mixed 실제는 openmic 1012, FMA 158, Jamendo 79, sonicmaster 79. voice_only 실제 가창은 vocalset 349, csd 200",
+        "results/reconstructed_bank_20260919_ctrsvdd_dev/combined_catalog.csv license 컬럼: CtrSVDD 41,728행 전부 CC-BY-NC-ND-4.0. DATA_PLAN_236749_2026-09-19.md:227 제외. data_v4/DESIGN.md:59 v4에는 새로 넣지 않음. pending_collection.csv에 CtrSVDD/train_set.zip 미수집",
+        "full_bank_submission.py predict(): vf = mean_seed(max_segment softmax[fake]), 보컬 스템이 무음이면 0. MUSIC 값은 VOICE 출력에 쓰이지 않음"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "ARCHITECTURE-4",
+      "dimension": "architecture",
+      "original_severity": "high",
+      "original_candidate_title": "보지 못한 생성기의 기악 AI 음악을 일반화하지 못함 — 동결 MERT L12 단일층 + MLP의 한계",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "미관측 생성기의 특정 기악 구간에서 실패한다. 데이터 공백과 동결 표현 한계를 분리하지 못했으며, 모든 기악의 실패나 새 표현 학습의 무용함으로 일반화하지 않는다.",
+      "historical_corrected_claim": "프록시 test의 music EER(0.2000)을 끌어올리는 원인은 '기악 전체'가 아니다. 학습에 없던 상용 생성기 Lyria-3 Pro(그리고 fx_encoder_style_transfer)의 보컬 없는 곡과 MUSAN 진짜 음악 중 VOICE_PRESENT가 미상인 180행에 몰려 있고, 이 부분집합의 EER은 0.416이다. 기악으로 확인된 VOICE_PRESENT==0 행은 EER 0.161로, mixed(0.178)보다 좋다. 같은 동결 MERT-L12 head가 보컬 있는 Lyria는 86.5% 탐지한다. 따라서 실패는 '보컬 없는 최신 상용 생성기'라는 조건에서만 나타난다. 원인 후보는 두 가지이고 현재 증거로는 구분할 수 없다. (i) 학습 기악 가짜가 옛 TTM(FakeMusicCaps/MusicGen 등)에 치우친 데이터 공백과 보컬 잔향에 기댄 지름길, (ii) 동결 단일층 표현의 한계. 층 비교(L6/L24가 L12보다 나쁨), AF3 인코더(historical 악화), EAT fullFT(LB 0.6379)를 보면, 인코더를 추가하거나 바꾸는 것이 LB로 이어진다는 선행 근거는 부정적이다.",
+      "historical_evidence": [
+        "재계산 스크립트: <CLAUDE_AUDIT_SCRATCH>/a4_music.py, a4_more.py, a4_dec.py, a4_lyria.py, a4_train.py (eight_metrics.eer 사용)",
+        "music EER 부분집합(new_duration_balanced legacy): VP==0 0.1608(n=1044), VP==1 0.1784(n=1631), VP=NaN 0.4164(n=180, 가짜 115: Lyria 73, fx_encoder 32, acestep 3, haim concat/crossfade 7; 진짜: musan_music 61 등), VP!=1 0.2565(n=1224)",
+        "Lyria-3 Pro 행 프로필: VP 미상 73행은 MUSIC_FAKE_PROB 중앙값 0.176, vocal_ratio 중앙값 0.0016. VP=1 222행은 MUSIC_FAKE_PROB 중앙값 0.915, miss 30/222=13.5% (manifest.jsonl의 vocal_ratio)",
+        "trainval 기악 가짜(VP!=1) 구성: FakeMusicCaps MusicGen_medium 386, musicldm 385, audioldm2 360, stable_audio_open 279, mustango 190, HAIM musicgen 385 등. Lyria-3 Pro와 fx_encoder_style_transfer는 trainval 0행, Echoes/TTA 273행, acestep 892행 (bank_trainval.csv)",
+        "data_v4/split_rules.json:2 — test 보류 대상은 Lyria-3 Pro, fx_encoder_style_transfer, MUSAN music real, VoxCPM, OpenVoice, FLEURS-ko",
+        "Lyria 기악만 완벽하게 맞힌다는 가정의 what-if: File EER 0.1094→0.0965, Music EER 0.2001→0.1660. 기악(VP!=1) 전체를 완벽하게 맞힌다는 가정: 0.0864/0.1379 (재현됨)",
+        "prev_existing9504도 같은 패턴: VP0 0.2434, VP1 0.2563, VPnan 0.3060 (compare/test_predictions_prev_existing9504_legacy.csv)",
+        "MERT 층 비교: dev_mean_eer L12 0.1615, L6 0.2122, L24 0.2411; test L12 0.0900, L6 0.1229, L24 0.1735 (.omo/evidence/eight_heads_build/final_report_metric_extract.json, 'MERT' 키, test 127행)",
+        "AF3 sound tower 637M 동결 head: historical Music EER .2574±.0065, M330은 .2204±.0092로 더 좋음 (EXPERIMENTS_ALL_2026-09-17.md:405-413)",
+        "EAT fullFT S2: 로컬 test Music EER .1676이었으나 공식 LB 0.6378679788로 베이스라인 아래 (EXPERIMENTS_ALL_2026-09-17.md:428-431, :68)",
+        "창 설정: prepare_full_bank.py:26 WINDOW, HOP = 64600, 32300 (4.04초 창, 2.02초 hop), full_bank_submission.py:92 hidden_states[12].mean(1)",
+        "진짜 음악 쪽 오탐(임계 0.491)도 큼: constructed_mix 93/403, constructed_song 75/316, openmic 71/386, musan_music VP=1 52/187. 음악 EER 문제는 가짜 기악 미탐만이 아님"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "ARCHITECTURE-5",
+      "dimension": "architecture",
+      "original_severity": "medium",
+      "original_candidate_title": "음성 head 용량 부족과 앙상블 착시 — fc5 Linear(1280→2) seed 3개가 사실상 동일하고 50 epoch 상한에서 미수렴",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "음성 쪽은 DF-Arena의 fc5(파라미터 2,562개)만 원래 가중치에서 출발해 재학습한다. 볼록 문제라 seed 3개의 순위가 같아 앙상블 이득이 0이다. seed 41과 43은 max_epochs=50에 도달했을 때도 여전히 개선 중이었다. 백본을 동결한 선형 판별로는 가창·전화·후처리 같은 조건별 경계를 만들 수 없다.",
+      "candidate_evidence": [
+        "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/voice_validation.csv: seed 간 Spearman 0.9999/1.0, seed별 EER 0.0508/0.0510/0.0508, 앙상블 0.0510",
+        "같은 폴더 results.json: voice_41 epoch 50(50 epoch 완료), voice_43 epoch 50(50 epoch 완료), voice_42 44/49",
+        "full_bank_train.py:207-209 (nn.Linear(1280,2)를 원래 fc5로 초기화), :215 (lr 1e-4), :289 (--max-epochs 50)",
+        "full_bank_features.py:151-153 (fc5 입력 1280-d만 캐시)",
+        "results/voice_music_h100_20260917_retry1/FINAL_REPORT.md 실험 2: DF+AntiDeepfake 평균으로 기본 test 21개 File EER 24.04%→13.94%(작은 패널, LB 미검증)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ARCHITECTURE-6",
+      "dimension": "architecture",
+      "original_severity": "medium",
+      "original_candidate_title": "음성 탐지기가 항상 Demucs vocal stem만 봄 — 분리 아티팩트가 실제 음성 오탐을 만듦",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "speech-only 파일에서도 DF-Arena의 입력은 vocal stem이다. 보컬과 음악이 섞인 파일에서 실제 음성 오탐이 급증하고, AI 후처리된 실제 음성(대회 정의상 REAL)도 25% 오탐된다. raw 뷰가 없으므로 head가 분리 아티팩트를 보정할 수 없다.",
+      "candidate_evidence": [
+        "full_bank_submission.py:101 (extract_segment(voice, start)만 사용)",
+        "실제 음성 FPR(임계 0.191): musan_music mixed 30.5%(187), constructed_mix 19.3%(140), constructed_enhanced 25.4%(276) vs zeroth 0%(99), vocalset 1.6%(385)",
+        "results/voice_music_h100_20260917_retry1/FINAL_REPORT.md 실험 1: 실제 음성의 DF-Arena vocals 평균 fake 확률, 단독 0.0242 → 0 dB 혼합 0.5645(n=4)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ARCHITECTURE-7",
+      "dimension": "architecture",
+      "original_severity": "medium",
+      "original_candidate_title": "전화 채널 약점 — tel_opus8/tel_gsm에서 음성 EER이 약 2배",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "전화 코덱을 거친 파일에서 음성 미탐과 음악 오탐이 크게 늘어난다. 모든 탐지기가 대역 제한 여부를 모르는 하나의 head로 판정한다.",
+      "candidate_evidence": [
+        "voice EER: 전화 0.167(n=1,062) vs 비전화 0.098(4,077). tel_opus8 0.254, tel_gsm 0.218, tel_ulaw 0.145",
+        "music: 전화 FPR 0.304 vs 비전화 0.175. tel_opus8 music EER 0.326",
+        "File EER: tel_opus8 0.206 vs flac 0.100",
+        "data_v4/build_manifest.py:316-318 (CODECS: 전화 체인 합계 약 20%)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ARCHITECTURE-8",
+      "dimension": "architecture",
+      "original_severity": "medium",
+      "original_candidate_title": "런타임·용량 여유는 업그레이드를 허용하지만, DF-Arena fp32 4.59 GB가 두 번째 1B 백본의 병목",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "L4 실행 시간은 17m32s(한도 60분)이고 ZIP은 6.35/10 GB다. 남는 시간으로 raw 뷰, vocal-stem MERT, 두 번째 음성 백본을 넣을 수 있다. 하지만 1B 백본을 fp32로 하나 더 넣으면 10 GB를 넘는다.",
+      "candidate_evidence": [
+        "submissions/DataV4_DurationBalanced/submit.zip: df_arena_1b/pytorch_model.bin 4,591,794,734 B, mert/pytorch_model.bin 1,261,846,489 B, PANNs 327,428,481 B, htdemucs 84,141,911 B, ffmpeg 79,826,272 B; 총 6,350,711,037 B (unzip -l)",
+        "LB 실행 17m32s(과제 설명); verification.log에 official_l4_validated=false"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ARCHITECTURE-9",
+      "dimension": "architecture",
+      "original_severity": "medium",
+      "original_candidate_title": "stereo를 mono로 평균하고 16 kHz mono를 44.1 kHz 2채널로 복제해 HTDemucs에 입력 — 분리 품질 손실 가능성(미측정)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "librosa mono=True로 채널을 평균한 뒤 16 kHz FLOAT WAV로 쓰고, HTDemucs는 이 파일을 44.1 kHz stereo(좌우 동일)로 다시 읽는다. hidden test에는 stereo 파일이 있고, 이전 expanded 제출은 원본 파일을 Demucs에 넣었다. 학습 캐시도 같은 방식이라 학습과 추론은 일치하지만, 분리 품질의 상한이 낮다. ARCHITECTURE-2와 -6의 원인인 분리 잔여물과 직결된다.",
+      "candidate_evidence": [
+        "full_bank_submission.py:76-83",
+        "artifacts/Existing9504_Architecture/architecture_source/model/assets/baseline/script.py:144-150 (mono=True), :264-267 (load_track(audio_channels=2, samplerate=44100))",
+        "results/balanced7144_regression_20260919/ANALYSIS.md §5 (전처리 변경이 통제되지 않았다는 기록)",
+        "proxy test File EER: channels=2 0.128(n=1,392) vs mono 0.080(3,856) — 원천과 교락돼 있어 인과가 아님"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ARCHITECTURE-10",
+      "dimension": "architecture",
+      "original_severity": "low",
+      "original_candidate_title": "FILE 결합층은 포화 상태 — CDF 앙상블, Platt, stack 모두 ±0.004 이내",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "FILE_FAKE_PROB를 만드는 val 분위수 CDF 동일가중 평균은 test에서 max 규칙보다 0.0006만 낫고, 다른 결합 방식도 개선이 없다. FILE 개선은 component 탐지기에서만 나온다.",
+      "candidate_evidence": [
+        "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/file_ensemble.report.json: test ensemble 0.1094 vs max 0.11004, val grid 이득 0.0000",
+        "재계산: noisy_or 0.1075, max_nopresence 0.1304, raw mean 0.1089. 분기별 Platt 후 max 0.1120, noisy-OR 0.1094. val 적합 로지스틱 FILE stack 0.1133 [exp_stack.py]",
+        "decision_heads.py:70-98; data_v4/file_ensemble.py:37-52"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "ARCHITECTURE-11",
+      "dimension": "architecture",
+      "original_severity": "low",
+      "original_candidate_title": "점검 결과 손실이 없는 경로 — 추가 투자 불필요",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "게인 처리, 무음 규칙, 짧은 클립 tiling, presence gating, bf16 head 정밀도는 hidden 조건에서 실질적인 손실이 없다.",
+      "candidate_evidence": [
+        "bank_trainval.csv에 input_kind 열이 없어 full_bank_features.py:174에서 preserve_gain=False → 학습과 추론 모두 peak 0.6 cap으로 일치(full_bank_submission.py:78)",
+        "VOICE_FAKE_PROB==0인 행: test 0/6,444, val 0/4,927 → full_bank_submission.py:112 무음 규칙은 발동하지 않음",
+        "hidden 최소 길이 4 s = 64,000 samples < 64,600 → tiling되는 것은 600 samples뿐(script.py:168-172)",
+        "presence<0.5인 가짜: voice 8/2,124, music 20/1,030",
+        "bf16 autocast로 VOICE_FAKE_PROB tie 1,134행, 최대 tie 크기 6, 0.999 이상 tie는 전부 가짜"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "VALIDATION_GAP-1",
+      "dimension": "validation_gap",
+      "original_severity": "critical",
+      "original_candidate_title": "프록시 test는 오디오 없이 '원천(코퍼스) 식별'만으로 풀리며, 이 구조 때문에 새 음성 head의 실제 퇴행이 가려졌다",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "원천과 라벨의 결합 및 pooled 보정 약점은 확인할 위험이다. source-prior 진단은 실제 모델이 원천만 쓴다는 인과 증거가 아니며, 옛 voice head 복귀의 근거도 아니다.",
+      "historical_corrected_claim": "[관측] proxy test의 라벨은 원천(코퍼스)과 강하게 얽혀 있다. 음성 전용 행(n=3,595)은 train 원천별 fake 비율만으로 AUC 0.998이 나오고, 미관측 원천을 어떻게 채우든 같다. 전체 File AUC 0.960/EER 0.043은 미관측 원천(fleurs_ko, musan_music, constructed_song)을 0이나 0.5로 채울 때만 나온다. 전역 fake 비율 0.70으로 채우면 0.789/0.171이다. VOICE 과제에 source prior를 쓰면 EER이 0.130으로 모델(0.111)보다 나쁘다. 따라서 proxy의 절대 수준은 낙관적이다. 생성기 단위 holdout(VoxCPM, OpenVoice, Lyria, fx)은 모두 train에 이미 있는 코퍼스 안에 있다. 새 DataV4 fc5 음성 head는 음성 TTS에서 크게 좋아졌다(음성 전용 voice EER 0.125→0.044). 보컬과 음악이 함께 있는 파일(0.260→0.206)과 코퍼스 내부 EER(HAIM, constructed_song, constructed_mix)도 모두 좋아졌다. AI 가창 대 real 가창의 판별력은 유지됐다(Lyria AUC 0.782→0.780). 약해진 것은 AI 가창 보컬(HAIM Lyria-3 Pro)과 real 낭독 음성 사이의 순위다(AUC 0.919→0.712). 옛 head가 음악 맥락의 real 보컬에도 fake 점수를 높게 주던 편향(musan real 중앙값 0.84)이 사라지면서 생긴 offset 변화다. pooled Voice EER은 이 도메인 간 보정 약점을 가린다. 코퍼스 단위 holdout과 슬라이스별 지표가 필요하다. 옛 head로 되돌리는 것이 낫다는 근거는 없다.",
+      "historical_evidence": [
+        "python adv_vg1_r2/q1.py: source-prior File AUC/EER by fill — fill0 0.9601/0.0431, fill0.5 0.9649/0.0431, fill=global(0.7015) 0.7894/0.1707; type=voice AUC 0.9983 for all fills; music 0.983→0.7848, mixed 0.8148→0.3946 under global fill",
+        "q1.py source table: constructed_song has 0 train rows but 400 test rows with FILE_FAKE mean 0.21 (84 fakes) — a third corpus-novel source, not only fleurs_ko/musan_music; speechfake train fake rate 0.803",
+        "q3.py: bank_trainval haim generators in train = acestep 340, musicgen 340, concat 176, crossfade 182, sonicmaster 200 (+ existing:HAIM 680) → HAIM is a seen corpus; Lyria-3 Pro/fx are within-corpus generator holdouts like VoxCPM",
+        "q3.py within-corpus FILE EER (e9504/b7144/bal_dec): haim 0.2026/0.3042/0.1706; constructed_song 0.3803/0.3328/0.2500; constructed_mix 0.2646/0.2739/0.1980 → the new model is best on every one",
+        "q4.py: Lyria-3 Pro vs sung reals (constructed_song+musan_music+vocalset, n=972) AUC b7144 0.782 / bal_dec 0.780; vs speech reals (n=1902) 0.919 / 0.712; fx vs sung reals 0.947 / 0.954",
+        "q4.py median VOICE_FAKE_PROB b7144→bal_dec: musan_music real 0.84→0.087, haim real 0.964→0.133, constructed_mix real 0.522→0.037, haim fake 0.973→0.347 (old head's 'music context = fake' bias)",
+        "q4.py: voice-task source prior (VOICE_FAKE among voice-present, n=5139) AUC 0.80–0.87, EER 0.1298 > model 0.1107",
+        "q3.py: finding's corpus-novel slice split by real type — FLEURS reals vs Lyria+fx voice EER b7144 0.1006 / bal_dec 0.2516; MUSAN reals vs Lyria+fx 0.3744 / 0.3645",
+        "q5.py voice EER b7144→bal_dec: speech-only (n=3595) 0.1246→0.0443; voice+music present (n=1544) 0.2597→0.2060; excluding mlaad/speechfake/constructed_mix 0.1636→0.2500 (only 440 fakes, all HAIM singing + 2 splice)",
+        "q5.py: OpenVoice misses at the global voice-EER threshold = 0/600 for b7144 as well as bal_dec (not a new-head gain)",
+        "q6.py rank-blend of old and new voice heads, w_old 0→1: all 0.1107→0.1601, speech 0.0443→0.1246, songs 0.2060→0.2597; only the finding's slice improves (0.2695→0.1462)",
+        "logs/phase_c.steps: train_balanced 16:44:06→file_ensemble 16:51:41 (7m35s) supports the ~8 min/fold effort estimate",
+        "DATA_PLAN_236749_2026-09-19.md:3 best-before LB 0.7579 (ADS 0.7322) → new 0.7912 (ADS 0.7683): direction matches proxy; proxy ADS gain +0.0645 (e9504→bal_dec) vs LB +0.036 (mapping of best-before to e9504 heads unverified)"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "VALIDATION_GAP-2",
+      "dimension": "validation_gap",
+      "original_severity": "high",
+      "original_candidate_title": "리더보드 탐침: ADS가 소수점 10자리로 공개되고 최고점만 반영되므로, 한 열만 바꾼 제출로 숨은 F/V/M을 정확히 분해할 수 있다",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "conditionally_confirmed",
+      "historical_verdict": "confirmed",
+      "accepted_scope": "다른 열을 정확히 고정하고 한 성분만 상수0.5로 바꾸면, 두 클래스와 공식 EER 규칙하에서 E=0.5+(Ac-A0)/w로 역산할 수 있다. 이는 집계 수준의 조건부 산식이며 제출 슬롯을 소모한다. 개별 hidden 라벨 추정·학습·튜닝은 허용하지 않는다. 실행하지 않았다.",
+      "historical_corrected_claim": "리더보드는 총점, ADS, CPS만 공개한다. ADS는 반올림 없이 정확히 계산된다. 기록된 13개 값이 모두 k/126000 격자 위에 있다. Public=Private=100%이고 최고점이 반영된다(CONTRACT:36, :107). 그래서 진단 제출은 최종 점수를 깎지 않는다. 단, 제출선택 열 관리는 필요하다. 한 열을 상수 0.5로 바꾸면 그 성분 EER은 정확히 0.5가 된다. 따라서 PRESENT 열과 나머지 열을 고정하고 한 열만 바꾸면 ΔADS=0.2ΔV, 0.3ΔM 또는 0.5ΔF로 성분 차이를 잴 수 있다. 이는 서로 다른 실행이 같은 FILE 열을 재현한다는 전제에 달려 있고, 두 번의 동일 baseline 제출과 CPS 불변이 이 전제를 지지한다. 역산에 필요한 ADS0는 제출표의 10자리 값을 써야 한다(격자 추정값 0.7683174603). 이 방법은 점수를 올리는 수단이 아니라 측정 수단이다. 음성 열만 바꾼 A/B는 음성 head가 FILE(가중 0.45)에 주는 효과를 반영하지 못하므로, 결합 규칙 확인을 따로 해야 한다.",
+      "historical_evidence": [
+        "live_submissions.json의 ADS 13개 × 126000이 모두 정수다(91979, 92255, 90860, 81878, 75450, 89699, 88556, 81958, 80338, 81283, 82877, 74102, 78279). 63000을 곱하면 반정수가 남는다. 따라서 ADS는 반올림 없이 정확히 계산되며 차이 해상도는 1/126000≈7.9e-6이다. 계산: .venv/bin/python에서 round(v*126000, 4)",
+        "ADS0는 로컬에 'ADS 0.7683'로만 기록돼 있다(transcript: '2026-09-24 02:09 KST user submitted ... LB 0.7912534339 (ADS 0.7683, CPS 0.99768'). 격자와 총점, CPS를 함께 만족하는 값은 96808/126000=0.7683174603(CPS 0.9976772) 하나다. 이는 추정이며 제출표 값으로 확정해야 한다.",
+        "재현성: baseline_submit.zip 제출 88418(09-13 00:35)과 88809(09-13 17:25)는 총점, ADS, CPS가 10자리까지 같다. 서로 다른 제출 8개의 CPS도 0.9893940741로 같다(live_submissions.json). full_bank_submission.py:134-136은 TF32를 끄고 benchmark=False로 두며, baseline script.py:283은 shifts=0이다.",
+        "sklearn 실행 결과 상수 0.5 점수의 EER은 양성 비율 0.1, 0.5, 0.9에서 모두 0.5다.",
+        "proxy에서는 새 시스템이 모든 성분에서 우세해, 성분을 섞는 선택이 이득을 낸다는 근거가 없다. compare_report.json 기준 prev_existing9504는 F/V/M = 0.1735/0.1685/0.2690, prev_balanced7144는 0.1733/0.1601/0.2641이고, DataV4는 0.1094/0.1107/0.2001이다.",
+        "full_bank_submission.py:114에서 FILE은 decision_heads.file_score(Pv, Pm, Fv, Fm)로 계산되므로 음성 head를 바꾸면 FILE도 바뀐다. 음성 열만 바꾸는 A/B는 이 경로를 측정하지 못한다.",
+        "full_bank_submission.py:123-126은 manifest sha256을 검사한다. probe.json 플래그를 추가하면 manifest를 갱신하거나 검사 대상에서 빼야 한다. 제출마다 ZIP을 새로 만들어야 한다.",
+        "results/leaderboard_audit_20260917/experiment_plan.md:27은 성분 병목 분석을 로컬 정답 대체로만 계획했다. LB 열 탐침을 했다는 기록은 없다."
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "VALIDATION_GAP-3",
+      "dimension": "validation_gap",
+      "original_severity": "high",
+      "original_candidate_title": "proxy에는 긴 음성 파일이 없다. 음성 EER은 길이에 따라 커지고, 새 head의 이득은 15초 이상에서 사라진다",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed",
+      "accepted_scope": "The proxy has no voice-only files >=30 seconds: real n2287/max26.58s/p9517.04s, fake n1308/max24.803s/p9512.359s. Negative log duration alone gives voice-only label AUC0.78140958. Real voice-only score/duration Spearman rho0.33289672 and max-over-segment scoring support a length-related risk, but do not isolate its cause. Voice-present EER worsens in longer bins while content/source composition changes sharply: 286 of291 rows in the25-61s bin also contain music. The exact new-versus-Balanced7144 gap is zero in15-25s and0.01301824 in25-61s; the voice-only15-25s gap remains0.07675941 with just13 fakes. Four fake voice-only training clips are >=30s, contradicting zero. Class-conditional binned duration reweighting reproduces the reported scenario degradation but cannot measure how much of the hidden-test gap duration causes.",
+      "evidence_locator": "audit_receipt.json#current_reviews/VALIDATION_GAP-3"
+    },
+    {
+      "id": "VALIDATION_GAP-4",
+      "dimension": "validation_gap",
+      "original_severity": "high",
+      "original_candidate_title": "proxy의 모델 간 차이는 잡음이 아니라 편향이다. '+0.059 대 +0.033' 비교는 기준 패키지도 서로 다르다",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed",
+      "accepted_scope": "The local known-label proxy overstates the observed ADS improvement for this one context-attributed Balanced7144-to-DataV4 comparison: proxy delta 0.06107174 versus saved LB delta 0.03832540 (ratio 0.62755). Restricting both models to the same 6,444 IDs changes the proxy delta only to 0.06103749. The DataV4 proxy-minus-LB surrogate-total gap is 0.08540418, of which 99.927% is the ADS term. The saved connected-component bootstrap intervals and exploratory filtered-slice numbers reproduce. These show a discrepancy conditional on this proxy and these attributed packages; they do not establish that sampling noise is impossible, identify its cause, validate a future 0.6 multiplier, or validate the post-hoc slice as an independent model-selection metric.",
+      "evidence_locator": "audit_receipt.json#current_reviews/VALIDATION_GAP-4"
+    },
+    {
+      "id": "VALIDATION_GAP-5",
+      "dimension": "validation_gap",
+      "original_severity": "medium",
+      "original_candidate_title": "연결 성분(closure)이 test 쪽으로 번져, 구성 데이터 전체가 train에서 사라지고 test에는 이미 본 생성기가 섞였다",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] bank_test 6,450행 가운데 2,755행(42.7%)은 holdout 규칙과 직접 맞지 않고 연결 성분 때문에 끌려온 행이다. manifest 기준 끌려온 3,032행 중 2,415행은 fleurs_ko 또는 musan_music이 들어 있는 성분에 속한다. 연결은 vocalset 가수 → constructed_song → openmic 트랙 → constructed_mix → MLAAD mailabs_text(모든 TTS가 같은 M-AILABS 문장 사용) → VoxCPM·musan_music 순서로 이어진다. 100행 넘는 test 성분이 10개이고 가장 큰 것은 362행과 290행이다. 결과: constructed_song 400/400이 test에 있고 train에는 0개다. constructed_enhanced는 276/300이 test, train은 17개다. vocalset 385/800, openmic 386, musan_noise 276, MLAAD의 다른 생성기 280행도 test로 갔다. test fake 587개는 생성기가 train에도 있다(Fish-S2-Pro 12, Qwen3-TTS 0.6B 12, MOSS-TTS 12 등). constructed_song의 부모는 vocalset 400개뿐이고 CSD(한국어 가창)는 쓰이지 않았다.",
+      "candidate_evidence": [
+        "computed: T.direct (holdout 규칙 직접 매칭) 3,695 / closure 2,755",
+        "computed components (build_manifest.components): largest test comps 362 {musan_music 163, vocalset 45, constructed_song 43, constructed_mix 32, openmic 27, mlaad 21}",
+        "computed M.groupby(source) test/total: constructed_song 400/400, constructed_enhanced 276/300, vocalset 385/800",
+        "manifest group_keys: mlaad → 'mailabs_text:...'; constructed_mix → ['speechfake_text:...','track:fma:...']",
+        "data_v4/DESIGN.md §6.1 (실제 노래·AI 후처리 실제 = 공백 1·3 보완 목적)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "VALIDATION_GAP-6",
+      "dimension": "validation_gap",
+      "original_severity": "medium",
+      "original_candidate_title": "proxy의 pooled File EER은 가장 쉬운 voice-only가 좌우한다. 판정이 애매한 가사곡은 마스크로 빠져 있다",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] 새 모델의 유형별 File EER은 voice-only 0.050(3,595행, test의 56%), music 0.161, mixed 0.185, 존재 미상 0.426이다. voice, music, mixed를 같은 비중으로 재가중하면 pooled File EER이 0.109에서 0.134로 오른다(Balanced7144는 0.173→0.203). 숨은 test는 speech, vocals, songs, instrumental 네 범주다. 또 VOICE_PRESENT 미상 180행(Lyria 73, fx 32, musan_music 61)과 VOICE_FAKE 미상 87행(HAIM concat/crossfade)이 Voice EER과 존재 AUC에서 빠진다. 음성 대상 행의 4.9%이고 보컬 판정이 애매한 곡들이다. 이 행들의 fake File 점수 평균은 0.329(real 0.209)로 약하다.",
+      "candidate_evidence": [
+        "computed per-type EER (bal_dec): voice 0.0498, music 0.1608, mixed 0.1854, unk 0.4262; equal-type weighted 0.1344",
+        "compare_report.json unknown_counts voice_eer 261, voice_presence_auc 176 (decision)",
+        "computed masked rows by source/generator (haim Lyria-3 Pro 73, fx 32, musan_music 61; concat 42, crossfade 45)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "VALIDATION_GAP-7",
+      "dimension": "validation_gap",
+      "original_severity": "medium",
+      "original_candidate_title": "proxy의 30%는 우리가 만든 코덱 체인이고 모델 간 차이의 절반이 거기서 나온다. 실제 전화 전송은 평가에 한 건도 없다",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] proxy test의 20.3%는 시뮬레이션 전화 채널이다(tel_ulaw 477, tel_alaw 318, tel_gsm 279, tel_opus8 238). 또 10%는 opus_32/aac_96으로, 숨은 test 형식(MP3/WAV/FLAC)이 아니다. 코덱은 라벨과 독립이다(클래스별 비율 차 ≤0.02). Balanced7144→DataV4 ΔADS는 전화 행에서 +0.096(0.7338→0.8302), wav/flac/mp3 행에서 +0.047(0.8279→0.8749)이다. 실제 전화망 전송이 있는 ASVspoof2021 LA는 17개 채널 조건 3,667행이 전부 train/val에 있고 test에는 5행뿐이다. 따라서 '실제 전화 real/fake' 평가는 0건이다.",
+      "candidate_evidence": [
+        "computed crosstab codec×FILE_FAKE (test)",
+        "scratchpad/audit load.py table(): telephone only b7144 ADS 0.7338 vs bal_dec 0.8302; codec in wav/flac/mp3 0.8279 vs 0.8749",
+        "computed asvspoof2021_la channel × split: all conditions train≥156, test ≤2",
+        "data_v4/DESIGN.md §5 코덱 표(전화 20%), §10 '전화 채널: 시뮬레이션'"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "VALIDATION_GAP-8",
+      "dimension": "validation_gap",
+      "original_severity": "medium",
+      "original_candidate_title": "과거 로컬 지표는 LB를 추적한 적이 없다. 현재도 모든 선택이 같은 코퍼스로 구성된 val에서 이뤄진다",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] 로컬 EER이 있는 제출 9건에서 Spearman(로컬 File EER, LB ADS)은 −0.41(n=7, p=0.36), 로컬 Music EER은 −0.31(n=9, p=0.42)이다. C3와 C08은 로컬 File/Music EER이 0.3160/0.3139로 같지만 LB는 0.6844와 0.7315다. AST full1029는 로컬 music 0.088로 최고였지만 LB는 0.6175로 최하위다. Balanced7144는 val File 0.094, Voice 0.0105였지만 직전 최고보다 LB가 −0.002다. DataV4의 단계별 값은 val ADS 0.919 → proxy 0.863 → LB 0.768(가중 EER 0.081 → 0.137 → 0.232)이다. proxy는 val에서 LB로 가며 생기는 악화의 37%만 포착한다. val은 train과 같은 코퍼스와 생성기인데 체크포인트 선택(voice epoch 50/44/50, val EER 0.078→0.051 단조 감소), presence C, file_ensemble 분위수 표와 가중치 선택에 모두 쓰였다. 반면 CPS는 proxy 0.9983 대 LB 0.99768로 거의 그대로 전이된다.",
+      "candidate_evidence": [
+        "EXPERIMENTS_ALL_2026-09-17.md §3 제출표; REVIEW_236749_2026-09-17.md §2.1 표",
+        "results/balanced7144_h100_20260919/RESULTS.md (voice 1.049%, file 9.384%)",
+        "train_duration_balanced/validation_metrics.json (file 0.0753 legacy), file_ensemble.report.json val_official_decision file 0.0700, voice 0.0510, music 0.1202",
+        "train_duration_balanced/voice_41_history.json epoch1 0.0784 → epoch46 0.0510",
+        "computed scipy spearmanr over 9 packages (scratchpad inline)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "VALIDATION_GAP-9",
+      "dimension": "validation_gap",
+      "original_severity": "medium",
+      "original_candidate_title": "LB 기준점 2개를 적은 비용으로 4~5개로 늘릴 수 있다",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] proxy와 LB가 짝을 이루는 점은 Balanced7144와 DataV4 두 개뿐이다. 캐시에는 세그먼트별 DF-Arena voice_embeddings(fc5 입력)와 MERT-330M layer-12의 1024차원 창 특징이 있다(full_bank_evaluate.score_rows). 원본 DF-Arena fc5는 G0, C08, M330, MERT12(LB 0.7479), Expanded(92644 추정, 0.7579)의 음성 열이었다. MERT12와 Expanded 음악 head도 1024차원 MERT12 창을 입력으로 받는다(mert12_submission.py:91, expanded_submission.py:46). [추론] 이들을 같은 proxy 캐시로 채점하면 기준점을 추가할 수 있다. 다만 두 패키지는 원본 오디오를 그대로 HTDemucs에 넣었고, 캐시는 mono·peak 0.6 전처리다(ANALYSIS.md §5). 창 설정 차이도 있어 근사치다.",
+      "candidate_evidence": [
+        "full_bank_evaluate.py:41-61 (voice_embeddings, mert_windows 캐시 사용)",
+        "mert12_submission.py:91, expanded_submission.py:46 ('1024-wide MERT windows')",
+        "results/balanced7144_regression_20260919/ANALYSIS.md §5 전처리 차이",
+        "live_submissions.json: 92294 MERT12 0.7479394074, 92644 0.7579036931"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "VALIDATION_GAP-10",
+      "dimension": "validation_gap",
+      "original_severity": "medium",
+      "original_candidate_title": "더 나은 proxy 사양: 코퍼스 holdout(LOCO), 원본 형식, 전체 길이, 게이트 포함. 필요한 추가 데이터 목록",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[제안] (1) Fold는 real과 fake를 함께 가진 코퍼스 단위로 뺀다. F1 SpeechFake 전체(ko, CV real 508 + CosyVoice/EdgeTTS/MeloTTS/OpenVoice/SeedVC), F2 ASVspoof2021 LA+DF(실제 전화와 코덱), F3 HAIM 전체(MTG real, Lyria-3 Pro, fx, ACE-Step, MusicGen, sonicmaster), F4 held-out 부모로만 만든 constructed_song/mix다. 여기에 corpus-novel real(FLEURS, MUSAN music)을 상시 test로 둔다. fold마다 캐시 특징으로 head를 재학습한다. (2) 평가 slice는 원본을 다시 만든다. 4~60 s이면 자르지 않고 원래 길이(최대 60 s)를 쓰고, 인코딩은 {wav, flac, mp3} 중 한 번만 한다. 원래 채널을 유지하고 RMS 정규화는 하지 않는다. (3) 지표는 공식 마스크 기준 성분별 EER에 코퍼스 내부 EER, 길이 구간별 EER과 균등 4~60 s 재가중 ADS, 균등 유형 구성 ADS를 더한다. (4) 게이트: source-prior AUC ≤ 0.6, 유형별 duration-only AUC가 [0.4, 0.6] 안, 기준점 순위 일치(GAP-9). (5) 검증 전용 추가 데이터: 30~60 s 한국어 real/fake 음성 쌍 각 약 200개. 이 정도면 EER 표준오차가 약 ±0.02~0.03이다. fake는 이미 계획된 공개 TTS/VC로 여러 문장 단락을 한 번에 생성한다(MeloTTS MIT, Seed-VC, CosyVoice2 Apache. CosyVoice2는 지난번에 건너뜀). 긴 한국어 real 원천은 현재 manifest에 없다. musan_speech는 영어이고 Zeroth·FLEURS는 약 20 s 이하다. 공개 라이선스 원천은 별도 확인이 필요하며, 이번 작업에서는 웹 조사를 하지 않았다.",
+      "candidate_evidence": [
+        "computed: SpeechFake bonafide 508(=15 test+493 train), haim real sonicmaster/MTG, asvspoof2021_la 3,672 rows 17 channels",
+        "data_v4_phase_c_20260923T1653Z/logs/phase_c.steps: train_balanced 16:44:06 → file_ensemble 16:51:41 (6 heads ≈ 7.5 min)",
+        "musan_speech crop median 17.7 s, max 59.8 s, all train (computed)",
+        "data_v4/DESIGN.md §2.3 (KSS·AI-Hub·Common Voice 직접 수집 제외 사유)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "HISTORY-1",
+      "dimension": "history",
+      "original_severity": "critical",
+      "original_candidate_title": "음악 분기가 hidden 오류의 최대 몫이자 LB 변동성이 가장 큰 레버",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "프록시 음악 포함 파일의 오류 집중은 재계산으로 확인했다. 음악만 바꾼 과거 제출 사례는 있으나 혼합 보정과 패키지가 달라 hidden의 최대 성분이나 정확한 개선 폭을 식별하지 못한다.",
+      "historical_corrected_claim": "[관측] DataV4 proxy(6,444행)의 File EER 임계점(.3347)에서 오류 705건 중 538건(76%)이 music route다. 행당 오류율은 music 18.9%, voice 4.6%다. Voice EER도 speech 경로에서는 .044지만 노래·믹스 속 보컬에서는 .206이다. 즉 proxy 오류는 '음악을 포함한 파일'에 집중된다. File 점수를 oracle로 대체하는 진단에서 음악 성분을 정답으로 바꾸면 File EER이 .109→.041, 음성을 바꾸면 →.061이다. 음악이 가장 큰 레버지만 음성(특히 음악 안의 보컬)도 크다. real 음악 오탐은 학습에 포함된 OpenMIC(val 15.3%, test 18.1%)와 HAIM real(val 21.8%)에서도 처음 보는 MUSAN(20.2%)과 비슷하다. 따라서 주원인은 도메인 부재보다 음악 표현·분류기의 분리 한계다. LB에서는 음성·존재를 고정하고 음악만 바꾼 File=max 시절 제출의 ADS가 +0.045에서 −0.113까지 움직였다. 이 폭은 max 결합에서 음악 확률의 보정이 섞인 결과일 수 있다. 음성만 바꾼 통제 제출이 없으므로 '가장 큰 LB 레버'라는 비교는 검증되지 않았다. [추론] hidden 성분 분해는 식별할 수 없다. 두 가지 배율 가정이 모두 음악 항 비중 약 43–44%(M≈.33–.34)를 주지만 가능한 범위는 넓다.",
+      "historical_evidence": [
+        "h1/route.py: music route 538/705 (76.3%) 대 voice 167/705. 행당 오류율 .1888 대 .0465. 521은 음악 분기 FP 306 + music route 미탐 215의 혼합 정의다",
+        "h1/oracle.py: decision layer 재구성 maxdiff 2.4e-13, 기준 File EER .1094. oracle 음악 .0411, oracle 음성 .0607, oracle 존재 .1063",
+        "h1/veer.py: Voice EER test 전체 .1107 = speech route .0443(n 3,595) + music route 보컬 .206(n 1,544). val은 .0305 대 .1635",
+        "h1/seen.py + bank_trainval.csv: OpenMIC train 2,018 / val 360(학습 포함 도메인)인데 real FPR val .153 / test .181. HAIM real val .218 / test .174. 처음 보는 MUSAN .202. 음악 real 행의 Pm 중앙값 ≈ .998로, 오탐은 존재 확률이 아니라 Fm 쪽에서 생긴다",
+        "h1/seen.py: route별 오류율 val→test는 music .120→.189, voice .043→.046. 분포 이동으로 인한 악화는 음악 문맥에 집중된다",
+        "성분별 val→test 배율(F 1.562, V 2.172, M 1.665)로 외삽하면 F .171, V .240, M .333, W .2335(LB .2317). 음악 비중 .428, 음성 .206",
+        "W=.2317 하나로는 M을 .20(비중 26%)부터 .43(56%)까지 모두 맞출 수 있다. 식별 불가",
+        "EXPERIMENTS_ALL_2026-09-17.md:240-246: V6는 음성도 XLS-R300M+AASIST로 바꿨는데 CPS가 .9893940741로 같다. CPS가 같다고 음성 경로가 같다는 뜻은 아니다",
+        "decision_heads.py:88-99: 현재 File은 후보별 val-CDF 평균이라, File=max 시절 LB 변동성의 원인이었던 보정 결합이 약해졌다",
+        "compare_report.json + lb.py: DataV4 전면 개편(음성·음악·결합·존재 모두 변경)의 LB ΔADS는 +.038이고 proxy ΔADS .061의 0.63배다"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "HISTORY-2",
+      "dimension": "history",
+      "original_severity": "critical",
+      "original_candidate_title": "음성 오류가 길이에 따라 급증하지만 proxy는 짧은 클립 위주라 LB 격차의 약 40%를 설명한다",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "길이가 긴 구간의 코퍼스·콘텐츠 구성이 다르다. 원천 내부 real 점수의 길이 효과와 긴 fake 탐지 개선을 함께 본다. 길이가 LB 격차40%를 설명한다는 주장은 채택하지 않는다.",
+      "historical_corrected_claim": "[관측] proxy test는 짧은 쪽으로 치우쳐 있다(중앙값 9.56초, q75 13.65초). hidden 규격(4–60초) 밖인 4초 미만 257개와 60초 초과 행도 들어 있다. 구간을 합쳐 보면 voice 오류가 길이에 따라 커진다. 그러나 이것은 주로 원천 구성 때문이다. 긴 구간의 real은 musan_music, fake는 haim(Lyria-3 Pro)이 채우고, 두 원천은 길이와 상관없이 어렵다. 원천 구성을 유지하고 원천 안에서만 길이를 재가중하면 Voice EER은 .111→.116이고 W는 .137→.128로 오히려 내려간다. 원천 fixed-effect로 4–60초 균등에 외삽해도 voice 오류는 약 +.02(ΔW 약 +.005)다. 따라서 LB 격차의 약 40%를 길이로 설명할 수 없다. 원천 내부에서 확인되는 것은 real 음성 쪽 효과뿐이다. 길이가 2배가 될 때 오탐 odds가 약 1.5배가 되며, max-over-segments 집계와 부합한다. fake 쪽은 반대다. 원천 안에서 긴 fake일수록 점수가 높다(haim rho +.31, 미탐 .57→.22). 합산 fake rho −.37은 Simpson 역설이다. voice head는 이미 max-MIL로 학습되고 있다(full_bank_train.py:90). REVIEW:62의 경고는 음악 윈도우 pooling에 대한 것이고, 음악 경로는 이미 LME로 반영됐다.",
+      "historical_evidence": [
+        "재실행: .venv/bin/python scratchpad/audit/dur.py → V4dec W raw .1369 / 재가중 .1744, B7144 .1979 / .2356(원래 숫자 재현)",
+        "h2/src.py: 40–60초 real voice 36개 = musan_music 32 + constructed_mix 4; fake 102개 = haim 95 + constructed_mix 7. musan_music은 ≤6초에서도 FPR .21, haim은 ≤6초에서 미탐 .57",
+        "h2/rw.py: 주장 방식으로 재가중하면 real 쪽 musan_music 비중 .062→.495, fake 쪽 haim 비중 .206→.656. 원천 구성을 유지한 재가중: V4dec Voice .1107→.1160, File .1094→.0988, W .1369→.1277; B7144 W .1979→.1891; E9504 W .2011→.1875",
+        "h2/rw.py 부트스트랩(300회, 원천 불확실성 제외): 주장 방식 재가중 voice EER 95% 구간 [.205,.283], W [.160,.187]",
+        "h2/rw.py: musan_music·haim을 빼면 40–60초 구간이 real 4개, fake 9개만 남는다(가중치 36%). 재가중 추정이 불안정하다",
+        "h2/fe.py 원천 fixed-effect 로지스틱: real 오탐은 길이 2배당 odds ×1.53, fake 미탐은 ×0.67. 원천 구성 고정 + U(4,60) 외삽 시 고정 임계 voice 오류 .111→.134",
+        "원천 내부 fake score–길이 rho: haim +.309, speechfake +.626, constructed_mix +.241, mlaad −.019(합산 −.369와 부호 반대)",
+        "full_bank_train.py:88-91: voice head를 파일 단위 max-MIL로 학습(`part.max()`). full_bank_train.py:83-84, full_bank_submission.py:98: music은 log-mean-exp",
+        "REVIEW_236749_2026-09-17.md:62 원문: '윈도우 max pooling은 60초 실제 곡에서 윈도우 하나만 튀어도 오탐... Empower Thee'. 음악(MERT) 윈도우를 가리킨다",
+        "COMPETITION_CONTRACT.md:17: '평가 오디오는 4–60초'라는 범위만 있고 분포 정보는 없다",
+        "results/balanced7144_regression_20260919 live_submissions: B7144 LB 0.7559347884 / ADS 0.7299920635; 이전 0.7579036931 / ADS 0.7321825397",
+        "로컬 results/data_v4_20260923에 npz 없음(find 결과 0). 메모리 기록상 세그먼트 캐시는 VESSL /root/data_v4/feature_cache_v4.tar"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "HISTORY-3",
+      "dimension": "history",
+      "original_severity": "high",
+      "original_candidate_title": "LB가 곧 최종 점수인데 제출 슬롯이 방치되고 DataV4의 단일 요인 절제가 전무하다",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "단일 변화 제출 비교는 유용하지만 남은 계정별 슬롯을 조회하지 않았다. 과거 미사용 슬롯 계산은 현재 예약이나 실행 권한이 아니다. 3회/일 이내에서 의사결정을 바꿀 후보만 제출하도록 계획했다.",
+      "historical_corrected_claim": "[관측] Public은 hidden 100%이고 Private은 종료 시점 Public이다(COMPETITION_CONTRACT.md:36). 후처리 변경과 진단 제출은 허용된다(:60). 리더보드는 최고 점수를 반영한다(:107). 채점은 결정적이다(88418과 88809가 모두 0.6909110688). 09-13~09-24에 17건(채점 15, 오류 2)을 제출했고, 가능 슬롯 36개 중 47%를 썼다. 09-19 14:11 이후 09-24 02:09까지 약 14개 슬롯이 쓰이지 않은 것으로 보인다. 이 기간에 제출 기록이 전혀 없다는 점에서 한 추론이다. 완성된 Existing9504_MIL 패키지도 제출되지 않았다. 채점된 제출 중 깨끗한 단일 레버 LB 비교는 C08과 S2 정도뿐이다. MERT12는 layer, 데이터, seed, decoder가 동시에 바뀌었다. DataV4는 이전 LB 제출 대비 학습 데이터(v4와 duration balance), voice/music head 재학습, presence head, CDF 퓨전을 한꺼번에 바꿨다. proxy에서는 부분 분해가 가능하다. heads 재학습 ADS +0.0586, decision layer +0.0025다. LB에서 분리된 기여는 CPS +0.00083뿐이다. 남은 슬롯은 자정 초기화를 가정하면 최대 약 17회다. 사전 등록한 단일 요인 LB 사다리는 가치가 있다. 다만 proxy 재계산으로 보면 퓨전 가중 변형(①{max:1} −0.0003, ②{max_nopresence:1} −0.0086, noisy_or 단독 +0.0008)의 기대 이득은 ±0.001 수준이다. 실질적 후보는 추론만 바꾸는 voice pooling top-k, 세그먼트 중첩, stereo 처리다. AntiDeepfake 퓨전과 music 다층 head는 GPU 특징 추출이나 재학습, ZIP 용량과 L4 시간 검증이 필요하므로 재학습 없는 변형이 아니다.",
+      "historical_evidence": [
+        "COMPETITION_CONTRACT.md:36 'Public은 평가 데이터 100%, Private은 종료 시점 Public이다'. finding이 인용한 37행은 오기다.",
+        "COMPETITION_CONTRACT.md:60 '규정 안에서 후처리 변경·진단 제출은 허용된다'. LB 판독 전략이 규정상 허용됨을 뒷받침한다.",
+        "COMPETITION_CONTRACT.md:107 'FAQ상 리더보드는 최고 점수를 반영하고…제출 횟수가 차감된 실패 건'. 회귀 제출은 순위를 깎지 않으므로 '회귀 방지' 이점은 작다.",
+        "results/balanced7144_regression_20260919/live_submissions.json: observed_at 2026-09-19T05:38:16Z, 16행, 오류 2건(89372, 89989).",
+        "submissions/Existing9504_MIL/README.md: 'No DACON submission was made'. DataV4의 직접 기준선 패키지가 미제출 슬롯 기간에 완성돼 있었다.",
+        "재계산(<CLAUDE_AUDIT_SCRATCH>/fusion_variants.py, n=6444 proxy test, decision presence): File EER은 submitted CDF ensemble 0.10940, max 0.11004, noisy_or 0.10753, max_nopresence 0.13035, voice_only 0.19056, music_only 0.42103이다.",
+        "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/file_ensemble.report.json: val candidates_alone max .07127, noisy_or .07203, max_nopresence .07853, equal .07003, grid gain 0.0000 < 0.002. 퓨전 가중의 여지가 작다.",
+        "compare_report.json: new legacy .85716 → new_duration_balanced legacy .86068. proxy 단일 요인(duration balance) 비교가 존재한다.",
+        "full_bank_submission.py:105 voice 세그먼트 '.max()' 집계. ③ top-k는 한 줄 변경이다.",
+        "submissions/DataV4_DurationBalanced/submit.zip은 6,350,720,613 bytes다. 1B 모델(fp32 약 4 GB)을 추가하면 10 GB 제한을 넘을 위험이 있다.",
+        "live_submissions.json 92294 메모 'MERT12 full1322: seeds41/42/43, batch32 x500, balanced coverage prefix, fixed torchaudio Demucs decoder'와 EXPERIMENTS_ALL_2026-09-17.md:346(M330 5-fold 1206)을 비교하면 MERT12는 단일 레버가 아니다.",
+        "REVIEW_236749_2026-09-17.md:152 한 번에 한 요인 제출 원칙 제안. 확인했다.",
+        "~/.codex/sessions/2026/09/21~23와 이 대화 JSONL에서 09-20~23 LB 점수 행을 찾지 못했다. 미제출 추론을 지지하지만 직접 관측은 아니다."
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "HISTORY-4",
+      "dimension": "history",
+      "original_severity": "high",
+      "original_candidate_title": "로컬 지표에서 LB로의 전이: 부호 반전 4회, 전이율 0.17–0.63, 단계마다 약 1.69배 과대평가",
+      "review_origin": "recovered_claude_verification_with_synthesis_corrections",
+      "status": "partially_confirmed",
+      "historical_verdict": "partially_confirmed",
+      "accepted_scope": "과거 로컬/리더보드 불일치에는 패널·재학습·패키지 차이가 있다. 고정1.69배 보정, 보편적인 전이율, 일률적인0.015–0.02 통과 기준은 채택하지 않는다.",
+      "historical_corrected_claim": "[관측] 로컬 또는 proxy에서 개선된 제출이 LB에서 악화한 사례가 4번 있다. AST17(dev proxy 0.758→0.904, LB 총점 −0.0456), V5B1(로컬 ΔW −0.076, LB ΔW +0.0127), C3(음성 항을 뺀 F·M ΔW −0.130, LB +0.0073), S2 EAT(다른 test 패널 사이의 비교라 로컬 크기는 확정할 수 없음, LB ΔW +0.113)이다. 다만 AST는 사전 gate에서 탈락한 뒤 제출됐다. V5B1, C3, M330의 LB 패키지는 로컬에서 평가한 모델이 아니라 재학습본이다. 따라서 이 사례들은 레시피 수준의 전이 증거다. 부호가 맞은 경우의 전이율은 0.17–0.63이다. 현재 v4 proxy에서 LB가 알려진 시스템은 B7144와 DataV4 두 개뿐이다. 두 시스템 사이의 전이율은 0.63이고, LB/proxy W 배율은 1.36(B7144)과 1.69(DataV4)로 서로 다르다. 격차가 일정한 배율이 아니므로, v4 파이프라인으로 학습한 모델일수록 proxy가 더 낙관적이다. FLEURS-ko real과 SpeechFake fake(33.7%)는 오류율이 0–2.7%다. 이 둘을 빼면 W는 0.137→0.167(V4), 0.198→0.242(B7144)가 된다. 하지만 이렇게 가중을 바꾸어도 LB로의 전이율이 좋아지지는 않는다(0.63→0.51). 실무 규칙은 다음과 같다. proxy에서 ΔW가 대략 0.015–0.02 이상인 후보만 LB 슬롯에 올린다. 이는 paired bootstrap SD 0.0046의 약 3–4배이며, 전이율 0.2–0.6을 감안한 값이다. 최종 선택은 LB로 직접 한다. Public이 평가 데이터 100%이고 Private은 종료 시점 Public이며, 리더보드는 최고 점수를 반영하기 때문이다.",
+      "historical_evidence": [
+        "COMPETITION_CONTRACT.md:36 \"Public은 평가 데이터 100%, Private은 종료 시점 Public이다\"; :107 \"리더보드는 최고 점수를 반영\" -> 회귀 제출은 최종 점수를 낮추지 않고 슬롯만 소모한다",
+        "EXPERIMENTS_ALL_2026-09-17.md:418 \"S1/S2 test는 같은 190개이며 S0와 다르다\" -> S2 로컬 −0.099(S0 .266667 대 S2 EAT .167603)는 서로 다른 패널 사이의 비교다",
+        "EXPERIMENTS_ALL_2026-09-17.md:236: 최종 B1 ZIP은 1,936행 최종 풀로 만든 별도 패키지다(dev 비교값으로 대체하지 않는다); :350 M330 LB는 5-fold 전체 재학습본이다; :136-137,586 AST는 사전 gate 탈락 후 dev proxy만 보고 제출됐다",
+        "submissions/C08/README.md:7: C08은 baseline DF-Arena 음성과 max 결합을 쓴다. C3는 V6의 XLS-R300M+AASIST 음성과 logistic 결합을 쓴다(EXPERIMENTS_ALL:242,244, V6 로컬 Voice EER 0.429). C3/C08의 LB 차이 0.047은 음성 경로에서 나온다",
+        "results/balanced7144_regression_20260919/ANALYSIS.md:21: 92644와 Expanded_MIL_3659 패키지가 같은지 확인되지 않았다 -> 권고 앵커 'Expanded(.2678)'의 정체가 불확실하다",
+        "lb.py 재실행: B7144 proxy W 0.1979 대 LB 0.2700 -> 배율 1.364(DataV4는 1.693). ADS 기준 LB−proxy 격차는 B7144 0.0721, DataV4 0.0948이다",
+        "scratchpad/audit/h4_rw.py: 가중안별 dLB/dProxy는 uniform 0.63, drop_fleurs_sf 0.51, dur>=4 0.62, equal_per_source 0.88, cap300 0.62, dur_uniform_4_60 0.68이다. 앵커 2개로는 가중안을 식별할 수 없다",
+        "scratchpad/audit/h4_boot.py: component 2,730개를 200회 paired bootstrap한 결과, E9504−B7144 proxy W 차이는 평균 +0.0028, SD 0.0046, 95% CI [−0.0064, +0.0114]다. MERT12/Expanded/B7144의 LB W 간격 0.002–0.011은 proxy로 구분할 수 없다",
+        "scratchpad/audit/h4_src.py: EER 임계값 0.3347에서 fleurs_ko real 1,500행의 오류율은 0.027, speechfake fake 676행은 0.000이다(speechfake real 15행은 0.067). 두 원천은 합쳐 33.7%다",
+        "Existing9504 학습셋(artifacts/Existing9504_All_Source/.../existing_only_20260919_final/train.csv)에는 lyria3 track 78개가 있다(v4 test track과 ID가 겹치지는 않는다). v4 bank_trainval에는 Lyria가 0개다 -> 앵커마다 held-out family 조건이 다르다",
+        "results/data_v4_20260923/.../train_duration_balanced/file_ensemble.report.json의 val_official_decision은 decision layer를 맞출 때 쓴 val이다. 그래서 val→proxy 배율 1.684에는 선택 편향이 섞여 있다"
+      ],
+      "historical_text_warning": "Historical wording may contain superseded estimates or causal claims. accepted_scope and report take precedence; no historical LB-gain forecast is adopted."
+    },
+    {
+      "id": "HISTORY-5",
+      "dimension": "history",
+      "original_severity": "high",
+      "original_candidate_title": "레버 장부: 고정 백본에 작은 head와 데이터 다양성은 성공, 교체와 소량 fullFT는 전부 실패",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed",
+      "accepted_scope": "The saved official submission records support the listed scores and several large regressions. They support preserving the strongest verified package and requiring a controlled adoption gate before costly changes. They do not establish that every encoder replacement or full fine-tune is inferior. MERT95 to MERT330 is itself a successful frozen-encoder replacement, accompanied by head/ensemble/training changes in the submitted package. C08 is also a music-route replacement rather than a pure head-only intervention against the original baseline. IDs 91610 and 92644 lack an independently verified archive-to-submission binding in the inspected evidence; nearby mtimes only generate hypotheses. The 115-fit sweep count describes local fits, not 115 LB trials, and cannot establish that none could improve LB by 0.01. C08, a selected compact sweep candidate, actually improved over G0 by 0.0405711958. Local fullft8 results are mixed; their splits and interventions must remain separate.",
+      "evidence_locator": "audit_receipt.json#current_reviews/HISTORY-5"
+    },
+    {
+      "id": "HISTORY-6",
+      "dimension": "history",
+      "original_severity": "medium",
+      "original_candidate_title": "AntiDeepfake 음성 앙상블은 09-17 검토의 1순위였으나 LB와 data v4에서 한 번도 시도하지 않았다",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] 09-17 검토는 '학습 없이 되는 AntiDeepfake XLS-R-1B 앙상블 + 캘리브레이션'을 가장 먼저 할 일로 제시했다. 실제로는 voice_music H100 재실행의 소규모 패널에서만 평가했다. 기본 test 21개에서 DF+Anti 평균은 File EER 24.04%→13.94%였고, 전화음질 37.98%→24.04%였다. 반면 −6 dB 혼합 8개는 0%→25%로 악화됐다. eight E2에서 Anti와 DF는 비슷한 수준이었다(test DF max 22.75%, Anti max 22.75%). data v4 가중치 수집 목록(fetch_weights.py SETS core)에 AntiDeepfake가 없고 LB 제출도 없다. voice head는 Balanced7144, Existing9504, DataV4 모두 DF-Arena fc5 선형층만 학습했다.",
+      "candidate_evidence": [
+        "REVIEW_236749_2026-09-17.md:250 '가장 먼저 할 일 하나'",
+        "results/voice_music_h100_20260917_retry1/FINAL_REPORT.md:10, :13",
+        "results/eight_h100_20260917/FINAL_REPORT.md E2 raw vs recovered-vocals 표",
+        "data_v4/fetch_weights.py:17-20 SETS['core'](AntiDeepfake 없음)",
+        "antideepfake_runtime.py(런타임 코드 존재)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "HISTORY-7",
+      "dimension": "history",
+      "original_severity": "medium",
+      "original_candidate_title": "MERT 층 선택은 LB가 확인한 유일한 표현 레버인데 다층 결합은 미시도",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] E6에서 MERT L12 test seed 평균 EER은 8.995%로 L24 17.349%, L6 12.291%보다 낮았다(dev 16.15/24.11/21.22%). L24→L12 전환만 바뀐 MERT12 제출은 LB +0.0083이었다. 이후 모든 시스템은 L12 단일 층만 쓴다(full_bank_submission.py:92 hidden_states[12]). 추론은 이미 output_hidden_states=True로 전 층을 계산하므로 다층 결합의 추론 비용은 사실상 0이다. 반면 spectral 결합(E4)은 약한 신호였고, AF-Whisper637은 historical에서 악화됐다.",
+      "candidate_evidence": [
+        "results/eight_h100_20260917/FINAL_REPORT.md E6 표",
+        "live_submissions.json 92294 vs 90735",
+        "full_bank_submission.py:92 `self.mert(values, output_hidden_states=True).hidden_states[12].mean(1)`",
+        "EXPERIMENTS_ALL_2026-09-17.md:407-414 AF637"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "HISTORY-8",
+      "dimension": "history",
+      "original_severity": "medium",
+      "original_candidate_title": "음성 head는 fc5 선형층뿐이고, 잔여 음성 오류는 enhanced-real과 MLAAD",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] Balanced7144는 fc5를 ASVspoof2019 fake만으로 재학습해 LB −0.0020이었다. 다양한 fake로 재학습한 DataV4 fc5는 양의 결과를 냈다. DataV4 voice seed 41/43은 epoch 50/50(상한)에서 선택됐다. voice EER은 val 0.051에서 proxy 0.111로 벌어진다. proxy의 음성 분기 real 오탐은 constructed_enhanced 34/276(12.3%)과 FLEURS 41/1500이다. enhanced-real은 규정상 REAL(노이즈 제거 등)이다. fake 미탐은 MLAAD 71/630(11.3%)이다. 과거의 '노래 속 real 보컬이 음성 분기 FP'를 만드는 문제(Balanced7144 val real 음악 FP 70건 중 52건, six에서 real 음성+real 음악 시 VOICE_FAKE 0.005→0.78–0.94)는 DataV4 proxy에서 constructed_song 5건으로 크게 줄었다.",
+      "candidate_evidence": [
+        "results/balanced7144_regression_20260919/ANALYSIS.md §1(52/70, fake 음성은 모두 ASVspoof2019)",
+        "data_v4_phase_c_20260923T1653Z/train_duration_balanced/results.json voice_41 epoch 50/50, voice_43 50/50",
+        "file_ensemble.report.json val voice_eer .0510 vs test .1107",
+        "scratchpad/audit/fpbranch.py(voice-branch FPs: enhanced 34, fleurs 41, musan 18, mix 12, song 5)",
+        "results/six_h100_20260917/analysis.md 혼합 음성 사례"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "HISTORY-9",
+      "dimension": "history",
+      "original_severity": "medium",
+      "original_candidate_title": "noisy-OR와 결합식 변경의 LB 증거는 음의 방향뿐인데 DataV4 CDF 앙상블에 noisy_or가 1/3 포함",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측·추론] B_full1696(noisy-OR, raw+stem)으로 보이는 91610은 LB 0.6838로 M330보다 −0.056이었다(다른 요인과 혼재). 로컬에서도 noisy-OR는 불안정했다. six 최종 확인 기본 File EER은 noisy-OR 10.05% 대 max 7.11%였고, NSynth 제외 129개 val에서는 25.07% 대 A+max 14.50%였다. 보정 후 max와 noisy-OR는 동률이었다. V6 logistic 결합과 C3 OOF calibrator 제출도 모두 baseline 아래였다. DataV4 file_ensemble은 {max, noisy_or, max_nopresence}를 동일 가중으로 쓴다. val grid 최적은 {noisy_or 6, max_nopresence 4, max 0}이었으나 이득 0.0000 < 0.002라 동일 가중이 채택됐다. proxy에서 decision layer 전체 이득은 File EER 0.1144→0.1094(ADS +0.0025)에 그친다. max 단독은 0.1100이다.",
+      "candidate_evidence": [
+        "stat submissions/B_full1696/submit.json 2026-09-17 12:15:16 vs 91610 12:20:00",
+        "EXPERIMENTS_ALL_2026-09-17.md:505 'File은 noisy-OR'",
+        "results/six_h100_20260917/analysis.md 항목 2",
+        "results/leaderboard_audit_20260917/experiment_plan.md 표",
+        "results/voice_music_h100_20260917_retry1/FINAL_REPORT.md:13",
+        "train_duration_balanced/file_ensemble.report.json(candidates_alone, test_one_shot max_rule_eer .11004)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "HISTORY-10",
+      "dimension": "history",
+      "original_severity": "medium",
+      "original_candidate_title": "L4 추론 여유 42분 미사용, stereo·overlap·TTA 한 번도 없음, 전처리 변경은 혼재된 채 상속",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] DataV4는 L4에서 17분32초로 60분 제한의 29%만 쓴다. 입력은 librosa mono=True로 downmix한 뒤 peak가 0.6을 넘으면 축소하고 HTDemucs로 넘긴다. 이 전처리는 Balanced7144에서 도입됐고(Expanded는 원본 파일을 HTDemucs에 전달), 같은 제출에서 데이터와 fc5도 함께 바뀌어 LB −0.002의 원인을 분리할 수 없다. 음성 세그먼트는 비중첩이다. 추론 TTA(gain, codec, crop, channel)나 채널별 추론은 어떤 제출에도 없다. hidden은 mono/stereo가 섞여 있고 전화 채널을 포함한다.",
+      "candidate_evidence": [
+        "user-provided screenshot imasasdge.png 소요 시간 17분 32초",
+        "baseline script.py:144-146 librosa.load(mono=True)",
+        "full_bank_submission.py:77-79 peak>.6 축소",
+        "results/balanced7144_regression_20260919/ANALYSIS.md §5 전처리 변경 혼재",
+        "REVIEW_236749_2026-09-17.md:76 스테레오 채널별 추론 권고(미이행)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "HISTORY-11",
+      "dimension": "history",
+      "original_severity": "low",
+      "original_candidate_title": "ADS 산술 분석: hidden 파일 real/fake 수 제약과 LB 해상도",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[계산] 제출 14건의 ADS가 모두 1/126000의 정수배다(탐색상 최소 공통분모 126000, 오차 ≤1e-5). EER 분모 구조상 4·n_real, 4·n_fake가 126000을 나눠야 한다. 따라서 hidden 파일 real/fake 수는 (75,1125), (150,1050), (300,900), (450,750), (500,700) 및 그 역순 중 하나이고, 600/600은 불가능하다(추론, 분자가 다양하다는 가정). 파일 1개의 판정이 바뀔 때 File 항 변화는 0.45/(2·n_class), 즉 n=500이면 약 0.00045점, n=300이면 0.00075점이다. 따라서 Expanded→Balanced7144의 −0.00197은 파일 약 3–4개 수준의 사실상 동률이다.",
+      "candidate_evidence": [
+        "scratchpad/audit/denom.py: 모든 ADS×126000이 정수(예: .7683174603→96808, .6577539683→82877)",
+        "scratchpad/audit/counts.py: File (real,fake) 후보 목록",
+        "COMPETITION_CONTRACT.md 평가 산식(EER=(fpr+fnr)/2)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "HISTORY-12",
+      "dimension": "history",
+      "original_severity": "low",
+      "original_candidate_title": "Presence(CPS)는 포화: 추가 투자 금지, 결합식 입력으로서만 관리",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] CPS는 G0 0.98932, 8개 제출에서 0.98939, Balanced7144 0.98942를 거쳐 DataV4 0.9976771958이 됐다. 1위 CPS 0.99765와 같은 수준이며 남은 최대 이득은 0.1×(1−0.99768)=+0.00023점이다. PANNs를 교체하거나 미세조정한 제출은 CPS가 폭락했다(AST 0.862/0.882, V5B1 0.971). 정답 presence로 대체해도 File EER은 오히려 17.16%→41.42%로 악화됐다(presence가 결합 가중으로 작동).",
+      "candidate_evidence": [
+        "live_submissions.json CPS 열, imageio 스크린샷 CPS 0.9976771958",
+        "results/precision_audit_20260918/live_leaderboard_20260918.json top CPS 0.99765",
+        "results/six_h100_20260917/analysis.md 항목 3"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "RUNTIME_BUDGET-1",
+      "dimension": "runtime_budget",
+      "original_severity": "high",
+      "original_candidate_title": "히든 테스트는 긴 파일인데 voice가 max-over-segments라 길이가 길수록 EER이 단조 악화 — overlap 추가는 역효과, 캐시만으로 pooling 교정 가능",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed",
+      "accepted_scope": "The archived runtime and matched trainer both max-pool voice evidence across segments, and saved proxy predictions reproduce the aggregate length-bin deterioration. Trainval has95708 segments/35589 files=2.6893; test has23607/6450=3.66. The metrics use6444 prediction rows, with5139 eligible voice rows, not all6450 bank rows. The length bins substantially change source/domain composition; at>=7 segments HAIM+MUSAN comprise255/309 eligible voice rows. FLEURS real scores rise with length, but HAIM fake scores also rise, and constructed-enhanced real medians are not monotone. Thus max aggregation provides a plausible real-FP mechanism, not proof that overall EER must increase or that overlap must hurt. Hidden mean duration28-43s is not identifiable from these timing differences. The claimed H100 window denominator is wrong:4020 saved values include1456 summary scores and only2564 actual window predictions.",
+      "evidence_locator": "audit_receipt.json#current_reviews/RUNTIME_BUDGET-1"
+    },
+    {
+      "id": "RUNTIME_BUDGET-2",
+      "dimension": "runtime_budget",
+      "original_severity": "high",
+      "original_candidate_title": "재추출 0: 캐시에 이미 있는 42,039행 전체(proxy test 6,450행의 미학습 생성기 포함)로 head 재적합 — head 학습은 7분 35초, voice는 epoch 상한에 도달",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed",
+      "accepted_scope": "The cached pool contains42039 bank rows:30658train,4931val,6450test. The submitted recipe trains only train rows and selects checkpoints onval. Test intentionally holds out VoxCPM/OpenVoice/Lyria-3Pro/fx_encoder_style_transfer and FLEURS-ko/MUSAN real domains. PhaseC train_balanced lasts455s and the file-ensemble stage34s. It trains six heads,2routes times3seeds, not eighteen. Voice41/43 selectepoch50 and complete50; voice42 selects44 and stops49 becausepatience5. The cap motivates a bounded continuation experiment; it does not prove underfitting or that more training improves unseen domains. Refitting all rows is technically possible in principle with existing features, but the current trainer is not an all-data-refit implementation and consuming test would remove its out-of-training generator/domain signal. Any gain remains unvalidated.",
+      "evidence_locator": "audit_receipt.json#current_reviews/RUNTIME_BUDGET-2"
+    },
+    {
+      "id": "RUNTIME_BUDGET-3",
+      "dimension": "runtime_budget",
+      "original_severity": "medium",
+      "original_candidate_title": "가장 싼 추가 뷰는 Demucs가 필요 없는 raw-mix 뷰(MERT raw 0.2–0.35 H100-h, L4 +0.9–2.1분) — DF raw는 노래에서 오탐을 키우므로 presence 게이팅 필수",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관찰] 특징 캐시 npz에는 embedding만 있고 stem은 저장돼 있지 않다. 따라서 stem 기반 뷰(DF overlap, 다른 모델의 stem 추론)를 추가하려면 Demucs를 다시 돌려야 한다. H100에서 Demucs는 실시간의 약 75배라 bank 113.2시간 분량에 약 1.5 H100-h가 든다. raw-mix 뷰는 이 과정이 필요 없다. [추정] MERT raw는 176,832 windows를 약 150 w/s로 처리해 0.33 h(24층), 13층만 쓰면 약 0.2 h다. DF raw는 119,315 segs × 23.2 ms = 0.77 h(fp32 b1)이고, fp16 배치로는 약 0.15–0.25 h다. 기존 증거는 DF를 노래에 적용하는 데 불리하다. 실제 음성의 분리 vocal DF fake 확률이 음성 단독일 때 0.0242, 0 dB 혼합일 때 0.5645였다. proxy에서도 음악이 있을 때 voice EER은 0.19–0.25, 음성 단독일 때 0.006–0.06이다.",
+      "candidate_evidence": [
+        "full_bank_features.py:209-215 np.savez에 mert_windows, voice_embeddings, presence 등만 저장하고 stem은 저장하지 않음",
+        "H100 Demucs 처리량(computed from manifest.jsonl + logs/phase_a.steps): vocals 09:18:22→09:43:58 = 1,536 s, 음악 crop 6,803개(116,689 s) → 실시간 76배(77 ms/chunk); legacy 5,275개 1,059 s → 73.8배",
+        "results/full_bank_mil_8020_20260918/mert_batch_benchmark.json: H100 fp32 138.6–159.9 windows/s(batch 16–128), batch 256 peak 26.9 GB",
+        "bank 작업량(computed from features_*.log): DF seg 95,708+23,607=119,315; MERT window 139,720+37,112=176,832; 오디오 87.71+22.70 h",
+        "results/voice_music_h100_20260917_retry1/FINAL_REPORT.md:9 'DF-Arena vocals 평균 가짜 확률 음성 단독 0.0242 → 0 dB 혼합 0.5645'",
+        "computed(seg_eer.py): voice EER music=1 0.2096/0.1920/0.2507, music=0 0.0316/0.0603"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "RUNTIME_BUDGET-4",
+      "dimension": "runtime_budget",
+      "original_severity": "high",
+      "original_candidate_title": "17분 32초 분해와 옵션별 추가 L4 분·학습 GPU-h 표 — 실사용 29%, 정확/준정확 가속 후 약 10분이라 25–30분이 남음",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed",
+      "accepted_scope": "The root agent's inspected user screenshot records17m32s for submission102411, and saved historical tables record earlier server elapsed times. Treat this as evidence for that submitted execution, not a freshL4 run or a per-stage profile, and do not assume exact local archive binding.1052s is29.22% of the60min limit. The proposed Demucs/DF/MERT breakdown,±30% component error,10-11min optimized total, and option-specificL4/H100 timings are estimates without direct stage-levelL4 measurements. Historical package differences cannot isolate individual kernel costs. The cited AntiDeepfake window count is wrong, and the same-workload runtime variability claim mixes different packages. A ratio1052 divided by a syntheticH100 run does not measureL4/H100 scaling because the numerator and denominator have different inputs and potentially different bottlenecks.",
+      "evidence_locator": "audit_receipt.json#current_reviews/RUNTIME_BUDGET-4"
+    },
+    {
+      "id": "RUNTIME_BUDGET-5",
+      "dimension": "runtime_budget",
+      "original_severity": "medium",
+      "original_candidate_title": "DF-Arena(1B, fp32, batch 1)가 최대 런타임 항목 — 파일 내 배치는 bitwise 동일, bf16 오차 ≤2.7e-3 → fp16+배치로 약 4–5분 절감",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관찰] 추론은 세그먼트마다 DF-Arena를 따로 호출한다(full_bank_submission.py:100-102). backbone.py:47이 `self.ssl_model(x.unsqueeze(0))`로 배치 입력을 막고 있어 wrapper가 필요하다. [검증, CPU] backbone forward를 unsqueeze 없이 (B,T)로 재현하면 7개 세그먼트에서 fc5 입력 embedding과 확률이 bitwise 동일했다(max|d|=0.0). CPU 시간은 5.6 s에서 3.5 s로 줄었다. bf16 autocast는 embedding 상대오차 5.58e-3, 확률 최대 오차 2.69e-3, 상관 1.00000이었다. GPU fp16은 가수부가 bf16보다 3비트 많으므로 이 값이 비관적 상한이다. [추정] L4에서 fp32 b1은 3.85 GB 가중치 스트리밍만으로 세그먼트당 12.8 ms의 하한이 있다(300 GB/s). fp16 tensor core는 fp32보다 약 4배 빠르다(121 vs 30.3 TFLOPS dense).",
+      "candidate_evidence": [
+        "full_bank_submission.py:100-102 세그먼트별 self.df(input_values=...) 루프; :133-136 TF32 off, cudnn.benchmark False",
+        "submit.zip model/assets/baseline/model/df_arena_1b/backbone.py:47 `out_ssl = self.ssl_model(x.unsqueeze(0))`, 49개 hidden_states 전부를 attention pooling(:28-44)에 쓰므로 층을 잘라 낼 수 없음",
+        "computed: scratchpad/audit/df_parity.py — 'batched vs single: emb max|d|=0.00e+00 prob max|d|=0.00e+00'; 'bf16 vs fp32: emb rel=5.58e-03 prob max|d|=2.69e-03 corr=1.00000'; 'CPU seconds single 5.6 batched 3.5' (voice_41.pt head, qa/originals 4파일 7 seg)",
+        "full_bank_train.py:103,125 head 학습도 bf16 autocast → head 경로는 학습과 추론이 일치"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "RUNTIME_BUDGET-6",
+      "dimension": "runtime_budget",
+      "original_severity": "medium",
+      "original_candidate_title": "MERT는 layer 12만 쓰면서 24층을 모두 계산 — encoder.layers[:13]로 자르면 bitwise 동일, 추론 약 1.5분·재추출 MERT 시간 약 45% 절감",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[검증] MERT-v1-330M config는 do_stable_layer_norm=True이고 HubertEncoderStableLayerNorm을 쓴다. 이 구조에서 hidden_states[i]는 layers[i] 실행 전에 저장되고, 루프가 끝난 뒤 최종 layer_norm이 적용된다. 그래서 layers[:13]만 남기면 hidden_states[12]가 bitwise 동일하다(max abs diff 0.0, torch.equal True). CPU 시간은 4 windows 기준 1.01 s에서 0.54 s로 0.54배가 됐다. layers[:12]로 자르면 최종 LayerNorm이 layer 12 출력에 적용되어 값이 달라지므로 주의한다.",
+      "candidate_evidence": [
+        "full_bank_submission.py:92 `self.mert(values, output_hidden_states=True).hidden_states[12]`; full_bank_features.py:158 동일",
+        "submit.zip model/assets/mert/config.json: num_hidden_layers 24, do_stable_layer_norm true; modeling_MERT.py:90-92 HubertEncoderStableLayerNorm",
+        "transformers 4.57.6 models/hubert/modeling_hubert.py:620-645 (for layer: all_hidden_states += (hidden_states,) 이후 layer 실행 → 루프 뒤 self.layer_norm 적용 후 append)",
+        "computed: scratchpad/audit/mert_trunc.py → 'len(hidden_states) after truncation 14', 'max abs diff 0.0 bitwise equal True', 'CPU time 4 windows: full24 1.01s trunc13 0.54s ratio 0.54'"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "RUNTIME_BUDGET-7",
+      "dimension": "runtime_budget",
+      "original_severity": "medium",
+      "original_candidate_title": "42k행 재추출 5h44m의 약 절반은 모델 연산이 아닌 오버헤드로 추정 — O(N²) index.json 재기록, Ceph 임시 WAV, stem 미캐시",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관찰] features 단계는 10:50:13부터 16:34:17까지 5.73시간이 걸렸다. trainval 35,589행(87.7 h 오디오)을 처리하는 동안 test 6,450행 프로세스가 같은 H100에서 병렬로 돌았다. 행마다 atomic_json이 전체 index를 indent=2로 다시 쓴다. json.dumps 측정값은 35,589개일 때 75.2 ms(10.9 MB), 17,800개일 때 36.6 ms였다. 이를 합하면 CPU 약 22분, CephFS 누적 쓰기 약 195 GB다. 또 TemporaryDirectory(dir=args.cache)가 행마다 float WAV를 CephFS에 썼다 지운다. [추정] 모델 연산은 Demucs 1.5 h, DF 0.77 h, MERT 0.33 h, PANNs 0.1 h 미만으로 합계 약 2.7 h다. 나머지 약 3 h는 I/O와 순차 처리 오버헤드다.",
+      "candidate_evidence": [
+        "results/data_v4_20260923/data_v4_results_20260923T1639Z/logs/phase_b.steps: '10:50:13Z == features' → '16:34:17Z == train_heads'",
+        "data_v4/phase_b.sh:29-33 tv와 test를 같은 H100에서 병렬 실행",
+        "full_bank_features.py:177 `tempfile.TemporaryDirectory(prefix='full_bank_audio_', dir=args.cache)`; :217-221 행마다 index 전체를 atomic_json; eight_fixed_io.py:21-25 indent=2, sort_keys 전체 재기록",
+        "computed: scratchpad/audit/idx_cost.py → 1,000개 2.2 ms, 10,000개 20.5 ms, 17,800개 36.6 ms(5.46 MB), 35,589개 75.2 ms(10.93 MB)",
+        "results/a100_batch_probe_20260919/blocked_by_ceph.json: feature worker가 fsync에서 D-state, io_pressure full_avg10 75.75, 진행이 7분간 정지",
+        "stem 캐시 크기(computed): 113.2 h × 3600 × 16k × 2 stem × 2 B = 26.1 GB(fp16)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "RUNTIME_BUDGET-8",
+      "dimension": "runtime_budget",
+      "original_severity": "medium",
+      "original_candidate_title": "두 번째 음성 backbone(AntiDeepfake 등)은 런타임상 가능하지만 효과가 불확실 — 가장 약한 구간(노래 속 음성)은 AntiDeepfake의 학습 범위 밖",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[추정] XLS-R-1B급 모델 하나를 비중첩으로 추가하면 L4에서 fp32 +5…+7분이다. 기존 antideepfake_runtime.py의 50% hop을 그대로 쓰면 +10…+14분, fp16 배치로는 +1…+1.5분이다. [관찰] H100 fp32 b1 기준 4,020 windows에 93.12 s가 걸렸다. proxy에서 voice 오류는 음악이 있는 파일에 몰려 있다(EER 0.19–0.25, 음성 단독은 0.006–0.06). 리뷰 문서에 따르면 AntiDeepfake는 가창 데이터로 학습되지 않았다. 과거 H100 패널에서 DF+Anti 평균은 기본 test 21개에서 24.04%를 13.94%로 낮췄지만, −6 dB 혼합에서는 0%에서 25%로 나빠졌다.",
+      "candidate_evidence": [
+        "antideepfake_runtime.py:71-77 window 64600, hop window//2; :19-64 fp32, eager attention",
+        "results/voice_music_h100_20260917_retry1/downloaded/unpacked/output/experiment_2.json inference_seconds 93.1197, antideepfake_windows.json 합계 4,020 windows(568파일)",
+        "results/voice_music_h100_20260917_retry1/FINAL_REPORT.md:10",
+        "REVIEW_236749_2026-09-17.md:118 'AntiDeepfake는 가창 데이터를 학습하지 않았으므로'; :245 CC BY-NC-SA 사용 가능",
+        "computed(seg_eer.py): voice EER music=1 0.2096/0.1920/0.2507 vs music=0 0.0316/0.0603"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "RUNTIME_BUDGET-9",
+      "dimension": "runtime_budget",
+      "original_severity": "medium",
+      "original_candidate_title": "ZIP 여유는 3.65 GB — fp32 1B 모델을 추가하면 10.2 GB로 한도 초과, 대형 추가는 fp16으로 1개까지만",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관찰] submit.zip은 6,350,720,613 B이며 압축 없이 저장돼 있다. 구성은 DF-Arena pytorch_model.bin 4,591,794,734 B, MERT 1,261,846,489 B, PANNs Cnn14 327,428,481 B, HTDemucs 84,141,911 B, ffmpeg 79,826,272 B다. 10 GB를 보수적으로 1e10 B로 보면 여유는 3,649,279,387 B다. [추정] XLS-R-1B AntiDeepfake를 fp32로 넣으면 약 963M×4 B ≈ 3.85 GB로 합계 10.2 GB가 되어 초과한다. fp16이면 1.93 GB로 합계 8.28 GB다. 300M급 모델은 fp32 1.27 GB로 합계 7.62 GB다. 대형 모델 두 개를 넣으려면 DF-Arena 자체를 fp16으로 저장해 2.3 GB를 줄여야 하고, 그러려면 head parity 게이트가 필요하다.",
+      "candidate_evidence": [
+        "submissions/DataV4_DurationBalanced/submit.json: bytes 6350720613, expanded_bytes 6350711037",
+        "`unzip -lv submit.zip` 멤버 크기(Stored 0%)",
+        "COMPETITION_CONTRACT.md:51 'ZIP 10 GB, 해제 후 32 GB'"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "RUNTIME_BUDGET-10",
+      "dimension": "runtime_budget",
+      "original_severity": "medium",
+      "original_candidate_title": "L4 실검증이 없고 실행 중 오류는 제출 차감 — OOM, NaN, 교차 파일 배치, H100 배치 크기 이식 위험과 사전 게이트",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관찰] 모든 패키지가 official_l4_validated=false 상태다. QA는 macOS CPU에서만 했고 CPU에서는 autocast가 꺼진다. 코드 실행 뒤 발생한 오류는 제출 횟수에서 차감되며, 실제로 제출 오류가 2건 있었다(89989 numpy ABI, 89372 libtorchaudio). OOM 전례로 B_full1696(MERT raw+stem 배치)은 H100에서 peak allocated 20,652,236,800 B, reserved 22,594,715,648 B였다. L4는 22.4 GiB(24.05e9 B)이므로 경계선이다. H100 mert_batch_benchmark가 고른 batch 256(26.9 GB)을 L4에 그대로 옮기면 OOM이 난다. 현재 경로는 고정 batch 8이고 MERT12 A100 peak는 6.56 GB라 안전하다. 현재 QA의 역순 부분집합 최대 차이는 0.0이다. 교차 파일 배치를 쓰면 GEMM 결과가 배치 구성에 따라 달라져 이 검증이 깨지고, 파일 독립성 규정에서도 논란이 될 수 있다.",
+      "candidate_evidence": [
+        "submissions/DataV4_DurationBalanced/verification.log: device cpu, official_l4_validated false, file_independence_max_abs_error 0.0",
+        "COMPETITION_CONTRACT.md:52 '코드 실행 후 오류는 차감'; :58 파일 독립 예측",
+        "results/precision_audit_20260918/live_submissions_20260918.txt 89989/89372 제출 오류",
+        "results/redesign_full_20260917/downloaded/unpacked/output/runtime_receipt.json peak_gpu_allocated_bytes 20652236800, reserved 22594715648",
+        "results/full_bank_mil_8020_20260918/mert_batch_benchmark.json chosen 256, peak 26929689088",
+        "results/precision_audit_20260918/evidence/packaging_output_contract.json MERT12 A100 peak_gpu_allocated 6556092416",
+        "full_bank_submission.py:44,88 batch=8 고정; mert12_submission.py validate_predictions가 non-finite면 실패 처리"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "RUNTIME_BUDGET-11",
+      "dimension": "runtime_budget",
+      "original_severity": "low",
+      "original_candidate_title": "런타임 여유를 써도 가치가 낮은 선택지 — HTDemucs shifts TTA, max pooling을 둔 DF overlap, SpecTTTra zero-shot, DF-Arena fine-tuning",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "HTDemucs shifts=1은 +5…+7분이고 stem이 학습 캐시와 달라지므로, 일관성을 위해 전체 재추출(2.5–5.7 H100-h)이 필요하다. max pooling을 둔 채 DF overlap을 넣으면 RUNTIME_BUDGET-1의 길이 악화가 커진다. SONICS 계열은 런타임이 +1…+2분으로 싸지만, 이를 쓴 과거 제출(V5_B1) LB가 0.6776으로 baseline 0.6909보다 낮았다. DF-Arena 상위층 또는 LoRA fine-tuning은 stem 캐시와 1B backward가 필요해 약 3 epoch × 96k seg × 약 60 ms ≈ 4.8 h에 stem 1.5 h와 튜닝을 더해 6–10 H100-h로 추정된다. 게다가 모델 선택에 쓰는 proxy가 LB를 약 0.09 과대평가한다.",
+      "candidate_evidence": [
+        "artifacts/Existing9504_Architecture/architecture_source/model/assets/baseline/script.py:279-287 apply_model(shifts=0, overlap=0.25)",
+        "results/precision_audit_20260918/live_submissions_20260918.txt 89524 V5_B1_fixed 0.6776485873, 2분55초",
+        "results/recovery_v3/colab_20260913_044621/coverage_timing.json sonics_raw 10.56 s, sonics_stem 9.88 s(484파일, A100)",
+        "features_tv.log DF seg 95,708(fine-tuning 1 epoch 단위)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_ACQUISITION-1",
+      "dimension": "data_acquisition",
+      "original_severity": "critical",
+      "original_candidate_title": "실제 보컬 노래(real song) 다양성 부족: 음악·FILE EER의 최대 오류원",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed",
+      "accepted_scope": "Real-vocal diversification is plausible, but source rights are conditional. MTG-Jamendo/FMA need per-track audio licenses; code/metadata licenses do not clear recordings. MUSDB18-HQ identifies 48 CC tracks, subject to provenance mapping and stated conditions. One Korean FMA hit cannot prove that no openly licensed Korean songs exist. Separator energy is a candidate presence signal, not certified truth; four tar shards do not guarantee 800 eligible vocal artists.",
+      "evidence_locator": "audit_receipt.json#current_reviews/DATA_ACQUISITION-1"
+    },
+    {
+      "id": "DATA_ACQUISITION-2",
+      "dimension": "data_acquisition",
+      "original_severity": "critical",
+      "original_candidate_title": "최신 상용 음악 생성기 공백: Music Arena(CC BY 4.0) + ACE-Step 1.5 자체 생성",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "availability_confirmed_recommendation_conditional",
+      "accepted_scope": "Music Arena is a public text-to-music preference dataset, not an authenticity benchmark that can be adopted unchanged. Live API confirms gated=false, 13,090 audio paths and revision 4dbe538410a1c14eb65270839c6fcd150c65c9fe. Missing audio and prompt-derived instrumental/lyrics fields require content checks. ACE-Step 1.5 MIT and editing support are confirmed. The dataset's CC tag does not independently establish upstream commercial-generator clearance.",
+      "evidence_locator": "audit_receipt.json#current_reviews/DATA_ACQUISITION-2"
+    },
+    {
+      "id": "DATA_ACQUISITION-3",
+      "dimension": "data_acquisition",
+      "original_severity": "high",
+      "original_candidate_title": "가짜 무반주 가창 0행 / AI 보컬+실제 반주 공백: CtrSVDD·ACE-KiSing·Seed-VC·ACE-Step 1.5 구성",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed_license_and_label_defects",
+      "accepted_scope": "CtrSVDD author README says DATA BY-NC-ND 4.0; Zenodo API says CC BY 4.0. Original-files-plus-scripts does not resolve that conflict. ACE-KiSing is public CC BY-NC 4.0 synthetic singing (24,362 train/50 validation/4,548 test), mainly Chinese/English. GTSinger has CC BY-NC-SA plus additional indemnification wording. Seed-VC lists GPL-3.0 and has a dedicated F0-conditioned SVC model; source/reference audio and performer rights remain separate. Vocal2BGM/repaint naming does not prove the original vocal stays unchanged.",
+      "evidence_locator": "audit_receipt.json#current_reviews/DATA_ACQUISITION-3"
+    },
+    {
+      "id": "DATA_ACQUISITION-4",
+      "dimension": "data_acquisition",
+      "original_severity": "high",
+      "original_candidate_title": "장문(15–60 s)·실환경 한국어 발화 부재: Emilia-YODAS KO/YODAS2 real + 장문 TTS/VC 자체 생성",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "partially_confirmed_access_and_quality_gates_missing",
+      "accepted_scope": "YODAS2 is long-form 24 kHz CC BY 3.0 video audio, not certified genuine human speech. Emilia/Emilia-YODAS have distinct NC/BY terms plus an access agreement conditioning colleague access on accepting those terms. Reviewer transfer therefore needs resolution. CosyVoice3, MaskGCT and MeloTTS card licenses/language support are verified; proposed long-Korean quality and throughput are not. A listening sample estimates label noise, not certainty over all collected clips.",
+      "evidence_locator": "audit_receipt.json#current_reviews/DATA_ACQUISITION-4"
+    },
+    {
+      "id": "DATA_ACQUISITION-5",
+      "dimension": "data_acquisition",
+      "original_severity": "medium",
+      "original_candidate_title": "AI 후처리된 REAL(향상·분리) 하드 네거티브 부족",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] constructed_enhanced(잡음 섞은 실제 음성을 HTDemucs로 추출, 규정상 REAL) 276개의 FILE FP는 12.3%, voice FP는 25.4%(70건, 음성 오류 셀 3위)다. HAIM sonicmaster(AI 마스터링된 실제 음악)의 FP도 21.2%(n=52)다. 학습에 있는 향상 방식은 HTDemucs 1종, 300행뿐이다.",
+      "candidate_evidence": [
+        "acq_evidence.py [4]: real-speech/vocal constructed_enhanced 276 0.123; real-instrumental haim sonicmaster 52 0.212",
+        "VOICE 셀 분석: constructed_enhanced VOICE_FAKE=0 n=276 err 0.254 (70)",
+        "COMPETITION_CONTRACT.md: '성분을 새로 생성하지 않는 잡음 제거·음량 조정 등은 REAL'",
+        "select_counts.json: constructed_enhanced 300 (data_v4 DESIGN §6.1)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_ACQUISITION-6",
+      "dimension": "data_acquisition",
+      "original_severity": "medium",
+      "original_candidate_title": "전화채널·코덱 현실성: AMR-NB/WB·GSM 부재, 공개 한국어 전화 코퍼스는 규정상 사용 불가",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] 실제 음악(구성물 제외)의 FILE FP는 전화 체인 27.8%(n=223), AAC 31.5%(n=54)로 FLAC 14.3%(n=168), MP3 14.8%(n=318)보다 높다. FLEURS 음성 FP도 tel 11.9% 대 pcm 8.0%다. 코덱 표는 μ-law/A-law/Opus8k뿐이고 한국 이동통신 표준 AMR-NB/AMR-WB는 없다. GSM은 로컬 ffmpeg 7.1에 libgsm이 없어 자동 제외됐다. 실측 전화 전송은 영어 ASVspoof2021 LA뿐이다. ClovaCall은 '수정·편집 금지'와 '제3자 제공 금지'이고 AI-Hub도 제3자 제공 금지라서, DACON 417280 답변에 따라 사용할 수 없다.",
+      "candidate_evidence": [
+        "real music FP by codec (FILE thr 0.3347): tel 0.278(223), aac 0.315(54), flac 0.143(168), mp3 0.148(318), pcm 0.181(287), opus 0.200(50)",
+        "fleurs_ko voice FP by codec: tel 0.119(319) vs pcm 0.080(438)",
+        "data_v4/DESIGN.md §5: '로컬 ffmpeg 7.1에는 libgsm이 없었다'",
+        "https://github.com/clovaai/ClovaCall (라이선스: 'ANY KIND OF MODIFICATION ... PROHIBITED', 'NOT ALLOWED TO ... PROVIDE ... TO ANY 3RD PARTY')",
+        "https://dacon.io/competitions/official/236749/talkboard/417280 ('제3자 제공 제한 데이터는 학습 데이터로 사용 불가', '실제 파일 제출, URL·스크립트 대체 불가')"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_ACQUISITION-7",
+      "dimension": "data_acquisition",
+      "original_severity": "high",
+      "original_candidate_title": "규정·약관 필터: 사용하면 2차 평가 탈락 위험이 있는 원천 목록",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "core_restrictions_confirmed_blanket_clearance_rejected",
+      "accepted_scope": "DACON requires actual training files and forbids sources disallowing third-party provision. AI-Hub/ClovaCall default exclusion is supported absent specific permission; AI-Hub allows separately approved arrangements, so an absolute permanent ban is too broad. Live Suno/ElevenLabs terms explicitly restrict ML output use. Deepfake-Eval-2024 is gated evaluation-only. CtrSVDD is unresolved. A downstream dataset CC label cannot by itself prove upstream commercial-service rights were cleared.",
+      "evidence_locator": "audit_receipt.json#current_reviews/DATA_ACQUISITION-7"
+    },
+    {
+      "id": "DATA_ACQUISITION-8",
+      "dimension": "data_acquisition",
+      "original_severity": "medium",
+      "original_candidate_title": "이미 받아 둔 미사용 풀 + Echoes 생성기 파싱 버그(값싼 개선)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] Echoes.zip(8.6 GB, 약 3,577곡, 12개 생성기)은 이미 받았지만 600곡만 사용했다. build_manifest.py:141은 경로 Echoes/<TTA|ATA>/<generator>/file에서 generator를 parts[index(mode)-1](= 'Echoes')로 뽑는다. 그래서 600행 전부의 generator가 'Echoes/TTA' 또는 'Echoes/ATA'이고, suno/udio/elevenlabs/producer/brev/mubert 구분이 사라졌다. 프록시의 'Echoes/TTA' 미탐 37%도 생성기별로 분해할 수 없다. 그 밖의 미사용 풀: MLAAD-ko는 12 시스템 × 1,001개 중 약 3,830개, SpeechFake MD-ko fake는 82,728개 중 3,000개, HAIM plan은 5,658 파일 중 1,500개만 썼다.",
+      "candidate_evidence": [
+        "data_v4/build_manifest.py:140-143 (gen = parts[parts.index(mode) - 1])",
+        "manifest ID 예: 'echoes:Echoes/TTA/brev/mc_trabalenguas_Volumina_brev_TTA_002.mp3' → generator 'Echoes/TTA'",
+        "acq_evidence.py [4]: fake-instrumental echoes Echoes/TTA 27 0.370",
+        "data_v4/plan/SUMMARY.json: echoes 8.6 GB, haim 5,658 files 11.22 GB, mlaad_ko 12,012 files; select_counts.json: echoes 600, haim 1500, mlaad 8775, speechfake 3600",
+        "data_v4/vessl_fetch_speechfake.sh:3 ('MD ko fakes ... 82,728 files, 13.2 GB')",
+        "DATA_PLAN_236749_2026-09-19.md:187 (Echoes 3,577곡 110 h)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_ACQUISITION-9",
+      "dimension": "data_acquisition",
+      "original_severity": "low",
+      "original_candidate_title": "보조 원천: In-the-Wild(실환경 real/fake)·CodecFake+ CoSG(코덱 LM TTS)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "[관측] In-the-Wild는 CC BY-SA 4.0, gate 없음, release_in_the_wild.zip 8.16 GB의 영어 유명인 real/fake다. CodecFake+ CoSG는 MIT, CodecFake_plus_CoSG.tar.xz 0.24 GB이며 웹에서 수집한 17종 코덱 기반 TTS 샘플이다. CoRS는 4×25 GB 코덱 재합성이라 규정상 라벨이 모호하다. ASVspoof5는 142.3 GB, 영어, ODC-By다. [추론] 한국어가 아니므로 효과는 제한적이다. 그래도 실환경 음향의 real과 코덱 LM 계열 fake를 추가해 준다.",
+      "candidate_evidence": [
+        "https://huggingface.co/datasets/mueller91/In-The-Wild (license:cc-by-sa-4.0, gated False, 8.16 GB)",
+        "https://huggingface.co/datasets/CodecFake/CodecFake_Plus_Dataset (license:mit; CoSG 0.24 GB, CoRS part0-3 각 25.05 GB)",
+        "https://zenodo.org/records/14498691 (ASVspoof 5, odc-by, 21 files 142.3 GB)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "DATA_ACQUISITION-10",
+      "dimension": "data_acquisition",
+      "original_severity": "high",
+      "original_candidate_title": "2–3일 수집·생성 일정과 GPU·저장소 예산(실측 처리량 기반)",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "historical_timing_confirmed_prospective_budget_inconsistent",
+      "accepted_scope": "phase_b.steps confirms features 10:50:13Z–16:34:17Z (5h44m04s) and head interval 4m51s. Bank CSVs have 35,589+6,450=42,039 rows; joining orig_id to manifest gives 110.3844 audio-hours, about 19.25 audio-hours per elapsed stage-hour. Full manifest is 42,947 rows/113.1741 hours. Listed proposed categories total 20,200 if disjoint, not about 15k: at assumed 22 s this is 123.44 audio-hours, roughly 6.4 extraction stage-hours before generation.",
+      "evidence_locator": "audit_receipt.json#current_reviews/DATA_ACQUISITION-10"
+    },
+    {
+      "id": "SOTA_RESEARCH-1",
+      "dimension": "sota_research",
+      "original_severity": "high",
+      "original_candidate_title": "AI-song vocals are missed by the speech detector; feed song-level (music) evidence into VOICE_FAKE_PROB",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "failure_mode_supported_max_rule_recommendation_rejected",
+      "accepted_scope": "Fake song/backing evidence cannot establish fake vocals: real vocal+AI accompaniment requires VOICE_FAKE=0 and FILE_FAKE=1. The recovered finding reports hybrid errors 10→46/84, so recommending max(Fv,0.5*Pm*Fm) as an initial submission is not justified by aggregate EER. Hybrid-stem and CompSpoof papers support separation-leakage risk, not this shortcut. Learned fusion remains conditional on adequately represented component-labelled hybrids.",
+      "evidence_locator": "audit_receipt.json#current_reviews/SOTA_RESEARCH-1"
+    },
+    {
+      "id": "SOTA_RESEARCH-2",
+      "dimension": "sota_research",
+      "original_severity": "high",
+      "original_candidate_title": "Add AntiDeepfake XLS-R-1B as a second voice front-end with whole-file pooling (store weights in fp16 for the ZIP)",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "model_facts_confirmed_dominance_and_deployment_unverified",
+      "accepted_scope": "AntiDeepfake XLS-R-1B is a conditional second encoder: CC BY-NC-SA weights, 16 kHz arbitrary-length input, waveform normalization and mean-pooled binary classification. It is not proven strongest or complementary on DACON. The 11.86→8.28 duration EER is after DE2024-specific fine-tuning; zero-shot DE2024 is 26.76. FLEURS upstream training weakens independence; restored-speech fake labels may conflict with DACON non-generative-enhancement semantics. Mean pooling removes max-of-segments, not all duration bias.",
+      "evidence_locator": "audit_receipt.json#current_reviews/SOTA_RESEARCH-2"
+    },
+    {
+      "id": "SOTA_RESEARCH-3",
+      "dimension": "sota_research",
+      "original_severity": "high",
+      "original_candidate_title": "Music drives FILE error: add a second stream (speech-SSL features next to MERT), as CLAM and AT-ADD-2026 top systems do",
+      "review_origin": "current_artifact_and_primary_source_review",
+      "status": "partially_confirmed",
+      "detailed_verdict": "rationale_supported_equivalence_and_gain_overstated",
+      "accepted_scope": "CLAM/AT-ADD justify testing complementary SSL evidence. CLAM's no-alignment dual-stream ablation is .875 F1 vs .853 MERT; .925 includes triplet training. Both CLAM streams encode the full mix, unlike cached backing-MERT+vocal-DF-Arena. AT-ADD predicts file-level authenticity; it does not prove correct MUSIC_FAKE/VOICE_FAKE semantics. Cached fusion may avoid a backbone pass but does not guarantee zero overhead or usable instrumental evidence.",
+      "evidence_locator": "audit_receipt.json#current_reviews/SOTA_RESEARCH-3"
+    },
+    {
+      "id": "SOTA_RESEARCH-4",
+      "dimension": "sota_research",
+      "original_severity": "medium",
+      "original_candidate_title": "Replace max-over-4.04 s pooling in the voice head with length-robust pooling (multi-crop mean or top-k)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "The voice head is trained and run as max over non-overlapping 4.04 s DF-Arena segments. Proxy correlation between score and duration is +0.359 for real voice and −0.369 for fake voice; the duration-balanced retrain did not remove this. Literature: AntiDeepfake's fine-tuned EER falls monotonically as input length grows (4 s 11.86% → 50 s 8.28%), and AT-ADD 2026 winners use 'conservative multi-crop pooling'. Max over more crops raises the false-positive probability for long real files, and hidden-test files run up to 60 s.",
+      "candidate_evidence": [
+        "full_bank_train.py lines 87-90: `files = torch.stack([part.max() for part in odds.split(sizes)])` (voice); full_bank_submission.py: `.softmax(-1)[:, self.fake_index].max()`",
+        "compare_report.json new_duration_balanced.decision.audit.voice: rho_score_duration_real 0.3594, rho_score_duration_fake -0.369",
+        "https://arxiv.org/html/2506.21090 Table III (length effect)",
+        "https://arxiv.org/html/2608.14249 (T2 winner: conservative multi-crop pooling)",
+        "DF-Arena feature extractor truncates or tiles to 64,600 samples: https://huggingface.co/Speech-Arena-2025/DF_Arena_500M_V_1/blob/main/feature_extraction_antispoofing.py (same design as 1B)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "SOTA_RESEARCH-5",
+      "dimension": "sota_research",
+      "original_severity": "medium",
+      "original_candidate_title": "Cheap 16 kHz song-level AI detectors as stacked features: lofcz fakeprint (MIT) and SONICS SpecTTTra-α-120s (MIT)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "Two public detectors run natively at 16 kHz for almost no cost. (a) lofcz/ai-music-detector implements Deezer's ISMIR-2025 deconvolution 'fakeprint': logistic regression on 3,585 spectral features in 1–8 kHz (n_fft 8192). It targets Suno ≤v5 and Udio ≤1.5 and reports 0.31% FPR and 0.02% FNR on a held-out 17,866 set, with 3.6 KB of parameters. (b) SONICS SpecTTTra-α-120s: MIT, 75 MB, 16 kHz, mel f_max 8 kHz. Our bank's Suno and Udio fakes are old (SONICS Suno v2–v3.5, Udio 32/130), so (a) is the only source of Suno v4–v5 evidence we found. Earlier, SONICS-γ-5s tested zero-shot as a replacement lost to G0 on a 48-file dev set; it was never tried as a stacked feature.",
+      "candidate_evidence": [
+        "https://huggingface.co/lofcz/ai-music-detector (license mit; preprocessing_config.json: sample_rate 16000, n_fft 8192, freq 1000–8000, hull_area 10; README metrics)",
+        "Afchar et al., 'A Fourier Explanation of AI-music Artifacts' (ISMIR 2025) https://arxiv.org/abs/2506.19108; code (CC BY-NC) https://github.com/deezer/ismir25-ai-music-detector",
+        "https://huggingface.co/awsaf49/sonics-spectttra-alpha-120s (mit; pytorch_model.bin 75,315,274 B; config audio.sample_rate 16000, melspec f_max 8000)",
+        "results/recovery_v3/colab_20260913_044621/comparison.json: selected G0; SONICS_RAW/STEM ignored (dev-only, 48 music rows)",
+        "results/eight_h100_20260917/FINAL_REPORT.md E4: our own 1–7 kHz spectral residual was weaker than MERT alone, and fusion gave −0.321 pp mean (mixed)",
+        "data_v4 manifest source counts: sonics 800 + existing:SONICS 800, existing:suno 24, existing:udio 24; no Suno v4/v4.5/v5"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "SOTA_RESEARCH-6",
+      "dimension": "sota_research",
+      "original_severity": "medium",
+      "original_candidate_title": "DF-Arena-500M (XLS-R-300M + layer attention + conformer) as a cheap third voice front-end; better than 1B on Korean and on ASVspoof5 codec conditions",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "Same code family as the deployed DF-Arena-1B (64,600-sample input, conformer, fc5), trained on the same corpora. Per its model card it is better than 1B on ASVspoof 2024 (12.39% vs 17.25%) and CodecFake (6.36% vs 8.37%), with a similar average EER (5.78% vs 5.92%). In the LRLspoof 66-language study, its Korean spoof rejection rate at a transferred EER threshold is 98.50%, against 85.68% for DF-Arena-1B (fakes only; no real-speech FPR was measured). Weights are 1.745 GB fp32 under a custom non-commercial license, the same as the 1B already in use.",
+      "candidate_evidence": [
+        "https://huggingface.co/Speech-Arena-2025/DF_Arena_500M_V_1 (card EERs; backbone.py: Wav2Vec2Config 'facebook/wav2vec2-xls-r-300m', attentive layer weighting, FinalConformer; LICENSE.txt non-commercial; x-linked-size 1,745,031,842 B)",
+        "https://huggingface.co/Speech-Arena-2025/DF_Arena_1B_V_1 (card EERs: asvspoof_2024 17.25, codecfake 8.37, avg 5.919, pooled 9.52)",
+        "LRLspoof Korean SRR: df_arena_500 98.50%, df_arena_1b 85.68%, aasist3 51.74%, sls 3.58%, nes2net 1.84% https://arxiv.org/html/2603.02364",
+        "RAPTOR / compact backbones (DF-Arena-500M pooled 10.88%) https://huggingface.co/papers/2603.06164",
+        "L4 cost estimate: 12·1024²·24 = 0.30 GMAC/frame → about 35 GFLOP per audio-second incl. CNN → 1.35 PFLOP for 38,400 s ≈ 1.5 min FP32"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "SOTA_RESEARCH-7",
+      "dimension": "sota_research",
+      "original_severity": "medium",
+      "original_candidate_title": "Telephone channel is a measured weak spot; SOTA fixes (codec/packet-loss augmentation plus front-end LoRA) need backbone adaptation, which frozen heads cannot provide",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "Proxy EER on telephone-coded vs other audio: Voice 0.1667 vs 0.0976, Music 0.2268 vs 0.1958, File 0.1368 vs 0.1026. Real speech over tel_opus8 is 30% wrong and fake speech over tel_gsm 22.9% missed. Literature: ADD-C found an average 5.30% EER degradation under AMR-WB/EVS/Opus/Speex/SILK with packet loss, and codec+packet-loss augmented training made it negligible. The AT-ADD 2026 Track-1 winner (90.71 Macro-F1 under noise, reverb, compression, resampling and replay) used an ensemble on W2V-BERT 2.0 with codec/replay augmentation and a frozen-LoRA-then-joint fine-tune. Our backbones are frozen and only fc5 or MLP heads see augmented data, which limits how much codec invariance can be learned.",
+      "candidate_evidence": [
+        "<CLAUDE_AUDIT_SCRATCH>/tel.py output (tel=True vs False EERs above)",
+        "<CLAUDE_AUDIT_SCRATCH>/slice_eer.py → VOICE tel_opus8 real 33/110 wrong; tel_gsm fake 19/83; MUSIC tel_ulaw real 41/123, tel_gsm real 27/84",
+        "ADD-C benchmark https://arxiv.org/html/2504.12423v3",
+        "AT-ADD T1 winner WaveShield (W2V-BERT 2.0 + AASIST/AASIST3/Adapter-MFA; noise/reverb/codec/replay augmentation) https://arxiv.org/html/2608.14249; facebook/w2v-bert-2.0 MIT, 2.322 GB",
+        "RTCFake (600 h real-time-communication deepfakes; license not stated in abstract) https://arxiv.org/abs/2604.23742",
+        "results/eight_h100_20260917/FINAL_REPORT.md E7: LoRA vs head-only could not be judged (all EER 0 ceiling); the data v4 proxy is now hard enough to judge it"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "SOTA_RESEARCH-8",
+      "dimension": "sota_research",
+      "original_severity": "medium",
+      "original_candidate_title": "Stronger music representation: multi-layer MERT (SLS-style) or MuQ-large as a second music encoder",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "In-project E6 showed the MERT layer choice alone changes Music EER by 8 pp (L6 12.29%, L12 8.995%, L24 17.35%), so single-layer L12 is probably not optimal. SLS-style learned layer weighting is the standard remedy in SSL anti-spoofing and is what DF-Arena-500M's attentive layer pooling does. MuQ-large-msd-iter (Tencent, CC BY-NC 4.0 weights, 1.334 GB, 24 kHz input like MERT) is a stronger MIR encoder on published benchmarks, but we found no deepfake-detection evidence for it.",
+      "candidate_evidence": [
+        "results/eight_h100_20260917/FINAL_REPORT.md E6 table",
+        "SLS (ACM MM 2024) https://github.com/QiShanZhang/SLSforASVspoof-2021-DF; DF-Arena-500M backbone.py attentive layer weighting",
+        "https://huggingface.co/OpenMuQ/MuQ-large-msd-iter (cc-by-nc-4.0; HF API model.safetensors 1.334 GB); https://github.com/tencent-ailab/MuQ",
+        "mert12_submission / full_bank_submission.py: `hidden_states[12].mean(1)`; other layers are computed but discarded"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "SOTA_RESEARCH-9",
+      "dimension": "sota_research",
+      "original_severity": "low",
+      "original_candidate_title": "Public datasets worth adding: AIME and ArtifactBench fakes for music, CompSpoof hybrids, and Deepfake-Eval-2024 as an external evaluation-only check",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "Licensed options found: AIME (CC BY 4.0, 6,000 AI tracks from 12 generators: Suno v3/3.5, Udio, MusicGen S/M/L, Stable Audio v1/v2, AudioLDM2, Riffusion, Mustango, plus 500 Jamendo real; only 25 AIME files are in our bank). ArtifactBench AI subset (CC BY-NC 4.0, 4,383 AI tracks from 22 generator versions including Suno v4, Chirp, YuE, DiffRhythm, Riffusion; its real tracks are YouTube IDs only). CompSpoof (CC BY-NC 4.0, 2,500 component-level speech/environment mixtures). Deepfake-Eval-2024 (56.5 h, 42 languages; the terms allow evaluation only, not training). Observed: proxy music errors are dominated by real false positives (musan_music 113, constructed real songs 168, openmic 71 wrong), so adding fakes alone will not remove the main error mass.",
+      "candidate_evidence": [
+        "HF API: disco-eth/AIME license cc-by-4.0; intrect/artifactbench license cc-by-nc-4.0 (modified 2026-09-23)",
+        "https://huggingface.co/datasets/intrect/artifactbench (generators; real via YouTube IDs)",
+        "https://huggingface.co/datasets/XuepingZhang/CompSpoof (CC BY-NC 4.0, 16 kHz, 2,500 clips)",
+        "https://huggingface.co/datasets/nuriachandra/Deepfake-Eval-2024 (evaluation-only terms, gated)",
+        "DATA_SOURCES_V2.md line 12: 'AIME를 새로 추가하지 않았으며, 기존 개발 자료에 포함된 25개는 유지했다'",
+        "slice_eer.py MUSIC errors by source (see SOTA_RESEARCH-7 evidence path)",
+        "humair025/suno-audio: uploader-declared MIT, but sampled model_name is chirp-v3 (Suno v3), 2024-10/11, so it adds no newer Suno versions (datasets-server statistics)"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    },
+    {
+      "id": "SOTA_RESEARCH-10",
+      "dimension": "sota_research",
+      "original_severity": "low",
+      "original_candidate_title": "Options checked and rejected or deprioritized for this 5-day window (with a negative test of AT-ADD-style per-type thresholds)",
+      "review_origin": "recovered_candidate_only",
+      "status": "not_independently_verified",
+      "original_candidate_claim": "Rejected: ArtifactNet needs 44.1 kHz, and its forensic signal is lost at 16 kHz; training code is unreleased and a patent is pending. MusicDET has no released checkpoint and MP3-64k adds +37 pp EER. CLAM has no released weights. Alethia has no released code. Audio-LLM detectors are weaker and too heavy: in AT-ADD, Qwen2.5-Omni-7B scored 68.64/61.78 Macro-F1 against 76.73/79.47 for FT-XLSR-AASIST. Lyrics-ASR detection (Whisper-large-v2 + LLM2Vec) does not fit the ZIP or L4 time and fails on human-written lyrics. Single-dataset XLSR-SLS / Nes2Net / DeepFense checkpoints are weaker than DF-Arena (Arena avg 13.84% for XLSR-SLS vs 5.92% for DF-Arena-1B; LRLspoof Korean SRR ≤3.6% for sls and nes2net). AntiDeepfake-2B (8.652 GB fp32) exceeds the ZIP budget. Replacing HTDemucs with a RoFormer separator would invalidate every cached feature. Better presence taggers (BEATs/EAT/CED) are pointless because CPS is already 0.99768, capping the gain at +0.00023. Negative test: AT-ADD-style per-type ('routed') calibration, mapping FILE scores to validation real-quantiles within the predicted type, made proxy FILE EER worse (0.1094 → 0.1372).",
+      "candidate_evidence": [
+        "ArtifactNet https://arxiv.org/html/2604.16254v2 (44.1 kHz residuals; ONNX CC BY-NC; patent pending)",
+        "MusicDET https://arxiv.org/html/2605.18072 (MP3 64 kbps about +37.24% EER)",
+        "AT-ADD eval plan baselines https://arxiv.org/html/2604.08184v1",
+        "Lyrics detection https://arxiv.org/abs/2506.18488",
+        "Speech DF Arena paper https://arxiv.org/html/2509.02859v1 (XLSR+SLS avg 13.84%)",
+        "Alethia https://arxiv.org/abs/2605.00251 (code not disclosed per search)",
+        "<CLAUDE_AUDIT_SCRATCH>/route_cal.py → base test FILE EER 0.1094; type-real-quantile calibrated 0.1372",
+        "DACON leaderboard submission CPS 0.99768 (task context); ADS weight 0.9"
+      ],
+      "warning": "Preserved as an investigation candidate; not accepted evidence or an approved experiment. Original forecasts and effort estimates are not adopted."
+    }
+  ]
+}

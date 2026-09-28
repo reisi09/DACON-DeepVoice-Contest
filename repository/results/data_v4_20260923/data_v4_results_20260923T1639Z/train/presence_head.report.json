@@ -1,0 +1,34 @@
+{
+ "VOICE_PRESENT": {
+  "target": "VOICE_PRESENT",
+  "train_n": 5255,
+  "train_pos": 3608,
+  "C": 0.05,
+  "val": {
+   "n": 870,
+   "head_auc": 0.9965,
+   "baseline_auc": 0.9471
+  },
+  "test": {
+   "n": 1626,
+   "head_auc": 0.9912,
+   "baseline_auc": 0.9646
+  }
+ },
+ "MUSIC_PRESENT": {
+  "target": "MUSIC_PRESENT",
+  "train_n": 5946,
+  "train_pos": 4053,
+  "C": 0.05,
+  "val": {
+   "n": 996,
+   "head_auc": 0.992,
+   "baseline_auc": 0.9819
+  },
+  "test": {
+   "n": 1806,
+   "head_auc": 0.9963,
+   "baseline_auc": 0.9854
+  }
+ }
+}

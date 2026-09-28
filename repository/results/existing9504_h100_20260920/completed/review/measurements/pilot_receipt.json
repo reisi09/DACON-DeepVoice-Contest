@@ -1,0 +1,885 @@
+{
+  "device": {
+    "capability": [
+      9,
+      0
+    ],
+    "cudnn": 91002,
+    "device": "cuda",
+    "name": "NVIDIA H100 80GB HBM3",
+    "torch": "2.9.1+cu128",
+    "torch_cuda": "12.8",
+    "total_memory": 85017624576
+  },
+  "fingerprint": {
+    "asset_hashes_sha256": "69f588fac806ec2afd0abfebf1555dcee23101a2c1770f3893bb08755fce972b",
+    "config": {
+      "asset_hashes": {
+        "baseline/model/df_arena_1b/.gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "baseline/model/df_arena_1b/.gitignore": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baseline/model/df_arena_1b/LICENSE.txt": "903d5ad67a67b3a919981892948e984bdf349053d54f1563c6497f48cdaf75b4",
+        "baseline/model/df_arena_1b/README.md": "0f577f45eea69a99eb55404569c6efa814dfb15b22791bf33bc652c0e134d75a",
+        "baseline/model/df_arena_1b/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baseline/model/df_arena_1b/backbone.py": "397df32fb0b1a1296b292ec698e7edca44f98c5f2afe3655bf182ad01fa5a11c",
+        "baseline/model/df_arena_1b/config.json": "e9f6b651fb2f83d320b5e10b38bc104afdc57641839d16dd1b4921e9eae49a43",
+        "baseline/model/df_arena_1b/configuration_antispoofing.py": "dd4a40789c2383896ce743effdd48cb6cdbd2f01c4bcdd7d4b71d7fb92869cf7",
+        "baseline/model/df_arena_1b/conformer.py": "84651dc9e81aaf4a32b400a621aa37e8f22e656a8207c5f4120cbb6e682c5540",
+        "baseline/model/df_arena_1b/facebook/wav2vec2-xls-r-1b/config.json": "36668778db09d5c64090b62d6afb66ba63057304fe456a45388066ff7dabb997",
+        "baseline/model/df_arena_1b/feature_extraction_antispoofing.py": "f549bce974e527a5bf57fd5544ba793d35d99c5db8047600d1c905308a8aacf7",
+        "baseline/model/df_arena_1b/modeling_antispoofing.py": "a7925c0ba67ef090552e0c337be6e6b3efffd53c3193e2310b30675af968c624",
+        "baseline/model/df_arena_1b/pipeline_antispoofing.py": "a308720d1be9fa6c948bd91648a1ec83a1465a178ae0da29f3cc48fe425170b4",
+        "baseline/model/df_arena_1b/preprocessor_config.json": "e23aafe2a4a2a7c0caaefdc6e4b1e131774137fdeaa50fb5376764b05dacb3c7",
+        "baseline/model/df_arena_1b/pytorch_model.bin": "780bc14fd4c15e65d58efdef728427cf03cd29cd60be528e97badf8c89087988",
+        "baseline/model/htdemucs/955717e8-8726e21a.th": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4",
+        "baseline/model/htdemucs/htdemucs.yaml": "239c445d0b14454d541ad8bd9bb271c9e536d267e8a4625208744cbb2e7bb66c",
+        "baseline/model/panns/Cnn14_mAP=0.431.pth": "0dc499e40e9761ef5ea061ffc77697697f277f6a960894903df3ada000e34b31",
+        "baseline/model/panns/class_labels_indices.csv": "cdd1049833c4b86127c2773ac0d14a2754b6a6d0d1798002ed5c66e699708429",
+        "baseline/model/panns/component_labels.json": "95bdfd3ca12f7ba31a7cb15d4bbe0147d02074a180f92c0177ffa1f0b80f4f33",
+        "baseline/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+        "mert/README.md": "50e8eeec63445c8c76d7052379e038c79f58b8a142d346eac3a3f67c57c1d2e9",
+        "mert/config.json": "a5b40f9db03c84f29e3114abe813a9226178d5437b517d45cd4c2924ac3d0ce0",
+        "mert/configuration_MERT.py": "ae0ec2bab8f59c724ba9878a7c20b67210189536ea62d34a56775968e9decb03",
+        "mert/modeling_MERT.py": "6c3ee73cef6f0c30ef494f88d96f891fa6925ffe663fa391b512f4b57abecc6c",
+        "mert/preprocessor_config.json": "c623b903eb1967474b27522975cfb81638e265df99aa640d2c0bd87a987ab538",
+        "mert/pytorch_model.bin": "0c03774d821a6ad972cb48220b128a10ebea2c790116bd0fd35e5a013f8017f6"
+      },
+      "cuda_visible_devices": "0",
+      "dataset_expectations": {
+        "historical_exposure": {
+          "test": 1001,
+          "train": 4176,
+          "val": 997
+        },
+        "per_class": {
+          "test": 713,
+          "train": 3326,
+          "val": 713
+        },
+        "routes": {
+          "test": {
+            "music": 682,
+            "voice": 744
+          },
+          "train": {
+            "music": 2584,
+            "voice": 4068
+          },
+          "val": {
+            "music": 680,
+            "voice": 746
+          }
+        },
+        "rows": 9504,
+        "singing": {
+          "test": 0,
+          "train": 2034,
+          "val": 0
+        },
+        "singing_source": "CtrSVDD",
+        "splits": {
+          "test": 1426,
+          "train": 6652,
+          "val": 1426
+        }
+      },
+      "device": "cuda",
+      "expected_gpu": "H100",
+      "mert_batch_override": null,
+      "runtime_manifest_sha256": "96ba67dd2dfdbcfbf041465e883e0e003e6489e14f82e93054df4b42075a9ae3",
+      "source_hashes": {
+        "ast_multitask.py": "2204c7a406f2865a9fc84ea9efb3a7ea3bfeaeb1e894eb15ef80671944c69a6b",
+        "eight_fixed_io.py": "2a5267ccb6a77b67b4a1c2bbf22735e129056ff6071f389f9f4576eceb822a69",
+        "eight_heads.py": "c3e040ad607e0f40046358a7bd6069d0fe389f6c6c6201c39992060838eeba09",
+        "eight_metrics.py": "78ea26c579d4f59791956c60a674c00c963334be5ccfebfc82ff445ef6f64d4c",
+        "expanded_submission.py": "7c7ef05802d9d34b4cd039fdc1943fcbfd358c90d5e7f5f7e6936a97f31f352c",
+        "full_bank_batches.py": "f7dea887167586c428c366ed9bff1122abf8df959a3b2d94f0496346f54db583",
+        "full_bank_evaluate.py": "3db489ec1f7491389fd374ceca4c10328ca6178015381c07c66f48f36d519bba",
+        "full_bank_features.py": "59963062eb536d514f8f1a8ea8aa981d65cf2d8f03c7df905597c973d9481116",
+        "full_bank_run.py": "c0830be29cdbf6234ebb25fef08d25e9301b49e84126d0a1d541106dc70b5bd5",
+        "full_bank_submission.py": "55eaadaca62874afb1113c3319bed10aa17e5c156c15dc992aff6cb622dea204",
+        "full_bank_train.py": "bb35c7d23fd305fdaff97398b0b9a07dd7a5da2121494279be00dd2148293673",
+        "graph_scoring.py": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+        "localization_features.py": "3e1abb11dcc8b5f1b8b118f65f5192d7b40e17be45d66c9930a9a9f950c7285c",
+        "localization_models.py": "f0c325d9b654cb0a6fa64740082637a39da89c6137c9d29206c1a376201ec94c",
+        "mert12_full_refit.py": "0f503a9fd9783de7e6de3ca250fd0a912dcb613f4dfa20d69dcf2ef3d945e990",
+        "mert12_submission.py": "30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e",
+        "music_temporal.py": "208e9ab8f4912e64f19bcd365c5760134db298c5ac0d58075688566278b3ebe5",
+        "package_expanded_submission.py": "5ec1ad3bf7dabc17efe659c79ac980f68f1d9714a62d45aeed21c048fab670c3",
+        "package_full_bank_submission.py": "3b9d9e44bd892e1923a7d6556308eda9122ba9cc34df797c8bddb1520cc67b44",
+        "package_mert12_submission.py": "02abedd396b2fbca0878ec80a31831109e83ee41ce5eb1e1af4e14c1bfe99708",
+        "package_redesign_submission.py": "ec59532f99f731066c2517abd688ee54ac3c0a1e857c68b1a4ac6c2378985111",
+        "redesign_assets.py": "3039d85626bf28c5e5374316c97aa3b49dec37956fd550116e1eb8288575d933",
+        "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+        "redesign_features_cache.py": "5594b86ca3effffeb40893317cad04debf510da11db84158bdc0590508fb299a",
+        "redesign_features_runtime.py": "33799ddc1efc017a6b04f2ca52a8f22c50b57d32ed05b18cc1eb477447ffec99",
+        "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+        "redesign_submission.py": "fdc86dcf7d7157e910fd6f5067152f307412a539811102a2565443bcdffa6146",
+        "temporal_augmentation.py": "ac7aaeabdeb72bc8b8553ab75f2fa5b933b0dd419e827f605297804decc986a5",
+        "v6_core.py": "b0b0496623f16f815e82d465139449b5258b52cf7d2246f5cad72467037dfd72",
+        "v6_data.py": "e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33",
+        "v6_runtime.py": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce",
+        "v6_train.py": "ac5dbad1b572dec8803792012517108055b64da66ddee4b527c6458584135b1b",
+        "v7_ablation.py": "1c93d837c8a0fbd65f48b74b078c97755a588b0013163ee95550d18136e4ea89"
+      }
+    },
+    "environment": {
+      "ffmpeg_ld_library_path": null,
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "lock_sha256": "83b3d67698d7e96260af3063b54c895127f4432bfc8d4af778f2bc506036f6a7",
+      "packages_sha256": "fa9af0ea687e1eb2903c5ba6355d8a6366b9cb26d73892ae7fddaee06f50e608",
+      "torch": "2.9.1+cu128",
+      "torch_cuda": "12.8"
+    },
+    "implementation": {
+      "assets/baseline/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+      "dacon9504a100/common.py": "561a3411d1a6aa453cb229441f3d3afdb91311236cfdf2c6116dfead567fcbbb",
+      "dacon9504a100/dataset.py": "ef172d2c75c9a2b1573bd7f9ae9289a110e89524492c23296726b51c34eeb97d",
+      "dacon9504a100/features.py": "d17f213a5b7a67e07e9ff8bfa3806c58ed285519746a26e46f0a05f0b3b438cb",
+      "dacon9504a100/fingerprint.py": "37c5cc0f042b98dd7114cd33723fb7f55491d047213c6652bdd90e12a8b2b5a4",
+      "dacon9504a100/gpu.py": "93d26e778ed35bde97ecf66173a0586cc3fbeda3d6c8a59991ffe5a28d9c605c",
+      "source/eight_fixed_io.py": "2a5267ccb6a77b67b4a1c2bbf22735e129056ff6071f389f9f4576eceb822a69",
+      "source/full_bank_features.py": "59963062eb536d514f8f1a8ea8aa981d65cf2d8f03c7df905597c973d9481116",
+      "source/localization_features.py": "3e1abb11dcc8b5f1b8b118f65f5192d7b40e17be45d66c9930a9a9f950c7285c",
+      "source/mert12_submission.py": "30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e",
+      "source/v6_data.py": "e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33",
+      "source/v6_runtime.py": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce"
+    },
+    "manifest_sha256": "96ba67dd2dfdbcfbf041465e883e0e003e6489e14f82e93054df4b42075a9ae3",
+    "stage": "pilot"
+  },
+  "finished_at": "2026-09-19T16:01:32+00:00",
+  "fit": {
+    "intercept_seconds": 0.10333498459801166,
+    "rmse_seconds": 0.07004488538793166,
+    "rows": 24,
+    "seconds_per_audio_second": 0.03203062670014546
+  },
+  "identity": {
+    "assets": {
+      "baseline/model/df_arena_1b/.gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+      "baseline/model/df_arena_1b/.gitignore": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baseline/model/df_arena_1b/LICENSE.txt": "903d5ad67a67b3a919981892948e984bdf349053d54f1563c6497f48cdaf75b4",
+      "baseline/model/df_arena_1b/README.md": "0f577f45eea69a99eb55404569c6efa814dfb15b22791bf33bc652c0e134d75a",
+      "baseline/model/df_arena_1b/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baseline/model/df_arena_1b/backbone.py": "397df32fb0b1a1296b292ec698e7edca44f98c5f2afe3655bf182ad01fa5a11c",
+      "baseline/model/df_arena_1b/config.json": "e9f6b651fb2f83d320b5e10b38bc104afdc57641839d16dd1b4921e9eae49a43",
+      "baseline/model/df_arena_1b/configuration_antispoofing.py": "dd4a40789c2383896ce743effdd48cb6cdbd2f01c4bcdd7d4b71d7fb92869cf7",
+      "baseline/model/df_arena_1b/conformer.py": "84651dc9e81aaf4a32b400a621aa37e8f22e656a8207c5f4120cbb6e682c5540",
+      "baseline/model/df_arena_1b/facebook/wav2vec2-xls-r-1b/config.json": "36668778db09d5c64090b62d6afb66ba63057304fe456a45388066ff7dabb997",
+      "baseline/model/df_arena_1b/feature_extraction_antispoofing.py": "f549bce974e527a5bf57fd5544ba793d35d99c5db8047600d1c905308a8aacf7",
+      "baseline/model/df_arena_1b/modeling_antispoofing.py": "a7925c0ba67ef090552e0c337be6e6b3efffd53c3193e2310b30675af968c624",
+      "baseline/model/df_arena_1b/pipeline_antispoofing.py": "a308720d1be9fa6c948bd91648a1ec83a1465a178ae0da29f3cc48fe425170b4",
+      "baseline/model/df_arena_1b/preprocessor_config.json": "e23aafe2a4a2a7c0caaefdc6e4b1e131774137fdeaa50fb5376764b05dacb3c7",
+      "baseline/model/df_arena_1b/pytorch_model.bin": "780bc14fd4c15e65d58efdef728427cf03cd29cd60be528e97badf8c89087988",
+      "baseline/model/htdemucs/955717e8-8726e21a.th": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4",
+      "baseline/model/htdemucs/htdemucs.yaml": "239c445d0b14454d541ad8bd9bb271c9e536d267e8a4625208744cbb2e7bb66c",
+      "baseline/model/panns/Cnn14_mAP=0.431.pth": "0dc499e40e9761ef5ea061ffc77697697f277f6a960894903df3ada000e34b31",
+      "baseline/model/panns/class_labels_indices.csv": "cdd1049833c4b86127c2773ac0d14a2754b6a6d0d1798002ed5c66e699708429",
+      "baseline/model/panns/component_labels.json": "95bdfd3ca12f7ba31a7cb15d4bbe0147d02074a180f92c0177ffa1f0b80f4f33",
+      "baseline/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+      "mert/README.md": "50e8eeec63445c8c76d7052379e038c79f58b8a142d346eac3a3f67c57c1d2e9",
+      "mert/config.json": "a5b40f9db03c84f29e3114abe813a9226178d5437b517d45cd4c2924ac3d0ce0",
+      "mert/configuration_MERT.py": "ae0ec2bab8f59c724ba9878a7c20b67210189536ea62d34a56775968e9decb03",
+      "mert/modeling_MERT.py": "6c3ee73cef6f0c30ef494f88d96f891fa6925ffe663fa391b512f4b57abecc6c",
+      "mert/preprocessor_config.json": "c623b903eb1967474b27522975cfb81638e265df99aa640d2c0bd87a987ab538",
+      "mert/pytorch_model.bin": "0c03774d821a6ad972cb48220b128a10ebea2c790116bd0fd35e5a013f8017f6"
+    },
+    "demucs_input_decoder": "torchaudio.load+demucs.audio.convert_audio",
+    "dtype": "float32",
+    "duration": "all samples, no crop",
+    "env_lock_sha256": "83b3d67698d7e96260af3063b54c895127f4432bfc8d4af778f2bc506036f6a7",
+    "gain_policy": "input_kind legacy*/constructed* preserved; otherwise peak capped at 0.6",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "hop": 32300,
+    "implementation": {
+      "assets/baseline/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+      "dacon9504a100/common.py": "561a3411d1a6aa453cb229441f3d3afdb91311236cfdf2c6116dfead567fcbbb",
+      "dacon9504a100/dataset.py": "ef172d2c75c9a2b1573bd7f9ae9289a110e89524492c23296726b51c34eeb97d",
+      "dacon9504a100/features.py": "d17f213a5b7a67e07e9ff8bfa3806c58ed285519746a26e46f0a05f0b3b438cb",
+      "dacon9504a100/fingerprint.py": "37c5cc0f042b98dd7114cd33723fb7f55491d047213c6652bdd90e12a8b2b5a4",
+      "dacon9504a100/gpu.py": "93d26e778ed35bde97ecf66173a0586cc3fbeda3d6c8a59991ffe5a28d9c605c",
+      "source/eight_fixed_io.py": "2a5267ccb6a77b67b4a1c2bbf22735e129056ff6071f389f9f4576eceb822a69",
+      "source/full_bank_features.py": "59963062eb536d514f8f1a8ea8aa981d65cf2d8f03c7df905597c973d9481116",
+      "source/localization_features.py": "3e1abb11dcc8b5f1b8b118f65f5192d7b40e17be45d66c9930a9a9f950c7285c",
+      "source/mert12_submission.py": "30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e",
+      "source/v6_data.py": "e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33",
+      "source/v6_runtime.py": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce"
+    },
+    "manifest_sha256": "96ba67dd2dfdbcfbf041465e883e0e003e6489e14f82e93054df4b42075a9ae3",
+    "mert_batch": 256,
+    "mert_layer": 12,
+    "purpose": "pilot",
+    "torch": "2.9.1+cu128",
+    "torch_cuda": "12.8",
+    "window": 64600
+  },
+  "longest_duration_seconds_all_rows": 1261.5639909297051,
+  "longest_duration_seconds_pilot": 738.8615873015873,
+  "memory": {
+    "allocated": 6508012032,
+    "max_allocated": 26930737664,
+    "max_reserved": 27132952576,
+    "reserved": 27132952576,
+    "total": 85017624576
+  },
+  "mert_batch": 256,
+  "mert_batch_benchmark": {
+    "chosen": 256,
+    "measurements": [
+      {
+        "batch": 16,
+        "peak_allocated_bytes": 7785219072,
+        "seconds": 0.1179021680727601,
+        "status": "ok",
+        "windows_per_second": 135.70573180745953
+      },
+      {
+        "batch": 32,
+        "peak_allocated_bytes": 9062425600,
+        "seconds": 0.22288424149155617,
+        "status": "ok",
+        "windows_per_second": 143.57228571142522
+      },
+      {
+        "batch": 64,
+        "peak_allocated_bytes": 11613431296,
+        "seconds": 0.4325301293283701,
+        "status": "ok",
+        "windows_per_second": 147.9665707898286
+      },
+      {
+        "batch": 128,
+        "peak_allocated_bytes": 16719569408,
+        "seconds": 0.851483628153801,
+        "status": "ok",
+        "windows_per_second": 150.32584980821233
+      },
+      {
+        "batch": 256,
+        "peak_allocated_bytes": 26930737664,
+        "seconds": 1.6625773133710027,
+        "status": "ok",
+        "windows_per_second": 153.97780177869768
+      }
+    ],
+    "policy": "largest within 90% fastest throughput and 80% VRAM",
+    "reference_id": "new_haim_sonicmaster_real_1092339_mastered"
+  },
+  "model_load_seconds": 23.32540418766439,
+  "projection": {
+    "audio_hours": 154.66142695920647,
+    "by_split_seconds": {
+      "test": 3641.2813104831257,
+      "train": 11575.721510634448,
+      "val": 3599.1416271336457
+    },
+    "projected_feature_hours": 5.226706791180929,
+    "projected_feature_seconds": 18816.144448251343,
+    "rows": 9504,
+    "rows_without_duration": 0
+  },
+  "rows": [
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0000760",
+      "duration_seconds": 0.25,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 4000,
+      "split": "train",
+      "stratum": "singing",
+      "timing": {
+        "decode": 0.0007095262408256531,
+        "dfarena_panns": 0.20037873275578022,
+        "htdemucs": 0.1194231454282999,
+        "mert": 0.020317520946264267,
+        "total": 0.34082892537117004
+      },
+      "voice_segments": 1,
+      "windows": 1
+    },
+    {
+      "ID": "asvspoof2019_la:LA_E_8209350",
+      "duration_seconds": 0.776625,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 12426,
+      "split": "train",
+      "stratum": "speech",
+      "timing": {
+        "decode": 0.0010663550347089767,
+        "dfarena_panns": 0.05129700340330601,
+        "htdemucs": 0.12027418799698353,
+        "mert": 0.020197352394461632,
+        "total": 0.19283489882946014
+      },
+      "voice_segments": 1,
+      "windows": 1
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0005855",
+      "duration_seconds": 1.5875,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 25400,
+      "split": "train",
+      "stratum": "singing",
+      "timing": {
+        "decode": 0.001169160008430481,
+        "dfarena_panns": 0.05050296522676945,
+        "htdemucs": 0.12559487856924534,
+        "mert": 0.0202083308249712,
+        "total": 0.19747533462941647
+      },
+      "voice_segments": 1,
+      "windows": 1
+    },
+    {
+      "ID": "asvspoof2019_la:LA_E_4569852",
+      "duration_seconds": 2.4685625,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 39497,
+      "split": "train",
+      "stratum": "speech",
+      "timing": {
+        "decode": 0.0013051200658082962,
+        "dfarena_panns": 0.05107242986559868,
+        "htdemucs": 0.12976962886750698,
+        "mert": 0.019580643624067307,
+        "total": 0.20172782242298126
+      },
+      "voice_segments": 1,
+      "windows": 1
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0110_D_0015521",
+      "duration_seconds": 2.98,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 47680,
+      "split": "train",
+      "stratum": "singing",
+      "timing": {
+        "decode": 0.0016052890568971634,
+        "dfarena_panns": 0.050620608031749725,
+        "htdemucs": 0.12313953787088394,
+        "mert": 0.019775811582803726,
+        "total": 0.19514124654233456
+      },
+      "voice_segments": 1,
+      "windows": 1
+    },
+    {
+      "ID": "asvspoof2019_la:LA_E_2466369",
+      "duration_seconds": 3.2005,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 51208,
+      "split": "train",
+      "stratum": "speech",
+      "timing": {
+        "decode": 0.001542411744594574,
+        "dfarena_panns": 0.05093902908265591,
+        "htdemucs": 0.12399791553616524,
+        "mert": 0.0200054869055748,
+        "total": 0.19648484326899052
+      },
+      "voice_segments": 1,
+      "windows": 1
+    },
+    {
+      "ID": "librispeech_test-clean:1580-141083-0008",
+      "duration_seconds": 4.305,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 68880,
+      "split": "train",
+      "stratum": "speech",
+      "timing": {
+        "decode": 0.0019058119505643845,
+        "dfarena_panns": 0.10330121964216232,
+        "htdemucs": 0.13717308826744556,
+        "mert": 0.03240502439439297,
+        "total": 0.27478514425456524
+      },
+      "voice_segments": 2,
+      "windows": 2
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0002454",
+      "duration_seconds": 4.6125,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 73800,
+      "split": "train",
+      "stratum": "singing",
+      "timing": {
+        "decode": 0.0019194502383470535,
+        "dfarena_panns": 0.0978068858385086,
+        "htdemucs": 0.1283411905169487,
+        "mert": 0.024418005719780922,
+        "total": 0.2524855323135853
+      },
+      "voice_segments": 2,
+      "windows": 2
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0110_D_0015728",
+      "duration_seconds": 6.705,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 107280,
+      "split": "train",
+      "stratum": "singing",
+      "timing": {
+        "decode": 0.002346394583582878,
+        "dfarena_panns": 0.10369875282049179,
+        "htdemucs": 0.20009277760982513,
+        "mert": 0.03381997160613537,
+        "total": 0.33995789662003517
+      },
+      "voice_segments": 2,
+      "windows": 3
+    },
+    {
+      "ID": "asvspoof2019_la:LA_E_1697481",
+      "duration_seconds": 7.100875,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 113614,
+      "split": "train",
+      "stratum": "speech",
+      "timing": {
+        "decode": 0.002244822680950165,
+        "dfarena_panns": 0.0999416895210743,
+        "htdemucs": 0.19553275033831596,
+        "mert": 0.026825448498129845,
+        "total": 0.32454471103847027
+      },
+      "voice_segments": 2,
+      "windows": 3
+    },
+    {
+      "ID": "core_00fa3840f7e8661d9b12_base",
+      "duration_seconds": 8.0,
+      "extension": ".wav",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 128000,
+      "split": "train",
+      "stratum": "music_legacy_gain_preserved",
+      "timing": {
+        "decode": 0.001529870554804802,
+        "dfarena_panns": 0.09986033476889133,
+        "htdemucs": 0.199310764670372,
+        "mert": 0.026760337874293327,
+        "total": 0.3274613078683615
+      },
+      "voice_segments": 2,
+      "windows": 3
+    },
+    {
+      "ID": "core_468053d1c0312457f0a6_base",
+      "duration_seconds": 8.0,
+      "extension": ".wav",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 128000,
+      "split": "train",
+      "stratum": "music_legacy_gain_preserved",
+      "timing": {
+        "decode": 0.0017443876713514328,
+        "dfarena_panns": 0.10106432065367699,
+        "htdemucs": 0.19547093473374844,
+        "mert": 0.026997949928045273,
+        "total": 0.32527759298682213
+      },
+      "voice_segments": 2,
+      "windows": 3
+    },
+    {
+      "ID": "core_82b3ccd6cb4fc446e1fe_base",
+      "duration_seconds": 8.0,
+      "extension": ".wav",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 128000,
+      "split": "train",
+      "stratum": "music_legacy_gain_preserved",
+      "timing": {
+        "decode": 0.001458076760172844,
+        "dfarena_panns": 0.0995585285127163,
+        "htdemucs": 0.191229660063982,
+        "mert": 0.026974959298968315,
+        "total": 0.31922122463583946
+      },
+      "voice_segments": 2,
+      "windows": 3
+    },
+    {
+      "ID": "core_c7f4818fe05d69a48837_base",
+      "duration_seconds": 8.0,
+      "extension": ".wav",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 128000,
+      "split": "train",
+      "stratum": "music_legacy_gain_preserved",
+      "timing": {
+        "decode": 0.0014703627675771713,
+        "dfarena_panns": 0.10231395810842514,
+        "htdemucs": 0.19044942408800125,
+        "mert": 0.026521634310483932,
+        "total": 0.3207553792744875
+      },
+      "voice_segments": 2,
+      "windows": 3
+    },
+    {
+      "ID": "core_ef7516707efb67dd1d8c_base",
+      "duration_seconds": 8.0,
+      "extension": ".wav",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 128000,
+      "split": "train",
+      "stratum": "music_legacy_gain_preserved",
+      "timing": {
+        "decode": 0.0023633576929569244,
+        "dfarena_panns": 0.10368745401501656,
+        "htdemucs": 0.2458182219415903,
+        "mert": 0.027264125645160675,
+        "total": 0.37913315929472446
+      },
+      "voice_segments": 2,
+      "windows": 3
+    },
+    {
+      "ID": "core_feb95864a2136fcef06f_base",
+      "duration_seconds": 8.0,
+      "extension": ".wav",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 128000,
+      "split": "train",
+      "stratum": "music_legacy_gain_preserved",
+      "timing": {
+        "decode": 0.0016144104301929474,
+        "dfarena_panns": 0.10331608168780804,
+        "htdemucs": 0.21478881314396858,
+        "mert": 0.027255110442638397,
+        "total": 0.34697441570460796
+      },
+      "voice_segments": 2,
+      "windows": 3
+    },
+    {
+      "ID": "haim_musicgen_131da087-4a28-4215-a486-ace346186e17",
+      "duration_seconds": 9.94,
+      "extension": ".mp3",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 159040,
+      "split": "train",
+      "stratum": "music_original_peak_capped",
+      "timing": {
+        "decode": 0.01915966533124447,
+        "dfarena_panns": 0.15497620217502117,
+        "htdemucs": 0.19975151494145393,
+        "mert": 0.04330146871507168,
+        "total": 0.41718885116279125
+      },
+      "voice_segments": 3,
+      "windows": 4
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0006536",
+      "duration_seconds": 16.975,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 271600,
+      "split": "train",
+      "stratum": "singing",
+      "timing": {
+        "decode": 0.004931002855300903,
+        "dfarena_panns": 0.2559479549527168,
+        "htdemucs": 0.299406785517931,
+        "mert": 0.06862795911729336,
+        "total": 0.6289137024432421
+      },
+      "voice_segments": 5,
+      "windows": 8
+    },
+    {
+      "ID": "librispeech_test-clean:5142-36377-0014",
+      "duration_seconds": 25.415,
+      "extension": ".flac",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "voice",
+      "samples": 406640,
+      "split": "train",
+      "stratum": "speech",
+      "timing": {
+        "decode": 0.007607182487845421,
+        "dfarena_panns": 0.35847160778939724,
+        "htdemucs": 0.4591042064130306,
+        "mert": 0.08517230302095413,
+        "total": 0.9103552997112274
+      },
+      "voice_segments": 7,
+      "windows": 12
+    },
+    {
+      "ID": "fake_16900_udio_1",
+      "duration_seconds": 32.8106875,
+      "extension": ".mp3",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 524971,
+      "split": "train",
+      "stratum": "music_original_peak_capped",
+      "timing": {
+        "decode": 0.010451022535562515,
+        "dfarena_panns": 0.4643542319536209,
+        "htdemucs": 0.5306731928139925,
+        "mert": 0.11971432715654373,
+        "total": 1.1251927744597197
+      },
+      "voice_segments": 9,
+      "windows": 16
+    },
+    {
+      "ID": "fake_21481_udio_0",
+      "duration_seconds": 131.1146875,
+      "extension": ".mp3",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 2097835,
+      "split": "train",
+      "stratum": "music_original_peak_capped",
+      "timing": {
+        "decode": 0.03952229581773281,
+        "dfarena_panns": 1.6861126199364662,
+        "htdemucs": 1.9440518971532583,
+        "mert": 0.43628703616559505,
+        "total": 4.105973849073052
+      },
+      "voice_segments": 33,
+      "windows": 64
+    },
+    {
+      "ID": "new_haim_sonicmaster_real_1420610_mastered",
+      "duration_seconds": 214.71843537414966,
+      "extension": ".mp3",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 3435495,
+      "split": "train",
+      "stratum": "music_original_peak_capped",
+      "timing": {
+        "decode": 0.4746134355664253,
+        "dfarena_panns": 2.701372915878892,
+        "htdemucs": 3.104614555835724,
+        "mert": 0.7015998717397451,
+        "total": 6.982200779020786
+      },
+      "voice_segments": 54,
+      "windows": 106
+    },
+    {
+      "ID": "jamendo_139308",
+      "duration_seconds": 356.243875,
+      "extension": ".mp3",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 5699902,
+      "split": "train",
+      "stratum": "music_original_peak_capped",
+      "timing": {
+        "decode": 0.7647576984018087,
+        "dfarena_panns": 4.460125546902418,
+        "htdemucs": 5.064151540398598,
+        "mert": 1.1504478845745325,
+        "total": 11.439482670277357
+      },
+      "voice_segments": 89,
+      "windows": 176
+    },
+    {
+      "ID": "new_haim_sonicmaster_real_1092339_mastered",
+      "duration_seconds": 738.8615873015873,
+      "extension": ".mp3",
+      "memory": {
+        "allocated": 6508012032,
+        "max_allocated": 26930737664,
+        "max_reserved": 27132952576,
+        "reserved": 27132952576,
+        "total": 85017624576
+      },
+      "route": "music",
+      "samples": 11821786,
+      "split": "train",
+      "stratum": "music_original_peak_capped",
+      "timing": {
+        "decode": 1.728568110615015,
+        "dfarena_panns": 9.142349056899548,
+        "htdemucs": 10.582588797435164,
+        "mert": 2.389492779970169,
+        "total": 23.842998744919896
+      },
+      "voice_segments": 183,
+      "windows": 365
+    }
+  ],
+  "selection": "train split only; duration quantiles per stratum + one row per extension",
+  "warmup_seconds": 1.4466162621974945
+}

@@ -1,0 +1,34 @@
+{
+  "checked_prefixes": [
+    "mert12-a100-20260918/",
+    "mert12-a100-20260918/output/",
+    "full-bank-mil-8020-20260918/",
+    "existing-only-9504-h100-20260920/",
+    "existing-only-9504-20260919/",
+    "data-v4-20260923/results/",
+    "full-bank-mil-8020-20260918/data/",
+    "existing-only-9504-20260919/data/",
+    "existing-only-9504-20260919/before_workspace_replacement_20260919/",
+    "balanced7144-h100-20260919/",
+    "mert12-a100-20260918/output/mert12_full/"
+  ],
+  "matching_remote_feature_objects": [
+    {
+      "key": "mert12-a100-20260918/output/cached_mert12_reference.json",
+      "sizeBytes": 730
+    },
+    {
+      "key": "full-bank-mil-8020-20260918/restart_cache_index.json",
+      "sizeBytes": 123218
+    }
+  ],
+  "scope": "Listed specified object prefixes; stopped cluster workspace filesystem was not mounted or inspected.",
+  "local_feature_archive": "_workspace/mert12_a100_20260918/readback/features.zip",
+  "data_v4_complete_feature_cache_located": false,
+  "new_compute_started": false,
+  "workspace": {
+    "slug": "wsp-9683432r72m7",
+    "state": "stopped",
+    "phase": "standby"
+  }
+}

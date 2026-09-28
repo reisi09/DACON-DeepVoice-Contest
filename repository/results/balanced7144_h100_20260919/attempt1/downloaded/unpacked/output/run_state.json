@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "error": "Traceback (most recent call last):\n  File \"/shared/balanced7144-h100-20260919/full_bank_run.py\", line 140, in main\n    subprocess.run([sys.executable, str(incoming/'source'/script), *common,\n  File \"/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['/root/fullft8/.venv/bin/python', '/root/balanced7144_h100_20260919/input/source/full_bank_features.py', '--manifest', '/root/balanced7144_h100_20260919/input/dataset/manifest.csv', '--cache', '/root/balanced7144_h100_20260919/cache', '--output', '/root/balanced7144_h100_20260919/output/features', '--input', '/root/balanced7144_h100_20260919/input/dataset', '--assets', '/root/redesign_h100_20260917/assets', '--asset-hashes', '/root/balanced7144_h100_20260919/input/asset_hashes.json']' returned non-zero exit status 1.\n",
+  "started_at": 1789775806.3254435,
+  "finished_at": 1789779647.544414
+}

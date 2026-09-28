@@ -1,0 +1,17 @@
+{
+  "allocation_start_unix": 1789283305,
+  "deadline_unix": 1789290385,
+  "epochs_each": 10,
+  "g0_sha256": "bd1c27227829f36e9ae6191db7600920bf6649810f0896a791730b10555f0854",
+  "dev_csv_sha256": "f78185faee0578a311eea420a1776256ccea0346d2152e77b2288db477c605d9",
+  "train_csv_sha256": "df5c083d7deee6f5efa195c4fce2c8b4298f2e8ca743f2c7bce7f7129877c07f",
+  "seed": 20260913,
+  "encoder_lr": 0.00003,
+  "head_lr": 0.00009,
+  "patience": 0,
+  "scheduler_horizon_epochs": 30,
+  "operations": ["P1_full_fine_tune", "P3_full_fine_tune_with_P3_augmentation"],
+  "forbidden_operations": ["G0_recompute", "selection", "refit", "sealed", "submission"],
+  "legacy_gpu_p3_causal_eligible": false,
+  "cli": "python -u recheck_v4_matched.py --data /content/dacon_trainable_v4/v4_validation --sonics /content/dacon_trainable_v4/sonics_assets --g0 PATH_TO_PINNED_G0_predictions.csv --g0-sha256 bd1c27227829f36e9ae6191db7600920bf6649810f0896a791730b10555f0854 --output NEW_TIMESTAMP_PATH --allocation-start 1789283305 --deadline 1789290385"
+}

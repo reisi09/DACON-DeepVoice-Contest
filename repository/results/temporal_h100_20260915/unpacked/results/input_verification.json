@@ -1,0 +1,31 @@
+{
+  "files": 1446,
+  "input_sha256": {
+    "full_data_plan.json": "7bca217c03564aecd50e646ff48ca5a0e2568e5d4e8d8e823be57c9ec32e8bf8",
+    "v7_notebook_runner.py": "db204f12b1370621ab38b0240a5f3949251bb2d023db0efc5c310e604045f8b8",
+    "graph_scoring.py": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+    "temporal_experiment.py": "413c9be60905d895f48015d9ef5b2bf2562be93202a493f3c57b657b004ec6e6",
+    "v6_runtime.py": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce",
+    "v6_data.py": "e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33",
+    "requirements-head.txt": "72235f93b2434e1ec1cb0e2ec5d56984257157466eb828939137c854380fb12e",
+    "v6_train.py": "ac5dbad1b572dec8803792012517108055b64da66ddee4b527c6458584135b1b",
+    "c3_data.py": "7c0265171a1ed5fd9e9145bddd07611dbc52d2a92c06ab0287628304764c9bd5",
+    "music_temporal.py": "22ee04b927afaa550b659bd18b0de62b3bb6b885bb204787cb6057434ac96f8a",
+    "baseline_predictions.json": "03ed68f4c3296be26649d02d16b43a45c8e395bbaf7bcd750e3816394355168f",
+    "Temporal_H100_Tuning.ipynb": "506a14940b87282b0c2a16dc1b8ad1e6a12a85ab534c0fa83e9d9b39c8560694",
+    "v7_ablation.py": "1c93d837c8a0fbd65f48b74b078c97755a588b0013163ee95550d18136e4ea89",
+    "locked_split.json": "f8be800de2a3f9c4d7b0c0228e68a79a03a468344d938c9e380b32ec8257ac3b",
+    "v6_core.py": "b0b0496623f16f815e82d465139449b5258b52cf7d2246f5cad72467037dfd72"
+  },
+  "split_sha256": "fe469cf969174820fe388e0d8abb2c8da36b13b3528912fb2a3da00ce1b1f49f",
+  "quality_policy": {
+    "window_samples": 64600,
+    "frame_samples": 1600,
+    "active_dbfs": -50,
+    "minimum_active_fraction": 0.2,
+    "nsynth_loss_mass": 0.05,
+    "synthetic_mixes": "exclude legacy V6 supplementary mixtures"
+  },
+  "baseline_sha256": "03ed68f4c3296be26649d02d16b43a45c8e395bbaf7bcd750e3816394355168f",
+  "cache_validation": "Source audio SHA256 checked by CPU exporter; exact cache SHA256 and original identity checked on H100"
+}

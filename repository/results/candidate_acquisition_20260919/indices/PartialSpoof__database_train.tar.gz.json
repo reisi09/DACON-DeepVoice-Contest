@@ -1,0 +1,42 @@
+{
+  "audio_members": 25380,
+  "unique_member_names": 25380,
+  "duplicate_member_names": 0,
+  "uncompressed_audio_bytes": 2795376790,
+  "formats": {
+    ".wav": 25380
+  },
+  "decoded_samples": [
+    {
+      "member": "database/train/con_wav/CON_T_0000279.wav",
+      "sample_rate": 16000,
+      "channels": 1,
+      "duration": 3.377375,
+      "peak": 0.37310791015625,
+      "full_sample_decode": true
+    },
+    {
+      "member": "database/train/con_wav/CON_T_0000813.wav",
+      "sample_rate": 16000,
+      "channels": 1,
+      "duration": 3.6738125,
+      "peak": 0.615966796875,
+      "full_sample_decode": true
+    },
+    {
+      "member": "database/train/con_wav/CON_T_0001097.wav",
+      "sample_rate": 16000,
+      "channels": 1,
+      "duration": 4.5120625,
+      "peak": 0.60406494140625,
+      "full_sample_decode": true
+    }
+  ],
+  "sample_errors": [],
+  "all_audio_decoded": false,
+  "content_deduplicated": false,
+  "training_admitted": false,
+  "archive": "PartialSpoof/database_train.tar.gz",
+  "archive_sha256": "d34d99e0eb59707ab23195bb87fc8a9251373257fae6319119c826f0cd030f71",
+  "source_split": "train"
+}

@@ -1,0 +1,24 @@
+{
+  "symptom": "Original deep training curves diverge after early epochs; reproduction assertion stopped evaluation",
+  "hypotheses": [
+    "Changed graph execution order",
+    "Different inputs or seeds",
+    "Environment difference"
+  ],
+  "cpu_probe": [
+    {
+      "seed": 41,
+      "forward_max_abs_diff": 0,
+      "gradient_max_abs_diff": 1.7881393432617188e-07
+    },
+    {
+      "seed": 42,
+      "forward_max_abs_diff": 0,
+      "gradient_max_abs_diff": 3.8743019104003906e-07
+    }
+  ],
+  "suspected_change": "Moved max pooling before attention; gradient accumulation order differs",
+  "archive_verified": true,
+  "cpu_regression": "Exact legacy gradients fail before restoring order and pass after restoration; 13 integration checks pass",
+  "fix": "Restore max pooling after attended sum for original branch; compute it separately for simple branch"
+}

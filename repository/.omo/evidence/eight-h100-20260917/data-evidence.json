@@ -1,0 +1,47 @@
+{
+  "dataset": "_workspace/eight_h100_20260917/dataset",
+  "freeze": {
+    "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+    "receipt_sha256": "bd49bc583abac831b6b751c42e8d890e9e922ae16a346612414c609e155c6743",
+    "sources_sha256": "ab7de8e9d077d64008381b7cd78831db5b5ace5b7acf219636f1269ee965fdb9"
+  },
+  "scenarios": [
+    {
+      "artifact": "results/eight_h100_20260917/data_check.log",
+      "binary_observable": {
+        "actual_dataset_valid": true,
+        "codec_pairs_checked": 1834,
+        "corrupted_audio_rejected": true,
+        "cross_split_contributor_rejected": true,
+        "e2_background_pairs_checked": 80,
+        "e5_pairs_checked": 324
+      },
+      "invocation": ".venv/bin/python eight_data.py check",
+      "scenario": "real dataset semantic and adversarial audit"
+    },
+    {
+      "artifact": ".omo/evidence/eight-h100-20260917/data-validation.json",
+      "binary_observable": "all assertions passed; 7101 unique audio hashes; E2 peak 0.829436; E5 peak 0.866460",
+      "invocation": "documented inline Python semantic audit in .omo/evidence/eight-h100-20260917/data-validation.log",
+      "scenario": "full manifest hash, parent, split, labels, E2 gain, E5 boundary controls and clipping audit"
+    },
+    {
+      "artifact": "results/eight_h100_20260917/data_receipt.json",
+      "binary_observable": {
+        "NSynth_rows": 0,
+        "connected_music_components": 296,
+        "connected_source_components": 306,
+        "connected_speech_components": 10,
+        "source_records": 1834
+      },
+      "invocation": "sha256_file(dataset/sources.csv) plus connected-component audit over base rows",
+      "scenario": "input/source provenance inventory"
+    },
+    {
+      "artifact": "results/eight_h100_20260917/data_evidence.json",
+      "binary_observable": "returned rows=7101 without rebuilding dataset",
+      "invocation": "symlink dataset to TEMP/source/dataset; eight_data.prepare(TEMP)",
+      "scenario": "remote prepare validate-only interface"
+    }
+  ]
+}

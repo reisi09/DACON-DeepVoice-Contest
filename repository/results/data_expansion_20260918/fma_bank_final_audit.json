@@ -1,0 +1,121 @@
+{
+  "status": "stopped_near_budget_after_repeated_size_rejections",
+  "new_originals": 331,
+  "new_distinct_artist_ids": 331,
+  "new_unique_source_hashes": 331,
+  "new_unique_pcm_hashes": 330,
+  "new_source_bytes": 1496278020,
+  "recorded_transferred_bytes": 1496278020,
+  "conservative_charged_bytes": 1500000000,
+  "unresolved_requests": 4,
+  "transfer_limit_bytes": 1500000000,
+  "retention_limit_bytes": 1550000000,
+  "retained_bank_and_metadata_bytes": 1520096420,
+  "local_reused_tracks": 270,
+  "eligible_local_reuse": 67,
+  "eligible_new": 326,
+  "technical_audio_quality_pass_new": 330,
+  "duration_selection_review": [
+    {
+      "track_id": "10429",
+      "artist_id": "2527",
+      "artist_name": "Iriarte and Pesoa",
+      "declared_duration_seconds": 180,
+      "duration_seconds": 180.48
+    },
+    {
+      "track_id": "27794",
+      "artist_id": "7007",
+      "artist_name": "Zapac",
+      "declared_duration_seconds": 180,
+      "duration_seconds": 180.9763125
+    },
+    {
+      "track_id": "51078",
+      "artist_id": "8333",
+      "artist_name": "Pablo Ribot",
+      "declared_duration_seconds": 180,
+      "duration_seconds": 180.12
+    }
+  ],
+  "technical_audio_failures": [
+    {
+      "track_id": "93536",
+      "artist_id": "17327",
+      "artist_name": "FOXHOLE",
+      "source_bytes": 4096,
+      "decode_status": "ok",
+      "duration_seconds": 0.0271875,
+      "very_short": true,
+      "silence_flag": true
+    }
+  ],
+  "exact_duplicate_exclusions": [
+    {
+      "track_id": "122155",
+      "artist_id": "20435",
+      "artist_name": "John Hyatt & Jaan Patterson",
+      "duplicate_of": [
+        {
+          "track_id": "120632",
+          "artist_id": "20240",
+          "artist_name": "John Hyatt and Jaan Patterson",
+          "same_source_sha": false,
+          "same_pcm_sha": true
+        }
+      ]
+    }
+  ],
+  "decoded_new_hours": 12.395332343749988,
+  "license_url_counts": {
+    "http://creativecommons.org/licenses/by-nc-sa/4.0/": 44,
+    "http://creativecommons.org/licenses/by-nc-sa/3.0/us/": 124,
+    "http://creativecommons.org/licenses/by-nc-sa/3.0/": 82,
+    "http://creativecommons.org/licenses/by-nc-sa/3.0/de/": 3,
+    "http://creativecommons.org/licenses/by-nc/3.0/us/": 12,
+    "http://creativecommons.org/licenses/by-nc-sa/2.0/fr/": 1,
+    "http://creativecommons.org/licenses/by/3.0/": 5,
+    "http://creativecommons.org/licenses/by/4.0/": 16,
+    "http://creativecommons.org/licenses/by-nc/4.0/": 15,
+    "http://creativecommons.org/licenses/by-nc-sa/2.5/it/": 3,
+    "http://creativecommons.org/licenses/by-nc/3.0/": 14,
+    "http://creativecommons.org/licenses/by-sa/3.0/": 4,
+    "http://creativecommons.org/licenses/by-nc-sa/3.0/nl/": 1,
+    "http://creativecommons.org/licenses/by-nc-sa/2.0/uk/": 2,
+    "http://creativecommons.org/licenses/by-nc-sa/3.0": 1,
+    "http://creativecommons.org/licenses/by-sa/4.0/": 2,
+    "http://creativecommons.org/licenses/by-sa/3.0/br/": 1,
+    "http://creativecommons.org/licenses/by-sa/3.0/us/": 1
+  },
+  "source": "FMA official original URLs recorded per track",
+  "artist_name_preserved": true,
+  "eligible_prior_source_pcm_overlaps": 0,
+  "new_artist_ids_seen_before": 0,
+  "network_attempt_receipts": 608,
+  "unavailable_http404": 3,
+  "size_limit_rejections": 274,
+  "failed_partials_removed_bytes": 0,
+  "remaining_partials": 0,
+  "active_acquisition_processes": [],
+  "final_manifest": "results/data_expansion_20260918/fma_bank_final_manifest.csv",
+  "final_manifest_sha256": "a5f953ecea74c26fce008ffe6a7506d7c6c21b775599e81c28c3d75e111307ff",
+  "raw_records_sha256": "29eda7b3620b62df2d7e50787505cef173b6f12a3822fdc5b7b70e1ebf7d2035",
+  "source_inventory_sha256": "d37abeee97e3041725b92a41497a4a2c6f6715b53f36e5be89d0cda2abd21fb6",
+  "locked_groups_sha256": "2ca4cf947b2dddd72b4767337ac94601d10b380a9b1b76414fa835e46f640846",
+  "selection_sha256": "c90e997ad70afb4da3e6fd3cf00435d1253ca7df99e959703651735ff1c7fc0f",
+  "acquisition_script_sha256": "6011c382da40a9a6de19f9b52a19052d22b90c883335a3d2b13ceb3ab1a6077a",
+  "current_script_sha256": "28850f2bbc023ea2cf5cb3fb6c18f20b7be524aa3028d17167f7bc5dffa0c62d",
+  "frozen2470_manifest_sha256": "daf9317856e63fba6cdba04f8fa28c48afa447fffe9046b246571ddecdbebff4",
+  "postrun_regression_check": "8 checks passed, including no-progress termination regression",
+  "no_training_or_gpu": true,
+  "independent_listening": false,
+  "limitations": [
+    "Technical decode/silence checks do not establish human listening quality or correctness of declared genre.",
+    "Three small duration mismatches are selection-review items, not audio corruption; originals retained.",
+    "One tiny decoded source and one exact duplicate are separately excluded.",
+    "Artist aliases, cross-catalog identity, perceptual duplicates, and pretraining overlap require separate review.",
+    "Per-track archived CC licenses retained; attribution and NC/SA obligations remain.",
+    "Four interrupted request reservations remain fully charged; no attempt to reclaim uncertain bytes."
+  ],
+  "updated_epoch": 1789708400.1098812
+}

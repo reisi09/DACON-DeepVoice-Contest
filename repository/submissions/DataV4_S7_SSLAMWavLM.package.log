@@ -1,0 +1,75 @@
+{
+  "file": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/submissions/DataV4_S7_SSLAMWavLM/submit.zip",
+  "sha256": "5239c912ccbee8c20bef48aa7434cbedf15a8768a1f5ca2cff3a9949cf59a1fa",
+  "bytes": 9735068819,
+  "expanded_bytes": 9735055169,
+  "choice": {
+    "candidate": "datav4_s7_s6_sslam5_wavlm8",
+    "base_archive_sha256": "b19b88de1b23ccb8e2863d30d9a755e991419ff36b39ac629d73ff26f65895aa",
+    "heads": "voice: S6 heads byte-identical (DF-Arena fc5 MLP + AntiDeepfake-1B ResMLP, label completion) + WavLM-Large hidden-8 MLP member (original labels), val-CDF fusion 1/0.5/1 (clipped); music: WindowMIL on MERT 6+12 + EAT-large block 16 + SSLAM-pretrain block 5 of the backing stem, P1 on 100% rows; FILE ensemble refitted on val; exploratory (fails the per-seed lock rule, RT held-out +0.0104 vs S6)",
+    "split": "train 30,658 + held-out 6,450 / val 4,931",
+    "presence": "presence_head.json logistic heads over PANNs tag statistics + stem energy",
+    "file_fusion": "file_ensemble.json refitted on val over the fused VOICE/MUSIC scores",
+    "val_route_eer": {
+      "voice_ad_ensemble": 0.034641946272753944,
+      "music_ensemble": 0.05417243284341342,
+      "voice_ensemble": 0.0348382556563425,
+      "voice_wavlm_ensemble": 0.02747348237623788
+    },
+    "per_file_independent": true,
+    "inference_gain": "peak capped at 0.6",
+    "component_fusion": {
+      "voice": {
+        "ours": 1,
+        "ad": 0.5,
+        "wavlm": 1.0
+      },
+      "music": {
+        "ours": 1
+      }
+    }
+  },
+  "crc_verified": true,
+  "replaced_members": [
+    "model/assets/antideepfake/ad/antideepfake_config.json",
+    "model/assets/antideepfake/ad/model.safetensors",
+    "model/assets/eat/config.json",
+    "model/assets/eat/model_fp16.safetensors",
+    "model/assets/sslam_pt/config.json",
+    "model/assets/sslam_pt/model_fp16.safetensors",
+    "model/assets/wavlm/config.json",
+    "model/assets/wavlm/model_fp16.safetensors",
+    "model/runtime/antideepfake_runtime.py",
+    "model/runtime/component_fusion.py",
+    "model/runtime/decision_heads.py",
+    "model/runtime/eat_core/__init__.py",
+    "model/runtime/eat_core/configuration_eat.py",
+    "model/runtime/eat_core/eat_model.py",
+    "model/runtime/eat_core/model_core.py",
+    "model/runtime/full_bank_submission.py",
+    "model/runtime/voice_heads.py",
+    "model/trained/candidate_lock.json",
+    "model/trained/component_fusion.json",
+    "model/trained/file_ensemble.json",
+    "model/trained/music_41.pt",
+    "model/trained/music_42.pt",
+    "model/trained/music_43.pt",
+    "model/trained/music_eat_layers.json",
+    "model/trained/music_layers.json",
+    "model/trained/music_sslam_layers.json",
+    "model/trained/presence_head.json",
+    "model/trained/run_identity.json",
+    "model/trained/validation_metrics.json",
+    "model/trained/voice_41.pt",
+    "model/trained/voice_42.pt",
+    "model/trained/voice_43.pt",
+    "model/trained/voice_ad_41.pt",
+    "model/trained/voice_ad_42.pt",
+    "model/trained/voice_ad_43.pt",
+    "model/trained/voice_wavlm_layer.json",
+    "model/trained/wavlm_41.pt",
+    "model/trained/wavlm_42.pt",
+    "model/trained/wavlm_43.pt"
+  ],
+  "official_l4_validated": false
+}

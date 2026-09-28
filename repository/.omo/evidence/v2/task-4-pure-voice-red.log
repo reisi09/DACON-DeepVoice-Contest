@@ -1,0 +1,19 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________________ test_mixture_parents_use_pure_voice_groups __________________
+
+    def test_mixture_parents_use_pure_voice_groups() -> None:
+        # Given a pure speech row and an earlier mixed speech/music row.
+        rows = [
+            validation.ManifestRow("v", "audio/v.wav", "voice:v", "dev_train", "speech", "0", "0", "", "1", "0", "v"),
+            validation.ManifestRow("m", "audio/m.wav", "voice:x|music:x", "dev_train", "mixture", "1", "1", "1", "1", "1", "m"),
+        ]
+        # When parents are selected, then a prior mixture cannot become a voice parent.
+>       assert validation.pure_voice_groups(rows, "dev_train") == ["voice:v"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'prepare_v2_validation' has no attribute 'pure_voice_groups'
+
+test_prepare_v2_validation.py:37: AttributeError
+=========================== short test summary info ============================
+FAILED test_prepare_v2_validation.py::test_mixture_parents_use_pure_voice_groups
+1 failed, 2 deselected in 0.03s

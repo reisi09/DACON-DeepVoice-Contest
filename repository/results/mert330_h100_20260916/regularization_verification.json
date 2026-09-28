@@ -1,0 +1,16 @@
+{
+  "input_sha256": "75ea6909924d34095a7c4f061ca06f23e3d40f82b288e8da6f8537a728670036",
+  "sealed_member_count": 38,
+  "zip_crc_valid": true,
+  "source_and_notebook_match": true,
+  "bootstrap_matches_input": true,
+  "checks": [
+    "weight decay changes actual optimizer updates",
+    "training dropout varies output; eval and checkpoint reload predictions agree",
+    "additional 256 channels receive gradients and influence predictions",
+    "original C08 cached prediction parity within 1e-6"
+  ],
+  "gpu_started": false,
+  "dropout": 0.1,
+  "weight_decay": 0.01
+}

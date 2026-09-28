@@ -1,0 +1,38 @@
+{
+  "cache_id": "efd812a6f74e9a9d55cddba8e53ddbfa03784228bcea68f3cdf74f1f5ca29fe9",
+  "model": {
+    "model": "nvidia/audio-flamingo-3",
+    "revision": "ee26c58423988d7d7cda7b85dd3ce5d97ee8753d",
+    "subfolder": "sound_tower",
+    "audio_parameters": 636968960,
+    "input_dim": 1280,
+    "weight_bytes": 1273988176,
+    "weight_sha256": "7350df1dc94c1357dfa88212db4efe99cd3f880799fb176c7084dd186f39b6c8",
+    "config_sha256": "08e7d555b5cf305f4a6b6fb56b9d606e2a185499e9d9acbd2abd0bfd460eb32a",
+    "upstream_code_revision": "1337fb9dfffe6e40f1d204f137da71e7208b4742",
+    "upstream_code": "https://github.com/NVIDIA/audio-flamingo/blob/1337fb9dfffe6e40f1d204f137da71e7208b4742/llava/model/multimodal_encoder/modeling_whisper.py",
+    "license": "NVIDIA OneWay Noncommercial License",
+    "usage": "noncommercial research comparison; no competition upload"
+  },
+  "source_sha256": "cf0e68f26110e7f8de63de88e531b25112a61c2636dd9bdd070c4b3810ad5d08",
+  "baseline_assets": {
+    "baseline/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+    "baseline/__pycache__/script.cpython-313.pyc": "ffeb06651b2225e00335d38c9ec3ccfe66273da85fc8e6018252b9b4c00e6aa6",
+    "baseline/model/htdemucs/htdemucs.yaml": "239c445d0b14454d541ad8bd9bb271c9e536d267e8a4625208744cbb2e7bb66c",
+    "baseline/model/htdemucs/955717e8-8726e21a.th": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4"
+  },
+  "torch": "2.9.1+cu130",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "dtype": "float32",
+  "versions": {
+    "transformers": "4.57.6",
+    "librosa": "0.11.0",
+    "numpy": "2.2.6",
+    "demucs": "4.0.1"
+  },
+  "sample_rate": 16000,
+  "window_samples": 64600,
+  "feature": "128 mel, 30s padded; post-convolution masked-key trimming; valid-frame mean after native avgpool and layernorm",
+  "extractor": "WhisperFeatureExtractor(feature_size=128, sampling_rate=16000, return_attention_mask=True)",
+  "batch_size": 8
+}

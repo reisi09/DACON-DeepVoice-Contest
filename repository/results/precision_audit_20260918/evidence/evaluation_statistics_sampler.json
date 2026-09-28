@@ -1,0 +1,1016 @@
+[
+  {
+    "branch": "music",
+    "mode": "parent",
+    "train_rows": 831,
+    "train_parents": 831,
+    "drawn_parents": 831,
+    "checkpoint": "results/eight_h100_20260917/downloaded/unpacked/output/checkpoints/E1_music_parent_seed41.pt",
+    "draw_sha256": "c195afc758dc384b6622da5cec7f0e4c06fd4409b01ba4fa6409ca392d498359",
+    "saved_draw_sha256": "c195afc758dc384b6622da5cec7f0e4c06fd4409b01ba4fa6409ca392d498359",
+    "digest_matches": true,
+    "cells": [
+      {
+        "label": 0,
+        "source": "FMA",
+        "generator": "",
+        "available_parents": 84,
+        "drawn_parents": 84,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          57,
+          58
+        ],
+        "draws": 4810
+      },
+      {
+        "label": 0,
+        "source": "FMA/FMA",
+        "generator": "",
+        "available_parents": 55,
+        "drawn_parents": 55,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          58,
+          58
+        ],
+        "draws": 3190
+      },
+      {
+        "label": 1,
+        "source": "Echoes/acestep/TTA",
+        "generator": "acestep",
+        "available_parents": 48,
+        "drawn_parents": 48,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 554
+      },
+      {
+        "label": 1,
+        "source": "Echoes/audioldm/ATA",
+        "generator": "audioldm",
+        "available_parents": 43,
+        "drawn_parents": 43,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 496
+      },
+      {
+        "label": 1,
+        "source": "Echoes/audioldm/TTA",
+        "generator": "audioldm",
+        "available_parents": 47,
+        "drawn_parents": 47,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 551
+      },
+      {
+        "label": 1,
+        "source": "Echoes/brev/TTA",
+        "generator": "brev",
+        "available_parents": 42,
+        "drawn_parents": 42,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 485
+      },
+      {
+        "label": 1,
+        "source": "Echoes/diffrhythm/ATA",
+        "generator": "diffrhythm",
+        "available_parents": 45,
+        "drawn_parents": 45,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 528
+      },
+      {
+        "label": 1,
+        "source": "Echoes/diffrhythm/TTA",
+        "generator": "diffrhythm",
+        "available_parents": 50,
+        "drawn_parents": 50,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 581
+      },
+      {
+        "label": 1,
+        "source": "Echoes/elevenlabs/TTA",
+        "generator": "elevenlabs",
+        "available_parents": 42,
+        "drawn_parents": 42,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 483
+      },
+      {
+        "label": 1,
+        "source": "Echoes/mubert/TTA",
+        "generator": "mubert",
+        "available_parents": 6,
+        "drawn_parents": 6,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 69
+      },
+      {
+        "label": 1,
+        "source": "Echoes/musicgen/ATA",
+        "generator": "musicgen",
+        "available_parents": 43,
+        "drawn_parents": 43,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 499
+      },
+      {
+        "label": 1,
+        "source": "Echoes/musicgen/TTA",
+        "generator": "musicgen",
+        "available_parents": 49,
+        "drawn_parents": 49,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 567
+      },
+      {
+        "label": 1,
+        "source": "Echoes/producer/ATA",
+        "generator": "producer",
+        "available_parents": 20,
+        "drawn_parents": 20,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 230
+      },
+      {
+        "label": 1,
+        "source": "Echoes/producer/TTA",
+        "generator": "producer",
+        "available_parents": 23,
+        "drawn_parents": 23,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 268
+      },
+      {
+        "label": 1,
+        "source": "Echoes/songgen/ATA",
+        "generator": "songgen",
+        "available_parents": 42,
+        "drawn_parents": 42,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 490
+      },
+      {
+        "label": 1,
+        "source": "Echoes/songgen/TTA",
+        "generator": "songgen",
+        "available_parents": 49,
+        "drawn_parents": 49,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 566
+      },
+      {
+        "label": 1,
+        "source": "Echoes/stableaudio/TTA",
+        "generator": "stableaudio",
+        "available_parents": 6,
+        "drawn_parents": 6,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 70
+      },
+      {
+        "label": 1,
+        "source": "Echoes/suno/TTA",
+        "generator": "suno",
+        "available_parents": 44,
+        "drawn_parents": 44,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 512
+      },
+      {
+        "label": 1,
+        "source": "Echoes/udio/TTA",
+        "generator": "udio",
+        "available_parents": 45,
+        "drawn_parents": 45,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          12
+        ],
+        "draws": 523
+      },
+      {
+        "label": 1,
+        "source": "suno",
+        "generator": "suno",
+        "available_parents": 24,
+        "drawn_parents": 24,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          11
+        ],
+        "draws": 264
+      },
+      {
+        "label": 1,
+        "source": "udio",
+        "generator": "udio",
+        "available_parents": 24,
+        "drawn_parents": 24,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          11,
+          11
+        ],
+        "draws": 264
+      }
+    ]
+  },
+  {
+    "branch": "music",
+    "mode": "source_generator_parent",
+    "train_rows": 831,
+    "train_parents": 831,
+    "drawn_parents": 789,
+    "checkpoint": "results/eight_h100_20260917/downloaded/unpacked/output/checkpoints/E1_music_balanced_seed41.pt",
+    "draw_sha256": "80b54a36fa77eaa86c820951648a3074a20a5dcca7d2f8998081842140f7bae8",
+    "saved_draw_sha256": "80b54a36fa77eaa86c820951648a3074a20a5dcca7d2f8998081842140f7bae8",
+    "digest_matches": true,
+    "cells": [
+      {
+        "label": 0,
+        "source": "FMA",
+        "generator": "",
+        "available_parents": 84,
+        "drawn_parents": 42,
+        "never_drawn_parents": 42,
+        "draw_count_range_all_parents": [
+          0,
+          96
+        ],
+        "draws": 4000
+      },
+      {
+        "label": 0,
+        "source": "FMA/FMA",
+        "generator": "",
+        "available_parents": 55,
+        "drawn_parents": 55,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          72,
+          73
+        ],
+        "draws": 4000
+      },
+      {
+        "label": 1,
+        "source": "Echoes/acestep/TTA",
+        "generator": "acestep",
+        "available_parents": 48,
+        "drawn_parents": 48,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          8,
+          9
+        ],
+        "draws": 422
+      },
+      {
+        "label": 1,
+        "source": "Echoes/audioldm/ATA",
+        "generator": "audioldm",
+        "available_parents": 43,
+        "drawn_parents": 43,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          9,
+          10
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/audioldm/TTA",
+        "generator": "audioldm",
+        "available_parents": 47,
+        "drawn_parents": 47,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          8,
+          9
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/brev/TTA",
+        "generator": "brev",
+        "available_parents": 42,
+        "drawn_parents": 42,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          10,
+          11
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/diffrhythm/ATA",
+        "generator": "diffrhythm",
+        "available_parents": 45,
+        "drawn_parents": 45,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          9,
+          10
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/diffrhythm/TTA",
+        "generator": "diffrhythm",
+        "available_parents": 50,
+        "drawn_parents": 50,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          8,
+          9
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/elevenlabs/TTA",
+        "generator": "elevenlabs",
+        "available_parents": 42,
+        "drawn_parents": 42,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          10,
+          11
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/mubert/TTA",
+        "generator": "mubert",
+        "available_parents": 6,
+        "drawn_parents": 6,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          70,
+          71
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/musicgen/ATA",
+        "generator": "musicgen",
+        "available_parents": 43,
+        "drawn_parents": 43,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          9,
+          10
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/musicgen/TTA",
+        "generator": "musicgen",
+        "available_parents": 49,
+        "drawn_parents": 49,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          8,
+          9
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/producer/ATA",
+        "generator": "producer",
+        "available_parents": 20,
+        "drawn_parents": 20,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          21,
+          22
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/producer/TTA",
+        "generator": "producer",
+        "available_parents": 23,
+        "drawn_parents": 23,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          18,
+          19
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/songgen/ATA",
+        "generator": "songgen",
+        "available_parents": 42,
+        "drawn_parents": 42,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          10,
+          11
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/songgen/TTA",
+        "generator": "songgen",
+        "available_parents": 49,
+        "drawn_parents": 49,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          8,
+          9
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/stableaudio/TTA",
+        "generator": "stableaudio",
+        "available_parents": 6,
+        "drawn_parents": 6,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          70,
+          71
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/suno/TTA",
+        "generator": "suno",
+        "available_parents": 44,
+        "drawn_parents": 44,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          9,
+          10
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "Echoes/udio/TTA",
+        "generator": "udio",
+        "available_parents": 45,
+        "drawn_parents": 45,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          9,
+          10
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "suno",
+        "generator": "suno",
+        "available_parents": 24,
+        "drawn_parents": 24,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          17,
+          18
+        ],
+        "draws": 421
+      },
+      {
+        "label": 1,
+        "source": "udio",
+        "generator": "udio",
+        "available_parents": 24,
+        "drawn_parents": 24,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          17,
+          18
+        ],
+        "draws": 421
+      }
+    ]
+  },
+  {
+    "branch": "voice",
+    "mode": "parent",
+    "train_rows": 212,
+    "train_parents": 212,
+    "drawn_parents": 212,
+    "checkpoint": "results/eight_h100_20260917/downloaded/unpacked/output/checkpoints/E1_voice_parent_seed41.pt",
+    "draw_sha256": "6eeed8ddcad475b8581b4f3fdf6340fd83772bd1a30cdb8b3fdb4adbacd7ad84",
+    "saved_draw_sha256": "6eeed8ddcad475b8581b4f3fdf6340fd83772bd1a30cdb8b3fdb4adbacd7ad84",
+    "digest_matches": true,
+    "cells": [
+      {
+        "label": 0,
+        "source": "MLAAD",
+        "generator": "original",
+        "available_parents": 4,
+        "drawn_parents": 4,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          75
+        ],
+        "draws": 300
+      },
+      {
+        "label": 0,
+        "source": "mlaad_real",
+        "generator": "",
+        "available_parents": 102,
+        "drawn_parents": 102,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 7700
+      },
+      {
+        "label": 1,
+        "source": "MLAAD",
+        "generator": "Cartesia.ai (Sonic-3)",
+        "available_parents": 1,
+        "drawn_parents": 1,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          75
+        ],
+        "draws": 75
+      },
+      {
+        "label": 1,
+        "source": "MLAAD",
+        "generator": "Chatterbox Multilingual",
+        "available_parents": 1,
+        "drawn_parents": 1,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          75
+        ],
+        "draws": 75
+      },
+      {
+        "label": 1,
+        "source": "MLAAD",
+        "generator": "Higgs-Audio-V2",
+        "available_parents": 1,
+        "drawn_parents": 1,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          75
+        ],
+        "draws": 75
+      },
+      {
+        "label": 1,
+        "source": "MLAAD",
+        "generator": "Kani-TTS-370M",
+        "available_parents": 1,
+        "drawn_parents": 1,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          75
+        ],
+        "draws": 75
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Cartesia.ai (Sonic-3)",
+        "available_parents": 12,
+        "drawn_parents": 12,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 906
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "FireRedTTS-2.0",
+        "available_parents": 9,
+        "drawn_parents": 9,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 682
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Higgs-Audio-V2",
+        "available_parents": 11,
+        "drawn_parents": 11,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 829
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Index-TTS-1.5",
+        "available_parents": 6,
+        "drawn_parents": 6,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 452
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Index-TTS-2.0",
+        "available_parents": 11,
+        "drawn_parents": 11,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 830
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Llasa-1B-Multilingual",
+        "available_parents": 13,
+        "drawn_parents": 13,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 984
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Llasa-8B",
+        "available_parents": 10,
+        "drawn_parents": 10,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 754
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Mars5",
+        "available_parents": 9,
+        "drawn_parents": 9,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 679
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "MeloTTS",
+        "available_parents": 10,
+        "drawn_parents": 10,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 753
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "VoxCPM-0.5B",
+        "available_parents": 11,
+        "drawn_parents": 11,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          75,
+          76
+        ],
+        "draws": 831
+      }
+    ]
+  },
+  {
+    "branch": "voice",
+    "mode": "source_generator_parent",
+    "train_rows": 212,
+    "train_parents": 212,
+    "drawn_parents": 129,
+    "checkpoint": "results/eight_h100_20260917/downloaded/unpacked/output/checkpoints/E1_voice_balanced_seed41.pt",
+    "draw_sha256": "548429a3dfd62207049c676d7a7687e65f654ff2fbee4a089317ad732392cd3b",
+    "saved_draw_sha256": "548429a3dfd62207049c676d7a7687e65f654ff2fbee4a089317ad732392cd3b",
+    "digest_matches": true,
+    "cells": [
+      {
+        "label": 0,
+        "source": "MLAAD",
+        "generator": "original",
+        "available_parents": 4,
+        "drawn_parents": 2,
+        "never_drawn_parents": 2,
+        "draw_count_range_all_parents": [
+          0,
+          2000
+        ],
+        "draws": 4000
+      },
+      {
+        "label": 0,
+        "source": "mlaad_real",
+        "generator": "",
+        "available_parents": 102,
+        "drawn_parents": 51,
+        "never_drawn_parents": 51,
+        "draw_count_range_all_parents": [
+          0,
+          79
+        ],
+        "draws": 4000
+      },
+      {
+        "label": 1,
+        "source": "MLAAD",
+        "generator": "Cartesia.ai (Sonic-3)",
+        "available_parents": 1,
+        "drawn_parents": 1,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          1000,
+          1000
+        ],
+        "draws": 1000
+      },
+      {
+        "label": 1,
+        "source": "MLAAD",
+        "generator": "Chatterbox Multilingual",
+        "available_parents": 1,
+        "drawn_parents": 1,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          1000,
+          1000
+        ],
+        "draws": 1000
+      },
+      {
+        "label": 1,
+        "source": "MLAAD",
+        "generator": "Higgs-Audio-V2",
+        "available_parents": 1,
+        "drawn_parents": 1,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          1000,
+          1000
+        ],
+        "draws": 1000
+      },
+      {
+        "label": 1,
+        "source": "MLAAD",
+        "generator": "Kani-TTS-370M",
+        "available_parents": 1,
+        "drawn_parents": 1,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          1000,
+          1000
+        ],
+        "draws": 1000
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Cartesia.ai (Sonic-3)",
+        "available_parents": 12,
+        "drawn_parents": 3,
+        "never_drawn_parents": 9,
+        "draw_count_range_all_parents": [
+          0,
+          134
+        ],
+        "draws": 400
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "FireRedTTS-2.0",
+        "available_parents": 9,
+        "drawn_parents": 9,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          44,
+          45
+        ],
+        "draws": 400
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Higgs-Audio-V2",
+        "available_parents": 11,
+        "drawn_parents": 11,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          36,
+          37
+        ],
+        "draws": 400
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Index-TTS-1.5",
+        "available_parents": 6,
+        "drawn_parents": 3,
+        "never_drawn_parents": 3,
+        "draw_count_range_all_parents": [
+          0,
+          134
+        ],
+        "draws": 400
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Index-TTS-2.0",
+        "available_parents": 11,
+        "drawn_parents": 11,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          36,
+          37
+        ],
+        "draws": 400
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Llasa-1B-Multilingual",
+        "available_parents": 13,
+        "drawn_parents": 13,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          30,
+          31
+        ],
+        "draws": 400
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Llasa-8B",
+        "available_parents": 10,
+        "drawn_parents": 1,
+        "never_drawn_parents": 9,
+        "draw_count_range_all_parents": [
+          0,
+          400
+        ],
+        "draws": 400
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "Mars5",
+        "available_parents": 9,
+        "drawn_parents": 9,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          44,
+          45
+        ],
+        "draws": 400
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "MeloTTS",
+        "available_parents": 10,
+        "drawn_parents": 1,
+        "never_drawn_parents": 9,
+        "draw_count_range_all_parents": [
+          0,
+          400
+        ],
+        "draws": 400
+      },
+      {
+        "label": 1,
+        "source": "mlaad_fake",
+        "generator": "VoxCPM-0.5B",
+        "available_parents": 11,
+        "drawn_parents": 11,
+        "never_drawn_parents": 0,
+        "draw_count_range_all_parents": [
+          36,
+          37
+        ],
+        "draws": 400
+      }
+    ]
+  }
+]

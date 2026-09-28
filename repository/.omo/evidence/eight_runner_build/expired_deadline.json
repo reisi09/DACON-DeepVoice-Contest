@@ -1,0 +1,7 @@
+{
+  "scenario": "expired or over-four-hour allocation is rejected before notebook execution",
+  "invocation": "eight_h100_run.main(expired config)",
+  "observable": "RuntimeError invalid immutable four-hour run boundary",
+  "rejected": true,
+  "error": "run started after its export reserve"
+}

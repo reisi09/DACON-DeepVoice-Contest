@@ -1,0 +1,36 @@
+{
+  "cache_id": "8718428fd1840b43e20a9e59c6d6492f280e841f025abe7dc802af92eda0d042",
+  "schema": "mert-disjoint-eight-v2",
+  "input_dim": 1024,
+  "assets": {
+    "baseline/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+    "mert/pytorch_model.bin": "0c03774d821a6ad972cb48220b128a10ebea2c790116bd0fd35e5a013f8017f6",
+    "mert/README.md": "50e8eeec63445c8c76d7052379e038c79f58b8a142d346eac3a3f67c57c1d2e9",
+    "mert/configuration_MERT.py": "ae0ec2bab8f59c724ba9878a7c20b67210189536ea62d34a56775968e9decb03",
+    "mert/config.json": "a5b40f9db03c84f29e3114abe813a9226178d5437b517d45cd4c2924ac3d0ce0",
+    "mert/modeling_MERT.py": "6c3ee73cef6f0c30ef494f88d96f891fa6925ffe663fa391b512f4b57abecc6c",
+    "mert/preprocessor_config.json": "c623b903eb1967474b27522975cfb81638e265df99aa640d2c0bd87a987ab538",
+    "baseline/model/htdemucs/htdemucs.yaml": "239c445d0b14454d541ad8bd9bb271c9e536d267e8a4625208744cbb2e7bb66c",
+    "baseline/model/htdemucs/955717e8-8726e21a.th": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4"
+  },
+  "extractor_sha256": "a9f995034cf111ff32c311f7948bd178d5bcc93ec3f29431575811a0c1ae6082",
+  "torch": "2.9.1+cu130",
+  "device": "NVIDIA A100-SXM4-80GB",
+  "versions": {
+    "transformers": "4.57.6",
+    "demucs": "4.0.1",
+    "librosa": "0.11.0",
+    "numpy": "2.2.6",
+    "torchaudio": "2.9.1+cu130"
+  },
+  "sample_rate": 16000,
+  "mert_sample_rate": 24000,
+  "window_samples": 64600,
+  "frame_time": "convolution receptive-field centre; contextual MERT embeddings",
+  "tail": "baseline last full window, short audio tiled",
+  "bins": [
+    1,
+    8
+  ],
+  "dtype": "float32"
+}

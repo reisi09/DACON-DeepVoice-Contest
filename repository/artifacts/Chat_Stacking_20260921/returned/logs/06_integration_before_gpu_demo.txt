@@ -1,0 +1,20 @@
+..FF                                                                     [100%]
+=================================== FAILURES ===================================
+_______ test_opt_in_telemetry_leaves_baseline_and_four_outputs_unchanged _______
+
+    def test_opt_in_telemetry_leaves_baseline_and_four_outputs_unchanged():
+>       from dacon_stacking.gpu import record_from_engine
+E       ModuleNotFoundError: No module named 'dacon_stacking.gpu'
+
+tests/test_integration.py:75: ModuleNotFoundError
+______ test_six_matched_cv_systems_keep_same_outer_rows_and_four_outputs _______
+
+    def test_six_matched_cv_systems_keep_same_outer_rows_and_four_outputs():
+>       from dacon_stacking.demo import synthetic_data, smoke_config
+E       ModuleNotFoundError: No module named 'dacon_stacking.demo'
+
+tests/test_integration.py:87: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_integration.py::test_opt_in_telemetry_leaves_baseline_and_four_outputs_unchanged - ModuleNotFoundError: No module named 'dacon_stacking.gpu'
+FAILED tests/test_integration.py::test_six_matched_cv_systems_keep_same_outer_rows_and_four_outputs - ModuleNotFoundError: No module named 'dacon_stacking.demo'
+2 failed, 2 passed in 1.25s

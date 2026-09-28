@@ -1,0 +1,23 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_explicit_p4_starts_select_distinct_late_file_content ___________
+
+    def test_explicit_p4_starts_select_distinct_late_file_content() -> None:
+        # Given: a 30-second file whose samples identify their exact source position.
+        loaded = v4.LoadedModel("sonics", torch.nn.Identity(), None, 16_000, 80_000)
+        audio = np.arange(480_000, dtype=np.float32)
+        starts = ((0, 160_000, 320_000, 400_000),)
+    
+        # When: the runner supplies its four stratified P4 starts and segment labels.
+>       prepared = v4.prepare_windows(
+            loaded,
+            [audio],
+            starts=starts,
+            window_targets=((0.0, 0.0, 1.0, 1.0),),
+        )
+E       TypeError: prepare_windows() got an unexpected keyword argument 'starts'
+
+test_v4_model.py:188: TypeError
+=========================== short test summary info ============================
+FAILED test_v4_model.py::test_explicit_p4_starts_select_distinct_late_file_content
+1 failed, 5 deselected in 2.77s

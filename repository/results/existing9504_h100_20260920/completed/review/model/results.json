@@ -1,0 +1,64 @@
+{
+  "music_41": {
+    "checkpoint_sha256": "37402170d05f13840becc4ae45b1d9755e565d89889c5330fd6fa11bcd0aeb82",
+    "epoch": 23,
+    "epochs_completed": 28,
+    "microbatch": 256,
+    "validation_eer": 0.0911764705882353,
+    "window_limit": 46140
+  },
+  "music_42": {
+    "checkpoint_sha256": "3315cd455b2781571e2d0a5ba02388d4335bfa5210222a1e130ecf79f2101609",
+    "epoch": 13,
+    "epochs_completed": 18,
+    "microbatch": 256,
+    "validation_eer": 0.0911764705882353,
+    "window_limit": 46140
+  },
+  "music_43": {
+    "checkpoint_sha256": "ef4dae28ef052d74e2cdd236765be5d2b33d220f02bc6f29129b31e3211be540",
+    "epoch": 19,
+    "epochs_completed": 24,
+    "microbatch": 256,
+    "validation_eer": 0.09705882352941175,
+    "window_limit": 46140
+  },
+  "music_ensemble": {
+    "auc": 0.9650865051903125,
+    "eer": 0.0911764705882353,
+    "normalization": "train-route file means (mean/std over train files)",
+    "train_rows": 2584,
+    "validation_rows": 680
+  },
+  "voice_41": {
+    "checkpoint_sha256": "c1d00490d79765e422f99022ea2179db19be6eac800c93832fa4ffb5272c705c",
+    "epoch": 50,
+    "epochs_completed": 50,
+    "microbatch": 256,
+    "validation_eer": 0.008042895442359251,
+    "window_limit": 610
+  },
+  "voice_42": {
+    "checkpoint_sha256": "bc394b6bed3cf212f4a09f9811651d8f8b8477efbeeae1a676ba65a9442dd4bb",
+    "epoch": 49,
+    "epochs_completed": 50,
+    "microbatch": 256,
+    "validation_eer": 0.008042895442359251,
+    "window_limit": 610
+  },
+  "voice_43": {
+    "checkpoint_sha256": "31b350e02eb54105dac35bf78a43dc674dffa30af0bc75c9b0f665226ae9185b",
+    "epoch": 50,
+    "epochs_completed": 50,
+    "microbatch": 256,
+    "validation_eer": 0.008042895442359251,
+    "window_limit": 610
+  },
+  "voice_ensemble": {
+    "auc": 0.9997699976281006,
+    "eer": 0.008042895442359251,
+    "normalization": "train-route file means (mean/std over train files)",
+    "train_rows": 4068,
+    "validation_rows": 746
+  }
+}

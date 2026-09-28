@@ -1,0 +1,24 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_mps_last_block_gradient_matches_cpu_with_frozen_prefix __________
+
+    @pytest.mark.skipif(not torch.backends.mps.is_available(), reason='MPS-specific partial LayerNorm backward')
+    def test_mps_last_block_gradient_matches_cpu_with_frozen_prefix():
+        # Protect against MPS returning zero/garbage LayerNorm bias gradients for a frozen input.
+        from copy import deepcopy
+        cpu = tiny_model('last_block').train()
+        mps = deepcopy(cpu).to('mps').train()
+        for _ in range(2):
+            inputs = torch.randn(2, 32, 128)
+            for model, device in ((cpu, 'cpu'), (mps, 'mps')):
+                model.zero_grad(set_to_none=True)
+                model(inputs.to(device)).square().mean().backward()
+            for (name, left), (_, right) in zip(cpu.named_parameters(), mps.named_parameters(), strict=True):
+                if left.requires_grad:
+>                   torch.testing.assert_close(right.grad.cpu(), left.grad, atol=2e-4, rtol=2e-3, msg=name)
+E                   AssertionError: backbone.encoder.layer.1.layernorm_before.weight
+
+test_ast_multitask.py:161: AssertionError
+=========================== short test summary info ============================
+FAILED test_ast_multitask.py::test_mps_last_block_gradient_matches_cpu_with_frozen_prefix
+1 failed, 5 deselected in 2.73s

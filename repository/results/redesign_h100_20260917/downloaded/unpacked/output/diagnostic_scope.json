@@ -1,0 +1,27 @@
+{
+  "accepted": false,
+  "capacity_control": {
+    "reason": "optional post-main control was not placed ahead of bounded export",
+    "status": "not_run"
+  },
+  "diagnostic_only": true,
+  "historical_reused_data": true,
+  "reports": [
+    "A_vs_B",
+    "file_max_vs_noisy_or",
+    "file_max_vs_oof_relation"
+  ],
+  "run_arms": [
+    "A",
+    "B"
+  ],
+  "skipped_arms": {
+    "C": "no verified paired pure/mixed slots; C duplicates A exposure",
+    "D": "no verified paired pure/mixed slots; D duplicates B exposure"
+  },
+  "voice": {
+    "eligible_ids": [],
+    "reason": "known real/fake singing and telephone labels are both required",
+    "status": "provisional_skip"
+  }
+}

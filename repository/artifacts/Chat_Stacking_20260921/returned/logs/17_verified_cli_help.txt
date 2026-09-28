@@ -1,0 +1,13 @@
+$ /opt/pyvenv/bin/python -m dacon_stacking --help
+usage: __main__.py [-h]
+                   {audit,smoke,validate-data,split-parents,extract,dev,lock,ood,infer-cache,infer-audio,stage-runtime} ...
+
+Current frozen-expert File-only stacking; local execution only
+
+positional arguments:
+  {audit,smoke,validate-data,split-parents,extract,dev,lock,ood,infer-cache,infer-audio,stage-runtime}
+
+options:
+  -h, --help            show this help message and exit
+
+EXIT_CODE=0

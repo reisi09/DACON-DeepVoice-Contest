@@ -1,0 +1,25 @@
+{
+  "status": "running",
+  "started_at": 1789780224.9690864,
+  "updated_at": 1789791060.721709,
+  "features": {
+    "done": 7144,
+    "elapsed_seconds": 10574.16016960144,
+    "last_id": "librispeech_test-clean:908-31957-0025",
+    "stage": "features",
+    "total": 7144
+  },
+  "train": {
+    "epoch": 29,
+    "improved": true,
+    "loss": 0.02895778341874458,
+    "order_sha256": "9621c09366fc90f527fc1284f9df8d8e76c5c23e8ff342251de80f9d4e034a86",
+    "route": "voice",
+    "rows_seen": 2716,
+    "seed": 43,
+    "stage": "train",
+    "unique_rows_seen": 2716,
+    "validation_bce": 0.03198920393738703,
+    "validation_eer": 0.011707058909409433
+  }
+}

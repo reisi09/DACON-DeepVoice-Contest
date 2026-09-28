@@ -1,0 +1,123 @@
+"""Immutable run contract for the A100 existing-only 9504 handoff.
+
+Every value here is copied from reviewed inputs (AUTHOR_REQUEST.txt, dataset
+README/verification/audit, asset_hashes.json, the original source modules and
+the reference requirements).  The notebook never edits these values.
+"""
+from __future__ import annotations
+
+from typing import Final
+
+RUN_NAME: Final = "DACON_Existing9504_A100"
+HANDOFF_NAME: Final = "DACON_Existing9504_A100_Handoff.zip"
+FAILURE_NAME: Final = "DACON_Existing9504_A100_Handoff_FAILED.zip"
+WORKSPACE: Final = "wsp-5i3knd3gxeox"
+OBJVOL_ROOT: Final = "/root-1"
+DEPLOYMENT_ROOT: Final = "/root-1/existing-only-9504-20260919"
+DEFAULT_JOB_ROOT: Final = "/root/dacon_existing9504_a100_20260919"
+EXPECTED_GPU: Final = "A100"
+SEEDS: Final = (41, 42, 43)
+ROUTES: Final = ("music", "voice")
+SPLITS: Final = ("train", "val", "test")
+LABELS: Final = ("FILE_FAKE", "VOICE_FAKE", "MUSIC_FAKE", "VOICE_PRESENT", "MUSIC_PRESENT")
+TARGET_HOURS: Final = 16.0
+
+# Dataset contract (dataset/README.md, verification.json, audit.json).
+SELECTED_CSV_SHA256: Final = "21bb36fb0e7377d986a7c77a466f24ddf473675596effbc57c4bfaac220429fd"
+# Runtime dataset/manifest.csv (all 9504 rows) as reviewed by Codex v1; deployment.json must name it.
+RUNTIME_MANIFEST_SHA256: Final = "96ba67dd2dfdbcfbf041465e883e0e003e6489e14f82e93054df4b42075a9ae3"
+SOURCE_AUDIO_BYTES: Final = 14_939_622_208
+DATASET_EXPECTATIONS: Final = {
+    "rows": 9504,
+    "splits": {"train": 6652, "val": 1426, "test": 1426},
+    "per_class": {"train": 3326, "val": 713, "test": 713},
+    "routes": {"train": {"voice": 4068, "music": 2584},
+               "val": {"voice": 746, "music": 680},
+               "test": {"voice": 744, "music": 682}},
+    "historical_exposure": {"train": 4176, "val": 997, "test": 1001},
+    "singing": {"train": 2034, "val": 0, "test": 0},
+    "singing_source": "CtrSVDD",
+}
+PROVENANCE_CSV_SHA256: Final = {
+    "train.csv": "ffcd4cb2ddfb13313fa251abdd3b92550d2888c508dc08101d21430abbaeae35",
+    "val.csv": "802d8f5f6e1540f710d11eefdee4d2583e6eec579b00af12f7f5f0aa0e0588c7",
+    "test.csv": "39048ccf0cde85e8f0a15e6517e2980b44336ff4f88462378d7a66a75be72638",
+    "selected.csv": SELECTED_CSV_SHA256,
+}
+
+# The 27 frozen pretrained/baseline files (asset_hashes.json in the context ZIP).
+ASSET_HASHES: Final = {
+    'baseline/model/df_arena_1b/.gitattributes': '11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361',
+    'baseline/model/df_arena_1b/.gitignore': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+    'baseline/model/df_arena_1b/LICENSE.txt': '903d5ad67a67b3a919981892948e984bdf349053d54f1563c6497f48cdaf75b4',
+    'baseline/model/df_arena_1b/README.md': '0f577f45eea69a99eb55404569c6efa814dfb15b22791bf33bc652c0e134d75a',
+    'baseline/model/df_arena_1b/__init__.py': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+    'baseline/model/df_arena_1b/backbone.py': '397df32fb0b1a1296b292ec698e7edca44f98c5f2afe3655bf182ad01fa5a11c',
+    'baseline/model/df_arena_1b/config.json': 'e9f6b651fb2f83d320b5e10b38bc104afdc57641839d16dd1b4921e9eae49a43',
+    'baseline/model/df_arena_1b/configuration_antispoofing.py': 'dd4a40789c2383896ce743effdd48cb6cdbd2f01c4bcdd7d4b71d7fb92869cf7',
+    'baseline/model/df_arena_1b/conformer.py': '84651dc9e81aaf4a32b400a621aa37e8f22e656a8207c5f4120cbb6e682c5540',
+    'baseline/model/df_arena_1b/facebook/wav2vec2-xls-r-1b/config.json': '36668778db09d5c64090b62d6afb66ba63057304fe456a45388066ff7dabb997',
+    'baseline/model/df_arena_1b/feature_extraction_antispoofing.py': 'f549bce974e527a5bf57fd5544ba793d35d99c5db8047600d1c905308a8aacf7',
+    'baseline/model/df_arena_1b/modeling_antispoofing.py': 'a7925c0ba67ef090552e0c337be6e6b3efffd53c3193e2310b30675af968c624',
+    'baseline/model/df_arena_1b/pipeline_antispoofing.py': 'a308720d1be9fa6c948bd91648a1ec83a1465a178ae0da29f3cc48fe425170b4',
+    'baseline/model/df_arena_1b/preprocessor_config.json': 'e23aafe2a4a2a7c0caaefdc6e4b1e131774137fdeaa50fb5376764b05dacb3c7',
+    'baseline/model/df_arena_1b/pytorch_model.bin': '780bc14fd4c15e65d58efdef728427cf03cd29cd60be528e97badf8c89087988',
+    'baseline/model/htdemucs/955717e8-8726e21a.th': '8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4',
+    'baseline/model/htdemucs/htdemucs.yaml': '239c445d0b14454d541ad8bd9bb271c9e536d267e8a4625208744cbb2e7bb66c',
+    'baseline/model/panns/Cnn14_mAP=0.431.pth': '0dc499e40e9761ef5ea061ffc77697697f277f6a960894903df3ada000e34b31',
+    'baseline/model/panns/class_labels_indices.csv': 'cdd1049833c4b86127c2773ac0d14a2754b6a6d0d1798002ed5c66e699708429',
+    'baseline/model/panns/component_labels.json': '95bdfd3ca12f7ba31a7cb15d4bbe0147d02074a180f92c0177ffa1f0b80f4f33',
+    'baseline/script.py': 'c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e',
+    'mert/README.md': '50e8eeec63445c8c76d7052379e038c79f58b8a142d346eac3a3f67c57c1d2e9',
+    'mert/config.json': 'a5b40f9db03c84f29e3114abe813a9226178d5437b517d45cd4c2924ac3d0ce0',
+    'mert/configuration_MERT.py': 'ae0ec2bab8f59c724ba9878a7c20b67210189536ea62d34a56775968e9decb03',
+    'mert/modeling_MERT.py': '6c3ee73cef6f0c30ef494f88d96f891fa6925ffe663fa391b512f4b57abecc6c',
+    'mert/preprocessor_config.json': 'c623b903eb1967474b27522975cfb81638e265df99aa640d2c0bd87a987ab538',
+    'mert/pytorch_model.bin': '0c03774d821a6ad972cb48220b128a10ebea2c790116bd0fd35e5a013f8017f6',
+}
+
+# Original modules (source.zip -> source/*.py). Reused unchanged by import.
+SOURCE_HASHES: Final = {
+    'ast_multitask.py': '2204c7a406f2865a9fc84ea9efb3a7ea3bfeaeb1e894eb15ef80671944c69a6b',
+    'eight_fixed_io.py': '2a5267ccb6a77b67b4a1c2bbf22735e129056ff6071f389f9f4576eceb822a69',
+    'eight_heads.py': 'c3e040ad607e0f40046358a7bd6069d0fe389f6c6c6201c39992060838eeba09',
+    'eight_metrics.py': '78ea26c579d4f59791956c60a674c00c963334be5ccfebfc82ff445ef6f64d4c',
+    'expanded_submission.py': '7c7ef05802d9d34b4cd039fdc1943fcbfd358c90d5e7f5f7e6936a97f31f352c',
+    'full_bank_batches.py': 'f7dea887167586c428c366ed9bff1122abf8df959a3b2d94f0496346f54db583',
+    'full_bank_evaluate.py': '3db489ec1f7491389fd374ceca4c10328ca6178015381c07c66f48f36d519bba',
+    'full_bank_features.py': '59963062eb536d514f8f1a8ea8aa981d65cf2d8f03c7df905597c973d9481116',
+    'full_bank_run.py': 'c0830be29cdbf6234ebb25fef08d25e9301b49e84126d0a1d541106dc70b5bd5',
+    'full_bank_submission.py': '55eaadaca62874afb1113c3319bed10aa17e5c156c15dc992aff6cb622dea204',
+    'full_bank_train.py': 'bb35c7d23fd305fdaff97398b0b9a07dd7a5da2121494279be00dd2148293673',
+    'graph_scoring.py': '7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96',
+    'localization_features.py': '3e1abb11dcc8b5f1b8b118f65f5192d7b40e17be45d66c9930a9a9f950c7285c',
+    'localization_models.py': 'f0c325d9b654cb0a6fa64740082637a39da89c6137c9d29206c1a376201ec94c',
+    'mert12_full_refit.py': '0f503a9fd9783de7e6de3ca250fd0a912dcb613f4dfa20d69dcf2ef3d945e990',
+    'mert12_submission.py': '30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e',
+    'music_temporal.py': '208e9ab8f4912e64f19bcd365c5760134db298c5ac0d58075688566278b3ebe5',
+    'package_expanded_submission.py': '5ec1ad3bf7dabc17efe659c79ac980f68f1d9714a62d45aeed21c048fab670c3',
+    'package_full_bank_submission.py': '3b9d9e44bd892e1923a7d6556308eda9122ba9cc34df797c8bddb1520cc67b44',
+    'package_mert12_submission.py': '02abedd396b2fbca0878ec80a31831109e83ee41ce5eb1e1af4e14c1bfe99708',
+    'package_redesign_submission.py': 'ec59532f99f731066c2517abd688ee54ac3c0a1e857c68b1a4ac6c2378985111',
+    'redesign_assets.py': '3039d85626bf28c5e5374316c97aa3b49dec37956fd550116e1eb8288575d933',
+    'redesign_checkpoint.py': '8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab',
+    'redesign_features_cache.py': '5594b86ca3effffeb40893317cad04debf510da11db84158bdc0590508fb299a',
+    'redesign_features_runtime.py': '33799ddc1efc017a6b04f2ca52a8f22c50b57d32ed05b18cc1eb477447ffec99',
+    'redesign_models.py': '5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9',
+    'redesign_submission.py': 'fdc86dcf7d7157e910fd6f5067152f307412a539811102a2565443bcdffa6146',
+    'temporal_augmentation.py': 'ac7aaeabdeb72bc8b8553ab75f2fa5b933b0dd419e827f605297804decc986a5',
+    'v6_core.py': 'b0b0496623f16f815e82d465139449b5258b52cf7d2246f5cad72467037dfd72',
+    'v6_data.py': 'e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33',
+    'v6_runtime.py': 'fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce',
+    'v6_train.py': 'ac5dbad1b572dec8803792012517108055b64da66ddee4b527c6458584135b1b',
+    'v7_ablation.py': '1c93d837c8a0fbd65f48b74b078c97755a588b0013163ee95550d18136e4ea89',
+}
+
+# Isolated environment (reference_requirements.txt + packages the baseline imports).
+UV_VERSION: Final = "0.8.17"
+UV_WHEEL_URL: Final = ("https://files.pythonhosted.org/packages/8f/35/cb47d2d07a383c07b0e5043c6fe5555f0fd79683c6d7f9760222987c8be9/"
+                       "uv-0.8.17-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl")
+UV_WHEEL_SHA256: Final = "b6d30d02fb65193309fc12a20f9e1a9fab67f469d3e487a254ca1145fd06788f"
+PYTHON_VERSION: Final = "3.11.13"
+MICROMAMBA_VERSION: Final = "2.9.0-0"
+CONDA_FFMPEG_SPEC: Final = "ffmpeg=7.1.*"

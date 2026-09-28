@@ -1,0 +1,3061 @@
+{
+  "accepted_input_rows": 1696,
+  "all_measured_invariants_pass": true,
+  "ensembles": [
+    {
+      "checks": {
+        "member_means_exact": true,
+        "saved_members_match": true
+      },
+      "maximum_absolute_errors": {
+        "predictions": 0.0,
+        "window_scores": 0.0
+      },
+      "member_count": 3,
+      "path": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/A_ensemble.json",
+      "sha256": "53fb12ae3b1ab2d9d4370dacce593c77a6a76c8ba9389dda96b6e42b9b7b3ace"
+    },
+    {
+      "checks": {
+        "member_means_exact": true,
+        "saved_members_match": true
+      },
+      "maximum_absolute_errors": {
+        "predictions": 0.0,
+        "window_scores": 0.0
+      },
+      "member_count": 3,
+      "path": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/B_ensemble.json",
+      "sha256": "83ee27c3007dc82f6baec880c09d85f17b41e9fa33d2df6f30c04b271aaaa048"
+    }
+  ],
+  "input_sha256": {
+    "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+    "redesign_fit.py": "cca6162e1cc45ac68426b56217fd902a72b821bd1e111e5b4551aa79bf6271b2",
+    "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+    "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+    "redesign_predictions.py": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+    "redesign_train.py": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497",
+    "results/precision_audit_20260918/evidence/evaluation_oof_replay.py": "e625e8b479208e14332aaa957d52065e3cbf929e2cc4c10c68c200c5f403fb8b",
+    "results/redesign_h100_20260917/downloaded/unpacked/evidence/data_audit_copy.json": "3ec2855b06abe0f5f1c121f9ba613710e57a5990f4bbf95e5453a1f23ebb7fe0",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/A_ensemble.json": "53fb12ae3b1ab2d9d4370dacce593c77a6a76c8ba9389dda96b6e42b9b7b3ace",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/A_seed41.json": "c18a130cd9c86f76f892272b09adb2243e253e3b939a663d73f8a7f39fcfa72d",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/A_seed42.json": "4983a86658212e707bfacdf6616a2f0c1340870a1e821b176dfb804a5766d9b4",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/A_seed43.json": "d101a8bdcbbea94f1e4f883bca7b3603f7e15e363769982c6b7d73220c94758f",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/B_ensemble.json": "83ee27c3007dc82f6baec880c09d85f17b41e9fa33d2df6f30c04b271aaaa048",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/B_seed41.json": "340b2b413594a21ddeaf1d041446775d8aa1669fe645fb64a37889c7ad007f15",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/B_seed42.json": "50412fb011ebe0f041a8058c576fb84d34f369911b62b887c215dbe2ce3238a0",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/B_seed43.json": "64d8d4af71a313328ac486bd615337a483b305d38eb8cde406f170381beb6c5e",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold0/best.pt": "2c705e452b2f984ba85e00070163f5302b96bdd899bacc91c9843f503791a144",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold1/best.pt": "11f0a28e486e3259360b39e1b7185179162cf4f5ee83bf68114dd6a995b0ec83",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold2/best.pt": "ec77b7995c49baf41ba5b21c51cac727db7b30b8ccbea0c4766d7f4603a1d7ac",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold3/best.pt": "0c5a0ae88e3434e9c0271c7f89b2df5fbb773d8be21389d37c5a8c16716fe893",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold4/best.pt": "3ff3fbea98d305d70a72b53056695256d41445fc7049ff7bb8a5738bf5dc1430",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold0/best.pt": "0a5936a01e6f66c59d1b67aedfa5ac3fb17720e367aea312102246fa024455c4",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold1/best.pt": "d9f349162a76581035554b9f7b3a99533a18c9a42f56fe73004f436f05546a07",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold2/best.pt": "7cd464a7679a00ae33570f72e7b508a13ecf809ed7d66be987a80405ffe26ef3",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold3/best.pt": "d1f9dc2d0b7f0dd45c3061c73afa89abdc75c67f83fe791016aed19d691743ac",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold4/best.pt": "e060d99a6e5a0a57a3ceb72edb929496491fa0953365b697f9a2fd694e9e2c81",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold0/best.pt": "4bf968f71d39e9a48c04c10aa22e4fff722b2908f76fc10ddd2387cf30b388f7",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold1/best.pt": "055d46ae191a580829f3907ebe6cda84ee492bb69302d8ecaad8c5b174336d5b",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold2/best.pt": "1a0e7b00c9f736282ba35bf790c3f75bba2068571a7e34f06d16358938c39304",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold3/best.pt": "a53397fbccd01b3cdab3734748a979d424d27446e3dd1f04c4845c4aa3c92540",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold4/best.pt": "57b9749e9bb26363b502467b1cee7e32a4f1900b72346d2c44a427d912285578",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold0/best.pt": "9e41dd5765775f93845ef1c5f5ca34eab1e2b1d40192a4417d0c1975e8f417ea",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold1/best.pt": "3dc94e32ec8dd0b0e731b0b726f5b57260793c4c32ab71a83aca27a58273ba3b",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold2/best.pt": "63feafa528c8671c9d6e255bfd125e8458b495e2b06294ca3c865b3d2ba8a2b3",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold3/best.pt": "95dc3873fe532de7b174930f34d84617d0c56feaa3c0a7f247886fa860efb4c9",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold4/best.pt": "d2585d4debc5f66ddd813ec0d80709978e648a68aacedeaf4a4bcf18e10e9c55",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold0/best.pt": "fd8686a2f19e918679b2b0760e3b7d6eb635d3bc37a1923ba8439485c9560fd9",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold1/best.pt": "51243bd32f4ed935360aca2ed87e4063bcee34b45a13963a781b076eaa18a270",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold2/best.pt": "8239889dd745735bea363de92519db48f6c37169a69b0fbfc03d985b68efd0a9",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold3/best.pt": "dcafa0ff65e632f403685c39049dae67d5433dd27c577426e6568b5cdb32c523",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold4/best.pt": "4baa7d876d77ab2a926a947ce49087ff440874daf580a78c672a7d508e1a335b",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold0/best.pt": "7edebbab04368fe1713ae1b09ee9649030d645745c3510f47568272199ba4a07",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold1/best.pt": "909443172450e82a84db3a8e804173b1eb464209d08d79999f29246b8a4c9a7b",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold2/best.pt": "bb219ac09ca1535fcf9273e50f3832579f417d2b2a9ebc4cf2d64b49ef3583cf",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold3/best.pt": "160e55ee560a51f114195bce9cbd31734b8c4aadfecdca7dbba6949602fe63c4",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold4/best.pt": "dfef735c01be8701471f71ffda164c49c22114848ea7ccad75735238429fe639",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/predictions/A_seed41.json": "77b71e0b1c46fe829fe68fdbda6fd669b19519cbdf6a7e6cc3835c41b17bd48d",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/predictions/A_seed42.json": "ecda3b3cc1c45d2996285d8b334a2f87d83e68fb174186e87e175bccea47a7fe",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/predictions/A_seed43.json": "c0eddeda3caf98f5a0e2c4dc8e754d8d82a31e0ee5740883fb8784c03738612f",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/predictions/B_seed41.json": "cfa0e5bc735f68512513688004eede250ad1cd1573f78546ff50675295204406",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/predictions/B_seed42.json": "589a066b64248b32957391fd81617870dc2b5380cb81903cdb0c34ac4c59acbd",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/predictions/B_seed43.json": "d441c8009413580d02043d6987045470634b61fcf521c82f6569e9bd6df2f034",
+    "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/summary.json": "03d8015741d93ae9263a67ee249645fcb6e24e267548e45c706a921a00d5dfd9",
+    "results/redesign_h100_20260917/sources.csv": "47ad5a01c1d88365ee1e8c72cd3b125858578d50041e93280516d4372004ae89"
+  },
+  "replay_command": "'/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.venv/bin/python' '/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/precision_audit_20260918/evidence/evaluation_oof_replay.py'",
+  "runtime": {
+    "device": "cpu",
+    "inference_run": false,
+    "numpy": "2.4.6",
+    "python": "3.11.15",
+    "torch": "2.7.1"
+  },
+  "scope": "Saved A/B head OOF provenance and arithmetic; no score or quality claim",
+  "seed_artifacts": [
+    {
+      "checks": {
+        "all_rows_held_once": true,
+        "artifact_sections_same_ids": true,
+        "global_validation_groups_disjoint": true,
+        "global_validation_rows_disjoint": true,
+        "known_source_ids": true,
+        "train_population_count": true,
+        "training_manifest_matches_audit": true
+      },
+      "current_source_hash_comparison": {
+        "redesign_checkpoint.py": {
+          "current_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+          "matches": true,
+          "saved_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab"
+        },
+        "redesign_fit.py": {
+          "current_sha256": "cca6162e1cc45ac68426b56217fd902a72b821bd1e111e5b4551aa79bf6271b2",
+          "matches": false,
+          "saved_sha256": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906"
+        },
+        "redesign_models.py": {
+          "current_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+          "matches": true,
+          "saved_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9"
+        },
+        "redesign_oof.py": {
+          "current_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+          "matches": true,
+          "saved_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1"
+        },
+        "redesign_predictions.py": {
+          "current_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+          "matches": true,
+          "saved_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93"
+        },
+        "redesign_train.py": {
+          "current_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497",
+          "matches": true,
+          "saved_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+        }
+      },
+      "folds": [
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold0/best.pt",
+          "checkpoint_sha256": "2c705e452b2f984ba85e00070163f5302b96bdd899bacc91c9843f503791a144",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 0,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            253,
+            938,
+            278
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 29,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold1/best.pt",
+          "checkpoint_sha256": "11f0a28e486e3259360b39e1b7185179162cf4f5ee83bf68114dd6a995b0ec83",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 1,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            306,
+            924,
+            239
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 22,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold2/best.pt",
+          "checkpoint_sha256": "ec77b7995c49baf41ba5b21c51cac727db7b30b8ccbea0c4766d7f4603a1d7ac",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 2,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            315,
+            978,
+            176
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 15,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold3/best.pt",
+          "checkpoint_sha256": "0c5a0ae88e3434e9c0271c7f89b2df5fbb773d8be21389d37c5a8c16716fe893",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 3,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            293,
+            958,
+            218
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 14,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/41/fold4/best.pt",
+          "checkpoint_sha256": "3ff3fbea98d305d70a72b53056695256d41445fc7049ff7bb8a5738bf5dc1430",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 4,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            302,
+            768,
+            399
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 15,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "groups": 97,
+      "held_count_distribution": {
+        "1": 1469
+      },
+      "labels": {
+        "FILE_FAKE": {
+          "0": 385,
+          "1": 1084
+        },
+        "MUSIC_FAKE": {
+          "0": 145,
+          "1": 844,
+          "None": 480
+        },
+        "MUSIC_PRESENT": {
+          "0": 480,
+          "1": 989
+        },
+        "VOICE_FAKE": {
+          "0": 240,
+          "1": 240,
+          "None": 989
+        },
+        "VOICE_PRESENT": {
+          "0": 72,
+          "1": 480,
+          "None": 917
+        }
+      },
+      "path": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/A_seed41.json",
+      "rows": 1469,
+      "sha256": "c18a130cd9c86f76f892272b09adb2243e253e3b939a663d73f8a7f39fcfa72d",
+      "strata": {
+        "domain": {
+          "historical-v4-reused": 1469
+        },
+        "kind": {
+          "instrumental": 72,
+          "mixed": 917,
+          "speech": 480
+        },
+        "view": {
+          "observed": 1469
+        }
+      },
+      "validation_overlap_groups": 0,
+      "validation_overlap_rows": 0
+    },
+    {
+      "checks": {
+        "all_rows_held_once": true,
+        "artifact_sections_same_ids": true,
+        "global_validation_groups_disjoint": true,
+        "global_validation_rows_disjoint": true,
+        "known_source_ids": true,
+        "train_population_count": true,
+        "training_manifest_matches_audit": true
+      },
+      "current_source_hash_comparison": {
+        "redesign_checkpoint.py": {
+          "current_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+          "matches": true,
+          "saved_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab"
+        },
+        "redesign_fit.py": {
+          "current_sha256": "cca6162e1cc45ac68426b56217fd902a72b821bd1e111e5b4551aa79bf6271b2",
+          "matches": false,
+          "saved_sha256": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906"
+        },
+        "redesign_models.py": {
+          "current_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+          "matches": true,
+          "saved_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9"
+        },
+        "redesign_oof.py": {
+          "current_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+          "matches": true,
+          "saved_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1"
+        },
+        "redesign_predictions.py": {
+          "current_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+          "matches": true,
+          "saved_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93"
+        },
+        "redesign_train.py": {
+          "current_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497",
+          "matches": true,
+          "saved_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+        }
+      },
+      "folds": [
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold0/best.pt",
+          "checkpoint_sha256": "0a5936a01e6f66c59d1b67aedfa5ac3fb17720e367aea312102246fa024455c4",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 0,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            253,
+            938,
+            278
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 18,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold1/best.pt",
+          "checkpoint_sha256": "d9f349162a76581035554b9f7b3a99533a18c9a42f56fe73004f436f05546a07",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 1,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            306,
+            924,
+            239
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 32,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold2/best.pt",
+          "checkpoint_sha256": "7cd464a7679a00ae33570f72e7b508a13ecf809ed7d66be987a80405ffe26ef3",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 2,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            315,
+            978,
+            176
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 20,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold3/best.pt",
+          "checkpoint_sha256": "d1f9dc2d0b7f0dd45c3061c73afa89abdc75c67f83fe791016aed19d691743ac",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 3,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            293,
+            958,
+            218
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 14,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/42/fold4/best.pt",
+          "checkpoint_sha256": "e060d99a6e5a0a57a3ceb72edb929496491fa0953365b697f9a2fd694e9e2c81",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 4,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            302,
+            768,
+            399
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 14,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "groups": 97,
+      "held_count_distribution": {
+        "1": 1469
+      },
+      "labels": {
+        "FILE_FAKE": {
+          "0": 385,
+          "1": 1084
+        },
+        "MUSIC_FAKE": {
+          "0": 145,
+          "1": 844,
+          "None": 480
+        },
+        "MUSIC_PRESENT": {
+          "0": 480,
+          "1": 989
+        },
+        "VOICE_FAKE": {
+          "0": 240,
+          "1": 240,
+          "None": 989
+        },
+        "VOICE_PRESENT": {
+          "0": 72,
+          "1": 480,
+          "None": 917
+        }
+      },
+      "path": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/A_seed42.json",
+      "rows": 1469,
+      "sha256": "4983a86658212e707bfacdf6616a2f0c1340870a1e821b176dfb804a5766d9b4",
+      "strata": {
+        "domain": {
+          "historical-v4-reused": 1469
+        },
+        "kind": {
+          "instrumental": 72,
+          "mixed": 917,
+          "speech": 480
+        },
+        "view": {
+          "observed": 1469
+        }
+      },
+      "validation_overlap_groups": 0,
+      "validation_overlap_rows": 0
+    },
+    {
+      "checks": {
+        "all_rows_held_once": true,
+        "artifact_sections_same_ids": true,
+        "global_validation_groups_disjoint": true,
+        "global_validation_rows_disjoint": true,
+        "known_source_ids": true,
+        "train_population_count": true,
+        "training_manifest_matches_audit": true
+      },
+      "current_source_hash_comparison": {
+        "redesign_checkpoint.py": {
+          "current_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+          "matches": true,
+          "saved_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab"
+        },
+        "redesign_fit.py": {
+          "current_sha256": "cca6162e1cc45ac68426b56217fd902a72b821bd1e111e5b4551aa79bf6271b2",
+          "matches": false,
+          "saved_sha256": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906"
+        },
+        "redesign_models.py": {
+          "current_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+          "matches": true,
+          "saved_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9"
+        },
+        "redesign_oof.py": {
+          "current_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+          "matches": true,
+          "saved_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1"
+        },
+        "redesign_predictions.py": {
+          "current_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+          "matches": true,
+          "saved_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93"
+        },
+        "redesign_train.py": {
+          "current_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497",
+          "matches": true,
+          "saved_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+        }
+      },
+      "folds": [
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold0/best.pt",
+          "checkpoint_sha256": "4bf968f71d39e9a48c04c10aa22e4fff722b2908f76fc10ddd2387cf30b388f7",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 0,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            253,
+            938,
+            278
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 13,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold1/best.pt",
+          "checkpoint_sha256": "055d46ae191a580829f3907ebe6cda84ee492bb69302d8ecaad8c5b174336d5b",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 1,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            306,
+            924,
+            239
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 17,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold2/best.pt",
+          "checkpoint_sha256": "1a0e7b00c9f736282ba35bf790c3f75bba2068571a7e34f06d16358938c39304",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 2,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            315,
+            978,
+            176
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 14,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold3/best.pt",
+          "checkpoint_sha256": "a53397fbccd01b3cdab3734748a979d424d27446e3dd1f04c4845c4aa3c92540",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 3,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            293,
+            958,
+            218
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 18,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/A/43/fold4/best.pt",
+          "checkpoint_sha256": "57b9749e9bb26363b502467b1cee7e32a4f1900b72346d2c44a427d912285578",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 4,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            302,
+            768,
+            399
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 10,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "groups": 97,
+      "held_count_distribution": {
+        "1": 1469
+      },
+      "labels": {
+        "FILE_FAKE": {
+          "0": 385,
+          "1": 1084
+        },
+        "MUSIC_FAKE": {
+          "0": 145,
+          "1": 844,
+          "None": 480
+        },
+        "MUSIC_PRESENT": {
+          "0": 480,
+          "1": 989
+        },
+        "VOICE_FAKE": {
+          "0": 240,
+          "1": 240,
+          "None": 989
+        },
+        "VOICE_PRESENT": {
+          "0": 72,
+          "1": 480,
+          "None": 917
+        }
+      },
+      "path": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/A_seed43.json",
+      "rows": 1469,
+      "sha256": "d101a8bdcbbea94f1e4f883bca7b3603f7e15e363769982c6b7d73220c94758f",
+      "strata": {
+        "domain": {
+          "historical-v4-reused": 1469
+        },
+        "kind": {
+          "instrumental": 72,
+          "mixed": 917,
+          "speech": 480
+        },
+        "view": {
+          "observed": 1469
+        }
+      },
+      "validation_overlap_groups": 0,
+      "validation_overlap_rows": 0
+    },
+    {
+      "checks": {
+        "all_rows_held_once": true,
+        "artifact_sections_same_ids": true,
+        "global_validation_groups_disjoint": true,
+        "global_validation_rows_disjoint": true,
+        "known_source_ids": true,
+        "train_population_count": true,
+        "training_manifest_matches_audit": true
+      },
+      "current_source_hash_comparison": {
+        "redesign_checkpoint.py": {
+          "current_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+          "matches": true,
+          "saved_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab"
+        },
+        "redesign_fit.py": {
+          "current_sha256": "cca6162e1cc45ac68426b56217fd902a72b821bd1e111e5b4551aa79bf6271b2",
+          "matches": false,
+          "saved_sha256": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906"
+        },
+        "redesign_models.py": {
+          "current_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+          "matches": true,
+          "saved_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9"
+        },
+        "redesign_oof.py": {
+          "current_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+          "matches": true,
+          "saved_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1"
+        },
+        "redesign_predictions.py": {
+          "current_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+          "matches": true,
+          "saved_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93"
+        },
+        "redesign_train.py": {
+          "current_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497",
+          "matches": true,
+          "saved_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+        }
+      },
+      "folds": [
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold0/best.pt",
+          "checkpoint_sha256": "9e41dd5765775f93845ef1c5f5ca34eab1e2b1d40192a4417d0c1975e8f417ea",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 0,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            253,
+            938,
+            278
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 19,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold1/best.pt",
+          "checkpoint_sha256": "3dc94e32ec8dd0b0e731b0b726f5b57260793c4c32ab71a83aca27a58273ba3b",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 1,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            306,
+            924,
+            239
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 22,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold2/best.pt",
+          "checkpoint_sha256": "63feafa528c8671c9d6e255bfd125e8458b495e2b06294ca3c865b3d2ba8a2b3",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 2,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            315,
+            978,
+            176
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 14,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold3/best.pt",
+          "checkpoint_sha256": "95dc3873fe532de7b174930f34d84617d0c56feaa3c0a7f247886fa860efb4c9",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 3,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            293,
+            958,
+            218
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 13,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/41/fold4/best.pt",
+          "checkpoint_sha256": "d2585d4debc5f66ddd813ec0d80709978e648a68aacedeaf4a4bcf18e10e9c55",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 4,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            302,
+            768,
+            399
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 9,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "groups": 97,
+      "held_count_distribution": {
+        "1": 1469
+      },
+      "labels": {
+        "FILE_FAKE": {
+          "0": 385,
+          "1": 1084
+        },
+        "MUSIC_FAKE": {
+          "0": 145,
+          "1": 844,
+          "None": 480
+        },
+        "MUSIC_PRESENT": {
+          "0": 480,
+          "1": 989
+        },
+        "VOICE_FAKE": {
+          "0": 240,
+          "1": 240,
+          "None": 989
+        },
+        "VOICE_PRESENT": {
+          "0": 72,
+          "1": 480,
+          "None": 917
+        }
+      },
+      "path": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/B_seed41.json",
+      "rows": 1469,
+      "sha256": "340b2b413594a21ddeaf1d041446775d8aa1669fe645fb64a37889c7ad007f15",
+      "strata": {
+        "domain": {
+          "historical-v4-reused": 1469
+        },
+        "kind": {
+          "instrumental": 72,
+          "mixed": 917,
+          "speech": 480
+        },
+        "view": {
+          "observed": 1469
+        }
+      },
+      "validation_overlap_groups": 0,
+      "validation_overlap_rows": 0
+    },
+    {
+      "checks": {
+        "all_rows_held_once": true,
+        "artifact_sections_same_ids": true,
+        "global_validation_groups_disjoint": true,
+        "global_validation_rows_disjoint": true,
+        "known_source_ids": true,
+        "train_population_count": true,
+        "training_manifest_matches_audit": true
+      },
+      "current_source_hash_comparison": {
+        "redesign_checkpoint.py": {
+          "current_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+          "matches": true,
+          "saved_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab"
+        },
+        "redesign_fit.py": {
+          "current_sha256": "cca6162e1cc45ac68426b56217fd902a72b821bd1e111e5b4551aa79bf6271b2",
+          "matches": false,
+          "saved_sha256": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906"
+        },
+        "redesign_models.py": {
+          "current_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+          "matches": true,
+          "saved_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9"
+        },
+        "redesign_oof.py": {
+          "current_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+          "matches": true,
+          "saved_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1"
+        },
+        "redesign_predictions.py": {
+          "current_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+          "matches": true,
+          "saved_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93"
+        },
+        "redesign_train.py": {
+          "current_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497",
+          "matches": true,
+          "saved_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+        }
+      },
+      "folds": [
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold0/best.pt",
+          "checkpoint_sha256": "fd8686a2f19e918679b2b0760e3b7d6eb635d3bc37a1923ba8439485c9560fd9",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 0,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            253,
+            938,
+            278
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 18,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold1/best.pt",
+          "checkpoint_sha256": "51243bd32f4ed935360aca2ed87e4063bcee34b45a13963a781b076eaa18a270",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 1,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            306,
+            924,
+            239
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 22,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold2/best.pt",
+          "checkpoint_sha256": "8239889dd745735bea363de92519db48f6c37169a69b0fbfc03d985b68efd0a9",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 2,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            315,
+            978,
+            176
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 12,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold3/best.pt",
+          "checkpoint_sha256": "dcafa0ff65e632f403685c39049dae67d5433dd27c577426e6568b5cdb32c523",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 3,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            293,
+            958,
+            218
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 14,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/42/fold4/best.pt",
+          "checkpoint_sha256": "4baa7d876d77ab2a926a947ce49087ff440874daf580a78c672a7d508e1a335b",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 4,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            302,
+            768,
+            399
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 12,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "groups": 97,
+      "held_count_distribution": {
+        "1": 1469
+      },
+      "labels": {
+        "FILE_FAKE": {
+          "0": 385,
+          "1": 1084
+        },
+        "MUSIC_FAKE": {
+          "0": 145,
+          "1": 844,
+          "None": 480
+        },
+        "MUSIC_PRESENT": {
+          "0": 480,
+          "1": 989
+        },
+        "VOICE_FAKE": {
+          "0": 240,
+          "1": 240,
+          "None": 989
+        },
+        "VOICE_PRESENT": {
+          "0": 72,
+          "1": 480,
+          "None": 917
+        }
+      },
+      "path": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/B_seed42.json",
+      "rows": 1469,
+      "sha256": "50412fb011ebe0f041a8058c576fb84d34f369911b62b887c215dbe2ce3238a0",
+      "strata": {
+        "domain": {
+          "historical-v4-reused": 1469
+        },
+        "kind": {
+          "instrumental": 72,
+          "mixed": 917,
+          "speech": 480
+        },
+        "view": {
+          "observed": 1469
+        }
+      },
+      "validation_overlap_groups": 0,
+      "validation_overlap_rows": 0
+    },
+    {
+      "checks": {
+        "all_rows_held_once": true,
+        "artifact_sections_same_ids": true,
+        "global_validation_groups_disjoint": true,
+        "global_validation_rows_disjoint": true,
+        "known_source_ids": true,
+        "train_population_count": true,
+        "training_manifest_matches_audit": true
+      },
+      "current_source_hash_comparison": {
+        "redesign_checkpoint.py": {
+          "current_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+          "matches": true,
+          "saved_sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab"
+        },
+        "redesign_fit.py": {
+          "current_sha256": "cca6162e1cc45ac68426b56217fd902a72b821bd1e111e5b4551aa79bf6271b2",
+          "matches": false,
+          "saved_sha256": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906"
+        },
+        "redesign_models.py": {
+          "current_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+          "matches": true,
+          "saved_sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9"
+        },
+        "redesign_oof.py": {
+          "current_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+          "matches": true,
+          "saved_sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1"
+        },
+        "redesign_predictions.py": {
+          "current_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+          "matches": true,
+          "saved_sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93"
+        },
+        "redesign_train.py": {
+          "current_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497",
+          "matches": true,
+          "saved_sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+        }
+      },
+      "folds": [
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold0/best.pt",
+          "checkpoint_sha256": "7edebbab04368fe1713ae1b09ee9649030d645745c3510f47568272199ba4a07",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 0,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            253,
+            938,
+            278
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 13,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold1/best.pt",
+          "checkpoint_sha256": "909443172450e82a84db3a8e804173b1eb464209d08d79999f29246b8a4c9a7b",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 1,
+          "group_counts": [
+            20,
+            62,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            306,
+            924,
+            239
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 18,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold2/best.pt",
+          "checkpoint_sha256": "bb219ac09ca1535fcf9273e50f3832579f417d2b2a9ebc4cf2d64b49ef3583cf",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 2,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            315,
+            978,
+            176
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 11,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold3/best.pt",
+          "checkpoint_sha256": "160e55ee560a51f114195bce9cbd31734b8c4aadfecdca7dbba6949602fe63c4",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 3,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            293,
+            958,
+            218
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 16,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "checkpoint": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof_checkpoints/B/43/fold4/best.pt",
+          "checkpoint_sha256": "dfef735c01be8701471f71ffda164c49c22114848ea7ccad75735238429fe639",
+          "checks": {
+            "checkpoint_earlystop_ids_match": true,
+            "checkpoint_hash_matches": true,
+            "checkpoint_selected_epoch_matches": true,
+            "checkpoint_train_ids_match": true,
+            "full_population_partition": true,
+            "groups_pairwise_disjoint": true,
+            "row_group_membership": true,
+            "rows_pairwise_disjoint": true,
+            "source_identities_pairwise_disjoint": true
+          },
+          "extra_population_ids": [],
+          "fold": 4,
+          "group_counts": [
+            19,
+            63,
+            15
+          ],
+          "group_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "missing_population_ids": [],
+          "overlap_pairs": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "partition_order": [
+            "held_out",
+            "fitting",
+            "earlystop"
+          ],
+          "row_counts": [
+            302,
+            768,
+            399
+          ],
+          "row_overlaps": [
+            0,
+            0,
+            0
+          ],
+          "selected_epoch": 9,
+          "source_identity_overlaps": {
+            "artist_id": [
+              0,
+              0,
+              0
+            ],
+            "audio_sha256": [
+              0,
+              0,
+              0
+            ],
+            "parent_ids": [
+              0,
+              0,
+              0
+            ],
+            "speaker_id": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "groups": 97,
+      "held_count_distribution": {
+        "1": 1469
+      },
+      "labels": {
+        "FILE_FAKE": {
+          "0": 385,
+          "1": 1084
+        },
+        "MUSIC_FAKE": {
+          "0": 145,
+          "1": 844,
+          "None": 480
+        },
+        "MUSIC_PRESENT": {
+          "0": 480,
+          "1": 989
+        },
+        "VOICE_FAKE": {
+          "0": 240,
+          "1": 240,
+          "None": 989
+        },
+        "VOICE_PRESENT": {
+          "0": 72,
+          "1": 480,
+          "None": 917
+        }
+      },
+      "path": "results/redesign_h100_20260917/downloaded/unpacked/output/experiments/oof/B_seed43.json",
+      "rows": 1469,
+      "sha256": "64d8d4af71a313328ac486bd615337a483b305d38eb8cde406f170381beb6c5e",
+      "strata": {
+        "domain": {
+          "historical-v4-reused": 1469
+        },
+        "kind": {
+          "instrumental": 72,
+          "mixed": 917,
+          "speech": 480
+        },
+        "view": {
+          "observed": 1469
+        }
+      },
+      "validation_overlap_groups": 0,
+      "validation_overlap_rows": 0
+    }
+  ],
+  "split_rows": {
+    "sealed": 98,
+    "train": 1469,
+    "validation": 129
+  },
+  "voice_status": {
+    "eligible_ids": [],
+    "reason": "known real/fake singing and telephone labels are both required",
+    "status": "provisional_skip"
+  }
+}

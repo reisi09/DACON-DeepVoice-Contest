@@ -1,0 +1,794 @@
+{
+  "status": "complete",
+  "manifest_sha256": "0a06f1e5f4d72e0c7a4a8f6ae11a2cf4119a2c8ecb34342532c46814f8d0b8ae",
+  "source_manifest_sha256": "37ea900b0eba80694a3f2fab5841444ccceb68f2354aec75070811739a31107f",
+  "script_sha256": "3163353d4eab91ef62aec0ac81b055ea8acdc63e4b67477656997b6930096f90",
+  "rows": 352,
+  "natural_duration_rows": 320,
+  "paired_partial_sham_rows": 32,
+  "independent_source_parents": 64,
+  "construction_replays_identical": 32,
+  "source_repetition_or_padding": false,
+  "crossfade_ms": 10,
+  "source_gain": "one peak ceiling per central60s parent",
+  "source_decoder": "eight_audio.load (same canonical source decoder as the existing training builder)",
+  "selection_used_predictions": false,
+  "evaluated": false,
+  "independent_listening": false,
+  "limitations": [
+    "Same known FMA/SONICS corpora and generators",
+    "The 352 views are dependent observations from64 parents",
+    "Mixed music voice labels are unknown",
+    "Constructed splices do not represent all naturally edited music"
+  ],
+  "constructions": [
+    {
+      "ID": "new_edit_0_8s_0",
+      "pair_id": "confirmation_edit:0:8",
+      "actual_audio_parents": [
+        "new_fma_131381",
+        "new_fma_113413"
+      ],
+      "split_group_parents": [
+        "new_fma_131381",
+        "new_fma_113413",
+        "new_sonics_53424"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_0_8s_1",
+      "pair_id": "confirmation_edit:0:8",
+      "actual_audio_parents": [
+        "new_fma_131381",
+        "new_sonics_53424"
+      ],
+      "split_group_parents": [
+        "new_fma_131381",
+        "new_fma_113413",
+        "new_sonics_53424"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_0_16s_0",
+      "pair_id": "confirmation_edit:0:16",
+      "actual_audio_parents": [
+        "new_fma_131381",
+        "new_fma_113413"
+      ],
+      "split_group_parents": [
+        "new_fma_131381",
+        "new_fma_113413",
+        "new_sonics_53424"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_0_16s_1",
+      "pair_id": "confirmation_edit:0:16",
+      "actual_audio_parents": [
+        "new_fma_131381",
+        "new_sonics_53424"
+      ],
+      "split_group_parents": [
+        "new_fma_131381",
+        "new_fma_113413",
+        "new_sonics_53424"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_0_30s_0",
+      "pair_id": "confirmation_edit:0:30",
+      "actual_audio_parents": [
+        "new_fma_131381",
+        "new_fma_113413"
+      ],
+      "split_group_parents": [
+        "new_fma_131381",
+        "new_fma_113413",
+        "new_sonics_53424"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_0_30s_1",
+      "pair_id": "confirmation_edit:0:30",
+      "actual_audio_parents": [
+        "new_fma_131381",
+        "new_sonics_53424"
+      ],
+      "split_group_parents": [
+        "new_fma_131381",
+        "new_fma_113413",
+        "new_sonics_53424"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_0_60s_0",
+      "pair_id": "confirmation_edit:0:60",
+      "actual_audio_parents": [
+        "new_fma_131381",
+        "new_fma_113413"
+      ],
+      "split_group_parents": [
+        "new_fma_131381",
+        "new_fma_113413",
+        "new_sonics_53424"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_0_60s_1",
+      "pair_id": "confirmation_edit:0:60",
+      "actual_audio_parents": [
+        "new_fma_131381",
+        "new_sonics_53424"
+      ],
+      "split_group_parents": [
+        "new_fma_131381",
+        "new_fma_113413",
+        "new_sonics_53424"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_1_8s_0",
+      "pair_id": "confirmation_edit:1:8",
+      "actual_audio_parents": [
+        "new_fma_10510",
+        "new_fma_135744"
+      ],
+      "split_group_parents": [
+        "new_fma_10510",
+        "new_fma_135744",
+        "new_sonics_54245"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 3.0,
+          "end": 5.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_1_8s_1",
+      "pair_id": "confirmation_edit:1:8",
+      "actual_audio_parents": [
+        "new_fma_10510",
+        "new_sonics_54245"
+      ],
+      "split_group_parents": [
+        "new_fma_10510",
+        "new_fma_135744",
+        "new_sonics_54245"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 3.0,
+          "end": 5.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_1_16s_0",
+      "pair_id": "confirmation_edit:1:16",
+      "actual_audio_parents": [
+        "new_fma_10510",
+        "new_fma_135744"
+      ],
+      "split_group_parents": [
+        "new_fma_10510",
+        "new_fma_135744",
+        "new_sonics_54245"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 7.0,
+          "end": 9.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_1_16s_1",
+      "pair_id": "confirmation_edit:1:16",
+      "actual_audio_parents": [
+        "new_fma_10510",
+        "new_sonics_54245"
+      ],
+      "split_group_parents": [
+        "new_fma_10510",
+        "new_fma_135744",
+        "new_sonics_54245"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 7.0,
+          "end": 9.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_1_30s_0",
+      "pair_id": "confirmation_edit:1:30",
+      "actual_audio_parents": [
+        "new_fma_10510",
+        "new_fma_135744"
+      ],
+      "split_group_parents": [
+        "new_fma_10510",
+        "new_fma_135744",
+        "new_sonics_54245"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 14.0,
+          "end": 16.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_1_30s_1",
+      "pair_id": "confirmation_edit:1:30",
+      "actual_audio_parents": [
+        "new_fma_10510",
+        "new_sonics_54245"
+      ],
+      "split_group_parents": [
+        "new_fma_10510",
+        "new_fma_135744",
+        "new_sonics_54245"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 14.0,
+          "end": 16.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_1_60s_0",
+      "pair_id": "confirmation_edit:1:60",
+      "actual_audio_parents": [
+        "new_fma_10510",
+        "new_fma_135744"
+      ],
+      "split_group_parents": [
+        "new_fma_10510",
+        "new_fma_135744",
+        "new_sonics_54245"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 29.0,
+          "end": 31.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_1_60s_1",
+      "pair_id": "confirmation_edit:1:60",
+      "actual_audio_parents": [
+        "new_fma_10510",
+        "new_sonics_54245"
+      ],
+      "split_group_parents": [
+        "new_fma_10510",
+        "new_fma_135744",
+        "new_sonics_54245"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 29.0,
+          "end": 31.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_2_8s_0",
+      "pair_id": "confirmation_edit:2:8",
+      "actual_audio_parents": [
+        "new_fma_97165",
+        "new_fma_17769"
+      ],
+      "split_group_parents": [
+        "new_fma_97165",
+        "new_fma_17769",
+        "new_sonics_54297"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 6.0,
+          "end": 8.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_2_8s_1",
+      "pair_id": "confirmation_edit:2:8",
+      "actual_audio_parents": [
+        "new_fma_97165",
+        "new_sonics_54297"
+      ],
+      "split_group_parents": [
+        "new_fma_97165",
+        "new_fma_17769",
+        "new_sonics_54297"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 6.0,
+          "end": 8.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_2_16s_0",
+      "pair_id": "confirmation_edit:2:16",
+      "actual_audio_parents": [
+        "new_fma_97165",
+        "new_fma_17769"
+      ],
+      "split_group_parents": [
+        "new_fma_97165",
+        "new_fma_17769",
+        "new_sonics_54297"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 14.0,
+          "end": 16.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_2_16s_1",
+      "pair_id": "confirmation_edit:2:16",
+      "actual_audio_parents": [
+        "new_fma_97165",
+        "new_sonics_54297"
+      ],
+      "split_group_parents": [
+        "new_fma_97165",
+        "new_fma_17769",
+        "new_sonics_54297"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 14.0,
+          "end": 16.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_2_30s_0",
+      "pair_id": "confirmation_edit:2:30",
+      "actual_audio_parents": [
+        "new_fma_97165",
+        "new_fma_17769"
+      ],
+      "split_group_parents": [
+        "new_fma_97165",
+        "new_fma_17769",
+        "new_sonics_54297"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 28.0,
+          "end": 30.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_2_30s_1",
+      "pair_id": "confirmation_edit:2:30",
+      "actual_audio_parents": [
+        "new_fma_97165",
+        "new_sonics_54297"
+      ],
+      "split_group_parents": [
+        "new_fma_97165",
+        "new_fma_17769",
+        "new_sonics_54297"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 28.0,
+          "end": 30.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_2_60s_0",
+      "pair_id": "confirmation_edit:2:60",
+      "actual_audio_parents": [
+        "new_fma_97165",
+        "new_fma_17769"
+      ],
+      "split_group_parents": [
+        "new_fma_97165",
+        "new_fma_17769",
+        "new_sonics_54297"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 58.0,
+          "end": 60.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_2_60s_1",
+      "pair_id": "confirmation_edit:2:60",
+      "actual_audio_parents": [
+        "new_fma_97165",
+        "new_sonics_54297"
+      ],
+      "split_group_parents": [
+        "new_fma_97165",
+        "new_fma_17769",
+        "new_sonics_54297"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 58.0,
+          "end": 60.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_3_8s_0",
+      "pair_id": "confirmation_edit:3:8",
+      "actual_audio_parents": [
+        "new_fma_124831",
+        "new_fma_13077"
+      ],
+      "split_group_parents": [
+        "new_fma_124831",
+        "new_fma_13077",
+        "new_sonics_53201"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_3_8s_1",
+      "pair_id": "confirmation_edit:3:8",
+      "actual_audio_parents": [
+        "new_fma_124831",
+        "new_sonics_53201"
+      ],
+      "split_group_parents": [
+        "new_fma_124831",
+        "new_fma_13077",
+        "new_sonics_53201"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_3_16s_0",
+      "pair_id": "confirmation_edit:3:16",
+      "actual_audio_parents": [
+        "new_fma_124831",
+        "new_fma_13077"
+      ],
+      "split_group_parents": [
+        "new_fma_124831",
+        "new_fma_13077",
+        "new_sonics_53201"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_3_16s_1",
+      "pair_id": "confirmation_edit:3:16",
+      "actual_audio_parents": [
+        "new_fma_124831",
+        "new_sonics_53201"
+      ],
+      "split_group_parents": [
+        "new_fma_124831",
+        "new_fma_13077",
+        "new_sonics_53201"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_3_30s_0",
+      "pair_id": "confirmation_edit:3:30",
+      "actual_audio_parents": [
+        "new_fma_124831",
+        "new_fma_13077"
+      ],
+      "split_group_parents": [
+        "new_fma_124831",
+        "new_fma_13077",
+        "new_sonics_53201"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_3_30s_1",
+      "pair_id": "confirmation_edit:3:30",
+      "actual_audio_parents": [
+        "new_fma_124831",
+        "new_sonics_53201"
+      ],
+      "split_group_parents": [
+        "new_fma_124831",
+        "new_fma_13077",
+        "new_sonics_53201"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_3_60s_0",
+      "pair_id": "confirmation_edit:3:60",
+      "actual_audio_parents": [
+        "new_fma_124831",
+        "new_fma_13077"
+      ],
+      "split_group_parents": [
+        "new_fma_124831",
+        "new_fma_13077",
+        "new_sonics_53201"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 0
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    },
+    {
+      "ID": "new_edit_3_60s_1",
+      "pair_id": "confirmation_edit:3:60",
+      "actual_audio_parents": [
+        "new_fma_124831",
+        "new_sonics_53201"
+      ],
+      "split_group_parents": [
+        "new_fma_124831",
+        "new_fma_13077",
+        "new_sonics_53201"
+      ],
+      "fade_samples": 160,
+      "rms_matching": "existing eight_audio.replace_event",
+      "event_intervals": [
+        {
+          "component": "music",
+          "start": 0.0,
+          "end": 2.0,
+          "label": 1
+        }
+      ],
+      "sample_support_note": "Nominal edit interval; the first fade sample has zero donor weight"
+    }
+  ]
+}

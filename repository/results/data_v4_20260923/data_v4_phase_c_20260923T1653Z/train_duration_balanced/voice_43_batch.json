@@ -1,0 +1,42 @@
+{
+  "effective_batch": 256,
+  "measurements": [
+    {
+      "batch": 16,
+      "peak_bytes": 70067200,
+      "seconds": 0.005971543490886688,
+      "status": "ok",
+      "window_limit": 245
+    },
+    {
+      "batch": 32,
+      "peak_bytes": 71911424,
+      "seconds": 0.007112130522727966,
+      "status": "ok",
+      "window_limit": 485
+    },
+    {
+      "batch": 64,
+      "peak_bytes": 75599872,
+      "seconds": 0.010168932378292084,
+      "status": "ok",
+      "window_limit": 965
+    },
+    {
+      "batch": 128,
+      "peak_bytes": 82599936,
+      "seconds": 0.01681756228208542,
+      "status": "ok",
+      "window_limit": 1876
+    },
+    {
+      "batch": 256,
+      "peak_bytes": 96135680,
+      "seconds": 0.02801450714468956,
+      "status": "ok",
+      "window_limit": 3540
+    }
+  ],
+  "microbatch": 256,
+  "window_limit": 3540
+}

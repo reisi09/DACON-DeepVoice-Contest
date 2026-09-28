@@ -1,0 +1,4 @@
+invocation=.venv/bin/python validate_manifest(_workspace/eight_h100_20260917/dataset)
+manifest_sha256 fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537
+sources_sha256 ab7de8e9d077d64008381b7cd78831db5b5ace5b7acf219636f1269ee965fdb9
+validate_manifest {'rows': 7101, 'audio_hashes': 7101, 'provenance_atoms': 876, 'splits': {'train': 3321, 'calibration': 1880, 'dev': 1024, 'test': 876}, 'probe_families': {'core': 6293, 'swap': 160, 'partial': 648}}

@@ -1,0 +1,82 @@
+{
+  "scope": "Descriptive post-lock analysis of already-opened external test predictions only; no tuning, selection, replay, or DACON/leaderboard audio.",
+  "inputs": {
+    "comparison_json_sha256": "6360ede1fa776768fdfe690ddcb5eee749a399c00bf868a824fc963748029fc6",
+    "hybrid_comparison_json_sha256": "476234a7f533bfe0c3a5eef64ad038b0f31688db9971fc9601d2348e4541dbb3",
+    "training_report_json_sha256": "dd399d238c1528c6a7869cffdfed761b536f610fa380c9c4a006d3a4c88793c3",
+    "G0_test_predictions_sha256": "f515ae2ee182648c2789632687f4ad46522775b96bcf753d667448444f895298",
+    "AST_LAST_BLOCK_test_predictions_sha256": "55fcee3c2a182fc814e858a067d9d900460b207dacc5031ef2586ff064c2db2e",
+    "locked_manifest_sha256": "a11ae794de70f83c0a325f884d8ba920b4a1b3653a2936777a08a0be7c0c735d",
+    "source_inventory_sha256": "296dfe8fd50fe917933507b274b1e30f7dc2de07a723b8e51a3f32ab296f568e"
+  },
+  "population": {
+    "test_rows": 274,
+    "roles": {"test_generator": 176, "test_source": 98},
+    "join": "Every prediction ID in G0, AST_LAST_BLOCK, AST_FROZEN, and G0_AST_MUSIC matched exactly one locked-manifest ID.",
+    "mask_policy": "Empty authenticity/presence labels stay excluded from that target. Music-authenticity raw diagnostic uses only fma_real (label 0) and echoes_tta (label 1); NSynth is excluded and mixtures are reported separately."
+  },
+  "reported_fresh_metrics": {
+    "test_generator": {
+      "G0": {"file_eer": 0.220982, "voice_eer": 0.141098, "music_eer": 0.322479, "music_presence_auc": 1.0},
+      "AST_LAST_BLOCK": {"file_eer": 0.283482, "voice_eer": 0.141098, "music_eer": 0.394958, "music_presence_auc": 1.0}
+    },
+    "test_source": {
+      "G0": {"file_eer": 0.163333, "voice_eer": 0.034648, "music_eer": 0.653673, "music_presence_auc": 0.98286},
+      "AST_LAST_BLOCK": {"file_eer": 0.102083, "voice_eer": 0.069295, "music_eer": 0.173163, "music_presence_auc": 1.0}
+    },
+    "combined": {
+      "G0": {"file_eer": 0.20453, "voice_eer": 0.086557, "music_eer": 0.492867, "music_presence_auc": 0.994584},
+      "AST_LAST_BLOCK": {"file_eer": 0.233355, "voice_eer": 0.1133, "music_eer": 0.371024, "music_presence_auc": 1.0}
+    }
+  },
+  "per_kind_counts": {
+    "test_generator": {"echoes_tta": 60, "fma_real": 20, "mixture": 16, "mlaad_fake": 40, "mlaad_real": 40},
+    "test_source": {"echoes_tta": 15, "fma_real": 5, "mixture": 16, "mlaad_fake": 23, "mlaad_real": 23, "nsynth": 16}
+  },
+  "music_authenticity_raw_excluding_nsynth_and_mixtures": {
+    "test_generator": {
+      "fma_real_label_0_n20": {"G0": {"mean": 0.620154, "median": 0.574716, "p10": 0.426197, "p90": 0.831813}, "AST_LAST_BLOCK": {"mean": 0.210498, "median": 0.116737, "p10": 0.052314, "p90": 0.692882}},
+      "echoes_tta_label_1_n60": {"G0": {"mean": 0.706396, "median": 0.746051, "p10": 0.449962, "p90": 0.891615}, "AST_LAST_BLOCK": {"mean": 0.434678, "median": 0.372332, "p10": 0.063455, "p90": 0.867881}},
+      "threshold_0_5_correct_of_80": {"G0": 54, "AST_LAST_BLOCK": 43}
+    },
+    "test_source": {
+      "fma_real_label_0_n5": {"G0": {"mean": 0.663139, "median": 0.596999, "p10": 0.530906, "p90": 0.838148}, "AST_LAST_BLOCK": {"mean": 0.515472, "median": 0.725437, "p10": 0.177853, "p90": 0.743922}},
+      "echoes_tta_label_1_n15": {"G0": {"mean": 0.79753, "median": 0.895452, "p10": 0.560792, "p90": 0.955958}, "AST_LAST_BLOCK": {"mean": 0.854324, "median": 0.933908, "p10": 0.680475, "p90": 0.993266}},
+      "threshold_0_5_correct_of_20": {"G0": 14, "AST_LAST_BLOCK": 16}
+    },
+    "all_raw_n100": {
+      "fma_real_label_0_n25": {"G0": {"mean": 0.628751, "median": 0.586649}, "AST_LAST_BLOCK": {"mean": 0.271493, "median": 0.130977}},
+      "echoes_tta_label_1_n75": {"G0": {"mean": 0.724623, "median": 0.751727}, "AST_LAST_BLOCK": {"mean": 0.518607, "median": 0.598472}},
+      "threshold_0_5_correct": {"G0": "68/100", "AST_LAST_BLOCK": "59/100"}
+    }
+  },
+  "mixtures_reported_separately": {
+    "test_generator": {"music_label_0_n8": {"G0_mean": 0.441907, "AST_LAST_BLOCK_mean": 0.622686}, "music_label_1_n8": {"G0_mean": 0.544647, "AST_LAST_BLOCK_mean": 0.838663}},
+    "test_source": {"music_label_0_n8": {"G0_mean": 0.781568, "AST_LAST_BLOCK_mean": 0.772698}, "music_label_1_n8": {"G0_mean": 0.517835, "AST_LAST_BLOCK_mean": 0.848245}}
+  },
+  "other_material_per_kind_distributions": {
+    "test_generator": {
+      "mlaad_real_n40": {"FILE_FAKE_G0": {"mean": 0.182308, "p10": 0.038036, "p90": 0.412897}, "FILE_FAKE_AST_LAST_BLOCK": {"mean": 0.201093, "p10": 0.037008, "p90": 0.454541}},
+      "mlaad_fake_n40": {"FILE_FAKE_G0": {"mean": 0.671079, "p10": 0.512212, "p90": 0.80869}, "FILE_FAKE_AST_LAST_BLOCK": {"mean": 0.851386, "p10": 0.66752, "p90": 0.990299}},
+      "mixture_n16": {"FILE_FAKE_G0": {"mean": 0.482743, "p10": 0.288734, "p90": 0.720156}, "FILE_FAKE_AST_LAST_BLOCK": {"mean": 0.743181, "p10": 0.56142, "p90": 0.908645}}
+    },
+    "test_source": {
+      "mlaad_real_n23": {"FILE_FAKE_G0": {"mean": 0.125661, "p10": 0.041019, "p90": 0.241669}, "FILE_FAKE_AST_LAST_BLOCK": {"mean": 0.150036, "p10": 0.015281, "p90": 0.555798}},
+      "mlaad_fake_n23": {"FILE_FAKE_G0": {"mean": 0.782215, "p10": 0.728701, "p90": 0.818993}, "FILE_FAKE_AST_LAST_BLOCK": {"mean": 0.844281, "p10": 0.675906, "p90": 0.988657}},
+      "nsynth_n16": {"MUSIC_FAKE_G0": {"mean": 0.912315, "p10": 0.861138, "p90": 0.965842}, "MUSIC_FAKE_AST_LAST_BLOCK": {"mean": 0.003449, "p10": 0.000275, "p90": 0.009631}},
+      "mixture_n16": {"FILE_FAKE_G0": {"mean": 0.741552, "p10": 0.529387, "p90": 0.898168}, "FILE_FAKE_AST_LAST_BLOCK": {"mean": 0.871216, "p10": 0.769904, "p90": 0.970611}}
+    }
+  },
+  "interpretation": {
+    "measured": [
+      "AST_LAST_BLOCK is worse than G0 on generator-held-out file and music EER, but better on source-held-out file and music EER; its voice EER is equal on generator-held-out and worse on source-held-out.",
+      "For raw FMA-vs-Echoes music, AST_LAST_BLOCK's score ordering is much stronger on the 20 source-held-out clips (means 0.515 vs 0.854) than on the 80 generator-held-out clips (0.210 vs 0.435). The source FMA estimate has n=5 and is therefore unstable.",
+      "G0 assigns high music-fake probability to both raw FMA and Echoes in both slices and to NSynth, while AST_LAST_BLOCK assigns near-zero music-fake probability to NSynth. This distribution difference explains part of the source-slice music-EER contrast, but it is not a causal explanation.",
+      "Mixture score behavior differs by slice and label; it must not be pooled with the raw FMA/Echoes diagnostic."
+    ],
+    "not_established": [
+      "The observed difference does not establish whether model architecture, last-block fine-tuning, pretraining exposure, generator identity, artist/source identity, audio content, or sampling variance caused it.",
+      "It does not support any new candidate selection, threshold change, hybrid adjustment, or claim of speaker disjointness or pretraining cleanliness."
+    ]
+  }
+}

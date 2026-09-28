@@ -1,0 +1,56 @@
+{
+  "contract": "redesign-notebook-v1",
+  "stages": {
+    "compare_and_lock": {
+      "detail": "no candidate accepted or locked",
+      "status": "not_run",
+      "unix": 1789602231.242322
+    },
+    "cpu_integration": {
+      "detail": "{\"status\": \"algorithm_qa_only\", \"real_model_fit\": true, \"oof_relation_fit\": true, \"grouped_evaluation\": true, \"save_load_prediction_max_difference\": 0.0, \"save_load_upstream_identity_equal\": true, \"ordered_voice_weight_hash_count\": 2, \"seed_count\": 2, \"oof_member_count\": 2, \"oof_proof_names\": [[\"music\", \"voice\"], [\"music\", \"voice\"]], \"trained_voice_prediction_max_delta\": 2.3305416107177734e-05, \"candidate_status\": \"rejected\", \"ineligible_lock_rejected\": true, \"actual_data_performance_verified\": false, \"h100_verified\": false, \"l4_verified\": false, \"final_submission_zip\": false, \"export_sha256\": \"fa6003708f3fc4b242a9f73e7f2b5cbe746590300ad9c108a8992678b6b57da4\", \"export_verified\": true}",
+      "status": "completed",
+      "unix": 1789602233.120969
+    },
+    "export_results": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789602233.1213608
+    },
+    "extract_features": {
+      "detail": "flag is False; no fixture fallback",
+      "status": "not_run",
+      "unix": 1789602231.226902
+    },
+    "fit_file_relation": {
+      "detail": "max/noisy-OR/OOF fitting not run",
+      "status": "not_run",
+      "unix": 1789602231.241982
+    },
+    "open_sealed": {
+      "detail": "explicit sealed flag is False",
+      "status": "not_run",
+      "unix": 1789602231.248613
+    },
+    "preflight": {
+      "detail": "CPU provenance, hashes, and writable storage checked",
+      "status": "completed",
+      "unix": 1789602229.271434
+    },
+    "prepare_assets": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789602229.276683
+    },
+    "prepare_data": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789602229.276442
+    },
+    "train_experiments": {
+      "detail": "flag is False; A/B/C/D/capacity/voice not claimed",
+      "status": "not_run",
+      "unix": 1789602231.22715
+    }
+  },
+  "updated_unix": 1789602233.1213608
+}

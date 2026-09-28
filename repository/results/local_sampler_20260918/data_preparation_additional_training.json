@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "source_parents": 640,
+  "train": 510,
+  "confirmation_external": 130,
+  "class_counts": {
+    "train:0": 254,
+    "train:1": 256,
+    "confirmation_external:0": 66,
+    "confirmation_external:1": 64
+  },
+  "jamendo_artists": 135,
+  "jamendo_external_artists": 27,
+  "sunocaps_external_prompt_groups": 64,
+  "exact_parent_view_replays": 640,
+  "cross_split_source_atom_overlap": 0,
+  "prior_or_fixed_confirmation_exact_source_hash_overlap": 0,
+  "partition_sha256": "1476a074507c673788d24ef9154155b89d20f6aabccc1fb665e8da6578c51e12",
+  "component_sha256": {
+    "results/local_sampler_20260918/data_preparation_jamendo_sources.csv": "91ebdc7df201ce0f70b90db64f85b24bfe7ad7a2e84921ab256e4e8dba57a0a4",
+    "results/local_sampler_20260918/data_preparation_jamendo_manifest.csv": "eafa8ec4b5dd4204b42a8eefec8d9a27c894ed885bc2bb76187b30f11346af2c",
+    "results/local_sampler_20260918/data_preparation_haim_sources.csv": "e44adcb447fcae8aa13b13834ab1c9a5acd14bcaf35edbfd95e69ba025c2f9ad",
+    "results/local_sampler_20260918/data_preparation_haim_manifest.csv": "2b8abb7e5072ee9716669fae44ce6780e3d07375f84be46abc0e13f1a81d8fb4",
+    "results/local_sampler_20260918/sunocaps_sources.csv": "7b5cb4635d4ca0aae229ae751f4f7bff75a20bb23cfcb5ff8ee31db64915117a",
+    "results/local_sampler_20260918/sunocaps_manifest.csv": "402bef5cb6791bdc497a8e3211ed86bfef0a582909d2fdb147595a5b69ae9480"
+  },
+  "manifest_sha256": "da9674b52835c0c4d3138314ae7ab567f46e2d0ea7b1625618e0b6d6df6eec0e",
+  "source_manifest_sha256": "7feb3800b98654fc3670f5b4af454071d398f94a6efd2f167a4657097957b0e8",
+  "script_sha256": "b05fbe0a6d967a4df2c642fee92e42612259712bcf9598ed8cd868d146a232ed",
+  "evaluated": false,
+  "limitations": [
+    "Cross-catalogue artist aliases unresolved beyond exact normalized-name exclusion",
+    "Unknown HAIM conditioning references are not claimed independent of every external source",
+    "Suno, ACE-Step and MusicGen are known generator families in this project",
+    "SunoCaps includes one natural5s source; no repeat/padding was added",
+    "No independent listening review; music voice labels remain unknown"
+  ]
+}

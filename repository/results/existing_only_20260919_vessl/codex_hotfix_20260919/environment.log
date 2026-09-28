@@ -1,0 +1,102 @@
+deployment root : /root-1/existing-only-9504-20260919
+job root        : /root/dacon_existing9504_a100_20260919
+author code     : /root/dacon_existing9504_a100_20260919/code/d386b833c94d3bce (sha256 d386b833c94d3bce4683f79e67ced8dbf81c2194a404e502de8b09af1575b683)
+notebook        : /root-1/existing-only-9504-20260919/DACON_Existing9504_A100.ipynb
+kernel python   : 3.14.6 (orchestration only; GPU work runs in the isolated venv)
+[13:27:00] === environment ===
+[13:27:00] [env] $ /root/dacon_existing9504_a100_20260919/env/bin/uv --version
+[13:27:00] [env] $ /root/dacon_existing9504_a100_20260919/env/bin/uv python install 3.11.13
+[13:27:00] [env] $ /root/dacon_existing9504_a100_20260919/env/bin/uv python find --python-preference only-managed 3.11.13
+[13:27:26] [env] $ /root/dacon_existing9504_a100_20260919/env/bin/uv venv --python /root/dacon_existing9504_a100_20260919/env/python/cpython-3.11.13-linux-x86_64-gnu/bin/python3.11 /root/dacon_existing9504_a100_20260919/env/venv
+[13:27:27] [env] $ /root/dacon_existing9504_a100_20260919/env/bin/uv pip install --python /root/dacon_existing9504_a100_20260919/env/venv/bin/python --require-hashes --no-deps --strict -r /root/dacon_existing9504_a100_20260919/code/d386b833c94d3bce/dacon9504a100/requirements.lock.txt
+[13:27:35] [env] $ /root/dacon_existing9504_a100_20260919/env/bin/uv pip freeze --python /root/dacon_existing9504_a100_20260919/env/venv/bin/python
+[13:27:35] [env] $ /root/dacon_existing9504_a100_20260919/env/venv/bin/python -c 
+import importlib, importlib.metadata as md, json, os, subprocess, sys, tempfile, time
+expected = sys.argv[1]
+report = {"python": sys.version, "executable": sys.executable, "imports": {}}
+for name in json.loads(sys.argv[2]):
+    try:
+        importlib.import_module(name)
+        report["imports"][name] = "ok"
+    except Exception as error:
+        report["imports"][name] = f"{type(error).__name__}: {error}"[:600]
+import numpy as np
+import torch
+report["torch"] = torch.__version__
+report["torch_cuda"] = torch.version.cuda
+report["cudnn"] = torch.backends.cudnn.version()
+report["cuda_available"] = torch.cuda.is_available()
+if report["cuda_available"]:
+    properties = torch.cuda.get_device_properties(0)
+    report["gpu"] = {"name": torch.cuda.get_device_name(0), "count": torch.cuda.device_count(),
+                     "capability": list(torch.cuda.get_device_capability(0)),
+                     "total_memory": properties.total_memory, "multiprocessors": properties.multi_processor_count}
+try:
+    import soundfile as sf, torchaudio, torchcodec
+    from torchcodec._core import get_ffmpeg_library_versions
+    report["ffmpeg_libraries"] = get_ffmpeg_library_versions()
+    signal = (np.random.default_rng(0).standard_normal(16000) * 0.1).astype(np.float32)
+    with tempfile.TemporaryDirectory() as directory:
+        path = os.path.join(directory, "probe.wav")
+        sf.write(path, signal, 16000, subtype="FLOAT")
+        waveform, rate = torchaudio.load(path)
+    report["torchaudio_torchcodec_decode"] = {"ok": rate == 16000 and waveform.shape == (1, 16000)
+                                              and float((waveform[0].numpy() - signal).__abs__().max()) == 0.0}
+except Exception as error:
+    report["torchaudio_torchcodec_decode"] = {"ok": False, "error": f"{type(error).__name__}: {error}"[:1500]}
+import imageio_ffmpeg
+exe = imageio_ffmpeg.get_ffmpeg_exe()
+report["imageio_ffmpeg"] = {"exe": exe, "version": subprocess.run([exe, "-version"], capture_output=True,
+                            text=True).stdout.splitlines()[0]}
+report["distributions"] = {d.metadata["Name"]: d.version for d in md.distributions()}
+print("PROBE_JSON=" + json.dumps(report))
+ A100 ["torch", "torchaudio", "torchcodec", "transformers", "librosa", "soundfile", "demucs.apply", "demucs.pretrained", "demucs.separate", "demucs.audio", "panns_inference", "sklearn", "scipy.special", "numpy", "einops", "safetensors", "imageio_ffmpeg", "tqdm"]
+[13:27:43] [env] torchaudio->torchcodec cannot load FFmpeg libraries; provisioning FFmpeg
+{"ok": false, "error": "RuntimeError: Could not load libtorchcodec. Likely causes:\n          1. FFmpeg is not properly installed in your environment. We support\n             versions 4, 5, 6, and 7 on all platforms, and 8 on Mac and Linux.\n          2. The PyTorch version (2.9.1+cu128) is not compatible with\n             this version of TorchCodec. Refer to the version compatibility\n             table:\n             https://github.com/pytorch/torchcodec?tab=readme-ov-file#installing-torchcodec.\n          3. Another runtime dependency; see exceptions below.\n        The following exceptions were raised as we tried to load libtorchcodec:\n        \n[start of libtorchcodec loading traceback]\nFFmpeg version 8: Could not load this library: /root/dacon_existing9504_a100_20260919/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core8.so\nFFmpeg version 7: Could not load this library: /root/dacon_existing9504_a100_20260919/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core7.so\nFFmpeg version 6: Could not load this library: /root/dacon_existing9504_a100_20260919/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core6.so\nFFmpeg version 5: Could not load this library: /root/dacon_existing9504_a100_20260919/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core5.so\nFFmpeg version 4: Could not load this library: /root/dacon_existing9504_a100_20260919/env/venv/lib/python3.11/site-packages/torchcodec/libtorchcodec_core4.so\n
+[13:27:43] [env] $ apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 update
+[13:27:48] [env] $ apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 install -y --no-install-recommends ffmpeg
+[13:28:27] [env] $ /root/dacon_existing9504_a100_20260919/env/bin/micromamba create -y -p /root/dacon_existing9504_a100_20260919/env/ffmpeg -c conda-forge --override-channels ffmpeg=7.1.*
+[13:28:38] [env] $ /root/dacon_existing9504_a100_20260919/env/venv/bin/python -c 
+import importlib, importlib.metadata as md, json, os, subprocess, sys, tempfile, time
+expected = sys.argv[1]
+report = {"python": sys.version, "executable": sys.executable, "imports": {}}
+for name in json.loads(sys.argv[2]):
+    try:
+        importlib.import_module(name)
+        report["imports"][name] = "ok"
+    except Exception as error:
+        report["imports"][name] = f"{type(error).__name__}: {error}"[:600]
+import numpy as np
+import torch
+report["torch"] = torch.__version__
+report["torch_cuda"] = torch.version.cuda
+report["cudnn"] = torch.backends.cudnn.version()
+report["cuda_available"] = torch.cuda.is_available()
+if report["cuda_available"]:
+    properties = torch.cuda.get_device_properties(0)
+    report["gpu"] = {"name": torch.cuda.get_device_name(0), "count": torch.cuda.device_count(),
+                     "capability": list(torch.cuda.get_device_capability(0)),
+                     "total_memory": properties.total_memory, "multiprocessors": properties.multi_processor_count}
+try:
+    import soundfile as sf, torchaudio, torchcodec
+    from torchcodec._core import get_ffmpeg_library_versions
+    report["ffmpeg_libraries"] = get_ffmpeg_library_versions()
+    signal = (np.random.default_rng(0).standard_normal(16000) * 0.1).astype(np.float32)
+    with tempfile.TemporaryDirectory() as directory:
+        path = os.path.join(directory, "probe.wav")
+        sf.write(path, signal, 16000, subtype="FLOAT")
+        waveform, rate = torchaudio.load(path)
+    report["torchaudio_torchcodec_decode"] = {"ok": rate == 16000 and waveform.shape == (1, 16000)
+                                              and float((waveform[0].numpy() - signal).__abs__().max()) == 0.0}
+except Exception as error:
+    report["torchaudio_torchcodec_decode"] = {"ok": False, "error": f"{type(error).__name__}: {error}"[:1500]}
+import imageio_ffmpeg
+exe = imageio_ffmpeg.get_ffmpeg_exe()
+report["imageio_ffmpeg"] = {"exe": exe, "version": subprocess.run([exe, "-version"], capture_output=True,
+                            text=True).stdout.splitlines()[0]}
+report["distributions"] = {d.metadata["Name"]: d.version for d in md.distributions()}
+print("PROBE_JSON=" + json.dumps(report))
+ A100 ["torch", "torchaudio", "torchcodec", "transformers", "librosa", "soundfile", "demucs.apply", "demucs.pretrained", "demucs.separate", "demucs.audio", "panns_inference", "sklearn", "scipy.special", "numpy", "einops", "safetensors", "imageio_ffmpeg", "tqdm"]
+[13:29:15] venv 3.11.13 torch 2.9.1+cu128 (CUDA 12.8) on NVIDIA A100-SXM4-80GB; ffmpeg libs 6.1.1-3ubuntu5
+[13:29:16] environment complete in 0h02m16s; elapsed stage total 0h17m36s
+ENVIRONMENT_VERIFIED {"python": "3.11.13 (main, Sep  2 2025, 14:20:25) [Clang 20.1.4 ]", "gpu": {"name": "NVIDIA A100-SXM4-80GB", "count": 1, "capability": [8, 0], "total_memory": 85094825984, "multiprocessors": 108}, "decode": {"ok": true}}

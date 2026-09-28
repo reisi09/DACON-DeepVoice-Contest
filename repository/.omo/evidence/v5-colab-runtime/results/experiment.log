@@ -1,0 +1,97 @@
+Checkpoint path: /content/dacon_v5/baseline/model/panns/Cnn14_mAP=0.431.pth
+GPU number: 1
+2026-09-13 14:20:45.852648: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-09-13 14:20:45.923560: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+TRAIN_START B1 voice stage_seconds=873.4
+/content/dacon_v5/v5_training.py:346: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  probes[group] = (parameter, peak, float(parameter.reshape(-1)[peak]))
+{"event": "first_step_audit", "gradient_norms": {"encoder": 75.8777915385551, "head": 10.620148634064863}, "parameter_deltas": {"encoder": 1.0132789611816406e-06, "head": 2.998858690261841e-06}, "updates": 1}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": 0.8, "epoch": 1, "event": "epoch_complete", "seconds": 131.56319753899993, "updates": 50}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": 0.8208333333333333, "epoch": 2, "event": "epoch_complete", "seconds": 131.015789306, "updates": 100}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": null, "epoch": 3, "event": "epoch_complete", "seconds": 113.58561159800001, "updates": 150}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": 0.8291666666666667, "epoch": 4, "event": "epoch_complete", "seconds": 128.73845211299977, "updates": 200}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": null, "epoch": 5, "event": "epoch_complete", "seconds": 112.99620274400013, "updates": 250}
+TRAIN_START B2 voice stage_seconds=983.9
+{"event": "first_step_audit", "gradient_norms": {"encoder": 65.31872123541541, "head": 15.308468632449934}, "parameter_deltas": {"encoder": 1.0132789611816406e-06, "head": 2.998858690261841e-06}, "updates": 1}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": 0.8, "epoch": 1, "event": "epoch_complete", "seconds": 140.6913359240002, "updates": 50}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": 0.8208333333333333, "epoch": 2, "event": "epoch_complete", "seconds": 142.12437872600003, "updates": 100}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": null, "epoch": 3, "event": "epoch_complete", "seconds": 124.42281656000023, "updates": 150}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": 0.85, "epoch": 4, "event": "epoch_complete", "seconds": 140.82820430500033, "updates": 200}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": null, "epoch": 5, "event": "epoch_complete", "seconds": 124.13265550100004, "updates": 250}
+{"batch_norm_stats_frozen": 5, "dev_selection_metric": 0.85, "epoch": 6, "event": "epoch_complete", "seconds": 140.1744864389998, "updates": 300}
+TRAIN_START B1 music stage_seconds=408.1
+{"event": "first_step_audit", "gradient_norms": {"encoder": 11.51292839019668, "head": 14.750128876043416}, "parameter_deltas": {"encoder": 2.9742717742919922e-05, "head": 8.996948599815369e-05}, "updates": 1}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": 0.595, "epoch": 1, "event": "epoch_complete", "seconds": 39.91995972399991, "updates": 69}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 2, "event": "epoch_complete", "seconds": 33.07996741500028, "updates": 138}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 3, "event": "epoch_complete", "seconds": 33.13507756600029, "updates": 207}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 4, "event": "epoch_complete", "seconds": 33.04867271399962, "updates": 276}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": 0.6316666666666667, "epoch": 5, "event": "epoch_complete", "seconds": 36.92885859699982, "updates": 345}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 6, "event": "epoch_complete", "seconds": 33.23389006699972, "updates": 414}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 7, "event": "epoch_complete", "seconds": 33.243349279000086, "updates": 483}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 8, "event": "epoch_complete", "seconds": 33.13422060499988, "updates": 552}
+TRAIN_START B2 music stage_seconds=498.4
+{"event": "first_step_audit", "gradient_norms": {"encoder": 9.991496513479827, "head": 13.229468056300293}, "parameter_deltas": {"encoder": 2.968311309814453e-05, "head": 8.996948599815369e-05}, "updates": 1}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": 0.5422222222222223, "epoch": 1, "event": "epoch_complete", "seconds": 77.16562225800044, "updates": 69}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 2, "event": "epoch_complete", "seconds": 73.09381998400022, "updates": 138}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 3, "event": "epoch_complete", "seconds": 73.05852956399985, "updates": 207}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 4, "event": "epoch_complete", "seconds": 73.15565750299993, "updates": 276}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": 0.5422222222222223, "epoch": 5, "event": "epoch_complete", "seconds": 77.03043070100011, "updates": 345}
+TRAIN_START B1 presence stage_seconds=492.9
+{"event": "first_step_audit", "gradient_norms": {"encoder": 4.038799408521807, "head": 3.299845562818284}, "parameter_deltas": {"encoder": 9.894371032714844e-06, "head": 3.013014793395996e-05}, "updates": 1}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": 0.9421052631578948, "epoch": 1, "event": "epoch_complete", "seconds": 46.545827330000066, "updates": 94}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 2, "event": "epoch_complete", "seconds": 38.401764576000005, "updates": 188}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 3, "event": "epoch_complete", "seconds": 38.557076959999904, "updates": 282}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 4, "event": "epoch_complete", "seconds": 38.480280105999555, "updates": 376}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": 0.9934429824561404, "epoch": 5, "event": "epoch_complete", "seconds": 46.37457292799991, "updates": 470}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 6, "event": "epoch_complete", "seconds": 38.56014971000059, "updates": 564}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 7, "event": "epoch_complete", "seconds": 38.767210071999216, "updates": 658}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 8, "event": "epoch_complete", "seconds": 38.660356800000045, "updates": 752}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 9, "event": "epoch_complete", "seconds": 38.990498199000285, "updates": 846}
+TRAIN_START B2 presence stage_seconds=494.2
+{"event": "first_step_audit", "gradient_norms": {"encoder": 1089.952113141496, "head": 17.024443301681618}, "parameter_deltas": {"encoder": 1.0132789611816406e-05, "head": 3.013014793395996e-05}, "updates": 1}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": 0.7798355263157895, "epoch": 1, "event": "epoch_complete", "seconds": 93.8297443929996, "updates": 94}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 2, "event": "epoch_complete", "seconds": 85.75202067000009, "updates": 188}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 3, "event": "epoch_complete", "seconds": 85.87181682099981, "updates": 282}
+{"batch_norm_stats_frozen": 0, "dev_selection_metric": null, "epoch": 4, "event": "epoch_complete", "seconds": 85.79061107399957, "updates": 376}
+SEPARATE train 1/1736
+SEPARATE train 51/1736
+SEPARATE train 101/1736
+SEPARATE train 151/1736
+SEPARATE train 201/1736
+SEPARATE train 251/1736
+SEPARATE train 301/1736
+SEPARATE train 351/1736
+SEPARATE train 401/1736
+SEPARATE train 451/1736
+SEPARATE train 501/1736
+SEPARATE train 551/1736
+SEPARATE train 601/1736
+SEPARATE train 651/1736
+SEPARATE train 701/1736
+SEPARATE train 751/1736
+SEPARATE train 801/1736
+SEPARATE train 851/1736
+SEPARATE train 901/1736
+SEPARATE train 951/1736
+SEPARATE train 1001/1736
+SEPARATE train 1051/1736
+SEPARATE train 1101/1736
+SEPARATE train 1151/1736
+SEPARATE train 1201/1736
+SEPARATE train 1251/1736
+SEPARATE train 1301/1736
+SEPARATE train 1351/1736
+SEPARATE train 1401/1736
+SEPARATE train 1451/1736
+Traceback (most recent call last):
+  File "/content/dacon_v5/v5_compare.py", line 227, in <module>
+  File "/content/dacon_v5/v5_compare.py", line 220, in main
+  File "/content/dacon_v5/v5_compare.py", line 151, in run_temporal
+    model = load_expert(kind, work / "baseline", work / "sonics_assets", "cuda")
+              ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/dacon_v5/v5_features.py", line 66, in prepare_views
+    raise TimeoutError("Full raw/stem preparation exceeded its stage budget")
+TimeoutError: Full raw/stem preparation exceeded its stage budget
+

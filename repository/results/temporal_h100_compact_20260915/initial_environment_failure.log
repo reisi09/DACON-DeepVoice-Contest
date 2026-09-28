@@ -1,0 +1,126 @@
+Input bundle and 1446 exported feature files unpacked
+Collecting uv
+  Downloading uv-0.12.14-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+Downloading uv-0.12.14-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.0/20.0 MB 233.6 MB/s  0:00:00
+Installing collected packages: uv
+Successfully installed uv-0.12.14
+Using CPython 3.14.6 interpreter at: /opt/conda/bin/python
+Creating virtual environment at: /root/temporal-venv
+Activate with: source /root/temporal-venv/bin/activate
+Using Python 3.14.6 environment at: /root/temporal-venv
+Resolved 71 packages in 379ms
+Downloading pillow (6.6MiB)
+Downloading pygments (1.2MiB)
+Downloading jedi (4.7MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading llvmlite (57.1MiB)
+Downloading debugpy (3.7MiB)
+Downloading numba (3.7MiB)
+Downloading fonttools (5.1MiB)
+Downloading soundfile (1.3MiB)
+ Downloaded pygments
+ Downloaded soundfile
+ Downloaded kiwisolver
+ Downloaded debugpy
+ Downloaded numba
+ Downloaded fonttools
+ Downloaded pillow
+ Downloaded jedi
+ Downloaded llvmlite
+   Building scikit-learn==1.7.1
+   Building numpy==2.2.6
+   Building scipy==1.15.3
+   Building matplotlib==3.10.3
+error: Failed to build `scipy==1.15.3`
+  cause: The build backend returned an error
+  cause: Call to `mesonpy.build_wheel` failed (exit status: 1)
+
+         [stdout]
+         + meson setup
+         /root/.cache/uv/sdists-v9/pypi/scipy/1.15.3/d0KrE2aqr6Ps0P9P/src
+         /root/.cache/uv/sdists-v9/pypi/scipy/1.15.3/d0KrE2aqr6Ps0P9P/src/.mesonpy-lxs7hchx
+         -Dbuildtype=release -Db_ndebug=if-release -Db_vscrt=md
+         --native-file=/root/.cache/uv/sdists-v9/pypi/scipy/1.15.3/d0KrE2aqr6Ps0P9P/src/.mesonpy-lxs7hchx/meson-python-native-file.ini
+         The Meson build system
+         Version: 1.12.0
+         Source dir:
+         /root/.cache/uv/sdists-v9/pypi/scipy/1.15.3/d0KrE2aqr6Ps0P9P/src
+         Build dir:
+         /root/.cache/uv/sdists-v9/pypi/scipy/1.15.3/d0KrE2aqr6Ps0P9P/src/.mesonpy-lxs7hchx
+         Build type: native build
+         Project name: scipy
+         Project version: 1.15.3
+         C compiler for the host machine: cc (gcc 13.3.0 "cc (Ubuntu
+         13.3.0-6ubuntu2~24.04) 13.3.0")
+         C linker for the host machine: cc ld.bfd 2.42
+         C++ compiler for the host machine: c++ (gcc 13.3.0 "c++ (Ubuntu
+         13.3.0-6ubuntu2~24.04) 13.3.0")
+         C++ linker for the host machine: c++ ld.bfd 2.42
+         Cython compiler for the host machine: cython (cython 3.0.12)
+         Host machine cpu family: x86_64
+         Host machine cpu: x86_64
+         Program python found: YES
+         (/root/.cache/uv/builds-v0/.tmpTLdHjK/bin/python)
+         Did not find pkg-config by name 'pkg-config'
+         Found pkg-config: NO
+         Run-time dependency python found: YES 3.14
+         Program cython found: YES
+         (/root/.cache/uv/builds-v0/.tmpTLdHjK/bin/cython)
+         Compiler for C supports arguments -Wno-unused-but-set-variable: YES
+         Compiler for C supports arguments -Wno-unused-function: YES
+         Compiler for C supports arguments -Wno-conversion: YES
+         Compiler for C supports arguments -Wno-misleading-indentation: YES
+         Library m found: YES
+
+         ../meson.build:80:0: ERROR: Unknown compiler(s): [['gfortran'],
+         ['flang-new'], ['flang'], ['nvfortran'], ['pgfortran'], ['ifort'],
+         ['ifx'], ['g95']]
+         The following exception(s) were encountered:
+         Running `gfortran --help` gave "[Errno 2] No such file or directory:
+         'gfortran'"
+         Running `gfortran --version` gave "[Errno 2] No such file or directory:
+         'gfortran'"
+         Running `gfortran -V` gave "[Errno 2] No such file or directory:
+         'gfortran'"
+         Running `flang-new --help` gave "[Errno 2] No such file or directory:
+         'flang-new'"
+         Running `flang-new --version` gave "[Errno 2] No such file or
+         directory: 'flang-new'"
+         Running `flang-new -V` gave "[Errno 2] No such file or directory:
+         'flang-new'"
+         Running `flang --help` gave "[Errno 2] No such file or directory:
+         'flang'"
+         Running `flang --version` gave "[Errno 2] No such file or directory:
+         'flang'"
+         Running `flang -V` gave "[Errno 2] No such file or directory: 'flang'"
+         Running `nvfortran --help` gave "[Errno 2] No such file or directory:
+         'nvfortran'"
+         Running `nvfortran --version` gave "[Errno 2] No such file or
+         directory: 'nvfortran'"
+         Running `nvfortran -V` gave "[Errno 2] No such file or directory:
+         'nvfortran'"
+         Running `pgfortran --help` gave "[Errno 2] No such file or directory:
+         'pgfortran'"
+         Running `pgfortran --version` gave "[Errno 2] No such file or
+         directory: 'pgfortran'"
+         Running `pgfortran -V` gave "[Errno 2] No such file or directory:
+         'pgfortran'"
+         Running `ifort --help` gave "[Errno 2] No such file or directory:
+         'ifort'"
+         Running `ifort --version` gave "[Errno 2] No such file or directory:
+         'ifort'"
+         Running `ifort -V` gave "[Errno 2] No such file or directory: 'ifort'"
+         Running `ifx --help` gave "[Errno 2] No such file or directory: 'ifx'"
+         Running `ifx --version` gave "[Errno 2] No such file or directory:
+         'ifx'"
+         Running `ifx -V` gave "[Errno 2] No such file or directory: 'ifx'"
+         Running `g95 --help` gave "[Errno 2] No such file or directory: 'g95'"
+         Running `g95 --version` gave "[Errno 2] No such file or directory:
+         'g95'"
+         Running `g95 -V` gave "[Errno 2] No such file or directory: 'g95'"
+
+         A full log can be found at
+         /root/.cache/uv/sdists-v9/pypi/scipy/1.15.3/d0KrE2aqr6Ps0P9P/src/.mesonpy-lxs7hchx/meson-logs/meson-log.txt
+
+hint: Build failures usually indicate a problem with the package or the build environment

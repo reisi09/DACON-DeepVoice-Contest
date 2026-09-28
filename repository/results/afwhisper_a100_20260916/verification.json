@@ -1,0 +1,195 @@
+{
+  "status": "verified",
+  "new_fits": 6,
+  "reused_controls": 6,
+  "winner": "AF637_mlp_ls5",
+  "encoder_parity": {
+    "full_masked_vs_trimmed_max_abs": 1.6093254089355469e-06,
+    "tolerance": 0.0001,
+    "audio_id": "009c2b5eba62c6fea9a0a555",
+    "valid_mel_frames": 404,
+    "valid_encoder_frames": 202,
+    "audio_parameters": 636968960,
+    "trainable_audio_parameters": 0,
+    "batch_vs_single_max_abs": 5.0067901611328125e-06
+  },
+  "features_verified": 1446,
+  "groups": [
+    {
+      "name": "M330_mlp_ls0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5545781043804501,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 14,
+          "epochs_completed": 34,
+          "parameters": 107234
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.4950898196389696,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.28012820512820513,
+          "selected_epoch": 19,
+          "epochs_completed": 39,
+          "parameters": 107234
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.5155753846669145,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 17,
+          "epochs_completed": 37,
+          "parameters": 107234
+        }
+      ],
+      "tune_eer_mean": 0.25557984508676757,
+      "tune_eer_std": 0.013415811598902743,
+      "tune_bce_mean": 0.5217477695621113,
+      "tune_bce_std": 0.02467505834970076,
+      "music_eer_mean": 0.22037037037037036,
+      "music_eer_std": 0.009166199015381151,
+      "file_eer_mean": 0.26666666666666666,
+      "file_eer_std": 0.01155032628353811
+    },
+    {
+      "name": "M330_mlp_ls5",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5529275081808531,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 14,
+          "epochs_completed": 34,
+          "parameters": 107234
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.21763419965994657,
+          "tune_bce": 0.4765201729564584,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 35,
+          "epochs_completed": 55,
+          "parameters": 107234
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.2332604647396972,
+          "tune_bce": 0.5171709800095816,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 17,
+          "epochs_completed": 37,
+          "parameters": 107234
+        }
+      ],
+      "tune_eer_mean": 0.24181577739994062,
+      "tune_eer_std": 0.024011428319219572,
+      "tune_bce_mean": 0.515539553715631,
+      "tune_bce_std": 0.03121448790586089,
+      "music_eer_mean": 0.2175925925925926,
+      "music_eer_std": 0.0026189140043946114,
+      "file_eer_mean": 0.2572649572649573,
+      "file_eer_std": 0.007554559628061431
+    },
+    {
+      "name": "AF637_mlp_ls0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.26171969880981294,
+          "tune_bce": 0.5123009499633813,
+          "music_eer": 0.2666666666666667,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 11,
+          "epochs_completed": 31,
+          "parameters": 124130
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.21763419965994657,
+          "tune_bce": 0.4663984517861462,
+          "music_eer": 0.25277777777777777,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "parameters": 124130
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.21763419965994657,
+          "tune_bce": 0.46506745753587103,
+          "music_eer": 0.25277777777777777,
+          "file_eer": 0.26410256410256405,
+          "selected_epoch": 14,
+          "epochs_completed": 34,
+          "parameters": 124130
+        }
+      ],
+      "tune_eer_mean": 0.23232936604323537,
+      "tune_eer_std": 0.02078210360057619,
+      "tune_bce_mean": 0.4812556197617995,
+      "tune_bce_std": 0.02195908744183905,
+      "music_eer_mean": 0.2574074074074074,
+      "music_eer_std": 0.0065472850109865805,
+      "file_eer_mean": 0.2773504273504273,
+      "file_eer_std": 0.00936765393879616
+    },
+    {
+      "name": "AF637_mlp_ls5",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.26171969880981294,
+          "tune_bce": 0.5120003354837708,
+          "music_eer": 0.2666666666666667,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 11,
+          "epochs_completed": 31,
+          "parameters": 124130
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.21763419965994657,
+          "tune_bce": 0.46112453631108113,
+          "music_eer": 0.25277777777777777,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "parameters": 124130
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.21763419965994657,
+          "tune_bce": 0.46134119749497593,
+          "music_eer": 0.2666666666666667,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 14,
+          "epochs_completed": 34,
+          "parameters": 124130
+        }
+      ],
+      "tune_eer_mean": 0.23232936604323537,
+      "tune_eer_std": 0.02078210360057619,
+      "tune_bce_mean": 0.4781553564299426,
+      "tune_bce_std": 0.023932177653843676,
+      "music_eer_mean": 0.26203703703703707,
+      "music_eer_std": 0.0065472850109865805,
+      "file_eer_mean": 0.27863247863247864,
+      "file_eer_std": 0.007554559628061379
+    }
+  ],
+  "early_stopping_verified": true,
+  "official_score": null,
+  "independent_test": false,
+  "submission_changed": false
+}

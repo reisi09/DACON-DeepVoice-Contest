@@ -1,0 +1,11 @@
+{
+  "artifact": "results/eight_h100_20260917/data_e2_ratio_audit.csv",
+  "formula": "RMS(mix_minus6 - vocal_parent) / RMS(mix_0dB - vocal_parent)",
+  "group_key": "(parent_ids[0], variant without final level suffix)",
+  "groups": 80,
+  "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+  "passing_abs_tolerance_2e-5": 80,
+  "ratio_max": 0.501187027089,
+  "ratio_min": 0.501187025447,
+  "same_background_parent_ids_in_pair": true
+}

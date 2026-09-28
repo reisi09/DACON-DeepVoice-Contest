@@ -1,0 +1,67 @@
+{
+  "status": "pass",
+  "scope": "role-specific feature pruning and conservative E2 scope",
+  "scenarios": [
+    {
+      "requirement": "all sealed rows map to exact consumer-complete profiles",
+      "invocation": ".venv/bin/python -m pytest -q test_eight*.py --junitxml=.omo/evidence/eight-h100-20260917/task-2-pruned-features.junit.xml",
+      "observable": "27 passed; sealed 7101 rows partition as 1322/3135/512/1324/160/648"
+    },
+    {
+      "requirement": "pruned arrays equal full lightweight inference on retained keys",
+      "invocation": "same pytest invocation",
+      "observable": "test_role_pruning_matches_full_lightweight_inference passed for all six profiles"
+    },
+    {
+      "requirement": "stale profile cache rejected",
+      "invocation": "same pytest invocation",
+      "observable": "test_cache_identity_rejects_stale_feature_profile raised FeatureError as required"
+    },
+    {
+      "requirement": "syntax and patch integrity",
+      "invocation": ".venv/bin/python -m py_compile eight_features.py eight_feature_schema.py eight_feature_identity.py eight_probes.py test_eight_features.py && git diff --check",
+      "observable": "exit 0"
+    }
+  ],
+  "compute": {
+    "separator_records": [
+      7101,
+      7101
+    ],
+    "df_forwards": [
+      58550,
+      31808
+    ],
+    "anti_window_items": [
+      58550,
+      31808
+    ],
+    "anti_batches": [
+      15930,
+      7016
+    ],
+    "mert_window_items": [
+      29275,
+      13811
+    ],
+    "mert_batches": [
+      7965,
+      4617
+    ],
+    "panns_window_items": [
+      29275,
+      440
+    ],
+    "spectral_transforms": [
+      58550,
+      3966
+    ],
+    "float_payload_mib": [
+      872.63,
+      132.895
+    ]
+  },
+  "limitations": [
+    "No GPU/native inference run by this worker; next full notebook run must execute six-profile native preflight."
+  ]
+}

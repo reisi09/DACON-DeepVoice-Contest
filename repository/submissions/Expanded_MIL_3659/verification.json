@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "files": 3,
+  "max_probability_error": 4.3737791166620354e-11,
+  "tolerance": 1e-06,
+  "mean_pooling_alternative_gap": 0.00038935856961567583,
+  "checkpoint_sha256": {
+    "mil_41.pt": "7f3fd783c8965469cd85ee36b339ce6d32cf410492de49e8c4203e815e974801",
+    "mil_42.pt": "a181651c8e6f4f6d498edb0960ede8310bc22b07a842ffdf63f7d0bef757394f",
+    "mil_43.pt": "92b128eca4ba5a44be61dd9ff47b336bde4aa550145f88842e684329d5dd96a4"
+  },
+  "probabilities": [
+    {
+      "ID": "bank_fma_27506",
+      "music_probability": 0.0014987305282071854,
+      "windows": 3
+    },
+    {
+      "ID": "haim_acestep_02040",
+      "music_probability": 0.9999607801437378,
+      "windows": 3
+    },
+    {
+      "ID": "silence_4s",
+      "music_probability": 0.9957513411839803,
+      "windows": 1
+    }
+  ],
+  "order_subset_max_probability_error": 0.0,
+  "device": "cpu",
+  "official_l4_validated": false,
+  "gpu_prediction_parity_verified": false,
+  "submission_sha256": "23e2076aae406dec5e3f992f7ca8ecfc0caacb08a5f91c7196239aa0fa59277d"
+}

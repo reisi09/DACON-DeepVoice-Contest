@@ -1,0 +1,24 @@
+{
+  "winner": {
+    "name": "T7",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.05,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.4
+    },
+    "music_eer": 0.3498906971095458,
+    "balanced_bce": 0.7547810927089393,
+    "selected_epoch": 1,
+    "epochs_completed": 21,
+    "seconds": 10.691218137741089
+  },
+  "criterion": "Tuning music EER, then balanced BCE, then candidate name",
+  "test_used": false,
+  "frozen_at": 1789455773.8479497
+}

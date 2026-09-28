@@ -1,0 +1,46 @@
+{
+  "requested_at_utc": "2026-09-24T10:34:31.009458+00:00",
+  "create_returncode": 0,
+  "job_slugs": [
+    "job-lregdqqbkv9q"
+  ],
+  "authorization": "User explicitly approved one additional CPU-only instance for revalidation",
+  "command_timeout_seconds": 600,
+  "termination_grace_seconds": 30,
+  "job": {
+    "slug": "job-lregdqqbkv9q",
+    "name": "lb-storage-reverify-20260924",
+    "workloadState": "succeeded",
+    "createdDt": "2026-09-24T10:34:33.659103Z",
+    "startedAt": "2026-09-24T10:34:34Z",
+    "completedAt": "2026-09-24T10:40:07Z",
+    "hourlyCreditForCompute": 0.3,
+    "resourceSpecSlug": "resourcespec-kmswqig4b12w",
+    "resourceSpecCpuCount": 3,
+    "resourceSpecMemoryBytes": 13958643712,
+    "observed_at_utc": "2026-09-24T10:40:37.945601+00:00"
+  },
+  "terminal_state_verified": true,
+  "full_audio_preflight_completed": true,
+  "gpu_started": false,
+  "audio_files": 43516,
+  "audio_bytes": 12329271166,
+  "pinned_asset_files": 25,
+  "elapsed_verification_seconds": 317.2476994449971,
+  "reports": {
+    "readiness.json": {
+      "bytes": 440,
+      "sha256": "d3216ebe2f78cd25bb1be8c75b3fd54cd48f6d7511f749230f7445b62505b3b1"
+    },
+    "preflight.json": {
+      "bytes": 1184,
+      "sha256": "0590a78530578e577ad83d4a3ff3ca0789ba02ca9b307e8a0ffd5078ddf12dbb"
+    },
+    "environment.json": {
+      "bytes": 314,
+      "sha256": "8cbdf0b101d6f24b856963c9db08a1e9d5454ca45b1f80db6f03225ca34161b4"
+    }
+  },
+  "runtime_log_sha256": "f1f5491e778aa6ad4ad3f682c7e1d7effaa9757247eb9c6e144d1c4e37b08dad",
+  "verification": "Downloaded receipts matched pinned manifest/config/asset hashes and role counts; preflight SHA matched cloud log and readiness receipt; fresh attempt and terminal success confirmed."
+}

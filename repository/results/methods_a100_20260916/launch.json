@@ -1,0 +1,20 @@
+{
+  "workspace": "wsp-5i3knd3gxeox",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "pid": 3390,
+  "deadline_unix": 1789511244,
+  "input_sha256": "5e29328628e1140892caac53052300cdf90e144b16f8a9468db7e09d48c084a2",
+  "source_commit": "9d21cdb",
+  "submission_verified_before_launch": true,
+  "submission_sha256": "1f6cfd6c9feacead01d4ebcfd217d10c1796969b1f863ba4b0283d46e7432c7e",
+  "balance_snapshot": 3.8006,
+  "burn_per_hour": 1.48,
+  "settings": 16,
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "epochs": "early stopping; max300/patience20/min_delta1e-4",
+  "monitor_minutes": 5
+}

@@ -1,0 +1,756 @@
+ID,path,group_id,split,source,FILE_FAKE,VOICE_FAKE,MUSIC_FAKE,VOICE_PRESENT,MUSIC_PRESENT
+0073086fdea34044,audio/0073086fdea34044.wav,mlaad:piratesofersatz_12_leinster_64kb_f000181,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+0073086fdea34044_tel,audio/0073086fdea34044_tel.wav,mlaad:piratesofersatz_12_leinster_64kb_f000181,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+007a242892ccd56146fe,audio/007a242892ccd56146fe.wav,mlaad:northandsouth_36_f000214,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+009eacefaf518119,audio/009eacefaf518119.wav,mlaad:jane_eyre_30_f000127,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+009eacefaf518119_music_a0c9cba2851b3180_snr0,audio/009eacefaf518119_music_a0c9cba2851b3180_snr0.wav,"mlaad:jane_eyre_30_f000127|AIME prompt: world, trance, classicalguitar",dev_train,mixture:SNR=0dB,1,1,1,1,1
+009eacefaf518119_music_a0c9cba2851b3180_snr10,audio/009eacefaf518119_music_a0c9cba2851b3180_snr10.wav,"mlaad:jane_eyre_30_f000127|AIME prompt: world, trance, classicalguitar",dev_train,mixture:SNR=10dB,1,1,1,1,1
+009eacefaf518119_music_a3613704db84f026_snr0,audio/009eacefaf518119_music_a3613704db84f026_snr0.wav,mlaad:jane_eyre_30_f000127|fma_artist_13391,dev_train,mixture:SNR=0dB,1,1,0,1,1
+009eacefaf518119_music_a3613704db84f026_snr10,audio/009eacefaf518119_music_a3613704db84f026_snr10.wav,mlaad:jane_eyre_30_f000127|fma_artist_13391,dev_train,mixture:SNR=10dB,1,1,0,1,1
+009eacefaf518119_tel,audio/009eacefaf518119_tel.wav,mlaad:jane_eyre_30_f000127,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+00c65fe4fb6260cc6143,audio/00c65fe4fb6260cc6143.wav,fma_artist_22007,dev_train,echoes_tta/acestep,1,,1,,1
+00da35c3f7c78ee426c6,audio/00da35c3f7c78ee426c6.wav,mlaad:wives_and_daughters_17_f000077,dev_train,mlaad_fake/Mars5,1,1,,1,0
+0163c5a88edcb52a43a6,audio/0163c5a88edcb52a43a6.wav,mlaad:northandsouth_21_f000086,dev_train,mlaad_fake/Mars5,1,1,,1,0
+01a097b15e8ad95d5d4d,audio/01a097b15e8ad95d5d4d.wav,nsynth_instrument_263,dev_select,nsynth/NSynth,0,,0,0,1
+01decbda08463fae0338,audio/01decbda08463fae0338.wav,mlaad:pink_fairy_book_22_f000104,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+0237aff7d60e67416187,audio/0237aff7d60e67416187.wav,fma_artist_19189,dev_select,echoes_tta/acestep,1,,1,,1
+02993f0ce30cadf00111,audio/02993f0ce30cadf00111.wav,mlaad:the_master_key_10_f000082|fma_artist_4365,dev_train,mixture/SNR=10,1,,1,1,1
+02d92ced9cddfddef6ad,audio/02d92ced9cddfddef6ad.wav,fma_artist_4365,dev_train,fma_real/FMA,0,,0,,1
+038e5d0d4c1970e28970,audio/038e5d0d4c1970e28970.wav,mlaad:northandsouth_51_f000043,dev_select,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+03ba9880c1b6516f46db,audio/03ba9880c1b6516f46db.wav,nsynth_instrument_316,dev_train,nsynth/NSynth,0,,0,0,1
+040736d2462b0e1be1e2,audio/040736d2462b0e1be1e2.wav,mlaad:jane_eyre_34_f000271,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+0467bfa24b3dd279abaa,audio/0467bfa24b3dd279abaa.wav,nsynth_instrument_590,dev_select,nsynth/NSynth,0,,0,0,1
+04be5fcbb4e30d94999d,audio/04be5fcbb4e30d94999d.wav,mlaad:rinkitink_baum_08_64kb_f000094,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+04c9ad0e8674d641ed74,audio/04c9ad0e8674d641ed74.wav,mlaad:midnight_passenger_12_f000043,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+04d6f0a25dcd1de604f9,audio/04d6f0a25dcd1de604f9.wav,fma_artist_13115,dev_train,echoes_tta/musicgen,1,,1,,1
+04ea646bbfe13780a4b2,audio/04ea646bbfe13780a4b2.wav,nsynth_instrument_590,dev_select,nsynth/NSynth,0,,0,0,1
+05050a4565c962e8,audio/05050a4565c962e8.wav,mlaad:piratesofersatz_03_leinster_64kb_f000260,dev_train,M-AILABS,0,0,,1,0
+05050a4565c962e8_tel,audio/05050a4565c962e8_tel.wav,mlaad:piratesofersatz_03_leinster_64kb_f000260,dev_train,M-AILABS,0,0,,1,0
+051dcab964a430693f31,audio/051dcab964a430693f31.wav,nsynth_instrument_609,dev_train,nsynth/NSynth,0,,0,0,1
+055d9983d5465714,audio/055d9983d5465714.wav,mlaad:wives_and_daughters_37_f000028,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+055d9983d5465714_tel,audio/055d9983d5465714_tel.wav,mlaad:wives_and_daughters_37_f000028,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+05b63edb12bd9086284b,audio/05b63edb12bd9086284b.wav,mlaad:poisoned_pen_10_f000016,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+05c86992aff238349439,audio/05c86992aff238349439.wav,fma_artist_19740,dev_select,echoes_tta/musicgen,1,,1,,1
+069b44fe9d51b6027b68,audio/069b44fe9d51b6027b68.wav,mlaad:poisoned_pen_07_f000386,dev_select,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+06afb2495c34403283ec,audio/06afb2495c34403283ec.wav,mlaad:midnight_passenger_04_f000292,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+072c44f7a68946d02fd2,audio/072c44f7a68946d02fd2.wav,nsynth_instrument_86,dev_select,nsynth/NSynth,0,,0,0,1
+0948251894de6e399e01,audio/0948251894de6e399e01.wav,nsynth_instrument_572,dev_train,nsynth/NSynth,0,,0,0,1
+0a7d9e1b7f7232228ca5,audio/0a7d9e1b7f7232228ca5.wav,fma_artist_190,dev_train,echoes_tta/audioldm,1,,1,,1
+0a82362bbf9aa9a2680e,audio/0a82362bbf9aa9a2680e.wav,mlaad:piratesofersatz_05_leinster_64kb_f000112,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+0abc1822203003e503dd,audio/0abc1822203003e503dd.wav,mlaad:midnight_passenger_06_f000063,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+0ae3d62cf0bb1b019cce,audio/0ae3d62cf0bb1b019cce.wav,mlaad:northandsouth_18_f000017,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+0b44e96a5833ade8464a,audio/0b44e96a5833ade8464a.wav,nsynth_instrument_450,dev_train,nsynth/NSynth,0,,0,0,1
+0c9e0a13cd4b7d6c0db4,audio/0c9e0a13cd4b7d6c0db4.wav,mlaad:jane_eyre_35_f000105|fma_artist_1041,dev_train,mixture/SNR=0,0,0,0,1,1
+0cf2d99ff23b4ead6919,audio/0cf2d99ff23b4ead6919.wav,mlaad:wives_and_daughters_55_f000006,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+0d2580738f6fe562c83b,audio/0d2580738f6fe562c83b.wav,fma_artist_1353,dev_train,fma_real/FMA,0,,0,,1
+0e45a8b6366057d11184,audio/0e45a8b6366057d11184.wav,mlaad:northandsouth_20_f000074,dev_select,mlaad_fake/MeloTTS,1,1,,1,0
+0e47ee3f515da9a287d7,audio/0e47ee3f515da9a287d7.wav,mlaad:midnight_passenger_06_f000063|fma_artist_20985,dev_select,mixture/SNR=0,1,1,0,1,1
+0e7572c69c187c4f05ca,audio/0e7572c69c187c4f05ca.wav,fma_artist_11018,dev_train,fma_real/FMA,0,,0,,1
+0f645e366755fa4957c0,audio/0f645e366755fa4957c0.wav,nsynth_instrument_121,dev_train,nsynth/NSynth,0,,0,0,1
+0f9f9cb26ff038d703f0,audio/0f9f9cb26ff038d703f0.wav,fma_artist_21107,dev_train,echoes_tta/musicgen,1,,1,,1
+100622ab19f13e05e147,audio/100622ab19f13e05e147.wav,fma_artist_19453,dev_train,fma_real/FMA,0,,0,,1
+10647ff610f8e631995a,audio/10647ff610f8e631995a.wav,mlaad:the_master_key_10_f000082|fma_artist_4365,dev_train,mixture/SNR=10,1,1,0,1,1
+108c71e2830faa1c4641,audio/108c71e2830faa1c4641.wav,mlaad:jane_eyre_35_f000105,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+1099fe228fd8108514ed,audio/1099fe228fd8108514ed.wav,fma_artist_1353,dev_train,echoes_tta/musicgen,1,,1,,1
+10adb6c05a906affb061,audio/10adb6c05a906affb061.wav,fma_artist_21691,dev_train,echoes_tta/musicgen,1,,1,,1
+10c514a3cbf69573541f,audio/10c514a3cbf69573541f.wav,mlaad:the_master_key_10_f000082|fma_artist_4365,dev_train,mixture/SNR=10,0,0,0,1,1
+10ecdfcdf5b33fb4,audio/10ecdfcdf5b33fb4.wav,mlaad:jane_eyre_34_f000401,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+10ecdfcdf5b33fb4_music_5802ad48509c9fda_snr0,audio/10ecdfcdf5b33fb4_music_5802ad48509c9fda_snr0.wav,"mlaad:jane_eyre_34_f000401|AIME prompt: hiphop, rap, orchestra",dev_train,mixture:SNR=0dB,1,1,1,1,1
+10ecdfcdf5b33fb4_music_5802ad48509c9fda_snr10,audio/10ecdfcdf5b33fb4_music_5802ad48509c9fda_snr10.wav,"mlaad:jane_eyre_34_f000401|AIME prompt: hiphop, rap, orchestra",dev_train,mixture:SNR=10dB,1,1,1,1,1
+10ecdfcdf5b33fb4_music_ced239b6f758ac66_snr0,audio/10ecdfcdf5b33fb4_music_ced239b6f758ac66_snr0.wav,mlaad:jane_eyre_34_f000401|fma_artist_12626,dev_train,mixture:SNR=0dB,1,1,0,1,1
+10ecdfcdf5b33fb4_music_ced239b6f758ac66_snr10,audio/10ecdfcdf5b33fb4_music_ced239b6f758ac66_snr10.wav,mlaad:jane_eyre_34_f000401|fma_artist_12626,dev_train,mixture:SNR=10dB,1,1,0,1,1
+10ecdfcdf5b33fb4_tel,audio/10ecdfcdf5b33fb4_tel.wav,mlaad:jane_eyre_34_f000401,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+11e1fea9f29be5ddf0f7,audio/11e1fea9f29be5ddf0f7.wav,mlaad:dorothy_and_wizard_oz_06_f000021,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+1265c2a27938366eed29,audio/1265c2a27938366eed29.wav,mlaad:jane_eyre_34_f000271,dev_train,mlaad_fake/Mars5,1,1,,1,0
+128f800820e9a86d2a73,audio/128f800820e9a86d2a73.wav,fma_artist_21456,dev_train,echoes_tta/audioldm,1,,1,,1
+12b06d03342892ea8136,audio/12b06d03342892ea8136.wav,mlaad:poisoned_pen_07_f000388,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+12bdc73b1e76d70a7c44,audio/12bdc73b1e76d70a7c44.wav,fma_artist_18767,dev_train,echoes_tta/acestep,1,,1,,1
+14606ae3353f56670bff,audio/14606ae3353f56670bff.wav,mlaad:jane_eyre_05_f000186,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+16cc076b19eb3580b315,audio/16cc076b19eb3580b315.wav,mlaad:wives_and_daughters_54_f000126,dev_select,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+17d1673d40522c5f,audio/17d1673d40522c5f.wav,mlaad:wives_and_daughters_29_f000178,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+17d1673d40522c5f_tel,audio/17d1673d40522c5f_tel.wav,mlaad:wives_and_daughters_29_f000178,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+17e27e8bf2ea1ed0b6b6,audio/17e27e8bf2ea1ed0b6b6.wav,mlaad:northandsouth_20_f000074,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+182f27520b661decf212,audio/182f27520b661decf212.wav,fma_artist_21957,dev_train,echoes_tta/acestep,1,,1,,1
+186068f94fa4236e1448,audio/186068f94fa4236e1448.wav,fma_artist_19696,dev_train,fma_real/FMA,0,,0,,1
+18747c1ce02cd1602c53,audio/18747c1ce02cd1602c53.wav,mlaad:pink_fairy_book_29_f000036,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+1a1f9eb8d721c2a29171,audio/1a1f9eb8d721c2a29171.wav,mlaad:silent_bullet_08_f000314,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+1a3df48c5ad8ac37ab1e,audio/1a3df48c5ad8ac37ab1e.wav,nsynth_instrument_121,dev_train,nsynth/NSynth,0,,0,0,1
+1b5407917fcd387c72fc,audio/1b5407917fcd387c72fc.wav,mlaad:jane_eyre_30_f000075,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+1bbcaf454fd4423cc5c0,audio/1bbcaf454fd4423cc5c0.wav,nsynth_instrument_219,dev_train,nsynth/NSynth,0,,0,0,1
+1bbf523f6260d921358d,audio/1bbf523f6260d921358d.wav,mlaad:skyisland_17_baum_64kb_f000012,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+1c80611591fc915a69c7,audio/1c80611591fc915a69c7.wav,mlaad:midnight_passenger_12_f000043,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+1c9ce2d3afdd4f198674,audio/1c9ce2d3afdd4f198674.wav,fma_artist_5730,dev_train,fma_real/FMA,0,,0,,1
+1d586722d1c8f73954e4,audio/1d586722d1c8f73954e4.wav,fma_artist_19273,dev_select,fma_real/FMA,0,,0,,1
+1dc7c31876ae8530cc44,audio/1dc7c31876ae8530cc44.wav,mlaad:wives_and_daughters_10_f000108|fma_artist_19273,dev_select,mixture/SNR=10,0,0,0,1,1
+1df27aa4d707edc8640f,audio/1df27aa4d707edc8640f.wav,mlaad:midnight_passenger_05_f000214,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+1e05efbd99eb051ad061,audio/1e05efbd99eb051ad061.wav,mlaad:silent_bullet_11_f000313,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+1e50a963a7064879e6f7,audio/1e50a963a7064879e6f7.wav,mlaad:wives_and_daughters_18_f000013,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+20704cad2ac560ad468b,audio/20704cad2ac560ad468b.wav,mlaad:poisoned_pen_03_f000161,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+20884b22192ed3ed22c1,audio/20884b22192ed3ed22c1.wav,mlaad:wives_and_daughters_54_f000126,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+20f387562072c8d84584,audio/20f387562072c8d84584.wav,mlaad:dorothy_and_wizard_oz_06_f000021,dev_select,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+20fe897a26a497d9bda6,audio/20fe897a26a497d9bda6.wav,nsynth_instrument_488,dev_select,nsynth/NSynth,0,,0,0,1
+21498110271ce6da,audio/21498110271ce6da.wav,mlaad:wives_and_daughters_59_f000074,dev_train,M-AILABS,0,0,,1,0
+21498110271ce6da_tel,audio/21498110271ce6da_tel.wav,mlaad:wives_and_daughters_59_f000074,dev_train,M-AILABS,0,0,,1,0
+2204f7054e4148a75b5b,audio/2204f7054e4148a75b5b.wav,mlaad:emerald_city_of_oz_14_f000084,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+22655a8981d255345ad1,audio/22655a8981d255345ad1.wav,mlaad:jane_eyre_35_f000025,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+2282abbe178a0030b460,audio/2282abbe178a0030b460.wav,fma_artist_6104,dev_select,echoes_tta/musicgen,1,,1,,1
+22ba0af611ed35552d2e,audio/22ba0af611ed35552d2e.wav,fma_artist_20985,dev_select,fma_real/FMA,0,,0,,1
+2395c94d485950f96fa2,audio/2395c94d485950f96fa2.wav,nsynth_instrument_100,dev_train,nsynth/NSynth,0,,0,0,1
+242acf2a6b7583bbcf5d,audio/242acf2a6b7583bbcf5d.wav,mlaad:wives_and_daughters_37_f000280,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+2487d9f4a24e27a2a5d3,audio/2487d9f4a24e27a2a5d3.wav,fma_artist_19273,dev_select,echoes_tta/audioldm,1,,1,,1
+24f5d0bd08132bf7bf9c,audio/24f5d0bd08132bf7bf9c.wav,mlaad:the_master_key_10_f000082|fma_artist_4365,dev_train,mixture/SNR=10,1,1,1,1,1
+253ea4b3709a9d092b1d,audio/253ea4b3709a9d092b1d.wav,mlaad:poisoned_pen_09_f000313,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+2569c06f79d8654759b1,audio/2569c06f79d8654759b1.wav,mlaad:midnight_passenger_15_f000019,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+26326a06ca77bbda19df,audio/26326a06ca77bbda19df.wav,mlaad:rinkitink_baum_01_64kb_f000091,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+264901b528549910635a,audio/264901b528549910635a.wav,fma_artist_16893,dev_train,echoes_tta/musicgen,1,,1,,1
+2689dc8cd03eab50619e,audio/2689dc8cd03eab50619e.wav,mlaad:wives_and_daughters_10_f000108,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+275fa90e17fa8fdf3669,audio/275fa90e17fa8fdf3669.wav,fma_artist_23635,dev_train,echoes_tta/audioldm,1,,1,,1
+27ceece882e88c10b92b,audio/27ceece882e88c10b92b.wav,nsynth_instrument_43,dev_train,nsynth/NSynth,0,,0,0,1
+282133809f9b63342c6d,audio/282133809f9b63342c6d.wav,mlaad:ozma_of_oz_06_f000085,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+28815dfe7662d24164e9,audio/28815dfe7662d24164e9.wav,mlaad:midnight_passenger_06_f000078,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+298256ef562f63106b23,audio/298256ef562f63106b23.wav,mlaad:wives_and_daughters_12_f000018,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+29d42c3c9a6d77a950e6,audio/29d42c3c9a6d77a950e6.wav,mlaad:skyisland_27_baum_64kb_f000041,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+2a58881cbb3c1c2d9a3f,audio/2a58881cbb3c1c2d9a3f.wav,mlaad:jane_eyre_28_f000177,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+2ae23eab36e036645dd0,audio/2ae23eab36e036645dd0.wav,mlaad:the_master_key_10_f000082|fma_artist_4365,dev_train,mixture/SNR=0,0,0,0,1,1
+2bc85a0524ba4aa8f659,audio/2bc85a0524ba4aa8f659.wav,mlaad:jane_eyre_16_f000057,dev_train,mlaad_fake/Mars5,1,1,,1,0
+2c6d46f34604515a3dee,audio/2c6d46f34604515a3dee.wav,mlaad:dorothy_and_wizard_oz_08_f000005,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+2cd9eb1e26ead2ad,audio/2cd9eb1e26ead2ad.wav,mlaad:midnight_passenger_05_f000040,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+2cd9eb1e26ead2ad_tel,audio/2cd9eb1e26ead2ad_tel.wav,mlaad:midnight_passenger_05_f000040,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+2d1654ce92f0ee7d6070,audio/2d1654ce92f0ee7d6070.wav,fma_artist_16893,dev_train,fma_real/FMA,0,,0,,1
+2d37209333cc5e7e04b1,audio/2d37209333cc5e7e04b1.wav,mlaad:jane_eyre_06_f000142,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+2d9f0d6b48322930e329,audio/2d9f0d6b48322930e329.wav,nsynth_instrument_86,dev_select,nsynth/NSynth,0,,0,0,1
+2df2ccaac6a09ce6,audio/2df2ccaac6a09ce6.wav,mlaad:jane_eyre_28_f000315,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+2df2ccaac6a09ce6_music_53faae0ce376f35e_snr0,audio/2df2ccaac6a09ce6_music_53faae0ce376f35e_snr0.wav,"mlaad:jane_eyre_28_f000315|AIME prompt: pop, triphop, synthesizer",dev_train,mixture:SNR=0dB,1,1,1,1,1
+2df2ccaac6a09ce6_music_53faae0ce376f35e_snr10,audio/2df2ccaac6a09ce6_music_53faae0ce376f35e_snr10.wav,"mlaad:jane_eyre_28_f000315|AIME prompt: pop, triphop, synthesizer",dev_train,mixture:SNR=10dB,1,1,1,1,1
+2df2ccaac6a09ce6_music_788bf3fb2a4db064_snr0,audio/2df2ccaac6a09ce6_music_788bf3fb2a4db064_snr0.wav,mlaad:jane_eyre_28_f000315|fma_artist_6274,dev_train,mixture:SNR=0dB,1,1,0,1,1
+2df2ccaac6a09ce6_music_788bf3fb2a4db064_snr10,audio/2df2ccaac6a09ce6_music_788bf3fb2a4db064_snr10.wav,mlaad:jane_eyre_28_f000315|fma_artist_6274,dev_train,mixture:SNR=10dB,1,1,0,1,1
+2df2ccaac6a09ce6_tel,audio/2df2ccaac6a09ce6_tel.wav,mlaad:jane_eyre_28_f000315,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+2e462f2fa1158dfa7191,audio/2e462f2fa1158dfa7191.wav,nsynth_instrument_436,dev_train,nsynth/NSynth,0,,0,0,1
+2e72d9d933ee789064ba,audio/2e72d9d933ee789064ba.wav,mlaad:pink_fairy_book_14_f000090,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+2eaaba1f42da2c5a,audio/2eaaba1f42da2c5a.wav,mlaad:piratesofersatz_02_leinster_64kb_f000114,dev_train,M-AILABS,0,0,,1,0
+2eaaba1f42da2c5a_tel,audio/2eaaba1f42da2c5a_tel.wav,mlaad:piratesofersatz_02_leinster_64kb_f000114,dev_train,M-AILABS,0,0,,1,0
+2fbaed2996a664000cae,audio/2fbaed2996a664000cae.wav,nsynth_instrument_327,dev_train,nsynth/NSynth,0,,0,0,1
+300daf5c1073acb5f899,audio/300daf5c1073acb5f899.wav,fma_artist_23198,dev_train,echoes_tta/musicgen,1,,1,,1
+302fc4881d1d2e3035dd,audio/302fc4881d1d2e3035dd.wav,nsynth_instrument_436,dev_train,nsynth/NSynth,0,,0,0,1
+30c16a44ed01e57b8761,audio/30c16a44ed01e57b8761.wav,mlaad:silent_bullet_02_f000003,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+310d22b2b0a43a78d4b3,audio/310d22b2b0a43a78d4b3.wav,mlaad:northandsouth_16_f000112,dev_select,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+31588394b914ca123102,audio/31588394b914ca123102.wav,fma_artist_4365,dev_train,echoes_tta/audioldm,1,,1,,1
+317b0f06e00d1814fb8a,audio/317b0f06e00d1814fb8a.wav,mlaad:jane_eyre_27_f000167,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+324112d043f5c1e6a597,audio/324112d043f5c1e6a597.wav,mlaad:wives_and_daughters_10_f000108|fma_artist_19273,dev_select,mixture/SNR=0,1,1,1,1,1
+32df3d1367ba89a2618b,audio/32df3d1367ba89a2618b.wav,fma_artist_21456,dev_train,echoes_tta/musicgen,1,,1,,1
+32ec330f6b41c8e4fb17,audio/32ec330f6b41c8e4fb17.wav,mlaad:wives_and_daughters_20_f000117,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+32f43564667f9507cc2c,audio/32f43564667f9507cc2c.wav,fma_artist_8762,dev_train,echoes_tta/musicgen,1,,1,,1
+33c260000774a7547d40,audio/33c260000774a7547d40.wav,mlaad:wives_and_daughters_56_f000019,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+33c5816b681b7fa6,audio/33c5816b681b7fa6.wav,mlaad:wives_and_daughters_51_f000163,dev_train,M-AILABS,0,0,,1,0
+33c5816b681b7fa6_tel,audio/33c5816b681b7fa6_tel.wav,mlaad:wives_and_daughters_51_f000163,dev_train,M-AILABS,0,0,,1,0
+340a1fc4e18222ab0704,audio/340a1fc4e18222ab0704.wav,mlaad:jane_eyre_29_f000047,dev_train,mlaad_fake/Mars5,1,1,,1,0
+3474a77a16e51a685982,audio/3474a77a16e51a685982.wav,mlaad:jane_eyre_05_f000186,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+3496d10ddda589826111,audio/3496d10ddda589826111.wav,mlaad:pink_fairy_book_10_f000104,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+34c52f9e2699aa575a0e,audio/34c52f9e2699aa575a0e.wav,nsynth_instrument_224,dev_select,nsynth/NSynth,0,,0,0,1
+34e2ac2bdb24a1f8b6fc,audio/34e2ac2bdb24a1f8b6fc.wav,nsynth_instrument_609,dev_train,nsynth/NSynth,0,,0,0,1
+350bfb84bc8b258b6a29,audio/350bfb84bc8b258b6a29.wav,mlaad:midnight_passenger_05_f000214,dev_select,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+35de457ee050df3c2924,audio/35de457ee050df3c2924.wav,mlaad:wives_and_daughters_10_f000108|fma_artist_19273,dev_select,mixture/SNR=0,0,0,0,1,1
+35e05ed89fa7c50096e3,audio/35e05ed89fa7c50096e3.wav,mlaad:dorothy_and_wizard_oz_14_f000119,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+361db399f315363df891,audio/361db399f315363df891.wav,mlaad:ozma_of_oz_16_f000033,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+365cf4f384b2c44d6715,audio/365cf4f384b2c44d6715.wav,mlaad:midnight_passenger_06_f000078,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+367086926d0b0cb52254,audio/367086926d0b0cb52254.wav,fma_artist_1037,dev_train,fma_real/FMA,0,,0,,1
+36cebeb4a618fcd4b301,audio/36cebeb4a618fcd4b301.wav,mlaad:the_sea_fairies_17_f000026,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+379ffef3fc131d9c0f74,audio/379ffef3fc131d9c0f74.wav,fma_artist_24309,dev_select,fma_real/FMA,0,,0,,1
+3837cbbbacf9d0ff,audio/3837cbbbacf9d0ff.wav,mlaad:piratesofersatz_12_leinster_64kb_f000181,dev_train,M-AILABS,0,0,,1,0
+3837cbbbacf9d0ff_tel,audio/3837cbbbacf9d0ff_tel.wav,mlaad:piratesofersatz_12_leinster_64kb_f000181,dev_train,M-AILABS,0,0,,1,0
+38533b99d7d157f10d8b,audio/38533b99d7d157f10d8b.wav,mlaad:midnight_passenger_14_f000079,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+38b5ed5024e6884341b9,audio/38b5ed5024e6884341b9.wav,mlaad:poisoned_pen_12_f000071,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+38e131e844947e511ec9,audio/38e131e844947e511ec9.wav,mlaad:skyisland_17_baum_64kb_f000012,dev_select,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+395ef96c44cf3a3fcd6d,audio/395ef96c44cf3a3fcd6d.wav,fma_artist_4365,dev_train,echoes_tta/musicgen,1,,1,,1
+398886711cf86933336d,audio/398886711cf86933336d.wav,mlaad:the_sea_fairies_17_f000026,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+39b00d0308bb4f6afc69,audio/39b00d0308bb4f6afc69.wav,fma_artist_19453,dev_train,echoes_tta/audioldm,1,,1,,1
+3a4353824edbba6a87e4,audio/3a4353824edbba6a87e4.wav,nsynth_instrument_414,dev_train,nsynth/NSynth,0,,0,0,1
+3a48a972ce865bcce997,audio/3a48a972ce865bcce997.wav,fma_artist_889,dev_train,fma_real/FMA,0,,0,,1
+3b374f72fdab78488a14,audio/3b374f72fdab78488a14.wav,nsynth_instrument_450,dev_train,nsynth/NSynth,0,,0,0,1
+3b4682edd47d9c2dfb62,audio/3b4682edd47d9c2dfb62.wav,fma_artist_5730,dev_train,echoes_tta/acestep,1,,1,,1
+3b8fd5ed3320a0e3edb5,audio/3b8fd5ed3320a0e3edb5.wav,fma_artist_15501,dev_train,echoes_tta/musicgen,1,,1,,1
+3b9200f4f61e329c9fbf,audio/3b9200f4f61e329c9fbf.wav,mlaad:hunters_space_14_f000057,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+3bb0fb31ab9fb38b2c2d,audio/3bb0fb31ab9fb38b2c2d.wav,mlaad:poisoned_pen_11_f000228,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+3bf91908fa6c7deb7647,audio/3bf91908fa6c7deb7647.wav,mlaad:jane_eyre_35_f000105|fma_artist_1041,dev_train,mixture/SNR=10,1,,1,1,1
+3c1082c1a219aca2,audio/3c1082c1a219aca2.wav,mlaad:poisoned_pen_10_f000346,dev_train,M-AILABS,0,0,,1,0
+3c1082c1a219aca2_tel,audio/3c1082c1a219aca2_tel.wav,mlaad:poisoned_pen_10_f000346,dev_train,M-AILABS,0,0,,1,0
+3cebef289609682a2908,audio/3cebef289609682a2908.wav,mlaad:skyisland_07_baum_64kb_f000068,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+3d3c5e13cb66ab606744,audio/3d3c5e13cb66ab606744.wav,mlaad:pink_fairy_book_13_f000137,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+3d6a45a73033555a03e3,audio/3d6a45a73033555a03e3.wav,mlaad:hunters_space_03_f000076,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+3d7ae111a7dc2c52b97d,audio/3d7ae111a7dc2c52b97d.wav,nsynth_instrument_590,dev_select,nsynth/NSynth,0,,0,0,1
+3d92ba5b5f5c9615eaca,audio/3d92ba5b5f5c9615eaca.wav,mlaad:ozma_of_oz_20_f000010,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+3d9e0a463492826d945a,audio/3d9e0a463492826d945a.wav,fma_artist_19696,dev_train,echoes_tta/acestep,1,,1,,1
+3dbfd2b4c7f19c2368cf,audio/3dbfd2b4c7f19c2368cf.wav,mlaad:jane_eyre_06_f000142,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+3df0766980659d14,audio/3df0766980659d14.wav,mlaad:jane_eyre_34_f000401,dev_train,M-AILABS,0,0,,1,0
+3df0766980659d14_music_5802ad48509c9fda_snr0,audio/3df0766980659d14_music_5802ad48509c9fda_snr0.wav,"mlaad:jane_eyre_34_f000401|AIME prompt: hiphop, rap, orchestra",dev_train,mixture:SNR=0dB,1,,1,1,1
+3df0766980659d14_music_5802ad48509c9fda_snr10,audio/3df0766980659d14_music_5802ad48509c9fda_snr10.wav,"mlaad:jane_eyre_34_f000401|AIME prompt: hiphop, rap, orchestra",dev_train,mixture:SNR=10dB,1,,1,1,1
+3df0766980659d14_music_ced239b6f758ac66_snr0,audio/3df0766980659d14_music_ced239b6f758ac66_snr0.wav,mlaad:jane_eyre_34_f000401|fma_artist_12626,dev_train,mixture:SNR=0dB,0,0,0,1,1
+3df0766980659d14_music_ced239b6f758ac66_snr10,audio/3df0766980659d14_music_ced239b6f758ac66_snr10.wav,mlaad:jane_eyre_34_f000401|fma_artist_12626,dev_train,mixture:SNR=10dB,0,0,0,1,1
+3df0766980659d14_tel,audio/3df0766980659d14_tel.wav,mlaad:jane_eyre_34_f000401,dev_train,M-AILABS,0,0,,1,0
+3e388cd7a4f6e2579431,audio/3e388cd7a4f6e2579431.wav,mlaad:piratesofersatz_10_leinster_64kb_f000005,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+3eafd2a059f36a7d18b9,audio/3eafd2a059f36a7d18b9.wav,fma_artist_19273,dev_select,echoes_tta/musicgen,1,,1,,1
+3f289daf2a01f71e7060,audio/3f289daf2a01f71e7060.wav,fma_artist_19696,dev_train,echoes_tta/audioldm,1,,1,,1
+3fdbb1b8aea2e0eb7f35,audio/3fdbb1b8aea2e0eb7f35.wav,mlaad:jane_eyre_35_f000105|fma_artist_1041,dev_train,mixture/SNR=10,0,0,0,1,1
+3fea88f2bd5be466,audio/3fea88f2bd5be466.wav,mlaad:jane_eyre_08_f000016,dev_train,M-AILABS,0,0,,1,0
+3fea88f2bd5be466_music_33e5dfebb1b36d40_snr0,audio/3fea88f2bd5be466_music_33e5dfebb1b36d40_snr0.wav,"mlaad:jane_eyre_08_f000016|AIME prompt: electronic, house, dubstep",dev_train,mixture:SNR=0dB,1,,1,1,1
+3fea88f2bd5be466_music_33e5dfebb1b36d40_snr10,audio/3fea88f2bd5be466_music_33e5dfebb1b36d40_snr10.wav,"mlaad:jane_eyre_08_f000016|AIME prompt: electronic, house, dubstep",dev_train,mixture:SNR=10dB,1,,1,1,1
+3fea88f2bd5be466_music_62aa234be157f857_snr0,audio/3fea88f2bd5be466_music_62aa234be157f857_snr0.wav,mlaad:jane_eyre_08_f000016|fma_artist_18269,dev_train,mixture:SNR=0dB,0,0,0,1,1
+3fea88f2bd5be466_music_62aa234be157f857_snr10,audio/3fea88f2bd5be466_music_62aa234be157f857_snr10.wav,mlaad:jane_eyre_08_f000016|fma_artist_18269,dev_train,mixture:SNR=10dB,0,0,0,1,1
+3fea88f2bd5be466_tel,audio/3fea88f2bd5be466_tel.wav,mlaad:jane_eyre_08_f000016,dev_train,M-AILABS,0,0,,1,0
+40479117daeb0b1dd666,audio/40479117daeb0b1dd666.wav,fma_artist_1041,dev_train,fma_real/FMA,0,,0,,1
+40858e55ae1d2f4eec0e,audio/40858e55ae1d2f4eec0e.wav,mlaad:northandsouth_41_f000208,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+408bbf63337aae6d4a6f,audio/408bbf63337aae6d4a6f.wav,mlaad:midnight_passenger_03_f000175,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+40fbf40dc079e6c92258,audio/40fbf40dc079e6c92258.wav,nsynth_instrument_104,dev_train,nsynth/NSynth,0,,0,0,1
+43cae1f2da315de45add,audio/43cae1f2da315de45add.wav,fma_artist_19189,dev_select,echoes_tta/musicgen,1,,1,,1
+44628002e5a91a5c2c16,audio/44628002e5a91a5c2c16.wav,mlaad:northandsouth_35_f000228,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+44e888fb9e6175f4b31b,audio/44e888fb9e6175f4b31b.wav,mlaad:jane_eyre_17_f000113,dev_select,mlaad_fake/MeloTTS,1,1,,1,0
+45bc6e454ae7a137f2e7,audio/45bc6e454ae7a137f2e7.wav,mlaad:silent_bullet_11_f000313,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+45f4292bf7339cffccb3,audio/45f4292bf7339cffccb3.wav,mlaad:northandsouth_42_f000101,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+4667639121c367b82ed9,audio/4667639121c367b82ed9.wav,mlaad:rinkitink_baum_01_64kb_f000091,dev_select,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+479d58edda4e147c,audio/479d58edda4e147c.wav,mlaad:midnight_passenger_03_f000280,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+479d58edda4e147c_music_86bd989bb26575f9_snr0,audio/479d58edda4e147c_music_86bd989bb26575f9_snr0.wav,"mlaad:midnight_passenger_03_f000280|AIME prompt: electronic, house, singersongwriter",dev_train,mixture:SNR=0dB,1,1,1,1,1
+479d58edda4e147c_music_86bd989bb26575f9_snr10,audio/479d58edda4e147c_music_86bd989bb26575f9_snr10.wav,"mlaad:midnight_passenger_03_f000280|AIME prompt: electronic, house, singersongwriter",dev_train,mixture:SNR=10dB,1,1,1,1,1
+479d58edda4e147c_music_e30463a55c09ebe8_snr0,audio/479d58edda4e147c_music_e30463a55c09ebe8_snr0.wav,mlaad:midnight_passenger_03_f000280|fma_artist_13262,dev_train,mixture:SNR=0dB,1,1,0,1,1
+479d58edda4e147c_music_e30463a55c09ebe8_snr10,audio/479d58edda4e147c_music_e30463a55c09ebe8_snr10.wav,mlaad:midnight_passenger_03_f000280|fma_artist_13262,dev_train,mixture:SNR=10dB,1,1,0,1,1
+479d58edda4e147c_tel,audio/479d58edda4e147c_tel.wav,mlaad:midnight_passenger_03_f000280,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+47b3d1f1163bb29cc7c7,audio/47b3d1f1163bb29cc7c7.wav,fma_artist_15502,dev_train,echoes_tta/musicgen,1,,1,,1
+47fc393500d56015b72c,audio/47fc393500d56015b72c.wav,fma_artist_23635,dev_train,fma_real/FMA,0,,0,,1
+483504342b2879e27c28,audio/483504342b2879e27c28.wav,mlaad:jane_eyre_29_f000047,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+489eebbadeb50e7c8da4,audio/489eebbadeb50e7c8da4.wav,nsynth_instrument_316,dev_train,nsynth/NSynth,0,,0,0,1
+48a40a51fa11a9f9b58d,audio/48a40a51fa11a9f9b58d.wav,mlaad:poisoned_pen_06_f000019,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+493662aa2149ebc1,audio/493662aa2149ebc1.wav,mlaad:wives_and_daughters_09_f000144,dev_train,M-AILABS,0,0,,1,0
+493662aa2149ebc1_tel,audio/493662aa2149ebc1_tel.wav,mlaad:wives_and_daughters_09_f000144,dev_train,M-AILABS,0,0,,1,0
+49844c456ebacbc38fc1,audio/49844c456ebacbc38fc1.wav,nsynth_instrument_43,dev_train,nsynth/NSynth,0,,0,0,1
+4a4891d52b5e645a,audio/4a4891d52b5e645a.wav,mlaad:piratesofersatz_06_leinster_64kb_f000089,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+4a4891d52b5e645a_tel,audio/4a4891d52b5e645a_tel.wav,mlaad:piratesofersatz_06_leinster_64kb_f000089,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+4a912c967e1b6ef3fd8e,audio/4a912c967e1b6ef3fd8e.wav,mlaad:poisoned_pen_11_f000228,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+4b0e5a7809cad5a66f88,audio/4b0e5a7809cad5a66f88.wav,nsynth_instrument_104,dev_train,nsynth/NSynth,0,,0,0,1
+4b998972b19473ff684c,audio/4b998972b19473ff684c.wav,mlaad:piratesofersatz_02_leinster_64kb_f000030,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+4bb81339eb7ca85b,audio/4bb81339eb7ca85b.wav,mlaad:hunters_space_18_f000010,dev_train,M-AILABS,0,0,,1,0
+4bb81339eb7ca85b_music_57082f97192e1baa_snr0,audio/4bb81339eb7ca85b_music_57082f97192e1baa_snr0.wav,"mlaad:hunters_space_18_f000010|AIME prompt: hiphop, rap, beat",dev_train,mixture:SNR=0dB,1,,1,1,1
+4bb81339eb7ca85b_music_57082f97192e1baa_snr10,audio/4bb81339eb7ca85b_music_57082f97192e1baa_snr10.wav,"mlaad:hunters_space_18_f000010|AIME prompt: hiphop, rap, beat",dev_train,mixture:SNR=10dB,1,,1,1,1
+4bb81339eb7ca85b_music_ad47ca8a74b2bb3b_snr0,audio/4bb81339eb7ca85b_music_ad47ca8a74b2bb3b_snr0.wav,mlaad:hunters_space_18_f000010|fma_artist_23246,dev_train,mixture:SNR=0dB,0,0,0,1,1
+4bb81339eb7ca85b_music_ad47ca8a74b2bb3b_snr10,audio/4bb81339eb7ca85b_music_ad47ca8a74b2bb3b_snr10.wav,mlaad:hunters_space_18_f000010|fma_artist_23246,dev_train,mixture:SNR=10dB,0,0,0,1,1
+4bb81339eb7ca85b_tel,audio/4bb81339eb7ca85b_tel.wav,mlaad:hunters_space_18_f000010,dev_train,M-AILABS,0,0,,1,0
+4bdcc720360aea3473c8,audio/4bdcc720360aea3473c8.wav,mlaad:poisoned_pen_05_f000096,dev_select,mlaad_fake/Mars5,1,1,,1,0
+4d50a0ba7226a0989923,audio/4d50a0ba7226a0989923.wav,fma_artist_21957,dev_train,fma_real/FMA,0,,0,,1
+4d5b08f2ecccb12c01d5,audio/4d5b08f2ecccb12c01d5.wav,nsynth_instrument_327,dev_train,nsynth/NSynth,0,,0,0,1
+4f1baebc2ae74ae2,audio/4f1baebc2ae74ae2.wav,mlaad:jane_eyre_30_f000127,dev_train,M-AILABS,0,0,,1,0
+4f1baebc2ae74ae2_music_a0c9cba2851b3180_snr0,audio/4f1baebc2ae74ae2_music_a0c9cba2851b3180_snr0.wav,"mlaad:jane_eyre_30_f000127|AIME prompt: world, trance, classicalguitar",dev_train,mixture:SNR=0dB,1,,1,1,1
+4f1baebc2ae74ae2_music_a0c9cba2851b3180_snr10,audio/4f1baebc2ae74ae2_music_a0c9cba2851b3180_snr10.wav,"mlaad:jane_eyre_30_f000127|AIME prompt: world, trance, classicalguitar",dev_train,mixture:SNR=10dB,1,,1,1,1
+4f1baebc2ae74ae2_music_a3613704db84f026_snr0,audio/4f1baebc2ae74ae2_music_a3613704db84f026_snr0.wav,mlaad:jane_eyre_30_f000127|fma_artist_13391,dev_train,mixture:SNR=0dB,0,0,0,1,1
+4f1baebc2ae74ae2_music_a3613704db84f026_snr10,audio/4f1baebc2ae74ae2_music_a3613704db84f026_snr10.wav,mlaad:jane_eyre_30_f000127|fma_artist_13391,dev_train,mixture:SNR=10dB,0,0,0,1,1
+4f1baebc2ae74ae2_tel,audio/4f1baebc2ae74ae2_tel.wav,mlaad:jane_eyre_30_f000127,dev_train,M-AILABS,0,0,,1,0
+4f5fc2e7c29a2e2d,audio/4f5fc2e7c29a2e2d.wav,mlaad:jane_eyre_12_f000050,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+4f5fc2e7c29a2e2d_music_0314ceaa29113b2e_snr0,audio/4f5fc2e7c29a2e2d_music_0314ceaa29113b2e_snr0.wav,"mlaad:jane_eyre_12_f000050|AIME prompt: newage, world, oriental",dev_train,mixture:SNR=0dB,1,1,1,1,1
+4f5fc2e7c29a2e2d_music_0314ceaa29113b2e_snr10,audio/4f5fc2e7c29a2e2d_music_0314ceaa29113b2e_snr10.wav,"mlaad:jane_eyre_12_f000050|AIME prompt: newage, world, oriental",dev_train,mixture:SNR=10dB,1,1,1,1,1
+4f5fc2e7c29a2e2d_music_ced239b6f758ac66_snr0,audio/4f5fc2e7c29a2e2d_music_ced239b6f758ac66_snr0.wav,mlaad:jane_eyre_12_f000050|fma_artist_12626,dev_train,mixture:SNR=0dB,1,1,0,1,1
+4f5fc2e7c29a2e2d_music_ced239b6f758ac66_snr10,audio/4f5fc2e7c29a2e2d_music_ced239b6f758ac66_snr10.wav,mlaad:jane_eyre_12_f000050|fma_artist_12626,dev_train,mixture:SNR=10dB,1,1,0,1,1
+4f5fc2e7c29a2e2d_tel,audio/4f5fc2e7c29a2e2d_tel.wav,mlaad:jane_eyre_12_f000050,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+50ccfe1acadb3202,audio/50ccfe1acadb3202.wav,mlaad:wives_and_daughters_29_f000178,dev_train,M-AILABS,0,0,,1,0
+50ccfe1acadb3202_tel,audio/50ccfe1acadb3202_tel.wav,mlaad:wives_and_daughters_29_f000178,dev_train,M-AILABS,0,0,,1,0
+51786d25e08b3d447367,audio/51786d25e08b3d447367.wav,mlaad:wives_and_daughters_55_f000006,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+520becfd362e0c389fe2,audio/520becfd362e0c389fe2.wav,mlaad:pink_fairy_book_30_f000084,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+5250294cb97155795d95,audio/5250294cb97155795d95.wav,fma_artist_13115,dev_train,fma_real/FMA,0,,0,,1
+526fbe9304f30473d50e,audio/526fbe9304f30473d50e.wav,fma_artist_21691,dev_train,fma_real/FMA,0,,0,,1
+528c58a6af81b7984deb,audio/528c58a6af81b7984deb.wav,mlaad:northandsouth_35_f000228,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+52fa399e1cec4d35586e,audio/52fa399e1cec4d35586e.wav,mlaad:wives_and_daughters_02_f000217,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+537716ab885effde6550,audio/537716ab885effde6550.wav,mlaad:midnight_passenger_06_f000063|fma_artist_20985,dev_select,mixture/SNR=0,0,0,0,1,1
+542ce56c0ebe983a1736,audio/542ce56c0ebe983a1736.wav,fma_artist_1041,dev_train,echoes_tta/acestep,1,,1,,1
+54ea22f4a3bd22229e02,audio/54ea22f4a3bd22229e02.wav,fma_artist_15501,dev_train,fma_real/FMA,0,,0,,1
+54fa8c0462df48d13ff2,audio/54fa8c0462df48d13ff2.wav,nsynth_instrument_316,dev_train,nsynth/NSynth,0,,0,0,1
+554cdb1946da3c87de86,audio/554cdb1946da3c87de86.wav,mlaad:silent_bullet_03_f000267,dev_select,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+55e02ec4dd574c5e6479,audio/55e02ec4dd574c5e6479.wav,mlaad:midnight_passenger_06_f000063|fma_artist_20985,dev_select,mixture/SNR=0,1,,1,1,1
+5674f2712af45271111f,audio/5674f2712af45271111f.wav,mlaad:northandsouth_41_f000208,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+56c013bbefb39a6866f6,audio/56c013bbefb39a6866f6.wav,mlaad:poisoned_pen_03_f000161,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+57c987a9eafae3f1dbb4,audio/57c987a9eafae3f1dbb4.wav,nsynth_instrument_128,dev_train,nsynth/NSynth,0,,0,0,1
+57f5f53e583a85f66866,audio/57f5f53e583a85f66866.wav,mlaad:pink_fairy_book_31_f000105,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+581fc29c564a32f75181,audio/581fc29c564a32f75181.wav,fma_artist_8762,dev_train,fma_real/FMA,0,,0,,1
+583db0324a008ed8eb43,audio/583db0324a008ed8eb43.wav,mlaad:midnight_passenger_01_f000169,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+584e092dcb74a48449aa,audio/584e092dcb74a48449aa.wav,fma_artist_24075,dev_train,echoes_tta/acestep,1,,1,,1
+59409ec2696b6a3da1fb,audio/59409ec2696b6a3da1fb.wav,mlaad:ozma_of_oz_04_f000065,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+5967f39c2a573a84c174,audio/5967f39c2a573a84c174.wav,nsynth_instrument_675,dev_train,nsynth/NSynth,0,,0,0,1
+599048d6a961c326da4f,audio/599048d6a961c326da4f.wav,nsynth_instrument_86,dev_select,nsynth/NSynth,0,,0,0,1
+59c56b184ace369840d0,audio/59c56b184ace369840d0.wav,fma_artist_18767,dev_train,echoes_tta/audioldm,1,,1,,1
+59eba8b96d8a863ebb53,audio/59eba8b96d8a863ebb53.wav,mlaad:northandsouth_42_f000101,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+5a0c0131320c3f83,audio/5a0c0131320c3f83.wav,mlaad:jane_eyre_28_f000315,dev_train,M-AILABS,0,0,,1,0
+5a0c0131320c3f83_music_53faae0ce376f35e_snr0,audio/5a0c0131320c3f83_music_53faae0ce376f35e_snr0.wav,"mlaad:jane_eyre_28_f000315|AIME prompt: pop, triphop, synthesizer",dev_train,mixture:SNR=0dB,1,,1,1,1
+5a0c0131320c3f83_music_53faae0ce376f35e_snr10,audio/5a0c0131320c3f83_music_53faae0ce376f35e_snr10.wav,"mlaad:jane_eyre_28_f000315|AIME prompt: pop, triphop, synthesizer",dev_train,mixture:SNR=10dB,1,,1,1,1
+5a0c0131320c3f83_music_788bf3fb2a4db064_snr0,audio/5a0c0131320c3f83_music_788bf3fb2a4db064_snr0.wav,mlaad:jane_eyre_28_f000315|fma_artist_6274,dev_train,mixture:SNR=0dB,0,0,0,1,1
+5a0c0131320c3f83_music_788bf3fb2a4db064_snr10,audio/5a0c0131320c3f83_music_788bf3fb2a4db064_snr10.wav,mlaad:jane_eyre_28_f000315|fma_artist_6274,dev_train,mixture:SNR=10dB,0,0,0,1,1
+5a0c0131320c3f83_tel,audio/5a0c0131320c3f83_tel.wav,mlaad:jane_eyre_28_f000315,dev_train,M-AILABS,0,0,,1,0
+5a6d2323cc57a34c1fe3,audio/5a6d2323cc57a34c1fe3.wav,mlaad:midnight_passenger_04_f000292,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+5a959c3f6b415901572f,audio/5a959c3f6b415901572f.wav,mlaad:midnight_passenger_01_f000169,dev_train,mlaad_fake/Mars5,1,1,,1,0
+5a9991a353c26027,audio/5a9991a353c26027.wav,mlaad:ozma_of_oz_03_f000009,dev_train,M-AILABS,0,0,,1,0
+5a9991a353c26027_tel,audio/5a9991a353c26027_tel.wav,mlaad:ozma_of_oz_03_f000009,dev_train,M-AILABS,0,0,,1,0
+5acea4b3c192d20b637f,audio/5acea4b3c192d20b637f.wav,mlaad:jane_eyre_35_f000025,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+5ae32e978ce101f3d390,audio/5ae32e978ce101f3d390.wav,mlaad:pink_fairy_book_22_f000104,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+5aeaa99b12e25da09b9a,audio/5aeaa99b12e25da09b9a.wav,fma_artist_24075,dev_train,echoes_tta/audioldm,1,,1,,1
+5b8a69ff73a5b5244197,audio/5b8a69ff73a5b5244197.wav,nsynth_instrument_609,dev_train,nsynth/NSynth,0,,0,0,1
+5c15e525e24cab5c,audio/5c15e525e24cab5c.wav,mlaad:silent_bullet_07_f000129,dev_train,M-AILABS,0,0,,1,0
+5c15e525e24cab5c_tel,audio/5c15e525e24cab5c_tel.wav,mlaad:silent_bullet_07_f000129,dev_train,M-AILABS,0,0,,1,0
+5cf17c94fe6dd5b52962,audio/5cf17c94fe6dd5b52962.wav,mlaad:poisoned_pen_05_f000283,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+5d30c2787924128b9d14,audio/5d30c2787924128b9d14.wav,nsynth_instrument_450,dev_train,nsynth/NSynth,0,,0,0,1
+5d483f06eb5164c52334,audio/5d483f06eb5164c52334.wav,mlaad:wives_and_daughters_04_f000195,dev_train,mlaad_fake/Mars5,1,1,,1,0
+5e85807aeba3bab9ef1f,audio/5e85807aeba3bab9ef1f.wav,mlaad:jane_eyre_35_f000105|fma_artist_1041,dev_train,mixture/SNR=0,1,,1,1,1
+5ebc4abfc6e5cdd3cc3f,audio/5ebc4abfc6e5cdd3cc3f.wav,fma_artist_15502,dev_train,fma_real/FMA,0,,0,,1
+600e85e2d07ee8ca820e,audio/600e85e2d07ee8ca820e.wav,mlaad:jane_eyre_27_f000155,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+61a23f35f9c3df18d56f,audio/61a23f35f9c3df18d56f.wav,mlaad:poisoned_pen_11_f000335,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+6262b296f12fd275,audio/6262b296f12fd275.wav,mlaad:wives_and_daughters_59_f000076,dev_select,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+6262b296f12fd275_tel,audio/6262b296f12fd275_tel.wav,mlaad:wives_and_daughters_59_f000076,dev_select,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+628101db089ca4712c73,audio/628101db089ca4712c73.wav,fma_artist_24309,dev_select,echoes_tta/acestep,1,,1,,1
+6284140f9ab1b3ce1617,audio/6284140f9ab1b3ce1617.wav,mlaad:jane_eyre_25_f000101,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+6288832138c324ad0c45,audio/6288832138c324ad0c45.wav,fma_artist_19740,dev_select,echoes_tta/audioldm,1,,1,,1
+62eee36fb1953c79b59d,audio/62eee36fb1953c79b59d.wav,nsynth_instrument_642,dev_train,nsynth/NSynth,0,,0,0,1
+632984d09c78e953,audio/632984d09c78e953.wav,mlaad:midnight_passenger_04_f000151,dev_train,M-AILABS,0,0,,1,0
+632984d09c78e953_music_37dd7f3dfb1957fb_snr0,audio/632984d09c78e953_music_37dd7f3dfb1957fb_snr0.wav,"mlaad:midnight_passenger_04_f000151|AIME prompt: classical, soundtrack, percussion",dev_train,mixture:SNR=0dB,1,,1,1,1
+632984d09c78e953_music_37dd7f3dfb1957fb_snr10,audio/632984d09c78e953_music_37dd7f3dfb1957fb_snr10.wav,"mlaad:midnight_passenger_04_f000151|AIME prompt: classical, soundtrack, percussion",dev_train,mixture:SNR=10dB,1,,1,1,1
+632984d09c78e953_music_788bf3fb2a4db064_snr0,audio/632984d09c78e953_music_788bf3fb2a4db064_snr0.wav,mlaad:midnight_passenger_04_f000151|fma_artist_6274,dev_train,mixture:SNR=0dB,0,0,0,1,1
+632984d09c78e953_music_788bf3fb2a4db064_snr10,audio/632984d09c78e953_music_788bf3fb2a4db064_snr10.wav,mlaad:midnight_passenger_04_f000151|fma_artist_6274,dev_train,mixture:SNR=10dB,0,0,0,1,1
+632984d09c78e953_tel,audio/632984d09c78e953_tel.wav,mlaad:midnight_passenger_04_f000151,dev_train,M-AILABS,0,0,,1,0
+6353e6dfd6991aee6e30,audio/6353e6dfd6991aee6e30.wav,nsynth_instrument_128,dev_train,nsynth/NSynth,0,,0,0,1
+63bb8ef1d02b4259635c,audio/63bb8ef1d02b4259635c.wav,mlaad:wives_and_daughters_58_f000172,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+64ad4295ad552888e464,audio/64ad4295ad552888e464.wav,mlaad:wives_and_daughters_29_f000092,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+64d50ce39354900c2c90,audio/64d50ce39354900c2c90.wav,mlaad:silent_bullet_08_f000314,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+64d95bb672846ec2e7bd,audio/64d95bb672846ec2e7bd.wav,fma_artist_18767,dev_train,fma_real/FMA,0,,0,,1
+651c461543fe0521abf5,audio/651c461543fe0521abf5.wav,mlaad:skyisland_27_baum_64kb_f000041,dev_select,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+65cb761217df420dcbbc,audio/65cb761217df420dcbbc.wav,nsynth_instrument_327,dev_train,nsynth/NSynth,0,,0,0,1
+66d20735d62ff75aced4,audio/66d20735d62ff75aced4.wav,nsynth_instrument_128,dev_train,nsynth/NSynth,0,,0,0,1
+67b06d26db7d3029,audio/67b06d26db7d3029.wav,mlaad:wives_and_daughters_51_f000163,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+67b06d26db7d3029_tel,audio/67b06d26db7d3029_tel.wav,mlaad:wives_and_daughters_51_f000163,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+681641ee733c91cad9f7,audio/681641ee733c91cad9f7.wav,mlaad:midnight_passenger_06_f000063,dev_select,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+6948bda67b759778e53e,audio/6948bda67b759778e53e.wav,mlaad:northandsouth_05_f000222,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+69b18453d7b6cc7ca2c7,audio/69b18453d7b6cc7ca2c7.wav,fma_artist_190,dev_train,fma_real/FMA,0,,0,,1
+6a322524305aaa136b31,audio/6a322524305aaa136b31.wav,mlaad:skyisland_11_baum_64kb_f000054,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+6a53d590723a16a2c4e5,audio/6a53d590723a16a2c4e5.wav,fma_artist_1041,dev_train,echoes_tta/musicgen,1,,1,,1
+6ab3aa2b397484645a99,audio/6ab3aa2b397484645a99.wav,mlaad:jane_eyre_17_f000120,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+6b1a1893d6201881c066,audio/6b1a1893d6201881c066.wav,nsynth_instrument_219,dev_train,nsynth/NSynth,0,,0,0,1
+6b7f528a652d7cb32104,audio/6b7f528a652d7cb32104.wav,nsynth_instrument_263,dev_select,nsynth/NSynth,0,,0,0,1
+6b9279e2a23111ff5336,audio/6b9279e2a23111ff5336.wav,mlaad:the_sea_fairies_05_f000068,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+6caf41f5935dce80,audio/6caf41f5935dce80.wav,mlaad:the_sea_fairies_18_f000042,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+6caf41f5935dce80_tel,audio/6caf41f5935dce80_tel.wav,mlaad:the_sea_fairies_18_f000042,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+6cbf973cb8a525dc4394,audio/6cbf973cb8a525dc4394.wav,mlaad:pink_fairy_book_31_f000105,dev_train,mlaad_fake/Mars5,1,1,,1,0
+6d5e92cb87b3eb5527e4,audio/6d5e92cb87b3eb5527e4.wav,mlaad:poisoned_pen_10_f000016,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+6dedd4ff60a3da4aa543,audio/6dedd4ff60a3da4aa543.wav,fma_artist_23198,dev_train,echoes_tta/acestep,1,,1,,1
+6e894c8d2b80fca7234f,audio/6e894c8d2b80fca7234f.wav,mlaad:northandsouth_02_f000127,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+70b6081cba58c90d6cf0,audio/70b6081cba58c90d6cf0.wav,mlaad:jane_eyre_27_f000167,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+712b3e71b3d570397b43,audio/712b3e71b3d570397b43.wav,mlaad:piratesofersatz_02_leinster_64kb_f000030,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+71fc538535a04cc4a4f6,audio/71fc538535a04cc4a4f6.wav,fma_artist_889,dev_train,echoes_tta/audioldm,1,,1,,1
+72beccc5fe1e434769c7,audio/72beccc5fe1e434769c7.wav,mlaad:piratesofersatz_10_leinster_64kb_f000005,dev_select,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+72c465f0e20e96efaf6e,audio/72c465f0e20e96efaf6e.wav,mlaad:jane_eyre_30_f000075,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+73046d1557fa835a7e42,audio/73046d1557fa835a7e42.wav,fma_artist_9032,dev_train,echoes_tta/musicgen,1,,1,,1
+732e304f258ebb8ae28a,audio/732e304f258ebb8ae28a.wav,mlaad:jane_eyre_16_f000156,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+7353e4486dce845eff8c,audio/7353e4486dce845eff8c.wav,fma_artist_15501,dev_train,echoes_tta/acestep,1,,1,,1
+743737ea90de3c526fe1,audio/743737ea90de3c526fe1.wav,mlaad:midnight_passenger_07_f000151,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+74e0b670f1caa0fb2f56,audio/74e0b670f1caa0fb2f56.wav,fma_artist_20985,dev_select,echoes_tta/audioldm,1,,1,,1
+75866e087cc97bfc647a,audio/75866e087cc97bfc647a.wav,mlaad:jane_eyre_15_f000215,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+75b436150fc96ff1,audio/75b436150fc96ff1.wav,mlaad:midnight_passenger_04_f000151,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+75b436150fc96ff1_music_37dd7f3dfb1957fb_snr0,audio/75b436150fc96ff1_music_37dd7f3dfb1957fb_snr0.wav,"mlaad:midnight_passenger_04_f000151|AIME prompt: classical, soundtrack, percussion",dev_train,mixture:SNR=0dB,1,1,1,1,1
+75b436150fc96ff1_music_37dd7f3dfb1957fb_snr10,audio/75b436150fc96ff1_music_37dd7f3dfb1957fb_snr10.wav,"mlaad:midnight_passenger_04_f000151|AIME prompt: classical, soundtrack, percussion",dev_train,mixture:SNR=10dB,1,1,1,1,1
+75b436150fc96ff1_music_788bf3fb2a4db064_snr0,audio/75b436150fc96ff1_music_788bf3fb2a4db064_snr0.wav,mlaad:midnight_passenger_04_f000151|fma_artist_6274,dev_train,mixture:SNR=0dB,1,1,0,1,1
+75b436150fc96ff1_music_788bf3fb2a4db064_snr10,audio/75b436150fc96ff1_music_788bf3fb2a4db064_snr10.wav,mlaad:midnight_passenger_04_f000151|fma_artist_6274,dev_train,mixture:SNR=10dB,1,1,0,1,1
+75b436150fc96ff1_tel,audio/75b436150fc96ff1_tel.wav,mlaad:midnight_passenger_04_f000151,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+7609d936f4b6945cfd7a,audio/7609d936f4b6945cfd7a.wav,fma_artist_21394,dev_train,fma_real/FMA,0,,0,,1
+763febdf7005418062e8,audio/763febdf7005418062e8.wav,mlaad:silent_bullet_09_f000237,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+77147fb3130cae1442a6,audio/77147fb3130cae1442a6.wav,fma_artist_9067,dev_train,echoes_tta/acestep,1,,1,,1
+771dafcdfc2479d64b4c,audio/771dafcdfc2479d64b4c.wav,mlaad:wives_and_daughters_38_f000008,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+7759fbcb677986e392b6,audio/7759fbcb677986e392b6.wav,fma_artist_19189,dev_select,echoes_tta/audioldm,1,,1,,1
+78c3dc3e5aace723a69a,audio/78c3dc3e5aace723a69a.wav,mlaad:midnight_passenger_04_f000229,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+78daa2a0bd3e712c2ae2,audio/78daa2a0bd3e712c2ae2.wav,fma_artist_1044,dev_train,fma_real/FMA,0,,0,,1
+78eedcae879fec19daff,audio/78eedcae879fec19daff.wav,mlaad:wives_and_daughters_10_f000108|fma_artist_19273,dev_select,mixture/SNR=10,1,,1,1,1
+790795067cca7304,audio/790795067cca7304.wav,mlaad:skyisland_15_baum_64kb_f000054,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+790795067cca7304_tel,audio/790795067cca7304_tel.wav,mlaad:skyisland_15_baum_64kb_f000054,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+79424147253b246d2622,audio/79424147253b246d2622.wav,mlaad:silent_bullet_06_f000153,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+798adaacdaaa509056ca,audio/798adaacdaaa509056ca.wav,mlaad:pink_fairy_book_23_f000049,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+798dca372fca8cee2c74,audio/798dca372fca8cee2c74.wav,mlaad:pink_fairy_book_13_f000137,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+79bb469cb193cb4a77c2,audio/79bb469cb193cb4a77c2.wav,fma_artist_22007,dev_train,echoes_tta/audioldm,1,,1,,1
+79c5c3e018397218100c,audio/79c5c3e018397218100c.wav,mlaad:jane_eyre_17_f000113,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+7af66fd39988463db671,audio/7af66fd39988463db671.wav,fma_artist_20985,dev_select,echoes_tta/acestep,1,,1,,1
+7b47bffc1899cf417629,audio/7b47bffc1899cf417629.wav,fma_artist_19696,dev_train,echoes_tta/musicgen,1,,1,,1
+7b90adb888d8ce4361bd,audio/7b90adb888d8ce4361bd.wav,mlaad:jane_eyre_27_f000155,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+7bf3fb1fcbbd2482849f,audio/7bf3fb1fcbbd2482849f.wav,mlaad:hunters_space_12_f000017,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+7bfd4609afa071a495a6,audio/7bfd4609afa071a495a6.wav,fma_artist_24309,dev_select,echoes_tta/audioldm,1,,1,,1
+7c4da612e35827d7bf5d,audio/7c4da612e35827d7bf5d.wav,mlaad:jane_eyre_15_f000215,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+7c5fde2ee1ca4476de40,audio/7c5fde2ee1ca4476de40.wav,mlaad:hunters_space_16_f000003,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+7ce7a5b5fbdbbc61,audio/7ce7a5b5fbdbbc61.wav,mlaad:wives_and_daughters_37_f000109,dev_train,M-AILABS,0,0,,1,0
+7ce7a5b5fbdbbc61_tel,audio/7ce7a5b5fbdbbc61_tel.wav,mlaad:wives_and_daughters_37_f000109,dev_train,M-AILABS,0,0,,1,0
+7cf7c3774f71b38dfed9,audio/7cf7c3774f71b38dfed9.wav,fma_artist_889,dev_train,echoes_tta/musicgen,1,,1,,1
+7cfcbf6741fa3b7c8988,audio/7cfcbf6741fa3b7c8988.wav,mlaad:skyisland_13_baum_64kb_f000001,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+7d0c30b067eac32afcda,audio/7d0c30b067eac32afcda.wav,nsynth_instrument_263,dev_select,nsynth/NSynth,0,,0,0,1
+7d65aca05c8520ffa4a3,audio/7d65aca05c8520ffa4a3.wav,mlaad:pink_fairy_book_01_f000016,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+7d8dce81f2fb3944ab1d,audio/7d8dce81f2fb3944ab1d.wav,fma_artist_24309,dev_select,echoes_tta/musicgen,1,,1,,1
+7dae7eabbba1ddb1,audio/7dae7eabbba1ddb1.wav,mlaad:midnight_passenger_05_f000040,dev_train,M-AILABS,0,0,,1,0
+7dae7eabbba1ddb1_tel,audio/7dae7eabbba1ddb1_tel.wav,mlaad:midnight_passenger_05_f000040,dev_train,M-AILABS,0,0,,1,0
+7ddc6e70b6f19bcbbffd,audio/7ddc6e70b6f19bcbbffd.wav,nsynth_instrument_327,dev_train,nsynth/NSynth,0,,0,0,1
+7dff557ab19c7974a204,audio/7dff557ab19c7974a204.wav,fma_artist_23056,dev_select,echoes_tta/audioldm,1,,1,,1
+7e73d3b2fd45d314124e,audio/7e73d3b2fd45d314124e.wav,mlaad:silent_bullet_13_f000280,dev_train,mlaad_fake/Mars5,1,1,,1,0
+7f0cc3fd3294353f,audio/7f0cc3fd3294353f.wav,mlaad:poisoned_pen_08_f000027,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+7f0cc3fd3294353f_tel,audio/7f0cc3fd3294353f_tel.wav,mlaad:poisoned_pen_08_f000027,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+7f36abb9bc87bfa6b966,audio/7f36abb9bc87bfa6b966.wav,mlaad:pink_fairy_book_29_f000036,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+7fd31de603e5b13497b7,audio/7fd31de603e5b13497b7.wav,nsynth_instrument_387,dev_train,nsynth/NSynth,0,,0,0,1
+802e3289db44b0c66cea,audio/802e3289db44b0c66cea.wav,mlaad:jane_eyre_35_f000105|fma_artist_1041,dev_train,mixture/SNR=10,1,1,0,1,1
+80e450a30a9fd08cf49e,audio/80e450a30a9fd08cf49e.wav,mlaad:jane_eyre_07_f000014,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+822f84d70dc97e7a23a0,audio/822f84d70dc97e7a23a0.wav,mlaad:emerald_city_of_oz_10_f000128,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+830dcaef712d2974a46c,audio/830dcaef712d2974a46c.wav,mlaad:hunters_space_08_f000076,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+83a3edaded139ad8264d,audio/83a3edaded139ad8264d.wav,mlaad:northandsouth_02_f000127,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+841446f6003ba78ac527,audio/841446f6003ba78ac527.wav,mlaad:dorothy_and_wizard_oz_08_f000005,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+85034d3b27a67f0c18c0,audio/85034d3b27a67f0c18c0.wav,fma_artist_1041,dev_train,echoes_tta/audioldm,1,,1,,1
+85686f90369d5e8afaba,audio/85686f90369d5e8afaba.wav,mlaad:jane_eyre_17_f000120,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+856d196e526268a11aac,audio/856d196e526268a11aac.wav,mlaad:jane_eyre_15_f000223,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+867698c42a5e7e5a,audio/867698c42a5e7e5a.wav,mlaad:ozma_of_oz_03_f000009,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+867698c42a5e7e5a_tel,audio/867698c42a5e7e5a_tel.wav,mlaad:ozma_of_oz_03_f000009,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+869f7c9cd4c1a0dcca20,audio/869f7c9cd4c1a0dcca20.wav,nsynth_instrument_675,dev_train,nsynth/NSynth,0,,0,0,1
+86a3bc5474e7ef950c53,audio/86a3bc5474e7ef950c53.wav,mlaad:poisoned_pen_12_f000439,dev_train,mlaad_fake/Mars5,1,1,,1,0
+87147098a78316ad1402,audio/87147098a78316ad1402.wav,nsynth_instrument_414,dev_train,nsynth/NSynth,0,,0,0,1
+87917ce6caefcc16d635,audio/87917ce6caefcc16d635.wav,fma_artist_15502,dev_train,echoes_tta/audioldm,1,,1,,1
+87d83462f952d72b3af1,audio/87d83462f952d72b3af1.wav,fma_artist_8762,dev_train,echoes_tta/acestep,1,,1,,1
+88180b3e50e1ff7ebf0a,audio/88180b3e50e1ff7ebf0a.wav,nsynth_instrument_104,dev_train,nsynth/NSynth,0,,0,0,1
+883b4ef8a23772fdde62,audio/883b4ef8a23772fdde62.wav,mlaad:jane_eyre_35_f000105,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+88e7f9836a009600d020,audio/88e7f9836a009600d020.wav,fma_artist_21691,dev_train,echoes_tta/audioldm,1,,1,,1
+89802d6c6805947c10e7,audio/89802d6c6805947c10e7.wav,fma_artist_16893,dev_train,echoes_tta/audioldm,1,,1,,1
+8b854d883f53768f1820,audio/8b854d883f53768f1820.wav,fma_artist_22007,dev_train,echoes_tta/musicgen,1,,1,,1
+8bebec5290ad4c8d394c,audio/8bebec5290ad4c8d394c.wav,fma_artist_15502,dev_train,echoes_tta/acestep,1,,1,,1
+8cab32ad8d8f8c535c8f,audio/8cab32ad8d8f8c535c8f.wav,mlaad:poisoned_pen_07_f000388,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+8cb27829c90a5b132bf8,audio/8cb27829c90a5b132bf8.wav,mlaad:jane_eyre_21_f000268,dev_train,mlaad_fake/Mars5,1,1,,1,0
+8ccb41cd3c866fa0bc26,audio/8ccb41cd3c866fa0bc26.wav,mlaad:the_master_key_10_f000082|fma_artist_4365,dev_train,mixture/SNR=0,1,1,0,1,1
+8ce21d99d0bf3804cd34,audio/8ce21d99d0bf3804cd34.wav,mlaad:emerald_city_of_oz_10_f000128,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+8ce2d244206a69f9a4eb,audio/8ce2d244206a69f9a4eb.wav,mlaad:midnight_passenger_14_f000079,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+8d48cbd8605dbc580914,audio/8d48cbd8605dbc580914.wav,mlaad:wives_and_daughters_56_f000019,dev_train,mlaad_fake/Mars5,1,1,,1,0
+8d49d660f3fa157563ec,audio/8d49d660f3fa157563ec.wav,mlaad:wives_and_daughters_59_f000029,dev_select,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+8e3b3829b70c98d6f434,audio/8e3b3829b70c98d6f434.wav,fma_artist_1044,dev_train,echoes_tta/audioldm,1,,1,,1
+8eb2d5f2de44b5d072f3,audio/8eb2d5f2de44b5d072f3.wav,mlaad:midnight_passenger_15_f000019,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+8ed9b0bdd921658f5fb2,audio/8ed9b0bdd921658f5fb2.wav,mlaad:midnight_passenger_04_f000042,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+8ef6078b794be08397e1,audio/8ef6078b794be08397e1.wav,mlaad:poisoned_pen_04_f000178,dev_select,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+8f7349330d04fd9edc3f,audio/8f7349330d04fd9edc3f.wav,nsynth_instrument_316,dev_train,nsynth/NSynth,0,,0,0,1
+8f7fc7141c3988cdd5c0,audio/8f7fc7141c3988cdd5c0.wav,mlaad:piratesofersatz_12_leinster_64kb_f000044,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+9046aba0cc1483b4de9f,audio/9046aba0cc1483b4de9f.wav,nsynth_instrument_121,dev_train,nsynth/NSynth,0,,0,0,1
+9051334cf7752163c557,audio/9051334cf7752163c557.wav,mlaad:piratesofersatz_01_leinster_64kb_f000217,dev_train,mlaad_fake/Mars5,1,1,,1,0
+91a0f5134f13e2d4aab3,audio/91a0f5134f13e2d4aab3.wav,mlaad:the_master_key_10_f000082,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+9223b73025c02907d5ce,audio/9223b73025c02907d5ce.wav,nsynth_instrument_43,dev_train,nsynth/NSynth,0,,0,0,1
+925ee9ad53b783850d92,audio/925ee9ad53b783850d92.wav,mlaad:wives_and_daughters_10_f000108|fma_artist_19273,dev_select,mixture/SNR=10,1,1,0,1,1
+92674290af14b0799963,audio/92674290af14b0799963.wav,mlaad:wives_and_daughters_55_f000144,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+93838b54cefb5b486a62,audio/93838b54cefb5b486a62.wav,mlaad:hunters_space_02_f000038,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+942210e290805cd62454,audio/942210e290805cd62454.wav,fma_artist_19453,dev_train,echoes_tta/musicgen,1,,1,,1
+95a99601a1768223d62a,audio/95a99601a1768223d62a.wav,mlaad:piratesofersatz_08_leinster_64kb_f000166,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+965af09091bcf5fe3516,audio/965af09091bcf5fe3516.wav,mlaad:northandsouth_18_f000017,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+968bcd70f07c76fbd68c,audio/968bcd70f07c76fbd68c.wav,mlaad:pink_fairy_book_10_f000124,dev_train,mlaad_fake/Mars5,1,1,,1,0
+972316c94e0d363b107f,audio/972316c94e0d363b107f.wav,mlaad:wives_and_daughters_12_f000018,dev_select,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+97d1c7c5f0caf6ce9640,audio/97d1c7c5f0caf6ce9640.wav,mlaad:skyisland_11_baum_64kb_f000054,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+97ed93a9ec6fb8b35965,audio/97ed93a9ec6fb8b35965.wav,mlaad:poisoned_pen_05_f000265,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+98176ea81f20dcf325c0,audio/98176ea81f20dcf325c0.wav,mlaad:hunters_space_02_f000017,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+985c551957cd19b79177,audio/985c551957cd19b79177.wav,mlaad:rinkitink_baum_19_64kb_f000011,dev_select,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+98ce1e9cac4161112719,audio/98ce1e9cac4161112719.wav,mlaad:poisoned_pen_09_f000049,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+98eff8cc00cff9e22860,audio/98eff8cc00cff9e22860.wav,mlaad:hunters_space_02_f000038,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+9975d610c667f8cd768d,audio/9975d610c667f8cd768d.wav,mlaad:wives_and_daughters_59_f000029,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+99a4934a7efeb997,audio/99a4934a7efeb997.wav,mlaad:poisoned_pen_06_f000067,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+99a4934a7efeb997_tel,audio/99a4934a7efeb997_tel.wav,mlaad:poisoned_pen_06_f000067,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+99eeb569b1a1aa21,audio/99eeb569b1a1aa21.wav,mlaad:wives_and_daughters_30_f000122,dev_train,M-AILABS,0,0,,1,0
+99eeb569b1a1aa21_tel,audio/99eeb569b1a1aa21_tel.wav,mlaad:wives_and_daughters_30_f000122,dev_train,M-AILABS,0,0,,1,0
+9a9598a98065b8f565b8,audio/9a9598a98065b8f565b8.wav,mlaad:midnight_passenger_03_f000175,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+9a9d94dd92b65ac7ff3a,audio/9a9d94dd92b65ac7ff3a.wav,fma_artist_1044,dev_train,echoes_tta/musicgen,1,,1,,1
+9b36a92569e43a643100,audio/9b36a92569e43a643100.wav,fma_artist_20985,dev_select,echoes_tta/musicgen,1,,1,,1
+9b41a7a9f8b07c94,audio/9b41a7a9f8b07c94.wav,mlaad:the_sea_fairies_18_f000042,dev_train,M-AILABS,0,0,,1,0
+9b41a7a9f8b07c94_tel,audio/9b41a7a9f8b07c94_tel.wav,mlaad:the_sea_fairies_18_f000042,dev_train,M-AILABS,0,0,,1,0
+9b87dbbc12f204e5bacf,audio/9b87dbbc12f204e5bacf.wav,mlaad:wives_and_daughters_49_f000179,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+9b8ebf88ff9574f47663,audio/9b8ebf88ff9574f47663.wav,nsynth_instrument_572,dev_train,nsynth/NSynth,0,,0,0,1
+9bee522409fa1fc3,audio/9bee522409fa1fc3.wav,mlaad:wives_and_daughters_30_f000122,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+9bee522409fa1fc3_tel,audio/9bee522409fa1fc3_tel.wav,mlaad:wives_and_daughters_30_f000122,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+9c955f7f8880a20ebf8f,audio/9c955f7f8880a20ebf8f.wav,mlaad:jane_eyre_28_f000177,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+9cb2e658c6770585ae74,audio/9cb2e658c6770585ae74.wav,fma_artist_15501,dev_train,echoes_tta/audioldm,1,,1,,1
+9d4c814049d055dbf219,audio/9d4c814049d055dbf219.wav,nsynth_instrument_609,dev_train,nsynth/NSynth,0,,0,0,1
+9e346ca1b4751d597101,audio/9e346ca1b4751d597101.wav,mlaad:wives_and_daughters_49_f000161,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+9f5a2c2838c1c268b90c,audio/9f5a2c2838c1c268b90c.wav,mlaad:wives_and_daughters_10_f000108|fma_artist_19273,dev_select,mixture/SNR=10,1,1,1,1,1
+9fb3873c10e1cb76cecf,audio/9fb3873c10e1cb76cecf.wav,nsynth_instrument_488,dev_select,nsynth/NSynth,0,,0,0,1
+9fc7f9dd792aa943,audio/9fc7f9dd792aa943.wav,mlaad:silent_bullet_07_f000129,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+9fc7f9dd792aa943_tel,audio/9fc7f9dd792aa943_tel.wav,mlaad:silent_bullet_07_f000129,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+a0082a5ea7efcc6a021d,audio/a0082a5ea7efcc6a021d.wav,fma_artist_9032,dev_train,fma_real/FMA,0,,0,,1
+a035d92936f23cc1ce8b,audio/a035d92936f23cc1ce8b.wav,mlaad:wives_and_daughters_55_f000144,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+a0b75be31bfc285789ec,audio/a0b75be31bfc285789ec.wav,fma_artist_23056,dev_select,echoes_tta/musicgen,1,,1,,1
+a0d9a2a898c2caf7,audio/a0d9a2a898c2caf7.wav,mlaad:poisoned_pen_07_f000017,dev_train,M-AILABS,0,0,,1,0
+a0d9a2a898c2caf7_tel,audio/a0d9a2a898c2caf7_tel.wav,mlaad:poisoned_pen_07_f000017,dev_train,M-AILABS,0,0,,1,0
+a137733008786e474554,audio/a137733008786e474554.wav,fma_artist_23056,dev_select,echoes_tta/acestep,1,,1,,1
+a17375384373e03fe1dd,audio/a17375384373e03fe1dd.wav,nsynth_instrument_572,dev_train,nsynth/NSynth,0,,0,0,1
+a1954471f1a4f58ed4aa,audio/a1954471f1a4f58ed4aa.wav,mlaad:northandsouth_39_f000118,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+a19c5fd8b5b5f60f3dcb,audio/a19c5fd8b5b5f60f3dcb.wav,fma_artist_23635,dev_train,echoes_tta/acestep,1,,1,,1
+a1a3e99628907df7c501,audio/a1a3e99628907df7c501.wav,mlaad:poisoned_pen_07_f000386,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+a237b4c12264cb79d53d,audio/a237b4c12264cb79d53d.wav,mlaad:poisoned_pen_05_f000283,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+a24874876f2b8e583776,audio/a24874876f2b8e583776.wav,mlaad:wives_and_daughters_38_f000008,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+a34da5fa7091933c8304,audio/a34da5fa7091933c8304.wav,nsynth_instrument_121,dev_train,nsynth/NSynth,0,,0,0,1
+a353599e369b2077b771,audio/a353599e369b2077b771.wav,mlaad:poisoned_pen_05_f000265,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+a35e3cb2d2a67d4493e5,audio/a35e3cb2d2a67d4493e5.wav,mlaad:jane_eyre_07_f000014,dev_train,mlaad_fake/Mars5,1,1,,1,0
+a3802721cd1fa2e31441,audio/a3802721cd1fa2e31441.wav,fma_artist_23198,dev_train,echoes_tta/audioldm,1,,1,,1
+a415143042a64b46b4aa,audio/a415143042a64b46b4aa.wav,mlaad:rinkitink_baum_19_64kb_f000011,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+a434c2a5558653c4,audio/a434c2a5558653c4.wav,mlaad:wives_and_daughters_37_f000109,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+a434c2a5558653c4_tel,audio/a434c2a5558653c4_tel.wav,mlaad:wives_and_daughters_37_f000109,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+a4a4de519b8aaef0,audio/a4a4de519b8aaef0.wav,mlaad:poisoned_pen_07_f000017,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+a4a4de519b8aaef0_tel,audio/a4a4de519b8aaef0_tel.wav,mlaad:poisoned_pen_07_f000017,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+a4c16ed83098f186e0ac,audio/a4c16ed83098f186e0ac.wav,mlaad:silent_bullet_09_f000237,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+a4f0c7f690f3ded9,audio/a4f0c7f690f3ded9.wav,mlaad:piratesofersatz_02_leinster_64kb_f000114,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+a4f0c7f690f3ded9_tel,audio/a4f0c7f690f3ded9_tel.wav,mlaad:piratesofersatz_02_leinster_64kb_f000114,dev_train,MLAAD-tiny/Edge-TTS,1,1,,1,0
+a567b9b054575eb167cb,audio/a567b9b054575eb167cb.wav,nsynth_instrument_642,dev_train,nsynth/NSynth,0,,0,0,1
+a5b1cbd78f360c2ba74b,audio/a5b1cbd78f360c2ba74b.wav,mlaad:the_master_key_03_f000082,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+a5cf24d0645b07c444d3,audio/a5cf24d0645b07c444d3.wav,mlaad:midnight_passenger_07_f000151,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+a6ea4379a002c981,audio/a6ea4379a002c981.wav,mlaad:wives_and_daughters_59_f000074,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+a6ea4379a002c981_tel,audio/a6ea4379a002c981_tel.wav,mlaad:wives_and_daughters_59_f000074,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+a6ee8eab81c5472711d6,audio/a6ee8eab81c5472711d6.wav,mlaad:midnight_passenger_06_f000063|fma_artist_20985,dev_select,mixture/SNR=10,1,1,1,1,1
+a85c60f7d2b9350b,audio/a85c60f7d2b9350b.wav,mlaad:skyisland_15_baum_64kb_f000054,dev_train,M-AILABS,0,0,,1,0
+a85c60f7d2b9350b_tel,audio/a85c60f7d2b9350b_tel.wav,mlaad:skyisland_15_baum_64kb_f000054,dev_train,M-AILABS,0,0,,1,0
+a8bdace7afd135eb64db,audio/a8bdace7afd135eb64db.wav,nsynth_instrument_219,dev_train,nsynth/NSynth,0,,0,0,1
+a974d3de04ae0949dfdf,audio/a974d3de04ae0949dfdf.wav,fma_artist_190,dev_train,echoes_tta/musicgen,1,,1,,1
+a9b5f7a09c4f6750d7e1,audio/a9b5f7a09c4f6750d7e1.wav,mlaad:the_sea_fairies_05_f000068,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+a9ff5b8148afea31103f,audio/a9ff5b8148afea31103f.wav,mlaad:jane_eyre_35_f000105|fma_artist_1041,dev_train,mixture/SNR=10,1,1,1,1,1
+aa1f95f34ced7ef751e3,audio/aa1f95f34ced7ef751e3.wav,mlaad:ozma_of_oz_20_f000010,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+aadb01e560667097b147,audio/aadb01e560667097b147.wav,fma_artist_21691,dev_train,echoes_tta/acestep,1,,1,,1
+ab373c9820885e0caca8,audio/ab373c9820885e0caca8.wav,fma_artist_13115,dev_train,echoes_tta/audioldm,1,,1,,1
+ab395a3277af30d97963,audio/ab395a3277af30d97963.wav,mlaad:northandsouth_16_f000112,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+ac9c7307aca90675cd3e,audio/ac9c7307aca90675cd3e.wav,mlaad:wives_and_daughters_18_f000013,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+acee5d9ac11e4fdf95c4,audio/acee5d9ac11e4fdf95c4.wav,mlaad:hunters_space_12_f000054,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+acf2e438e124cb83c7e7,audio/acf2e438e124cb83c7e7.wav,mlaad:northandsouth_21_f000086,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+ad7f0d28fc09b5e8b375,audio/ad7f0d28fc09b5e8b375.wav,mlaad:pink_fairy_book_10_f000124,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+ad859f3c9033eb0cdd3c,audio/ad859f3c9033eb0cdd3c.wav,fma_artist_23635,dev_train,echoes_tta/musicgen,1,,1,,1
+ad90321d0c03628ba18d,audio/ad90321d0c03628ba18d.wav,fma_artist_21456,dev_train,echoes_tta/acestep,1,,1,,1
+ad984b2995638ecc323a,audio/ad984b2995638ecc323a.wav,mlaad:emerald_city_of_oz_08_f000059,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+ae88ee4a0f6d2277c5a9,audio/ae88ee4a0f6d2277c5a9.wav,fma_artist_24075,dev_train,fma_real/FMA,0,,0,,1
+ae96934cb4d95273,audio/ae96934cb4d95273.wav,mlaad:poisoned_pen_10_f000346,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+ae96934cb4d95273_tel,audio/ae96934cb4d95273_tel.wav,mlaad:poisoned_pen_10_f000346,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+aea7510533cee52e2d2c,audio/aea7510533cee52e2d2c.wav,mlaad:skyisland_13_baum_64kb_f000001,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+aeea961c1fd3ee68,audio/aeea961c1fd3ee68.wav,mlaad:piratesofersatz_03_leinster_64kb_f000260,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+aeea961c1fd3ee68_tel,audio/aeea961c1fd3ee68_tel.wav,mlaad:piratesofersatz_03_leinster_64kb_f000260,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+af2aa8278d028dc165f0,audio/af2aa8278d028dc165f0.wav,nsynth_instrument_224,dev_select,nsynth/NSynth,0,,0,0,1
+af89346ce6698071d871,audio/af89346ce6698071d871.wav,mlaad:midnight_passenger_06_f000063|fma_artist_20985,dev_select,mixture/SNR=10,0,0,0,1,1
+afd789cde09c4abc77ec,audio/afd789cde09c4abc77ec.wav,fma_artist_18767,dev_train,echoes_tta/musicgen,1,,1,,1
+afe5f234b2cc6f1ffa68,audio/afe5f234b2cc6f1ffa68.wav,mlaad:piratesofersatz_02_leinster_64kb_f000206,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+b00ea7588467b917dfee,audio/b00ea7588467b917dfee.wav,fma_artist_889,dev_train,echoes_tta/acestep,1,,1,,1
+b0abbaa4f1634b20fdf1,audio/b0abbaa4f1634b20fdf1.wav,mlaad:silent_bullet_03_f000267,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+b13651abead2e1f788d7,audio/b13651abead2e1f788d7.wav,mlaad:wives_and_daughters_49_f000161,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+b1d16d398cce3a64e1c3,audio/b1d16d398cce3a64e1c3.wav,nsynth_instrument_224,dev_select,nsynth/NSynth,0,,0,0,1
+b1d68ff6d1a8b46ef995,audio/b1d68ff6d1a8b46ef995.wav,mlaad:emerald_city_of_oz_08_f000059,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+b1e84370dc230fab063e,audio/b1e84370dc230fab063e.wav,mlaad:silent_bullet_06_f000153,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+b1e9c6341bb5db597735,audio/b1e9c6341bb5db597735.wav,mlaad:northandsouth_39_f000118,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+b21785fccb28dd564999,audio/b21785fccb28dd564999.wav,mlaad:wives_and_daughters_02_f000217,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+b2b1566762af5fd8e44c,audio/b2b1566762af5fd8e44c.wav,mlaad:poisoned_pen_11_f000335,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+b2d1a462f6277393e2ca,audio/b2d1a462f6277393e2ca.wav,mlaad:rinkitink_baum_07_64kb_f000059,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+b31ce99f2a4baf6ee442,audio/b31ce99f2a4baf6ee442.wav,mlaad:piratesofersatz_12_leinster_64kb_f000044,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+b42fa81ff63ef7a3f511,audio/b42fa81ff63ef7a3f511.wav,fma_artist_190,dev_train,echoes_tta/acestep,1,,1,,1
+b51260d8fdf688ef4d09,audio/b51260d8fdf688ef4d09.wav,mlaad:piratesofersatz_05_leinster_64kb_f000112,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+b56d225edb7a4f8bd26e,audio/b56d225edb7a4f8bd26e.wav,nsynth_instrument_100,dev_train,nsynth/NSynth,0,,0,0,1
+b57bb968b0c39a0c2f23,audio/b57bb968b0c39a0c2f23.wav,mlaad:midnight_passenger_04_f000229,dev_select,mlaad_fake/MeloTTS,1,1,,1,0
+b5b42084ccb62426bad7,audio/b5b42084ccb62426bad7.wav,mlaad:pink_fairy_book_23_f000049,dev_select,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+b694c0497af618caece6,audio/b694c0497af618caece6.wav,fma_artist_21394,dev_train,echoes_tta/acestep,1,,1,,1
+b6e377f416510397f292,audio/b6e377f416510397f292.wav,fma_artist_22007,dev_train,fma_real/FMA,0,,0,,1
+b79111f2face3cc6b701,audio/b79111f2face3cc6b701.wav,mlaad:poisoned_pen_09_f000049,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+b7c4d7d170c8004d,audio/b7c4d7d170c8004d.wav,mlaad:poisoned_pen_08_f000027,dev_train,M-AILABS,0,0,,1,0
+b7c4d7d170c8004d_tel,audio/b7c4d7d170c8004d_tel.wav,mlaad:poisoned_pen_08_f000027,dev_train,M-AILABS,0,0,,1,0
+b842e1752d02ea5214a0,audio/b842e1752d02ea5214a0.wav,mlaad:poisoned_pen_05_f000096,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+ba10d9c2ea4d15c907f2,audio/ba10d9c2ea4d15c907f2.wav,mlaad:wives_and_daughters_37_f000280,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+ba5acc703a7b2a651670,audio/ba5acc703a7b2a651670.wav,nsynth_instrument_414,dev_train,nsynth/NSynth,0,,0,0,1
+bacfa9c02bf02a825ba2,audio/bacfa9c02bf02a825ba2.wav,fma_artist_21107,dev_train,fma_real/FMA,0,,0,,1
+bc18efcb9f77b801a2cb,audio/bc18efcb9f77b801a2cb.wav,fma_artist_13115,dev_train,echoes_tta/acestep,1,,1,,1
+bcaeb9a6e37b87ff61ff,audio/bcaeb9a6e37b87ff61ff.wav,nsynth_instrument_642,dev_train,nsynth/NSynth,0,,0,0,1
+bd82e53881fb02b09212,audio/bd82e53881fb02b09212.wav,fma_artist_9067,dev_train,echoes_tta/musicgen,1,,1,,1
+be0bfd7a9329454c758a,audio/be0bfd7a9329454c758a.wav,mlaad:northandsouth_05_f000222,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+be374d7a05eb9b57e789,audio/be374d7a05eb9b57e789.wav,fma_artist_5730,dev_train,echoes_tta/audioldm,1,,1,,1
+be886b167e22dd91468e,audio/be886b167e22dd91468e.wav,fma_artist_9032,dev_train,echoes_tta/acestep,1,,1,,1
+becdf7a733f9b2e389b7,audio/becdf7a733f9b2e389b7.wav,nsynth_instrument_436,dev_train,nsynth/NSynth,0,,0,0,1
+bfc7b76b668c73d2bb17,audio/bfc7b76b668c73d2bb17.wav,mlaad:wives_and_daughters_04_f000195,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+bff0968ca64603914c6d,audio/bff0968ca64603914c6d.wav,fma_artist_23198,dev_train,fma_real/FMA,0,,0,,1
+c0045a13e42f4da32b0e,audio/c0045a13e42f4da32b0e.wav,mlaad:piratesofersatz_02_leinster_64kb_f000206,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+c06ac4c98bf7ac31e82b,audio/c06ac4c98bf7ac31e82b.wav,fma_artist_11018,dev_train,echoes_tta/musicgen,1,,1,,1
+c07bc3ffb5a73f6997f6,audio/c07bc3ffb5a73f6997f6.wav,mlaad:wives_and_daughters_28_f000194,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+c1089d2149813449,audio/c1089d2149813449.wav,mlaad:wives_and_daughters_19_f000034,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+c1089d2149813449_tel,audio/c1089d2149813449_tel.wav,mlaad:wives_and_daughters_19_f000034,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+c176c4b615ff05dc0f0c,audio/c176c4b615ff05dc0f0c.wav,mlaad:jane_eyre_16_f000156,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+c1d0eda00a5d6887,audio/c1d0eda00a5d6887.wav,mlaad:pink_fairy_book_35_f000019,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+c1d0eda00a5d6887_tel,audio/c1d0eda00a5d6887_tel.wav,mlaad:pink_fairy_book_35_f000019,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+c2a0b5098f96c556f2de,audio/c2a0b5098f96c556f2de.wav,fma_artist_19189,dev_select,fma_real/FMA,0,,0,,1
+c2d4b11e2d984e579b10,audio/c2d4b11e2d984e579b10.wav,mlaad:piratesofersatz_08_leinster_64kb_f000166,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+c3a8bd8ac2be7b7a2a0f,audio/c3a8bd8ac2be7b7a2a0f.wav,mlaad:the_master_key_10_f000082,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+c47a281038e4bbece048,audio/c47a281038e4bbece048.wav,mlaad:wives_and_daughters_10_f000108|fma_artist_19273,dev_select,mixture/SNR=0,1,1,0,1,1
+c4c87624b5ae27dd1189,audio/c4c87624b5ae27dd1189.wav,mlaad:wives_and_daughters_28_f000194,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+c5bcee1077b76f02ad00,audio/c5bcee1077b76f02ad00.wav,mlaad:northandsouth_51_f000043,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+c65f52772c88c6cd87b7,audio/c65f52772c88c6cd87b7.wav,mlaad:jane_eyre_30_f000198,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+c6c84c5cffa4370eeadc,audio/c6c84c5cffa4370eeadc.wav,nsynth_instrument_100,dev_train,nsynth/NSynth,0,,0,0,1
+c6fd5a42d08f3368afc2,audio/c6fd5a42d08f3368afc2.wav,mlaad:ozma_of_oz_01_f000053,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+c7c08dff8974a4a765c2,audio/c7c08dff8974a4a765c2.wav,mlaad:hunters_space_12_f000017,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+c7fa61f9f8c9331860ec,audio/c7fa61f9f8c9331860ec.wav,fma_artist_19740,dev_select,echoes_tta/acestep,1,,1,,1
+c855281a6e9dfc318d95,audio/c855281a6e9dfc318d95.wav,mlaad:jane_eyre_25_f000101,dev_train,mlaad_fake/FireRedTTS-2.0,1,1,,1,0
+c885c113ca1d2e28f643,audio/c885c113ca1d2e28f643.wav,fma_artist_1044,dev_train,echoes_tta/acestep,1,,1,,1
+c89998ca575cf4936930,audio/c89998ca575cf4936930.wav,mlaad:hunters_space_03_f000076,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+c8b8e1354087250e3739,audio/c8b8e1354087250e3739.wav,mlaad:jane_eyre_21_f000268,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+c9919f209cdbda18533c,audio/c9919f209cdbda18533c.wav,fma_artist_1353,dev_train,echoes_tta/acestep,1,,1,,1
+c9a354dfed7d7a2ab338,audio/c9a354dfed7d7a2ab338.wav,mlaad:jane_eyre_30_f000198,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+cb2d24033a10aa243833,audio/cb2d24033a10aa243833.wav,nsynth_instrument_436,dev_train,nsynth/NSynth,0,,0,0,1
+cb8bedb699355519,audio/cb8bedb699355519.wav,mlaad:wives_and_daughters_19_f000034,dev_train,M-AILABS,0,0,,1,0
+cb8bedb699355519_tel,audio/cb8bedb699355519_tel.wav,mlaad:wives_and_daughters_19_f000034,dev_train,M-AILABS,0,0,,1,0
+cbb41eb0642bce6fd498,audio/cbb41eb0642bce6fd498.wav,nsynth_instrument_488,dev_select,nsynth/NSynth,0,,0,0,1
+cc264a004753fc08d1c2,audio/cc264a004753fc08d1c2.wav,mlaad:dorothy_and_wizard_oz_14_f000119,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+cc7398bb869d58549179,audio/cc7398bb869d58549179.wav,nsynth_instrument_128,dev_train,nsynth/NSynth,0,,0,0,1
+ce3f829500b4c3b70da9,audio/ce3f829500b4c3b70da9.wav,mlaad:wives_and_daughters_29_f000092,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+cede17b048c80eae1837,audio/cede17b048c80eae1837.wav,nsynth_instrument_104,dev_train,nsynth/NSynth,0,,0,0,1
+cf2f200e15d526cbe25c,audio/cf2f200e15d526cbe25c.wav,mlaad:the_master_key_10_f000082|fma_artist_4365,dev_train,mixture/SNR=0,1,1,1,1,1
+cfbbcdde7e0a17ebca0f,audio/cfbbcdde7e0a17ebca0f.wav,mlaad:poisoned_pen_12_f000439,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+d0e198d2687bdf8e140c,audio/d0e198d2687bdf8e140c.wav,fma_artist_4365,dev_train,echoes_tta/acestep,1,,1,,1
+d0f9149fafb79cd9815c,audio/d0f9149fafb79cd9815c.wav,mlaad:ozma_of_oz_04_f000065,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+d19e88453eaf36d021ce,audio/d19e88453eaf36d021ce.wav,mlaad:poisoned_pen_12_f000071,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+d1af977a36074cfffe01,audio/d1af977a36074cfffe01.wav,fma_artist_1037,dev_train,echoes_tta/musicgen,1,,1,,1
+d20a536d046e49c060fd,audio/d20a536d046e49c060fd.wav,mlaad:northandsouth_36_f000214,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+d32b29cb4fd061bc49e4,audio/d32b29cb4fd061bc49e4.wav,fma_artist_1037,dev_train,echoes_tta/audioldm,1,,1,,1
+d3587289a3c6b5dd,audio/d3587289a3c6b5dd.wav,mlaad:jane_eyre_12_f000050,dev_train,M-AILABS,0,0,,1,0
+d3587289a3c6b5dd_music_0314ceaa29113b2e_snr0,audio/d3587289a3c6b5dd_music_0314ceaa29113b2e_snr0.wav,"mlaad:jane_eyre_12_f000050|AIME prompt: newage, world, oriental",dev_train,mixture:SNR=0dB,1,,1,1,1
+d3587289a3c6b5dd_music_0314ceaa29113b2e_snr10,audio/d3587289a3c6b5dd_music_0314ceaa29113b2e_snr10.wav,"mlaad:jane_eyre_12_f000050|AIME prompt: newage, world, oriental",dev_train,mixture:SNR=10dB,1,,1,1,1
+d3587289a3c6b5dd_music_ced239b6f758ac66_snr0,audio/d3587289a3c6b5dd_music_ced239b6f758ac66_snr0.wav,mlaad:jane_eyre_12_f000050|fma_artist_12626,dev_train,mixture:SNR=0dB,0,0,0,1,1
+d3587289a3c6b5dd_music_ced239b6f758ac66_snr10,audio/d3587289a3c6b5dd_music_ced239b6f758ac66_snr10.wav,mlaad:jane_eyre_12_f000050|fma_artist_12626,dev_train,mixture:SNR=10dB,0,0,0,1,1
+d3587289a3c6b5dd_tel,audio/d3587289a3c6b5dd_tel.wav,mlaad:jane_eyre_12_f000050,dev_train,M-AILABS,0,0,,1,0
+d407e3369fe595241535,audio/d407e3369fe595241535.wav,mlaad:wives_and_daughters_49_f000179,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+d40d4347ab59cf82,audio/d40d4347ab59cf82.wav,mlaad:wives_and_daughters_09_f000144,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+d40d4347ab59cf82_tel,audio/d40d4347ab59cf82_tel.wav,mlaad:wives_and_daughters_09_f000144,dev_train,MLAAD-tiny/FishTTS,1,1,,1,0
+d4cfb365649d60c92597,audio/d4cfb365649d60c92597.wav,mlaad:poisoned_pen_06_f000019,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+d4eafb2e15f7a6216019,audio/d4eafb2e15f7a6216019.wav,mlaad:wives_and_daughters_11_f000256,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+d51b8397acdb5a346f9b,audio/d51b8397acdb5a346f9b.wav,mlaad:poisoned_pen_09_f000313,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+d53d53dace1b8f2cc0a1,audio/d53d53dace1b8f2cc0a1.wav,mlaad:wives_and_daughters_11_f000256,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+d600bd40ab25c7e68e11,audio/d600bd40ab25c7e68e11.wav,fma_artist_21957,dev_train,echoes_tta/audioldm,1,,1,,1
+d6542174494171aef191,audio/d6542174494171aef191.wav,fma_artist_21107,dev_train,echoes_tta/audioldm,1,,1,,1
+d6c0d2d4c4c359d5cfb2,audio/d6c0d2d4c4c359d5cfb2.wav,nsynth_instrument_414,dev_train,nsynth/NSynth,0,,0,0,1
+d6c4982b34a136cf5b1e,audio/d6c4982b34a136cf5b1e.wav,nsynth_instrument_100,dev_train,nsynth/NSynth,0,,0,0,1
+d79536dc2ae671f48cf5,audio/d79536dc2ae671f48cf5.wav,mlaad:ozma_of_oz_01_f000053,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+d86969d63ba0c9c9,audio/d86969d63ba0c9c9.wav,mlaad:pink_fairy_book_35_f000019,dev_train,M-AILABS,0,0,,1,0
+d86969d63ba0c9c9_tel,audio/d86969d63ba0c9c9_tel.wav,mlaad:pink_fairy_book_35_f000019,dev_train,M-AILABS,0,0,,1,0
+d88c61765aa891d4a6ab,audio/d88c61765aa891d4a6ab.wav,nsynth_instrument_675,dev_train,nsynth/NSynth,0,,0,0,1
+d95c356c246877fd2eef,audio/d95c356c246877fd2eef.wav,fma_artist_11018,dev_train,echoes_tta/acestep,1,,1,,1
+da74f80e69985138afa4,audio/da74f80e69985138afa4.wav,mlaad:silent_bullet_02_f000003,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+da77441c4a1d17ab,audio/da77441c4a1d17ab.wav,mlaad:piratesofersatz_08_leinster_64kb_f000058,dev_train,M-AILABS,0,0,,1,0
+da77441c4a1d17ab_tel,audio/da77441c4a1d17ab_tel.wav,mlaad:piratesofersatz_08_leinster_64kb_f000058,dev_train,M-AILABS,0,0,,1,0
+dae775f5d14b7fc0a292,audio/dae775f5d14b7fc0a292.wav,mlaad:skyisland_07_baum_64kb_f000068,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+daec400fd16127faab37,audio/daec400fd16127faab37.wav,fma_artist_21957,dev_train,echoes_tta/musicgen,1,,1,,1
+db0e2b1e53e248c22fd0,audio/db0e2b1e53e248c22fd0.wav,mlaad:pink_fairy_book_30_f000084,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+db509e0462ce1271f065,audio/db509e0462ce1271f065.wav,mlaad:jane_eyre_35_f000105|fma_artist_1041,dev_train,mixture/SNR=0,1,1,0,1,1
+db7fc411e4a77b04ba33,audio/db7fc411e4a77b04ba33.wav,fma_artist_8762,dev_train,echoes_tta/audioldm,1,,1,,1
+dc32ea2ab5e2ccb96964,audio/dc32ea2ab5e2ccb96964.wav,mlaad:pink_fairy_book_14_f000090,dev_train,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+dc91d3682c6a2523fc16,audio/dc91d3682c6a2523fc16.wav,nsynth_instrument_488,dev_select,nsynth/NSynth,0,,0,0,1
+dcbaf5802fae14d4c200,audio/dcbaf5802fae14d4c200.wav,fma_artist_1353,dev_train,echoes_tta/audioldm,1,,1,,1
+dcf9a2cd2c88c22d31c9,audio/dcf9a2cd2c88c22d31c9.wav,mlaad:midnight_passenger_06_f000063|fma_artist_20985,dev_select,mixture/SNR=10,1,1,0,1,1
+dd49d621ec0e72f7,audio/dd49d621ec0e72f7.wav,mlaad:piratesofersatz_06_leinster_64kb_f000089,dev_train,M-AILABS,0,0,,1,0
+dd49d621ec0e72f7_tel,audio/dd49d621ec0e72f7_tel.wav,mlaad:piratesofersatz_06_leinster_64kb_f000089,dev_train,M-AILABS,0,0,,1,0
+ddec7157e78bfb158ad6,audio/ddec7157e78bfb158ad6.wav,mlaad:wives_and_daughters_10_f000108|fma_artist_19273,dev_select,mixture/SNR=0,1,,1,1,1
+de9a7439d8150eb46c87,audio/de9a7439d8150eb46c87.wav,mlaad:wives_and_daughters_22_f000007,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+e00bf8fdbcdaaf2b262f,audio/e00bf8fdbcdaaf2b262f.wav,mlaad:hunters_space_08_f000076,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+e044ce937b88c16b,audio/e044ce937b88c16b.wav,mlaad:piratesofersatz_08_leinster_64kb_f000058,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+e044ce937b88c16b_tel,audio/e044ce937b88c16b_tel.wav,mlaad:piratesofersatz_08_leinster_64kb_f000058,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+e0454766389486a10e25,audio/e0454766389486a10e25.wav,nsynth_instrument_572,dev_train,nsynth/NSynth,0,,0,0,1
+e0afc432c30df5c7,audio/e0afc432c30df5c7.wav,mlaad:wives_and_daughters_37_f000028,dev_train,M-AILABS,0,0,,1,0
+e0afc432c30df5c7_tel,audio/e0afc432c30df5c7_tel.wav,mlaad:wives_and_daughters_37_f000028,dev_train,M-AILABS,0,0,,1,0
+e100a3aad653afe9,audio/e100a3aad653afe9.wav,mlaad:hunters_space_18_f000010,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+e100a3aad653afe9_music_57082f97192e1baa_snr0,audio/e100a3aad653afe9_music_57082f97192e1baa_snr0.wav,"mlaad:hunters_space_18_f000010|AIME prompt: hiphop, rap, beat",dev_train,mixture:SNR=0dB,1,1,1,1,1
+e100a3aad653afe9_music_57082f97192e1baa_snr10,audio/e100a3aad653afe9_music_57082f97192e1baa_snr10.wav,"mlaad:hunters_space_18_f000010|AIME prompt: hiphop, rap, beat",dev_train,mixture:SNR=10dB,1,1,1,1,1
+e100a3aad653afe9_music_ad47ca8a74b2bb3b_snr0,audio/e100a3aad653afe9_music_ad47ca8a74b2bb3b_snr0.wav,mlaad:hunters_space_18_f000010|fma_artist_23246,dev_train,mixture:SNR=0dB,1,1,0,1,1
+e100a3aad653afe9_music_ad47ca8a74b2bb3b_snr10,audio/e100a3aad653afe9_music_ad47ca8a74b2bb3b_snr10.wav,mlaad:hunters_space_18_f000010|fma_artist_23246,dev_train,mixture:SNR=10dB,1,1,0,1,1
+e100a3aad653afe9_tel,audio/e100a3aad653afe9_tel.wav,mlaad:hunters_space_18_f000010,dev_train,MLAAD-tiny/Chatterbox,1,1,,1,0
+e1315be6e63f0391be69,audio/e1315be6e63f0391be69.wav,mlaad:rinkitink_baum_08_64kb_f000094,dev_select,mlaad_fake/MeloTTS,1,1,,1,0
+e2d1572a891a3e55ce30,audio/e2d1572a891a3e55ce30.wav,mlaad:pink_fairy_book_10_f000104,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+e2ec45d672dbfb3b8427,audio/e2ec45d672dbfb3b8427.wav,mlaad:wives_and_daughters_52_f000098,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+e32d9b6e9e0ae07c9956,audio/e32d9b6e9e0ae07c9956.wav,mlaad:midnight_passenger_06_f000063|fma_artist_20985,dev_select,mixture/SNR=10,1,,1,1,1
+e447e35e14f3c9cf97cb,audio/e447e35e14f3c9cf97cb.wav,nsynth_instrument_43,dev_train,nsynth/NSynth,0,,0,0,1
+e4befc844c92df7a927d,audio/e4befc844c92df7a927d.wav,mlaad:emerald_city_of_oz_14_f000084,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+e624fd6f9dbc5b499d0c,audio/e624fd6f9dbc5b499d0c.wav,fma_artist_19740,dev_select,fma_real/FMA,0,,0,,1
+e63ff2716355b8ccaf2c,audio/e63ff2716355b8ccaf2c.wav,nsynth_instrument_219,dev_train,nsynth/NSynth,0,,0,0,1
+e66afe318860f456,audio/e66afe318860f456.wav,mlaad:jane_eyre_08_f000016,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+e66afe318860f456_music_33e5dfebb1b36d40_snr0,audio/e66afe318860f456_music_33e5dfebb1b36d40_snr0.wav,"mlaad:jane_eyre_08_f000016|AIME prompt: electronic, house, dubstep",dev_train,mixture:SNR=0dB,1,1,1,1,1
+e66afe318860f456_music_33e5dfebb1b36d40_snr10,audio/e66afe318860f456_music_33e5dfebb1b36d40_snr10.wav,"mlaad:jane_eyre_08_f000016|AIME prompt: electronic, house, dubstep",dev_train,mixture:SNR=10dB,1,1,1,1,1
+e66afe318860f456_music_62aa234be157f857_snr0,audio/e66afe318860f456_music_62aa234be157f857_snr0.wav,mlaad:jane_eyre_08_f000016|fma_artist_18269,dev_train,mixture:SNR=0dB,1,1,0,1,1
+e66afe318860f456_music_62aa234be157f857_snr10,audio/e66afe318860f456_music_62aa234be157f857_snr10.wav,mlaad:jane_eyre_08_f000016|fma_artist_18269,dev_train,mixture:SNR=10dB,1,1,0,1,1
+e66afe318860f456_tel,audio/e66afe318860f456_tel.wav,mlaad:jane_eyre_08_f000016,dev_train,MLAAD-tiny/Kyutai-TTS,1,1,,1,0
+e6a1ff90dd3ee23bd37f,audio/e6a1ff90dd3ee23bd37f.wav,nsynth_instrument_387,dev_train,nsynth/NSynth,0,,0,0,1
+e6ee4bc13acd25571da4,audio/e6ee4bc13acd25571da4.wav,mlaad:rinkitink_baum_07_64kb_f000059,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+e6f69d9d05973030eb23,audio/e6f69d9d05973030eb23.wav,mlaad:jane_eyre_16_f000057,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+e750a13ca3cabe8522d0,audio/e750a13ca3cabe8522d0.wav,mlaad:hunters_space_12_f000054,dev_train,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+e7cb4dbc721887bf1d86,audio/e7cb4dbc721887bf1d86.wav,nsynth_instrument_224,dev_select,nsynth/NSynth,0,,0,0,1
+e7ce123bc13213708ee3,audio/e7ce123bc13213708ee3.wav,fma_artist_21456,dev_train,fma_real/FMA,0,,0,,1
+e96c44d823047597,audio/e96c44d823047597.wav,mlaad:midnight_passenger_03_f000280,dev_train,M-AILABS,0,0,,1,0
+e96c44d823047597_music_86bd989bb26575f9_snr0,audio/e96c44d823047597_music_86bd989bb26575f9_snr0.wav,"mlaad:midnight_passenger_03_f000280|AIME prompt: electronic, house, singersongwriter",dev_train,mixture:SNR=0dB,1,,1,1,1
+e96c44d823047597_music_86bd989bb26575f9_snr10,audio/e96c44d823047597_music_86bd989bb26575f9_snr10.wav,"mlaad:midnight_passenger_03_f000280|AIME prompt: electronic, house, singersongwriter",dev_train,mixture:SNR=10dB,1,,1,1,1
+e96c44d823047597_music_e30463a55c09ebe8_snr0,audio/e96c44d823047597_music_e30463a55c09ebe8_snr0.wav,mlaad:midnight_passenger_03_f000280|fma_artist_13262,dev_train,mixture:SNR=0dB,0,0,0,1,1
+e96c44d823047597_music_e30463a55c09ebe8_snr10,audio/e96c44d823047597_music_e30463a55c09ebe8_snr10.wav,mlaad:midnight_passenger_03_f000280|fma_artist_13262,dev_train,mixture:SNR=10dB,0,0,0,1,1
+e96c44d823047597_tel,audio/e96c44d823047597_tel.wav,mlaad:midnight_passenger_03_f000280,dev_train,M-AILABS,0,0,,1,0
+ea0df67f0d911c9ec624,audio/ea0df67f0d911c9ec624.wav,nsynth_instrument_263,dev_select,nsynth/NSynth,0,,0,0,1
+ea1f61a4f84ac7478067,audio/ea1f61a4f84ac7478067.wav,mlaad:midnight_passenger_04_f000042,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+ea2076ccd6a66e9646f1,audio/ea2076ccd6a66e9646f1.wav,mlaad:the_master_key_03_f000082,dev_train,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+ea4872191e71f68b1b91,audio/ea4872191e71f68b1b91.wav,fma_artist_24075,dev_train,echoes_tta/musicgen,1,,1,,1
+ea6ed340b8e301a56189,audio/ea6ed340b8e301a56189.wav,fma_artist_16893,dev_train,echoes_tta/acestep,1,,1,,1
+ea9cdcd3c3d04e866603,audio/ea9cdcd3c3d04e866603.wav,fma_artist_9032,dev_train,echoes_tta/audioldm,1,,1,,1
+eaa64194a4e9a80cb3a9,audio/eaa64194a4e9a80cb3a9.wav,fma_artist_19273,dev_select,echoes_tta/acestep,1,,1,,1
+ead41e19f8b098fbbd78,audio/ead41e19f8b098fbbd78.wav,nsynth_instrument_86,dev_select,nsynth/NSynth,0,,0,0,1
+eb6539fbe4b4df36e8a9,audio/eb6539fbe4b4df36e8a9.wav,fma_artist_9067,dev_train,fma_real/FMA,0,,0,,1
+ec3bdb539fb8ed6b7b5c,audio/ec3bdb539fb8ed6b7b5c.wav,nsynth_instrument_387,dev_train,nsynth/NSynth,0,,0,0,1
+ec50b37f6288f99f29cc,audio/ec50b37f6288f99f29cc.wav,fma_artist_21394,dev_train,echoes_tta/musicgen,1,,1,,1
+ed5b4f206c3b2bf47aae,audio/ed5b4f206c3b2bf47aae.wav,nsynth_instrument_387,dev_train,nsynth/NSynth,0,,0,0,1
+ed762137571b6f939214,audio/ed762137571b6f939214.wav,mlaad:the_master_key_10_f000082|fma_artist_4365,dev_train,mixture/SNR=0,1,,1,1,1
+eddb870380800b332f9a,audio/eddb870380800b332f9a.wav,fma_artist_19453,dev_train,echoes_tta/acestep,1,,1,,1
+ef062922e47e6871f4bd,audio/ef062922e47e6871f4bd.wav,fma_artist_5730,dev_train,echoes_tta/musicgen,1,,1,,1
+ef15442757e8add0,audio/ef15442757e8add0.wav,mlaad:wives_and_daughters_59_f000076,dev_select,M-AILABS,0,0,,1,0
+ef15442757e8add0_tel,audio/ef15442757e8add0_tel.wav,mlaad:wives_and_daughters_59_f000076,dev_select,M-AILABS,0,0,,1,0
+ef28159bf0b4f98293de,audio/ef28159bf0b4f98293de.wav,mlaad:pink_fairy_book_01_f000016,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+ef5ff02e709ced2c3a10,audio/ef5ff02e709ced2c3a10.wav,mlaad:wives_and_daughters_52_f000098,dev_train,mlaad_fake/MeloTTS,1,1,,1,0
+efbe4b84ebb61fa18ef8,audio/efbe4b84ebb61fa18ef8.wav,fma_artist_21394,dev_train,echoes_tta/audioldm,1,,1,,1
+f0d0b87a55626dc24ab1,audio/f0d0b87a55626dc24ab1.wav,mlaad:hunters_space_02_f000017,dev_train,mlaad_fake/Index-TTS-2.0,1,1,,1,0
+f17d5278f9faf0465d97,audio/f17d5278f9faf0465d97.wav,nsynth_instrument_590,dev_select,nsynth/NSynth,0,,0,0,1
+f1bd659bf584d9d8dc4d,audio/f1bd659bf584d9d8dc4d.wav,mlaad:wives_and_daughters_22_f000007,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+f1cd701507ce66e2aecc,audio/f1cd701507ce66e2aecc.wav,nsynth_instrument_642,dev_train,nsynth/NSynth,0,,0,0,1
+f2d085c826547ef26092,audio/f2d085c826547ef26092.wav,fma_artist_1037,dev_train,echoes_tta/acestep,1,,1,,1
+f2f4477af22f03f7ab60,audio/f2f4477af22f03f7ab60.wav,mlaad:poisoned_pen_04_f000178,dev_select,mlaad_real/M-AILABS,0,0,,1,0
+f2fb38302e81c50fc9b8,audio/f2fb38302e81c50fc9b8.wav,mlaad:ozma_of_oz_16_f000033,dev_train,mlaad_fake/Llasa-1B-Multilingual,1,1,,1,0
+f35d7f131a98e37e1806,audio/f35d7f131a98e37e1806.wav,mlaad:piratesofersatz_01_leinster_64kb_f000217,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+f371bf4e934405aec7b9,audio/f371bf4e934405aec7b9.wav,fma_artist_21107,dev_train,echoes_tta/acestep,1,,1,,1
+f3b61ab8b4696674c392,audio/f3b61ab8b4696674c392.wav,mlaad:jane_eyre_15_f000223,dev_select,mlaad_fake/Cartesia.ai (Sonic-3),1,1,,1,0
+f448de057dfcc8e203f0,audio/f448de057dfcc8e203f0.wav,fma_artist_6104,dev_select,echoes_tta/audioldm,1,,1,,1
+f47c7580da3575a9fb43,audio/f47c7580da3575a9fb43.wav,mlaad:wives_and_daughters_58_f000172,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+f4c593da7ecd65b2cf9f,audio/f4c593da7ecd65b2cf9f.wav,nsynth_instrument_675,dev_train,nsynth/NSynth,0,,0,0,1
+f52db60dca3dd9c47355,audio/f52db60dca3dd9c47355.wav,mlaad:jane_eyre_35_f000105|fma_artist_1041,dev_train,mixture/SNR=0,1,1,1,1,1
+f58d5292360f534f51ea,audio/f58d5292360f534f51ea.wav,fma_artist_9067,dev_train,echoes_tta/audioldm,1,,1,,1
+f60fe7fb001c4453643b,audio/f60fe7fb001c4453643b.wav,fma_artist_23056,dev_select,fma_real/FMA,0,,0,,1
+f698582fe4dbb6d65b9e,audio/f698582fe4dbb6d65b9e.wav,mlaad:hunters_space_16_f000003,dev_train,mlaad_fake/Mars5,1,1,,1,0
+f7423e8c2cff42adb6bf,audio/f7423e8c2cff42adb6bf.wav,mlaad:hunters_space_14_f000057,dev_select,mlaad_fake/Higgs-Audio-V2,1,1,,1,0
+f7846391e5b49b99a305,audio/f7846391e5b49b99a305.wav,mlaad:midnight_passenger_06_f000063|fma_artist_20985,dev_select,mixture/SNR=0,1,1,1,1,1
+f89c6273fee56043272d,audio/f89c6273fee56043272d.wav,nsynth_instrument_450,dev_train,nsynth/NSynth,0,,0,0,1
+f9146f4f9396f75a254c,audio/f9146f4f9396f75a254c.wav,fma_artist_6104,dev_select,fma_real/FMA,0,,0,,1
+fa88a0ae8345650713b4,audio/fa88a0ae8345650713b4.wav,mlaad:wives_and_daughters_17_f000077,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+fb2e1131b79c8f9b27d9,audio/fb2e1131b79c8f9b27d9.wav,fma_artist_6104,dev_select,echoes_tta/acestep,1,,1,,1
+fc2f80a5aa29d10ec4ca,audio/fc2f80a5aa29d10ec4ca.wav,mlaad:ozma_of_oz_06_f000085,dev_train,mlaad_fake/Mars5,1,1,,1,0
+fc527935fba05ba1dea1,audio/fc527935fba05ba1dea1.wav,mlaad:silent_bullet_13_f000280,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+fd14c66b54afe09c,audio/fd14c66b54afe09c.wav,mlaad:poisoned_pen_06_f000067,dev_train,M-AILABS,0,0,,1,0
+fd14c66b54afe09c_tel,audio/fd14c66b54afe09c_tel.wav,mlaad:poisoned_pen_06_f000067,dev_train,M-AILABS,0,0,,1,0
+fe76e45dde834818de4e,audio/fe76e45dde834818de4e.wav,mlaad:wives_and_daughters_10_f000108,dev_select,mlaad_fake/Index-TTS-1.5,1,1,,1,0
+fe818dff7b8f853ccdad,audio/fe818dff7b8f853ccdad.wav,mlaad:wives_and_daughters_20_f000117,dev_train,mlaad_real/M-AILABS,0,0,,1,0
+feddeb094b5bcc153bb1,audio/feddeb094b5bcc153bb1.wav,fma_artist_11018,dev_train,echoes_tta/audioldm,1,,1,,1
+music_0314ceaa29113b2e,audio/music_0314ceaa29113b2e.wav,"AIME prompt: newage, world, oriental",dev_train,disco-eth/AIME,1,,1,,1
+music_03597272f9d0c5e6,audio/music_03597272f9d0c5e6.wav,"AIME prompt: hiphop, rap, happy",dev_train,disco-eth/AIME,1,,1,,1
+music_17ed03ede2282e87,audio/music_17ed03ede2282e87.wav,fma_artist_2631,dev_train,FMA original recording (FMA-small member),0,,0,,1
+music_2525f085bcd4c1dd,audio/music_2525f085bcd4c1dd.wav,"AIME prompt: postrock, keyboard, electricguitar",dev_train,disco-eth/AIME,1,,1,,1
+music_26e1d8d9ec902d9f,audio/music_26e1d8d9ec902d9f.wav,"AIME prompt: pop, classical, percussion",dev_train,disco-eth/AIME,1,,1,,1
+music_33e5dfebb1b36d40,audio/music_33e5dfebb1b36d40.wav,"AIME prompt: electronic, house, dubstep",dev_train,disco-eth/AIME,1,,1,,1
+music_37dd7f3dfb1957fb,audio/music_37dd7f3dfb1957fb.wav,"AIME prompt: classical, soundtrack, percussion",dev_train,disco-eth/AIME,1,,1,,1
+music_43fa43208594a31f,audio/music_43fa43208594a31f.wav,"AIME prompt: hiphop, hardrock, hard",dev_train,disco-eth/AIME,1,,1,,1
+music_5379115990f9c3b1,audio/music_5379115990f9c3b1.wav,"AIME prompt: rock, electronic, funk",dev_train,disco-eth/AIME,1,,1,,1
+music_53faae0ce376f35e,audio/music_53faae0ce376f35e.wav,"AIME prompt: pop, triphop, synthesizer",dev_train,disco-eth/AIME,1,,1,,1
+music_57082f97192e1baa,audio/music_57082f97192e1baa.wav,"AIME prompt: hiphop, rap, beat",dev_train,disco-eth/AIME,1,,1,,1
+music_5802ad48509c9fda,audio/music_5802ad48509c9fda.wav,"AIME prompt: hiphop, rap, orchestra",dev_train,disco-eth/AIME,1,,1,,1
+music_5c4250cdf1bfad2e,audio/music_5c4250cdf1bfad2e.wav,"AIME prompt: electronic, soundtrack, guitar",dev_select,disco-eth/AIME,1,,1,,1
+music_62aa234be157f857,audio/music_62aa234be157f857.wav,fma_artist_18269,dev_train,FMA original recording (FMA-small member),0,,0,,1
+music_6419ad77dec8ac49,audio/music_6419ad77dec8ac49.wav,"AIME prompt: electronic, techno, piano",dev_train,disco-eth/AIME,1,,1,,1
+music_788bf3fb2a4db064,audio/music_788bf3fb2a4db064.wav,fma_artist_6274,dev_train,FMA original recording (FMA-small member),0,,0,,1
+music_86bd989bb26575f9,audio/music_86bd989bb26575f9.wav,"AIME prompt: electronic, house, singersongwriter",dev_train,disco-eth/AIME,1,,1,,1
+music_8abd990974929ffe,audio/music_8abd990974929ffe.wav,"AIME prompt: hiphop, rap, guitar",dev_select,disco-eth/AIME,1,,1,,1
+music_9494949a85949d4d,audio/music_9494949a85949d4d.wav,"AIME prompt: hiphop, rap, beat",dev_train,disco-eth/AIME,1,,1,,1
+music_9521059b93ad0c47,audio/music_9521059b93ad0c47.wav,"AIME prompt: pop, electronic, country",dev_train,disco-eth/AIME,1,,1,,1
+music_a09a73a3c773a6b0,audio/music_a09a73a3c773a6b0.wav,"AIME prompt: electronic, downtempo, choir",dev_train,disco-eth/AIME,1,,1,,1
+music_a0c9cba2851b3180,audio/music_a0c9cba2851b3180.wav,"AIME prompt: world, trance, classicalguitar",dev_train,disco-eth/AIME,1,,1,,1
+music_a31bfceb766e8430,audio/music_a31bfceb766e8430.wav,fma_artist_11679,dev_train,FMA original recording (FMA-small member),0,,0,,1
+music_a3613704db84f026,audio/music_a3613704db84f026.wav,fma_artist_13391,dev_train,FMA original recording (FMA-small member),0,,0,,1
+music_ad47ca8a74b2bb3b,audio/music_ad47ca8a74b2bb3b.wav,fma_artist_23246,dev_train,FMA original recording (FMA-small member),0,,0,,1
+music_c57d12c3d9625385,audio/music_c57d12c3d9625385.wav,"AIME prompt: disco, chillout, world",dev_train,disco-eth/AIME,1,,1,,1
+music_ca06e33a6d33a4c5,audio/music_ca06e33a6d33a4c5.wav,"AIME prompt: pop, classical, orchestral",dev_train,disco-eth/AIME,1,,1,,1
+music_cc3b273c9f457cdd,audio/music_cc3b273c9f457cdd.wav,"AIME prompt: pop, electronica, dark",dev_select,disco-eth/AIME,1,,1,,1
+music_ced239b6f758ac66,audio/music_ced239b6f758ac66.wav,fma_artist_12626,dev_train,FMA original recording (FMA-small member),0,,0,,1
+music_d97f2a53d20c65bd,audio/music_d97f2a53d20c65bd.wav,"AIME prompt: ambient, soundtrack, beat",dev_train,disco-eth/AIME,1,,1,,1
+music_da82744a819c465d,audio/music_da82744a819c465d.wav,"AIME prompt: ambient, calm, happy",dev_train,disco-eth/AIME,1,,1,,1
+music_e30463a55c09ebe8,audio/music_e30463a55c09ebe8.wav,fma_artist_13262,dev_train,FMA original recording (FMA-small member),0,,0,,1
+music_ef4d9f91f6bbf0d7,audio/music_ef4d9f91f6bbf0d7.wav,"AIME prompt: chillout, jazz, piano",dev_select,disco-eth/AIME,1,,1,,1

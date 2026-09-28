@@ -1,0 +1,46 @@
+{
+  "workspace": "wsp-5i3knd3gxeox",
+  "state": "stopped",
+  "object_volume": "objvol-a5gxdg7er70i",
+  "absolute_directory": "/root-1/existing-only-9504-20260919",
+  "files": {
+    "author_code.zip": {
+      "key": "existing-only-9504-20260919/author_code.zip",
+      "bytes": 199388,
+      "sha256": "3647291e86971d17abd07d7d75d3155cca78fbcdc34abb7a85c5131b067822ae",
+      "etag": "\"4161aa99462327aae55afb76626afc13\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "DACON_Existing9504_A100.ipynb": {
+      "key": "existing-only-9504-20260919/DACON_Existing9504_A100.ipynb",
+      "bytes": 12775,
+      "sha256": "bb94bad488d0bcfeeab16324ba483a254320d07e914355ed591efd01577dd48a",
+      "etag": "\"2ab0cc290af2b9be55918b49da909a9a\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "README_REVIEWER.md": {
+      "key": "existing-only-9504-20260919/README_REVIEWER.md",
+      "bytes": 21711,
+      "sha256": "d07cf0afc4e03744cf30bdf723a46d44056eb0d1f69ada30743f6c65ed863c7c",
+      "etag": "\"27e6e9c35b070344091a313bdee9d782\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "codex_review.json": {
+      "key": "existing-only-9504-20260919/codex_review.json",
+      "bytes": 1419,
+      "sha256": "515e19e64a31aa67f2c07c366db6acfd46d5f715641fc50b0fd39c7f8d809069",
+      "etag": "\"87145e317731849a108a3f9d7d8f97cc\"",
+      "verification": "S3 ETag matches every uploaded part"
+    }
+  },
+  "deployment": {
+    "key": "existing-only-9504-20260919/deployment.json",
+    "bytes": 6908,
+    "sha256": "c6460875f4b4def26e3cb6bda5a219663a3dbe1c14427861b08be30dc6814447",
+    "etag": "\"eef4a5e313d2fd12a9bea24b993a426d\"",
+    "verification": "S3 ETag matches every uploaded part"
+  },
+  "uploaded_objects_readback_sha256_verified": true,
+  "gpu_started": false,
+  "startup_changed": false
+}

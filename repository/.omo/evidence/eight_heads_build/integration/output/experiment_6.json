@@ -1,0 +1,720 @@
+{
+  "bootstrap_unit": "provenance-connected component; CI conditional on fixed fitted models",
+  "claim_limit": "diagnostic historical/fresh-source evidence; no official score or authenticity generalization",
+  "class_exposure": "16 REAL + 16 FAKE per batch32",
+  "comparison_scope": "same manifest split, modality, labels and frozen feature cache",
+  "component_count": 17,
+  "estimand": "paired candidate minus reference EER; lower is better",
+  "experiment": 6,
+  "families": {
+    "Anti": {
+      "mean_dev_eer": {
+        "anti_l12": 0.0,
+        "anti_l24": 0.0,
+        "anti_l48": 1.0
+      },
+      "seed_summary": {
+        "anti_l12": {
+          "mean": 0.0,
+          "n_seeds": 1,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        },
+        "anti_l24": {
+          "mean": 0.0,
+          "n_seeds": 1,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        },
+        "anti_l48": {
+          "mean": 1.0,
+          "n_seeds": 1,
+          "range": [
+            1.0,
+            1.0
+          ],
+          "std": 0.0
+        }
+      },
+      "seeds": [
+        41
+      ],
+      "selected": "anti_l12",
+      "test": {
+        "anti_l12": {
+          "41": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.8169711828231812,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.8169711828231812,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.8169711828231812
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "test_speech_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "test_speech_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.8169711828231812
+          }
+        },
+        "anti_l24": {
+          "41": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.9999018907546997,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.9999018907546997,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.9999018907546997
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "test_speech_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "test_speech_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.9999018907546997
+          }
+        },
+        "anti_l48": {
+          "41": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.9896383285522461,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.9896383285522461,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.9896383285522461
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "test_speech_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "test_speech_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.9896383285522461
+          }
+        }
+      }
+    },
+    "MERT": {
+      "mean_dev_eer": {
+        "mert_l12": 0.0,
+        "mert_l24": 0.0,
+        "mert_l6": 0.0
+      },
+      "seed_summary": {
+        "mert_l12": {
+          "mean": 0.0,
+          "n_seeds": 1,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        },
+        "mert_l24": {
+          "mean": 0.0,
+          "n_seeds": 1,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        },
+        "mert_l6": {
+          "mean": 0.0,
+          "n_seeds": 1,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        }
+      },
+      "seeds": [
+        41
+      ],
+      "selected": "mert_l12",
+      "test": {
+        "mert_l12": {
+          "41": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.7520013451576233,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.7520013451576233,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.7520013451576233
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "test_music_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "test_music_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.7520013451576233
+          }
+        },
+        "mert_l24": {
+          "41": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.6795294284820557,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.6795294284820557,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.6795294284820557
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "test_music_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "test_music_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.6795294284820557
+          }
+        },
+        "mert_l6": {
+          "41": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.7684358358383179,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.7684358358383179,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.7684358358383179
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "test_music_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "test_music_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.7684358358383179
+          }
+        }
+      }
+    }
+  },
+  "fixed_updates": 2,
+  "label_denominators": {
+    "fake": 30,
+    "real": 31
+  },
+  "official_score": null,
+  "population": "known component label within the experiment modality/variant",
+  "seeds": [
+    41
+  ],
+  "selection_locked": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/eight_heads_build/integration/output/selection_E6_locked.json",
+  "status": "complete",
+  "wall_seconds": 0.025391101837158203
+}

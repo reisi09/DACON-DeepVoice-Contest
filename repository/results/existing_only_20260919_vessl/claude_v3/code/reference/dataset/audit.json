@@ -1,0 +1,758 @@
+{
+  "parent_derivative_cross_split_rejected": true,
+  "unknown_component_target_rejected": true,
+  "emitted_partition_membership_matches": true,
+  "frozen_manifest_hash_matches": true,
+  "counts": {
+    "train": {
+      "voice_1": 2034,
+      "voice_0": 2034,
+      "music_0": 1292,
+      "music_1": 1292
+    },
+    "val": {
+      "voice_0": 373,
+      "voice_1": 373,
+      "music_0": 340,
+      "music_1": 340
+    },
+    "test": {
+      "voice_1": 372,
+      "voice_0": 372,
+      "music_0": 341,
+      "music_1": 341
+    }
+  },
+  "new_selected": {
+    "A01": 300,
+    "A03": 89,
+    "A02": 304,
+    "A04": 24,
+    "A05": 300,
+    "REAL": 1017,
+    "lyria-pro3": 120,
+    "sonicmaster_real": 465
+  },
+  "new_selected_by_split": {
+    "train": {
+      "A01": 300,
+      "A03": 89,
+      "A02": 304,
+      "A04": 24,
+      "A05": 300,
+      "REAL": 1017,
+      "lyria-pro3": 78,
+      "sonicmaster_real": 292
+    },
+    "val": {
+      "lyria-pro3": 21,
+      "sonicmaster_real": 89
+    },
+    "test": {
+      "lyria-pro3": 21,
+      "sonicmaster_real": 84
+    }
+  },
+  "unknown_labels": {
+    "train": {
+      "FILE_FAKE": 0,
+      "VOICE_FAKE": 2584,
+      "MUSIC_FAKE": 4068,
+      "VOICE_PRESENT": 2584,
+      "MUSIC_PRESENT": 0
+    },
+    "val": {
+      "FILE_FAKE": 0,
+      "VOICE_FAKE": 680,
+      "MUSIC_FAKE": 746,
+      "VOICE_PRESENT": 680,
+      "MUSIC_PRESENT": 0
+    },
+    "test": {
+      "FILE_FAKE": 0,
+      "VOICE_FAKE": 682,
+      "MUSIC_FAKE": 744,
+      "VOICE_PRESENT": 682,
+      "MUSIC_PRESENT": 0
+    }
+  },
+  "weak_evaluation_cells": [
+    {
+      "source": "FMA/FMA",
+      "generator": "",
+      "label": "0",
+      "split": "test",
+      "rows": 9
+    },
+    {
+      "source": "FMA/FMA",
+      "generator": "",
+      "label": "0",
+      "split": "val",
+      "rows": 4
+    }
+  ],
+  "metadata_shortcut_diagnostics": {
+    "voice_val": {
+      "source_only_auc": 0.5,
+      "duration_only_auc": 0.626206614005707
+    },
+    "voice_test": {
+      "source_only_auc": 0.5,
+      "duration_only_auc": 0.49238712567926923
+    },
+    "music_val": {
+      "source_only_auc": 0.9665095155709343,
+      "duration_only_auc": 0.8470242214532873
+    },
+    "music_test": {
+      "source_only_auc": 0.9685761216363808,
+      "duration_only_auc": 0.846853742227879
+    }
+  },
+  "missing_source_generator_cells": [
+    {
+      "source": "CtrSVDD",
+      "generator": "A01",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 5,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "A01",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 5,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "A02",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 5,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "A02",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 5,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "A03",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 1,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "A03",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 1,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "A04",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 1,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "A04",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 1,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "A05",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 5,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "A05",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 5,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "REAL",
+      "label": "0",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 4,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "CtrSVDD",
+      "generator": "REAL",
+      "label": "0",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 4,
+      "reason": "intentional_training_only"
+    },
+    {
+      "source": "Echoes/acestep/TTA",
+      "generator": "acestep",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 27,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/acestep/TTA",
+      "generator": "acestep",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 27,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/audioldm/ATA",
+      "generator": "audioldm",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 23,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/audioldm/ATA",
+      "generator": "audioldm",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 23,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/audioldm/TTA",
+      "generator": "audioldm",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 25,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/audioldm/TTA",
+      "generator": "audioldm",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 25,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/brev/TTA",
+      "generator": "brev",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 11,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/brev/TTA",
+      "generator": "brev",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 11,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/diffrhythm/ATA",
+      "generator": "diffrhythm",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 23,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/diffrhythm/ATA",
+      "generator": "diffrhythm",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 23,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/diffrhythm/TTA",
+      "generator": "diffrhythm",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 23,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/diffrhythm/TTA",
+      "generator": "diffrhythm",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 23,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/elevenlabs/TTA",
+      "generator": "elevenlabs",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 11,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/elevenlabs/TTA",
+      "generator": "elevenlabs",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 11,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/mubert/TTA",
+      "generator": "mubert",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 5,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/mubert/TTA",
+      "generator": "mubert",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 5,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/musicgen/ATA",
+      "generator": "musicgen",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 23,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/musicgen/ATA",
+      "generator": "musicgen",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 23,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/musicgen/TTA",
+      "generator": "musicgen",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 26,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/musicgen/TTA",
+      "generator": "musicgen",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 26,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/producer/ATA",
+      "generator": "producer",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 10,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/producer/ATA",
+      "generator": "producer",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 10,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/producer/TTA",
+      "generator": "producer",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 12,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/producer/TTA",
+      "generator": "producer",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 12,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/songgen/ATA",
+      "generator": "songgen",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 22,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/songgen/ATA",
+      "generator": "songgen",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 22,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/songgen/TTA",
+      "generator": "songgen",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 25,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/songgen/TTA",
+      "generator": "songgen",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 25,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/stableaudio/TTA",
+      "generator": "stableaudio",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 3,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/stableaudio/TTA",
+      "generator": "stableaudio",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 3,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/suno/TTA",
+      "generator": "suno",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 12,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/suno/TTA",
+      "generator": "suno",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 12,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/udio/TTA",
+      "generator": "udio",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 14,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "Echoes/udio/TTA",
+      "generator": "udio",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 14,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A01",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A02",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A03",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A04",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A05",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A06",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A07",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A08",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A09",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A10",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A11",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A12",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A13",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A14",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A15",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A16",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A17",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A18",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "asvspoof2019_la",
+      "generator": "A19",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 2,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "librispeech_test-clean",
+      "generator": "original",
+      "label": "0",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 40,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "librispeech_test-clean",
+      "generator": "original",
+      "label": "0",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 40,
+      "reason": "selection_gap"
+    },
+    {
+      "source": "suno",
+      "generator": "suno",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 1,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "suno",
+      "generator": "suno",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 1,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "udio",
+      "generator": "udio",
+      "label": "1",
+      "split": "val",
+      "rows": 0,
+      "available_groups": 1,
+      "reason": "fewer_than_three_groups"
+    },
+    {
+      "source": "udio",
+      "generator": "udio",
+      "label": "1",
+      "split": "test",
+      "rows": 0,
+      "available_groups": 1,
+      "reason": "fewer_than_three_groups"
+    }
+  ],
+  "all_source_generator_cells_present": false,
+  "diagnostics_are_not_model_performance": true,
+  "test_covariates_inspected": true,
+  "independent_test_claim": false
+}

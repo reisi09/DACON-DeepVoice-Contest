@@ -1,0 +1,10 @@
+manifest_sha256 fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537
+rows=7101 unique_audio=7101 path_audio_sha256=PASS
+global_postmix_components 256
+cross_split_group_atoms=0 cross_split_parent_ids=0
+speaker_components=10 split_counts {'calibration': 3, 'dev': 2, 'train': 3, 'test': 2}
+core_rows_by_split {'train': 1043, 'calibration': 404, 'dev': 212, 'test': 175}
+unknown_label_masks {'FILE_FAKE': 0, 'VOICE_FAKE': 4517, 'MUSIC_FAKE': 2524, 'VOICE_PRESENT': 4457, 'MUSIC_PRESENT': 0}
+E2_groups=80 rows=160 duration_pair_match=PASS gain_ratio_min_max 0.5011869669 0.5011870861 max_abs_error 0.0000000861
+E5_rows=648 cells=324 matched_labels_split_duration_parents=PASS
+source_records= 1834 source_paths_hashes=PASS

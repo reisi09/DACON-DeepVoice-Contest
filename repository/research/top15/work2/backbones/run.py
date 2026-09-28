@@ -27,6 +27,7 @@ ROOT = Path('/Users/choiwuseck/Documents/ChatGPT/데이콘')
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / 'data_v4'))
 import train_backbone_heads as H  # noqa: E402
+import weighting  # noqa: E402
 import full_bank_train as T  # noqa: E402
 from eight_heads import FrozenHead  # noqa: E402
 from full_bank_batches import Item, duration_balance, epoch_order, loss_weights  # noqa: E402
@@ -34,16 +35,26 @@ from graph_scoring import _roc_metrics  # noqa: E402
 from localization_models import WindowMIL  # noqa: E402
 
 CACHE = ROOT / '_workspace/backbone_cache'
-OUT = Path(__file__).resolve().parent / 'runs'
+OUT = Path(os.environ.get('RUNS_OUT', Path(__file__).resolve().parent / 'runs'))
 NEW = Path(os.environ.get('NEWCACHE', Path(__file__).resolve().parent / 'cache'))
 S6 = Path(os.environ.get('S6CACHE', Path(__file__).resolve().parents[1] / 's6' / 'cache'))
+S8 = Path(os.environ.get('S8CACHE', Path(__file__).resolve().parents[2] / 'work5' / 's8' / 'cache'))
+S9 = Path(os.environ.get('S9CACHE', Path(__file__).resolve().parents[2] / 'work5' / 's9' / 'cache'))
+DEVICE = os.environ.get('HEAD_DEVICE', 'cpu')   # 'cuda:0' = fp32 on GPU (full_bank_train autocasts bf16 only for 'cuda')
+torch.backends.cuda.matmul.allow_tf32 = False
+torch.backends.cudnn.allow_tf32 = False
 # rows pinned to R2's 31,270 backbone rows (the live backbone_cache keeps growing; R2 components exist only for these)
 PINNED = set(Path(os.environ.get('ROWS', Path(__file__).resolve().parent / 'rows_r2.txt')).read_text().split())
 SOURCES = {'mert': (CACHE, 'mert_layers', 'layers'), 'ad': (CACHE, 'ad_embeddings', None),
            'muq': (NEW, 'muq_backing', 'muq_layers'), 'muqv': (NEW, 'muq_voice', 'muq_layers'), 'eat': (NEW, 'eat_backing', 'eat_layers'),
            # S6 candidates (research/top15/work2/s6/extract_s6.py, directory $S6CACHE)
            'sslampt': (S6, 'sslam_pt_backing', 'sslam_layers'), 'sslamft': (S6, 'sslam_ft_backing', 'sslam_layers'),
-           'wavlm': (S6, 'wavlm_voice', 'wavlm_layers'), 'hubert': (S6, 'hubert_voice', 'hubert_layers')}
+           'wavlm': (S6, 'wavlm_voice', 'wavlm_layers'), 'hubert': (S6, 'hubert_voice', 'hubert_layers'),
+           # S8 candidates (research/top15/work5/s8/extract_s8.py, directory $S8CACHE)
+           'mixwavlm': (S8, 'mixwavlm', 'ssl_layers'), 'd2v': (S8, 'd2v', 'ssl_layers'), 'usat': (S8, 'usat', 'ssl_layers'),
+           'mixsslam': (S8, 'mixsslam', 'sslam_layers'), 'encodec': (S8, 'encodec', None),
+           # S9 candidates (research/top15/work5/s9/extract_s9.py, directory $S9CACHE): S7 music encoders on the raw mix
+           'mixeat': (S9, 'mixeat', 'eat_layers'), 'mixmert': (S9, 'mixmert', 'mert_layers')}
 ALL = [3, 6, 9, 12, 15, 18, 21, 24]
 LONG = dict(max_epochs=150, patience=10)
 VARIANTS = {
@@ -61,7 +72,7 @@ def music_items(rows, layers):
     """H.items_for(route 'music') with fp16 storage (exact: cache is fp16; model promotes to fp32 on subtraction)."""
     out = []
     for r in rows:
-        p = CACHE / f"{r['ID']}.npz"
+        p = H.npz_path(r, CACHE)
         if not p.exists():
             continue
         with np.load(p) as d:
@@ -69,7 +80,7 @@ def music_items(rows, layers):
             f = d['mert_layers'][:, [L.index(k) for k in layers]].reshape(len(d['mert_layers']), -1)
             samples = int(d['samples'])
         truth = np.full(len(f), np.nan, np.float32)
-        with np.load(H.OLD[r.get('cache_split', r['split'])] / f"{r['ID']}.npz") as o:
+        with np.load(H.npz_path(r, H.OLD.get(r.get('cache_split', r['split'])))) as o:
             if len(o['window_truth']) == len(truth):
                 truth = o['window_truth'].astype(np.float32)
         label = T.head_labels(r).get('music')
@@ -94,12 +105,12 @@ def new_items(rows, spec, route):
     labels from T.head_labels, music window truth from the old cache, a silent voice stem drops non-voice-route rows."""
     out = []
     for r in rows:
-        if not all((SOURCES[n][0] / f"{r['ID']}.npz").exists() for n, _ in spec):
+        if not all(H.npz_path(r, SOURCES[n][0]).exists() for n, _ in spec):
             continue
         parts = []
         for index, (name, layers) in enumerate(spec):
             base, key, layer_key = SOURCES[name]
-            with np.load(base / f"{r['ID']}.npz") as d:
+            with np.load(H.npz_path(r, base)) as d:
                 x = d[key]
                 if layers is not None:
                     L = list(d[layer_key])
@@ -115,12 +126,38 @@ def new_items(rows, spec, route):
             continue
         truth = np.full(len(f), np.nan, np.float32)
         if route == 'music':
-            with np.load(H.OLD[r.get('cache_split', r['split'])] / f"{r['ID']}.npz") as o:
+            with np.load(H.npz_path(r, H.OLD.get(r.get('cache_split', r['split'])))) as o:
                 if len(o['window_truth']) == len(truth):
                     truth = o['window_truth'].astype(np.float32)
         else:
             f = f.astype(np.float32)   # as H.items_for (voice); music stays fp16 like music_items (model promotes)
         out.append((Item({**r, 'route': route}, f, truth, label, silent), samples))
+    return out
+
+
+def every_items(rows, spec, route):
+    """One Item per frozen row whatever its labels (work4 rt_* semantics); voice silent = the first source's stem flag."""
+    frozen = set(json.loads((ROOT / 'research/top15/work2/stacking/frozen_rows.json').read_text())['ids'])
+    out = []
+    for r in rows:
+        if r['ID'] not in frozen and not r.get('npz'):   # new rows (own npz) are all scored
+            continue
+        parts = []
+        for index, (name, layers) in enumerate(spec):
+            base, key, layer_key = SOURCES[name]
+            with np.load(H.npz_path(r, base)) as d:
+                x = d[key]
+                if layers is not None:
+                    L = list(d[layer_key])
+                    x = x[:, [L.index(k) for k in layers]].reshape(len(x), -1)
+                if index == 0:
+                    silent = bool(d['voice_silent'])
+            parts.append(x)
+        if len({len(x) for x in parts}) != 1:
+            raise ValueError(f"window counts differ across sources for {r['ID']}: {[len(x) for x in parts]}")
+        f = np.concatenate(parts, 1)
+        f = f if route == 'music' else f.astype(np.float32)
+        out.append(Item({**r, 'route': route}, f, np.full(len(f), np.nan, np.float32), 0., silent and route == 'voice'))
     return out
 
 
@@ -175,13 +212,12 @@ def stats(items):
 
 def train(route, training, validation, make, fake_index, seed, max_epochs=50, patience=5, lr=None, batch=256):
     items = [x for x, _ in training]
-    weights = loss_weights(items)
-    ids = [x.row['ID'] for x in items]
-    factor = duration_balance([x.label for x in items], [s for _, s in training], [weights[i] for i in ids])
-    weights = {i: weights[i] * f for i, f in zip(ids, factor, strict=True)}
+    weights = weighting.weights(items, [s for _, s in training], route)   # WEIGHTING env: s7 (default = the previous code) | C | W
+    if weighting.SCHEME != 's7' and seed == 41:
+        print('weights', route, weighting.SCHEME, json.dumps(weighting.describe(items, weights, route), default=float), flush=True)
     torch.manual_seed(seed)
     np.random.seed(seed)
-    model = make(items)
+    model = make(items).to(DEVICE)
     val = [x for x, _ in validation]
     limit = max(sum(len(x.features) for x in sorted(items, key=lambda x: len(x.features), reverse=True)[:256]), 10 ** 6)
     lr = lr or (1e-3 if route == 'music' else 1e-4)
@@ -197,9 +233,9 @@ def train(route, training, validation, make, fake_index, seed, max_epochs=50, pa
         loss = 0.
         for offset in range(0, len(order), batch):
             chunk = [items[i] for i in order[offset:offset + batch]]
-            loss += T.step(model, optimizer, chunk, route, fake_index, weights, 256, limit, 'cpu') * len(chunk)
+            loss += T.step(model, optimizer, chunk, route, fake_index, weights, 256, limit, DEVICE) * len(chunk)
             updates += 1
-        pred = T.predict(model, val, route, fake_index, 256, limit, 'cpu')
+        pred = T.predict(model, val, route, fake_index, 256, limit, DEVICE)
         eer = float(_roc_metrics([int(v) for v in labels], pred.tolist())[0])
         clipped = np.clip(pred, 1e-7, 1 - 1e-7)
         bce = float(-(labels * np.log(clipped) + (1 - labels) * np.log1p(-clipped)).mean())
@@ -224,6 +260,7 @@ def main(group, variant):
     torch.set_num_threads(4)
     rows = {s: [r for r in csv.DictReader((H.BANK / f).open()) if r['split'] == s and r['ID'] in PINNED]
             for s, f in (('train', 'bank_trainval.csv'), ('val', 'bank_trainval.csv'), ('test', 'bank_test.csv'))}
+    H.add_new_rows(rows)   # NEW_ROWS / NEW_TRAIN / NEW_VAL (train_backbone_heads.add_new_rows)
     arch, layers = cfg.pop('arch', 'mil' if group in ('music', 'music_new') else 'linear'), cfg.pop('layers', [12])
     t0 = time.monotonic()
     if group in ('music_new', 'voice_new'):
@@ -266,15 +303,23 @@ def main(group, variant):
            'load_seconds': round(load_s, 1), 'n': {s: len(v) for s, v in data.items()}, 'seeds': {},
            'val_ids': [x.row['ID'] for x, _ in data['val']], 'val_labels': [int(x.label) for x, _ in data['val']],
            'test_ids': [x.row['ID'] for x, _ in data['test']], 'test_labels': [int(x.label) for x, _ in data['test']]}
+    # runtime semantics (every frozen val/test row scored, whatever its labels) for new-cache groups when EVERY=1
+    every = {s: every_items(rows[s], spec, route) for s in ('val', 'test', 'newtest') if s in rows} if os.environ.get('EVERY') and group.endswith('_new') else {}
+    res['every'] = {s: {'ids': [x.row['ID'] for x in v], 'silent': [bool(x.silent) for x in v], 'preds': []} for s, v in every.items()}
     val_preds, test_preds = [], []
-    for seed in (41, 42, 43):
+    for seed in [int(x) for x in os.environ.get('SEEDS', '41,42,43').split(',')]:
         model, info = train(route, data['train'], data['val'], make, fake_index, seed, **cfg)
-        vp = T.predict(model, [x for x, _ in data['val']], route, fake_index, 256, 10 ** 6, 'cpu')
-        tp = T.predict(model, [x for x, _ in data['test']], route, fake_index, 256, 10 ** 6, 'cpu')
+        vp = T.predict(model, [x for x, _ in data['val']], route, fake_index, 256, 10 ** 6, DEVICE)
+        tp = T.predict(model, [x for x, _ in data['test']], route, fake_index, 256, 10 ** 6, DEVICE)
+        for s, v in every.items():
+            res['every'][s]['preds'].append(T.predict(model, v, route, fake_index, 256, 10 ** 6, DEVICE).tolist())
         if arch == 'sls':
             info['layer_weights'] = [round(float(w), 4) for w in model.head.alpha.detach().softmax(0)]
         info['n_params'] = sum(p.numel() for p in model.parameters())
         res['seeds'][seed] = info
+        if os.environ.get('SAVE_MODELS'):   # whole module (scoring rows that must stay on another machine, e.g. AI-Hub on the Mac)
+            Path(os.environ['SAVE_MODELS']).mkdir(parents=True, exist_ok=True)
+            torch.save(model.cpu(), Path(os.environ['SAVE_MODELS']) / f'{group}__{variant}__{seed}.pt')
         val_preds.append(vp.tolist())
         test_preds.append(tp.tolist())
         print(group, variant, seed, {k: info[k] for k in ('val_eer', 'best_epoch', 'epochs_run', 'updates_to_best',
@@ -283,6 +328,7 @@ def main(group, variant):
     ens = np.mean(val_preds, 0)
     res['val_ens_eer'] = float(_roc_metrics(res['val_labels'], ens.tolist())[0])
     print(group, variant, 'val_ens_eer', round(res['val_ens_eer'], 5), flush=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     (OUT / f'{group}__{variant}.json').write_text(json.dumps(res))
 
 

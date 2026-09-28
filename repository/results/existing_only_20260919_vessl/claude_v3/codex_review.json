@@ -1,0 +1,35 @@
+{
+  "approved_for_notebook_deployment": true,
+  "gpu_execution_authorized_now": false,
+  "gpu_executed": false,
+  "author": "Claude Opus 5 Extra",
+  "reviewer": "Codex",
+  "author_code_sha256": "3647291e86971d17abd07d7d75d3155cca78fbcdc34abb7a85c5131b067822ae",
+  "evidence": "codex_cpu_results.json",
+  "resolved": [
+    "R5: actual FINAL cell exposes a verified local copy; Jupyter HTTP200 and matching SHA, v2 path HTTP403",
+    "R6: complete ZIP gate rejects changed predictions/metrics and wrong parity lock; rejects post-gate mutation on archive bytes"
+  ],
+  "unchanged_from_v2": [
+    "training",
+    "evaluation",
+    "features",
+    "dataset",
+    "environment",
+    "controller",
+    "constants and original model modules"
+  ],
+  "prior_review": "../claude_v2/codex_review.json",
+  "remaining_runtime_gates": [
+    "Actual A100 model load, VRAM batch and throughput measurement",
+    "Actual Linux pinned environment installation and FFmpeg probe",
+    "Full encoder inference, GPU numerical parity and end-to-end run",
+    "Live VESSL Jupyter UI and object-volume publication behavior"
+  ],
+  "data_limits": [
+    "test historical development exposure 1001/1426; not independent",
+    "CtrSVDD singing has no val/test rows",
+    "Music source/length bias remains"
+  ],
+  "review_environment": "macOS Python3.11, local Jupyter server2.21.1; synthetic result/checkpoint fixtures on actual9504 manifest IDs"
+}

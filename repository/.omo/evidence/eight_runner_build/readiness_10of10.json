@@ -1,0 +1,26 @@
+{
+  "scenario": "actual execution environment readiness before notebook continuation",
+  "binary_observable": {
+    "status": "ready",
+    "started_unix": 1789651032.0526152,
+    "completed_unix": 1789651107.6250186,
+    "passed_count": 10,
+    "check_count": 10,
+    "errors": [],
+    "sha256": "0a71645f6732cfe994a9c42c86fbfd4c7d47dabcec498de72e2ab513c114b3b6",
+    "kernel": {
+      "argv0": "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/bin/python3.11",
+      "available": [
+        "eight-h100",
+        "python3",
+        "six-h100",
+        "voice-music-h100",
+        "voice-music-h100-retry1"
+      ],
+      "interpreter_match": true,
+      "kernel": "eight-h100",
+      "registered": true
+    }
+  },
+  "artifact": "results/eight_h100_20260917/readiness_audit_final.json"
+}

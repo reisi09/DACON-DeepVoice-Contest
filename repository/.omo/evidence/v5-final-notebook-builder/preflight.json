@@ -1,0 +1,22 @@
+{
+  "status": "local_preflight_passed_colab_execution_unconfirmed",
+  "commit": "9acb46e",
+  "notebook_id": "11uU-EaYeFwwB3yVnDRAMBg92tRsvcu7K",
+  "allocation_attempt_unix": 1789316849,
+  "gpu_allocation_confirmed": false,
+  "sources": {
+    "run_v5_final.py": "a195fd6c3178ed41030c336476ff60ce201afbc1f15a05e3e2ff62dbe2dab503",
+    "v5_final_refit.py": "d0065fc01f7efa6d5fd41f2ff727635fbfbbf7de35590c36ff8a0c3ea4437453",
+    "package_v5_submission.py": "70c433b097b847fc7871eccfb03e1490687babac23b9175ab60dc913cf843c00",
+    "v5_submission.py": "b7366d9041e3031bb68612a6b3d1a94997d2f86c47991865df7b34442f23399b",
+    "build_v5_final_notebook.py": "f1c2ae5720ecac083a26f7e91d6df903547934f059b9cc9cdcece7278d81a247"
+  },
+  "validation": {
+    "focused_regressions": 23,
+    "ruff": "passed",
+    "source_closure": "24 embedded files exact",
+    "LSP": "unavailable; install previously declined",
+    "actual_cuda_inference": "pending",
+    "L4_runtime": "pending"
+  }
+}

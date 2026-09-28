@@ -1,0 +1,37 @@
+{
+  "workspace": "wsp-9683432r72m7",
+  "wall_time_limit": null,
+  "files": {
+    "input.zip": {
+      "key": "balanced7144-h100-20260919/input.zip",
+      "bytes": 2103715,
+      "sha256": "b95af9d0c38eaf79826d1268dac79b772f1b4d6c2bed9a89023b9a3494ef8bbf",
+      "etag": "\"698828a0f64b8dc47ddbcecd6469bf76\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "bootstrap.sh": {
+      "key": "balanced7144-h100-20260919/bootstrap.sh",
+      "bytes": 366,
+      "sha256": "37741a33d52ab1f186f6bd6408c91c2154f711417b134051be574486e8649896",
+      "etag": "\"20668687f600faff1c2ccd37ecaa687b\"",
+      "verification": "S3 ETag matches every uploaded part"
+    },
+    "full_bank_run.py": {
+      "key": "balanced7144-h100-20260919/full_bank_run.py",
+      "bytes": 9548,
+      "sha256": "c0830be29cdbf6234ebb25fef08d25e9301b49e84126d0a1d541106dc70b5bd5",
+      "etag": "\"d905e71eb93f7a0451894d48f97c7010\"",
+      "verification": "S3 ETag matches every uploaded part"
+    }
+  },
+  "all_sources_sha256": "512dff11a9ebd9555fefe8791c21f3f46abab7d8a0c36591d2591ed24f2397c2",
+  "runtime_manifest_sha256": "defc0dc66aa18ca4f012fd8885cba3291320cbbd8cf4cf3d1bd3b26174ab826a",
+  "rows": 7144,
+  "audio_bytes": 15054431524,
+  "prepared_at": 1789780138.233571,
+  "split_counts": {
+    "train": 5716,
+    "val": 1428
+  },
+  "reuse_audio_root": "/root/full_bank_mil_8020_20260918/input/dataset"
+}

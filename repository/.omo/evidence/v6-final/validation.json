@@ -1,0 +1,113 @@
+{
+  "real_full_pipeline": {
+    "ID": "010c40aa04aa6101f2f35719",
+    "seconds": 55.4343502499396,
+    "values": {
+      "presence": [
+        [
+          0.025609469041228294,
+          0.8878734707832336
+        ],
+        [
+          0.028920480981469154,
+          0.9338170886039734
+        ],
+        [
+          0.028567953035235405,
+          0.933169424533844
+        ],
+        [
+          0.18874689936637878,
+          0.9113673567771912
+        ],
+        [
+          0.038084279745817184,
+          0.9416667819023132
+        ],
+        [
+          0.029733719304203987,
+          0.9456508755683899
+        ],
+        [
+          0.03644514083862305,
+          0.9268988370895386
+        ],
+        [
+          0.03943120315670967,
+          0.9231053590774536
+        ]
+      ],
+      "voice": [
+        4.860365265813016e-07,
+        3.83456864483378e-07,
+        3.594954591790156e-07,
+        0.999992847442627,
+        0.9999973773956299,
+        0.9999953508377075,
+        0.9999978542327881,
+        0.9999977350234985
+      ],
+      "raw": [
+        0.5809875726699829,
+        0.5414219498634338,
+        0.43130379915237427,
+        0.7069335579872131,
+        0.6728976964950562,
+        0.5844923853874207,
+        0.7221354246139526,
+        0.7281954288482666
+      ],
+      "music_audible": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "starts": [
+        0,
+        64600,
+        129200,
+        193800,
+        258400,
+        323000,
+        387600,
+        415400
+      ]
+    },
+    "music_mean_abs": 0.13853812217712402
+  },
+  "real_training_smoke": {
+    "status": "complete",
+    "purpose": "smoke",
+    "version": "v6-xlsraasist-la-mert95-aligned-1",
+    "epochs_requested": 30,
+    "epochs_completed": 30,
+    "music_files": 4,
+    "fusion_files": 4,
+    "dev_files": 2,
+    "asset_id": "b5da2bf48b57d9354312e532e579ec4765eb3c52fa335e10fc2f5845ad5b4f01",
+    "cache_id": "d7e83bf5c4b8a63133bf406cfa9a443db28e6cd1d72a2756cbcff8f7808ef6f9",
+    "heads_sha256": "db5884986991a3ce3866fe368f383a36deefa3377047b2089730119f88b4033d",
+    "split_sha256": "79d8f0b3596d42d04078671cc76cba882b97225e02b5ce52fe47c3f99bff4760",
+    "seed": 41,
+    "voice": "frozen pretrained XLS-R+AASIST LA; no new voice fine-tuning",
+    "dev_status": "Tiny integration smoke; not a performance estimate",
+    "initial_loss": 0.6931471824645996,
+    "final_loss": 0.0002638933074194938
+  },
+  "serialization_max_abs_error": 0.0,
+  "smoke_export_rejected": true,
+  "full_dataset_split": {
+    "expert": 1137,
+    "fusion": 459,
+    "dev": 210,
+    "music_training": 823
+  },
+  "cloud_execution": "not started; Computer Use temporary-file failures",
+  "gpu_runtime": "H100 and L4 unverified",
+  "notebook_validation": "nbformat and code-cell compilation; remote execution pending"
+}

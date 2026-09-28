@@ -1,0 +1,829 @@
+{
+  "status": "verified",
+  "runs": 48,
+  "settings": 16,
+  "winner": "cosine_ls5_lr0",
+  "groups": [
+    {
+      "name": "cosine_ls5_lr0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.30580519795967936,
+          "tune_bce": 0.6089903380815028,
+          "music_eer": 0.25277777777777777,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 0,
+          "parameters": 105216
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.17354870051008014,
+          "tune_bce": 0.4557452060270579,
+          "music_eer": 0.19999999999999998,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 34,
+          "epochs_completed": 54,
+          "lr_reductions": 0,
+          "parameters": 105216
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.21484090357056107,
+          "tune_bce": 0.5251992051135794,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.26410256410256405,
+          "selected_epoch": 31,
+          "epochs_completed": 51,
+          "lr_reductions": 0,
+          "parameters": 105216
+        }
+      ],
+      "tune_eer_mean": 0.23139826734677352,
+      "tune_eer_std": 0.05524825789604794,
+      "tune_bce_mean": 0.5299782497407134,
+      "tune_bce_std": 0.06265326315128988,
+      "music_eer_mean": 0.22407407407407406,
+      "music_eer_std": 0.021793707955444115,
+      "file_eer_mean": 0.2773504273504273,
+      "file_eer_std": 0.00936765393879616
+    },
+    {
+      "name": "attention_reg0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2332604647396972,
+          "tune_bce": 0.5299127131792845,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 0,
+          "parameters": 107299
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.5231347586524582,
+          "music_eer": 0.19999999999999998,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 15,
+          "epochs_completed": 35,
+          "lr_reductions": 0,
+          "parameters": 107299
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.21763419965994657,
+          "tune_bce": 0.529497985520771,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 17,
+          "epochs_completed": 37,
+          "lr_reductions": 0,
+          "parameters": 107299
+        }
+      ],
+      "tune_eer_mean": 0.23232936604323537,
+      "tune_eer_std": 0.01163707321598588,
+      "tune_bce_mean": 0.5275151524508379,
+      "tune_bce_std": 0.0031020302093249076,
+      "music_eer_mean": 0.21296296296296294,
+      "music_eer_std": 0.009166199015381179,
+      "file_eer_mean": 0.26794871794871794,
+      "file_eer_std": 0.013084881104610993
+    },
+    {
+      "name": "attention_reg1",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2332604647396972,
+          "tune_bce": 0.5287053723926392,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 3,
+          "parameters": 107299
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.5223003292258546,
+          "music_eer": 0.19999999999999998,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 15,
+          "epochs_completed": 35,
+          "lr_reductions": 3,
+          "parameters": 107299
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.21763419965994657,
+          "tune_bce": 0.5204538282599214,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 17,
+          "epochs_completed": 37,
+          "lr_reductions": 3,
+          "parameters": 107299
+        }
+      ],
+      "tune_eer_mean": 0.23232936604323537,
+      "tune_eer_std": 0.01163707321598588,
+      "tune_bce_mean": 0.5238198432928051,
+      "tune_bce_std": 0.0035358815396156927,
+      "music_eer_mean": 0.21296296296296294,
+      "music_eer_std": 0.009166199015381179,
+      "file_eer_mean": 0.2626068376068376,
+      "file_eer_std": 0.007554559628061431
+    },
+    {
+      "name": "mlp_ls5_lr0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5529275081808531,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 14,
+          "epochs_completed": 34,
+          "lr_reductions": 0,
+          "parameters": 107234
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.21763419965994657,
+          "tune_bce": 0.4765201729564584,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 35,
+          "epochs_completed": 55,
+          "lr_reductions": 0,
+          "parameters": 107234
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.2332604647396972,
+          "tune_bce": 0.5171709800095816,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 17,
+          "epochs_completed": 37,
+          "lr_reductions": 0,
+          "parameters": 107234
+        }
+      ],
+      "tune_eer_mean": 0.24181577739994062,
+      "tune_eer_std": 0.024011428319219572,
+      "tune_bce_mean": 0.515539553715631,
+      "tune_bce_std": 0.03121448790586089,
+      "music_eer_mean": 0.2175925925925926,
+      "music_eer_std": 0.0026189140043946114,
+      "file_eer_mean": 0.2572649572649573,
+      "file_eer_std": 0.007554559628061431
+    },
+    {
+      "name": "mlp_ls0_lr0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5545781043804501,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 14,
+          "epochs_completed": 34,
+          "lr_reductions": 0,
+          "parameters": 107234
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.4950898196389696,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.28012820512820513,
+          "selected_epoch": 19,
+          "epochs_completed": 39,
+          "lr_reductions": 0,
+          "parameters": 107234
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.5155753846669145,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 17,
+          "epochs_completed": 37,
+          "lr_reductions": 0,
+          "parameters": 107234
+        }
+      ],
+      "tune_eer_mean": 0.25557984508676757,
+      "tune_eer_std": 0.013415811598902743,
+      "tune_bce_mean": 0.5217477695621113,
+      "tune_bce_std": 0.02467505834970076,
+      "music_eer_mean": 0.22037037037037036,
+      "music_eer_std": 0.009166199015381151,
+      "file_eer_mean": 0.26666666666666666,
+      "file_eer_std": 0.01155032628353811
+    },
+    {
+      "name": "mlp_ls0_lr1",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5545781043804501,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 14,
+          "epochs_completed": 34,
+          "lr_reductions": 3,
+          "parameters": 107234
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.4950898196389696,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.28012820512820513,
+          "selected_epoch": 19,
+          "epochs_completed": 39,
+          "lr_reductions": 3,
+          "parameters": 107234
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.5155753846669145,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 17,
+          "epochs_completed": 37,
+          "lr_reductions": 3,
+          "parameters": 107234
+        }
+      ],
+      "tune_eer_mean": 0.25557984508676757,
+      "tune_eer_std": 0.013415811598902743,
+      "tune_bce_mean": 0.5217477695621113,
+      "tune_bce_std": 0.02467505834970076,
+      "music_eer_mean": 0.22037037037037036,
+      "music_eer_std": 0.009166199015381151,
+      "file_eer_mean": 0.26666666666666666,
+      "file_eer_std": 0.01155032628353811
+    },
+    {
+      "name": "mlp_ls5_lr1",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5529275081808531,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 14,
+          "epochs_completed": 34,
+          "lr_reductions": 3,
+          "parameters": 107234
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.25892640272042744,
+          "tune_bce": 0.49749439793563155,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 19,
+          "epochs_completed": 39,
+          "lr_reductions": 3,
+          "parameters": 107234
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.2332604647396972,
+          "tune_bce": 0.5171709800095816,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.2519230769230769,
+          "selected_epoch": 17,
+          "epochs_completed": 37,
+          "lr_reductions": 3,
+          "parameters": 107234
+        }
+      ],
+      "tune_eer_mean": 0.2555798450867676,
+      "tune_eer_std": 0.017022751332526575,
+      "tune_bce_mean": 0.5225309620420221,
+      "tune_bce_std": 0.022945652942053984,
+      "music_eer_mean": 0.2222222222222222,
+      "music_eer_std": 0.008177556357710952,
+      "file_eer_mean": 0.2572649572649573,
+      "file_eer_std": 0.007554559628061431
+    },
+    {
+      "name": "conv_mean_reg0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2901789328799288,
+          "tune_bce": 0.5506779760441992,
+          "music_eer": 0.18611111111111112,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 0,
+          "parameters": 105218
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.26171969880981294,
+          "tune_bce": 0.550529229164118,
+          "music_eer": 0.25277777777777777,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 19,
+          "epochs_completed": 39,
+          "lr_reductions": 0,
+          "parameters": 105218
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.26171969880981294,
+          "tune_bce": 0.5609240438133812,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 11,
+          "epochs_completed": 31,
+          "lr_reductions": 0,
+          "parameters": 105218
+        }
+      ],
+      "tune_eer_mean": 0.27120611016651824,
+      "tune_eer_std": 0.013415811598902767,
+      "tune_bce_mean": 0.5540437496738995,
+      "tune_bce_std": 0.004865481613223495,
+      "music_eer_mean": 0.2175925925925926,
+      "music_eer_std": 0.027342264926358145,
+      "file_eer_mean": 0.28397435897435896,
+      "file_eer_std": 0.0
+    },
+    {
+      "name": "conv_mean_reg1",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2901789328799288,
+          "tune_bce": 0.5429287567732636,
+          "music_eer": 0.18611111111111112,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 3,
+          "parameters": 105218
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.2717593717107927,
+          "tune_bce": 0.5335322856368943,
+          "music_eer": 0.25277777777777777,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 19,
+          "epochs_completed": 39,
+          "lr_reductions": 3,
+          "parameters": 105218
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5568726829714206,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.30000000000000004,
+          "selected_epoch": 11,
+          "epochs_completed": 31,
+          "lr_reductions": 3,
+          "parameters": 105218
+        }
+      ],
+      "tune_eer_mean": 0.27883032413029984,
+      "tune_eer_std": 0.008105299343633554,
+      "tune_bce_mean": 0.5444445751271928,
+      "tune_bce_std": 0.009588771763368939,
+      "music_eer_mean": 0.21944444444444444,
+      "music_eer_std": 0.02721655269759086,
+      "file_eer_mean": 0.28931623931623934,
+      "file_eer_std": 0.007554559628061431
+    },
+    {
+      "name": "cosine_ls0_lr0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.31863816695004454,
+          "tune_bce": 0.632785675118677,
+          "music_eer": 0.2666666666666667,
+          "file_eer": 0.2961538461538461,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 0,
+          "parameters": 105216
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.5787130160573513,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 15,
+          "epochs_completed": 35,
+          "lr_reductions": 0,
+          "parameters": 105216
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5579120931509625,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.28012820512820513,
+          "selected_epoch": 9,
+          "epochs_completed": 29,
+          "lr_reductions": 0,
+          "parameters": 105216
+        }
+      ],
+      "tune_eer_mean": 0.2797614228267617,
+      "tune_eer_std": 0.02984440680356279,
+      "tune_bce_mean": 0.5898035947756636,
+      "tune_bce_std": 0.03155697515499364,
+      "music_eer_mean": 0.23981481481481481,
+      "music_eer_std": 0.019815680147252525,
+      "file_eer_mean": 0.2814102564102564,
+      "file_eer_std": 0.01155032628353806
+    },
+    {
+      "name": "cosine_ls0_lr1",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.31863816695004454,
+          "tune_bce": 0.632785675118677,
+          "music_eer": 0.2666666666666667,
+          "file_eer": 0.2961538461538461,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 3,
+          "parameters": 105216
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.24609343373006232,
+          "tune_bce": 0.5787130160573513,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 15,
+          "epochs_completed": 35,
+          "lr_reductions": 3,
+          "parameters": 105216
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5609906073638451,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 15,
+          "epochs_completed": 35,
+          "lr_reductions": 5,
+          "parameters": 105216
+        }
+      ],
+      "tune_eer_mean": 0.2797614228267617,
+      "tune_eer_std": 0.02984440680356279,
+      "tune_bce_mean": 0.5908297661799577,
+      "tune_bce_std": 0.030536804718574055,
+      "music_eer_mean": 0.24444444444444444,
+      "music_eer_std": 0.01571348402636776,
+      "file_eer_mean": 0.27735042735042736,
+      "file_eer_std": 0.013296024945388025
+    },
+    {
+      "name": "conv_lme_reg1",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.2901789328799288,
+          "tune_bce": 0.5442043755153553,
+          "music_eer": 0.19999999999999998,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 3,
+          "parameters": 105218
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.26171969880981294,
+          "tune_bce": 0.5293423180922353,
+          "music_eer": 0.24722222222222223,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 19,
+          "epochs_completed": 39,
+          "lr_reductions": 3,
+          "parameters": 105218
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.2901789328799288,
+          "tune_bce": 0.5628274836551982,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 11,
+          "epochs_completed": 31,
+          "lr_reductions": 3,
+          "parameters": 105218
+        }
+      ],
+      "tune_eer_mean": 0.2806925215232235,
+      "tune_eer_std": 0.013415811598902767,
+      "tune_bce_mean": 0.5454580590875963,
+      "tune_bce_std": 0.013698974902506125,
+      "music_eer_mean": 0.22685185185185183,
+      "music_eer_std": 0.019815680147252504,
+      "file_eer_mean": 0.28397435897435896,
+      "file_eer_std": 0.0
+    },
+    {
+      "name": "conv_lme_reg0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.3030119018702939,
+          "tune_bce": 0.5505713702378252,
+          "music_eer": 0.19999999999999998,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 0,
+          "parameters": 105218
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.25892640272042744,
+          "tune_bce": 0.5378465472083223,
+          "music_eer": 0.25277777777777777,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 19,
+          "epochs_completed": 39,
+          "lr_reductions": 0,
+          "parameters": 105218
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.2901789328799288,
+          "tune_bce": 0.563262063652988,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 11,
+          "epochs_completed": 31,
+          "lr_reductions": 0,
+          "parameters": 105218
+        }
+      ],
+      "tune_eer_mean": 0.28403907915688337,
+      "tune_eer_std": 0.018514069634173097,
+      "tune_bce_mean": 0.5505599936997118,
+      "tune_bce_std": 0.010375844258227334,
+      "music_eer_mean": 0.22870370370370366,
+      "music_eer_std": 0.02179370795544411,
+      "file_eer_mean": 0.28397435897435896,
+      "file_eer_std": 0.0
+    },
+    {
+      "name": "cosine_ls5_lr1",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.30580519795967936,
+          "tune_bce": 0.6089903380815028,
+          "music_eer": 0.25277777777777777,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 3,
+          "parameters": 105216
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.2745526678001781,
+          "tune_bce": 0.5332628654472265,
+          "music_eer": 0.21944444444444444,
+          "file_eer": 0.28012820512820513,
+          "selected_epoch": 19,
+          "epochs_completed": 39,
+          "lr_reductions": 3,
+          "parameters": 105216
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.2773459638895636,
+          "tune_bce": 0.5486395520001307,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.267948717948718,
+          "selected_epoch": 15,
+          "epochs_completed": 35,
+          "lr_reductions": 5,
+          "parameters": 105216
+        }
+      ],
+      "tune_eer_mean": 0.285901276549807,
+      "tune_eer_std": 0.01412032085042746,
+      "tune_bce_mean": 0.5636309185096199,
+      "tune_bce_std": 0.032682496133355,
+      "music_eer_mean": 0.23518518518518516,
+      "music_eer_std": 0.013671132463179072,
+      "file_eer_mean": 0.27735042735042736,
+      "file_eer_std": 0.006830926223566548
+    },
+    {
+      "name": "prototype_reg0",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.26171969880981294,
+          "tune_bce": 0.5307471052194968,
+          "music_eer": 0.19999999999999998,
+          "file_eer": 0.28012820512820513,
+          "selected_epoch": 12,
+          "epochs_completed": 32,
+          "lr_reductions": 0,
+          "parameters": 105472
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.31863816695004454,
+          "tune_bce": 0.636412173440233,
+          "music_eer": 0.3666666666666667,
+          "file_eer": 0.3519230769230769,
+          "selected_epoch": 6,
+          "epochs_completed": 26,
+          "lr_reductions": 0,
+          "parameters": 105472
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.31863816695004454,
+          "tune_bce": 0.6228547959759542,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 9,
+          "epochs_completed": 29,
+          "lr_reductions": 0,
+          "parameters": 105472
+        }
+      ],
+      "tune_eer_mean": 0.299665344236634,
+      "tune_eer_std": 0.026831623197805483,
+      "tune_bce_mean": 0.5966713582118947,
+      "tune_bce_std": 0.0469429154781386,
+      "music_eer_mean": 0.2601851851851852,
+      "music_eer_std": 0.07550697421435229,
+      "file_eer_mean": 0.3053418803418803,
+      "file_eer_std": 0.032975284998051996
+    },
+    {
+      "name": "prototype_reg1",
+      "seeds": [
+        {
+          "seed": 41,
+          "tune_eer": 0.30580519795967936,
+          "tune_bce": 0.6097478256602792,
+          "music_eer": 0.4,
+          "file_eer": 0.3519230769230769,
+          "selected_epoch": 4,
+          "epochs_completed": 24,
+          "lr_reductions": 3,
+          "parameters": 105472
+        },
+        {
+          "seed": 42,
+          "tune_eer": 0.3030119018702939,
+          "tune_bce": 0.6310033892468795,
+          "music_eer": 0.25277777777777777,
+          "file_eer": 0.3038461538461539,
+          "selected_epoch": 15,
+          "epochs_completed": 35,
+          "lr_reductions": 4,
+          "parameters": 105472
+        },
+        {
+          "seed": 43,
+          "tune_eer": 0.33426443202979517,
+          "tune_bce": 0.6021462126737596,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.28397435897435896,
+          "selected_epoch": 9,
+          "epochs_completed": 29,
+          "lr_reductions": 3,
+          "parameters": 105472
+        }
+      ],
+      "tune_eer_mean": 0.3143605106199228,
+      "tune_eer_std": 0.01412032085042747,
+      "tune_bce_mean": 0.6142991425269727,
+      "tune_bce_std": 0.012212562490016645,
+      "music_eer_mean": 0.2888888888888889,
+      "music_eer_std": 0.08015545595492278,
+      "file_eer_mean": 0.31324786324786325,
+      "file_eer_std": 0.0285254409545146
+    }
+  ],
+  "postprocessing": [
+    {
+      "name": "T0.5",
+      "seeds": [
+        {
+          "seed": 41,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.26410256410256405,
+          "bce": 0.5844473610453376
+        },
+        {
+          "seed": 42,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.28397435897435896,
+          "bce": 0.7093226175891165
+        },
+        {
+          "seed": 43,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.267948717948718,
+          "bce": 0.6146676743834427
+        }
+      ],
+      "music_eer": 0.22037037037037036,
+      "file_eer": 0.272008547008547,
+      "bce": 0.636145884339299
+    },
+    {
+      "name": "T2",
+      "seeds": [
+        {
+          "seed": 41,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.267948717948718,
+          "bce": 0.5654306594472828
+        },
+        {
+          "seed": 42,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.267948717948718,
+          "bce": 0.5473557515856515
+        },
+        {
+          "seed": 43,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.2519230769230769,
+          "bce": 0.5269879238424892
+        }
+      ],
+      "music_eer": 0.22037037037037036,
+      "file_eer": 0.2626068376068376,
+      "bce": 0.5465914449584744
+    },
+    {
+      "name": "prob_smoothing0.05",
+      "seeds": [
+        {
+          "seed": 41,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.2519230769230769,
+          "bce": 0.5232994721660498
+        },
+        {
+          "seed": 42,
+          "music_eer": 0.2333333333333333,
+          "file_eer": 0.267948717948718,
+          "bce": 0.5343407157013719
+        },
+        {
+          "seed": 43,
+          "music_eer": 0.2138888888888889,
+          "file_eer": 0.267948717948718,
+          "bce": 0.4977359720097341
+        }
+      ],
+      "music_eer": 0.22037037037037036,
+      "file_eer": 0.2626068376068376,
+      "bce": 0.5184587199590519
+    }
+  ],
+  "early_stopping_verified": true,
+  "checkpoint_reload_verified_on_A100": true,
+  "official_score": null,
+  "independent_test": false,
+  "final_submission_changed": false
+}

@@ -1,0 +1,38 @@
+{
+  "score": null,
+  "metrics": {
+    "file_eer": 0.3857142857142857,
+    "voice_eer": 0.4291666666666667,
+    "music_eer": 0.4828571428571429,
+    "voice_presence_auc": null,
+    "music_presence_auc": 0.9954411764705886
+  },
+  "invalid": {
+    "voice_presence_auc": "both positive and negative labels are required"
+  },
+  "partial": {
+    "voice_eer": "known subset only; unknown relevant labels: 110",
+    "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+  },
+  "counts": {
+    "file_eer": 210,
+    "voice_eer": 100,
+    "music_eer": 170,
+    "voice_presence_auc": 120,
+    "music_presence_auc": 210
+  },
+  "unknown_counts": {
+    "file_eer": 0,
+    "voice_eer": 110,
+    "music_eer": 0,
+    "voice_presence_auc": 90,
+    "music_presence_auc": 0
+  },
+  "coverage": {
+    "file_eer": 1.0,
+    "voice_eer": 0.47619047619047616,
+    "music_eer": 1.0,
+    "voice_presence_auc": 0.5714285714285714,
+    "music_presence_auc": 1.0
+  }
+}

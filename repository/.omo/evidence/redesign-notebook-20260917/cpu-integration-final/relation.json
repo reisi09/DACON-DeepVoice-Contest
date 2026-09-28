@@ -1,0 +1,125 @@
+{
+  "epsilon": 1e-05,
+  "feature_names": [
+    "logit_voice_evidence",
+    "logit_music_evidence",
+    "logit_voice_fake",
+    "logit_music_fake",
+    "logit_voice_present",
+    "logit_music_present",
+    "evidence_gap",
+    "max_window_voice_evidence",
+    "max_window_music_evidence",
+    "max_window_file_evidence",
+    "top2mean_window_file_evidence",
+    "mean_joint_presence"
+  ],
+  "fit": {
+    "converged": true,
+    "eligible_rows": 40,
+    "final_loss": 0.020042691340478563,
+    "fixed_endpoint_rows": 0,
+    "initial_loss": 0.4700371166701087,
+    "irreducible_endpoint_contradictions": 0,
+    "rows": 40,
+    "weighting": {
+      "class_mass": {
+        "0.0": 0.5000000000000001,
+        "1.0": 0.5000000000000001
+      },
+      "connected_groups": {
+        "0.0": 20,
+        "1.0": 20
+      },
+      "scheme": "equal FILE class and connected-group mass"
+    }
+  },
+  "intercept": -0.09368964792442644,
+  "l2": 0.01,
+  "mean": [
+    -0.3726582901415362,
+    -0.31092498463651486,
+    4.67043935432232e-05,
+    -0.0079071019367804,
+    1.7346012423830834,
+    1.7346012423830834,
+    0.17637042391287353,
+    0.42500705737640354,
+    0.4363579659928334,
+    0.5225373839564585,
+    0.5197959669912523,
+    1.0
+  ],
+  "oof_sha256": "c7cfa2525516a6e634ddb7cd3625da44a04db61c688a65d68e33181c7ad35e9c",
+  "scale": [
+    0.9372251139737705,
+    0.154059933948968,
+    1.0986191535428276,
+    0.1770059798428752,
+    8.881784197001252e-16,
+    8.881784197001252e-16,
+    0.01013224046200619,
+    0.21250100625673196,
+    0.02953078847858701,
+    0.1151097469051512,
+    0.11781240833890745,
+    1.0
+  ],
+  "schema_version": 1,
+  "upstream_family_identity": "a92797b251c536d46d6f9cdec5f302d2fdcaa83a2b34390a5f4ac267d68e7514",
+  "upstream_identity": {
+    "base_upstream_family_identity": "064a2789978ddc0e7a65687bb7a664c8b2c74be119e71dee45ce173e9b163dba",
+    "checkpoint_sha256": "ac19966d82394abb9d6925a1e571b4b51abae1f3441599fd483ea6d8eb8b2a7c",
+    "model_recipe_identity": "81096ca1428b002316e34229796fba637d9ae3a569bd281c3aff22d37b4bd97f",
+    "records_identity": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+    "seed_checkpoint_sha256": [
+      "ac19966d82394abb9d6925a1e571b4b51abae1f3441599fd483ea6d8eb8b2a7c",
+      "a8464f50f4d9cea7180a9eff522ff50672cc6aeb2b5cb0f164f158c3438156b6"
+    ],
+    "seed_model_recipe_identity": [
+      "81096ca1428b002316e34229796fba637d9ae3a569bd281c3aff22d37b4bd97f",
+      "53ff13dd3ad97608f530f7284f43f918db09387726142c932a9a5b814d9c0181"
+    ],
+    "seed_upstream_family_identity": [
+      "3a7b176f9eec10d0ab31db8cd0de453128e7f3af10c1ab58276fd2755af73fd1",
+      "745c39b384bf64b150b294c1f85d8e4d5fc218032a6dea77bd5a755e755fb323"
+    ],
+    "seed_voice_checkpoint_sha256": [
+      "f613ad549b4f08e4aaa26af6241e6f0ec3892f78a89300e8e9c09f1c97b298f8",
+      "e9a2ed6d2d9d58a426647bc11a60b3d22352227dbb18209d234779d0a956ea58"
+    ],
+    "source_sha256": {
+      "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+      "redesign_fit.py": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906",
+      "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+      "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+      "redesign_predictions.py": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+      "redesign_train.py": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+    },
+    "training_manifest_sha256": "b8f338a496c91f87ff6f6924372f9447d9532eb01deca5e1869158d1ee548681",
+    "upstream_family_identity": "a92797b251c536d46d6f9cdec5f302d2fdcaa83a2b34390a5f4ac267d68e7514",
+    "upstream_family_payload": {
+      "seed_upstream_family_identity": [
+        "3a7b176f9eec10d0ab31db8cd0de453128e7f3af10c1ab58276fd2755af73fd1",
+        "745c39b384bf64b150b294c1f85d8e4d5fc218032a6dea77bd5a755e755fb323"
+      ]
+    },
+    "voice_checkpoint_sha256": "f613ad549b4f08e4aaa26af6241e6f0ec3892f78a89300e8e9c09f1c97b298f8",
+    "voice_recipe_identity": "5e154446c8f3167a2060dda5d55ee7ab191e31430a6d3310cdfaea17d5bda258"
+  },
+  "upstream_identity_sha256": "a0858f44abdc154c1f20d8cbb0d3ff1fed8714d55a0a392795c3cd152d83297a",
+  "weights": [
+    0.6152990546765812,
+    0.535566816387527,
+    0.6152987376673538,
+    0.5360529761643769,
+    -0.00015403030178141658,
+    -0.00015403030178141658,
+    0.03848194545834476,
+    0.6152981147281281,
+    0.5667775896711068,
+    0.6088465836092801,
+    0.6085558791962828,
+    0.0
+  ]
+}

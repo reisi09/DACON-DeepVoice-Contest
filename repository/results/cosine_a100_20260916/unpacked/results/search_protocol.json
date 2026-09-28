@@ -1,0 +1,36 @@
+{
+  "model": "m-a-p/MERT-v1-330M",
+  "revision": "5240c2708a5acaee1007f43fb9735c7dcd0b78c9",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "recipe": {
+    "epochs": 300,
+    "patience": 20,
+    "min_delta": 0.0001,
+    "batch_size": 64,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "nsynth_mass": 0.0,
+    "seed": 41,
+    "dropout": 0.1,
+    "crop_probability": 0.7,
+    "feature_mask_probability": 0.3,
+    "simplified": true,
+    "compact": true,
+    "temporal_bins": 1,
+    "softmax_output": true,
+    "input_dim": 1024,
+    "mlp_output": false,
+    "cosine_output": true,
+    "label_smoothing": 0.05,
+    "lr_plateau": true
+  },
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "control": "MERT95 cached features with newly trained matched regularized heads",
+  "comparison": "Both backbones use 64x3 GELU convolutions, cosine classifier (scale 10), label smoothing 0.05, ReduceLROnPlateau, dropout 0.1 and AdamW weight decay 0.01",
+  "reference95_manifest_sha256": "d0bae67646c2b7ca7dad838c6f27118403af235e0ee1ed8f705fb8626879ac22",
+  "selection": "Tune EER mean, std, BCE rounded to 12 decimals, then name; no test-based selection"
+}

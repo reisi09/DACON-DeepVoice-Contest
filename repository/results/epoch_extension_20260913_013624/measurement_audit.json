@@ -1,0 +1,61 @@
+{
+  "prediction_changes": {
+    "FILE_FAKE_PROB": {
+      "max_abs_delta": 0.4300127662718296,
+      "changed_above_1e-6": 274
+    },
+    "VOICE_FAKE_PROB": {
+      "max_abs_delta": 0.41614844650030136,
+      "changed_above_1e-6": 274
+    },
+    "MUSIC_FAKE_PROB": {
+      "max_abs_delta": 0.4238274395465851,
+      "changed_above_1e-6": 274
+    },
+    "VOICE_PRESENT_PROB": {
+      "max_abs_delta": 0.15562564134597778,
+      "changed_above_1e-6": 270
+    },
+    "MUSIC_PRESENT_PROB": {
+      "max_abs_delta": 0.01690042018890381,
+      "changed_above_1e-6": 274
+    }
+  },
+  "recomputed_combined_metrics_equal": true,
+  "proxy": {
+    "development": {
+      "G0": 0.757797251419444,
+      "AST_6": 0.8657196510733428,
+      "AST_extended": 0.9038005610039294
+    },
+    "combined": {
+      "G0": 0.7590361544239564,
+      "AST_6": 0.7744196671928713,
+      "AST_extended": 0.7758085560817601,
+      "hybrid_6": 0.7922045896318654,
+      "hybrid_extended": 0.7922045896318654
+    },
+    "test_generator": {
+      "G0": 0.7769378744320695,
+      "AST_6": 0.7267333189256565,
+      "AST_extended": 0.7267333189256565,
+      "hybrid_6": 0.7563385820835512,
+      "hybrid_extended": 0.7563385820835512
+    },
+    "test_source": {
+      "G0": 0.7429146633259054,
+      "AST_6": 0.8948352587818995,
+      "AST_extended": 0.8948352587818995,
+      "hybrid_6": 0.8735093179216844,
+      "hybrid_extended": 0.8735093179216844
+    }
+  },
+  "checkpoint_changed": true,
+  "gpu_release_ui": {
+    "active_sessions": 0,
+    "usage_rate": 0,
+    "displayed_units_before": 54.49,
+    "displayed_units_after": 54.36,
+    "billing_finality": "unverified; displayed balance may lag"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "scenario": "isolate failed attempt and finish bootstrap restoration before retry",
+  "binary_observable": {
+    "old_watcher_terminated": true,
+    "pause_verified": true,
+    "workspace_state": "stopped",
+    "workspace_phase": "standby",
+    "failed_metadata_isolated": true,
+    "bootstrap_restored": true
+  },
+  "artifact": "results/eight_h100_20260917/failed_attempt_01"
+}

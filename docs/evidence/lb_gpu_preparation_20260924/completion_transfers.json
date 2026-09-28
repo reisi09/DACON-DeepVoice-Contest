@@ -1,0 +1,53 @@
+{
+  "object_volume": "objvol-a5gxdg7er70i",
+  "remote_prefix": "lb-improvement-20260924/gpu-preparation-v1/completion/",
+  "files": [
+    {
+      "name": "README.txt",
+      "bytes": 4876,
+      "sha256": "5b5780f1f3753ed3260812d31e5a28e5b3789dccfe4ef83883469fe83b4f0e21",
+      "full_readback_verified": true
+    },
+    {
+      "name": "cpu_retry_environment.json",
+      "bytes": 314,
+      "sha256": "8cbdf0b101d6f24b856963c9db08a1e9d5454ca45b1f80db6f03225ca34161b4",
+      "full_readback_verified": true
+    },
+    {
+      "name": "cpu_retry_execution.json",
+      "bytes": 1732,
+      "sha256": "84cbc1a06593ec0558f4acc1eb185339ff3df7b71ca84c5b3a8ac12c2613c636",
+      "full_readback_verified": true
+    },
+    {
+      "name": "cpu_retry_preflight.json",
+      "bytes": 1184,
+      "sha256": "0590a78530578e577ad83d4a3ff3ca0789ba02ca9b307e8a0ffd5078ddf12dbb",
+      "full_readback_verified": true
+    },
+    {
+      "name": "cpu_retry_readiness.json",
+      "bytes": 440,
+      "sha256": "d3216ebe2f78cd25bb1be8c75b3fd54cd48f6d7511f749230f7445b62505b3b1",
+      "full_readback_verified": true
+    },
+    {
+      "name": "cpu_retry_runtime.log",
+      "bytes": 2366,
+      "sha256": "f1f5491e778aa6ad4ad3f682c7e1d7effaa9757247eb9c6e144d1c4e37b08dad",
+      "full_readback_verified": true
+    },
+    {
+      "name": "readiness.json",
+      "bytes": 1608,
+      "sha256": "f9fc188fab543ad749d1f6411f7bd20c6656d0cadd49ce51dfa1f03802210599",
+      "full_readback_verified": true
+    }
+  ],
+  "canonical_readme": {
+    "key": "lb-improvement-20260924/gpu-preparation-v1/README.txt",
+    "sha256": "5b5780f1f3753ed3260812d31e5a28e5b3789dccfe4ef83883469fe83b4f0e21",
+    "full_readback_verified": true
+  }
+}

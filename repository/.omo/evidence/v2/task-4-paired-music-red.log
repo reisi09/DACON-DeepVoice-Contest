@@ -1,0 +1,20 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_mixture_music_parent_requires_both_authenticity_classes _________
+
+    def test_mixture_music_parent_requires_both_authenticity_classes() -> None:
+        # Given one unpaired legacy music group and one paired-content group.
+        rows = [
+            validation.ManifestRow("u", "audio/u.wav", "music:u", "dev_train", "legacy", "0", "", "0", "", "1", "u"),
+            validation.ManifestRow("r", "audio/r.wav", "music:p", "dev_train", "FMA", "0", "", "0", "", "1", "r"),
+            validation.ManifestRow("f", "audio/f.wav", "music:p", "dev_train", "Echoes", "1", "", "1", "", "1", "f"),
+        ]
+        # When parent groups are selected, then only a group with real and fake music qualifies.
+>       assert validation.paired_music_groups(rows, "dev_train") == ["music:p"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'prepare_v2_validation' has no attribute 'paired_music_groups'
+
+test_prepare_v2_validation.py:48: AttributeError
+=========================== short test summary info ============================
+FAILED test_prepare_v2_validation.py::test_mixture_music_parent_requires_both_authenticity_classes
+1 failed, 3 deselected in 0.03s

@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/tmp/dacon_h100_api.py", line 24, in <module>
+    sock=websocket.create_connection(base.replace('https://','wss://').replace('http://','ws://')+'/api/kernels/'+kernel+'/channels?session_id='+sid,header=['Authorization: '+headers['Authorization']],timeout=30)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/v3_review_venv/lib/python3.11/site-packages/websocket/_core.py", line 734, in create_connection
+    websock.connect(url, **options)
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/v3_review_venv/lib/python3.11/site-packages/websocket/_core.py", line 279, in connect
+    self.sock, addrs = connect(
+                       ^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/v3_review_venv/lib/python3.11/site-packages/websocket/_http.py", line 158, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/v3_review_venv/lib/python3.11/site-packages/websocket/_http.py", line 237, in _open_socket
+    raise error
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/v3_review_venv/lib/python3.11/site-packages/websocket/_http.py", line 227, in _open_socket
+    sock.connect(address)
+TimeoutError: timed out

@@ -1,0 +1,80 @@
+{
+  "candidates": {
+    "R1_sigmoid": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.0,
+      "nsynth_mass": 0.0,
+      "seed": 41,
+      "dropout": 0.0,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true,
+      "temporal_bins": 1,
+      "softmax_output": false
+    },
+    "R1_softmax": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.0,
+      "nsynth_mass": 0.0,
+      "seed": 41,
+      "dropout": 0.0,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true,
+      "temporal_bins": 1,
+      "softmax_output": true
+    },
+    "R8_sigmoid": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.0,
+      "nsynth_mass": 0.0,
+      "seed": 41,
+      "dropout": 0.0,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true,
+      "temporal_bins": 8,
+      "softmax_output": false
+    },
+    "R8_softmax": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.0,
+      "nsynth_mass": 0.0,
+      "seed": 41,
+      "dropout": 0.0,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true,
+      "temporal_bins": 8,
+      "softmax_output": true
+    }
+  },
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "comparison": "temporal resolution x output-loss parameterization",
+  "selection": "three-seed tune music EER mean, std, BCE, name; historical test not used",
+  "note": "8 bins also shorten the convolution receptive field in seconds; no new HP search"
+}

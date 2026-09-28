@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "source_audio_sha256": "cd1ea301e9adf854ba820e9aafe7c055f4ae0236eb7ef522a845b210f2705393",
+  "decode": "torchaudio.load + demucs.audio.convert_audio (julius resample)",
+  "versions": {
+    "torch": "2.7.1",
+    "torchaudio": "2.7.1",
+    "transformers": "4.57.6",
+    "librosa": "0.10.2.post1"
+  },
+  "decoded_shape": [
+    2,
+    352800
+  ],
+  "backing_shape": [
+    128000
+  ],
+  "artifact": ".omo/evidence/mert12_submission_build/parity_diagnosis/fallback_cpu/core_000209_torchaudio_fallback.npz",
+  "artifact_sha256": "296a0ed7bd7d1a53f8f440880bcd1ef8bc1bedf4a235d752fe23faf884a995e8",
+  "fallback_backing_vs_a100_ffmpeg_backing": {
+    "max_abs": 0.12433165311813354,
+    "rms": 0.0051407821433099845
+  },
+  "fallback_feature_vs_h100_cache_window0": {
+    "max_abs": 0.0001983642578125,
+    "rms": 1.2443122987190886e-05
+  },
+  "fallback_feature_vs_a100_gpu_window0": {
+    "max_abs": 2.872743606567383,
+    "rms": 0.3554826019983307
+  },
+  "a100_gpu_feature_vs_h100_cache_window0": {
+    "max_abs": 2.8726978302001953,
+    "rms": 0.3554816732128229
+  },
+  "elapsed_demucs_seconds": 4.2256509580038255
+}

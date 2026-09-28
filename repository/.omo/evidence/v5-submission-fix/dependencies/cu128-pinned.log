@@ -1,0 +1,16 @@
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu128
+Collecting imageio-ffmpeg==0.6.0
+  Using cached imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting timm==1.0.15
+  Using cached timm-1.0.15-py3-none-any.whl.metadata (52 kB)
+Collecting torchvision==0.22.1+cu128
+  Downloading torchvision-0.22.1%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+Requirement already satisfied: torch==2.7.1+cu128 in ./.omo/evidence/v5-submission-fix/dependencies/simulated-env/lib/python3.11/site-packages (2.7.1+cu128)
+Requirement already satisfied: torchaudio==2.7.1+cu128 in ./.omo/evidence/v5-submission-fix/dependencies/simulated-env/lib/python3.11/site-packages (2.7.1+cu128)
+Requirement already satisfied: pyyaml in ./.omo/evidence/v5-submission-fix/dependencies/simulated-env/lib/python3.11/site-packages (from timm==1.0.15) (6.0.1)
+Requirement already satisfied: huggingface_hub in ./.omo/evidence/v5-submission-fix/dependencies/simulated-env/lib/python3.11/site-packages (from timm==1.0.15) (0.34.4)
+Requirement already satisfied: safetensors in ./.omo/evidence/v5-submission-fix/dependencies/simulated-env/lib/python3.11/site-packages (from timm==1.0.15) (0.6.2)
+Requirement already satisfied: numpy in ./.omo/evidence/v5-submission-fix/dependencies/simulated-env/lib/python3.11/site-packages (from torchvision==0.22.1+cu128) (1.26.4)
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.22.1+cu128)
+  Using cached pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Would install imageio-ffmpeg-0.6.0 pillow-12.3.0 timm-1.0.15 torchvision-0.22.1+cu128

@@ -1,0 +1,10 @@
+{"event": "notebook_started", "unix": 1789283400.4954066, "elapsed_seconds": 49.92621302604675}
+{"event": "archive_verified", "unix": 1789283748.7000318, "elapsed_seconds": 398.13083815574646, "archive": "v4_train.zip"}
+{"event": "archive_verified", "unix": 1789283777.0144517, "elapsed_seconds": 426.44525814056396, "archive": "v4_dev.zip"}
+{"event": "archive_verified", "unix": 1789283809.8643377, "elapsed_seconds": 459.29514384269714, "archive": "v4_sealed.zip"}
+{"event": "archive_verified", "unix": 1789283810.6962452, "elapsed_seconds": 460.1270513534546, "archive": "v4_metadata.zip"}
+{"event": "archive_verified", "unix": 1789283841.0873473, "elapsed_seconds": 490.51815366744995, "archive": "v2_ast_assets.zip"}
+{"event": "archive_verified", "unix": 1789283843.6198058, "elapsed_seconds": 493.05061197280884, "archive": "recovery_sonics_assets.zip"}
+{"event": "runner_started", "unix": 1789283972.492938, "elapsed_seconds": 621.9237442016602, "command": ["/usr/bin/python3", "-u", "train_v4.py", "--data", "/content/dacon_trainable_v4/v4_validation", "--baseline", "/content/dacon_trainable_v4/baseline", "--sonics", "/content/dacon_trainable_v4/sonics_assets", "--ast", "/content/dacon_trainable_v4/ast", "--output", "/content/drive/MyDrive/DACON_236749/runs_trainable_v4/20260913_070910", "--deadline", "1789290430.5691943"]}
+{"deadline": 1789290430.5691943, "event": "runner_started", "unix": 1789283987.0944014}
+{"event": "notebook_failure", "unix": 1789284002.509362, "elapsed_seconds": 651.9401679039001}

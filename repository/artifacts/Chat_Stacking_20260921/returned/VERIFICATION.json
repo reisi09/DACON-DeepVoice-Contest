@@ -1,0 +1,250 @@
+{
+  "scope": "THIS ChatGPT session; local container CPU only",
+  "date": "2026-09-21",
+  "input_zip_sha256": "7adfb7b426c45b0efbb23de581ca1a5a073079d2110f4f4f84cdcf0fca2fc75a",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "cuda_available": false,
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0",
+      "torch": "2.10.0+cpu",
+      "torchaudio": "2.10.0+cpu",
+      "xgboost": "3.1.3",
+      "pytest": "9.0.2",
+      "librosa": "0.11.0",
+      "soundfile": "0.13.1"
+    },
+    "skops": "NOT_INSTALLED",
+    "transformers": "NOT_INSTALLED"
+  },
+  "source_hashes_during_final_validation": {
+    "src/dacon_stacking/__init__.py": "e88b61ce7b8fd4aaebc441de60f26635c79113fec8041b07a4988900da07847c",
+    "src/dacon_stacking/__main__.py": "aee9de1b04a3dfdf49a69b63da327234b9ba5247b73fe437cfc72bf7410de7e7",
+    "src/dacon_stacking/_base_contract.py": "33c87363821138a3ca5e4d5af4f78bef0109e04250cc58a49803085fc550883c",
+    "src/dacon_stacking/_snapshot_math.py": "261538955b9a67084946a74eff9d683f13f64d983fc08725dcdcc6dd4da4e690",
+    "src/dacon_stacking/_snapshot_scoring.py": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+    "src/dacon_stacking/audit.py": "14b57c4856e3faf446c623339c850ce9b56335438f28a7a15180763a83ecafe1",
+    "src/dacon_stacking/common.py": "4b51eb774b5857e388be6b6cf44750ce20b2288315fd7fe596e39a2b22ada8b7",
+    "src/dacon_stacking/demo.py": "7cec3f6d4dbd5794b9f7abc7e59fa23cf328c5de7f03868ad17796dcb0d1b00d",
+    "src/dacon_stacking/evaluation.py": "dc05d3a2391778edcedeadab4561b645449638727aecb19b20b1aa58afa95b40",
+    "src/dacon_stacking/features.py": "f097f1818bb27970a0e81627a7c5780c1c73bad8f57d69c8f8ea1aa110258007",
+    "src/dacon_stacking/gpu.py": "f87b47fc4c609a40bdc78c00a6dfa979c2049124279818ebb3e57d56b38cb938",
+    "src/dacon_stacking/models.py": "02fb7f9a58c43cca6f41d7ea40e30cc9234fbb8c91158b7a338705cf01d8a026",
+    "src/dacon_stacking/provenance.py": "cd01f79f6125b81fdb97db4078c5d2982dbb334fb59af7abced068811d987492",
+    "src/dacon_stacking/stage.py": "387d0399f03a8fcfcef459e309b2a44c26ce78987551510ca51841f64ce3358f",
+    "src/dacon_stacking/workflow.py": "e14faf541a263ec709f222bb311f9cdc1eb9f470a8af57661828e0d054186a0b"
+  },
+  "commands": [
+    {
+      "name": "final_pytest",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "cwd": "/mnt/data/DACON_Stacking_Return",
+      "env_overrides": {
+        "PYTHONPATH": "/mnt/data/DACON_Stacking_Return/src",
+        "STACKING_INPUT_ROOT": "/mnt/data/stacking_input",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "exit_code": 0,
+      "status": "PASS",
+      "wall_seconds_observed": 7.803,
+      "log": "logs/15_verified_pytest.txt"
+    },
+    {
+      "name": "compileall",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "patches"
+      ],
+      "cwd": "/mnt/data/DACON_Stacking_Return",
+      "env_overrides": {
+        "PYTHONPATH": "/mnt/data/DACON_Stacking_Return/src",
+        "STACKING_INPUT_ROOT": "/mnt/data/stacking_input",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "exit_code": 0,
+      "status": "PASS",
+      "wall_seconds_observed": 0.586,
+      "log": "logs/16_verified_compileall.txt"
+    },
+    {
+      "name": "cli_help",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "dacon_stacking",
+        "--help"
+      ],
+      "cwd": "/mnt/data/DACON_Stacking_Return",
+      "env_overrides": {
+        "PYTHONPATH": "/mnt/data/DACON_Stacking_Return/src",
+        "STACKING_INPUT_ROOT": "/mnt/data/stacking_input",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "exit_code": 0,
+      "status": "PASS",
+      "wall_seconds_observed": 0.613,
+      "log": "logs/17_verified_cli_help.txt"
+    },
+    {
+      "name": "final_input_audit",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "dacon_stacking",
+        "audit",
+        "--input-root",
+        "/mnt/data/stacking_input",
+        "--out",
+        "artifacts/audit"
+      ],
+      "cwd": "/mnt/data/DACON_Stacking_Return",
+      "env_overrides": {
+        "PYTHONPATH": "/mnt/data/DACON_Stacking_Return/src",
+        "STACKING_INPUT_ROOT": "/mnt/data/stacking_input",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "exit_code": 0,
+      "status": "PASS",
+      "wall_seconds_observed": 4.202,
+      "log": "logs/18_verified_input_audit.txt"
+    },
+    {
+      "name": "stage_runtime_local_copy",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "dacon_stacking",
+        "stage-runtime",
+        "--source-root",
+        "/mnt/data/stacking_stage_cpu_check",
+        "--return-root",
+        "/mnt/data/DACON_Stacking_Return"
+      ],
+      "cwd": "/mnt/data/DACON_Stacking_Return",
+      "env_overrides": {
+        "PYTHONPATH": "/mnt/data/DACON_Stacking_Return/src",
+        "STACKING_INPUT_ROOT": "/mnt/data/stacking_input",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "exit_code": 0,
+      "status": "PASS",
+      "wall_seconds_observed": 0.587,
+      "log": "logs/19_verified_stage_runtime.txt"
+    },
+    {
+      "name": "final_synthetic_six_system_smoke",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "dacon_stacking",
+        "smoke",
+        "--out",
+        "artifacts/final_synthetic_wiring"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "wall_seconds_observed": 4.306,
+      "log": "logs/20_verified_smoke.txt"
+    }
+  ],
+  "executed_assertions": [
+    "133 input file hashes and sizes match the supplied manifest",
+    "10 real NPZ caches + six real current heads recomputed on CPU; old GPU diagnostic absolute tolerance 0.002",
+    "Both 1426-row diagnostic CSVs exactly reproduce original max formula; unknown/presence masks retained; total score null",
+    "Current numerical AST definitions and original scorer bytes match snapshot; no reference/legacy import",
+    "Actual-overlap alignment handles different hop grids and excludes invalid padding; uncovered time fails",
+    "Feature allowlist/order/extra columns/nonfinite/missing measurements are refused",
+    "Transitive two-parent bridge across dev/OOD refused; base training/selection exposure and registry matches refused",
+    "Explicit all-parent exposure review and File/component label consistency enforced",
+    "Train-only LR preprocessing; XGB internal stopping groups and meta inner/outer training groups traced and checked",
+    "Same synthetic outer split and four unchanged outputs across F0/F1 LR/ET/XGB systems",
+    "XGBoost JSON save/reload equality and singleton/permutation/subset inference equality",
+    "Extended cache identity/hash rejects wrong identity and modified NPZ; OOD without production lock refused",
+    "Paired connected-parent bootstrap skips one-class resamples and records counts",
+    "Original Engine vs patched disabled/enabled with synthetic stub encoders; real heads but NOT real GPU encoder parity",
+    "Local disposable source copy patch/manifest staging executed; missing assets retained as not deployable"
+  ],
+  "tolerances": {
+    "cached_cpu_vs_provided_historical_gpu_reference": 0.002,
+    "observed_max_reference_difference": 0.0012562870979309082,
+    "xgb_json_roundtrip_max_abs_difference": 0.0,
+    "CSV_baseline_max_formula_max_abs_difference": 0.0
+  },
+  "not_run": [
+    {
+      "item": "LR/ExtraTrees skops serialization/reload",
+      "reason": "skops missing; pip and direct package download attempts failed; no pickle fallback"
+    },
+    {
+      "item": "new independent meta-dev/OOD collection and real meta training/selection",
+      "reason": "No new raw audio or original provenance supplied/acquired"
+    },
+    {
+      "item": "complete production lock -> new OOD end-to-end run",
+      "reason": "No eligible new data and no selected real candidate; guard/unit paths only tested"
+    },
+    {
+      "item": "actual GPU extraction/F2/F2R/native parity",
+      "reason": "CPU-only runtime, large frozen encoder assets/raw audio unavailable"
+    },
+    {
+      "item": "L4/VRAM/latency/offline packaging/official submission score",
+      "reason": "No hardware instance, upload, inference or official evaluation launched"
+    },
+    {
+      "item": "base-head retraining nested cross-fitting alternative",
+      "reason": "Design only, separate from frozen-expert main implementation"
+    },
+    {
+      "item": "macOS/Python3.11/L4 dependency compatibility and skops 0.13.0 compatibility",
+      "reason": "Not installed/tested on these target environments"
+    },
+    {
+      "item": "independent second-agent code review",
+      "reason": "Not dispatched in this session; Codex review checklist provided"
+    }
+  ],
+  "failures_retained": [
+    {
+      "item": "initial test-first red runs",
+      "logs": [
+        "logs/01_tests_before_implementation.txt",
+        "logs/04_guards_before_implementation.txt",
+        "logs/06_integration_before_gpu_demo.txt",
+        "logs/08_manifest_scope_red.txt"
+      ],
+      "resolution": "corresponding implementations added; final suite passes"
+    },
+    {
+      "item": "skops installation",
+      "log": "logs/02_install_skops.txt",
+      "resolution": "UNRESOLVED; safe serialization code present, execution NOT_RUN"
+    }
+  ],
+  "performance_claim": "NONE. Synthetic results are wiring only. Old val/test are diagnostic, not independent evaluation.",
+  "remote_actions": {
+    "work_tasks_created": false,
+    "github_accessed": false,
+    "vessl_accessed": false,
+    "gpu_instances_created": false,
+    "uploads_or_submissions": false
+  }
+}

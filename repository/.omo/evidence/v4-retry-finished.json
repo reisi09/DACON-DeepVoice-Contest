@@ -1,0 +1,1038 @@
+{
+  "actual_gpu_metrics": "measured_in_this_run",
+  "completed_unix": 1789288076.2300541,
+  "final": "G0",
+  "sealed_opened": false,
+  "selection": {
+    "candidate_order": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "candidates": {
+      "P1": {
+        "evaluation": {
+          "absolute": {
+            "counts": {
+              "file_eer": 210,
+              "music_eer": 170,
+              "music_presence_auc": 210,
+              "voice_eer": 100,
+              "voice_presence_auc": 120
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "music_eer": 1.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.47619047619047616,
+              "voice_presence_auc": 0.5714285714285714
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "metrics": {
+              "file_eer": 0.34285714285714286,
+              "music_eer": 0.3414285714285714,
+              "music_presence_auc": 0.9954411764705883,
+              "voice_eer": 0.15000000000000002,
+              "voice_presence_auc": null
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 110",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+            },
+            "score": null,
+            "unknown_counts": {
+              "file_eer": 0,
+              "music_eer": 0,
+              "music_presence_auc": 0,
+              "voice_eer": 110,
+              "voice_presence_auc": 90
+            }
+          },
+          "controlled": {
+            "mixture": {
+              "D": 0.11625000000000003,
+              "G0": {
+                "file": {
+                  "auc": 0.47,
+                  "eer": 0.5583333333333333,
+                  "n": 80,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.404375,
+                  "eer": 0.6,
+                  "n": 80,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.6033333333333333,
+                  "eer": 0.44999999999999996,
+                  "n": 80,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.694375,
+                  "eer": 0.35,
+                  "n": 80,
+                  "unknown": 0
+                }
+              }
+            },
+            "speech": {
+              "D": null,
+              "G0": {
+                "file": {
+                  "auc": 1.0,
+                  "eer": 0.0,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": null,
+                  "eer": null,
+                  "n": 0,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 1.0,
+                  "eer": 0.0,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": null,
+                  "eer": null,
+                  "n": 0,
+                  "unknown": 0
+                }
+              }
+            },
+            "splice": {
+              "D": 0.0,
+              "G0": {
+                "file": {
+                  "auc": 0.67,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.65,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.59,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.61,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "music": {
+            "music_ood": {
+              "D": -0.04499999999999999,
+              "G0": {
+                "file": {
+                  "auc": 0.42,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.58,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                }
+              },
+              "bootstrap": {
+                "class_group_support": {
+                  "0": 10,
+                  "1": 10
+                },
+                "lineage_components": 10,
+                "p10_delta": -0.09000000000000001,
+                "resamples": 2000,
+                "seed": 20260913,
+                "valid_rate": 1.0,
+                "valid_resamples": 2000,
+                "win_rate": 0.4125
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.46,
+                  "eer": 0.5,
+                  "n": 20,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.52,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                }
+              }
+            },
+            "music_seen": {
+              "D": 0.1095,
+              "G0": {
+                "file": {
+                  "auc": 0.48666666666666664,
+                  "eer": 0.5,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.5666666666666667,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              },
+              "bootstrap": {
+                "class_group_support": {
+                  "0": 10,
+                  "1": 10
+                },
+                "lineage_components": 10,
+                "p10_delta": 0.002999999999999999,
+                "resamples": 2000,
+                "seed": 20260913,
+                "valid_rate": 1.0,
+                "valid_resamples": 2000,
+                "win_rate": 0.9075
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.6833333333333333,
+                  "eer": 0.31666666666666665,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.74,
+                  "eer": 0.30000000000000004,
+                  "n": 40,
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "music_auc_tiebreak": 0.52,
+          "rank_score": -0.04499999999999999,
+          "split": "dev"
+        },
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": false,
+          "ood_music_eer": true,
+          "passed": false,
+          "resource": true,
+          "seen_bootstrap_p10": true,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": true,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": true,
+          "seen_music_auc": true,
+          "seen_music_eer": true,
+          "speech_file_eer": true
+        },
+        "projected_refit_seconds": 78.24739620942823,
+        "runtime_seconds": 67.7885858249997,
+        "status": "completed"
+      },
+      "P2": {
+        "evaluation": {
+          "absolute": {
+            "counts": {
+              "file_eer": 210,
+              "music_eer": 170,
+              "music_presence_auc": 210,
+              "voice_eer": 100,
+              "voice_presence_auc": 120
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "music_eer": 1.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.47619047619047616,
+              "voice_presence_auc": 0.5714285714285714
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "metrics": {
+              "file_eer": 0.28928571428571426,
+              "music_eer": 0.3707142857142857,
+              "music_presence_auc": 0.9954411764705883,
+              "voice_eer": 0.15000000000000002,
+              "voice_presence_auc": null
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 110",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+            },
+            "score": null,
+            "unknown_counts": {
+              "file_eer": 0,
+              "music_eer": 0,
+              "music_presence_auc": 0,
+              "voice_eer": 110,
+              "voice_presence_auc": 90
+            }
+          },
+          "controlled": {
+            "mixture": {
+              "D": 0.10275000000000002,
+              "G0": {
+                "file": {
+                  "auc": 0.47,
+                  "eer": 0.5583333333333333,
+                  "n": 80,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.404375,
+                  "eer": 0.6,
+                  "n": 80,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.6208333333333333,
+                  "eer": 0.44999999999999996,
+                  "n": 80,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.61,
+                  "eer": 0.4,
+                  "n": 80,
+                  "unknown": 0
+                }
+              }
+            },
+            "speech": {
+              "D": null,
+              "G0": {
+                "file": {
+                  "auc": 1.0,
+                  "eer": 0.0,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": null,
+                  "eer": null,
+                  "n": 0,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 1.0,
+                  "eer": 0.0,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": null,
+                  "eer": null,
+                  "n": 0,
+                  "unknown": 0
+                }
+              }
+            },
+            "splice": {
+              "D": 0.0,
+              "G0": {
+                "file": {
+                  "auc": 0.67,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.65,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.6,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.58,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "music": {
+            "music_ood": {
+              "D": -0.04499999999999999,
+              "G0": {
+                "file": {
+                  "auc": 0.42,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.58,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                }
+              },
+              "bootstrap": {
+                "class_group_support": {
+                  "0": 10,
+                  "1": 10
+                },
+                "lineage_components": 10,
+                "p10_delta": -0.10799999999999998,
+                "resamples": 2000,
+                "seed": 20260913,
+                "valid_rate": 1.0,
+                "valid_resamples": 2000,
+                "win_rate": 0.5025
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.48,
+                  "eer": 0.5,
+                  "n": 20,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.61,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                }
+              }
+            },
+            "music_seen": {
+              "D": 0.17700000000000002,
+              "G0": {
+                "file": {
+                  "auc": 0.48666666666666664,
+                  "eer": 0.5,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.5666666666666667,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              },
+              "bootstrap": {
+                "class_group_support": {
+                  "0": 10,
+                  "1": 10
+                },
+                "lineage_components": 10,
+                "p10_delta": 0.09000000000000002,
+                "resamples": 2000,
+                "seed": 20260913,
+                "valid_rate": 1.0,
+                "valid_resamples": 2000,
+                "win_rate": 0.998
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.8333333333333334,
+                  "eer": 0.21666666666666665,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.89,
+                  "eer": 0.21666666666666665,
+                  "n": 40,
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "music_auc_tiebreak": 0.61,
+          "rank_score": -0.04499999999999999,
+          "split": "dev"
+        },
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": true,
+          "ood_music_eer": true,
+          "passed": false,
+          "resource": false,
+          "seen_bootstrap_p10": true,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": true,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": true,
+          "seen_music_auc": true,
+          "seen_music_eer": true,
+          "speech_file_eer": true
+        },
+        "projected_refit_seconds": 460.90461586448555,
+        "runtime_seconds": 398.31263099399985,
+        "status": "completed"
+      },
+      "P3": {
+        "evaluation": {
+          "absolute": {
+            "counts": {
+              "file_eer": 210,
+              "music_eer": 170,
+              "music_presence_auc": 210,
+              "voice_eer": 100,
+              "voice_presence_auc": 120
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "music_eer": 1.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.47619047619047616,
+              "voice_presence_auc": 0.5714285714285714
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "metrics": {
+              "file_eer": 0.35357142857142854,
+              "music_eer": 0.35857142857142854,
+              "music_presence_auc": 0.9954411764705883,
+              "voice_eer": 0.15000000000000002,
+              "voice_presence_auc": null
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 110",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+            },
+            "score": null,
+            "unknown_counts": {
+              "file_eer": 0,
+              "music_eer": 0,
+              "music_presence_auc": 0,
+              "voice_eer": 110,
+              "voice_presence_auc": 90
+            }
+          },
+          "controlled": {
+            "mixture": {
+              "D": 0.12975000000000003,
+              "G0": {
+                "file": {
+                  "auc": 0.47,
+                  "eer": 0.5583333333333333,
+                  "n": 80,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.404375,
+                  "eer": 0.6,
+                  "n": 80,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.5983333333333333,
+                  "eer": 0.44999999999999996,
+                  "n": 80,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.700625,
+                  "eer": 0.30000000000000004,
+                  "n": 80,
+                  "unknown": 0
+                }
+              }
+            },
+            "speech": {
+              "D": null,
+              "G0": {
+                "file": {
+                  "auc": 1.0,
+                  "eer": 0.0,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": null,
+                  "eer": null,
+                  "n": 0,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 1.0,
+                  "eer": 0.0,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": null,
+                  "eer": null,
+                  "n": 0,
+                  "unknown": 0
+                }
+              }
+            },
+            "splice": {
+              "D": -0.04499999999999999,
+              "G0": {
+                "file": {
+                  "auc": 0.67,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.65,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.63,
+                  "eer": 0.5,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.65,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "music": {
+            "music_ood": {
+              "D": -0.11699999999999998,
+              "G0": {
+                "file": {
+                  "auc": 0.42,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.58,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                }
+              },
+              "bootstrap": {
+                "class_group_support": {
+                  "0": 10,
+                  "1": 10
+                },
+                "lineage_components": 10,
+                "p10_delta": -0.15749999999999997,
+                "resamples": 2000,
+                "seed": 20260913,
+                "valid_rate": 1.0,
+                "valid_resamples": 2000,
+                "win_rate": 0.248
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.42,
+                  "eer": 0.6,
+                  "n": 20,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.45999999999999996,
+                  "eer": 0.5,
+                  "n": 20,
+                  "unknown": 0
+                }
+              }
+            },
+            "music_seen": {
+              "D": 0.04499999999999999,
+              "G0": {
+                "file": {
+                  "auc": 0.48666666666666664,
+                  "eer": 0.5,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.5666666666666667,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              },
+              "bootstrap": {
+                "class_group_support": {
+                  "0": 10,
+                  "1": 10
+                },
+                "lineage_components": 10,
+                "p10_delta": -0.03749999999999999,
+                "resamples": 2000,
+                "seed": 20260913,
+                "valid_rate": 1.0,
+                "valid_resamples": 2000,
+                "win_rate": 0.7175
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.6366666666666666,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.68,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "music_auc_tiebreak": 0.45999999999999996,
+          "rank_score": -0.11699999999999998,
+          "split": "dev"
+        },
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": false,
+          "ood_music_eer": false,
+          "passed": false,
+          "resource": true,
+          "seen_bootstrap_p10": false,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": false,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": true,
+          "seen_music_auc": true,
+          "seen_music_eer": true,
+          "speech_file_eer": true
+        },
+        "projected_refit_seconds": 234.14728512776006,
+        "runtime_seconds": 202.85037077900006,
+        "status": "completed"
+      },
+      "P4": {
+        "evaluation": {
+          "absolute": {
+            "counts": {
+              "file_eer": 210,
+              "music_eer": 170,
+              "music_presence_auc": 210,
+              "voice_eer": 100,
+              "voice_presence_auc": 120
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "music_eer": 1.0,
+              "music_presence_auc": 1.0,
+              "voice_eer": 0.47619047619047616,
+              "voice_presence_auc": 0.5714285714285714
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "metrics": {
+              "file_eer": 0.3678571428571429,
+              "music_eer": 0.4464285714285714,
+              "music_presence_auc": 0.9954411764705883,
+              "voice_eer": 0.15000000000000002,
+              "voice_presence_auc": null
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 110",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+            },
+            "score": null,
+            "unknown_counts": {
+              "file_eer": 0,
+              "music_eer": 0,
+              "music_presence_auc": 0,
+              "voice_eer": 110,
+              "voice_presence_auc": 90
+            }
+          },
+          "controlled": {
+            "mixture": {
+              "D": 0.07050000000000003,
+              "G0": {
+                "file": {
+                  "auc": 0.47,
+                  "eer": 0.5583333333333333,
+                  "n": 80,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.404375,
+                  "eer": 0.6,
+                  "n": 80,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.5708333333333333,
+                  "eer": 0.49166666666666664,
+                  "n": 80,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.599375,
+                  "eer": 0.44999999999999996,
+                  "n": 80,
+                  "unknown": 0
+                }
+              }
+            },
+            "speech": {
+              "D": null,
+              "G0": {
+                "file": {
+                  "auc": 1.0,
+                  "eer": 0.0,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": null,
+                  "eer": null,
+                  "n": 0,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 1.0,
+                  "eer": 0.0,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": null,
+                  "eer": null,
+                  "n": 0,
+                  "unknown": 0
+                }
+              }
+            },
+            "splice": {
+              "D": -0.07199999999999998,
+              "G0": {
+                "file": {
+                  "auc": 0.67,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.65,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.53,
+                  "eer": 0.5,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.58,
+                  "eer": 0.5,
+                  "n": 40,
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "music": {
+            "music_ood": {
+              "D": -0.04499999999999999,
+              "G0": {
+                "file": {
+                  "auc": 0.42,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.58,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                }
+              },
+              "bootstrap": {
+                "class_group_support": {
+                  "0": 10,
+                  "1": 10
+                },
+                "lineage_components": 10,
+                "p10_delta": -0.16200000000000006,
+                "resamples": 2000,
+                "seed": 20260913,
+                "valid_rate": 1.0,
+                "valid_resamples": 2000,
+                "win_rate": 0.192
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.38,
+                  "eer": 0.5,
+                  "n": 20,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.48,
+                  "eer": 0.4,
+                  "n": 20,
+                  "unknown": 0
+                }
+              }
+            },
+            "music_seen": {
+              "D": 0.1095,
+              "G0": {
+                "file": {
+                  "auc": 0.48666666666666664,
+                  "eer": 0.5,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.5666666666666667,
+                  "eer": 0.4,
+                  "n": 40,
+                  "unknown": 0
+                }
+              },
+              "bootstrap": {
+                "class_group_support": {
+                  "0": 10,
+                  "1": 10
+                },
+                "lineage_components": 10,
+                "p10_delta": -0.0255,
+                "resamples": 2000,
+                "seed": 20260913,
+                "valid_rate": 1.0,
+                "valid_resamples": 2000,
+                "win_rate": 0.847
+              },
+              "candidate": {
+                "file": {
+                  "auc": 0.6499999999999999,
+                  "eer": 0.31666666666666665,
+                  "n": 40,
+                  "unknown": 0
+                },
+                "music": {
+                  "auc": 0.7133333333333333,
+                  "eer": 0.30000000000000004,
+                  "n": 40,
+                  "unknown": 0
+                }
+              }
+            }
+          },
+          "music_auc_tiebreak": 0.48,
+          "rank_score": -0.04499999999999999,
+          "split": "dev"
+        },
+        "gates": {
+          "mixture_file_eer": true,
+          "ood_bootstrap_p10": false,
+          "ood_bootstrap_valid": true,
+          "ood_bootstrap_win": false,
+          "ood_class_support": true,
+          "ood_file_eer": false,
+          "ood_gain": false,
+          "ood_music_auc": false,
+          "ood_music_eer": true,
+          "passed": false,
+          "resource": true,
+          "seen_bootstrap_p10": false,
+          "seen_bootstrap_valid": true,
+          "seen_bootstrap_win": true,
+          "seen_class_support": true,
+          "seen_file_eer": true,
+          "seen_gain": true,
+          "seen_music_auc": true,
+          "seen_music_eer": true,
+          "speech_file_eer": true
+        },
+        "projected_refit_seconds": 341.4875586741487,
+        "runtime_seconds": 228.44169619800005,
+        "status": "completed"
+      }
+    },
+    "reason": "no_candidate_passed",
+    "selected": "G0"
+  }
+}

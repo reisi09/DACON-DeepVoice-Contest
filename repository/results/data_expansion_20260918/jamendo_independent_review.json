@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "reviewer": "/root/acquire_jamendo/jamendo_risk_review",
+  "timestamp_utc": "2026-09-18T05:12:44.315800+00:00",
+  "material_findings": [],
+  "checked": {
+    "unique_track_source_pcm_hashes": 854,
+    "new_tracks": 534,
+    "reused_pilot_tracks": 320,
+    "pilot_ids_and_source_hashes_match": true,
+    "technical_training_candidates": 755,
+    "new_technical_training_candidates": 509,
+    "reserved_eval_artists_excluded": 27,
+    "reserved_eval_tracks_excluded": 66,
+    "voice_fields_unknown_rows": 854,
+    "exact_license_urls_allowed": 45,
+    "original_bytes": 4803175390,
+    "metadata_bytes": 473299278,
+    "csv_hash_and_file_sizes_match": true,
+    "partial_files": 0,
+    "active_jamendo_download_processes": 0
+  },
+  "limits": [
+    "Original audio hashes were verified by the finalizer and not recomputed a second time by this reviewer",
+    "Technical checks do not establish perceptual quality or human authorship",
+    "Re-encoded duplicates and aliases remain unresolved",
+    "Process check covers Jamendo only; other-source acquisition processes were active at review time"
+  ]
+}

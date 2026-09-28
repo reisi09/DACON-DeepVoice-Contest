@@ -1,0 +1,35 @@
+{
+  "archive_bytes": 344834329,
+  "base_asset_bytes": 346404948,
+  "base_asset_sha256": "ae0c1e2ad4e1381d851fa9bf298ba13ebc9c5a914cdee2dbe427a6583869924d",
+  "cleanup": {
+    "method": "macOS Trash",
+    "moved_after_measurement": [
+      "_workspace/v2_preflight_real_ast/reference/model/ast",
+      "_workspace/v2_preflight_real_ast/fresh/model/ast",
+      "_workspace/v2_preflight_real_ast/ast_submission.zip"
+    ]
+  },
+  "clip_seconds": 4,
+  "cpu_threads": 4,
+  "derived_sample_rates": [
+    16000,
+    44100
+  ],
+  "exported_checkpoint_bytes": 344816720,
+  "fresh_subprocess_seconds": 3.66924887499772,
+  "inference_is_model_quality_measurement": false,
+  "max_probability_delta": 0.0,
+  "network_blocked": true,
+  "scenario": "actual_pinned_ast_export_fresh_offline_replay",
+  "source_audio": "_workspace/validation_sources/originals/original/en/piratesofersatz_08_leinster_64kb_f000058.wav",
+  "source_audio_sha256": "0dc7a61e241647c6c2dac0849a5e7edc40b23f8964e560cd9bd8a3028746ce13",
+  "submission_ids": [
+    "resampled_44k",
+    "real_16k"
+  ],
+  "versions": {
+    "torch": "2.7.1",
+    "transformers": "4.57.6"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "epsilon": 1e-05,
+  "feature_names": [
+    "logit_voice_evidence",
+    "logit_music_evidence",
+    "logit_voice_fake",
+    "logit_music_fake",
+    "logit_voice_present",
+    "logit_music_present",
+    "evidence_gap",
+    "max_window_voice_evidence",
+    "max_window_music_evidence",
+    "max_window_file_evidence",
+    "top2mean_window_file_evidence",
+    "mean_joint_presence"
+  ],
+  "fit": {
+    "converged": true,
+    "eligible_rows": 1469,
+    "final_loss": 0.36991754635898466,
+    "fixed_endpoint_rows": 0,
+    "initial_loss": 0.5025999677017295,
+    "irreducible_endpoint_contradictions": 0,
+    "rows": 1469,
+    "weighting": {
+      "class_mass": {
+        "0.0": 0.5,
+        "1.0": 0.5
+      },
+      "connected_groups": {
+        "0.0": 97,
+        "1.0": 79
+      },
+      "scheme": "equal FILE class and connected-group mass"
+    }
+  },
+  "intercept": 0.10150460931825131,
+  "l2": 0.01,
+  "mean": [
+    -1.3664527115549396,
+    -0.7834537387111478,
+    3.0820501514122447,
+    1.2340075425043044,
+    -0.6894685517860549,
+    0.32882462163910814,
+    0.46044944488547185,
+    0.2794071710521414,
+    0.48789899986068724,
+    0.6316461013193552,
+    0.6086281763947758,
+    0.009620281284587981
+  ],
+  "oof_sha256": "83ee27c3007dc82f6baec880c09d85f17b41e9fa33d2df6f30c04b271aaaa048",
+  "scale": [
+    1.783224718885334,
+    2.4513119853944643,
+    2.8291789363405035,
+    1.6931306228209175,
+    1.9787658157087604,
+    2.5985911514138467,
+    0.29162697617941646,
+    0.2806493346721411,
+    0.37159086966007465,
+    0.28701161933094543,
+    0.2948413622996551,
+    0.0535124767396609
+  ],
+  "schema_version": 1,
+  "upstream_family_identity": "5f280dfc76a318d0d5161bc90178494590a2adc01e61580824e5f58ce4f4946c",
+  "upstream_identity": {
+    "checkpoint_sha256": "9e41dd5765775f93845ef1c5f5ca34eab1e2b1d40192a4417d0c1975e8f417ea",
+    "model_recipe_identity": "455913ae10c3124981846600c29d59781009a5d18e853f807bd962ec8ae12c8e",
+    "records_identity": "6123ae68193cedcb4f1733538e1f77dd0c788f5999b87220b61f8cfd5afdc744",
+    "seed_checkpoint_sha256": [
+      "9e41dd5765775f93845ef1c5f5ca34eab1e2b1d40192a4417d0c1975e8f417ea",
+      "fd8686a2f19e918679b2b0760e3b7d6eb635d3bc37a1923ba8439485c9560fd9",
+      "7edebbab04368fe1713ae1b09ee9649030d645745c3510f47568272199ba4a07"
+    ],
+    "seed_model_recipe_identity": [
+      "455913ae10c3124981846600c29d59781009a5d18e853f807bd962ec8ae12c8e",
+      "6c935c4b8a6c48cbf64dd68fa33973babf941575e8b8352200a9ddea5e7d2cb8",
+      "bd952577f05be2a4ed2f70a606ef9f6090dddd2070cef7bf575b3a7a4e679d7c"
+    ],
+    "seed_upstream_family_identity": [
+      "909a9f3aeb44882dcf3fcfba3c33b92f107a4b2898459f39be7d97a8be27c519",
+      "78fde7f6f3ddea0cd020e2148081257bc4b6f3cd8eafc1e417667e2e6bcbd5d9",
+      "c97e005017613635d9902c64475c5161a3fadfefa88ac19b589c80cb7f9fa9b0"
+    ],
+    "source_sha256": {
+      "redesign_checkpoint.py": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+      "redesign_fit.py": "fa8e709e12109990f16ec691e4268e91bc5552ac746e645a094bef166ed26906",
+      "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+      "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+      "redesign_predictions.py": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+      "redesign_train.py": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497"
+    },
+    "training_manifest_sha256": "c564e3a55d4651e0d534323d4b24619396233adbc53b81712b69c07aaa0f0ddc",
+    "upstream_family_identity": "5f280dfc76a318d0d5161bc90178494590a2adc01e61580824e5f58ce4f4946c",
+    "upstream_family_payload": {
+      "seed_upstream_family_identity": [
+        "909a9f3aeb44882dcf3fcfba3c33b92f107a4b2898459f39be7d97a8be27c519",
+        "78fde7f6f3ddea0cd020e2148081257bc4b6f3cd8eafc1e417667e2e6bcbd5d9",
+        "c97e005017613635d9902c64475c5161a3fadfefa88ac19b589c80cb7f9fa9b0"
+      ]
+    }
+  },
+  "upstream_identity_sha256": "773065da5577dfc387865bf1f0ff496998a0b5ef6c077c4fe973fae9af4f901a",
+  "weights": [
+    -0.5642009435265993,
+    -0.1792174664597615,
+    0.9532197949430996,
+    0.7680172012156578,
+    -0.6404889415355226,
+    -0.6827533344117022,
+    -0.0737303178452332,
+    0.12600392574337577,
+    -0.4369809941200107,
+    0.3210459261249315,
+    0.0854976001153159,
+    0.0021708628540554028
+  ]
+}

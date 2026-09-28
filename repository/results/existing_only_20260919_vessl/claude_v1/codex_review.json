@@ -1,0 +1,36 @@
+{
+  "artifact_sha256": "f2a69ecf33c9ff19ce06cb2b0d38a1593b6b777a911690b3d2c7219e391e3954",
+  "approved": false,
+  "gpu_executed": false,
+  "author": "Claude Opus 5 Extra",
+  "reviewer": "Codex",
+  "actual_manifest_check": "actual_manifest_check.json",
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "P1",
+      "file": "training.py",
+      "defect": "Resume lacks RNG state, so dropout optimization diverges from uninterrupted training."
+    },
+    {
+      "id": "R2",
+      "severity": "P1",
+      "file": "features.py/parity.py/orchestrator.py",
+      "defect": "NaN mismatch is classified within_tolerance; parity mismatch does not prevent complete handoff.",
+      "reproduction": "window_truth [NaN,1] vs [0,1] -> max_abs 0.0 -> within_tolerance"
+    },
+    {
+      "id": "R3",
+      "severity": "P1",
+      "file": "orchestrator.py/common.py",
+      "defect": "Duplicate controller can overwrite state and terminate a live legitimate same-job child."
+    },
+    {
+      "id": "R4",
+      "severity": "P2",
+      "file": "orchestrator.py/evaluation.py/staging.py",
+      "defect": "Pilot/locked-result resume insufficiently binds current inputs/config/code; missing extracted asset behind marker fails rather than repairs."
+    }
+  ],
+  "disposition": "Sent concrete fix request to existing author chat; awaiting v2; original v1 retained."
+}

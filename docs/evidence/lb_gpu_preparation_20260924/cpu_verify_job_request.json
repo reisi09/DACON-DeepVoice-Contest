@@ -1,0 +1,38 @@
+{
+  "status": "prepared_not_created",
+  "requires_new_paid_cpu_authorization": true,
+  "prior_job": "job-aj1ufwbahfpk",
+  "organization": "qwdkw",
+  "resource": "3 CPU,13 GiB RAM,no GPU",
+  "credit_per_hour": 0.3,
+  "command_timeout_seconds": 600,
+  "termination_grace_seconds": 30,
+  "script_sha256": "1ab256645a65954ce2c3758e7e082b9f1e2b522468fbe27e29f18976a72e8a7e",
+  "prepared_manifest_sha256": "9c30f8294a7c2e1109fe94c336f83cfbf943016403bd7f240bc5a7d40f0a974a",
+  "effects": [
+    "Verify existing prepared code and input hashes",
+    "Hash all43516bank audio rows and25pinnedassets; do not recopy data/weights",
+    "Require4GiB disk reserve and write3fresh attempt receipts to same project objectvolume prefix"
+  ],
+  "argv": [
+    "/Users/choiwuseck/.local/bin/vesslctl",
+    "--org",
+    "qwdkw",
+    "job",
+    "create",
+    "-n",
+    "lb-storage-reverify-20260924",
+    "-r",
+    "resourcespec-kmswqig4b12w",
+    "-i",
+    "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+    "--cluster-volume",
+    "clustervol-qgze68bffy6l:/root",
+    "--object-volume",
+    "objvol-a5gxdg7er70i:/shared",
+    "--working-dir",
+    "/tmp",
+    "--cmd",
+    "printf '%s\\n' '1ab256645a65954ce2c3758e7e082b9f1e2b522468fbe27e29f18976a72e8a7e  /shared/lb-improvement-20260924/gpu-preparation-v1/retry/verify_gpu_cpu.sh' | sha256sum -c - && timeout --kill-after=30s 600s bash -c 'set -euo pipefail\nbash /shared/lb-improvement-20260924/gpu-preparation-v1/retry/verify_gpu_cpu.sh /root/lb-improvement-20260924/prepared-v1 /root/data_v4/out /root/lb-improvement-20260924/assets /root/lb-improvement-20260924/cpu-verify-attempt-02 9c30f8294a7c2e1109fe94c336f83cfbf943016403bd7f240bc5a7d40f0a974a\nmkdir -p /shared/lb-improvement-20260924/gpu-preparation-v1/retry/cpu-reports-attempt-02\ncp /root/lb-improvement-20260924/cpu-verify-attempt-02/environment.json /root/lb-improvement-20260924/cpu-verify-attempt-02/preflight.json /root/lb-improvement-20260924/cpu-verify-attempt-02/readiness.json /shared/lb-improvement-20260924/gpu-preparation-v1/retry/cpu-reports-attempt-02/'"
+  ]
+}

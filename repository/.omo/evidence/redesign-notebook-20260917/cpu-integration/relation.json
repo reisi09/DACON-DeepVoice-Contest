@@ -1,0 +1,98 @@
+{
+  "epsilon": 1e-05,
+  "feature_names": [
+    "logit_voice_evidence",
+    "logit_music_evidence",
+    "logit_voice_fake",
+    "logit_music_fake",
+    "logit_voice_present",
+    "logit_music_present",
+    "evidence_gap",
+    "max_window_voice_evidence",
+    "max_window_music_evidence",
+    "max_window_file_evidence",
+    "top2mean_window_file_evidence",
+    "mean_joint_presence"
+  ],
+  "fit": {
+    "converged": true,
+    "eligible_rows": 40,
+    "final_loss": 0.020471028224211173,
+    "fixed_endpoint_rows": 0,
+    "initial_loss": 0.4675946191206197,
+    "irreducible_endpoint_contradictions": 0,
+    "rows": 40
+  },
+  "intercept": -0.149011794371049,
+  "l2": 0.01,
+  "mean": [
+    -0.3726957333010746,
+    -0.32071067609339365,
+    0.0,
+    -0.019021717197679817,
+    1.7346012423830834,
+    1.7346012423830834,
+    0.1756463284139093,
+    0.42500001192092896,
+    0.4409727206463557,
+    0.5224582687161987,
+    0.5180880325321034,
+    1.0
+  ],
+  "oof_sha256": "5ce4ab41e1373eadd3ae93036ed751c66ab0b134c54f294b221b7944bca8679c",
+  "scale": [
+    0.937225613416154,
+    0.15959530297751015,
+    1.0986122886681098,
+    0.1830371527261078,
+    8.881784197001252e-16,
+    8.881784197001252e-16,
+    0.01259679050396625,
+    0.21250000596046448,
+    0.03513267290560934,
+    0.11544140098020803,
+    0.11959127092861582,
+    1.0
+  ],
+  "schema_version": 1,
+  "upstream_family_identity": "3e3ab40265babfb874caa7b30cda1723d90d40297753a733e0fa87b135ca0f8b",
+  "upstream_identity": {
+    "checkpoint_sha256": "2af6d6e396927c31ceb5dda790ad17d81d8ac2e75872c9c9ef1a096642de7119",
+    "model_recipe_identity": "81096ca1428b002316e34229796fba637d9ae3a569bd281c3aff22d37b4bd97f",
+    "records_identity": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+    "source_sha256": {
+      "redesign_fit.py": "d58dcb66233358f4c7daf1f8bae3eb09dcb5456234bfb6b65b303fa437cf2265",
+      "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+      "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+      "redesign_train.py": "655fe589a0af464afcb1fb2c89b52dc9e42b3bea3a9af09f93eae652758423f1"
+    },
+    "training_manifest_sha256": "ad0e26ddbb5014c341c872b70b5fdc45d37b3bd08a4620c24a78987654fa66f7",
+    "upstream_family_identity": "3e3ab40265babfb874caa7b30cda1723d90d40297753a733e0fa87b135ca0f8b",
+    "upstream_family_payload": {
+      "model_recipe_identity": "81096ca1428b002316e34229796fba637d9ae3a569bd281c3aff22d37b4bd97f",
+      "records_identity": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+      "source_sha256": {
+        "redesign_fit.py": "d58dcb66233358f4c7daf1f8bae3eb09dcb5456234bfb6b65b303fa437cf2265",
+        "redesign_models.py": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+        "redesign_oof.py": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+        "redesign_train.py": "655fe589a0af464afcb1fb2c89b52dc9e42b3bea3a9af09f93eae652758423f1"
+      },
+      "training_manifest_sha256": "ad0e26ddbb5014c341c872b70b5fdc45d37b3bd08a4620c24a78987654fa66f7"
+    }
+  },
+  "upstream_identity_sha256": "c67551e6b73a43deab6c196ee612765c0d1ed2ebccf665df9546bfca050c9fca",
+  "weights": [
+    0.6363680236707454,
+    0.5184688076613245,
+    0.6363680236707453,
+    0.5196241046489061,
+    -8.102591413231149e-05,
+    -8.102591413231149e-05,
+    0.06761361164472665,
+    0.6363680236707453,
+    0.5395217707202711,
+    0.6161375367320128,
+    0.6221802379561061,
+    0.0
+  ]
+}

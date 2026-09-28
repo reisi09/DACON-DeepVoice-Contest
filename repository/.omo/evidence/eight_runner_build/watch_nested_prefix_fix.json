@@ -1,0 +1,33 @@
+{
+  "scenario": "actual CLI _read_state download with nested-prefix exclusion",
+  "invocation": "python3 integration snippet -> watch._read_state(run)",
+  "binary": "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/bin/vesslctl",
+  "cli_operations": [
+    "volume ls",
+    "volume download"
+  ],
+  "output_dir": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_runner_build/watch_nested_prefix_fix_download.Szb0Wl",
+  "downloaded_artifacts": [
+    "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_runner_build/watch_nested_prefix_fix_download.Szb0Wl/run_state.json",
+    "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_runner_build/watch_nested_prefix_fix_download.Szb0Wl/downloaded/run_state.json"
+  ],
+  "downloaded_run_state_sha256": "b2b2a2c439d58de8b6fd6729ef763daa4ad9e7005717a129e6961297959b7961",
+  "metadata_path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/workspace_run.json",
+  "workspace": "wsp-9683432r72m7",
+  "object_volume": "objvol-a5gxdg7er70i",
+  "object_prefix": "eight-h100-20260917/",
+  "nested_exclude": true,
+  "top_level_run_state_count": 1,
+  "canonical_download_files": [
+    "downloaded/run_state.json"
+  ],
+  "retry_or_wheel_files": [],
+  "state_status": "failed",
+  "state_archive_sha256": "9cd3a5f8db2098dbc914db311709db63b5f451a0a8b7b1f44a7ec8ba1c184a78",
+  "expected_failure_archive_sha256": "9cd3a5f8db2098dbc914db311709db63b5f451a0a8b7b1f44a7ec8ba1c184a78",
+  "failure_state_sha_matches": true,
+  "monitor_called": false,
+  "pause_called": false,
+  "wrapper_sha256": "ab5513271a1f826218364caac9472353f5d0b072d94dd3782e2a351fb5472a55",
+  "diff_stat": "1 insertion, 0 deletions"
+}

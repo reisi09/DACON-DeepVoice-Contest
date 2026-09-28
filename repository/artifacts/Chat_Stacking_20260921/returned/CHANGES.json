@@ -1,0 +1,451 @@
+{
+  "input_zip_sha256": "7adfb7b426c45b0efbb23de581ca1a5a073079d2110f4f4f84cdcf0fca2fc75a",
+  "input_manifest_sha256": "6d8d81c074c92981b8f6466c0517956e0fa99029f5ca75ea802c105687a01bfd",
+  "base_commit": "67b2bc61f6ce8a32cfdcf5d17837872f7c5b109c",
+  "remote_changes_made": false,
+  "modified_existing": [
+    {
+      "target": "submissions/Existing9504_MIL/source/model/runtime/full_bank_submission.py",
+      "input_path": "current/submission_source/model/runtime/full_bank_submission.py",
+      "input_sha256": "6349b3df9eb737d9c7139251afc8ea78cc28f4538d0731d157eee2df2d5d06ff",
+      "returned_sha256": "85007b08922c31a5ab11f4549a86775ddaa7db46f4bc0d128b467b475af8ebf3",
+      "full_modified_file": "patches/full_bank_submission.py",
+      "unified_diff": "patches/full_bank_submission.patch",
+      "reason": "Opt-in native telemetry; explicit production-lock File-only meta combiner; unchanged default max and four base outputs; receipt identifies combiner"
+    }
+  ],
+  "added": [
+    {
+      "returned_path": "DATA_CANDIDATES.csv",
+      "suggested_repo_path": "tools/stacking/DATA_CANDIDATES.csv",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "DATA_PLAN.md",
+      "suggested_repo_path": "tools/stacking/DATA_PLAN.md",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "DESIGN.md",
+      "suggested_repo_path": "tools/stacking/DESIGN.md",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "FEATURE_SPEC.csv",
+      "suggested_repo_path": "tools/stacking/FEATURE_SPEC.csv",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "IMPLEMENTATION_PLAN.md",
+      "suggested_repo_path": "tools/stacking/IMPLEMENTATION_PLAN.md",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "MISSING_ASSETS.json",
+      "suggested_repo_path": "tools/stacking/MISSING_ASSETS.json",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "REFERENCES.md",
+      "suggested_repo_path": "tools/stacking/REFERENCES.md",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "RETURN_REPORT.md",
+      "suggested_repo_path": "tools/stacking/RETURN_REPORT.md",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "RUNBOOK.md",
+      "suggested_repo_path": "tools/stacking/RUNBOOK.md",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "VERIFICATION.json",
+      "suggested_repo_path": "tools/stacking/VERIFICATION.json",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "artifacts/README.md",
+      "suggested_repo_path": "tools/stacking/artifacts/README.md",
+      "reason": "Inspectable diagnostic/synthetic execution evidence; no real trained meta model",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "artifacts/audit/fixture_replay.json",
+      "suggested_repo_path": "tools/stacking/artifacts/audit/fixture_replay.json",
+      "reason": "Inspectable diagnostic/synthetic execution evidence; no real trained meta model",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "artifacts/audit/input_audit.json",
+      "suggested_repo_path": "tools/stacking/artifacts/audit/input_audit.json",
+      "reason": "Inspectable diagnostic/synthetic execution evidence; no real trained meta model",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "artifacts/final_synthetic_wiring/serialization_results.json",
+      "suggested_repo_path": "tools/stacking/artifacts/final_synthetic_wiring/serialization_results.json",
+      "reason": "Inspectable diagnostic/synthetic execution evidence; no real trained meta model",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "artifacts/final_synthetic_wiring/synthetic_cv.json",
+      "suggested_repo_path": "tools/stacking/artifacts/final_synthetic_wiring/synthetic_cv.json",
+      "reason": "Inspectable diagnostic/synthetic execution evidence; no real trained meta model",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "artifacts/final_synthetic_wiring/synthetic_xgb/manifest.json",
+      "suggested_repo_path": "tools/stacking/artifacts/final_synthetic_wiring/synthetic_xgb/manifest.json",
+      "reason": "Inspectable diagnostic/synthetic execution evidence; no real trained meta model",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "artifacts/final_synthetic_wiring/synthetic_xgb/model.json",
+      "suggested_repo_path": "tools/stacking/artifacts/final_synthetic_wiring/synthetic_xgb/model.json",
+      "reason": "Inspectable diagnostic/synthetic execution evidence; no real trained meta model",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "configs/data_contract.json",
+      "suggested_repo_path": "tools/stacking/configs/data_contract.json",
+      "reason": "Pinned feature/data/split/grid/snapshot contract",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "configs/experiment.json",
+      "suggested_repo_path": "tools/stacking/configs/experiment.json",
+      "reason": "Pinned feature/data/split/grid/snapshot contract",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "configs/experiment_f2.json",
+      "suggested_repo_path": "tools/stacking/configs/experiment_f2.json",
+      "reason": "Pinned feature/data/split/grid/snapshot contract",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "configs/experiment_file_equal.json",
+      "suggested_repo_path": "tools/stacking/configs/experiment_file_equal.json",
+      "reason": "Pinned feature/data/split/grid/snapshot contract",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "configs/experiment_shortcut.json",
+      "suggested_repo_path": "tools/stacking/configs/experiment_shortcut.json",
+      "reason": "Pinned feature/data/split/grid/snapshot contract",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "configs/feature_allowlists.json",
+      "suggested_repo_path": "tools/stacking/configs/feature_allowlists.json",
+      "reason": "Pinned feature/data/split/grid/snapshot contract",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "configs/ood_reservations.example.json",
+      "suggested_repo_path": "tools/stacking/configs/ood_reservations.example.json",
+      "reason": "Pinned feature/data/split/grid/snapshot contract",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "configs/runtime_patch.json",
+      "suggested_repo_path": "tools/stacking/configs/runtime_patch.json",
+      "reason": "Pinned feature/data/split/grid/snapshot contract",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "configs/snapshot_symbols.json",
+      "suggested_repo_path": "tools/stacking/configs/snapshot_symbols.json",
+      "reason": "Pinned feature/data/split/grid/snapshot contract",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/01_tests_before_implementation.txt",
+      "suggested_repo_path": "tools/stacking/logs/01_tests_before_implementation.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/02_install_skops.txt",
+      "suggested_repo_path": "tools/stacking/logs/02_install_skops.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/03_replay_first_run.txt",
+      "suggested_repo_path": "tools/stacking/logs/03_replay_first_run.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/04_guards_before_implementation.txt",
+      "suggested_repo_path": "tools/stacking/logs/04_guards_before_implementation.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/05_first_full_tests.txt",
+      "suggested_repo_path": "tools/stacking/logs/05_first_full_tests.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/06_integration_before_gpu_demo.txt",
+      "suggested_repo_path": "tools/stacking/logs/06_integration_before_gpu_demo.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/07_gpu_wiring_and_six_systems.txt",
+      "suggested_repo_path": "tools/stacking/logs/07_gpu_wiring_and_six_systems.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/08_manifest_scope_red.txt",
+      "suggested_repo_path": "tools/stacking/logs/08_manifest_scope_red.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/09_parent_contract_green.txt",
+      "suggested_repo_path": "tools/stacking/logs/09_parent_contract_green.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/10_input_audit.txt",
+      "suggested_repo_path": "tools/stacking/logs/10_input_audit.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/11_synthetic_cpu_experiment.txt",
+      "suggested_repo_path": "tools/stacking/logs/11_synthetic_cpu_experiment.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/12_final_tests.txt",
+      "suggested_repo_path": "tools/stacking/logs/12_final_tests.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/13_compileall.txt",
+      "suggested_repo_path": "tools/stacking/logs/13_compileall.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/14_cli_help.txt",
+      "suggested_repo_path": "tools/stacking/logs/14_cli_help.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/15_verified_pytest.txt",
+      "suggested_repo_path": "tools/stacking/logs/15_verified_pytest.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/16_verified_compileall.txt",
+      "suggested_repo_path": "tools/stacking/logs/16_verified_compileall.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/17_verified_cli_help.txt",
+      "suggested_repo_path": "tools/stacking/logs/17_verified_cli_help.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/18_verified_input_audit.txt",
+      "suggested_repo_path": "tools/stacking/logs/18_verified_input_audit.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/19_verified_stage_runtime.txt",
+      "suggested_repo_path": "tools/stacking/logs/19_verified_stage_runtime.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/20_verified_smoke.txt",
+      "suggested_repo_path": "tools/stacking/logs/20_verified_smoke.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "logs/21_core_completeness.txt",
+      "suggested_repo_path": "tools/stacking/logs/21_core_completeness.txt",
+      "reason": "Actual same-session command output, including failures and verification limits",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "pyproject.toml",
+      "suggested_repo_path": "tools/stacking/pyproject.toml",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "requirements-cpu-verified.txt",
+      "suggested_repo_path": "tools/stacking/requirements-cpu-verified.txt",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "requirements-gpu-overlay.txt",
+      "suggested_repo_path": "tools/stacking/requirements-gpu-overlay.txt",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "requirements-serialization.txt",
+      "suggested_repo_path": "tools/stacking/requirements-serialization.txt",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "requirements-xgb.txt",
+      "suggested_repo_path": "tools/stacking/requirements-xgb.txt",
+      "reason": "Return contract documentation, dependency pins or verification evidence",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/__init__.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/__init__.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/__main__.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/__main__.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/_base_contract.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/_base_contract.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/_snapshot_math.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/_snapshot_math.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/_snapshot_scoring.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/_snapshot_scoring.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/audit.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/audit.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/common.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/common.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/demo.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/demo.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/evaluation.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/evaluation.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/features.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/features.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/gpu.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/gpu.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/models.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/models.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/provenance.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/provenance.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/stage.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/stage.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "src/dacon_stacking/workflow.py",
+      "suggested_repo_path": "tools/stacking/src/dacon_stacking/workflow.py",
+      "reason": "Isolated stacking implementation; CPU cache/model/evaluation and opt-in GPU wrapper, no large base-project refactor",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "tests/README.md",
+      "suggested_repo_path": "tools/stacking/tests/README.md",
+      "reason": "Named defect-prevention assertion or test scope documentation",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "tests/test_guards.py",
+      "suggested_repo_path": "tools/stacking/tests/test_guards.py",
+      "reason": "Named defect-prevention assertion or test scope documentation",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "tests/test_integration.py",
+      "suggested_repo_path": "tools/stacking/tests/test_integration.py",
+      "reason": "Named defect-prevention assertion or test scope documentation",
+      "input_sha256": null
+    },
+    {
+      "returned_path": "tests/test_replay.py",
+      "suggested_repo_path": "tools/stacking/tests/test_replay.py",
+      "reason": "Named defect-prevention assertion or test scope documentation",
+      "input_sha256": null
+    }
+  ],
+  "not_modified": [
+    "all four frozen encoder architectures and weights",
+    "six current base heads",
+    "original training pipeline sources",
+    "reference/legacy/*"
+  ]
+}

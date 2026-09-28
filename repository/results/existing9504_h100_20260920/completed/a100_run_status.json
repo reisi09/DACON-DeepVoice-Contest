@@ -1,0 +1,186 @@
+{
+  "controller": {
+    "attached_at": "2026-09-19T21:20:50+00:00",
+    "pid": 79,
+    "start_ticks": 1336054004
+  },
+  "created_at": "2026-09-19T15:12:03+00:00",
+  "handoff": {
+    "bytes": 6316973258,
+    "crc_and_member_sha256_verified": true,
+    "file": "/shared/existing-only-9504-h100-20260920/DACON_Existing9504_H100_Handoff.zip",
+    "local_copy": "/root/dacon_existing9504_h100_20260920/handoff/DACON_Existing9504_H100_Handoff.zip",
+    "manifest_member": "handoff_manifest.json",
+    "members": 136,
+    "publish_mode": "atomic_rename",
+    "published_at": "2026-09-19T21:45:12+00:00",
+    "sha256": "53a3236bbe201ce4ac2fd021800c4b891731c9eee5146fbf9733fae355460a7d",
+    "status": "complete"
+  },
+  "lock_publication": {
+    "bytes": 12741,
+    "mode": "atomic_rename",
+    "path": "/shared/existing-only-9504-h100-20260920/a100_run_evidence/candidate_lock.json",
+    "sha256": "bb50efd693f47c76cafe376c91e28f2fe1c9c29edf30455ca42b30022338097f"
+  },
+  "run_name": "DACON_Existing9504_H100",
+  "stages": {
+    "environment": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T15:59:30+00:00",
+          "seconds": 155.261742034927,
+          "status": "complete"
+        },
+        {
+          "finished_at": "2026-09-19T21:28:06+00:00",
+          "seconds": 70.33998893946409,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 225.6017309743911,
+      "finished_at": "2026-09-19T21:28:06+00:00",
+      "seconds": 70.33998893946409,
+      "started_at": "2026-09-19T21:26:56+00:00",
+      "status": "complete"
+    },
+    "features": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T21:31:28+00:00",
+          "seconds": 192.15002423338592,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 192.15002423338592,
+      "finished_at": "2026-09-19T21:31:28+00:00",
+      "last_report": "9504/9504 rows; ETA 0h00m00s (observed/pilot x1.02); peak VRAM 21.0GiB; last new_haim_sonicmaster_real_997278_mastered",
+      "seconds": 192.15002423338592,
+      "started_at": "2026-09-19T21:28:15+00:00",
+      "status": "complete"
+    },
+    "handoff": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T21:45:15+00:00",
+          "seconds": 508.8835664037615,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 508.8835664037615,
+      "finished_at": "2026-09-19T21:45:15+00:00",
+      "seconds": 508.8835664037615,
+      "started_at": "2026-09-19T21:36:46+00:00",
+      "status": "complete"
+    },
+    "parity": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T21:36:44+00:00",
+          "seconds": 38.55564264021814,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 38.55564264021814,
+      "finished_at": "2026-09-19T21:36:44+00:00",
+      "last_report": "parity fakemusiccaps_mustango_b1j-hD9zs6Q: features=bitwise predictions=bitwise max_diff=0.0",
+      "seconds": 38.55564264021814,
+      "started_at": "2026-09-19T21:36:06+00:00",
+      "status": "complete"
+    },
+    "pilot": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T16:01:43+00:00",
+          "seconds": 126.81536035425961,
+          "status": "complete"
+        },
+        {
+          "finished_at": "2026-09-19T21:28:13+00:00",
+          "seconds": 0.8534006867557764,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 127.66876104101539,
+      "finished_at": "2026-09-19T21:28:13+00:00",
+      "seconds": 0.8534006867557764,
+      "started_at": "2026-09-19T21:28:12+00:00",
+      "status": "complete"
+    },
+    "preflight": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T15:12:08+00:00",
+          "seconds": 4.0120382672175765,
+          "status": "complete"
+        },
+        {
+          "finished_at": "2026-09-19T15:29:57+00:00",
+          "seconds": 4.522353287786245,
+          "status": "complete"
+        },
+        {
+          "finished_at": "2026-09-19T21:20:54+00:00",
+          "seconds": 4.089541459456086,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 12.623933014459908,
+      "finished_at": "2026-09-19T21:20:54+00:00",
+      "seconds": 4.089541459456086,
+      "started_at": "2026-09-19T21:20:50+00:00",
+      "status": "complete"
+    },
+    "stage_inputs": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T15:56:52+00:00",
+          "seconds": 1614.5742665417492,
+          "status": "complete"
+        },
+        {
+          "finished_at": "2026-09-19T21:26:49+00:00",
+          "seconds": 354.2790778912604,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 1968.8533444330096,
+      "finished_at": "2026-09-19T21:26:49+00:00",
+      "seconds": 354.2790778912604,
+      "started_at": "2026-09-19T21:20:55+00:00",
+      "status": "complete"
+    },
+    "test_eval": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T21:36:04+00:00",
+          "seconds": 36.31964308395982,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 36.31964308395982,
+      "finished_at": "2026-09-19T21:36:04+00:00",
+      "last_report": "===== 2026-09-19T21:35:29+00:00 /root/dacon_existing9504_h100_20260920/env/venv/bin/python -m dacon9504a100.evaluation test --config /root/dacon_existing9504_h100_20260920/config/run_config.json",
+      "seconds": 36.31964308395982,
+      "started_at": "2026-09-19T21:35:28+00:00",
+      "status": "complete"
+    },
+    "train": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T21:35:24+00:00",
+          "seconds": 235.0504112523049,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 235.0504112523049,
+      "finished_at": "2026-09-19T21:35:24+00:00",
+      "last_report": "train: locked 6 checkpoints; val metrics written",
+      "seconds": 235.0504112523049,
+      "started_at": "2026-09-19T21:31:29+00:00",
+      "status": "complete"
+    }
+  },
+  "status": "complete",
+  "updated_at": "2026-09-19T21:45:15+00:00"
+}

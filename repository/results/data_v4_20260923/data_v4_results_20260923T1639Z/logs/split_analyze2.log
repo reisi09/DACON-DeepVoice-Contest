@@ -1,0 +1,57 @@
+{
+ "rows": 42947,
+ "components": 19452,
+ "component_size_quantiles": [
+  1,
+  1,
+  1,
+  1,
+  4
+ ],
+ "type_x_label": {
+  "music|1": 2880,
+  "voice|0": 9321,
+  "voice|1": 18748,
+  "none|0": 900,
+  "mixed|0": 2267,
+  "music|0": 2465,
+  "unknown_presence|1": 538,
+  "mixed|1": 5335,
+  "unknown_presence|0": 456,
+  "unknown_presence|None": 14,
+  "mixed|None": 18,
+  "music|None": 5
+ },
+ "metadata_probe": {
+  "voice": {
+   "n": 28069,
+   "auc_folds": [
+    0.75,
+    0.734,
+    0.777,
+    0.758,
+    0.754
+   ]
+  },
+  "music": {
+   "n": 5345,
+   "auc_folds": [
+    0.723,
+    0.775,
+    0.751,
+    0.734,
+    0.754
+   ]
+  },
+  "mixed": {
+   "n": 7602,
+   "auc_folds": [
+    0.665,
+    0.674,
+    0.685,
+    0.683,
+    0.686
+   ]
+  }
+ }
+}

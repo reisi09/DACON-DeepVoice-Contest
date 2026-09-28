@@ -1,0 +1,43 @@
+{
+  "overall": {
+    "count": 190,
+    "real": 12,
+    "fake": 178,
+    "eer": 0.1676029962546816,
+    "auc": 0.9124531835205992,
+    "balanced_bce": 0.8100098266150396
+  },
+  "subsets": {
+    "music_real": {
+      "count": 12,
+      "real": 12,
+      "fake": 0,
+      "eer": null,
+      "auc": null
+    },
+    "music_seen": {
+      "count": 178,
+      "real": 0,
+      "fake": 178,
+      "eer": null,
+      "auc": null
+    },
+    "unseen_generator_plus_real": {
+      "count": 36,
+      "real": 12,
+      "fake": 24,
+      "eer": 0.16666666666666663,
+      "auc": 0.861111111111111,
+      "balanced_bce": 0.821989239965672
+    },
+    "seen_generators_plus_real": {
+      "count": 166,
+      "real": 12,
+      "fake": 154,
+      "eer": 0.17099567099567098,
+      "auc": 0.9204545454545455,
+      "balanced_bce": 0.8081429050539021
+    }
+  },
+  "official_score": null
+}

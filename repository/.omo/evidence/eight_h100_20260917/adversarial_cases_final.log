@@ -1,0 +1,19 @@
+{
+  "archive_corruption": {
+    "error": "AssertionError: testzip returned none",
+    "verdict": "PASS"
+  },
+  "changed_audio_hash_and_same_group_roles": {
+    "actual_dataset_valid": true,
+    "corrupted_audio_rejected": true,
+    "cross_split_contributor_rejected": true
+  },
+  "expired_deadline": {
+    "error": "RuntimeError: run started after its export reserve",
+    "verdict": "PASS"
+  },
+  "replay_old_cache": {
+    "error": "Feature/audio identity mismatch: stale",
+    "verdict": "PASS"
+  }
+}

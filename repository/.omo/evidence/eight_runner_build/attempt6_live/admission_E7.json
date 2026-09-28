@@ -1,0 +1,90 @@
+{
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "gradient_and_rollback": {
+    "adapter_changed": true,
+    "frozen_probe_unchanged": true,
+    "lora_b_tensors": 96,
+    "loss": 1.6268844604492188,
+    "nonzero_lora_b_gradients": 96,
+    "restored_logits_exact": true
+  },
+  "native_parity": {
+    "fake_class": 0,
+    "max_logit_error": 2.956390380859375e-05,
+    "native_revision": "60c96543210117bdb256636e7961e16463f99291",
+    "real_audio_cases": 3,
+    "unused_training_only": [
+      "m_ssl.model.final_proj.bias",
+      "m_ssl.model.final_proj.weight",
+      "m_ssl.model.project_q.bias",
+      "m_ssl.model.project_q.weight",
+      "m_ssl.model.quantizer.vars",
+      "m_ssl.model.quantizer.weight_proj.bias",
+      "m_ssl.model.quantizer.weight_proj.weight"
+    ]
+  },
+  "population": {
+    "eval_variants": [
+      "base",
+      "opus_telephone"
+    ],
+    "files": 1236,
+    "manifest": "/root/eight_h100_20260917/source/dataset/manifest.csv",
+    "manifest_validation": {
+      "audio_hashes": 7101,
+      "probe_families": {
+        "core": 6293,
+        "partial": 648,
+        "swap": 160
+      },
+      "provenance_atoms": 876,
+      "rows": 7101,
+      "splits": {
+        "calibration": 1880,
+        "dev": 1024,
+        "test": 876,
+        "train": 3321
+      }
+    },
+    "speakers": {
+      "calibration": 3,
+      "dev": 2,
+      "test": 2,
+      "train": 3
+    },
+    "train_class_counts": {
+      "0": 318,
+      "1": 318
+    },
+    "train_generator_counts": {
+      "": 306,
+      "Cartesia.ai (Sonic-3)": 39,
+      "Chatterbox Multilingual": 3,
+      "FireRedTTS-2.0": 27,
+      "Higgs-Audio-V2": 36,
+      "Index-TTS-1.5": 18,
+      "Index-TTS-2.0": 33,
+      "Kani-TTS-370M": 3,
+      "Llasa-1B-Multilingual": 39,
+      "Llasa-8B": 30,
+      "Mars5": 27,
+      "MeloTTS": 30,
+      "VoxCPM-0.5B": 33,
+      "original": 12
+    },
+    "train_variants": [
+      "base",
+      "mp3_32k",
+      "telephone"
+    ],
+    "windows": {
+      "calibration": 1132,
+      "dev": 270,
+      "test": 246,
+      "train": 1800
+    }
+  },
+  "qv_modules": 96,
+  "status": "admitted",
+  "trainable_parameters": 1968642
+}

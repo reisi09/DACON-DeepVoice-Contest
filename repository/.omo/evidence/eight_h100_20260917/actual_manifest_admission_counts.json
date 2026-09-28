@@ -1,0 +1,639 @@
+{
+  "E1": {
+    "music": {
+      "generators": {
+        "REAL": 218,
+        "acestep": 79,
+        "audioldm": 147,
+        "brev": 66,
+        "diffrhythm": 154,
+        "elevenlabs": 65,
+        "mubert": 10,
+        "musicgen": 148,
+        "producer": 66,
+        "songgen": 145,
+        "stableaudio": 10,
+        "suno": 107,
+        "udio": 107
+      },
+      "label_generator_counts": {
+        "0": 1,
+        "1": 12
+      },
+      "label_source_counts": {
+        "0": 2,
+        "1": 19
+      },
+      "rows": 1322,
+      "source_generator_strata": 21,
+      "sources": 21,
+      "split_labels": {
+        "calibration": {
+          "0": 31,
+          "1": 169
+        },
+        "dev": {
+          "0": 25,
+          "1": 139
+        },
+        "test": {
+          "0": 23,
+          "1": 104
+        },
+        "train": {
+          "0": 139,
+          "1": 692
+        }
+      },
+      "variants": {
+        "base": 1322
+      }
+    },
+    "music_generator_holdout": {
+      "all_folds_both_classes": true,
+      "complete_folds": 12,
+      "generators_considered": 12,
+      "insufficient_folds": []
+    },
+    "music_sampler": {
+      "batch_size": 2,
+      "draw_labels": [
+        {
+          "0": 1,
+          "1": 1
+        },
+        {
+          "0": 1,
+          "1": 1
+        }
+      ],
+      "ok": false,
+      "steps": 2
+    },
+    "voice": {
+      "generators": {
+        "Cartesia.ai (Sonic-3)": 31,
+        "Chatterbox Multilingual": 13,
+        "FireRedTTS-2.0": 20,
+        "Higgs-Audio-V2": 35,
+        "Index-TTS-1.5": 20,
+        "Index-TTS-2.0": 20,
+        "Kani-TTS-370M": 17,
+        "Llasa-1B-Multilingual": 20,
+        "Llasa-8B": 20,
+        "Mars5": 20,
+        "MeloTTS": 20,
+        "REAL": 240,
+        "VoxCPM-0.5B": 20,
+        "original": 16
+      },
+      "label_generator_counts": {
+        "0": 2,
+        "1": 12
+      },
+      "label_source_counts": {
+        "0": 3,
+        "1": 6
+      },
+      "rows": 512,
+      "source_generator_strata": 21,
+      "sources": 8,
+      "split_labels": {
+        "calibration": {
+          "0": 102,
+          "1": 102
+        },
+        "dev": {
+          "0": 24,
+          "1": 24
+        },
+        "test": {
+          "0": 24,
+          "1": 24
+        },
+        "train": {
+          "0": 106,
+          "1": 106
+        }
+      },
+      "variants": {
+        "base": 512
+      }
+    },
+    "voice_generator_holdout": {
+      "all_folds_both_classes": false,
+      "complete_folds": 4,
+      "generators_considered": 13,
+      "insufficient_folds": [
+        "FireRedTTS-2.0",
+        "Index-TTS-1.5",
+        "Index-TTS-2.0",
+        "Llasa-1B-Multilingual",
+        "Llasa-8B",
+        "Mars5",
+        "MeloTTS",
+        "VoxCPM-0.5B",
+        "original"
+      ]
+    },
+    "voice_sampler": {
+      "batch_size": 2,
+      "draw_labels": [
+        {
+          "0": 1,
+          "1": 1
+        },
+        {
+          "0": 1,
+          "1": 1
+        }
+      ],
+      "ok": false,
+      "steps": 2
+    }
+  },
+  "E2": {
+    "by_family": {
+      "core": 1836,
+      "partial": 648,
+      "swap": 160
+    },
+    "by_split": {
+      "calibration": 1080,
+      "dev": 368,
+      "test": 368,
+      "train": 828
+    },
+    "constructed_parent_cross_split": [],
+    "constructed_parent_missing": [],
+    "core_processed_parent_ids_external": 1324,
+    "nonbase_parent_cross_split": [],
+    "nonbase_parent_missing": [],
+    "nonbase_rows": 2132,
+    "selected_rows": 2644,
+    "voice_labels": {
+      "0": 1262,
+      "1": 1322,
+      "unknown": 60
+    }
+  },
+  "E3": {
+    "music": {
+      "generators": {
+        "REAL": 733,
+        "acestep": 268,
+        "audioldm": 498,
+        "brev": 222,
+        "diffrhythm": 521,
+        "elevenlabs": 218,
+        "mubert": 34,
+        "musicgen": 500,
+        "producer": 221,
+        "songgen": 489,
+        "stableaudio": 34,
+        "suno": 360,
+        "udio": 359
+      },
+      "label_generator_counts": {
+        "0": 1,
+        "1": 12
+      },
+      "label_source_counts": {
+        "0": 2,
+        "1": 19
+      },
+      "rows": 4457,
+      "source_generator_strata": 21,
+      "sources": 21,
+      "split_labels": {
+        "calibration": {
+          "0": 124,
+          "1": 676
+        },
+        "dev": {
+          "0": 100,
+          "1": 556
+        },
+        "test": {
+          "0": 92,
+          "1": 416
+        },
+        "train": {
+          "0": 417,
+          "1": 2076
+        }
+      },
+      "variants": {
+        "base": 1322,
+        "mp3_32k": 1322,
+        "opus_telephone": 491,
+        "telephone": 1322
+      }
+    },
+    "music_pairs": {
+      "complete_base_telephone_mp3": 1322,
+      "dev_opus_labels": {
+        "0": 25,
+        "1": 139
+      },
+      "dev_opus_rows": 164,
+      "incomplete_pairs": 0,
+      "pair_ids": 1322
+    },
+    "train_pairs_music": 831,
+    "train_pairs_voice": 212,
+    "voice": {
+      "generators": {
+        "Cartesia.ai (Sonic-3)": 111,
+        "Chatterbox Multilingual": 51,
+        "FireRedTTS-2.0": 71,
+        "Higgs-Audio-V2": 128,
+        "Index-TTS-1.5": 74,
+        "Index-TTS-2.0": 69,
+        "Kani-TTS-370M": 67,
+        "Llasa-1B-Multilingual": 67,
+        "Llasa-8B": 70,
+        "Mars5": 71,
+        "MeloTTS": 70,
+        "REAL": 858,
+        "VoxCPM-0.5B": 69,
+        "original": 60
+      },
+      "label_generator_counts": {
+        "0": 2,
+        "1": 12
+      },
+      "label_source_counts": {
+        "0": 3,
+        "1": 6
+      },
+      "rows": 1836,
+      "source_generator_strata": 21,
+      "sources": 8,
+      "split_labels": {
+        "calibration": {
+          "0": 408,
+          "1": 408
+        },
+        "dev": {
+          "0": 96,
+          "1": 96
+        },
+        "test": {
+          "0": 96,
+          "1": 96
+        },
+        "train": {
+          "0": 318,
+          "1": 318
+        }
+      },
+      "variants": {
+        "base": 512,
+        "mp3_32k": 512,
+        "opus_telephone": 300,
+        "telephone": 512
+      }
+    },
+    "voice_pairs": {
+      "complete_base_telephone_mp3": 512,
+      "dev_opus_labels": {
+        "0": 24,
+        "1": 24
+      },
+      "dev_opus_rows": 48,
+      "incomplete_pairs": 0,
+      "pair_ids": 512
+    }
+  },
+  "E4": {
+    "music_base": {
+      "generators": {
+        "REAL": 218,
+        "acestep": 79,
+        "audioldm": 147,
+        "brev": 66,
+        "diffrhythm": 154,
+        "elevenlabs": 65,
+        "mubert": 10,
+        "musicgen": 148,
+        "producer": 66,
+        "songgen": 145,
+        "stableaudio": 10,
+        "suno": 107,
+        "udio": 107
+      },
+      "label_generator_counts": {
+        "0": 1,
+        "1": 12
+      },
+      "label_source_counts": {
+        "0": 2,
+        "1": 19
+      },
+      "rows": 1322,
+      "source_generator_strata": 21,
+      "sources": 21,
+      "split_labels": {
+        "calibration": {
+          "0": 31,
+          "1": 169
+        },
+        "dev": {
+          "0": 25,
+          "1": 139
+        },
+        "test": {
+          "0": 23,
+          "1": 104
+        },
+        "train": {
+          "0": 139,
+          "1": 692
+        }
+      },
+      "variants": {
+        "base": 1322
+      }
+    }
+  },
+  "E5": {
+    "by_split": {
+      "calibration": 216,
+      "dev": 144,
+      "test": 144,
+      "train": 144
+    },
+    "cell_pair_failures": [],
+    "cell_pairing_key": "pair_id (each exactly one FILE_FAKE=0 and one FILE_FAKE=1)",
+    "cells": 324,
+    "durations": {
+      "12.00000000": 216,
+      "30.00000000": 216,
+      "60.00000000": 216
+    },
+    "labels": {
+      "0": 324,
+      "1": 324
+    },
+    "pair_ids": 324,
+    "positions": {
+      "end": 108,
+      "middle": 108,
+      "real_control": 324,
+      "start": 108
+    },
+    "selected_rows": 648
+  },
+  "E6": {
+    "Anti_voice_base": {
+      "generators": {
+        "Cartesia.ai (Sonic-3)": 31,
+        "Chatterbox Multilingual": 13,
+        "FireRedTTS-2.0": 20,
+        "Higgs-Audio-V2": 35,
+        "Index-TTS-1.5": 20,
+        "Index-TTS-2.0": 20,
+        "Kani-TTS-370M": 17,
+        "Llasa-1B-Multilingual": 20,
+        "Llasa-8B": 20,
+        "Mars5": 20,
+        "MeloTTS": 20,
+        "REAL": 240,
+        "VoxCPM-0.5B": 20,
+        "original": 16
+      },
+      "label_generator_counts": {
+        "0": 2,
+        "1": 12
+      },
+      "label_source_counts": {
+        "0": 3,
+        "1": 6
+      },
+      "rows": 512,
+      "source_generator_strata": 21,
+      "sources": 8,
+      "split_labels": {
+        "calibration": {
+          "0": 102,
+          "1": 102
+        },
+        "dev": {
+          "0": 24,
+          "1": 24
+        },
+        "test": {
+          "0": 24,
+          "1": 24
+        },
+        "train": {
+          "0": 106,
+          "1": 106
+        }
+      },
+      "variants": {
+        "base": 512
+      }
+    },
+    "MERT_music_base": {
+      "generators": {
+        "REAL": 218,
+        "acestep": 79,
+        "audioldm": 147,
+        "brev": 66,
+        "diffrhythm": 154,
+        "elevenlabs": 65,
+        "mubert": 10,
+        "musicgen": 148,
+        "producer": 66,
+        "songgen": 145,
+        "stableaudio": 10,
+        "suno": 107,
+        "udio": 107
+      },
+      "label_generator_counts": {
+        "0": 1,
+        "1": 12
+      },
+      "label_source_counts": {
+        "0": 2,
+        "1": 19
+      },
+      "rows": 1322,
+      "source_generator_strata": 21,
+      "sources": 21,
+      "split_labels": {
+        "calibration": {
+          "0": 31,
+          "1": 169
+        },
+        "dev": {
+          "0": 25,
+          "1": 139
+        },
+        "test": {
+          "0": 23,
+          "1": 104
+        },
+        "train": {
+          "0": 139,
+          "1": 692
+        }
+      },
+      "variants": {
+        "base": 1322
+      }
+    }
+  },
+  "E8": {
+    "dev_labels": {
+      "0": 25,
+      "1": 139
+    },
+    "music_base_calibration_real": 31,
+    "music_base_train_real": 139,
+    "test_labels": {
+      "0": 23,
+      "1": 104
+    }
+  },
+  "audit": "actual_manifest_admission",
+  "features": {
+    "actual_npz_inspected": false,
+    "all_manifest_rows_profiled": true,
+    "consumers": {
+      "E1_music": "mert_l24",
+      "E1_voice": "anti_l24",
+      "E2": "anti_raw/anti_vocals/df_raw/df_vocals; core speech reference anti_l24; swap additionally mert_l24+presence",
+      "E3_music": "mert_l24",
+      "E3_voice": "anti_l24",
+      "E4_music": "mert_l24+spectrum_stem[:384]",
+      "E5": "anti_raw/df_raw",
+      "E6_music": "mert_l6/l12/l24",
+      "E6_voice": "anti_l12/l24/l48",
+      "E8_music": "mert_l24"
+    },
+    "profile_counts": {
+      "core_music_base": 1322,
+      "core_music_processed": 3135,
+      "core_speech_base": 512,
+      "core_speech_processed": 1324,
+      "partial": 648,
+      "swap": 160
+    },
+    "profiles": {
+      "core_music_base": [
+        "mert_l12",
+        "mert_l24",
+        "mert_l6",
+        "padding_samples",
+        "raw_mask",
+        "spectrum_stem",
+        "starts",
+        "stem_mask",
+        "valid_samples"
+      ],
+      "core_music_processed": [
+        "mert_l24",
+        "padding_samples",
+        "raw_mask",
+        "starts",
+        "stem_mask",
+        "valid_samples"
+      ],
+      "core_speech_base": [
+        "anti_l12",
+        "anti_l24",
+        "anti_l48",
+        "anti_raw",
+        "anti_vocals",
+        "df_raw",
+        "df_vocals",
+        "padding_samples",
+        "raw_mask",
+        "starts",
+        "valid_samples"
+      ],
+      "core_speech_processed": [
+        "anti_l24",
+        "anti_raw",
+        "anti_vocals",
+        "df_raw",
+        "df_vocals",
+        "padding_samples",
+        "raw_mask",
+        "starts",
+        "valid_samples"
+      ],
+      "partial": [
+        "anti_raw",
+        "anti_vocals",
+        "df_raw",
+        "df_vocals",
+        "padding_samples",
+        "raw_mask",
+        "starts",
+        "valid_samples"
+      ],
+      "swap": [
+        "anti_l24",
+        "anti_raw",
+        "anti_vocals",
+        "df_raw",
+        "df_vocals",
+        "mert_l24",
+        "padding_samples",
+        "presence",
+        "raw_mask",
+        "starts",
+        "stem_mask",
+        "valid_samples"
+      ]
+    }
+  },
+  "manifest": {
+    "audio_unique": 7101,
+    "kind": {
+      "mixed": 4617,
+      "speech": 2484
+    },
+    "path": "_workspace/eight_h100_20260917/dataset/manifest.csv",
+    "probe_family": {
+      "core": 6293,
+      "partial": 648,
+      "swap": 160
+    },
+    "receipt_sha256": "bd49bc583abac831b6b751c42e8d890e9e922ae16a346612414c609e155c6743",
+    "rows": 7101,
+    "sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+    "sources_sha256": "ab7de8e9d077d64008381b7cd78831db5b5ace5b7acf219636f1269ee965fdb9",
+    "split": {
+      "calibration": 1880,
+      "dev": 1024,
+      "test": 876,
+      "train": 3321
+    }
+  },
+  "provenance": {
+    "component_split_collisions": 0,
+    "cross_split_group_atoms": [],
+    "global_components": 256,
+    "group_atoms": 876
+  },
+  "selectors": {
+    "music_kind_literal_rows": 0,
+    "music_model_rows": "probe_family=core && MUSIC_PRESENT=1 && MUSIC_FAKE known; current ablation selector",
+    "music_rows_after_selector": 1322,
+    "voice_model_rows": "kind=speech && probe_family=core && VOICE_FAKE known; current model_rows path"
+  },
+  "verdicts": {
+    "e2_parent_joins_clean": true,
+    "e5_matched_cells": true,
+    "feature_profile_mapping_clean": true,
+    "music_selector_per_split_two_classes": true,
+    "provenance_split_safe": true,
+    "source_holdout_at_least_one_each": true,
+    "voice_selector_per_split_two_classes": true
+  }
+}

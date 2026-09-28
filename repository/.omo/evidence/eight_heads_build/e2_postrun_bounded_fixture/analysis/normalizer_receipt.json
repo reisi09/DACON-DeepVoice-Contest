@@ -1,0 +1,34 @@
+{
+  "checkpoint_sha256": {
+    "E1_music_balanced_seed41.pt": "bf1fefe6b73b3ff32cba884d6d80ccf729c4ce52bc0779856ba3f527e2b63409",
+    "E1_music_balanced_seed42.pt": "be1104727f5130a3c34bbe9057e659b1c359286c9e2709e7900285961d15f89c",
+    "E1_music_balanced_seed43.pt": "9dab32c11d6f1c62b414f111293c5fced25ecca733dde44fa7b3102c207a49c8",
+    "E1_music_parent_seed41.pt": "05b449e02fcc20646e55d150eecde3bfda86f1ef5375264293bd69fe5e53327a",
+    "E1_music_parent_seed42.pt": "c4db9b488670e6559fb81874864bedfd30f7e04911ad879f0d96971af2996fa6",
+    "E1_music_parent_seed43.pt": "6d1691f7d8b2a9b273c7a51bb8b62e96bcafb2d7f0ddfd2482c50e678e2434c8",
+    "E1_voice_balanced_seed41.pt": "517cd09939ece12b35af835d558e9553b270e5d877f9cedfa83e238e1eeacad7",
+    "E1_voice_balanced_seed42.pt": "6b209a3f26ededd84995196036bc2f83676a33e8985b766f0cc32e2d536de26f",
+    "E1_voice_balanced_seed43.pt": "f21c0f69568c4c817cadd3bc3391bb29eed65f6ac8517ea1bf07a65343245898",
+    "E1_voice_parent_seed41.pt": "b7af35a79d42d1930fc634dcb888e1adb4ddad4cf22d0744a31a14abcb356f0a",
+    "E1_voice_parent_seed42.pt": "51c9da5a96edceffb6b5b1f346fc1d854278b347127dda23fdafd55636902ac4",
+    "E1_voice_parent_seed43.pt": "271fe6fb3f98f8d604c08906c4ac5d7907beeacde1d32b9d98bb522fad825f45"
+  },
+  "manifest_sha256": "20d6166ff702e98473f10a1a38cd6cb13221f3f8d6bc1115c791bc3292a04fb3",
+  "normalizer_sha256": "f40516396b4ba4a60863d10eabe4eb1d41c16cc5a6acabe0b67ede072e0fac41",
+  "normalizers": {
+    "music": {
+      "key": "mert_l24",
+      "train_ids": [
+        "train_music_0",
+        "train_music_1"
+      ]
+    },
+    "voice": {
+      "key": "anti_l24",
+      "train_ids": [
+        "train_speech_0",
+        "train_speech_1"
+      ]
+    }
+  }
+}

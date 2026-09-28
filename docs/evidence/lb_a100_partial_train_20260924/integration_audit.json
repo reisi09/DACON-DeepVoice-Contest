@@ -1,0 +1,35 @@
+{
+  "original_rows_roles_labels_unchanged": true,
+  "role_counts": {
+    "train": 5196,
+    "selection": 421,
+    "calibration": 335
+  },
+  "runs": {
+    "E08_topk": {
+      "metrics_recomputed_match": true,
+      "checkpoint_hashes_match": true,
+      "unique_training_rows_per_epoch": true,
+      "metrics": {
+        "file_eer": 0.06274586939417784,
+        "voice_eer": 0.05016117619309693,
+        "music_eer": 0.1715686274509804,
+        "voice_presence_auc": 0.998014888337469,
+        "music_presence_auc": 0.9997779422649888
+      }
+    },
+    "E00_control": {
+      "metrics_recomputed_match": true,
+      "checkpoint_hashes_match": true,
+      "unique_training_rows_per_epoch": true,
+      "metrics": {
+        "file_eer": 0.0726953842119066,
+        "voice_eer": 0.06270147024137118,
+        "music_eer": 0.1715686274509804,
+        "voice_presence_auc": 0.998014888337469,
+        "music_presence_auc": 0.9997779422649888
+      }
+    }
+  },
+  "scope": "Ordered partial-cache selection set; no independent test and no official score"
+}

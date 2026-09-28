@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "scope": "SONICS rejection receipt synchronization only",
+  "observed_utc": "2026-09-18T05:12:49.012530+00:00",
+  "original_artifact_hashes": {
+    "results/data_expansion_20260918/sonics_retention.json": "cb0856f7145a95578638ae8052a8dbb93bfb79f6089460c344aeb8cd81037b07",
+    "results/data_expansion_20260918/sonics_retention_selection.json": "3b4fb75aa23507c078c257eda2f14fef1332a7ded1410f1e939436857292264a",
+    "results/data_expansion_20260918/sonics_retained_sources.jsonl": "32369bb3b5e209710068bcb9d2192b43bc82692843abc058c4994f97a0677acf",
+    "results/data_expansion_20260918/sonics_download.json": "cb6f89563fe25f17b1f111ee385895e3f6cb562c48045c67f8a35024c5f2cd4c",
+    "results/data_expansion_20260918/sonics_retained_part_01.json": "19d92fa8cf9fc05a2b10aaa64818dba2f09c1b05aad5443b4b6ee6c2459d2b84",
+    "results/data_expansion_20260918/sonics_retained_part_02.json": "f81caaec85454dcc2bb404ad9a6ffb392b07419241ab09df4f34ff903ccfa1f5",
+    "results/data_expansion_20260918/sonics_retained_part_03.json": "cb03a977c7a72249e087e85320b6811a1d2e20d8c81b8a0247b8aa3390ec5962",
+    "results/data_expansion_20260918/sonics_retained_part_04.json": "82adf2768e3b332117ae8b0d0d8b257260444c1e91dd4a54cdbb9ef084fd3af4"
+  },
+  "retained_files_checked": 2932,
+  "retained_file_hash_errors": [],
+  "active_sonics_operations": [],
+  "patched_script_sha256": "dbfc01fba725ca9058f5e78fe64341bfe12a6b65a3215a0eb354354a9da49462",
+  "regression_sha256": "69f13363700342dc4ee7eb92e535cee9846f3d029502a90c226ff9e6b671a511",
+  "original_artifacts_unchanged": true,
+  "original_execution_verifier_sha256": "6ac4e72ac9640e28f368a3cc48d2ef6a81b66bcb0b3045347c854ba16e0250bc",
+  "original_receipts_rewritten": false,
+  "regression": {
+    "command": ".venv/bin/python results/data_expansion_20260918/sonics_resume_regression.py",
+    "before_fix": "Second execution failed with FileNotFoundError for a duplicate-pair source that had been deleted while still marked retained in its archive receipt.",
+    "after_fix": "Rejected statuses are stored atomically before file deletion; rerun tolerates missing rejected files and rejects changed retained-source bytes.",
+    "exit_code": 0,
+    "uses_isolated_copies_of_actual_source_bytes": true,
+    "original_audio_touched": false
+  },
+  "network_bytes": 0,
+  "gpu_or_training_started": false
+}
+

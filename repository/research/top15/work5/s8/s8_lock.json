@@ -1,0 +1,43 @@
+{
+ "written": "2026-09-28 05:05 KST, before any S8 candidate head was trained (features still extracting)",
+ "numbers_seen_before_lock": "val-only AC EERs of cached hubert/muq/sslamft runs (briefing_round7.md); one GPU plumbing run voice_new hubert8 seed 41 (val EER 0.03472). No held-out number of any S8 candidate.",
+ "reviewed_by": "Codex GPT-6-Astra ultra round 7 (codex_debate/codex_round7.md): modifications B1-B6 adopted",
+ "base": {
+  "S7_cpu": "DB-protocol RT config of S7: voice CDF fusion df_L 1 / ad_L 0.5 / wavlm8 1 (work4/runs voice_df__L, voice_ad__L, voice_wavlm8__every), music WindowMIL mert6_12+eat16+sslampt5 (work4/runs/music_sslam__every), FILE file_ensemble.fit on val per configuration, presence = work2/stacking presence_val/test; held-out RT ADS 0.90921",
+  "music_gpu_control": "the S7 music recipe retrained on VESSL GPU fp32 (run.py music_new mert6_12+eat16+sslampt5, HEAD_DEVICE=cuda:0: full_bank_train autocast is enabled only for device == 'cuda')"
+ },
+ "protocol": "R2 pinned rows, bank split train -> val early stopping (voice_new mlp 150/10, music_new WindowMIL defaults), seeds 41/42/43, ORIGINAL labels for every new member (no label completion), RT every-row semantics (every frozen val/test row scored, VOICE 0 when the DF run marks the voice stem silent, CDF tables on non-silent val rows, FILE refit on val). Identical rows/splits/masks for all candidates.",
+ "cache_gate": "screening starts only after a validator confirms all 42,039 manifest_s6 ids have an s8 npz with the five feature keys, finite values, window count == len(window_layout(samples)) and samples == stems samples; any failure = stop and re-extract those ids",
+ "candidates": {
+  "voice_single": ["hubert2", "hubert4", "hubert6", "hubert8", "hubert10", "hubert12", "d2v4", "d2v6", "d2v8", "d2v10", "d2v12", "d2v16", "usat4", "usat6", "usat8", "usat10", "usat12", "usat16", "mixwavlm4", "mixwavlm6", "mixwavlm8", "mixwavlm10", "mixwavlm12", "mixwavlm16"],
+  "music_single": ["mixsslam4", "mixsslam5", "mixsslam6", "mixsslam7", "mixsslam8", "mixsslam9", "encodec"],
+  "count": "31 single-member candidates, 93 head fits before combinations"
+ },
+ "step_A": "per encoder, the layer with the lowest val ensemble EER of its single-member head (voice route for voice candidates, music route for music candidates); ties -> lower layer. This is an approximation, not a search of each encoder's best ensemble contribution.",
+ "step_B_voice": "greedy forward selection from the S7 voice fusion (existing weights fixed): each step tries every remaining encoder's step-A layer at w in {0.25, 0.5, 1}; accept the best only if val RT ADS >= current + 0.002; at most 2 additions; ties -> smaller w, then order hubert, d2v, usat, mixwavlm",
+ "step_B_music": "gpu_control vs gpu_control+mixsslam{a} vs gpu_control+encodec vs gpu_control+mixsslam{a}+encodec (a = step-A block); accept the best only if val RT ADS >= gpu_control + 0.002 (voice = S7); ties -> fewer encoders",
+ "joint": "voice choice + music choice evaluated together on val RT ADS; must be >= S7_cpu val + 0.002, else the single better passing component change; nothing passing -> no S8",
+ "package_feasibility_before_held_out": "deflated zip <= 1e10 B with the new weights (measured, not estimated) and L4 estimate <= 45 min; otherwise drop the lowest-val-gain addition before looking at the held-out",
+ "step_C_ship": {
+  "held_out_rt_dads_vs_S7_cpu": ">= +0.002 (point estimate)",
+  "bootstrap": "paired group bootstrap (test group_id, 1000 reps, rng 0): P(dADS > 0) >= 0.90",
+  "unseen_generator_subset_dads": ">= -0.002",
+  "raw_mix_voice_guard": "if a mixwavlm member is chosen: realV+fakeM (held-out 107 rows) VOICE FPR increase <= 0.03 at each model's val TPR-95% threshold",
+  "raw_mix_music_guard": "if mixsslam is chosen: fakeV+realM (held-out 286 rows) MUSIC FPR increase <= 0.03 at each model's val TPR-95% threshold",
+  "report": "candidate - gpu_control (representation), gpu_control - S7_cpu (backend), candidate - S7_cpu (practical); seeds and group-level changes",
+  "package": "offline load, training-vs-runtime parity, zip/memory/time checks on the actual archive"
+ },
+ "no_rescue": "if the locked joint fails step C, no voice-only / music-only subset is shipped as S8",
+ "alternatives_exploratory": {
+  "note": "separate names, val-only; at most ONE finalist locked later for a held-out look; never merged into S8 after the fact",
+  "A1": "WavLM h6+h8+h12 concat member replacing wavlm8 (vs GPU wavlm8 control, same seeds, fusion weight 1 fixed)",
+  "A2": "voice-member window pooling mean vs max (re-aggregation of the same heads' window probabilities)",
+  "A3": "music gated attention-MIL pooling vs log-mean-exp on the S7 music features (one fixed configuration)",
+  "A4": "raw-mix FILE head: mixsslam5 features trained on train FILE_FAKE, added as a 4th FILE candidate with the existing 3 weights fixed and a pre-set weight set for the new one",
+  "A5": "5 seeds vs 3 for the finalist only (41-45 vs 41-43, all included)"
+ },
+ "slots": {
+  "2026-09-28": "S8 if screened, packaged and verified by 12:00 KST; else S7-noL (S5 no-L voice heads + S7 SSLAM music + WavLM, val CDF/FILE refit); else S5",
+  "2026-09-29": "#1 S8 (if not submitted today) or the locked alternative finalist; #2 another verified candidate; #3 reserve for a deployment fix or a pre-locked combination; candidates frozen by 08:00 KST"
+ }
+}

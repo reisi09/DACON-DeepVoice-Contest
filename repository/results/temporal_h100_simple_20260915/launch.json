@@ -1,0 +1,30 @@
+{
+  "input_sha256": "acce4b3fe2ba527597122dc59de01dc849ae6cc1a117277c105b15d78e042314",
+  "input_bytes": 530872,
+  "parameters": {
+    "False": 414017,
+    "True": 199169
+  },
+  "candidates": 6,
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "batch": 128,
+  "crop_probability": 0.7,
+  "max_compute_minutes": 30,
+  "workspace": "wsp-yiuufw51tke8",
+  "object_prefix": "/temporal/h100-simple-20260915-retry1",
+  "run_root": "/root/Temporal_Simplification_retry1",
+  "balance_before": 11.555556,
+  "launched_utc": 1789463051.0678148,
+  "status": "complete_and_paused",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "torch": "2.9.1+cu130",
+  "python": "3.13.9",
+  "first_observed_candidate": "D_deep_crop_seed41",
+  "attempt": 2,
+  "retry_dispatched_utc": 1789463355.329849,
+  "completed_utc": 1789463444.1102571
+}

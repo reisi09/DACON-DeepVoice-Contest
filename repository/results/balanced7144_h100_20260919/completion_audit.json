@@ -1,0 +1,99 @@
+{
+  "verified": true,
+  "rows": 7144,
+  "split_counts": {
+    "train": 5716,
+    "val": 1428
+  },
+  "split_labels": {
+    "train:1": 2858,
+    "train:0": 2858,
+    "val:1": 714,
+    "val:0": 714
+  },
+  "exact_selected_membership_labels_groups": true,
+  "checkpoints": {
+    "music_41": {
+      "selected_epoch": 11,
+      "epochs_completed": 16,
+      "every_epoch_rows": 3000,
+      "final_train_loss": 0.047026610692342125,
+      "final_validation_bce": 0.24271624585175064
+    },
+    "music_42": {
+      "selected_epoch": 13,
+      "epochs_completed": 18,
+      "every_epoch_rows": 3000,
+      "final_train_loss": 0.03677152785658836,
+      "final_validation_bce": 0.2479959839140144
+    },
+    "music_43": {
+      "selected_epoch": 11,
+      "epochs_completed": 16,
+      "every_epoch_rows": 3000,
+      "final_train_loss": 0.04650107582410177,
+      "final_validation_bce": 0.2344184444023474
+    },
+    "voice_41": {
+      "selected_epoch": 50,
+      "epochs_completed": 50,
+      "every_epoch_rows": 2716,
+      "final_train_loss": 0.023323481721427727,
+      "final_validation_bce": 0.02685754512818411
+    },
+    "voice_42": {
+      "selected_epoch": 50,
+      "epochs_completed": 50,
+      "every_epoch_rows": 2716,
+      "final_train_loss": 0.02341330128643711,
+      "final_validation_bce": 0.026697928254205864
+    },
+    "voice_43": {
+      "selected_epoch": 50,
+      "epochs_completed": 50,
+      "every_epoch_rows": 2716,
+      "final_train_loss": 0.02308308953674447,
+      "final_validation_bce": 0.026433506503547814
+    }
+  },
+  "recomputed_metrics": {
+    "score": null,
+    "metrics": {
+      "file_eer": 0.0938375350140056,
+      "voice_eer": 0.010493466676399723,
+      "music_eer": 0.08657314333017974,
+      "voice_presence_auc": null,
+      "music_presence_auc": 0.9987826941986168
+    },
+    "invalid": {
+      "voice_presence_auc": "both positive and negative labels are required"
+    },
+    "partial": {
+      "voice_eer": "known subset only; unknown relevant labels: 750",
+      "voice_presence_auc": "known subset only; unknown relevant labels: 750"
+    },
+    "counts": {
+      "file_eer": 1428,
+      "voice_eer": 678,
+      "music_eer": 750,
+      "voice_presence_auc": 678,
+      "music_presence_auc": 1428
+    },
+    "unknown_counts": {
+      "file_eer": 0,
+      "voice_eer": 750,
+      "music_eer": 0,
+      "voice_presence_auc": 750,
+      "music_presence_auc": 0
+    },
+    "coverage": {
+      "file_eer": 1.0,
+      "voice_eer": 0.47478991596638653,
+      "music_eer": 1.0,
+      "voice_presence_auc": 0.47478991596638653,
+      "music_presence_auc": 1.0
+    }
+  },
+  "historical_exposure_rows": 561,
+  "independent_test": false
+}

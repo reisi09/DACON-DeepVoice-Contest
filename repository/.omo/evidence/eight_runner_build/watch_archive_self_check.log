@@ -1,0 +1,5 @@
+scenario=archive/member/path/link corruption rejection and deadline pause retry
+invocation=.venv/bin/python redesign_h100_watch.py --self-check
+observable=SELF_CHECK_OK
+STOP_RETRY 1789641975 RuntimeError: transient pause failure
+SELF_CHECK_OK valid=1 corrupt_rejected=1 traversal_rejected=1 link_rejected=1 duplicate_rejected=1 deadline_pause_retry=1

@@ -1,0 +1,43 @@
+{
+  "clusterName": "capella-emea",
+  "clusterSlug": "cluster-capella",
+  "clusterVolumes": [],
+  "command": "bash -lc 'remaining=$((FULLFT_JOB_STARTED_AT + 57600 - $(date +%s) - 30)); test \"$remaining\" -gt 0; exec timeout -k 30s \"${remaining}s\" bash /shared/fullft7/h100x1-20260916/launcher/start_job.sh'",
+  "createdDt": "2026-09-16T04:42:41.160963Z",
+  "creatorName": "riwpq",
+  "envVars": [
+    {
+      "key": "FULLFT_RUN_ID",
+      "value": "run-20260916-044239"
+    },
+    {
+      "key": "FULLFT_JOB_STARTED_AT",
+      "value": "1789533759"
+    }
+  ],
+  "hourlyCreditForCompute": 2.98,
+  "imagePullPolicy": "Always",
+  "imageUri": "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+  "jobType": "k8s-job",
+  "name": "fullft7-h100x1-run-20260916-044239",
+  "objectVolumes": [
+    {
+      "mountPath": "/shared",
+      "objectStorageSlug": "object_storage_e322branyapw",
+      "objectVolumeSlug": "objvol-a5gxdg7er70i",
+      "volumeName": "dacon-v6-training"
+    }
+  ],
+  "region": "eu-north1",
+  "resourceSpecAcceleratorCount": 1,
+  "resourceSpecAcceleratorName": "H100 SXM",
+  "resourceSpecCpuCount": 15,
+  "resourceSpecEphemeralStorageBytes": 200000000000,
+  "resourceSpecMemoryBytes": 200000000000,
+  "resourceSpecName": "VESSL H100 SXM ×1",
+  "resourceSpecSlug": "resourcespec-ch100x1",
+  "slug": "job-gxeb388rndlt",
+  "startedAt": "2026-09-16T04:42:42Z",
+  "tags": [],
+  "workloadState": "running"
+}

@@ -1,0 +1,342 @@
+{
+  "parent_derivative_cross_split_rejected": true,
+  "unknown_component_target_rejected": true,
+  "emitted_partition_membership_matches": true,
+  "frozen_manifest_hash_matches": true,
+  "counts": {
+    "train": {
+      "voice_1": 898,
+      "voice_0": 3219,
+      "music_0": 1396,
+      "music_1": 3717
+    },
+    "val": {
+      "voice_0": 707,
+      "voice_1": 130,
+      "music_0": 282,
+      "music_1": 859
+    },
+    "test": {
+      "voice_1": 60,
+      "voice_0": 694,
+      "music_0": 295,
+      "music_1": 929
+    }
+  },
+  "new_selected": {
+    "lyria-pro3": 320,
+    "sonicmaster_real": 465
+  },
+  "new_selected_by_split": {
+    "train": {
+      "lyria-pro3": 224,
+      "sonicmaster_real": 326
+    },
+    "val": {
+      "lyria-pro3": 48,
+      "sonicmaster_real": 69
+    },
+    "test": {
+      "lyria-pro3": 48,
+      "sonicmaster_real": 70
+    }
+  },
+  "unknown_labels": {
+    "train": {
+      "FILE_FAKE": 0,
+      "VOICE_FAKE": 5113,
+      "MUSIC_FAKE": 4117,
+      "VOICE_PRESENT": 5113,
+      "MUSIC_PRESENT": 0
+    },
+    "val": {
+      "FILE_FAKE": 0,
+      "VOICE_FAKE": 1141,
+      "MUSIC_FAKE": 837,
+      "VOICE_PRESENT": 1141,
+      "MUSIC_PRESENT": 0
+    },
+    "test": {
+      "FILE_FAKE": 0,
+      "VOICE_FAKE": 1224,
+      "MUSIC_FAKE": 754,
+      "VOICE_PRESENT": 1224,
+      "MUSIC_PRESENT": 0
+    }
+  },
+  "weak_evaluation_cells": [
+    {
+      "source": "Echoes/acestep/TTA",
+      "generator": "acestep",
+      "label": "1",
+      "split": "test",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/acestep/TTA",
+      "generator": "acestep",
+      "label": "1",
+      "split": "val",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/audioldm/ATA",
+      "generator": "audioldm",
+      "label": "1",
+      "split": "test",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/audioldm/ATA",
+      "generator": "audioldm",
+      "label": "1",
+      "split": "val",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/audioldm/TTA",
+      "generator": "audioldm",
+      "label": "1",
+      "split": "test",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/audioldm/TTA",
+      "generator": "audioldm",
+      "label": "1",
+      "split": "val",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/brev/TTA",
+      "generator": "brev",
+      "label": "1",
+      "split": "test",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/brev/TTA",
+      "generator": "brev",
+      "label": "1",
+      "split": "val",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/diffrhythm/ATA",
+      "generator": "diffrhythm",
+      "label": "1",
+      "split": "test",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/diffrhythm/ATA",
+      "generator": "diffrhythm",
+      "label": "1",
+      "split": "val",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/diffrhythm/TTA",
+      "generator": "diffrhythm",
+      "label": "1",
+      "split": "test",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/diffrhythm/TTA",
+      "generator": "diffrhythm",
+      "label": "1",
+      "split": "val",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/elevenlabs/TTA",
+      "generator": "elevenlabs",
+      "label": "1",
+      "split": "test",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/elevenlabs/TTA",
+      "generator": "elevenlabs",
+      "label": "1",
+      "split": "val",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/mubert/TTA",
+      "generator": "mubert",
+      "label": "1",
+      "split": "test",
+      "rows": 1
+    },
+    {
+      "source": "Echoes/mubert/TTA",
+      "generator": "mubert",
+      "label": "1",
+      "split": "val",
+      "rows": 1
+    },
+    {
+      "source": "Echoes/musicgen/ATA",
+      "generator": "musicgen",
+      "label": "1",
+      "split": "test",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/musicgen/ATA",
+      "generator": "musicgen",
+      "label": "1",
+      "split": "val",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/musicgen/TTA",
+      "generator": "musicgen",
+      "label": "1",
+      "split": "test",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/musicgen/TTA",
+      "generator": "musicgen",
+      "label": "1",
+      "split": "val",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/producer/ATA",
+      "generator": "producer",
+      "label": "1",
+      "split": "test",
+      "rows": 2
+    },
+    {
+      "source": "Echoes/producer/ATA",
+      "generator": "producer",
+      "label": "1",
+      "split": "val",
+      "rows": 2
+    },
+    {
+      "source": "Echoes/producer/TTA",
+      "generator": "producer",
+      "label": "1",
+      "split": "test",
+      "rows": 2
+    },
+    {
+      "source": "Echoes/producer/TTA",
+      "generator": "producer",
+      "label": "1",
+      "split": "val",
+      "rows": 2
+    },
+    {
+      "source": "Echoes/songgen/ATA",
+      "generator": "songgen",
+      "label": "1",
+      "split": "test",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/songgen/ATA",
+      "generator": "songgen",
+      "label": "1",
+      "split": "val",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/songgen/TTA",
+      "generator": "songgen",
+      "label": "1",
+      "split": "test",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/songgen/TTA",
+      "generator": "songgen",
+      "label": "1",
+      "split": "val",
+      "rows": 5
+    },
+    {
+      "source": "Echoes/stableaudio/TTA",
+      "generator": "stableaudio",
+      "label": "1",
+      "split": "test",
+      "rows": 1
+    },
+    {
+      "source": "Echoes/stableaudio/TTA",
+      "generator": "stableaudio",
+      "label": "1",
+      "split": "val",
+      "rows": 1
+    },
+    {
+      "source": "Echoes/suno/TTA",
+      "generator": "suno",
+      "label": "1",
+      "split": "test",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/suno/TTA",
+      "generator": "suno",
+      "label": "1",
+      "split": "val",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/udio/TTA",
+      "generator": "udio",
+      "label": "1",
+      "split": "test",
+      "rows": 4
+    },
+    {
+      "source": "Echoes/udio/TTA",
+      "generator": "udio",
+      "label": "1",
+      "split": "val",
+      "rows": 4
+    },
+    {
+      "source": "FMA/FMA",
+      "generator": "",
+      "label": "0",
+      "split": "test",
+      "rows": 8
+    },
+    {
+      "source": "FMA/FMA",
+      "generator": "",
+      "label": "0",
+      "split": "val",
+      "rows": 8
+    }
+  ],
+  "metadata_shortcut_diagnostics": {
+    "voice_val": {
+      "source_only_auc": 0.6011315417256011,
+      "duration_only_auc": 0.67002502448047
+    },
+    "voice_test": {
+      "source_only_auc": 0.7845821325648414,
+      "duration_only_auc": 0.7459774255523535
+    },
+    "music_val": {
+      "source_only_auc": 0.971230773041389,
+      "duration_only_auc": 0.8027910567293323
+    },
+    "music_test": {
+      "source_only_auc": 0.9742022586707048,
+      "duration_only_auc": 0.8430461038842567
+    }
+  },
+  "diagnostics_are_not_model_performance": true,
+  "test_covariates_inspected": true,
+  "independent_test_claim": false
+}

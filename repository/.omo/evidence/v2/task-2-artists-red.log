@@ -1,0 +1,16 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_distinct_artists_does_not_spend_slots_on_second_tracks __________
+
+    def test_distinct_artists_does_not_spend_slots_on_second_tracks() -> None:
+        # Given two valid tracks by one artist followed by another artist.
+        items = [{"artist_id": "a", "track_id": "1"}, {"artist_id": "a", "track_id": "2"}, {"artist_id": "b", "track_id": "3"}]
+        # When two references are reserved, then they represent two independent artists.
+>       assert [item["track_id"] for item in sources.distinct_artists(items, set(), 2)] == ["1", "3"]
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'prepare_v2_sources' has no attribute 'distinct_artists'
+
+test_prepare_v2_sources.py:53: AttributeError
+=========================== short test summary info ============================
+FAILED test_prepare_v2_sources.py::test_distinct_artists_does_not_spend_slots_on_second_tracks
+1 failed, 3 deselected in 0.05s

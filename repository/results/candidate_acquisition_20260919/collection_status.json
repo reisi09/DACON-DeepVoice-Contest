@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-09-19T07:14:14.206742+00:00",
+  "datasets": {
+    "ASVspoof5": {
+      "verified_files": 3,
+      "verified_bytes": 20701463,
+      "standalone_audio": 0
+    },
+    "CtrSVDD": {
+      "verified_files": 2,
+      "verified_bytes": 7615104,
+      "standalone_audio": 0
+    },
+    "HAIM": {
+      "verified_files": 4000,
+      "verified_bytes": 9051131298,
+      "standalone_audio": 2000
+    },
+    "PartialSpoof": {
+      "verified_files": 6,
+      "verified_bytes": 4147304258,
+      "standalone_audio": 0
+    }
+  },
+  "planned_files": 4022,
+  "verified_files": 4011,
+  "pending_files": 11,
+  "planned_bytes": 88079995421,
+  "verified_bytes": 13226752123,
+  "training_admitted_rows": 0,
+  "gpu_started": false,
+  "all_audio_quality_audit_complete": false
+}

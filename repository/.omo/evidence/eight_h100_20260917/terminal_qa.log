@@ -1,0 +1,29 @@
+terminal QA attempt6 CPU audit
+UTC audit time: 2026-09-17T15:34:05.561093+00:00
+Scope: CPU-only independent audit of unpacked terminal artifacts; no GPU operation, retraining, or archive mutation
+
+[1] command: omo ulw-loop status --json
+result: ULW_LOOP_PLAN_MISSING; caller evidence directory used: .omo/evidence/eight_h100_20260917
+
+[2] command: .venv/bin/python /tmp/audit_terminal_attempt6.py
+result: EER comparisons=77; mismatches=0; max_abs_delta=0; EXPORT_SHA256 listed=7314, mismatches=0; notebook_errors=0; manifest_sha256={'executed_notebook_rule': 178, 'corrected_global_all_group_atoms': 256, 'difference': 78, 'singleton_group_rows': 264}; feature_files=7101, finite_bad=0
+
+[3] command: .venv/bin/python /tmp/audit_identity.py
+result: identity audio hash errors=0; required-array mismatches=0; profiles={"core_music_base": 1322, "core_music_processed": 3135, "core_speech_base": 512, "core_speech_processed": 1324, "partial": 648, "swap": 160}
+
+[4] command: .venv/bin/python -c "torch.load each output/e7/checkpoints/*.pt; inspect lora B/classifier tensors"
+result: 9 checkpoints; all tensors finite; head-only LoRA-B nonzero=0 for each seed; LoRA CE/KL LoRA-B nonzero=96/96 for each seed; classifier shape=(2,1280). Report records 200 optimizer updates per learned arm per seed, frozen_probe_unchanged=true, reloaded_dev_logits_exact=true.
+
+[5] command: .venv/bin/python -c "json.load(DACON_Eight_H100_Executed.ipynb); scan code execution_count and output_type=error"
+result: 19 cells, 9 code cells, execution counts 1..9, 0 notebook error outputs.
+
+[6] command: nl -ba results/eight_h100_20260917/downloaded/unpacked/output/run.log; rg Traceback|Error|Exception|ModuleNotFound|ffmpeg|asset_hash
+result: pre-recovery operational failures at run.log lines 2-25: imageio_ffmpeg missing, ffmpeg executable missing, redesign_full asset_hashes path missing. Later H100 telemetry present. These are retained run-log history, not executed-notebook errors.
+
+[7] command: execute notebook component DSU logic against _workspace/eight_h100_20260917/dataset/manifest.csv; compare global atom DSU
+result: executed notebook rule=178; corrected all group atoms=256; singleton group rows=264; manifest rows=7101, manifest SHA=fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537.
+
+[8] report consistency
+result: E1/E3/E4/E6/E7 seeds=[41,42,43]; E2/E5/E8 deterministic; E1/E3/E4/E6 fixed_updates=500; E2/E5 fixed_updates=0; E8 raw fixed_updates=null; final aggregation E8 fixed_updates=500. All E1-E8 report statuses complete.
+
+Verdict: PASS for numerical prediction/export/execution artifacts, with report-level blockers requiring corrected aggregation sidecar: component_count 256 and E8 fixed_updates null. No GPU operation, retraining, launch, or archive mutation performed.

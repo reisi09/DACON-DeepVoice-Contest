@@ -1,0 +1,59 @@
+{
+  "scenario": "bounded failed-attempt cleanup, partial export verification, stop confirmation, and bootstrap restoration",
+  "invocation": "python3 integration snippet configuring eight_h100_watch globals -> watch._read_state(run) -> watch._verify_export(run, state) -> eight_h100_launch.workspace_snapshot() -> eight_h100_watch.restore_bootstrap()",
+  "binary": "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/bin/vesslctl",
+  "cli_operations": [
+    "volume ls",
+    "volume download",
+    "volume upload"
+  ],
+  "workspace": "wsp-9683432r72m7",
+  "workspace_snapshot": {
+    "phase": "standby",
+    "state": "stopped",
+    "accelerator": "H100 SXM",
+    "accelerator_count": 1
+  },
+  "watcher_pid": 45159,
+  "watcher_command_verified_before_stop": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python -u /Users/choiwuseck/Documents/ChatGPT/데이콘/eight_h100_watch.py",
+  "watcher_stopped": true,
+  "nested_exclude": "*/*",
+  "state_status": "failed",
+  "archive_sha256": "9cd3a5f8db2098dbc914db311709db63b5f451a0a8b7b1f44a7ec8ba1c184a78",
+  "files_verified": 8,
+  "download_verification": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/download_verification.json",
+    "sha256": "a55a8ae7d8ed6073a5a1ae3bcf44dfc47566a90e9e555e722c26b5f0aa34b3b6",
+    "verified_at": 1789651708.163063
+  },
+  "downloaded_artifacts": {
+    "run_state.json": {
+      "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/downloaded/run_state.json",
+      "sha256": "b2b2a2c439d58de8b6fd6729ef763daa4ad9e7005717a129e6961297959b7961"
+    },
+    "results.zip": {
+      "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/downloaded/results.zip",
+      "sha256": "9cd3a5f8db2098dbc914db311709db63b5f451a0a8b7b1f44a7ec8ba1c184a78"
+    },
+    "EXPORT_SHA256.json": {
+      "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/downloaded/unpacked/EXPORT_SHA256.json",
+      "sha256": "eb38494d3bf1ad5cd79935d9febe39c167f4be4197de2577e56473051a962810"
+    }
+  },
+  "resource_stop": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/resource_stop.json",
+    "verified_at": 1789651709.084537,
+    "pause_requested": false,
+    "pause_verified": true
+  },
+  "bootstrap_restore": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/bootstrap_restored.json",
+    "sha256": "d027558a7774b4581c6ed1485ed9e94f8bec5b0b8fc88687aa5366e520b07a94",
+    "original_path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/six_h100_20260917/original_bootstrap/redesign_full_refit_run.sh",
+    "readback_path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/eight_h100_20260917/bootstrap_restore_readback/redesign_full_refit_run.sh",
+    "restored": true
+  },
+  "monitor_called": false,
+  "pause_called": false,
+  "start_called": false
+}

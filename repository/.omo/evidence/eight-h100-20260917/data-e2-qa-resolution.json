@@ -1,0 +1,19 @@
+{
+  "correct_formula": "RMS(mix_minus6 - raw parent_ids[0]) / RMS(mix_0dB - raw parent_ids[0])",
+  "correct_groups": 80,
+  "correct_pass": 80,
+  "correct_ratio_max": 0.501187027089,
+  "correct_ratio_min": 0.501187025447,
+  "dataset_mutated": false,
+  "independent_qa_artifact": ".omo/evidence/eight_h100_20260917/independent_data_recompute_final2.log",
+  "initial_qa_assumption": "rescaled parent vocal to RMS 0.04 before subtraction; this was obsolete after final gain repair",
+  "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+  "obsolete_assumption_reproduction": {
+    "groups": 80,
+    "ratio_max": 0.9007662231221522,
+    "ratio_min": 0.501643090955845,
+    "within_0.01": 12
+  },
+  "row_audit_artifact": "results/eight_h100_20260917/data_e2_ratio_audit.csv",
+  "status": "PASS"
+}

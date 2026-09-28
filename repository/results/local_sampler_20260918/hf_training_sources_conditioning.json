@@ -1,0 +1,42 @@
+{
+  "github_commit": "48e6a131cd74f134ed4a748f9c172dc456b707c1",
+  "hf_revision": "371be01815b65274762d6d0a33e2cb70e24b9baa",
+  "code_evidence": [
+    {
+      "path": "_workspace/local_sampler_20260918/new_data/sunocaps/haim_generate_musicgen.py",
+      "sha256": "7baaa25921be1d4ef8f19513f7637abb78dae140f4c304d2b1d8b79aa349d72f",
+      "url": "https://github.com/Mippia/HAIM_dataset/blob/48e6a131cd74f134ed4a748f9c172dc456b707c1/scripts/generation/generate_musicgen.py#L78-L93",
+      "claim": "Generic fixed prompt list; processor receives text only."
+    },
+    {
+      "path": "_workspace/local_sampler_20260918/new_data/sunocaps/haim_gen_musicgen_large.py",
+      "sha256": "0252e26224129d2972e41844c7992b32f9dd6cabf149b574af14715ecc258667",
+      "url": "https://github.com/Mippia/HAIM_dataset/blob/48e6a131cd74f134ed4a748f9c172dc456b707c1/scripts/generation/gen_musicgen_large.py#L58-L62",
+      "claim": "Fixed genre prompts; processor receives text only."
+    },
+    {
+      "path": "_workspace/local_sampler_20260918/new_data/sunocaps/haim_gen_acestep_direct.py",
+      "sha256": "d403a0b89c841e91ae0ce14131cae5d767d32dc3278d49d93ac138627b950525",
+      "url": "https://github.com/Mippia/HAIM_dataset/blob/48e6a131cd74f134ed4a748f9c172dc456b707c1/scripts/generation/gen_acestep_direct.py#L97-L106",
+      "claim": "Captions plus task_type=text2music; no reference audio passed."
+    },
+    {
+      "path": "_workspace/local_sampler_20260918/new_data/sunocaps/haim_generate_acestep.py",
+      "sha256": "1606c25de2ca1a66653713fc750e70f425ebf1b968f78cd4f9d3125858c72438",
+      "url": "https://github.com/Mippia/HAIM_dataset/blob/48e6a131cd74f134ed4a748f9c172dc456b707c1/scripts/generation/generate_acestep.py#L151-L184",
+      "claim": "Generic text prompts passed to text-to-audio pipeline / CLI."
+    },
+    {
+      "path": "_workspace/local_sampler_20260918/new_data/sunocaps/haim_generation_utils.py",
+      "sha256": "1e887e0da7544ed8b4c3318c4732b8267bd41d6b408ed1b40daf0db73af48264",
+      "url": "https://github.com/Mippia/HAIM_dataset/blob/48e6a131cd74f134ed4a748f9c172dc456b707c1/scripts/generation/utils.py#L435-L440",
+      "claim": "Cycles through fixed MUSIC_PROMPTS; does not read Jamendo captions or audio."
+    }
+  ],
+  "ace_metadata_rows": 6000,
+  "ace_metadata_editing_type_counts": {
+    "text_to_music": 1000,
+    "": 5000
+  },
+  "conclusion": "Published A2 generation recipe is text-only with generic prompts; A2 is distinct from B7-B9 reference-conditioned hybrid sets. No evidence that the published A2 recipe consumes held-out Jamendo audio. Per-file UUID-to-generation-run attestation remains unavailable; this is documentation and code provenance evidence, not a complete end-to-end construction proof."
+}

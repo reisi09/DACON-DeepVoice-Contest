@@ -1,0 +1,58 @@
+[2026-09-23T07:26:28Z] == preflight
+[2026-09-23T07:26:55Z] == envs
+[2026-09-23T07:27:31Z] == smoke
+[2026-09-23T07:27:56Z] == SMOKE FAILED (see smoke.log)
+relaunch 2026-09-23T07:29:56Z
+[2026-09-23T07:29:58Z] == preflight
+[2026-09-23T07:29:59Z] == envs
+relaunch(setsid) 2026-09-23T07:30:46Z
+[2026-09-23T07:30:46Z] == preflight
+[2026-09-23T07:30:46Z] == envs
+relaunch(PATH fix) 2026-09-23T07:32:16Z
+[2026-09-23T07:32:17Z] == preflight
+[2026-09-23T07:32:18Z] == envs
+[2026-09-23T07:32:36Z] == smoke
+[2026-09-23T07:33:26Z] == unpack+generation
+relaunch(parallel unpack, torchcodec) 2026-09-23T07:43:17Z
+[2026-09-23T07:43:18Z] == preflight
+[2026-09-23T07:43:18Z] == envs
+relaunch(after partial envs.sh read) 2026-09-23T07:46:53Z
+[2026-09-23T07:46:55Z] == preflight
+[2026-09-23T07:46:55Z] == envs
+[2026-09-23T07:47:10Z] == smoke
+[2026-09-23T07:47:46Z] == unpack+generation
+[2026-09-23T08:36:31Z] == ingest
+[2026-09-23T08:39:28Z] == select
+[2026-09-23T08:39:38Z] == materialize
+relaunch(caps+adapters) 2026-09-23T08:42:52Z
+[2026-09-23T08:42:54Z] == preflight
+[2026-09-23T08:42:54Z] == envs
+[2026-09-23T08:43:09Z] == smoke
+[2026-09-23T08:44:03Z] == unpack+generation
+[2026-09-23T08:45:07Z] == ingest
+[2026-09-23T08:47:50Z] == select
+[2026-09-23T08:47:59Z] == materialize
+relaunch(workers14) 2026-09-23T08:54:10Z
+[2026-09-23T08:54:10Z] == preflight
+[2026-09-23T08:54:10Z] == envs
+[2026-09-23T08:54:26Z] == smoke
+relaunch(workers14, confirmed) 2026-09-23T08:54:40Z
+[2026-09-23T08:54:40Z] == preflight
+[2026-09-23T08:54:40Z] == envs
+[2026-09-23T08:54:52Z] == smoke
+[2026-09-23T08:55:13Z] == unpack+generation
+[2026-09-23T08:56:03Z] == ingest
+[2026-09-23T08:58:38Z] == select
+[2026-09-23T08:58:47Z] == materialize
+relaunch(local code copy) 2026-09-23T09:04:20Z
+[2026-09-23T09:07:08Z] == preflight
+[2026-09-23T09:07:08Z] == envs
+[2026-09-23T09:07:08Z] == smoke
+[2026-09-23T09:07:30Z] == unpack+generation
+[2026-09-23T09:08:08Z] == ingest
+[2026-09-23T09:10:40Z] == select
+[2026-09-23T09:10:47Z] == materialize
+[2026-09-23T09:18:22Z] == vocals
+[2026-09-23T09:43:58Z] == construct
+[2026-09-23T09:51:17Z] == split_analyze
+[2026-09-23T09:51:28Z] == PHASE_A_DONE

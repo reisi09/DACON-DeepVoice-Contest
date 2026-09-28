@@ -1,0 +1,34 @@
+{
+  "files": 1446,
+  "input_sha256": {
+    "Temporal_H100_Compact_Tuning.ipynb": "997ab679a767a9b7b994680375231daa96e8cfcd10cff2aeba3c4000dc220970",
+    "baseline_predictions.json": "03ed68f4c3296be26649d02d16b43a45c8e395bbaf7bcd750e3816394355168f",
+    "c3_data.py": "7c0265171a1ed5fd9e9145bddd07611dbc52d2a92c06ab0287628304764c9bd5",
+    "full_data_plan.json": "7bca217c03564aecd50e646ff48ca5a0e2568e5d4e8d8e823be57c9ec32e8bf8",
+    "graph_scoring.py": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+    "locked_split.json": "f8be800de2a3f9c4d7b0c0228e68a79a03a468344d938c9e380b32ec8257ac3b",
+    "music_temporal.py": "0a6349fa398930f64c0aea56932b16262e834e02d28d17c87c66f68b6ed85548",
+    "reference_simple.json": "7759900e2ce9319b14d35671f7cfdb1f1525920465bf1be02c0fca9f2337f3f1",
+    "requirements-head.txt": "72235f93b2434e1ec1cb0e2ec5d56984257157466eb828939137c854380fb12e",
+    "temporal_augmentation.py": "ff4b5846cb90c659261c60deb783741fd4213c0af86a52de4bb570ba80a0c51f",
+    "temporal_experiment.py": "18da3fcb7ec114aa84d2408f26e921702ba9f299d454a3832672ee1ff58e0f56",
+    "temporal_tuning.py": "674a621c93348d1537c53f28311ae678e19ccb0a24be8bcdb8547ac334931f9c",
+    "v6_core.py": "b0b0496623f16f815e82d465139449b5258b52cf7d2246f5cad72467037dfd72",
+    "v6_data.py": "e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33",
+    "v6_runtime.py": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce",
+    "v6_train.py": "ac5dbad1b572dec8803792012517108055b64da66ddee4b527c6458584135b1b",
+    "v7_ablation.py": "1c93d837c8a0fbd65f48b74b078c97755a588b0013163ee95550d18136e4ea89",
+    "v7_notebook_runner.py": "db204f12b1370621ab38b0240a5f3949251bb2d023db0efc5c310e604045f8b8"
+  },
+  "split_sha256": "fe469cf969174820fe388e0d8abb2c8da36b13b3528912fb2a3da00ce1b1f49f",
+  "quality_policy": {
+    "window_samples": 64600,
+    "frame_samples": 1600,
+    "active_dbfs": -50,
+    "minimum_active_fraction": 0.2,
+    "nsynth_loss_mass": 0.05,
+    "synthetic_mixes": "exclude legacy V6 supplementary mixtures"
+  },
+  "baseline_sha256": "03ed68f4c3296be26649d02d16b43a45c8e395bbaf7bcd750e3816394355168f",
+  "cache_validation": "Source audio SHA256 checked by CPU exporter; exact cache SHA256 and original identity checked on H100"
+}

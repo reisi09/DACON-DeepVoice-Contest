@@ -1,0 +1,21 @@
+{
+  "workspace_slug": "wsp-fu3a51jw77ln",
+  "stage": "cancelled_by_user",
+  "started_epoch": 1789568084.451658,
+  "pause_deadline_epoch": 1789570184.451658,
+  "training_timeout_seconds": 1800,
+  "extra_training": true,
+  "purpose": "One fresh pretrained EAT S2 rerun with 80/10/10 parent-group allocation",
+  "result_path": "/root/fullft8/s2_811_run",
+  "ui_interaction_allowed": false,
+  "cached_inputs_verified": 808,
+  "initialization": "fresh_pretrained_EAT",
+  "reason": "User requested partition only, not training. Assistant incorrectly started training.",
+  "pause_requested_epoch": 1789568557.19855,
+  "automation_status": "PAUSED",
+  "gpu_state": "stopped",
+  "gpu_phase": "standby",
+  "last_checked_epoch": 1789568617.288241,
+  "gpu_resource_stopped": true,
+  "stop_verified_epoch": 1789568617.2882419
+}

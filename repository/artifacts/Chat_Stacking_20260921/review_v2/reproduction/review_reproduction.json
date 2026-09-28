@@ -1,0 +1,69 @@
+{
+  "purpose": "Synthetic regression reproduction only; no real audio or GPU parity",
+  "source_of_reproducer": "Written from user review text; reproduce_preprocessing_gap.py was not available",
+  "expected": "fixed",
+  "status": "PASS",
+  "workflow_sha256": "109168d4c8a17c1340879514c234a9b8716907250d43ca71525a01ac9f9ddab8",
+  "demo_sha256": "8b0ffc6999f53e26e07e0fec48fc5c7aa7ff14540961246db92ea5aab4bf45ec",
+  "observations": {
+    "same_policy_distinct_measurements": {
+      "outcome": "ACCEPTED",
+      "rows": 2,
+      "measured_peak_gain": [
+        {
+          "source_peak": 0.3,
+          "normalization_gain": 1.0
+        },
+        {
+          "source_peak": 0.7,
+          "normalization_gain": 0.8571428571428572
+        }
+      ]
+    },
+    "mixed_flags": {
+      "outcome": "REJECTED",
+      "reason": "Production manifest preserve_gain must be False (boolean); gain-preserving diagnostics cannot enter a production candidate"
+    },
+    "manifest_false_cache_true": {
+      "outcome": "REJECTED",
+      "reason": "Unsupported production preprocessing; require preserve_gain=False, mono 16000 Hz, peak cap 0.6 and the pinned Demucs policy"
+    },
+    "all_true": {
+      "outcome": "REJECTED",
+      "reason": "Production manifest preserve_gain must be False (boolean); gain-preserving diagnostics cannot enter a production candidate"
+    },
+    "missing_xgboost_smoke": {
+      "outcome": "RETURNED",
+      "summary": {
+        "purpose": "SYNTHETIC WIRING ONLY. Metrics here are NOT evidence of audio detection performance.",
+        "systems": {
+          "F0/lr": "OK",
+          "F0/et": "OK",
+          "F0/xgb": "NOT_RUN",
+          "F1/lr": "OK",
+          "F1/et": "OK",
+          "F1/xgb": "NOT_RUN"
+        },
+        "serialization": {
+          "lr": {
+            "status": "NOT_RUN",
+            "stage": "save",
+            "reason": "skops unavailable: safe LR/ExtraTrees serialization NOT_RUN; no pickle fallback"
+          },
+          "et": {
+            "status": "NOT_RUN",
+            "stage": "save",
+            "reason": "skops unavailable: safe LR/ExtraTrees serialization NOT_RUN; no pickle fallback"
+          },
+          "xgb": {
+            "status": "NOT_RUN",
+            "stage": "fit",
+            "reason": "XGBoost NOT_RUN: install requirements-xgb.txt"
+          }
+        }
+      },
+      "serialization_report_exists": true,
+      "cv_report_exists": true
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "archive_bytes": 468,
+  "archive_sha256": "6c4841b9ef99b9e65ab7dba180e2af1b71dc888dc4241e16499fea6de5b0af1c",
+  "invocation": "RUN_ROOT=<tmp>/root RUN_SHARED=<tmp>/shared RUN_PYTHON=.venv/bin/python bash eight_h100_run.sh --worker",
+  "members": 1,
+  "observable": "nonempty partial archive passes CRC, exact manifest coverage, every member SHA, and only then archive_verified=true",
+  "receipt": {
+    "archive_bytes": 468,
+    "archive_ready": true,
+    "archive_sha256": "6c4841b9ef99b9e65ab7dba180e2af1b71dc888dc4241e16499fea6de5b0af1c",
+    "archive_verified": true,
+    "export_member_count": 1,
+    "exported_unix": 1789647434.451835,
+    "status": "partial_exported"
+  },
+  "scenario": "injected bootstrap failure before source sidecar"
+}

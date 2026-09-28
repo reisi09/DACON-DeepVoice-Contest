@@ -1,0 +1,17 @@
+{
+  "checked_at": 1789717919.4199722,
+  "input_sha256": "33fd284202cceb9a3127a79329ba057d5235bf5a5f4383cd8dc8ca5034576c0f",
+  "split_review": "No cross-split intersections in known source identities, prompts, parent links or exact hashes; unresolved near-duplicates remain a limitation",
+  "training_exposure": "All training parents seen under every frozen seed",
+  "isolated_bundle_import": "passed with project venv and no workspace imports",
+  "local_notebook_run_all": "passed in inspection mode; GPU not yet run",
+  "meaningful_checks": "10 checks passed: source/parent leakage rejection, real AST training and gradient/benchmark invariants, lock before heldout, cache integrity and export completeness; ops fail-safe checks passed separately",
+  "uploaded_new_audio_files": 3668,
+  "uploaded_new_audio_bytes": 1634223239,
+  "gpu_start_state": {
+    "H100": "stopped/standby",
+    "A100": "stopped/standby"
+  },
+  "maximum_seconds": 14400,
+  "effective_batch": 256
+}

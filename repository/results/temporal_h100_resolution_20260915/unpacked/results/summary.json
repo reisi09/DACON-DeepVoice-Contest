@@ -1,0 +1,29 @@
+{
+  "groups": [
+    {
+      "name": "R1_sigmoid",
+      "tune_eer": 0.2764148651931018,
+      "test_music_eer": 0.3111111111111111,
+      "test_file_eer": 0.3267094017094017
+    },
+    {
+      "name": "R1_softmax",
+      "tune_eer": 0.3030119018702939,
+      "test_music_eer": 0.33796296296296297,
+      "test_file_eer": 0.32264957264957267
+    },
+    {
+      "name": "R8_sigmoid",
+      "tune_eer": 0.27641486519310177,
+      "test_music_eer": 0.3092592592592593,
+      "test_file_eer": 0.3267094017094017
+    },
+    {
+      "name": "R8_softmax",
+      "tune_eer": 0.28683237524626887,
+      "test_music_eer": 0.3,
+      "test_file_eer": 0.31068376068376075
+    }
+  ],
+  "winner": "R8_sigmoid"
+}

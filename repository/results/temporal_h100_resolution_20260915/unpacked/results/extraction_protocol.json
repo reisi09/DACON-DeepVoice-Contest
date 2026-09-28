@@ -1,0 +1,48 @@
+{
+  "cache_id": "b82b3131c4a0cf7c17b80ae00f3a1be1c9d90885bbe2045538d8c08b544a989b",
+  "schema": "mert95-disjoint-eight-v1",
+  "assets": {
+    "baseline/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+    "baseline/model/htdemucs/955717e8-8726e21a.th": "8726e21a993978c7ba086d3872e7608d7d5bfca646ca4aca459ffda844faa8b4",
+    "baseline/model/htdemucs/htdemucs.yaml": "239c445d0b14454d541ad8bd9bb271c9e536d267e8a4625208744cbb2e7bb66c",
+    "mert/modeling_MERT.py": "6c3ee73cef6f0c30ef494f88d96f891fa6925ffe663fa391b512f4b57abecc6c",
+    "mert/config.json": "ea2627c4c7825cd66f3c944b6b966331604c35928174e0100cd4a82829424e32",
+    "mert/README.md": "4bd95e900185d8b393785c0038aa662355a904e5a98ec692003b8011c802455d",
+    "mert/configuration_MERT.py": "ae0ec2bab8f59c724ba9878a7c20b67210189536ea62d34a56775968e9decb03",
+    "mert/pytorch_model.bin": "a2b8b747f72c06e0595aeae41ae5473f4364938c6b39b2c58be38c48e6bd3fcd",
+    "mert/preprocessor_config.json": "cc5a5e4a5d3b1a758a5ed984b2eaa15bb0522d811d44a9eed82bfca4baa0dc8f",
+    "mert/.cache/huggingface/.gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+    "mert/.cache/huggingface/download/configuration_MERT.py.metadata": "6d35def376b194d457e994b06aa3298a6756230aeef534ed389fde73a182fa6b",
+    "mert/.cache/huggingface/download/preprocessor_config.json.metadata": "1977027b5e530a6a670cec94f1e237dc63b1d2af1ef7716560810c9207df0507",
+    "mert/.cache/huggingface/download/modeling_MERT.py.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mert/.cache/huggingface/download/config.json.metadata": "c764492b24c4acc3c907d57b4cd5d3a1c72a901108680de857ebed406704ad6e",
+    "mert/.cache/huggingface/download/config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mert/.cache/huggingface/download/modeling_MERT.py.metadata": "be42e985bdc677bda8ef44e202c4f5efe14b9fb512f24767031f3d6bc9c3b836",
+    "mert/.cache/huggingface/download/pytorch_model.bin.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mert/.cache/huggingface/download/README.md.metadata": "9cd97b1e2763e9b0cdea9420078533fd2cf8716ba082d00394b4dd13d3a22326",
+    "mert/.cache/huggingface/download/README.md.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mert/.cache/huggingface/download/preprocessor_config.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mert/.cache/huggingface/download/configuration_MERT.py.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mert/.cache/huggingface/download/pytorch_model.bin.metadata": "1e404d5e89000f12d1ee01e5b2d811bed776ed1db5c238e7615e99e2e01646ee"
+  },
+  "extractor_sha256": "3e9d135b3b83edef635d99eb0c5e8e2ce145fcea677e22ac29619775f57a9109",
+  "torch": "2.9.1+cu130",
+  "device": "NVIDIA H100 80GB HBM3",
+  "versions": {
+    "transformers": "4.57.6",
+    "demucs": "4.0.1",
+    "librosa": "0.11.0",
+    "numpy": "2.2.6",
+    "torchaudio": "2.9.1+cu130"
+  },
+  "sample_rate": 16000,
+  "mert_sample_rate": 24000,
+  "window_samples": 64600,
+  "frame_time": "convolution receptive-field centre; contextual MERT embeddings",
+  "tail": "baseline last full window, short audio tiled",
+  "bins": [
+    1,
+    8
+  ],
+  "dtype": "float32"
+}

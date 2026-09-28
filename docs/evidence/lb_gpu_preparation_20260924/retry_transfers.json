@@ -1,0 +1,31 @@
+{
+  "object_volume": "objvol-a5gxdg7er70i",
+  "remote_prefix": "lb-improvement-20260924/gpu-preparation-v1/retry/",
+  "files": [
+    {
+      "name": "README.txt",
+      "bytes": 4563,
+      "sha256": "5621e37ca99b7b43c3bbf400af8bd1b6f042e8338ab90649782f3b35f79b0d25",
+      "full_readback_verified": true
+    },
+    {
+      "name": "cpu_verify_job_request.json",
+      "bytes": 2076,
+      "sha256": "289f89d680f32bcb1c84e62547322500e2e27fcb89570da77d11dd3eea338698",
+      "full_readback_verified": true
+    },
+    {
+      "name": "verify_gpu_cpu.sh",
+      "bytes": 5573,
+      "sha256": "1ab256645a65954ce2c3758e7e082b9f1e2b522468fbe27e29f18976a72e8a7e",
+      "full_readback_verified": true
+    }
+  ],
+  "new_cpu_job_created": false,
+  "canonical_readme_update": {
+    "remote_key": "lb-improvement-20260924/gpu-preparation-v1/README.txt",
+    "previous_sha256": "ce283e4703802061da96e674142bdaa8f9204ff2d53a3c59bf258e5e400174ad",
+    "sha256": "5621e37ca99b7b43c3bbf400af8bd1b6f042e8338ab90649782f3b35f79b0d25",
+    "full_readback_verified": true
+  }
+}

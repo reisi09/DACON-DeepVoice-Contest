@@ -1,0 +1,61 @@
+{
+  "status": "cpu_preparation_complete",
+  "gpu_started": false,
+  "cloud_modified": false,
+  "train_rows": 7390,
+  "full_original_rows": 6431,
+  "legacy_rows": 959,
+  "duration_hours": 193.8898976562579,
+  "windows": 340767,
+  "original_audio_bytes_copied": 0,
+  "rows_by_source": {
+    "HAIM": 1435,
+    "FMA": 360,
+    "JamendoMaxCaps": 572,
+    "FakeMusicCaps": 1384,
+    "SONICS": 2764,
+    "suno": 24,
+    "Echoes/songgen/ATA": 42,
+    "Echoes/producer/ATA": 20,
+    "udio": 24,
+    "Echoes/musicgen/ATA": 43,
+    "Echoes/elevenlabs/TTA": 42,
+    "Echoes/udio/TTA": 45,
+    "Echoes/audioldm/TTA": 47,
+    "Echoes/musicgen/TTA": 49,
+    "Echoes/diffrhythm/ATA": 45,
+    "Echoes/diffrhythm/TTA": 50,
+    "Echoes/acestep/TTA": 48,
+    "Echoes/audioldm/ATA": 43,
+    "FMA/FMA": 55,
+    "Echoes/suno/TTA": 44,
+    "Echoes/songgen/TTA": 49,
+    "Echoes/brev/TTA": 42,
+    "Echoes/producer/TTA": 23,
+    "Echoes/mubert/TTA": 6,
+    "Echoes/stableaudio/TTA": 6,
+    "constructed_music": 128
+  },
+  "labels": {
+    "1": 6339,
+    "0": 1051
+  },
+  "admission_reasons": {
+    "train_music": 7390,
+    "protected_evaluation_component": 1638,
+    "quality_or_integrity_review": 4,
+    "source_admission_gate": 130,
+    "heldout_generator_mustango": 346
+  },
+  "speech_catalogue_rows": 6620,
+  "frozen_evaluation_rows": 968,
+  "files_sha256": {
+    "admission_ledger.csv": "dd70830489eb92351806b70c4a58392a306442f8efefb2b590877b730ff175d3",
+    "frozen_evaluation_sources.csv": "0b265cb906882b20a022605cf67332bd71c9578f505a2d913eb51700d644a5a4",
+    "speech_catalogue.csv": "ec09af14cfec441f96ef14ebd659b7e99d19b4297bfa56473e623777f75c33cc",
+    "train_full_duration.csv": "6f4a0f6a2337f70ea789661a98bb85b952ec7ee8b257fa6c5aa9127f548942da"
+  },
+  "elapsed_seconds": 162.70015433299704,
+  "cache_status": "No HTDemucs stems or MERT embeddings computed; GPU remains off",
+  "storage": "Originals retained; normalized waveform and windows are reconstructed from this manifest on demand"
+}

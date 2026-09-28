@@ -1,0 +1,72 @@
+......................ss......FF.                                        [100%]
+=================================== FAILURES ===================================
+___________ test_smoke_records_notrun_at_each_candidate_stage[save] ____________
+
+tmp_path = PosixPath('/private/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/pytest-of-choiwuseck/pytest-107/test_smoke_records_notrun_at_e1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x12187f290>
+stage = 'save'
+
+    @pytest.mark.parametrize('stage', ['fit', 'save', 'load'])
+    def test_smoke_records_notrun_at_each_candidate_stage(tmp_path, monkeypatch, stage):
+        from dacon_stacking import demo
+        from dacon_stacking.common import NotRunError
+        target = {'fit': 'fit_final_dev', 'save': 'save_bundle', 'load': 'load_bundle'}[stage]
+        original = getattr(demo, target)
+        def maybe_unavailable(*args, **kwargs):
+            kind = args[2] if stage == 'fit' else (args[1]['kind'] if stage == 'save' else Path(args[0]).name.removeprefix('synthetic_'))
+            if kind == 'xgb':
+                raise NotRunError(f'TEST ONLY: dependency unavailable during {stage}')
+            return original(*args, **kwargs)
+        monkeypatch.setattr(demo, target, maybe_unavailable)
+        result = demo.run_smoke(tmp_path)
+>       assert result['serialization']['xgb'] == {'status': 'NOT_RUN', 'stage': stage,
+                                                'reason': f'TEST ONLY: dependency unavailable during {stage}'}
+E       AssertionError: assert {'status': 'N...ents-xgb.txt'} == {'status': 'N... during save'}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Differing items:
+E         {'reason': 'XGBoost NOT_RUN: install requirements-xgb.txt'} != {'reason': 'TEST ONLY: dependency unavailable during save'}
+E         {'stage': 'fit'} != {'stage': 'save'}
+E         Use -v to get more diff
+
+_workspace/stacking_return_v2/tests/test_smoke_optional.py:60: AssertionError
+___________ test_smoke_records_notrun_at_each_candidate_stage[load] ____________
+
+tmp_path = PosixPath('/private/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/pytest-of-choiwuseck/pytest-107/test_smoke_records_notrun_at_e2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1216e2f10>
+stage = 'load'
+
+    @pytest.mark.parametrize('stage', ['fit', 'save', 'load'])
+    def test_smoke_records_notrun_at_each_candidate_stage(tmp_path, monkeypatch, stage):
+        from dacon_stacking import demo
+        from dacon_stacking.common import NotRunError
+        target = {'fit': 'fit_final_dev', 'save': 'save_bundle', 'load': 'load_bundle'}[stage]
+        original = getattr(demo, target)
+        def maybe_unavailable(*args, **kwargs):
+            kind = args[2] if stage == 'fit' else (args[1]['kind'] if stage == 'save' else Path(args[0]).name.removeprefix('synthetic_'))
+            if kind == 'xgb':
+                raise NotRunError(f'TEST ONLY: dependency unavailable during {stage}')
+            return original(*args, **kwargs)
+        monkeypatch.setattr(demo, target, maybe_unavailable)
+        result = demo.run_smoke(tmp_path)
+>       assert result['serialization']['xgb'] == {'status': 'NOT_RUN', 'stage': stage,
+                                                'reason': f'TEST ONLY: dependency unavailable during {stage}'}
+E       AssertionError: assert {'status': 'N...ents-xgb.txt'} == {'status': 'N... during load'}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Differing items:
+E         {'reason': 'XGBoost NOT_RUN: install requirements-xgb.txt'} != {'reason': 'TEST ONLY: dependency unavailable during load'}
+E         {'stage': 'fit'} != {'stage': 'load'}
+E         Use -v to get more diff
+
+_workspace/stacking_return_v2/tests/test_smoke_optional.py:60: AssertionError
+=============================== warnings summary ===============================
+tests/test_integration.py::test_opt_in_telemetry_leaves_baseline_and_four_outputs_unchanged
+  /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/lib/python3.11/site-packages/librosa/core/intervals.py:15: DeprecationWarning: path is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.
+    with resources.path("librosa.core", "intervals.msgpack") as imsgpack:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED _workspace/stacking_return_v2/tests/test_smoke_optional.py::test_smoke_records_notrun_at_each_candidate_stage[save]
+FAILED _workspace/stacking_return_v2/tests/test_smoke_optional.py::test_smoke_records_notrun_at_each_candidate_stage[load]
+2 failed, 29 passed, 2 skipped, 2 deselected, 1 warning in 6.35s

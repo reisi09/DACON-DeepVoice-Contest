@@ -1,0 +1,27 @@
+{
+  "calibration_thresholds": {
+    "frozen": 0.09229545237030834,
+    "head_only_ce_seed41": 0.7115453084309896,
+    "head_only_ce_seed42": 0.6535479724407196,
+    "head_only_ce_seed43": 0.7188319067160288,
+    "lora_ce_kl_seed41": 0.7343048254648844,
+    "lora_ce_kl_seed42": 0.7851228912671407,
+    "lora_ce_kl_seed43": 0.4367589031656583,
+    "lora_ce_seed41": 0.9986647764841715,
+    "lora_ce_seed42": 0.9997714161872864,
+    "lora_ce_seed43": 0.9979908168315887
+  },
+  "chosen_arm": "head_only_ce",
+  "locked_before_test": true,
+  "mean_dev_eer": {
+    "head_only_ce": 0.0,
+    "lora_ce": 0.0,
+    "lora_ce_kl": 0.0
+  },
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "selection_objective": "lowest mean dev voice EER"
+}

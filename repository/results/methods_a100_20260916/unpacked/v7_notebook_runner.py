@@ -1,0 +1,84 @@
+"""Execute the A100 notebook with a wall-clock deadline and recoverable results."""
+
+import hashlib
+import json
+import os
+from pathlib import Path
+import signal
+import subprocess
+import sys
+import time
+import zipfile
+
+
+ROOT = Path(__file__).resolve().parent
+NOTEBOOK = os.environ.get('EXPERIMENT_NOTEBOOK', 'V7_A100_DataAblation.ipynb')
+EXECUTED = os.environ.get('EXPERIMENT_EXECUTED', 'V7_A100_Executed.ipynb')
+RESULTS = os.environ.get('EXPERIMENT_OUTPUT_DIR', 'results')
+
+
+def state(stage: str, details: str = '') -> None:
+    path = ROOT / 'run_state.json'
+    temporary = path.with_suffix('.tmp')
+    temporary.write_text(json.dumps(dict(stage=stage, details=details, utc=time.time()), indent=2))
+    temporary.replace(path)
+
+
+def execute_notebook() -> None:
+    import nbformat
+    from nbclient import NotebookClient
+
+    notebook = nbformat.read(ROOT / NOTEBOOK, as_version=4)
+    target = ROOT / EXECUTED
+    def save_cell(**kwargs):
+        nbformat.write(notebook, target)
+    client = NotebookClient(notebook, timeout=None, kernel_name=os.environ.get('EXPERIMENT_KERNEL', 'v7-a100'),
+                            resources={'metadata': {'path': str(ROOT)}}, on_cell_executed=save_cell)
+    try:
+        client.execute()
+    finally:
+        nbformat.write(notebook, target)
+
+
+def main() -> None:
+    if '--worker' in sys.argv:
+        execute_notebook()
+        return
+    os.environ['MPLBACKEND'] = 'Agg'
+    os.environ['PYTHONUNBUFFERED'] = '1'
+    deadline = float(os.environ['V7_RESUMED_EPOCH']) + float(os.environ.get('EXPERIMENT_COMPUTE_HOURS', '3.5')) * 3600
+    if time.time() >= deadline:
+        raise TimeoutError('Workspace compute deadline already passed')
+    state('running')
+    child = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), '--worker'],
+                             cwd=ROOT, start_new_session=True)
+    try:
+        code = child.wait(timeout=max(1, deadline - time.time()))
+        state('complete' if code == 0 else 'error', f'notebook exit code {code}')
+    except subprocess.TimeoutExpired:
+        os.killpg(child.pid, signal.SIGTERM)
+        try:
+            child.wait(timeout=15)
+        except subprocess.TimeoutExpired:
+            os.killpg(child.pid, signal.SIGKILL)
+            child.wait()
+        state('time_limit', 'Compute stopped; download partial artifacts and Pause workspace')
+    finally:
+        bundle = ROOT / os.environ.get('EXPERIMENT_RESULTS_ZIP', 'V7_A100_results.zip')
+        with zipfile.ZipFile(bundle.with_suffix('.partial'), 'w', zipfile.ZIP_DEFLATED, compresslevel=1) as archive:
+            paths = [p for p in (ROOT / RESULTS).rglob('*')
+                     if not {'new_cache', 'inference_cache'}.intersection(p.parts)]
+            paths += [p for p in ROOT.iterdir() if p.suffix in ('.py', '.ipynb', '.json', '.csv', '.log')]
+            for path in paths:
+                if path.is_file():
+                    archive.write(path, path.relative_to(ROOT))
+        bundle.with_suffix('.partial').replace(bundle)
+        with bundle.open('rb') as stream:
+            digest = hashlib.file_digest(stream, 'sha256').hexdigest()
+        (ROOT / 'download_manifest.json').write_text(json.dumps(
+            dict(file=bundle.name, bytes=bundle.stat().st_size, sha256=digest), indent=2))
+        print('RESULTS_READY', bundle.name, digest, flush=True)
+
+
+if __name__ == '__main__':
+    main()

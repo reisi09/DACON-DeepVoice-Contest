@@ -1,0 +1,22 @@
+2026-09-13 07:19:42.608649: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-09-13 07:19:42.680831: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/content/dacon_trainable_v4/train_v4.py", line 284, in <module>
+    main()
+    ~~~~^^
+  File "/content/dacon_trainable_v4/train_v4.py", line 274, in main
+    result = run(args)
+  File "/content/dacon_trainable_v4/train_v4.py", line 97, in run
+    profiles.append(profile_update(loaded, (groups.encoder, groups.head), train_rows, args.data,
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                   p95_row, output / "profile_codec",
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                   _stage_deadline(allocation_start, args.deadline, "profile")))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/dacon_trainable_v4/v4_training_trials.py", line 186, in profile_update
+    batch = batches[0]
+            ~~~~~~~^^^
+  File "/content/dacon_trainable_v4/v4_training_data.py", line 95, in __getitem__
+    raise TimeoutError("deadline reached during CPU batch preparation")
+TimeoutError: deadline reached during CPU batch preparation

@@ -1,0 +1,14 @@
+{
+  "command": ".venv/bin/python test_full_bank_training.py",
+  "passed": true,
+  "validated": [
+    "all train rows exactly once per epoch",
+    "validation excluded from optimization",
+    "ragged MIL forward and gradients match original WindowMIL",
+    "original fc5 gradients and fake label mapping",
+    "unknown local labels remain unknown",
+    "truncated or modified feature cache rejected"
+  ],
+  "runtime_manifest_rows": 16042,
+  "all_mapped_audio_hashes_match_source_sha256": true
+}

@@ -1,0 +1,46 @@
+{
+  "status": "final_bank_reconciliation_passed",
+  "checked_at_utc": "2026-09-18T06:12:29.528466+00:00",
+  "asv": {
+    "rows": 4000,
+    "unique_source_sha256": 4000,
+    "unique_pcm_sha256": 4000,
+    "hours": 3.6987045833333343,
+    "label_counts": {
+      "spoof": 2000,
+      "bonafide": 2000
+    },
+    "train_eligible_rows": 4000
+  },
+  "libri": {
+    "rows": 2620,
+    "unique_source_sha256": 2620,
+    "unique_pcm_sha256": 2620,
+    "hours": 5.403466840277778,
+    "label_counts": {
+      "bonafide": 2620
+    },
+    "train_eligible_rows": 2126
+  },
+  "combined": {
+    "rows": 6620,
+    "unique_source_sha256": 6620,
+    "unique_pcm_sha256": 6620,
+    "hours": 9.10217142361111,
+    "label_counts": {
+      "spoof": 2000,
+      "bonafide": 4620
+    },
+    "train_eligible_rows": 6126
+  },
+  "cross_corpus_exact_pcm_overlap": 0,
+  "asv_selection_and_official_cm_joins_verified": 4000,
+  "asv_reference_target_vcinput_and_text_fields_verified": 4000,
+  "all_rows_unassigned_and_label_masks_verified": 6620,
+  "libri_reserved_speakers": 8,
+  "libri_reserved_speaker_rows_train_ineligible": 494,
+  "asv_train_eligible_interpretation": "source integrity eligibility only; does not imply pretrained-independent evaluation",
+  "asv_verification_finished_at_utc": "2026-09-18T06:08:57.619863+00:00",
+  "raw_source_download_finished_at_utc": "2026-09-18T06:08:18.136331+00:00",
+  "asv_official_relationship_table_directly_matched_rows": 4000
+}

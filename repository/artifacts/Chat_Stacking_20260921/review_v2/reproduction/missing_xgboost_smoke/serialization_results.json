@@ -1,0 +1,17 @@
+{
+  "lr": {
+    "status": "NOT_RUN",
+    "stage": "save",
+    "reason": "skops unavailable: safe LR/ExtraTrees serialization NOT_RUN; no pickle fallback"
+  },
+  "et": {
+    "status": "NOT_RUN",
+    "stage": "save",
+    "reason": "skops unavailable: safe LR/ExtraTrees serialization NOT_RUN; no pickle fallback"
+  },
+  "xgb": {
+    "status": "NOT_RUN",
+    "stage": "fit",
+    "reason": "XGBoost NOT_RUN: install requirements-xgb.txt"
+  }
+}

@@ -1,0 +1,8 @@
+manifest rows 7101 unique IDs 7101 unique audio hashes 7101
+source records 1834 source paths missing 0 source hash mismatches 0 status PASS
+speaker components 10 split counts {'calibration': 3, 'dev': 2, 'train': 3, 'test': 2}
+E5 rows 648 cells 324 pairs with labels 0+1 324 all paired True
+E5 duration values [12.0, 30.0, 60.0] variant position samples ['partial_fake_12s_0.25s_end', 'partial_fake_12s_0.25s_mid', 'partial_fake_12s_0.25s_start', 'partial_fake_12s_0.5s_end', 'partial_fake_12s_0.5s_mid']
+E2 rows 160 duration values [4.326, 5.48, 5.599875, 5.9043125, 6.0304375, 6.289875, 7.11175, 7.46, 7.76, 7.8, 7.819875, 8.0] levels ['0dB', 'minus6dB']
+E2 pair-background groups 80 residual gain ratio min 0.501643 max 0.900766 target 0.501187 within_0.01 12 of 80
+unknown masks {'FILE_FAKE': 0, 'VOICE_FAKE': 4517, 'MUSIC_FAKE': 2524, 'VOICE_PRESENT': 4457, 'MUSIC_PRESENT': 0}

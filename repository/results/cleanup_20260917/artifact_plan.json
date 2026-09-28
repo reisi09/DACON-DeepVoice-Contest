@@ -1,0 +1,512 @@
+{
+  "scope": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+  "action": "move_obsolete_artifacts_to_trash",
+  "protected": [
+    "submissions/M330_MLP_full1206",
+    "baseline_original",
+    "_workspace/bin",
+    "_workspace/redesign_full_20260917",
+    "_workspace/redesign_20260917",
+    "_workspace/six_h100_20260917/source.zip",
+    "_workspace/six_h100_20260917/source",
+    "_workspace/v4_data/sources",
+    "_workspace/v2_sources",
+    "_workspace/mert330_submission_assets",
+    "_workspace/fresh_fma_20260917",
+    "_workspace/fresh_sonics_20260917",
+    "_workspace/fresh_music_crops_20260917",
+    "results/six_h100_20260917",
+    "results/redesign_full_20260917",
+    "results/mlp_full_a100_20260916",
+    ".venv",
+    ".omo/evidence/v4-training/source-sha256.txt",
+    "EXPERIMENTS_ALL_2026-09-17.md",
+    "COMPETITION_CONTRACT.md"
+  ],
+  "items": [
+    {
+      "path": "submissions/C08/C08_submit.zip",
+      "reason": "이전 C08 제출 ZIP; 최고점 M330 제출본과 C08 소형 학습 기록 보존",
+      "files": 1,
+      "bytes": 5381446417
+    },
+    {
+      "path": "submissions/S2_EAT/submit.zip",
+      "reason": "낮은 공식 점수의 과거 S2 제출 ZIP",
+      "files": 1,
+      "bytes": 6239402263
+    },
+    {
+      "path": "submissions/S2_EAT/staged",
+      "reason": "과거 S2 ZIP 제작용 펼친 모델 복사본",
+      "files": 37,
+      "bytes": 6239395791
+    },
+    {
+      "path": "submissions/AST_full1029_epoch17/DACON_Sumbit_1.zip",
+      "reason": "과거 AST 제출 ZIP; 제출 기록과 재현 코드 보존",
+      "files": 1,
+      "bytes": 344836628
+    },
+    {
+      "path": "submissions/B_full1696/submit.zip",
+      "reason": "현재 미채택 B 제출 ZIP; 동결 assets와 B 학습 checkpoint·패키징 코드 보존",
+      "files": 1,
+      "bytes": 6267071302
+    },
+    {
+      "path": "results/fullft8_h100x1_20260916/downloaded/fullft8_results.tar",
+      "reason": "과거 fullFT 8개 실험의 대형 재개 checkpoint archive; 소형 결과 및 실행 노트북 별도 보존",
+      "files": 1,
+      "bytes": 37601239040
+    },
+    {
+      "path": "results/fullft8_h100x1_20260916/downloaded/h100x1_fullft8_run/07_S2_EAT_fullft/best.pt",
+      "reason": "과거 낮은 점수 S2 가중치; 학습 설정·지표 보존",
+      "files": 1,
+      "bytes": 1236025611
+    },
+    {
+      "path": "results/redesign_h100_20260917/input.zip",
+      "reason": "이전 GPU 업로드용 ZIP; 원천 자료와 현재 준비본 보존",
+      "files": 1,
+      "bytes": 3563625498
+    },
+    {
+      "path": "results/temporal_h100_resolution_20260915/Temporal_Resolution_Audio.zip",
+      "reason": "과거 해상도 실험 전송용 오디오 archive",
+      "files": 1,
+      "bytes": 3208572459
+    },
+    {
+      "path": "results/temporal_h100_resolution_20260915/Temporal_Resolution_Input.zip",
+      "reason": "과거 해상도 실험 입력 archive",
+      "files": 1,
+      "bytes": 316313680
+    },
+    {
+      "path": "_workspace/mlp_full_package_check",
+      "reason": "M330 패키지 검사 중복 펼친 복사본",
+      "files": 61,
+      "bytes": 6267961821
+    },
+    {
+      "path": "_workspace/mlp_full_package_check_1789507559",
+      "reason": "M330 패키지 검사 중복 펼친 복사본",
+      "files": 51,
+      "bytes": 6267797394
+    },
+    {
+      "path": "_workspace/c08_package_check",
+      "reason": "이전 C08 패키지 검사 중복 복사본",
+      "files": 49,
+      "bytes": 5381676227
+    },
+    {
+      "path": "_workspace/v5_submission_fix",
+      "reason": "과거 V5 제출 복구·패키징 임시본",
+      "files": 63,
+      "bytes": 9557896718
+    },
+    {
+      "path": "_workspace/full_refit_20260913_fixed",
+      "reason": "과거 AST 패키징·재현 검사 중복 작업본",
+      "files": 1098,
+      "bytes": 1475057834
+    },
+    {
+      "path": "_workspace/full_refit_drive_parts",
+      "reason": "과거 AST 업로드 분할 전송본",
+      "files": 6,
+      "bytes": 689674167
+    },
+    {
+      "path": "_workspace/fullft7_upload",
+      "reason": "과거 GPU 업로드용 모델 복사본",
+      "files": 34,
+      "bytes": 2582026180
+    },
+    {
+      "path": "_workspace/v6_assets",
+      "reason": "과거 V6 음성/음악 모델 묶음; 현재 baseline·MERT330는 redesign_full assets에 보존",
+      "files": 62,
+      "bytes": 6645884297
+    },
+    {
+      "path": "_workspace/v2_models",
+      "reason": "과거 AST 모델 묶음",
+      "files": 13,
+      "bytes": 346433597
+    },
+    {
+      "path": "_workspace/six_h100_20260917/remote_verify",
+      "reason": "이미 해시 검증이 끝난 업로드 readback 복사본",
+      "files": 3,
+      "bytes": 823348389
+    },
+    {
+      "path": "_workspace/temporal_resolution_input",
+      "reason": "과거 해상도 실험 업로드 준비 복사본",
+      "files": 42,
+      "bytes": 464702889
+    },
+    {
+      "path": "_workspace/fullft8_readback",
+      "reason": "과거 학습 런 readback 임시본",
+      "files": 48,
+      "bytes": 281773800
+    },
+    {
+      "path": "_workspace/fullft8_batch4_readback",
+      "reason": "과거 batch4 readback 임시본",
+      "files": 4,
+      "bytes": 382453
+    },
+    {
+      "path": "_workspace/v6_local_check",
+      "reason": "과거 V6 실행 검사 임시본",
+      "files": 99,
+      "bytes": 73936923
+    },
+    {
+      "path": "_workspace/v5_composition_check",
+      "reason": "과거 V5 조합 검사 임시본",
+      "files": 240,
+      "bytes": 143763200
+    },
+    {
+      "path": "_workspace/h100_portable_backup",
+      "reason": "이전 H100 전송용 임시 backup; 현재 실행·복원 자료 보존",
+      "files": 2,
+      "bytes": 82829555
+    },
+    {
+      "path": "_workspace/v2_discovery",
+      "reason": "과거 데이터 탐색 중복 다운로드; v2_sources 원본 보존",
+      "files": 25,
+      "bytes": 544521442
+    },
+    {
+      "path": "_workspace/v4_data/v4_metadata.zip",
+      "reason": "과거 V4 전송용 ZIP; sources와 v4_validation 원본·분할 자료 보존",
+      "files": 1,
+      "bytes": 659843
+    },
+    {
+      "path": "_workspace/v4_data/v4_sealed.zip",
+      "reason": "과거 V4 전송용 ZIP; sources와 v4_validation 원본·분할 자료 보존",
+      "files": 1,
+      "bytes": 322426108
+    },
+    {
+      "path": "_workspace/v4_data/v4_dev.zip",
+      "reason": "과거 V4 전송용 ZIP; sources와 v4_validation 원본·분할 자료 보존",
+      "files": 1,
+      "bytes": 255421320
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip",
+      "reason": "과거 V4 전송용 ZIP; sources와 v4_validation 원본·분할 자료 보존",
+      "files": 1,
+      "bytes": 3150620485
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part007",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part000",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_sealed.zip.part000",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part009",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part031",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 62564165
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part030",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_sealed.zip.part001",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part008",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part001",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part006",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part024",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part023",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part015",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part012",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part013",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part014",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part022",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part025",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_metadata.zip.part000",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 659843
+    },
+    {
+      "path": "_workspace/v4_data/v4_dev.zip.part000",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_dev.zip.part001",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part003",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part004",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_sealed.zip.part003",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 23581948
+    },
+    {
+      "path": "_workspace/v4_data/v4_sealed.zip.part002",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part005",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part002",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part020",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part018",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part027",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part011",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part029",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part016",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part028",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part017",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part010",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part019",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part026",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_train.zip.part021",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 99614720
+    },
+    {
+      "path": "_workspace/v4_data/v4_dev.zip.part002",
+      "reason": "과거 V4 전송용 분할 archive",
+      "files": 1,
+      "bytes": 56191880
+    },
+    {
+      "path": "__pycache__",
+      "reason": "재생성 가능한 Python 또는 검사 캐시",
+      "files": 264,
+      "bytes": 4598664
+    },
+    {
+      "path": ".pytest_cache",
+      "reason": "재생성 가능한 Python 또는 검사 캐시",
+      "files": 5,
+      "bytes": 24247
+    },
+    {
+      "path": ".ruff_cache",
+      "reason": "재생성 가능한 Python 또는 검사 캐시",
+      "files": 5,
+      "bytes": 2810
+    },
+    {
+      "path": "results/fullft7_h100x1_20260916/__pycache__",
+      "reason": "재생성 가능한 Python 또는 검사 캐시",
+      "files": 1,
+      "bytes": 7630
+    },
+    {
+      "path": "results/methods_a100_20260916/__pycache__",
+      "reason": "재생성 가능한 Python 또는 검사 캐시",
+      "files": 1,
+      "bytes": 14037
+    },
+    {
+      "path": "results/afwhisper_a100_20260916/__pycache__",
+      "reason": "재생성 가능한 Python 또는 검사 캐시",
+      "files": 1,
+      "bytes": 12320
+    },
+    {
+      "path": "results/afwhisper_a100_20260916/source/__pycache__",
+      "reason": "재생성 가능한 Python 또는 검사 캐시",
+      "files": 1,
+      "bytes": 68744
+    },
+    {
+      "path": "results/temporal_h100_aug_20260915/unpacked/__pycache__",
+      "reason": "재생성 가능한 Python 또는 검사 캐시",
+      "files": 1,
+      "bytes": 25226
+    },
+    {
+      "path": "results/c3_final_20260915/unpacked/final_run/packaged_smoke/model/runtime/__pycache__",
+      "reason": "재생성 가능한 Python 또는 검사 캐시",
+      "files": 6,
+      "bytes": 72197
+    }
+  ],
+  "total_bytes": 119490676962,
+  "total_files": 2275,
+  "preserve_all_root_source_code": true,
+  "preserve_all_small_experiment_reports": true
+}

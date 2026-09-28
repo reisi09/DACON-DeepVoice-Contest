@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "purpose": "final",
+  "version": "v6-xlsraasist-la-mert95-aligned-1",
+  "model_id": "C3-full-clean-oof",
+  "asset_id": "b5da2bf48b57d9354312e532e579ec4765eb3c52fa335e10fc2f5845ad5b4f01",
+  "heads_sha256": "c2bf67ee311416702b43f3636a0b4eccd0e24223dd228bd1e58e66b996277497",
+  "epochs_requested": 300,
+  "epochs_completed": 300,
+  "music_files": 1206,
+  "fusion_files": 1886,
+  "seed": 41,
+  "source_weighting": "FMA 45%, NSynth 5%, fake 50% equally split across generators",
+  "window_policy": {
+    "window_samples": 64600,
+    "frame_samples": 1600,
+    "active_dbfs": -50,
+    "minimum_active_fraction": 0.2,
+    "nsynth_loss_mass": 0.05,
+    "synthetic_mixes": "exclude legacy V6 supplementary mixtures"
+  },
+  "composition": {
+    "files": 1206,
+    "windows": 25879,
+    "real_loss_mass": 0.4999999701976776,
+    "fake_loss_mass": 0.5
+  },
+  "oof_folds": 5,
+  "data_plan_sha256": "7bca217c03564aecd50e646ff48ca5a0e2568e5d4e8d8e823be57c9ec32e8bf8",
+  "final_evaluation": "Unavailable: all eligible public train/dev/sealed data used for final fitting",
+  "calibration": "Trained on source-component-disjoint OOF music predictions",
+  "architecture": "Frozen encoders; C3 linear music head and logistic file calibrator",
+  "initial_loss": 0.6931472420692444,
+  "final_loss": 0.31596651673316956
+}

@@ -1,0 +1,8 @@
+Fri Sep 18 01:22:01 UTC 2026
+279 timeout -k 30s 910s /root/mert330-a100-venv/bin/python -m jupyter nbconvert --to notebook --execute /root/mert12_a100_20260918/source/DACON_MERT12_Final_QA.ipynb --ExecutePreprocessor.kernel_name=mert12-final-qa --ExecutePreprocessor.timeout=7200 --output /root-1/mert12-a100-20260918/output/DACON_MERT12_Final_QA_Executed.ipynb
+280 /opt/conda/bin/python3 /opt/conda/bin/jupyter-nbconvert --to notebook --execute /root/mert12_a100_20260918/source/DACON_MERT12_Final_QA.ipynb --ExecutePreprocessor.kernel_name=mert12-final-qa --ExecutePreprocessor.timeout=7200 --output /root-1/mert12-a100-20260918/output/DACON_MERT12_Final_QA_Executed.ipynb
+281 /root/V6_L40S/.venv/bin/python -Xfrozen_modules=off -m ipykernel_launcher -f /tmp/tmp31at3cjn.json
+325 /root/V6_L40S/.venv/bin/python /root/mert12_a100_20260918/final_package/script.py --test-dir /root/mert12_a100_20260918/smoke_inputs/original/test --sample-submission /root/mert12_a100_20260918/smoke_inputs/original/sample_submission.csv --output /root-1/mert12-a100-20260918/output/final_smoke_original/submission.csv --device cuda
+/root-1/mert12-a100-20260918/output/final_gpu_telemetry.csv
+/root-1/mert12-a100-20260918/output/final_smoke_original
+/root-1/mert12-a100-20260918/output/final_smoke_original/runtime.log

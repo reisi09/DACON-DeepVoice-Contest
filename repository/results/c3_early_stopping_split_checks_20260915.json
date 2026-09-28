@@ -1,0 +1,36 @@
+{
+  "data_plan_sha256": "7bca217c03564aecd50e646ff48ca5a0e2568e5d4e8d8e823be57c9ec32e8bf8",
+  "split_checks": [
+    {
+      "fold": 1,
+      "inner_training_files": 828,
+      "early_stopping_files": 209,
+      "outer_held_files": 361
+    },
+    {
+      "fold": 2,
+      "inner_training_files": 828,
+      "early_stopping_files": 209,
+      "outer_held_files": 361
+    },
+    {
+      "fold": 3,
+      "inner_training_files": 738,
+      "early_stopping_files": 178,
+      "outer_held_files": 388
+    },
+    {
+      "fold": 4,
+      "inner_training_files": 739,
+      "early_stopping_files": 178,
+      "outer_held_files": 389
+    },
+    {
+      "fold": 5,
+      "inner_training_files": 739,
+      "early_stopping_files": 178,
+      "outer_held_files": 387
+    }
+  ],
+  "scope": "Real data split/source composition checks; no new GPU training or leaderboard score"
+}

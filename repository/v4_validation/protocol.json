@@ -1,0 +1,179 @@
+{
+  "schema_version": 4,
+  "selection_basis": "source availability, licenses, hashes and parent identity only; no model predictions",
+  "music_roles": {
+    "dev_provider": "stableaudio",
+    "sealed_provider": "mubert",
+    "dev_artists": [
+      "966",
+      "214",
+      "233",
+      "22222",
+      "20348",
+      "15212",
+      "18761",
+      "19741",
+      "10484",
+      "6396"
+    ],
+    "sealed_artists": [
+      "17198",
+      "21958",
+      "14614",
+      "23706",
+      "13328",
+      "20705",
+      "14633",
+      "23769",
+      "23712",
+      "10779"
+    ],
+    "assignment": "exclusive-first then SHA-256 ordered shared artists",
+    "training": {
+      "artists": 70,
+      "providers": [
+        "acestep",
+        "audioldm",
+        "brev",
+        "diffrhythm",
+        "elevenlabs",
+        "musicgen",
+        "producer",
+        "songgen",
+        "suno",
+        "udio"
+      ],
+      "provider_groups": {
+        "acestep": 70,
+        "audioldm": 70,
+        "brev": 32,
+        "diffrhythm": 70,
+        "elevenlabs": 31,
+        "musicgen": 70,
+        "producer": 31,
+        "songgen": 70,
+        "suno": 32,
+        "udio": 32
+      },
+      "reused_inventory_sources": 740
+    }
+  },
+  "exclusions": {
+    "prior_sources": "V2 source_inventory.json plus V3 recovery provenance",
+    "heldout_from_training": [
+      "stableaudio",
+      "mubert"
+    ],
+    "derivatives_inherit_parent_union": true
+  },
+  "labels": {
+    "unknown": "",
+    "rule": "source metadata and controlled parent logic only",
+    "generated_song_voice": "unknown unless fake speech is retained"
+  },
+  "evaluation": {
+    "primary_seconds": [
+      4,
+      10,
+      30,
+      60
+    ],
+    "music_files_per_role": 50,
+    "speech_files_per_role": 40,
+    "mixture_files_per_role": 80,
+    "splice_files_per_role": 40
+  },
+  "models": {
+    "ast": {
+      "revision": "f826b80d28226b62986cc218e5cec390b1096902",
+      "asset_sha256": "54c227b873cc3c424579fa06e8a06c442b91663de5b740b182f7cac30a3fac75"
+    },
+    "sonics": {
+      "checkpoint_revision": "a349d427b681fa15e3d0e22d1708108322f967b1",
+      "source_commit": "9156ffad151f797c71556923c4a02fa01fa8fc91"
+    }
+  },
+  "resources": [
+    {
+      "name": "Echoes",
+      "revision": "14b0c76c6a691c42fadfab9fb6a4eb1ee8c628a2",
+      "license": "CC-BY-SA-4.0",
+      "permitted_use": "attribution/share-alike research and adaptation"
+    },
+    {
+      "name": "FMA",
+      "revision": "local metadata snapshot",
+      "license": "per-track license retained in provenance",
+      "permitted_use": "only license_eligible tracks"
+    },
+    {
+      "name": "MLAAD-tiny",
+      "revision": "9143e5ea709575ebab6bec52840a1043aada7bb1",
+      "license": "CC-BY-NC-4.0 generated; M-AILABS original notice",
+      "permitted_use": "non-commercial research"
+    },
+    {
+      "name": "NSynth",
+      "revision": "5ba57c8114d9d4d7cf076c4cb3c8f508f105fca8",
+      "license": "CC-BY-4.0",
+      "permitted_use": "attribution research and adaptation"
+    }
+  ],
+  "source_receipts": [
+    {
+      "path": "_workspace/v2_sources/source_inventory.json",
+      "bytes": 732414,
+      "sha256": "296dfe8fd50fe917933507b274b1e30f7dc2de07a723b8e51a3f32ab296f568e"
+    },
+    {
+      "path": "_workspace/v2_discovery/echoes_fma_unique.json",
+      "bytes": 413531,
+      "sha256": "7ab7bae0be75a3af5786503f878af85266c859ae42ec7e44e13521c4f1c448a2"
+    },
+    {
+      "path": "_workspace/v2_discovery/archive_probes/echoes_manifest.csv",
+      "bytes": 1019727,
+      "sha256": "d105d8b796419b7d1dd4317526db5b7fd88706e2d7aeafaabaf000128da46d1f"
+    },
+    {
+      "path": "_workspace/v2_discovery/archive_probes/echoes_entries.json",
+      "bytes": 912816,
+      "sha256": "7d7369b5fea7c9676de22878f3eb2e309eb98da424ad971585f9f1e40720c846"
+    },
+    {
+      "path": "_workspace/v2_discovery/nsynth_repo.json",
+      "bytes": 4420,
+      "sha256": "454b1294f6594684f9b17e511aaee1534e15913475f9d8bd6afa2d0552460f83"
+    },
+    {
+      "path": "_workspace/v2_discovery/ast_assets_receipt.json",
+      "bytes": 210,
+      "sha256": "bb1a32ce3ff19206bbdd4c0c05ef1f5211fe661068cf24c36f47cd5e454f927e"
+    },
+    {
+      "path": "_workspace/recovery_v3/sonics_repo_tree.json",
+      "bytes": 13472,
+      "sha256": "936137eaafb501ee80c986384d074f1fea2d80389d3ec584ff8a36fd505288e4"
+    },
+    {
+      "path": "_workspace/v4_data/source_receipts/ECHOES_README.md",
+      "bytes": 2647,
+      "sha256": "4e350233f8447679db0211405eaa65ccfec8ebd40f73e474ba8e2542e2743dc1"
+    },
+    {
+      "path": "_workspace/v2_sources/licenses/MLAAD_LICENSE",
+      "bytes": 929,
+      "sha256": "c269fce180b8ed351aa7a6a470344bad837bb6f665013b1030a1069c341e16c0"
+    },
+    {
+      "path": "_workspace/v2_sources/licenses/MLAAD_original_LICENSE",
+      "bytes": 1535,
+      "sha256": "192aa5cd757a8a3249e0b97459820ac4d33b1938807fe34f388527aa4fb1d613"
+    },
+    {
+      "path": "_workspace/v2_sources/licenses/MLAAD_README.md",
+      "bytes": 1456,
+      "sha256": "b44f3b88c5df7a50829ecec18d7e99d02d2d8206f7df687522dd69ba5724038b"
+    }
+  ]
+}

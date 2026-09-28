@@ -1,0 +1,125 @@
+{
+  "winner": {
+    "name": "M330_cosine",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 64,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.0,
+      "seed": 41,
+      "dropout": 0.1,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.3,
+      "simplified": true,
+      "compact": true,
+      "temporal_bins": 1,
+      "softmax_output": true,
+      "input_dim": 1024,
+      "mlp_output": false,
+      "cosine_output": true,
+      "label_smoothing": 0.05,
+      "lr_plateau": true
+    },
+    "candidates": [
+      "M330_cosine_seed41",
+      "M330_cosine_seed42",
+      "M330_cosine_seed43"
+    ],
+    "music_eer_mean": 0.285901276549807,
+    "music_eer_std": 0.01412032085042746,
+    "balanced_bce_mean": 0.5636309185096199
+  },
+  "summaries": [
+    {
+      "name": "M95_cosine",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.1,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": true,
+        "input_dim": 768,
+        "mlp_output": false,
+        "cosine_output": true,
+        "label_smoothing": 0.05,
+        "lr_plateau": true
+      },
+      "candidates": [
+        "M95_cosine_seed41",
+        "M95_cosine_seed42",
+        "M95_cosine_seed43"
+      ],
+      "music_eer_mean": 0.29966534423663405,
+      "music_eer_std": 0.013415811598902715,
+      "balanced_bce_mean": 0.5776044823219588
+    },
+    {
+      "name": "M330_cosine",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.0,
+        "seed": 41,
+        "dropout": 0.1,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3,
+        "simplified": true,
+        "compact": true,
+        "temporal_bins": 1,
+        "softmax_output": true,
+        "input_dim": 1024,
+        "mlp_output": false,
+        "cosine_output": true,
+        "label_smoothing": 0.05,
+        "lr_plateau": true
+      },
+      "candidates": [
+        "M330_cosine_seed41",
+        "M330_cosine_seed42",
+        "M330_cosine_seed43"
+      ],
+      "music_eer_mean": 0.285901276549807,
+      "music_eer_std": 0.01412032085042746,
+      "balanced_bce_mean": 0.5636309185096199
+    }
+  ],
+  "test_used": false,
+  "frozen_at": 1789504906.2291281,
+  "comparison_groups": {
+    "M95_cosine": [
+      "M95_cosine_seed41",
+      "M95_cosine_seed42",
+      "M95_cosine_seed43"
+    ],
+    "M330_cosine": [
+      "M330_cosine_seed41",
+      "M330_cosine_seed42",
+      "M330_cosine_seed43"
+    ]
+  },
+  "evaluation_candidates": [
+    "M95_cosine_seed41",
+    "M95_cosine_seed42",
+    "M95_cosine_seed43",
+    "M330_cosine_seed41",
+    "M330_cosine_seed42",
+    "M330_cosine_seed43"
+  ]
+}

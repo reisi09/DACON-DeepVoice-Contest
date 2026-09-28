@@ -1,0 +1,42 @@
+{
+  "all_final_tensors_finite": true,
+  "export_equals_epoch17_trainable_state": true,
+  "heads_changed_since_full_warmup": [
+    "heads.0.bias",
+    "heads.0.weight",
+    "heads.1.bias",
+    "heads.1.weight",
+    "heads.2.bias",
+    "heads.2.weight",
+    "heads.3.bias",
+    "heads.3.weight",
+    "heads.4.bias",
+    "heads.4.weight"
+  ],
+  "frozen_tensors_identical_to_pretrained": 181,
+  "trainable_backbone_tensors_changed": [
+    "backbone.encoder.layer.11.attention.attention.key.bias",
+    "backbone.encoder.layer.11.attention.attention.key.weight",
+    "backbone.encoder.layer.11.attention.attention.query.bias",
+    "backbone.encoder.layer.11.attention.attention.query.weight",
+    "backbone.encoder.layer.11.attention.attention.value.bias",
+    "backbone.encoder.layer.11.attention.attention.value.weight",
+    "backbone.encoder.layer.11.attention.output.dense.bias",
+    "backbone.encoder.layer.11.attention.output.dense.weight",
+    "backbone.encoder.layer.11.intermediate.dense.bias",
+    "backbone.encoder.layer.11.intermediate.dense.weight",
+    "backbone.encoder.layer.11.layernorm_after.bias",
+    "backbone.encoder.layer.11.layernorm_after.weight",
+    "backbone.encoder.layer.11.layernorm_before.bias",
+    "backbone.encoder.layer.11.layernorm_before.weight",
+    "backbone.encoder.layer.11.output.dense.bias",
+    "backbone.encoder.layer.11.output.dense.weight",
+    "backbone.layernorm.bias",
+    "backbone.layernorm.weight"
+  ],
+  "trainable_backbone_tensors_unchanged": [],
+  "warmup_total_exposures": 8232,
+  "finetune_total_exposures": 17493,
+  "files_per_epoch": 1029,
+  "private_competition_evaluation_data_used": false
+}

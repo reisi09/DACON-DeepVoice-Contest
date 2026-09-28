@@ -1,0 +1,35 @@
+{
+  "archive_sha256": "188c016268af2ebc76fa42e5066d7f11e295b65ae214454a9b09a5b7420fdc4f",
+  "archive_bytes": 58617233,
+  "verified_records": 1322,
+  "verified_windows": 3966,
+  "producer_contracts": 1,
+  "records_matching_current_audio": 0,
+  "current_rows_matching_audio": 0,
+  "asset_mismatch_records": 0,
+  "producer_difference_records": 0,
+  "available_arrays": {
+    "mert_l12": 1322,
+    "mert_l24": 1322,
+    "mert_l6": 1322,
+    "padding_samples": 1322,
+    "raw_mask": 1322,
+    "spectrum_stem": 1322,
+    "starts": 1322,
+    "stem_mask": 1322,
+    "valid_samples": 1322
+  },
+  "missing_for_full_bank": [
+    "voice_embeddings",
+    "presence",
+    "current row/supervision binding"
+  ],
+  "cache_promoted": false,
+  "gpu_used": false,
+  "input_sha256": {
+    "features_storage_receipt.json": "187686e98313c9ff91722002f0bb8363f970504564c72afaa234b6cb243496ca",
+    "manifest.jsonl": "98be945fa7ec8622f964e43e715dbe06d088381cd3b116d12f89943af96043ab",
+    "baseline_assets.json": "30cf503ff2738090c676f2530345a6c703d3c6cdb75476e2661b49649d3dd4eb"
+  },
+  "decision": "Preserve this music cache; full-bank reuse needs exact audio/frontend compatibility and missing branches."
+}

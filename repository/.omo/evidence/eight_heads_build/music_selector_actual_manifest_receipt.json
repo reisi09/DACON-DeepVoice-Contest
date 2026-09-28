@@ -1,0 +1,85 @@
+{
+  "invocation": ".venv/bin/python receipt script using music_model_rows",
+  "kind_counts": {
+    "mixed": 4617,
+    "speech": 2484
+  },
+  "manifest": "_workspace/eight_h100_20260917/dataset/manifest.csv",
+  "manifest_rows": 7101,
+  "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+  "music_absent": 0,
+  "non_core": 0,
+  "observable": "all splits have labels 0/1 and planned variants; zero truth/core/presence violations",
+  "scenario": "actual manifest admission for E1/E3/E4/E6/E8 music branches and E2 postrun normalizer",
+  "selected_rows": 4457,
+  "splits": {
+    "calibration": {
+      "labels": {
+        "0": 124,
+        "1": 676
+      },
+      "rows": 800,
+      "sources_by_label": {
+        "0": 2,
+        "1": 17
+      },
+      "variants": {
+        "base": 200,
+        "mp3_32k": 200,
+        "opus_telephone": 200,
+        "telephone": 200
+      }
+    },
+    "dev": {
+      "labels": {
+        "0": 100,
+        "1": 556
+      },
+      "rows": 656,
+      "sources_by_label": {
+        "0": 2,
+        "1": 19
+      },
+      "variants": {
+        "base": 164,
+        "mp3_32k": 164,
+        "opus_telephone": 164,
+        "telephone": 164
+      }
+    },
+    "test": {
+      "labels": {
+        "0": 92,
+        "1": 416
+      },
+      "rows": 508,
+      "sources_by_label": {
+        "0": 2,
+        "1": 18
+      },
+      "variants": {
+        "base": 127,
+        "mp3_32k": 127,
+        "opus_telephone": 127,
+        "telephone": 127
+      }
+    },
+    "train": {
+      "labels": {
+        "0": 417,
+        "1": 2076
+      },
+      "rows": 2493,
+      "sources_by_label": {
+        "0": 2,
+        "1": 19
+      },
+      "variants": {
+        "base": 831,
+        "mp3_32k": 831,
+        "telephone": 831
+      }
+    }
+  },
+  "truth_mismatches": 0
+}

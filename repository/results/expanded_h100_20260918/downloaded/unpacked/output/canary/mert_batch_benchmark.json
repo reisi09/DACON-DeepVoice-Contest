@@ -1,0 +1,34 @@
+{
+  "chosen": 256,
+  "measurements": [
+    {
+      "batch": 32,
+      "peak_allocated_bytes": 3850387968,
+      "seconds": 0.22835868876427412,
+      "status": "ok",
+      "windows_per_second": 140.13042452276633
+    },
+    {
+      "batch": 64,
+      "peak_allocated_bytes": 6401573376,
+      "seconds": 0.417178844101727,
+      "status": "ok",
+      "windows_per_second": 153.41142271441242
+    },
+    {
+      "batch": 128,
+      "peak_allocated_bytes": 11507352064,
+      "seconds": 0.8377467328682542,
+      "status": "ok",
+      "windows_per_second": 152.7908077441939
+    },
+    {
+      "batch": 256,
+      "peak_allocated_bytes": 21718520320,
+      "seconds": 1.6670279344543815,
+      "status": "ok",
+      "windows_per_second": 153.56671277604525
+    }
+  ],
+  "policy": "largest within 90% fastest throughput and 80% VRAM"
+}

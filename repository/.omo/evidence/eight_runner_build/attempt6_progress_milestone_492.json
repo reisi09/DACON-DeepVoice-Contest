@@ -1,0 +1,26 @@
+{
+  "scenario": "attempt6 live features progress milestone",
+  "invocation": "redesign_h100_watch._download(run, 'progress.json') with KNOWN_REMOTE_FILES including '*/*'",
+  "binary": "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/bin/vesslctl",
+  "artifact": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_runner_build/attempt6_progress_snapshot.6VpC5Q/downloaded/progress.json",
+  "artifact_sha256": "5a8180d6c16b9114569be7bd5d239630f503c93851b6ac62a60e2125b031021e",
+  "attempt": 6,
+  "stage": "features",
+  "completed_records": 492,
+  "total_records": 7101,
+  "processed_windows": 1446,
+  "requested_windows": 29275,
+  "elapsed_after_engine_init_seconds": 174.89690470695496,
+  "overall_windows_per_second": 8.267727793255213,
+  "profile_inference": {
+    "core_music_base": {"records": 100, "windows": 300, "seconds": 27.01761817932129},
+    "core_music_processed": {"records": 242, "windows": 726, "seconds": 62.90527653694153},
+    "core_speech_base": {"records": 40, "windows": 112, "seconds": 21.876582860805664},
+    "core_speech_processed": {"records": 106, "windows": 296, "seconds": 58.202768325805664},
+    "partial": {"records": 0, "windows": 0, "seconds": 0.0},
+    "swap": {"records": 0, "windows": 0, "seconds": 0.0}
+  },
+  "archive_ready": false,
+  "watcher_pid": 58324,
+  "gpu_start_called_by_this_agent": false
+}

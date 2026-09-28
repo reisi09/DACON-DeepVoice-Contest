@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "official-score",
+      "title": "Official submission score change",
+      "queries": [
+        {
+          "id": "dacon-submissions",
+          "source": {
+            "label": "DACON 236749 submissions",
+            "links": [
+              {
+                "label": "My submissions",
+                "url": "https://dacon.io/competitions/official/236749/mysubmission"
+              }
+            ],
+            "files": [
+              {
+                "label": "live_submissions.json"
+              }
+            ],
+            "metricDefinitions": [
+              {
+                "label": "Total score",
+                "definition": "The total weights ADS by 0.9 and CPS by 0.1."
+              }
+            ],
+            "filters": [
+              "Submission IDs: 92644 and 93093"
+            ],
+            "caveats": [
+              "The rendered table does not expose individual EER components or package hashes. The exact local package associated with submission 92644 is unconfirmed."
+            ]
+          },
+          "columns": [
+            "submission",
+            "total",
+            "ADS",
+            "CPS"
+          ],
+          "rows": [
+            {
+              "submission": 92644,
+              "total": 0.7579036931,
+              "ADS": 0.7321825397,
+              "CPS": 0.9893940741
+            },
+            {
+              "submission": 93093,
+              "total": 0.7559347884,
+              "ADS": 0.7299920635,
+              "CPS": 0.9894193122
+            }
+          ],
+          "methods": [
+            {
+              "language": "calculation",
+              "code": "Total change = 0.7559347884 - 0.7579036931 = -0.0019689047\nADS contribution = 0.9 * (0.7299920635 - 0.7321825397) = -0.00197142858\nCPS contribution = 0.1 * (0.9894193122 - 0.9893940741) = 0.00000252381"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "local-diagnostics",
+      "title": "Local validation and training-condition audit",
+      "queries": [
+        {
+          "id": "balanced-diagnostics",
+          "source": {
+            "label": "Balanced7144 diagnostic artifacts",
+            "files": [
+              {
+                "label": "diagnostics.json"
+              },
+              {
+                "label": "analyze.py"
+              },
+              {
+                "label": "ANALYSIS.md"
+              },
+              {
+                "label": "music_real_voice_branch_false_positives.csv"
+              }
+            ],
+            "filters": [
+              "Balanced7144 validation: 1428 rows",
+              "Music validation: 750 rows, including 302 real rows",
+              "Fixed-threshold error counts: probability >= 0.5"
+            ],
+            "caveats": [
+              "561 validation rows have historical exposure. These are not independent-test results.",
+              "Oracle route calculations use known route labels and are not deployable performance estimates.",
+              "Source-only AUC diagnoses source-label confounding, not proof that the audio model uses that shortcut.",
+              "Code and data differences identify hypotheses; they do not quantify causes of the official decline."
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "validation",
+                "title": "Recomputed checks",
+                "detail": "Matched all 1428 prediction IDs to labels; reproduced saved EER values within 1e-12 and max-fusion scores within 1e-6. The voice-only false-positive export contains 52 real music rows."
+              }
+            ]
+          },
+          "columns": [
+            "measure",
+            "value"
+          ],
+          "rows": [
+            {
+              "measure": "Music head EER",
+              "value": 0.08657314333017974
+            },
+            {
+              "measure": "File EER on music rows",
+              "value": 0.15871127010406816
+            },
+            {
+              "measure": "Voice-branch-only real music false positives at 0.5",
+              "value": 52
+            },
+            {
+              "measure": "Music source-only AUC",
+              "value": 1.0
+            },
+            {
+              "measure": "Music duration-only AUC",
+              "value": 0.8867446192052989
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "Selected diagnostics recomputed from the local split, predictions and training metadata."
+          }
+        }
+      ]
+    },
+    {
+      "id": "data-reconstruction",
+      "title": "Additional dataset research and proposed replacement quotas",
+      "queries": [
+        {
+          "id": "candidate-data",
+          "source": {
+            "label": "Primary dataset records and reviewed Claude Opus 5 proposal",
+            "files": [
+              {
+                "label": "DATA_RECONSTRUCTION.md"
+              },
+              {
+                "label": "claude_correction_ax.txt"
+              },
+              {
+                "label": "research_receipts.json"
+              }
+            ],
+            "links": [
+              {
+                "label": "VocalSet",
+                "url": "https://zenodo.org/records/1442513"
+              },
+              {
+                "label": "CtrSVDD",
+                "url": "https://github.com/SVDDChallenge/CtrSVDD_Utils"
+              },
+              {
+                "label": "ASVspoof 5",
+                "url": "https://zenodo.org/records/14498691"
+              },
+              {
+                "label": "PartialSpoof",
+                "url": "https://zenodo.org/records/5766198"
+              },
+              {
+                "label": "HAIM conditions",
+                "url": "https://huggingface.co/datasets/mippia/HAIM/blob/main/SUPPLEMENT_LEGAL_AND_ETHICAL.txt"
+              },
+              {
+                "label": "CodecFake",
+                "url": "https://huggingface.co/datasets/rogertseng/CodecFake"
+              }
+            ],
+            "caveats": [
+              "Proposed quotas, not acquired or admitted audio. No new training or bulk audio downloads.",
+              "Exact counts depend on source conditions and connected parent groups.",
+              "The 20GB cap requires a complete inventory including existing and derived data; the initial 15GB estimate was withdrawn."
+            ]
+          },
+          "columns": [
+            "category",
+            "train_real",
+            "train_fake",
+            "val_real",
+            "val_fake"
+          ],
+          "rows": [
+            {
+              "category": "음성",
+              "train_real": 800,
+              "train_fake": 800,
+              "val_real": 200,
+              "val_fake": 200
+            },
+            {
+              "category": "부분 조작 / real sham",
+              "train_real": 300,
+              "train_fake": 300,
+              "val_real": 80,
+              "val_fake": 80
+            },
+            {
+              "category": "반주 없는 가창",
+              "train_real": 400,
+              "train_fake": 400,
+              "val_real": 100,
+              "val_fake": 100
+            },
+            {
+              "category": "보컬·반주 혼합곡",
+              "train_real": 1100,
+              "train_fake": 1100,
+              "val_real": 275,
+              "val_fake": 275
+            },
+            {
+              "category": "기악",
+              "train_real": 258,
+              "train_fake": 258,
+              "val_real": 59,
+              "val_fake": 59
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "Checked totals: train 5716, validation 1428, each class 3572. Existing split preserved."
+          }
+        }
+      ]
+    }
+  ]
+}

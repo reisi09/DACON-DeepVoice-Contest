@@ -1,0 +1,45 @@
+{
+  "feature_seconds_estimate": 2400.943491123722,
+  "ast_training_seconds_estimate": 410.9988080263138,
+  "ast_evaluation_seconds_estimate": 32.2430705515435,
+  "safety_multiplier": 1.35,
+  "total_remaining_seconds_estimate": 4139.6502490971325,
+  "remaining_seconds": 11899.046300888062,
+  "ast_chosen_microbatch": 256,
+  "ast_trials": [
+    {
+      "files": 32,
+      "windows_per_file": 3,
+      "files_per_second": 169.6268049306576,
+      "peak_allocated_bytes": 5470119424,
+      "safe": true
+    },
+    {
+      "files": 64,
+      "windows_per_file": 3,
+      "files_per_second": 172.99389309621344,
+      "peak_allocated_bytes": 10316132864,
+      "safe": true
+    },
+    {
+      "files": 128,
+      "windows_per_file": 3,
+      "files_per_second": 178.84114447888422,
+      "peak_allocated_bytes": 20033976832,
+      "safe": true
+    },
+    {
+      "files": 256,
+      "windows_per_file": 3,
+      "files_per_second": 179.38738156943666,
+      "peak_allocated_bytes": 39583876608,
+      "safe": true
+    }
+  ],
+  "canary_rows": 48,
+  "canary_windows": 131,
+  "full_rows": 4627,
+  "full_windows": 13660,
+  "proceed": true,
+  "estimate_not_completion_guarantee": true
+}

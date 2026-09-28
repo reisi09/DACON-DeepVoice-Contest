@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.640" timestamp="2026-09-14T00:27:10.553198+09:00" hostname="choiui-MacBookPro.local"><testcase classname="test_v5_training" name="test_budget_stop_evaluates_and_selects_last_completed_epoch" time="0.686"><failure message="AssertionError: assert 3 == 2&#10; +  where 3 = TrainResult(status='budget_stop', epochs_completed=3, updates=3, seconds=0.04575424990616739, best_path=PosixPath('/va...ilestone(epoch=10, status='censored'), Milestone(epoch=30, status='censored'), Milestone(epoch=60, status='censored'))).epochs_completed">def test_budget_stop_evaluates_and_selects_last_completed_epoch() -&gt; None:
+        # Given: each training epoch and full evaluation take two seconds under a nine-second budget.
+        rows = [
+            Example(f"budget-{index}", Path(f"{index}.wav"), (f"source-{index}",),
+                    (float(index), float(index), math.nan, 1.0, 0.0), "train")
+            for index in range(2)
+        ]
+        model = SurrogateVoiceExpert()
+        clock = ManualClock()
+        evaluation_states: list[dict[str, torch.Tensor]] = []
+        original_crop, original_evaluate = v5_training.training_crop, v5_training.evaluate_expert
+
+        def timed_crop(row: Example, _epoch: int, window_samples: int, _augmented: bool,
+                       _seed: int) -&gt; tuple[np.ndarray, tuple[float, ...]]:
+            clock.advance(1.0)
+            return np.full(window_samples, row.labels[1], dtype=np.float32), row.labels
+
+        def improving_evaluation(_model: nn.Module, _rows: list[Example], _kind: str, **_kwargs) -&gt; EvaluationResult:
+            clock.advance(2.0)
+            evaluation_states.append({name: value.detach().clone()
+                                      for name, value in _model.state_dict().items()})
+            score = float(len(evaluation_states))
+            return EvaluationResult((), (), (HeadMetric("voice_fake", 2, 1.0, 0.5, 0.5),),
+                                    1.0, score)
+
+        v5_training.training_crop = timed_crop
+        v5_training.evaluate_expert = improving_evaluation
+        try:
+            with tempfile.TemporaryDirectory() as directory:
+                # When: interval five would normally leave epoch two unevaluated before budget stop.
+                result = train_expert(model, rows, rows, TrainConfig(
+                    kind="voice", output=Path(directory), deadline=9.0, epochs=6,
+                    evaluation_interval=5, microbatch=2, accumulation=1, device="cpu", clock=clock,
+                ))
+
+                # Then: epoch two is evaluated adaptively and its improving weights become best.
+                assert result.status == "budget_stop"
+&gt;               assert result.epochs_completed == 2
+E               AssertionError: assert 3 == 2
+E                +  where 3 = TrainResult(status='budget_stop', epochs_completed=3, updates=3, seconds=0.04575424990616739, best_path=PosixPath('/va...ilestone(epoch=10, status='censored'), Milestone(epoch=30, status='censored'), Milestone(epoch=60, status='censored'))).epochs_completed
+
+test_v5_training.py:176: AssertionError</failure></testcase></testsuite></testsuites>

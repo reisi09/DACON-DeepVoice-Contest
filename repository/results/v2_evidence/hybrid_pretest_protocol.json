@@ -1,0 +1,16 @@
+{
+  "decision_basis": "development predictions only; root has not read any v2 fresh-test scores or predictions",
+  "registered_utc": "2026-09-12T17:54:29Z",
+  "candidate": "G0_AST_MUSIC",
+  "routing": {
+    "FILE_FAKE_PROB": "G0",
+    "VOICE_FAKE_PROB": "G0",
+    "MUSIC_FAKE_PROB": "AST_LAST_BLOCK",
+    "VOICE_PRESENT_PROB": "AST_LAST_BLOCK",
+    "MUSIC_PRESENT_PROB": "AST_LAST_BLOCK"
+  },
+  "reason": "On dev_select AST_LAST_BLOCK raises proxy by0.10792239965389872 and reduces music EER0.6030303030 to0.1471861472, but voice EER worsens0.0304147465 to0.1359447005. Preserve G0 file/voice outputs while testing learned music/presence heads.",
+  "selection": "same existing dev-only connected-component bootstrap and per-head non-regression gates; no new fitted weights or test-adaptive parameters",
+  "fresh_evaluation": "evaluate this fixed route once from per-file cached fresh predictions only after a separate development lock; report original three-candidate result separately",
+  "gpu_limit": "total v2 allocations remain below7200seconds"
+}

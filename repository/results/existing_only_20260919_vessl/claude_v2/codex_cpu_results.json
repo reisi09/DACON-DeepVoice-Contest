@@ -1,0 +1,57 @@
+{
+  "device": "cpu",
+  "torch": "2.7.1",
+  "gpu_executed": false,
+  "manifest": {
+    "rows": 9504,
+    "splits": {
+      "test": 1426,
+      "train": 6652,
+      "val": 1426
+    },
+    "cross_split_components": 0,
+    "file_fake_by_split": {
+      "train": {
+        "1": 3326,
+        "0": 3326
+      },
+      "val": {
+        "0": 713,
+        "1": 713
+      },
+      "test": {
+        "1": 713,
+        "0": 713
+      }
+    },
+    "historical_exposure_by_split": {
+      "train": 4176,
+      "val": 997,
+      "test": 1001
+    }
+  },
+  "unchanged_original_modules": 33,
+  "nan_parity": [
+    "mismatch",
+    "mismatch",
+    "bitwise",
+    "mismatch"
+  ],
+  "controller": "cross-process rejection preserves holder; same-process ownership transfers",
+  "controller_limit": "Linux /proc orphan recovery not exercised on macOS",
+  "optimizer_resume": "actual WindowMIL loop: uninterrupted/resumed weights, predictions, history and RNG equal",
+  "optimizer_fixture": "8 synthetic train bags and 4 synthetic val bags, 5 epochs, seed 41, CPU",
+  "handoff_evidence_binding": {
+    "status": "defect_reproduced",
+    "changed_test_probability_without_changing_ids": "accepted despite test_receipt hash mismatch",
+    "parity_receipt_from_wrong_lock": "accepted",
+    "scope": "Actual coverage_report using real 9504 IDs and synthetic evidence; no real results modified"
+  },
+  "download_link": {
+    "status": "requires_fix_for_root_scoped_jupyter",
+    "notebook_cwd": "/root",
+    "published_zip": "/root-1/existing-only-9504-20260919/DACON_Existing9504_A100_Handoff.zip",
+    "generated_relative_path": "../root-1/existing-only-9504-20260919/DACON_Existing9504_A100_Handoff.zip",
+    "boundary": "Outside a Jupyter server rooted at /root; live VESSL download not tested"
+  }
+}

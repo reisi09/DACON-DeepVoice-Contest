@@ -1,0 +1,3153 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-24",
+  "scope": {
+    "task": "Continue the interrupted audit and write the final analysis and plan.",
+    "input_head": "8a7ea9beddcd2c9b7b6da2063b6ccd4b18b795d5\n",
+    "input_has_preexisting_changes": true,
+    "identity_warning": "HEAD alone does not identify the dirty working tree, archived runtime or scored submission.",
+    "executed": [
+      "Recovered journal findings and completed independent review of the remaining16 high/critical candidates.",
+      "Read current source, archived runtime members, manifests, saved predictions, logs and published primary sources.",
+      "Recomputed proxy EER/AUC and mask denominators from actual saved CSV values.",
+      "Inspected the user-provided submission screenshot."
+    ],
+    "not_executed": [
+      "Training or new neural inference",
+      "GPU/workspace start or paid compute",
+      "Dataset/audio/checkpoint downloads",
+      "Leaderboard submission or live account score/quota lookup",
+      "Code modification",
+      "Full independent re-execution of all87 findings"
+    ]
+  },
+  "workflow_provenance": {
+    "session_id": "4eb54be1-b92d-4f86-9c9d-e9ad6584bc69",
+    "workflow_id": "wf_e0978135-4f1",
+    "journal_sha256": "e5d12f6542f14845ae861ab383530213012afaf327c22d9455f2aa033a9cf654"
+  },
+  "metric_verification": {
+    "purpose": "Independently validate report arithmetic, masks, denominator alignment and score boundary from real prediction CSVs; tolerance1e-12 against stored report",
+    "prediction_rows": 6444,
+    "bank_rows": 6450,
+    "counts": {
+      "file_eer": 6444,
+      "voice_eer": 5139,
+      "music_eer": 2849,
+      "voice_presence_auc": 6268,
+      "music_presence_auc": 6444
+    },
+    "metrics": {
+      "file_eer": 0.10939954188481671,
+      "voice_eer": 0.11070986873541894,
+      "music_eer": 0.20005497526113247,
+      "voice_presence_auc": 0.9979462237360137,
+      "music_presence_auc": 0.9986542871104762
+    },
+    "thresholds": {
+      "file_eer": 0.33474017730618194,
+      "voice_eer": 0.19125081598758698,
+      "music_eer": 0.4913932780424754
+    },
+    "max_abs_report_error": 1.7319479184152442e-14,
+    "weighted_eer_known_subsets": 0.1368582372678319,
+    "composite_known_subsets_only": 0.8766576120012759,
+    "official_score": null,
+    "official_score_reason": "Unknown eligible voice labels and presence labels; retained null per existing report",
+    "reference_unknown_counts": {
+      "file_eer": 0,
+      "voice_eer": 261,
+      "music_eer": 0,
+      "voice_presence_auc": 176,
+      "music_presence_auc": 0
+    },
+    "recorded_leaderboard_screenshot": {
+      "submission_id": "102411",
+      "date": "2026-09-24 02:09:50",
+      "score": 0.7912534339,
+      "ADS": 0.7683174603,
+      "CPS": 0.9976771958,
+      "elapsed_seconds": 1052,
+      "source": "user-provided screenshot imasasdge.png",
+      "verification": "visually read this turn; not live leaderboard"
+    },
+    "cps_only_theoretical_score_ceiling_gain": 0.00023228041999999728,
+    "source_hashes": {
+      "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/bank/bank_test.csv": "c94d0847000d51f2b705ed28debf0ae60811a71bec4510b8f8b0fe1128c505c1",
+      "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/test_predictions_decision.csv": "da46ff8befc1ff76a1286eebd086403355e61ad111b2bbda0724dda28a75d5c4",
+      "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/compare/compare_report.json": "5b543da6cf3aba7374c31bbcb904103ae12112c5a1c14208bede5e747c8de9a5"
+    }
+  },
+  "file_error_contribution": {
+    "threshold": 0.33474017730618194,
+    "slices": {
+      "with_music": {
+        "n": 2849,
+        "FP": 323,
+        "FN": 215,
+        "count_errors": 538,
+        "eer_contribution": 0.08324547471587282,
+        "error_fraction_within_slice": 0.18883818883818884
+      },
+      "without_music": {
+        "n": 3595,
+        "FP": 95,
+        "FN": 72,
+        "count_errors": 167,
+        "eer_contribution": 0.02615406716894394,
+        "error_fraction_within_slice": 0.04645340751043116
+      }
+    },
+    "music_share_raw_errors": 0.7631205673758865,
+    "music_share_weighted_eer": 0.7609307432340008,
+    "denominator_note": "MUSIC_PRESENT truth==1. Raw error-count share and EER-weighted share are different. Proxy only; hidden composition unknown."
+  },
+  "data_census": {
+    "manifest_rows": 42947,
+    "echoes_generator_counts": {
+      "Echoes/TTA": 300,
+      "Echoes/ATA": 294
+    },
+    "echoes_examples": [
+      {
+        "ID": "echoes:Echoes/TTA/musicgen/Lady_Love_Parsley_Flakes_musicgen_TTA_001.wav",
+        "source": "echoes",
+        "generator": "Echoes/TTA",
+        "path": "audio/00/003d60a1191552c698ef.flac",
+        "group_keys": [
+          "echoes_item:TTA:Lady_Love_Parsley_Flakes_musicgen_TTA_001"
+        ]
+      },
+      {
+        "ID": "echoes:Echoes/TTA/brev/mc_trabalenguas_Volumina_brev_TTA_002.mp3",
+        "source": "echoes",
+        "generator": "Echoes/TTA",
+        "path": "audio/00/0062cfce92360415d038.flac",
+        "group_keys": [
+          "echoes_item:TTA:mc_trabalenguas_Volumina_brev_TTA_002"
+        ]
+      }
+    ],
+    "bank_trainval_rows": 35589,
+    "bank_split_counts": {
+      "train": 30658,
+      "val": 4931
+    },
+    "scope": "Read-only manifest and bank census; does not establish all filenames correct or labels valid"
+  },
+  "current_reviews": [
+    {
+      "id": "DATA_DISTRIBUTION-6",
+      "verdict": "partially_confirmed",
+      "corrected_claim": "Music training sources and labels are strongly associated, and original-path extensions differ by class. Under the current source/generator and duration weighting, 86.0942% of fake-music weight and 44.1307% of real-music weight come from source strings containing one label only. The specified train/validation extension calculation reproduces real OGG 65.8908%, MP3 30.8119%, WAV 3.2973% and fake WAV 50.4139%, MP3 49.5861%. HAIM selected subsets are A2/B1/B2/C1/C2, without A1. These facts do not establish that commercial music, Korean songs, or high-quality/lossless masters are absent, nor that production quality or codec history causes hidden-test false positives.",
+      "actual_primary_evidence": [
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/bank/bank_trainval.csv",
+          "key": "split=train; music head eligibility per full_bank_train.head_labels; source,generator,MUSIC_FAKE,orig_id",
+          "supports": "3755 real and 5608 fake music-head training items; weighted source/label association."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/manifest.jsonl",
+          "key": "ID joined to bank.orig_id; source,subset,orig_path,crop_len_s,language,MUSIC_PRESENT,MUSIC_FAKE",
+          "supports": "Extension association, HAIM subsets, language coverage, real music source composition."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/splits.csv",
+          "key": "ID,split",
+          "supports": "Excludes test from extension statistics."
+        },
+        {
+          "path": "full_bank_batches.py",
+          "lines": "27-54",
+          "supports": "Class/source/generator weights and duration multipliers; current SHA256 matches recorded run identity."
+        },
+        {
+          "path": "full_bank_train.py",
+          "lines": "30-41,191-200",
+          "supports": "Music-head item eligibility and actual training weight path; current SHA256 matches recorded run identity."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/run_identity.json",
+          "key": "batches=2159a611d220ace44ebbce0403b8171967bef2cdaeeafa587a714a45c037223a; trainer=d7cd74013cdf5ec5d9a4ebe887eb09a8a2dc4536f68477c9e5de2ff866435bdf; duration_balance=true",
+          "supports": "Inspected weighting and trainer code match this run."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/test_predictions_decision.csv",
+          "key": "ID,MUSIC_FAKE_PROB joined to bank_test.csv; known MUSIC_FAKE and MUSIC_PRESENT=1; prediction-ID intersection",
+          "supports": "Source-specific real-music false-positive fractions at global test EER threshold0.4913932780424754."
+        },
+        {
+          "path": "DATA_PLAN_236749_2026-09-19.md",
+          "lines": "128,147,195",
+          "supports": "HAIM A1 was planned; this document is a plan, not proof of acquisition or current license permission."
+        },
+        {
+          "path": "<CLAUDE_AUDIT_SCRATCH>/dd/a9.py",
+          "lines": "3-6",
+          "supports": "Original extension statistic excludes source starting constructed only, not existing:constructed_music."
+        }
+      ],
+      "calculated_numbers": {
+        "music_training": {
+          "0": {
+            "n": 3755,
+            "both_source_weight_base": 0.5555555555555979,
+            "both_source_weight_duration": 0.5586926791729085,
+            "sources": {
+              "constructed_mix": {
+                "n": 695,
+                "wd_fraction": 0.09755303584417611
+              },
+              "existing:FMA": {
+                "n": 340,
+                "wd_fraction": 0.09860727651037131
+              },
+              "existing:FMA/FMA": {
+                "n": 45,
+                "wd_fraction": 0.15317214222390677
+              },
+              "existing:JamendoMaxCaps": {
+                "n": 340,
+                "wd_fraction": 0.097669497246219
+              },
+              "existing:constructed_music": {
+                "n": 64,
+                "wd_fraction": 0.15326184627167805
+              },
+              "haim": {
+                "n": 253,
+                "wd_fraction": 0.30787779705705115
+              },
+              "openmic": {
+                "n": 2018,
+                "wd_fraction": 0.0918584048465505
+              }
+            }
+          },
+          "1": {
+            "n": 5608,
+            "both_source_weight_base": 0.1315789473684176,
+            "both_source_weight_duration": 0.13905811973576804,
+            "sources": {
+              "constructed_mix": {
+                "n": 135,
+                "wd_fraction": 0.031950871952891376
+              },
+              "echoes": {
+                "n": 449,
+                "wd_fraction": 0.06324693387945388
+              },
+              "existing:Echoes/acestep/TTA": {
+                "n": 39,
+                "wd_fraction": 0.02146961629059445
+              },
+              "existing:Echoes/audioldm/ATA": {
+                "n": 35,
+                "wd_fraction": 0.02164247285914
+              },
+              "existing:Echoes/audioldm/TTA": {
+                "n": 38,
+                "wd_fraction": 0.02230970664314179
+              },
+              "existing:Echoes/brev/TTA": {
+                "n": 36,
+                "wd_fraction": 0.021595657538492245
+              },
+              "existing:Echoes/diffrhythm/ATA": {
+                "n": 37,
+                "wd_fraction": 0.020814476308756224
+              },
+              "existing:Echoes/diffrhythm/TTA": {
+                "n": 42,
+                "wd_fraction": 0.020968326994120316
+              },
+              "existing:Echoes/elevenlabs/TTA": {
+                "n": 35,
+                "wd_fraction": 0.02185969384786875
+              },
+              "existing:Echoes/mubert/TTA": {
+                "n": 4,
+                "wd_fraction": 0.019957121315820916
+              },
+              "existing:Echoes/musicgen/ATA": {
+                "n": 35,
+                "wd_fraction": 0.020518905163593937
+              },
+              "existing:Echoes/musicgen/TTA": {
+                "n": 40,
+                "wd_fraction": 0.022257637192604787
+              },
+              "existing:Echoes/producer/ATA": {
+                "n": 17,
+                "wd_fraction": 0.02137590955894441
+              },
+              "existing:Echoes/producer/TTA": {
+                "n": 19,
+                "wd_fraction": 0.022026851281300497
+              },
+              "existing:Echoes/songgen/ATA": {
+                "n": 34,
+                "wd_fraction": 0.022308913521844585
+              },
+              "existing:Echoes/songgen/TTA": {
+                "n": 41,
+                "wd_fraction": 0.021798681548595596
+              },
+              "existing:Echoes/stableaudio/TTA": {
+                "n": 6,
+                "wd_fraction": 0.02249136618432303
+              },
+              "existing:Echoes/suno/TTA": {
+                "n": 38,
+                "wd_fraction": 0.022461500374131884
+              },
+              "existing:Echoes/udio/TTA": {
+                "n": 38,
+                "wd_fraction": 0.022592562004983083
+              },
+              "existing:FakeMusicCaps": {
+                "n": 1658,
+                "wd_fraction": 0.15877345194090373
+              },
+              "existing:HAIM": {
+                "n": 680,
+                "wd_fraction": 0.06198875650300788
+              },
+              "existing:SONICS": {
+                "n": 680,
+                "wd_fraction": 0.064315290965395
+              },
+              "existing:constructed_music": {
+                "n": 64,
+                "wd_fraction": 0.04364192401754545
+              },
+              "existing:suno": {
+                "n": 24,
+                "wd_fraction": 0.022545999364180547
+              },
+              "existing:udio": {
+                "n": 24,
+                "wd_fraction": 0.022786339438248208
+              },
+              "generated_music": {
+                "n": 362,
+                "wd_fraction": 0.0344438343594185
+              },
+              "haim": {
+                "n": 324,
+                "wd_fraction": 0.06346532376533127
+              },
+              "sonics": {
+                "n": 674,
+                "wd_fraction": 0.0643918751853678
+              }
+            }
+          }
+        },
+        "both_label_sources": [
+          "constructed_mix",
+          "existing:constructed_music",
+          "haim"
+        ],
+        "single_label_source_weight_fraction": {
+          "real": 0.44130732082709145,
+          "fake": 0.8609418802642319
+        },
+        "extensions": {
+          "0": {
+            "n": 3609,
+            "counts": {
+              ".ogg": 2378,
+              ".mp3": 1112,
+              ".wav": 119
+            },
+            "fractions": {
+              ".ogg": 0.658908284843447,
+              ".mp3": 0.3081185924078692,
+              ".wav": 0.032973122748683845
+            }
+          },
+          "1": {
+            "n": 6524,
+            "counts": {
+              ".mp3": 3235,
+              ".wav": 3289
+            },
+            "fractions": {
+              ".mp3": 0.49586143470263644,
+              ".wav": 0.5041385652973636
+            }
+          }
+        },
+        "haim_subsets": {
+          "C1": 300,
+          "C2": 300,
+          "B2": 300,
+          "A2": 300,
+          "B1": 300
+        },
+        "real_music_trainval_language": {
+          "UNKNOWN": 4441
+        },
+        "real_music_sources": {
+          "openmic": 2378,
+          "existing:FMA": 400,
+          "existing:JamendoMaxCaps": 400,
+          "haim": 312,
+          "existing:FMA/FMA": 55,
+          "existing:constructed_music": 64,
+          "constructed_mix": 832
+        },
+        "false_positives": {
+          "threshold": 0.4913932780424754,
+          "eer": 0.20005497526113247,
+          "real_FPR_by_source": {
+            "constructed_mix": {
+              "n": 403,
+              "fpr": 0.23076923076923078
+            },
+            "constructed_song": {
+              "n": 316,
+              "fpr": 0.23734177215189872
+            },
+            "haim:concat": {
+              "n": 9,
+              "fpr": 0.1111111111111111
+            },
+            "haim:crossfade": {
+              "n": 7,
+              "fpr": 0.0
+            },
+            "haim:sonicmaster": {
+              "n": 53,
+              "fpr": 0.20754716981132076
+            },
+            "musan_music": {
+              "n": 645,
+              "fpr": 0.17519379844961241
+            },
+            "openmic": {
+              "n": 386,
+              "fpr": 0.18393782383419688
+            }
+          }
+        }
+      },
+      "corrections": [
+        "All 4441 real-music train/validation rows have missing language metadata. Zero Korean/K-pop real songs is therefore unverified, not a measured zero.",
+        "No catalog-level commerciality, mastering-quality, or uncompressed-origin field was verified. CC/open corpus provenance does not establish amateur production quality, and .wav containers can hold audio previously decoded from lossy formats.",
+        "orig_path denotes an immediate input path, including legacy derived files, not complete compression lineage. The quoted distribution is unweighted row frequency on train+validation, while the source association percentages are duration-weighted training contribution; keep those populations separate.",
+        "The source filter excludes constructed_mix/song/etc only when source starts constructed; existing:constructed_music remains included. Use the precise filter description rather than non-constructed all-inclusive wording.",
+        "Training duration-weight reconstruction uses rounded manifest crop_len_s converted to samples, whereas actual training used cache index sample counts. Three-decimal weight percentages reproduce, but bit-exact per-item weights were not validated without that index.",
+        "OpenMIC real FPR18.3938% and MUSAN17.5194% reproduce at a threshold fitted to this proxy. They establish local errors, not a hidden-domain error rate or source-quality causal effect.",
+        "Lossy generation-0 applied only to fake WAVs is a proposed intervention, not a demonstrated fix. Test its label/source interactions on a frozen validation protocol; label-conditional augmentation can introduce another artifact."
+      ],
+      "what_remains_unverified": [
+        "Commercial/K-pop/genre coverage and true mastering/compression history; no audio listening or provenance audit performed.",
+        "HAIM A1 availability and current subset-specific licensing/redistribution permission; same repository/revision does not automatically verify each subset.",
+        "Whether source or codec association drives model errors, its share of hidden-test errors, and benefit of new corpora or codec augmentation.",
+        "Current feature-index exact sample counts for bit-exact duration weights."
+      ],
+      "impact_adjustment": "Keep as a meaningful source/label confounding and coverage risk. Remove the +0.005 to +0.020 LB-gain estimate and asserted hidden-commercial-audio failure. Predeclare source-held-out and codec-crossed validation, use balanced interventions across labels where feasible, and evaluate actual error changes before assigning priority to a large download."
+    },
+    {
+      "id": "VALIDATION_GAP-3",
+      "verdict": "partially_confirmed",
+      "corrected_claim": "The proxy has no voice-only files >=30 seconds: real n2287/max26.58s/p9517.04s, fake n1308/max24.803s/p9512.359s. Negative log duration alone gives voice-only label AUC0.78140958. Real voice-only score/duration Spearman rho0.33289672 and max-over-segment scoring support a length-related risk, but do not isolate its cause. Voice-present EER worsens in longer bins while content/source composition changes sharply: 286 of291 rows in the25-61s bin also contain music. The exact new-versus-Balanced7144 gap is zero in15-25s and0.01301824 in25-61s; the voice-only15-25s gap remains0.07675941 with just13 fakes. Four fake voice-only training clips are >=30s, contradicting zero. Class-conditional binned duration reweighting reproduces the reported scenario degradation but cannot measure how much of the hidden-test gap duration causes.",
+      "actual_primary_evidence": [
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/bank/bank_test.csv",
+          "key": "VOICE_PRESENT=1,MUSIC_PRESENT=0,VOICE_FAKE known; ID,orig_id and component labels",
+          "supports": "3595 voice-only proxy rows, complete voice target selection and joins."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/manifest.jsonl",
+          "key": "ID,crop_len_s; joined using bank.orig_id",
+          "supports": "Duration quantiles, binning, duration-only AUC, source breakdown."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/test_predictions_decision.csv",
+          "key": "ID,VOICE_FAKE_PROB and FILE/MUSIC probability columns;6444 prediction rows",
+          "supports": "New head EERs, FPRs, correlations and reweighting."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/compare/test_predictions_prev_balanced7144_legacy.csv",
+          "key": "ID and component probability columns;6450 prediction rows",
+          "supports": "Previous-model EERs and scenario comparisons."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/bank/bank_trainval.csv",
+          "lines": "12288,12710,14351,17478",
+          "supports": "Four actual train voice-only fake rows >=30s, all MLAAD."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/manifest.jsonl",
+          "lines": "13450,13964,15955,19465",
+          "supports": "The four MLAAD clip durations33.732,32.973,39.755,31.24seconds; languagesko,ko,bn,yo."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/splits.csv",
+          "key": "ID,split; source musan_speech joined from manifest",
+          "supports": "All426 musan_speech rows are train; median17.6655seconds."
+        },
+        {
+          "path": "full_bank_evaluate.py",
+          "lines": "53-60",
+          "supports": "Per-seed voice softmax fake probability maximum over segments, then mean across heads."
+        },
+        {
+          "path": "<CLAUDE_AUDIT_SCRATCH>/pkg/model/assets/baseline/script.py",
+          "lines": "39-42,157-165",
+          "supports": "64600 samples/16000Hz=4.0375second segments; last overlapping segment logic."
+        },
+        {
+          "path": "<CLAUDE_AUDIT_SCRATCH>/reweight.py",
+          "lines": "4-27",
+          "supports": "Edges4,6,10,15,25,40,61; >=4s filter; per-class bin weights; component-specific known labels and prediction-ID intersection."
+        }
+      ],
+      "calculated_numbers": {
+        "counts": {
+          "test": 6450,
+          "predictions": {
+            "new": 6444,
+            "b7144": 6450
+          }
+        },
+        "missing_prediction_rows": {
+          "new": [
+            {
+              "ID": "v4_11f5005d4695761d1c0359fb",
+              "orig_id": "haim:C1/C1_03160",
+              "VOICE_PRESENT": "",
+              "MUSIC_PRESENT": "1",
+              "VOICE_FAKE": "",
+              "MUSIC_FAKE": "0",
+              "FILE_FAKE": ""
+            },
+            {
+              "ID": "v4_1ef1c6aa715c11156f5b5f06",
+              "orig_id": "haim:C1/C1_00120",
+              "VOICE_PRESENT": "1",
+              "MUSIC_PRESENT": "1",
+              "VOICE_FAKE": "",
+              "MUSIC_FAKE": "0",
+              "FILE_FAKE": ""
+            },
+            {
+              "ID": "v4_26f2531bfe7def2fa879e7d1",
+              "orig_id": "haim:C2/C2_04920",
+              "VOICE_PRESENT": "1",
+              "MUSIC_PRESENT": "1",
+              "VOICE_FAKE": "",
+              "MUSIC_FAKE": "0",
+              "FILE_FAKE": ""
+            },
+            {
+              "ID": "v4_286dcd12e51753138d6d0db6",
+              "orig_id": "haim:C2/C2_01020",
+              "VOICE_PRESENT": "",
+              "MUSIC_PRESENT": "1",
+              "VOICE_FAKE": "",
+              "MUSIC_FAKE": "0",
+              "FILE_FAKE": ""
+            },
+            {
+              "ID": "v4_3f610f1c32ac81ae6f576021",
+              "orig_id": "haim:C1/C1_02640",
+              "VOICE_PRESENT": "",
+              "MUSIC_PRESENT": "1",
+              "VOICE_FAKE": "",
+              "MUSIC_FAKE": "0",
+              "FILE_FAKE": ""
+            },
+            {
+              "ID": "v4_778117b83bb170ab841f14f5",
+              "orig_id": "haim:C1/C1_01020",
+              "VOICE_PRESENT": "",
+              "MUSIC_PRESENT": "1",
+              "VOICE_FAKE": "",
+              "MUSIC_FAKE": "0",
+              "FILE_FAKE": ""
+            }
+          ],
+          "b7144": []
+        },
+        "voice_only_quantiles": {
+          "0": {
+            "n": 2287,
+            "q05_25_50_75_95": [
+              4.8015,
+              7.26,
+              9.609,
+              12.6,
+              17.04
+            ],
+            "max": 26.58,
+            "ge30": 0
+          },
+          "1": {
+            "n": 1308,
+            "q05_25_50_75_95": [
+              2.953,
+              4.3825,
+              5.7665,
+              8.182749999999999,
+              12.358999999999993
+            ],
+            "max": 24.803,
+            "ge30": 0
+          }
+        },
+        "voice_only_negative_log_duration_auc": 0.7814095826831352,
+        "bins": {
+          "voice_only": [
+            {
+              "lo": 0,
+              "hi": 6,
+              "new": {
+                "n": 994,
+                "fake": 680,
+                "eer": 0.03210003746721618,
+                "threshold": 0.3961583872636159
+              },
+              "b7144": {
+                "n": 994,
+                "fake": 680,
+                "eer": 0.07265361558636196,
+                "threshold": 0.3372211257616679
+              },
+              "voice_only_n": 994
+            },
+            {
+              "lo": 6,
+              "hi": 10,
+              "new": {
+                "n": 1398,
+                "fake": 466,
+                "eer": 0.04077253218884125,
+                "threshold": 0.3353259563446045
+              },
+              "b7144": {
+                "n": 1398,
+                "fake": 466,
+                "eer": 0.13948497854077258,
+                "threshold": 0.31711796919504803
+              },
+              "voice_only_n": 1398
+            },
+            {
+              "lo": 10,
+              "hi": 15,
+              "new": {
+                "n": 950,
+                "fake": 149,
+                "eer": 0.06016388909835857,
+                "threshold": 0.4246224860350291
+              },
+              "b7144": {
+                "n": 950,
+                "fake": 149,
+                "eer": 0.18946534952115224,
+                "threshold": 0.39368117849032086
+              },
+              "voice_only_n": 950
+            },
+            {
+              "lo": 15,
+              "hi": 25,
+              "new": {
+                "n": 248,
+                "fake": 13,
+                "eer": 0.07675941080196391,
+                "threshold": 0.34650784730911255
+              },
+              "b7144": {
+                "n": 248,
+                "fake": 13,
+                "eer": 0.153518821603928,
+                "threshold": 0.5995406707127889
+              },
+              "voice_only_n": 248
+            },
+            {
+              "lo": 25,
+              "hi": 61,
+              "new": {
+                "n": 5,
+                "fake": 0,
+                "eer": null,
+                "threshold": null
+              },
+              "b7144": {
+                "n": 5,
+                "fake": 0,
+                "eer": null,
+                "threshold": null
+              },
+              "voice_only_n": 5
+            }
+          ],
+          "voice_present": [
+            {
+              "lo": 0,
+              "hi": 6,
+              "new": {
+                "n": 1116,
+                "fake": 721,
+                "eer": 0.048322477571586586,
+                "threshold": 0.2877430319786072
+              },
+              "b7144": {
+                "n": 1116,
+                "fake": 721,
+                "eer": 0.09860425920398885,
+                "threshold": 0.5079712669054667
+              },
+              "voice_only_n": 994
+            },
+            {
+              "lo": 6,
+              "hi": 10,
+              "new": {
+                "n": 1902,
+                "fake": 686,
+                "eer": 0.09621350889980057,
+                "threshold": 0.1446392983198166
+              },
+              "b7144": {
+                "n": 1902,
+                "fake": 686,
+                "eer": 0.16614958953506215,
+                "threshold": 0.5304893354574839
+              },
+              "voice_only_n": 1398
+            },
+            {
+              "lo": 10,
+              "hi": 15,
+              "new": {
+                "n": 1284,
+                "fake": 325,
+                "eer": 0.12926606240474858,
+                "threshold": 0.22063923875490823
+              },
+              "b7144": {
+                "n": 1284,
+                "fake": 325,
+                "eer": 0.18769391192748858,
+                "threshold": 0.5793546835581461
+              },
+              "voice_only_n": 950
+            },
+            {
+              "lo": 15,
+              "hi": 25,
+              "new": {
+                "n": 544,
+                "fake": 189,
+                "eer": 0.2005291005291005,
+                "threshold": 0.14996983607610068
+              },
+              "b7144": {
+                "n": 544,
+                "fake": 189,
+                "eer": 0.2005291005291005,
+                "threshold": 0.75325874487559
+              },
+              "voice_only_n": 248
+            },
+            {
+              "lo": 25,
+              "hi": 61,
+              "new": {
+                "n": 291,
+                "fake": 201,
+                "eer": 0.2992537313432836,
+                "threshold": 0.21327888468901315
+              },
+              "b7144": {
+                "n": 291,
+                "fake": 201,
+                "eer": 0.3122719734660033,
+                "threshold": 0.9438833793004354
+              },
+              "voice_only_n": 5
+            }
+          ]
+        },
+        "voice_threshold_all_voice_present": 0.19125081598758698,
+        "voice_real_fpr_by_segments_from_duration": {
+          "1": {
+            "n": 19,
+            "fpr": 0.0
+          },
+          "2": {
+            "n": 748,
+            "fpr": 0.05080213903743316
+          },
+          "3": {
+            "n": 856,
+            "fpr": 0.10864485981308411
+          },
+          "4": {
+            "n": 502,
+            "fpr": 0.14741035856573706
+          },
+          "5": {
+            "n": 162,
+            "fpr": 0.12962962962962962
+          }
+        },
+        "voice_only_real_spearman": 0.3328967222317575,
+        "training_voice_only_duration": {
+          "0_ge20": {
+            "n": 295,
+            "sources": {
+              "musan_speech": 189,
+              "csd": 100,
+              "existing:librispeech_test-clean": 5,
+              "vocalset": 1
+            }
+          },
+          "0_ge30": {
+            "n": 172,
+            "sources": {
+              "csd": 59,
+              "musan_speech": 113
+            }
+          },
+          "1_ge20": {
+            "n": 36,
+            "sources": {
+              "mlaad": 36
+            }
+          },
+          "1_ge30": {
+            "n": 4,
+            "sources": {
+              "mlaad": 4
+            }
+          }
+        },
+        "musan_speech": {
+          "n": 426,
+          "median": 17.6655,
+          "splits": {
+            "train": 426
+          }
+        },
+        "reweight": {
+          "new_asis": {
+            "file": {
+              "n": 6187,
+              "fake": 2382,
+              "eer": 0.11331106822853398,
+              "threshold": 0.33054931470278776,
+              "class_duration_bin_counts": {
+                "0": [
+                  467,
+                  1356,
+                  1254,
+                  444,
+                  149,
+                  135
+                ],
+                "1": [
+                  528,
+                  832,
+                  396,
+                  277,
+                  185,
+                  164
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "voice": {
+              "n": 4882,
+              "fake": 1882,
+              "eer": 0.1185788168614949,
+              "threshold": 0.17499921222527823,
+              "class_duration_bin_counts": {
+                "0": [
+                  380,
+                  1216,
+                  959,
+                  355,
+                  54,
+                  36
+                ],
+                "1": [
+                  479,
+                  686,
+                  325,
+                  189,
+                  99,
+                  104
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "music": {
+              "n": 2848,
+              "fake": 1030,
+              "eer": 0.20011001100110004,
+              "threshold": 0.4913932780424754,
+              "class_duration_bin_counts": {
+                "0": [
+                  178,
+                  521,
+                  553,
+                  274,
+                  153,
+                  139
+                ],
+                "1": [
+                  79,
+                  269,
+                  147,
+                  199,
+                  176,
+                  160
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "ads": 0.859595699213104
+          },
+          "new_uniform": {
+            "file": {
+              "n": 6187,
+              "fake": 2382,
+              "eer": 0.1417544140291655,
+              "threshold": 0.3508130484152791,
+              "class_duration_bin_counts": {
+                "0": [
+                  467,
+                  1356,
+                  1254,
+                  444,
+                  149,
+                  135
+                ],
+                "1": [
+                  528,
+                  832,
+                  396,
+                  277,
+                  185,
+                  164
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "voice": {
+              "n": 4882,
+              "fake": 1882,
+              "eer": 0.24817085903474762,
+              "threshold": 0.21327888468901315,
+              "class_duration_bin_counts": {
+                "0": [
+                  380,
+                  1216,
+                  959,
+                  355,
+                  54,
+                  36
+                ],
+                "1": [
+                  479,
+                  686,
+                  325,
+                  189,
+                  99,
+                  104
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "music": {
+              "n": 2848,
+              "fake": 1030,
+              "eer": 0.18380765678706662,
+              "threshold": 0.5298623939355215,
+              "class_duration_bin_counts": {
+                "0": [
+                  178,
+                  521,
+                  553,
+                  274,
+                  153,
+                  139
+                ],
+                "1": [
+                  79,
+                  269,
+                  147,
+                  199,
+                  176,
+                  160
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "ads": 0.8243463241423478
+          },
+          "b7144_asis": {
+            "file": {
+              "n": 6187,
+              "fake": 2382,
+              "eer": 0.1795907987082267,
+              "threshold": 0.3359545353539346,
+              "class_duration_bin_counts": {
+                "0": [
+                  467,
+                  1356,
+                  1254,
+                  444,
+                  149,
+                  135
+                ],
+                "1": [
+                  528,
+                  832,
+                  396,
+                  277,
+                  185,
+                  164
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "voice": {
+              "n": 4882,
+              "fake": 1882,
+              "eer": 0.16529153382925965,
+              "threshold": 0.6493568619092306,
+              "class_duration_bin_counts": {
+                "0": [
+                  380,
+                  1216,
+                  959,
+                  355,
+                  54,
+                  36
+                ],
+                "1": [
+                  479,
+                  686,
+                  325,
+                  189,
+                  99,
+                  104
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "music": {
+              "n": 2854,
+              "fake": 1030,
+              "eer": 0.26389190512689487,
+              "threshold": 0.33426512281099957,
+              "class_duration_bin_counts": {
+                "0": [
+                  179,
+                  524,
+                  554,
+                  275,
+                  153,
+                  139
+                ],
+                "1": [
+                  79,
+                  269,
+                  147,
+                  199,
+                  176,
+                  160
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "ads": 0.7979787223419662
+          },
+          "b7144_uniform": {
+            "file": {
+              "n": 6187,
+              "fake": 2382,
+              "eer": 0.20964167313626875,
+              "threshold": 0.3674346077075299,
+              "class_duration_bin_counts": {
+                "0": [
+                  467,
+                  1356,
+                  1254,
+                  444,
+                  149,
+                  135
+                ],
+                "1": [
+                  528,
+                  832,
+                  396,
+                  277,
+                  185,
+                  164
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "voice": {
+              "n": 4882,
+              "fake": 1882,
+              "eer": 0.28303649689281685,
+              "threshold": 0.9135042230288187,
+              "class_duration_bin_counts": {
+                "0": [
+                  380,
+                  1216,
+                  959,
+                  355,
+                  54,
+                  36
+                ],
+                "1": [
+                  479,
+                  686,
+                  325,
+                  189,
+                  99,
+                  104
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "music": {
+              "n": 2854,
+              "fake": 1030,
+              "eer": 0.2376663980502225,
+              "threshold": 0.3475653827190399,
+              "class_duration_bin_counts": {
+                "0": [
+                  179,
+                  524,
+                  554,
+                  275,
+                  153,
+                  139
+                ],
+                "1": [
+                  79,
+                  269,
+                  147,
+                  199,
+                  176,
+                  160
+                ]
+              },
+              "target_mass_retained": {
+                "0": 1.0,
+                "1": 1.0
+              }
+            },
+            "ads": 0.7672719446382354
+          }
+        }
+      },
+      "corrections": [
+        "The title must say no >=30s voice-only proxy clips, not no long voice files. Voice-present files with music exist through the long-duration bins.",
+        "The original near-monotone bins are descriptive correlations. New voice-only EERs for[0,6),[6,10),[10,15),[15,25) are0.0321000,0.0407725,0.0601639,0.0767594. New all-voice-present values are0.0483225,0.0962135,0.1292661,0.2005291,0.2992537; previous values0.0986043,0.1661496,0.1876939,0.2005291,0.3122720. Replace slightly different source numbers with these primary-CSV recalculations.",
+        "Training contains four >=30s fake voice-only rows, including two Korean MLAAD Bark clips. This is sparse coverage, not no coverage.",
+        "Real voice-only train rows >=30s total172:113 musan_speech and59 csd. The426 musan_speech total includes shorter files; median17.6655s is not a long-file count.",
+        "Reported FPRs use the global voice EER threshold0.19125081599 derived on this proxy. They are descriptive test diagnostics, not validation-selected deployment FPR guarantees. Inferred segment counts use rounded duration; one-segment real n19 is especially small.",
+        "The reweight scenario is binned over[4,61) and preserves observed within-bin/source mixtures, not an exact continuous uniform4-60s population. Current whole-component evaluation has no empty class bins; filtered slices need separate support checks.",
+        "New decision predictions omit six HAIM rows with unknown file labels but known real music labels. Thus the original reweight comparison uses new music n2848 and old music n2854 after >=4s filtering. Use common-ID comparison when measuring paired model changes.",
+        "A max statistic can increase with additional candidate segments, but observed duration association also includes domain, content and label differences. No controlled append-length or aggregation ablation was executed here.",
+        "Moving previously trained musan_speech rows into test does not create an independent holdout for these fitted heads. Obtain unseen long sources or exclude full source components before retraining; preserve the original evaluation record.",
+        "Choose aggregation and thresholds using validation only. Repeatedly selecting max/mean/top-k/log-mean-exp against this test proxy or public LB converts those outcomes into development data; hold back a prospective confirmation set. Mean/top-k may dilute localized fake evidence, so evaluate partial-fake recall alongside real FPR."
+      ],
+      "what_remains_unverified": [
+        "Hidden-test actual duration/source distribution and per-example errors;4-60s range was not independently re-read from official source in this network-free task.",
+        "Causal contribution of length/max pooling versus source, music content or label coverage.",
+        "Performance of alternate voice aggregation, runtime parity, cache availability for all needed segment scores, and partial-fake tradeoffs.",
+        "Any future LB gain or portion of current LB gap attributable to duration."
+      ],
+      "impact_adjustment": "Retain high priority for sparse long-speech validation and duration/content stratification, with corrected training counts. Remove the claimed0.02-0.036 ADS-gap explanation, predicted V/F reductions and+0.01-0.025 total-score gain. Treat reweighting as an explicit stress scenario. Secure an untouched long-speech holdout before using aggregation changes as a model-selection result."
+    },
+    {
+      "id": "VALIDATION_GAP-4",
+      "verdict": "partially_confirmed",
+      "confidence": "high for primary CSV arithmetic and script reproduction; conditional for proxy-to-LB package pairing; unsupported for causal mechanism and universal calibration",
+      "corrected_claim": "The local known-label proxy overstates the observed ADS improvement for this one context-attributed Balanced7144-to-DataV4 comparison: proxy delta 0.06107174 versus saved LB delta 0.03832540 (ratio 0.62755). Restricting both models to the same 6,444 IDs changes the proxy delta only to 0.06103749. The DataV4 proxy-minus-LB surrogate-total gap is 0.08540418, of which 99.927% is the ADS term. The saved connected-component bootstrap intervals and exploratory filtered-slice numbers reproduce. These show a discrepancy conditional on this proxy and these attributed packages; they do not establish that sampling noise is impossible, identify its cause, validate a future 0.6 multiplier, or validate the post-hoc slice as an independent model-selection metric.",
+      "confirmed": [
+        "Existing9504 README records no submission at packaging time. It is not the identified submission 92644 baseline; the local +0.05890 surrogate-total gain versus Existing9504 is not matched to the LB +0.03335 gain versus submission 92644.",
+        "The September 19 saved submission table directly records submission 93093 total 0.7559347884 / ADS 0.7299920635 / CPS 0.9894193122 and submission 92644 total 0.7579036931 / ADS 0.7321825397 / CPS 0.9893940741.",
+        "The saved screenshot was independently viewed in this turn: submission 102411, September 24 02:09:50, total 0.7912534339, ADS 0.7683174603, CPS 0.9976771958, runtime 17m32s. It displays submit.zip, without hash.",
+        "Primary CSV recalculation reproduces the compare-report EERs. Independent code implementing the saved bootstrap specification, without importing or executing project/audit scripts, reproduces ALL CI [0.05161085, 0.06063209, 0.07195187] and selected-uniform CI [0.01742654, 0.03590206, 0.05559832]."
+      ],
+      "corrections": [
+        {
+          "issue": "baseline_identity",
+          "detail": "The claim that Balanced7144 and DataV4 form a fully verified matched pair is too strong. ANALYSIS.md explicitly says 93093 attribution is based on conversation context; both older submissions are named submit.zip with no hashes. The DataV4 screenshot is also only submit.zip. Keep both model associations conditional until upload-to-hash identity is recovered."
+        },
+        {
+          "issue": "absence_overclaim",
+          "detail": "Existing9504 README no-submission statement is time-scoped, not proof it was never subsequently submitted. The cited live_submissions.json snapshot is September 19 and therefore cannot independently establish non-submission of a later Existing9504 package. DataV4 README also says no submission despite the later screenshot, illustrating this limitation."
+        },
+        {
+          "issue": "partial_labels_and_denominators",
+          "detail": "compare_report.json official.score is null for all compared variants because labels are partial. 0.82065 and 0.87666 are independently reconstructed known-subset surrogate totals, not valid complete official scores. Old predictions cover 6,450 IDs and new decision predictions 6,444; Music EER denominators differ 2,855 versus 2,849. A common-ID comparison has old ADS 0.8021042732, new ADS 0.8631417627, delta 0.0610374896."
+        },
+        {
+          "issue": "bootstrap_estimand",
+          "detail": "The cited ALL CI is conditional on the observed proxy component population, excludes <4-second rows at metric evaluation, and uses 200 component resamples. Its point estimand is not the unfiltered 0.06107174 delta. LB sampling uncertainty, unknown source/generator population, package identity, and model-selection uncertainty are not included. LB delta lying outside this proxy-only CI does not prove noise cannot contribute or that a particular distribution mechanism caused the difference."
+        },
+        {
+          "issue": "posthoc_proxy_calibration",
+          "detail": "combos.py compares 8 filters times 2 duration weightings against hard-coded known LB ADS anchors. The recommended slice is selected after inspecting those anchors, so near-constant residual gaps are in-sample calibration evidence. boot.py resamples the already-chosen slice; it does not repeat filter selection or correct its selection optimism. Using this slice for future model selection is permissible only as an exploratory development metric, with independent prospective validation."
+        },
+        {
+          "issue": "unjustified_multiplier_and_threshold",
+          "detail": "0.62755 is one contrast of two context-attributed packages, not an estimated general transfer law. The 0.6 multiplier and delta>=0.01 gate have no prospective calibration, uncertainty model, or demonstrated decision accuracy. In particular the quoted selected-slice 95% interval spans roughly 0.0174 to 0.0556; it does not establish 0.01 as a universally decisive threshold."
+        },
+        {
+          "issue": "causal_overclaim",
+          "detail": "Data, source composition, training/sampling, voice/music heads, learned presence, and file fusion differ simultaneously. The target is the new decision variant while the old variant is legacy fusion. No controlled ablation here separates pipeline familiarity, corpus familiarity, head learning, fusion, label coverage, or sampling effects. Replace systematic advantage caused by v4 training with a plausible but unisolated explanation."
+        },
+        {
+          "issue": "test_selection_boundary",
+          "detail": "The saved compare report exposes multiple new/old and decision/legacy candidates on the test proxy. README records validation-only checkpoint selection, so this audit does not establish test-label gradient leakage or prove final model selection used test labels. The post-hoc slice selection against test/LB outcomes is directly observable, and its evaluation cannot be treated as independent validation."
+        },
+        {
+          "issue": "uniform_duration_label",
+          "detail": "The script weights each target and class by bin widths over edges [4,6,10,15,25,40,61], not exact continuous uniform sampling over 4-60 seconds. The selected common-ID evaluation has 2,943 rows, duration 4.017-59.957 seconds, and no empty target/class bins. Describe it as class-conditional binned duration reweighting; it does not standardize source/type composition."
+        }
+      ],
+      "impact_adjustment": "No direct LB gain can be assigned. Retain high decision-risk priority for mismatched baselines and unsupported calibration, but remove the numeric 0.6 correction, 1.6x future overstatement claim, and mandatory 0.01 selection gate. Report full proxy, common-ID comparison, and predeclared diagnostic slices separately. Freeze the proposed slice before evaluating additional hash-linked model submissions or a genuinely untouched domain holdout; only those new anchors can test calibration value.",
+      "verification_method": "Read-only primary CSV/JSON/screenshot audit, code inspection, and bounded independent CPU calculations using project .venv/bin/python with pandas/numpy/sklearn. No project/audit scripts imported or rerun, no checkpoint/pickle/GPU/network/install/git operations. One failed preliminary join was corrected by disambiguating codec_chain metadata; completed calculations validate unique IDs and metadata joins. Only this result JSON is written.",
+      "actual_primary_evidence": [
+        {
+          "path": "submissions/Existing9504_MIL/README.md",
+          "lines": "20-22",
+          "supports": "Time-scoped CPU QA and no-submission statement; historically exposed local test."
+        },
+        {
+          "path": "results/balanced7144_regression_20260919/live_submissions.json",
+          "lines": "2-8",
+          "supports": "Timestamp, captured source and LB values for 93093/92644."
+        },
+        {
+          "path": "results/balanced7144_regression_20260919/ANALYSIS.md",
+          "lines": "17-21",
+          "supports": "Official total formula, inability to separate LB causes, package-identity caveat."
+        },
+        {
+          "path": "user-provided screenshot imasasdge.png",
+          "locator": "visible submission row 102411",
+          "supports": "Independently viewed total/ADS/CPS/date/runtime; no hash shown."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/compare/compare_report.json",
+          "lines": "75-115,359-397",
+          "supports": "Old/new exact metrics, null official score, partial labels, metric denominator mismatch."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/compare/test_predictions_prev_balanced7144_legacy.csv",
+          "locator": "ID and five probability columns; 6450 unique rows",
+          "supports": "Independent old-model recalculation."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/test_predictions_decision.csv",
+          "locator": "ID and five probability columns; 6444 unique rows",
+          "supports": "Independent new-model recalculation."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/bank/bank_test.csv",
+          "locator": "ID,orig_id,component_id,source,generator,presence/fake label columns",
+          "supports": "Validated unique prediction joins and official target eligibility."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/manifest.jsonl",
+          "locator": "ID,crop_len_s,codec_chain",
+          "supports": "Unique many-to-one metadata join by bank.orig_id; duration/codec slices."
+        },
+        {
+          "path": "<CLAUDE_AUDIT_SCRATCH>/combos.py",
+          "lines": "3-29",
+          "supports": "Eight exploratory filters, two weightings, hard-coded LB targets, reported residual gaps."
+        },
+        {
+          "path": "<CLAUDE_AUDIT_SCRATCH>/reweight.py",
+          "lines": "2-27",
+          "supports": "Official EER rule, >=4 seconds filter, class-conditional bin-weight targets and ADS weights."
+        },
+        {
+          "path": "<CLAUDE_AUDIT_SCRATCH>/boot.py",
+          "lines": "5-18",
+          "supports": "B=200, component bootstrap conditional on chosen slice, then duration filtering in rw_metrics."
+        },
+        {
+          "path": "<CLAUDE_AUDIT_SCRATCH>/lb.py",
+          "lines": "1,15-18,34-37",
+          "supports": "Original DataV4 ADS was reconstructed from memory total and rounded CPS, not read exactly from the supplied screenshot."
+        },
+        {
+          "path": "submissions/DataV4_DurationBalanced/README.md",
+          "lines": "7-17",
+          "supports": "Multiple changed components, validation-only checkpoint claim, surrogate score, time-scoped no-submission wording."
+        },
+        {
+          "path": "data_v4/compare_runs.py",
+          "lines": "83-100",
+          "supports": "Multiple candidate evaluations and separate decision subset coverage; not proof of test-based selection."
+        }
+      ],
+      "calculated_numbers": {
+        "row_counts": {
+          "old": 6450,
+          "existing": 6450,
+          "new": 6444
+        },
+        "all": {
+          "old": {
+            "file": {
+              "n": 6444,
+              "eer": 0.17334890978163708,
+              "empty_bins": []
+            },
+            "voice": {
+              "n": 5139,
+              "eer": 0.16013716727098964,
+              "empty_bins": []
+            },
+            "music": {
+              "n": 2855,
+              "eer": 0.2640936294720042,
+              "empty_bins": []
+            },
+            "ads": 0.8020700228133824,
+            "cps": 0.9878660329454987,
+            "surrogate_total": 0.820649623826594
+          },
+          "existing": {
+            "file": {
+              "n": 6444,
+              "eer": 0.1734797998339931,
+              "empty_bins": []
+            },
+            "voice": {
+              "n": 5139,
+              "eer": 0.16852039238834077,
+              "empty_bins": []
+            },
+            "music": {
+              "n": 2855,
+              "eer": 0.26898656736268123,
+              "empty_bins": []
+            },
+            "ads": 0.7988600513965309,
+            "cps": 0.9878660329454987,
+            "surrogate_total": 0.8177606495514278
+          },
+          "new": {
+            "file": {
+              "n": 6444,
+              "eer": 0.10939954188481671,
+              "empty_bins": []
+            },
+            "voice": {
+              "n": 5139,
+              "eer": 0.11070986873541894,
+              "empty_bins": []
+            },
+            "music": {
+              "n": 2849,
+              "eer": 0.20005497526113247,
+              "empty_bins": []
+            },
+            "ads": 0.8631417627321682,
+            "cps": 0.998300255423245,
+            "surrogate_total": 0.8766576120012759
+          }
+        },
+        "common": {
+          "old": {
+            "file": {
+              "n": 6444,
+              "eer": 0.17334890978163708,
+              "empty_bins": []
+            },
+            "voice": {
+              "n": 5139,
+              "eer": 0.16013716727098964,
+              "empty_bins": []
+            },
+            "music": {
+              "n": 2849,
+              "eer": 0.2639794616694332,
+              "empty_bins": []
+            },
+            "ads": 0.8021042731541537,
+            "cps": 0.9878577292381656,
+            "surrogate_total": 0.8206796187625549
+          },
+          "new": {
+            "file": {
+              "n": 6444,
+              "eer": 0.10939954188481671,
+              "empty_bins": []
+            },
+            "voice": {
+              "n": 5139,
+              "eer": 0.11070986873541894,
+              "empty_bins": []
+            },
+            "music": {
+              "n": 2849,
+              "eer": 0.20005497526113247,
+              "empty_bins": []
+            },
+            "ads": 0.8631417627321682,
+            "cps": 0.998300255423245,
+            "surrogate_total": 0.8766576120012759
+          }
+        },
+        "selected": {
+          "old": {
+            "file": {
+              "n": 2943,
+              "eer": 0.17996362396265564,
+              "empty_bins": []
+            },
+            "voice": {
+              "n": 2010,
+              "eer": 0.2802828487173453,
+              "empty_bins": []
+            },
+            "music": {
+              "n": 1366,
+              "eer": 0.18759848546004004,
+              "empty_bins": []
+            },
+            "ads": 0.7976820726371912
+          },
+          "new": {
+            "file": {
+              "n": 2943,
+              "eer": 0.12860761612138816,
+              "empty_bins": []
+            },
+            "voice": {
+              "n": 2010,
+              "eer": 0.27420264734631317,
+              "empty_bins": []
+            },
+            "music": {
+              "n": 1366,
+              "eer": 0.15498191526727928,
+              "empty_bins": []
+            },
+            "ads": 0.8343610878898595
+          }
+        },
+        "selected_n": 2943,
+        "selected_duration_range": [
+          4.017,
+          59.957
+        ],
+        "selected_codec_counts": {
+          "pcm_wav": 1183,
+          "flac": 638,
+          "mp3_128": 526,
+          "mp3_64": 302,
+          "mp3_192": 294
+        },
+        "bootstrap": {
+          "ALL_ge4": {
+            "rows": 6187,
+            "components": 2565,
+            "component_max": 358,
+            "delta_ci": [
+              0.05198433306563059,
+              0.06111542710784246,
+              0.07276378095050715
+            ]
+          },
+          "selected_uniform": {
+            "rows": 2943,
+            "components": 1454,
+            "component_max": 207,
+            "delta_ci": [
+              0.01805354033124378,
+              0.0379954968645147,
+              0.05699144187727161
+            ]
+          }
+        },
+        "saved_bootstrap_method_reproduction": {
+          "ALL": {
+            "levels_original_unmatched": {
+              "old": 0.7979787223419662,
+              "new": 0.859595699213104
+            },
+            "delta_original_unmatched": 0.06161697687113776,
+            "bootstrap_components_before_duration_filter": 2730,
+            "bootstrap_sample_pool_rows": 6444,
+            "bootstrap_delta_ci": [
+              0.05161084619061833,
+              0.06063209174908113,
+              0.07195186654874647
+            ]
+          },
+          "std_nocon_notwithin": {
+            "levels_original_unmatched": {
+              "old": 0.7977121860531985,
+              "new": 0.8343610878898595
+            },
+            "delta_original_unmatched": 0.03664890183666103,
+            "bootstrap_components_before_duration_filter": 1465,
+            "bootstrap_sample_pool_rows": 2999,
+            "bootstrap_delta_ci": [
+              0.017426541815830917,
+              0.035902060357571985,
+              0.05559832263750528
+            ]
+          }
+        },
+        "leaderboard_arithmetic": {
+          "proxy_ads_delta_report_denominators": 0.061071739918785894,
+          "proxy_ads_delta_common_ids": 0.06103748957801458,
+          "lb_ads_delta": 0.03832539680000002,
+          "lb_to_proxy_ads_delta_ratio_report": 0.627547157670073,
+          "lb_to_proxy_ads_delta_ratio_common_ids": 0.6278992970543902,
+          "proxy_total_delta": 0.05600798817468189,
+          "lb_total_delta": 0.03531864550000008,
+          "new_proxy_minus_lb_total": 0.08540417810127587,
+          "ads_contribution": 0.0853418721889514,
+          "cps_contribution": 6.23059623244937e-05,
+          "ads_fraction_of_total_gap": 0.9992704582643417,
+          "selected_proxy_minus_lb_old": 0.06769000913719114,
+          "selected_proxy_minus_lb_new": 0.06604362758985949
+        }
+      },
+      "what_remains_unverified": [
+        "Hash identity linking 93093 to Balanced7144 and 102411 to DataV4, or 92644 to a specific local package.",
+        "No current authenticated live submission list was fetched; old JSON and saved screenshot were inspected.",
+        "Hidden-set per-file scores/labels, source composition, per-head EERs, and leaderboard sampling variance.",
+        "Whether the final DataV4 variant choice used the exposed test comparisons; checkpoint-selection wording alone does not settle model-level selection.",
+        "Prospective utility of the 0.6 factor, selected slice, or 0.01 gate, and causal attribution to v4 processing/corpus exposure."
+      ]
+    },
+    {
+      "id": "HISTORY-5",
+      "verdict": "partially_confirmed",
+      "corrected_claim": "The saved official submission records support the listed scores and several large regressions. They support preserving the strongest verified package and requiring a controlled adoption gate before costly changes. They do not establish that every encoder replacement or full fine-tune is inferior. MERT95 to MERT330 is itself a successful frozen-encoder replacement, accompanied by head/ensemble/training changes in the submitted package. C08 is also a music-route replacement rather than a pure head-only intervention against the original baseline. IDs 91610 and 92644 lack an independently verified archive-to-submission binding in the inspected evidence; nearby mtimes only generate hypotheses. The 115-fit sweep count describes local fits, not 115 LB trials, and cannot establish that none could improve LB by 0.01. C08, a selected compact sweep candidate, actually improved over G0 by 0.0405711958. Local fullft8 results are mixed; their splits and interventions must remain separate.",
+      "evidence": [
+        {
+          "path": "results/balanced7144_regression_20260919/live_submissions.json",
+          "keys": [
+            "observed_at",
+            "source",
+            "rows"
+          ],
+          "fact": "Authenticated rendered table saved on 2026-09-19 contains exact official scores/runtimes and generic submit.zip names for 91610/92644."
+        },
+        {
+          "path": "results/precision_audit_20260918/REPORT.md",
+          "lines": [
+            20,
+            42
+          ],
+          "fact": "91610 model connection explicitly unverified; ordering/file names were not treated as proof."
+        },
+        {
+          "path": "EXPERIMENTS_ALL_2026-09-17.md",
+          "lines": [
+            315,
+            317,
+            334,
+            341,
+            343,
+            350,
+            367,
+            407
+          ],
+          "fact": "Compact 37 fits; C08 single selected seed; MERT95-to-330 controlled local comparison and differing final 5-fold package; 48 method fits; AF changes are local experiments."
+        },
+        {
+          "path": "submissions/M330_MLP_full1206/M330_MLP_full1206_submit.json",
+          "keys": [
+            "choice.training_mode",
+            "choice.seeds",
+            "choice.selected_epochs",
+            "choice.files"
+          ],
+          "fact": "Final M330 package uses grouped 5-fold early stopping, seeds41-45, 1206 files; not the same three-seed local comparison."
+        },
+        {
+          "path": "results/fullft8_h100x1_20260916/final_metrics.json",
+          "keys": [
+            "[0].test_music_eer",
+            "[1].test_music_eer",
+            "[2].test_music_eer",
+            "[6].test_music_eer",
+            "[7].test_music_eer"
+          ],
+          "fact": "S0 MERT frozen .2666667, MERT fullft .3194444, EAT fullft .3000000, adapted fullft .2527778; S2 EAT .167603 on a different panel."
+        },
+        {
+          "path": "results/fullft8_h100x1_20260916/RESULTS.md",
+          "fact": "S0 adapted separator vs frozen separator EAT fullft is .3000 to .2527778 locally, single seed, historical panel; this is not an official improvement."
+        },
+        {
+          "path": "submissions/B_full1696/README.md",
+          "lines": [
+            3,
+            5
+          ],
+          "fact": "B uses frozen MERT features and a residual head, not encoder fullFT. All1696 include former validation129 and sealed98; no independent final validation remains."
+        },
+        {
+          "path": "submissions/Existing9504_MIL/README.md",
+          "lines": [
+            20,
+            22
+          ],
+          "fact": "Packaging-time report says CPU-only QA and no submission; it does not prove no later submission beyond the saved table's date."
+        },
+        {
+          "path": "user-provided screenshot imasasdge.png",
+          "fact": "Root agent independently viewed user-supplied screenshot:102411,2026-09-24 02:09:50,total.7912534339,ADS.7683174603,CPS.9976771958,17m32s. This subagent did not re-view it or query live DACON. Archive hash binding remains unverified."
+        }
+      ],
+      "independent_calculations": {
+        "C08_minus_G0": 0.0405711958,
+        "M330_minus_C08": 0.0081642857,
+        "MERT12_minus_M330": 0.0082928571,
+        "S2_minus_M330": -0.1017785715,
+        "92644_minus_MERT12": 0.0099642857,
+        "B7144_minus_92644": -0.0019689047,
+        "DataV4_minus_B7144": 0.0353186455,
+        "DataV4_minus_prior_best_92644": 0.0333497408
+      },
+      "impact_adjustment": "Remove the universal ban and the claimed -0.01 to -0.11 predictive regression range. Historical downside is real but not a causal estimate for a new backbone/LoRA/fullFT. Prefer low-cost controlled comparisons first; allow expensive candidates only after a matched source/generator-held-out gain and packaging/runtime gates. Do not claim B_full1696 caused91610's score.",
+      "limitations": [
+        "Submission score provenance is stronger than submission-to-local-artifact binding for generic filenames.",
+        "Several locally evaluated recipes differ from the actual refitted/fold-ensemble LB packages.",
+        "No fresh experiments were run, so this audit neither validates a new architecture nor proves its inferiority."
+      ]
+    },
+    {
+      "id": "RUNTIME_BUDGET-1",
+      "verdict": "partially_confirmed",
+      "corrected_claim": "The archived runtime and matched trainer both max-pool voice evidence across segments, and saved proxy predictions reproduce the aggregate length-bin deterioration. Trainval has95708 segments/35589 files=2.6893; test has23607/6450=3.66. The metrics use6444 prediction rows, with5139 eligible voice rows, not all6450 bank rows. The length bins substantially change source/domain composition; at>=7 segments HAIM+MUSAN comprise255/309 eligible voice rows. FLEURS real scores rise with length, but HAIM fake scores also rise, and constructed-enhanced real medians are not monotone. Thus max aggregation provides a plausible real-FP mechanism, not proof that overall EER must increase or that overlap must hurt. Hidden mean duration28-43s is not identifiable from these timing differences. The claimed H100 window denominator is wrong:4020 saved values include1456 summary scores and only2564 actual window predictions.",
+      "evidence": [
+        {
+          "path": "submissions/DataV4_DurationBalanced/submit.zip::model/runtime/full_bank_submission.py",
+          "lines": [
+            98,
+            100,
+            105,
+            112,
+            114
+          ],
+          "fact": "Music LME, voice segment forward loop, per-head max then seed average, silence gate, file fusion."
+        },
+        {
+          "path": "submissions/DataV4_DurationBalanced/submit.zip::model/assets/baseline/script.py",
+          "lines": [
+            157,
+            165
+          ],
+          "fact": "Stride is64600 with an end-anchored final segment; final segment may overlap. Segment count equalsceil(samples/64600), but strictly nonoverlapping is imprecise."
+        },
+        {
+          "path": "full_bank_train.py",
+          "lines": [
+            76,
+            90
+          ],
+          "fact": "Voice training already uses max-MIL; music usesLME. Saved trainer hash matches."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/data/bank/bank_test.csv",
+          "fact": "6450 IDs, source/generator/component labels used in independent join."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/test_predictions_decision.csv",
+          "fact": "6444 unique prediction IDs; six absent IDs listed in calculation artifact."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/logs/features_test.log",
+          "fact": "Actual logged sample lengths, used rather than requested crop lengths."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_results_20260923T1639Z/logs/features_tv.log",
+          "fact": "35589 logged files;95708 segments."
+        },
+        {
+          "path": "antideepfake_runtime.py",
+          "lines": [
+            71,
+            88
+          ],
+          "fact": "Returned list is[max_probability,top30_mean,*window_probabilities], with50%hop; array length is not number of windows."
+        },
+        {
+          "path": "voice_music_h100_experiments.py",
+          "lines": [
+            161,
+            180
+          ],
+          "fact": "Timer includes stem npz I/O, optional raw decode, all predict calls, fusion and saves; it is not a pure same-model GPU benchmark."
+        },
+        {
+          "path": "results/voice_music_h100_20260917_retry1/downloaded/unpacked/output/antideepfake_windows.json",
+          "fact": "568 rows,728 raw/stem calls,4020 array values,2564 window predictions."
+        }
+      ],
+      "independent_calculations": {
+        "voice_eer_by_nseg": {
+          "1": 0.002016129,
+          "2": 0.0641057204,
+          "3-4": 0.1237577589,
+          "5plus": 0.2308816914,
+          "7plus": 0.2980694417
+        },
+        "known_subset_ADS_by_nseg": {
+          "all": 0.8631417627,
+          "1-2": 0.8858362754,
+          "3-4": 0.8474596158,
+          "5plus": 0.8248813518,
+          "7plus": 0.8161876077
+        },
+        "fleurs_real_median_1to2_3to4_5plus": [
+          0.0143552904,
+          0.0281887831,
+          0.0385859969
+        ],
+        "haim_voice_median_1to2_3to4_5plus": [
+          0.1562304596,
+          0.2011332015,
+          0.4503249228
+        ],
+        "constructed_enhanced_real_median_1to2_3to4_5plus": [
+          0.0200242636,
+          0.0569182324,
+          0.0503149107
+        ],
+        "actual_antideepfake_windows": 2564,
+        "saved_timer_div_windows_seconds": 0.0363181396
+      },
+      "impact_adjustment": "Delete LB+0.005 to+0.025 and 'half the proxy-to-LB gap explained by length'. Retain pooling as an inexpensive, unvalidated ablation. Evaluate by source/domain and true length; assess real FPR and fake FNR together. Do not make uniform4-60s validation weighting the default without evidence of hidden proportions. Training-matched top-k/LME/mean is meaningful; cache bag concatenation is an embedding-level stress experiment, not validated long continuous audio. Overlap is a candidate with measured quality/runtime gates, not automatically harmful.",
+      "limitations": [
+        "No per-segment cached embeddings were deserialized and no alternative pooling was executed.",
+        "Grouped-bin associations are not paired length interventions.",
+        "Unknown eligibility labels mean the displayedADS is a known-subset diagnostic; official total is not available for these local rows.",
+        "Hidden duration distribution and L4/H100 model-specific scaling are unobserved."
+      ]
+    },
+    {
+      "id": "RUNTIME_BUDGET-2",
+      "verdict": "partially_confirmed",
+      "corrected_claim": "The cached pool contains42039 bank rows:30658train,4931val,6450test. The submitted recipe trains only train rows and selects checkpoints onval. Test intentionally holds out VoxCPM/OpenVoice/Lyria-3Pro/fx_encoder_style_transfer and FLEURS-ko/MUSAN real domains. PhaseC train_balanced lasts455s and the file-ensemble stage34s. It trains six heads,2routes times3seeds, not eighteen. Voice41/43 selectepoch50 and complete50; voice42 selects44 and stops49 becausepatience5. The cap motivates a bounded continuation experiment; it does not prove underfitting or that more training improves unseen domains. Refitting all rows is technically possible in principle with existing features, but the current trainer is not an all-data-refit implementation and consuming test would remove its out-of-training generator/domain signal. Any gain remains unvalidated.",
+      "evidence": [
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/logs/phase_c.steps",
+          "lines": [
+            1,
+            4
+          ],
+          "fact": "16:44:06 train_balanced,16:51:41 file_ensemble_balanced,16:52:15 compare."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/results.json",
+          "keys": [
+            "music_41",
+            "music_42",
+            "music_43",
+            "voice_41",
+            "voice_42",
+            "voice_43"
+          ],
+          "fact": "Exactly six learned-head result keys plus two route-ensemble metric summaries."
+        },
+        {
+          "path": "results/data_v4_20260923/data_v4_phase_c_20260923T1653Z/train_duration_balanced/run_identity.json",
+          "keys": [
+            "trainer",
+            "batches",
+            "max_epochs",
+            "patience",
+            "seeds",
+            "duration_balance"
+          ],
+          "fact": "Trainer/batches hashes match inspected source;max_epochs50,patience5,seeds41/42/43."
+        },
+        {
+          "path": "full_bank_train.py",
+          "lines": [
+            97,
+            98,
+            191,
+            195,
+            204,
+            226,
+            228,
+            279,
+            281
+          ],
+          "fact": "Optimizer rejects non-train items; trainer needs train/validation classes and loops two routes times three seeds;stage also includes evaluation."
+        },
+        {
+          "path": "data_v4/phase_b.sh",
+          "lines": [
+            21,
+            23,
+            30,
+            33,
+            39
+          ],
+          "fact": "Test is separately extracted, withtemporarysplitval only for extractor compatibility; training manifest remainsbank_trainval."
+        },
+        {
+          "path": "data_v4/phase_c.sh",
+          "lines": [
+            22,
+            31
+          ],
+          "fact": "Duration-balanced retraining usescache_tv;testcache is used for scoring/comparison."
+        },
+        {
+          "path": "data_v4/split_rules.json",
+          "keys": [
+            "_why",
+            "test_holdout",
+            "val_fraction"
+          ],
+          "fact": "Explicit unseen-family/domain evaluation purpose andcomponent closure."
+        },
+        {
+          "path": "data_v4/file_ensemble.py",
+          "lines": [
+            79,
+            84
+          ],
+          "fact": "CDF ensemble fitted onval;test scored afterward."
+        },
+        {
+          "path": "data_v4/presence.py",
+          "lines": [
+            94,
+            104
+          ],
+          "fact": "Presence logistic heads fittrain and separately reportval/test."
+        }
+      ],
+      "independent_calculations": {
+        "bank_train": 30658,
+        "bank_val": 4931,
+        "bank_test": 6450,
+        "bank_total": 42039,
+        "trained_heads": 6,
+        "train_balanced_stage_seconds": 455,
+        "file_ensemble_stage_seconds": 34,
+        "voice_best_and_completed": {
+          "41": [
+            50,
+            50
+          ],
+          "42": [
+            44,
+            49
+          ],
+          "43": [
+            50,
+            50
+          ]
+        },
+        "music_best_and_completed": {
+          "41": [
+            12,
+            17
+          ],
+          "42": [
+            11,
+            16
+          ],
+          "43": [
+            9,
+            14
+          ]
+        }
+      },
+      "impact_adjustment": "DeleteLB+0.003 to+0.015 and an unconditional all-data-refit priority. First extend voice training under a fixed train/val protocol and assess the unchanged generator/domain holdout; any already-inspected test is diagnostic, not a fresh sealed confirmation. Preserve an independent holdout before optional final refit. If final all-data refit is chosen later, freeze recipe/epoch policy beforehand, label the result as no independent post-refit validation, and require OOF predictions from the entire upstream head-training pipeline for fusion calibration. Fitting only the final fusion in groupfolds over in-sample upstream predictions is not leakage-free OOF.",
+      "limitations": [
+        "Current remote cache availability was not rechecked; logs prove past extraction, not live accessible backup state.",
+        "455s includes loading, benchmarking, training,validation and final evaluation and does not establish cost for an OOF/refit redesign.",
+        "OOF5fold training and an all-data finalfit add compute; the proposed0.3GPUh has not been measured.",
+        "Same architecture can preserve inference cost/size approximately, but a new packaged artifact still needs verification."
+      ]
+    },
+    {
+      "id": "RUNTIME_BUDGET-4",
+      "verdict": "partially_confirmed",
+      "corrected_claim": "The root agent's inspected user screenshot records17m32s for submission102411, and saved historical tables record earlier server elapsed times. Treat this as evidence for that submitted execution, not a freshL4 run or a per-stage profile, and do not assume exact local archive binding.1052s is29.22% of the60min limit. The proposed Demucs/DF/MERT breakdown,±30% component error,10-11min optimized total, and option-specificL4/H100 timings are estimates without direct stage-levelL4 measurements. Historical package differences cannot isolate individual kernel costs. The cited AntiDeepfake window count is wrong, and the same-workload runtime variability claim mixes different packages. A ratio1052 divided by a syntheticH100 run does not measureL4/H100 scaling because the numerator and denominator have different inputs and potentially different bottlenecks.",
+      "evidence": [
+        {
+          "path": "user-provided screenshot imasasdge.png",
+          "fact": "Root independently viewed submission102411 elapsed17m32s. This subagent uses that reported visual evidence; no live platform query."
+        },
+        {
+          "path": "results/balanced7144_regression_20260919/live_submissions.json",
+          "keys": [
+            "rows"
+          ],
+          "fact": "Same-named originalbaseline submissions88418/88809 have identical score and times1319/1276s.93093 and DataV4 are different models/data, so their24s difference is not repeatability evidence."
+        },
+        {
+          "path": "results/recovery_v3/colab_20260913_044621/coverage_timing.json",
+          "keys": [
+            "timings"
+          ],
+          "fact": "Saved older-run timings:separation273.191,DFvoice102.371,DFmusic102.220,PANNs10.316,SONICSraw10.563,stem9.881. These are not currentL4 stage measurements."
+        },
+        {
+          "path": "submissions/S2_EAT/README.md",
+          "lines": [
+            5,
+            9
+          ],
+          "fact": "S2 still runsDF-Arena voice andPANNs, substitutes EAT on8fixed5s music windows;baseline-minusS2 includes a changed music pipeline, not isolatedDFvoice time."
+        },
+        {
+          "path": "c08_submission.py",
+          "lines": [
+            75,
+            90
+          ],
+          "fact": "Historical C08/M330 route is sequential nonoverlapMERT; current archive uses50%hop batchedMERT, so98s difference is not directly transferable."
+        },
+        {
+          "path": "submissions/DataV4_DurationBalanced/submit.zip::model/runtime/full_bank_submission.py",
+          "lines": [
+            88,
+            105,
+            123,
+            135
+          ],
+          "fact": "Actual archive runs fullMERT withhidden_states[12],DFone segment at a time,autocast onlyheads,hash verification andTF32disabled."
+        },
+        {
+          "path": "antideepfake_runtime.py",
+          "lines": [
+            75,
+            88
+          ],
+          "fact": "Half-hop per-window processing withtwo aggregate entries in every saved output list."
+        },
+        {
+          "path": "results/voice_music_h100_20260917_retry1/downloaded/unpacked/output/experiment_2.json",
+          "keys": [
+            "inference_seconds"
+          ],
+          "fact": "93.1197099686s for the experiment's mixed I/O/inference/reporting interval."
+        },
+        {
+          "path": "COMPETITION_CONTRACT.md",
+          "lines": [
+            49,
+            51
+          ],
+          "fact": "Locally saved contract:L422.4GiB,6vCPU,RAM28GB;inference60min,ZIP10GB. Not revalidated online in this constrained audit."
+        }
+      ],
+      "independent_calculations": {
+        "observed_execution_seconds": 1052,
+        "fraction_of_60min": 0.2922222222,
+        "remaining_to_60min_seconds": 2548,
+        "remaining_to_voluntary_35min_seconds": 1048,
+        "remaining_to_voluntary_40min_seconds": 1348,
+        "baseline_repeat_difference_seconds": 43,
+        "baseline_repeat_difference_relative_to_shorter": 0.0336990596,
+        "baseline_half_range_relative_to_midpoint": 0.0165703276,
+        "AntiDeepfake_array_entries": 4020,
+        "AntiDeepfake_calls": 728,
+        "AntiDeepfake_actual_windows": 2564,
+        "AntiDeepfake_timer_div_actual_windows_seconds": 0.0363181396
+      },
+      "impact_adjustment": "Keep only present-package headroom arithmetic as firm, conditioned on the screenshot runtime and saved60min contract. MarkO1-O15 cost table and10-11min targetUNVERIFIED; discard numericalH100-toL4 conversion and claims that runtime is definitively not a bottleneck. A35-40min ceiling is an optional conservative engineering margin, not a measured failure threshold. Before adopting an addedencoder or precision change, profile current and candidate on the same representative inputs on the targetL4 where authorized, includingstartup/hash/decode,peakmemory and file-level numerical/metric parity. If onlyH100 is available, reportH100 measurements as such and retainL4 uncertainty.",
+      "limitations": [
+        "No accelerator measurements were performed.",
+        "CPUparity cannot establishCUDAfp16/TF32 numerical behavior or speed.",
+        "One observed completed submission does not establish throughput for a new architecture or hidden-duration distribution.",
+        "Archived elapsed timing does not expose component walltime or startup/environment variation."
+      ]
+    },
+    {
+      "id": "DATA_ACQUISITION-1",
+      "verdict": "partially_confirmed",
+      "corrected_claim": "Real-vocal diversification is plausible, but source rights are conditional. MTG-Jamendo/FMA need per-track audio licenses; code/metadata licenses do not clear recordings. MUSDB18-HQ identifies 48 CC tracks, subject to provenance mapping and stated conditions. One Korean FMA hit cannot prove that no openly licensed Korean songs exist. Separator energy is a candidate presence signal, not certified truth; four tar shards do not guarantee 800 eligible vocal artists.",
+      "source_ids": [
+        "jamendo",
+        "fma",
+        "musdb",
+        "dacon_transfer"
+      ],
+      "impact_adjustment": "Keep high diagnostic priority; remove +0.015–0.035. Hidden-test composition, collection yield and score gain are unknown.",
+      "unverified_limits": [
+        "Proxy FPR and raw-FMA inventory counts not rerun here.",
+        "Per-track current license, eligible artist count, 48-track mapping and Range extraction not verified; no audio downloaded."
+      ],
+      "proposed_next_step": "Treat 2,000 real-music / 1,300 vocal as targets. Start with a bounded rights-cleared tranche, retain artist/source identities and separator-training overlap, and calibrate presence labels by listening before expansion.",
+      "official_urls_checked": [
+        "https://github.com/MTG/mtg-jamendo-dataset",
+        "https://github.com/mdeff/fma",
+        "https://zenodo.org/records/3338373",
+        "https://dacon.io/competitions/official/236749/talkboard/417280"
+      ]
+    },
+    {
+      "id": "DATA_ACQUISITION-2",
+      "verdict": "availability_confirmed_recommendation_conditional",
+      "corrected_claim": "Music Arena is a public text-to-music preference dataset, not an authenticity benchmark that can be adopted unchanged. Live API confirms gated=false, 13,090 audio paths and revision 4dbe538410a1c14eb65270839c6fcd150c65c9fe. Missing audio and prompt-derived instrumental/lyrics fields require content checks. ACE-Step 1.5 MIT and editing support are confirmed. The dataset's CC tag does not independently establish upstream commercial-generator clearance.",
+      "source_ids": [
+        "arena",
+        "arena_api",
+        "ace_step",
+        "dacon_rules"
+      ],
+      "impact_adjustment": "Keep generator-diversity priority; remove +0.01–0.03 and collection/runtime promises.",
+      "unverified_limits": [
+        "Per-system totals, audio bytes and individual download success not revalidated.",
+        "No evidence of hidden-test overlap or absence thereof.",
+        "M6 not independently audited; defer."
+      ],
+      "proposed_next_step": "Propose 300–600 eligible Music Arena tracks first, then up to 3,600 after rights, near-duplicate and label checks. Group battle/prompt/parent tracks; keep Lyria and Sonauto-v3 families held out while used for selection. Inclusion in final refit retires their independent-test status. ACE-Step 600 lyrical+200 instrumental remains an unrun target.",
+      "official_urls_checked": [
+        "https://huggingface.co/datasets/music-arena/music-arena-dataset",
+        "https://huggingface.co/api/datasets/music-arena/music-arena-dataset",
+        "https://huggingface.co/ACE-Step/Ace-Step1.5",
+        "https://dacon.io/competitions/official/236749/overview/rules"
+      ]
+    },
+    {
+      "id": "DATA_ACQUISITION-3",
+      "verdict": "partially_confirmed_license_and_label_defects",
+      "corrected_claim": "CtrSVDD author README says DATA BY-NC-ND 4.0; Zenodo API says CC BY 4.0. Original-files-plus-scripts does not resolve that conflict. ACE-KiSing is public CC BY-NC 4.0 synthetic singing (24,362 train/50 validation/4,548 test), mainly Chinese/English. GTSinger has CC BY-NC-SA plus additional indemnification wording. Seed-VC lists GPL-3.0 and has a dedicated F0-conditioned SVC model; source/reference audio and performer rights remain separate. Vocal2BGM/repaint naming does not prove the original vocal stays unchanged.",
+      "source_ids": [
+        "ctr_repo",
+        "ctr_zenodo",
+        "ace_kising",
+        "ace_kising_paper",
+        "gts",
+        "gts_license",
+        "seed",
+        "seed_repo",
+        "ace_step_repo"
+      ],
+      "impact_adjustment": "Retain fake-a-cappella/hybrid coverage priority; withdraw +0.005–0.02. Hold CtrSVDD pending license clarification.",
+      "unverified_limits": [
+        "Eligible >=4-second counts and full Korean GTSinger audio access not measured.",
+        "No generator output quality or unchanged-vocal parity measured.",
+        "Reported zero-fake-a-cappella count belongs to another numerical audit."
+      ],
+      "proposed_next_step": "Prioritize proposed ACE-KiSing 400 and rights-cleared Seed-VC SVC 800 before CtrSVDD 1,200. Build all four vocal/backing authenticity combinations. For known-real vocals over fake music, explicitly mix an unchanged authorized vocal with generated instrumental backing and retain all parent identities.",
+      "official_urls_checked": [
+        "https://github.com/SVDDChallenge/CtrSVDD_Utils",
+        "https://zenodo.org/api/records/10467605",
+        "https://huggingface.co/datasets/espnet/ace-kising-segments",
+        "https://arxiv.org/abs/2401.17619",
+        "https://huggingface.co/datasets/GTSinger/GTSinger/raw/main/README.md",
+        "https://raw.githubusercontent.com/AaronZ345/GTSinger/main/dataset_license.md",
+        "https://huggingface.co/Plachta/Seed-VC",
+        "https://github.com/Plachtaa/seed-vc",
+        "https://github.com/ace-step/ACE-Step-1.5"
+      ]
+    },
+    {
+      "id": "DATA_ACQUISITION-4",
+      "verdict": "partially_confirmed_access_and_quality_gates_missing",
+      "corrected_claim": "YODAS2 is long-form 24 kHz CC BY 3.0 video audio, not certified genuine human speech. Emilia/Emilia-YODAS have distinct NC/BY terms plus an access agreement conditioning colleague access on accepting those terms. Reviewer transfer therefore needs resolution. CosyVoice3, MaskGCT and MeloTTS card licenses/language support are verified; proposed long-Korean quality and throughput are not. A listening sample estimates label noise, not certainty over all collected clips.",
+      "source_ids": [
+        "yodas",
+        "emilia",
+        "cosy",
+        "maskgct",
+        "melo",
+        "dacon_transfer"
+      ],
+      "impact_adjustment": "Retain duration/channel-diversity rationale; remove +0.005–0.02 and 1.5-hour parallel promise.",
+      "unverified_limits": [
+        "No gated access accepted or dataset files fetched.",
+        "Shard bytes and long-generation quality unmeasured.",
+        "GPT-SoVITS/Qwen3-TTS/Chatterbox component licenses not individually audited here.",
+        "unsafe-best-match is not a verified root-cause environment fix."
+      ],
+      "proposed_next_step": "Plan a 200–400-clip screened YODAS2 pilot, expanding toward 800. Defer 3,000 Emilia clips until access/transfer is resolved. Pilot long-Korean generation before the 2,800-fake target; group speaker/reference/source parents. Treat processed-real, codec, duration and music-presence uncertainty explicitly.",
+      "official_urls_checked": [
+        "https://huggingface.co/datasets/espnet/yodas2",
+        "https://huggingface.co/datasets/amphion/Emilia-Dataset",
+        "https://huggingface.co/FunAudioLLM/Fun-CosyVoice3-0.5B-2512",
+        "https://huggingface.co/amphion/MaskGCT",
+        "https://huggingface.co/myshell-ai/MeloTTS-Korean",
+        "https://dacon.io/competitions/official/236749/talkboard/417280"
+      ]
+    },
+    {
+      "id": "DATA_ACQUISITION-7",
+      "verdict": "core_restrictions_confirmed_blanket_clearance_rejected",
+      "corrected_claim": "DACON requires actual training files and forbids sources disallowing third-party provision. AI-Hub/ClovaCall default exclusion is supported absent specific permission; AI-Hub allows separately approved arrangements, so an absolute permanent ban is too broad. Live Suno/ElevenLabs terms explicitly restrict ML output use. Deepfake-Eval-2024 is gated evaluation-only. CtrSVDD is unresolved. A downstream dataset CC label cannot by itself prove upstream commercial-service rights were cleared.",
+      "source_ids": [
+        "dacon_transfer",
+        "dacon_rules",
+        "dacon_ncsa",
+        "aihub",
+        "clova",
+        "suno",
+        "eleven",
+        "deepfake_eval",
+        "ctr_repo"
+      ],
+      "impact_adjustment": "High priority eligibility control; no blanket legal-compliance or automatic-disqualification conclusion.",
+      "unverified_limits": [
+        "No written exception or reviewer-transfer permission obtained.",
+        "Udio/Mureka terms not separately audited; exclusion is conservative rather than a verified quotation.",
+        "Link-only metadata is not intrinsically illegal if lawful acquisition and actual-file submission are possible."
+      ],
+      "proposed_next_step": "Use eligible-candidate, unresolved, explicitly restricted, and evaluation-only statuses. Preserve license version, provenance, exact files and derivations. Do not treat MLAAD/Echoes/Music Arena CC labels as automatically overriding original-service restrictions.",
+      "official_urls_checked": [
+        "https://dacon.io/competitions/official/236749/talkboard/417280",
+        "https://dacon.io/competitions/official/236749/overview/rules",
+        "https://dacon.io/competitions/official/236749/talkboard/417212",
+        "https://aihub.or.kr/intrcn/guid/usagepolicy.do",
+        "https://github.com/clovaai/ClovaCall/blob/master/README.md",
+        "https://suno.com/terms",
+        "https://elevenlabs.io/use-policy",
+        "https://huggingface.co/datasets/nuriachandra/Deepfake-Eval-2024",
+        "https://github.com/SVDDChallenge/CtrSVDD_Utils"
+      ]
+    },
+    {
+      "id": "DATA_ACQUISITION-10",
+      "verdict": "historical_timing_confirmed_prospective_budget_inconsistent",
+      "corrected_claim": "phase_b.steps confirms features 10:50:13Z–16:34:17Z (5h44m04s) and head interval 4m51s. Bank CSVs have 35,589+6,450=42,039 rows; joining orig_id to manifest gives 110.3844 audio-hours, about 19.25 audio-hours per elapsed stage-hour. Full manifest is 42,947 rows/113.1741 hours. Listed proposed categories total 20,200 if disjoint, not about 15k: at assumed 22 s this is 123.44 audio-hours, roughly 6.4 extraction stage-hours before generation.",
+      "source_ids": [
+        "dacon_schedule",
+        "dacon_rules",
+        "ace_step"
+      ],
+      "impact_adjustment": "If the unmeasured 6–8 generation-hour assumption is retained, disjoint categories imply ~12.4–14.4 stage-hours before setup/retries. Parallel processes on one GPU do not divide billed GPU-hours or guarantee proportional speedup.",
+      "unverified_limits": [
+        "Row overlap/unique file counts unspecified.",
+        "Historical stage time is not isolated GPU utilization.",
+        "78.32 GB is SUMMARY.json's planning value, not current disk measurement.",
+        "70 GB download, 170 GB peak, generator RTFs, concurrency and L4 cost unmeasured.",
+        "Official deadline 2026-09-29 10:00 has no explicit timezone; current quota uninspected."
+      ],
+      "proposed_next_step": "Reconcile the row/source/derived-file ledger and peak disk including weights, originals, extracts, stems, caches and temporary files. Keep actual used originals; URLs/checksums cannot replace required files. Stage by acceptance gates. No acquisition, GPU use, submission or cleanup performed.",
+      "official_urls_checked": [
+        "https://dacon.io/competitions/official/236749/overview/schedule",
+        "https://dacon.io/competitions/official/236749/overview/rules",
+        "https://huggingface.co/ACE-Step/Ace-Step1.5"
+      ]
+    },
+    {
+      "id": "SOTA_RESEARCH-1",
+      "verdict": "failure_mode_supported_max_rule_recommendation_rejected",
+      "corrected_claim": "Fake song/backing evidence cannot establish fake vocals: real vocal+AI accompaniment requires VOICE_FAKE=0 and FILE_FAKE=1. The recovered finding reports hybrid errors 10→46/84, so recommending max(Fv,0.5*Pm*Fm) as an initial submission is not justified by aggregate EER. Hybrid-stem and CompSpoof papers support separation-leakage risk, not this shortcut. Learned fusion remains conditional on adequately represented component-labelled hybrids.",
+      "source_ids": [
+        "dacon_labels",
+        "hybrid",
+        "compspoof"
+      ],
+      "impact_adjustment": "Remove expected +0.002–0.004; negative hybrid transfer is material.",
+      "unverified_limits": [
+        "Original fusion script, threshold and local 5/84 counts not rerun here.",
+        "94.7→26.2 FPR is a specific paper condition, not local expected gain.",
+        "CompSpoof F1 is a different five-class speech/environment protocol."
+      ],
+      "proposed_next_step": "Keep component labels separate; use song evidence first for FILE or trainable context with balanced (VF,MF)=(0,0),(0,1),(1,0),(1,1). Evaluate component EER and real-vocal/fake-backing FPR at validation-fixed operating points across mix levels/codecs/durations. Reject aggregate gains that materially damage protected hybrid slices.",
+      "official_urls_checked": [
+        "https://dacon.io/competitions/official/236749/overview/description",
+        "https://arxiv.org/html/2607.26874",
+        "https://arxiv.org/html/2509.15804v2"
+      ]
+    },
+    {
+      "id": "SOTA_RESEARCH-2",
+      "verdict": "model_facts_confirmed_dominance_and_deployment_unverified",
+      "corrected_claim": "AntiDeepfake XLS-R-1B is a conditional second encoder: CC BY-NC-SA weights, 16 kHz arbitrary-length input, waveform normalization and mean-pooled binary classification. It is not proven strongest or complementary on DACON. The 11.86→8.28 duration EER is after DE2024-specific fine-tuning; zero-shot DE2024 is 26.76. FLEURS upstream training weakens independence; restored-speech fake labels may conflict with DACON non-generative-enhancement semantics. Mean pooling removes max-of-segments, not all duration bias.",
+      "source_ids": [
+        "anti",
+        "anti_paper",
+        "dacon_labels",
+        "dacon_ncsa"
+      ],
+      "impact_adjustment": "Withdraw +0.003–0.010 and +4–6-minute L4 promises. fp16 size arithmetic is not parity, memory or packaging validation.",
+      "unverified_limits": [
+        "No weights downloaded/converted or inference executed.",
+        "Whole-60-second memory and actual L4 runtime unmeasured.",
+        "Local Transformers adapter/parity report not re-audited here.",
+        "Exact overlapping FLEURS utterances not established."
+      ],
+      "proposed_next_step": "After simpler ablations, require preprocessing/fake-index correctness, matched-precision parity, non-FLEURS holdout quality, enhanced-real and partial-fake behavior, and real offline L4 longest-file packaging. Use bounded windows/masked pooling if whole-file cost or dilution is unfavorable.",
+      "official_urls_checked": [
+        "https://huggingface.co/nii-yamagishilab/xls-r-1b-anti-deepfake",
+        "https://arxiv.org/html/2506.21090",
+        "https://dacon.io/competitions/official/236749/overview/description",
+        "https://dacon.io/competitions/official/236749/talkboard/417212"
+      ]
+    },
+    {
+      "id": "SOTA_RESEARCH-3",
+      "verdict": "rationale_supported_equivalence_and_gain_overstated",
+      "corrected_claim": "CLAM/AT-ADD justify testing complementary SSL evidence. CLAM's no-alignment dual-stream ablation is .875 F1 vs .853 MERT; .925 includes triplet training. Both CLAM streams encode the full mix, unlike cached backing-MERT+vocal-DF-Arena. AT-ADD predicts file-level authenticity; it does not prove correct MUSIC_FAKE/VOICE_FAKE semantics. Cached fusion may avoid a backbone pass but does not guarantee zero overhead or usable instrumental evidence.",
+      "source_ids": [
+        "clam",
+        "atadd",
+        "atadd_fusion",
+        "dacon_labels"
+      ],
+      "impact_adjustment": "Keep as a low-cost ablation after data/split correction; withdraw +0.004–0.012 and do not add projected gains to other proposals.",
+      "unverified_limits": [
+        "Cache semantics/time alignment belong to another worker's review.",
+        "No CLAM checkpoint/local reproduction run.",
+        "F1 and EER are not interchangeable."
+      ],
+      "proposed_next_step": "Start with simple file-level pooled cached features; train on training folds and select on validation with all hybrid cells and no-vocal music. Test raw-mix second encoding separately for quality/runtime; it is not zero extra inference.",
+      "official_urls_checked": [
+        "https://arxiv.org/html/2512.00621",
+        "https://arxiv.org/html/2608.14249",
+        "https://arxiv.org/abs/2608.29021",
+        "https://dacon.io/competitions/official/236749/overview/description"
+      ]
+    }
+  ],
+  "runtime_history_calculations": {
+    "inputs": {
+      "bank_test_rows": 6450,
+      "prediction_rows": 6444,
+      "unique_prediction_ids": 6444,
+      "missing_prediction_ids": [
+        "v4_11f5005d4695761d1c0359fb",
+        "v4_1ef1c6aa715c11156f5b5f06",
+        "v4_26f2531bfe7def2fa879e7d1",
+        "v4_286dcd12e51753138d6d0db6",
+        "v4_3f610f1c32ac81ae6f576021",
+        "v4_778117b83bb170ab841f14f5"
+      ],
+      "trainval_rows": 35589,
+      "trainval_splits": {
+        "train": 30658,
+        "val": 4931
+      }
+    },
+    "overall": {
+      "FILE": {
+        "n": 6444,
+        "real": 3820,
+        "fake": 2624,
+        "eer": 0.10939954188481675
+      },
+      "VOICE": {
+        "n": 5139,
+        "real": 3015,
+        "fake": 2124,
+        "eer": 0.11070986873541894
+      },
+      "MUSIC": {
+        "n": 2849,
+        "real": 1819,
+        "fake": 1030,
+        "eer": 0.20005497526113247
+      },
+      "ADS": 0.863141762732168
+    },
+    "buckets": {
+      "1-1": {
+        "n": 270,
+        "FILE": {
+          "n": 270,
+          "real": 22,
+          "fake": 248,
+          "eer": 0.04490469208211142
+        },
+        "VOICE": {
+          "n": 269,
+          "real": 21,
+          "fake": 248,
+          "eer": 0.0020161290322580627
+        },
+        "MUSIC": {
+          "n": 3,
+          "real": 3,
+          "fake": 0,
+          "eer": null
+        },
+        "ADS": null,
+        "source_counts_voice": {
+          "speechfake": 191,
+          "asvspoof2021_la": 4,
+          "mlaad": 62,
+          "fleurs_ko": 4,
+          "vocalset": 2,
+          "zeroth": 2,
+          "existing:librispeech_test-clean": 1,
+          "constructed_song": 2,
+          "constructed_enhanced": 1
+        }
+      },
+      "2-2": {
+        "n": 2116,
+        "FILE": {
+          "n": 2116,
+          "real": 1128,
+          "fake": 988,
+          "eer": 0.08791131880437593
+        },
+        "VOICE": {
+          "n": 1841,
+          "real": 970,
+          "fake": 871,
+          "eer": 0.06410572040668977
+        },
+        "MUSIC": {
+          "n": 645,
+          "real": 434,
+          "fake": 211,
+          "eer": 0.2091041125210213
+        },
+        "ADS": 0.8804919627601677,
+        "source_counts_voice": {
+          "speechfake": 410,
+          "mlaad": 321,
+          "vocalset": 187,
+          "fleurs_ko": 404,
+          "zeroth": 68,
+          "asvspoof2021_la": 1,
+          "haim": 77,
+          "existing:librispeech_test-clean": 4,
+          "asvspoof2021_df": 1,
+          "musan_music": 36,
+          "constructed_mix": 77,
+          "constructed_song": 180,
+          "constructed_enhanced": 75
+        }
+      },
+      "1-2": {
+        "n": 2386,
+        "FILE": {
+          "n": 2386,
+          "real": 1150,
+          "fake": 1236,
+          "eer": 0.08004854368932038
+        },
+        "VOICE": {
+          "n": 2110,
+          "real": 991,
+          "fake": 1119,
+          "eer": 0.05640442264563378
+        },
+        "MUSIC": {
+          "n": 648,
+          "real": 437,
+          "fake": 211,
+          "eer": 0.20952856073833875
+        },
+        "ADS": 0.8858362754047114,
+        "source_counts_voice": {
+          "speechfake": 601,
+          "mlaad": 383,
+          "vocalset": 189,
+          "fleurs_ko": 408,
+          "zeroth": 70,
+          "asvspoof2021_la": 5,
+          "haim": 77,
+          "existing:librispeech_test-clean": 5,
+          "asvspoof2021_df": 1,
+          "musan_music": 36,
+          "constructed_mix": 77,
+          "constructed_song": 182,
+          "constructed_enhanced": 76
+        }
+      },
+      "3-4": {
+        "n": 2866,
+        "FILE": {
+          "n": 2866,
+          "real": 2050,
+          "fake": 816,
+          "eer": 0.12139347202295553
+        },
+        "VOICE": {
+          "n": 2336,
+          "real": 1682,
+          "fake": 654,
+          "eer": 0.12375775889341001
+        },
+        "MUSIC": {
+          "n": 1176,
+          "real": 863,
+          "fake": 313,
+          "eer": 0.2236403214879368
+        },
+        "ADS": 0.8474596157634592,
+        "source_counts_voice": {
+          "fleurs_ko": 969,
+          "vocalset": 183,
+          "speechfake": 90,
+          "mlaad": 242,
+          "zeroth": 28,
+          "haim": 107,
+          "musan_music": 44,
+          "existing:librispeech_test-clean": 1,
+          "constructed_mix": 291,
+          "constructed_song": 204,
+          "constructed_splice": 2,
+          "constructed_enhanced": 175
+        }
+      },
+      "5-999": {
+        "n": 1192,
+        "FILE": {
+          "n": 1192,
+          "real": 620,
+          "fake": 572,
+          "eer": 0.15017482517482517
+        },
+        "VOICE": {
+          "n": 693,
+          "real": 342,
+          "fake": 351,
+          "eer": 0.23088169140800718
+        },
+        "MUSIC": {
+          "n": 1025,
+          "real": 519,
+          "fake": 506,
+          "eer": 0.1795163243391441
+        },
+        "ADS": 0.8248813518292427,
+        "source_counts_voice": {
+          "fleurs_ko": 123,
+          "musan_music": 107,
+          "haim": 255,
+          "zeroth": 1,
+          "mlaad": 5,
+          "vocalset": 13,
+          "constructed_mix": 150,
+          "constructed_song": 14,
+          "constructed_enhanced": 25
+        }
+      },
+      "7-999": {
+        "n": 667,
+        "FILE": {
+          "n": 667,
+          "real": 300,
+          "fake": 367,
+          "eer": 0.152960944595822
+        },
+        "VOICE": {
+          "n": 309,
+          "real": 97,
+          "fake": 212,
+          "eer": 0.29806944174285155
+        },
+        "MUSIC": {
+          "n": 660,
+          "real": 309,
+          "fake": 351,
+          "eer": 0.15906010566204742
+        },
+        "ADS": 0.8161876076549045,
+        "source_counts_voice": {
+          "musan_music": 73,
+          "haim": 182,
+          "mlaad": 1,
+          "vocalset": 1,
+          "fleurs_ko": 4,
+          "constructed_mix": 46,
+          "constructed_song": 1,
+          "constructed_enhanced": 1
+        }
+      }
+    },
+    "source_voice": {
+      "fleurs_ko": {
+        "1-2": {
+          "music_presence": {
+            "0": 408
+          },
+          "score_median": 0.014355290370682876,
+          "n": 408,
+          "real": 408,
+          "fake": 0,
+          "eer": null
+        },
+        "3-4": {
+          "music_presence": {
+            "0": 969
+          },
+          "score_median": 0.028188783054550488,
+          "n": 969,
+          "real": 969,
+          "fake": 0,
+          "eer": null
+        },
+        "5-999": {
+          "music_presence": {
+            "0": 123
+          },
+          "score_median": 0.0385859968761603,
+          "n": 123,
+          "real": 123,
+          "fake": 0,
+          "eer": null
+        }
+      },
+      "haim": {
+        "1-2": {
+          "music_presence": {
+            "1": 77
+          },
+          "score_median": 0.15623045961062113,
+          "n": 77,
+          "real": 0,
+          "fake": 77,
+          "eer": null
+        },
+        "3-4": {
+          "music_presence": {
+            "1": 107
+          },
+          "score_median": 0.20113320151964822,
+          "n": 107,
+          "real": 1,
+          "fake": 106,
+          "eer": 0.2169811320754717
+        },
+        "5-999": {
+          "music_presence": {
+            "1": 255
+          },
+          "score_median": 0.4503249228000641,
+          "n": 255,
+          "real": 0,
+          "fake": 255,
+          "eer": null
+        }
+      },
+      "musan_music": {
+        "1-2": {
+          "music_presence": {
+            "1": 36
+          },
+          "score_median": 0.06832422129809856,
+          "n": 36,
+          "real": 36,
+          "fake": 0,
+          "eer": null
+        },
+        "3-4": {
+          "music_presence": {
+            "1": 44
+          },
+          "score_median": 0.05469154504438241,
+          "n": 44,
+          "real": 44,
+          "fake": 0,
+          "eer": null
+        },
+        "5-999": {
+          "music_presence": {
+            "1": 107
+          },
+          "score_median": 0.11994907508293788,
+          "n": 107,
+          "real": 107,
+          "fake": 0,
+          "eer": null
+        }
+      },
+      "constructed_enhanced": {
+        "1-2": {
+          "music_presence": {
+            "0": 76
+          },
+          "score_median": 0.02002426361044248,
+          "n": 76,
+          "real": 76,
+          "fake": 0,
+          "eer": null
+        },
+        "3-4": {
+          "music_presence": {
+            "0": 175
+          },
+          "score_median": 0.05691823239127795,
+          "n": 175,
+          "real": 175,
+          "fake": 0,
+          "eer": null
+        },
+        "5-999": {
+          "music_presence": {
+            "0": 25
+          },
+          "score_median": 0.05031491070985794,
+          "n": 25,
+          "real": 25,
+          "fake": 0,
+          "eer": null
+        }
+      }
+    },
+    "feature_logs": {
+      "tv": {
+        "rows": 35589,
+        "segments": 95708,
+        "mean_segments": 2.6892579167720365,
+        "duration_mean": 8.872003538663632,
+        "under_4s": 8964,
+        "over_60s": 4
+      },
+      "test": {
+        "rows": 6450,
+        "segments": 23607,
+        "mean_segments": 3.66,
+        "duration_mean": 12.671217548449613,
+        "under_4s": 256,
+        "over_60s": 3
+      }
+    },
+    "same_model_baseline_runtime": {
+      "seconds": [
+        1276,
+        1319
+      ],
+      "difference_seconds": 43,
+      "difference_div_shorter": 0.03369905956112853,
+      "half_range_div_midpoint": 0.016570327552986513
+    },
+    "runtime_budget_arithmetic": {
+      "elapsed_user_report_seconds": 1052,
+      "fraction_60_minutes": 0.2922222222222222,
+      "remaining_hard_seconds": 2548,
+      "remaining_to_35min_seconds": 1048,
+      "remaining_to_40min_seconds": 1348
+    },
+    "antideepfake_timing_correction": {
+      "rows": 568,
+      "calls": 728,
+      "array_entries": 4020,
+      "actual_per_window_predictions": 2564,
+      "saved_elapsed_seconds": 93.1197099685669,
+      "seconds_div_array_entries": 0.02316410695735495,
+      "seconds_div_actual_windows": 0.03631813961332562,
+      "not_pure_gpu_timer": true
+    },
+    "training_runtime": {
+      "train_balanced_stage_seconds": 455,
+      "file_ensemble_stage_seconds": 34,
+      "trained_heads": 6,
+      "routes": 2,
+      "seeds": 3,
+      "train_balanced_stage_includes_validation_and_evaluate": true
+    },
+    "history_deltas": {
+      "C08_minus_G0": 0.040571195800000015,
+      "M330_minus_C08": 0.008164285700000051,
+      "MERT12_minus_M330": 0.00829285709999994,
+      "S2_minus_M330": -0.10177857150000003,
+      "92644_minus_MERT12": 0.009964285700000075,
+      "B7144_minus_92644": -0.001968904700000107,
+      "DataV4_minus_B7144": 0.03531864550000008,
+      "DataV4_minus_prior_best_92644": 0.03334974079999997
+    }
+  },
+  "data_distribution_measurements": {
+    "music_training_weights": {
+      "0": {
+        "n": 3755,
+        "both_source_weight_base": 0.5555555555555979,
+        "both_source_weight_duration": 0.5586926791729085,
+        "sources": {
+          "constructed_mix": {
+            "n": 695,
+            "wd_fraction": 0.09755303584417611
+          },
+          "existing:FMA": {
+            "n": 340,
+            "wd_fraction": 0.09860727651037131
+          },
+          "existing:FMA/FMA": {
+            "n": 45,
+            "wd_fraction": 0.15317214222390677
+          },
+          "existing:JamendoMaxCaps": {
+            "n": 340,
+            "wd_fraction": 0.097669497246219
+          },
+          "existing:constructed_music": {
+            "n": 64,
+            "wd_fraction": 0.15326184627167805
+          },
+          "haim": {
+            "n": 253,
+            "wd_fraction": 0.30787779705705115
+          },
+          "openmic": {
+            "n": 2018,
+            "wd_fraction": 0.0918584048465505
+          }
+        }
+      },
+      "1": {
+        "n": 5608,
+        "both_source_weight_base": 0.1315789473684176,
+        "both_source_weight_duration": 0.13905811973576804,
+        "sources": {
+          "constructed_mix": {
+            "n": 135,
+            "wd_fraction": 0.031950871952891376
+          },
+          "echoes": {
+            "n": 449,
+            "wd_fraction": 0.06324693387945388
+          },
+          "existing:Echoes/acestep/TTA": {
+            "n": 39,
+            "wd_fraction": 0.02146961629059445
+          },
+          "existing:Echoes/audioldm/ATA": {
+            "n": 35,
+            "wd_fraction": 0.02164247285914
+          },
+          "existing:Echoes/audioldm/TTA": {
+            "n": 38,
+            "wd_fraction": 0.02230970664314179
+          },
+          "existing:Echoes/brev/TTA": {
+            "n": 36,
+            "wd_fraction": 0.021595657538492245
+          },
+          "existing:Echoes/diffrhythm/ATA": {
+            "n": 37,
+            "wd_fraction": 0.020814476308756224
+          },
+          "existing:Echoes/diffrhythm/TTA": {
+            "n": 42,
+            "wd_fraction": 0.020968326994120316
+          },
+          "existing:Echoes/elevenlabs/TTA": {
+            "n": 35,
+            "wd_fraction": 0.02185969384786875
+          },
+          "existing:Echoes/mubert/TTA": {
+            "n": 4,
+            "wd_fraction": 0.019957121315820916
+          },
+          "existing:Echoes/musicgen/ATA": {
+            "n": 35,
+            "wd_fraction": 0.020518905163593937
+          },
+          "existing:Echoes/musicgen/TTA": {
+            "n": 40,
+            "wd_fraction": 0.022257637192604787
+          },
+          "existing:Echoes/producer/ATA": {
+            "n": 17,
+            "wd_fraction": 0.02137590955894441
+          },
+          "existing:Echoes/producer/TTA": {
+            "n": 19,
+            "wd_fraction": 0.022026851281300497
+          },
+          "existing:Echoes/songgen/ATA": {
+            "n": 34,
+            "wd_fraction": 0.022308913521844585
+          },
+          "existing:Echoes/songgen/TTA": {
+            "n": 41,
+            "wd_fraction": 0.021798681548595596
+          },
+          "existing:Echoes/stableaudio/TTA": {
+            "n": 6,
+            "wd_fraction": 0.02249136618432303
+          },
+          "existing:Echoes/suno/TTA": {
+            "n": 38,
+            "wd_fraction": 0.022461500374131884
+          },
+          "existing:Echoes/udio/TTA": {
+            "n": 38,
+            "wd_fraction": 0.022592562004983083
+          },
+          "existing:FakeMusicCaps": {
+            "n": 1658,
+            "wd_fraction": 0.15877345194090373
+          },
+          "existing:HAIM": {
+            "n": 680,
+            "wd_fraction": 0.06198875650300788
+          },
+          "existing:SONICS": {
+            "n": 680,
+            "wd_fraction": 0.064315290965395
+          },
+          "existing:constructed_music": {
+            "n": 64,
+            "wd_fraction": 0.04364192401754545
+          },
+          "existing:suno": {
+            "n": 24,
+            "wd_fraction": 0.022545999364180547
+          },
+          "existing:udio": {
+            "n": 24,
+            "wd_fraction": 0.022786339438248208
+          },
+          "generated_music": {
+            "n": 362,
+            "wd_fraction": 0.0344438343594185
+          },
+          "haim": {
+            "n": 324,
+            "wd_fraction": 0.06346532376533127
+          },
+          "sonics": {
+            "n": 674,
+            "wd_fraction": 0.0643918751853678
+          }
+        }
+      }
+    },
+    "both_label_sources": [
+      "constructed_mix",
+      "existing:constructed_music",
+      "haim"
+    ],
+    "nonconstructed_trainval_orig_extensions": {
+      "0": {
+        "n": 3609,
+        "counts": {
+          ".ogg": 2378,
+          ".mp3": 1112,
+          ".wav": 119
+        },
+        "fractions": {
+          ".ogg": 0.658908284843447,
+          ".mp3": 0.3081185924078692,
+          ".wav": 0.032973122748683845
+        }
+      },
+      "1": {
+        "n": 6524,
+        "counts": {
+          ".mp3": 3235,
+          ".wav": 3289
+        },
+        "fractions": {
+          ".mp3": 0.49586143470263644,
+          ".wav": 0.5041385652973636
+        }
+      }
+    },
+    "haim_subsets": {
+      "C1": 300,
+      "C2": 300,
+      "B2": 300,
+      "A2": 300,
+      "B1": 300
+    },
+    "real_music_trainval_languages": {
+      "UNKNOWN": 4441
+    },
+    "real_music_trainval_sources": {
+      "openmic": 2378,
+      "existing:FMA": 400,
+      "existing:JamendoMaxCaps": 400,
+      "haim": 312,
+      "existing:FMA/FMA": 55,
+      "existing:constructed_music": 64,
+      "constructed_mix": 832
+    }
+  },
+  "primary_external_sources": {
+    "dacon_rules": {
+      "url": "https://dacon.io/competitions/official/236749/overview/rules",
+      "observed": "Publicly accessible resources allowing at least noncommercial use are eligible only while their licenses and terms are respected. Three submissions/day. No hidden-evaluation training, tuning, or pseudo-labeling. Predictions must be independent across files; within-file segment aggregation is allowed."
+    },
+    "dacon_transfer": {
+      "url": "https://dacon.io/competitions/official/236749/talkboard/417280",
+      "observed": "Official answer: restrictions on third-party provision make a dataset ineligible. Actual training files are required; URLs/scripts/checksums cannot replace them. Augmentation intermediates may be reconstructed from originals, code, settings and seeds. Upstream pretraining corpora need not be submitted."
+    },
+    "dacon_labels": {
+      "url": "https://dacon.io/competitions/official/236749/overview/description",
+      "observed": "Vocals are voice; instrumental backing is music. Components have independent authenticity labels. Any fake component makes the file fake. Non-generative enhancement of real sources remains real. Evaluation: 1,200 files, 4–60 seconds, 16 kHz; 60-minute inference, 10 GB archive, L4 22.4 GiB."
+    },
+    "dacon_ncsa": {
+      "url": "https://dacon.io/competitions/official/236749/talkboard/417212",
+      "observed": "Official answer allows CC BY-NC-SA resources conditionally on public accessibility, minimum noncommercial permission, and compliance with the license."
+    },
+    "dacon_schedule": {
+      "url": "https://dacon.io/competitions/official/236749/overview/schedule",
+      "observed": "Explicit leaderboard deadline is 2026-09-29 10:00, one day before competition end. Page does not explicitly specify timezone. Its competition-period sentence still has a 2025 end-year typo; explicit deadline and end items say 2026."
+    },
+    "jamendo": {
+      "url": "https://github.com/MTG/mtg-jamendo-dataset",
+      "observed": "320 kbps MP3 full-track release. Audio uses per-track Creative Commons terms listed in audio_licenses.txt; metadata CC BY-NC-SA 4.0; code Apache 2.0. README additionally describes the dataset as solely noncommercial research/academic use and requires authorization for other uses."
+    },
+    "fma": {
+      "url": "https://github.com/mdeff/fma",
+      "observed": "Metadata CC BY 4.0 and code MIT do not license the recordings: audio remains under artist-selected licenses. Published standard dataset lists 106,574 tracks; this is not the same inventory as the recovered finding's 109,727-row raw metadata snapshot."
+    },
+    "musdb": {
+      "url": "https://zenodo.org/records/3338373",
+      "observed": "150 songs, 22.7 GB archive. Overall educational/noncommercial wording. 100 tracks derive from DSD100/Mixing Secrets; 46 MedleyDB CC BY-NC-SA 4.0; two Easton Ellises CC BY-NC-SA 3.0; two Native Instruments tracks. No blanket CC license covers all recordings."
+    },
+    "arena": {
+      "url": "https://huggingface.co/datasets/music-arena/music-arena-dataset",
+      "observed": "Official public text-to-music preference/battle dataset; CC BY 4.0 label. Missing audio for some models is explicitly documented. is_instrumental describes prompt interpretation, not verified sound content; lyrics are prompt-derived."
+    },
+    "arena_api": {
+      "url": "https://huggingface.co/api/datasets/music-arena/music-arena-dataset",
+      "observed": "Read-only metadata API on 2026-09-24: gated=false; lastModified=2026-08-09T19:08:41Z; revision=4dbe538410a1c14eb65270839c6fcd150c65c9fe; exactly 13,090 repository paths begin audio_files/. No audio payload was downloaded."
+    },
+    "ace_step": {
+      "url": "https://huggingface.co/ACE-Step/Ace-Step1.5",
+      "observed": "Model card declares MIT, permits commercial generated music, and advertises cover/repaint/vocal-to-BGM and 50+ languages. A100 speed is an author benchmark, not this project's measured throughput."
+    },
+    "ace_step_repo": {
+      "url": "https://github.com/ace-step/ACE-Step-1.5",
+      "observed": "README advertises Vocal2BGM accompaniment generation and local repainting; this does not establish sample-exact preservation of the supplied vocal or guarantee generated content obeys requested presence labels."
+    },
+    "ctr_repo": {
+      "url": "https://github.com/SVDDChallenge/CtrSVDD_Utils",
+      "observed": "Author README explicitly calls the TRAIN/DEV DATA BY-NC-ND 4.0. Some bona-fide entries are not in the archives because their source licenses are more restrictive; Oniku, Ofuton, Kiritan and JVS-MuSiC require separate acquisition. Utility-code license is distinct."
+    },
+    "ctr_zenodo": {
+      "url": "https://zenodo.org/api/records/10467605",
+      "observed": "Read-only API returned metadata license cc-by-4.0, train_set.zip 7,910,658,841 B and dev_set.zip 3,389,073,344 B. This conflicts with the author dataset README and is not a resolved permission grant."
+    },
+    "ace_kising": {
+      "url": "https://huggingface.co/datasets/espnet/ace-kising-segments",
+      "observed": "Public card: CC BY-NC 4.0, Chinese/English. Raw README reports train 24,362, validation 50, test 4,548 and download_size 10,783,178,516 B. Segment durations vary and many are under four seconds."
+    },
+    "ace_kising_paper": {
+      "url": "https://arxiv.org/abs/2401.17619",
+      "observed": "Author paper introduces ACE-KiSing/ACE-Opencpop as singing synthesis data built using ACE Studio; availability does not make it representative of Korean or modern jointly generated songs."
+    },
+    "gts": {
+      "url": "https://huggingface.co/datasets/GTSinger/GTSinger/raw/main/README.md",
+      "observed": "Official card links Google Drive, processed language metadata and paired speech; use is subject to dataset_license.md. Full Korean audio accessibility/completeness was not tested."
+    },
+    "gts_license": {
+      "url": "https://raw.githubusercontent.com/AaronZ345/GTSinger/main/dataset_license.md",
+      "observed": "CC BY-NC-SA 4.0 plus an additional agreement containing indemnification referring to M4Singer and representation of employer authorization. The wording was observed, not legally cleared."
+    },
+    "seed": {
+      "url": "https://huggingface.co/Plachta/Seed-VC",
+      "observed": "Hugging Face license tag GPL-3.0; card body is empty."
+    },
+    "seed_repo": {
+      "url": "https://github.com/Plachtaa/seed-vc",
+      "observed": "Official repository GPL-3.0; distinguishes a 44.1 kHz SVC checkpoint from speech VC; recommends f0_condition=True for SVC, with 30–50 diffusion steps. Model/code licensing does not itself clear source/reference recording or performer rights."
+    },
+    "emilia": {
+      "url": "https://huggingface.co/datasets/amphion/Emilia-Dataset",
+      "observed": "Access requires contact-information sharing and agreement. Emilia is CC BY-NC 4.0; Emilia-YODAS is CC BY 4.0. Colleague access is conditioned on their agreement to the same terms. Card disclaims ownership of original audio, and reports 0.2k h Korean Emilia plus 7.3k h Korean Emilia-YODAS."
+    },
+    "yodas": {
+      "url": "https://huggingface.co/datasets/espnet/yodas2",
+      "observed": "CC BY 3.0 card, long-form video-level 24 kHz audio. video_id is an internal identifier, not the YouTube ID. Public contents are not proof that every recording contains genuine human speech."
+    },
+    "cosy": {
+      "url": "https://huggingface.co/FunAudioLLM/Fun-CosyVoice3-0.5B-2512",
+      "observed": "Apache 2.0 model card; Korean explicitly included among nine supported languages."
+    },
+    "maskgct": {
+      "url": "https://huggingface.co/amphion/MaskGCT",
+      "observed": "Model card CC BY-NC 4.0; several codec/T2S/S2A components must be accounted for. No project throughput or long-Korean output quality was measured."
+    },
+    "melo": {
+      "url": "https://huggingface.co/myshell-ai/MeloTTS-Korean",
+      "observed": "MIT model/library card and Korean support; CPU real-time is an author claim, not a measured runtime here."
+    },
+    "aihub": {
+      "url": "https://aihub.or.kr/intrcn/guid/usagepolicy.do",
+      "observed": "AI-Hub open-data policy prohibits making data available to unapproved third parties and requires separate agreement for overseas export. Other hosted institutions have their own terms. Exclusion without specific permission is justified; a universal claim that permission can never be obtained is not."
+    },
+    "clova": {
+      "url": "https://github.com/clovaai/ClovaCall/blob/master/README.md",
+      "observed": "Data license limits use to noncommercial AI research/development, prohibits modification/editing/reproduction and third-party provision. Its permissive CODE license does not license the audio."
+    },
+    "eleven": {
+      "url": "https://elevenlabs.io/use-policy",
+      "observed": "Restrictions 4(k)/(l) prohibit services/output as input for ML/AI training and as dataset material for training, fine-tuning, developing, testing or improving ML/AI. Restrictions apply more broadly than competing generators."
+    },
+    "suno": {
+      "url": "https://suno.com/terms",
+      "observed": "Effective September 3, 2026 terms: prohibited-use item 10 covers using service/output/Voice Models to power, enable or train other AI/ML tools, as well as competing products. Paid-tier output assignment remains subject to terms."
+    },
+    "deepfake_eval": {
+      "url": "https://huggingface.co/datasets/nuriachandra/Deepfake-Eval-2024",
+      "observed": "CC BY-SA 4.0 card plus gated access terms explicitly permit evaluation only and prohibit training. A license tag alone misses this restriction."
+    },
+    "anti": {
+      "url": "https://huggingface.co/nii-yamagishilab/xls-r-1b-anti-deepfake",
+      "observed": "Weights CC BY-NC-SA 4.0 for research/education. 16 kHz arbitrary-length input; waveform normalization; average pooling plus linear two-class head; index order fake then real. Native example depends on fairseq. FLEURS and restored FLEURS-R/LibriTTS-R occur in training; restored variants are fake. Zero-shot card EER: ITW 1.35%, DE2024 26.76%."
+    },
+    "anti_paper": {
+      "url": "https://arxiv.org/html/2506.21090",
+      "observed": "Table III's 11.86% at 4 s and 8.28% at 50 s are after DE2024-specific fine-tuning, measured over segments, not evidence for the downloadable zero-shot checkpoint on DACON. Training used up to 13 s; authors segment long recordings for memory."
+    },
+    "hybrid": {
+      "url": "https://arxiv.org/html/2607.26874",
+      "observed": "Hybrid-stem study: real-vocal/AI-accompaniment FPR 94.7% with naive separated-stem detection vs 26.2% with its learned local-mixture/SNR method at the specified 0 dB condition. Authors note possible optimistic Demucs estimates from MUSDB18-HQ training overlap."
+    },
+    "compspoof": {
+      "url": "https://arxiv.org/html/2509.15804v2",
+      "observed": "Eval ALL file-level F1: baseline .827, separation .668, separation+joint-learning .908. These are five-class speech/environment results under the paper protocol, not direct gains on DACON component EER or music hybrids."
+    },
+    "clam": {
+      "url": "https://arxiv.org/html/2512.00621",
+      "observed": "CLAM encodes the same full mixed track with MERT and Wav2Vec2. MoM F1: MERT .853, Wav2Vec2 .846, dual stream without alignment .875, full triplet model .925. Learned layers/cross-aggregation and contrastive training contribute; cached stem concatenation is not the evaluated system."
+    },
+    "atadd": {
+      "url": "https://arxiv.org/html/2608.14249",
+      "observed": "Track-2 winner uses audio-type routing and separate SSL experts; runner-up orange9 95.58% Macro-F1 uses EAT/XLSR fusion, augmentation and pooling. Task is a clip-level binary decision, unlike DACON's separate component labels."
+    },
+    "atadd_fusion": {
+      "url": "https://arxiv.org/abs/2608.29021",
+      "observed": "Runner-up combines EAT-large and XLS-R-300M with layer/token fusion and attentive statistics pooling, without requiring frame alignment; 95.58% Macro-F1 is the AT-ADD result, not a DACON expectation."
+    }
+  },
+  "source_identity_and_limits": {
+    "repository": "<PROJECT_ROOT>",
+    "review_date": "2026-09-24",
+    "mode": "Read-only independent audit; JSON/CSV/log/source/archive-text inspection and bounded stdlib CPU calculations only.",
+    "not_performed": [
+      "GPU execution",
+      "model or pickle deserialization",
+      "training",
+      "network access",
+      "submission",
+      "repository changes",
+      "Git mutations"
+    ],
+    "calculation_artifact": "<RESUME_SCRATCH>/runtime_history_calculations.json",
+    "runtime_source_identity": {
+      "archive": "submissions/DataV4_DurationBalanced/submit.zip",
+      "member": "model/runtime/full_bank_submission.py",
+      "member_sha256": "f0b14ebe7ac0050d77b5fe7c40a69318105ca378ba1f9c844d321b076a9f3211",
+      "working_tree_difference": "Only CANDIDATE string differs; runtime statements cited below were also inspected in the archive member.",
+      "trainer_sha256": "d7cd74013cdf5ec5d9a4ebe887eb09a8a2dc4536f68477c9e5de2ff866435bdf",
+      "trainer_identity_match": "Current full_bank_train.py and full_bank_batches.py match the saved duration-balanced run_identity.json trainer and batches hashes."
+    },
+    "source_prefix_note": "Evidence paths below are relative to repository unless absolute. Zip member references mean text read directly from the archive, without executing its code."
+  },
+  "historical_cost_scenario": {
+    "historical_feature_stage_seconds": 20644,
+    "historical_bank_audio_hours": 110.38438027777777,
+    "historical_audio_hours_per_stage_hour": 19.249359087386164,
+    "listed_proposed_categories": [
+      2000,
+      4400,
+      1500,
+      2400,
+      1300,
+      1100,
+      3800,
+      900,
+      2800
+    ],
+    "sum_if_disjoint": 20200,
+    "assumed_mean_seconds": 22,
+    "proposed_audio_hours_if_disjoint": 123.44444444444444,
+    "proposed_extraction_stage_hours_if_same_throughput": 6.412911925225389,
+    "warning": "Rows may overlap; generation and peak storage remain unmeasured. Scenario is not an authorization or forecast."
+  },
+  "final_plan_cost_scenario": {
+    "planned_derived_training_rows": 4400,
+    "assumed_mean_seconds": 22,
+    "audio_hours": 26.88888888888889,
+    "historical_composite_stage_audio_hours_per_elapsed_hour": 19.249359087386164,
+    "estimated_composite_stage_hours": 1.3968719045045401,
+    "historical_stage_includes": [
+      "decode",
+      "HTDemucs separation",
+      "MERT/DF-Arena/PANNs extraction",
+      "parallel presence work",
+      "cache writes"
+    ],
+    "outside_stage": [
+      "generation",
+      "download",
+      "new-example materialization and additional construction separation",
+      "additional retries/inspection"
+    ],
+    "warning": "Conditional extrapolation, not measured future runtime, isolated GPU throughput, or authorization. Supersedes any earlier claim that all separation must be added again."
+  },
+  "review_resolutions": {
+    "R1": "Cost labels corrected to elapsed composite feature stage; ordinary separation and cache IO included.",
+    "R2": "Frozen-fusion comparison separated from same-method recalibration. Refit needs disjoint calibration or upstream group OOF; final holdout remains unused.",
+    "R3": "Six excluded HAIM rows identified as FILE-mask export exclusion, not inference failures. Future metric masks are component-specific."
+  },
+  "delegation": {
+    "destination_checked": "Ordinary Chat UI in a separate Aside tab",
+    "observed_mode": "Chat",
+    "observed_model_label": "Latest",
+    "observed_reasoning_or_performance": "Pro, highest offered level5/5",
+    "gpt6_pro_explicit_model_identity_verified": false,
+    "requests_submitted": 0,
+    "attachments_transferred": 0,
+    "status": "Prepared manual handoff only; no delegated Chat output used."
+  },
+  "artifact_inputs_sha256": {
+    "recovered_findings.json": "8b0e1d46bcf4366c9cfbcaf662fb7baeb312ca6fdd1b166eaaa8b2aa87e8362d",
+    "root_metrics_verification.json": "4b1746dcc8c24b623b6eedf5fd8f1341178e3f1cd44033b6b5962e9f9e2c9a97",
+    "root_error_contribution.json": "cfca66e4ccdcb3508bbbcbc0ce6e06735126c1cae3aefbedc5100360a9b4c1b4",
+    "root_data_census.json": "de5df61ff56f326729dac19514b8098853882189b38d985c431be43e3d57c3b4",
+    "verify_data_proxy.json": "33e9867209ac3f11a11fe758d15fa8de9e633ab236da9b563b0583d768acb16e",
+    "verify_runtime_history.json": "ff106c350d812582b29043d9b48bf9003da2bc32c3081f54124d3055e6c652f4",
+    "verify_external_sources.json": "6296b992538dae6b2d37e4d86399dd6035693119f7b9aa9e759d222dd562371b",
+    "report_review.md": "6f44ab98afef0cc7a9f9546d65bcabaa5ef37658dcce7b479f10a3cfeb28e836"
+  }
+}

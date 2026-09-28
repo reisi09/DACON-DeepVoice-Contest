@@ -1,0 +1,47 @@
+{
+  "proc/3469/syscall": {
+    "http": 200,
+    "content": "1 0x1 0x7faa69bbc1d0 0x3e 0x7fad1d908860 0x0 0x0 0x7ffe578f0490 0x7fad1dad45ad\n"
+  },
+  "proc/231/syscall": {
+    "http": 200,
+    "content": "74 0x4e 0x0 0x0 0x1 0x7f7612319530 0x0 0x7ffffda26d70 0x7f76124aae0c\n"
+  },
+  "proc/pressure/memory": {
+    "http": 200,
+    "content": "some avg10=0.00 avg60=0.00 avg300=0.00 total=1822523841\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=1704696637\n"
+  },
+  "proc/pressure/io": {
+    "http": 200,
+    "content": "some avg10=84.51 avg60=83.92 avg300=76.74 total=162192661178\nfull avg10=84.16 avg60=82.82 avg300=75.21 total=154412727003\n"
+  },
+  "sys/fs/cgroup/memory.events": {
+    "http": 200,
+    "content": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  "blocked_processes": {
+    "3469": {
+      "state": "D",
+      "wchan": "folio_wait_bit_common",
+      "operation": "write(fd=1)",
+      "fd_mount_id": 9853
+    },
+    "231": {
+      "state": "D",
+      "wchan": "folio_wait_bit_common",
+      "operation": "fsync(fd=78)",
+      "fd_mount_id": 9853
+    }
+  },
+  "mount": {
+    "mount_id": 9853,
+    "path": "/root",
+    "filesystem": "ceph",
+    "volume": "clustervol-4jnjmzdw5rik"
+  },
+  "memory_available_kib": 1123633624,
+  "cache_index_rows": 681,
+  "feature_progress_rows": 680,
+  "last_feature_progress_utc": "2026-09-19T13:39:03+00:00",
+  "unproven": "The internal Ceph/backend cause is not visible from this workspace."
+}

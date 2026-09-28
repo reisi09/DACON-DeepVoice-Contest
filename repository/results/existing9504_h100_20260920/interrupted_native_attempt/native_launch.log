@@ -1,0 +1,11 @@
+deployment root : /shared/existing-only-9504-h100-20260920
+job root        : /root/dacon_existing9504_h100_20260920
+author code     : /root/dacon_existing9504_h100_20260920/code/5994d3f2e442c572 (sha256 5994d3f2e442c5721eff5e8844b0ca72a61a7ad1253094eb8066241b27d2364e)
+notebook        : /shared/existing-only-9504-h100-20260920/DACON_Existing9504_H100.ipynb
+kernel python   : 3.13.9 (orchestration only; GPU work runs in the isolated venv)
+[15:12:05] === preflight ===
+[15:12:08] GPU NVIDIA H100 80GB HBM3 81559 MiB driver 580.82.07; free 9.8TiB
+[15:12:08] preflight complete in 0h00m04s; elapsed stage total 0h00m04s
+[15:12:10] === stage_inputs ===
+[15:12:10] [stage_inputs] verifying every immutable deployment file (bytes + SHA-256)
+[15:14:35] [stage_inputs] staging frozen assets and original source modules

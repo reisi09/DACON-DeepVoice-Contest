@@ -1,0 +1,4 @@
+{"stage": "remove_invalid_e2", "removed_rows": 160, "retained_rows": 6941}
+{"stage": "rebuild_e2", "rows": 160, "elapsed_seconds": 0.2}
+{"audio_hashes": 7101, "probe_families": {"core": 6293, "partial": 648, "swap": 160}, "provenance_atoms": 876, "rows": 7101, "splits": {"calibration": 1880, "dev": 1024, "test": 876, "train": 3321}}
+{"rows": 160, "stage": "e2_gain_repair", "validation": {"audio_hashes": 7101, "probe_families": {"core": 6293, "partial": 648, "swap": 160}, "provenance_atoms": 876, "rows": 7101, "splits": {"calibration": 1880, "dev": 1024, "test": 876, "train": 3321}}}

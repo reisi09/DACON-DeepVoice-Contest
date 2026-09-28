@@ -1,0 +1,40 @@
+{
+  "gpu": {
+    "name": "NVIDIA A100-SXM4-80GB",
+    "count": 1,
+    "capability": [
+      8,
+      0
+    ],
+    "total_memory": 85094825984,
+    "multiprocessors": 108
+  },
+  "cuda_available": true,
+  "torch": "2.9.1+cu128",
+  "torch_cuda": "12.8",
+  "python": "3.11.13 (main, Sep  2 2025, 14:20:25) [Clang 20.1.4 ]",
+  "imports": {
+    "torch": "ok",
+    "torchaudio": "ok",
+    "torchcodec": "ok",
+    "transformers": "ok",
+    "librosa": "ok",
+    "soundfile": "ok",
+    "demucs.apply": "ok",
+    "demucs.pretrained": "ok",
+    "demucs.separate": "ok",
+    "demucs.audio": "ok",
+    "panns_inference": "ok",
+    "sklearn": "ok",
+    "scipy.special": "ok",
+    "numpy": "ok",
+    "einops": "ok",
+    "safetensors": "ok",
+    "imageio_ffmpeg": "ok",
+    "tqdm": "ok"
+  },
+  "decoder": {
+    "ok": true
+  },
+  "lock_sha256": "83b3d67698d7e96260af3063b54c895127f4432bfc8d4af778f2bc506036f6a7"
+}

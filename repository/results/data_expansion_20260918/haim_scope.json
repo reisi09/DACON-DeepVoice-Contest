@@ -1,0 +1,53 @@
+{
+  "recorded_utc": "2026-09-18T04:49:00.620931+00:00",
+  "source": "https://huggingface.co/datasets/mippia/HAIM",
+  "revision": "371be01815b65274762d6d0a33e2cb70e24b9baa",
+  "eligible_acquisition_candidates": {
+    "acestep": {
+      "metadata_rows": 6000,
+      "unique_track_ids": 6000,
+      "unique_paths": 6000,
+      "missing_raw_paths": [],
+      "nonempty_prompts": 5999,
+      "distinct_nonempty_prompts": 5337,
+      "documented_duration_count": 6000,
+      "duration_min": 10.03,
+      "duration_max": 489.04,
+      "subgroups": {
+        "d0": 3001,
+        "d1": 2999
+      }
+    },
+    "musicgen": {
+      "metadata_rows": 5000,
+      "unique_track_ids": 5000,
+      "unique_paths": 5000,
+      "missing_raw_paths": [],
+      "nonempty_prompts": 0,
+      "distinct_nonempty_prompts": 0,
+      "documented_duration_count": 0,
+      "duration_min": null,
+      "duration_max": null,
+      "subgroups": {
+        "large": 1000,
+        "medium": 2000,
+        "small": 2000
+      }
+    }
+  },
+  "pilot_was_our_quota_not_dataset_limit": true,
+  "pilot_reused": 256,
+  "maximum_net_new_sources": 10744,
+  "A1_real": {
+    "reported": 6000,
+    "admitted": false,
+    "reason": "Original artist/track ID to per-track license join unresolved"
+  },
+  "LyriaPro3": {
+    "reported": 6000,
+    "admitted": false,
+    "reason": "Gemini API upstream rights applicability still under review; not a finding that audio detector training is prohibited"
+  },
+  "split": "unassigned",
+  "actual_download_status": "Read haim_receipt.json; candidate inventory is not acquisition completion"
+}

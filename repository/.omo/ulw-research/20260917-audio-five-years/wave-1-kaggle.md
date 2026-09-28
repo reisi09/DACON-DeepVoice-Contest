@@ -1,0 +1,24 @@
+# Kaggle notebooks and rank evidence
+
+ObserverH:>=50queries;5notebooksourceAPIresponsesread,noneexecuted;6repospinnedwithselectedreads,notcompleteaudits. SourcesH01–H21.
+
+Fourrankedcurrentpublicnotebooks:
+
+| URL | version | sourceSHA256 |
+|---|---:|---|
+| https://www.kaggle.com/code/honglihang/2nd-place-solution-inference-kernel |1|6077ebc0b69acba45f3240993a00449a68ab92313915b03e008f79f9279b99d0|
+| https://www.kaggle.com/code/chemrovkirill/birdclef-2024-1st-place-inference |8|ef18ef7a820f85624eb17514cc1c2f46868f18a6444574ac0143f641cd0201b1|
+| https://www.kaggle.com/code/vladimirsydor/bird-clef-2025-ensemble-v2-final-final |4|5ecef5c4992e20c23e8250d90b02c54d8a2a198ee3ef4faef96d231cdb425dee|
+| https://www.kaggle.com/code/nikitababich/birdclef2026-1st-place-inference |3|49a6a51cbe754283fadddfd7e8bc66e2076b10b943045f0d0491d7bc18788647|
+
+FifthMLAADtutorialversion3hashe1511a63dd572fe7c6dafad5010dd2de9342bc8630159c99b496bf32fbc825e5isunranked/unfinishededucationalcode. Currentpublicversionnotcryptographicallyoriginalsubmission.
+
+Rankclosure:2022KDL0.8527verifiedorganizerFigure3plusSelimonderdiscussionredirectofficialKDLwriteup.2023ranks1–4,2025namedranks,2026ranks1–6officialrowsconfirmed.2024rankstableprimaryworkingnoteandranklabelledwriteups.2025rank1fullbodyunavailable,2025rank3partial;nofabricatedmicrodetails.
+
+Transfer:train-onlyKD,uncertaincroplabelmasking,independenterrorcomplementarity,sharedfrontendcache. Counterexamples:SEDlosttosimpleCNN;PLandKDfailedforsometeams;moreNoisyStudentroundsregressed;SWA/EMAnegligibleorworse;CVcorrelationbad. Birdlocation/taxonomy/testpopulationpriorsandhiddentestPLexcludedunderDACONrules.
+
+Pinned2026rank2repo5e1ce860cef9626d3a48a49fce972842b0ce5229defaulttrainclassificationbypassesattentionwhilevalidatesattention;alternatedistilledSEDpathtrainsit. Staticpathconcernonly,notwinningcheckpointbugproof.
+
+## EXPAND
+
+Wave2closed2022rankattributionand2026rank1sourcepackageinventory19files172016bytes.2026rank3–6writeuptriagecoveredduplicativeKD/SED/PLwithcomplementarity/cachingleads;sourcecodeunreadexplicitly.2024rank9CADoverlapA/J.2025rank1/3partialbodypublicgap,duplicatefamilyso no promotednewclaims. Inclusion/fraudI. No furtherdecision-changingBirdCLEFlead.

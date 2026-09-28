@@ -1,0 +1,25 @@
+{
+ "written": "2026-09-28 07:00 KST, before any S9 feature was extracted or any S9 head trained",
+ "numbers_seen_before_lock": "S8 screen val numbers (s8_choice.json, incl. music combos gpu_control+mixsslam{4..9} val ens EER); A1 val; A5 val EER of seeds 44/45 (0.04982). No S9 number; S8 LB not yet known.",
+ "designed_with": "Codex GPT-6-Astra ultra round 9 (codex_debate/codex_round9.md)",
+ "base": "S8 DB recipe on VESSL GPU fp32 = control: voice S7 fusion (df_L 1 / ad_L 0.5 / wavlm8_cpu 1), music run.py music_new mert6_12+eat16+sslampt5+mixsslam5 (seeds 41/42/43, /root/s8_runs, reused: identical recipe/identity), FILE refit on val, presence as before",
+ "features": "extract_s9.py on the raw mix (post peak cap, fp32; packaged EAT/MERT weights): mixeat blocks 4..24, mixmert hidden 3..24; cache gate validate_s9.py (layer lists, shapes, finite, samples == stems)",
+ "candidates": {
+  "C1-C6": "control + mixeat{4,8,12,16,20,24}",
+  "C7-C9": "control + mixmert6, + mixmert12, + mixmert6_12",
+  "C10": "mixsslam5 REPLACED by mixsslam4_5 (exploratory: suggested by the already-seen S8 val combos)"
+ },
+ "step_A": "each candidate's val RT ADS vs control (3-seed ensemble); entry gate dADS >= +0.002",
+ "step_B": "only if the best EAT candidate and the best MERT candidate both pass: evaluate their joint once; adopt the joint only if >= best single + 0.002; no further SSLAM combinations; ties -> fewer extra encoder forwards",
+ "final_choice": "the best passing option (joint, or best single); nothing passing -> no S9",
+ "package_feasibility_before_held_out": "zip <= 1e10 B measured; runtime peak GPU allocated measured on the parity files (H100) must not exceed S7's 21.35 GiB by more than 0.3 GiB; L4 time estimate <= 45 min, else prefer a single-encoder option",
+ "step_C_ship": {
+  "held_out_rt_dads_vs_S8_gpu_control": ">= +0.002",
+  "bootstrap": "P(dADS > 0) >= 0.90 (test group_id, 1000 reps, rng 0)",
+  "unseen_generator_subset_dads": ">= -0.002",
+  "fakeV_realM_music_fpr_increase": "<= 0.03 (the 214 R2 held-out ids, each model's val TPR-95 threshold)",
+  "no_retry": "a failed candidate is not re-tried with other layers/seeds/slices; this held-out has been reused and is not an independent confirmation"
+ },
+ "s8_lb_dependency": "if S8 LB <= S7 LB (0.8373968254): no new costly raw-mix expansion beyond this lock; completed candidates may still ship (best-ever), S7-noL moves to the first 09-29 slot",
+ "slots_2026-09-29": "#1 S9 (if it passes and is packaged + verified), #2 S8 music 5 seeds (41-45 all; if val and held-out not worse and unseen >= -0.002), #3 S7-noL (label-completion attribution); packages frozen by 08:00 KST"
+}

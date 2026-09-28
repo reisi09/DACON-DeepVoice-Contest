@@ -1,0 +1,388 @@
+container 2개 메시지 중 2번째
+														182 container
+															183 항목 Claude 응답: DACON 236749용 추가 데이터를 1차 출처에서 확인하고, 7144행을 유지하는 교체 구성안을 작성하겠습니다., Value: 2
+																184 텍스트 Claude 응답: DACON 236749용 추가 데이터를 1차 출처에서 확인하고, 7144행을 유지하는 교체 구성안을 작성하겠습니다.
+															185 텍스트 출처를 확인하며 조사 보고서를 준비하는 중.
+															186 텍스트 출처를 확인하며 조사 보고서를 준비하는 중.
+															187 텍스트 DACON 236749용 추가 데이터를 1차 출처에서 확인하고, 7144행을 유지하는 교체 구성안을 작성하겠습니다.
+															188 텍스트 6페이지 읽음, 웹 검색됨
+															189 버튼 6페이지 읽음, 웹 검색됨
+															190 텍스트 6페이지 읽음, 웹 검색됨
+															191 container
+																192 텍스트 결론:
+																193 텍스트  음악은 출처와 라벨을 끊고, 음성은 fake 생성기를 다변화하고, 신경코덱 real 대조군을 추가하는 것이 우선입니다.
+																194 내용 목록
+																	195 container
+																		196 AXListMarker •
+																		197 text 음악:  같은 출처 안에 real과 fake가 모두 있게 만듭니다. FMA/Jamendo 반주에 AI 보컬을 얹은 혼합 fake를 넣고, FMA/Jamendo 밖의 real(MUSDB18-HQ, HAIM B1, VocalSet)을 추가합니다.
+																	198 container
+																		199 AXListMarker •
+																		200 text 음성:  fake가 ASV2019 한 곳뿐입니다. ASVspoof5 tar 1개와 PartialSpoof를 더합니다.
+																	201 container
+																		202 AXListMarker •
+																		203 text 코덱 대조:  CodecFake(VCTK 코덱 재합성, CC BY 4.0)를 규칙상 real 라벨로 넣습니다.
+																	204 container
+																		205 AXListMarker •
+																		206 text 구성:  7144행과 1:1은 유지하고, 유형은 음성 2000 / 부분조작 380 / 가창 1000 / 혼합곡 2750 / 기악 1014로 재배분합니다.
+																207 텍스트 아래 태그는 [사실]=오늘 1차 페이지로 확인, [가설]=검증 필요, [미확인]=아직 보지 않음입니다.
+																208 항목 1) 후보 (우선순위순), Value: 3
+																	209 텍스트 1) 후보 (우선순위순)
+																210 표
+																	211 row
+																		212 열 헤더
+																			213 텍스트 #
+																		214 열 헤더
+																			215 텍스트 데이터
+																		216 열 헤더
+																			217 텍스트 가치
+																		218 열 헤더
+																			219 텍스트 조건·접근
+																		220 열 헤더
+																			221 텍스트 권장 행
+																	222 row
+																		223 셀
+																			224 텍스트 1
+																		225 셀
+																			226 텍스트 PartialSpoof
+																			227 link Description: https://zenodo.org/records/5766198, Value: zenodo.org/records/5766198
+																		228 셀
+																			229 텍스트 부분조작 + 구간 라벨
+																		230 셀
+																			231 텍스트 CC BY 4.0, train/dev 각 2.0GB 별도 파일 [사실]
+																		232 셀
+																			233 텍스트 fake 380
+																	234 row
+																		235 셀
+																			236 텍스트 2
+																		237 셀
+																			238 텍스트 ASVspoof5
+																			239 link Description: https://zenodo.org/records/14498691, Value: zenodo.org/records/14498691
+																		240 셀
+																			241 텍스트 음성 생성기·녹음환경 다변화
+																		242 셀
+																			243 텍스트 ODC-By, 파티션별 tar(6.6~8.6GB) [사실]
+																		244 셀
+																			245 텍스트 1,070
+																	246 row
+																		247 셀
+																			248 텍스트 3
+																		249 셀
+																			250 텍스트 CodecFake(VCTK)
+																			251 link Description: https://huggingface.co/datasets/rogertseng/CodecFake, Value: huggingface.co/datasets/rogertseng/CodecFake
+																		252 셀
+																			253 텍스트 코덱 재합성 → real 대조
+																		254 셀
+																			255 텍스트 CC BY 4.0, 코덱별 행 [사실]
+																		256 셀
+																			257 텍스트 real 310
+																	258 row
+																		259 셀
+																			260 텍스트 4
+																		261 셀
+																			262 텍스트 VocalSet
+																			263 link Description: https://zenodo.org/records/1442513, Value: zenodo.org/records/1442513
+																		264 셀
+																			265 텍스트 가창 real, 가수 단위 분할
+																		266 셀
+																			267 텍스트 CC BY 4.0 (사용자 확인, 재확인 안 함)
+																		268 셀
+																			269 텍스트 370
+																	270 row
+																		271 셀
+																			272 텍스트 5
+																		273 셀
+																			274 텍스트 CtrSVDD
+																			275 link Description: https://github.com/SVDDChallenge/CtrSVDD_Utils, Value: github.com/SVDDChallenge/CtrSVDD_Utils
+																		276 셀
+																			277 텍스트 가창 fake, 시스템 holdout
+																		278 셀
+																			279 텍스트 BY-NC-ND. 원형 행으로만 쓰고 합성 mix에는 쓰지 않음 [가설: ND 안전책]
+																		280 셀
+																			281 텍스트 630
+																	282 row
+																		283 셀
+																			284 텍스트 6
+																		285 셀
+																			286 텍스트 SONICS
+																			287 link Description: https://huggingface.co/datasets/awsaf49/sonics, Value: huggingface.co/datasets/awsaf49/sonics
+																		288 셀
+																			289 텍스트 Suno/Udio 전곡 fake
+																		290 셀
+																			291 텍스트 CC BY-NC 4.0. real은 YouTube ID만 제공되므로 제외. 파일 단위 선별 [사실]
+																		292 셀
+																			293 텍스트 fake 400
+																	294 row
+																		295 셀
+																			296 텍스트 7
+																		297 셀
+																			298 텍스트 MUSDB18-HQ
+																			299 link Description: https://zenodo.org/records/3338373, Value: zenodo.org/records/3338373
+																		300 셀
+																			301 텍스트 스템 포함 real 곡 → voice 정답, 합성 mix 재료
+																		302 셀
+																			303 텍스트 교육·비상업, 22.7GB zip 1개 [사실]. 원격 부분추출 가능 여부 [미확인]
+																		304 셀
+																			305 텍스트 곡 ≤150
+																	306 row
+																		307 셀
+																			308 텍스트 8
+																		309 셀
+																			310 텍스트 HAIM
+																			311 link Description: https://huggingface.co/datasets/mippia/HAIM, Value: huggingface.co/datasets/mippia/HAIM
+																		312 셀
+																			313 텍스트 B1 후처리 real, Lyria 신규 생성기
+																		314 셀
+																			315 텍스트 기존 판단 유지, B6 보류
+																		316 셀
+																			317 텍스트 650
+																	318 row
+																		319 셀
+																			320 텍스트 보류
+																		321 셀
+																			322 텍스트 FakeMusicCaps
+																			323 link Description: https://zenodo.org/records/15063698, Value: zenodo.org/records/15063698
+																		324 셀
+																			325 텍스트 TTM 5종
+																		326 셀
+																			327 텍스트 CC BY-NC, 10초 클립, 12.9GB zip 1개 [사실]. 길이 지름길을 악화시킬 수 있음
+																		328 셀
+																			329 텍스트 0
+																	330 row
+																		331 셀
+																			332 텍스트 보류
+																		333 셀
+																			334 텍스트 MLAAD / Codecfake(Xie)
+																		335 셀
+																			336 텍스트 동의 gate / BY-NC-ND
+																		337 셀
+																			338 텍스트 —
+																		339 셀
+																			340 텍스트 0
+																341 텍스트 1차 페이지에서 확인한 근거:
+																342 내용 목록
+																	343 container
+																		344 AXListMarker •
+																		345 텍스트 SONICS: 라이선스는 CC BY-NC 4.0이고, real 곡은 mp3가 아니라 real_songs.csv의 youtube_id로만 제공되며 전체 크기는 32.6GB
+																		346 link Description: huggingface, Value: huggingface.co/datasets/awsaf49/sonics
+																	347 container
+																		348 AXListMarker •
+																		349 텍스트 MUSDB18-HQ: 교육 목적 한정·상업 이용 금지이며, 100곡은 DSD100, 46곡은 MedleyDB(CC BY-NC-SA 4.0)에서 가져옴
+																		350 link Description: zenodo, Value: zenodo.org/records/3338373
+																	351 container
+																		352 AXListMarker •
+																		353 텍스트 CodecFake(Xie 판): CC BY-NC-ND 4.0
+																		354 link Description: github, Value: github.com/xieyuankun/Codecfake
+																	355 container
+																		356 AXListMarker •
+																		357 텍스트 PartialSpoof: ASVspoof2019 데이터셋을 인용하고 CC BY 4.0
+																		358 link Description: zenodo, Value: zenodo.org/records/5766198
+																	359 container
+																		360 AXListMarker •
+																		361 텍스트 ASVspoof5: 라이선스는 Open Data Commons Attribution v1.0
+																		362 link Description: zenodo, Value: zenodo.org/records/14498691
+																363 텍스트 원본 용량은 ASV5 D_aa 6.6 + PartialSpoof 4.0 + SONICS 약 1.5 + CodecFake·VocalSet 약 3 [미확인]으로 대략 15GB입니다. MUSDB는 부분추출이 안 되면 제외하고 그 행은 HAIM B1로 대체합니다.
+																364 항목 2) 교체 구성 (행은 상호배타, 총 7144, real:fake 1:1), Value: 3
+																	365 텍스트 2) 교체 구성 (행은 상호배타, 총 7144, real:fake 1:1)
+																366 표
+																	367 row
+																		368 열 헤더
+																			369 텍스트 유형
+																		370 열 헤더
+																			371 텍스트 train R/F
+																		372 열 헤더
+																			373 텍스트 val R/F
+																		374 열 헤더
+																			375 텍스트 주 출처 (val은 holdout)
+																	376 row
+																		377 셀
+																			378 텍스트 음성
+																		379 셀
+																			380 텍스트 800/800
+																		381 셀
+																			382 텍스트 200/200
+																		383 셀
+																			384 텍스트 R: ASV19 bona 250·ASV5 300·CodecFake 250 / F: ASV19 350·ASV5 450. val: ASV5 미학습 공격, 미학습 코덱
+																	385 row
+																		386 셀
+																			387 텍스트 부분조작
+																		388 셀
+																			389 텍스트 0/300
+																		390 셀
+																			391 텍스트 0/80
+																		392 셀
+																			393 텍스트 PartialSpoof train / dev
+																	394 row
+																		395 셀
+																			396 텍스트 가창(보컬만)
+																		397 셀
+																			398 텍스트 400/400
+																		399 셀
+																			400 텍스트 100/100
+																		401 셀
+																			402 텍스트 R: VocalSet·CtrSVDD bona / F: CtrSVDD A01–08, val은 A09 이후
+																	403 row
+																		404 셀
+																			405 텍스트 혼합곡
+																		406 셀
+																			407 텍스트 1100/1100
+																		408 셀
+																			409 텍스트 275/275
+																		410 셀
+																			411 텍스트 R: FMA·Jamendo 600, MUSDB 250, HAIM B1 250 / F: Echoes 300, HAIM B7–9 250, SONICS Suno 300, 합성 mix 250. val: Udio, Lyria
+																	412 row
+																		413 셀
+																			414 텍스트 기악
+																		415 셀
+																			416 텍스트 558/258
+																		417 셀
+																			418 텍스트 139/59
+																		419 셀
+																			420 텍스트 R: FMA 기악, MUSDB 반주 합 / F: Echoes·HAIM 기악
+																	421 row
+																		422 셀
+																			423 텍스트 합계
+																		424 셀
+																			425 텍스트 2858/2858 = 5716
+																		426 셀
+																			427 텍스트 714/714 = 1428
+																428 내용 목록
+																	429 container
+																		430 AXListMarker •
+																		431 text 합성 mix:  FMA/Jamendo의 non-ND 트랙 반주에 SONICS/HAIM에서 분리한 AI 보컬을 얹고 fake로 라벨합니다(보컬이 AI면 fake 규칙).
+																		432 내용 목록
+																			433 container
+																				434 AXListMarker ◦
+																				435 텍스트 곡당 트랙 라이선스는 필터로 확인합니다. MUSDB는 SA 조항이 있어 합성에 쓰지 않습니다.
+																	436 container
+																		437 AXListMarker •
+																		438 text 행 수와 파일 수는 따로 보고합니다.  MUSDB는 약 480행이지만 고유 부모는 150곡 이하입니다. 합성 mix 1행은 반주 부모 1개와 보컬 부모 1개를 재사용합니다. 여러 head를 학습하는 것은 한 행을 1회로 셉니다.
+																	439 container
+																		440 AXListMarker •
+																		441 text 길이 지름길:  real과 fake 모두 같은 crop 길이 분포에서 뽑습니다 [가설: 길이 단독 AUC가 0.887에서 0.6 이하로 내려갈 것].
+																442 항목 3) 라벨·분할·실험, Value: 3
+																	443 텍스트 3) 라벨·분할·실험
+																444 텍스트 정답 5개 + 마스크:
+																445 텍스트 y_final
+																446 텍스트 ,
+																447 텍스트 voice_present
+																448 텍스트 ,
+																449 텍스트 voice_fake
+																450 텍스트 ,
+																451 텍스트 music_present
+																452 텍스트 ,
+																453 텍스트 music_fake
+																454 텍스트 , 그리고 head별 마스크, PartialSpoof만 프레임 마스크를 추가합니다.
+																455 내용 목록
+																	456 container
+																		457 AXListMarker •
+																		458 text y_final  = present 성분의 fake 중 하나라도 1이면 1(OR).
+																	459 container
+																		460 AXListMarker •
+																		461 텍스트 FMA real처럼 voice를 모르는 행(3750개)은 voice head를 마스크합니다.
+																	462 container
+																		463 AXListMarker •
+																		464 텍스트 음성 행은 music head를 마스크합니다.
+																465 텍스트 분할 순서:
+																466 내용 목록
+																	467 container
+																		468 AXListMarker 1.
+																		469 텍스트 부모 ID(곡, 화자, 가수) 부여
+																	470 container
+																		471 AXListMarker 2.
+																		472 텍스트 출처×라벨로 층화해 부모 단위 80:20 분할
+																	473 container
+																		474 AXListMarker 3.
+																		475 텍스트 생성기(Udio, Lyria, CtrSVDD 후반 시스템, ASV5 일부 공격)는 val 전용으로 holdout
+																	476 container
+																		477 AXListMarker 4.
+																		478 텍스트 각 split 안에서만 mix 생성
+																	479 container
+																		480 AXListMarker 5.
+																		481 텍스트 crop
+																482 텍스트 기존 7144 split은 대조군으로 두고 모든 지표를 병기합니다.
+																483 텍스트 신경코덱 real 대조:
+																484 텍스트  CodecFake와 HAIM B1을 real로 넣습니다. VCTK 계열(ASV19 bona·LA, CodecFake)은 같은 출처 안에 real과 fake가 모두 생기므로 출처 지름길이 끊깁니다.
+																485 텍스트 실험 (비용 낮은 순):
+																486 표
+																	487 row
+																		488 열 헤더
+																			489 텍스트 단계
+																		490 열 헤더
+																			491 텍스트 내용
+																		492 열 헤더
+																			493 텍스트 결정 기준
+																	494 row
+																		495 셀
+																			496 텍스트 E0 (CPU)
+																		497 셀
+																			498 텍스트 출처·길이·샘플레이트·비트레이트만으로 AUC
+																		499 셀
+																			500 텍스트 도메인별 0.65 초과면 구성 수정
+																	501 row
+																		502 셀
+																			503 텍스트 E1 (학습 없음)
+																		504 셀
+																			505 텍스트 기존 모델로 새 val 추론: 코덱 real FPR, holdout 생성기 AUC
+																		506 셀
+																			507 텍스트 codec FPR이 높으면 codec real 비중 확대
+																	508 row
+																		509 셀
+																			510 텍스트 E2 (학습 없음)
+																		511 셀
+																			512 텍스트 max 결합 대신
+																			513 텍스트 voice_present
+																			514 텍스트 로 게이트
+																		515 셀
+																			516 텍스트 음악 real 52건 오탐 감소 여부
+																	517 row
+																		518 셀
+																			519 텍스트 E3
+																		520 셀
+																			521 텍스트 head만 학습(backbone 동결), 새 split vs 대조 split, 같은 seed
+																		522 셀
+																			523 텍스트 holdout AUC와 partial 구간 F1 개선
+																	524 row
+																		525 셀
+																			526 텍스트 E4
+																		527 셀
+																			528 텍스트 전체 학습
+																		529 셀
+																			530 텍스트 E3 통과 시에만
+																531 텍스트 미확인으로 남은 것:
+																532 내용 목록
+																	533 container
+																		534 AXListMarker •
+																		535 텍스트 ASV5 dev tar에 들어 있는 공격 ID
+																	536 container
+																		537 AXListMarker •
+																		538 텍스트 VocalSet·CodecFake 부분 다운로드 시 실제 용량
+																	539 container
+																		540 AXListMarker •
+																		541 텍스트 CtrSVDD 원천 real 누락 규모
+																	542 container
+																		543 AXListMarker •
+																		544 텍스트 MUSDB 원격 부분추출 가능 여부
+																545 텍스트 Sources:
+																546 내용 목록
+																	547 container
+																		548 AXListMarker •
+																		549 link Description: SONICS (HF), Value: huggingface.co/datasets/awsaf49/sonics
+																	550 container
+																		551 AXListMarker •
+																		552 link Description: FakeMusicCaps (Zenodo), Value: zenodo.org/records/15063698
+																	553 container
+																		554 AXListMarker •
+																		555 link Description: MUSDB18-HQ (Zenodo), Value: zenodo.org/records/3338373
+																	556 container
+																		557 AXListMarker •
+																		558 link Description: CodecFake rogertseng (HF), Value: huggingface.co/datasets/rogertseng/CodecFake
+																	559 container
+																		560 AXListMarker •
+																		561 link Description: Codecfake Xie (GitHub), Value: github.com/xieyuankun/Codecfake
+																	562 container
+																		563 AXListMarker •
+																		564 link Description: PartialSpoof (Zenodo), Value: zenodo.org/records/5766198
+																	565 container
+																		566 AXListMarker •
+																		567 link Description: ASVspoof5 (Zenodo), Value: zenodo.org/records/14498691
+															568

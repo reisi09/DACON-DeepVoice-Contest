@@ -1,0 +1,16 @@
+{
+  "environment": {"device": "cpu", "python": "3.11.15", "threads": 2, "torch": "2.7.1"},
+  "scenario": "Pinned FP32 real weights on deterministic quiet/loud waveforms, together, serially, and in reverse batch order",
+  "tolerance": 0.00001,
+  "models": {
+    "sonics": {
+      "batch_serial_max_abs": 2.384185791015625e-07,
+      "reverse_batch_max_abs": 2.384185791015625e-07,
+      "legacy_batch_wide_top_db_max_abs": 0.029443860054016113
+    },
+    "ast": {
+      "batch_serial_max_abs": 5.960464477539063e-08,
+      "reverse_batch_max_abs": 5.960464477539063e-08
+    }
+  }
+}

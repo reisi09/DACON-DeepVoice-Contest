@@ -1,0 +1,47 @@
+{
+  "scope": "train_v2.py and test_train_v2.py",
+  "scenarios": [
+    {
+      "name": "AST training integration and model gradient contract",
+      "invocation": ".venv/bin/python -m pytest -q test_train_v2.py test_ast_multitask.py --basetemp=.omo/evidence/v2/task5_tmp5",
+      "observable": "exit code 0; 9 passed; tiny AST report records max_head_gradient_norm > 0 and trainable_absolute_update > 0",
+      "log": ".omo/evidence/v2/task-5-final.txt",
+      "artifact": ".omo/evidence/v2/task5_tmp5/test_tiny_ast_training_records0/run/AST_FROZEN/report.json"
+    },
+    {
+      "name": "Resume parity and wrong-config rejection",
+      "invocation": ".venv/bin/python -m pytest -q test_train_v2.py -k resume_parity",
+      "observable": "exit code 0; uninterrupted and resumed AdamW parameters agree at atol 1e-7; changed config raises",
+      "log": ".omo/evidence/v2/task-5-resume-parity.txt",
+      "artifact": ".omo/evidence/v2/task5_tmp2/test_resume_parity_and_wrong_c0/last.pt"
+    },
+    {
+      "name": "Locked-test ingestion rejection",
+      "invocation": ".venv/bin/python -m pytest -q test_train_v2.py -k rejects_locked_test",
+      "observable": "exit code 0; locked_test/manifest.csv raises before audio access",
+      "log": ".omo/evidence/v2/task-5-locked-test-rejection.txt",
+      "artifact": ".omo/evidence/v2/task5_tmp2/test_rejects_locked_test_befor0/locked_test/manifest.csv"
+    },
+    {
+      "name": "Pinned AST optimizer and trainable-scope contract",
+      "invocation": ".venv/bin/python inline load of _workspace/v2_models/ast through ASTMultiTask.from_pretrained and train_v2._optimizer",
+      "observable": "exit code 0; frozen=3845 head-only parameters at 3e-4; last-block=3845 head parameters at 1e-4 plus 7089408 backbone parameters at 1e-5",
+      "log": ".omo/evidence/v2/task-5-pinned-assets-contract.txt",
+      "artifact": "_workspace/v2_models/ast/model.safetensors"
+    },
+    {
+      "name": "Best-epoch CPU snapshot remains immutable",
+      "invocation": ".venv/bin/python -m pytest -q test_train_v2.py -k best_epoch_snapshot",
+      "observable": "exit code 0; optimizer changes live model parameters while the captured best-state tensors remain byte-identical",
+      "log": ".omo/evidence/v2/task-5-best-snapshot-regression.txt",
+      "artifact": ".omo/evidence/v2/task-5-final-after-review.txt"
+    },
+    {
+      "name": "Training and deployment share non-16k resampling",
+      "invocation": ".venv/bin/python -m pytest -q test_train_v2.py -k non_16k -vv",
+      "observable": "exit code 0; the real train_v2.predict_rows and v2_inference.predict_audio_file paths agree within absolute tolerance 1e-5 for a 44.1 kHz WAV",
+      "log": ".omo/evidence/v2/task-5-shared-resampler.txt",
+      "artifact": ".omo/evidence/v2/task-5-final-review-fixes.txt"
+    }
+  ]
+}

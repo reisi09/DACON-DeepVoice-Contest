@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "scenario": "final Korean report and compact sidecar preserve raw metrics, corrected metadata, E1 architecture/sampler semantics, explicit generalization limits, artifact integrity, and resolvable evidence links",
+  "invocation": ".venv/bin/python inline semantic validation; captured in final_report_validation.log",
+  "checks": {
+    "sidecar_json_parses": true,
+    "canonical_global_components": true,
+    "e8_noniterative": true,
+    "e6_l12_seed_mean": true,
+    "e6_bootstrap_exact": true,
+    "e6_ensemble_recomputed": true,
+    "qa_77_exact": true,
+    "archive_receipt": true,
+    "all_experiment_sections": true,
+    "correct_e1_arch_and_sampler": true,
+    "limitations_explicit": true,
+    "claim_limits_present": true,
+    "failure_history_bounded": true,
+    "humanize_receipt": true,
+    "no_pending_review_text": true,
+    "relative_links_resolve": true
+  },
+  "missing_links": [],
+  "artifacts": {
+    "report": "results/eight_h100_20260917/FINAL_REPORT.md",
+    "sidecar": "results/eight_h100_20260917/FINAL_REPORT.metrics.json",
+    "canonical_summary": "results/eight_h100_20260917/corrected_summary/final_aggregation.corrected.json",
+    "qa": ".omo/evidence/eight_h100_20260917/terminal_qa.json"
+  }
+}

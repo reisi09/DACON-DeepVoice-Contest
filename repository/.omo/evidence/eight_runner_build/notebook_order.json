@@ -1,0 +1,21 @@
+{
+  "scenario": "generated notebook execution order",
+  "invocation": "python build_eight_h100_notebook.py plus AST/order validator",
+  "binary_observable": {
+    "all_code_cells_compile": true,
+    "tokens_unique": true,
+    "nondecreasing_required_order": true,
+    "code_cell_indices": [
+      1,
+      2,
+      2,
+      3,
+      4,
+      5,
+      5,
+      6,
+      7
+    ]
+  },
+  "artifact": "DACON_Eight_H100.ipynb"
+}

@@ -1,0 +1,154 @@
+- main:
+  - heading "딥보이스 범죄 대응을 위한 AI 탐지 모델 경진대회" [level=1]
+  - heading "알고리즘 | 코드 제출 평가 | 오디오 | 딥보이스" [level=2]
+  - list:
+    - img "moneyIcon"
+    - text: 상금 4,200만 원
+    - generic: 󰅐
+    - text: 2026.08.26 ~ 2026.09.30 10:00
+    - link "+ Google Calendar":
+      - /url: https://calendar.google.com/calendar/render?action=TEMPLATE&text=딥보이스 범죄 대응을 위한 AI 탐지 모델 경진대회&dates=20260826T100000/20260930T175900
+      - generic: + Google Calendar
+    - generic: 󰀏
+    - text: 1,013명
+    - generic: 󰭦
+    - text: 종료까지 D-14
+  - button "공유하기":
+    - img "공유하기"
+  - generic: 참여중
+  - tablist:
+    - tab "대회안내"
+    - tab "데이터"
+    - tab "코드 공유"
+    - tab "토크"
+    - tab "리더보드"
+    - tab "팀"
+    - tab "제출" [selected]
+  - separator
+  - generic: 나의 제출
+  - paragraph: 모든 사용자의 제출물들은 데이콘 Fraud Detection System에 의해 모니터링 되며,
+  - paragraph: 부정 행위 등 규정 위반에 연관된 팀들은 모두 동반 탈락 되니 유의하시기 바랍니다.
+  - paragraph: 또한, 설치 오류 상태에서는 제출 횟수가 차감되지 않습니다.
+  - paragraph: 한 개의 파일(zip)만 가능합니다.
+  - generic: 파일첨부
+  - separator
+  - generic: memo
+  - textbox "memo"
+  - generic: 0 / 1000
+  - button "제출" [disabled]:
+    - generic: 제출
+  - tablist:
+    - tab "최신순" [selected]
+    - tab "점수순"
+  - button:
+    - generic: 󰑓
+  - table:
+    - rowgroup:
+      - row "제목 제출 일시 점수":
+        - columnheader "제목"
+        - columnheader "제출 일시"
+        - columnheader "점수"
+    - rowgroup:
+      - row "submit.zip 2026-09-16 23:06:28 0.6378679788":
+        - cell "submit.zip"
+        - cell "2026-09-16 23:06:28"
+        - cell "0.6378679788"
+      - row "M330_MLP_full1206_submit.zip 2026-09-16 07:05:24 0.7396465503":
+        - cell "M330_MLP_full1206_submit.zip"
+        - cell "2026-09-16 07:05:24"
+        - cell "0.7396465503"
+      - row "C08_submit.zip 2026-09-16 02:34:32 0.7314822646":
+        - cell "C08_submit.zip"
+        - cell "2026-09-16 02:34:32"
+        - cell "0.7314822646"
+      - row "C3_full_clean_submission.zip 2026-09-15 14:06:12 0.6843536931":
+        - cell "C3_full_clean_submission.zip"
+        - cell "2026-09-15 14:06:12"
+        - cell "0.6843536931"
+      - row "V6_final_submission_fixed.zip 2026-09-15 08:42:35 0.6727822646":
+        - cell "V6_final_submission_fixed.zip"
+        - cell "2026-09-15 08:42:35"
+        - cell "0.6727822646"
+      - row "V6_final_submission.zip 2026-09-15 07:22:59 제출 오류":
+        - cell "V6_final_submission.zip"
+        - cell "2026-09-15 07:22:59"
+        - cell "제출 오류":
+          - generic: 제출 오류
+      - row "V5_B1_fixed.zip 2026-09-14 15:48:35 0.6776485873":
+        - cell "V5_B1_fixed.zip"
+        - cell "2026-09-14 15:48:35"
+        - cell "0.6776485873"
+      - row "V5_B1.zip 2026-09-14 11:17:33 제출 오류":
+        - cell "V5_B1.zip"
+        - cell "2026-09-14 11:17:33"
+        - cell "제출 오류":
+          - generic: 제출 오류
+      - row "baseline_submit.zip 2026-09-13 17:25:28 0.6909110688":
+        - cell "baseline_submit.zip"
+        - cell "2026-09-13 17:25:28"
+        - cell "0.6909110688"
+      - row "DACON_Sumbit_1.zip 2026-09-13 12:48:06 0.6174819841":
+        - cell "DACON_Sumbit_1.zip"
+        - cell "2026-09-13 12:48:06"
+        - cell "0.6174819841"
+      - row "DACON_236749_AST_epoch17.zip 2026-09-13 11:25:23 0.6453405503":
+        - cell "DACON_236749_AST_epoch17.zip"
+        - cell "2026-09-13 11:25:23"
+        - cell "0.6453405503"
+      - row "baseline_submit.zip 2026-09-13 00:35:37 0.6909110688":
+        - cell "baseline_submit.zip"
+        - cell "2026-09-13 00:35:37"
+        - cell "0.6909110688"
+  - button:
+    - generic: 󰁝
+  - contentinfo:
+    - button "이용약관"
+    - button "개인정보 처리방침"
+    - button "대회 주최 문의"
+    - button "교육 문의"
+    - button "데이콘 서비스 소개"
+    - button "데이콘 채용"
+    - link "Kakao logo":
+      - /url: https://pf.kakao.com/_bmVkxj
+      - img "Kakao logo"
+    - link "Instagram logo":
+      - /url: https://www.instagram.com/daconio
+      - img "Instagram logo"
+    - link "YouTube logo":
+      - /url: https://www.youtube.com/@%EB%8D%B0%EC%9D%B4%EC%BD%98
+      - img "YouTube logo"
+    - link "Blog logo":
+      - /url: https://m.blog.naver.com/daconist?tab=1
+      - img "Blog logo"
+    - button "lang logo 한국어":
+      - img "lang logo"
+      - text: 한국어
+    - paragraph:
+      - text: 데이콘(주) | 대표 김국진 | 699-81-01021
+      - text: "통신판매업 신고번호: 제 2021-서울영등포-1704호"
+      - text: "직업정보제공사업 신고번호: J1204020250004"
+      - text: 서울특별시 영등포구 은행로 3 익스콘벤처타워 901호
+      - text: 이메일
+      - link "dacon@dacon.io":
+        - /url: mailto:dacon@dacon.io
+      - text: "| 전화번호: 070-4102-0545"
+      - text: Copyright ⓒ DACON Co.,Ltd All rights reserved
+- link "홈 Icon":
+  - /url: /
+  - generic: 홈
+  - img "Icon"
+- link "커뮤니티 Icon":
+  - /url: /community/
+  - generic: 커뮤니티
+  - img "Icon"
+- link "대회 currentIcon":
+  - /url: /competitions
+  - generic: 대회
+  - img "currentIcon"
+- link "학습 Icon":
+  - /url: /hackathon
+  - generic: 학습
+  - img "Icon"
+- button "더보기 Icon":
+  - generic: 더보기
+  - img "Icon"

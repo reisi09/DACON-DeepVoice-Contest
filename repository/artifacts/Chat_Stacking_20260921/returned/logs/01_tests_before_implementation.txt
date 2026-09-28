@@ -1,0 +1,28 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+________________ test_real_heads_cache_baseline_and_seed_replay ________________
+
+    def test_real_heads_cache_baseline_and_seed_replay():
+>       from dacon_stacking.features import FixtureAdapter
+E       ModuleNotFoundError: No module named 'dacon_stacking.features'
+
+tests/test_replay.py:12: ModuleNotFoundError
+____________ test_different_timebases_and_no_invalid_padding_weight ____________
+
+    def test_different_timebases_and_no_invalid_padding_weight():
+>       from dacon_stacking.features import time_layout, aligned_summary
+E       ModuleNotFoundError: No module named 'dacon_stacking.features'
+
+tests/test_replay.py:26: ModuleNotFoundError
+_______________ test_forbidden_and_missing_features_are_rejected _______________
+
+    def test_forbidden_and_missing_features_are_rejected():
+>       from dacon_stacking.features import strict_frame, FEATURE_SETS
+E       ModuleNotFoundError: No module named 'dacon_stacking.features'
+
+tests/test_replay.py:41: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_replay.py::test_real_heads_cache_baseline_and_seed_replay - ModuleNotFoundError: No module named 'dacon_stacking.features'
+FAILED tests/test_replay.py::test_different_timebases_and_no_invalid_padding_weight - ModuleNotFoundError: No module named 'dacon_stacking.features'
+FAILED tests/test_replay.py::test_forbidden_and_missing_features_are_rejected - ModuleNotFoundError: No module named 'dacon_stacking.features'
+3 failed in 0.08s

@@ -1,0 +1,292 @@
+{
+  "report_scope": "Historical failure diagnosis and completed Recovery V3 A100 comparison; all new candidates rejected",
+  "official_submissions": [
+    {
+      "id": 88418,
+      "filename": "baseline_submit.zip",
+      "score": 0.6909110688,
+      "ADS": 0.6577539683,
+      "CPS": 0.9893249735,
+      "seconds": 1319
+    },
+    {
+      "id": 88630,
+      "filename": "DACON_236749_AST_epoch17.zip",
+      "score": 0.6453405503,
+      "ADS": 0.6212619048,
+      "CPS": 0.8620483598,
+      "seconds": 81
+    },
+    {
+      "id": 88673,
+      "filename": "DACON_Sumbit_1.zip",
+      "score": 0.6174819841,
+      "ADS": 0.5881111111,
+      "CPS": 0.8818198413,
+      "seconds": 82
+    }
+  ],
+  "full1029_identity": {
+    "local_download": "/Users/choiwuseck/Downloads/DACON_Sumbit_1.zip",
+    "zip_sha256": "af071e6090def81ac3074dea65235502ea35c2c9d59dc04e88aafdbc5c61d424",
+    "weights_sha256": "a6e97595b15e12322a5703561e8923b4723b9b515da3646bf37210b790539408",
+    "matches_full1029_refit": true
+  },
+  "official_degradation": {
+    "88418": {
+      "score_change": -0.07342908469999998,
+      "ADS_weighted_change": -0.06267857147999997,
+      "CPS_weighted_change": -0.010750513220000002
+    },
+    "88630": {
+      "score_change": -0.027858566200000046,
+      "ADS_weighted_change": -0.029835714329999964,
+      "CPS_weighted_change": 0.0019771481499999966
+    }
+  },
+  "training_audit": {
+    "all_final_tensors_finite": true,
+    "export_equals_epoch17_trainable_state": true,
+    "heads_changed_since_full_warmup": [
+      "heads.0.bias",
+      "heads.0.weight",
+      "heads.1.bias",
+      "heads.1.weight",
+      "heads.2.bias",
+      "heads.2.weight",
+      "heads.3.bias",
+      "heads.3.weight",
+      "heads.4.bias",
+      "heads.4.weight"
+    ],
+    "frozen_tensors_identical_to_pretrained": 181,
+    "trainable_backbone_tensors_changed": [
+      "backbone.encoder.layer.11.attention.attention.key.bias",
+      "backbone.encoder.layer.11.attention.attention.key.weight",
+      "backbone.encoder.layer.11.attention.attention.query.bias",
+      "backbone.encoder.layer.11.attention.attention.query.weight",
+      "backbone.encoder.layer.11.attention.attention.value.bias",
+      "backbone.encoder.layer.11.attention.attention.value.weight",
+      "backbone.encoder.layer.11.attention.output.dense.bias",
+      "backbone.encoder.layer.11.attention.output.dense.weight",
+      "backbone.encoder.layer.11.intermediate.dense.bias",
+      "backbone.encoder.layer.11.intermediate.dense.weight",
+      "backbone.encoder.layer.11.layernorm_after.bias",
+      "backbone.encoder.layer.11.layernorm_after.weight",
+      "backbone.encoder.layer.11.layernorm_before.bias",
+      "backbone.encoder.layer.11.layernorm_before.weight",
+      "backbone.encoder.layer.11.output.dense.bias",
+      "backbone.encoder.layer.11.output.dense.weight",
+      "backbone.layernorm.bias",
+      "backbone.layernorm.weight"
+    ],
+    "trainable_backbone_tensors_unchanged": [],
+    "warmup_total_exposures": 8232,
+    "finetune_total_exposures": 17493,
+    "files_per_epoch": 1029,
+    "private_competition_evaluation_data_used": false
+  },
+  "prepared_audio_audit": {
+    "files": 1029,
+    "split_counts": {
+      "dev_train": 633,
+      "dev_select": 122,
+      "test_generator": 176,
+      "test_source": 98
+    },
+    "actual_wav_headers_read": 1029,
+    "minimum_seconds": 4.0,
+    "maximum_seconds": 10.0,
+    "source_crop": "v2_data.decode_audio(limit_seconds=10), central crop; this is prepared-corpus coverage, not full upstream-dataset training"
+  },
+  "prior_selection": {
+    "selected": "G0",
+    "reason": "no_candidate_passed_all_gates",
+    "failed_gates": {
+      "AST_FROZEN": [
+        "eer_regression",
+        "companion_auc_regression",
+        "passed"
+      ],
+      "AST_LAST_BLOCK": [
+        "eer_regression",
+        "companion_auc_regression",
+        "passed"
+      ]
+    }
+  },
+  "development_metric_coverage": {
+    "score": null,
+    "metrics": {
+      "file_eer": 0.1557112068965517,
+      "voice_eer": 0.030414746543778806,
+      "music_eer": 0.603030303030303,
+      "voice_presence_auc": 1.0,
+      "music_presence_auc": 0.923202614379085
+    },
+    "invalid": {},
+    "partial": {
+      "voice_eer": "known subset only; unknown relevant labels: 36",
+      "voice_presence_auc": "known subset only; unknown relevant labels: 32"
+    },
+    "counts": {
+      "file_eer": 122,
+      "voice_eer": 66,
+      "music_eer": 68,
+      "voice_presence_auc": 90,
+      "music_presence_auc": 122
+    },
+    "unknown_counts": {
+      "file_eer": 0,
+      "voice_eer": 36,
+      "music_eer": 0,
+      "voice_presence_auc": 32,
+      "music_presence_auc": 0
+    },
+    "coverage": {
+      "file_eer": 1.0,
+      "voice_eer": 0.6470588235294118,
+      "music_eer": 1.0,
+      "voice_presence_auc": 0.7377049180327869,
+      "music_presence_auc": 1.0
+    }
+  },
+  "epoch_extension_diagnostics": {
+    "development": {
+      "G0": 0.757797251419444,
+      "AST_6": 0.8657196510733428,
+      "AST_extended": 0.9038005610039294
+    },
+    "combined": {
+      "G0": 0.7590361544239564,
+      "AST_6": 0.7744196671928713,
+      "AST_extended": 0.7758085560817601,
+      "hybrid_6": 0.7922045896318654,
+      "hybrid_extended": 0.7922045896318654
+    },
+    "test_generator": {
+      "G0": 0.7769378744320695,
+      "AST_6": 0.7267333189256565,
+      "AST_extended": 0.7267333189256565,
+      "hybrid_6": 0.7563385820835512,
+      "hybrid_extended": 0.7563385820835512
+    },
+    "test_source": {
+      "G0": 0.7429146633259054,
+      "AST_6": 0.8948352587818995,
+      "AST_extended": 0.8948352587818995,
+      "hybrid_6": 0.8735093179216844,
+      "hybrid_extended": 0.8735093179216844
+    }
+  },
+  "epoch_extension_deltas": {
+    "development": 0.03808090993058655,
+    "reused_274": 0.001388888888888884
+  },
+  "confirmed_findings": [
+    "All three official submissions have numerical scores.",
+    "Latest local renamed ZIP and weights match full1029 refit.",
+    "Original and epoch-extension selection artifacts selected G0; AST promotion bypassed failed gates.",
+    "All 1029 prepared WAVs are 4-10 seconds.",
+    "AST packaged code traverses all enumerated evaluation files and all audio windows; code inspection is not server-side per-file execution evidence.",
+    "Development metrics have unknown labels; official score is null and reported proxy is partial.",
+    "Epoch extension changed checkpoint and predictions; reused combined diagnostic improved far less than development."
+  ],
+  "causal_hypotheses_not_proven": [
+    "Replacing PANNs, source separation and specialized fake detection with shared AST removed useful generalization.",
+    "Short training clips plus mean window pooling dilute localized evidence on long files.",
+    "Selection on a small partial-label source distribution overstates out-of-distribution quality."
+  ],
+  "unavailable_evidence": [
+    "Private server per-file inference logs and per-file ground truth.",
+    "Per-stage timing for historical official submissions.",
+    "Independent validation of full1029 refit after former holdouts were included.",
+    "New Recovery V3 comparison metrics at report creation."
+  ],
+  "recovery_contract": {
+    "candidate_order": [
+      "G0",
+      "SONICS_RAW",
+      "SONICS_STEM",
+      "BLEND_RAW",
+      "BLEND_STEM"
+    ],
+    "protected_fields": [
+      "VOICE_FAKE_PROB",
+      "VOICE_PRESENT_PROB",
+      "MUSIC_PRESENT_PROB"
+    ],
+    "blend_weight": 0.5,
+    "training_this_wave": false,
+    "old_dev_selection_files": 122,
+    "old_generator_veto_files": 176,
+    "old_source_veto_files": 98,
+    "dev_and_fresh_min_diagnostic_gain": 0.005,
+    "max_eer_regression": 0.02,
+    "max_companion_auc_regression": 0.01,
+    "bootstrap_resamples": 2000,
+    "min_bootstrap_win_rate": 0.7,
+    "min_bootstrap_p10": -0.005,
+    "fresh_role": "Accept/reject one frozen candidate only; do not select runner-up after veto.",
+    "fresh_results_read": true
+  },
+  "new_run_snapshot": {
+    "run_id": "20260913_044621",
+    "status": "finished",
+    "new_metric_values": {
+      "G0": 0.757797251419444,
+      "SONICS_RAW": 0.6940159104543745,
+      "SONICS_STEM": 0.7178600662985304,
+      "BLEND_RAW": 0.7282175100401337,
+      "BLEND_STEM": 0.7435604973330132
+    },
+    "promotion_decision": "retain G0; all four new candidates failed development gates",
+    "fresh_baseline_diagnostic": 0.8185620300751879,
+    "submission_status": "not_submitted",
+    "experiment_seconds": 570.4202938079834,
+    "first_cell_to_release_seconds": 842.4277806282043,
+    "displayed_units_before": 54.36,
+    "displayed_units_after": 53.34,
+    "displayed_units_consumed": 1.02,
+    "active_sessions_after": 0,
+    "drive_folder": "https://drive.google.com/drive/folders/1_1YslMNK2SWyxHEmL2EHfgZ0gDCc2nHl",
+    "notebook": "https://colab.research.google.com/drive/1TdF2g6JiOnryZsD38QyNDrQNWd67m4K8"
+  },
+  "sources": {
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/submission_audit_20260913/audit.json": "dc5d0fb953ebb73b250dbb8bf7d4d4995c9a5bef8499e4989c075b607d5e5f29",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/submission_audit_20260913/submission_table.txt": "fedb0baba070bb52dee79ed0447219e1f890601fae222a626be574edd8f3fe1f",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/v2_colab_20260912_174330/selection.json": "78f456f2e9f2845bdedfc672a4f10e6b7fbba83715ba07f7910c3182c5ae91b7",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/epoch_extension_20260913_013624/selection.json": "b8951ad035c73174781863af3bb82bc79635b670eda3b9695a6e37cd677bbda0",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/epoch_extension_20260913_013624/measurement_audit.json": "fd8c06b50163db35e603900bcd37ddd83a7712a44eba3e467659f32f182ad1ee",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/full_refit_20260913/final_weight_audit.json": "8beb97290c276cffbc126f988c62e1a8f910037f134fc98478253162e17b0c30",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/v2_validation/development/manifest.csv": "4fd72e3731de71c5ae4fccd4ca8a1e4d05f9e88a5f8143a60209e7cf9c2de01a",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/v2_validation/locked_test/manifest.csv": "a11ae794de70f83c0a325f884d8ba920b4a1b3653a2936777a08a0be7c0c735d",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/v2_data.py": "b9e11433f65ecd5110a4d3a2bd9e101f7e25fee2081b52a89bd034fabe783868",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/ast_multitask.py": "2204c7a406f2865a9fc84ea9efb3a7ea3bfeaeb1e894eb15ef80671944c69a6b",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/v2_inference.py": "a6c98733df52013fc4410efdb4afed749cf33a8ad8d2f6f5875ec96ca7a1a4f2",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/baseline_original/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/plans/recovery-v3.md": "0cc7ee7b540db86a7ae54ee0ba133a0894f5b4ad313a47429354a278fe245a67",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/recovery_selection.py": "e804c6126634cb4159d138179754197d9c99963f5e3a51945ec952d92938d525",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/recovery_fusion.py": "45d261e2468eb53fab2d4744c0cef4e3cf14eb8e0f0c6f64918695a5c34d2482",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/recovery_sonics.py": "4882c036f504695df46162b81ca794a897acde7a671c564231eea2066b82e0ba",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/fresh_opened.json": "28dd5ba1009ee3c7a0383181e003b4a987ada29c2dafe2a710794659d52fefe7",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/raw_features.json": "21c80c80dbca3a02a2c9ba2d27810b0f1c1df581e4de86e53036a1f46a098d80",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/release_requested.json": "89a9ba7c0dde238f83d30b841f61e76351fd11f0437e9f5c66c658cf9841bcce",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/comparison.json": "b11dbde4942b036b176b498beaab1993cea78b8a2c9b43a38332164420cdbaf4",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/fresh_raw_features.json": "687dd48f1662cadd661683d23b561fee6f205fd1d4064bf432bc3d48772ed8fc",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/input_archives.json": "9e474fe0b65a981bd30b1954da1b9cbbd37dda0801b7d00ae1eee1e0ef605620",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/budget.json": "61dda3fa78f1f663632998ed4fed6b25dfdd3d41b350639936fa6ca0ad029e08",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/rescored_roles.json": "a4f4e8c41d751fd25cc927b3eb63e45e0d16ad2b753790f1e7963d1bccb464d9",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/candidate_lock.json": "8710799497c84f816018d3c489f068bfc2008c3743cbe69fbbab2dde738570b0",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/selection.json": "e260aa6d9f3f72002209fff921e94924df990a9cf91c5473a1023804319afe16",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/source_hashes.json": "ec36851093c433ab770c0e0506e7849a18b67736a38378c4574cea349d05da96",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/verification.json": "ce838dc105d2a0ad2d1c57524c2c53f9efbf9958550d41580afa93a2fa68f656",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/finished.json": "df311cc9e62a79dec4eca979723dd9282c39d20f984e3d1ea881f77fce50dced",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/environment.json": "65fb229c66ea72e23c8a69c7385333979a9af076e7c60b6287e2b8727e4a0b79",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/candidate_lock_written.json": "8fda7b088c5c27eb6224b7a5aca9200d6fe4108ca2e02b140d07dcd178d05fbb",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/coverage_timing.json": "8d64541722f30874a82a3ba049bc8d7dc2d5a1dba0b3f66c75d58fe3c2cd17cc",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/colab_20260913_044621/executed.ipynb": "336f8bff644ed99041dd1877cf830c4d99578fc74a2dd9bc6f02a0c48819cb0b",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/recovery_v3/new_candidate_diagnostics.json": "967d81ade2dc187f7c128407d3052e1ec91568afc6288506e0ffe543d87488bf",
+    "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/recovery_sonics_runtime/score_audit_report.md": "f309fdb56b980e042c82ec5a4834a3a67f983b347d481c5a94a86f2537ca394e"
+  }
+}

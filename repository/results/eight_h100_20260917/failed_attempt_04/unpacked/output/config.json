@@ -1,0 +1,23 @@
+{
+  "antideepfake": "/root/voice_music_h100_20260917/source/antideepfake",
+  "assets": "/root/redesign_h100_20260917/assets",
+  "attempt": 4,
+  "export_reserve_seconds": 600,
+  "head_batch_size": 32,
+  "head_steps": 500,
+  "kernel": "eight-h100",
+  "lora_batch_size": 2,
+  "lora_steps": 200,
+  "mode": "main_recovery",
+  "notebook": "DACON_Eight_H100.ipynb",
+  "pause_deadline_epoch": 1789663360,
+  "resumed_epoch": 1789650933,
+  "root": "/root/eight_h100_20260917",
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "shared": "/shared/eight-h100-20260917",
+  "started_epoch": 1789648960
+}

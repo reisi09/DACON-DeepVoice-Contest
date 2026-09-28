@@ -1,0 +1,7 @@
+{"arm": "legacy", "seed": 41, "unique_rows": 789, "dev_eer": 0.15913669064748198}
+{"arm": "legacy", "seed": 42, "unique_rows": 789, "dev_eer": 0.16273381294964023}
+{"arm": "legacy", "seed": 43, "unique_rows": 789, "dev_eer": 0.16273381294964023}
+{"arm": "corrected", "seed": 41, "unique_rows": 831, "dev_eer": 0.238705035971223}
+{"arm": "corrected", "seed": 42, "unique_rows": 831, "dev_eer": 0.20071942446043162}
+{"arm": "corrected", "seed": 43, "unique_rows": 831, "dev_eer": 0.20071942446043162}
+{"status": "complete", "output": "results/local_sampler_20260918", "paired": {"dev": {"delta_eer": 0.041582733812949635, "ci95": [-0.0055555555555555376, 0.07857998720031481], "components": 27, "resamples": 1000, "valid": 1000, "uncertain": false, "invalid_resamples": 0, "invalid_fraction": 0.0, "scope": "paired fixed-model probability-ensemble group bootstrap; excludes training and layer-selection uncertainty"}, "test": {"delta_eer": 0.0, "ci95": [-0.09945820951331354, 0.1008583902310924], "components": 24, "resamples": 1000, "valid": 1000, "uncertain": false, "invalid_resamples": 0, "invalid_fraction": 0.0, "scope": "paired fixed-model probability-ensemble group bootstrap; excludes training and layer-selection uncertainty"}}}

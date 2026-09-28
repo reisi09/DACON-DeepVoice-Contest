@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 3,
+  "transport": "multi_agent_v2",
+  "teamId": "40a9406c-068d-4a5a-9c5a-6d4d7c2ac230",
+  "teamName": "audio-research-2021-2026",
+  "sessionName": "Dacon five-year evidence review",
+  "sessionId": "team-ccf8ffd5",
+  "threadTitleConvention": null,
+  "status": "archived",
+  "createdAt": "2026-09-17T09:51:38.108Z",
+  "updatedAt": "2026-09-17T10:21:05.695Z",
+  "archivedAt": "2026-09-17T10:21:05.695Z",
+  "leader": {
+    "kind": "main-session",
+    "sessionId": null,
+    "agentPath": "/root"
+  },
+  "communication": {
+    "memberLanguage": "english",
+    "replyToUserInUserLanguage": true
+  },
+  "worktree": {
+    "enabled": false,
+    "baseBranch": "dev",
+    "root": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/teams/team-ccf8ffd5/worktrees"
+  },
+  "paths": {
+    "dir": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/teams/team-ccf8ffd5",
+    "team": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/teams/team-ccf8ffd5/team.json",
+    "guide": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/teams/team-ccf8ffd5/guide.md",
+    "artifacts": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/teams/team-ccf8ffd5/artifacts"
+  },
+  "members": [
+    {
+      "id": "A",
+      "name": "speech_early",
+      "focus": "Speech detection 2021-2023: AASIST, SSL anti-spoofing, RawBoost, losses and generalization",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "speech_early",
+      "agentPath": "/root/speech_early",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "B",
+      "name": "speech_recent",
+      "focus": "Speech detection 2024-2026: foundation detectors, SLS/layer selection, parameter-efficient adaptation",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "speech_recent",
+      "agentPath": "/root/speech_recent",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "C",
+      "name": "robust_partial",
+      "focus": "Codec/channel robustness, enhanced real audio, partial splices and short fake localization",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "robust_partial",
+      "agentPath": "/root/robust_partial",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "D",
+      "name": "music_papers",
+      "focus": "AI music detection papers and benchmarks: semantic versus decoder artifacts, SONICS, cross-generator generalization",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "music_papers",
+      "agentPath": "/root/music_papers",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "E",
+      "name": "singing_svdd",
+      "focus": "Singing deepfake datasets and SVDD winning systems with verified rank",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "singing_svdd",
+      "agentPath": "/root/singing_svdd",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "F",
+      "name": "asvspoof_winners",
+      "focus": "ASVspoof2021 and ASVspoof5 official ranking and leading open systems",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "asvspoof_winners",
+      "agentPath": "/root/asvspoof_winners",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "G",
+      "name": "add_challenges",
+      "focus": "ADD2022/2023/2025 and partial-audio challenge leading systems",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "add_challenges",
+      "agentPath": "/root/add_challenges",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "H",
+      "name": "kaggle_audio",
+      "focus": "Kaggle2021-2026 audio top solutions and publicly verifiable notebooks",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "kaggle_audio",
+      "agentPath": "/root/kaggle_audio",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "I",
+      "name": "safe_other",
+      "focus": "SAFE2025 and other non-ASV/ADD/SVDD direct deepfake competition solutions",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "safe_other",
+      "agentPath": "/root/safe_other",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "J",
+      "name": "dataset_validity",
+      "focus": "Benchmark leakage, source confounding, evaluation transfer and dataset diversification research",
+      "lens": "perspective",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "dataset_validity",
+      "agentPath": "/root/dataset_validity",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "K",
+      "name": "local_flow",
+      "focus": "Current local inference/caching/fusion/layer/pooling code audit; what remains genuinely untested",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "local_flow",
+      "agentPath": "/root/local_flow",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived"
+    },
+    {
+      "id": "L",
+      "name": "local_history",
+      "focus": "Prior local experiment evidence and failures; novelty and duplicated work audit",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "evaluation_audit",
+      "agentPath": "/root/evaluation_audit",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived",
+      "note": "Existing agent reused because native agent thread limit was reached. N external verification incomplete; root owns closure."
+    },
+    {
+      "id": "M",
+      "name": "music_code",
+      "focus": "Public AI-music detector implementation deep dive with pinned code and reproducibility constraints",
+      "lens": "area",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "audit_script_review",
+      "agentPath": "/root/audit_script_review",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived",
+      "note": "Existing agent reused because native agent thread limit was reached. N external verification incomplete; root owns closure."
+    },
+    {
+      "id": "N",
+      "name": "claim_skeptic",
+      "focus": "Independently fact-check supplied review paper IDs, rank claims, label/rule compatibility and strongest contrary evidence",
+      "lens": "perspective",
+      "deliverable": "Primary-source matrix, concrete experiments, evidence limits, CLAIMS and EXPAND messages",
+      "taskName": "next_experiment_data_inventory",
+      "agentPath": "/root/next_experiment_data_inventory",
+      "threadId": null,
+      "threadTitle": null,
+      "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘",
+      "worktree": {
+        "path": null,
+        "branch": null
+      },
+      "status": "archived",
+      "note": "Existing agent reused because native agent thread limit was reached. N external verification incomplete; root owns closure."
+    }
+  ],
+  "log": [
+    {
+      "ts": "2026-09-17T09:51:38.108Z",
+      "event": "created",
+      "detail": "team audio-research-2021-2026"
+    },
+    {
+      "ts": "2026-09-17T09:52:02.516Z",
+      "event": "add-member",
+      "detail": "member A (area): Speech detection 2021-2023: AASIST, SSL anti-spoofing, RawBoost, losses and generalization"
+    },
+    {
+      "ts": "2026-09-17T09:52:02.573Z",
+      "event": "add-member",
+      "detail": "member B (area): Speech detection 2024-2026: foundation detectors, SLS/layer selection, parameter-efficient adaptation"
+    },
+    {
+      "ts": "2026-09-17T09:52:02.629Z",
+      "event": "add-member",
+      "detail": "member C (area): Codec/channel robustness, enhanced real audio, partial splices and short fake localization"
+    },
+    {
+      "ts": "2026-09-17T09:52:02.684Z",
+      "event": "add-member",
+      "detail": "member D (area): AI music detection papers and benchmarks: semantic versus decoder artifacts, SONICS, cross-generator generalization"
+    },
+    {
+      "ts": "2026-09-17T09:52:02.738Z",
+      "event": "add-member",
+      "detail": "member E (area): Singing deepfake datasets and SVDD winning systems with verified rank"
+    },
+    {
+      "ts": "2026-09-17T09:52:02.794Z",
+      "event": "add-member",
+      "detail": "member F (area): ASVspoof2021 and ASVspoof5 official ranking and leading open systems"
+    },
+    {
+      "ts": "2026-09-17T09:52:02.849Z",
+      "event": "add-member",
+      "detail": "member G (area): ADD2022/2023/2025 and partial-audio challenge leading systems"
+    },
+    {
+      "ts": "2026-09-17T09:52:02.904Z",
+      "event": "add-member",
+      "detail": "member H (area): Kaggle2021-2026 audio top solutions and publicly verifiable notebooks"
+    },
+    {
+      "ts": "2026-09-17T09:52:02.960Z",
+      "event": "add-member",
+      "detail": "member I (area): SAFE2025 and other non-ASV/ADD/SVDD direct deepfake competition solutions"
+    },
+    {
+      "ts": "2026-09-17T09:52:03.014Z",
+      "event": "add-member",
+      "detail": "member J (perspective): Benchmark leakage, source confounding, evaluation transfer and dataset diversification research"
+    },
+    {
+      "ts": "2026-09-17T09:52:03.068Z",
+      "event": "add-member",
+      "detail": "member K (area): Current local inference/caching/fusion/layer/pooling code audit; what remains genuinely untested"
+    },
+    {
+      "ts": "2026-09-17T09:52:03.121Z",
+      "event": "add-member",
+      "detail": "member L (area): Prior local experiment evidence and failures; novelty and duplicated work audit"
+    },
+    {
+      "ts": "2026-09-17T09:52:03.175Z",
+      "event": "add-member",
+      "detail": "member M (area): Public AI-music detector implementation deep dive with pinned code and reproducibility constraints"
+    },
+    {
+      "ts": "2026-09-17T09:52:03.231Z",
+      "event": "add-member",
+      "detail": "member N (perspective): Independently fact-check supplied review paper IDs, rank claims, label/rule compatibility and strongest contrary evidence"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.142Z",
+      "event": "bind-agent",
+      "detail": "member A -> agent /root/speech_early"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.201Z",
+      "event": "bind-agent",
+      "detail": "member B -> agent /root/speech_recent"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.262Z",
+      "event": "bind-agent",
+      "detail": "member C -> agent /root/robust_partial"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.319Z",
+      "event": "bind-agent",
+      "detail": "member D -> agent /root/music_papers"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.377Z",
+      "event": "bind-agent",
+      "detail": "member E -> agent /root/singing_svdd"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.434Z",
+      "event": "bind-agent",
+      "detail": "member F -> agent /root/asvspoof_winners"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.489Z",
+      "event": "bind-agent",
+      "detail": "member G -> agent /root/add_challenges"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.544Z",
+      "event": "bind-agent",
+      "detail": "member H -> agent /root/kaggle_audio"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.600Z",
+      "event": "bind-agent",
+      "detail": "member I -> agent /root/safe_other"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.656Z",
+      "event": "bind-agent",
+      "detail": "member J -> agent /root/dataset_validity"
+    },
+    {
+      "ts": "2026-09-17T09:58:22.714Z",
+      "event": "bind-agent",
+      "detail": "member K -> agent /root/local_flow"
+    },
+    {
+      "ts": "2026-09-17T10:21:05.695Z",
+      "event": "archive",
+      "detail": "Research completed: 167 source entries, two targeted expansion rounds, independent recommendation review, no GPU activity."
+    }
+  ]
+}

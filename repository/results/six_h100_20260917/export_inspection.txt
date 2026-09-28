@@ -1,0 +1,52 @@
+    100      81 S       20:30  0.0  0.0 timeout --signal=TERM --kill-after=30s 14288s /root/fullft8/.venv/bin/python /root/six_h100_20260917/source/six_h100_run.py /root/six_h100_20260917/config.json
+wchan sigsuspend
+io rchar: 4092
+wchar: 0
+syscr: 8
+syscw: 0
+read_bytes: 0
+write_bytes: 0
+cancelled_write_bytes: 0
+
+files []
+    101     100 S       20:30  0.0  0.0 /root/fullft8/.venv/bin/python /root/six_h100_20260917/source/six_h100_run.py /root/six_h100_20260917/config.json
+wchan request_wait_answer
+io rchar: 40395780977
+wchar: 49298939
+syscr: 98722
+syscw: 25705
+read_bytes: 0
+write_bytes: 52806649
+cancelled_write_bytes: 8192
+
+files []
+output 768 47634977
+executed_notebook True
+summary {
+  "experiments": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "independently_reviewed_labels": false,
+  "leaderboard_improvement_verified": false,
+  "official_score": null,
+  "rows": 839,
+  "selected_for_more_validation": "mixture_seed41",
+  "status": "complete",
+  "variants": {
+    "15s": 104,
+    "4s": 136,
+    "60s": 87,
+    "base": 136,
+    "mp3_32k": 136,
+    "partial_music": 40,
+    "partial_voice": 16,
+    "real_voice_fake_music": 16,
+    "speech_music": 32,
+    "telephone": 136
+  }
+}

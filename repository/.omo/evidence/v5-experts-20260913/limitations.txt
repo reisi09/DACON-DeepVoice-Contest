@@ -1,0 +1,5 @@
+The 4.59 GB DF-Arena wrapper state remains inside the 4.2 GB baseline ZIP, so this bounded local run did not instantiate or backpropagate the actual 1B model. It did not claim actual-1B parity or gradients.
+
+The deterministic VoiceExpert test reproduces the original source's SSL hidden-state attention, weighted layer sum, BatchNorm/SELU, positional/class-token Conformer path and fc5 seam. It validates the corrected B>1 computation against serial original-style B=1 execution and checks update connectivity across first/middle/last miniature SSL and Conformer layers. The parent execution owns the actual checkpoint parity and full-depth audit on its configured runtime.
+
+No GPU or UI action was used.

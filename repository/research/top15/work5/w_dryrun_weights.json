@@ -1,0 +1,116 @@
+{
+ "music/s7": {
+  "real": {
+   "rows": 5580,
+   "kish_rows": 856.7,
+   "kish_groups": 19.0,
+   "max_group_share": 0.2196,
+   "max_row_over_mean": 24.01,
+   "stratum_share": {
+    "all": 1.0
+   },
+   "top_sources": {
+    "haim": 0.248,
+    "existing:FMA": 0.21,
+    "existing:constructed_music": 0.129,
+    "openmic": 0.086,
+    "constructed_song": 0.084,
+    "musan_music": 0.082
+   }
+  },
+  "fake": {
+   "rows": 6638,
+   "kish_rows": 2076.6,
+   "kish_groups": 11.8,
+   "max_group_share": 0.2884,
+   "max_row_over_mean": 30.83,
+   "stratum_share": {
+    "all": 1.0
+   },
+   "top_sources": {
+    "echoes": 0.398,
+    "haim": 0.175,
+    "sonics": 0.16,
+    "existing:FakeMusicCaps": 0.137,
+    "existing:constructed_music": 0.04,
+    "constructed_mix": 0.03
+   }
+  }
+ },
+ "music/C": {
+  "real": {
+   "rows": 5580,
+   "kish_rows": 2827.6,
+   "kish_groups": 217.1,
+   "max_group_share": 0.02,
+   "max_row_over_mean": 5.0,
+   "stratum_share": {
+    "all": 1.0
+   },
+   "top_sources": {
+    "haim": 0.202,
+    "openmic": 0.146,
+    "existing:FMA": 0.144,
+    "existing:JamendoMaxCaps": 0.141,
+    "constructed_mix": 0.133,
+    "musan_music": 0.114
+   }
+  },
+  "fake": {
+   "rows": 6638,
+   "kish_rows": 4153.6,
+   "kish_groups": 335.3,
+   "max_group_share": 0.02,
+   "max_row_over_mean": 5.0,
+   "stratum_share": {
+    "all": 1.0
+   },
+   "top_sources": {
+    "haim": 0.251,
+    "echoes": 0.248,
+    "existing:FakeMusicCaps": 0.196,
+    "sonics": 0.172,
+    "constructed_mix": 0.044,
+    "generated_music": 0.044
+   }
+  }
+ },
+ "music/W": {
+  "real": {
+   "rows": 5580,
+   "kish_rows": 3753.0,
+   "kish_groups": 228.6,
+   "max_group_share": 0.02,
+   "max_row_over_mean": 5.0,
+   "stratum_share": {
+    "all": 1.0
+   },
+   "top_sources": {
+    "openmic": 0.239,
+    "constructed_mix": 0.174,
+    "haim": 0.153,
+    "musan_music": 0.119,
+    "existing:FMA": 0.115,
+    "existing:JamendoMaxCaps": 0.106
+   }
+  },
+  "fake": {
+   "rows": 6638,
+   "kish_rows": 5840.9,
+   "kish_groups": 615.7,
+   "max_group_share": 0.02,
+   "max_row_over_mean": 4.36,
+   "stratum_share": {
+    "all": 1.0
+   },
+   "top_sources": {
+    "existing:FakeMusicCaps": 0.283,
+    "haim": 0.278,
+    "echoes": 0.167,
+    "sonics": 0.141,
+    "generated_music": 0.057,
+    "constructed_mix": 0.044
+   }
+  }
+ }
+}

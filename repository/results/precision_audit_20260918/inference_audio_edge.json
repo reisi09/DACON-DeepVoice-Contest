@@ -1,0 +1,16 @@
+{
+  "scope": "Real WAV decode/resample and actual silence branch; no separation model loaded",
+  "source_channel_rms": [
+    0.14142135681755297,
+    0.14142135681755297
+  ],
+  "raw_mono_rms": 0.0,
+  "demucs_stereo_rms": 0.14142002165317535,
+  "demucs_mono_std": 0.0,
+  "vocal_output_rms": 0.0,
+  "backing_output_rms": 0.0,
+  "nonfinite_decoded_input_rejected": {
+    "exception": "ParameterError",
+    "message": "Audio buffer is not finite everywhere"
+  }
+}

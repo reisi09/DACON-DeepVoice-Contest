@@ -1,0 +1,23 @@
+{
+  "status": "offline_regression_passed",
+  "network_requests": 0,
+  "before_fix": {
+    "interrupted_existing_final_preserved": false,
+    "interrupted_new_final_absent": false
+  },
+  "after_fix": {
+    "interrupted_existing_final_preserved": true,
+    "interrupted_new_final_absent": true,
+    "corrupt_crc_rejected": true,
+    "crc_failure_existing_final_preserved": true,
+    "valid_member_published_exactly": true,
+    "no_member_partial_remaining": true,
+    "later_reset_honored": true,
+    "longer_retry_after_honored": true,
+    "stale_or_invalid_reset_retains_floor": true
+  },
+  "source_payload": "existing ASV FLAC repacked in a local ZIP; HTTP response stubbed, actual shared ZIP extractor retained",
+  "script_sha256": "b08dbf28de3d0fa01fd51942f57730bcae19e563888ee6e33ef5fc3ab7029d65",
+  "selected_rows_sha256": "59cd45bc6a6d45ce354c5aaa6a01488d150705be9ed009ad6f9857770923b258",
+  "live_probe_still_pending": true
+}

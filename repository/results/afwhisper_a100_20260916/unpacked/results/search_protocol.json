@@ -1,0 +1,37 @@
+{
+  "models": [
+    "m-a-p/MERT-v1-330M",
+    "nvidia/audio-flamingo-3/sound_tower"
+  ],
+  "afwhisper_parameters": 636968960,
+  "input_dims": [
+    1024,
+    1280
+  ],
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "factors": "backbone x label_smoothing(0,0.05); original compact MLP, fixed LR",
+  "afwhisper_metadata": {
+    "model": "nvidia/audio-flamingo-3",
+    "revision": "ee26c58423988d7d7cda7b85dd3ce5d97ee8753d",
+    "subfolder": "sound_tower",
+    "audio_parameters": 636968960,
+    "input_dim": 1280,
+    "weight_bytes": 1273988176,
+    "weight_sha256": "7350df1dc94c1357dfa88212db4efe99cd3f880799fb176c7084dd186f39b6c8",
+    "config_sha256": "08e7d555b5cf305f4a6b6fb56b9d606e2a185499e9d9acbd2abd0bfd460eb32a",
+    "upstream_code_revision": "1337fb9dfffe6e40f1d204f137da71e7208b4742",
+    "upstream_code": "https://github.com/NVIDIA/audio-flamingo/blob/1337fb9dfffe6e40f1d204f137da71e7208b4742/llava/model/multimodal_encoder/modeling_whisper.py",
+    "license": "NVIDIA OneWay Noncommercial License",
+    "usage": "noncommercial research comparison; no competition upload"
+  },
+  "split_sha256": "f8be800de2a3f9c4d7b0c0228e68a79a03a468344d938c9e380b32ec8257ac3b",
+  "nsynth_mass": 0.0,
+  "deadline": 1789517800.0,
+  "selection": "three-seed tune music EER mean, std, BCE, name; freeze before historical test",
+  "controls": "Reuse six sealed MERT330 MLP checkpoints and verify predictions; six new AF-Whisper fits",
+  "limitation": "Different pretraining, architecture, input dimension and required frontend; not a parameter-count-only causal study. Historical test reused. No official score or submission update."
+}

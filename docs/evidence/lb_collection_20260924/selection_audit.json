@@ -1,0 +1,38 @@
+{
+  "jamendo_prior_artist_id_overlap": 0,
+  "jamendo_prior_normalized_artist_name_matches": [
+    "836493",
+    "789953",
+    "726597"
+  ],
+  "music_generators": {
+    "acestep": 35,
+    "acestep-1.5-turbo-1.7b": 132,
+    "elevenlabs-music-v1": 132,
+    "magenta-rt-2-base": 60,
+    "magenta-rt-large": 66,
+    "musicgen-medium": 66,
+    "musicgen-small": 66,
+    "preview-jerboa": 20,
+    "preview-ocelot": 28,
+    "riffusion-fuzz-1-0": 106,
+    "riffusion-fuzz-1-1": 130,
+    "sonauto-v2-2": 130,
+    "sonauto-v3-preview": 29
+  },
+  "music_unique_prompt_groups": 559,
+  "music_quality_flagged": 24,
+  "constraints": [
+    "Different artist IDs do not establish independent identities",
+    "Prompt groups must remain within one role",
+    "Instrumental prompts do not prove absence of voice",
+    "Quality flags require review before admission"
+  ],
+  "mlaad_prior_plan_sha256_overlap": 0,
+  "mlaad_unique_source_text_groups": 371,
+  "mlaad_held_text_group_overlap": 0,
+  "mlaad_metadata_duration_range": [
+    15.25,
+    59.5
+  ]
+}

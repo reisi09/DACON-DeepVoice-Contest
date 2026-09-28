@@ -1,0 +1,285 @@
+{
+  "arms": {
+    "A": {
+      "exposure": {
+        "draws_per_epoch": 40,
+        "paired_slots": 40,
+        "paired_target_seconds": 487.9999999999997,
+        "shared_unpaired": 0
+      },
+      "seeds": [
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/A/41/best.pt",
+          "optimizer_updates": 8,
+          "seed": 41,
+          "selected_epoch": 2
+        },
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/A/42/best.pt",
+          "optimizer_updates": 8,
+          "seed": 42,
+          "selected_epoch": 2
+        }
+      ]
+    },
+    "B": {
+      "exposure": {
+        "draws_per_epoch": 40,
+        "paired_slots": 40,
+        "paired_target_seconds": 487.9999999999997,
+        "shared_unpaired": 0
+      },
+      "seeds": [
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/B/41/best.pt",
+          "optimizer_updates": 8,
+          "seed": 41,
+          "selected_epoch": 2
+        },
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/B/42/best.pt",
+          "optimizer_updates": 8,
+          "seed": 42,
+          "selected_epoch": 2
+        }
+      ]
+    },
+    "C": {
+      "exposure": {
+        "draws_per_epoch": 40,
+        "paired_slots": 40,
+        "paired_target_seconds": 487.9999999999997,
+        "shared_unpaired": 0
+      },
+      "seeds": [
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/C/41/best.pt",
+          "optimizer_updates": 8,
+          "seed": 41,
+          "selected_epoch": 2
+        },
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/C/42/best.pt",
+          "optimizer_updates": 8,
+          "seed": 42,
+          "selected_epoch": 2
+        }
+      ]
+    },
+    "D": {
+      "exposure": {
+        "draws_per_epoch": 40,
+        "paired_slots": 40,
+        "paired_target_seconds": 487.9999999999997,
+        "shared_unpaired": 0
+      },
+      "raw_equals_stem_capacity_control": {
+        "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/D_raw_equals_stem/41/best.pt",
+        "optimizer_updates": 8,
+        "seed": 41,
+        "selected_epoch": 2
+      },
+      "seeds": [
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/D/41/best.pt",
+          "optimizer_updates": 8,
+          "seed": 41,
+          "selected_epoch": 2
+        },
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/D/42/best.pt",
+          "optimizer_updates": 8,
+          "seed": 42,
+          "selected_epoch": 2
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "CPU fixtures validate execution only; no performance, H100, L4, sealed, or leaderboard claim"
+  ],
+  "status": "complete",
+  "voice": {
+    "base_arm": "D",
+    "ensemble_candidate": "D_voice_ensemble",
+    "members": [
+      {
+        "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/voice/41/voice.pt",
+        "eligible_ids": [
+          "train-000-pure",
+          "train-000-mixed",
+          "train-001-pure",
+          "train-001-mixed",
+          "train-002-pure",
+          "train-002-mixed",
+          "train-003-pure",
+          "train-003-mixed",
+          "train-004-pure",
+          "train-004-mixed",
+          "train-005-pure",
+          "train-005-mixed",
+          "train-006-pure",
+          "train-006-mixed",
+          "train-007-pure",
+          "train-007-mixed",
+          "train-008-pure",
+          "train-008-mixed",
+          "train-009-pure",
+          "train-009-mixed",
+          "train-010-pure",
+          "train-010-mixed",
+          "train-011-pure",
+          "train-011-mixed",
+          "train-012-pure",
+          "train-012-mixed",
+          "train-013-pure",
+          "train-013-mixed",
+          "train-014-pure",
+          "train-014-mixed",
+          "train-015-pure",
+          "train-015-mixed",
+          "train-016-pure",
+          "train-016-mixed",
+          "train-017-pure",
+          "train-017-mixed",
+          "train-018-pure",
+          "train-018-mixed",
+          "train-019-pure",
+          "train-019-mixed",
+          "train-020-pure",
+          "train-020-mixed",
+          "train-021-pure",
+          "train-021-mixed",
+          "train-022-pure",
+          "train-022-mixed",
+          "train-023-pure",
+          "train-023-mixed",
+          "train-024-pure",
+          "train-024-mixed",
+          "train-025-pure",
+          "train-025-mixed",
+          "train-026-pure",
+          "train-026-mixed",
+          "train-027-pure",
+          "train-027-mixed",
+          "train-028-pure",
+          "train-028-mixed",
+          "train-029-pure",
+          "train-029-mixed",
+          "train-030-pure",
+          "train-030-mixed",
+          "train-031-pure",
+          "train-031-mixed",
+          "train-032-pure",
+          "train-032-mixed",
+          "train-033-pure",
+          "train-033-mixed",
+          "train-034-pure",
+          "train-034-mixed",
+          "train-035-pure",
+          "train-035-mixed",
+          "train-036-pure",
+          "train-036-mixed",
+          "train-037-pure",
+          "train-037-mixed",
+          "train-038-pure",
+          "train-038-mixed",
+          "train-039-pure",
+          "train-039-mixed"
+        ],
+        "music_checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/D/41/best.pt",
+        "seed": 41
+      },
+      {
+        "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/voice/42/voice.pt",
+        "eligible_ids": [
+          "train-000-pure",
+          "train-000-mixed",
+          "train-001-pure",
+          "train-001-mixed",
+          "train-002-pure",
+          "train-002-mixed",
+          "train-003-pure",
+          "train-003-mixed",
+          "train-004-pure",
+          "train-004-mixed",
+          "train-005-pure",
+          "train-005-mixed",
+          "train-006-pure",
+          "train-006-mixed",
+          "train-007-pure",
+          "train-007-mixed",
+          "train-008-pure",
+          "train-008-mixed",
+          "train-009-pure",
+          "train-009-mixed",
+          "train-010-pure",
+          "train-010-mixed",
+          "train-011-pure",
+          "train-011-mixed",
+          "train-012-pure",
+          "train-012-mixed",
+          "train-013-pure",
+          "train-013-mixed",
+          "train-014-pure",
+          "train-014-mixed",
+          "train-015-pure",
+          "train-015-mixed",
+          "train-016-pure",
+          "train-016-mixed",
+          "train-017-pure",
+          "train-017-mixed",
+          "train-018-pure",
+          "train-018-mixed",
+          "train-019-pure",
+          "train-019-mixed",
+          "train-020-pure",
+          "train-020-mixed",
+          "train-021-pure",
+          "train-021-mixed",
+          "train-022-pure",
+          "train-022-mixed",
+          "train-023-pure",
+          "train-023-mixed",
+          "train-024-pure",
+          "train-024-mixed",
+          "train-025-pure",
+          "train-025-mixed",
+          "train-026-pure",
+          "train-026-mixed",
+          "train-027-pure",
+          "train-027-mixed",
+          "train-028-pure",
+          "train-028-mixed",
+          "train-029-pure",
+          "train-029-mixed",
+          "train-030-pure",
+          "train-030-mixed",
+          "train-031-pure",
+          "train-031-mixed",
+          "train-032-pure",
+          "train-032-mixed",
+          "train-033-pure",
+          "train-033-mixed",
+          "train-034-pure",
+          "train-034-mixed",
+          "train-035-pure",
+          "train-035-mixed",
+          "train-036-pure",
+          "train-036-mixed",
+          "train-037-pure",
+          "train-037-mixed",
+          "train-038-pure",
+          "train-038-mixed",
+          "train-039-pure",
+          "train-039-mixed"
+        ],
+        "music_checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/experiments/checkpoints/D/42/best.pt",
+        "seed": 42
+      }
+    ],
+    "reason": "eligible",
+    "single_candidate": "D_voice_seed41",
+    "status": "complete"
+  }
+}

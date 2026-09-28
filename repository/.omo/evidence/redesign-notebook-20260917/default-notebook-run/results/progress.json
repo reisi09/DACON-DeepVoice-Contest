@@ -1,0 +1,56 @@
+{
+  "contract": "redesign-notebook-v1",
+  "stages": {
+    "compare_and_lock": {
+      "detail": "no candidate accepted or locked",
+      "status": "not_run",
+      "unix": 1789582130.364896
+    },
+    "cpu_integration": {
+      "detail": "flag is False; algorithm QA not run",
+      "status": "not_run",
+      "unix": 1789582130.3737652
+    },
+    "export_results": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789582130.374037
+    },
+    "extract_features": {
+      "detail": "flag is False; no fixture fallback",
+      "status": "not_run",
+      "unix": 1789582130.351773
+    },
+    "fit_file_relation": {
+      "detail": "max/noisy-OR/OOF fitting not run",
+      "status": "not_run",
+      "unix": 1789582130.364597
+    },
+    "open_sealed": {
+      "detail": "explicit sealed flag is False",
+      "status": "not_run",
+      "unix": 1789582130.3689861
+    },
+    "preflight": {
+      "detail": "CPU provenance, hashes, and writable storage checked",
+      "status": "completed",
+      "unix": 1789582129.2306728
+    },
+    "prepare_assets": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789582129.2359612
+    },
+    "prepare_data": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789582129.235702
+    },
+    "train_experiments": {
+      "detail": "flag is False; A/B/C/D/capacity/voice not claimed",
+      "status": "not_run",
+      "unix": 1789582130.3520389
+    }
+  },
+  "updated_unix": 1789582130.374036
+}

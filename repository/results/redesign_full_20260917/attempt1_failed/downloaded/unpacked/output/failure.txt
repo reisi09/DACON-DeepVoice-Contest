@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/root/redesign_full_20260917/source/redesign_full_refit_run.py", line 119, in main
+    execute(root, previous, hard - 600)
+  File "/root/redesign_full_20260917/source/redesign_full_refit_run.py", line 97, in execute
+    subprocess.run([sys.executable, str(smoke_script), str(root), str(previous)], check=True,
+  File "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/root/fullft8/.venv/bin/python', '/root/redesign_full_20260917/source/redesign_submission_smoke.py', '/root/redesign_full_20260917', '/root/redesign_h100_20260917']' returned non-zero exit status 1.

@@ -1,0 +1,65 @@
+{
+  "submission_sha256": "b19b88de1b23ccb8e2863d30d9a755e991419ff36b39ac629d73ff26f65895aa",
+  "device": "cpu",
+  "absolute_tolerance": 0.002,
+  "relative_tolerance": 0,
+  "network_connections_forbidden": true,
+  "official_l4_validated": false,
+  "started_epoch": 1789859951.892411,
+  "regular": {
+    "files": 7,
+    "max_abs_error": 0.0007349252700805664,
+    "differences": {
+      "asvspoof2019_la:LA_T_5517266": {
+        "FILE_FAKE_PROB": 0.00011310802577801926,
+        "VOICE_FAKE_PROB": 0.00014090538024902344,
+        "MUSIC_FAKE_PROB": 0.0005998561779657907,
+        "VOICE_PRESENT_PROB": 4.172325134277344e-07,
+        "MUSIC_PRESENT_PROB": 7.450580596923828e-09
+      },
+      "haim_musicgen_musicgen_small_00029": {
+        "FILE_FAKE_PROB": 4.2348656430490905e-05,
+        "VOICE_FAKE_PROB": 0.0003465414047241211,
+        "MUSIC_FAKE_PROB": 5.3172310193361216e-05,
+        "VOICE_PRESENT_PROB": 2.9802322387695312e-08,
+        "MUSIC_PRESENT_PROB": 0.0
+      },
+      "ctrsvdd_CtrSVDD_0059_D_0002454": {
+        "FILE_FAKE_PROB": 3.3347324475685447e-06,
+        "VOICE_FAKE_PROB": 7.669130961174275e-06,
+        "MUSIC_FAKE_PROB": 0.00031913320223486696,
+        "VOICE_PRESENT_PROB": 2.980232238769531e-07,
+        "MUSIC_PRESENT_PROB": 5.960464477539063e-08
+      },
+      "fake_16900_udio_1": {
+        "FILE_FAKE_PROB": 6.478471060245017e-05,
+        "VOICE_FAKE_PROB": 0.0002382795015971606,
+        "MUSIC_FAKE_PROB": 7.061163584398678e-05,
+        "VOICE_PRESENT_PROB": 7.301568984985352e-07,
+        "MUSIC_PRESENT_PROB": 1.1920928955078125e-07
+      },
+      "librispeech_test-clean:1580-141083-0008": {
+        "FILE_FAKE_PROB": 2.0462857381220445e-05,
+        "VOICE_FAKE_PROB": 3.727587560812661e-05,
+        "MUSIC_FAKE_PROB": 0.0007349252700805664,
+        "VOICE_PRESENT_PROB": 0.0,
+        "MUSIC_PRESENT_PROB": 5.587935447692871e-09
+      },
+      "asvspoof2019_la:LA_E_5923854": {
+        "FILE_FAKE_PROB": 1.033313867804253e-08,
+        "VOICE_FAKE_PROB": 9.934107463305253e-07,
+        "MUSIC_FAKE_PROB": 2.957632144291733e-05,
+        "VOICE_PRESENT_PROB": 5.960464477539062e-07,
+        "MUSIC_PRESENT_PROB": 1.4901161193847656e-08
+      },
+      "fakemusiccaps_mustango_b1j-hD9zs6Q": {
+        "FILE_FAKE_PROB": 4.0656711514097665e-06,
+        "VOICE_FAKE_PROB": 0.0006258686383565637,
+        "MUSIC_FAKE_PROB": 5.56310017829631e-07,
+        "VOICE_PRESENT_PROB": 2.2724270820617676e-07,
+        "MUSIC_PRESENT_PROB": 3.6954879760742188e-06
+      }
+    },
+    "passed": true
+  }
+}

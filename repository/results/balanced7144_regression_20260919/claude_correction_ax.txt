@@ -1,0 +1,90 @@
+container 4개 메시지 중 4번째
+														585 container
+															586 항목 Claude 응답: 수정 구성표 (sham은 PartialSpoof와 같은 편집 절차로 real끼리 splice, 부모와 split 공유), Value: 2
+																587 텍스트 Claude 응답: 수정 구성표 (sham은 PartialSpoof와 같은 편집 절차로 real끼리 splice, 부모와 split 공유)
+															588 텍스트 Reworking the dataset split across categories.
+															589 텍스트 Reworking the dataset split across categories.
+															590 container
+																591 텍스트 수정 구성표
+																592 텍스트  (sham은 PartialSpoof와 같은 편집 절차로 real끼리 splice, 부모와 split 공유)
+																593 표
+																	594 row
+																		595 열 헤더
+																			596 텍스트 유형
+																		597 열 헤더
+																			598 텍스트 train R/F
+																		599 열 헤더
+																			600 텍스트 val R/F
+																	601 row
+																		602 셀
+																			603 텍스트 음성
+																		604 셀
+																			605 텍스트 800/800
+																		606 셀
+																			607 텍스트 200/200
+																	608 row
+																		609 셀
+																			610 텍스트 부분조작 (sham/partial)
+																		611 셀
+																			612 텍스트 300/300
+																		613 셀
+																			614 텍스트 80/80
+																	615 row
+																		616 셀
+																			617 텍스트 가창
+																		618 셀
+																			619 텍스트 400/400
+																		620 셀
+																			621 텍스트 100/100
+																	622 row
+																		623 셀
+																			624 텍스트 혼합곡
+																		625 셀
+																			626 텍스트 1100/1100
+																		627 셀
+																			628 텍스트 275/275
+																	629 row
+																		630 셀
+																			631 텍스트 기악
+																		632 셀
+																			633 텍스트 258/258 (real −300)
+																		634 셀
+																			635 텍스트 59/59 (real −80)
+																	636 row
+																		637 셀
+																			638 텍스트 합계
+																		639 셀
+																			640 텍스트 2858/2858 = 5716
+																		641 셀
+																			642 텍스트 714/714 = 1428
+																643 텍스트 정정 사항
+																644 내용 목록
+																	645 container
+																		646 AXListMarker 1.
+																		647 text 분할:  기존 7144 동분포 대조군과 새 OOD 패널을 분리합니다.
+																		648 내용 목록
+																			649 container
+																				650 AXListMarker •
+																				651 텍스트 순서는 holdout corpus·생성기 고정 → 부모 연결 그룹(mix와 sham 공유 포함) 80:20 → split 안에서만 mix입니다.
+																			652 container
+																				653 AXListMarker •
+																				654 텍스트 수량은 원본 메타데이터를 확보하기 전까지 목표치일 뿐입니다.
+																	655 container
+																		656 AXListMarker 2.
+																		657 text 용량:  앞의 15GB는 기존 자료, CtrSVDD, HAIM을 빠뜨린 계산이라 철회합니다. 다운로드 전에 파일별로 합산하고 20GB 미만인지 확인합니다.
+																	658 container
+																		659 AXListMarker 3.
+																		660 text E2 교체:  현재 구조가 이미 presence×fake에 max를 쓰므로 presence 게이트 제안은 철회합니다. 대신 기존 fc5와 새 fc5/전처리를 단독으로 비교합니다.
+																	661 container
+																		662 AXListMarker 4.
+																		663 text 합성 mix:  분리 보컬에 AI 반주 잔여물이 남으면  music_fake=0 을 확정할 수 없습니다. 깨끗한 성분만 섞고, 보컬 존재를 검토한 뒤 라벨을 확정합니다.
+																	664 container
+																		665 AXListMarker 5.
+																		666 text 마스크:  음성·보컬·혼합 행은 라벨이 알려진 head만 학습합니다. 존재 마스크(present를 아는지)와 진위 마스크(fake 여부를 아는지)를 따로 둡니다.
+																	667 container
+																		668 AXListMarker 6.
+																		669 text E4 삭제:  전체 backbone 재학습은 요청 범위 밖이라 삭제합니다.
+																	670 container
+																		671 AXListMarker 7.
+																		672 text SA 해석 삭제:  SA 조항이 일괄 합성 금지라는 해석은 철회하고, 원천별 조건으로 판단합니다.
+															673

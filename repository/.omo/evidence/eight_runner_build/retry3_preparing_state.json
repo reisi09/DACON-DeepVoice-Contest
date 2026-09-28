@@ -1,0 +1,26 @@
+{
+  "scenario": "fresh attempt3 preparing state stable remote readback",
+  "invocation": "two filtered VESSL full-object downloads after upload",
+  "binary_observable": {
+    "expected_sha256": "589a977c89724b44f1978138c5ccefbba27bdd5df777dc7a6f1e0f3c8a047032",
+    "readbacks": [
+      {
+        "sha256": "589a977c89724b44f1978138c5ccefbba27bdd5df777dc7a6f1e0f3c8a047032",
+        "status": "running",
+        "stage": "preparing",
+        "attempt": 3
+      },
+      {
+        "sha256": "589a977c89724b44f1978138c5ccefbba27bdd5df777dc7a6f1e0f3c8a047032",
+        "status": "running",
+        "stage": "preparing",
+        "attempt": 3
+      }
+    ],
+    "stable": true,
+    "started_epoch": 1789648960,
+    "resumed_epoch": 1789650033,
+    "deadline_epoch": 1789663360
+  },
+  "artifact": "_workspace/eight_h100_20260917/retry3_state/run_state.json"
+}

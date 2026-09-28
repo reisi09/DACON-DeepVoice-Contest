@@ -1,0 +1,69 @@
+{
+  "arms": {
+    "A": {
+      "exposure": {
+        "draws_per_epoch": 1469,
+        "paired_slots": 0,
+        "paired_target_seconds": 0.0,
+        "shared_unpaired": 1469
+      },
+      "seeds": [
+        {
+          "checkpoint": "/root/redesign_h100_20260917/output/experiments/checkpoints/A/41/best.pt",
+          "optimizer_updates": 774,
+          "seed": 41,
+          "selected_epoch": 23
+        },
+        {
+          "checkpoint": "/root/redesign_h100_20260917/output/experiments/checkpoints/A/42/best.pt",
+          "optimizer_updates": 630,
+          "seed": 42,
+          "selected_epoch": 15
+        },
+        {
+          "checkpoint": "/root/redesign_h100_20260917/output/experiments/checkpoints/A/43/best.pt",
+          "optimizer_updates": 680,
+          "seed": 43,
+          "selected_epoch": 14
+        }
+      ]
+    },
+    "B": {
+      "exposure": {
+        "draws_per_epoch": 1469,
+        "paired_slots": 0,
+        "paired_target_seconds": 0.0,
+        "shared_unpaired": 1469
+      },
+      "seeds": [
+        {
+          "checkpoint": "/root/redesign_h100_20260917/output/experiments/checkpoints/B/41/best.pt",
+          "optimizer_updates": 666,
+          "seed": 41,
+          "selected_epoch": 17
+        },
+        {
+          "checkpoint": "/root/redesign_h100_20260917/output/experiments/checkpoints/B/42/best.pt",
+          "optimizer_updates": 666,
+          "seed": 42,
+          "selected_epoch": 17
+        },
+        {
+          "checkpoint": "/root/redesign_h100_20260917/output/experiments/checkpoints/B/43/best.pt",
+          "optimizer_updates": 560,
+          "seed": 43,
+          "selected_epoch": 8
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "CPU fixtures validate execution only; no performance, H100, L4, sealed, or leaderboard claim"
+  ],
+  "status": "complete",
+  "voice": {
+    "eligible_ids": [],
+    "reason": "known real/fake singing and telephone labels are both required",
+    "status": "provisional_skip"
+  }
+}

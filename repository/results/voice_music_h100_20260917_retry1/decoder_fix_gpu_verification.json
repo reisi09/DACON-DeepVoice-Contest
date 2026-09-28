@@ -1,0 +1,27 @@
+{
+  "verified_at": 1789635542.0223029,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "previous_missing_dependency_failure_passed": true,
+  "actual_inference_progress": {
+    "done": 101,
+    "stage": "experiment_2_inference",
+    "time": 1789635508.9362998,
+    "total": 568
+  },
+  "native_parity": {
+    "fake_class": 0,
+    "max_logit_error": 2.956390380859375e-05,
+    "native_revision": "60c96543210117bdb256636e7961e16463f99291",
+    "real_audio_cases": 3,
+    "unused_training_only": [
+      "m_ssl.model.final_proj.bias",
+      "m_ssl.model.final_proj.weight",
+      "m_ssl.model.project_q.bias",
+      "m_ssl.model.project_q.weight",
+      "m_ssl.model.quantizer.vars",
+      "m_ssl.model.quantizer.weight_proj.bias",
+      "m_ssl.model.quantizer.weight_proj.weight"
+    ]
+  },
+  "all_experiments_complete": false
+}

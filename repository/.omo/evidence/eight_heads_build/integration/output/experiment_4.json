@@ -1,0 +1,674 @@
+{
+  "bootstrap_unit": "provenance-connected component; CI conditional on fixed fitted models",
+  "claim_limit": "diagnostic historical/fresh-source evidence; no official score or authenticity generalization",
+  "class_exposure": "16 REAL + 16 FAKE per batch32",
+  "comparison_scope": "same manifest split, modality, labels and frozen feature cache",
+  "component_count": 17,
+  "dev": {
+    "41": {
+      "fusion": {
+        "auc": 1.0,
+        "components": 2,
+        "decision_threshold": 0.3580436408519745,
+        "eer": 0.0,
+        "fpr": 0.0,
+        "n": 2,
+        "negative_n": 1,
+        "positive_n": 1,
+        "recall": 1.0,
+        "rows": 2,
+        "strata": {
+          "codec": {
+            "base": {
+              "auc": 1.0,
+              "decision_threshold": 0.3580436408519745,
+              "eer": 0.0,
+              "fpr": 0.0,
+              "n": 2,
+              "negative_n": 1,
+              "positive_n": 1,
+              "recall": 1.0,
+              "threshold": 0.3580436408519745
+            }
+          },
+          "generator": {
+            "": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 1,
+              "positive_n": 0,
+              "recall": null,
+              "threshold": null
+            },
+            "suno": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 0,
+              "positive_n": 1,
+              "recall": null,
+              "threshold": null
+            }
+          },
+          "parent_id": {
+            "dev_music_0": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 1,
+              "positive_n": 0,
+              "recall": null,
+              "threshold": null
+            },
+            "dev_music_1": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 0,
+              "positive_n": 1,
+              "recall": null,
+              "threshold": null
+            }
+          },
+          "source": {
+            "FMA": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 1,
+              "positive_n": 0,
+              "recall": null,
+              "threshold": null
+            },
+            "suno": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 0,
+              "positive_n": 1,
+              "recall": null,
+              "threshold": null
+            }
+          }
+        },
+        "threshold": 0.3580436408519745
+      },
+      "mert": {
+        "auc": 0.0,
+        "components": 2,
+        "decision_threshold": 0.27762219309806824,
+        "eer": 1.0,
+        "fpr": 1.0,
+        "n": 2,
+        "negative_n": 1,
+        "positive_n": 1,
+        "recall": 0.0,
+        "rows": 2,
+        "strata": {
+          "codec": {
+            "base": {
+              "auc": 0.0,
+              "decision_threshold": 0.27762219309806824,
+              "eer": 1.0,
+              "fpr": 1.0,
+              "n": 2,
+              "negative_n": 1,
+              "positive_n": 1,
+              "recall": 0.0,
+              "threshold": 0.27762219309806824
+            }
+          },
+          "generator": {
+            "": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 1,
+              "positive_n": 0,
+              "recall": null,
+              "threshold": null
+            },
+            "suno": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 0,
+              "positive_n": 1,
+              "recall": null,
+              "threshold": null
+            }
+          },
+          "parent_id": {
+            "dev_music_0": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 1,
+              "positive_n": 0,
+              "recall": null,
+              "threshold": null
+            },
+            "dev_music_1": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 0,
+              "positive_n": 1,
+              "recall": null,
+              "threshold": null
+            }
+          },
+          "source": {
+            "FMA": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 1,
+              "positive_n": 0,
+              "recall": null,
+              "threshold": null
+            },
+            "suno": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 0,
+              "positive_n": 1,
+              "recall": null,
+              "threshold": null
+            }
+          }
+        },
+        "threshold": 0.27762219309806824
+      },
+      "paired_delta": {
+        "ci95": null,
+        "components": 2,
+        "delta_eer": -1.0,
+        "resamples": 0,
+        "uncertain": true,
+        "valid": 0
+      },
+      "selected_spectral_weight": 0.25,
+      "spectral": {
+        "auc": 1.0,
+        "components": 2,
+        "decision_threshold": 0.8841041922569275,
+        "eer": 0.0,
+        "fpr": 0.0,
+        "n": 2,
+        "negative_n": 1,
+        "positive_n": 1,
+        "recall": 1.0,
+        "rows": 2,
+        "strata": {
+          "codec": {
+            "base": {
+              "auc": 1.0,
+              "decision_threshold": 0.8841041922569275,
+              "eer": 0.0,
+              "fpr": 0.0,
+              "n": 2,
+              "negative_n": 1,
+              "positive_n": 1,
+              "recall": 1.0,
+              "threshold": 0.8841041922569275
+            }
+          },
+          "generator": {
+            "": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 1,
+              "positive_n": 0,
+              "recall": null,
+              "threshold": null
+            },
+            "suno": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 0,
+              "positive_n": 1,
+              "recall": null,
+              "threshold": null
+            }
+          },
+          "parent_id": {
+            "dev_music_0": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 1,
+              "positive_n": 0,
+              "recall": null,
+              "threshold": null
+            },
+            "dev_music_1": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 0,
+              "positive_n": 1,
+              "recall": null,
+              "threshold": null
+            }
+          },
+          "source": {
+            "FMA": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 1,
+              "positive_n": 0,
+              "recall": null,
+              "threshold": null
+            },
+            "suno": {
+              "auc": null,
+              "decision_threshold": null,
+              "eer": null,
+              "fpr": null,
+              "n": 1,
+              "negative_n": 0,
+              "positive_n": 1,
+              "recall": null,
+              "threshold": null
+            }
+          }
+        },
+        "threshold": 0.8841041922569275
+      },
+      "test": {
+        "fusion": {
+          "auc": 1.0,
+          "components": 2,
+          "decision_threshold": 0.29078739881515503,
+          "eer": 0.0,
+          "fpr": 0.0,
+          "n": 2,
+          "negative_n": 1,
+          "positive_n": 1,
+          "recall": 1.0,
+          "rows": 2,
+          "strata": {
+            "codec": {
+              "base": {
+                "auc": 1.0,
+                "decision_threshold": 0.29078739881515503,
+                "eer": 0.0,
+                "fpr": 0.0,
+                "n": 2,
+                "negative_n": 1,
+                "positive_n": 1,
+                "recall": 1.0,
+                "threshold": 0.29078739881515503
+              }
+            },
+            "generator": {
+              "": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 1,
+                "positive_n": 0,
+                "recall": null,
+                "threshold": null
+              },
+              "suno": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 0,
+                "positive_n": 1,
+                "recall": null,
+                "threshold": null
+              }
+            },
+            "parent_id": {
+              "test_music_0": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 1,
+                "positive_n": 0,
+                "recall": null,
+                "threshold": null
+              },
+              "test_music_1": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 0,
+                "positive_n": 1,
+                "recall": null,
+                "threshold": null
+              }
+            },
+            "source": {
+              "FMA": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 1,
+                "positive_n": 0,
+                "recall": null,
+                "threshold": null
+              },
+              "suno": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 0,
+                "positive_n": 1,
+                "recall": null,
+                "threshold": null
+              }
+            }
+          },
+          "threshold": 0.29078739881515503
+        },
+        "mert": {
+          "auc": 0.0,
+          "components": 2,
+          "decision_threshold": 0.18952079117298126,
+          "eer": 1.0,
+          "fpr": 1.0,
+          "n": 2,
+          "negative_n": 1,
+          "positive_n": 1,
+          "recall": 0.0,
+          "rows": 2,
+          "strata": {
+            "codec": {
+              "base": {
+                "auc": 0.0,
+                "decision_threshold": 0.18952079117298126,
+                "eer": 1.0,
+                "fpr": 1.0,
+                "n": 2,
+                "negative_n": 1,
+                "positive_n": 1,
+                "recall": 0.0,
+                "threshold": 0.18952079117298126
+              }
+            },
+            "generator": {
+              "": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 1,
+                "positive_n": 0,
+                "recall": null,
+                "threshold": null
+              },
+              "suno": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 0,
+                "positive_n": 1,
+                "recall": null,
+                "threshold": null
+              }
+            },
+            "parent_id": {
+              "test_music_0": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 1,
+                "positive_n": 0,
+                "recall": null,
+                "threshold": null
+              },
+              "test_music_1": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 0,
+                "positive_n": 1,
+                "recall": null,
+                "threshold": null
+              }
+            },
+            "source": {
+              "FMA": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 1,
+                "positive_n": 0,
+                "recall": null,
+                "threshold": null
+              },
+              "suno": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 0,
+                "positive_n": 1,
+                "recall": null,
+                "threshold": null
+              }
+            }
+          },
+          "threshold": 0.18952079117298126
+        },
+        "paired_delta": {
+          "ci95": null,
+          "components": 2,
+          "delta_eer": -1.0,
+          "resamples": 0,
+          "uncertain": true,
+          "valid": 0
+        },
+        "spectral": {
+          "auc": 1.0,
+          "components": 2,
+          "decision_threshold": 0.7676073312759399,
+          "eer": 0.0,
+          "fpr": 0.0,
+          "n": 2,
+          "negative_n": 1,
+          "positive_n": 1,
+          "recall": 1.0,
+          "rows": 2,
+          "strata": {
+            "codec": {
+              "base": {
+                "auc": 1.0,
+                "decision_threshold": 0.7676073312759399,
+                "eer": 0.0,
+                "fpr": 0.0,
+                "n": 2,
+                "negative_n": 1,
+                "positive_n": 1,
+                "recall": 1.0,
+                "threshold": 0.7676073312759399
+              }
+            },
+            "generator": {
+              "": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 1,
+                "positive_n": 0,
+                "recall": null,
+                "threshold": null
+              },
+              "suno": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 0,
+                "positive_n": 1,
+                "recall": null,
+                "threshold": null
+              }
+            },
+            "parent_id": {
+              "test_music_0": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 1,
+                "positive_n": 0,
+                "recall": null,
+                "threshold": null
+              },
+              "test_music_1": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 0,
+                "positive_n": 1,
+                "recall": null,
+                "threshold": null
+              }
+            },
+            "source": {
+              "FMA": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 1,
+                "positive_n": 0,
+                "recall": null,
+                "threshold": null
+              },
+              "suno": {
+                "auc": null,
+                "decision_threshold": null,
+                "eer": null,
+                "fpr": null,
+                "n": 1,
+                "negative_n": 0,
+                "positive_n": 1,
+                "recall": null,
+                "threshold": null
+              }
+            }
+          },
+          "threshold": 0.7676073312759399
+        }
+      }
+    }
+  },
+  "estimand": "paired candidate minus reference EER; lower is better",
+  "experiment": 4,
+  "fixed_updates": 2,
+  "label_denominators": {
+    "fake": 30,
+    "real": 31
+  },
+  "official_score": null,
+  "population": "known component label within the experiment modality/variant",
+  "seed_summary": {
+    "fusion": {
+      "mean": 0.0,
+      "n_seeds": 1,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "std": 0.0
+    },
+    "mert": {
+      "mean": 1.0,
+      "n_seeds": 1,
+      "range": [
+        1.0,
+        1.0
+      ],
+      "std": 0.0
+    },
+    "spectral": {
+      "mean": 0.0,
+      "n_seeds": 1,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "std": 0.0
+    }
+  },
+  "seeds": [
+    41
+  ],
+  "selection_locked": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/eight_heads_build/integration/output/selection_E4_locked.json",
+  "status": "complete",
+  "wall_seconds": 0.02835988998413086
+}

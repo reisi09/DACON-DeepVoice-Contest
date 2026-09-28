@@ -1,0 +1,14 @@
+{
+  "scenario": "decode every manifest waveform and recompute lineage closure",
+  "invocation": ".venv/bin/python inline dataset lineage audit",
+  "files_checked": 1936,
+  "all_paths_exist": true,
+  "all_decoded_durations_match": true,
+  "all_pcm_sha256_match": true,
+  "all_samples_finite": true,
+  "all_wav": true,
+  "manifest_id_sets_match_provenance": true,
+  "derivative_parent_closure_failures": [],
+  "missing_license_rows": 0,
+  "generated_music_false_voice_zero_rows": 0
+}

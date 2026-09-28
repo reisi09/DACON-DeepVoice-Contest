@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "recommendation": {
+    "diagnostic": true,
+    "fresh_holdout": false,
+    "make_mixtures": true
+  },
+  "historical_status": "all rows reuse the 2026-09-17 V4 panel or its existing augmentations",
+  "source_provenance": {
+    "path": "v4_validation/provenance.json",
+    "sha256": "2d250402253d292517d823ed1c8de8b789bc684eddb7d7e44689554c4157d00a",
+    "protocol_path": "v4_validation/protocol.json",
+    "protocol_sha256": "bb4030f2c2b88eb22c32fe80ee7976d002cd92c736914fdf43b816dd091b075a"
+  },
+  "rows": 1696,
+  "logical_audio_bytes": 3916530384,
+  "manifest_sha256": "47ad5a01c1d88365ee1e8c72cd3b125858578d50041e93280516d4372004ae89",
+  "source_counts": {
+    "Echoes/acestep/TTA": 79,
+    "Echoes/audioldm/ATA": 70,
+    "Echoes/audioldm/TTA": 77,
+    "Echoes/brev/TTA": 66,
+    "Echoes/diffrhythm/ATA": 72,
+    "Echoes/diffrhythm/TTA": 82,
+    "Echoes/elevenlabs/TTA": 65,
+    "Echoes/mubert/TTA": 10,
+    "Echoes/musicgen/ATA": 70,
+    "Echoes/musicgen/TTA": 78,
+    "Echoes/producer/ATA": 31,
+    "Echoes/producer/TTA": 35,
+    "Echoes/songgen/ATA": 64,
+    "Echoes/songgen/TTA": 81,
+    "Echoes/stableaudio/TTA": 10,
+    "Echoes/suno/TTA": 68,
+    "Echoes/udio/TTA": 68,
+    "FMA/FMA": 90,
+    "MLAAD/Cartesia.ai (Sonic-3)": 7,
+    "MLAAD/Chatterbox Multilingual": 9,
+    "MLAAD/Higgs-Audio-V2": 11,
+    "MLAAD/Kani-TTS-370M": 13,
+    "MLAAD/M-AILABS": 40,
+    "mlaad_fake": 200,
+    "mlaad_real": 200,
+    "nsynth": 100
+  },
+  "kind_counts": {
+    "instrumental": 100,
+    "mixed": 1116,
+    "speech": 480
+  },
+  "file_label_counts": {
+    "0": 430,
+    "1": 1266
+  },
+  "component_label_counts": {
+    "VOICE_FAKE": {
+      "": 1216,
+      "0": 240,
+      "1": 240
+    },
+    "MUSIC_FAKE": {
+      "": 480,
+      "0": 190,
+      "1": 1026
+    },
+    "VOICE_PRESENT": {
+      "": 1116,
+      "0": 100,
+      "1": 480
+    },
+    "MUSIC_PRESENT": {
+      "0": 480,
+      "1": 1216
+    }
+  },
+  "unknown_component_labels": {
+    "MUSIC_FAKE": 480,
+    "VOICE_FAKE": 1216,
+    "VOICE_PRESENT": 1116
+  },
+  "license_counts": {
+    "Attribution 2.0 UK: England  http://creativecommons.org/licenses/by/2.0/uk/": 1,
+    "Attribution 3.0 International http://creativecommons.org/licenses/by/3.0/": 1,
+    "Attribution 3.0 Netherlands http://creativecommons.org/licenses/by/3.0/nl/": 1,
+    "Attribution 3.0 United States http://creativecommons.org/licenses/by/3.0/us/": 6,
+    "Attribution http://creativecommons.org/licenses/by/4.0/": 66,
+    "Attribution-Noncommercial-Share Alike 3.0 United States http://creativecommons.org/licenses/by-nc-sa/3.0/us/": 1,
+    "CC-BY-4.0": 100,
+    "CC-BY-NC-4.0": 240,
+    "CC-BY-SA-4.0": 1026,
+    "Creative Commons Attribution http://creativecommons.org/licenses/by/3.0/": 13,
+    "M-AILABS permissive notice": 240,
+    "Public Domain http://creativecommons.org/licenses/publicdomain/": 1
+  },
+  "materialization": {
+    "existing": 1696
+  },
+  "receipts": [
+    {
+      "path": "receipts/ECHOES_README.md",
+      "source_path": "_workspace/v4_data/source_receipts/ECHOES_README.md",
+      "sha256": "4e350233f8447679db0211405eaa65ccfec8ebd40f73e474ba8e2542e2743dc1"
+    },
+    {
+      "path": "receipts/MLAAD_LICENSE",
+      "source_path": "_workspace/v2_sources/licenses/MLAAD_LICENSE",
+      "sha256": "c269fce180b8ed351aa7a6a470344bad837bb6f665013b1030a1069c341e16c0"
+    },
+    {
+      "path": "receipts/MLAAD_original_LICENSE",
+      "source_path": "_workspace/v2_sources/licenses/MLAAD_original_LICENSE",
+      "sha256": "192aa5cd757a8a3249e0b97459820ac4d33b1938807fe34f388527aa4fb1d613"
+    },
+    {
+      "path": "receipts/MLAAD_README.md",
+      "source_path": "_workspace/v2_sources/licenses/MLAAD_README.md",
+      "sha256": "b44f3b88c5df7a50829ecec18d7e99d02d2d8206f7df687522dd69ba5724038b"
+    },
+    {
+      "path": "receipts/nsynth_repo.json",
+      "source_path": "_workspace/v2_discovery/nsynth_repo.json",
+      "sha256": "454b1294f6594684f9b17e511aaee1534e15913475f9d8bd6afa2d0552460f83"
+    },
+    {
+      "path": "receipts/protocol.json",
+      "source_path": "v4_validation/protocol.json",
+      "sha256": "bb4030f2c2b88eb22c32fe80ee7976d002cd92c736914fdf43b816dd091b075a"
+    }
+  ],
+  "limitations": [
+    "This is historical/reused data and is not a fresh holdout.",
+    "Whole-song music has unknown voice presence/authenticity and cannot be claimed as isolated accompaniment.",
+    "No verified fake instrumental/accompaniment source is available, so the four music/voice paired mixture states are not expected.",
+    "License metadata is preserved, but competition eligibility is not independently adjudicated here."
+  ]
+}

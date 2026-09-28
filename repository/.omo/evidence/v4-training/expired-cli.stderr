@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/train_v4.py", line 265, in <module>
+    main()
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/train_v4.py", line 255, in main
+    result = run(args)
+             ^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/train_v4.py", line 75, in run
+    raise TimeoutError("V4 deadline already reached")
+TimeoutError: V4 deadline already reached

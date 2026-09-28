@@ -1,0 +1,30 @@
+{
+  "bootstrap_overwritten": false,
+  "cpu_import_and_asset_preflight": {
+    "antideepfake_model_sha256": "57da6a47234bb8aad0c61b7f575378a12c2734a30f1f395b95bbf97ed4ba5373",
+    "asset_files_verified": 27,
+    "imageio_ffmpeg_imported": true,
+    "imports": 9,
+    "shared_antideepfake_receipt_verified": true,
+    "status": "passed",
+    "workspace_h100_count": 1
+  },
+  "prepared_unix": 1789648886.8019001,
+  "source": {
+    "archive_bytes": 3246461219,
+    "archive_sha256": "2606dbc7fbdb98b024d781467c17528b95f94e58486d1be77d0be7efff12d363",
+    "members": 7133,
+    "modules": 22
+  },
+  "source_roundtrip_verified": true,
+  "status": "prepared_not_started",
+  "workspace": {
+    "accelerator": "H100 SXM",
+    "accelerator_count": 1,
+    "hourly_compute_credits": 2.98,
+    "init_script": "bash /shared/redesign-full-20260917/redesign_full_refit_run.sh",
+    "phase": "standby",
+    "state": "stopped",
+    "workspace": "wsp-9683432r72m7"
+  }
+}

@@ -1,0 +1,916 @@
+{
+  "analysis_limitations": {
+    "fresh_holdout_claim": false,
+    "official_score": null,
+    "progress_marker": "downloaded/unpacked/output/progress.json ends at experiment_5 and is stale; durable E1-E8 reports are complete",
+    "robustness_claim": false
+  },
+  "authoritative_for": [
+    "dataset_component_count",
+    "experiment_population_metadata",
+    "fixed_update_semantics"
+  ],
+  "authority": {
+    "branch_population_source": "results/eight_h100_20260917/postrun_e2/fixed_experiment_population_denominators.json",
+    "branch_population_source_sha256": "373511e90b8f2c6006d5c3080f5952a08c3b20f9f9f2d72492ab854275ac2142",
+    "canonical_for": "post-run population and optimization metadata",
+    "numerical_scores": "remain authoritative in immutable raw experiment reports and prediction files"
+  },
+  "correction_scope": "report_metadata_only_no_refit_no_rescore",
+  "dataset": {
+    "component_count": 256,
+    "component_rule": "eight_fixed_io.connected_components over group_id and parent_ids for all 7,101 rows before subsetting",
+    "label_denominators": {
+      "FILE_FAKE": {
+        "calibration": {
+          "known": 1880,
+          "unknown": 0
+        },
+        "dev": {
+          "known": 1024,
+          "unknown": 0
+        },
+        "test": {
+          "known": 876,
+          "unknown": 0
+        },
+        "train": {
+          "known": 3321,
+          "unknown": 0
+        }
+      },
+      "MUSIC_FAKE": {
+        "calibration": {
+          "known": 836,
+          "unknown": 1044
+        },
+        "dev": {
+          "known": 680,
+          "unknown": 344
+        },
+        "test": {
+          "known": 532,
+          "unknown": 344
+        },
+        "train": {
+          "known": 2529,
+          "unknown": 792
+        }
+      },
+      "MUSIC_PRESENT": {
+        "calibration": {
+          "known": 1880,
+          "unknown": 0
+        },
+        "dev": {
+          "known": 1024,
+          "unknown": 0
+        },
+        "test": {
+          "known": 876,
+          "unknown": 0
+        },
+        "train": {
+          "known": 3321,
+          "unknown": 0
+        }
+      },
+      "VOICE_FAKE": {
+        "calibration": {
+          "known": 1062,
+          "unknown": 818
+        },
+        "dev": {
+          "known": 356,
+          "unknown": 668
+        },
+        "test": {
+          "known": 356,
+          "unknown": 520
+        },
+        "train": {
+          "known": 810,
+          "unknown": 2511
+        }
+      },
+      "VOICE_PRESENT": {
+        "calibration": {
+          "known": 1080,
+          "unknown": 800
+        },
+        "dev": {
+          "known": 368,
+          "unknown": 656
+        },
+        "test": {
+          "known": 368,
+          "unknown": 508
+        },
+        "train": {
+          "known": 828,
+          "unknown": 2493
+        }
+      }
+    },
+    "probe_family_counts": {
+      "core": 6293,
+      "partial": 648,
+      "swap": 160
+    },
+    "rows": 7101,
+    "source_counts": {
+      "Echoes/acestep/TTA": 268,
+      "Echoes/audioldm/ATA": 237,
+      "Echoes/audioldm/TTA": 261,
+      "Echoes/brev/TTA": 222,
+      "Echoes/diffrhythm/ATA": 243,
+      "Echoes/diffrhythm/TTA": 278,
+      "Echoes/elevenlabs/TTA": 218,
+      "Echoes/mubert/TTA": 34,
+      "Echoes/musicgen/ATA": 237,
+      "Echoes/musicgen/TTA": 263,
+      "Echoes/producer/ATA": 104,
+      "Echoes/producer/TTA": 117,
+      "Echoes/songgen/ATA": 214,
+      "Echoes/songgen/TTA": 275,
+      "Echoes/stableaudio/TTA": 34,
+      "Echoes/suno/TTA": 228,
+      "Echoes/udio/TTA": 227,
+      "FMA": 428,
+      "FMA/FMA": 305,
+      "MLAAD": 120,
+      "MLAAD/Cartesia.ai (Sonic-3)": 28,
+      "MLAAD/Chatterbox Multilingual": 36,
+      "MLAAD/Higgs-Audio-V2": 44,
+      "MLAAD/Kani-TTS-370M": 52,
+      "MLAAD/M-AILABS": 160,
+      "constructed:E2": 160,
+      "constructed:E5": 648,
+      "mlaad_fake": 698,
+      "mlaad_real": 698,
+      "suno": 132,
+      "udio": 132
+    }
+  },
+  "experiments": {
+    "E1": {
+      "bootstrap_unit": "provenance-connected component; CI conditional on fixed fitted models",
+      "branch_population_denominators": {
+        "music": {
+          "calibration": {
+            "components": 30,
+            "fake": 169,
+            "real": 31,
+            "rows": 200,
+            "variants": {
+              "base": 200
+            }
+          },
+          "dev": {
+            "components": 27,
+            "fake": 139,
+            "real": 25,
+            "rows": 164,
+            "variants": {
+              "base": 164
+            }
+          },
+          "test": {
+            "components": 24,
+            "fake": 104,
+            "real": 23,
+            "rows": 127,
+            "variants": {
+              "base": 127
+            }
+          },
+          "train": {
+            "components": 175,
+            "fake": 692,
+            "real": 139,
+            "rows": 831,
+            "variants": {
+              "base": 831
+            }
+          }
+        },
+        "voice": {
+          "calibration": {
+            "components": 1,
+            "fake": 102,
+            "real": 102,
+            "rows": 204,
+            "variants": {
+              "base": 204
+            }
+          },
+          "dev": {
+            "components": 1,
+            "fake": 24,
+            "real": 24,
+            "rows": 48,
+            "variants": {
+              "base": 48
+            }
+          },
+          "test": {
+            "components": 1,
+            "fake": 24,
+            "real": 24,
+            "rows": 48,
+            "variants": {
+              "base": 48
+            }
+          },
+          "train": {
+            "components": 1,
+            "fake": 106,
+            "real": 106,
+            "rows": 212,
+            "variants": {
+              "base": 212
+            }
+          }
+        }
+      },
+      "claim_limit": "historical/source-confounded diagnostic",
+      "class_exposure": "16 REAL + 16 FAKE per batch32",
+      "comparison_scope": "same prepared labels/features and fixed updates",
+      "component_count": 256,
+      "estimand": "balanced-sampler head difference",
+      "fixed_updates": 500,
+      "label_denominators": {
+        "fake": 5066,
+        "real": 2035
+      },
+      "population": "known component label within the experiment modality/variant",
+      "population_metadata_source": "postrun_e2/fixed_experiment_population_denominators.json",
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E1_music.csv",
+        "/root/eight_h100_20260917/output/predictions_E1_voice.csv"
+      ],
+      "prediction_rows": 175,
+      "raw_report_metadata_scope": "generic_top_level_not_branch_authoritative",
+      "report": "/root/eight_h100_20260917/output/experiment_1.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E1_locked.json",
+      "source_report_path": "downloaded/unpacked/output/experiment_1.json",
+      "source_report_sha256": "26ca1d90c999fbf726834599d26d73d2a1c224a62de3e8286393a74e81a05673",
+      "status": "complete"
+    },
+    "E2": {
+      "bootstrap_unit": "provenance component",
+      "claim_limit": "separator-view diagnostic",
+      "class_exposure": {
+        "same_frozen_models": 2644
+      },
+      "comparison_scope": "paired identical windows",
+      "component_count": 4,
+      "estimand": "raw-minus-recovered-vocal score shift",
+      "fixed_updates": 0,
+      "label_denominators": {
+        "voice_fake": 1322,
+        "voice_known": 2584,
+        "voice_real": 1262,
+        "voice_unknown": 60
+      },
+      "population": 2644,
+      "population_metadata_source": "downloaded/unpacked/output/experiment_2.json",
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E2.csv"
+      ],
+      "prediction_rows": 15864,
+      "raw_report_metadata_scope": "experiment_native",
+      "report": "/root/eight_h100_20260917/output/experiment_2.json",
+      "seeds": [],
+      "selection_locked": true,
+      "source_report_path": "downloaded/unpacked/output/experiment_2.json",
+      "source_report_sha256": "9a86bcd2d42547532117ee4db93f74c29dcdcc7889f1ed25613c5f75e4e54b63",
+      "status": "complete"
+    },
+    "E3": {
+      "bootstrap_unit": "provenance-connected component; CI conditional on fixed fitted models",
+      "branch_population_denominators": {
+        "music": {
+          "calibration": {
+            "components": 30,
+            "fake": 676,
+            "real": 124,
+            "rows": 800,
+            "variants": {
+              "base": 200,
+              "mp3_32k": 200,
+              "opus_telephone": 200,
+              "telephone": 200
+            }
+          },
+          "dev": {
+            "components": 27,
+            "fake": 556,
+            "real": 100,
+            "rows": 656,
+            "variants": {
+              "base": 164,
+              "mp3_32k": 164,
+              "opus_telephone": 164,
+              "telephone": 164
+            }
+          },
+          "test": {
+            "components": 24,
+            "fake": 416,
+            "real": 92,
+            "rows": 508,
+            "variants": {
+              "base": 127,
+              "mp3_32k": 127,
+              "opus_telephone": 127,
+              "telephone": 127
+            }
+          },
+          "train": {
+            "components": 175,
+            "fake": 2076,
+            "real": 417,
+            "rows": 2493,
+            "variants": {
+              "base": 831,
+              "mp3_32k": 831,
+              "telephone": 831
+            }
+          }
+        },
+        "primary_opus_dev_test": {
+          "music": {
+            "dev": {
+              "components": 27,
+              "fake": 139,
+              "real": 25,
+              "rows": 164,
+              "variants": {
+                "opus_telephone": 164
+              }
+            },
+            "test": {
+              "components": 24,
+              "fake": 104,
+              "real": 23,
+              "rows": 127,
+              "variants": {
+                "opus_telephone": 127
+              }
+            }
+          },
+          "voice": {
+            "dev": {
+              "components": 1,
+              "fake": 24,
+              "real": 24,
+              "rows": 48,
+              "variants": {
+                "opus_telephone": 48
+              }
+            },
+            "test": {
+              "components": 1,
+              "fake": 24,
+              "real": 24,
+              "rows": 48,
+              "variants": {
+                "opus_telephone": 48
+              }
+            }
+          }
+        },
+        "voice": {
+          "calibration": {
+            "components": 1,
+            "fake": 408,
+            "real": 408,
+            "rows": 816,
+            "variants": {
+              "base": 204,
+              "mp3_32k": 204,
+              "opus_telephone": 204,
+              "telephone": 204
+            }
+          },
+          "dev": {
+            "components": 1,
+            "fake": 96,
+            "real": 96,
+            "rows": 192,
+            "variants": {
+              "base": 48,
+              "mp3_32k": 48,
+              "opus_telephone": 48,
+              "telephone": 48
+            }
+          },
+          "test": {
+            "components": 1,
+            "fake": 96,
+            "real": 96,
+            "rows": 192,
+            "variants": {
+              "base": 48,
+              "mp3_32k": 48,
+              "opus_telephone": 48,
+              "telephone": 48
+            }
+          },
+          "train": {
+            "components": 1,
+            "fake": 318,
+            "real": 318,
+            "rows": 636,
+            "variants": {
+              "base": 212,
+              "mp3_32k": 212,
+              "telephone": 212
+            }
+          }
+        }
+      },
+      "claim_limit": "unseen-chain diagnostic within recorded sources",
+      "class_exposure": "16 REAL + 16 FAKE per batch32",
+      "comparison_scope": "same transformed views and fixed updates",
+      "component_count": 256,
+      "estimand": "CE-plus-consistency difference",
+      "fixed_updates": 500,
+      "label_denominators": {
+        "fake": 5066,
+        "real": 2035
+      },
+      "population": "known component label within the experiment modality/variant",
+      "population_metadata_source": "postrun_e2/fixed_experiment_population_denominators.json",
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E3_music.csv",
+        "/root/eight_h100_20260917/output/predictions_E3_voice.csv"
+      ],
+      "prediction_rows": 700,
+      "raw_report_metadata_scope": "generic_top_level_not_branch_authoritative",
+      "report": "/root/eight_h100_20260917/output/experiment_3.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E3_locked.json",
+      "source_report_path": "downloaded/unpacked/output/experiment_3.json",
+      "source_report_sha256": "ca4dea2110851b3139189227b7fb3cc797e76dda5f152de963c5498883ae7eb3",
+      "status": "complete"
+    },
+    "E4": {
+      "bootstrap_unit": "provenance-connected component; CI conditional on fixed fitted models",
+      "branch_population_denominators": {
+        "music": {
+          "dev": {
+            "components": 27,
+            "fake": 139,
+            "real": 25,
+            "rows": 164,
+            "variants": {
+              "base": 164
+            }
+          },
+          "test": {
+            "components": 24,
+            "fake": 104,
+            "real": 23,
+            "rows": 127,
+            "variants": {
+              "base": 127
+            }
+          }
+        }
+      },
+      "claim_limit": "complementarity diagnostic",
+      "class_exposure": "16 REAL + 16 FAKE per batch32",
+      "comparison_scope": "dev-selected fusion on grouped split",
+      "component_count": 256,
+      "estimand": "fixed spectral fusion difference",
+      "fixed_updates": 500,
+      "label_denominators": {
+        "fake": 5066,
+        "real": 2035
+      },
+      "population": "known component label within the experiment modality/variant",
+      "population_metadata_source": "postrun_e2/fixed_experiment_population_denominators.json",
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E4.csv"
+      ],
+      "prediction_rows": 127,
+      "raw_report_metadata_scope": "generic_top_level_not_branch_authoritative",
+      "report": "/root/eight_h100_20260917/output/experiment_4.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E4_locked.json",
+      "source_report_path": "downloaded/unpacked/output/experiment_4.json",
+      "source_report_sha256": "a27079cb991dbb7dea8d626ff872bf776313d56762ab41f4b7096798e86a70ee",
+      "status": "complete"
+    },
+    "E5": {
+      "bootstrap_unit": "provenance component",
+      "claim_limit": "constructed-composite diagnostic",
+      "class_exposure": {
+        "calibration": {
+          "fake": 108,
+          "real": 108
+        },
+        "dev": {
+          "fake": 72,
+          "real": 72
+        },
+        "test": {
+          "fake": 72,
+          "real": 72
+        }
+      },
+      "comparison_scope": "same windows with calibration-locked thresholds",
+      "component_count": 4,
+      "estimand": "pooling-rule sparse-event sensitivity",
+      "fixed_updates": 0,
+      "label_denominators": {
+        "fake": 324,
+        "real": 324
+      },
+      "population": 648,
+      "population_metadata_source": "downloaded/unpacked/output/experiment_5.json",
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E5.csv"
+      ],
+      "prediction_rows": 648,
+      "raw_report_metadata_scope": "experiment_native",
+      "report": "/root/eight_h100_20260917/output/experiment_5.json",
+      "seeds": [],
+      "selection_locked": true,
+      "source_report_path": "downloaded/unpacked/output/experiment_5.json",
+      "source_report_sha256": "009733e590af32c1a2ea680712a4ba57013b0b467509b10810958d39fc97779b",
+      "status": "complete"
+    },
+    "E6": {
+      "bootstrap_unit": "provenance-connected component; CI conditional on fixed fitted models",
+      "branch_population_denominators": {
+        "Anti": {
+          "dev": {
+            "components": 1,
+            "fake": 24,
+            "real": 24,
+            "rows": 48,
+            "variants": {
+              "base": 48
+            }
+          },
+          "test": {
+            "components": 1,
+            "fake": 24,
+            "real": 24,
+            "rows": 48,
+            "variants": {
+              "base": 48
+            }
+          }
+        },
+        "MERT": {
+          "dev": {
+            "components": 27,
+            "fake": 139,
+            "real": 25,
+            "rows": 164,
+            "variants": {
+              "base": 164
+            }
+          },
+          "test": {
+            "components": 24,
+            "fake": 104,
+            "real": 23,
+            "rows": 127,
+            "variants": {
+              "base": 127
+            }
+          }
+        }
+      },
+      "claim_limit": "layer probe only",
+      "class_exposure": "16 REAL + 16 FAKE per batch32",
+      "comparison_scope": "same grouped split, heads, and updates",
+      "component_count": 256,
+      "estimand": "encoder-layer head difference",
+      "fixed_updates": 500,
+      "label_denominators": {
+        "fake": 5066,
+        "real": 2035
+      },
+      "population": "known component label within the experiment modality/variant",
+      "population_metadata_source": "postrun_e2/fixed_experiment_population_denominators.json",
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E6_Anti.csv",
+        "/root/eight_h100_20260917/output/predictions_E6_MERT.csv"
+      ],
+      "prediction_rows": 175,
+      "raw_report_metadata_scope": "generic_top_level_not_branch_authoritative",
+      "report": "/root/eight_h100_20260917/output/experiment_6.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E6_locked.json",
+      "source_report_path": "downloaded/unpacked/output/experiment_6.json",
+      "source_report_sha256": "89280e2f14d02ee955329e97628534d7fee189d6b1b1930ade55f0cd396ef3e5",
+      "status": "complete"
+    },
+    "E7": {
+      "bootstrap_unit": "provenance-connected group_id; no population CI asserted for two-speaker test",
+      "claim_limit": "bounded speech adaptation diagnostic",
+      "class_exposure": {
+        "head_only_ce": {
+          "per_seed": {
+            "fake_windows": 200,
+            "real_windows": 200
+          },
+          "total": {
+            "fake_windows": 600,
+            "real_windows": 600
+          }
+        },
+        "lora_ce": {
+          "per_seed": {
+            "fake_windows": 200,
+            "real_windows": 200
+          },
+          "total": {
+            "fake_windows": 600,
+            "real_windows": 600
+          }
+        },
+        "lora_ce_kl": {
+          "per_seed": {
+            "fake_windows": 200,
+            "real_windows": 200
+          },
+          "total": {
+            "fake_windows": 600,
+            "real_windows": 600
+          }
+        }
+      },
+      "comparison_scope": "same views, schedules, seeds, and initialization",
+      "component_count": 10,
+      "estimand": "CE-plus-KL LoRA difference",
+      "fixed_updates": {
+        "frozen": {
+          "per_seed": 0,
+          "total": 0
+        },
+        "head_only_ce": {
+          "per_seed": 200,
+          "total": 600
+        },
+        "lora_ce": {
+          "per_seed": 200,
+          "total": 600
+        },
+        "lora_ce_kl": {
+          "per_seed": 200,
+          "total": 600
+        }
+      },
+      "label_denominators": {
+        "calibration": {
+          "0": 204,
+          "1": 204
+        },
+        "dev": {
+          "0": 48,
+          "1": 48
+        },
+        "test": {
+          "0": 48,
+          "1": 48
+        }
+      },
+      "population": {
+        "eval_variants": [
+          "base",
+          "opus_telephone"
+        ],
+        "files": 1236,
+        "manifest": "/root/eight_h100_20260917/source/dataset/manifest.csv",
+        "manifest_validation": {
+          "audio_hashes": 7101,
+          "probe_families": {
+            "core": 6293,
+            "partial": 648,
+            "swap": 160
+          },
+          "provenance_atoms": 876,
+          "rows": 7101,
+          "splits": {
+            "calibration": 1880,
+            "dev": 1024,
+            "test": 876,
+            "train": 3321
+          }
+        },
+        "speakers": {
+          "calibration": 3,
+          "dev": 2,
+          "test": 2,
+          "train": 3
+        },
+        "train_class_counts": {
+          "0": 318,
+          "1": 318
+        },
+        "train_generator_counts": {
+          "": 306,
+          "Cartesia.ai (Sonic-3)": 39,
+          "Chatterbox Multilingual": 3,
+          "FireRedTTS-2.0": 27,
+          "Higgs-Audio-V2": 36,
+          "Index-TTS-1.5": 18,
+          "Index-TTS-2.0": 33,
+          "Kani-TTS-370M": 3,
+          "Llasa-1B-Multilingual": 39,
+          "Llasa-8B": 30,
+          "Mars5": 27,
+          "MeloTTS": 30,
+          "VoxCPM-0.5B": 33,
+          "original": 12
+        },
+        "train_variants": [
+          "base",
+          "mp3_32k",
+          "telephone"
+        ],
+        "windows": {
+          "calibration": 1132,
+          "dev": 270,
+          "test": 246,
+          "train": 1800
+        }
+      },
+      "population_metadata_source": "downloaded/unpacked/output/e7/report.json",
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/e7/predictions/frozen.json",
+        "/root/eight_h100_20260917/output/e7/predictions/head_only_ce_seed41.json",
+        "/root/eight_h100_20260917/output/e7/predictions/head_only_ce_seed42.json",
+        "/root/eight_h100_20260917/output/e7/predictions/head_only_ce_seed43.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_kl_seed41.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_kl_seed42.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_kl_seed43.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_seed41.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_seed42.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_seed43.json"
+      ],
+      "prediction_rows": 6000,
+      "raw_report_metadata_scope": "experiment_native",
+      "report": "/root/eight_h100_20260917/output/e7/report.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": true,
+      "source_report_path": "downloaded/unpacked/output/e7/report.json",
+      "source_report_sha256": "e3162412f878837ae5df00ba32d1055a4d6f38d174fbdf868e5614666f8eb0c2",
+      "status": "complete"
+    },
+    "E8": {
+      "bootstrap_unit": "provenance-connected component; CI conditional on fixed fitted models",
+      "branch_population_denominators": {
+        "dev": {
+          "components": 27,
+          "fake": 139,
+          "real": 25,
+          "rows": 164,
+          "variants": {
+            "base": 164
+          }
+        },
+        "fit_train_real": {
+          "components": 127,
+          "fake": 0,
+          "real": 139,
+          "rows": 139,
+          "variants": {
+            "base": 139
+          }
+        },
+        "test": {
+          "components": 24,
+          "fake": 104,
+          "real": 23,
+          "rows": 127,
+          "variants": {
+            "base": 127
+          }
+        },
+        "threshold_calibration_real": {
+          "components": 19,
+          "fake": 0,
+          "real": 31,
+          "rows": 31,
+          "variants": {
+            "base": 31
+          }
+        }
+      },
+      "claim_limit": "shifted-REAL false-positive diagnostic",
+      "class_exposure": "REAL-only fit",
+      "comparison_scope": "train-REAL fit and calibration-fixed polarity",
+      "component_count": 256,
+      "estimand": "REAL-only distance behavior",
+      "fit_kind": "non_iterative_closed_form_real_only_gaussian",
+      "fixed_updates": null,
+      "label_denominators": {
+        "fake": 5066,
+        "real": 2035
+      },
+      "population": "known component label within the experiment modality/variant",
+      "population_metadata_source": "postrun_e2/fixed_experiment_population_denominators.json",
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E8.csv"
+      ],
+      "prediction_rows": 291,
+      "raw_report_metadata_scope": "generic_top_level_not_branch_authoritative",
+      "report": "/root/eight_h100_20260917/output/experiment_8.json",
+      "seeds": [],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E8_locked.json",
+      "source_report_path": "downloaded/unpacked/output/experiment_8.json",
+      "source_report_sha256": "1a6d60dc02431018cda216b637b760e3437de4a6245336386118e28128c21bcd",
+      "status": "complete"
+    }
+  },
+  "fresh_holdout_claim": false,
+  "immutable_archive": {
+    "changed": false,
+    "path": "downloaded/results.zip",
+    "sha256": "681d41de10397d31a371daaa276a4a90d19f04789b85e01fdd6f936399dd23d2"
+  },
+  "official_score": null,
+  "postrun_supplements": {
+    "E2_music_file": {
+      "inside_immutable_gpu_archive": false,
+      "report": "postrun_e2/experiment_2_music_file_postrun.json",
+      "status": "verified_cpu_postrun_supplement",
+      "verification_receipt": "postrun_e2/verification_receipt.json"
+    }
+  },
+  "robustness_claim": false,
+  "schema_version": 1,
+  "source_reports": {
+    "E1": {
+      "path": "downloaded/unpacked/output/experiment_1.json",
+      "sha256": "26ca1d90c999fbf726834599d26d73d2a1c224a62de3e8286393a74e81a05673"
+    },
+    "E2": {
+      "path": "downloaded/unpacked/output/experiment_2.json",
+      "sha256": "9a86bcd2d42547532117ee4db93f74c29dcdcc7889f1ed25613c5f75e4e54b63"
+    },
+    "E3": {
+      "path": "downloaded/unpacked/output/experiment_3.json",
+      "sha256": "ca4dea2110851b3139189227b7fb3cc797e76dda5f152de963c5498883ae7eb3"
+    },
+    "E4": {
+      "path": "downloaded/unpacked/output/experiment_4.json",
+      "sha256": "a27079cb991dbb7dea8d626ff872bf776313d56762ab41f4b7096798e86a70ee"
+    },
+    "E5": {
+      "path": "downloaded/unpacked/output/experiment_5.json",
+      "sha256": "009733e590af32c1a2ea680712a4ba57013b0b467509b10810958d39fc97779b"
+    },
+    "E6": {
+      "path": "downloaded/unpacked/output/experiment_6.json",
+      "sha256": "89280e2f14d02ee955329e97628534d7fee189d6b1b1930ade55f0cd396ef3e5"
+    },
+    "E7": {
+      "path": "downloaded/unpacked/output/e7/report.json",
+      "sha256": "e3162412f878837ae5df00ba32d1055a4d6f38d174fbdf868e5614666f8eb0c2"
+    },
+    "E8": {
+      "path": "downloaded/unpacked/output/experiment_8.json",
+      "sha256": "1a6d60dc02431018cda216b637b760e3437de4a6245336386118e28128c21bcd"
+    }
+  },
+  "status": "corrected_postrun_summary",
+  "supersedes": {
+    "path": "downloaded/unpacked/output/final_aggregation.json",
+    "reason": [
+      "sealed aggregation omitted singleton provenance groups",
+      "sealed aggregation overwrote experiment-specific metadata",
+      "sealed aggregation assigned head_steps to non-iterative E8"
+    ],
+    "sha256": "d2d29fa246083e55c89b9c310836af6278af469e0672ab9fa60e4c48ce401c6f"
+  }
+}

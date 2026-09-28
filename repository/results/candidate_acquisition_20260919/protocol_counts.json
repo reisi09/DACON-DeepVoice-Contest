@@ -1,0 +1,84 @@
+{
+  "ASVspoof5.train.tsv": {
+    "rows": 182357,
+    "labels": {
+      "spoof": 163560,
+      "bonafide": 18797
+    },
+    "speakers": 400,
+    "attacks": {
+      "A05": 20445,
+      "A07": 20445,
+      "A04": 20445,
+      "A08": 20445,
+      "A02": 20445,
+      "A03": 20445,
+      "A06": 20445,
+      "bonafide": 18797,
+      "A01": 20445
+    }
+  },
+  "ASVspoof5.dev.track_1.tsv": {
+    "rows": 140950,
+    "labels": {
+      "spoof": 109616,
+      "bonafide": 31334
+    },
+    "speakers": 785,
+    "attacks": {
+      "A11": 13702,
+      "A16": 13702,
+      "A15": 13702,
+      "A12": 13702,
+      "A09": 13702,
+      "A14": 13702,
+      "bonafide": 31334,
+      "A10": 13702,
+      "A13": 13702
+    }
+  },
+  "database/protocols/PartialSpoof_LA_cm_protocols/PartialSpoof.LA.cm.train.trl.txt": {
+    "rows": 25380,
+    "labels": {
+      "spoof": 22800,
+      "bonafide": 2580
+    },
+    "speakers": 20
+  },
+  "database/protocols/PartialSpoof_LA_cm_protocols/PartialSpoof.LA.cm.dev.trl.txt": {
+    "rows": 24844,
+    "labels": {
+      "spoof": 22296,
+      "bonafide": 2548
+    },
+    "speakers": 20
+  },
+  "CtrSVDD/train": {
+    "rows": 84404,
+    "labels": {
+      "bonafide": 12169,
+      "deepfake": 72235
+    },
+    "singers": 59,
+    "sources": {
+      "ofuton": 3584,
+      "oniku": 4406,
+      "jvsmusic": 2771,
+      "m4singer": 43389,
+      "opencpop": 30254
+    }
+  },
+  "CtrSVDD/dev": {
+    "rows": 43625,
+    "labels": {
+      "bonafide": 6547,
+      "deepfake": 37078
+    },
+    "singers": 55,
+    "sources": {
+      "kiritan": 8818,
+      "jvsmusic": 2759,
+      "m4singer": 32048
+    }
+  }
+}

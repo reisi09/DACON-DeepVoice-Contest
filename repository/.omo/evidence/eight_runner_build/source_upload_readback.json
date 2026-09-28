@@ -1,0 +1,30 @@
+{
+  "scenario": "source archive upload and full download readback",
+  "invocation": ".venv/bin/python eight_h100_launch.py prepare",
+  "binary_observable": {
+    "prepare_exit_code": 0,
+    "archive_bytes": 3246461219,
+    "local_sha256": "2606dbc7fbdb98b024d781467c17528b95f94e58486d1be77d0be7efff12d363",
+    "downloaded_sha256": "2606dbc7fbdb98b024d781467c17528b95f94e58486d1be77d0be7efff12d363",
+    "local_sidecar_sha256": "2606dbc7fbdb98b024d781467c17528b95f94e58486d1be77d0be7efff12d363",
+    "downloaded_sidecar_sha256": "2606dbc7fbdb98b024d781467c17528b95f94e58486d1be77d0be7efff12d363",
+    "all_sha256_equal": true,
+    "zip_crc_ok": true,
+    "required_members_present": true,
+    "member_count": 7134,
+    "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+    "manifest_frozen_match": true,
+    "notebook_sha256": "f05102e95043050c458ee3ba5049b5fdcf3dff281305092e4ddcdf1a4c1ef515",
+    "notebook_worktree_match": true,
+    "workspace_state_before": "stopped",
+    "workspace_phase_before": "standby",
+    "accelerator": "H100 SXM",
+    "accelerator_count": 1
+  },
+  "artifacts": [
+    "results/eight_h100_20260917/source_bundle.json",
+    "_workspace/eight_h100_20260917/readback/source.zip/source.zip",
+    "results/eight_h100_20260917/workspace_before.json",
+    "results/eight_h100_20260917/preflight.json"
+  ]
+}

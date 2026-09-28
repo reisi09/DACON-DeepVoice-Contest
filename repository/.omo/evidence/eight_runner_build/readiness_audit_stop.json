@@ -1,0 +1,17 @@
+{
+  "scenario": "readiness audit completed and compute stopped",
+  "binary_observable": {
+    "readiness_status": "blocked",
+    "passed_count": 9,
+    "check_count": 10,
+    "only_blocker": "kernel_registration",
+    "pause_verified": true,
+    "workspace_state": "stopped",
+    "bootstrap_restored": true
+  },
+  "artifacts": [
+    "results/eight_h100_20260917/readiness_audit.json",
+    "results/eight_h100_20260917/resource_stop.json",
+    "results/eight_h100_20260917/bootstrap_restored.json"
+  ]
+}

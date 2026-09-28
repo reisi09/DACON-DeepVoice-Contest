@@ -1,0 +1,34 @@
+{
+  "competition_id": 236749,
+  "status": "prepared_not_submitted",
+  "candidate": "AST_LAST_BLOCK",
+  "checkpoint_epoch": 17,
+  "training_stopped_epoch": 22,
+  "selection_basis": "maximum development proxy within AST epoch extension, user-requested submission",
+  "original_gate_selection": "G0",
+  "filename": "DACON_236749_AST_epoch17.zip",
+  "drive_folder_id": "1M5-JhWlZxFzTBq6bziU7Ff86CsWBSQSI",
+  "drive_file_id": "1ROtdWWWFhjs-iCpLABWiPHa3AtDwjbog",
+  "original_drive_file_id": "12NeVok-WmvRmbDXE6L6gg0VvlNjJ0ery",
+  "expected_sha256": "5aa3c61dc017a85cdf795de5b730da85d461d51ec3c4b9f731dfe54ef43bc712",
+  "expected_bytes": 344836171,
+  "checkpoint_hashes": {
+    "config.json": "76d43c4f383cd7f745c6ea2619d1941aa7fb4927739df11cee80ea3ddf1a3b6d",
+    "model.safetensors": "b51e8645730626c2b5c26647e4fb5d02b5d117a542ac2d71c77ee9cde282a107",
+    "multitask_config.json": "a0d1dc416f90b2a6cb949a5a4999340fddff3e80d4dae586515d08760e4a03b1",
+    "preprocessor_config.json": "8d04ba5a9c6fca5d39d0de2b1fd05ecf79deb589fbba279728bbebac39934231"
+  },
+  "original_package_verification": {
+    "max_delta": 0.0,
+    "files": 4,
+    "network_blocked": true,
+    "stress_60s_included": true,
+    "seconds_including_drive_copy": 18.387922406000143,
+    "zip_sha256": "5aa3c61dc017a85cdf795de5b730da85d461d51ec3c4b9f731dfe54ef43bc712",
+    "zip_bytes": 344836171,
+    "L4_runtime": "unverified"
+  },
+  "copy_byte_hash_recomputed": false,
+  "before_submission": "Download ZIP and compare its SHA-256 to expected_sha256",
+  "memo": "AST last-block fine-tuning; best dev checkpoint epoch 17; train 633 / dev 122; offline inference"
+}

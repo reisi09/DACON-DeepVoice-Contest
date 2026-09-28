@@ -1,0 +1,55 @@
+{
+  "candidate_order": [
+    "G0",
+    "SONICS_RAW",
+    "SONICS_STEM",
+    "BLEND_RAW",
+    "BLEND_STEM"
+  ],
+  "development_manifest_sha256": "4fd72e3731de71c5ae4fccd4ca8a1e4d05f9e88a5f8143a60209e7cf9c2de01a",
+  "formulas": {
+    "file": "max(voice_present*voice_fake,music_present*music_fake)",
+    "music": "G0|max SONICS mean|0.5 blend"
+  },
+  "fresh_manifest_sha256": "e3f08a56dec08928deaab89a75d6111f9159344b999fd57fc068589b6df1b415",
+  "old_manifest_sha256": "a11ae794de70f83c0a325f884d8ba920b4a1b3653a2936777a08a0be7c0c735d",
+  "selected": "G0",
+  "selection_sha256": "e260aa6d9f3f72002209fff921e94924df990a9cf91c5473a1023804319afe16",
+  "source_hashes": {
+    "/content/dacon_recovery_v3/baseline/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+    "/content/dacon_recovery_v3/run_recovery.py": "e87cad8f89ffefbb8f3065f73b5d10952cbea7a214f26d1333f2aec76f8a4699",
+    "/content/dacon_recovery_v3/sonics_assets/config.json": "754bc15b3f914afaf4e002e50bfaa5e81055c9fb0e2b76408e52fd88f09f7def",
+    "/content/dacon_recovery_v3/sonics_assets/pytorch_model.bin": "11c384cea651c56028d6f02e04aa467c2099cf1102687353fe4dd9504c4db868",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/__init__.py": "a0db24a108e3b0b98689a7383ac5ef350ff027589dd7563552732a614db6fba9",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/layers/__init__.py": "5f30a0f798359b5ecc02c8f7e1160ffee8914352e4cd8a400eabd5605457057a",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/layers/augment.py": "cf70955afc197ac150a405578b6b95b55edab1fc8be3905966f54e2443856eb6",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/layers/embedding.py": "c6467dfc1251e7c4b406eaf803841dfc5febeab75e1fee86381a6f4162be5189",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/layers/feature.py": "2c32f2097eea2c2c4c2e1ebf592596547aae52618c310731f29409703bded031",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/layers/tokenizer.py": "3b823db9a35422093d75abd9744f9b74af70393c6e534f58e4f898b004484f2d",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/layers/transformer.py": "08776fa5a8a09b8b4ab64ba3abaedb303eb333265c74338b42e59b0d25a1eacf",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/models/__init__.py": "adfe8628032b1a6fce14cc8e716d03c9078a00c5045d9076640be9d2cafcaf11",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/models/hf_model.py": "2cb44a0f74ecf518e503477006ab41aba98e3fbbac6115a91276a110dfc13371",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/models/model.py": "68affbe0bbe45e5bffb474715e61b7807de9b57eef4f40771d616dee7004e31b",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/models/spectttra.py": "a8974a07d64c0ed7fe14fb2ba9080bc4297315c26be563176dcb2765c5367a19",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/models/vit.py": "1d9858e4ca774626fdb63d509507c3ff41adfdcd645b1ce46bd8c7ea475066f2",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/utils/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/utils/config.py": "05eec1d363ac0ed83f588856beca87aeac2517af79c431892f3df31b5ee48eb5",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/utils/dataset.py": "a1a730d886adaeb7494fdfd073cf8ec8c4a3af61f24d32ef87b4859aa642a68c",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/utils/losses.py": "ae5c64d0f9bebc91e173006576792e82865917e7f97c277f73fd30a027dbfbf7",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/utils/metrics.py": "fcfcc841486dc41d443299989a850ecad88a5010550a10c8d2b96d75e28b776f",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/utils/perf.py": "eee5cf32f7e6812ea7497a01a090f42ab7d5978f9d8c6c7ac29062904c1b5e71",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/utils/scheduler.py": "be4eb554fd973a2c1cd6dde25b9ecc962d0ec04d7d24fd515b3d35ee747205f9",
+    "/content/dacon_recovery_v3/sonics_vendor/sonics/utils/seed.py": "fc8a62b22ee109b8d309f7056eadcf69d1ee282f4196560f7ab2fb7a856ab5bd",
+    "recovery_fusion.py": "45d261e2468eb53fab2d4744c0cef4e3cf14eb8e0f0c6f64918695a5c34d2482",
+    "recovery_selection.py": "e804c6126634cb4159d138179754197d9c99963f5e3a51945ec952d92938d525",
+    "recovery_sonics.py": "4882c036f504695df46162b81ca794a897acde7a671c564231eea2066b82e0ba"
+  },
+  "thresholds": {
+    "auc_regression": 0.01,
+    "bootstrap_p10": -0.005,
+    "bootstrap_resamples": 2000,
+    "bootstrap_win_rate": 0.7,
+    "diagnostic_gain": 0.005,
+    "eer_regression": 0.02
+  }
+}

@@ -1,0 +1,36 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_actual_budget_stop_and_duplicate_sensitivity_are_preserved ________
+
+tmp_path = PosixPath('/private/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/pytest-of-choiwuseck/pytest-151/test_actual_budget_stop_and_du0')
+
+    def test_actual_budget_stop_and_duplicate_sensitivity_are_preserved(tmp_path: Path) -> None:
+        source = Path('.omo/evidence/v5-colab-runtime/results')
+        shutil.copy(source / 'comparison.json', tmp_path)
+        for arm in ('B0', 'B1'):
+            shutil.copy(source / f'{arm}_predictions.csv', tmp_path)
+        shutil.copytree(source / 'jobs', tmp_path / 'jobs')
+        result = analyze(tmp_path, Path('v4_validation'))
+        receipt = json.loads((source / 'comparison.json').read_text())
+        for arm in ('B0', 'B1'):
+            assert result['arms'][arm]['original']['metrics'] == pytest.approx(
+                receipt[arm]['metrics']['metrics'], abs=1e-12)
+>       assert result['arms']['B1']['status'] == 'evaluated_budget_censored'
+E       AssertionError: assert 'evaluated' == 'evaluated_budget_censored'
+E         
+E         - evaluated_budget_censored
+E         + evaluated
+
+test_v5_analyze.py:23: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  matplotlib.style.core:core.py:213 In /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/lib/python3.11/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'parseString' deprecated - use 'parse_string'
+WARNING  matplotlib.style.core:core.py:213 In /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/lib/python3.11/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'resetCache' deprecated - use 'reset_cache'
+WARNING  matplotlib.style.core:core.py:213 In /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/lib/python3.11/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'parseString' deprecated - use 'parse_string'
+WARNING  matplotlib.style.core:core.py:213 In /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/lib/python3.11/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'resetCache' deprecated - use 'reset_cache'
+WARNING  matplotlib.style.core:core.py:213 In /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/lib/python3.11/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'parseString' deprecated - use 'parse_string'
+WARNING  matplotlib.style.core:core.py:213 In /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/lib/python3.11/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'resetCache' deprecated - use 'reset_cache'
+WARNING  matplotlib.style.core:core.py:213 In /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/lib/python3.11/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'parseString' deprecated - use 'parse_string'
+WARNING  matplotlib.style.core:core.py:213 In /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/lib/python3.11/site-packages/matplotlib/mpl-data/stylelib/classic.mplstyle: 'resetCache' deprecated - use 'reset_cache'
+=========================== short test summary info ============================
+FAILED test_v5_analyze.py::test_actual_budget_stop_and_duplicate_sensitivity_are_preserved
+1 failed, 14 warnings in 3.28s

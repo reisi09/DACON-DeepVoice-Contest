@@ -1,0 +1,49 @@
+The following is a diff from the previous accessibility tree for Window: "DACON 236749 오디오 데이터 재구성 - Claude" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 1330-1333, 1338, 1340-1341
++										1340 텍스트 Claude가 응답을 완료했습니다
+~															1307 텍스트 49분 전
++													1341 툴바 메시지 작업
++														1342 텍스트 지금
++														1343 버튼 재시도
++														1344 버튼 편집
++														1345 버튼 복사
+~												1339 container 10개 메시지 중 10번째
++													1346 container
++														1347 항목 Claude 응답: 남는 위험, Value: 2
++															1348 텍스트 Claude 응답: 남는 위험
++														1349 텍스트 가수별 데이터 분할 비율 문제를 검토하는 중.
++														1350 텍스트 가수별 데이터 분할 비율 문제를 검토하는 중.
++														1351 container
++															1352 텍스트 남는 위험
++															1353 내용 목록
++																1354 container
++																	1355 AXListMarker • 
++																	1356 text 가수 누수:  가수가 4명뿐이라 70/15/15를 가수 단위로 나누면 val·test가 각각 1명 이하가 되거나 비율을 맞출 수 없습니다. 그러면 가수 정체성이 라벨이나 split과 얽힐 수 있습니다.
++																1357 container
++																	1358 AXListMarker • 
++																	1359 text 콘텐츠 누수:  곡·악보 ID가 없으면 같은 곡이나 악보에서 나온 real과 SVS가 서로 다른 split에 들어갈 수 있습니다.
++																1360 container
++																	1361 AXListMarker • 
++																	1362 text 생성기 편향:  SVC를 보류하면 fake가 SVS A01–A05에만 치우칩니다.
++															1363 텍스트 실행 전 필수 검사
++															1364 내용 목록
++																1365 container
++																	1366 AXListMarker 1. 
++																	1367 텍스트 split마다 가수별 real/fake 수를 표로 만들고, 가수 단독 AUC를 산출합니다.
++																1368 container
++																	1369 AXListMarker 2. 
++																	1370 텍스트 split 간에 F0 궤적이나 chroma로 최근접 유사도를 검사해 같은 곡이 다른 split에 흩어졌는지 확인합니다.
++														1371 툴바 메시지 작업
++															1372 버튼 복사
++															1373 버튼 소리 내어 읽기
++															1374 전환 버튼 Description: 좋은 답변, Value: 0
++															1375 전환 버튼 Description: 나쁜 답변, Value: 0
++															1376 버튼 재시도
++															1377 텍스트 지금
++													1378 버튼 (disabled) 메시지 보내기
++												1379 container
++													1380 버튼 받아쓰기
++													1381 container 음성 모드 시작
++														1382 버튼 음성 모드 시작
++														1383 팝업 버튼 마이크
+The focused UI element is 421 HTML 콘텐츠 DACON 236749 오디오 데이터 재구성 - Claude, URL: claude.ai/chat/9b127d1e-bde6-43be-a6c6-cb484dc7199a

@@ -1,0 +1,811 @@
+{
+  "created_date": "2026-09-21",
+  "base_commit": "67b2bc61f6ce8a32cfdcf5d17837872f7c5b109c",
+  "purpose": "General ChatGPT implementation input, not trained stacking results",
+  "source_snapshot_has_uncommitted_files": true,
+  "large_encoder_weights": false,
+  "raw_audio": false,
+  "small_head_checkpoints": 6,
+  "real_cache_fixtures": 10,
+  "diagnostic_predictions_are_independent_oof": false,
+  "files": [
+    {
+      "path": "00_START_HERE.md",
+      "bytes": 3175,
+      "sha256": "738ae10b0e24d7ec13351a1cebcc10e2a15ad87ee11f7f70ba49239c19bd2fd8",
+      "origin": "artifacts/Chat_Stacking_20260921/00_START_HERE.md"
+    },
+    {
+      "path": "01_MAIN_PROMPT.md",
+      "bytes": 11279,
+      "sha256": "a602e444499b2b6e77d2f737f2b371ac9293fa40b4829eb9caa457d75d9b029c",
+      "origin": "artifacts/Chat_Stacking_20260921/01_MAIN_PROMPT.md"
+    },
+    {
+      "path": "02_CONTEXT_AND_CONSTRAINTS.md",
+      "bytes": 4512,
+      "sha256": "b70aa7ffca523578d8c382a375c9463baac8ff1f5f5e6504540c90c48448b438",
+      "origin": "artifacts/Chat_Stacking_20260921/02_CONTEXT_AND_CONSTRAINTS.md"
+    },
+    {
+      "path": "03_INPUT_MAP.md",
+      "bytes": 3020,
+      "sha256": "ddf9823b5ff3a14040e1c08b4b081caa47b856259076ae5d4e7a083fb41f8e39",
+      "origin": "artifacts/Chat_Stacking_20260921/03_INPUT_MAP.md"
+    },
+    {
+      "path": "04_RETURN_CONTRACT.md",
+      "bytes": 3492,
+      "sha256": "337574281f9c4a8c6fc011af1188053291b8dd6b0d0737acf769645e33a67e3e",
+      "origin": "artifacts/Chat_Stacking_20260921/04_RETURN_CONTRACT.md"
+    },
+    {
+      "path": "05_FOLLOWUP_PROMPTS.md",
+      "bytes": 2332,
+      "sha256": "5853117b9ade7e148247a11bd980ac5ef78e72fa2f2255572945057bdfb33c8e",
+      "origin": "artifacts/Chat_Stacking_20260921/05_FOLLOWUP_PROMPTS.md"
+    },
+    {
+      "path": "current/DATASETS.md",
+      "bytes": 7747,
+      "sha256": "b307cb8ce65d023037310629c7341aea8c6c2c406b22db2866fa845c30828400",
+      "origin": "artifacts/Existing9504_Project/DATASETS.md"
+    },
+    {
+      "path": "current/PROJECT.md",
+      "bytes": 6802,
+      "sha256": "49db1b828351283cf66cd942409990584e72191a1800599a08b3aa4e89f8097c",
+      "origin": "artifacts/Existing9504_Project/PROJECT.md"
+    },
+    {
+      "path": "current/submission_source/model/assets/asset_hashes.json",
+      "bytes": 3039,
+      "sha256": "69f588fac806ec2afd0abfebf1555dcee23101a2c1770f3893bb08755fce972b",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/asset_hashes.json"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/LICENSE.txt",
+      "bytes": 3264,
+      "sha256": "903d5ad67a67b3a919981892948e984bdf349053d54f1563c6497f48cdaf75b4",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/LICENSE.txt"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/README.md",
+      "bytes": 3043,
+      "sha256": "0f577f45eea69a99eb55404569c6efa814dfb15b22791bf33bc652c0e134d75a",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/README.md"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/__init__.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/backbone.py",
+      "bytes": 2344,
+      "sha256": "397df32fb0b1a1296b292ec698e7edca44f98c5f2afe3655bf182ad01fa5a11c",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/backbone.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/config.json",
+      "bytes": 600,
+      "sha256": "e9f6b651fb2f83d320b5e10b38bc104afdc57641839d16dd1b4921e9eae49a43",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/config.json"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/configuration_antispoofing.py",
+      "bytes": 325,
+      "sha256": "dd4a40789c2383896ce743effdd48cb6cdbd2f01c4bcdd7d4b71d7fb92869cf7",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/configuration_antispoofing.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/conformer.py",
+      "bytes": 8741,
+      "sha256": "84651dc9e81aaf4a32b400a621aa37e8f22e656a8207c5f4120cbb6e682c5540",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/conformer.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/facebook/wav2vec2-xls-r-1b/config.json",
+      "bytes": 1570,
+      "sha256": "36668778db09d5c64090b62d6afb66ba63057304fe456a45388066ff7dabb997",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/facebook/wav2vec2-xls-r-1b/config.json"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/feature_extraction_antispoofing.py",
+      "bytes": 1046,
+      "sha256": "f549bce974e527a5bf57fd5544ba793d35d99c5db8047600d1c905308a8aacf7",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/feature_extraction_antispoofing.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/modeling_antispoofing.py",
+      "bytes": 822,
+      "sha256": "a7925c0ba67ef090552e0c337be6e6b3efffd53c3193e2310b30675af968c624",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/modeling_antispoofing.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/pipeline_antispoofing.py",
+      "bytes": 1502,
+      "sha256": "a308720d1be9fa6c948bd91648a1ec83a1465a178ae0da29f3cc48fe425170b4",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/pipeline_antispoofing.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/df_arena_1b/preprocessor_config.json",
+      "bytes": 147,
+      "sha256": "e23aafe2a4a2a7c0caaefdc6e4b1e131774137fdeaa50fb5376764b05dacb3c7",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/df_arena_1b/preprocessor_config.json"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/model/panns/component_labels.json",
+      "bytes": 2664,
+      "sha256": "95bdfd3ca12f7ba31a7cb15d4bbe0147d02074a180f92c0177ffa1f0b80f4f33",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/model/panns/component_labels.json"
+    },
+    {
+      "path": "current/submission_source/model/assets/baseline/script.py",
+      "bytes": 14552,
+      "sha256": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/baseline/script.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/mert/README.md",
+      "bytes": 6760,
+      "sha256": "50e8eeec63445c8c76d7052379e038c79f58b8a142d346eac3a3f67c57c1d2e9",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/mert/README.md"
+    },
+    {
+      "path": "current/submission_source/model/assets/mert/config.json",
+      "bytes": 2032,
+      "sha256": "a5b40f9db03c84f29e3114abe813a9226178d5437b517d45cd4c2924ac3d0ce0",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/mert/config.json"
+    },
+    {
+      "path": "current/submission_source/model/assets/mert/configuration_MERT.py",
+      "bytes": 5340,
+      "sha256": "ae0ec2bab8f59c724ba9878a7c20b67210189536ea62d34a56775968e9decb03",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/mert/configuration_MERT.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/mert/modeling_MERT.py",
+      "bytes": 18033,
+      "sha256": "6c3ee73cef6f0c30ef494f88d96f891fa6925ffe663fa391b512f4b57abecc6c",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/mert/modeling_MERT.py"
+    },
+    {
+      "path": "current/submission_source/model/assets/mert/preprocessor_config.json",
+      "bytes": 212,
+      "sha256": "c623b903eb1967474b27522975cfb81638e265df99aa640d2c0bd87a987ab538",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/assets/mert/preprocessor_config.json"
+    },
+    {
+      "path": "current/submission_source/model/manifest.json",
+      "bytes": 6522,
+      "sha256": "2b64e89489666512a006f3a0bb1d769fb740caf2b8a043d7ba8a230bf762c819",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/manifest.json"
+    },
+    {
+      "path": "current/submission_source/model/runtime/ast_multitask.py",
+      "bytes": 10423,
+      "sha256": "2204c7a406f2865a9fc84ea9efb3a7ea3bfeaeb1e894eb15ef80671944c69a6b",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/runtime/ast_multitask.py"
+    },
+    {
+      "path": "current/submission_source/model/runtime/eight_heads.py",
+      "bytes": 11001,
+      "sha256": "c3e040ad607e0f40046358a7bd6069d0fe389f6c6c6201c39992060838eeba09",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/runtime/eight_heads.py"
+    },
+    {
+      "path": "current/submission_source/model/runtime/full_bank_submission.py",
+      "bytes": 7666,
+      "sha256": "6349b3df9eb737d9c7139251afc8ea78cc28f4538d0731d157eee2df2d5d06ff",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/runtime/full_bank_submission.py"
+    },
+    {
+      "path": "current/submission_source/model/runtime/graph_scoring.py",
+      "bytes": 7105,
+      "sha256": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/runtime/graph_scoring.py"
+    },
+    {
+      "path": "current/submission_source/model/runtime/localization_models.py",
+      "bytes": 10294,
+      "sha256": "f0c325d9b654cb0a6fa64740082637a39da89c6137c9d29206c1a376201ec94c",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/runtime/localization_models.py"
+    },
+    {
+      "path": "current/submission_source/model/runtime/mert12_submission.py",
+      "bytes": 13754,
+      "sha256": "30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/runtime/mert12_submission.py"
+    },
+    {
+      "path": "current/submission_source/model/runtime/v6_core.py",
+      "bytes": 2983,
+      "sha256": "b0b0496623f16f815e82d465139449b5258b52cf7d2246f5cad72467037dfd72",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/runtime/v6_core.py"
+    },
+    {
+      "path": "current/submission_source/model/runtime/v6_data.py",
+      "bytes": 5930,
+      "sha256": "e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/runtime/v6_data.py"
+    },
+    {
+      "path": "current/submission_source/model/runtime/v6_runtime.py",
+      "bytes": 7689,
+      "sha256": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/runtime/v6_runtime.py"
+    },
+    {
+      "path": "current/submission_source/model/trained/candidate_lock.json",
+      "bytes": 12741,
+      "sha256": "bb50efd693f47c76cafe376c91e28f2fe1c9c29edf30455ca42b30022338097f",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/trained/candidate_lock.json"
+    },
+    {
+      "path": "current/submission_source/model/trained/run_identity.json",
+      "bytes": 1963,
+      "sha256": "f1b0880ea5c43e1d8e320f412cf716b5f638d90898516a19c49b89e3ba618e59",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/trained/run_identity.json"
+    },
+    {
+      "path": "current/submission_source/model/trained/validation_metrics.json",
+      "bytes": 13160,
+      "sha256": "86e369e881f6cd305c3d4fa15bdf72b725cd8d15e0ad7fe643f512af6a051130",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/model/trained/validation_metrics.json"
+    },
+    {
+      "path": "current/submission_source/requirements.txt",
+      "bytes": 83,
+      "sha256": "7c94169148cd2a873feafaa827e3e67f23b2e2ed0506cab6274f044516f74afe",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/requirements.txt"
+    },
+    {
+      "path": "current/submission_source/script.py",
+      "bytes": 223,
+      "sha256": "b31d161d72d59ab5712ab8248e35ec00c42533d56d9fefa735c0a1061df97a02",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/submissions/Existing9504_MIL/source/script.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/__init__.py",
+      "bytes": 449,
+      "sha256": "7236ec74a3b08e3e398a857038b032d938098d8e4b98fe13c537eb5d6e1c8b24",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/__init__.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/common.py",
+      "bytes": 18688,
+      "sha256": "561a3411d1a6aa453cb229441f3d3afdb91311236cfdf2c6116dfead567fcbbb",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/common.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/constants.py",
+      "bytes": 9228,
+      "sha256": "39341ceee61897dafeeb30185674ef65f6544c43439e11cee103276bafff31a6",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/constants.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/dataset.py",
+      "bytes": 14264,
+      "sha256": "ef172d2c75c9a2b1573bd7f9ae9289a110e89524492c23296726b51c34eeb97d",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/dataset.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/environment.py",
+      "bytes": 18914,
+      "sha256": "bb79a40e0d341e29d83ef5a381b4995a1970490e033aef654fec105146347eff",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/environment.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/evaluation.py",
+      "bytes": 20666,
+      "sha256": "f07b58730321a11d61052a8560064380db4911584826c3b0cfd7a6d2eaaa2fac",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/evaluation.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/features.py",
+      "bytes": 26536,
+      "sha256": "d17f213a5b7a67e07e9ff8bfa3806c58ed285519746a26e46f0a05f0b3b438cb",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/features.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/fingerprint.py",
+      "bytes": 4560,
+      "sha256": "37c5cc0f042b98dd7114cd33723fb7f55491d047213c6652bdd90e12a8b2b5a4",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/fingerprint.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/gpu.py",
+      "bytes": 2144,
+      "sha256": "93d26e778ed35bde97ecf66173a0586cc3fbeda3d6c8a59991ffe5a28d9c605c",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/gpu.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/handoff.py",
+      "bytes": 28427,
+      "sha256": "2bd8641ac3e7e6947b12ea9daccc9b3172be4620c18642880381f610684d8086",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/handoff.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/orchestrator.py",
+      "bytes": 25970,
+      "sha256": "836b96811622deece1f9746c91beb1aac391c49c17d05648d67d372725bd05c4",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/orchestrator.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/parity.py",
+      "bytes": 11079,
+      "sha256": "d91fb6e8c7ff81359133b73f1b6407b3164223b5fc8513b1345a231a74275ff8",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/parity.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/requirements.in",
+      "bytes": 640,
+      "sha256": "bfbdbbe04a9b759727a3249c7f03da5f88445b524eaeec1891d4f479de358364",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/requirements.in"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/requirements.lock.txt",
+      "bytes": 141568,
+      "sha256": "83b3d67698d7e96260af3063b54c895127f4432bfc8d4af778f2bc506036f6a7",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/requirements.lock.txt"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/staging.py",
+      "bytes": 17439,
+      "sha256": "e34f148a4b3547ce276ad950abbffa41ce1de5bb0c73dc34421e72f1450ab1ae",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/staging.py"
+    },
+    {
+      "path": "current/training_code/dacon9504a100/training.py",
+      "bytes": 18258,
+      "sha256": "81c5a230df49f1cbf7868dbc799676502c72bf7198bf7169813c5ae59de5b686",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/code/dacon9504a100/training.py"
+    },
+    {
+      "path": "current/training_source/ast_multitask.py",
+      "bytes": 10423,
+      "sha256": "2204c7a406f2865a9fc84ea9efb3a7ea3bfeaeb1e894eb15ef80671944c69a6b",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/ast_multitask.py"
+    },
+    {
+      "path": "current/training_source/eight_fixed_io.py",
+      "bytes": 6243,
+      "sha256": "2a5267ccb6a77b67b4a1c2bbf22735e129056ff6071f389f9f4576eceb822a69",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/eight_fixed_io.py"
+    },
+    {
+      "path": "current/training_source/eight_heads.py",
+      "bytes": 11001,
+      "sha256": "c3e040ad607e0f40046358a7bd6069d0fe389f6c6c6201c39992060838eeba09",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/eight_heads.py"
+    },
+    {
+      "path": "current/training_source/eight_metrics.py",
+      "bytes": 6793,
+      "sha256": "78ea26c579d4f59791956c60a674c00c963334be5ccfebfc82ff445ef6f64d4c",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/eight_metrics.py"
+    },
+    {
+      "path": "current/training_source/expanded_submission.py",
+      "bytes": 7340,
+      "sha256": "7c7ef05802d9d34b4cd039fdc1943fcbfd358c90d5e7f5f7e6936a97f31f352c",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/expanded_submission.py"
+    },
+    {
+      "path": "current/training_source/full_bank_batches.py",
+      "bytes": 2086,
+      "sha256": "f7dea887167586c428c366ed9bff1122abf8df959a3b2d94f0496346f54db583",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/full_bank_batches.py"
+    },
+    {
+      "path": "current/training_source/full_bank_evaluate.py",
+      "bytes": 3604,
+      "sha256": "3db489ec1f7491389fd374ceca4c10328ca6178015381c07c66f48f36d519bba",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/full_bank_evaluate.py"
+    },
+    {
+      "path": "current/training_source/full_bank_features.py",
+      "bytes": 13038,
+      "sha256": "59963062eb536d514f8f1a8ea8aa981d65cf2d8f03c7df905597c973d9481116",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/full_bank_features.py"
+    },
+    {
+      "path": "current/training_source/full_bank_run.py",
+      "bytes": 9548,
+      "sha256": "c0830be29cdbf6234ebb25fef08d25e9301b49e84126d0a1d541106dc70b5bd5",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/full_bank_run.py"
+    },
+    {
+      "path": "current/training_source/full_bank_submission.py",
+      "bytes": 7664,
+      "sha256": "55eaadaca62874afb1113c3319bed10aa17e5c156c15dc992aff6cb622dea204",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/full_bank_submission.py"
+    },
+    {
+      "path": "current/training_source/full_bank_train.py",
+      "bytes": 15476,
+      "sha256": "bb35c7d23fd305fdaff97398b0b9a07dd7a5da2121494279be00dd2148293673",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/full_bank_train.py"
+    },
+    {
+      "path": "current/training_source/graph_scoring.py",
+      "bytes": 7105,
+      "sha256": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/graph_scoring.py"
+    },
+    {
+      "path": "current/training_source/localization_features.py",
+      "bytes": 17908,
+      "sha256": "3e1abb11dcc8b5f1b8b118f65f5192d7b40e17be45d66c9930a9a9f950c7285c",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/localization_features.py"
+    },
+    {
+      "path": "current/training_source/localization_models.py",
+      "bytes": 10294,
+      "sha256": "f0c325d9b654cb0a6fa64740082637a39da89c6137c9d29206c1a376201ec94c",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/localization_models.py"
+    },
+    {
+      "path": "current/training_source/mert12_full_refit.py",
+      "bytes": 14467,
+      "sha256": "0f503a9fd9783de7e6de3ca250fd0a912dcb613f4dfa20d69dcf2ef3d945e990",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/mert12_full_refit.py"
+    },
+    {
+      "path": "current/training_source/mert12_submission.py",
+      "bytes": 13754,
+      "sha256": "30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/mert12_submission.py"
+    },
+    {
+      "path": "current/training_source/music_temporal.py",
+      "bytes": 24590,
+      "sha256": "208e9ab8f4912e64f19bcd365c5760134db298c5ac0d58075688566278b3ebe5",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/music_temporal.py"
+    },
+    {
+      "path": "current/training_source/package_expanded_submission.py",
+      "bytes": 5767,
+      "sha256": "5ec1ad3bf7dabc17efe659c79ac980f68f1d9714a62d45aeed21c048fab670c3",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/package_expanded_submission.py"
+    },
+    {
+      "path": "current/training_source/package_full_bank_submission.py",
+      "bytes": 5683,
+      "sha256": "3b9d9e44bd892e1923a7d6556308eda9122ba9cc34df797c8bddb1520cc67b44",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/package_full_bank_submission.py"
+    },
+    {
+      "path": "current/training_source/package_mert12_submission.py",
+      "bytes": 8837,
+      "sha256": "02abedd396b2fbca0878ec80a31831109e83ee41ce5eb1e1af4e14c1bfe99708",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/package_mert12_submission.py"
+    },
+    {
+      "path": "current/training_source/package_redesign_submission.py",
+      "bytes": 8689,
+      "sha256": "ec59532f99f731066c2517abd688ee54ac3c0a1e857c68b1a4ac6c2378985111",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/package_redesign_submission.py"
+    },
+    {
+      "path": "current/training_source/redesign_assets.py",
+      "bytes": 6508,
+      "sha256": "3039d85626bf28c5e5374316c97aa3b49dec37956fd550116e1eb8288575d933",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/redesign_assets.py"
+    },
+    {
+      "path": "current/training_source/redesign_checkpoint.py",
+      "bytes": 2962,
+      "sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/redesign_checkpoint.py"
+    },
+    {
+      "path": "current/training_source/redesign_features_cache.py",
+      "bytes": 8525,
+      "sha256": "5594b86ca3effffeb40893317cad04debf510da11db84158bdc0590508fb299a",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/redesign_features_cache.py"
+    },
+    {
+      "path": "current/training_source/redesign_features_runtime.py",
+      "bytes": 8500,
+      "sha256": "33799ddc1efc017a6b04f2ca52a8f22c50b57d32ed05b18cc1eb477447ffec99",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/redesign_features_runtime.py"
+    },
+    {
+      "path": "current/training_source/redesign_models.py",
+      "bytes": 4804,
+      "sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/redesign_models.py"
+    },
+    {
+      "path": "current/training_source/redesign_submission.py",
+      "bytes": 6870,
+      "sha256": "fdc86dcf7d7157e910fd6f5067152f307412a539811102a2565443bcdffa6146",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/redesign_submission.py"
+    },
+    {
+      "path": "current/training_source/temporal_augmentation.py",
+      "bytes": 3227,
+      "sha256": "ac7aaeabdeb72bc8b8553ab75f2fa5b933b0dd419e827f605297804decc986a5",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/temporal_augmentation.py"
+    },
+    {
+      "path": "current/training_source/v6_core.py",
+      "bytes": 2983,
+      "sha256": "b0b0496623f16f815e82d465139449b5258b52cf7d2246f5cad72467037dfd72",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/v6_core.py"
+    },
+    {
+      "path": "current/training_source/v6_data.py",
+      "bytes": 5930,
+      "sha256": "e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/v6_data.py"
+    },
+    {
+      "path": "current/training_source/v6_runtime.py",
+      "bytes": 7689,
+      "sha256": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/v6_runtime.py"
+    },
+    {
+      "path": "current/training_source/v6_train.py",
+      "bytes": 6654,
+      "sha256": "ac5dbad1b572dec8803792012517108055b64da66ddee4b527c6458584135b1b",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/v6_train.py"
+    },
+    {
+      "path": "current/training_source/v7_ablation.py",
+      "bytes": 10525,
+      "sha256": "1c93d837c8a0fbd65f48b74b078c97755a588b0013163ee95550d18136e4ea89",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!repository/results/existing9504_h100_20260920/training_snapshot/source/v7_ablation.py"
+    },
+    {
+      "path": "data/catalog_list.csv",
+      "bytes": 35351836,
+      "sha256": "167cc1842999cb185063947d711fcccd7c4dd16388b411e163c8d6324e4fe7e1",
+      "origin": "artifacts/Existing9504_Project/data/catalog_list.csv"
+    },
+    {
+      "path": "data/runtime_manifest.csv",
+      "bytes": 14398171,
+      "sha256": "96ba67dd2dfdbcfbf041465e883e0e003e6489e14f82e93054df4b42075a9ae3",
+      "origin": "artifacts/Existing9504_Project/data/runtime_manifest.csv"
+    },
+    {
+      "path": "data/selected_list.csv",
+      "bytes": 6036078,
+      "sha256": "bab57914b7d62ea7d80fb66e3543ca242fb499e07880fd6ff26ff8d9f328e465",
+      "origin": "artifacts/Existing9504_Project/data/selected_list.csv"
+    },
+    {
+      "path": "data/source_counts.csv",
+      "bytes": 985,
+      "sha256": "675a717ad8730bd6449fa8840c4a387c105ccc73f97c902a1e1a38846d6a8026",
+      "origin": "artifacts/Existing9504_Project/data/source_counts.csv"
+    },
+    {
+      "path": "data/source_generator_counts.csv",
+      "bytes": 3499,
+      "sha256": "9cdc91e7d8e5b10a45ff9c735ce4ac8d44000d4724456149660f843e58034274",
+      "origin": "artifacts/Existing9504_Project/data/source_generator_counts.csv"
+    },
+    {
+      "path": "data/summary.json",
+      "bytes": 1597,
+      "sha256": "19ddfd97eb59c54ea9d9cb4af8416c5660925f5ce254719d40afe871d92d10d3",
+      "origin": "artifacts/Existing9504_Project/data/summary.json"
+    },
+    {
+      "path": "diagnostic/test_predictions.csv",
+      "bytes": 678157,
+      "sha256": "f784ba738735233779cba4aaba59d8045e5a373ef99b1d98af31cfb0e0907ca5",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!predictions/test_predictions.csv"
+    },
+    {
+      "path": "diagnostic/val_predictions.csv",
+      "bytes": 677493,
+      "sha256": "888ab22d88f1f4eae86d317be6492280b5bd1cd616657cab1bded6a87bcc39ec",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!predictions/val_predictions.csv"
+    },
+    {
+      "path": "evidence/metrics/test_metrics.json",
+      "bytes": 11663,
+      "sha256": "cdfc9fa841da806e57cb73902004eefdf2186077af2d5dc1873719a9e715d677",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!evidence/metrics/test_metrics.json"
+    },
+    {
+      "path": "evidence/metrics/val_metrics.json",
+      "bytes": 13160,
+      "sha256": "86e369e881f6cd305c3d4fa15bdf72b725cd8d15e0ad7fe643f512af6a051130",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!evidence/metrics/val_metrics.json"
+    },
+    {
+      "path": "evidence/model/candidate_lock.json",
+      "bytes": 12741,
+      "sha256": "bb50efd693f47c76cafe376c91e28f2fe1c9c29edf30455ca42b30022338097f",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!evidence/model/candidate_lock.json"
+    },
+    {
+      "path": "evidence/parity/parity_receipt.json",
+      "bytes": 118302,
+      "sha256": "322b2ee1afb36dc8792acae3802dd4c17ae830d49357b7ba90d86c435dbe7aa5",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!evidence/parity/parity_receipt.json"
+    },
+    {
+      "path": "evidence/submission_smoke_result.json",
+      "bytes": 4392,
+      "sha256": "afd9fec80eb38e8968288b67d67e516708504a3e9eba768b6587a0188e597e79",
+      "origin": "artifacts/Existing9504_Project/DACON_Existing9504_Project_Source_and_Metadata.zip!evidence/submission_smoke_result.json"
+    },
+    {
+      "path": "fixtures/cache/asvspoof2019_la_LA_E_5923854__3148a95d8c.npz",
+      "bytes": 12881,
+      "sha256": "0552fec9faf700f5e51e152445ad362025439623d0bb1969825536183207f816",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/asvspoof2019_la_LA_E_5923854__3148a95d8c.npz"
+    },
+    {
+      "path": "fixtures/cache/asvspoof2019_la_LA_T_5517266__5a374f6261.npz",
+      "bytes": 12881,
+      "sha256": "96cc3f7b3b2faf13494592ecafdc08bd44380214e6fdc5cf124c3caf0ec065c8",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/asvspoof2019_la_LA_T_5517266__5a374f6261.npz"
+    },
+    {
+      "path": "fixtures/cache/core_63ab76f979000832863b_base__2b1a70e367.npz",
+      "bytes": 26233,
+      "sha256": "f5d128d2a21215e1a45d3e855203e4903ec50b58f91267f202333178e5104379",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/core_63ab76f979000832863b_base__2b1a70e367.npz"
+    },
+    {
+      "path": "fixtures/cache/core_9177faa10fc0e78a99e3_base__84f4864fb9.npz",
+      "bytes": 26233,
+      "sha256": "6d5490f0c1965800196e10e7089dac1a9ab76af1b30bf9b8dc05ef1b0a247c5f",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/core_9177faa10fc0e78a99e3_base__84f4864fb9.npz"
+    },
+    {
+      "path": "fixtures/cache/core_c7f4818fe05d69a48837_base__e8b587e3ce.npz",
+      "bytes": 26233,
+      "sha256": "753bc5e116130138ca20093d30366baf9e20f9d7d8b8fd37b33825517d55de63",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/core_c7f4818fe05d69a48837_base__e8b587e3ce.npz"
+    },
+    {
+      "path": "fixtures/cache/ctrsvdd_CtrSVDD_0059_D_0002454__146540f32b.npz",
+      "bytes": 22117,
+      "sha256": "78a544e7f86a331098465332f0649a0fbb3297f1b75a0bfeea3e348ef9ff80f3",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/ctrsvdd_CtrSVDD_0059_D_0002454__146540f32b.npz"
+    },
+    {
+      "path": "fixtures/cache/fake_16900_udio_1__81062a7b5a.npz",
+      "bytes": 115581,
+      "sha256": "29911f6302a54b03abc8fb8f68b86452b80cc3513fddea6afb500ec2eb8e45f1",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/fake_16900_udio_1__81062a7b5a.npz"
+    },
+    {
+      "path": "fixtures/cache/fakemusiccaps_mustango_b1j-hD9zs6Q__59053ec13e.npz",
+      "bytes": 39585,
+      "sha256": "1609cb5d0b57fe3824533e542ad93777a2afde5182c190486c2a071b90a883e1",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/fakemusiccaps_mustango_b1j-hD9zs6Q__59053ec13e.npz"
+    },
+    {
+      "path": "fixtures/cache/haim_musicgen_musicgen_small_00029__f7f6acf7a5.npz",
+      "bytes": 39585,
+      "sha256": "dba7e0f8c6de6b0e2b8e083904c80b98739cab11a6d2f986c505376d57223173",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/haim_musicgen_musicgen_small_00029__f7f6acf7a5.npz"
+    },
+    {
+      "path": "fixtures/cache/librispeech_test-clean_1580-141083-0008__a832b3a4a5.npz",
+      "bytes": 22117,
+      "sha256": "2a4ecddde0d4a6cb18c43e186ef2361ac6f19537c5f77bff063b7fafe1ee4a17",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!parity/full_cache/librispeech_test-clean_1580-141083-0008__a832b3a4a5.npz"
+    },
+    {
+      "path": "fixtures/cache_schema.json",
+      "bytes": 11357,
+      "sha256": "a88f7b6f961ea607f787026c8f4d81e393c9ed8bdf3fd2e0fb7e4d30496a039d",
+      "origin": "derived from actual caches and handoff parity receipt"
+    },
+    {
+      "path": "fixtures/heads/music_41.pt",
+      "bytes": 629537,
+      "sha256": "37402170d05f13840becc4ae45b1d9755e565d89889c5330fd6fa11bcd0aeb82",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!model/checkpoints/music_41.pt"
+    },
+    {
+      "path": "fixtures/heads/music_42.pt",
+      "bytes": 629537,
+      "sha256": "3315cd455b2781571e2d0a5ba02388d4335bfa5210222a1e130ecf79f2101609",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!model/checkpoints/music_42.pt"
+    },
+    {
+      "path": "fixtures/heads/music_43.pt",
+      "bytes": 629537,
+      "sha256": "ef4dae28ef052d74e2cdd236765be5d2b33d220f02bc6f29129b31e3211be540",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!model/checkpoints/music_43.pt"
+    },
+    {
+      "path": "fixtures/heads/voice_41.pt",
+      "bytes": 177965,
+      "sha256": "c1d00490d79765e422f99022ea2179db19be6eac800c93832fa4ffb5272c705c",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!model/checkpoints/voice_41.pt"
+    },
+    {
+      "path": "fixtures/heads/voice_42.pt",
+      "bytes": 177965,
+      "sha256": "bc394b6bed3cf212f4a09f9811651d8f8b8477efbeeae1a676ba65a9442dd4bb",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!model/checkpoints/voice_42.pt"
+    },
+    {
+      "path": "fixtures/heads/voice_43.pt",
+      "bytes": 177965,
+      "sha256": "31b350e02eb54105dac35bf78a43dc674dffa30af0bc75c9b0f665226ae9185b",
+      "origin": "results/existing9504_h100_20260920/completed/DACON_Existing9504_H100_Handoff.zip!model/checkpoints/voice_43.pt"
+    },
+    {
+      "path": "fixtures/index.json",
+      "bytes": 10203,
+      "sha256": "5d1309866539e9fb7ceae566ecc73387ba9600ddda20c26eb1fb6b7ad22fcec0",
+      "origin": "derived from actual caches and handoff parity receipt"
+    },
+    {
+      "path": "reference/COMPETITION_CONTRACT.md",
+      "bytes": 9442,
+      "sha256": "f0f947115e60eda6974f47dfa42e1f571cca59665cd7a459056f55f231dc8528",
+      "origin": "COMPETITION_CONTRACT.md"
+    },
+    {
+      "path": "reference/EXPERIMENTS_ALL_2026-09-17.md",
+      "bytes": 131211,
+      "sha256": "7f2ddc93ef6e9074d5cb6e009906423df3ef5278b7103f7656ab844fa966548f",
+      "origin": "EXPERIMENTS_ALL_2026-09-17.md"
+    },
+    {
+      "path": "reference/legacy/graph_fusion.py",
+      "bytes": 9197,
+      "sha256": "342602dc27d3311a86bff00ca6e075fa4f74d5e207859734f8b071a9757c3b9a",
+      "origin": "graph_fusion.py"
+    },
+    {
+      "path": "reference/legacy/graph_scoring.py",
+      "bytes": 7105,
+      "sha256": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+      "origin": "graph_scoring.py"
+    },
+    {
+      "path": "reference/legacy/redesign_evaluation_common.py",
+      "bytes": 9258,
+      "sha256": "eb0bac83fe689bff4fcd9d783f5307efacf7974b14c979097370edacb0537a4e",
+      "origin": "redesign_evaluation_common.py"
+    },
+    {
+      "path": "reference/legacy/redesign_file.py",
+      "bytes": 9983,
+      "sha256": "6a047801488d1d157a88edfbdb0892dc8398a4f64f54719418dcd7bb78518289",
+      "origin": "redesign_file.py"
+    },
+    {
+      "path": "reference/legacy/redesign_oof.py",
+      "bytes": 5688,
+      "sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+      "origin": "redesign_oof.py"
+    },
+    {
+      "path": "reference/legacy/redesign_oof_validation.py",
+      "bytes": 6151,
+      "sha256": "ce69800b0fbbf5e09209190b18af384fce2934442aad2227066dcced79a4d442",
+      "origin": "redesign_oof_validation.py"
+    },
+    {
+      "path": "reference/legacy/test_graph_fusion.py",
+      "bytes": 7225,
+      "sha256": "8729168a6ac8a7ef359f1b8a7b42b2a1be6fdc0b2197e4602e9418f70875a13d",
+      "origin": "test_graph_fusion.py"
+    },
+    {
+      "path": "reference/legacy/test_graph_scoring.py",
+      "bytes": 6667,
+      "sha256": "088c7bdea69e3a4faf9112b18135e290d5d238f8cd3ba40d6d07bacae09de757",
+      "origin": "test_graph_scoring.py"
+    }
+  ]
+}

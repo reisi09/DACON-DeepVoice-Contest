@@ -1,0 +1,17 @@
+{
+  "v6_split_sha256": "738d7370ebeef9b7c2e1b7435a244caca851ffa5a730da4520570d4683f4b524",
+  "files": {
+    "v7_ablation.py": "7924db1fd2f10d272aef1a7019b29c5852f192b97ed0f8364109784af88df2d8",
+    "v7_features.py": "e32ef1f5d9de4e77fdb5caeac85c0ac536b296047c6cac0afd312a9b579a0254",
+    "v7_notebook_runner.py": "04f937d3b47639d6512e9cf6cd27c80357c471300f5ad040bfcfefd2d4efd649",
+    "test_v7_ablation.py": "84bdaf9fb30f049224228fde30e608610a325f6be51209adf748fda1ddca10a0",
+    "V7_A100_DataAblation.ipynb": "1c555212ba894a11a9d45c5d30d0ed8e1dfc13d8a0a9720847d6d020145c57f5",
+    "dev_unique_ids.csv": "c460d285a6f4ab5b2176fba9210c7e8e24b57b30a40cfb15049a8caa9128d950",
+    "data_audit_report.md": "08f87c4903a2b1df3783401cadd8c6302a8d8ff1d43745cf518bee758377fc27"
+  },
+  "variants": "C0 original; C1 source weighting; C2 NSynth exclusion; C3 equal-window sampling; C4/C5 fresh 4 seconds",
+  "gpu": "A100 SXM x1",
+  "hourly_credits": 1.48,
+  "max_workspace_hours": 4,
+  "max_compute_hours": 3.5
+}

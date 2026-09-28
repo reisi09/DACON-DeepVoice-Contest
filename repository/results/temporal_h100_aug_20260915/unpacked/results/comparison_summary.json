@@ -1,0 +1,97 @@
+{
+  "tune": [
+    {
+      "name": "A0_none",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 128,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.05,
+        "seed": 41,
+        "dropout": 0.2,
+        "crop_probability": 0.0,
+        "feature_mask_probability": 0.0
+      },
+      "music_eer_mean": 0.38076539011685967,
+      "music_eer_std": 0.10996003760011029,
+      "balanced_bce_mean": 0.670216724997489,
+      "candidates": [
+        "A0_none_seed41",
+        "A0_none_seed42",
+        "A0_none_seed43"
+      ]
+    },
+    {
+      "name": "A1_crop",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 128,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.05,
+        "seed": 41,
+        "dropout": 0.2,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.0
+      },
+      "music_eer_mean": 0.30822065689687744,
+      "music_eer_std": 0.007366292001673476,
+      "balanced_bce_mean": 0.5576661453125719,
+      "candidates": [
+        "A1_crop_seed41",
+        "A1_crop_seed42",
+        "A1_crop_seed43"
+      ]
+    },
+    {
+      "name": "A2_crop_mask",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 128,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.05,
+        "seed": 41,
+        "dropout": 0.2,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.3
+      },
+      "music_eer_mean": 0.3110139529862629,
+      "music_eer_std": 0.012808291061874784,
+      "balanced_bce_mean": 0.5644275845395502,
+      "candidates": [
+        "A2_crop_mask_seed41",
+        "A2_crop_mask_seed42",
+        "A2_crop_mask_seed43"
+      ]
+    }
+  ],
+  "historical_test": [
+    {
+      "name": "A0_none",
+      "music_eer_mean": 0.5175925925925927,
+      "music_eer_std": 0.08203724604939511,
+      "balanced_bce_mean": 0.7382354311695888
+    },
+    {
+      "name": "A1_crop",
+      "music_eer_mean": 0.4333333333333333,
+      "music_eer_std": 0.03855678298825373,
+      "balanced_bce_mean": 0.7004633658470277
+    },
+    {
+      "name": "A2_crop_mask",
+      "music_eer_mean": 0.41944444444444445,
+      "music_eer_std": 0.027216552697590907,
+      "balanced_bce_mean": 0.7114111016929056
+    }
+  ],
+  "selected_using_tune": "A1_crop"
+}

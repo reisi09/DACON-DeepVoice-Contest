@@ -1,0 +1,37 @@
+{
+  "artifacts": {
+    ".omo/evidence/v4-results-analysis.ipynb": {
+      "bytes": 152899,
+      "sha256": "6290c26afb917e388aa2806240ecfdbe2d1ccf09d3d788117fc77e5ae4f18f19"
+    },
+    ".omo/evidence/v4-results-epoch-eer.png": {
+      "bytes": 139703,
+      "sha256": "b138c117fed6fced3c7ae04907c25bd25deb433ed304dd6346b783e0e5247446"
+    },
+    ".omo/evidence/v4-results-first-comparison.md": {
+      "bytes": 4497,
+      "sha256": "562a04f6a2df42ebad3cf54440df2dc4216722c42711c6d3ba228bd7032d6b99"
+    },
+    ".omo/evidence/v4-results-seen-ood.png": {
+      "bytes": 40236,
+      "sha256": "ffbe52d0f5b838cef5955159eec235596705258ca0ad92016d05d210e9abb745"
+    },
+    ".omo/evidence/v4-results-summary.json": {
+      "bytes": 3411,
+      "sha256": "d47656f47262645378188ea5624af9e8c3fe1430b6eb70ae14489f9b5663722e"
+    }
+  },
+  "invocation": ".venv/bin/python _workspace/v4_results_report/build_report.py --execute",
+  "observable": {
+    "candidate_gate_passes": 0,
+    "executed_code_cells": 5,
+    "notebook_errors": 0,
+    "overall_score": null,
+    "plots_visually_inspected": true,
+    "reason": "no_candidate_passed",
+    "refit_performed": false,
+    "sealed_accessed": false,
+    "selection": "G0"
+  },
+  "scenario": "local CPU analysis replay of frozen Colab receipts"
+}

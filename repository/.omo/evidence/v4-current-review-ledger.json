@@ -1,0 +1,37 @@
+{
+  "source_commit": "d2397ad8cc96667e5bc2e4132d86405afe093f4e",
+  "lanes": {
+    "code": {
+      "verdict": "PASS",
+      "report": ".omo/evidence/v4-current-code-review.md",
+      "source_commit": "d2397ad8cc96667e5bc2e4132d86405afe093f4e",
+      "report_sha256": "329ffff6ca8fdd42743dfbe275894cf362e9beba5b304a84e00dfb49765eff0b"
+    },
+    "security": {
+      "verdict": "PASS",
+      "report": ".omo/evidence/v4-current-security-review.md",
+      "source_commit": "d2397ad8cc96667e5bc2e4132d86405afe093f4e",
+      "report_sha256": "8843d5f10ca9df67d3d7fb304a9ddd86545716fd46aec13460d932d060260c9c"
+    },
+    "goal": {
+      "verdict": "PASS",
+      "report": ".omo/evidence/v4-current-goal-review.md",
+      "source_commit": "d2397ad8cc96667e5bc2e4132d86405afe093f4e",
+      "report_sha256": "8d04ee131fcd10c52e81d130a66ff511d10746e40a54e2fd26b8b50672e4cd8c"
+    },
+    "qa": {
+      "verdict": "PASS",
+      "report": ".omo/evidence/v4-current-qa-review.md",
+      "source_commit": "d2397ad8cc96667e5bc2e4132d86405afe093f4e",
+      "report_sha256": "3cea516fcd786c5df6b71e5299e8d5c76220e02e5c9a9c1b93e2ac074a40fe56"
+    },
+    "context": {
+      "verdict": "PASS",
+      "report": ".omo/evidence/v4-current-context-review.md",
+      "source_commit": "d2397ad8cc96667e5bc2e4132d86405afe093f4e",
+      "report_sha256": "e8d1e7cd1cc6d3018c8d6a5bb3918e8bae0ac9016772aecea72b6cc9de7af731"
+    }
+  },
+  "overall": "PASS",
+  "analysis_notebook_sha256": "d050883fb71fe6572879deb9d85da5dc7f006e3f7979761b40a7e582855c0418"
+}

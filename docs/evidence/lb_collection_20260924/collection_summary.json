@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-24",
+  "code_commit": "523c1643c4e808d8f0886d7d90d12fc3f73c56b4",
+  "original_audio_files": 2800,
+  "audio_bytes": 7986807113,
+  "duration_seconds": 344462.0419374986,
+  "datasets": [
+    {
+      "name": "jamendo-v1",
+      "files": 1000,
+      "bytes": 5530358532,
+      "duration_seconds": 235585.29543749982,
+      "duration_range_seconds": [
+        30.16025,
+        479.642625
+      ],
+      "flags": {
+        "clipping_review": 179,
+        "duration_metadata_mismatch": 24,
+        "prior_artist_name_match_review": 3
+      },
+      "flagged_rows": 205
+    },
+    {
+      "name": "librispeech-dev-clean-long-v1",
+      "files": 134,
+      "bytes": 47879638,
+      "duration_seconds": 2629.2698749999995,
+      "duration_range_seconds": [
+        15.02,
+        32.645
+      ],
+      "flags": {},
+      "flagged_rows": 0
+    },
+    {
+      "name": "librispeech-long-v1",
+      "files": 94,
+      "bytes": 32768720,
+      "duration_seconds": 1841.7352499999997,
+      "duration_range_seconds": [
+        15.02,
+        35.155
+      ],
+      "flags": {},
+      "flagged_rows": 0
+    },
+    {
+      "name": "librispeech-test-other-long-v1",
+      "files": 172,
+      "bytes": 57513855,
+      "duration_seconds": 3271.6996250000025,
+      "duration_range_seconds": [
+        15.0,
+        34.51
+      ],
+      "flags": {},
+      "flagged_rows": 0
+    },
+    {
+      "name": "mlaad-long-v1",
+      "files": 400,
+      "bytes": 304517348,
+      "duration_seconds": 6904.7632499999945,
+      "duration_range_seconds": [
+        15.2500625,
+        58.5
+      ],
+      "flags": {},
+      "flagged_rows": 0
+    },
+    {
+      "name": "music-arena-v1",
+      "files": 1000,
+      "bytes": 2013769020,
+      "duration_seconds": 94229.27850000003,
+      "duration_range_seconds": [
+        19.9691875,
+        310.0
+      ],
+      "flags": {
+        "clipping_review": 24
+      },
+      "flagged_rows": 24
+    }
+  ],
+  "flagged_rows": 229,
+  "unique_byte_sha256": 2800,
+  "unique_canonical_pcm_sha256": 2800,
+  "training_admitted": false,
+  "role": "unassigned",
+  "sealed": false,
+  "new_credentials_created": false,
+  "new_gpu_jobs": 0,
+  "source_audio_transformed": false,
+  "cloud_readback_status": "verified_all_13_files",
+  "transfer_evidence": "transfers.json"
+}

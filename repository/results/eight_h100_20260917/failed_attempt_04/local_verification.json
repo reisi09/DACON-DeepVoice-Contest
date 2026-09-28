@@ -1,0 +1,15 @@
+{
+  "scenario": "preserve attempt4 notebook startup failure",
+  "binary_observable": {
+    "status": "failed",
+    "archive_verified": true,
+    "archive_bytes": 12344,
+    "archive_sha256": "9cd3a5f8db2098dbc914db311709db63b5f451a0a8b7b1f44a7ec8ba1c184a78",
+    "sidecar_match": true,
+    "receipt_match": true,
+    "crc_ok": true,
+    "member_hashes_ok": true,
+    "export_member_count": 8
+  },
+  "artifact": "results/eight_h100_20260917/failed_attempt_04"
+}

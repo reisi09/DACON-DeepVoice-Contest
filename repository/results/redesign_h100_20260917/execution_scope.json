@@ -1,0 +1,24 @@
+{
+  "purpose": "diagnostic structural ablation on historically reused labeled data",
+  "arms": [
+    "A",
+    "B"
+  ],
+  "candidate": "B_ensemble",
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "max_gpu_hours": 4,
+  "export_reserve_minutes": 15,
+  "fresh_holdout": false,
+  "skipped_arms": {
+    "C": "no verified paired pure/mixed slots; same exposure as A",
+    "D": "no verified paired pure/mixed slots; same exposure as B"
+  },
+  "voice_validation_available": false,
+  "sealed_open_authorized_for_this_run": false,
+  "dacon_submission": false,
+  "notebook_sha256": "781d89c868773c12e539f935dca31194cae37c47d94a291a87f77854ec501fab"
+}

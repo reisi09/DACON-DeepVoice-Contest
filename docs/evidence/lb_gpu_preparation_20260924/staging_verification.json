@@ -1,0 +1,41 @@
+{
+  "evidence_basis": "Recorded from the already completed real-archive staging tool output; no rerun performed.",
+  "cwd": "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/lb_cpu_20260924/repository",
+  "command": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python - <<'PY'\nfrom pathlib import Path\nimport tempfile,json,time\nfrom data_v4.stage_gpu_inputs import stage,sha256_file\nbase=Path('/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace')\nfirst=base/'lb_admission_20260924/delivery/admitted-v2.tar.gz'\nsecond=base/'lb_mlaad_admission_20260924/delivery/mlaad-admitted-v1.tar.gz'\nprint((second.parent/'mlaad-admitted-v1.receipt.json').read_text())\nexpected1='9854dd539bf284a41f09020cf96928335de1adf40367afd59fd9ae6a6c5f8471'\nreceipt=json.loads((second.parent/'mlaad-admitted-v1.receipt.json').read_text())\nexpected2=receipt['sha256']\nassert expected2.startswith('4f090')\nstart=time.monotonic()\nwith tempfile.TemporaryDirectory(prefix='dacon-stage-verified-') as root:\n sentinel=Path(root)/'historical.bin'\n sentinel.write_bytes(b'pre-existing historical bytes remain unchanged')\n report=stage(Path(root),[(first,expected1),(second,expected2)])\n assert sentinel.read_bytes()==b'pre-existing historical bytes remain unchanged'\n print(json.dumps({k:v for k,v in report.items() if k!='items'}))\n print(json.dumps(dict(seconds=time.monotonic()-start,all_installed_bytes_match_embedded_hashes=True,original_sentinel_unchanged=True)))\nPY",
+  "observed_stdout_summary": {
+    "input_root": "/private/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/dacon-stage-verified-g71cowmm",
+    "archives": [
+      {
+        "name": "admitted-v2.tar.gz",
+        "sha256": "9854dd539bf284a41f09020cf96928335de1adf40367afd59fd9ae6a6c5f8471",
+        "bytes": 608398316,
+        "verified_audio_members": 1331
+      },
+      {
+        "name": "mlaad-admitted-v1.tar.gz",
+        "sha256": "4f090b462ef76b422afe5d27608b41fb38e0b56f5ada83bae8a14aeae924ca1d",
+        "bytes": 71206318,
+        "verified_audio_members": 146
+      }
+    ],
+    "files": 1477,
+    "installed": 1477,
+    "reused": 0,
+    "bytes": 709024988,
+    "gpu_used": false
+  },
+  "observed_stdout_measurement": {
+    "seconds": 6.4518159159924835,
+    "all_installed_bytes_match_embedded_hashes": true,
+    "original_sentinel_unchanged": true
+  },
+  "exit_code": 0,
+  "temporary_root_cleaned": true,
+  "temporary_cleanup_basis": "TemporaryDirectory context exited normally before the process returned exit code 0.",
+  "tested_stage_gpu_inputs_sha256": "6a2ea9a921dc0c14c1731d8cd166ce9df8438334892ef5abcb2a2387c14c75ec",
+  "limitations": [
+    "This run staged real supplemental archives in a private temporary local root, not the stopped VESSL workspace.",
+    "The historical preservation check used a task-owned sentinel; actual existing-file conflict behavior was validated separately by the focused regression test.",
+    "Per-file receipt entries were not persisted from that temporary run; the stager verified each installed file against the embedded hash before returning the observed aggregate receipt."
+  ]
+}

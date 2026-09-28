@@ -1,0 +1,40 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_extract_member_uses_central_sizes_with_data_descriptor __________
+
+tmp_path = PosixPath('/private/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/pytest-of-choiwuseck/pytest-25/test_extract_member_uses_centr0')
+
+    def test_extract_member_uses_central_sizes_with_data_descriptor(tmp_path: Path) -> None:
+        # Given a real ZIP member whose bit-3 local sizes are zero and central sizes are authoritative.
+        blob, entry = _local_member(b"descriptor audio bytes", descriptor=True)
+        # When extracted by range, then its payload is complete and CRC-verified.
+>       output = sources.extract_local_member(blob, entry, tmp_path / "audio.mp3")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_prepare_v2_sources.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blob = b'PK\x03\x04\x14\x00\x08\x00\x08\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\t\x00\x00\x00audio.mp3KI-N.\xca,(\xc9/RH,M\xc9\xccWH\xaa,I-\x06\x00'
+entry = {'filename': 'audio.mp3', 'compress_size': 24, 'file_size': 22, 'header_offset': 0, ...}
+output = PosixPath('/private/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/pytest-of-choiwuseck/pytest-25/test_extract_member_uses_centr0/audio.mp3')
+
+    def extract_local_member(blob: bytes, entry: dict[str, int | str], output: Path) -> Path:
+        if len(blob) < 30:
+            raise SourceIntegrityError("ZIP member local header is truncated")
+        signature, _, _, method, _, _, _, compressed_size, size, name_len, extra_len = struct.unpack("<4s5H3L2H", blob[:30])
+        if signature != b"PK\x03\x04" or method != int(entry["compress_type"]):
+            raise SourceIntegrityError("ZIP member header or compression method mismatch")
+        start = 30 + name_len + extra_len
+        compressed = blob[start:start + compressed_size]
+        match method:
+            case 0:
+                payload = compressed
+            case 8:
+>               payload = zlib.decompress(compressed, -15)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               zlib.error: Error -5 while decompressing data: incomplete or truncated stream
+
+prepare_v2_sources.py:80: error
+=========================== short test summary info ============================
+FAILED test_prepare_v2_sources.py::test_extract_member_uses_central_sizes_with_data_descriptor
+1 failed, 4 deselected in 0.18s

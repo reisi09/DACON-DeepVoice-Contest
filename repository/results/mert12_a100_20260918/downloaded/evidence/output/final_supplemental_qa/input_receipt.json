@@ -1,0 +1,18 @@
+{
+  "cases": {
+    "mp3": "tested",
+    "real_flac": "60s stereo 16k first_60s_real_crop",
+    "silence_wav": "4s mono 16k"
+  },
+  "generated_sha256": {
+    "qa_codec_mp3_6s.mp3": "d45b7919d4a09a1f08ebbfe7d2271b52d3736c4f77203c2cf99025d3b067fd6c",
+    "qa_real_stereo_60s.flac": "53d9e607b0be05367fc1c95795039b110746af395448dff48ba5b361d8755e09",
+    "qa_silence_4s.wav": "f751fd7094be088dc785125e4a1a0222a17c2bd20469aa31728ca5e515ed5809"
+  },
+  "long_case": "first_60s_real_crop",
+  "purpose": "finite probabilities and channel/codec/runtime/memory behavior",
+  "quality_claim": null,
+  "source_audio": "/root/mert12_a100_20260918/input/supplemental_real_source.wav",
+  "source_seconds": 296.6129375,
+  "source_sha256": "f11541207692ae85606b95019ab828f2c554bdcd334759f7964c81793b63960e"
+}

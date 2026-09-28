@@ -1,0 +1,23 @@
+{
+  "source_checks": {
+    "source_sha256_overlap": 0,
+    "pcm_sha256_overlap": 0,
+    "native_pcm_sha256_overlap": 0,
+    "asvspoof2019_la_identity_overlap": 0,
+    "librispeech_test-clean_identity_overlap": 0,
+    "FMA_identity_overlap": 0,
+    "JamendoMaxCaps_identity_overlap": 0
+  },
+  "csv_hashes_verified": true,
+  "original_manifest_unchanged": true,
+  "regression_test": "test_balanced_bank_split.py::test_real_bank_selection_preserves_groups_labels_and_source_ratios",
+  "regression_result": "passed; includes reversed-input reproducibility",
+  "selected_groups": 2657,
+  "selected_audio_bytes": 10345454546,
+  "source_audio_hashes_verified": 7144,
+  "workspace_state": "stopped",
+  "workspace_phase": "standby",
+  "heartbeat_status": "PAUSED",
+  "gpu_started": false,
+  "upload_started": false
+}

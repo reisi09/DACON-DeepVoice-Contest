@@ -1,0 +1,634 @@
+{
+  "scope": "Saved best-checkpoint diagnosis, not a new independent evaluation",
+  "cache_sha256": "ddd3d481269e95172762f3ec988ccb15b541424d10ee05f9925deed463dcb13c",
+  "verified_records": 1446,
+  "train_parent_components": 86,
+  "train_weight_effective_sample_size": 272.3016741247773,
+  "batches": {
+    "16": {
+      "steps_per_epoch": 63,
+      "expected_fma_full_batch": 0.9682539682539683,
+      "probability_no_fma_full_batch": 0.3654813112509655,
+      "observed_zero_fma_batches": 2326,
+      "observed_batches": 6300,
+      "loss_mass_cv": 0.4118700389454012
+    },
+    "64": {
+      "steps_per_epoch": 16,
+      "expected_fma_full_batch": 3.873015873015873,
+      "probability_no_fma_full_batch": 0.01608515095961933,
+      "observed_zero_fma_batches": 19,
+      "observed_batches": 1600,
+      "loss_mass_cv": 0.20221979306190416
+    },
+    "128": {
+      "steps_per_epoch": 8,
+      "expected_fma_full_batch": 7.746031746031746,
+      "probability_no_fma_full_batch": 0.00019164304305671184,
+      "observed_zero_fma_batches": 0,
+      "observed_batches": 800,
+      "loss_mass_cv": 0.13503616884025776
+    }
+  },
+  "sources": {
+    "train": [
+      {
+        "source": "Echoes",
+        "files": 857,
+        "groups": 61,
+        "labels": {
+          "1": 857
+        },
+        "windows_min": 4,
+        "windows_median": 24.0,
+        "windows_max": 119,
+        "audible_median": 24.0
+      },
+      {
+        "source": "FMA",
+        "files": 61,
+        "groups": 61,
+        "labels": {
+          "0": 61
+        },
+        "windows_min": 23,
+        "windows_median": 56.0,
+        "windows_max": 195,
+        "audible_median": 56.0
+      },
+      {
+        "source": "nsynth",
+        "files": 90,
+        "groups": 25,
+        "labels": {
+          "0": 90
+        },
+        "windows_min": 1,
+        "windows_median": 1.0,
+        "windows_max": 1,
+        "audible_median": 1.0
+      }
+    ],
+    "tune": [
+      {
+        "source": "Echoes",
+        "files": 129,
+        "groups": 19,
+        "labels": {
+          "1": 129
+        },
+        "windows_min": 1,
+        "windows_median": 8.0,
+        "windows_max": 36,
+        "audible_median": 8.0
+      },
+      {
+        "source": "FMA",
+        "files": 19,
+        "groups": 19,
+        "labels": {
+          "0": 19
+        },
+        "windows_min": 1,
+        "windows_median": 8.0,
+        "windows_max": 122,
+        "audible_median": 8.0
+      },
+      {
+        "source": "mixture",
+        "files": 80,
+        "groups": 20,
+        "labels": {
+          "1": 40,
+          "0": 40
+        },
+        "windows_min": 3,
+        "windows_median": 3.0,
+        "windows_max": 3,
+        "audible_median": 3.0
+      },
+      {
+        "source": "splice",
+        "files": 20,
+        "groups": 10,
+        "labels": {
+          "0": 10,
+          "1": 10
+        },
+        "windows_min": 8,
+        "windows_median": 8.0,
+        "windows_max": 8,
+        "audible_median": 8.0
+      }
+    ],
+    "test": [
+      {
+        "source": "Echoes",
+        "files": 40,
+        "groups": 10,
+        "labels": {
+          "1": 40
+        },
+        "windows_min": 1,
+        "windows_median": 3.0,
+        "windows_max": 8,
+        "audible_median": 3.0
+      },
+      {
+        "source": "FMA",
+        "files": 10,
+        "groups": 10,
+        "labels": {
+          "0": 10
+        },
+        "windows_min": 1,
+        "windows_median": 3.0,
+        "windows_max": 8,
+        "audible_median": 3.0
+      },
+      {
+        "source": "MLAAD",
+        "files": 40,
+        "groups": 20,
+        "labels": {
+          "": 40
+        },
+        "windows_min": 2,
+        "windows_median": 2.0,
+        "windows_max": 3,
+        "audible_median": 2.0
+      },
+      {
+        "source": "mixture",
+        "files": 80,
+        "groups": 20,
+        "labels": {
+          "1": 40,
+          "0": 40
+        },
+        "windows_min": 3,
+        "windows_median": 3.0,
+        "windows_max": 3,
+        "audible_median": 3.0
+      },
+      {
+        "source": "splice",
+        "files": 20,
+        "groups": 10,
+        "labels": {
+          "0": 10,
+          "1": 10
+        },
+        "windows_min": 8,
+        "windows_median": 8.0,
+        "windows_max": 8,
+        "audible_median": 8.0
+      }
+    ]
+  },
+  "curves": {
+    "T0": {
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 16,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.05,
+        "seed": 41,
+        "dropout": 0.2
+      },
+      "parameters": 414017,
+      "selected_epoch": 2,
+      "epochs_completed": 22,
+      "train_losses": [
+        0.759522212727461,
+        0.8127789806676446,
+        0.5352081495584571,
+        0.6333062898484059,
+        0.4879244341773301,
+        0.42795812952499546,
+        0.3904913585574832,
+        0.4178631076192687,
+        0.2203527042584028,
+        0.15808344544097963,
+        0.231412822931361,
+        0.030697212042980482,
+        0.08351029655398179,
+        0.20303978320150406,
+        0.21162281967951913,
+        0.0020331688769772427,
+        0.0006702814658154921,
+        0.005065636762232373,
+        0.09212250944624856,
+        0.052242850601231794,
+        7.119736824279244e-05,
+        2.767360947331099e-05
+      ],
+      "validation_losses": [
+        1.1117400703951716,
+        0.7741246577352285,
+        1.97481210809201,
+        1.4219529720721766,
+        1.2900083956774324,
+        1.969790606672177,
+        2.333040614164929,
+        2.3237140804267256,
+        2.7654946955935884,
+        3.7275795973837376,
+        2.370478664761322,
+        3.083609165085818,
+        3.597138143747884,
+        2.78914472654742,
+        3.3467029058374465,
+        3.5667052043631884,
+        4.066068891435862,
+        4.418822489286015,
+        3.7761915794108063,
+        3.992081518433281,
+        4.052858473067175,
+        4.260675707808474
+      ]
+    },
+    "T7": {
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 16,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.05,
+        "nsynth_mass": 0.05,
+        "seed": 41,
+        "dropout": 0.4
+      },
+      "parameters": 414017,
+      "selected_epoch": 1,
+      "epochs_completed": 21,
+      "train_losses": [
+        0.7723010459449142,
+        0.6528811047319323,
+        0.673462831240613,
+        0.7177459940721747,
+        0.6515042156679556,
+        0.6645531709073111,
+        0.48996590815659147,
+        0.6480976099701365,
+        0.4188204884630977,
+        0.42254913259967,
+        0.3432543666658603,
+        0.3231829874803225,
+        0.28012950415632076,
+        0.41017372664828144,
+        0.21635978454651195,
+        0.16256630489715462,
+        0.20915263738561407,
+        0.1950101451343471,
+        0.07935244139139286,
+        0.018516029582542615,
+        0.15923362525359153
+      ],
+      "validation_losses": [
+        0.7547811269760132,
+        0.8326447103172541,
+        1.228305579163134,
+        0.7842748304829001,
+        0.9646564578870311,
+        1.473605896346271,
+        1.095431609021034,
+        1.1274076604750007,
+        1.6999158009130042,
+        2.2566748743411154,
+        1.3946945100324228,
+        1.6572417124261847,
+        1.285110447963234,
+        2.117771485580306,
+        1.9036796631044126,
+        2.0590664246701635,
+        2.365656853045948,
+        2.4740843004265116,
+        2.6353210273828154,
+        2.2453948572647278,
+        3.202061095155841
+      ]
+    },
+    "T7_seed42": {
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 16,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.05,
+        "nsynth_mass": 0.05,
+        "seed": 42,
+        "dropout": 0.4
+      },
+      "parameters": 414017,
+      "selected_epoch": 2,
+      "epochs_completed": 22,
+      "train_losses": [
+        1.241297124128323,
+        0.7577662956900895,
+        0.7054786811349913,
+        0.7513138518843334,
+        0.6217716234968975,
+        0.6209677939186804,
+        0.4806289804982953,
+        0.6871803438370989,
+        0.4492293783769128,
+        0.39546361423344933,
+        0.5740702938892355,
+        0.3856109286498395,
+        0.3799535747657501,
+        0.4056674133025808,
+        0.1624579470462777,
+        0.19437520468136427,
+        0.15955543052450594,
+        0.30081137380739165,
+        0.2816845065262896,
+        0.06991133677911421,
+        0.05684752413139904,
+        0.03151626430201304
+      ],
+      "validation_losses": [
+        0.8929468151181936,
+        0.7763515496626496,
+        1.1829486200585961,
+        1.2857552180066705,
+        1.0591346160508692,
+        1.0608242223970592,
+        1.6691352827474475,
+        1.1983183287084103,
+        0.9594274675473571,
+        2.0180809581652284,
+        1.8180426312610507,
+        2.1224298626184464,
+        1.57759074884234,
+        2.009599804878235,
+        2.26532637065975,
+        1.9312514004741388,
+        2.737877307459712,
+        2.170789828292982,
+        2.3004211830721033,
+        2.619379590916651,
+        2.840560846802873,
+        3.309085720218718
+      ]
+    },
+    "T7_seed43": {
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 16,
+        "learning_rate": 0.0001,
+        "weight_decay": 0.05,
+        "nsynth_mass": 0.05,
+        "seed": 43,
+        "dropout": 0.4
+      },
+      "parameters": 414017,
+      "selected_epoch": 1,
+      "epochs_completed": 21,
+      "train_losses": [
+        0.7977364992257208,
+        0.6358625863213092,
+        0.818709620507434,
+        0.7900901484536007,
+        0.447434380359482,
+        0.40163760681753047,
+        0.5991559559042798,
+        0.42661695380229503,
+        0.58162317766255,
+        0.32719853815069655,
+        0.3620743404962923,
+        0.34693835820871755,
+        0.2690770707476986,
+        0.20294077652852138,
+        0.373825626632879,
+        0.23011248310240262,
+        0.2174376009693333,
+        0.09065381775008063,
+        0.06863746988801722,
+        0.05282168652456676,
+        0.05437217498001701
+      ],
+      "validation_losses": [
+        0.8239955082535744,
+        0.9774518851190805,
+        0.989865523763001,
+        0.884880249388516,
+        1.1415110607631505,
+        1.404283406212926,
+        1.2608973565511405,
+        1.1462402301840484,
+        1.4306864187819883,
+        1.9056490412913263,
+        2.5113200787454844,
+        1.6954018381657079,
+        1.7591737877082778,
+        1.9826151919551194,
+        1.7278635138645768,
+        2.95110597461462,
+        1.9347002806571254,
+        2.6551215732470155,
+        2.7386492174373416,
+        3.13694323040545,
+        2.881964843487367
+      ]
+    }
+  },
+  "metrics": {
+    "train": {
+      "length_only_auc_positive_longer": 0.6417388549305677,
+      "T7": {
+        "music_eer": 0.14577650358945032,
+        "balanced_bce": 0.5544103098510589,
+        "by_source": {
+          "Echoes": {
+            "files": 857,
+            "mean_fake_probability": 0.7343165936381008,
+            "bce": 0.312693686955688,
+            "error_at_point5": 0.0
+          },
+          "FMA": {
+            "files": 61,
+            "mean_fake_probability": 0.6421074935647307,
+            "bce": 1.0366502849378962,
+            "error_at_point5": 1.0
+          },
+          "nsynth": {
+            "files": 90,
+            "mean_fake_probability": 0.46831064224243163,
+            "bce": 0.6331055495944357,
+            "error_at_point5": 0.14444444444444443
+          }
+        }
+      },
+      "Linear": {
+        "music_eer": 0.20533278725262158,
+        "balanced_bce": 0.4972227472314638,
+        "by_source": {
+          "Echoes": {
+            "files": 857,
+            "mean_fake_probability": 0.706857822563118,
+            "bce": 0.36949145413003043,
+            "error_at_point5": 0.08984830805134189
+          },
+          "FMA": {
+            "files": 61,
+            "mean_fake_probability": 0.5698484945353097,
+            "bce": 0.9090048923780444,
+            "error_at_point5": 0.7049180327868853
+          },
+          "nsynth": {
+            "files": 90,
+            "mean_fake_probability": 0.333304567672388,
+            "bce": 0.43243068505785304,
+            "error_at_point5": 0.16666666666666666
+          }
+        }
+      }
+    },
+    "tune": {
+      "length_only_auc_positive_longer": 0.6175208485142903,
+      "T7": {
+        "music_eer": 0.3498906971095458,
+        "balanced_bce": 0.754781100087422,
+        "by_source": {
+          "Echoes": {
+            "files": 129,
+            "mean_fake_probability": 0.7328514087107755,
+            "bce": 0.318832659807546,
+            "error_at_point5": 0.031007751937984496
+          },
+          "FMA": {
+            "files": 19,
+            "mean_fake_probability": 0.6613923185750058,
+            "bce": 1.1161378118439653,
+            "error_at_point5": 0.9473684210526315
+          },
+          "mixture": {
+            "files": 80,
+            "mean_fake_probability": 0.6793644063174724,
+            "bce": 0.7764148135677701,
+            "error_at_point5": 0.5
+          },
+          "splice": {
+            "files": 20,
+            "mean_fake_probability": 0.7528264403343201,
+            "bce": 0.8189866396916015,
+            "error_at_point5": 0.5
+          }
+        }
+      },
+      "Linear": {
+        "music_eer": 0.3627236660999109,
+        "balanced_bce": 0.6063662892588048,
+        "by_source": {
+          "Echoes": {
+            "files": 129,
+            "mean_fake_probability": 0.6611868060510276,
+            "bce": 0.4483022881946425,
+            "error_at_point5": 0.1937984496124031
+          },
+          "FMA": {
+            "files": 19,
+            "mean_fake_probability": 0.5339580280883464,
+            "bce": 0.873854298152147,
+            "error_at_point5": 0.5789473684210527
+          },
+          "mixture": {
+            "files": 80,
+            "mean_fake_probability": 0.4826426778641745,
+            "bce": 0.6322053217562577,
+            "error_at_point5": 0.45
+          },
+          "splice": {
+            "files": 20,
+            "mean_fake_probability": 0.6120262364519974,
+            "bce": 0.6696651823445762,
+            "error_at_point5": 0.4
+          }
+        }
+      }
+    },
+    "test": {
+      "length_only_auc_positive_longer": 0.4888888888888888,
+      "T7": {
+        "music_eer": 0.5472222222222223,
+        "balanced_bce": 0.7883462548011455,
+        "by_source": {
+          "Echoes": {
+            "files": 40,
+            "mean_fake_probability": 0.6541597232222557,
+            "bce": 0.43637689692063136,
+            "error_at_point5": 0.05
+          },
+          "FMA": {
+            "files": 10,
+            "mean_fake_probability": 0.6549741446971893,
+            "bce": 1.0984146939557278,
+            "error_at_point5": 0.9
+          },
+          "mixture": {
+            "files": 80,
+            "mean_fake_probability": 0.6708849363029004,
+            "bce": 0.7790968141836961,
+            "error_at_point5": 0.5
+          },
+          "splice": {
+            "files": 20,
+            "mean_fake_probability": 0.7271163552999497,
+            "bce": 0.8125392599980295,
+            "error_at_point5": 0.5
+          }
+        }
+      },
+      "Linear": {
+        "music_eer": 0.3666666666666667,
+        "balanced_bce": 0.6401666456667999,
+        "by_source": {
+          "Echoes": {
+            "files": 40,
+            "mean_fake_probability": 0.53995000598142,
+            "bce": 0.6661546784359902,
+            "error_at_point5": 0.475
+          },
+          "FMA": {
+            "files": 10,
+            "mean_fake_probability": 0.394833287141958,
+            "bce": 0.5249626643629169,
+            "error_at_point5": 0.3
+          },
+          "mixture": {
+            "files": 80,
+            "mean_fake_probability": 0.45952442848526653,
+            "bce": 0.641874086674609,
+            "error_at_point5": 0.375
+          },
+          "splice": {
+            "files": 20,
+            "mean_fake_probability": 0.5190027580264595,
+            "bce": 0.7215753461977983,
+            "error_at_point5": 0.45
+          }
+        }
+      }
+    }
+  },
+  "input_perturbations": {
+    "reverse": {
+      "music_eer": 0.3599303700105254,
+      "balanced_bce": 0.7545102427406369,
+      "mean_absolute_probability_change": 0.012558538106180007
+    },
+    "repeat_mean": {
+      "music_eer": 0.3470974010201603,
+      "balanced_bce": 0.756337775605268,
+      "mean_absolute_probability_change": 0.009556780298871378
+    }
+  }
+}

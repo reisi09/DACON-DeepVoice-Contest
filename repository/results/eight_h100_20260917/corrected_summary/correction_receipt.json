@@ -1,0 +1,153 @@
+{
+  "authoritative_corrected_summary": {
+    "bytes": 27441,
+    "path": "results/eight_h100_20260917/corrected_summary/final_aggregation.corrected.json",
+    "sha256": "d2e306516e82e20345213483f078ca52efa8801e6b7eac43c713982e94df070a"
+  },
+  "builder_source": {
+    "path": "build_eight_h100_notebook.py",
+    "sha256": "bbaf98c8008cbd6ca26ee566890647818ebf95c1e688f652b645e7d743a74c95"
+  },
+  "corrected_experiment_component_counts": {
+    "E1": 256,
+    "E2": 4,
+    "E3": 256,
+    "E4": 256,
+    "E5": 4,
+    "E6": 256,
+    "E7": 10,
+    "E8": 256
+  },
+  "corrected_global_component_count": 256,
+  "correction_scope": "metadata_only_no_refit_no_rescore_no_gpu",
+  "created_at_utc": "2026-09-17T15:35:08.684757+00:00",
+  "e8": {
+    "fit_kind": "non_iterative_closed_form_real_only_gaussian",
+    "fixed_updates": null,
+    "seeds": []
+  },
+  "executed_notebook_errata": {
+    "bytes": 1084,
+    "path": "results/eight_h100_20260917/corrected_summary/executed_notebook_errata.md",
+    "sha256": "637357229575aa5ca1d29691200e7bb690e54f1a66c8b0249c03ed26af977993"
+  },
+  "gpu_rerun": false,
+  "immutable_archive": {
+    "bytes": 292178089,
+    "path": "results/eight_h100_20260917/downloaded/results.zip",
+    "sha256": "681d41de10397d31a371daaa276a4a90d19f04789b85e01fdd6f936399dd23d2"
+  },
+  "immutable_archive_changed": false,
+  "immutable_executed_notebook": {
+    "bytes": 9092724,
+    "path": "results/eight_h100_20260917/downloaded/unpacked/output/DACON_Eight_H100_Executed.ipynb",
+    "sha256": "bb28445e88a4d963aa7969fddba03e2c88badf4d969249e2456aca6b08acee91"
+  },
+  "immutable_executed_notebook_changed": false,
+  "integrity_validation": {
+    "artifact": ".omo/evidence/eight_h100_20260917/corrected_aggregation_integrity.log",
+    "binary_observable": "VALID global=256 sealed=178 E8=null archive_and_notebook_immutable=true",
+    "invocation": ".venv/bin/python .omo/evidence/eight_h100_20260917/verify_corrected_aggregation.py"
+  },
+  "numerical_score_verification": {
+    "eer_comparisons": 77,
+    "max_abs_delta": 0,
+    "mismatches": [],
+    "path": ".omo/evidence/eight_h100_20260917/terminal_qa.json",
+    "sha256": "a52194a1386f54ba74bbe4a8c0b0fd00c7ae83b36b05606bccdcd8882e73a6b1"
+  },
+  "numerical_scores_changed": false,
+  "population_sidecar": {
+    "bytes": 9270,
+    "path": "results/eight_h100_20260917/postrun_e2/fixed_experiment_population_denominators.json",
+    "sha256": "373511e90b8f2c6006d5c3080f5952a08c3b20f9f9f2d72492ab854275ac2142"
+  },
+  "raw_reports_changed": false,
+  "regression": {
+    "artifact": ".omo/evidence/eight_h100_20260917/corrected_aggregation_regression.log",
+    "binary_observable": "1 passed; global=256; E2/E5=4; E7=10; E8 fixed_updates=null; branch populations match hashed sidecar",
+    "invocation": ".venv/bin/python -m pytest -q test_eight_corrected_aggregation.py",
+    "scenario": "actual downloaded E1-E8 reports retain native metadata while corrected branch populations and E8 non-iterative status supersede the sealed aggregation",
+    "status": "passed"
+  },
+  "regression_source": {
+    "path": "test_eight_corrected_aggregation.py",
+    "sha256": "e808db56cc5d4ac86f1e97d7ade8dfd70464bc28a84a45f51bd799c07df2b064"
+  },
+  "schema_version": 1,
+  "source_reports": {
+    "E1": {
+      "component_count": 256,
+      "fixed_updates": 500,
+      "path": "results/eight_h100_20260917/downloaded/unpacked/output/experiment_1.json",
+      "sha256": "26ca1d90c999fbf726834599d26d73d2a1c224a62de3e8286393a74e81a05673"
+    },
+    "E2": {
+      "component_count": 4,
+      "fixed_updates": 0,
+      "path": "results/eight_h100_20260917/downloaded/unpacked/output/experiment_2.json",
+      "sha256": "9a86bcd2d42547532117ee4db93f74c29dcdcc7889f1ed25613c5f75e4e54b63"
+    },
+    "E3": {
+      "component_count": 256,
+      "fixed_updates": 500,
+      "path": "results/eight_h100_20260917/downloaded/unpacked/output/experiment_3.json",
+      "sha256": "ca4dea2110851b3139189227b7fb3cc797e76dda5f152de963c5498883ae7eb3"
+    },
+    "E4": {
+      "component_count": 256,
+      "fixed_updates": 500,
+      "path": "results/eight_h100_20260917/downloaded/unpacked/output/experiment_4.json",
+      "sha256": "a27079cb991dbb7dea8d626ff872bf776313d56762ab41f4b7096798e86a70ee"
+    },
+    "E5": {
+      "component_count": 4,
+      "fixed_updates": 0,
+      "path": "results/eight_h100_20260917/downloaded/unpacked/output/experiment_5.json",
+      "sha256": "009733e590af32c1a2ea680712a4ba57013b0b467509b10810958d39fc97779b"
+    },
+    "E6": {
+      "component_count": 256,
+      "fixed_updates": 500,
+      "path": "results/eight_h100_20260917/downloaded/unpacked/output/experiment_6.json",
+      "sha256": "89280e2f14d02ee955329e97628534d7fee189d6b1b1930ade55f0cd396ef3e5"
+    },
+    "E7": {
+      "component_count": 10,
+      "fixed_updates": {
+        "frozen": {
+          "per_seed": 0,
+          "total": 0
+        },
+        "head_only_ce": {
+          "per_seed": 200,
+          "total": 600
+        },
+        "lora_ce": {
+          "per_seed": 200,
+          "total": 600
+        },
+        "lora_ce_kl": {
+          "per_seed": 200,
+          "total": 600
+        }
+      },
+      "path": "results/eight_h100_20260917/downloaded/unpacked/output/e7/report.json",
+      "sha256": "e3162412f878837ae5df00ba32d1055a4d6f38d174fbdf868e5614666f8eb0c2"
+    },
+    "E8": {
+      "component_count": 256,
+      "fixed_updates": null,
+      "path": "results/eight_h100_20260917/downloaded/unpacked/output/experiment_8.json",
+      "sha256": "1a6d60dc02431018cda216b637b760e3437de4a6245336386118e28128c21bcd"
+    }
+  },
+  "stale_progress_marker_not_completion_evidence": true,
+  "status": "verified",
+  "superseded_sealed_summary": {
+    "path": "results/eight_h100_20260917/downloaded/unpacked/output/final_aggregation.json",
+    "reported_e8_fixed_updates": 500,
+    "reported_global_component_count": 178,
+    "sha256": "d2d29fa246083e55c89b9c310836af6278af469e0672ab9fa60e4c48ce401c6f"
+  }
+}

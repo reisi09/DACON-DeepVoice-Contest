@@ -1,0 +1,151 @@
+{
+  "scope": "Bounded local functions, serialized heads and cache replay; no encoder or GPU execution",
+  "source_parity": {
+    "model/runtime/mert12_submission.py": {
+      "root": "mert12_submission.py",
+      "equal": true,
+      "sha256": "30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e"
+    },
+    "model/runtime/eight_heads.py": {
+      "root": "eight_heads.py",
+      "equal": true,
+      "sha256": "630cee4b8126dc138b276ed2d9d7d663bbe69c7057e22b9bf205f9743dabfaef"
+    },
+    "model/runtime/v6_core.py": {
+      "root": "v6_core.py",
+      "equal": true,
+      "sha256": "b0b0496623f16f815e82d465139449b5258b52cf7d2246f5cad72467037dfd72"
+    },
+    "model/runtime/v6_runtime.py": {
+      "root": "v6_runtime.py",
+      "equal": true,
+      "sha256": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce"
+    },
+    "model/assets/baseline/script.py": {
+      "root": "baseline_original/script.py",
+      "equal": true,
+      "sha256": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e"
+    }
+  },
+  "normalization": {
+    "all_three_identical": true,
+    "min_scale": 0.9823168516159058,
+    "finite_heads": true
+  },
+  "window_layout": {
+    "64000": {
+      "seconds": 4.0,
+      "windows": 1,
+      "first": 0,
+      "last": 0,
+      "last_hop": null,
+      "coverage_min": 1,
+      "coverage_max": 1,
+      "zero_padding_samples": 600
+    },
+    "64600": {
+      "seconds": 4.0375,
+      "windows": 1,
+      "first": 0,
+      "last": 0,
+      "last_hop": null,
+      "coverage_min": 1,
+      "coverage_max": 1,
+      "zero_padding_samples": 0
+    },
+    "65600": {
+      "seconds": 4.1,
+      "windows": 2,
+      "first": 0,
+      "last": 1000,
+      "last_hop": 1000,
+      "coverage_min": 1,
+      "coverage_max": 2,
+      "zero_padding_samples": 0
+    },
+    "96000": {
+      "seconds": 6.0,
+      "windows": 2,
+      "first": 0,
+      "last": 31400,
+      "last_hop": 31400,
+      "coverage_min": 1,
+      "coverage_max": 2,
+      "zero_padding_samples": 0
+    },
+    "960000": {
+      "seconds": 60.0,
+      "windows": 29,
+      "first": 0,
+      "last": 895400,
+      "last_hop": 23300,
+      "coverage_min": 1,
+      "coverage_max": 3,
+      "zero_padding_samples": 0
+    }
+  },
+  "head_replay": {
+    "core_000209f68a0dc6367dcb_base": 0.9999916950861613,
+    "core_2d2bc674537639d1d836_base": 8.67836182199729e-05,
+    "core_80692bf518679d1acdbb_base": 0.9903170863787333,
+    "core_ffccfbb2f7762a614a08_base": 0.0011113235183681052
+  },
+  "embedding_mixture_probe": {
+    "warning": "Arithmetic mixture of two cached embeddings, not rendered audio or a partial-spoof quality score",
+    "probabilities": {
+      "0": 8.67836182199729e-05,
+      "0.034482758620689655": 0.0001465825189370662,
+      "0.1": 0.00041593982799289125,
+      "0.25": 0.0061436172885199385,
+      "0.5": 0.5648841063181559,
+      "0.75": 0.9978528420130411,
+      "1": 0.9999916950861613
+    }
+  },
+  "replayed_cache_vs_raw_final_csv_max_error": 1.218368105189438e-09,
+  "short_padding_mask": {
+    "original_samples": 64000,
+    "padded_samples": 64600,
+    "resampled_samples": 96900,
+    "processor_mask_zero_count": 0,
+    "runtime_passes_attention_mask": false
+  },
+  "file_fusion_counterexample": {
+    "window_presence": [
+      1.0,
+      0.0
+    ],
+    "window_fake": [
+      0.0,
+      1.0
+    ],
+    "aligned_max_product": 0.0,
+    "separate_max_product": 1.0,
+    "warning": "Numerical reducer counterexample; not an observed private-test file"
+  },
+  "silence_observed": {
+    "ID": "qa_silence_4s",
+    "FILE_FAKE_PROB": "0.1139619671",
+    "VOICE_FAKE_PROB": "0.0",
+    "MUSIC_FAKE_PROB": "0.9999964237",
+    "VOICE_PRESENT_PROB": "0.0563407838",
+    "MUSIC_PRESENT_PROB": "0.1139623746"
+  },
+  "extractor_identity": {
+    "eight_feature_identity.py": {
+      "recorded_sha256": "edb796b9c99b1083ec839743694cf9738230ba0f2eac6b14a00c5886a1d45bb2",
+      "root_sha256": "edb796b9c99b1083ec839743694cf9738230ba0f2eac6b14a00c5886a1d45bb2",
+      "matches": true
+    },
+    "eight_feature_schema.py": {
+      "recorded_sha256": "cdc62ffb8da7773deee4d030c68ca7fda1cd2cb99ce2294a866e88ba79d5e9ff",
+      "root_sha256": "cdc62ffb8da7773deee4d030c68ca7fda1cd2cb99ce2294a866e88ba79d5e9ff",
+      "matches": true
+    },
+    "eight_features.py": {
+      "recorded_sha256": "b0304f4f9aa2d13524d56622f494c4b1fab160b5009e09a51fb77987ed23acac",
+      "root_sha256": "b0304f4f9aa2d13524d56622f494c4b1fab160b5009e09a51fb77987ed23acac",
+      "matches": true
+    }
+  }
+}

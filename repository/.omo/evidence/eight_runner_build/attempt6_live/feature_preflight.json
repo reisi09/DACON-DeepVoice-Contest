@@ -1,0 +1,143 @@
+{
+  "IDs": [
+    "core_000209f68a0dc6367dcb_base",
+    "core_000209f68a0dc6367dcb_mp3_32k",
+    "core_000cbfa7068dfcdde08e_base",
+    "core_000cbfa7068dfcdde08e_mp3_32k",
+    "e2_core_000cbfa7068dfcdde08e_base_fma_a_0dB",
+    "e5_0154ad46e66363f42aa8699a"
+  ],
+  "extraction": {
+    "anti_native_max_logit_error": 2.956390380859375e-05,
+    "cached": 0,
+    "elapsed_after_engine_init_seconds": 8.83536434173584,
+    "elapsed_seconds": 29.944286584854126,
+    "extracted": 6,
+    "extracted_windows": 44,
+    "peak_gpu_bytes": 10939831296,
+    "processed_windows": 44,
+    "profile_inference": {
+      "core_music_base": {
+        "records": 1,
+        "seconds": 1.4687180519104004,
+        "windows": 3
+      },
+      "core_music_processed": {
+        "records": 1,
+        "seconds": 0.256195068359375,
+        "windows": 3
+      },
+      "core_speech_base": {
+        "records": 1,
+        "seconds": 0.7065169811248779,
+        "windows": 3
+      },
+      "core_speech_processed": {
+        "records": 1,
+        "seconds": 0.6299316883087158,
+        "windows": 3
+      },
+      "partial": {
+        "records": 1,
+        "seconds": 3.987128734588623,
+        "windows": 29
+      },
+      "swap": {
+        "records": 1,
+        "seconds": 0.7488183975219727,
+        "windows": 3
+      }
+    },
+    "records": 6,
+    "requested_windows": 44,
+    "status": "complete"
+  },
+  "feature_profiles": {
+    "core_000209f68a0dc6367dcb_base": "core_music_base",
+    "core_000209f68a0dc6367dcb_mp3_32k": "core_music_processed",
+    "core_000cbfa7068dfcdde08e_base": "core_speech_base",
+    "core_000cbfa7068dfcdde08e_mp3_32k": "core_speech_processed",
+    "e2_core_000cbfa7068dfcdde08e_base_fma_a_0dB": "swap",
+    "e5_0154ad46e66363f42aa8699a": "partial"
+  },
+  "identity_receipts": {
+    "core_000209f68a0dc6367dcb_base": "c06b82ba0620db48ddd157dacae90c43cb49bf858b397130ce5b027332e13912",
+    "core_000209f68a0dc6367dcb_mp3_32k": "d9645b05768b8491f34c68cd869a06f443b352d80174c22ff6153ea46a60df88",
+    "core_000cbfa7068dfcdde08e_base": "0fd82aa6eeda2d14caba1e18e6fd1bf85fa66f46ba2bcb910c72a2da16c48ae1",
+    "core_000cbfa7068dfcdde08e_mp3_32k": "149175d0b11a7c38dda7e8e8e9b8e0d6b43bf3e0a6ae24826019c47bf9daaa8b",
+    "e2_core_000cbfa7068dfcdde08e_base_fma_a_0dB": "55edbcafc5fb0ed2d1a0d456b7aed95f7b36a94fc574d341ecc197ec0131f85b",
+    "e5_0154ad46e66363f42aa8699a": "bb67eba1235845cac07ff5e4a2a18eaf67aad6cffd3f62bab8a65f0ad400ec7f"
+  },
+  "records_checked": 6,
+  "required_modalities": {
+    "core_000209f68a0dc6367dcb_base": [
+      "mert_l12",
+      "mert_l24",
+      "mert_l6",
+      "padding_samples",
+      "raw_mask",
+      "spectrum_stem",
+      "starts",
+      "stem_mask",
+      "valid_samples"
+    ],
+    "core_000209f68a0dc6367dcb_mp3_32k": [
+      "mert_l24",
+      "padding_samples",
+      "raw_mask",
+      "starts",
+      "stem_mask",
+      "valid_samples"
+    ],
+    "core_000cbfa7068dfcdde08e_base": [
+      "anti_l12",
+      "anti_l24",
+      "anti_l48",
+      "anti_raw",
+      "anti_vocals",
+      "df_raw",
+      "df_vocals",
+      "padding_samples",
+      "raw_mask",
+      "starts",
+      "valid_samples"
+    ],
+    "core_000cbfa7068dfcdde08e_mp3_32k": [
+      "anti_l24",
+      "anti_raw",
+      "anti_vocals",
+      "df_raw",
+      "df_vocals",
+      "padding_samples",
+      "raw_mask",
+      "starts",
+      "valid_samples"
+    ],
+    "e2_core_000cbfa7068dfcdde08e_base_fma_a_0dB": [
+      "anti_l24",
+      "anti_raw",
+      "anti_vocals",
+      "df_raw",
+      "df_vocals",
+      "mert_l24",
+      "padding_samples",
+      "presence",
+      "raw_mask",
+      "starts",
+      "stem_mask",
+      "valid_samples"
+    ],
+    "e5_0154ad46e66363f42aa8699a": [
+      "anti_raw",
+      "anti_vocals",
+      "df_raw",
+      "df_vocals",
+      "padding_samples",
+      "raw_mask",
+      "starts",
+      "valid_samples"
+    ]
+  },
+  "status": "complete"
+}
+

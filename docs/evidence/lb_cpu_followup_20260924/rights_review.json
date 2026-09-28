@@ -1,0 +1,72 @@
+{
+  "checked_date": "2026-09-24",
+  "competition_rules_url": "https://dacon.io/competitions/official/236749/overview/rules",
+  "competition_summary": "Publicly accessible resources permitting at least non-profit use are allowed subject to their own licenses. Sources and all training data must be provided at secondary evaluation.",
+  "sources": [
+    {
+      "source": "LibriSpeech",
+      "publisher_url": "https://www.openslr.org/12/",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "documented_permissions": "Sharing and adaptation with attribution, license link, and change notice.",
+      "remaining": "Preserve attribution in any derived release; perceptual/label review and role assignment remain."
+    },
+    {
+      "source": "Jamendo",
+      "publisher_url": "https://huggingface.co/datasets/amaai-lab/JamendoMaxCaps",
+      "license_urls": [
+        "https://creativecommons.org/licenses/by-sa/1.0/fi/",
+        "https://creativecommons.org/licenses/by-sa/2.0/at/",
+        "https://creativecommons.org/licenses/by-sa/2.0/be/",
+        "https://creativecommons.org/licenses/by-sa/2.0/cl/",
+        "https://creativecommons.org/licenses/by-sa/2.0/de/",
+        "https://creativecommons.org/licenses/by-sa/2.0/fr/",
+        "https://creativecommons.org/licenses/by-sa/2.0/uk/",
+        "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+        "https://creativecommons.org/licenses/by-sa/2.5/ar/",
+        "https://creativecommons.org/licenses/by-sa/2.5/au/",
+        "https://creativecommons.org/licenses/by-sa/2.5/br/",
+        "https://creativecommons.org/licenses/by-sa/2.5/ca/",
+        "https://creativecommons.org/licenses/by-sa/2.5/cn/",
+        "https://creativecommons.org/licenses/by-sa/2.5/co/",
+        "https://creativecommons.org/licenses/by-sa/2.5/dk/",
+        "https://creativecommons.org/licenses/by-sa/2.5/es/",
+        "https://creativecommons.org/licenses/by-sa/2.5/it/",
+        "https://creativecommons.org/licenses/by-sa/2.5/pl/",
+        "https://creativecommons.org/licenses/by-sa/2.5/se/",
+        "https://creativecommons.org/licenses/by-sa/3.0/",
+        "https://creativecommons.org/licenses/by-sa/3.0/nl/",
+        "https://creativecommons.org/licenses/by/1.0/fi/",
+        "https://creativecommons.org/licenses/by/2.0/be/",
+        "https://creativecommons.org/licenses/by/2.0/de/",
+        "https://creativecommons.org/licenses/by/2.0/fr/",
+        "https://creativecommons.org/licenses/by/2.0/uk/",
+        "https://creativecommons.org/licenses/by/2.5/ar/",
+        "https://creativecommons.org/licenses/by/2.5/co/",
+        "https://creativecommons.org/licenses/by/2.5/es/",
+        "https://creativecommons.org/licenses/by/2.5/hr/",
+        "https://creativecommons.org/licenses/by/2.5/it/",
+        "https://creativecommons.org/licenses/by/2.5/pe/",
+        "https://creativecommons.org/licenses/by/2.5/se/",
+        "https://creativecommons.org/licenses/by/3.0/"
+      ],
+      "documented_permissions": "Per-track metadata reports CC BY or CC BY-SA. Attribution retained in row; ShareAlike must follow adapted audio.",
+      "remaining": "Track licenses are pinned metadata observations, not a fresh per-track rights confirmation; complete provision/derived-audio review."
+    },
+    {
+      "source": "MusicArena",
+      "publisher_url": "https://huggingface.co/datasets/music-arena/music-arena-dataset",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "documented_permissions": "Dataset publisher declares CC BY 4.0.",
+      "remaining": "Downstream provenance/service terms and unknown preview generator identities remain unresolved."
+    },
+    {
+      "source": "MLAAD",
+      "publisher_url": "https://huggingface.co/datasets/mueller91/MLAAD",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "documented_permissions": "Publisher additionally limits use to non-commercial academic research. Existing gated account access was used.",
+      "remaining": "Competition use and secondary-evaluation transfer require resolving the narrower academic-use condition; no new consent accepted."
+    }
+  ],
+  "final_training_admission_granted": false,
+  "limitations": "This records published terms and remaining checks; no third party permission was obtained."
+}

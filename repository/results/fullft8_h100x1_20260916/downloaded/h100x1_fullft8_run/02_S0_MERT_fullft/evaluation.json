@@ -1,0 +1,76 @@
+{
+  "overall": {
+    "count": 150,
+    "real": 60,
+    "fake": 90,
+    "eer": 0.3194444444444444,
+    "auc": 0.7435185185185185,
+    "balanced_bce": 1.9230778774978483
+  },
+  "subsets": {
+    "mixture": {
+      "count": 80,
+      "real": 40,
+      "fake": 40,
+      "eer": 0.30000000000000004,
+      "auc": 0.77625,
+      "balanced_bce": 1.717153878117902
+    },
+    "music_ood": {
+      "count": 10,
+      "real": 0,
+      "fake": 10,
+      "eer": null,
+      "auc": null
+    },
+    "music_real": {
+      "count": 10,
+      "real": 10,
+      "fake": 0,
+      "eer": null,
+      "auc": null
+    },
+    "music_seen": {
+      "count": 30,
+      "real": 0,
+      "fake": 30,
+      "eer": null,
+      "auc": null
+    },
+    "speech": {
+      "count": 0,
+      "real": 0,
+      "fake": 0,
+      "eer": null,
+      "auc": null
+    },
+    "splice": {
+      "count": 20,
+      "real": 10,
+      "fake": 10,
+      "eer": 0.5,
+      "auc": 0.6900000000000001,
+      "balanced_bce": 1.4355311441612315
+    },
+    "music_seen_plus_real": {
+      "count": 40,
+      "real": 10,
+      "fake": 30,
+      "eer": 0.30000000000000004,
+      "auc": 0.8083333333333333,
+      "balanced_bce": 2.0399332587752057
+    },
+    "music_ood_plus_real": {
+      "count": 20,
+      "real": 10,
+      "fake": 10,
+      "eer": 0.30000000000000004,
+      "auc": 0.7649999999999999,
+      "balanced_bce": 1.7632734399846686
+    }
+  },
+  "official_score": null,
+  "known_file_eer": 0.30000000000000004,
+  "known_file_auc": 0.7189743589743587,
+  "voice_presence": "Fixed historical predictions; voice branch unchanged. No official total."
+}

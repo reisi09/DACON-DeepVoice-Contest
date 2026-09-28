@@ -1,0 +1,46 @@
+[
+  {
+    "encoder": "mert",
+    "batch_size": 1,
+    "accumulation": 8,
+    "loader_workers": 0,
+    "measured_songs": 64,
+    "seconds": 5.860846107825637,
+    "songs_per_second": 10.919925011261537,
+    "warmup_and_spawn_seconds": 1.7189293932169676,
+    "peak_allocated_gib": 7.557560443878174
+  },
+  {
+    "encoder": "mert",
+    "batch_size": 4,
+    "accumulation": 2,
+    "loader_workers": 4,
+    "measured_songs": 64,
+    "seconds": 1.8573769144713879,
+    "songs_per_second": 34.457195791202395,
+    "warmup_and_spawn_seconds": 7.605838129296899,
+    "peak_allocated_gib": 13.879537105560303
+  },
+  {
+    "encoder": "eat",
+    "batch_size": 1,
+    "accumulation": 8,
+    "loader_workers": 0,
+    "measured_songs": 64,
+    "seconds": 5.550177950412035,
+    "songs_per_second": 11.531161806307265,
+    "warmup_and_spawn_seconds": 1.0271671507507563,
+    "peak_allocated_gib": 6.6059889793396
+  },
+  {
+    "encoder": "eat",
+    "batch_size": 4,
+    "accumulation": 2,
+    "loader_workers": 4,
+    "measured_songs": 64,
+    "seconds": 1.9676992930471897,
+    "songs_per_second": 32.525295011357784,
+    "warmup_and_spawn_seconds": 7.453086452558637,
+    "peak_allocated_gib": 10.94240951538086
+  }
+]

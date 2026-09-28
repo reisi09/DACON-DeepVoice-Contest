@@ -1,0 +1,100 @@
+{
+  "A_noisy_or_vs_B_noisy_or": {
+    "comparison": {
+      "actual_l4_verified": false,
+      "bootstrap": {
+        "ci95": [
+          -0.043559375000000004,
+          0.03709855333856553
+        ],
+        "invalid": 0,
+        "invalid_fraction": 0.0,
+        "resamples": 2000,
+        "valid": 2000
+      },
+      "class_group_counts": {
+        "file_eer": {
+          "0": 12,
+          "1": 7
+        },
+        "music_eer": {
+          "0": 12,
+          "1": 7
+        },
+        "music_presence_auc": {
+          "0": 0,
+          "1": 12
+        },
+        "voice_eer": {
+          "0": 0,
+          "1": 0
+        },
+        "voice_presence_auc": {
+          "0": 5,
+          "1": 0
+        }
+      },
+      "delta": 0.01274509803921567,
+      "mode": "identifiable_delta",
+      "regression_failures": [
+        "missing natural subgroup",
+        "missing singing subgroup",
+        "missing telephone subgroup"
+      ],
+      "statistical_eligible": false,
+      "subgroups": {
+        "natural": null,
+        "singing": null,
+        "telephone": null
+      },
+      "validation_eligible": false
+    },
+    "reason": "statistical or subgroup regression gate failed",
+    "status": "rejected"
+  },
+  "diagnostic_only": true,
+  "evaluation_rows": 129,
+  "fresh_holdout": false,
+  "interpretation": "Matched max/noisy-OR postprocessing: only B + noisy-OR improves point File EER on this reused panel; a general raw-branch benefit is not established.",
+  "metrics": {
+    "A_max": {
+      "file_eer": 0.10947712418300651,
+      "music_eer": 0.08115468409586057,
+      "music_presence_auc": null,
+      "score": null,
+      "voice_eer": null,
+      "voice_presence_auc": null
+    },
+    "A_noisy_or": {
+      "file_eer": 0.10947712418300651,
+      "music_eer": 0.08115468409586057,
+      "music_presence_auc": null,
+      "score": null,
+      "voice_eer": null,
+      "voice_presence_auc": null
+    },
+    "B_max": {
+      "file_eer": 0.10947712418300651,
+      "music_eer": 0.08115468409586057,
+      "music_presence_auc": null,
+      "score": null,
+      "voice_eer": null,
+      "voice_presence_auc": null
+    },
+    "B_noisy_or": {
+      "file_eer": 0.08115468409586057,
+      "music_eer": 0.08115468409586057,
+      "music_presence_auc": null,
+      "score": null,
+      "voice_eer": null,
+      "voice_presence_auc": null
+    }
+  },
+  "official_score": null,
+  "post_hoc": true,
+  "retrained": false,
+  "source_sha256": {
+    "A": "4634bea1835f2e39d783570ef5220ac2855bbc2035832bac279dd722d8e3612a",
+    "B": "7e19ee33ca838818ce4789f27bb582febd3882bc41b0639ed5464cfa3be2b14f"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "scenario": "upload audit-only bootstrap and corrected remote asset config",
+  "binary_observable": {
+    "workspace_stopped": true,
+    "mode": "readiness_audit",
+    "attempt": 4,
+    "assets": "/root/redesign_h100_20260917/assets",
+    "started_epoch": 1789648960,
+    "resumed_epoch": 1789650499,
+    "deadline_epoch": 1789663360,
+    "immutable_times_preserved": true,
+    "config_sha256": "ea2621a17f8c8c88f2d55d964012f62341240fa298d518c96fd808682bfff577",
+    "audit_bootstrap_sha256": "4aab003e22909ceb2e8043e486de42c7c83d4f1b292d67d499357e24e0d641d3"
+  },
+  "artifacts": [
+    "_workspace/eight_h100_20260917/config.json",
+    "_workspace/eight_h100_20260917/readiness_bootstrap/redesign_full_refit_run.sh"
+  ]
+}

@@ -1,0 +1,6 @@
+Manual QA CA2
+Surface: canonical corrected aggregation, immutable archive, and executed notebook
+Invocation: .venv/bin/python .omo/evidence/eight_h100_20260917/verify_corrected_aggregation.py
+Exit code: 0
+Output:
+VALID global=256 sealed=178 E8=null archive_and_notebook_immutable=true

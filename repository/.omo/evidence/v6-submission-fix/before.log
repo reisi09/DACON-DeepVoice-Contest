@@ -1,0 +1,35 @@
+Installed 10 packages in 56ms
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/sklearn/__init__.py", line 70, in <module>
+    from sklearn.base import clone  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/sklearn/base.py", line 19, in <module>
+    from sklearn.utils._metadata_requests import _MetadataRequester, _routing_enabled
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/sklearn/utils/__init__.py", line 9, in <module>
+    from sklearn.utils._chunking import gen_batches, gen_even_slices
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/sklearn/utils/_chunking.py", line 11, in <module>
+    from sklearn.utils._param_validation import Interval, validate_params
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/sklearn/utils/_param_validation.py", line 17, in <module>
+    from sklearn.utils.validation import _is_arraylike_not_scalar
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/sklearn/utils/validation.py", line 24, in <module>
+    from sklearn.utils._array_api import (
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/sklearn/utils/_array_api.py", line 20, in <module>
+    from sklearn.utils.fixes import parse_version
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/sklearn/utils/fixes.py", line 19, in <module>
+    import pandas as pd
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/pandas/compat/__init__.py", line 18, in <module>
+    from pandas.compat.numpy import (
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/pandas/util/__init__.py", line 2, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly
+  File "/Users/choiwuseck/.cache/uv/archive-v0/NuvOx8u1bN3X7vTb/lib/python3.11/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject

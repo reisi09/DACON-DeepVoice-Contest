@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "scope": "same retained stem and exact processor tensor; MERT batch-of-file-windows versus singleton forwards",
+  "files": 4,
+  "records": [
+    {
+      "ID": "core_000209f68a0dc6367dcb_base",
+      "audio_sha256": "cd1ea301e9adf854ba820e9aafe7c055f4ae0236eb7ef522a845b210f2705393",
+      "backing_sha256_float32": "b41a27f0d8bfd338e1a4482ae1acb4fd3fd6770e47893b00a68f2d1dbbbf9250",
+      "arrays_path": "mert12_batch_parity_probe_arrays/core_000209f68a0dc6367dcb_base.npz",
+      "arrays_sha256": "34065bbb679bc7d0a25fbc21250e3d2c6293debf7d9307e600aeb372505d9650",
+      "starts": [
+        0,
+        32300,
+        63400
+      ],
+      "processor_batch_vs_single": {
+        "max_abs": 0.0,
+        "rms": 0.0
+      },
+      "mert_batch_vs_single": {
+        "max_abs": 3.0517578125e-05,
+        "rms": 1.176124414633509e-06
+      },
+      "mert_batch_vs_h100_cache": {
+        "max_abs": 5.214953422546387,
+        "rms": 0.48030393920763687
+      },
+      "mert_single_vs_h100_cache": {
+        "max_abs": 5.214956283569336,
+        "rms": 0.4803039013185091
+      },
+      "probability": {
+        "batch": 0.9999974171320597,
+        "single": 0.9999974171320597,
+        "h100_cache": 0.9999916950861613,
+        "batch_per_seed": [
+          0.9999940395355225,
+          0.999998927116394,
+          0.9999992847442627
+        ],
+        "single_per_seed": [
+          0.9999940395355225,
+          0.999998927116394,
+          0.9999992847442627
+        ],
+        "h100_cache_per_seed": [
+          0.9999802112579346,
+          0.9999963045120239,
+          0.9999985694885254
+        ]
+      }
+    },
+    {
+      "ID": "core_2d2bc674537639d1d836_base",
+      "audio_sha256": "c204d5b146a3c4cd1c1237d9562690cb6d2ebc3364ef54bb0c72b20c66b04554",
+      "backing_sha256_float32": "6f42429f4e2387b705efb0c48e090e21310fe514888868bf4a7b677a88837f69",
+      "arrays_path": "mert12_batch_parity_probe_arrays/core_2d2bc674537639d1d836_base.npz",
+      "arrays_sha256": "1588f3d4ceae7cdf491083eb34c9b9d40e67a8e6710bb800b64b79c202e28413",
+      "starts": [
+        0,
+        32300,
+        63400
+      ],
+      "processor_batch_vs_single": {
+        "max_abs": 0.0,
+        "rms": 0.0
+      },
+      "mert_batch_vs_single": {
+        "max_abs": 1.52587890625e-05,
+        "rms": 9.375698352958899e-07
+      },
+      "mert_batch_vs_h100_cache": {
+        "max_abs": 1.6250905990600586,
+        "rms": 0.15789432885260524
+      },
+      "mert_single_vs_h100_cache": {
+        "max_abs": 1.625091552734375,
+        "rms": 0.15789436157753028
+      },
+      "probability": {
+        "batch": 9.276178510238726e-05,
+        "single": 9.276151104131714e-05,
+        "h100_cache": 8.67836157946537e-05,
+        "batch_per_seed": [
+          9.087082435144112e-05,
+          0.00010689378541428596,
+          8.052074554143474e-05
+        ],
+        "single_per_seed": [
+          9.087056969292462e-05,
+          0.00010689337068470195,
+          8.052059274632484e-05
+        ],
+        "h100_cache_per_seed": [
+          8.770432759774849e-05,
+          9.890210640151054e-05,
+          7.374441338470206e-05
+        ]
+      }
+    },
+    {
+      "ID": "core_80692bf518679d1acdbb_base",
+      "audio_sha256": "6a56acd4f1617fa5f33934e90227fb6895c9ad13401cf392b9b2c29a3943efb6",
+      "backing_sha256_float32": "6d2a31c7c835abacf9a546885ac7877f5dcbeea6ff9d1e625e0576f1b70e809f",
+      "arrays_path": "mert12_batch_parity_probe_arrays/core_80692bf518679d1acdbb_base.npz",
+      "arrays_sha256": "3bee0914521666bd6278a2839929f968b1aff578b9ffc612c1b222f70fe61c80",
+      "starts": [
+        0,
+        32300,
+        63400
+      ],
+      "processor_batch_vs_single": {
+        "max_abs": 0.0,
+        "rms": 0.0
+      },
+      "mert_batch_vs_single": {
+        "max_abs": 1.52587890625e-05,
+        "rms": 6.788603585412587e-07
+      },
+      "mert_batch_vs_h100_cache": {
+        "max_abs": 0.2964564561843872,
+        "rms": 0.035132464305815715
+      },
+      "mert_single_vs_h100_cache": {
+        "max_abs": 0.2964553236961365,
+        "rms": 0.03513243536251075
+      },
+      "probability": {
+        "batch": 0.9905083974202474,
+        "single": 0.9905083974202474,
+        "h100_cache": 0.9903171261151632,
+        "batch_per_seed": [
+          0.997517466545105,
+          0.9801478385925293,
+          0.9938598871231079
+        ],
+        "single_per_seed": [
+          0.997517466545105,
+          0.9801478385925293,
+          0.9938598871231079
+        ],
+        "h100_cache_per_seed": [
+          0.9975177049636841,
+          0.9798635840415955,
+          0.99357008934021
+        ]
+      }
+    },
+    {
+      "ID": "core_ffccfbb2f7762a614a08_base",
+      "audio_sha256": "1183f69f4180ca899e66efa728c8d8ebee10f4d97101c991d1c0a35d999f9548",
+      "backing_sha256_float32": "c6dc72637fade38eba6debc31c40642019dbbda77c3b9740340f4d69c545910c",
+      "arrays_path": "mert12_batch_parity_probe_arrays/core_ffccfbb2f7762a614a08_base.npz",
+      "arrays_sha256": "4312331d65079e0c9cdee96af842277488be3e3ae80fe89cd343fb2c171fb28c",
+      "starts": [
+        0,
+        32300,
+        63400
+      ],
+      "processor_batch_vs_single": {
+        "max_abs": 0.0,
+        "rms": 0.0
+      },
+      "mert_batch_vs_single": {
+        "max_abs": 3.0517578125e-05,
+        "rms": 1.0339543302053181e-06
+      },
+      "mert_batch_vs_h100_cache": {
+        "max_abs": 0.18121719360351562,
+        "rms": 0.029035091533587062
+      },
+      "mert_single_vs_h100_cache": {
+        "max_abs": 0.18121719360351562,
+        "rms": 0.02903516156501879
+      },
+      "probability": {
+        "batch": 0.0010293757853408654,
+        "single": 0.00102937735694771,
+        "h100_cache": 0.001111324003431946,
+        "batch_per_seed": [
+          0.0011565848253667355,
+          0.0007606941508129239,
+          0.001170848379842937
+        ],
+        "single_per_seed": [
+          0.001156585873104632,
+          0.0007606949075125158,
+          0.0011708512902259827
+        ],
+        "h100_cache_per_seed": [
+          0.0012664389796555042,
+          0.000817222346086055,
+          0.0012503106845542789
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "python": "3.11.15",
+    "torch": "2.7.1+cu128",
+    "cuda": "12.8",
+    "transformers": "4.57.6",
+    "librosa": "0.10.2.post1",
+    "numpy": "2.2.6",
+    "demucs": "4.0.1",
+    "ffmpeg": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "matmul_tf32": false,
+    "cudnn_tf32": false
+  },
+  "elapsed_seconds": 11.96265059709549,
+  "peak_gpu_allocated_bytes": 1839561728,
+  "peak_gpu_reserved_bytes": 2357198848,
+  "package_manifest_sha256": "300dff64225580b618dcc103273592e0dda26d233fd50e0661b2d7746bb62012"
+}

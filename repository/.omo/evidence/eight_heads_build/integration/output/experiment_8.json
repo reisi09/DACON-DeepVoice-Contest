@@ -1,0 +1,224 @@
+{
+  "bootstrap_unit": "provenance-connected component; CI conditional on fixed fitted models",
+  "calibration_real_rows": 1,
+  "claim_limit": "diagnostic historical/fresh-source evidence; no official score or authenticity generalization",
+  "class_exposure": "REAL-only fit",
+  "comparison_scope": "same manifest split, modality, labels and frozen feature cache",
+  "component_count": 17,
+  "dev": {
+    "auc": 1.0,
+    "components": 2,
+    "decision_threshold": 28.019430074921935,
+    "eer": 0.0,
+    "fpr": 1.0,
+    "n": 2,
+    "negative_n": 1,
+    "positive_n": 1,
+    "recall": 1.0,
+    "rows": 2,
+    "strata": {
+      "codec": {
+        "base": {
+          "auc": 1.0,
+          "decision_threshold": 44.61033173267736,
+          "eer": 0.0,
+          "fpr": 0.0,
+          "n": 2,
+          "negative_n": 1,
+          "positive_n": 1,
+          "recall": 1.0,
+          "threshold": 44.61033173267736
+        }
+      },
+      "generator": {
+        "": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 1,
+          "positive_n": 0,
+          "recall": null,
+          "threshold": null
+        },
+        "suno": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 0,
+          "positive_n": 1,
+          "recall": null,
+          "threshold": null
+        }
+      },
+      "parent_id": {
+        "dev_music_0": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 1,
+          "positive_n": 0,
+          "recall": null,
+          "threshold": null
+        },
+        "dev_music_1": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 0,
+          "positive_n": 1,
+          "recall": null,
+          "threshold": null
+        }
+      },
+      "source": {
+        "FMA": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 1,
+          "positive_n": 0,
+          "recall": null,
+          "threshold": null
+        },
+        "suno": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 0,
+          "positive_n": 1,
+          "recall": null,
+          "threshold": null
+        }
+      }
+    },
+    "threshold": 44.61033173267736
+  },
+  "estimand": "paired candidate minus reference EER; lower is better",
+  "experiment": 8,
+  "fit_rows": 2,
+  "fixed_updates": null,
+  "label_denominators": {
+    "fake": 30,
+    "real": 31
+  },
+  "official_score": null,
+  "optional_fusion": null,
+  "population": "known component label within the experiment modality/variant",
+  "seeds": [],
+  "selection_locked": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/eight_heads_build/integration/output/selection_E8_locked.json",
+  "status": "complete",
+  "test": {
+    "auc": 1.0,
+    "components": 2,
+    "decision_threshold": 28.019430074921935,
+    "eer": 0.0,
+    "fpr": 1.0,
+    "n": 2,
+    "negative_n": 1,
+    "positive_n": 1,
+    "recall": 1.0,
+    "rows": 2,
+    "strata": {
+      "codec": {
+        "base": {
+          "auc": 1.0,
+          "decision_threshold": 56.21248002278333,
+          "eer": 0.0,
+          "fpr": 0.0,
+          "n": 2,
+          "negative_n": 1,
+          "positive_n": 1,
+          "recall": 1.0,
+          "threshold": 56.21248002278333
+        }
+      },
+      "generator": {
+        "": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 1,
+          "positive_n": 0,
+          "recall": null,
+          "threshold": null
+        },
+        "suno": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 0,
+          "positive_n": 1,
+          "recall": null,
+          "threshold": null
+        }
+      },
+      "parent_id": {
+        "test_music_0": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 1,
+          "positive_n": 0,
+          "recall": null,
+          "threshold": null
+        },
+        "test_music_1": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 0,
+          "positive_n": 1,
+          "recall": null,
+          "threshold": null
+        }
+      },
+      "source": {
+        "FMA": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 1,
+          "positive_n": 0,
+          "recall": null,
+          "threshold": null
+        },
+        "suno": {
+          "auc": null,
+          "decision_threshold": null,
+          "eer": null,
+          "fpr": null,
+          "n": 1,
+          "negative_n": 0,
+          "positive_n": 1,
+          "recall": null,
+          "threshold": null
+        }
+      }
+    },
+    "threshold": 56.21248002278333
+  },
+  "threshold": 28.019430074921935,
+  "wall_seconds": 0.00368499755859375
+}

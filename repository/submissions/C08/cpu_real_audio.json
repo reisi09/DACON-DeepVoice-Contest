@@ -1,0 +1,31 @@
+{
+  "status": "complete",
+  "seconds": 17.48777985572815,
+  "scope": "One labeled historical audio; actual offline encoders and C08 head, no L4 runtime claim",
+  "input_sha256": "803928b4a81e0a798d921518fbe3c011709f9dea571dc994761f9bffd8405b09",
+  "predictions": [
+    {
+      "ID": "025e3d128394bcf37fdd0947",
+      "FILE_FAKE_PROB": "0.3652059705",
+      "VOICE_FAKE_PROB": "0.9187143445",
+      "MUSIC_FAKE_PROB": "0.6866961122",
+      "VOICE_PRESENT_PROB": "0.0224061459",
+      "MUSIC_PRESENT_PROB": "0.5318305492"
+    }
+  ],
+  "h100_reference": {
+    "ID": "025e3d128394bcf37fdd0947",
+    "FILE_FAKE_PROB": 0.3652056442381897,
+    "VOICE_FAKE_PROB": 0.9187605381,
+    "MUSIC_FAKE_PROB": 0.6866955757141113,
+    "VOICE_PRESENT_PROB": 0.0224061031,
+    "MUSIC_PRESENT_PROB": 0.5318304896
+  },
+  "cpu_vs_h100_difference": {
+    "FILE_FAKE_PROB": 3.2626181029060675e-07,
+    "VOICE_FAKE_PROB": -4.619360000002182e-05,
+    "MUSIC_FAKE_PROB": 5.364858887135782e-07,
+    "VOICE_PRESENT_PROB": 4.279999999898254e-08,
+    "MUSIC_PRESENT_PROB": 5.95999999353225e-08
+  }
+}

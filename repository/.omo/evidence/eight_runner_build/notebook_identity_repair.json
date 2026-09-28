@@ -1,0 +1,25 @@
+{
+  "scenario": "restore uploaded notebook byte identity after nondeterministic nbformat cell IDs",
+  "invocation": "read DACON_Eight_H100.ipynb from CRC-verified source.zip; compare normalized JSON; write exact bytes; AST/order validation",
+  "binary_observable": {
+    "normalized_json_equal_before_restore": true,
+    "difference_scope": "cell ids only",
+    "before_sha256": "eec9eac8df65b515547058f901a5419f4dd7a531dc890b5fb1d613c2ec3f9042",
+    "archive_sha256": "f05102e95043050c458ee3ba5049b5fdcf3dff281305092e4ddcdf1a4c1ef515",
+    "restored_sha256": "f05102e95043050c458ee3ba5049b5fdcf3dff281305092e4ddcdf1a4c1ef515",
+    "restored_matches_archive": true,
+    "all_code_cells_compile": true,
+    "required_order_indices": [
+      1,
+      2,
+      2,
+      3,
+      4,
+      5,
+      5,
+      6,
+      7
+    ]
+  },
+  "artifact": "DACON_Eight_H100.ipynb"
+}

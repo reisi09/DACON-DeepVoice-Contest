@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "acquisition",
+      "title": "Candidate acquisition: verified originals versus pending downloads",
+      "queries": [
+        {
+          "id": "current-collection",
+          "source": {
+            "label": "Local checksum receipts and pinned upstream metadata",
+            "files": [
+              {
+                "label": "collection_status.json"
+              },
+              {
+                "label": "zenodo_plan.json"
+              },
+              {
+                "label": "haim_plan.json"
+              },
+              {
+                "label": "audio_decode_samples.json"
+              }
+            ],
+            "links": [
+              {
+                "label": "VocalSet",
+                "url": "https://zenodo.org/records/1442513"
+              },
+              {
+                "label": "CtrSVDD",
+                "url": "https://zenodo.org/records/10467648"
+              },
+              {
+                "label": "ASVspoof5",
+                "url": "https://zenodo.org/records/14498691"
+              },
+              {
+                "label": "PartialSpoof",
+                "url": "https://zenodo.org/records/5766198"
+              },
+              {
+                "label": "HAIM",
+                "url": "https://huggingface.co/datasets/mippia/HAIM"
+              }
+            ],
+            "caveats": [
+              "Snapshot at 2026-09-19T06:31:58.095105+00:00. Downloads continue in the background.",
+              "Planned 88.08GB is not completed volume. Partial files excluded.",
+              "Only 10 acquired HAIM audio files were fully decoded in this snapshot; no full quality audit or training admission."
+            ]
+          },
+          "columns": [
+            "dataset",
+            "verified_files",
+            "verified_bytes",
+            "standalone_audio"
+          ],
+          "rows": [
+            {
+              "dataset": "ASVspoof5",
+              "verified_files": 3,
+              "verified_bytes": 20701463,
+              "standalone_audio": 0
+            },
+            {
+              "dataset": "CtrSVDD",
+              "verified_files": 2,
+              "verified_bytes": 7615104,
+              "standalone_audio": 0
+            },
+            {
+              "dataset": "HAIM",
+              "verified_files": 537,
+              "verified_bytes": 1000217742,
+              "standalone_audio": 254
+            },
+            {
+              "dataset": "PartialSpoof",
+              "verified_files": 4,
+              "verified_bytes": 92230352,
+              "standalone_audio": 0
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "Verified original bytes and actual retained standalone audio; archive audio counts remain pending."
+          }
+        }
+      ]
+    },
+    {
+      "id": "gpu-plan",
+      "title": "A100 approximately 16-hour target: not launched",
+      "queries": [
+        {
+          "id": "resource-readback",
+          "source": {
+            "label": "VESSL CLI and historical H100 artifacts",
+            "files": [
+              {
+                "label": "gpu_resource_options.json"
+              },
+              {
+                "label": "workspace_state.json"
+              },
+              {
+                "label": "run_requirements.json"
+              }
+            ],
+            "caveats": [
+              "A100 x1 80GB is listed as usable; the existing workspace remains stopped on its H100 profile.",
+              "Region and storage profile differ. Same-workspace conversion must be verified before launch.",
+              "10574.16 seconds is the prior H100 feature extraction time for 7144 rows, not an A100 estimate."
+            ]
+          },
+          "columns": [
+            "requirement",
+            "value"
+          ],
+          "rows": [
+            {
+              "requirement": "Future target GPU",
+              "value": "A100 SXM x1 80GB"
+            },
+            {
+              "requirement": "Future total target time",
+              "value": "Approximately 16 hours including extraction and export"
+            },
+            {
+              "requirement": "Current GPU compute",
+              "value": "Stopped; new training not started"
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "Planning and current cloud state are shown separately."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "selected": "G0_AST_MUSIC",
+  "selected_unix": 1789235802.639526,
+  "basis": "development_only_before_root_reads_fresh_predictions_or_metrics",
+  "protocol_sha256": "248d3ad1bfa335852fbddbfc08664ae5e6015de3146b464a7465bc336d53555c",
+  "development_manifest_sha256": "4fd72e3731de71c5ae4fccd4ca8a1e4d05f9e88a5f8143a60209e7cf9c2de01a",
+  "selection_sha256": "c3278bf42a6283832961ecd2645681d71ef6963b59cbefeaefcbcc5308e5ceef",
+  "original_zip_sha256": "cc86f143915c95fd958a0066cbf14b0db9f4c41fd213310c3650b9fe870d0c70",
+  "checkpoints": {
+    "AST_FROZEN": {
+      "config.json": "76d43c4f383cd7f745c6ea2619d1941aa7fb4927739df11cee80ea3ddf1a3b6d",
+      "model.safetensors": "8604c2e65942e355ee9c041e8bc508562463b8069b891b5f9578992cb64882e1",
+      "multitask_config.json": "bb9db172c0d6169930274fc1d70d953829097901746d51f740fd4ea28156a7ea",
+      "preprocessor_config.json": "8d04ba5a9c6fca5d39d0de2b1fd05ecf79deb589fbba279728bbebac39934231"
+    },
+    "AST_LAST_BLOCK": {
+      "config.json": "76d43c4f383cd7f745c6ea2619d1941aa7fb4927739df11cee80ea3ddf1a3b6d",
+      "model.safetensors": "ee52a70cb3a2077dae73324b4706e85d5676755ccefc9390ee4fba6e962a57da",
+      "multitask_config.json": "a0d1dc416f90b2a6cb949a5a4999340fddff3e80d4dae586515d08760e4a03b1",
+      "preprocessor_config.json": "8d04ba5a9c6fca5d39d0de2b1fd05ecf79deb589fbba279728bbebac39934231"
+    }
+  },
+  "test_manifest_sha256": "a11ae794de70f83c0a325f884d8ba920b4a1b3653a2936777a08a0be7c0c735d",
+  "g0_dev_sha256": "7a1b4332f56f7b52ef2adaf6fe2dc1fb9a737698b22218eecf0a07c07a12d347",
+  "ast_dev_sha256": "ae53187ffd7e1760f71d80a7af1c50521bec7b0bfd2d6fa10a65daaa910cd130"
+}

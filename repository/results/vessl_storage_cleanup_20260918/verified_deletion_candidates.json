@@ -1,0 +1,110 @@
+[
+  {
+    "key": "mert12-a100-20260918/results.zip",
+    "bytes": 6268222843,
+    "etag": "\"f742ac6e0f294631b30107157d09777b-120\"",
+    "modified": "2026-09-18T01:25:54+00:00",
+    "local_backup": "results/mert12_a100_20260918/downloaded/results.zip",
+    "local_sha256": "e7bebbded6fef06517db0d42421a575a0440849248de99856796ffc3e5eb5ee5",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "mert12-a100-20260918/output/MERT12_full_submit.zip",
+    "bytes": 6268221960,
+    "etag": "\"121275a1eb2580cc82f430c25c1716cf-120\"",
+    "modified": "2026-09-18T00:00:14+00:00",
+    "local_backup": "results/mert12_a100_20260918/submission_download/MERT12_full_submit.zip",
+    "local_sha256": "eb5466d1446e205130f5db1de719260a1b0ecbd4743c4c18d207288970b88a90",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "voice-music-h100-20260917/model.safetensors",
+    "bytes": 3862169656,
+    "etag": "\"54188cf0410410c89e0a8e7721e9a5a5-737\"",
+    "modified": "2026-09-17T06:40:24+00:00",
+    "local_backup": "_workspace/voice_music_h100_20260917/model.safetensors",
+    "local_sha256": "57da6a47234bb8aad0c61b7f575378a12c2734a30f1f395b95bbf97ed4ba5373",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "eight-h100-20260917/source.zip",
+    "bytes": 3246461219,
+    "etag": "\"6de2c900fbff6ee702f3b4e74e77ec0a-620\"",
+    "modified": "2026-09-17T12:27:05+00:00",
+    "local_backup": "_workspace/eight_h100_20260917/source.zip",
+    "local_sha256": "2606dbc7fbdb98b024d781467c17528b95f94e58486d1be77d0be7efff12d363",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "localization-a100-20260918/input.zip",
+    "bytes": 2022562293,
+    "etag": "\"4d3a27e1add9a94e3412e8ef7da10459-386\"",
+    "modified": "2026-09-18T04:34:43+00:00",
+    "local_backup": "_workspace/localization_a100_20260918/upload/input.zip",
+    "local_sha256": "00e495257b76e09bcbd91646f98ef9e8286bfc403349679e0018bddaa3dd1c4d",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "six-h100-20260917/source.zip",
+    "bytes": 823345520,
+    "etag": "\"2ae41f2929a47053c3a51d41e0f82c2e-158\"",
+    "modified": "2026-09-17T04:08:51+00:00",
+    "local_backup": "_workspace/six_h100_20260917/source.zip",
+    "local_sha256": "29539a8943f3979e9db8bf789a18493782559fdc07a17646965ef3ed4dffbb6b",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "voice-music-h100-20260917-retry1/source.zip",
+    "bytes": 313392627,
+    "etag": "\"d052fd92089b0e197539cf102f34a287-60\"",
+    "modified": "2026-09-17T08:53:03+00:00",
+    "local_backup": "_workspace/voice_music_h100_20260917_retry1/source.zip",
+    "local_sha256": "779e7b9abe5137038b527d90ce185e939a33198b0fecea41b0bc2f765ade3eb9",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "voice-music-h100-20260917/source.zip",
+    "bytes": 313385930,
+    "etag": "\"d1a4b2cdaa270df8fbdda7683823facf-60\"",
+    "modified": "2026-09-17T06:45:55+00:00",
+    "local_backup": "_workspace/voice_music_h100_20260917/source.zip",
+    "local_sha256": "eed67fa0a24ff0e2ffa31ced5976df68f40312e36e168ffc6fb5ffb1ce716b7c",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "temporal/afwhisper-a100-20260916/AFWhisper_features.zip",
+    "bytes": 133648518,
+    "etag": "\"a352deeda9dcaa3db4aa415421d38d9a\"",
+    "modified": "2026-09-15T23:50:56+00:00",
+    "local_backup": "results/afwhisper_a100_20260916/AFWhisper_features.zip",
+    "local_sha256": "cdd54f433c7075a9c7a16e73506b13c7c82e16eda2035bb3b730fcc27298d90b",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "fast-h100-20260917/input.zip",
+    "bytes": 91246492,
+    "etag": "\"7c6c1ab804348455906b83551fcf887b-18\"",
+    "modified": "2026-09-16T15:35:09+00:00",
+    "local_backup": "results/fast_h100_20260917/input.zip",
+    "local_sha256": "74571ca4afc7ac0c71ca9222267c0d517743824bc4dda0866358bc1d2e891fbb",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "c3/full-final-20260915/C3_Final_Input.zip",
+    "bytes": 75657756,
+    "etag": "\"db23abeb7b3eadaeee53bf5809bfb7e6-15\"",
+    "modified": "2026-09-15T03:34:30+00:00",
+    "local_backup": "_workspace/c3_final_upload/C3_Final_Input.zip",
+    "local_sha256": "2ca7873fd297da26cf85f25f7ee8a4672494be72af567836da4d5dad6ad989f7",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  },
+  {
+    "key": "mert12-a100-20260918/features.zip",
+    "bytes": 58617233,
+    "etag": "\"effa8aaa1cb1a9087f27f91f42e2383c-12\"",
+    "modified": "2026-09-17T23:23:20+00:00",
+    "local_backup": "_workspace/mert12_a100_20260918/readback_final_1789688008/features.zip",
+    "local_sha256": "188c016268af2ebc76fa42e5066d7f11e295b65ae214454a9b09a5b7420fdc4f",
+    "proof": "Exact local bytes reproduce current S3 multipart ETag"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "scenario": "attempt6 full run terminal archive download, standard pause, and bootstrap restore",
+  "captured_at_utc": "2026-09-17T15:21:18Z",
+  "captured_unix": 1789658478,
+  "watcher": {
+    "script": "eight_h100_watch.py",
+    "sha256": "ab5513271a1f826218364caac9472353f5d0b072d94dd3782e2a351fb5472a55",
+    "pid": 58324,
+    "command": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python -u /Users/choiwuseck/Documents/ChatGPT/데이콘/eight_h100_watch.py",
+    "post_terminal_process": "exited"
+  },
+  "terminal_state": {
+    "path": "results/eight_h100_20260917/downloaded/run_state.json",
+    "status": "exported",
+    "archive_ready": true,
+    "archive_verified": true,
+    "archive_sha256": "681d41de10397d31a371daaa276a4a90d19f04789b85e01fdd6f936399dd23d2",
+    "archive_bytes": 292178089,
+    "export_member_count": 7314,
+    "hard_deadline_unix": 1789663360
+  },
+  "download_verification": {
+    "path": "results/eight_h100_20260917/download_verification.json",
+    "status": "exported",
+    "files_verified": 7314,
+    "archive_sha256": "681d41de10397d31a371daaa276a4a90d19f04789b85e01fdd6f936399dd23d2"
+  },
+  "stop": {
+    "path": "results/eight_h100_20260917/resource_stop.json",
+    "pause_verified": true,
+    "phase": "standby",
+    "verified_at": 1789658398.128507,
+    "workspace": "wsp-9683432r72m7"
+  },
+  "bootstrap_restore": {
+    "path": "results/eight_h100_20260917/bootstrap_restored.json",
+    "restored": true,
+    "sha256": "d027558a7774b4581c6ed1485ed9e94f8bec5b0b8fc88687aa5366e520b07a94",
+    "readback_path": "_workspace/eight_h100_20260917/bootstrap_restore_readback/redesign_full_refit_run.sh",
+    "readback_sha256_matches": true
+  },
+  "required_artifacts": {
+    "path": "results/eight_h100_20260917/required_artifacts.json",
+    "executed_notebooks": 1,
+    "prediction_files": 10,
+    "checkpoint_files": 154,
+    "required_artifacts_present": true
+  },
+  "final_workspace_snapshot": {
+    "workspace": "wsp-9683432r72m7",
+    "phase": "standby",
+    "state": "stopped",
+    "accelerator": "H100 SXM",
+    "accelerator_count": 1
+  },
+  "invocation": {
+    "read_download_only_progress_checks": true,
+    "monitor_called_by_watcher": true,
+    "manual_gpu_start_or_pause_by_this_agent": false,
+    "object_prefix": "eight-h100-20260917/",
+    "known_remote_files_including_nested_exclusion": "*/*"
+  }
+}

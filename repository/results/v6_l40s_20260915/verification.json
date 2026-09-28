@@ -1,0 +1,15 @@
+{
+  "download_sha256": "both archives match remote manifest",
+  "submission_heads": "byte-identical to downloaded trained heads",
+  "notebook": "all six code cells executed; no error outputs",
+  "metrics": "recomputed from 210 unique saved predictions and dev labels; exact match",
+  "epochs_completed": 300,
+  "file_eer": 0.3857142857142857,
+  "voice_eer_known_100": 0.4291666666666667,
+  "music_eer": 0.4828571428571429,
+  "music_presence_auc": 0.9954411764705886,
+  "official_composite_score": null,
+  "composite_limitation": "voice presence labels lack both classes; voice labels also incomplete",
+  "l4_submission_runtime": "not verified",
+  "leaderboard_submission": "not submitted"
+}

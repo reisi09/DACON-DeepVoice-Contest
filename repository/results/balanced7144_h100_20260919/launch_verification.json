@@ -1,0 +1,87 @@
+{
+  "workspace": "wsp-9683432r72m7",
+  "deployment_prefix": "balanced7144-h100-20260919/",
+  "object_volume": "objvol-a5gxdg7er70i",
+  "started_at_kst": "2026-09-19T08:55:58.801634+09:00",
+  "split_counts": {
+    "train": 5716,
+    "val": 1428
+  },
+  "train_real_fake": [
+    2858,
+    2858
+  ],
+  "val_real_fake": [
+    714,
+    714
+  ],
+  "selected_audio_bytes": 10345454546,
+  "storage_preflight": {
+    "free_bytes": 10819907616768,
+    "rows_verified": 7144,
+    "audio_hardlinks_reused": 7144,
+    "assets_verified": 27,
+    "manifest_sha256": "defc0dc66aa18ca4f012fd8885cba3291320cbbd8cf4cf3d1bd3b26174ab826a"
+  },
+  "automation_id": "full-bank-h100-completion",
+  "automation_status": "ACTIVE",
+  "watcher": {
+    "pid": 84791,
+    "log": "/tmp/balanced7144_watch.log",
+    "poll_seconds": 300,
+    "attached_at": 1789775796.390661
+  },
+  "wall_time_limit": null,
+  "historically_independent_validation": false,
+  "optimizer_training_started": false,
+  "observed_stage": "feature extraction",
+  "verification": "real-bank split and deployment integration passed; uploaded objects verified before GPU start; GPU runtime source hashes verified",
+  "feature_progress": {
+    "done": 213,
+    "elapsed_seconds": 58.93157887458801,
+    "last_id": "asvspoof2019_la:LA_D_6208197",
+    "stage": "features",
+    "total": 7144
+  },
+  "mert_batch": {
+    "chosen": 256,
+    "measurements": [
+      {
+        "batch": 16,
+        "peak_allocated_bytes": 7784170496,
+        "seconds": 0.11783323623239994,
+        "status": "ok",
+        "windows_per_second": 135.78511896629527
+      },
+      {
+        "batch": 32,
+        "peak_allocated_bytes": 9061377024,
+        "seconds": 0.23644769378006458,
+        "status": "ok",
+        "windows_per_second": 135.33648600423774
+      },
+      {
+        "batch": 64,
+        "peak_allocated_bytes": 11612382720,
+        "seconds": 0.42254025768488646,
+        "status": "ok",
+        "windows_per_second": 151.4648576934618
+      },
+      {
+        "batch": 128,
+        "peak_allocated_bytes": 16718520832,
+        "seconds": 0.8578728381544352,
+        "status": "ok",
+        "windows_per_second": 149.2062626383764
+      },
+      {
+        "batch": 256,
+        "peak_allocated_bytes": 26929689088,
+        "seconds": 1.7180291134864092,
+        "status": "ok",
+        "windows_per_second": 149.00795218801463
+      }
+    ],
+    "policy": "largest within 90% fastest throughput and 80% VRAM"
+  }
+}

@@ -1,0 +1,197 @@
+--- a/dacon9504a100/__init__.py
++++ b/dacon9504a100/__init__.py
+@@ -1,4 +1,4 @@
+-"""DACON 236749 existing-only 9504-row A100 pipeline (author code; Codex reviews).
++"""DACON 236749 existing-only 9504-row H100 pipeline (author code; Codex reviews).
+ 
+ Kernel-side (standard library): constants, common, dataset, staging, environment,
+ orchestrator, handoff.  Child-side (isolated Python 3.11 venv): gpu, features,
+--- a/dacon9504a100/constants.py
++++ b/dacon9504a100/constants.py
+@@ -1,4 +1,4 @@
+-"""Immutable run contract for the A100 existing-only 9504 handoff.
++"""Immutable run contract for the H100 existing-only 9504 handoff.
+ 
+ Every value here is copied from reviewed inputs (AUTHOR_REQUEST.txt, dataset
+ README/verification/audit, asset_hashes.json, the original source modules and
+@@ -8,14 +8,14 @@
+ 
+ from typing import Final
+ 
+-RUN_NAME: Final = "DACON_Existing9504_A100"
+-HANDOFF_NAME: Final = "DACON_Existing9504_A100_Handoff.zip"
+-FAILURE_NAME: Final = "DACON_Existing9504_A100_Handoff_FAILED.zip"
+-WORKSPACE: Final = "wsp-5i3knd3gxeox"
+-OBJVOL_ROOT: Final = "/root-1"
+-DEPLOYMENT_ROOT: Final = "/root-1/existing-only-9504-20260919"
+-DEFAULT_JOB_ROOT: Final = "/root/dacon_existing9504_a100_20260919"
+-EXPECTED_GPU: Final = "A100"
++RUN_NAME: Final = "DACON_Existing9504_H100"
++HANDOFF_NAME: Final = "DACON_Existing9504_H100_Handoff.zip"
++FAILURE_NAME: Final = "DACON_Existing9504_H100_Handoff_FAILED.zip"
++WORKSPACE: Final = "wsp-9683432r72m7"
++OBJVOL_ROOT: Final = "/shared"
++DEPLOYMENT_ROOT: Final = "/shared/existing-only-9504-h100-20260920"
++DEFAULT_JOB_ROOT: Final = "/root/dacon_existing9504_h100_20260920"
++EXPECTED_GPU: Final = "H100"
+ SEEDS: Final = (41, 42, 43)
+ ROUTES: Final = ("music", "voice")
+ SPLITS: Final = ("train", "val", "test")
+--- a/dacon9504a100/dataset.py
++++ b/dacon9504a100/dataset.py
+@@ -129,7 +129,7 @@
+ 
+ 
+ def validate_manifest(rows: Sequence[dict[str, str]], expectations: Mapping[str, Any]) -> dict[str, Any]:
+-    """Check every contract the A100 run relies on; raise with the full error list."""
++    """Check every contract the H100 run relies on; raise with the full error list."""
+     errors: list[str] = []
+ 
+     def fail(message: str) -> None:
+--- a/dacon9504a100/environment.py
++++ b/dacon9504a100/environment.py
+@@ -6,7 +6,7 @@
+   2. CPython 3.11.13 via ``uv python install`` (fallback: an existing python3.11),
+   3. ``uv pip install --require-hashes -r requirements.lock.txt`` (reference pins:
+      torch/torchaudio 2.9.1, torchcodec 0.8.1, transformers 4.57.6, numpy 2.2.6, ...),
+-  4. exact freeze comparison and an in-venv probe (A100, CUDA, imports, the
++  4. exact freeze comparison and an in-venv probe (H100, CUDA, imports, the
+      torchaudio->torchcodec decoder the pinned HTDemucs loader uses).
+ torchcodec needs FFmpeg shared libraries; if the image lacks them they are
+ provisioned (apt-get as root, else conda-forge via a pinned micromamba) and the
+--- a/dacon9504a100/evaluation.py
++++ b/dacon9504a100/evaluation.py
+@@ -334,8 +334,8 @@
+     parser.add_argument("--config", type=Path, required=True)
+     args = parser.parse_args()
+     config = read_json(args.config)
+-    if config["device"] != "cuda" or config["expected_gpu"] != "A100":
+-        raise PipelineError("The CLI runs only on the authorized A100 (device=cuda)")
++    if config["device"] != "cuda" or config["expected_gpu"] != "H100":
++        raise PipelineError("The CLI runs only on the authorized H100 (device=cuda)")
+     with StageLock(Path(config["job_root"]) / "locks" / "evaluation.lock", "dacon9504a100.evaluation"):
+         run_test(config)
+ 
+--- a/dacon9504a100/features.py
++++ b/dacon9504a100/features.py
+@@ -1,4 +1,4 @@
+-"""A100 full-duration frozen-encoder features for all 9504 rows (isolated venv).
++"""H100 full-duration frozen-encoder features for all 9504 rows (isolated venv).
+ 
+ Derived from source/full_bank_features.py (``prepare``).  The per-file
+ computation is the original one, reusing unchanged functions by import:
+@@ -12,7 +12,7 @@
+     forward pre-hook (1280-d) and the original fake probability kept as voice_original,
+   * PANNs presence max over baseline segments of the gain-normalized audio,
+   * full_bank_features.window_truth / row_identity / validate_cache unchanged.
+-Changes versus the original: A100 (not H100) identity check, all three splits
++Changes versus the original: H100 (not H100) identity check, all three splits
+ allowed (features carry no training decision), a separate pilot cache and a
+ recorded runtime projection, per-component timing, and exact 9504 coverage.
+ """
+@@ -472,8 +472,8 @@
+     parser.add_argument("--config", type=Path, required=True)
+     args = parser.parse_args()
+     config = load_config(args.config)
+-    if config["device"] != "cuda" or config["expected_gpu"] != "A100":
+-        raise PipelineError("The CLI runs only on the authorized A100 (device=cuda)")
++    if config["device"] != "cuda" or config["expected_gpu"] != "H100":
++        raise PipelineError("The CLI runs only on the authorized H100 (device=cuda)")
+     with StageLock(Path(config["job_root"]) / "locks" / f"features-{args.command}.lock", "dacon9504a100.features"):
+         (run_pilot if args.command == "pilot" else run_full)(config)
+ 
+--- a/dacon9504a100/gpu.py
++++ b/dacon9504a100/gpu.py
+@@ -17,7 +17,7 @@
+ 
+ 
+ def require_device(device: str, expected_gpu: str | None) -> dict[str, Any]:
+-    """Production passes device='cuda', expected_gpu='A100'. CPU is reachable only from tests."""
++    """Production passes device='cuda', expected_gpu='H100'. CPU is reachable only from tests."""
+     if device == "cuda":
+         if not torch.cuda.is_available():
+             raise PipelineError("CUDA is unavailable; this stage requires the authorized GPU")
+--- a/dacon9504a100/handoff.py
++++ b/dacon9504a100/handoff.py
+@@ -265,7 +265,7 @@
+ 
+ 
+ def readme(config: Mapping[str, Any], status: str, state: Mapping[str, Any], error: str | None) -> str:
+-    lines = [f"# {config['run_name']} A100 handoff", "", f"- status: **{status}**", f"- built_at: {now_iso()}",
++    lines = [f"# {config['run_name']} H100 handoff", "", f"- status: **{status}**", f"- built_at: {now_iso()}",
+              f"- workspace: {config['workspace']}; deployment: {config['deployment_root']}", ""]
+     if error:
+         lines += ["## Failure", "", "```", error[-6000:], "```", ""]
+@@ -281,7 +281,7 @@
+     if pilot.is_file():
+         receipt = read_json(pilot)
+         projection = receipt["projection"]
+-        lines += ["## Pilot (A100)", "", f"- MERT batch: {receipt['mert_batch']}",
++        lines += ["## Pilot (H100)", "", f"- MERT batch: {receipt['mert_batch']}",
+                   f"- projected feature extraction: {projection['projected_feature_hours']:.2f} h over "
+                   f"{projection['rows']} rows ({projection['audio_hours']:.1f} h audio)",
+                   f"- pilot peak allocated VRAM: {human_bytes(receipt['memory'].get('max_allocated', 0))} of "
+--- a/dacon9504a100/orchestrator.py
++++ b/dacon9504a100/orchestrator.py
+@@ -4,7 +4,7 @@
+   preflight -> stage_inputs -> environment -> pilot -> features -> train -> test_eval -> parity -> handoff
+ GPU stages run as child processes of the isolated Python 3.11 venv so the
+ kernel never holds CUDA memory.  Every stage is resume-safe; any exception
+-builds DACON_Existing9504_A100_Handoff_FAILED.zip with status "failed" and is
++builds DACON_Existing9504_H100_Handoff_FAILED.zip with status "failed" and is
+ re-raised.  No service start/stop, API keys or submissions happen here.
+ """
+ from __future__ import annotations
+@@ -56,7 +56,7 @@
+         result = subprocess.run(["nvidia-smi", *arguments, "--format=csv,noheader,nounits"], capture_output=True,
+                                 text=True, timeout=60)
+     except FileNotFoundError as error:
+-        raise PipelineError("nvidia-smi not found: this notebook must run on the A100 workspace") from error
++        raise PipelineError("nvidia-smi not found: this notebook must run on the H100 workspace") from error
+     if result.returncode != 0:
+         raise PipelineError(f"nvidia-smi failed: {result.stderr.strip()[:500]}")
+     return [[cell.strip() for cell in line.split(",")] for line in result.stdout.splitlines() if line.strip()]
+@@ -415,7 +415,7 @@
+         receipt = read_json(receipt_path)
+         projection = receipt["projection"]
+         elapsed = self.total_seconds()
+-        self.log(f"A100 pilot: MERT batch {receipt['mert_batch']}; peak VRAM "
++        self.log(f"H100 pilot: MERT batch {receipt['mert_batch']}; peak VRAM "
+                  f"{human_bytes(receipt['memory'].get('max_allocated', 0))}/{human_bytes(receipt['memory'].get('total', 0))}; "
+                  f"projected features {projection['projected_feature_hours']:.2f} h; "
+                  f"stages so far {human_seconds(elapsed)}; target {self.config['target_hours']} h "
+--- a/dacon9504a100/parity.py
++++ b/dacon9504a100/parity.py
+@@ -190,8 +190,8 @@
+     parser.add_argument("--config", type=Path, required=True)
+     args = parser.parse_args()
+     config = read_json(args.config)
+-    if config["device"] != "cuda" or config["expected_gpu"] != "A100":
+-        raise PipelineError("The CLI runs only on the authorized A100 (device=cuda)")
++    if config["device"] != "cuda" or config["expected_gpu"] != "H100":
++        raise PipelineError("The CLI runs only on the authorized H100 (device=cuda)")
+     with StageLock(Path(config["job_root"]) / "locks" / "parity.lock", "dacon9504a100.parity"):
+         run_parity(config)
+ 
+--- a/dacon9504a100/training.py
++++ b/dacon9504a100/training.py
+@@ -4,7 +4,7 @@
+ original one; ``forward``/``step``/``predict``/``benchmark`` and the batching,
+ epoch order and loss weights are imported unchanged from full_bank_train /
+ full_bank_batches.  Changes versus the original:
+-  * A100 identity check instead of H100; three-split manifest.
++  * H100 identity check instead of H100; three-split manifest.
+   * This process opens feature caches for train and val rows only; test rows are
+     never read before candidate_lock.json exists (counts recorded in the lock).
+   * Normalisation statistics and loss weights come from train rows only (as before).
+@@ -311,8 +311,8 @@
+     parser.add_argument("--config", type=Path, required=True)
+     args = parser.parse_args()
+     config = read_json(args.config)
+-    if config["device"] != "cuda" or config["expected_gpu"] != "A100" or config.get("train_benchmark_override"):
+-        raise PipelineError("The CLI runs only on the authorized A100 with measured VRAM batches")
++    if config["device"] != "cuda" or config["expected_gpu"] != "H100" or config.get("train_benchmark_override"):
++        raise PipelineError("The CLI runs only on the authorized H100 with measured VRAM batches")
+     with StageLock(Path(config["job_root"]) / "locks" / "training.lock", "dacon9504a100.training"):
+         train(config)
+ 

@@ -1,0 +1,44 @@
+{
+  "input": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/results/full_bank_mil_8020_20260918/all_sources.csv",
+  "input_sha256": "2cc269dfd1dc98c9585f894f60a7078a80c8f2a3613baa43819d751ddb588a9c",
+  "seed": "balanced7144-20260919-v1",
+  "rows": 7144,
+  "train": 5716,
+  "val": 1428,
+  "class_counts": {
+    "real": 3572,
+    "fake": 3572
+  },
+  "branch_label_counts": {
+    "train:voice:1": 1064,
+    "train:voice:0": 1652,
+    "val:voice:1": 266,
+    "val:voice:0": 412,
+    "train:music:0": 1206,
+    "val:music:0": 302,
+    "val:music:1": 448,
+    "train:music:1": 1794
+  },
+  "policy": "Global real/fake 1:1; every retained source/generator/label cell 80:20 with at most 0.4 validation-row rounding deviation; connected source groups never cross.",
+  "eligible_groups_exclude": "128 legacy constructed_music rows; originals preserved; parent groups recomputed before selection.",
+  "selection_preferences": "Retain scarce real music and rare music generators; ASV fake target 70 per attack; voice-real sources equal; three large music-fake sources equal.",
+  "solver": "scipy.optimize.milp; optimal feasible solution required; integer group assignments and row counts",
+  "historically_independent": false,
+  "prior_seen_selected": 2912,
+  "prior_seen_validation": 561,
+  "gpu_started": false,
+  "uploaded": false,
+  "source_audio_modified": false,
+  "train_val_identity_overlap": 0,
+  "audio_verification": {
+    "files_verified": 7144,
+    "audio_bytes": 10345454546
+  },
+  "csv_sha256": {
+    "val.csv": "6a849d98c33c08c153d4238d39f278d7bd18d26768a168f52bd53771b9dca87b",
+    "selected.csv": "512dff11a9ebd9555fefe8791c21f3f46abab7d8a0c36591d2591ed24f2397c2",
+    "source_summary.csv": "794cbab2490152dbf3d826c4ef8d9d3dc48503319b45a13a59dd51f7dab2315f",
+    "train.csv": "63c2a83b1036dbecdf8789273e6c7d4d5a0335cdfede9c73850af4c8bdc777e9",
+    "selection_ledger.csv": "dffc121f6dbe10281d54cc60649093b4fed8d94674c38baa3218b75c8379fc28"
+  }
+}

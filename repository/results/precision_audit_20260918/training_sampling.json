@@ -1,0 +1,1325 @@
+{
+  "manifest": "_workspace/eight_h100_20260917/dataset/manifest.csv",
+  "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+  "historical": {
+    "E6_music": {
+      "rows": 831,
+      "exposed": 789,
+      "omitted": 42,
+      "zero_by_label": {
+        "0": 42
+      },
+      "groups": {
+        "1|suno|base": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 421,
+          "min": 17,
+          "max": 18
+        },
+        "1|Echoes/songgen/ATA|base": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 421,
+          "min": 10,
+          "max": 11
+        },
+        "1|Echoes/producer/ATA|base": {
+          "rows": 20,
+          "exposed": 20,
+          "draws": 421,
+          "min": 21,
+          "max": 22
+        },
+        "1|udio|base": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 421,
+          "min": 17,
+          "max": 18
+        },
+        "0|FMA|base": {
+          "rows": 84,
+          "exposed": 42,
+          "draws": 4000,
+          "min": 0,
+          "max": 96
+        },
+        "1|Echoes/musicgen/ATA|base": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 421,
+          "min": 9,
+          "max": 10
+        },
+        "1|Echoes/elevenlabs/TTA|base": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 421,
+          "min": 10,
+          "max": 11
+        },
+        "1|Echoes/udio/TTA|base": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 421,
+          "min": 9,
+          "max": 10
+        },
+        "1|Echoes/audioldm/TTA|base": {
+          "rows": 47,
+          "exposed": 47,
+          "draws": 421,
+          "min": 8,
+          "max": 9
+        },
+        "1|Echoes/musicgen/TTA|base": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 421,
+          "min": 8,
+          "max": 9
+        },
+        "1|Echoes/diffrhythm/ATA|base": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 421,
+          "min": 9,
+          "max": 10
+        },
+        "1|Echoes/diffrhythm/TTA|base": {
+          "rows": 50,
+          "exposed": 50,
+          "draws": 421,
+          "min": 8,
+          "max": 9
+        },
+        "1|Echoes/acestep/TTA|base": {
+          "rows": 48,
+          "exposed": 48,
+          "draws": 422,
+          "min": 8,
+          "max": 9
+        },
+        "1|Echoes/audioldm/ATA|base": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 421,
+          "min": 9,
+          "max": 10
+        },
+        "0|FMA/FMA|base": {
+          "rows": 55,
+          "exposed": 55,
+          "draws": 4000,
+          "min": 72,
+          "max": 73
+        },
+        "1|Echoes/suno/TTA|base": {
+          "rows": 44,
+          "exposed": 44,
+          "draws": 421,
+          "min": 9,
+          "max": 10
+        },
+        "1|Echoes/songgen/TTA|base": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 421,
+          "min": 8,
+          "max": 9
+        },
+        "1|Echoes/brev/TTA|base": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 421,
+          "min": 10,
+          "max": 11
+        },
+        "1|Echoes/producer/TTA|base": {
+          "rows": 23,
+          "exposed": 23,
+          "draws": 421,
+          "min": 18,
+          "max": 19
+        },
+        "1|Echoes/mubert/TTA|base": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 421,
+          "min": 70,
+          "max": 71
+        },
+        "1|Echoes/stableaudio/TTA|base": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 421,
+          "min": 70,
+          "max": 71
+        }
+      },
+      "checkpoint_draw_sha256_matches": true,
+      "zero_ids": [
+        "core_0210dc24f7982bc2f76c_base",
+        "core_0294cf29f2e308633ba3_base",
+        "core_08a5ff68fdc061ee2b06_base",
+        "core_15dbb16f761a3ff114e7_base",
+        "core_1a867ad73e4ff3fe895b_base",
+        "core_27223e94d378de355cc2_base",
+        "core_2a55f46261d946966603_base",
+        "core_2d59df3f3196a6bf8f14_base",
+        "core_36b59711f915a83d3455_base",
+        "core_3ac7abf753d06d9d57c8_base",
+        "core_459b71d7c1b0e9e10cf1_base",
+        "core_52fe410f87d755f38c99_base",
+        "core_55560a34119cd6faacce_base",
+        "core_5ea724ad089f0300460b_base",
+        "core_60df71b717374868ff51_base",
+        "core_6597e52b3bc1de98b78b_base",
+        "core_6cbfc724474ba14de266_base",
+        "core_7243d5d7a3a0c5d6e7f9_base",
+        "core_744df6513847fd1f77aa_base",
+        "core_88ff5df4743c86bebe0c_base",
+        "core_8a71fa4a71a5777f30ea_base",
+        "core_98b55e3533a12bc37972_base",
+        "core_9e77fb2f5bba1dc1ffd9_base",
+        "core_b3a14f676fbf75919bbd_base",
+        "core_b5d5d7d91d54e5a11a7b_base",
+        "core_b6923f2aea9ae9e2bcda_base",
+        "core_bd72266efa53e95ea7fa_base",
+        "core_c0c43a848e9643c004a2_base",
+        "core_c4580981fbb5c25d4bd2_base",
+        "core_c5087450335cd901c8bd_base",
+        "core_c95ea03541bed3b72660_base",
+        "core_ce6ce2d0460916508931_base",
+        "core_d408108b128375ccbd4d_base",
+        "core_d6547b17bf0b1bd16603_base",
+        "core_d74929ab4b4a31743ac9_base",
+        "core_d927566e65ccfbbfb82c_base",
+        "core_ddcdbeafea3dc4d47da7_base",
+        "core_e3eb08a1b66428290271_base",
+        "core_e98e5765a283db246dfa_base",
+        "core_f5bdc3d4a4546065ce5d_base",
+        "core_f61ef970fc1ab23f149d_base",
+        "core_f9b936b2066994b27ae4_base"
+      ]
+    },
+    "E1_music_control": {
+      "rows": 831,
+      "exposed": 831,
+      "omitted": 0,
+      "zero_by_label": {},
+      "groups": {
+        "1|suno|base": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 264,
+          "min": 11,
+          "max": 11
+        },
+        "1|Echoes/songgen/ATA|base": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 490,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/producer/ATA|base": {
+          "rows": 20,
+          "exposed": 20,
+          "draws": 230,
+          "min": 11,
+          "max": 12
+        },
+        "1|udio|base": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 264,
+          "min": 11,
+          "max": 11
+        },
+        "0|FMA|base": {
+          "rows": 84,
+          "exposed": 84,
+          "draws": 4810,
+          "min": 57,
+          "max": 58
+        },
+        "1|Echoes/musicgen/ATA|base": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 499,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/elevenlabs/TTA|base": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 483,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/udio/TTA|base": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 523,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/audioldm/TTA|base": {
+          "rows": 47,
+          "exposed": 47,
+          "draws": 551,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/musicgen/TTA|base": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 567,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/diffrhythm/ATA|base": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 528,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/diffrhythm/TTA|base": {
+          "rows": 50,
+          "exposed": 50,
+          "draws": 581,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/acestep/TTA|base": {
+          "rows": 48,
+          "exposed": 48,
+          "draws": 554,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/audioldm/ATA|base": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 496,
+          "min": 11,
+          "max": 12
+        },
+        "0|FMA/FMA|base": {
+          "rows": 55,
+          "exposed": 55,
+          "draws": 3190,
+          "min": 58,
+          "max": 58
+        },
+        "1|Echoes/suno/TTA|base": {
+          "rows": 44,
+          "exposed": 44,
+          "draws": 512,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/songgen/TTA|base": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 566,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/brev/TTA|base": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 485,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/producer/TTA|base": {
+          "rows": 23,
+          "exposed": 23,
+          "draws": 268,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/mubert/TTA|base": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 69,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/stableaudio/TTA|base": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 70,
+          "min": 11,
+          "max": 12
+        }
+      },
+      "checkpoint_draw_sha256_matches": true,
+      "zero_ids": []
+    },
+    "E3_music": {
+      "rows": 2493,
+      "exposed": 2493,
+      "omitted": 0,
+      "zero_by_label": {},
+      "groups": {
+        "1|suno|base": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 90,
+          "min": 3,
+          "max": 4
+        },
+        "1|suno|mp3_32k": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 90,
+          "min": 3,
+          "max": 4
+        },
+        "1|suno|telephone": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 84,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/songgen/ATA|base": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 163,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/songgen/ATA|mp3_32k": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 162,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/songgen/ATA|telephone": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 165,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/producer/ATA|base": {
+          "rows": 20,
+          "exposed": 20,
+          "draws": 76,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/producer/ATA|mp3_32k": {
+          "rows": 20,
+          "exposed": 20,
+          "draws": 77,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/producer/ATA|telephone": {
+          "rows": 20,
+          "exposed": 20,
+          "draws": 77,
+          "min": 3,
+          "max": 4
+        },
+        "1|udio|base": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 86,
+          "min": 3,
+          "max": 4
+        },
+        "1|udio|mp3_32k": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 86,
+          "min": 3,
+          "max": 4
+        },
+        "1|udio|telephone": {
+          "rows": 24,
+          "exposed": 24,
+          "draws": 92,
+          "min": 3,
+          "max": 4
+        },
+        "0|FMA|base": {
+          "rows": 84,
+          "exposed": 84,
+          "draws": 1603,
+          "min": 19,
+          "max": 20
+        },
+        "0|FMA|mp3_32k": {
+          "rows": 84,
+          "exposed": 84,
+          "draws": 1604,
+          "min": 19,
+          "max": 20
+        },
+        "0|FMA|telephone": {
+          "rows": 84,
+          "exposed": 84,
+          "draws": 1603,
+          "min": 19,
+          "max": 20
+        },
+        "1|Echoes/musicgen/ATA|base": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 168,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/musicgen/ATA|mp3_32k": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 163,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/musicgen/ATA|telephone": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 168,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/elevenlabs/TTA|base": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 160,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/elevenlabs/TTA|mp3_32k": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 165,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/elevenlabs/TTA|telephone": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 158,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/udio/TTA|base": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 176,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/udio/TTA|mp3_32k": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 173,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/udio/TTA|telephone": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 174,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/audioldm/TTA|base": {
+          "rows": 47,
+          "exposed": 47,
+          "draws": 186,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/audioldm/TTA|mp3_32k": {
+          "rows": 47,
+          "exposed": 47,
+          "draws": 181,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/audioldm/TTA|telephone": {
+          "rows": 47,
+          "exposed": 47,
+          "draws": 184,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/musicgen/TTA|base": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 189,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/musicgen/TTA|mp3_32k": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 189,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/musicgen/TTA|telephone": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 189,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/diffrhythm/ATA|base": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 176,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/diffrhythm/ATA|mp3_32k": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 177,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/diffrhythm/ATA|telephone": {
+          "rows": 45,
+          "exposed": 45,
+          "draws": 175,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/diffrhythm/TTA|base": {
+          "rows": 50,
+          "exposed": 50,
+          "draws": 193,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/diffrhythm/TTA|mp3_32k": {
+          "rows": 50,
+          "exposed": 50,
+          "draws": 195,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/diffrhythm/TTA|telephone": {
+          "rows": 50,
+          "exposed": 50,
+          "draws": 193,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/acestep/TTA|base": {
+          "rows": 48,
+          "exposed": 48,
+          "draws": 184,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/acestep/TTA|mp3_32k": {
+          "rows": 48,
+          "exposed": 48,
+          "draws": 185,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/acestep/TTA|telephone": {
+          "rows": 48,
+          "exposed": 48,
+          "draws": 185,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/audioldm/ATA|base": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 164,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/audioldm/ATA|mp3_32k": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 166,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/audioldm/ATA|telephone": {
+          "rows": 43,
+          "exposed": 43,
+          "draws": 166,
+          "min": 3,
+          "max": 4
+        },
+        "0|FMA/FMA|base": {
+          "rows": 55,
+          "exposed": 55,
+          "draws": 1064,
+          "min": 19,
+          "max": 20
+        },
+        "0|FMA/FMA|mp3_32k": {
+          "rows": 55,
+          "exposed": 55,
+          "draws": 1063,
+          "min": 19,
+          "max": 20
+        },
+        "0|FMA/FMA|telephone": {
+          "rows": 55,
+          "exposed": 55,
+          "draws": 1063,
+          "min": 19,
+          "max": 20
+        },
+        "1|Echoes/suno/TTA|base": {
+          "rows": 44,
+          "exposed": 44,
+          "draws": 169,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/suno/TTA|mp3_32k": {
+          "rows": 44,
+          "exposed": 44,
+          "draws": 173,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/suno/TTA|telephone": {
+          "rows": 44,
+          "exposed": 44,
+          "draws": 170,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/songgen/TTA|base": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 189,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/songgen/TTA|mp3_32k": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 188,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/songgen/TTA|telephone": {
+          "rows": 49,
+          "exposed": 49,
+          "draws": 189,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/brev/TTA|base": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 161,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/brev/TTA|mp3_32k": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 163,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/brev/TTA|telephone": {
+          "rows": 42,
+          "exposed": 42,
+          "draws": 161,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/producer/TTA|base": {
+          "rows": 23,
+          "exposed": 23,
+          "draws": 89,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/producer/TTA|mp3_32k": {
+          "rows": 23,
+          "exposed": 23,
+          "draws": 88,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/producer/TTA|telephone": {
+          "rows": 23,
+          "exposed": 23,
+          "draws": 91,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/mubert/TTA|base": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 24,
+          "min": 4,
+          "max": 4
+        },
+        "1|Echoes/mubert/TTA|mp3_32k": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 23,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/mubert/TTA|telephone": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 22,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/stableaudio/TTA|base": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 24,
+          "min": 4,
+          "max": 4
+        },
+        "1|Echoes/stableaudio/TTA|mp3_32k": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 23,
+          "min": 3,
+          "max": 4
+        },
+        "1|Echoes/stableaudio/TTA|telephone": {
+          "rows": 6,
+          "exposed": 6,
+          "draws": 23,
+          "min": 3,
+          "max": 4
+        }
+      },
+      "checkpoint_draw_sha256_matches": true,
+      "zero_ids": [],
+      "consistency_pairs": {
+        "available": 1662,
+        "used": 500,
+        "base_rows_used": 250,
+        "eligible_base_rows": 831,
+        "label_pairs": {
+          "1": 412,
+          "0": 88
+        },
+        "source_pairs": {
+          "suno": 22,
+          "Echoes/songgen/ATA": 26,
+          "Echoes/producer/ATA": 12,
+          "udio": 14,
+          "FMA": 46,
+          "Echoes/musicgen/ATA": 24,
+          "Echoes/elevenlabs/TTA": 16,
+          "Echoes/udio/TTA": 26,
+          "Echoes/audioldm/TTA": 24,
+          "Echoes/musicgen/TTA": 32,
+          "Echoes/diffrhythm/ATA": 26,
+          "Echoes/diffrhythm/TTA": 40,
+          "Echoes/acestep/TTA": 24,
+          "Echoes/audioldm/ATA": 30,
+          "FMA/FMA": 42,
+          "Echoes/suno/TTA": 26,
+          "Echoes/songgen/TTA": 32,
+          "Echoes/brev/TTA": 22,
+          "Echoes/producer/TTA": 8,
+          "Echoes/mubert/TTA": 6,
+          "Echoes/stableaudio/TTA": 2
+        }
+      }
+    }
+  },
+  "latest": {
+    "41": {
+      "receipt_counts_match": true,
+      "before_zero_by_label": {
+        "0": 109
+      },
+      "formerly_omitted_max_last_step_zero_based": 13,
+      "formerly_omitted_min_count": 1,
+      "formerly_omitted_max_count": 1,
+      "groups": {
+        "1|suno": {
+          "rows": 39,
+          "exposed": 39,
+          "draws": 402,
+          "min": 10,
+          "max": 11
+        },
+        "1|Echoes/acestep/TTA": {
+          "rows": 79,
+          "exposed": 79,
+          "draws": 442,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/songgen/ATA": {
+          "rows": 64,
+          "exposed": 64,
+          "draws": 427,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/producer/ATA": {
+          "rows": 31,
+          "exposed": 31,
+          "draws": 394,
+          "min": 12,
+          "max": 13
+        },
+        "1|udio": {
+          "rows": 39,
+          "exposed": 39,
+          "draws": 402,
+          "min": 10,
+          "max": 11
+        },
+        "1|Echoes/musicgen/ATA": {
+          "rows": 70,
+          "exposed": 70,
+          "draws": 433,
+          "min": 6,
+          "max": 7
+        },
+        "0|FMA": {
+          "rows": 128,
+          "exposed": 128,
+          "draws": 4019,
+          "min": 1,
+          "max": 62
+        },
+        "1|Echoes/udio/TTA": {
+          "rows": 68,
+          "exposed": 68,
+          "draws": 431,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/musicgen/TTA": {
+          "rows": 78,
+          "exposed": 78,
+          "draws": 441,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/elevenlabs/TTA": {
+          "rows": 65,
+          "exposed": 65,
+          "draws": 428,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/audioldm/TTA": {
+          "rows": 77,
+          "exposed": 77,
+          "draws": 440,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/suno/TTA": {
+          "rows": 68,
+          "exposed": 68,
+          "draws": 431,
+          "min": 6,
+          "max": 7
+        },
+        "0|FMA/FMA": {
+          "rows": 90,
+          "exposed": 90,
+          "draws": 3981,
+          "min": 1,
+          "max": 88
+        },
+        "1|Echoes/diffrhythm/ATA": {
+          "rows": 72,
+          "exposed": 72,
+          "draws": 435,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/diffrhythm/TTA": {
+          "rows": 82,
+          "exposed": 82,
+          "draws": 445,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/mubert/TTA": {
+          "rows": 10,
+          "exposed": 10,
+          "draws": 373,
+          "min": 37,
+          "max": 38
+        },
+        "1|Echoes/audioldm/ATA": {
+          "rows": 70,
+          "exposed": 70,
+          "draws": 432,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/songgen/TTA": {
+          "rows": 81,
+          "exposed": 81,
+          "draws": 444,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/producer/TTA": {
+          "rows": 35,
+          "exposed": 35,
+          "draws": 398,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/brev/TTA": {
+          "rows": 66,
+          "exposed": 66,
+          "draws": 429,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/stableaudio/TTA": {
+          "rows": 10,
+          "exposed": 10,
+          "draws": 373,
+          "min": 37,
+          "max": 38
+        }
+      }
+    },
+    "42": {
+      "receipt_counts_match": true,
+      "before_zero_by_label": {
+        "0": 109
+      },
+      "formerly_omitted_max_last_step_zero_based": 13,
+      "formerly_omitted_min_count": 1,
+      "formerly_omitted_max_count": 1,
+      "groups": {
+        "1|suno": {
+          "rows": 39,
+          "exposed": 39,
+          "draws": 402,
+          "min": 10,
+          "max": 11
+        },
+        "1|Echoes/acestep/TTA": {
+          "rows": 79,
+          "exposed": 79,
+          "draws": 442,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/songgen/ATA": {
+          "rows": 64,
+          "exposed": 64,
+          "draws": 427,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/producer/ATA": {
+          "rows": 31,
+          "exposed": 31,
+          "draws": 394,
+          "min": 12,
+          "max": 13
+        },
+        "1|udio": {
+          "rows": 39,
+          "exposed": 39,
+          "draws": 402,
+          "min": 10,
+          "max": 11
+        },
+        "1|Echoes/musicgen/ATA": {
+          "rows": 70,
+          "exposed": 70,
+          "draws": 433,
+          "min": 6,
+          "max": 7
+        },
+        "0|FMA": {
+          "rows": 128,
+          "exposed": 128,
+          "draws": 4019,
+          "min": 1,
+          "max": 62
+        },
+        "1|Echoes/udio/TTA": {
+          "rows": 68,
+          "exposed": 68,
+          "draws": 431,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/musicgen/TTA": {
+          "rows": 78,
+          "exposed": 78,
+          "draws": 441,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/elevenlabs/TTA": {
+          "rows": 65,
+          "exposed": 65,
+          "draws": 428,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/audioldm/TTA": {
+          "rows": 77,
+          "exposed": 77,
+          "draws": 440,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/suno/TTA": {
+          "rows": 68,
+          "exposed": 68,
+          "draws": 431,
+          "min": 6,
+          "max": 7
+        },
+        "0|FMA/FMA": {
+          "rows": 90,
+          "exposed": 90,
+          "draws": 3981,
+          "min": 1,
+          "max": 88
+        },
+        "1|Echoes/diffrhythm/ATA": {
+          "rows": 72,
+          "exposed": 72,
+          "draws": 435,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/diffrhythm/TTA": {
+          "rows": 82,
+          "exposed": 82,
+          "draws": 445,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/mubert/TTA": {
+          "rows": 10,
+          "exposed": 10,
+          "draws": 373,
+          "min": 37,
+          "max": 38
+        },
+        "1|Echoes/audioldm/ATA": {
+          "rows": 70,
+          "exposed": 70,
+          "draws": 432,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/songgen/TTA": {
+          "rows": 81,
+          "exposed": 81,
+          "draws": 444,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/producer/TTA": {
+          "rows": 35,
+          "exposed": 35,
+          "draws": 398,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/brev/TTA": {
+          "rows": 66,
+          "exposed": 66,
+          "draws": 429,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/stableaudio/TTA": {
+          "rows": 10,
+          "exposed": 10,
+          "draws": 373,
+          "min": 37,
+          "max": 38
+        }
+      }
+    },
+    "43": {
+      "receipt_counts_match": true,
+      "before_zero_by_label": {
+        "0": 109
+      },
+      "formerly_omitted_max_last_step_zero_based": 13,
+      "formerly_omitted_min_count": 1,
+      "formerly_omitted_max_count": 1,
+      "groups": {
+        "1|suno": {
+          "rows": 39,
+          "exposed": 39,
+          "draws": 402,
+          "min": 10,
+          "max": 11
+        },
+        "1|Echoes/acestep/TTA": {
+          "rows": 79,
+          "exposed": 79,
+          "draws": 442,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/songgen/ATA": {
+          "rows": 64,
+          "exposed": 64,
+          "draws": 427,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/producer/ATA": {
+          "rows": 31,
+          "exposed": 31,
+          "draws": 394,
+          "min": 12,
+          "max": 13
+        },
+        "1|udio": {
+          "rows": 39,
+          "exposed": 39,
+          "draws": 402,
+          "min": 10,
+          "max": 11
+        },
+        "1|Echoes/musicgen/ATA": {
+          "rows": 70,
+          "exposed": 70,
+          "draws": 433,
+          "min": 6,
+          "max": 7
+        },
+        "0|FMA": {
+          "rows": 128,
+          "exposed": 128,
+          "draws": 4020,
+          "min": 1,
+          "max": 62
+        },
+        "1|Echoes/udio/TTA": {
+          "rows": 68,
+          "exposed": 68,
+          "draws": 431,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/musicgen/TTA": {
+          "rows": 78,
+          "exposed": 78,
+          "draws": 441,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/elevenlabs/TTA": {
+          "rows": 65,
+          "exposed": 65,
+          "draws": 428,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/audioldm/TTA": {
+          "rows": 77,
+          "exposed": 77,
+          "draws": 440,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/suno/TTA": {
+          "rows": 68,
+          "exposed": 68,
+          "draws": 431,
+          "min": 6,
+          "max": 7
+        },
+        "0|FMA/FMA": {
+          "rows": 90,
+          "exposed": 90,
+          "draws": 3980,
+          "min": 1,
+          "max": 88
+        },
+        "1|Echoes/diffrhythm/ATA": {
+          "rows": 72,
+          "exposed": 72,
+          "draws": 435,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/diffrhythm/TTA": {
+          "rows": 82,
+          "exposed": 82,
+          "draws": 445,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/mubert/TTA": {
+          "rows": 10,
+          "exposed": 10,
+          "draws": 373,
+          "min": 37,
+          "max": 38
+        },
+        "1|Echoes/audioldm/ATA": {
+          "rows": 70,
+          "exposed": 70,
+          "draws": 432,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/songgen/TTA": {
+          "rows": 81,
+          "exposed": 81,
+          "draws": 444,
+          "min": 5,
+          "max": 6
+        },
+        "1|Echoes/producer/TTA": {
+          "rows": 35,
+          "exposed": 35,
+          "draws": 398,
+          "min": 11,
+          "max": 12
+        },
+        "1|Echoes/brev/TTA": {
+          "rows": 66,
+          "exposed": 66,
+          "draws": 429,
+          "min": 6,
+          "max": 7
+        },
+        "1|Echoes/stableaudio/TTA": {
+          "rows": 10,
+          "exposed": 10,
+          "draws": 373,
+          "min": 37,
+          "max": 38
+        }
+      }
+    }
+  }
+}

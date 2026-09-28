@@ -1,0 +1,37 @@
+{
+  "code_commit": "a01a50e0c774f181c20238109127c5b81cc95dc1",
+  "notebook_id": "1_5OGLsmCbWYy8m0snIXuGfrDqnqA2AVf",
+  "notebook_sha256": "9e40c7c58bdc262f98699e0fef351ed15a01a8b8be7b296760bdfeead51a413c",
+  "drive_raw_readback_verified": true,
+  "notebook_bytes": 248788,
+  "run_folder_id": "1-8rmMbN058rMUbtlrGrdPnpWby9ljpF6",
+  "run_name": "20260913_074847",
+  "original_allocation_start_unix": 1789283305,
+  "retry_allocation_start_unix_ui": 1789285686,
+  "retry_notebook_start_unix": 1789285727.7541268,
+  "safe_deadline_unix": 1789290385,
+  "pre_retry_remaining_units_ui": 52.51,
+  "pre_retry_active_sessions_ui": 0,
+  "source_receipt_runner_sha256": "fc399dfa456f34f12ccf25851c6a4213f4fb2beaa6a5bc1e849f01c2a488bc3a",
+  "status": "completed_G0_retained",
+  "last_verified_utc": "2026-09-13T08:28:10.724975Z",
+  "final_details": {
+    "original_run_all_five_complete": true,
+    "final_model": "G0",
+    "g0_retained": true,
+    "sealed": false,
+    "sealed_opened": false,
+    "release_unix": 1789288090.7249749,
+    "selection_reason": "no_candidate_passed",
+    "source_commit_preserved": "a01a50e0c774f181c20238109127c5b81cc95dc1",
+    "matched_recheck_wrapper_sha256": "811534002492c462e3411106919bb823e1ba924637cc9fd2fad74671da01f349",
+    "matched_recheck_notebook_sha256": "c047a249f86f4fdbf03a131aa0feada413d5584cc6b0ef5fbf0082e60c2cf9e0",
+    "matched_recheck_source_receipt": ".omo/evidence/v4-training/recheck-source-sha256.txt",
+    "g0_prediction_analysis": {
+      "normalized_csv": ".omo/evidence/v4-retry-G0_predictions.csv",
+      "raw_csv": ".omo/evidence/v4-retry-G0_predictions.raw.csv",
+      "parity_receipt": ".omo/evidence/v4-retry-g0-parity.json",
+      "note": "Normalized and raw G0 prediction CSVs are retained as separate analysis artifacts; their parity deltas are recorded in the parity receipt."
+    }
+  }
+}

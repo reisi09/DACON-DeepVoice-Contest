@@ -1,0 +1,2859 @@
+{
+  "ensemble": {
+    "calibration": {
+      "corrected": {
+        "auc": 0.9465546860087803,
+        "decision_threshold": 0.5,
+        "eer": 0.15756823821339955,
+        "fpr": 0.2903225806451613,
+        "n": 200,
+        "negative_n": 31,
+        "positive_n": 169,
+        "real_false_positive_ids_at_0_5": [
+          "core_1272726b2fa669eff54f_base",
+          "core_1e38607156790bc1bd87_base",
+          "core_51ef221636100d0ad9fc_base",
+          "core_619a508362744ceb4732_base",
+          "core_8b00a6d6605f6ba35f76_base",
+          "core_8bff1091fe47d5cd41ef_base",
+          "core_cf0648ce315eeb1c58b3_base",
+          "core_d0ad072af8f17f0a49ba_base",
+          "core_e0f8753411a134959a6c_base"
+        ],
+        "recall": 0.9704142011834319,
+        "source_slices": {
+          "Echoes/acestep/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 0.9090909090909091,
+            "threshold": null
+          },
+          "Echoes/audioldm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 0.9090909090909091,
+            "threshold": null
+          },
+          "Echoes/brev/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/elevenlabs/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 0.8333333333333334,
+            "threshold": null
+          },
+          "Echoes/producer/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 10,
+            "negative_n": 0,
+            "positive_n": 10,
+            "recall": 0.9,
+            "threshold": null
+          },
+          "Echoes/songgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/suno/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/udio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 0.9166666666666666,
+            "threshold": null
+          },
+          "FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.25,
+            "n": 20,
+            "negative_n": 20,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "FMA/FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.36363636363636365,
+            "n": 11,
+            "negative_n": 11,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "suno": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 4,
+            "negative_n": 0,
+            "positive_n": 4,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "udio": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 7,
+            "negative_n": 0,
+            "positive_n": 7,
+            "recall": 1.0,
+            "threshold": null
+          }
+        },
+        "threshold": 0.9770523905754089
+      },
+      "legacy": {
+        "auc": 0.9195457148310746,
+        "decision_threshold": 0.5,
+        "eer": 0.16052681809505637,
+        "fpr": 0.3870967741935484,
+        "n": 200,
+        "negative_n": 31,
+        "positive_n": 169,
+        "real_false_positive_ids_at_0_5": [
+          "core_1195d11f495adf4a6797_base",
+          "core_1272726b2fa669eff54f_base",
+          "core_1e38607156790bc1bd87_base",
+          "core_51ef221636100d0ad9fc_base",
+          "core_619a508362744ceb4732_base",
+          "core_8b00a6d6605f6ba35f76_base",
+          "core_8bff1091fe47d5cd41ef_base",
+          "core_cca224c077f06816d1b2_base",
+          "core_cf0648ce315eeb1c58b3_base",
+          "core_d0ad072af8f17f0a49ba_base",
+          "core_e0f8753411a134959a6c_base",
+          "core_fe6e89f72243cb7b2331_base"
+        ],
+        "recall": 0.9704142011834319,
+        "source_slices": {
+          "Echoes/acestep/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/brev/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/elevenlabs/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 0.8333333333333334,
+            "threshold": null
+          },
+          "Echoes/producer/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 0.8333333333333334,
+            "threshold": null
+          },
+          "Echoes/songgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 10,
+            "negative_n": 0,
+            "positive_n": 10,
+            "recall": 0.9,
+            "threshold": null
+          },
+          "Echoes/songgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/suno/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/udio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 0.9166666666666666,
+            "threshold": null
+          },
+          "FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.4,
+            "n": 20,
+            "negative_n": 20,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "FMA/FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.36363636363636365,
+            "n": 11,
+            "negative_n": 11,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "suno": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 4,
+            "negative_n": 0,
+            "positive_n": 4,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "udio": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 7,
+            "negative_n": 0,
+            "positive_n": 7,
+            "recall": 0.8571428571428571,
+            "threshold": null
+          }
+        },
+        "threshold": 0.987831175327301
+      }
+    },
+    "dev": {
+      "corrected": {
+        "auc": 0.8650359712230216,
+        "decision_threshold": 0.5,
+        "eer": 0.20071942446043162,
+        "fpr": 0.4,
+        "n": 164,
+        "negative_n": 25,
+        "positive_n": 139,
+        "real_false_positive_ids_at_0_5": [
+          "core_0acd93c9b2df582993ec_base",
+          "core_520452303f2dcb863780_base",
+          "core_65853d431ba40db1689b_base",
+          "core_69f186513ab4294e3f2c_base",
+          "core_ad9007f916fcea93f870_base",
+          "core_b766f3a19397f92d3106_base",
+          "core_c102ff02967f49d7ef40_base",
+          "core_c428aab2d80d391a5298_base",
+          "core_caf174258376f666707f_base",
+          "core_f6f697454de196051697_base"
+        ],
+        "recall": 0.9424460431654677,
+        "source_slices": {
+          "Echoes/acestep/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 10,
+            "negative_n": 0,
+            "positive_n": 10,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 0.9090909090909091,
+            "threshold": null
+          },
+          "Echoes/brev/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 0.6666666666666666,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 10,
+            "negative_n": 0,
+            "positive_n": 10,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/elevenlabs/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 5,
+            "negative_n": 0,
+            "positive_n": 5,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/mubert/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 4,
+            "negative_n": 0,
+            "positive_n": 4,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 10,
+            "negative_n": 0,
+            "positive_n": 10,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 2,
+            "negative_n": 0,
+            "positive_n": 2,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 8,
+            "negative_n": 0,
+            "positive_n": 8,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 13,
+            "negative_n": 0,
+            "positive_n": 13,
+            "recall": 0.9230769230769231,
+            "threshold": null
+          },
+          "Echoes/stableaudio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 1,
+            "negative_n": 0,
+            "positive_n": 1,
+            "recall": 0.0,
+            "threshold": null
+          },
+          "Echoes/suno/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/udio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 5,
+            "negative_n": 0,
+            "positive_n": 5,
+            "recall": 0.4,
+            "threshold": null
+          },
+          "FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.5,
+            "n": 10,
+            "negative_n": 10,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "FMA/FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.3333333333333333,
+            "n": 15,
+            "negative_n": 15,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "suno": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 7,
+            "negative_n": 0,
+            "positive_n": 7,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "udio": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          }
+        },
+        "threshold": 0.9841868877410889
+      },
+      "legacy": {
+        "auc": 0.8831654676258993,
+        "decision_threshold": 0.5,
+        "eer": 0.15913669064748198,
+        "fpr": 0.52,
+        "n": 164,
+        "negative_n": 25,
+        "positive_n": 139,
+        "real_false_positive_ids_at_0_5": [
+          "core_073cbc830311d445af8d_base",
+          "core_0acd93c9b2df582993ec_base",
+          "core_0e0b4c2e563defbf34a2_base",
+          "core_520452303f2dcb863780_base",
+          "core_65853d431ba40db1689b_base",
+          "core_69f186513ab4294e3f2c_base",
+          "core_7ad1d8cb446a8905c856_base",
+          "core_ad9007f916fcea93f870_base",
+          "core_b766f3a19397f92d3106_base",
+          "core_c102ff02967f49d7ef40_base",
+          "core_c428aab2d80d391a5298_base",
+          "core_caf174258376f666707f_base",
+          "core_f6f697454de196051697_base"
+        ],
+        "recall": 0.9568345323741008,
+        "source_slices": {
+          "Echoes/acestep/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 10,
+            "negative_n": 0,
+            "positive_n": 10,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 0.9090909090909091,
+            "threshold": null
+          },
+          "Echoes/brev/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 0.8333333333333334,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 10,
+            "negative_n": 0,
+            "positive_n": 10,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 12,
+            "negative_n": 0,
+            "positive_n": 12,
+            "recall": 0.9166666666666666,
+            "threshold": null
+          },
+          "Echoes/elevenlabs/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 5,
+            "negative_n": 0,
+            "positive_n": 5,
+            "recall": 0.8,
+            "threshold": null
+          },
+          "Echoes/mubert/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 4,
+            "negative_n": 0,
+            "positive_n": 4,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 10,
+            "negative_n": 0,
+            "positive_n": 10,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 11,
+            "negative_n": 0,
+            "positive_n": 11,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 2,
+            "negative_n": 0,
+            "positive_n": 2,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 8,
+            "negative_n": 0,
+            "positive_n": 8,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 13,
+            "negative_n": 0,
+            "positive_n": 13,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/stableaudio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 1,
+            "negative_n": 0,
+            "positive_n": 1,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/suno/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/udio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 5,
+            "negative_n": 0,
+            "positive_n": 5,
+            "recall": 0.6,
+            "threshold": null
+          },
+          "FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.6,
+            "n": 10,
+            "negative_n": 10,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "FMA/FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.4666666666666667,
+            "n": 15,
+            "negative_n": 15,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "suno": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 7,
+            "negative_n": 0,
+            "positive_n": 7,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "udio": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          }
+        },
+        "threshold": 0.992753803730011
+      }
+    },
+    "test": {
+      "corrected": {
+        "auc": 0.975752508361204,
+        "decision_threshold": 0.5,
+        "eer": 0.09155518394648826,
+        "fpr": 0.21739130434782608,
+        "n": 127,
+        "negative_n": 23,
+        "positive_n": 104,
+        "real_false_positive_ids_at_0_5": [
+          "core_27db86d8a6debdeab6e3_base",
+          "core_4470c9e2a3fd2b88b3b3_base",
+          "core_ae28ba872ed1903ddc93_base",
+          "core_cb8878a0585cf1893a2b_base",
+          "core_e6d2e20cb7445cb3a776_base"
+        ],
+        "recall": 0.9711538461538461,
+        "source_slices": {
+          "Echoes/acestep/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 8,
+            "negative_n": 0,
+            "positive_n": 8,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 8,
+            "negative_n": 0,
+            "positive_n": 8,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/brev/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 0.8333333333333334,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 9,
+            "negative_n": 0,
+            "positive_n": 9,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/elevenlabs/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 7,
+            "negative_n": 0,
+            "positive_n": 7,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 4,
+            "negative_n": 0,
+            "positive_n": 4,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 8,
+            "negative_n": 0,
+            "positive_n": 8,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/stableaudio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/suno/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/udio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 0.8333333333333334,
+            "threshold": null
+          },
+          "FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.14285714285714285,
+            "n": 14,
+            "negative_n": 14,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "FMA/FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.3333333333333333,
+            "n": 9,
+            "negative_n": 9,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "suno": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 4,
+            "negative_n": 0,
+            "positive_n": 4,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "udio": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 5,
+            "negative_n": 0,
+            "positive_n": 5,
+            "recall": 0.8,
+            "threshold": null
+          }
+        },
+        "threshold": 0.9091865420341492
+      },
+      "legacy": {
+        "auc": 0.9707357859531772,
+        "decision_threshold": 0.5,
+        "eer": 0.09155518394648826,
+        "fpr": 0.2608695652173913,
+        "n": 127,
+        "negative_n": 23,
+        "positive_n": 104,
+        "real_false_positive_ids_at_0_5": [
+          "core_27db86d8a6debdeab6e3_base",
+          "core_3636be49d24e87a05a4f_base",
+          "core_4470c9e2a3fd2b88b3b3_base",
+          "core_ae28ba872ed1903ddc93_base",
+          "core_cb8878a0585cf1893a2b_base",
+          "core_e6d2e20cb7445cb3a776_base"
+        ],
+        "recall": 0.9711538461538461,
+        "source_slices": {
+          "Echoes/acestep/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 8,
+            "negative_n": 0,
+            "positive_n": 8,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 8,
+            "negative_n": 0,
+            "positive_n": 8,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/brev/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 9,
+            "negative_n": 0,
+            "positive_n": 9,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/elevenlabs/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 7,
+            "negative_n": 0,
+            "positive_n": 7,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 4,
+            "negative_n": 0,
+            "positive_n": 4,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 8,
+            "negative_n": 0,
+            "positive_n": 8,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/stableaudio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 3,
+            "negative_n": 0,
+            "positive_n": 3,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/suno/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/udio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 0.6666666666666666,
+            "threshold": null
+          },
+          "FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.14285714285714285,
+            "n": 14,
+            "negative_n": 14,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "FMA/FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.4444444444444444,
+            "n": 9,
+            "negative_n": 9,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "suno": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 4,
+            "negative_n": 0,
+            "positive_n": 4,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "udio": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 5,
+            "negative_n": 0,
+            "positive_n": 5,
+            "recall": 0.8,
+            "threshold": null
+          }
+        },
+        "threshold": 0.9266442656517029
+      }
+    },
+    "train": {
+      "corrected": {
+        "auc": 1.0,
+        "decision_threshold": 0.5,
+        "eer": 0.0,
+        "fpr": 0.0,
+        "n": 831,
+        "negative_n": 139,
+        "positive_n": 692,
+        "real_false_positive_ids_at_0_5": [],
+        "recall": 1.0,
+        "source_slices": {
+          "Echoes/acestep/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 48,
+            "negative_n": 0,
+            "positive_n": 48,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 43,
+            "negative_n": 0,
+            "positive_n": 43,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 47,
+            "negative_n": 0,
+            "positive_n": 47,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/brev/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 42,
+            "negative_n": 0,
+            "positive_n": 42,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 45,
+            "negative_n": 0,
+            "positive_n": 45,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 50,
+            "negative_n": 0,
+            "positive_n": 50,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/elevenlabs/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 42,
+            "negative_n": 0,
+            "positive_n": 42,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/mubert/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 43,
+            "negative_n": 0,
+            "positive_n": 43,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 49,
+            "negative_n": 0,
+            "positive_n": 49,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 20,
+            "negative_n": 0,
+            "positive_n": 20,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 23,
+            "negative_n": 0,
+            "positive_n": 23,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 42,
+            "negative_n": 0,
+            "positive_n": 42,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 49,
+            "negative_n": 0,
+            "positive_n": 49,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/stableaudio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/suno/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 44,
+            "negative_n": 0,
+            "positive_n": 44,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/udio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 45,
+            "negative_n": 0,
+            "positive_n": 45,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.0,
+            "n": 84,
+            "negative_n": 84,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "FMA/FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.0,
+            "n": 55,
+            "negative_n": 55,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "suno": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 24,
+            "negative_n": 0,
+            "positive_n": 24,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "udio": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 24,
+            "negative_n": 0,
+            "positive_n": 24,
+            "recall": 1.0,
+            "threshold": null
+          }
+        },
+        "threshold": 0.9902181029319763
+      },
+      "legacy": {
+        "auc": 0.9744042915956252,
+        "decision_threshold": 0.5,
+        "eer": 0.043259034390984274,
+        "fpr": 0.12949640287769784,
+        "n": 831,
+        "negative_n": 139,
+        "positive_n": 692,
+        "real_false_positive_ids_at_0_5": [
+          "core_2d59df3f3196a6bf8f14_base",
+          "core_3ac7abf753d06d9d57c8_base",
+          "core_55560a34119cd6faacce_base",
+          "core_5ea724ad089f0300460b_base",
+          "core_6597e52b3bc1de98b78b_base",
+          "core_7243d5d7a3a0c5d6e7f9_base",
+          "core_744df6513847fd1f77aa_base",
+          "core_b5d5d7d91d54e5a11a7b_base",
+          "core_bd72266efa53e95ea7fa_base",
+          "core_c0c43a848e9643c004a2_base",
+          "core_ce6ce2d0460916508931_base",
+          "core_d6547b17bf0b1bd16603_base",
+          "core_d74929ab4b4a31743ac9_base",
+          "core_d927566e65ccfbbfb82c_base",
+          "core_ddcdbeafea3dc4d47da7_base",
+          "core_e98e5765a283db246dfa_base",
+          "core_f5bdc3d4a4546065ce5d_base",
+          "core_f9b936b2066994b27ae4_base"
+        ],
+        "recall": 1.0,
+        "source_slices": {
+          "Echoes/acestep/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 48,
+            "negative_n": 0,
+            "positive_n": 48,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 43,
+            "negative_n": 0,
+            "positive_n": 43,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/audioldm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 47,
+            "negative_n": 0,
+            "positive_n": 47,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/brev/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 42,
+            "negative_n": 0,
+            "positive_n": 42,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 45,
+            "negative_n": 0,
+            "positive_n": 45,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/diffrhythm/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 50,
+            "negative_n": 0,
+            "positive_n": 50,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/elevenlabs/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 42,
+            "negative_n": 0,
+            "positive_n": 42,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/mubert/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 43,
+            "negative_n": 0,
+            "positive_n": 43,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/musicgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 49,
+            "negative_n": 0,
+            "positive_n": 49,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 20,
+            "negative_n": 0,
+            "positive_n": 20,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/producer/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 23,
+            "negative_n": 0,
+            "positive_n": 23,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/ATA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 42,
+            "negative_n": 0,
+            "positive_n": 42,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/songgen/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 49,
+            "negative_n": 0,
+            "positive_n": 49,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/stableaudio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 6,
+            "negative_n": 0,
+            "positive_n": 6,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/suno/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 44,
+            "negative_n": 0,
+            "positive_n": 44,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "Echoes/udio/TTA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 45,
+            "negative_n": 0,
+            "positive_n": 45,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.21428571428571427,
+            "n": 84,
+            "negative_n": 84,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "FMA/FMA": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": 0.0,
+            "n": 55,
+            "negative_n": 55,
+            "positive_n": 0,
+            "recall": null,
+            "threshold": null
+          },
+          "suno": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 24,
+            "negative_n": 0,
+            "positive_n": 24,
+            "recall": 1.0,
+            "threshold": null
+          },
+          "udio": {
+            "auc": null,
+            "decision_threshold": 0.5,
+            "eer": null,
+            "fpr": null,
+            "n": 24,
+            "negative_n": 0,
+            "positive_n": 24,
+            "recall": 1.0,
+            "threshold": null
+          }
+        },
+        "threshold": 0.996650755405426
+      }
+    }
+  },
+  "historical_replay": {
+    "41": {
+      "checkpoint_sha256": "2091996170d1e32cb9666fd4c3d67688b498cd6870c6504a5587297c33035fe4",
+      "draw_hash_exact_match": true,
+      "retrained_cpu_vs_saved_model_max_abs_error": 8.940696716308594e-07,
+      "stored_test_replay_max_abs_error": 3.725290298461914e-07
+    },
+    "42": {
+      "checkpoint_sha256": "9388dd8c8a2f198d2e0adb1aa959efc58caf657aa3a1dc80a9a855c3fb304853",
+      "draw_hash_exact_match": true,
+      "retrained_cpu_vs_saved_model_max_abs_error": 6.556510925292969e-07,
+      "stored_test_replay_max_abs_error": 3.5762786865234375e-07
+    },
+    "43": {
+      "checkpoint_sha256": "dbbae1748c3d21b1c7ea94043eaf8868f46c8b79d13364ae7fbf466bc1963157",
+      "draw_hash_exact_match": true,
+      "retrained_cpu_vs_saved_model_max_abs_error": 1.2516975402832031e-06,
+      "stored_test_replay_max_abs_error": 5.364418029785156e-07
+    }
+  },
+  "legacy_loop_parity_seed41": "bitwise identical",
+  "official_score": null,
+  "paired_group_bootstrap": {
+    "dev": {
+      "ci95": [
+        -0.0055555555555555376,
+        0.07857998720031481
+      ],
+      "components": 27,
+      "delta_eer": 0.041582733812949635,
+      "invalid_fraction": 0.0,
+      "invalid_resamples": 0,
+      "resamples": 1000,
+      "scope": "paired fixed-model probability-ensemble group bootstrap; excludes training and layer-selection uncertainty",
+      "uncertain": false,
+      "valid": 1000
+    },
+    "test": {
+      "ci95": [
+        -0.09945820951331354,
+        0.1008583902310924
+      ],
+      "components": 24,
+      "delta_eer": 0.0,
+      "invalid_fraction": 0.0,
+      "invalid_resamples": 0,
+      "resamples": 1000,
+      "scope": "paired fixed-model probability-ensemble group bootstrap; excludes training and layer-selection uncertainty",
+      "uncertain": false,
+      "valid": 1000
+    }
+  },
+  "phase_exposure": {
+    "corrected": {
+      "41": [
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            1,
+            100
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            101,
+            200
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            201,
+            300
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            301,
+            400
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            401,
+            500
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        }
+      ],
+      "42": [
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            1,
+            100
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            101,
+            200
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            201,
+            300
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            301,
+            400
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            401,
+            500
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        }
+      ],
+      "43": [
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            1,
+            100
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            101,
+            200
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            201,
+            300
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            301,
+            400
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            401,
+            500
+          ],
+          "unique_rows": 831,
+          "zero_exposure_rows": 0
+        }
+      ]
+    },
+    "legacy": {
+      "41": [
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            1,
+            100
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            101,
+            200
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            201,
+            300
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            301,
+            400
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            401,
+            500
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        }
+      ],
+      "42": [
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            1,
+            100
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            101,
+            200
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            201,
+            300
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            301,
+            400
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            401,
+            500
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        }
+      ],
+      "43": [
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            1,
+            100
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            101,
+            200
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            201,
+            300
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            301,
+            400
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        },
+        {
+          "class_draws": {
+            "0": 1600,
+            "1": 1600
+          },
+          "steps": [
+            401,
+            500
+          ],
+          "unique_rows": 789,
+          "zero_exposure_rows": 42
+        }
+      ]
+    }
+  },
+  "seeds": {
+    "corrected": {
+      "41": {
+        "draw_sha256": "b796f622704b3fcd142a9126ca54100f8b4aebff29f9af8ae8fa5c35ed42a216",
+        "split_metrics": {
+          "calibration": {
+            "auc": 0.9461729337659859,
+            "decision_threshold": 0.5,
+            "eer": 0.16052681809505637,
+            "fpr": 0.2903225806451613,
+            "n": 200,
+            "negative_n": 31,
+            "positive_n": 169,
+            "recall": 0.9704142011834319,
+            "threshold": 0.9752631783485413
+          },
+          "dev": {
+            "auc": 0.8658992805755396,
+            "decision_threshold": 0.5,
+            "eer": 0.238705035971223,
+            "fpr": 0.4,
+            "n": 164,
+            "negative_n": 25,
+            "positive_n": 139,
+            "recall": 0.9568345323741008,
+            "threshold": 0.9872711300849915
+          },
+          "test": {
+            "auc": 0.9715719063545151,
+            "decision_threshold": 0.5,
+            "eer": 0.08674749163879597,
+            "fpr": 0.17391304347826086,
+            "n": 127,
+            "negative_n": 23,
+            "positive_n": 104,
+            "recall": 0.9711538461538461,
+            "threshold": 0.9208714962005615
+          },
+          "train": {
+            "auc": 1.0,
+            "decision_threshold": 0.5,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 831,
+            "negative_n": 139,
+            "positive_n": 692,
+            "recall": 1.0,
+            "threshold": 0.990251898765564
+          }
+        },
+        "unique_train_rows": 831,
+        "unseen_train_ids": []
+      },
+      "42": {
+        "draw_sha256": "a86dc028cf5836df19721cf245bdf6b039533f42cc588ce227139fd20d05fdd2",
+        "split_metrics": {
+          "calibration": {
+            "auc": 0.9454094292803971,
+            "decision_threshold": 0.5,
+            "eer": 0.15756823821339955,
+            "fpr": 0.2903225806451613,
+            "n": 200,
+            "negative_n": 31,
+            "positive_n": 169,
+            "recall": 0.9644970414201184,
+            "threshold": 0.9799630045890808
+          },
+          "dev": {
+            "auc": 0.8620143884892086,
+            "decision_threshold": 0.5,
+            "eer": 0.20071942446043162,
+            "fpr": 0.44,
+            "n": 164,
+            "negative_n": 25,
+            "positive_n": 139,
+            "recall": 0.9424460431654677,
+            "threshold": 0.9820505380630493
+          },
+          "test": {
+            "auc": 0.9753344481605352,
+            "decision_threshold": 0.5,
+            "eer": 0.09636287625418055,
+            "fpr": 0.21739130434782608,
+            "n": 127,
+            "negative_n": 23,
+            "positive_n": 104,
+            "recall": 0.9711538461538461,
+            "threshold": 0.9396633505821228
+          },
+          "train": {
+            "auc": 1.0,
+            "decision_threshold": 0.5,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 831,
+            "negative_n": 139,
+            "positive_n": 692,
+            "recall": 1.0,
+            "threshold": 0.9894694089889526
+          }
+        },
+        "unique_train_rows": 831,
+        "unseen_train_ids": []
+      },
+      "43": {
+        "draw_sha256": "be510738c6caa6efd4fca0921006a4ba4c3e0c6df10eac1458aa0551e66024a8",
+        "split_metrics": {
+          "calibration": {
+            "auc": 0.9490360755869441,
+            "decision_threshold": 0.5,
+            "eer": 0.1355220461920213,
+            "fpr": 0.2903225806451613,
+            "n": 200,
+            "negative_n": 31,
+            "positive_n": 169,
+            "recall": 0.9644970414201184,
+            "threshold": 0.9802234172821045
+          },
+          "dev": {
+            "auc": 0.8658992805755396,
+            "decision_threshold": 0.5,
+            "eer": 0.20071942446043162,
+            "fpr": 0.4,
+            "n": 164,
+            "negative_n": 25,
+            "positive_n": 139,
+            "recall": 0.9496402877697842,
+            "threshold": 0.9901874661445618
+          },
+          "test": {
+            "auc": 0.9770066889632107,
+            "decision_threshold": 0.5,
+            "eer": 0.12290969899665549,
+            "fpr": 0.21739130434782608,
+            "n": 127,
+            "negative_n": 23,
+            "positive_n": 104,
+            "recall": 0.9711538461538461,
+            "threshold": 0.9122698903083801
+          },
+          "train": {
+            "auc": 1.0,
+            "decision_threshold": 0.5,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 831,
+            "negative_n": 139,
+            "positive_n": 692,
+            "recall": 1.0,
+            "threshold": 0.9892553091049194
+          }
+        },
+        "unique_train_rows": 831,
+        "unseen_train_ids": []
+      }
+    },
+    "legacy": {
+      "41": {
+        "draw_sha256": "80b54a36fa77eaa86c820951648a3074a20a5dcca7d2f8998081842140f7bae8",
+        "split_metrics": {
+          "calibration": {
+            "auc": 0.9209772857415538,
+            "decision_threshold": 0.5,
+            "eer": 0.16052681809505637,
+            "fpr": 0.3870967741935484,
+            "n": 200,
+            "negative_n": 31,
+            "positive_n": 169,
+            "recall": 0.9763313609467456,
+            "threshold": 0.9866412281990051
+          },
+          "dev": {
+            "auc": 0.8871942446043166,
+            "decision_threshold": 0.5,
+            "eer": 0.15913669064748198,
+            "fpr": 0.44,
+            "n": 164,
+            "negative_n": 25,
+            "positive_n": 139,
+            "recall": 0.9568345323741008,
+            "threshold": 0.9916114211082458
+          },
+          "test": {
+            "auc": 0.967809364548495,
+            "decision_threshold": 0.5,
+            "eer": 0.09636287625418055,
+            "fpr": 0.34782608695652173,
+            "n": 127,
+            "negative_n": 23,
+            "positive_n": 104,
+            "recall": 0.9807692307692307,
+            "threshold": 0.9520018100738525
+          },
+          "train": {
+            "auc": 0.9758649727616749,
+            "decision_threshold": 0.5,
+            "eer": 0.036049195325820294,
+            "fpr": 0.12949640287769784,
+            "n": 831,
+            "negative_n": 139,
+            "positive_n": 692,
+            "recall": 1.0,
+            "threshold": 0.9961250424385071
+          }
+        },
+        "unique_train_rows": 789,
+        "unseen_train_ids": [
+          "core_0210dc24f7982bc2f76c_base",
+          "core_0294cf29f2e308633ba3_base",
+          "core_08a5ff68fdc061ee2b06_base",
+          "core_15dbb16f761a3ff114e7_base",
+          "core_1a867ad73e4ff3fe895b_base",
+          "core_27223e94d378de355cc2_base",
+          "core_2a55f46261d946966603_base",
+          "core_2d59df3f3196a6bf8f14_base",
+          "core_36b59711f915a83d3455_base",
+          "core_3ac7abf753d06d9d57c8_base",
+          "core_459b71d7c1b0e9e10cf1_base",
+          "core_52fe410f87d755f38c99_base",
+          "core_55560a34119cd6faacce_base",
+          "core_5ea724ad089f0300460b_base",
+          "core_60df71b717374868ff51_base",
+          "core_6597e52b3bc1de98b78b_base",
+          "core_6cbfc724474ba14de266_base",
+          "core_7243d5d7a3a0c5d6e7f9_base",
+          "core_744df6513847fd1f77aa_base",
+          "core_88ff5df4743c86bebe0c_base",
+          "core_8a71fa4a71a5777f30ea_base",
+          "core_98b55e3533a12bc37972_base",
+          "core_9e77fb2f5bba1dc1ffd9_base",
+          "core_b3a14f676fbf75919bbd_base",
+          "core_b5d5d7d91d54e5a11a7b_base",
+          "core_b6923f2aea9ae9e2bcda_base",
+          "core_bd72266efa53e95ea7fa_base",
+          "core_c0c43a848e9643c004a2_base",
+          "core_c4580981fbb5c25d4bd2_base",
+          "core_c5087450335cd901c8bd_base",
+          "core_c95ea03541bed3b72660_base",
+          "core_ce6ce2d0460916508931_base",
+          "core_d408108b128375ccbd4d_base",
+          "core_d6547b17bf0b1bd16603_base",
+          "core_d74929ab4b4a31743ac9_base",
+          "core_d927566e65ccfbbfb82c_base",
+          "core_ddcdbeafea3dc4d47da7_base",
+          "core_e3eb08a1b66428290271_base",
+          "core_e98e5765a283db246dfa_base",
+          "core_f5bdc3d4a4546065ce5d_base",
+          "core_f61ef970fc1ab23f149d_base",
+          "core_f9b936b2066994b27ae4_base"
+        ]
+      },
+      "42": {
+        "draw_sha256": "4f747c55839fa95e84d3b2fc93c6373b816416e5c8a53335b67b93f430cec3a9",
+        "split_metrics": {
+          "calibration": {
+            "auc": 0.9156327543424317,
+            "decision_threshold": 0.5,
+            "eer": 0.19144874976140486,
+            "fpr": 0.41935483870967744,
+            "n": 200,
+            "negative_n": 31,
+            "positive_n": 169,
+            "recall": 0.9644970414201184,
+            "threshold": 0.9915634393692017
+          },
+          "dev": {
+            "auc": 0.879136690647482,
+            "decision_threshold": 0.5,
+            "eer": 0.16273381294964023,
+            "fpr": 0.52,
+            "n": 164,
+            "negative_n": 25,
+            "positive_n": 139,
+            "recall": 0.9496402877697842,
+            "threshold": 0.9932233095169067
+          },
+          "test": {
+            "auc": 0.9686454849498328,
+            "decision_threshold": 0.5,
+            "eer": 0.08674749163879597,
+            "fpr": 0.2608695652173913,
+            "n": 127,
+            "negative_n": 23,
+            "positive_n": 104,
+            "recall": 0.9807692307692307,
+            "threshold": 0.9231578707695007
+          },
+          "train": {
+            "auc": 0.9725693433692352,
+            "decision_threshold": 0.5,
+            "eer": 0.05046887345614831,
+            "fpr": 0.12949640287769784,
+            "n": 831,
+            "negative_n": 139,
+            "positive_n": 692,
+            "recall": 1.0,
+            "threshold": 0.9966138005256653
+          }
+        },
+        "unique_train_rows": 789,
+        "unseen_train_ids": [
+          "core_0210dc24f7982bc2f76c_base",
+          "core_0294cf29f2e308633ba3_base",
+          "core_08a5ff68fdc061ee2b06_base",
+          "core_15dbb16f761a3ff114e7_base",
+          "core_1a867ad73e4ff3fe895b_base",
+          "core_27223e94d378de355cc2_base",
+          "core_2a55f46261d946966603_base",
+          "core_2d59df3f3196a6bf8f14_base",
+          "core_36b59711f915a83d3455_base",
+          "core_3ac7abf753d06d9d57c8_base",
+          "core_459b71d7c1b0e9e10cf1_base",
+          "core_52fe410f87d755f38c99_base",
+          "core_55560a34119cd6faacce_base",
+          "core_5ea724ad089f0300460b_base",
+          "core_60df71b717374868ff51_base",
+          "core_6597e52b3bc1de98b78b_base",
+          "core_6cbfc724474ba14de266_base",
+          "core_7243d5d7a3a0c5d6e7f9_base",
+          "core_744df6513847fd1f77aa_base",
+          "core_88ff5df4743c86bebe0c_base",
+          "core_8a71fa4a71a5777f30ea_base",
+          "core_98b55e3533a12bc37972_base",
+          "core_9e77fb2f5bba1dc1ffd9_base",
+          "core_b3a14f676fbf75919bbd_base",
+          "core_b5d5d7d91d54e5a11a7b_base",
+          "core_b6923f2aea9ae9e2bcda_base",
+          "core_bd72266efa53e95ea7fa_base",
+          "core_c0c43a848e9643c004a2_base",
+          "core_c4580981fbb5c25d4bd2_base",
+          "core_c5087450335cd901c8bd_base",
+          "core_c95ea03541bed3b72660_base",
+          "core_ce6ce2d0460916508931_base",
+          "core_d408108b128375ccbd4d_base",
+          "core_d6547b17bf0b1bd16603_base",
+          "core_d74929ab4b4a31743ac9_base",
+          "core_d927566e65ccfbbfb82c_base",
+          "core_ddcdbeafea3dc4d47da7_base",
+          "core_e3eb08a1b66428290271_base",
+          "core_e98e5765a283db246dfa_base",
+          "core_f5bdc3d4a4546065ce5d_base",
+          "core_f61ef970fc1ab23f149d_base",
+          "core_f9b936b2066994b27ae4_base"
+        ]
+      },
+      "43": {
+        "draw_sha256": "c8907e1fb514227942fab659fd59756d2546c4cc1420f45cec5bdb813332808c",
+        "split_metrics": {
+          "calibration": {
+            "auc": 0.9127696125214736,
+            "decision_threshold": 0.5,
+            "eer": 0.16052681809505637,
+            "fpr": 0.41935483870967744,
+            "n": 200,
+            "negative_n": 31,
+            "positive_n": 169,
+            "recall": 0.9585798816568047,
+            "threshold": 0.9889755249023438
+          },
+          "dev": {
+            "auc": 0.8837410071942446,
+            "decision_threshold": 0.5,
+            "eer": 0.16273381294964023,
+            "fpr": 0.52,
+            "n": 164,
+            "negative_n": 25,
+            "positive_n": 139,
+            "recall": 0.9640287769784173,
+            "threshold": 0.9946244359016418
+          },
+          "test": {
+            "auc": 0.9728260869565217,
+            "decision_threshold": 0.5,
+            "eer": 0.08674749163879597,
+            "fpr": 0.30434782608695654,
+            "n": 127,
+            "negative_n": 23,
+            "positive_n": 104,
+            "recall": 0.9615384615384616,
+            "threshold": 0.9198400974273682
+          },
+          "train": {
+            "auc": 0.9718623944774816,
+            "decision_threshold": 0.5,
+            "eer": 0.05046887345614831,
+            "fpr": 0.12949640287769784,
+            "n": 831,
+            "negative_n": 139,
+            "positive_n": 692,
+            "recall": 1.0,
+            "threshold": 0.9970002770423889
+          }
+        },
+        "unique_train_rows": 789,
+        "unseen_train_ids": [
+          "core_0210dc24f7982bc2f76c_base",
+          "core_0294cf29f2e308633ba3_base",
+          "core_08a5ff68fdc061ee2b06_base",
+          "core_15dbb16f761a3ff114e7_base",
+          "core_1a867ad73e4ff3fe895b_base",
+          "core_27223e94d378de355cc2_base",
+          "core_2a55f46261d946966603_base",
+          "core_2d59df3f3196a6bf8f14_base",
+          "core_36b59711f915a83d3455_base",
+          "core_3ac7abf753d06d9d57c8_base",
+          "core_459b71d7c1b0e9e10cf1_base",
+          "core_52fe410f87d755f38c99_base",
+          "core_55560a34119cd6faacce_base",
+          "core_5ea724ad089f0300460b_base",
+          "core_60df71b717374868ff51_base",
+          "core_6597e52b3bc1de98b78b_base",
+          "core_6cbfc724474ba14de266_base",
+          "core_7243d5d7a3a0c5d6e7f9_base",
+          "core_744df6513847fd1f77aa_base",
+          "core_88ff5df4743c86bebe0c_base",
+          "core_8a71fa4a71a5777f30ea_base",
+          "core_98b55e3533a12bc37972_base",
+          "core_9e77fb2f5bba1dc1ffd9_base",
+          "core_b3a14f676fbf75919bbd_base",
+          "core_b5d5d7d91d54e5a11a7b_base",
+          "core_b6923f2aea9ae9e2bcda_base",
+          "core_bd72266efa53e95ea7fa_base",
+          "core_c0c43a848e9643c004a2_base",
+          "core_c4580981fbb5c25d4bd2_base",
+          "core_c5087450335cd901c8bd_base",
+          "core_c95ea03541bed3b72660_base",
+          "core_ce6ce2d0460916508931_base",
+          "core_d408108b128375ccbd4d_base",
+          "core_d6547b17bf0b1bd16603_base",
+          "core_d74929ab4b4a31743ac9_base",
+          "core_d927566e65ccfbbfb82c_base",
+          "core_ddcdbeafea3dc4d47da7_base",
+          "core_e3eb08a1b66428290271_base",
+          "core_e98e5765a283db246dfa_base",
+          "core_f5bdc3d4a4546065ce5d_base",
+          "core_f61ef970fc1ab23f149d_base",
+          "core_f9b936b2066994b27ae4_base"
+        ]
+      }
+    }
+  },
+  "test_used_for_selection": false,
+  "threshold_0_5_scope": "diagnostic only; not calibrated or selected"
+}

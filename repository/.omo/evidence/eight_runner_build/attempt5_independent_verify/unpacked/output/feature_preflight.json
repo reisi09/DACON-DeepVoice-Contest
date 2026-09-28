@@ -1,0 +1,43 @@
+{
+  "IDs": [
+    "core_000209f68a0dc6367dcb_base",
+    "core_000cbfa7068dfcdde08e_base",
+    "e5_0154ad46e66363f42aa8699a"
+  ],
+  "extraction": {
+    "anti_native_max_logit_error": 2.956390380859375e-05,
+    "cached": 0,
+    "elapsed_seconds": 30.4778151512146,
+    "extracted": 3,
+    "peak_gpu_bytes": 19757025792,
+    "records": 3,
+    "status": "complete"
+  },
+  "identity_receipts": {
+    "core_000209f68a0dc6367dcb_base": "eaafd6364a6b9711885a72e64478392aa3f05c94945998162cf806680838dac8",
+    "core_000cbfa7068dfcdde08e_base": "7b05bad9cd2dee08af67bd4e698cca82db435f58c1a1245266ca9ed638a4eacd",
+    "e5_0154ad46e66363f42aa8699a": "8b6fd5f5d9cd465c3e888b63584555b6a5d731134bdfa9d536a443f823a8020c"
+  },
+  "records_checked": 3,
+  "required_modalities": [
+    "anti_l12",
+    "anti_l24",
+    "anti_l48",
+    "anti_raw",
+    "anti_vocals",
+    "df_raw",
+    "df_vocals",
+    "mert_l12",
+    "mert_l24",
+    "mert_l6",
+    "padding_samples",
+    "presence",
+    "raw_mask",
+    "spectrum_raw",
+    "spectrum_stem",
+    "starts",
+    "stem_mask",
+    "valid_samples"
+  ],
+  "status": "complete"
+}

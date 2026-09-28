@@ -1,0 +1,76 @@
+{
+  "review_date": "2026-09-24",
+  "purpose": "DACON audio authenticity research preparation; GPU disabled",
+  "sources": {
+    "LibriSpeech": {
+      "training_allowed": true,
+      "status": "rights_review_closed",
+      "license": "CC-BY-4.0",
+      "evidence": [
+        "https://www.openslr.org/12/",
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "conditions": [
+        "Retain Vassil Panayotov et al. corpus attribution and LibriVox provenance",
+        "Retain source and license links",
+        "Mark resampling, cropping and gain/PCM conversion; permit verifier redistribution under original license"
+      ]
+    },
+    "MusicArena": {
+      "training_allowed": true,
+      "status": "rights_review_closed_for_released_audio",
+      "license": "CC-BY-4.0",
+      "revision": "4dbe538410a1c14eb65270839c6fcd150c65c9fe",
+      "evidence": [
+        "https://huggingface.co/datasets/music-arena/music-arena-dataset/blob/main/README.md",
+        "https://creativecommons.org/licenses/by/4.0/"
+      ],
+      "conditions": [
+        "Retain Music Arena dataset citation and per-file source/revision/hash",
+        "Use actually released audio; absent sao/sao-small not included",
+        "Retain license and mark transformations",
+        "Unknown generator identity excluded by technical policy, not invented license restriction"
+      ]
+    },
+    "Jamendo": {
+      "training_allowed": false,
+      "status": "jamendo_tdm_terms_unresolved",
+      "evidence": [
+        "https://licensing.jamendo.com/en/legal/termsofuse",
+        "https://support-artist.jamendo.com/creative-commons-explained"
+      ],
+      "conditions": [
+        "Track-level CC BY/BY-SA grants retained",
+        "General terms separately request prior written authorization for noncommercial research TDM/ML/AI",
+        "No written authorization evidence obtained; no contact made",
+        "This is an operational exclusion, not a finding that CC grants are invalid or the recordings are illegal"
+      ]
+    },
+    "MLAAD": {
+      "training_allowed": false,
+      "status": "excluded_research_scope_not_established",
+      "license": "CC-BY-NC-4.0",
+      "revision": "30c3dec763fa4803f11c2df1557d3b0828395366",
+      "evidence": [
+        "https://huggingface.co/datasets/mueller91/MLAAD/blob/main/README.md",
+        "https://deepfake-total.com/mlaad",
+        "https://creativecommons.org/licenses/by-nc/4.0/legalcode.en"
+      ],
+      "conditions": [
+        "Publisher restricts to noncommercial academic research",
+        "NC alone does not prohibit DACON use",
+        "User confirmed competition model development; this does not establish the additional noncommercial academic research scope. Excluded from this run; no claim that every competition use is forbidden."
+      ]
+    }
+  },
+  "competition_evidence": [
+    "https://dacon.io/competitions/official/236749/overview/rules",
+    "https://dacon.io/en/competitions/official/236749/talkboard/417857?category=&dtype=recent&fType=&page=1&ptype="
+  ],
+  "limitations": [
+    "Publisher licenses are not warranties clearing every third-party right",
+    "No official submission or rights transfer performed"
+  ],
+  "user_confirmed_purpose": "대회 모델 제작용도",
+  "input_decision_preserved": "rights_decisions.json is the immutable pre-inference decision; this resolution records the subsequent purpose clarification without changing this run admission."
+}

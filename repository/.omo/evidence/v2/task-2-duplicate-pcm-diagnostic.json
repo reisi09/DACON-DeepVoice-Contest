@@ -1,0 +1,19 @@
+{
+  "source_rows": {"speech": 400, "music": 240, "nsynth": 100},
+  "old_group_overlap": [],
+  "old_pcm_overlap": [],
+  "duplicate_pcm": [
+    {
+      "pcm_sha256": "79233a29c1807229b7be96bcfe0b2f1424e7d4af13c6a2fa3f79f8e4ac8dabd9",
+      "source_kind": "nsynth",
+      "group_id": "nsynth_instrument_414",
+      "items": [
+        "brass_acoustic_046-084-025",
+        "brass_acoustic_046-095-100",
+        "brass_acoustic_046-095-075",
+        "brass_acoustic_046-104-025"
+      ]
+    }
+  ],
+  "decision": "retain the full parquet and source records, but advance the deterministic per-instrument selection to the next SHA-ordered distinct PCM; do not train four times on the same waveform"
+}

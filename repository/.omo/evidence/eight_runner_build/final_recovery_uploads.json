@@ -1,0 +1,23 @@
+{
+  "scenario": "final recovery prestart executable uploads",
+  "binary_observable": {
+    "workspace_stopped": true,
+    "attempt": 4,
+    "mode": "main_recovery",
+    "started_epoch": 1789648960,
+    "resumed_epoch": 1789650933,
+    "deadline_epoch": 1789663360,
+    "immutable_times_preserved": true,
+    "assets": "/root/redesign_h100_20260917/assets",
+    "config_sha256": "b55772e58d56b94b3c3f4bb92ff5b86ae8587265317eb69bfa3c5a7852bc1a85",
+    "readiness_audit_sha256": "8903434f139265d356c0c00eaaa5aef4b4af0ecb50daa2a74ff7fd479cabeb6c",
+    "main_retry_sha256": "9bd84b39249800f310a2f14dc88406a941df912810e39f1df37a0ba308f7e2aa",
+    "bootstrap_uploaded_last_sha256": "dd4c468a4358657603a2915f65b3d2e21a623c37e8d10135f299225b470ac601"
+  },
+  "artifacts": [
+    "_workspace/eight_h100_20260917/config.json",
+    "_workspace/eight_h100_20260917/readiness_audit.sh",
+    "_workspace/eight_h100_20260917/eight_h100_run_retry.sh",
+    "_workspace/eight_h100_20260917/final_bootstrap/redesign_full_refit_run.sh"
+  ]
+}

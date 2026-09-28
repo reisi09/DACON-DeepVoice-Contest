@@ -1,0 +1,3 @@
+Checkpoint path: /root/redesign_h100_20260917/assets/baseline/model/panns/Cnn14_mAP=0.431.pth
+GPU number: 1
+{"passed": true, "files": 7, "real_audio_files": 5, "edge_inputs": ["4 second silence", "60 second stereo music"], "reference_max_abs_error": 4.869993297518249e-11, "independence_max_abs_error": 4.869993297518249e-11, "tolerance": 1e-05, "network_connections_forbidden": true, "elapsed_seconds": 38.88400340080261, "gpu": "NVIDIA H100 80GB HBM3", "L4_verified": false, "official_score_measured": false, "purpose": "packaging numerical parity, not model quality evaluation"}

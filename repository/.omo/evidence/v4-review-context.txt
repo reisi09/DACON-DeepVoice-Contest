@@ -1,0 +1,134 @@
+V4 immutable review context
+
+Review target: full-fine-tuning five-model comparison implementation, Colab A100 execution bounded by the original allocation deadline, and Drive result handling.
+Source commit: a01a50e0c774f181c20238109127c5b81cc95dc1
+Review worktree: /tmp/dacon-v4-review-a01a50e
+Review worktree HEAD: a01a50e0c774f181c20238109127c5b81cc95dc1
+Baseline for changed-path inventory: f69f4bf4603e3f2f751dbf8f0040c51cba94959b
+Source receipts: .omo/evidence/v4-training/source-sha256.txt
+Execution boundary: this context records source and review routing only; it makes no claim that the full experiment, Drive results, sealed acceptance, or Colab run is complete.
+
+Changed filenames versus baseline (git diff --name-status f69f4bf..a01a50e):
+M	.gitignore
+A	.omo/drafts/trainable-v4-execution.md
+A	.omo/evidence/v4-attempt1-events.txt
+A	.omo/evidence/v4-attempt1-failure.txt
+A	.omo/evidence/v4-attempt1-log.txt
+A	.omo/evidence/v4-attempt1-release.txt
+A	.omo/evidence/v4-colab-ui/v4-colab-ui-manual-qa.md
+A	.omo/evidence/v4-colab-ui/v4-readiness-accessibility.txt
+A	.omo/evidence/v4-colab-ui/v4-readiness-refresh-accessibility.txt
+A	.omo/evidence/v4-colab-ui/v4-readiness-refresh.png
+A	.omo/evidence/v4-colab-ui/v4-readiness-resources.png
+A	.omo/evidence/v4-control-delta-review.md
+A	.omo/evidence/v4-data-final-review.md
+A	.omo/evidence/v4-data-review.md
+A	.omo/evidence/v4-data/archive_integrity.json
+A	.omo/evidence/v4-data/build.log
+A	.omo/evidence/v4-data/build_failed_short_source.log
+A	.omo/evidence/v4-data/code_hashes.json
+A	.omo/evidence/v4-data/commit-verification.txt
+A	.omo/evidence/v4-data/dataset_lineage_audit.json
+A	.omo/evidence/v4-data/final_tests.log
+A	.omo/evidence/v4-data/full_duration_crop_qa.json
+A	.omo/evidence/v4-data/regression_data.log
+A	.omo/evidence/v4-data/source_hashes.json
+A	.omo/evidence/v4-data/test_v4_data.log
+A	.omo/evidence/v4-data/test_v4_data_first_run.log
+A	.omo/evidence/v4-drive-uploads.json
+A	.omo/evidence/v4-eval-review.md
+A	.omo/evidence/v4-eval/compile.txt
+A	.omo/evidence/v4-eval/diff_check.txt
+A	.omo/evidence/v4-eval/pytest.txt
+A	.omo/evidence/v4-eval/red.txt
+A	.omo/evidence/v4-eval/report.md
+A	.omo/evidence/v4-eval/selection_scenarios.txt
+A	.omo/evidence/v4-eval/sha256.txt
+A	.omo/evidence/v4-eval/tooling.txt
+A	.omo/evidence/v4-live-budget-review.md
+A	.omo/evidence/v4-live-run.json
+A	.omo/evidence/v4-model-review.md
+A	.omo/evidence/v4-model/ast-short-tail-green.txt
+A	.omo/evidence/v4-model/ast-short-tail-red.txt
+A	.omo/evidence/v4-model/cpu_profile.json
+A	.omo/evidence/v4-model/evidence.md
+A	.omo/evidence/v4-model/feature_parity.json
+A	.omo/evidence/v4-model/gradient-check.txt
+A	.omo/evidence/v4-model/gradient_audit.json
+A	.omo/evidence/v4-model/late_fake_measurement.json
+A	.omo/evidence/v4-model/p4-starts-red.txt
+A	.omo/evidence/v4-model/parity-check.txt
+A	.omo/evidence/v4-model/pytest-real-weights-after-tail-fix.txt
+A	.omo/evidence/v4-model/pytest-real-weights.txt
+A	.omo/evidence/v4-model/red.txt
+A	.omo/evidence/v4-model/regression-after-tail-fix.txt
+A	.omo/evidence/v4-model/regression-suite.txt
+A	.omo/evidence/v4-model/static-after-tail-fix.txt
+A	.omo/evidence/v4-model/static-checks.txt
+A	.omo/evidence/v4-model/tail-fix-source-hashes.txt
+A	.omo/evidence/v4-model/temporal-check.txt
+A	.omo/evidence/v4-model/training-integration-review.md
+A	.omo/evidence/v4-notebook/builder-smoke.md
+A	.omo/evidence/v4-training-final-review.md
+A	.omo/evidence/v4-training/cli-help-live-budget.txt
+A	.omo/evidence/v4-training/cli-help.txt
+A	.omo/evidence/v4-training/eligibility-counts.txt
+A	.omo/evidence/v4-training/expired-cli.exit
+A	.omo/evidence/v4-training/expired-cli.stderr
+A	.omo/evidence/v4-training/expired-cli.stdout
+A	.omo/evidence/v4-training/expired_cli/budget_events.jsonl
+A	.omo/evidence/v4-training/expired_cli/failure.txt
+A	.omo/evidence/v4-training/expired_cli_verified/budget_events.jsonl
+A	.omo/evidence/v4-training/expired_cli_verified/failure.txt
+A	.omo/evidence/v4-training/expired_cli_verified/stage_budget_plan.json
+A	.omo/evidence/v4-training/expired_cli_verified2/budget_events.jsonl
+A	.omo/evidence/v4-training/expired_cli_verified2/failure.txt
+A	.omo/evidence/v4-training/expired_cli_verified2/stage_budget_plan.json
+A	.omo/evidence/v4-training/focused-state-transitions.log
+A	.omo/evidence/v4-training/live-budget-focused.log
+A	.omo/evidence/v4-training/live-budget-schedule.json
+A	.omo/evidence/v4-training/live-budget-source-sha256.txt
+A	.omo/evidence/v4-training/pytest-v4-final.log
+A	.omo/evidence/v4-training/pytest-v4-live-budget.log
+A	.omo/evidence/v4-training/pytest-v4.log
+A	.omo/evidence/v4-training/source-sha256-check.txt
+A	.omo/evidence/v4-training/source-sha256.txt
+A	.omo/evidence/v4-training/verification.md
+A	DACON_236749_trainable_v4.ipynb
+A	build_v4_notebook.py
+A	prepare_v4_data.py
+A	test_v4_data.py
+A	test_v4_model.py
+A	test_v4_selection.py
+A	test_v4_training.py
+A	train_v4.py
+M	v2_data.py
+A	v4_batches.py
+A	v4_data.py
+A	v4_data_acquisition.py
+A	v4_data_augmentation.py
+A	v4_evaluation.py
+A	v4_model.py
+A	v4_model_components.py
+A	v4_selection.py
+A	v4_training.py
+A	v4_training_data.py
+A	v4_training_io.py
+A	v4_training_refit.py
+A	v4_training_trials.py
+A	v4_validation/data_integrity.json
+A	v4_validation/data_protocol_audit.json
+A	v4_validation/dev.csv
+A	v4_validation/drive_inputs.json
+A	v4_validation/duration_audit.csv
+A	v4_validation/integrity_report.json
+A	v4_validation/label_audit.json
+A	v4_validation/licenses/ECHOES_README.md
+A	v4_validation/licenses/MLAAD_LICENSE
+A	v4_validation/licenses/MLAAD_README.md
+A	v4_validation/licenses/MLAAD_original_LICENSE
+A	v4_validation/protocol.json
+A	v4_validation/provenance.json
+A	v4_validation/sealed.csv
+A	v4_validation/train.csv
+

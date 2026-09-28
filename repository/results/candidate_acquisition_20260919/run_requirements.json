@@ -1,0 +1,42 @@
+{
+  "source": "user instructions on 2026-09-19",
+  "data_volume_cap_bytes": null,
+  "phase": "candidate acquisition and CPU dataset reconstruction; no GPU start",
+  "requested_gpu": "A100 SXM x1 80GB",
+  "target_gpu_seconds": 57600,
+  "count_is_not_a_limit_on_source_collection": true,
+  "reuse_workspace": "wsp-9683432r72m7",
+  "current_workspace_profile": "H100 SXM x1; stopped; not switched yet",
+  "prelaunch_required": [
+    "source integrity and label/parent audit",
+    "fix and verify actual loader supervision and preprocessing defects",
+    "verify A100 profile and storage compatibility through API/CLI",
+    "upload and hash-verify data/code before GPU start",
+    "measure complete pipeline timing on length-stratified samples",
+    "fit total compute, all seeds, validation and exports within approximately 16 hours with checkpoint-safe stop"
+  ],
+  "planned_download_bytes_by_dataset": {
+    "ASVspoof5": 57582639383,
+    "PartialSpoof": 4147304258,
+    "CtrSVDD": 11307347289,
+    "VocalSet": 5991573193,
+    "HAIM": 9051131298
+  },
+  "haim_held_categories": [
+    "B6: copyrighted lyrics upstream conditions unresolved",
+    "B7/B8/B9: metadata cites commercial/SONICS human songs despite generic CC-source wording; source conditions unresolved"
+  ],
+  "model_architecture": "HTDemucs base + frozen MERT330M layer12 WindowMIL + DF-Arena fc5 + PANNs",
+  "training_started": false,
+  "total_selected_row_cap": null,
+  "split_ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "global_class_balance": "real_fake_1_to_1_maximum_feasible_subset",
+  "current_phase": "collection_and_cpu_reconstruction",
+  "new_split_output": "results/reconstructed_bank_20260919_haim_complete",
+  "gpu_start_authorized_now": false,
+  "previous_balanced_split_rows": 7144
+}

@@ -1,0 +1,33 @@
+{
+  "chosen_file_microbatch": 256,
+  "trials": [
+    {
+      "files": 32,
+      "windows_per_file": 3,
+      "files_per_second": 9795.329004971158,
+      "peak_allocated_bytes": 71621632,
+      "safe": true
+    },
+    {
+      "files": 64,
+      "windows_per_file": 3,
+      "files_per_second": 18837.38652188255,
+      "peak_allocated_bytes": 73235456,
+      "safe": true
+    },
+    {
+      "files": 128,
+      "windows_per_file": 3,
+      "files_per_second": 30171.47279984282,
+      "peak_allocated_bytes": 76463104,
+      "safe": true
+    },
+    {
+      "files": 256,
+      "windows_per_file": 3,
+      "files_per_second": 40696.73157472342,
+      "peak_allocated_bytes": 83246592,
+      "safe": true
+    }
+  ]
+}

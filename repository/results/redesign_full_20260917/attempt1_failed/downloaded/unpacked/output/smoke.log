@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/root/redesign_full_20260917/source/redesign_submission_smoke.py", line 131, in <module>
+    main()
+  File "/root/redesign_full_20260917/source/redesign_submission_smoke.py", line 66, in main
+    engine = FrozenEncoders(previous / 'assets', 'cuda')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/redesign_full_20260917/source/redesign_features_runtime.py", line 50, in __init__
+    self.df, self.fake_index = self.base.load_df_arena_model(self.device)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/redesign_h100_20260917/assets/baseline/script.py", line 331, in load_df_arena_model
+    model = model.to(device).eval()
+            ^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/modeling_utils.py", line 3698, in to
+    return super().to(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1355, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  [Previous line repeated 4 more times]
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 942, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1341, in convert
+    return t.to(
+           ^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 26.00 MiB. GPU 0 has a total capacity of 79.18 GiB of which 2.75 MiB is free. Process 93 has 76.14 GiB memory in use. Including non-PyTorch memory, this process has 3.02 GiB memory in use. Of the allocated memory 2.45 GiB is allocated by PyTorch, and 63.40 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

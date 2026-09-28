@@ -1,0 +1,18 @@
+{
+  "scenario": "raw remote kernelspec interpreter binding",
+  "invocation": "direct remote python -m jupyter kernelspec list with execution JUPYTER_PATH via private terminal",
+  "binary_observable": {
+    "kernel": "eight-h100",
+    "raw_argv0": "/root/fullft8/.venv/bin/python",
+    "expected_venv_argv0": "/root/fullft8/.venv/bin/python",
+    "raw_argv_match": true,
+    "argv_tail": [
+      "-Xfrozen_modules=off",
+      "-m",
+      "ipykernel_launcher",
+      "-f",
+      "{connection_file}"
+    ]
+  },
+  "artifact": "remote:/root/eight_h100_20260917/kernel_specs.json"
+}

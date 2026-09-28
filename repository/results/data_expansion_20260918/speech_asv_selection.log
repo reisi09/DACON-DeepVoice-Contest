@@ -1,0 +1,41 @@
+{
+  "status": "selected_not_acquired",
+  "max_original_bytes": 300000000,
+  "original_bytes": 242884605,
+  "rows": 4000,
+  "official_cm_pool_rows": 121461,
+  "class_counts": {
+    "bonafide": 12483,
+    "spoof": 108978
+  },
+  "selected_labels": {
+    "bonafide": 2000,
+    "spoof": 2000
+  },
+  "selected_attacks": {
+    "bonafide": 2000,
+    "A01": 106,
+    "A02": 106,
+    "A03": 106,
+    "A04": 106,
+    "A05": 106,
+    "A06": 105,
+    "A07": 105,
+    "A08": 105,
+    "A09": 105,
+    "A10": 105,
+    "A11": 105,
+    "A12": 105,
+    "A13": 105,
+    "A14": 105,
+    "A15": 105,
+    "A16": 105,
+    "A17": 105,
+    "A18": 105,
+    "A19": 105
+  },
+  "source_relationships": "original VCTK / target VCTK / VC input VCTK kept separately",
+  "central_sha256": "f50beacc91cc00ad12054dcbe2226c025aaaf0dc28e65128482fca6105e887e5",
+  "relationships_sha256": "f0887bcb7988ebafc0d90c03fee35d8fb176357eaf3ae1ba6a4ebeaf2ebf7bcd",
+  "selection_method": "fixed SHA256 order, round robin attack and actual source/target speaker, 2000 real + 2000 fake"
+}

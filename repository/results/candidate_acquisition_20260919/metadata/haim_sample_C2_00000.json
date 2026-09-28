@@ -1,0 +1,64 @@
+{
+  "track_id": "C2_00000",
+  "filename": "C2_00000.mp3",
+  "method": "crossfade",
+  "n_segments": 4,
+  "n_boundaries": 3,
+  "segments": [
+    {
+      "source": "939241.mp3",
+      "type": "human",
+      "start_in_source": 102.4,
+      "duration": 31.64,
+      "output_start": 0,
+      "output_end": 31.687
+    },
+    {
+      "source": "05871.mp3",
+      "type": "ai",
+      "start_in_source": 5.43,
+      "duration": 24.35,
+      "output_start": 29.407,
+      "output_end": 53.805
+    },
+    {
+      "source": "1121402.mp3",
+      "type": "human",
+      "start_in_source": 157.23,
+      "duration": 27.34,
+      "output_start": 51.105,
+      "output_end": 78.481
+    },
+    {
+      "source": "0738.mp3",
+      "type": "ai",
+      "start_in_source": 0.09,
+      "duration": 14.05,
+      "output_start": 74.711,
+      "output_end": 88.791
+    }
+  ],
+  "boundaries": [
+    {
+      "crossfade_start_sec": 29.407,
+      "crossfade_end_sec": 31.687,
+      "crossfade_duration": 2.28,
+      "from_type": "human",
+      "to_type": "ai"
+    },
+    {
+      "crossfade_start_sec": 51.105,
+      "crossfade_end_sec": 53.805,
+      "crossfade_duration": 2.7,
+      "from_type": "ai",
+      "to_type": "human"
+    },
+    {
+      "crossfade_start_sec": 74.711,
+      "crossfade_end_sec": 78.481,
+      "crossfade_duration": 3.77,
+      "from_type": "human",
+      "to_type": "ai"
+    }
+  ]
+}

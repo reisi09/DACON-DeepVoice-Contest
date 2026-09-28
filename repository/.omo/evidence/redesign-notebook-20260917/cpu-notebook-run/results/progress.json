@@ -1,0 +1,56 @@
+{
+  "contract": "redesign-notebook-v1",
+  "stages": {
+    "compare_and_lock": {
+      "detail": "no candidate accepted or locked",
+      "status": "not_run",
+      "unix": 1789582117.2656078
+    },
+    "cpu_integration": {
+      "detail": "{\"status\": \"algorithm_qa_only\", \"real_model_fit\": true, \"oof_relation_fit\": true, \"grouped_evaluation\": true, \"save_load_prediction_max_difference\": 0.0, \"candidate_status\": \"rejected\", \"ineligible_lock_rejected\": true, \"actual_data_performance_verified\": false, \"h100_verified\": false, \"l4_verified\": false, \"final_submission_zip\": false, \"export_sha256\": \"ac881bf4d48677954ae1af5f0b0b6da970920f1c63a5ae92b8b8cf68995a92c7\", \"export_verified\": true}",
+      "status": "completed",
+      "unix": 1789582118.3306491
+    },
+    "export_results": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789582118.331004
+    },
+    "extract_features": {
+      "detail": "flag is False; no fixture fallback",
+      "status": "not_run",
+      "unix": 1789582117.252749
+    },
+    "fit_file_relation": {
+      "detail": "max/noisy-OR/OOF fitting not run",
+      "status": "not_run",
+      "unix": 1789582117.2653172
+    },
+    "open_sealed": {
+      "detail": "explicit sealed flag is False",
+      "status": "not_run",
+      "unix": 1789582117.2695749
+    },
+    "preflight": {
+      "detail": "CPU provenance, hashes, and writable storage checked",
+      "status": "completed",
+      "unix": 1789582116.13345
+    },
+    "prepare_assets": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789582116.138208
+    },
+    "prepare_data": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789582116.137953
+    },
+    "train_experiments": {
+      "detail": "flag is False; A/B/C/D/capacity/voice not claimed",
+      "status": "not_run",
+      "unix": 1789582117.2530189
+    }
+  },
+  "updated_unix": 1789582118.331004
+}

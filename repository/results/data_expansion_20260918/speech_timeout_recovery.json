@@ -1,0 +1,43 @@
+{
+  "status": "same_official_range_retry_verified",
+  "observed_at_utc": "2026-09-18T05:44:46.298742+00:00",
+  "failed_attempt": {
+    "curl_exit": 28,
+    "header_bytes": 0,
+    "cause_scope": "transport timeout before response headers; DNS/TLS/server subcause not established"
+  },
+  "retry": {
+    "official_url": "https://zenodo.org/api/records/6906306/files/LA.zip/content",
+    "range": [
+      184050196,
+      187194514
+    ],
+    "content_length": 3144319,
+    "http": 206,
+    "selected_members": [
+      {
+        "member": "LA/ASVspoof2019_LA_train/flac/LA_T_3595333.flac",
+        "source_sha256": "267cdbbdad21fea70b7f5ee215e72edfcade6623384272bc82fe9873c08bb315",
+        "pcm_sha256": "c0e0dc59d6acdc712ed5a085d3d28a04866c61b169599e3e4ff0207394ced58b"
+      },
+      {
+        "member": "LA/ASVspoof2019_LA_train/flac/LA_T_6115575.flac",
+        "source_sha256": "d415cdc09314c5b58c856f3a64a13bc5cbf179d780c7a56eff27631d6cbe8f94",
+        "pcm_sha256": "6216c372bdb89ec25c1945b156e436135db74ec83cf4cc7e2c3f0ff22ce8e857"
+      },
+      {
+        "member": "LA/ASVspoof2019_LA_train/flac/LA_T_6150186.flac",
+        "source_sha256": "da4019b83593375efb94a4c72e5ee492f1f2f9a78bba33b5efc7be484d2132fd",
+        "pcm_sha256": "433a518c0bba9cae8fa24e01473b1060bfa595cef85fc8e6347516c6bb824f84"
+      },
+      {
+        "member": "LA/ASVspoof2019_LA_train/flac/LA_T_7725827.flac",
+        "source_sha256": "f9d31bf4f66e749115db8caf15b973252905d7db20e67eb0cc6db0d9551e4814",
+        "pcm_sha256": "2b2a6e8600b8c9cf61471a3bbc15a0d6538f89ada7a3d6902c7d3aa655e0e8fe"
+      }
+    ],
+    "all_crc_and_full_native_canonical_parity": true
+  },
+  "new_source_selection": false,
+  "whole_archive_downloaded": false
+}

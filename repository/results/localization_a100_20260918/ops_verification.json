@@ -1,0 +1,72 @@
+{
+  "checked_epoch": 1789705044.0015528,
+  "checks": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "test_localization_a100_ops.py"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "STORAGE_VERIFIED A100_stopped=True\nSTORAGE_VERIFIED A100_stopped=True\nPAUSE_VERIFIED launch_failure standby\nOPS_CONTRACT_OK wrong_target stale_bootstrap active_compute changed_bundle corrupt_readback startup_failure_pause immutable_deadline independent_deadline_guard monitor_failure_pause deadline_bounds\n"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "test_localization_export.py"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "EXPORT_CONTRACT_OK complete_primary9_control3 locked_control_corruption_partial full_payload_hashes\n"
+    },
+    {
+      "command": [
+        "bash",
+        "-n",
+        "localization_bootstrap.sh"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "py_compile",
+        "localization_a100_ops.py",
+        "localization_export.py",
+        "test_localization_a100_ops.py",
+        "test_localization_export.py"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "cloud_actions_performed": false,
+  "live_gpu_validation": false,
+  "review": {
+    "resolved_findings": [
+      "invalidate_stale_preparation_receipt_before_reupload",
+      "finally_cleanup_for_any_unsuccessful_dispatch",
+      "independent_deadline_guard_outside_archive_verification",
+      "remove_unused_mandatory_imageio_ffmpeg_requirement"
+    ],
+    "runtime_overlay": [
+      "transformers==4.57.6",
+      "tokenizers==0.22.2",
+      "huggingface-hub==0.36.2",
+      "safetensors==0.8.0"
+    ],
+    "status": "no_concrete_launch_blocker"
+  },
+  "source_sha256": {
+    "localization_a100_ops.py": "b1e3316f6bc575efa67db5295c02d17813fbab977eb33f4d624feb8526f0a53b",
+    "localization_bootstrap.sh": "fb4d8e2fa5dae481fd23908bd199e75c8b8ca6a0974b8e4d8a1974780f9ba41c",
+    "localization_export.py": "b63a12eefb93c014bc21239ab50e3cad003ebb8fe51f0efc3e79bb6cf6aad127",
+    "test_localization_a100_ops.py": "304164b903ce32f03486b8412101289b603915a38ca27cb772f6024d683c833f",
+    "test_localization_export.py": "a60dce575c8512cc7830a2839d47dbbc84a52d02f9087e96ad38e84b480c6da4"
+  },
+  "status": "offline_control_and_export_contracts_passed"
+}

@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "measured_at_utc": "2026-09-18T06:18:21.292888+00:00",
+  "cap_bytes": 20000000000,
+  "scope": "Both acquisition roots; broader check also includes prepared dataset, upload ZIP and results. Historical datasets outside these roots are preserved and excluded.",
+  "hardlinks": "du counts each hardlinked file once across all arguments in one invocation",
+  "measurement": "du KiB totals multiplied by1024; includes directories and symlinks; conservative rounded totals",
+  "measurements": {
+    "apparent": {
+      "roots": [
+        {
+          "root": "_workspace/data_expansion_20260918",
+          "bytes": 12926068736
+        },
+        {
+          "root": "_workspace/local_sampler_20260918/new_data",
+          "bytes": 1931566080
+        },
+        {
+          "root": "_workspace/localization_a100_20260918/dataset",
+          "bytes": 1659950080
+        },
+        {
+          "root": "_workspace/localization_a100_20260918/upload",
+          "bytes": 2022573056
+        },
+        {
+          "root": "results/data_expansion_20260918",
+          "bytes": 38366208
+        }
+      ],
+      "acquisition_and_pilot_bytes": 14857634816,
+      "including_prepared_copies_and_results_bytes": 18578524160
+    },
+    "allocated": {
+      "roots": [
+        {
+          "root": "_workspace/data_expansion_20260918",
+          "bytes": 13686136832
+        },
+        {
+          "root": "_workspace/local_sampler_20260918/new_data",
+          "bytes": 1949429760
+        },
+        {
+          "root": "_workspace/localization_a100_20260918/dataset",
+          "bytes": 1668255744
+        },
+        {
+          "root": "_workspace/localization_a100_20260918/upload",
+          "bytes": 2032091136
+        },
+        {
+          "root": "results/data_expansion_20260918",
+          "bytes": 42065920
+        }
+      ],
+      "acquisition_and_pilot_bytes": 15635566592,
+      "including_prepared_copies_and_results_bytes": 19377979392
+    }
+  },
+  "reproduction_commands": [
+    "du -skA _workspace/data_expansion_20260918 _workspace/local_sampler_20260918/new_data _workspace/localization_a100_20260918/dataset _workspace/localization_a100_20260918/upload results/data_expansion_20260918",
+    "du -sk _workspace/data_expansion_20260918 _workspace/local_sampler_20260918/new_data _workspace/localization_a100_20260918/dataset _workspace/localization_a100_20260918/upload results/data_expansion_20260918"
+  ]
+}

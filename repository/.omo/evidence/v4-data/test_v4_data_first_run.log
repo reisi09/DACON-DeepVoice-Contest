@@ -1,0 +1,21 @@
+...F.                                                                    [100%]
+=================================== FAILURES ===================================
+_____________ test_injected_parent_and_provider_leaks_are_rejected _____________
+
+    def test_injected_parent_and_provider_leaks_are_rejected() -> None:
+        rows = _built_rows()
+        protocol = json.loads((ROOT / "v4_validation/protocol.json").read_text())
+        old_groups, _, _ = prior_identities(ROOT)
+        providers = tuple(protocol["music_roles"]["training"]["providers"])
+        dev_index = next(index for index, row in enumerate(rows) if row.split == "dev" and row.panel == "music_real")
+        leaked = rows.copy()
+        leaked[dev_index] = replace(leaked[dev_index], group_id=next(iter(old_groups)))
+>       with pytest.raises(V4IntegrityError, match="overlap"):
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'overlap'
+E         Actual message: 'fresh panel parent group leaked into training'
+
+test_v4_data.py:72: AssertionError
+=========================== short test summary info ============================
+FAILED test_v4_data.py::test_injected_parent_and_provider_leaks_are_rejected
+1 failed, 4 passed in 0.64s

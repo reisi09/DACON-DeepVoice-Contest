@@ -1,0 +1,18 @@
+{
+  "L4_verified": false,
+  "edge_inputs": [
+    "4 second silence",
+    "60 second stereo music"
+  ],
+  "elapsed_seconds": 38.88400340080261,
+  "files": 7,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "independence_max_abs_error": 4.869993297518249e-11,
+  "network_connections_forbidden": true,
+  "official_score_measured": false,
+  "passed": true,
+  "purpose": "packaging numerical parity, not model quality evaluation",
+  "real_audio_files": 5,
+  "reference_max_abs_error": 4.869993297518249e-11,
+  "tolerance": 1e-05
+}

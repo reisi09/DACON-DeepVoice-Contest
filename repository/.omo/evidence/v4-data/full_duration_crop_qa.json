@@ -1,0 +1,15 @@
+{
+  "scenario": "full-duration decode and crop after 10 seconds on retained real FMA source",
+  "invocation": ".venv/bin/python inline full decode QA",
+  "ID": "0023fa4480aadf41aea8fbbd",
+  "path": "audio/full/train/0023fa4480aadf41aea8fbbd.wav",
+  "full_samples": 4745807,
+  "full_duration_seconds": 296.6129375,
+  "default_samples": 160000,
+  "later_crop_start_seconds": 10.0,
+  "later_crop_samples": 160000,
+  "later_crop_pcm_sha256": "ed3ec8cbb2bc98b5058aca6a006ac65f38a967e9480051bb123649cad43c616e",
+  "default_pcm_sha256": "65b35934b38be665561cfc3c1ff6614564bb8d3c5e3d49a8db02f73adddd95b0",
+  "later_crop_differs_from_default": true,
+  "later_crop_rms": 0.14788912883099084
+}

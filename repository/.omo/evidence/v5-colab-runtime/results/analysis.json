@@ -1,0 +1,476 @@
+{
+  "scope": "Local development; incomplete labels; not a leaderboard score",
+  "data_audit": {
+    "protocol": "V4 train/dev only; deterministic pre-label NSynth instrument-group holdout; sealed and V2 excluded",
+    "counts": {
+      "v4_train": 1516,
+      "v4_dev": 210,
+      "train": 1496,
+      "dev": 230
+    },
+    "nsynth_holdout": {
+      "protocol": "v5-nsynth-vp-holdout-v1",
+      "fraction": 0.2,
+      "available_groups": 25,
+      "groups": [
+        "nsynth_instrument_183",
+        "nsynth_instrument_327",
+        "nsynth_instrument_457",
+        "nsynth_instrument_488",
+        "nsynth_instrument_590"
+      ],
+      "rows": 20
+    },
+    "overlap": {
+      "groups": 0,
+      "paths": 0,
+      "sha256": 0
+    },
+    "hashes": {
+      "train_manifest_sha256": "df5c083d7deee6f5efa195c4fce2c8b4298f2e8ca743f2c7bce7f7129877c07f",
+      "dev_manifest_sha256": "f78185faee0578a311eea420a1776256ccea0346d2152e77b2288db477c605d9",
+      "train_audio_receipt_sha256": "16a29c83c3c45d7f74b1ef2f19a619881d22be067b23e40de6826290abe71554",
+      "dev_audio_receipt_sha256": "43666cc248a4b9d80344335e386efdf8fd536ee1928da095c39e804251e85b2a",
+      "train_unique_audio_sha256": 1496,
+      "dev_unique_audio_sha256": 210
+    }
+  },
+  "row_count": 230,
+  "unique_audio_count": 210,
+  "selection_panel": "Original 230 rows; unique audio is a secondary sensitivity analysis",
+  "arms": {
+    "B0": {
+      "status": "evaluated",
+      "runtime_status": "evaluated",
+      "original": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.37817460317460316,
+          "voice_eer": 0.15000000000000002,
+          "music_eer": 0.5422222222222222,
+          "voice_presence_auc": 0.9979166666666667,
+          "music_presence_auc": 0.9851315789473688
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 110",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+        },
+        "counts": {
+          "file_eer": 230,
+          "voice_eer": 100,
+          "music_eer": 190,
+          "voice_presence_auc": 140,
+          "music_presence_auc": 230
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 110,
+          "music_eer": 0,
+          "voice_presence_auc": 90,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.47619047619047616,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.6086956521739131,
+          "music_presence_auc": 1.0
+        }
+      },
+      "unique_audio": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.33798076923076925,
+          "voice_eer": 0.15000000000000002,
+          "music_eer": 0.5763888888888888,
+          "voice_presence_auc": 0.9979166666666667,
+          "music_presence_auc": 0.9833823529411767
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 90",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 70"
+        },
+        "counts": {
+          "file_eer": 210,
+          "voice_eer": 100,
+          "music_eer": 170,
+          "voice_presence_auc": 140,
+          "music_presence_auc": 210
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 90,
+          "music_eer": 0,
+          "voice_presence_auc": 70,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.5263157894736842,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.6666666666666666,
+          "music_presence_auc": 1.0
+        }
+      },
+      "identical_audio_max_probability_delta": 0.0
+    },
+    "B1": {
+      "status": "evaluated_budget_censored",
+      "runtime_status": "evaluated",
+      "original": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.3218253968253968,
+          "voice_eer": 0.1708333333333333,
+          "music_eer": 0.3683333333333333,
+          "voice_presence_auc": 0.9983333333333333,
+          "music_presence_auc": 0.9858552631578947
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 110",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+        },
+        "counts": {
+          "file_eer": 230,
+          "voice_eer": 100,
+          "music_eer": 190,
+          "voice_presence_auc": 140,
+          "music_presence_auc": 230
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 110,
+          "music_eer": 0,
+          "voice_presence_auc": 90,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.47619047619047616,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.6086956521739131,
+          "music_presence_auc": 1.0
+        }
+      },
+      "unique_audio": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.31009615384615385,
+          "voice_eer": 0.1708333333333333,
+          "music_eer": 0.3472222222222222,
+          "voice_presence_auc": 0.9983333333333333,
+          "music_presence_auc": 0.9841911764705882
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 90",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 70"
+        },
+        "counts": {
+          "file_eer": 210,
+          "voice_eer": 100,
+          "music_eer": 170,
+          "voice_presence_auc": 140,
+          "music_presence_auc": 210
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 90,
+          "music_eer": 0,
+          "voice_presence_auc": 70,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.5263157894736842,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.6666666666666666,
+          "music_presence_auc": 1.0
+        }
+      },
+      "identical_audio_max_probability_delta": 0.0,
+      "component_training_status": {
+        "voice": "budget_stop",
+        "music": "budget_stop",
+        "presence": "budget_stop"
+      }
+    },
+    "B2": {
+      "status": "evaluated_budget_censored",
+      "runtime_status": "evaluated",
+      "original": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.37817460317460316,
+          "voice_eer": 0.15000000000000002,
+          "music_eer": 0.45777777777777773,
+          "voice_presence_auc": 0.9695833333333332,
+          "music_presence_auc": 0.5935526315789476
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 110",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 90"
+        },
+        "counts": {
+          "file_eer": 230,
+          "voice_eer": 100,
+          "music_eer": 190,
+          "voice_presence_auc": 140,
+          "music_presence_auc": 230
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 110,
+          "music_eer": 0,
+          "voice_presence_auc": 90,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.47619047619047616,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.6086956521739131,
+          "music_presence_auc": 1.0
+        }
+      },
+      "unique_audio": {
+        "score": null,
+        "metrics": {
+          "file_eer": 0.37596153846153846,
+          "voice_eer": 0.15000000000000002,
+          "music_eer": 0.46458333333333335,
+          "voice_presence_auc": 0.9695833333333332,
+          "music_presence_auc": 0.5787499999999999
+        },
+        "invalid": {},
+        "partial": {
+          "voice_eer": "known subset only; unknown relevant labels: 90",
+          "voice_presence_auc": "known subset only; unknown relevant labels: 70"
+        },
+        "counts": {
+          "file_eer": 210,
+          "voice_eer": 100,
+          "music_eer": 170,
+          "voice_presence_auc": 140,
+          "music_presence_auc": 210
+        },
+        "unknown_counts": {
+          "file_eer": 0,
+          "voice_eer": 90,
+          "music_eer": 0,
+          "voice_presence_auc": 70,
+          "music_presence_auc": 0
+        },
+        "coverage": {
+          "file_eer": 1.0,
+          "voice_eer": 0.5263157894736842,
+          "music_eer": 1.0,
+          "voice_presence_auc": 0.6666666666666666,
+          "music_presence_auc": 1.0
+        }
+      },
+      "identical_audio_max_probability_delta": 0.0,
+      "component_training_status": {
+        "voice": "budget_stop",
+        "music": "budget_stop",
+        "presence": "budget_stop"
+      }
+    },
+    "B3": {
+      "status": "not_run_preparation_timeout",
+      "runtime_status": "pending"
+    },
+    "B4": {
+      "status": "not_run_preparation_timeout",
+      "runtime_status": "pending"
+    },
+    "B4_joint": {
+      "status": "not_recorded",
+      "runtime_status": null
+    }
+  },
+  "jobs": {
+    "B1_music": {
+      "status": "budget_stop",
+      "epochs_completed": 8,
+      "updates": 552,
+      "seconds": 275.9565159419999,
+      "selected_epoch": 5,
+      "selected_heads": [
+        {
+          "name": "music_fake",
+          "count": 190,
+          "loss": 1.0920201539993286,
+          "eer": 0.3683333333333333,
+          "auc": 0.6848888888888889
+        }
+      ],
+      "first_step_audit": {
+        "gradient_norms": {
+          "encoder": 11.51292839019668,
+          "head": 14.750128876043416
+        },
+        "parameter_deltas": {
+          "encoder": 2.9742717742919922e-05,
+          "head": 8.996948599815369e-05
+        }
+      }
+    },
+    "B1_presence": {
+      "status": "budget_stop",
+      "epochs_completed": 9,
+      "updates": 846,
+      "seconds": 364.19819666999956,
+      "selected_epoch": 5,
+      "selected_heads": [
+        {
+          "name": "voice_presence",
+          "count": 140,
+          "loss": 1.3263294696807861,
+          "eer": 0.045833333333333316,
+          "auc": 0.9958333333333333
+        },
+        {
+          "name": "music_presence",
+          "count": 230,
+          "loss": 1.737147331237793,
+          "eer": 0.04868421052631581,
+          "auc": 0.9910526315789474
+        }
+      ],
+      "first_step_audit": {
+        "gradient_norms": {
+          "encoder": 4.038799408521807,
+          "head": 3.299845562818284
+        },
+        "parameter_deltas": {
+          "encoder": 9.894371032714844e-06,
+          "head": 3.013014793395996e-05
+        }
+      }
+    },
+    "B1_voice": {
+      "status": "budget_stop",
+      "epochs_completed": 5,
+      "updates": 250,
+      "seconds": 664.7082686600002,
+      "selected_epoch": 4,
+      "selected_heads": [
+        {
+          "name": "voice_fake",
+          "count": 100,
+          "loss": 0.4737406075000763,
+          "eer": 0.1708333333333333,
+          "auc": 0.93625
+        }
+      ],
+      "first_step_audit": {
+        "gradient_norms": {
+          "encoder": 75.8777915385551,
+          "head": 10.620148634064863
+        },
+        "parameter_deltas": {
+          "encoder": 1.0132789611816406e-06,
+          "head": 2.998858690261841e-06
+        }
+      }
+    },
+    "B2_music": {
+      "status": "budget_stop",
+      "epochs_completed": 5,
+      "updates": 345,
+      "seconds": 373.5956566529999,
+      "selected_epoch": 1,
+      "selected_heads": [
+        {
+          "name": "music_fake",
+          "count": 190,
+          "loss": 0.9300423860549927,
+          "eer": 0.45777777777777773,
+          "auc": 0.5722222222222222
+        }
+      ],
+      "first_step_audit": {
+        "gradient_norms": {
+          "encoder": 9.991496513479827,
+          "head": 13.229468056300293
+        },
+        "parameter_deltas": {
+          "encoder": 2.968311309814453e-05,
+          "head": 8.996948599815369e-05
+        }
+      }
+    },
+    "B2_presence": {
+      "status": "budget_stop",
+      "epochs_completed": 4,
+      "updates": 376,
+      "seconds": 351.57871016900026,
+      "selected_epoch": 1,
+      "selected_heads": [
+        {
+          "name": "voice_presence",
+          "count": 140,
+          "loss": 6.02629280090332,
+          "eer": 0.10833333333333335,
+          "auc": 0.96375
+        },
+        {
+          "name": "music_presence",
+          "count": 230,
+          "loss": 5.739165306091309,
+          "eer": 0.4796052631578947,
+          "auc": 0.5959210526315789
+        }
+      ],
+      "first_step_audit": {
+        "gradient_norms": {
+          "encoder": 1089.952113141496,
+          "head": 17.024443301681618
+        },
+        "parameter_deltas": {
+          "encoder": 1.0132789611816406e-05,
+          "head": 3.013014793395996e-05
+        }
+      }
+    },
+    "B2_voice": {
+      "status": "budget_stop",
+      "epochs_completed": 6,
+      "updates": 300,
+      "seconds": 855.4896735340003,
+      "selected_epoch": 4,
+      "selected_heads": [
+        {
+          "name": "voice_fake",
+          "count": 100,
+          "loss": 0.5941475033760071,
+          "eer": 0.15000000000000002,
+          "auc": 0.9266666666666666
+        }
+      ],
+      "first_step_audit": {
+        "gradient_norms": {
+          "encoder": 65.31872123541541,
+          "head": 15.308468632449934
+        },
+        "parameter_deltas": {
+          "encoder": 1.0132789611816406e-06,
+          "head": 2.998858690261841e-06
+        }
+      }
+    }
+  },
+  "execution": {
+    "status": "partial_preparation_timeout",
+    "new_submission": false,
+    "release_request": {
+      "elapsed_seconds": 5365.780509233475,
+      "unix": 1789313380.7805078
+    }
+  }
+}

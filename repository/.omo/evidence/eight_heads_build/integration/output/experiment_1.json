@@ -1,0 +1,982 @@
+{
+  "bootstrap_unit": "provenance-connected component; CI conditional on fixed fitted models",
+  "branches": {
+    "music": {
+      "generator_holdout_sensitivity": {
+        "suno": {
+          "eval_rows": 2,
+          "reason": "held-generator fold lacks both training or evaluation labels",
+          "status": "data_insufficient",
+          "train_rows": 2
+        }
+      },
+      "same_class_exposure": true,
+      "same_updates": true,
+      "seed_summary": {
+        "balanced_dev_eer": {
+          "mean": 0.0,
+          "n_seeds": 1,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        },
+        "control_dev_eer": {
+          "mean": 0.0,
+          "n_seeds": 1,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        }
+      },
+      "seeds": {
+        "41": {
+          "adoption_status": "inconclusive",
+          "balanced": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.6388037800788879,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.6388037800788879,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.6388037800788879
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "dev_music_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "dev_music_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.6388037800788879
+          },
+          "balanced_draw_sha256": "9b89068cf5c2c694f6868cf94fefa206193d3be4617db14b0f6bf89c1be981c7",
+          "class_draw_counts": {
+            "class_0": 32,
+            "class_0|generator:REAL": 32,
+            "class_0|generator:suno": 0,
+            "class_0|source:FMA": 32,
+            "class_0|source:suno": 0,
+            "class_0|variant:base": 32,
+            "class_1": 32,
+            "class_1|generator:REAL": 0,
+            "class_1|generator:suno": 32,
+            "class_1|source:FMA": 0,
+            "class_1|source:suno": 32,
+            "class_1|variant:base": 32,
+            "generator:REAL": 32,
+            "generator:suno": 32,
+            "source:FMA": 32,
+            "source:suno": 32,
+            "variant:base": 64
+          },
+          "control": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.6388037800788879,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.6388037800788879,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.6388037800788879
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "dev_music_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "dev_music_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "suno": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.6388037800788879
+          },
+          "control_draw_sha256": "9b89068cf5c2c694f6868cf94fefa206193d3be4617db14b0f6bf89c1be981c7",
+          "paired_delta": {
+            "ci95": null,
+            "components": 2,
+            "delta_eer": 0.0,
+            "resamples": 0,
+            "uncertain": true,
+            "valid": 0
+          },
+          "test": {
+            "balanced": {
+              "auc": 1.0,
+              "components": 2,
+              "decision_threshold": 0.6795294284820557,
+              "eer": 0.0,
+              "fpr": 0.0,
+              "n": 2,
+              "negative_n": 1,
+              "positive_n": 1,
+              "recall": 1.0,
+              "rows": 2,
+              "strata": {
+                "codec": {
+                  "base": {
+                    "auc": 1.0,
+                    "decision_threshold": 0.6795294284820557,
+                    "eer": 0.0,
+                    "fpr": 0.0,
+                    "n": 2,
+                    "negative_n": 1,
+                    "positive_n": 1,
+                    "recall": 1.0,
+                    "threshold": 0.6795294284820557
+                  }
+                },
+                "generator": {
+                  "": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "suno": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                },
+                "parent_id": {
+                  "test_music_0": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "test_music_1": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                },
+                "source": {
+                  "FMA": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "suno": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                }
+              },
+              "threshold": 0.6795294284820557
+            },
+            "control": {
+              "auc": 1.0,
+              "components": 2,
+              "decision_threshold": 0.6795294284820557,
+              "eer": 0.0,
+              "fpr": 0.0,
+              "n": 2,
+              "negative_n": 1,
+              "positive_n": 1,
+              "recall": 1.0,
+              "rows": 2,
+              "strata": {
+                "codec": {
+                  "base": {
+                    "auc": 1.0,
+                    "decision_threshold": 0.6795294284820557,
+                    "eer": 0.0,
+                    "fpr": 0.0,
+                    "n": 2,
+                    "negative_n": 1,
+                    "positive_n": 1,
+                    "recall": 1.0,
+                    "threshold": 0.6795294284820557
+                  }
+                },
+                "generator": {
+                  "": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "suno": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                },
+                "parent_id": {
+                  "test_music_0": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "test_music_1": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                },
+                "source": {
+                  "FMA": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "suno": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                }
+              },
+              "threshold": 0.6795294284820557
+            },
+            "paired_delta": {
+              "ci95": null,
+              "components": 2,
+              "delta_eer": 0.0,
+              "resamples": 0,
+              "uncertain": true,
+              "valid": 0
+            }
+          },
+          "updates_each": 2
+        }
+      }
+    },
+    "voice": {
+      "generator_holdout_sensitivity": {
+        "MLAAD": {
+          "eval_rows": 2,
+          "reason": "held-generator fold lacks both training or evaluation labels",
+          "status": "data_insufficient",
+          "train_rows": 1
+        }
+      },
+      "same_class_exposure": true,
+      "same_updates": true,
+      "seed_summary": {
+        "balanced_dev_eer": {
+          "mean": 0.0,
+          "n_seeds": 1,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        },
+        "control_dev_eer": {
+          "mean": 0.0,
+          "n_seeds": 1,
+          "range": [
+            0.0,
+            0.0
+          ],
+          "std": 0.0
+        }
+      },
+      "seeds": {
+        "41": {
+          "adoption_status": "inconclusive",
+          "balanced": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.9999983310699463,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.9999983310699463,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.9999983310699463
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "dev_speech_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "dev_speech_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.9999983310699463
+          },
+          "balanced_draw_sha256": "72be1a18c0c3bf0fbcbca259b658dd7180cae8312d67fca1c6120f081ebbace5",
+          "class_draw_counts": {
+            "class_0": 32,
+            "class_0|generator:MLAAD": 0,
+            "class_0|generator:REAL": 32,
+            "class_0|source:FMA": 32,
+            "class_0|source:MLAAD": 0,
+            "class_0|variant:base": 32,
+            "class_1": 32,
+            "class_1|generator:MLAAD": 32,
+            "class_1|generator:REAL": 0,
+            "class_1|source:FMA": 0,
+            "class_1|source:MLAAD": 32,
+            "class_1|variant:base": 32,
+            "generator:MLAAD": 32,
+            "generator:REAL": 32,
+            "source:FMA": 32,
+            "source:MLAAD": 32,
+            "variant:base": 64
+          },
+          "control": {
+            "auc": 1.0,
+            "components": 2,
+            "decision_threshold": 0.9999983310699463,
+            "eer": 0.0,
+            "fpr": 0.0,
+            "n": 2,
+            "negative_n": 1,
+            "positive_n": 1,
+            "recall": 1.0,
+            "rows": 2,
+            "strata": {
+              "codec": {
+                "base": {
+                  "auc": 1.0,
+                  "decision_threshold": 0.9999983310699463,
+                  "eer": 0.0,
+                  "fpr": 0.0,
+                  "n": 2,
+                  "negative_n": 1,
+                  "positive_n": 1,
+                  "recall": 1.0,
+                  "threshold": 0.9999983310699463
+                }
+              },
+              "generator": {
+                "": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "parent_id": {
+                "dev_speech_0": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "dev_speech_1": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              },
+              "source": {
+                "FMA": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 1,
+                  "positive_n": 0,
+                  "recall": null,
+                  "threshold": null
+                },
+                "MLAAD": {
+                  "auc": null,
+                  "decision_threshold": null,
+                  "eer": null,
+                  "fpr": null,
+                  "n": 1,
+                  "negative_n": 0,
+                  "positive_n": 1,
+                  "recall": null,
+                  "threshold": null
+                }
+              }
+            },
+            "threshold": 0.9999983310699463
+          },
+          "control_draw_sha256": "72be1a18c0c3bf0fbcbca259b658dd7180cae8312d67fca1c6120f081ebbace5",
+          "paired_delta": {
+            "ci95": null,
+            "components": 2,
+            "delta_eer": 0.0,
+            "resamples": 0,
+            "uncertain": true,
+            "valid": 0
+          },
+          "test": {
+            "balanced": {
+              "auc": 1.0,
+              "components": 2,
+              "decision_threshold": 0.9999018907546997,
+              "eer": 0.0,
+              "fpr": 0.0,
+              "n": 2,
+              "negative_n": 1,
+              "positive_n": 1,
+              "recall": 1.0,
+              "rows": 2,
+              "strata": {
+                "codec": {
+                  "base": {
+                    "auc": 1.0,
+                    "decision_threshold": 0.9999018907546997,
+                    "eer": 0.0,
+                    "fpr": 0.0,
+                    "n": 2,
+                    "negative_n": 1,
+                    "positive_n": 1,
+                    "recall": 1.0,
+                    "threshold": 0.9999018907546997
+                  }
+                },
+                "generator": {
+                  "": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "MLAAD": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                },
+                "parent_id": {
+                  "test_speech_0": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "test_speech_1": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                },
+                "source": {
+                  "FMA": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "MLAAD": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                }
+              },
+              "threshold": 0.9999018907546997
+            },
+            "control": {
+              "auc": 1.0,
+              "components": 2,
+              "decision_threshold": 0.9999018907546997,
+              "eer": 0.0,
+              "fpr": 0.0,
+              "n": 2,
+              "negative_n": 1,
+              "positive_n": 1,
+              "recall": 1.0,
+              "rows": 2,
+              "strata": {
+                "codec": {
+                  "base": {
+                    "auc": 1.0,
+                    "decision_threshold": 0.9999018907546997,
+                    "eer": 0.0,
+                    "fpr": 0.0,
+                    "n": 2,
+                    "negative_n": 1,
+                    "positive_n": 1,
+                    "recall": 1.0,
+                    "threshold": 0.9999018907546997
+                  }
+                },
+                "generator": {
+                  "": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "MLAAD": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                },
+                "parent_id": {
+                  "test_speech_0": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "test_speech_1": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                },
+                "source": {
+                  "FMA": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 1,
+                    "positive_n": 0,
+                    "recall": null,
+                    "threshold": null
+                  },
+                  "MLAAD": {
+                    "auc": null,
+                    "decision_threshold": null,
+                    "eer": null,
+                    "fpr": null,
+                    "n": 1,
+                    "negative_n": 0,
+                    "positive_n": 1,
+                    "recall": null,
+                    "threshold": null
+                  }
+                }
+              },
+              "threshold": 0.9999018907546997
+            },
+            "paired_delta": {
+              "ci95": null,
+              "components": 2,
+              "delta_eer": 0.0,
+              "resamples": 0,
+              "uncertain": true,
+              "valid": 0
+            }
+          },
+          "updates_each": 2
+        }
+      }
+    }
+  },
+  "claim_limit": "diagnostic historical/fresh-source evidence; no official score or authenticity generalization",
+  "class_exposure": "16 REAL + 16 FAKE per batch32",
+  "comparison_scope": "same manifest split, modality, labels and frozen feature cache",
+  "component_count": 17,
+  "estimand": "paired candidate minus reference EER; lower is better",
+  "experiment": 1,
+  "fixed_updates": 2,
+  "label_denominators": {
+    "fake": 30,
+    "real": 31
+  },
+  "limitations": [
+    "historical and fresh sources are diagnostic",
+    "source/generator labels can be confounded"
+  ],
+  "official_score": null,
+  "population": "known component label within the experiment modality/variant",
+  "seeds": [
+    41
+  ],
+  "selection_locked": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/eight_heads_build/integration/output/selection_E1_locked.json",
+  "status": "complete",
+  "wall_seconds": 0.3305363655090332
+}

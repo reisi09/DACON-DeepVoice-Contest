@@ -1,0 +1,56 @@
+{
+  "requested_at_utc": "2026-09-24T10:11:36.719199+00:00",
+  "returncode": 0,
+  "job_slugs": [
+    "job-aj1ufwbahfpk"
+  ],
+  "authorization": "user explicitly approved one CPU verification instance",
+  "raw_output_file": "cpu_job_create.log",
+  "job": {
+    "slug": "job-aj1ufwbahfpk",
+    "name": "lb-storage-verify-20260924",
+    "workloadState": "failed",
+    "createdDt": "2026-09-24T10:11:37.438097Z",
+    "startedAt": "2026-09-24T10:11:39Z",
+    "completedAt": "2026-09-24T10:21:59Z",
+    "hourlyCreditForCompute": 0.3,
+    "resourceSpecSlug": "resourcespec-kmswqig4b12w",
+    "resourceSpecCpuCount": 3,
+    "resourceSpecMemoryBytes": 13958643712,
+    "observed_at_utc": "2026-09-24T10:22:19.343011+00:00"
+  },
+  "script_started_at_utc": "2026-09-24T10:11:53.350Z",
+  "staging_completed_at_utc": "2026-09-24T10:20:53.277Z",
+  "staging": {
+    "input_root": "/root/data_v4/out",
+    "archives": [
+      {
+        "name": "admitted-v2.tar.gz",
+        "sha256": "9854dd539bf284a41f09020cf96928335de1adf40367afd59fd9ae6a6c5f8471",
+        "bytes": 608398316,
+        "verified_audio_members": 1331
+      },
+      {
+        "name": "mlaad-admitted-v1.tar.gz",
+        "sha256": "4f090b462ef76b422afe5d27608b41fb38e0b56f5ada83bae8a14aeae924ca1d",
+        "bytes": 71206318,
+        "verified_audio_members": 146
+      }
+    ],
+    "files": 1477,
+    "installed": 1477,
+    "reused": 0,
+    "bytes": 709024988,
+    "gpu_used": false
+  },
+  "terminal_state_verified": true,
+  "exit_code": null,
+  "termination_reason": "Not exposed by job show/logs. Timeout suspected: failed about606seconds after script start under600second timeout.",
+  "full_preflight_receipt_received": false,
+  "object_report_download_files": 0,
+  "pinned_assets_verified_before_staging": true,
+  "asset_verification_evidence": "Staging was reached only after all25asset hashes passed in the pinned set-e preparation script.",
+  "new_gpu_started": false,
+  "full_audio_preflight_completed": false,
+  "runtime_log_sha256": "a2273568fb8f5795c22b0306310fbe0b3333aaad178e10e5a0f1ed52c554a7b5"
+}

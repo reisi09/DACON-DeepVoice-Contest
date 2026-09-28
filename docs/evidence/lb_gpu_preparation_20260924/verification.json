@@ -1,0 +1,32 @@
+{
+  "code_commit": "b4d1009902bc4cd04c79f850eee43bc10f0e338d",
+  "checks": [
+    "Exact E00 rows and unchanged evaluation roles retained in E04",
+    "1477 added train rows and no cross-role audio/source leakage",
+    "Actual NPZ subset reuse preserves values and masks; changed labels/roles/audio/code/cache rejected",
+    "Foreign encoder assets and stale baseline cache/checkpoints rejected",
+    "E00-only calibration reused as fixed F0; development labels and E04 do not refit it",
+    "Archive bytes, traversal, links, duplicate paths and no-clobber installation checked",
+    "CPU setup rejects stale code/weights and escaping asset symlinks",
+    "Default CLI does not execute model asset code; real task subprocess timeout cleanup tested",
+    "Packaged CLI imports executed from extracted 21-module bundle",
+    "Both real admitted archives staged and all1477 audio hashes matched",
+    "First CPU attempt installed1477 clips and passed pinned asset hashes; it ended before full preflight, later completed by the retry",
+    "Actual cloud CPU preflight verified 43516 audio files,25 assets,all prepared code/input hashes and disk reserve; E00/E04 roles/config matched locked inputs; job succeeded"
+  ],
+  "cpu_test_log_sha256": "aaa5f1c1430149728ece441d749ad91fd22bc7b3905459f6a92f546e47167d4d",
+  "later_symlink_regression": "2 passed in0.15s after final containment fix",
+  "gpu_experiment_executed": false,
+  "full_historical_audio_preflight_completed": true,
+  "quality_improvement_measured": false,
+  "cloud_cpu_attempt": "cpu_job_execution.json",
+  "retry_checks": [
+    "Changed code, unexpected code and changed pinned manifest rejected before entrypoint by real script payload",
+    "Fresh attempt directory required; no recopy/install/GPU action in retry script",
+    "Exact outer job command passed bash syntax before execution; authorized cloud run later succeeded",
+    "Independent code review found no material issue; actual CPU cloud input-integrity integration subsequently passed"
+  ],
+  "historical_preflight_scope": "42039 historical bank audio rows; excludes 908 original rows not exported to this bank",
+  "cloud_cpu_success": "cpu_retry_execution.json",
+  "retry_script_commit": "7773c9e87d71960e512f5ba2d8ab217471da3bd7"
+}

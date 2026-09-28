@@ -1,0 +1,12 @@
+
+==================================== ERRORS ====================================
+____________________ ERROR collecting test_v4_selection.py _____________________
+test_v4_selection.py:10: in <module>
+    from v4_evaluation import evaluate_development
+v4_evaluation.py:3: in <module>
+    raise NotImplementedError("V4 evaluation is not implemented")
+E   NotImplementedError: V4 evaluation is not implemented
+=========================== short test summary info ============================
+ERROR test_v4_selection.py - NotImplementedError: V4 evaluation is not implem...
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.04s

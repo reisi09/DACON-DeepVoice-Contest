@@ -1,0 +1,21 @@
+2026-09-13 01:38:17.252698: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-09-13 01:38:17.324431: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+RESUME_VERIFIED 0.0
+TRAIN_EPOCH AST_LAST_BLOCK 7/30 loss=0.078668 proxy=0.873115 head_grad=1.219408 backbone_grad=2.727818
+TRAIN_EPOCH AST_LAST_BLOCK 8/30 loss=0.070565 proxy=0.880510 head_grad=0.968782 backbone_grad=2.698819
+TRAIN_EPOCH AST_LAST_BLOCK 9/30 loss=0.058817 proxy=0.880510 head_grad=1.241773 backbone_grad=3.028659
+TRAIN_EPOCH AST_LAST_BLOCK 10/30 loss=0.049984 proxy=0.888458 head_grad=1.044911 backbone_grad=3.478589
+TRAIN_EPOCH AST_LAST_BLOCK 11/30 loss=0.043645 proxy=0.888458 head_grad=0.921385 backbone_grad=3.433003
+TRAIN_EPOCH AST_LAST_BLOCK 12/30 loss=0.037272 proxy=0.888458 head_grad=0.838939 backbone_grad=3.565308
+TRAIN_EPOCH AST_LAST_BLOCK 13/30 loss=0.031131 proxy=0.895853 head_grad=0.875974 backbone_grad=3.450380
+TRAIN_EPOCH AST_LAST_BLOCK 14/30 loss=0.028680 proxy=0.895853 head_grad=0.815278 backbone_grad=3.782972
+TRAIN_EPOCH AST_LAST_BLOCK 15/30 loss=0.026950 proxy=0.903247 head_grad=0.745646 backbone_grad=3.491398
+TRAIN_EPOCH AST_LAST_BLOCK 16/30 loss=0.018375 proxy=0.895853 head_grad=0.724767 backbone_grad=3.010366
+TRAIN_EPOCH AST_LAST_BLOCK 17/30 loss=0.017512 proxy=0.903801 head_grad=0.758159 backbone_grad=3.928774
+TRAIN_EPOCH AST_LAST_BLOCK 18/30 loss=0.014585 proxy=0.903801 head_grad=0.618059 backbone_grad=3.586447
+TRAIN_EPOCH AST_LAST_BLOCK 19/30 loss=0.012667 proxy=0.903801 head_grad=0.765615 backbone_grad=4.121716
+TRAIN_EPOCH AST_LAST_BLOCK 20/30 loss=0.010862 proxy=0.903801 head_grad=0.565504 backbone_grad=4.063283
+TRAIN_EPOCH AST_LAST_BLOCK 21/30 loss=0.009483 proxy=0.903801 head_grad=0.634591 backbone_grad=4.213551
+TRAIN_EPOCH AST_LAST_BLOCK 22/30 loss=0.007588 proxy=0.903801 head_grad=0.457552 backbone_grad=3.232266
+EXTENSION_FINISHED 22 17 0.9038005610039294

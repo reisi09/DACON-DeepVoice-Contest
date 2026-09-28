@@ -1,0 +1,302 @@
+[
+  {
+    "name": "D_deep_crop_seed41",
+    "setting": "D_deep_crop",
+    "seed": 41,
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 128,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.2,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.0,
+      "simplified": false
+    },
+    "parameters": 414017,
+    "music_eer": 0.3030119018702939,
+    "balanced_bce": 0.5659641454582747,
+    "panels": {
+      "pure_music": {
+        "music_eer": 0.3051815585475316,
+        "balanced_bce": 0.5865583032486716
+      },
+      "mixture": {
+        "music_eer": 0.4,
+        "balanced_bce": 0.6353649450972111
+      },
+      "splice": {
+        "music_eer": 0.30000000000000004,
+        "balanced_bce": 0.6930536063605266
+      }
+    },
+    "selected_epoch": 3,
+    "epochs_completed": 23,
+    "optimizer_steps": 184,
+    "seconds": 21.383673906326294,
+    "augmentation_totals": {
+      "seen": 23184,
+      "cropped": 14619,
+      "masked": 0,
+      "crop_eligible": 21114,
+      "real_cropped": 951,
+      "fake_cropped": 13668,
+      "input_windows": 564765,
+      "output_windows": 259018
+    }
+  },
+  {
+    "name": "D_deep_crop_seed42",
+    "setting": "D_deep_crop",
+    "seed": 42,
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 128,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 42,
+      "dropout": 0.2,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.0,
+      "simplified": false
+    },
+    "parameters": 414017,
+    "music_eer": 0.31863816695004454,
+    "balanced_bce": 0.5588465481019966,
+    "panels": {
+      "pure_music": {
+        "music_eer": 0.22154222766217868,
+        "balanced_bce": 0.47958045316222736
+      },
+      "mixture": {
+        "music_eer": 0.42500000000000004,
+        "balanced_bce": 0.6689941412137602
+      },
+      "splice": {
+        "music_eer": 0.4,
+        "balanced_bce": 0.6957234452130882
+      }
+    },
+    "selected_epoch": 5,
+    "epochs_completed": 25,
+    "optimizer_steps": 200,
+    "seconds": 15.778456449508667,
+    "augmentation_totals": {
+      "seen": 25200,
+      "cropped": 15936,
+      "masked": 0,
+      "crop_eligible": 22950,
+      "real_cropped": 1074,
+      "fake_cropped": 14862,
+      "input_windows": 613875,
+      "output_windows": 280901
+    }
+  },
+  {
+    "name": "D_deep_crop_seed43",
+    "setting": "D_deep_crop",
+    "seed": 43,
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 128,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 43,
+      "dropout": 0.2,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.0,
+      "simplified": false
+    },
+    "parameters": 414017,
+    "music_eer": 0.3030119018702939,
+    "balanced_bce": 0.5481834582886403,
+    "panels": {
+      "pure_music": {
+        "music_eer": 0.26336189310485514,
+        "balanced_bce": 0.5467605485364517
+      },
+      "mixture": {
+        "music_eer": 0.32499999999999996,
+        "balanced_bce": 0.5755859217587925
+      },
+      "splice": {
+        "music_eer": 0.30000000000000004,
+        "balanced_bce": 0.5868130569638871
+      }
+    },
+    "selected_epoch": 4,
+    "epochs_completed": 24,
+    "optimizer_steps": 192,
+    "seconds": 15.168666362762451,
+    "augmentation_totals": {
+      "seen": 24192,
+      "cropped": 15411,
+      "masked": 0,
+      "crop_eligible": 22032,
+      "real_cropped": 1046,
+      "fake_cropped": 14365,
+      "input_windows": 589320,
+      "output_windows": 266716
+    }
+  },
+  {
+    "name": "S_simple_crop_seed41",
+    "setting": "S_simple_crop",
+    "seed": 41,
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 128,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.2,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.0,
+      "simplified": true
+    },
+    "parameters": 199169,
+    "music_eer": 0.2901789328799288,
+    "balanced_bce": 0.5764365420199037,
+    "panels": {
+      "pure_music": {
+        "music_eer": 0.26336189310485514,
+        "balanced_bce": 0.5410774950777539
+      },
+      "mixture": {
+        "music_eer": 0.42500000000000004,
+        "balanced_bce": 0.6578081950873815
+      },
+      "splice": {
+        "music_eer": 0.30000000000000004,
+        "balanced_bce": 0.6843857718950832
+      }
+    },
+    "selected_epoch": 3,
+    "epochs_completed": 23,
+    "optimizer_steps": 184,
+    "seconds": 13.734479427337646,
+    "augmentation_totals": {
+      "seen": 23184,
+      "cropped": 14619,
+      "masked": 0,
+      "crop_eligible": 21114,
+      "real_cropped": 951,
+      "fake_cropped": 13668,
+      "input_windows": 564765,
+      "output_windows": 259018
+    }
+  },
+  {
+    "name": "S_simple_crop_seed42",
+    "setting": "S_simple_crop",
+    "seed": 42,
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 128,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 42,
+      "dropout": 0.2,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.0,
+      "simplified": true
+    },
+    "parameters": 199169,
+    "music_eer": 0.31863816695004454,
+    "balanced_bce": 0.5701571583453433,
+    "panels": {
+      "pure_music": {
+        "music_eer": 0.26336189310485514,
+        "balanced_bce": 0.52519393878382
+      },
+      "mixture": {
+        "music_eer": 0.42500000000000004,
+        "balanced_bce": 0.643929915621468
+      },
+      "splice": {
+        "music_eer": 0.4,
+        "balanced_bce": 0.6599469485712008
+      }
+    },
+    "selected_epoch": 6,
+    "epochs_completed": 26,
+    "optimizer_steps": 208,
+    "seconds": 14.742432832717896,
+    "augmentation_totals": {
+      "seen": 26208,
+      "cropped": 16586,
+      "masked": 0,
+      "crop_eligible": 23868,
+      "real_cropped": 1118,
+      "fake_cropped": 15468,
+      "input_windows": 638430,
+      "output_windows": 291985
+    }
+  },
+  {
+    "name": "S_simple_crop_seed43",
+    "setting": "S_simple_crop",
+    "seed": 43,
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 128,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 43,
+      "dropout": 0.2,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.0,
+      "simplified": true
+    },
+    "parameters": 199169,
+    "music_eer": 0.2929722289693142,
+    "balanced_bce": 0.5606693848084127,
+    "panels": {
+      "pure_music": {
+        "music_eer": 0.20991432068543453,
+        "balanced_bce": 0.48741639814628274
+      },
+      "mixture": {
+        "music_eer": 0.375,
+        "balanced_bce": 0.6870833601476727
+      },
+      "splice": {
+        "music_eer": 0.4,
+        "balanced_bce": 0.767357160426397
+      }
+    },
+    "selected_epoch": 9,
+    "epochs_completed": 29,
+    "optimizer_steps": 232,
+    "seconds": 16.949835777282715,
+    "augmentation_totals": {
+      "seen": 29232,
+      "cropped": 18645,
+      "masked": 0,
+      "crop_eligible": 26622,
+      "real_cropped": 1260,
+      "fake_cropped": 17385,
+      "input_windows": 712095,
+      "output_windows": 321387
+    }
+  }
+]

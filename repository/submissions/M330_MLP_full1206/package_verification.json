@@ -1,0 +1,36 @@
+{
+  "status": "verified",
+  "zip_sha256": "1f6cfd6c9feacead01d4ebcfd217d10c1796969b1f863ba4b0283d46e7432c7e",
+  "fresh_zip_extraction": true,
+  "offline_cpu_inference": true,
+  "files": 2,
+  "seconds": 53.229058027267456,
+  "predictions": [
+    {
+      "ID": "smoke",
+      "FILE_FAKE_PROB": "0.6498595503",
+      "VOICE_FAKE_PROB": "0.9993647933",
+      "MUSIC_FAKE_PROB": "0.1010290377",
+      "VOICE_PRESENT_PROB": "0.6502726078",
+      "MUSIC_PRESENT_PROB": "0.0603044517"
+    },
+    {
+      "ID": "025e3d128394bcf37fdd0947",
+      "FILE_FAKE_PROB": "0.281891814",
+      "VOICE_FAKE_PROB": "0.9187143445",
+      "MUSIC_FAKE_PROB": "0.5300406575",
+      "VOICE_PRESENT_PROB": "0.0224061459",
+      "MUSIC_PRESENT_PROB": "0.5318305492"
+    }
+  ],
+  "cpu_captured_feature_parity_max_abs_error": 2.0294210756333086e-11,
+  "gpu_cached_reference_max_abs_error": 1.9071964718619938e-07,
+  "cross_environment_max_abs_error": 0.006940650919647129,
+  "cross_environment_parity": false,
+  "limitation": "CPU and training A100 use different device and torch/librosa/numpy versions. Music difference0.00694 remains cross-environment drift; no claim of device-independent parity.",
+  "gpu_real_audio_files": 1,
+  "tolerance": 0.0001,
+  "L4_full_runtime_verified": false,
+  "official_score": null,
+  "utc": 1789507615.0996869
+}

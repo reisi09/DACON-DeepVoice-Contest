@@ -1,0 +1,163 @@
+{
+  "embedded_source": {
+    "matches_workspace_sources": true,
+    "member_count": 29,
+    "members": [
+      "graph_scoring.py",
+      "music_temporal.py",
+      "redesign_assets.py",
+      "redesign_data.py",
+      "redesign_evaluate.py",
+      "redesign_features.py",
+      "redesign_file.py",
+      "redesign_notebook_integration.py",
+      "redesign_notebook_results.py",
+      "redesign_notebook_runtime.py",
+      "redesign_train.py",
+      "temporal_augmentation.py",
+      "v6_data.py",
+      "v7_ablation.py",
+      "redesign_data_validation.py",
+      "redesign_mix_audio.py",
+      "redesign_evaluation_common.py",
+      "redesign_features_cache.py",
+      "redesign_features_runtime.py",
+      "redesign_oof_validation.py",
+      "redesign_fit.py",
+      "redesign_oof.py",
+      "redesign_predictions.py",
+      "redesign_voice.py",
+      "v6_core.py",
+      "v6_train.py",
+      "redesign_checkpoint.py",
+      "redesign_models.py",
+      "v6_runtime.py"
+    ],
+    "payload_sha256": "285fd682e08f352381a8d20765df2bad5f17fc957d7d2eb55e9235ac8291e058",
+    "zip_crc_verified": true
+  },
+  "evidence_markdown": {
+    "bytes": 7477,
+    "path": ".omo/evidence/redesign-notebook-20260917/notebook.md",
+    "sha256": "ebf7be1ec5da99ebd8a60adbccd5cdc9eb2f019193013346e6d964c51e47d8f7"
+  },
+  "executions": {
+    "cpu": {
+      "actual_data_performance_verified": false,
+      "candidate_status": "rejected",
+      "export_sha256": "fa6003708f3fc4b242a9f73e7f2b5cbe746590300ad9c108a8992678b6b57da4",
+      "export_verified": true,
+      "final_submission_zip": false,
+      "grouped_evaluation": true,
+      "h100_verified": false,
+      "ineligible_lock_rejected": true,
+      "l4_verified": false,
+      "oof_member_count": 2,
+      "oof_proof_names": [
+        [
+          "music",
+          "voice"
+        ],
+        [
+          "music",
+          "voice"
+        ]
+      ],
+      "oof_relation_fit": true,
+      "ordered_voice_weight_hash_count": 2,
+      "real_model_fit": true,
+      "save_load_prediction_max_difference": 0.0,
+      "save_load_upstream_identity_equal": true,
+      "seed_count": 2,
+      "status": "algorithm_qa_only",
+      "trained_voice_prediction_max_delta": 2.3305416107177734e-05
+    },
+    "default": {
+      "all_expensive_stages_not_run": true,
+      "passed": true
+    },
+    "expired_budget": {
+      "archive_sha256": "ee9cb98ee632cd7dad6b879ed49cb39d08ff2336dbf9a911028069e0e8f8dfd7",
+      "archive_verified": true,
+      "passed": true,
+      "stage": {
+        "detail": "NotebookContractError: GPU stage deadline reached; reserve time for export",
+        "status": "interrupted",
+        "unix": 1789602231.227306
+      }
+    }
+  },
+  "files": {
+    "clean_notebook": {
+      "bytes": 136641,
+      "path": "DACON_Redesign_H100_Experiments.ipynb",
+      "sha256": "781d89c868773c12e539f935dca31194cae37c47d94a291a87f77854ec501fab"
+    },
+    "cpu_executed_notebook": {
+      "bytes": 154028,
+      "path": ".omo/evidence/redesign-notebook-20260917/DACON_Redesign_H100_Experiments_CPU_Executed.ipynb",
+      "sha256": "bea26bb8d858614f03c961afa9a95dc6c35bd2b68b5dfb982756727c8cedb105"
+    },
+    "cpu_export": {
+      "bytes": 11468817,
+      "path": ".omo/evidence/redesign-notebook-20260917/cpu-notebook-final/cpu_integration/algorithm_qa_results.zip",
+      "sha256": "fa6003708f3fc4b242a9f73e7f2b5cbe746590300ad9c108a8992678b6b57da4"
+    },
+    "cpu_log": {
+      "bytes": 425,
+      "path": ".omo/evidence/redesign-notebook-20260917/cpu-notebook-final.log",
+      "sha256": "185ba438bac1a6a0de330eb72d2734f8f8c61dfc4669367560b684507275326e"
+    },
+    "default_executed_notebook": {
+      "bytes": 142398,
+      "path": ".omo/evidence/redesign-notebook-20260917/DACON_Redesign_H100_Experiments_Default_Executed.ipynb",
+      "sha256": "97896ba7b38fb3e9375d3574f2c8fc2fc1d8a5d596acd0280bdf27a8fb18ef06"
+    },
+    "default_log": {
+      "bytes": 431,
+      "path": ".omo/evidence/redesign-notebook-20260917/default-notebook-final.log",
+      "sha256": "cfe91ae88feef5853c06bc94fa7c25d01d76c4b3392ce72e4fe95c617a7c1877"
+    },
+    "expired_executed_notebook": {
+      "bytes": 143855,
+      "path": ".omo/evidence/redesign-notebook-20260917/DACON_Redesign_H100_Experiments_Expired_Executed.ipynb",
+      "sha256": "5476eb3da265b901d77dfcf0946ab516fcf982d25d95603087513f47bf21c28d"
+    },
+    "expired_export": {
+      "bytes": 2149,
+      "path": ".omo/evidence/redesign-notebook-20260917/expired-notebook-final/exports/interrupted_results.zip",
+      "sha256": "ee9cb98ee632cd7dad6b879ed49cb39d08ff2336dbf9a911028069e0e8f8dfd7"
+    },
+    "expired_log": {
+      "bytes": 430,
+      "path": ".omo/evidence/redesign-notebook-20260917/expired-notebook-final.log",
+      "sha256": "0468a1a402032fa8a0102197f4963736e32499cab1ae947eb45fd1a00574312a"
+    }
+  },
+  "limitations": {
+    "actual_h100_run": false,
+    "actual_l4_run": false,
+    "actual_labeled_performance": false,
+    "sealed_opened": false,
+    "submission_zip": false
+  },
+  "notebook": {
+    "cells": 22,
+    "clean_outputs": 0,
+    "sha256": "781d89c868773c12e539f935dca31194cae37c47d94a291a87f77854ec501fab"
+  },
+  "owned_sources": {
+    "build_redesign_notebook.py": "9e33228622e94ecf7978259446b4841f654bffe17c03ed247a36b4f1ad49895f",
+    "redesign_notebook_integration.py": "8575e8cb6cc0facef72a52b12a8681822c0a605e3b18191d5bc58d8a60fcb480",
+    "redesign_notebook_results.py": "0305a0973a3210578efe9790c63414031d485c18709373fae7d896b28810d45b",
+    "redesign_notebook_runtime.py": "8c7fdd3ccc96f4a54a056668367e7ebfd2112b0fad3493da6768df5d99505776",
+    "test_redesign_notebook.py": "4fd25cc770fa713aee276c3348f5dbb13d541af25cc9951c626c08780b342abb"
+  },
+  "static_checks": {
+    "git_diff_check": true,
+    "no_excuse_violations": 0,
+    "py_compile": true,
+    "ruff": "unavailable in current environment; not claimed"
+  },
+  "status": "verified_algorithm_qa_only"
+}

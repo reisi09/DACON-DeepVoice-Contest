@@ -1,0 +1,9 @@
+V4 data commit verification
+
+Scenario: scoped local data-preparation commit from base f69f4bf.
+Commit invocation: git commit -m 'Prepare full-source V4 data with disjoint validation panels'
+Scope invocation: git diff-tree --no-commit-id --name-status -r HEAD
+Binary/path invocation: git diff-tree --no-commit-id --name-only -r HEAD | rg '\\.(wav|mp3|flac|ogg|zip|part[0-9]+|safetensors|pt|bin|npy|parquet)$'
+Size invocation: git diff-tree --no-commit-id --name-only -r HEAD, then git cat-file -s HEAD:<path>
+
+Observed before this record was added: 36 committed paths, no audio/blob-like paths, and no committed file over 10 MiB. The V4 validation audio remains ignored and uncommitted; metadata-only validation files are committed.

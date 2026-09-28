@@ -1,0 +1,19 @@
+{
+  "numpy_original": "2.4.6",
+  "numpy_fixed": "1.26.4",
+  "torch": "2.7.1",
+  "device": "cpu",
+  "actual_entrypoint": true,
+  "files": 3,
+  "all_output_probabilities_finite_and_in_range": true,
+  "original_cpu_vs_fixed_cpu_max_abs": {
+    "qa_00": 1.0408340855860843e-17,
+    "qa_01": 1.1102230246251565e-16,
+    "qa_02": 0.0
+  },
+  "tolerance": 1e-05,
+  "within_tolerance": true,
+  "zip_members_match_executed_package": true,
+  "seconds": 46.939812541007996,
+  "official_l4_validated": false
+}

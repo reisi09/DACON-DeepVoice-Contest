@@ -1,0 +1,36 @@
+{
+  "status": "complete",
+  "network_bytes_this_phase": 0,
+  "source_files": 2932,
+  "source_groups": 2932,
+  "provider_counts": {
+    "udio": 1466,
+    "suno": 1466
+  },
+  "source_bytes": 1999256076,
+  "retained_bank_bytes": 2139236181,
+  "bank_cap_bytes": 2200000000,
+  "selected_rows": 2932,
+  "rejected_rows": 0,
+  "metadata_labels": {
+    "mostly fake": 2433,
+    "half fake": 499
+  },
+  "discarded_complete_archive_bytes": 13630475011,
+  "selection_sha256": "3b4fb75aa23507c078c257eda2f14fef1332a7ded1410f1e939436857292264a",
+  "inventory_sha256": "32369bb3b5e209710068bcb9d2192b43bc82692843abc058c4994f97a0677acf",
+  "locks_sha256": "2ca4cf947b2dddd72b4767337ac94601d10b380a9b1b76414fa835e46f640846",
+  "verifier_sha256": "6ac4e72ac9640e28f368a3cc48d2ef6a81b66bcb0b3045347c854ba16e0250bc",
+  "partition": "unassigned_bank",
+  "old_and_locked_id_overlap": 0,
+  "old_and_locked_exact_hash_overlap": 0,
+  "within_bank_source_or_pcm_exact_duplicates": 0,
+  "new_generator_family": false,
+  "decoder": "seekable MP3; ffmpeg float32 little endian mono16k, complete duration; no view/padding",
+  "limitations": [
+    "Source-documented generated music; voice unknown; no independent listening",
+    "Half/mostly fake are source prompting categories, not audio segment percentages",
+    "No model split assigned; no general near-duplicate or unknown-reference-independence proof",
+    "Unselected originals in deleted acquisition archives are not retained"
+  ]
+}

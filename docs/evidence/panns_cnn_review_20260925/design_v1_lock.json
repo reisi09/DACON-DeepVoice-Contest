@@ -1,0 +1,49 @@
+{
+  "design_version": "1.0",
+  "status": "finalized",
+  "date": "2026-09-25",
+  "scope": "design finalization and documented workflow only",
+  "base_commit": "2e58d9330809b92e28058cf77c80c218c6ff7b1c",
+  "spec": {
+    "path": "docs/superpowers/specs/2026-09-25-panns-cnn-expanded-design.md",
+    "sha256": "1b06777d098543e87c3f03cd00e7657765d11f068dfbffda3b39021ef6c1dde2"
+  },
+  "workflow": {
+    "path": "docs/superpowers/plans/2026-09-25-panns-cnn-v1-workflow.md",
+    "sha256": "940bb733759aeacfb4602572299b2af09dabfd917366919d7b4d2b3dd0beb095",
+    "execution_started": false
+  },
+  "prior_review": {
+    "path": "docs/evidence/panns_cnn_review_20260925/expanded_design_review.json",
+    "sha256": "91521fbb876883c98c413cd1f47724ff76947f954998f38f460813442f920c3e",
+    "document_commit": "2e58d9330809b92e28058cf77c80c218c6ff7b1c",
+    "new_claude_call_in_finalization": false
+  },
+  "primary_candidate": "R3",
+  "required_conditions": [
+    "R0",
+    "R1",
+    "R2",
+    "R3",
+    "R5"
+  ],
+  "training_seeds": [
+    41,
+    42,
+    43
+  ],
+  "training_runs_excluding_frozen_reference": 12,
+  "conditional_followups": [
+    "R4",
+    "R6",
+    "D1",
+    "D2",
+    "D+"
+  ],
+  "deployment_seed": 41,
+  "implementation_started": false,
+  "data_readiness_verified": false,
+  "full_training_budget_locked": false,
+  "new_gpu_started": false,
+  "quality_improvement_proven": false
+}

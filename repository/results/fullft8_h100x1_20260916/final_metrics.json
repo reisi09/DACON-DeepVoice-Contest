@@ -1,0 +1,90 @@
+[
+  {
+    "trial": "01_S0_MERT_frozen",
+    "selected_epoch": 5,
+    "tune_music_eer": 0.24609343373006232,
+    "test_music_eer": 0.2666666666666667,
+    "test_music_count": 150,
+    "held_generator_eer": null,
+    "best_checkpoint_sha256": "1dc5b01ab976e38a2ee22eb29a83766c12528694fc19e31d5ce0f65a290233e0",
+    "batch_size": 1,
+    "seed": 41
+  },
+  {
+    "trial": "02_S0_MERT_fullft",
+    "selected_epoch": 3,
+    "tune_music_eer": 0.23046716865031175,
+    "test_music_eer": 0.3194444444444444,
+    "test_music_count": 150,
+    "held_generator_eer": null,
+    "best_checkpoint_sha256": "0866b26c05ff0b6e345aa387b70479e7e74a2d80af0c18af0138f1247f9ccd9c",
+    "batch_size": 1,
+    "seed": 41
+  },
+  {
+    "trial": "03_S0_EAT_fullft",
+    "selected_epoch": 1,
+    "tune_music_eer": 0.21763419965994657,
+    "test_music_eer": 0.30000000000000004,
+    "test_music_count": 150,
+    "held_generator_eer": null,
+    "best_checkpoint_sha256": "e7a35665ad03878e661bfe6bd302602c12859b0b76dd99c07cb65da069ebb627",
+    "batch_size": 1,
+    "seed": 41
+  },
+  {
+    "trial": "04_S1_MERT_fullft",
+    "selected_epoch": 8,
+    "tune_music_eer": 0.10069444444444445,
+    "test_music_eer": 0.24859550561797755,
+    "test_music_count": 190,
+    "held_generator_eer": 0.2708333333333333,
+    "best_checkpoint_sha256": "40ecb5d247dce24e49d24eba3b3e709f506ef1929ae0f7ee56d37e094d630a9c",
+    "batch_size": 1,
+    "seed": 41
+  },
+  {
+    "trial": "05_S1_EAT_fullft",
+    "selected_epoch": 6,
+    "tune_music_eer": 0.00694444444444442,
+    "test_music_eer": 0.24859550561797755,
+    "test_music_count": 190,
+    "held_generator_eer": 0.25,
+    "best_checkpoint_sha256": "7c17e95ca4597b5a51387ad6abf39a71b0bd067632ed65151079cf8ec6a2d116",
+    "batch_size": 4,
+    "seed": 41
+  },
+  {
+    "trial": "06_S2_MERT_fullft",
+    "selected_epoch": 2,
+    "tune_music_eer": 0.09722222222222224,
+    "test_music_eer": 0.33239700374531833,
+    "test_music_count": 190,
+    "held_generator_eer": 0.33333333333333337,
+    "best_checkpoint_sha256": "e4a8e27f5f139c41e6a82d91bb01037d39ff7e17aeafe72016eec17ebb11d977",
+    "batch_size": 4,
+    "seed": 41
+  },
+  {
+    "trial": "07_S2_EAT_fullft",
+    "selected_epoch": 4,
+    "tune_music_eer": 0.013888888888888895,
+    "test_music_eer": 0.1676029962546816,
+    "test_music_count": 190,
+    "held_generator_eer": 0.16666666666666663,
+    "best_checkpoint_sha256": "81bf4daac2eb11857d9562a0ff01a0ddbfadd92237210a2c7cbcf053880fc6b6",
+    "batch_size": 4,
+    "seed": 41
+  },
+  {
+    "trial": "08_S0_adapted_fullft",
+    "selected_epoch": 6,
+    "tune_music_eer": 0.1707554044206947,
+    "test_music_eer": 0.25277777777777777,
+    "test_music_count": 150,
+    "held_generator_eer": null,
+    "best_checkpoint_sha256": "a072a9ddd7dfa1c2e576eadecb54012471bee59f5993d9fd461aabd7170f2fd5",
+    "batch_size": 1,
+    "seed": 41
+  }
+]

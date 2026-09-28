@@ -1,0 +1,41 @@
+VERIFIED_SHARD 1 rows=128/3668 bytes=60978775
+VERIFIED_SHARD 2 rows=256/3668 bytes=60931635
+VERIFIED_SHARD 3 rows=384/3668 bytes=60974900
+VERIFIED_SHARD 4 rows=512/3668 bytes=60974984
+VERIFIED_SHARD 5 rows=640/3668 bytes=60978364
+VERIFIED_SHARD 6 rows=768/3668 bytes=61007019
+VERIFIED_SHARD 7 rows=896/3668 bytes=60966418
+VERIFIED_SHARD 8 rows=1024/3668 bytes=60835969
+VERIFIED_SHARD 9 rows=1152/3668 bytes=60895861
+VERIFIED_SHARD 10 rows=1280/3668 bytes=60946748
+VERIFIED_SHARD 11 rows=1408/3668 bytes=60977374
+VERIFIED_SHARD 12 rows=1536/3668 bytes=60885994
+VERIFIED_SHARD 13 rows=1664/3668 bytes=60679347
+VERIFIED_SHARD 14 rows=1792/3668 bytes=60533938
+VERIFIED_SHARD 15 rows=1920/3668 bytes=60552589
+VERIFIED_SHARD 16 rows=2048/3668 bytes=60553779
+VERIFIED_SHARD 17 rows=2176/3668 bytes=60523356
+VERIFIED_SHARD 18 rows=2304/3668 bytes=60678696
+VERIFIED_SHARD 19 rows=2432/3668 bytes=60775058
+VERIFIED_SHARD 20 rows=2560/3668 bytes=60777024
+VERIFIED_SHARD 21 rows=2688/3668 bytes=60767890
+VERIFIED_SHARD 22 rows=2816/3668 bytes=60783041
+VERIFIED_SHARD 23 rows=2944/3668 bytes=54110996
+VERIFIED_SHARD 24 rows=3072/3668 bytes=50387810
+VERIFIED_SHARD 25 rows=3200/3668 bytes=50100442
+VERIFIED_SHARD 26 rows=3328/3668 bytes=50245192
+Traceback (most recent call last):
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/expanded_upload.py", line 145, in <module>
+    prepare()
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/expanded_upload.py", line 106, in prepare
+    verified = transfer(archive, PREFIX + f'shard_{number:03d}/')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/expanded_upload.py", line 70, in transfer
+    cloud._call(['volume', 'upload', VOLUME, str(path), '--remote-prefix', prefix, '--overwrite'], timeout=1800)
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/redesign_h100_watch.py", line 148, in _call
+    raise RuntimeError(f"vesslctl {command} failed with exit code {process.returncode}")
+RuntimeError: vesslctl volume upload failed with exit code 1
+VERIFIED_SHARD 27 rows=3456/3668 bytes=46590588
+VERIFIED_SHARD 28 rows=3584/3668 bytes=34173202
+VERIFIED_SHARD 29 rows=3668/3668 bytes=10636250
+{"rows": 4627, "new_originals": 3668, "windows": 13660, "ast_prefix_bytes": 25471856640, "manifest_sha256": "f9c8db0bdd1d8dcc15c9a3cba0e93f0da414d4efc1c590f0e3c5e8f3fce54f8b", "source_sha256": "4554a50413dcfb5b7aa3e34c2e42c680aeeb40675db617208193524fdff6d85c", "selection_sha256": "bf4295b0181babbc474b067fb258639d090c4adf2cc254bbb0cbff69e454a3bf", "remote_audio_bytes": 1634223239, "all_shards_readback_verified": true, "local_audio_shards_retained": false, "gpu_started": false}

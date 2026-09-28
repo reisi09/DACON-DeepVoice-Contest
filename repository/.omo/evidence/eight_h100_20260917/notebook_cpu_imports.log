@@ -1,0 +1,24 @@
+{
+  "imports": [
+    "imageio_ffmpeg",
+    "nbformat",
+    "nbclient",
+    "ipykernel",
+    "eight_contract",
+    "eight_features",
+    "eight_ablation",
+    "eight_probes",
+    "eight_lora_train"
+  ],
+  "notebook_valid": true,
+  "code_cell_count": 9,
+  "ordered_tokens": {
+    "validate_manifest(dataset)": 4,
+    "eight_features.extract(CONFIG_PATH)": 7,
+    "eight_ablation.run(CONFIG_PATH, 1)": 9,
+    "eight_probes.run(CONFIG_PATH, 2)": 11,
+    "eight_probes.run(CONFIG_PATH, 5)": 11,
+    "for number in (3, 4, 6, 8)": 13,
+    "eight_lora_train.run(CONFIG_PATH)": 15
+  }
+}

@@ -1,0 +1,10 @@
+scenario: postrun artifact semantic and immutability verification
+invocation: Python JSON/CSV/NPZ assertions plus immutable-input hash comparison
+artifact_count 9 prediction_rows 224 contrast_rows 56 lock_before_predictions True partial_files 0
+input_top_level_hash_expected_and_observed: 0ae54ff008a25d2521380e7b79530f61b6a35b1b21042adcb7f0e6524b53fa60
+0ae54ff008a25d2521380e7b79530f61b6a35b1b21042adcb7f0e6524b53fa60  -
+input_E1_checkpoint_set_hash_expected_and_observed: b5c201e6c78ae40f3955645c452f1a7f90b134132e91c2a1ec737d3f0f72e8a9
+b5c201e6c78ae40f3955645c452f1a7f90b134132e91c2a1ec737d3f0f72e8a9  -
+verified_output_files_newer_than_lock:
+       0
+observable: all assertions passed; expected input hashes reproduced; no verified-output file is newer than the postrun lock

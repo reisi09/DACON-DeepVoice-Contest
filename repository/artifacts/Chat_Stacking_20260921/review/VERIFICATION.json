@@ -1,0 +1,35 @@
+{
+  "return_zip_sha256": "1f35252e0d005be18cb456736c74f62eeaf8e10bd17a437adb91e78decac4d32",
+  "return_manifest_verified_files": 74,
+  "input_manifest_verified_files": 133,
+  "python": "3.11.15",
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "torch": "2.7.1",
+    "pytest": "9.1.1"
+  },
+  "pytest": {
+    "passed": 12,
+    "deselected": 2,
+    "omitted": "XGBoost unavailable: XGB roundtrip and all-six-systems tests"
+  },
+  "replayed_real_caches": 10,
+  "max_abs_reference_error": 0.0012563467025756836,
+  "reference_tolerance": 0.002,
+  "synthetic_systems": {
+    "F0/lr": "OK",
+    "F0/et": "OK",
+    "F0/xgb": "NOT_RUN",
+    "F1/lr": "OK",
+    "F1/et": "OK",
+    "F1/xgb": "NOT_RUN"
+  },
+  "serialization_rerun": "NOT_RUN: skops and xgboost absent",
+  "preprocessing_gap_reproduced": true,
+  "smoke_serialization_report_written": false,
+  "gpu_audio_parity": "NOT_RUN",
+  "independent_quality_gain": "NOT_EVALUATED",
+  "submission": "NOT_RUN"
+}

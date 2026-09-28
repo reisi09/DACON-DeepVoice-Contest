@@ -1,0 +1,28 @@
+{
+  "purpose": "SYNTHETIC WIRING ONLY. Metrics here are NOT evidence of audio detection performance.",
+  "systems": {
+    "F0/lr": "OK",
+    "F0/et": "OK",
+    "F0/xgb": "OK",
+    "F1/lr": "OK",
+    "F1/et": "OK",
+    "F1/xgb": "OK"
+  },
+  "serialization": {
+    "lr": {
+      "status": "PASS",
+      "max_abs_roundtrip_error": 0.0,
+      "manifest_sha256": "43d55c4454ecacb6577c641ba040b6cbf1bd96620bade5730dfb77b25e5ff720"
+    },
+    "et": {
+      "status": "PASS",
+      "max_abs_roundtrip_error": 0.0,
+      "manifest_sha256": "42843df463286f4321f1cb958120011fd1b2270fa5519ab629e648508a1526b0"
+    },
+    "xgb": {
+      "status": "PASS",
+      "max_abs_roundtrip_error": 0.0,
+      "manifest_sha256": "9dc3b56188f21180d657657b98f1ec7508bdb2ded165670f8abe4352d710dab5"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+[src/libmpg123/layer3.c:INT123_do_layer3():1774] error: part2_3_length (1120) too large for available bit count (1048)
+/data/code/data_v4/build_manifest.py:518: UserWarning: PySoundFile failed. Trying audioread instead.
+  return librosa.load(row['orig_path'], sr=SR, mono=True, offset=row.get('crop_start_s', 0.),
+/root/envs/data/lib/python3.11/site-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+[src/libmpg123/layer3.c:INT123_do_layer3():1774] error: part2_3_length (2432) too large for available bit count (2200)
+[src/libmpg123/layer3.c:INT123_do_layer3():1774] error: part2_3_length (1152) too large for available bit count (1048)
+[src/libmpg123/layer3.c:INT123_do_layer3():1774] error: part2_3_length (1088) too large for available bit count (1048)
+[src/libmpg123/layer3.c:INT123_do_layer3():1774] error: part2_3_length (1152) too large for available bit count (1048)
+/data/code/data_v4/build_manifest.py:518: UserWarning: PySoundFile failed. Trying audioread instead.
+  return librosa.load(row['orig_path'], sr=SR, mono=True, offset=row.get('crop_start_s', 0.),
+/root/envs/data/lib/python3.11/site-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+/data/code/data_v4/build_manifest.py:518: UserWarning: PySoundFile failed. Trying audioread instead.
+  return librosa.load(row['orig_path'], sr=SR, mono=True, offset=row.get('crop_start_s', 0.),
+/root/envs/data/lib/python3.11/site-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+[src/libmpg123/layer3.c:INT123_do_layer3():1774] error: part2_3_length (1216) too large for available bit count (1048)
+[src/libmpg123/layer3.c:INT123_do_layer3():1774] error: part2_3_length (1056) too large for available bit count (1048)
+/data/code/data_v4/build_manifest.py:518: UserWarning: PySoundFile failed. Trying audioread instead.
+  return librosa.load(row['orig_path'], sr=SR, mono=True, offset=row.get('crop_start_s', 0.),
+/root/envs/data/lib/python3.11/site-packages/librosa/core/audio.py:184: FutureWarning: librosa.core.audio.__audioread_load
+	Deprecated as of librosa version 0.10.0.
+	It will be removed in librosa version 1.0.
+  y, sr_native = __audioread_load(path, offset, duration, dtype)
+[src/libmpg123/layer3.c:INT123_do_layer3():1774] error: part2_3_length (1088) too large for available bit count (1048)
+[src/libmpg123/layer3.c:INT123_do_layer3():1774] error: part2_3_length (1120) too large for available bit count (1048)
+{
+ "constructed_mix": 1500,
+ "constructed_song": 400,
+ "constructed_splice": 121,
+ "constructed_enhanced": 300
+}

@@ -1,0 +1,63 @@
+{
+  "rows": 1029,
+  "mixtures": 64,
+  "role_counts": {
+    "dev_train": 633,
+    "dev_select": 122,
+    "test_generator": 176,
+    "test_source": 98
+  },
+  "atomic_groups": {
+    "dev_train": 215,
+    "dev_select": 42,
+    "test_generator": 60,
+    "test_source": 32
+  },
+  "connected_components": {
+    "dev_train": 197,
+    "dev_select": 40,
+    "test_generator": 58,
+    "test_source": 30
+  },
+  "voice_authenticity_masked_for_generated_music": 32,
+  "locked_label_coverage": {
+    "FILE_FAKE": {
+      "classes": [
+        "0",
+        "1"
+      ],
+      "unknown": 0
+    },
+    "VOICE_FAKE": {
+      "classes": [
+        "0",
+        "1"
+      ],
+      "unknown": 124
+    },
+    "MUSIC_FAKE": {
+      "classes": [
+        "0",
+        "1"
+      ],
+      "unknown": 126
+    },
+    "VOICE_PRESENT": {
+      "classes": [
+        "0",
+        "1"
+      ],
+      "unknown": 100
+    },
+    "MUSIC_PRESENT": {
+      "classes": [
+        "0",
+        "1"
+      ],
+      "unknown": 0
+    }
+  },
+  "development_manifest_sha256": "4fd72e3731de71c5ae4fccd4ca8a1e4d05f9e88a5f8143a60209e7cf9c2de01a",
+  "locked_manifest_sha256": "a11ae794de70f83c0a325f884d8ba920b4a1b3653a2936777a08a0be7c0c735d",
+  "pcm_index_sha256": "71e8569ae1f464b9810a2727260cd0e17f88c42b52d39e72786f497eeac0d41c"
+}

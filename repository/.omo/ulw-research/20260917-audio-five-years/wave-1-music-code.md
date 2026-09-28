@@ -1,0 +1,26 @@
+# Music implementation verification
+
+ObserverM:14queries,sixauthorrepospinned/corepathsread;oneisolatedCPUnumericalverification,noGPU/weights/data.
+
+| Repository | SHA | Finding |
+|---|---|---|
+| deezer/deepfake-detector |edc94ad04b721e4ba59ccfb25e14606ddaa4a78a|44.1k/.78sdefault;codecreconstructionlabelsnotautomaticDACONlabels;CCBYNC|
+| deezer/ismir25-ai-music-detector |dc8713a24bc3a593ac44fef96897cdde67e93d26|FFTlowerenvelope+LR;defaults5–16k/44.1k;16kfrequencylimitsmustchange;filenameclassrandomsplitreplace|
+| thomas0barand/robust-deepfake-detector |c4aa1df01a183f59fa98fcc085fb1cddafb6e5a3|Python>=3.13vscompetition3.11;variantsflattenedbeforerandomsplit;convolvefalsepredictiondefault|
+| Chaolei98/MusicDET |087a758955a638dca68ef0dcbb81107fce48d60f|Onlytrainreal,mixeddevselection;testEERbestpolarity;noinspecteddetectorcheckpoint;ActNormdefect|
+| MAAP-LAB/CoMoE |12dc36be417bbe6d14816a5f514a3290dec19505|Two-lineREADMEonly,noimplementation/checkpoint/license|
+| lcrosvila/ai-music-detection |29a8b12bfddcd79f4fd4cc64ef29e293f666978b|Wrapper48kCLAP;train-onlyscaler;as_completedembeddingswithoriginal-orderlabelsmisalignmentrisk|
+
+CLAPmodelcard/pklavailabilityverifiedbutpickleNOTloaded;trainedpublishedartifactnotprovenaffectedbycurrenthelper. ModelcardlicenseandGitHubcode/datapermissionsdistinct.
+
+## ActNorm executed numerical check
+
+Source:https://github.com/Chaolei98/MusicDET/blob/087a758955a638dca68ef0dcbb81107fce48d60f/NF_model/glow_modules.py#L60
+
+CPUtorch2.7.1,AST-extractedactual_ActNormclass(lines60–91),initializedbias0/logs=log2,input1×1×2×2. Output2x. Returnedlogdet0;autogradJacobianlogdet2.772588722239781=4log2. FlowStep/globalsumcallchaincontainsnocompensatingterm. Thisconfirmscurrentfunctionaccountingdefect,notinvalidityofpaperEER. Missingtermpersampleconstantatfixedshape/model,whiletrainingobjective/gradientsdiffer.
+
+Beforeflowpilot:correctActNorm,selectonREALdevifclaimstrictreal-only,lockscorepolarityindev,useofficialdiscreteEER,recordinputnativeSR. Do notcopyMusicDET16kMERTwrapperoverproject24kresampling.
+
+## EXPAND
+
+Spectralstabilityandcodec-pairselectionareproposedexperiments,notunreadliteratureclaims. Neuralreconstructionsquarantineduntiltasklabelresolved;doNOTimportpositivesautomatically. CLAPestimatorfeaturecount/classmappingfutureartifactcheck;noPickleunpicklinginresearch. CoMoEfuturecodeavailabilitygapclosedasofdate. No GPUcandidateisreadywithoutlocalvalidation.

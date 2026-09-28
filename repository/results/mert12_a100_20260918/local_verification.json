@@ -1,0 +1,37 @@
+{
+  "status": "passed_local_contracts_gpu_pending",
+  "source_sha256": {
+    "mert12_full_refit.py": "0f503a9fd9783de7e6de3ca250fd0a912dcb613f4dfa20d69dcf2ef3d945e990",
+    "mert12_submission.py": "70cfd7e2a894d6d4b7545d93c8aaf023846cb0ebae4a2ba9a11df148aaa74155",
+    "package_mert12_submission.py": "077a58802e00e29ad3083ad0a82584bac1bbaad546934001eb124bfd3ba0e8c1",
+    "DACON_MERT12_Full_A100.ipynb": "2c044eb35b4b452a794d52226e4d1bb7091f352231e1538d5ce28107277e3edb",
+    "test_mert12_submission.py": "eef2f9c191bf622bca013a0ad3d9321c41b40c52b2853ff0b6b2bc784e2e9e3b"
+  },
+  "checks": [
+    {
+      "scenario": "audited full-data feature and sampler contract",
+      "invocation": ".venv/bin/python inline verifier using eligible_rows, load_features, coverage_draws",
+      "observable": "1322x1024 finite matrix; 27 identical asset hashes; old sampler 1213 unique and 109 missing; corrected sampler 1322 unique with minimum exposure 1 for seeds 41,42,43",
+      "artifact": "_workspace/mert12_a100_20260918/upload/joined_data_audit.json"
+    },
+    {
+      "scenario": "exact-tail padding, full coverage, serialized-head parity, cached/raw smoke contract, notebook CLI parser alignment",
+      "invocation": ".venv/bin/python -m pytest -q test_mert12_submission.py --junitxml=.omo/evidence/mert12_submission_build/pytest.xml",
+      "observable": "5 passed",
+      "artifact": ".omo/evidence/mert12_submission_build/pytest.xml"
+    },
+    {
+      "scenario": "Python and notebook syntax plus mandatory programming rules",
+      "invocation": "py_compile, nbformat.validate plus compile of every code cell, check-no-excuse-rules.py, git diff --check",
+      "observable": "all passed; notebook order scope,paths,train,package,smoke,summary; no rule violations",
+      "artifact": "DACON_MERT12_Full_A100.ipynb"
+    }
+  ],
+  "pending_runtime_evidence": [
+    "output/mert12_full/gpu_training_receipt.json",
+    "output/mert12_full/batch_benchmark.json",
+    "output/MERT12_full_submit.json",
+    "output/submission_smoke.json",
+    "output/DACON_MERT12_Full_A100_Executed.ipynb"
+  ]
+}

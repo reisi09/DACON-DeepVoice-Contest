@@ -1,0 +1,1107 @@
+{
+  "eight": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/eight_h100_20260917/dataset/manifest.csv",
+    "sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+    "rows": 7101,
+    "unique_ids": 7101,
+    "unique_recorded_audio_hashes": 7101,
+    "total_connected_components": 256,
+    "splits": {
+      "calibration": {
+        "rows": 1880,
+        "connected_components_all_views": 30,
+        "base_rows": 404,
+        "base_components": 45,
+        "base_music": 200,
+        "base_music_components": 42,
+        "base_speech": 204,
+        "base_speech_group_atoms": 107,
+        "base_labels": {
+          "FILE_FAKE": {
+            "1": 271,
+            "0": 133
+          },
+          "MUSIC_FAKE": {
+            "UNKNOWN": 204,
+            "1": 169,
+            "0": 31
+          },
+          "VOICE_FAKE": {
+            "1": 102,
+            "0": 102,
+            "UNKNOWN": 200
+          },
+          "MUSIC_PRESENT": {
+            "0": 204,
+            "1": 200
+          },
+          "VOICE_PRESENT": {
+            "1": 204,
+            "UNKNOWN": 200
+          }
+        },
+        "base_duration_seconds": {
+          "7.46000000": 1,
+          "6.03043750": 1,
+          "7.81987500": 1,
+          "8.00000000": 292,
+          "6.67987500": 1,
+          "5.48000000": 1,
+          "7.60000000": 1,
+          "4.48987500": 1,
+          "7.28000000": 1,
+          "4.24000000": 1,
+          "4.00987500": 1,
+          "6.96887500": 1,
+          "6.23381250": 1,
+          "5.34706250": 1,
+          "6.42393750": 1,
+          "7.04000000": 1,
+          "7.76000000": 1,
+          "7.48000000": 1,
+          "4.76987500": 1,
+          "6.28587500": 1,
+          "7.95587500": 1,
+          "6.42037500": 1,
+          "6.14406250": 1,
+          "5.87287500": 1,
+          "5.80500000": 1,
+          "4.52987500": 1,
+          "4.29987500": 1,
+          "5.44000000": 1,
+          "6.01581250": 1,
+          "4.78331250": 1,
+          "4.95387500": 1,
+          "4.85075000": 1,
+          "5.29075000": 1,
+          "6.43987500": 1,
+          "6.16000000": 2,
+          "6.44268750": 2,
+          "6.71987500": 1,
+          "5.88987500": 1,
+          "7.33868750": 2,
+          "6.74025000": 1,
+          "7.52000000": 2,
+          "5.80000000": 1,
+          "4.51987500": 1,
+          "6.23987500": 1,
+          "6.90793750": 1,
+          "4.82137500": 1,
+          "6.12000000": 2,
+          "6.30350000": 1,
+          "6.69987500": 1,
+          "5.78987500": 1,
+          "4.89987500": 1,
+          "7.62000000": 1,
+          "5.93631250": 1,
+          "4.28000000": 1,
+          "6.35987500": 1,
+          "5.12987500": 1,
+          "6.08725000": 1,
+          "6.74137500": 1,
+          "4.14837500": 1,
+          "6.57987500": 1,
+          "6.94987500": 1,
+          "5.58987500": 1,
+          "4.83987500": 1,
+          "5.67987500": 1,
+          "5.52587500": 1,
+          "5.28256250": 1,
+          "7.44000000": 1,
+          "6.82987500": 1,
+          "7.72987500": 1,
+          "4.46987500": 1,
+          "6.24000000": 1,
+          "7.40718750": 1,
+          "6.40000000": 1,
+          "7.79987500": 1,
+          "6.22987500": 1,
+          "6.91206250": 1,
+          "7.85075000": 1,
+          "6.38987500": 1,
+          "5.40987500": 1,
+          "6.32000000": 1,
+          "5.44868750": 1,
+          "7.24987500": 1,
+          "7.70000000": 1,
+          "5.71737500": 1,
+          "7.68281250": 1,
+          "7.38400000": 1,
+          "7.73587500": 1,
+          "7.59987500": 1,
+          "5.92000000": 1,
+          "6.43556250": 1,
+          "7.72000000": 1,
+          "5.04000000": 1,
+          "5.84987500": 1,
+          "6.78000000": 1,
+          "6.16987500": 1,
+          "7.74587500": 1,
+          "5.08987500": 1,
+          "5.75987500": 1,
+          "4.65918750": 1,
+          "6.10987500": 1,
+          "7.40000000": 1,
+          "4.50987500": 1,
+          "5.16131250": 1,
+          "7.46987500": 1,
+          "6.21987500": 1,
+          "5.12000000": 1,
+          "6.06281250": 1,
+          "7.78000000": 1
+        },
+        "speech_speakers": 3,
+        "base_music_components_under_full_graph": 30,
+        "components_under_full_graph": 30
+      },
+      "dev": {
+        "rows": 1024,
+        "connected_components_all_views": 27,
+        "base_rows": 212,
+        "base_components": 37,
+        "base_music": 164,
+        "base_music_components": 35,
+        "base_speech": 48,
+        "base_speech_group_atoms": 27,
+        "base_labels": {
+          "FILE_FAKE": {
+            "1": 163,
+            "0": 49
+          },
+          "MUSIC_FAKE": {
+            "1": 139,
+            "UNKNOWN": 48,
+            "0": 25
+          },
+          "VOICE_FAKE": {
+            "UNKNOWN": 164,
+            "1": 24,
+            "0": 24
+          },
+          "MUSIC_PRESENT": {
+            "1": 164,
+            "0": 48
+          },
+          "VOICE_PRESENT": {
+            "UNKNOWN": 164,
+            "1": 48
+          }
+        },
+        "base_duration_seconds": {
+          "8.00000000": 192,
+          "7.11175000": 1,
+          "7.88987500": 1,
+          "4.43987500": 1,
+          "6.57281250": 1,
+          "5.44000000": 2,
+          "7.96987500": 1,
+          "7.06531250": 1,
+          "7.68000000": 1,
+          "5.59987500": 1,
+          "6.62000000": 1,
+          "7.95987500": 1,
+          "5.52987500": 1,
+          "5.28000000": 1,
+          "6.96000000": 1,
+          "5.24000000": 1,
+          "6.13187500": 1,
+          "5.04000000": 1,
+          "7.83987500": 1,
+          "6.00000000": 1
+        },
+        "speech_speakers": 2,
+        "base_music_components_under_full_graph": 27,
+        "components_under_full_graph": 27
+      },
+      "test": {
+        "rows": 876,
+        "connected_components_all_views": 24,
+        "base_rows": 175,
+        "base_components": 34,
+        "base_music": 127,
+        "base_music_components": 32,
+        "base_speech": 48,
+        "base_speech_group_atoms": 27,
+        "base_labels": {
+          "FILE_FAKE": {
+            "1": 128,
+            "0": 47
+          },
+          "MUSIC_FAKE": {
+            "1": 104,
+            "UNKNOWN": 48,
+            "0": 23
+          },
+          "VOICE_FAKE": {
+            "UNKNOWN": 127,
+            "1": 24,
+            "0": 24
+          },
+          "MUSIC_PRESENT": {
+            "1": 127,
+            "0": 48
+          },
+          "VOICE_PRESENT": {
+            "UNKNOWN": 127,
+            "1": 48
+          }
+        },
+        "base_duration_seconds": {
+          "8.00000000": 136,
+          "5.90431250": 2,
+          "4.32600000": 1,
+          "7.00787500": 1,
+          "6.93887500": 1,
+          "7.80000000": 1,
+          "6.16000000": 1,
+          "5.12000000": 1,
+          "4.98000000": 1,
+          "4.84000000": 1,
+          "5.48687500": 1,
+          "5.34693750": 1,
+          "6.00000000": 1,
+          "5.68000000": 1,
+          "5.52000000": 1,
+          "4.70000000": 1,
+          "7.85481250": 1,
+          "6.38187500": 1,
+          "4.91987500": 1,
+          "5.92000000": 1,
+          "5.11487500": 1,
+          "6.24987500": 1,
+          "5.20000000": 1,
+          "4.60987500": 1,
+          "7.15818750": 1,
+          "7.34281250": 1,
+          "6.40000000": 1,
+          "6.36281250": 1,
+          "6.82000000": 1,
+          "6.10787500": 1,
+          "6.28000000": 1,
+          "6.56987500": 1,
+          "4.33756250": 1,
+          "6.72000000": 1,
+          "6.32000000": 1,
+          "5.81143750": 1,
+          "4.28987500": 1,
+          "4.72000000": 1,
+          "6.19987500": 1
+        },
+        "speech_speakers": 2,
+        "base_music_components_under_full_graph": 24,
+        "components_under_full_graph": 24
+      },
+      "train": {
+        "rows": 3321,
+        "connected_components_all_views": 175,
+        "base_rows": 1043,
+        "base_components": 190,
+        "base_music": 831,
+        "base_music_components": 187,
+        "base_speech": 212,
+        "base_speech_group_atoms": 111,
+        "base_labels": {
+          "FILE_FAKE": {
+            "1": 798,
+            "0": 245
+          },
+          "MUSIC_FAKE": {
+            "1": 692,
+            "0": 139,
+            "UNKNOWN": 212
+          },
+          "VOICE_FAKE": {
+            "UNKNOWN": 831,
+            "1": 106,
+            "0": 106
+          },
+          "MUSIC_PRESENT": {
+            "1": 831,
+            "0": 212
+          },
+          "VOICE_PRESENT": {
+            "UNKNOWN": 831,
+            "1": 212
+          }
+        },
+        "base_duration_seconds": {
+          "8.00000000": 965,
+          "5.05987500": 1,
+          "7.40987500": 1,
+          "5.89987500": 1,
+          "6.48537500": 1,
+          "6.80000000": 1,
+          "6.64000000": 1,
+          "5.80862500": 1,
+          "6.83306250": 1,
+          "6.72987500": 1,
+          "7.56000000": 1,
+          "6.50512500": 1,
+          "6.13987500": 1,
+          "4.17987500": 1,
+          "7.04987500": 1,
+          "7.30987500": 1,
+          "7.04000000": 1,
+          "5.51987500": 1,
+          "7.68943750": 1,
+          "6.80537500": 2,
+          "6.28000000": 1,
+          "6.39987500": 1,
+          "6.28987500": 1,
+          "4.42343750": 1,
+          "5.64987500": 1,
+          "7.18662500": 1,
+          "4.78981250": 1,
+          "5.93987500": 1,
+          "6.92600000": 1,
+          "7.73987500": 1,
+          "6.65987500": 1,
+          "5.48350000": 1,
+          "6.34987500": 1,
+          "6.41987500": 1,
+          "7.40000000": 1,
+          "5.68000000": 1,
+          "5.51837500": 1,
+          "6.87956250": 1,
+          "5.28000000": 1,
+          "7.42000000": 1,
+          "4.51112500": 1,
+          "4.92912500": 1,
+          "5.56987500": 1,
+          "5.52000000": 1,
+          "4.33987500": 1,
+          "6.48987500": 1,
+          "4.16987500": 1,
+          "5.90987500": 1,
+          "7.60000000": 1,
+          "5.62987500": 1,
+          "7.36000000": 1,
+          "5.44000000": 1,
+          "4.44987500": 1,
+          "7.01987500": 1,
+          "5.84000000": 2,
+          "4.84000000": 1,
+          "6.76387500": 1,
+          "4.38862500": 1,
+          "6.60612500": 1,
+          "4.18606250": 1,
+          "6.86937500": 1,
+          "7.11175000": 1,
+          "4.45987500": 1,
+          "5.16268750": 1,
+          "7.07987500": 1,
+          "5.58443750": 1,
+          "6.67987500": 1,
+          "6.40987500": 1,
+          "7.75987500": 1,
+          "6.00000000": 1,
+          "6.77987500": 1,
+          "5.20000000": 1,
+          "4.43987500": 1,
+          "4.73987500": 1,
+          "7.16987500": 1,
+          "5.06843750": 1,
+          "7.76000000": 1
+        },
+        "speech_speakers": 3,
+        "base_music_components_under_full_graph": 175,
+        "components_under_full_graph": 175
+      }
+    },
+    "cross_split_atoms": {},
+    "cross_split_parent_ids": {},
+    "cross_split_recorded_audio_hashes": {},
+    "base_music_source_labels": {
+      "suno": {
+        "1": 39
+      },
+      "Echoes/acestep/TTA": {
+        "1": 79
+      },
+      "Echoes/songgen/ATA": {
+        "1": 64
+      },
+      "Echoes/producer/ATA": {
+        "1": 31
+      },
+      "udio": {
+        "1": 39
+      },
+      "Echoes/musicgen/ATA": {
+        "1": 70
+      },
+      "FMA": {
+        "0": 128
+      },
+      "Echoes/udio/TTA": {
+        "1": 68
+      },
+      "Echoes/musicgen/TTA": {
+        "1": 78
+      },
+      "Echoes/elevenlabs/TTA": {
+        "1": 65
+      },
+      "Echoes/audioldm/TTA": {
+        "1": 77
+      },
+      "Echoes/suno/TTA": {
+        "1": 68
+      },
+      "FMA/FMA": {
+        "0": 90
+      },
+      "Echoes/diffrhythm/ATA": {
+        "1": 72
+      },
+      "Echoes/diffrhythm/TTA": {
+        "1": 82
+      },
+      "Echoes/mubert/TTA": {
+        "1": 10
+      },
+      "Echoes/audioldm/ATA": {
+        "1": 70
+      },
+      "Echoes/songgen/TTA": {
+        "1": 81
+      },
+      "Echoes/producer/TTA": {
+        "1": 35
+      },
+      "Echoes/brev/TTA": {
+        "1": 66
+      },
+      "Echoes/stableaudio/TTA": {
+        "1": 10
+      }
+    },
+    "base_music_source_majority_rule_accuracy": 1.0,
+    "generators_by_split": {
+      "calibration": [
+        "Cartesia.ai (Sonic-3)",
+        "Chatterbox Multilingual",
+        "FireRedTTS-2.0",
+        "Higgs-Audio-V2",
+        "Index-TTS-1.5",
+        "Index-TTS-2.0",
+        "Kani-TTS-370M",
+        "Llasa-1B-Multilingual",
+        "Llasa-8B",
+        "Mars5",
+        "MeloTTS",
+        "VoxCPM-0.5B",
+        "acestep",
+        "audioldm",
+        "brev",
+        "diffrhythm",
+        "elevenlabs",
+        "musicgen",
+        "original",
+        "producer",
+        "songgen",
+        "suno",
+        "udio"
+      ],
+      "dev": [
+        "Cartesia.ai (Sonic-3)",
+        "Chatterbox Multilingual",
+        "Higgs-Audio-V2",
+        "Kani-TTS-370M",
+        "acestep",
+        "audioldm",
+        "brev",
+        "diffrhythm",
+        "elevenlabs",
+        "mubert",
+        "musicgen",
+        "original",
+        "producer",
+        "songgen",
+        "stableaudio",
+        "suno",
+        "udio"
+      ],
+      "test": [
+        "Cartesia.ai (Sonic-3)",
+        "Chatterbox Multilingual",
+        "Higgs-Audio-V2",
+        "Kani-TTS-370M",
+        "acestep",
+        "audioldm",
+        "brev",
+        "diffrhythm",
+        "elevenlabs",
+        "musicgen",
+        "original",
+        "producer",
+        "songgen",
+        "stableaudio",
+        "suno",
+        "udio"
+      ],
+      "train": [
+        "Cartesia.ai (Sonic-3)",
+        "Chatterbox Multilingual",
+        "FireRedTTS-2.0",
+        "Higgs-Audio-V2",
+        "Index-TTS-1.5",
+        "Index-TTS-2.0",
+        "Kani-TTS-370M",
+        "Llasa-1B-Multilingual",
+        "Llasa-8B",
+        "Mars5",
+        "MeloTTS",
+        "VoxCPM-0.5B",
+        "acestep",
+        "audioldm",
+        "brev",
+        "diffrhythm",
+        "elevenlabs",
+        "mubert",
+        "musicgen",
+        "original",
+        "producer",
+        "songgen",
+        "stableaudio",
+        "suno",
+        "udio"
+      ]
+    },
+    "test_generators_also_train": [
+      "Cartesia.ai (Sonic-3)",
+      "Chatterbox Multilingual",
+      "Higgs-Audio-V2",
+      "Kani-TTS-370M",
+      "acestep",
+      "audioldm",
+      "brev",
+      "diffrhythm",
+      "elevenlabs",
+      "musicgen",
+      "original",
+      "producer",
+      "songgen",
+      "stableaudio",
+      "suno",
+      "udio"
+    ],
+    "all_view_labels": {
+      "FILE_FAKE": {
+        "1": 5066,
+        "0": 2035
+      },
+      "VOICE_FAKE": {
+        "UNKNOWN": 4517,
+        "1": 1322,
+        "0": 1262
+      },
+      "MUSIC_FAKE": {
+        "1": 3764,
+        "UNKNOWN": 2524,
+        "0": 813
+      },
+      "VOICE_PRESENT": {
+        "UNKNOWN": 4457,
+        "1": 2644
+      },
+      "MUSIC_PRESENT": {
+        "1": 4577,
+        "0": 2524
+      }
+    },
+    "voice_presence_auc_label_eligible": false,
+    "recorded_duplicate_variant_groups": []
+  },
+  "six": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/six_h100_20260917/probes.csv",
+    "sha256": "4b82fe72fc9ebc7d9fcdbeced87a705b36688520562bc746d60a0765b2500868",
+    "rows": 839,
+    "unique_ids": 839,
+    "unique_recorded_audio_hashes": 735,
+    "total_connected_components": 35,
+    "splits": {
+      "dev": {
+        "rows": 178,
+        "connected_components_all_views": 6,
+        "base_rows": 29,
+        "base_components": 22,
+        "base_music": 21,
+        "base_music_components": 21,
+        "base_speech": 8,
+        "base_speech_group_atoms": 1,
+        "base_labels": {
+          "FILE_FAKE": {
+            "0": 17,
+            "1": 12
+          },
+          "MUSIC_FAKE": {
+            "0": 13,
+            "1": 8,
+            "UNKNOWN": 8
+          },
+          "VOICE_FAKE": {
+            "UNKNOWN": 21,
+            "0": 4,
+            "1": 4
+          },
+          "MUSIC_PRESENT": {
+            "1": 21,
+            "0": 8
+          },
+          "VOICE_PRESENT": {
+            "UNKNOWN": 21,
+            "1": 8
+          }
+        },
+        "base_duration_seconds": {
+          "15.0": 21,
+          "6.289875": 1,
+          "4.511125": 1,
+          "11.729875": 1,
+          "10.0": 1,
+          "9.489875": 1,
+          "7.42": 1,
+          "7.739875": 1,
+          "6.0": 1
+        },
+        "speech_speakers": 1,
+        "base_music_components_under_full_graph": 6,
+        "components_under_full_graph": 6
+      },
+      "test": {
+        "rows": 180,
+        "connected_components_all_views": 6,
+        "base_rows": 29,
+        "base_components": 22,
+        "base_music": 21,
+        "base_music_components": 21,
+        "base_speech": 8,
+        "base_speech_group_atoms": 1,
+        "base_labels": {
+          "FILE_FAKE": {
+            "0": 17,
+            "1": 12
+          },
+          "MUSIC_FAKE": {
+            "0": 13,
+            "1": 8,
+            "UNKNOWN": 8
+          },
+          "VOICE_FAKE": {
+            "UNKNOWN": 21,
+            "0": 4,
+            "1": 4
+          },
+          "MUSIC_PRESENT": {
+            "1": 21,
+            "0": 8
+          },
+          "VOICE_PRESENT": {
+            "UNKNOWN": 21,
+            "1": 8
+          }
+        },
+        "base_duration_seconds": {
+          "15.0": 21,
+          "11.635": 1,
+          "9.9910625": 1,
+          "9.5899375": 1,
+          "9.96": 1,
+          "6.0304375": 1,
+          "6.12": 1,
+          "6.3035": 1,
+          "7.76": 1
+        },
+        "speech_speakers": 1,
+        "base_music_components_under_full_graph": 6,
+        "components_under_full_graph": 6
+      },
+      "train": {
+        "rows": 481,
+        "connected_components_all_views": 23,
+        "base_rows": 78,
+        "base_components": 64,
+        "base_music": 62,
+        "base_music_components": 62,
+        "base_speech": 16,
+        "base_speech_group_atoms": 2,
+        "base_labels": {
+          "FILE_FAKE": {
+            "0": 46,
+            "1": 32
+          },
+          "MUSIC_FAKE": {
+            "0": 38,
+            "1": 24,
+            "UNKNOWN": 16
+          },
+          "VOICE_FAKE": {
+            "UNKNOWN": 62,
+            "0": 8,
+            "1": 8
+          },
+          "MUSIC_PRESENT": {
+            "1": 62,
+            "0": 16
+          },
+          "VOICE_PRESENT": {
+            "UNKNOWN": 62,
+            "1": 16
+          }
+        },
+        "base_duration_seconds": {
+          "15.0": 62,
+          "14.819875": 1,
+          "11.477125": 1,
+          "9.607875": 1,
+          "9.44": 1,
+          "10.169875": 1,
+          "9.2": 1,
+          "5.599875": 1,
+          "5.04": 1,
+          "8.039875": 1,
+          "5.9043125": 1,
+          "5.3469375": 1,
+          "6.28": 1,
+          "4.326": 1,
+          "5.2": 1,
+          "4.3375625": 1,
+          "5.12": 1
+        },
+        "speech_speakers": 2,
+        "base_music_components_under_full_graph": 23,
+        "components_under_full_graph": 23
+      }
+    },
+    "cross_split_atoms": {},
+    "cross_split_parent_ids": {},
+    "cross_split_recorded_audio_hashes": {},
+    "base_music_source_labels": {
+      "FMA": {
+        "0": 64
+      },
+      "suno": {
+        "1": 20
+      },
+      "udio": {
+        "1": 20
+      }
+    },
+    "base_music_source_majority_rule_accuracy": 1.0,
+    "generators_by_split": {
+      "dev": [],
+      "test": [],
+      "train": []
+    },
+    "test_generators_also_train": [],
+    "all_view_labels": {
+      "FILE_FAKE": {
+        "0": 464,
+        "1": 375
+      },
+      "VOICE_FAKE": {
+        "UNKNOWN": 679,
+        "0": 64,
+        "1": 96
+      },
+      "MUSIC_FAKE": {
+        "0": 432,
+        "1": 279,
+        "UNKNOWN": 128
+      },
+      "VOICE_PRESENT": {
+        "UNKNOWN": 647,
+        "1": 192
+      },
+      "MUSIC_PRESENT": {
+        "1": 711,
+        "0": 128
+      }
+    },
+    "voice_presence_auc_label_eligible": false,
+    "recorded_duplicate_variant_groups": [
+      {
+        "count": 104,
+        "variants": [
+          "15s",
+          "base"
+        ]
+      }
+    ]
+  },
+  "voice_music": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/voice_music_h100_20260917/probes.csv",
+    "sha256": "47217967ff321b0a83c87059de777266f1383904ee191770f3f328ac18404abf",
+    "rows": 568,
+    "unique_ids": 568,
+    "unique_recorded_audio_hashes": 568,
+    "total_connected_components": 93,
+    "splits": {
+      "calibration": {
+        "rows": 124,
+        "connected_components_all_views": 18,
+        "base_rows": 29,
+        "base_components": 22,
+        "base_music": 21,
+        "base_music_components": 21,
+        "base_speech": 8,
+        "base_speech_group_atoms": 1,
+        "base_labels": {
+          "FILE_FAKE": {
+            "0": 17,
+            "1": 12
+          },
+          "MUSIC_FAKE": {
+            "UNKNOWN": 8,
+            "0": 13,
+            "1": 8
+          },
+          "VOICE_FAKE": {
+            "0": 4,
+            "1": 4,
+            "UNKNOWN": 21
+          },
+          "MUSIC_PRESENT": {
+            "0": 8,
+            "1": 21
+          },
+          "VOICE_PRESENT": {
+            "1": 8,
+            "UNKNOWN": 21
+          }
+        },
+        "base_duration_seconds": {
+          "4.0": 8,
+          "15.0": 21
+        },
+        "speech_speakers": 1,
+        "base_music_components_under_full_graph": 18,
+        "components_under_full_graph": 18
+      },
+      "dev": {
+        "rows": 104,
+        "connected_components_all_views": 14,
+        "base_rows": 24,
+        "base_components": 17,
+        "base_music": 16,
+        "base_music_components": 16,
+        "base_speech": 8,
+        "base_speech_group_atoms": 1,
+        "base_labels": {
+          "FILE_FAKE": {
+            "0": 14,
+            "1": 10
+          },
+          "MUSIC_FAKE": {
+            "UNKNOWN": 8,
+            "0": 10,
+            "1": 6
+          },
+          "VOICE_FAKE": {
+            "0": 4,
+            "1": 4,
+            "UNKNOWN": 16
+          },
+          "MUSIC_PRESENT": {
+            "0": 8,
+            "1": 16
+          },
+          "VOICE_PRESENT": {
+            "1": 8,
+            "UNKNOWN": 16
+          }
+        },
+        "base_duration_seconds": {
+          "4.0": 8,
+          "15.0": 16
+        },
+        "speech_speakers": 1,
+        "base_music_components_under_full_graph": 14,
+        "components_under_full_graph": 14
+      },
+      "test": {
+        "rows": 92,
+        "connected_components_all_views": 11,
+        "base_rows": 21,
+        "base_components": 14,
+        "base_music": 13,
+        "base_music_components": 13,
+        "base_speech": 8,
+        "base_speech_group_atoms": 1,
+        "base_labels": {
+          "FILE_FAKE": {
+            "0": 13,
+            "1": 8
+          },
+          "MUSIC_FAKE": {
+            "UNKNOWN": 8,
+            "0": 9,
+            "1": 4
+          },
+          "VOICE_FAKE": {
+            "0": 4,
+            "1": 4,
+            "UNKNOWN": 13
+          },
+          "MUSIC_PRESENT": {
+            "0": 8,
+            "1": 13
+          },
+          "VOICE_PRESENT": {
+            "1": 8,
+            "UNKNOWN": 13
+          }
+        },
+        "base_duration_seconds": {
+          "4.0": 8,
+          "15.0": 13
+        },
+        "speech_speakers": 1,
+        "base_music_components_under_full_graph": 11,
+        "components_under_full_graph": 11
+      },
+      "train": {
+        "rows": 248,
+        "connected_components_all_views": 50,
+        "base_rows": 60,
+        "base_components": 53,
+        "base_music": 52,
+        "base_music_components": 52,
+        "base_speech": 8,
+        "base_speech_group_atoms": 1,
+        "base_labels": {
+          "FILE_FAKE": {
+            "0": 36,
+            "1": 24
+          },
+          "MUSIC_FAKE": {
+            "UNKNOWN": 8,
+            "0": 32,
+            "1": 20
+          },
+          "VOICE_FAKE": {
+            "0": 4,
+            "1": 4,
+            "UNKNOWN": 52
+          },
+          "MUSIC_PRESENT": {
+            "0": 8,
+            "1": 52
+          },
+          "VOICE_PRESENT": {
+            "1": 8,
+            "UNKNOWN": 52
+          }
+        },
+        "base_duration_seconds": {
+          "4.0": 8,
+          "15.0": 52
+        },
+        "speech_speakers": 1,
+        "base_music_components_under_full_graph": 50,
+        "components_under_full_graph": 50
+      }
+    },
+    "cross_split_atoms": {},
+    "cross_split_parent_ids": {},
+    "cross_split_recorded_audio_hashes": {},
+    "base_music_source_labels": {
+      "FMA": {
+        "0": 64
+      },
+      "suno": {
+        "1": 19
+      },
+      "udio": {
+        "1": 19
+      }
+    },
+    "base_music_source_majority_rule_accuracy": 1.0,
+    "generators_by_split": {
+      "calibration": [],
+      "dev": [],
+      "test": [],
+      "train": []
+    },
+    "test_generators_also_train": [],
+    "all_view_labels": {
+      "FILE_FAKE": {
+        "0": 336,
+        "1": 232
+      },
+      "VOICE_FAKE": {
+        "0": 48,
+        "1": 80,
+        "UNKNOWN": 440
+      },
+      "MUSIC_FAKE": {
+        "UNKNOWN": 96,
+        "0": 320,
+        "1": 152
+      },
+      "VOICE_PRESENT": {
+        "1": 160,
+        "UNKNOWN": 408
+      },
+      "MUSIC_PRESENT": {
+        "0": 96,
+        "1": 472
+      }
+    },
+    "voice_presence_auc_label_eligible": false,
+    "recorded_duplicate_variant_groups": []
+  },
+  "mert12": {
+    "training_manifest": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/mert12_a100_20260918/downloaded/unpacked/output/mert12_full/training_manifest.json",
+    "rows": 1322,
+    "eligible_rows": 1322,
+    "same_eligible_ids": true,
+    "same_labels_audio_hashes": true,
+    "former_splits": {
+      "train": 831,
+      "dev": 164,
+      "calibration": 200,
+      "test": 127
+    },
+    "labels": {
+      "1": 1104,
+      "0": 218
+    },
+    "windows": {
+      "3": 1322
+    },
+    "coverage": [
+      {
+        "seed": 41,
+        "before_unique": 1213,
+        "after_unique": 1322,
+        "after_zero_exposure_ids": [],
+        "after_min": 1,
+        "after_max": 88,
+        "after_total": 16000
+      },
+      {
+        "seed": 42,
+        "before_unique": 1213,
+        "after_unique": 1322,
+        "after_zero_exposure_ids": [],
+        "after_min": 1,
+        "after_max": 88,
+        "after_total": 16000
+      },
+      {
+        "seed": 43,
+        "before_unique": 1213,
+        "after_unique": 1322,
+        "after_zero_exposure_ids": [],
+        "after_min": 1,
+        "after_max": 88,
+        "after_total": 16000
+      }
+    ],
+    "full_manifest_path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/mert12_a100_20260918/upload/full_data_manifest.csv",
+    "full_manifest_sha256": "f1013101c5198295405b4094f5820a235c1ba89da55483710bce4b93454f7ff1",
+    "full_manifest_exactly_filtered_eight_rows": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.11.15",
+  "packages": {
+    "torch": "2.7.1",
+    "transformers": "4.57.6",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "soundfile": "0.14.0",
+    "safetensors": "0.8.0"
+  },
+  "training_device": "mps",
+  "training_precision": "float32",
+  "colab_training_executed": false
+}

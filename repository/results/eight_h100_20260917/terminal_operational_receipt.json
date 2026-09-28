@@ -1,0 +1,117 @@
+{
+  "all_eight_completed": true,
+  "analysis_boundary": "Execution and artifact verification are complete; downstream interpretation/report synthesis remains pending.",
+  "analysis_status": "pending_cross_experiment_interpretation",
+  "artifact_verification": {
+    "archive_bytes": 292178089,
+    "archive_member_count": 7314,
+    "archive_path": "downloaded/results.zip",
+    "archive_sha256": "681d41de10397d31a371daaa276a4a90d19f04789b85e01fdd6f936399dd23d2",
+    "archive_verified": true,
+    "bootstrap_restored": true,
+    "download_verified": true,
+    "restored_bootstrap_sha256": "d027558a7774b4581c6ed1485ed9e94f8bec5b0b8fc88687aa5366e520b07a94",
+    "workspace_stopped": true
+  },
+  "attempt": 6,
+  "consumed_runtime_seconds": {
+    "attempt6_resume_to_export": 4916.805527210236,
+    "attempt6_resume_to_verified_stop": 5038.12850689888,
+    "deadline_remaining_at_export": 5083.194472789764,
+    "notebook_execution": 4553.488925933838,
+    "original_start_to_export": 9316.805527210236,
+    "original_start_to_verified_stop": 9438.12850689888
+  },
+  "experiment_reports": {
+    "E1": {
+      "path": "downloaded/unpacked/output/experiment_1.json",
+      "sha256": "26ca1d90c999fbf726834599d26d73d2a1c224a62de3e8286393a74e81a05673",
+      "status": "complete"
+    },
+    "E2": {
+      "path": "downloaded/unpacked/output/experiment_2.json",
+      "sha256": "9a86bcd2d42547532117ee4db93f74c29dcdcc7889f1ed25613c5f75e4e54b63",
+      "status": "complete"
+    },
+    "E3": {
+      "path": "downloaded/unpacked/output/experiment_3.json",
+      "sha256": "ca4dea2110851b3139189227b7fb3cc797e76dda5f152de963c5498883ae7eb3",
+      "status": "complete"
+    },
+    "E4": {
+      "path": "downloaded/unpacked/output/experiment_4.json",
+      "sha256": "a27079cb991dbb7dea8d626ff872bf776313d56762ab41f4b7096798e86a70ee",
+      "status": "complete"
+    },
+    "E5": {
+      "path": "downloaded/unpacked/output/experiment_5.json",
+      "sha256": "009733e590af32c1a2ea680712a4ba57013b0b467509b10810958d39fc97779b",
+      "status": "complete"
+    },
+    "E6": {
+      "path": "downloaded/unpacked/output/experiment_6.json",
+      "sha256": "89280e2f14d02ee955329e97628534d7fee189d6b1b1930ade55f0cd396ef3e5",
+      "status": "complete"
+    },
+    "E7": {
+      "path": "downloaded/unpacked/output/e7/report.json",
+      "sha256": "e3162412f878837ae5df00ba32d1055a4d6f38d174fbdf868e5614666f8eb0c2",
+      "status": "complete"
+    },
+    "E8": {
+      "path": "downloaded/unpacked/output/experiment_8.json",
+      "sha256": "1a6d60dc02431018cda216b637b760e3437de4a6245336386118e28128c21bcd",
+      "status": "complete"
+    }
+  },
+  "experiment_statuses": {
+    "E1": "complete",
+    "E2": "complete",
+    "E3": "complete",
+    "E4": "complete",
+    "E5": "complete",
+    "E6": "complete",
+    "E7": "complete",
+    "E8": "complete"
+  },
+  "final_aggregation": {
+    "fresh_holdout_claim": false,
+    "official_score": null,
+    "robustness_claim": false,
+    "sha256": "d2d29fa246083e55c89b9c310836af6278af469e0672ab9fa60e4c48ce401c6f"
+  },
+  "notebook_execution": {
+    "code_cells": 9,
+    "error_outputs": 0,
+    "executed_code_cells": 9,
+    "path": "downloaded/unpacked/output/DACON_Eight_H100_Executed.ipynb",
+    "sha256": "bb28445e88a4d963aa7969fddba03e2c88badf4d969249e2456aca6b08acee91"
+  },
+  "result_paths": {
+    "e7_report": "downloaded/unpacked/output/e7/report.json",
+    "executed_notebook": "downloaded/unpacked/output/DACON_Eight_H100_Executed.ipynb",
+    "final_aggregation": "downloaded/unpacked/output/final_aggregation.json"
+  },
+  "run_boundaries": {
+    "attempt6_resumed_epoch": 1789653360.0,
+    "attempt6_resumed_utc": "2026-09-17T13:56:00+00:00",
+    "config_resumed_epoch": 1789653174.0,
+    "download_verified_epoch": 1789658397.004013,
+    "download_verified_utc": "2026-09-17T15:19:57.004013+00:00",
+    "exported_epoch": 1789658276.8055272,
+    "exported_utc": "2026-09-17T15:17:56.805527+00:00",
+    "immutable_deadline_epoch": 1789663360.0,
+    "immutable_deadline_utc": "2026-09-17T16:42:40+00:00",
+    "notebook_completed_epoch": 1789658245.310993,
+    "notebook_completed_utc": "2026-09-17T15:17:25.310993+00:00",
+    "notebook_started_epoch": 1789653691.822067,
+    "notebook_started_utc": "2026-09-17T14:01:31.822067+00:00",
+    "original_started_epoch": 1789648960.0,
+    "original_started_utc": "2026-09-17T12:42:40+00:00",
+    "stopped_epoch": 1789658398.128507,
+    "stopped_utc": "2026-09-17T15:19:58.128507+00:00"
+  },
+  "schema_version": 1,
+  "status": "all_eight_complete_export_verified_stopped",
+  "workspace": "wsp-9683432r72m7"
+}

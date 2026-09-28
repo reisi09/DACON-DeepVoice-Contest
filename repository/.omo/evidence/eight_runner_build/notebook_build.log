@@ -1,0 +1,4 @@
+scenario=regenerate_notebook_from_builder
+invocation=.venv/bin/python build_eight_h100_notebook.py
+exit_code=0
+observable=DACON_Eight_H100.ipynb regenerated

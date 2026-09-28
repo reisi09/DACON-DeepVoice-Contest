@@ -1,0 +1,174 @@
+[NbConvertApp] Converting notebook /root/mert12_a100_20260918/source/DACON_MERT12_Full_A100.ipynb to notebook
+{
+  "status": "complete",
+  "eligible_rows": 1322,
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "batch_size": 32,
+  "output": "/root-1/mert12-a100-20260918/output/mert12_full"
+}
+{
+  "status": "complete",
+  "file": "/root-1/mert12-a100-20260918/output/MERT12_full_submit.zip",
+  "sha256": "eb5466d1446e205130f5db1de719260a1b0ecbd4743c4c18d207288970b88a90",
+  "bytes": 6268221960,
+  "expanded_bytes": 6268213442
+}
+Checkpoint path: /root/mert12_a100_20260918/smoke_package/model/assets/baseline/model/panns/Cnn14_mAP=0.431.pth
+GPU number: 1
+Presence:   0%|          | 0/4 [00:00<?, ?it/s]Presence:  25%|██▌       | 1/4 [00:00<00:02,  1.11it/s]Presence: 100%|██████████| 4/4 [00:00<00:00,  4.29it/s]
+WARNING: feature_extractor_cqt requires the libray 'nnAudio'
+Could not load file /root/mert12_a100_20260918/smoke_inputs/original/test/core_000209f68a0dc6367dcb_base.wav. Maybe it is not a supported file format? 
+When trying to load using ffmpeg, got the following error: FFmpeg is not installed.
+When trying to load using torchaudio, got the following error: Could not load libtorchcodec. Likely causes:
+          1. FFmpeg is not properly installed in your environment. We support
+             versions 4, 5, 6, and 7 on all platforms, and 8 on Mac and Linux.
+          2. The PyTorch version (2.9.1+cu130) is not compatible with
+             this version of TorchCodec. Refer to the version compatibility
+             table:
+             https://github.com/pytorch/torchcodec?tab=readme-ov-file#installing-torchcodec.
+          3. Another runtime dependency; see exceptions below.
+        The following exceptions were raised as we tried to load libtorchcodec:
+        
+[start of libtorchcodec loading traceback]
+FFmpeg version 8: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core8.so
+FFmpeg version 7: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core7.so
+FFmpeg version 6: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core6.so
+FFmpeg version 5: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core5.so
+FFmpeg version 4: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core4.so
+[end of libtorchcodec loading traceback].
+Traceback (most recent call last):
+  File "/opt/conda/bin/jupyter-nbconvert", line 7, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_core/application.py", line 284, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+    app.start()
+    ~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/nbconvertapp.py", line 420, in start
+    self.convert_notebooks()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/nbconvertapp.py", line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/nbconvertapp.py", line 563, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        notebook_filename, resources, input_buffer=input_buffer
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        notebook_filename, resources=resources
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
+    return self.from_notebook_node(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        nbformat.read(file_stream, as_version=4), resources=resources, **kw
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 154, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 353, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+                ~~~~~~~~~~~~^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/preprocessors/execute.py", line 103, in preprocess
+    self.preprocess_cell(cell, resources, index)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.13/site-packages/nbconvert/preprocessors/execute.py", line 124, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+  File "/opt/conda/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/conda/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/conda/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+SMOKE_PACKAGE, SMOKE_INPUTS = JOB/'smoke_package', JOB/'smoke_inputs'
+assert not SMOKE_PACKAGE.exists() and not SMOKE_INPUTS.exists(), 'fresh smoke directories required'
+with zipfile.ZipFile(OUTPUT/'MERT12_full_submit.zip') as archive: archive.extractall(SMOKE_PACKAGE)
+with zipfile.ZipFile(INPUT/'smoke_inputs.zip') as archive: archive.extractall(SMOKE_INPUTS)
+subprocess.run([sys.executable, str(SOURCE/'mert12_submission.py'), 'cached-reference', '--features', str(INPUT/'features'), '--checkpoints', *[str(OUTPUT/f'mert12_full/head_seed{seed}.pt') for seed in (41, 42, 43)], '--sample-submission', str(SMOKE_INPUTS/'original/sample_submission.csv'), '--output', str(OUTPUT/'cached_mert12_reference.json')], check=True, cwd=SOURCE)
+for name in ('original', 'permuted', 'subset'):
+    target = OUTPUT/f'smoke_{name}'
+    target.mkdir()
+    subprocess.run([sys.executable, str(SMOKE_PACKAGE/'script.py'), '--test-dir', str(SMOKE_INPUTS/name/'test'), '--sample-submission', str(SMOKE_INPUTS/name/'sample_submission.csv'), '--output', str(target/'submission.csv'), '--device', 'cuda'], check=True)
+subprocess.run([sys.executable, str(SOURCE/'mert12_submission.py'), 'compare', '--reference', str(OUTPUT/'smoke_original/submission.csv'), '--permuted', str(OUTPUT/'smoke_permuted/submission.csv'), '--subset', str(OUTPUT/'smoke_subset/submission.csv'), '--cached-reference', str(OUTPUT/'cached_mert12_reference.json'), '--output', str(OUTPUT/'submission_smoke.json')], check=True, cwd=SOURCE)
+------------------
+
+----- stdout -----
+Checkpoint path: /root/mert12_a100_20260918/smoke_package/model/assets/baseline/model/panns/Cnn14_mAP=0.431.pth
+----- stdout -----
+GPU number: 1
+----- stderr -----
+Presence:   0%|          | 0/4 [00:00<?, ?it/s]
+----- stderr -----
+Presence:  25%|██▌       | 1/4 [00:00<00:02,  1.11it/s]Presence: 100%|██████████| 4/4 [00:00<00:00,  4.29it/s]
+----- stdout -----
+WARNING: feature_extractor_cqt requires the libray 'nnAudio'
+----- stdout -----
+Could not load file /root/mert12_a100_20260918/smoke_inputs/original/test/core_000209f68a0dc6367dcb_base.wav. Maybe it is not a supported file format? 
+When trying to load using ffmpeg, got the following error: FFmpeg is not installed.
+When trying to load using torchaudio, got the following error: Could not load libtorchcodec. Likely causes:
+          1. FFmpeg is not properly installed in your environment. We support
+             versions 4, 5, 6, and 7 on all platforms, and 8 on Mac and Linux.
+          2. The PyTorch version (2.9.1+cu130) is not compatible with
+             this version of TorchCodec. Refer to the version compatibility
+             table:
+             https://github.com/pytorch/torchcodec?tab=readme-ov-file#installing-torchcodec.
+          3. Another runtime dependency; see exceptions below.
+        The following exceptions were raised as we tried to load libtorchcodec:
+        
+[start of libtorchcodec loading traceback]
+FFmpeg version 8: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core8.so
+FFmpeg version 7: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core7.so
+FFmpeg version 6: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core6.so
+FFmpeg version 5: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core5.so
+FFmpeg version 4: Could not load this library: /root/mert330-a100-venv/lib/python3.13/site-packages/torchcodec/libtorchcodec_core4.so
+[end of libtorchcodec loading traceback].
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mCalledProcessError[39m                        Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 9[39m
+[32m      5[39m subprocess.run([sys.executable, str(SOURCE/[33m'mert12_submission.py'[39m), [33m'cached-reference'[39m, [33m'--features'[39m, str(INPUT/[33m'features'[39m), [33m'--checkpoints'[39m, *[str(OUTPUT/f'mert12_full/head_seed{seed}.pt') [38;5;28;01mfor[39;00m seed [38;5;28;01min[39;00m ([32m41[39m, [32m42[39m, [32m43[39m)], [33m'--sample-submission'[39m, str(SMOKE_INPUTS/[33m'original/sample_submission.csv'[39m), [33m'--output'[39m, str(OUTPUT/[33m'cached_mert12_reference.json'[39m)], check=[38;5;28;01mTrue[39;00m, cwd=SOURCE)
+[32m      6[39m [38;5;28;01mfor[39;00m name [38;5;28;01min[39;00m ([33m'original'[39m, [33m'permuted'[39m, [33m'subset'[39m):
+[32m      7[39m     target = OUTPUT/f'smoke_{name}'
+[32m      8[39m     target.mkdir()
+[32m----> [39m[32m9[39m     subprocess.run([sys.executable, str(SMOKE_PACKAGE/[33m'script.py'[39m), [33m'--test-dir'[39m, str(SMOKE_INPUTS/name/[33m'test'[39m), [33m'--sample-submission'[39m, str(SMOKE_INPUTS/name/[33m'sample_submission.csv'[39m), [33m'--output'[39m, str(target/[33m'submission.csv'[39m), [33m'--device'[39m, [33m'cuda'[39m], check=[38;5;28;01mTrue[39;00m)
+[32m     10[39m subprocess.run([sys.executable, str(SOURCE/[33m'mert12_submission.py'[39m), [33m'compare'[39m, [33m'--reference'[39m, str(OUTPUT/[33m'smoke_original/submission.csv'[39m), [33m'--permuted'[39m, str(OUTPUT/[33m'smoke_permuted/submission.csv'[39m), [33m'--subset'[39m, str(OUTPUT/[33m'smoke_subset/submission.csv'[39m), [33m'--cached-reference'[39m, str(OUTPUT/[33m'cached_mert12_reference.json'[39m), [33m'--output'[39m, str(OUTPUT/[33m'submission_smoke.json'[39m)], check=[38;5;28;01mTrue[39;00m, cwd=SOURCE)
+
+[36mFile [39m[32m~/.local/share/uv/python/cpython-3.13.9-linux-x86_64-gnu/lib/python3.13/subprocess.py:577[39m, in [36mrun[39m[34m(input, capture_output, timeout, check, *popenargs, **kwargs)[39m
+[32m    575[39m     retcode = process.poll()
+[32m    576[39m     [38;5;28;01mif[39;00m check [38;5;129;01mand[39;00m retcode:
+[32m--> [39m[32m577[39m         [38;5;28;01mraise[39;00m CalledProcessError(retcode, process.args,
+[32m    578[39m                                  output=stdout, stderr=stderr)
+[32m    579[39m [38;5;28;01mreturn[39;00m CompletedProcess(process.args, retcode, stdout, stderr)
+
+[31mCalledProcessError[39m: Command '['/root/mert330-a100-venv/bin/python', '/root/mert12_a100_20260918/smoke_package/script.py', '--test-dir', '/root/mert12_a100_20260918/smoke_inputs/original/test', '--sample-submission', '/root/mert12_a100_20260918/smoke_inputs/original/sample_submission.csv', '--output', '/root-1/mert12-a100-20260918/output/smoke_original/submission.csv', '--device', 'cuda']' returned non-zero exit status 1.
+

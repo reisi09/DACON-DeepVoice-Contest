@@ -1,0 +1,64 @@
+{
+  "automation_status": "PAUSED",
+  "file_fusion": "noisy_or",
+  "finished_epoch": 1789614983.2353501,
+  "fixed_epochs": [
+    17,
+    17,
+    8
+  ],
+  "frozen_experts": [
+    "MERT330",
+    "HTDemucs",
+    "DF-Arena",
+    "PANNs"
+  ],
+  "heartbeat_interval_minutes": 5,
+  "independent_validation": false,
+  "model": "B_raw_stem_full1696_3seed",
+  "music_label_eligible": 1216,
+  "official_score": null,
+  "resource_stop": {
+    "pause_requested_at": 1789614894.0487418,
+    "pause_verified": true,
+    "phase": "standby",
+    "reason": "archive_verified_exported",
+    "schema_version": 1,
+    "verified_at": 1789614895.313709,
+    "workspace": "wsp-9683432r72m7"
+  },
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "smoke": {
+    "L4_verified": false,
+    "edge_inputs": [
+      "4 second silence",
+      "60 second stereo music"
+    ],
+    "elapsed_seconds": 38.88400340080261,
+    "files": 7,
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "independence_max_abs_error": 4.869993297518249e-11,
+    "network_connections_forbidden": true,
+    "official_score_measured": false,
+    "passed": true,
+    "purpose": "packaging numerical parity, not model quality evaluation",
+    "real_audio_files": 5,
+    "reference_max_abs_error": 4.869993297518249e-11,
+    "tolerance": 1e-05
+  },
+  "speech_music_labels_masked": 480,
+  "status": "completed",
+  "submission": {
+    "bytes": 6267071302,
+    "exact_cloud_archive_match": true,
+    "path": "submissions/B_full1696/submit.zip",
+    "sha256": "1fda295b44925d5b255cc1235f9bee57141ace7469370ae3245af113572bfb00"
+  },
+  "train_source_files": 1696,
+  "trained": "B temporal raw/stem residual heads",
+  "workspace_policy": "reuse_existing_only"
+}

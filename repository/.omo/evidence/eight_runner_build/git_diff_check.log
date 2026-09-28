@@ -1,0 +1,4 @@
+scenario=validate_patch_whitespace
+invocation=git diff --check
+exit_code=0
+observable=no whitespace errors

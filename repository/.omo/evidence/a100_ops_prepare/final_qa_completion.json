@@ -1,0 +1,154 @@
+{
+  "absolute_deadline_epoch": 1789695277.734545,
+  "binary_observables": {
+    "archive_crc_and_member_hashes_verified": true,
+    "archive_ready": true,
+    "evidence_hashes_verified": true,
+    "final_qa_status": "complete",
+    "smoke_status": "passed",
+    "supplemental_status": "passed",
+    "workspace_terminal_state": "stopped/standby"
+  },
+  "checkpoint_sha256": [
+    "91f5bd17f786d5c9afccffb7516484cba6b695ba0156dce01c04a11aaca746d0",
+    "a3dbec68027d686f6465d9144166741a330c80309a0b3538e78300d3d2990d6a",
+    "a877808bd54326d51e0dedfc2331402a6f204f1534c8cc163db8036b5e895c9c"
+  ],
+  "download_verification": {
+    "path": "results/mert12_a100_20260918/download_verification.json",
+    "sha256": "9716041113f20c49686f089dabe0bff0b7270066a3c8932e760e6142679ba3a1",
+    "status": "exported"
+  },
+  "evidence_archive": {
+    "archive_bytes": 1459942,
+    "archive_sha256": "c9cc1bfd5abe460b8011af7745dde4db64f4f43c25cd00e266020ecb0f2d9166",
+    "files_verified": 23
+  },
+  "executed_notebook": {
+    "error_outputs": 0,
+    "path": "results/mert12_a100_20260918/downloaded/evidence/output/DACON_MERT12_Final_QA_Executed.ipynb",
+    "sha256": "5c89ba2097d9568f09b49fe8a70e22822e419de63153f460dad7527926f715b5"
+  },
+  "invocations": {
+    "notebook": "/root/mert330-a100-venv/bin/python -m jupyter nbconvert --to notebook --execute /root/mert12_a100_20260918/source/DACON_MERT12_Final_QA.ipynb --ExecutePreprocessor.kernel_name=mert12-final-qa --ExecutePreprocessor.timeout=7200 --output /root-1/mert12-a100-20260918/output/DACON_MERT12_Final_QA_Executed.ipynb",
+    "runtime": "/root/V6_L40S/.venv/bin/python <fixed-package>/script.py --test-dir <scenario>/test --sample-submission <scenario>/sample_submission.csv --output <scenario>/submission.csv --device cuda",
+    "watcher": ".venv/bin/python -u mert12_a100_watch.py"
+  },
+  "package": {
+    "bytes": 6268222843,
+    "members_verified": 45,
+    "path": "submissions/MERT12_full1322_submit.zip",
+    "sha256": "e7bebbded6fef06517db0d42421a575a0440849248de99856796ffc3e5eb5ee5",
+    "single_submission_archive": true
+  },
+  "resource_stop": {
+    "observed": "standby/stopped",
+    "path": "results/mert12_a100_20260918/resource_stop.json",
+    "pause_requested_at": 1789694878.179126,
+    "pause_verified": true,
+    "reason": "archive_verified_exported",
+    "schema_version": 1,
+    "sha256": "e539f74e148d20cf66573ea576af8881decd05c8dfcbb29a98878073d2cddf8f",
+    "verified_at": 1789694931.738518,
+    "workspace": "wsp-5i3knd3gxeox"
+  },
+  "runtime_receipts": {
+    "final_smoke_original": {
+      "demucs_input_decoder": "torchaudio.load+demucs.audio.convert_audio",
+      "device": "cuda",
+      "files": 4,
+      "path": "results/mert12_a100_20260918/downloaded/evidence/output/final_smoke_original/runtime_receipt.json",
+      "peak_gpu_allocated_bytes": 6556092416,
+      "peak_gpu_reserved_bytes": 7008681984,
+      "peak_rss_bytes": 5962006528,
+      "sha256": "e2ce478cdab4dd7a156372b223efa76905992301d6ef31bfe1468d1b3c746bb6"
+    },
+    "final_smoke_permuted": {
+      "demucs_input_decoder": "torchaudio.load+demucs.audio.convert_audio",
+      "device": "cuda",
+      "files": 4,
+      "path": "results/mert12_a100_20260918/downloaded/evidence/output/final_smoke_permuted/runtime_receipt.json",
+      "peak_gpu_allocated_bytes": 6556092416,
+      "peak_gpu_reserved_bytes": 7008681984,
+      "peak_rss_bytes": 5968957440,
+      "sha256": "7dbec18ca0333f96804d85d4cb9e6fd665444597893d9dff5c5add3c8e5c7e4c"
+    },
+    "final_smoke_subset": {
+      "demucs_input_decoder": "torchaudio.load+demucs.audio.convert_audio",
+      "device": "cuda",
+      "files": 2,
+      "path": "results/mert12_a100_20260918/downloaded/evidence/output/final_smoke_subset/runtime_receipt.json",
+      "peak_gpu_allocated_bytes": 6556092416,
+      "peak_gpu_reserved_bytes": 6962544640,
+      "peak_rss_bytes": 5966360576,
+      "sha256": "c0d4bad18940238bf6bf81d26615a3a878a98aaf02dd0db8580af48acf3d4870"
+    },
+    "final_supplemental_qa": {
+      "demucs_input_decoder": "torchaudio.load+demucs.audio.convert_audio",
+      "device": "cuda",
+      "files": 3,
+      "path": "results/mert12_a100_20260918/downloaded/evidence/output/final_supplemental_qa/runtime_receipt.json",
+      "peak_gpu_allocated_bytes": 6555433472,
+      "peak_gpu_reserved_bytes": 6970933248,
+      "peak_rss_bytes": 5976621056,
+      "sha256": "31d51deccdce05328d8b6a762a151e2f49de92b6cb0bacce51acee824938f0e5"
+    }
+  },
+  "scenario": {
+    "from_existing_archive": true,
+    "name": "final fixed-package GPU runtime QA",
+    "package_reconstructed_on_gpu": true,
+    "training_rerun": false
+  },
+  "schema_version": 1,
+  "smoke": {
+    "cached_raw_music_max_abs_error": 3.971516315814938e-08,
+    "cached_raw_music_tolerance": 1e-05,
+    "max_probability_error": 0.0,
+    "reference_files": 4,
+    "status": "passed",
+    "subset_files": 2
+  },
+  "supplemental": {
+    "command": [
+      "/root/V6_L40S/.venv/bin/python",
+      "/root/mert12_a100_20260918/final_package/script.py",
+      "--test-dir",
+      "/root-1/mert12-a100-20260918/output/final_supplemental_qa/test",
+      "--sample-submission",
+      "/root-1/mert12-a100-20260918/output/final_supplemental_qa/sample_submission.csv",
+      "--output",
+      "/root-1/mert12-a100-20260918/output/final_supplemental_qa/submission.csv",
+      "--device",
+      "cuda"
+    ],
+    "files": 3,
+    "finite_probabilities": true,
+    "ids": [
+      "qa_silence_4s",
+      "qa_real_stereo_60s",
+      "qa_codec_mp3_6s"
+    ],
+    "long_case": "first_60s_real_crop",
+    "mp3_status": "tested",
+    "peak_gpu_allocated_bytes": 6555433472,
+    "peak_gpu_reserved_bytes": 6970933248,
+    "peak_rss_bytes": 5976621056,
+    "probability_range": [
+      0.0,
+      0.9999964237
+    ],
+    "quality_claim": null,
+    "runtime_receipt_sha256": "31d51deccdce05328d8b6a762a151e2f49de92b6cb0bacce51acee824938f0e5",
+    "status": "passed",
+    "submission_sha256": "ae9191965198dd34934df1c7905cbca656de7d5beab989234b90041f81e85129",
+    "wall_seconds": 39.272363116033375
+  },
+  "verified_at_epoch": 1789695048.510001,
+  "workspace": {
+    "name": "jolly-routine",
+    "phase": "standby",
+    "slug": "wsp-5i3knd3gxeox",
+    "state": "stopped"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "changed_modules": [
+    {
+      "file": "dacon9504a100/__init__.py",
+      "before_sha256": "1670926c6a081e0569d2569f25d12a55d51f74d81ece64636712fe9d17ab31f0",
+      "after_sha256": "7236ec74a3b08e3e398a857038b032d938098d8e4b98fe13c537eb5d6e1c8b24"
+    },
+    {
+      "file": "dacon9504a100/constants.py",
+      "before_sha256": "0a91c273cdf533d3a1ec93e04a976f94d545c6e25ebe8463c31b05d9b08647cb",
+      "after_sha256": "39341ceee61897dafeeb30185674ef65f6544c43439e11cee103276bafff31a6"
+    },
+    {
+      "file": "dacon9504a100/dataset.py",
+      "before_sha256": "ca0e92558f14a865abfd27273b6c22cd9c13adb117a4a5b2f99579847d1cb55b",
+      "after_sha256": "ef172d2c75c9a2b1573bd7f9ae9289a110e89524492c23296726b51c34eeb97d"
+    },
+    {
+      "file": "dacon9504a100/environment.py",
+      "before_sha256": "c5a91f6c9bed5cae053362370bb9d6b96e81747218f054b0972ece304e9ecbfb",
+      "after_sha256": "bb79a40e0d341e29d83ef5a381b4995a1970490e033aef654fec105146347eff"
+    },
+    {
+      "file": "dacon9504a100/evaluation.py",
+      "before_sha256": "3cb8b8d83d7011d81e2225ef3008e7f54af67ac2ddeee54234dfab449a608237",
+      "after_sha256": "f07b58730321a11d61052a8560064380db4911584826c3b0cfd7a6d2eaaa2fac"
+    },
+    {
+      "file": "dacon9504a100/features.py",
+      "before_sha256": "b0476f18aa429df3d002f26dfc00bd63a1f8d6265c6fbcb6ee2c383802d3bed7",
+      "after_sha256": "d17f213a5b7a67e07e9ff8bfa3806c58ed285519746a26e46f0a05f0b3b438cb"
+    },
+    {
+      "file": "dacon9504a100/gpu.py",
+      "before_sha256": "98f1687111cf287d6fee92b94a8814d27d6b159aeccb9a0562cb782fb8c138f8",
+      "after_sha256": "93d26e778ed35bde97ecf66173a0586cc3fbeda3d6c8a59991ffe5a28d9c605c"
+    },
+    {
+      "file": "dacon9504a100/handoff.py",
+      "before_sha256": "889466b9be3a85a3734e01972b15543873e586e5d83e31797ef16beb0ed0a706",
+      "after_sha256": "2bd8641ac3e7e6947b12ea9daccc9b3172be4620c18642880381f610684d8086"
+    },
+    {
+      "file": "dacon9504a100/orchestrator.py",
+      "before_sha256": "0d20dead6ee01c7d37893b731ea38d7f5d2cd757391535014753174998cc6c1a",
+      "after_sha256": "836b96811622deece1f9746c91beb1aac391c49c17d05648d67d372725bd05c4"
+    },
+    {
+      "file": "dacon9504a100/parity.py",
+      "before_sha256": "1b573c3d24716e922bdbb374606d23632e2c8e5fb5dc50d797908e9f43502bc8",
+      "after_sha256": "d91fb6e8c7ff81359133b73f1b6407b3164223b5fc8513b1345a231a74275ff8"
+    },
+    {
+      "file": "dacon9504a100/training.py",
+      "before_sha256": "c19b2b1a72d5ba2275558d83c75bafdf7d52e511924c0a4070a0e4424b18dbb1",
+      "after_sha256": "81c5a230df49f1cbf7868dbc799676502c72bf7198bf7169813c5ae59de5b686"
+    }
+  ],
+  "deployment_files_checked": [
+    {
+      "file": "dataset/manifest.csv",
+      "bytes": 14398171,
+      "object_present": true
+    },
+    {
+      "file": "audio_upload.json",
+      "bytes": 2287330,
+      "object_present": true
+    },
+    {
+      "file": "dataset/selected.csv",
+      "bytes": 13097591,
+      "object_present": true
+    },
+    {
+      "file": "dataset/train.csv",
+      "bytes": 9028142,
+      "object_present": true
+    },
+    {
+      "file": "dataset/val.csv",
+      "bytes": 2055613,
+      "object_present": true
+    },
+    {
+      "file": "dataset/test.csv",
+      "bytes": 2019454,
+      "object_present": true
+    },
+    {
+      "file": "dataset/README.md",
+      "bytes": 6844,
+      "object_present": true
+    },
+    {
+      "file": "dataset/verification.json",
+      "bytes": 1720,
+      "object_present": true
+    },
+    {
+      "file": "dataset/audit.json",
+      "bytes": 16884,
+      "object_present": true
+    },
+    {
+      "file": "dataset/policy_checks.json",
+      "bytes": 327,
+      "object_present": true
+    },
+    {
+      "file": "dataset/provenance.json",
+      "bytes": 1035,
+      "object_present": true
+    },
+    {
+      "file": "dataset/reproducibility.json",
+      "bytes": 1029,
+      "object_present": true
+    },
+    {
+      "file": "assets.zip",
+      "bytes": 6265308398,
+      "object_present": true
+    },
+    {
+      "file": "asset_hashes.json",
+      "bytes": 3039,
+      "object_present": true
+    },
+    {
+      "file": "source.zip",
+      "bytes": 125605,
+      "object_present": true
+    },
+    {
+      "file": "author_code.zip",
+      "bytes": 200345,
+      "object_present": true
+    },
+    {
+      "file": "README_REVIEWER.md",
+      "bytes": 21711,
+      "object_present": true
+    },
+    {
+      "file": "codex_review.json",
+      "bytes": 1419,
+      "object_present": true
+    },
+    {
+      "file": "DACON_Existing9504_H100.ipynb",
+      "bytes": 12955,
+      "object_present": true
+    }
+  ],
+  "audio_shards_checked": 75,
+  "selected_rows": 9504,
+  "small_file_readback_verified": true,
+  "author_code_sha256": "5994d3f2e442c5721eff5e8844b0ca72a61a7ad1253094eb8066241b27d2364e"
+}

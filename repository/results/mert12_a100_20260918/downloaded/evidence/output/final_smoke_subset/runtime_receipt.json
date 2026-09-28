@@ -1,0 +1,14 @@
+{
+  "files": 2,
+  "windows": 6,
+  "device": "cuda",
+  "elapsed_seconds": 31.39791004685685,
+  "peak_gpu_allocated_bytes": 6556092416,
+  "peak_gpu_reserved_bytes": 6962544640,
+  "peak_rss_bytes": 5966360576,
+  "submission_sha256": "84cabab8415ce1115f7479f8588fcb85f8baa70896d4def2a4e82f35c577c111",
+  "manifest_sha256": "d9421798bc8fe535bcbd3dd5eb7e153af5f60ef8fa218149eabb782eb563296a",
+  "official_l4_validated": false,
+  "window_pooling": "all_valid_mean_no_audible_mask",
+  "demucs_input_decoder": "torchaudio.load+demucs.audio.convert_audio"
+}

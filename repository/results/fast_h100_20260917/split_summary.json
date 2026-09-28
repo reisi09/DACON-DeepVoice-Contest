@@ -1,0 +1,62 @@
+{
+  "train": {
+    "files": 1327,
+    "groups": 282,
+    "music": {
+      "0": 143,
+      "1": 800
+    },
+    "speech": {
+      "1": 192,
+      "0": 192
+    },
+    "sources": {
+      "FMA": 70,
+      "Echoes": 800,
+      "nsynth": 73,
+      "mlaad_fake": 162,
+      "mlaad_real": 162,
+      "MLAAD": 60
+    }
+  },
+  "validation": {
+    "files": 187,
+    "groups": 38,
+    "music": {
+      "1": 121,
+      "0": 18
+    },
+    "speech": {
+      "0": 24,
+      "1": 24
+    },
+    "sources": {
+      "mlaad_real": 20,
+      "mlaad_fake": 20,
+      "Echoes": 121,
+      "nsynth": 6,
+      "FMA": 12,
+      "MLAAD": 8
+    }
+  },
+  "test": {
+    "files": 172,
+    "groups": 35,
+    "music": {
+      "1": 105,
+      "0": 19
+    },
+    "speech": {
+      "1": 24,
+      "0": 24
+    },
+    "sources": {
+      "Echoes": 105,
+      "mlaad_fake": 18,
+      "mlaad_real": 18,
+      "nsynth": 11,
+      "FMA": 8,
+      "MLAAD": 12
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "scenario": "reassemble every immutable upload part set by streaming SHA and test each ZIP member",
+  "invocation": ".venv/bin/python inline archive integrity audit",
+  "archives": [
+    {
+      "name": "v4_train.zip",
+      "archive_bytes": 3150620485,
+      "archive_sha256_matches": true,
+      "part_count": 32,
+      "all_part_receipts_match_and_le_95MiB": true,
+      "zip_test_bad_member": null,
+      "all_members_under_v4_validation": true,
+      "members": 1517
+    },
+    {
+      "name": "v4_dev.zip",
+      "archive_bytes": 255421320,
+      "archive_sha256_matches": true,
+      "part_count": 3,
+      "all_part_receipts_match_and_le_95MiB": true,
+      "zip_test_bad_member": null,
+      "all_members_under_v4_validation": true,
+      "members": 261
+    },
+    {
+      "name": "v4_sealed.zip",
+      "archive_bytes": 322426108,
+      "archive_sha256_matches": true,
+      "part_count": 4,
+      "all_part_receipts_match_and_le_95MiB": true,
+      "zip_test_bad_member": null,
+      "all_members_under_v4_validation": true,
+      "members": 261
+    },
+    {
+      "name": "v4_metadata.zip",
+      "archive_bytes": 659843,
+      "archive_sha256_matches": true,
+      "part_count": 1,
+      "all_part_receipts_match_and_le_95MiB": true,
+      "zip_test_bad_member": null,
+      "all_members_under_v4_validation": true,
+      "members": 14
+    }
+  ],
+  "all_pass": true
+}

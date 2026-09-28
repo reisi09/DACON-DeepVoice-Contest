@@ -1,0 +1,67 @@
+{
+  "coefficients": {
+    "Anti": {
+      "ids": [
+        "speech_afe283a6f888e709a070_base",
+        "speech_4412a23e71da591f5939_base",
+        "speech_7a4d20c200779463e583_base",
+        "speech_11aa2d0545a187aae840_base",
+        "speech_03cb77a3db6534fdcfbf_base",
+        "speech_92c8fa535e8449ec053c_base",
+        "speech_03e300cc3349b7dbcfc6_base",
+        "speech_40430aaad86c163c5c74_base"
+      ],
+      "intercept": -1.81620738624139,
+      "positive_slope_fit_accepted": true,
+      "slope": 0.6188264484080087
+    },
+    "DF": {
+      "ids": [
+        "speech_afe283a6f888e709a070_base",
+        "speech_4412a23e71da591f5939_base",
+        "speech_7a4d20c200779463e583_base",
+        "speech_11aa2d0545a187aae840_base",
+        "speech_03cb77a3db6534fdcfbf_base",
+        "speech_92c8fa535e8449ec053c_base",
+        "speech_03e300cc3349b7dbcfc6_base",
+        "speech_40430aaad86c163c5c74_base"
+      ],
+      "intercept": -0.461329919033025,
+      "positive_slope_fit_accepted": true,
+      "slope": 0.7661203077104407
+    },
+    "Music": {
+      "ids": [
+        "fresh_fma_5223_base",
+        "fresh_fma_107756_base",
+        "fresh_fma_147070_base",
+        "fresh_fma_42051_base",
+        "fresh_fma_80052_base",
+        "fresh_fma_11550_base",
+        "fresh_fma_75028_base",
+        "fresh_fma_94251_base",
+        "fresh_fma_71508_base",
+        "fresh_fma_155064_base",
+        "fresh_fma_3481_base",
+        "fresh_fma_142277_base",
+        "fresh_fma_120493_base",
+        "fresh_sonics_53641_base",
+        "fresh_sonics_54051_base",
+        "fresh_sonics_53925_base",
+        "fresh_sonics_54084_base",
+        "fresh_sonics_54212_base",
+        "fresh_sonics_54158_base",
+        "fresh_sonics_54315_base",
+        "fresh_sonics_53491_base"
+      ],
+      "intercept": -2.1258797689168034,
+      "positive_slope_fit_accepted": true,
+      "slope": 0.9537850823778239
+    }
+  },
+  "evaluated_split": "dev",
+  "fitted_split": "calibration",
+  "limitation": "One calibration voice speaker; monotonic Platt cannot improve each branch EER by itself",
+  "parameters_frozen": true,
+  "test_statistics_used": false
+}

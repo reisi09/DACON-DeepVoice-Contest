@@ -1,0 +1,58 @@
+{
+  "reference": "historical DataV4; not independent or official score",
+  "metrics": {
+    "score": null,
+    "metrics": {
+      "file_eer": 0.10939954188481675,
+      "voice_eer": 0.11070986873541894,
+      "music_eer": 0.20005497526113247,
+      "voice_presence_auc": 0.9979462237360157,
+      "music_presence_auc": 0.9986542871104935
+    },
+    "invalid": {},
+    "partial": {
+      "voice_eer": "known subset only; unknown relevant labels: 261",
+      "voice_presence_auc": "known subset only; unknown relevant labels: 176"
+    },
+    "counts": {
+      "file_eer": 6444,
+      "voice_eer": 5139,
+      "music_eer": 2849,
+      "voice_presence_auc": 6268,
+      "music_presence_auc": 6444
+    },
+    "unknown_counts": {
+      "file_eer": 0,
+      "voice_eer": 261,
+      "music_eer": 0,
+      "voice_presence_auc": 176,
+      "music_presence_auc": 0
+    },
+    "coverage": {
+      "file_eer": 1.0,
+      "voice_eer": 0.9516666666666667,
+      "music_eer": 1.0,
+      "voice_presence_auc": 0.9726877715704532,
+      "music_presence_auc": 1.0
+    }
+  },
+  "W_known_subset": 0.13685823726783192,
+  "max_metric_abs_difference": 0.0,
+  "prediction_rows": 6444,
+  "bank_rows": 6450,
+  "missing_prediction_ids": [
+    "v4_11f5005d4695761d1c0359fb",
+    "v4_1ef1c6aa715c11156f5b5f06",
+    "v4_26f2531bfe7def2fa879e7d1",
+    "v4_286dcd12e51753138d6d0db6",
+    "v4_3f610f1c32ac81ae6f576021",
+    "v4_778117b83bb170ab841f14f5"
+  ],
+  "hashes": {
+    "bank_test.csv": "c94d0847000d51f2b705ed28debf0ae60811a71bec4510b8f8b0fe1128c505c1",
+    "test_predictions_decision.csv": "da46ff8befc1ff76a1286eebd086403355e61ad111b2bbda0724dda28a75d5c4",
+    "file_ensemble.report.json": "57488eda98a6c96c85f1df7073eb83eb4926a44eb152419e5e7ad7d2b2acc367",
+    "run_identity.json": "8dc83fafbe958db518d7388b2fb15d717e36302b7658e6fcd743058fbba08c3d",
+    "candidate_lock.json": "ea7f9c56c638f14d71285d2b5d56b887b41665a76a189fd14807645f99898e1a"
+  }
+}

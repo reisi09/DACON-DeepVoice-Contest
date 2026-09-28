@@ -1,0 +1,22 @@
+surface=Aside Colab matched recheck; invocation=sky.get_app_state after 45s wait; observed_lines=
+Window: "DACON_236749_v4_matched_recheck.ipynb - Colab", App: Aside.
+0 표준 윈도우 DACON_236749_v4_matched_recheck.ipynb - Colab - Aside, URL: colab.research.google.com/drive/1LSG2LyER9FtABtni9wBNYcJNPrphKiOj#scrollTo=ab55fb6b, Secondary Actions: Raise
+	1 container DACON_236749_v4_matched_recheck.ipynb - Colab - Aside, URL: colab.research.google.com/drive/1LSG2LyER9FtABtni9wBNYcJNPrphKiOj#scrollTo=ab55fb6b
+				27 HTML 콘텐츠 DACON_236749_v4_matched_recheck.ipynb - Colab, URL: colab.research.google.com/drive/1LSG2LyER9FtABtni9wBNYcJNPrphKiOj#scrollTo=ab55fb6b
+								34 텍스트 필드 (settable) Description: 노트북 이름, Value: DACON_236749_v4_matched_recheck.ipynb
+								79 버튼 RAM 디스크 연결된 런타임: Python 3 Google Compute Engine 백엔드 (GPU) RAM: 3.39 GB/83.47 GB 디스크: 47.38 GB/112.64 GB
+									82 텍스트 연결된 런타임: Python 3 Google Compute Engine 백엔드 (GPU) RAM: 3.39 GB/83.47 GB 디스크: 47.38 GB/112.64 GB
+											113 텍스트  This is a distinct, receipt-bound P1/P3 causal recheck. It never opens sealed data, selects a model, refits, or submits.
+											118 텍스트 The recheck uses the original allocation clock, fresh matched P1/P3 initialization and RNG receipts, fifteen epochs per arm, and the audited G0 development predictions. It is not a continuation of the earlier P3 result.
+"""Run only the receipt-bound, matched P1/P3 causal recheck."""
+ --------------------------------------------------------------------------- FileNotFoundError                          Traceback (most recent call last)
+														161 text  in  <cell line: 0> () ----> 1 get_ipython ( ) . run_cell_magic ( 'writefile' , '/content/dacon_trainable_v4/recheck_v4_matched.py' , '#!/usr/bin/env python3\n"""Run only the receipt-bound, matched P1/P3 causal recheck."""\n\nfrom __future__ import annotations\n\nimport argparse\nimport csv\nimport gc\nimport hashlib\nimport json\nimport time\nfrom dataclasses import replace\nfrom pathlib import Path\n\nimport torch\n\nfrom v4_batches import music_supervision_rows\nfrom v4_data import load_manifest\nfrom v4_model import load_model, parameter_groups\nfrom v4_training_trials import TrialSpec, reset_training_seed, train_trial\n\nSEED = 20_26
+											275 텍스트 remedy_contract.json
+											276 텍스트 , both trial receipts, and 
+											277 텍스트 matched_comparison.json
+											291 텍스트 matched_comparison.json
+											292 텍스트  and both trial receipts to decide whether the fresh causal comparison completed. This notebook does not make a selection or open sealed data.
+								305 팝업 버튼 A100(Python 3)
+								335 탭 (settable, boolean) Description: SUBMIT_AST_EPOCH17_20260913 - Google Drive - 비활성 탭 - 315MB 확보됨, Value: off
+								343 탭 (selected, settable, boolean) Description: DACON_236749_v4_matched_recheck.ipynb - Colab - 메모리 사용량 - 434MB, Value: on
+"""Run only the receipt-bound, matched P1/P3 causal recheck."""

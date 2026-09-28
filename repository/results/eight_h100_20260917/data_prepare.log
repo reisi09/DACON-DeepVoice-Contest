@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/eight_data.py", line 268, in <module>
+    print(json.dumps(prepare(root) if command == "prepare" else self_check(root), sort_keys=True))
+                     ^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/eight_data.py", line 231, in prepare
+    audit = validate_manifest(dataset)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/eight_contract.py", line 95, in validate_manifest
+    raise ContractError(f"duplicate identity or audio: {row['ID']}")
+eight_contract.ContractError: duplicate identity or audio: e2_core_000cbfa7068dfcdde08e_base_voice_only_minus6dB

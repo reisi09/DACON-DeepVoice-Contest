@@ -1,0 +1,14 @@
+{
+  "observed": "native startup waits for the full training job; workspace remained initializing and a new container launched at 14:33:50 UTC",
+  "initial_start_epoch": 1789740430.3379068,
+  "unexpected_restart_epoch": 1789742034.322526,
+  "cached_rows_preserved": 386,
+  "platform_restart_reason": "not exposed by retrieved logs",
+  "fix": "detach job with nohup; complete initialization immediately; verify and reuse original audio and feature cache",
+  "local_checks": "old startup blocks; detached startup returns; corrupted or missing resumed audio rejected",
+  "recovery_verified": true,
+  "workspace_state_after_fix": "running",
+  "features_after_resume": 411,
+  "cached_features_before_resume": 386,
+  "feature_model_code_changed": false
+}

@@ -25,7 +25,7 @@ sys.path.insert(0, str(HERE.parent / 'work2' / 'backbones'))
 import run as R  # noqa: E402  (backbones run.py: train, stats, Standardize, ResMLP, H, T, Item, PINNED, CACHE, LONG)
 
 H, T, Item = R.H, R.T, R.Item
-OUT = HERE / 'runs'
+OUT = Path(os.environ.get('RUNS_OUT', HERE / 'runs'))
 SINGMOS = Path(os.environ.get('SINGMOS_FEATS', H.ROOT / '_workspace/singmos_feats'))
 FULL_TRACK = ('existing:SONICS', 'existing:suno', 'existing:udio')
 FMC = set(json.loads((HERE / 'fmc_caption_vocal.json').read_text())['orig_ids'])
@@ -50,6 +50,7 @@ def load_rows(label_completion: bool):
             for s, f in (('train', 'bank_trainval.csv'), ('val', 'bank_trainval.csv'), ('test', 'bank_test.csv'))}
     if label_completion:
         rows['train'] = [complete(r) for r in rows['train']]
+    H.add_new_rows(rows)   # NEW_ROWS / NEW_TRAIN / NEW_VAL (train_backbone_heads.add_new_rows)
     return rows
 
 
@@ -79,13 +80,13 @@ def every_items(rows, member):
     frozen = set(json.loads((HERE.parent / 'work2' / 'stacking' / 'frozen_rows.json').read_text())['ids'])
     out = []
     for r in rows:
-        if r['ID'] not in frozen or not (R.CACHE / f"{r['ID']}.npz").exists():
+        if (r['ID'] not in frozen and not r.get('npz')) or not H.npz_path(r, R.CACHE).exists():
             continue
-        with np.load(H.OLD[r.get('cache_split', r['split'])] / f"{r['ID']}.npz") as o:
+        with np.load(H.npz_path(r, H.OLD.get(r.get('cache_split', r['split'])))) as o:
             silent = bool(o['voice_silent'])
             f = o['voice_embeddings'].astype(np.float32) if member == 'df' else None
         if member == 'ad':
-            with np.load(R.CACHE / f"{r['ID']}.npz") as d:
+            with np.load(H.npz_path(r, R.CACHE)) as d:
                 f = d['ad_embeddings'].astype(np.float32)
         out.append(Item({**r, 'route': 'voice'}, f, np.full(len(f), np.nan, np.float32), 0., silent))
     return out
@@ -120,19 +121,22 @@ def main(variant: str, member: str) -> None:
            'seeds': {}, 'val_ids': [x.row['ID'] for x, _ in data['val']], 'val_labels': [int(x.label) for x, _ in data['val']],
            'test_ids': [x.row['ID'] for x, _ in data['test']], 'test_labels': [int(x.label) for x, _ in data['test']]}
     val_preds, test_preds, sanity_preds, valc_preds = [], [], [], []
-    every = {s: every_items(rows[s], member) for s in ('val', 'test')}
+    every = {s: every_items(rows[s], member) for s in ('val', 'test', 'newtest') if s in rows}
     res['every'] = {s: {'ids': [x.row['ID'] for x in v], 'silent': [bool(x.silent) for x in v], 'preds': []} for s, v in every.items()}
     res['valc_ids'] = [x.row['ID'] for x, _ in valc]
     for seed in (41, 42, 43):
         model, info = R.train('voice', train, data['val'], make, fake_index, seed, **R.LONG)
-        val_preds.append(T.predict(model, [x for x, _ in data['val']], 'voice', fake_index, 256, 10 ** 6, 'cpu').tolist())
-        test_preds.append(T.predict(model, [x for x, _ in data['test']], 'voice', fake_index, 256, 10 ** 6, 'cpu').tolist())
+        val_preds.append(T.predict(model, [x for x, _ in data['val']], 'voice', fake_index, 256, 10 ** 6, R.DEVICE).tolist())
+        test_preds.append(T.predict(model, [x for x, _ in data['test']], 'voice', fake_index, 256, 10 ** 6, R.DEVICE).tolist())
         for s, v in every.items():
-            res['every'][s]['preds'].append(T.predict(model, v, 'voice', fake_index, 256, 10 ** 6, 'cpu').tolist())
-        valc_preds.append(T.predict(model, [x for x, _ in valc], 'voice', fake_index, 256, 10 ** 6, 'cpu').tolist())
+            res['every'][s]['preds'].append(T.predict(model, v, 'voice', fake_index, 256, 10 ** 6, R.DEVICE).tolist())
+        valc_preds.append(T.predict(model, [x for x, _ in valc], 'voice', fake_index, 256, 10 ** 6, R.DEVICE).tolist())
         if sanity:
-            sanity_preds.append(T.predict(model, [x for x, _ in sanity], 'voice', fake_index, 256, 10 ** 6, 'cpu').tolist())
+            sanity_preds.append(T.predict(model, [x for x, _ in sanity], 'voice', fake_index, 256, 10 ** 6, R.DEVICE).tolist())
         res['seeds'][seed] = {k: info[k] for k in ('val_eer', 'val_bce', 'best_epoch', 'epochs_run', 'n_train', 'train_seconds')}
+        if os.environ.get('SAVE_MODELS'):
+            Path(os.environ['SAVE_MODELS']).mkdir(parents=True, exist_ok=True)
+            torch.save(model.cpu(), Path(os.environ['SAVE_MODELS']) / f'voice_{member}__{variant}__{seed}.pt')
         print(variant, member, seed, res['seeds'][seed], flush=True)
     res['val_preds'], res['test_preds'], res['valc_preds'] = val_preds, test_preds, valc_preds
     if sanity:
@@ -141,7 +145,7 @@ def main(variant: str, member: str) -> None:
     res['val_ens_eer'] = float(R._roc_metrics(res['val_labels'], np.mean(val_preds, 0).tolist())[0])
     print(variant, member, 'val_ens_eer', round(res['val_ens_eer'], 5), res.get('singmos_test'), flush=True)
     OUT.mkdir(exist_ok=True)
-    (OUT / f'voice_{member}__{variant}.json').write_text(json.dumps(res))
+    (OUT / f"voice_{member}__{variant}{os.environ.get('RUN_TAG', '')}.json").write_text(json.dumps(res))
 
 
 if __name__ == '__main__':

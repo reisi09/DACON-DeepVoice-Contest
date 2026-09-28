@@ -1,0 +1,142 @@
+{
+  "candidate": "B_ensemble",
+  "candidate_metrics": {
+    "counts": {
+      "file_eer": 129,
+      "music_eer": 129,
+      "music_presence_auc": 129,
+      "voice_eer": 0,
+      "voice_presence_auc": 20
+    },
+    "coverage": {
+      "file_eer": 1.0,
+      "music_eer": 1.0,
+      "music_presence_auc": 1.0,
+      "voice_eer": 0.0,
+      "voice_presence_auc": 0.15503875968992248
+    },
+    "invalid": {
+      "music_presence_auc": "both positive and negative labels are required",
+      "voice_eer": "both positive and negative labels are required",
+      "voice_presence_auc": "both positive and negative labels are required"
+    },
+    "metrics": {
+      "file_eer": 0.08115468409586057,
+      "music_eer": 0.08115468409586057,
+      "music_presence_auc": null,
+      "voice_eer": null,
+      "voice_presence_auc": null
+    },
+    "partial": {
+      "voice_eer": "known subset only; unknown relevant labels: 109",
+      "voice_presence_auc": "known subset only; unknown relevant labels: 109"
+    },
+    "score": null,
+    "unknown_counts": {
+      "file_eer": 0,
+      "music_eer": 0,
+      "music_presence_auc": 0,
+      "voice_eer": 109,
+      "voice_presence_auc": 109
+    }
+  },
+  "candidate_sha256": "14f76c44a6717640a019c06fc0628b75aef32d5ff62a30541f1de61c18a722ea",
+  "changed_outputs": [
+    "FILE_FAKE_PROB"
+  ],
+  "comparison": {
+    "actual_l4_verified": false,
+    "bootstrap": {
+      "ci95": [
+        -0.003798379364865783,
+        0.02806619871605656
+      ],
+      "invalid": 0,
+      "invalid_fraction": 0.0,
+      "resamples": 2000,
+      "valid": 2000
+    },
+    "class_group_counts": {
+      "file_eer": {
+        "0": 12,
+        "1": 7
+      },
+      "music_eer": {
+        "0": 12,
+        "1": 7
+      },
+      "music_presence_auc": {
+        "0": 0,
+        "1": 12
+      },
+      "voice_eer": {
+        "0": 0,
+        "1": 0
+      },
+      "voice_presence_auc": {
+        "0": 5,
+        "1": 0
+      }
+    },
+    "delta": 0.01274509803921567,
+    "mode": "identifiable_delta",
+    "regression_failures": [
+      "missing natural subgroup",
+      "missing singing subgroup",
+      "missing telephone subgroup"
+    ],
+    "statistical_eligible": false,
+    "subgroups": {
+      "natural": null,
+      "singing": null,
+      "telephone": null
+    },
+    "validation_eligible": false
+  },
+  "control": {
+    "counts": {
+      "file_eer": 129,
+      "music_eer": 129,
+      "music_presence_auc": 129,
+      "voice_eer": 0,
+      "voice_presence_auc": 20
+    },
+    "coverage": {
+      "file_eer": 1.0,
+      "music_eer": 1.0,
+      "music_presence_auc": 1.0,
+      "voice_eer": 0.0,
+      "voice_presence_auc": 0.15503875968992248
+    },
+    "invalid": {
+      "music_presence_auc": "both positive and negative labels are required",
+      "voice_eer": "both positive and negative labels are required",
+      "voice_presence_auc": "both positive and negative labels are required"
+    },
+    "metrics": {
+      "file_eer": 0.10947712418300651,
+      "music_eer": 0.08115468409586057,
+      "music_presence_auc": null,
+      "voice_eer": null,
+      "voice_presence_auc": null
+    },
+    "partial": {
+      "voice_eer": "known subset only; unknown relevant labels: 109",
+      "voice_presence_auc": "known subset only; unknown relevant labels: 109"
+    },
+    "score": null,
+    "unknown_counts": {
+      "file_eer": 0,
+      "music_eer": 0,
+      "music_presence_auc": 0,
+      "voice_eer": 109,
+      "voice_presence_auc": 109
+    }
+  },
+  "control_sha256": "c5a4350208cd495868662cbbc464d8f8a3c5671b88dd98372316bee021e202ec",
+  "diagnostic_metric_status": "rejected",
+  "diagnostic_only": true,
+  "reason": "statistical or subgroup regression gate failed",
+  "schema_version": 1,
+  "status": "diagnostic_only_not_accepted"
+}

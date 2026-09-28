@@ -1,0 +1,19 @@
+{
+  "scenario": "Paired 30-second FMA-real files; second file replaces only its final 5 seconds with a labeled Echoes/udio fake-music segment",
+  "real_source_id": "0707d483d8823b23cd3a",
+  "fake_source_id": "01259f5fcc9bff837cdc",
+  "pooling": "temperature-2 normalized log-sum-exp over each model's native full-file grid",
+  "models": {
+    "sonics": {
+      "all_real_probability": 0.041514087468385696,
+      "late_fake_probability": 0.1395595222711563,
+      "absolute_delta": 0.09804543852806091
+    },
+    "ast": {
+      "all_real_probability": 0.7294114828109741,
+      "late_fake_probability": 0.742378294467926,
+      "absolute_delta": 0.012966811656951904,
+      "note": "AST music head is newly initialized with torch seed 236749; this measures connectivity, not detection quality"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "maximum_probability_difference": 1.4597686859296743e-07,
+  "recomputed_metrics": {
+    "file_eer": 0.3857142857142857,
+    "voice_eer": 0.4291666666666667,
+    "music_eer": 0.4828571428571429,
+    "voice_presence_auc": null,
+    "music_presence_auc": 0.9954411764705886
+  },
+  "reference_metrics": {
+    "file_eer": 0.3857142857142857,
+    "voice_eer": 0.4291666666666667,
+    "music_eer": 0.4828571428571429,
+    "voice_presence_auc": null,
+    "music_presence_auc": 0.9954411764705886
+  },
+  "absolute_probability_tolerance": 1e-05,
+  "reason": "Float32 BLAS reductions may differ across CPU hosts."
+}

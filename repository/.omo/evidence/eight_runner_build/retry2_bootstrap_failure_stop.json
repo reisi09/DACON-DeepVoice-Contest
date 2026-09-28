@@ -1,0 +1,16 @@
+{
+  "scenario": "stop retry2 after ffmpeg executable-mode failure",
+  "binary_observable": {
+    "pause_verified": true,
+    "failure_type": "RuntimeError",
+    "message": "No ffmpeg exe could be found",
+    "native_gpu_admission_created": false,
+    "final_workspace": {
+      "workspace": "wsp-9683432r72m7",
+      "phase": "standby",
+      "state": "stopped",
+      "accelerator": "H100 SXM",
+      "accelerator_count": 1
+    }
+  }
+}

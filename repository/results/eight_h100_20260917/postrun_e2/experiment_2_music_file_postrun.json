@@ -1,0 +1,292 @@
+{
+  "analysis": "postrun_cpu_only",
+  "arms": {
+    "balanced": {
+      "dev": {
+        "already_fake_file": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.30214706048447276,
+          "median": 0.32894367483564824,
+          "pairs": 4,
+          "positive_rate": 1.0,
+          "uncertain": true
+        },
+        "file_real_backing_control": {
+          "ci95": null,
+          "components": 1,
+          "mean": -0.19127171070025678,
+          "median": -0.13811515288162546,
+          "pairs": 4,
+          "positive_rate": 0.0,
+          "uncertain": true
+        },
+        "file_threshold_metrics_truth_changing": {
+          "auc": 0.46875,
+          "decision_threshold": 0.8588860740304459,
+          "eer": 0.5,
+          "fpr": 0.375,
+          "n": 12,
+          "negative_n": 8,
+          "positive_n": 4,
+          "recall": 0.0,
+          "threshold": 0.8127340671955744
+        },
+        "music_real_backing_control": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.23244256487953405,
+          "median": 0.012460837761561039,
+          "pairs": 8,
+          "positive_rate": 0.5,
+          "uncertain": true
+        },
+        "music_response": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.13504849727684132,
+          "median": 0.03285161157449085,
+          "pairs": 8,
+          "positive_rate": 1.0,
+          "uncertain": true
+        },
+        "music_threshold_metrics": {
+          "auc": 0.5234375,
+          "decision_threshold": 0.9998037815093995,
+          "eer": 0.375,
+          "fpr": 0.375,
+          "n": 24,
+          "negative_n": 16,
+          "positive_n": 8,
+          "recall": 0.5,
+          "threshold": 0.9996031920115153
+        },
+        "truth_changing_file": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.026526729197839105,
+          "median": -0.002715508062840377,
+          "pairs": 4,
+          "positive_rate": 0.5,
+          "uncertain": true
+        }
+      },
+      "test": {
+        "already_fake_file": {
+          "ci95": null,
+          "components": 1,
+          "mean": -0.236273335150024,
+          "median": -0.17070612250522288,
+          "pairs": 4,
+          "positive_rate": 0.5,
+          "uncertain": true
+        },
+        "file_real_backing_control": {
+          "ci95": null,
+          "components": 1,
+          "mean": -0.7895761597462123,
+          "median": -0.8058931127666535,
+          "pairs": 4,
+          "positive_rate": 0.0,
+          "uncertain": true
+        },
+        "file_threshold_metrics_truth_changing": {
+          "auc": 0.75,
+          "decision_threshold": 0.8588860740304459,
+          "eer": 0.5,
+          "fpr": 0.0,
+          "n": 12,
+          "negative_n": 8,
+          "positive_n": 4,
+          "recall": 0.5,
+          "threshold": 0.7308590063577207
+        },
+        "music_real_backing_control": {
+          "ci95": null,
+          "components": 1,
+          "mean": -0.38307027043871733,
+          "median": -0.5080517885119965,
+          "pairs": 8,
+          "positive_rate": 0.375,
+          "uncertain": true
+        },
+        "music_response": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.3633816541332635,
+          "median": 0.3746018894016743,
+          "pairs": 8,
+          "positive_rate": 1.0,
+          "uncertain": true
+        },
+        "music_threshold_metrics": {
+          "auc": 0.96875,
+          "decision_threshold": 0.9998037815093995,
+          "eer": 0.125,
+          "fpr": 0.0,
+          "n": 24,
+          "negative_n": 16,
+          "positive_n": 8,
+          "recall": 0.625,
+          "threshold": 0.9993205070495605
+        },
+        "truth_changing_file": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.38154461161219777,
+          "median": 0.38833273408394803,
+          "pairs": 4,
+          "positive_rate": 1.0,
+          "uncertain": true
+        }
+      }
+    },
+    "parent": {
+      "dev": {
+        "already_fake_file": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.36831870560297825,
+          "median": 0.47228243424297556,
+          "pairs": 4,
+          "positive_rate": 1.0,
+          "uncertain": true
+        },
+        "file_real_backing_control": {
+          "ci95": null,
+          "components": 1,
+          "mean": -0.183287114980886,
+          "median": -0.12151549941857226,
+          "pairs": 4,
+          "positive_rate": 0.0,
+          "uncertain": true
+        },
+        "file_threshold_metrics_truth_changing": {
+          "auc": 0.46875,
+          "decision_threshold": 0.8294650166603035,
+          "eer": 0.5,
+          "fpr": 0.5,
+          "n": 12,
+          "negative_n": 8,
+          "positive_n": 4,
+          "recall": 0.0,
+          "threshold": 0.812770920947613
+        },
+        "music_real_backing_control": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.15497300798582125,
+          "median": 0.03595184286435449,
+          "pairs": 8,
+          "positive_rate": 0.75,
+          "uncertain": true
+        },
+        "music_response": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.18411068615137083,
+          "median": 0.03291618327299756,
+          "pairs": 8,
+          "positive_rate": 1.0,
+          "uncertain": true
+        },
+        "music_threshold_metrics": {
+          "auc": 0.578125,
+          "decision_threshold": 0.9997464815775554,
+          "eer": 0.5,
+          "fpr": 0.25,
+          "n": 24,
+          "negative_n": 16,
+          "positive_n": 8,
+          "recall": 0.5,
+          "threshold": 0.9984839757283529
+        },
+        "truth_changing_file": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.02975523627968074,
+          "median": 0.010770329196021222,
+          "pairs": 4,
+          "positive_rate": 0.5,
+          "uncertain": true
+        }
+      },
+      "test": {
+        "already_fake_file": {
+          "ci95": null,
+          "components": 1,
+          "mean": -0.11429207546333048,
+          "median": -0.04907145636011462,
+          "pairs": 4,
+          "positive_rate": 0.5,
+          "uncertain": true
+        },
+        "file_real_backing_control": {
+          "ci95": null,
+          "components": 1,
+          "mean": -0.807170611156646,
+          "median": -0.815832912566846,
+          "pairs": 4,
+          "positive_rate": 0.0,
+          "uncertain": true
+        },
+        "file_threshold_metrics_truth_changing": {
+          "auc": 0.75,
+          "decision_threshold": 0.8294650166603035,
+          "eer": 0.5,
+          "fpr": 0.25,
+          "n": 12,
+          "negative_n": 8,
+          "positive_n": 4,
+          "recall": 0.5,
+          "threshold": 0.7237848843899695
+        },
+        "music_real_backing_control": {
+          "ci95": null,
+          "components": 1,
+          "mean": -0.3981712493356705,
+          "median": -0.6051088586100377,
+          "pairs": 8,
+          "positive_rate": 0.375,
+          "uncertain": true
+        },
+        "music_response": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.4390339631863754,
+          "median": 0.5119006002011399,
+          "pairs": 8,
+          "positive_rate": 1.0,
+          "uncertain": true
+        },
+        "music_threshold_metrics": {
+          "auc": 1.0,
+          "decision_threshold": 0.9997464815775554,
+          "eer": 0.0,
+          "fpr": 0.0,
+          "n": 24,
+          "negative_n": 16,
+          "positive_n": 8,
+          "recall": 0.75,
+          "threshold": 0.998728891213735
+        },
+        "truth_changing_file": {
+          "ci95": null,
+          "components": 1,
+          "mean": 0.38018319154939306,
+          "median": 0.40245537518375535,
+          "pairs": 4,
+          "positive_rate": 1.0,
+          "uncertain": true
+        }
+      }
+    }
+  },
+  "claim_limit": "constructed source-confounded diagnostic; separator and presence effects retained; no official score",
+  "estimand": "fake SONICS backing minus mean of two real FMA backings for the same vocal and level",
+  "noise_rows_excluded_from_truth_contrasts": 40,
+  "normalizer_receipt": "results/eight_h100_20260917/postrun_e2/normalizer_receipt.json",
+  "official_score": null,
+  "selection_lock": "results/eight_h100_20260917/postrun_e2/selection_E2_music_file_postrun_locked.json",
+  "status": "complete"
+}

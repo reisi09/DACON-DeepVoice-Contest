@@ -1,0 +1,31 @@
+{"stage": "coalesced_plan", "requests": 1240, "remaining_selected_members": 3914, "planned_transfer_bytes": 3080430090, "selected_original_bytes": 242884605, "max_span_bytes": 4194304, "unselected_gap_bytes_retained": false}
+Traceback (most recent call last):
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 725, in <module>
+    main()
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 643, in main
+    acquire_asv_selection()
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 424, in acquire_asv_selection
+    for number, (span, size) in enumerate(zip(tasks, executor.map(acquire, tasks)), 1):
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 408, in acquire
+    return fetch_asv_span(span)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/new_panel_data_speech_bank.py", line 309, in fetch_asv_span
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['curl', '-fLsS', '--connect-timeout', '20', '--max-time', '180', '--max-filesize', '3144319', '--range', '184050196-187194514', '-D', '/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/data_expansion_20260918/speech/metadata/asv_ranges/184050196-187194514.headers', 'https://zenodo.org/api/records/6906306/files/LA.zip/content?range=184050196-187194514']' returned non-zero exit status 28.

@@ -1,0 +1,636 @@
+{
+  "all_eight_complete": true,
+  "archive_receipt": {
+    "archive_bytes": 292178089,
+    "archive_ready": true,
+    "archive_sha256": "681d41de10397d31a371daaa276a4a90d19f04789b85e01fdd6f936399dd23d2",
+    "archive_verified": true,
+    "export_member_count": 7314,
+    "exported_unix": 1789658276.8055272,
+    "status": "exported"
+  },
+  "attempt": "attempt6",
+  "component_count_correction": {
+    "corrected_global_all_group_atoms": 256,
+    "difference": 78,
+    "executed_notebook_rule": 178,
+    "singleton_group_rows": 264
+  },
+  "e7": {
+    "checkpoint_audit": [
+      {
+        "all_finite": true,
+        "classifier_shapes": {
+          "classifier.bias": [
+            2
+          ],
+          "classifier.weight": [
+            2,
+            1280
+          ]
+        },
+        "file": "output/e7/checkpoints/head_only_ce_seed41.pt",
+        "lora_b_keys": 96,
+        "nonzero_lora_b": 0,
+        "tensor_keys": 194
+      },
+      {
+        "all_finite": true,
+        "classifier_shapes": {
+          "classifier.bias": [
+            2
+          ],
+          "classifier.weight": [
+            2,
+            1280
+          ]
+        },
+        "file": "output/e7/checkpoints/head_only_ce_seed42.pt",
+        "lora_b_keys": 96,
+        "nonzero_lora_b": 0,
+        "tensor_keys": 194
+      },
+      {
+        "all_finite": true,
+        "classifier_shapes": {
+          "classifier.bias": [
+            2
+          ],
+          "classifier.weight": [
+            2,
+            1280
+          ]
+        },
+        "file": "output/e7/checkpoints/head_only_ce_seed43.pt",
+        "lora_b_keys": 96,
+        "nonzero_lora_b": 0,
+        "tensor_keys": 194
+      },
+      {
+        "all_finite": true,
+        "classifier_shapes": {
+          "classifier.bias": [
+            2
+          ],
+          "classifier.weight": [
+            2,
+            1280
+          ]
+        },
+        "file": "output/e7/checkpoints/lora_ce_kl_seed41.pt",
+        "lora_b_keys": 96,
+        "nonzero_lora_b": 96,
+        "tensor_keys": 194
+      },
+      {
+        "all_finite": true,
+        "classifier_shapes": {
+          "classifier.bias": [
+            2
+          ],
+          "classifier.weight": [
+            2,
+            1280
+          ]
+        },
+        "file": "output/e7/checkpoints/lora_ce_kl_seed42.pt",
+        "lora_b_keys": 96,
+        "nonzero_lora_b": 96,
+        "tensor_keys": 194
+      },
+      {
+        "all_finite": true,
+        "classifier_shapes": {
+          "classifier.bias": [
+            2
+          ],
+          "classifier.weight": [
+            2,
+            1280
+          ]
+        },
+        "file": "output/e7/checkpoints/lora_ce_kl_seed43.pt",
+        "lora_b_keys": 96,
+        "nonzero_lora_b": 96,
+        "tensor_keys": 194
+      },
+      {
+        "all_finite": true,
+        "classifier_shapes": {
+          "classifier.bias": [
+            2
+          ],
+          "classifier.weight": [
+            2,
+            1280
+          ]
+        },
+        "file": "output/e7/checkpoints/lora_ce_seed41.pt",
+        "lora_b_keys": 96,
+        "nonzero_lora_b": 96,
+        "tensor_keys": 194
+      },
+      {
+        "all_finite": true,
+        "classifier_shapes": {
+          "classifier.bias": [
+            2
+          ],
+          "classifier.weight": [
+            2,
+            1280
+          ]
+        },
+        "file": "output/e7/checkpoints/lora_ce_seed42.pt",
+        "lora_b_keys": 96,
+        "nonzero_lora_b": 96,
+        "tensor_keys": 194
+      },
+      {
+        "all_finite": true,
+        "classifier_shapes": {
+          "classifier.bias": [
+            2
+          ],
+          "classifier.weight": [
+            2,
+            1280
+          ]
+        },
+        "file": "output/e7/checkpoints/lora_ce_seed43.pt",
+        "lora_b_keys": 96,
+        "nonzero_lora_b": 96,
+        "tensor_keys": 194
+      }
+    ],
+    "gradient_and_rollback": {
+      "adapter_changed": true,
+      "frozen_probe_unchanged": true,
+      "lora_b_tensors": 96,
+      "loss": 1.6268844604492188,
+      "nonzero_lora_b_gradients": 96,
+      "restored_logits_exact": true
+    },
+    "report_training": {
+      "head_only_ce_seed41": {
+        "adapter_changed": true,
+        "adapters_trainable": false,
+        "frozen_probe_unchanged": true,
+        "optimizer_updates": 200,
+        "reloaded_dev_logits_exact": true
+      },
+      "head_only_ce_seed42": {
+        "adapter_changed": true,
+        "adapters_trainable": false,
+        "frozen_probe_unchanged": true,
+        "optimizer_updates": 200,
+        "reloaded_dev_logits_exact": true
+      },
+      "head_only_ce_seed43": {
+        "adapter_changed": true,
+        "adapters_trainable": false,
+        "frozen_probe_unchanged": true,
+        "optimizer_updates": 200,
+        "reloaded_dev_logits_exact": true
+      },
+      "lora_ce_kl_seed41": {
+        "adapter_changed": true,
+        "adapters_trainable": true,
+        "frozen_probe_unchanged": true,
+        "optimizer_updates": 200,
+        "reloaded_dev_logits_exact": true
+      },
+      "lora_ce_kl_seed42": {
+        "adapter_changed": true,
+        "adapters_trainable": true,
+        "frozen_probe_unchanged": true,
+        "optimizer_updates": 200,
+        "reloaded_dev_logits_exact": true
+      },
+      "lora_ce_kl_seed43": {
+        "adapter_changed": true,
+        "adapters_trainable": true,
+        "frozen_probe_unchanged": true,
+        "optimizer_updates": 200,
+        "reloaded_dev_logits_exact": true
+      },
+      "lora_ce_seed41": {
+        "adapter_changed": true,
+        "adapters_trainable": true,
+        "frozen_probe_unchanged": true,
+        "optimizer_updates": 200,
+        "reloaded_dev_logits_exact": true
+      },
+      "lora_ce_seed42": {
+        "adapter_changed": true,
+        "adapters_trainable": true,
+        "frozen_probe_unchanged": true,
+        "optimizer_updates": 200,
+        "reloaded_dev_logits_exact": true
+      },
+      "lora_ce_seed43": {
+        "adapter_changed": true,
+        "adapters_trainable": true,
+        "frozen_probe_unchanged": true,
+        "optimizer_updates": 200,
+        "reloaded_dev_logits_exact": true
+      }
+    },
+    "selection": {
+      "calibration_thresholds": {
+        "frozen": 0.09229545237030834,
+        "head_only_ce_seed41": 0.7115453084309896,
+        "head_only_ce_seed42": 0.6535479724407196,
+        "head_only_ce_seed43": 0.7188319067160288,
+        "lora_ce_kl_seed41": 0.7343048254648844,
+        "lora_ce_kl_seed42": 0.7851228912671407,
+        "lora_ce_kl_seed43": 0.4367589031656583,
+        "lora_ce_seed41": 0.9986647764841715,
+        "lora_ce_seed42": 0.9997714161872864,
+        "lora_ce_seed43": 0.9979908168315887
+      },
+      "chosen_arm": "head_only_ce",
+      "locked_before_test": true,
+      "mean_dev_eer": {
+        "head_only_ce": 0.0,
+        "lora_ce": 0.0,
+        "lora_ce_kl": 0.0
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_objective": "lowest mean dev voice EER"
+    }
+  },
+  "e8_fixed_updates_correction": {
+    "corrected_value": null,
+    "final_aggregation_experiment_E8_fixed_updates": 500,
+    "raw_experiment_8_fixed_updates": null,
+    "semantics": "deterministic REAL-only density fit; no optimizer update count"
+  },
+  "eer_recompute": {
+    "comparisons": 77,
+    "max_abs_delta": 0,
+    "method": "sklearn.metrics.roc_curve(drop_intermediate=False); index=argmin(abs(fpr-(1-tpr))); eer=(fpr+1-tpr)/2",
+    "mismatches": []
+  },
+  "expected_head_seeds": [
+    41,
+    42,
+    43
+  ],
+  "expected_head_steps": 500,
+  "expected_lora_seeds": [
+    41,
+    42,
+    43
+  ],
+  "expected_lora_steps_per_seed": 200,
+  "export_integrity": {
+    "listed": 7314,
+    "mismatches": 0
+  },
+  "features": {
+    "files": 7101,
+    "finite_errors": 0,
+    "identity_audio_hash_errors": 0,
+    "profile_counts": {
+      "core_music_base": 1322,
+      "core_music_processed": 3135,
+      "core_speech_base": 512,
+      "core_speech_processed": 1324,
+      "partial": 648,
+      "swap": 160
+    },
+    "required_array_errors": 0
+  },
+  "limitations_and_findings": [
+    "final_aggregation.dataset.component_count=178 and every per-experiment component_count=178 reproduce the executed notebook singleton omission; corrected global connected-component count is 256 for manifest fc21a54.",
+    "final_aggregation.experiments.E8.fixed_updates=500 is a generic fallback and contradicts experiment_8.json fixed_updates=null; E8 is deterministic REAL-only density fitting.",
+    "Top-level generic label denominators are known mixed FILE/VOICE metadata and were not used to judge branch metrics; use postrun_e2/fixed_experiment_population_denominators.json for slice semantics.",
+    "run.log contains three pre-recovery operational failures (imageio_ffmpeg, ffmpeg executable, missing asset_hashes path); dependency recovery and the executed notebook are clean. progress.json is a stale stage marker (experiment_5), so completion is established from eight report statuses plus notebook outputs and export hashes."
+  ],
+  "manualQa": {
+    "adversarialCases": [
+      {
+        "adversarialClass": "singleton provenance omission",
+        "artifactRefs": [
+          "A9"
+        ],
+        "criterionReference": "group bootstrap connected provenance",
+        "expectedBehavior": "global atom DSU includes singleton and compound contributors",
+        "scenarioId": "A1",
+        "verdict": "FAIL_REPORT_FIELD"
+      },
+      {
+        "adversarialClass": "wrong optimizer-step aggregation",
+        "artifactRefs": [
+          "A10"
+        ],
+        "criterionReference": "E8 deterministic fit and fixed-step semantics",
+        "expectedBehavior": "E8 raw report remains null/deterministic in final aggregation",
+        "scenarioId": "A2",
+        "verdict": "FAIL_REPORT_FIELD"
+      },
+      {
+        "adversarialClass": "test leakage through selection locks",
+        "artifactRefs": [
+          "A3",
+          "A6"
+        ],
+        "criterionReference": "selection before test",
+        "expectedBehavior": "all locks mark test_used false and E7 locked_before_test true",
+        "scenarioId": "A3",
+        "verdict": "PASS"
+      },
+      {
+        "adversarialClass": "corrupt or partial exported member",
+        "artifactRefs": [
+          "A1",
+          "A2"
+        ],
+        "criterionReference": "archive/download correctness",
+        "expectedBehavior": "every listed member hash matches and all eight reports complete",
+        "scenarioId": "A4",
+        "verdict": "PASS"
+      }
+    ],
+    "artifactRefs": [
+      {
+        "description": "Downloaded archive SHA and export member count",
+        "id": "A1",
+        "kind": "archive_receipt",
+        "path": "results/eight_h100_20260917/downloaded/export_receipt.json"
+      },
+      {
+        "description": "Per-member EXPORT_SHA256 manifest",
+        "id": "A2",
+        "kind": "hash_manifest",
+        "path": "results/eight_h100_20260917/downloaded/unpacked/EXPORT_SHA256.json"
+      },
+      {
+        "description": "E1/E3/E4/E5/E6/E8 and E7 selection lock files",
+        "id": "A3",
+        "kind": "selection_locks",
+        "path": "results/eight_h100_20260917/downloaded/unpacked/output/selection_E1_locked.json"
+      },
+      {
+        "description": "77 primary EER recomputations and exact deltas",
+        "id": "A4",
+        "kind": "metric_recompute",
+        "path": ".omo/evidence/eight_h100_20260917/terminal_qa.json"
+      },
+      {
+        "description": "Executed notebook with nine sequential code execution counts and zero error outputs",
+        "id": "A5",
+        "kind": "notebook_execution",
+        "path": "results/eight_h100_20260917/downloaded/unpacked/output/DACON_Eight_H100_Executed.ipynb"
+      },
+      {
+        "description": "E7 report and admission gradient/rollback receipt",
+        "id": "A6",
+        "kind": "e7_rollback",
+        "path": "results/eight_h100_20260917/downloaded/unpacked/output/e7/report.json"
+      },
+      {
+        "description": "7101 feature NPZ identity, required-array, finite scan",
+        "id": "A7",
+        "kind": "feature_identity",
+        "path": ".omo/evidence/eight_h100_20260917/terminal_qa.json"
+      },
+      {
+        "description": "Saved prediction numeric scan",
+        "id": "A8",
+        "kind": "prediction_integrity",
+        "path": "results/eight_h100_20260917/downloaded/unpacked/output/predictions_E8.csv"
+      },
+      {
+        "description": "Executed notebook rule 178 versus corrected global DSU 256",
+        "id": "A9",
+        "kind": "corrected_sidecar",
+        "path": ".omo/evidence/eight_h100_20260917/terminal_qa.json"
+      },
+      {
+        "description": "Raw E8 fixed_updates null versus final aggregation 500",
+        "id": "A10",
+        "kind": "corrected_sidecar",
+        "path": ".omo/evidence/eight_h100_20260917/terminal_qa.json"
+      }
+    ],
+    "surfaceEvidence": [
+      {
+        "artifactRefs": [
+          "A1",
+          "A2",
+          "A3"
+        ],
+        "criterionReference": "F1/F3",
+        "exactInvocation": ".venv/bin/python /tmp/audit_terminal_attempt6.py",
+        "scenarioId": "S1",
+        "surface": "unpacked output reports and locks",
+        "verdict": "PASS"
+      },
+      {
+        "artifactRefs": [
+          "A4"
+        ],
+        "criterionReference": "F3",
+        "exactInvocation": ".venv/bin/python /tmp/audit_terminal_attempt6.py; E3 primary slice filtered codec=opus_telephone",
+        "scenarioId": "S2",
+        "surface": "saved EER predictions",
+        "verdict": "PASS"
+      },
+      {
+        "artifactRefs": [
+          "A5"
+        ],
+        "criterionReference": "F3/F4",
+        "exactInvocation": ".venv/bin/python -c \"json.load(...DACON_Eight_H100_Executed.ipynb); scan output_type==error and execution_count\"",
+        "scenarioId": "S3",
+        "surface": "executed notebook JSON outputs",
+        "verdict": "PASS"
+      },
+      {
+        "artifactRefs": [
+          "A6"
+        ],
+        "criterionReference": "E7 checkpoint/rollback contract",
+        "exactInvocation": ".venv/bin/python -c \"torch.load each output/e7/checkpoints/*.pt; inspect tensors; read report/admission\"",
+        "scenarioId": "S4",
+        "surface": "E7 report, admission receipt, CPU checkpoint tensors",
+        "verdict": "PASS"
+      },
+      {
+        "artifactRefs": [
+          "A7",
+          "A8"
+        ],
+        "criterionReference": "archive/data integrity",
+        "exactInvocation": ".venv/bin/python /tmp/audit_terminal_attempt6.py; .venv/bin/python /tmp/audit_identity.py",
+        "scenarioId": "S5",
+        "surface": "export member hashes and feature identities",
+        "verdict": "PASS"
+      }
+    ]
+  },
+  "notebook": {
+    "cells": 19,
+    "code_cells": 9,
+    "errors": [],
+    "execution_counts": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "progress_json": {
+    "stage": "experiment_5",
+    "time": 1789657742.5369473
+  },
+  "reports": {
+    "E1": {
+      "fixed_updates": 500,
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E1_locked.json",
+      "status": "complete"
+    },
+    "E2": {
+      "fixed_updates": 0,
+      "seeds": [],
+      "selection_locked": true,
+      "status": "complete"
+    },
+    "E3": {
+      "fixed_updates": 500,
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E3_locked.json",
+      "status": "complete"
+    },
+    "E4": {
+      "fixed_updates": 500,
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E4_locked.json",
+      "status": "complete"
+    },
+    "E5": {
+      "fixed_updates": 0,
+      "seeds": [],
+      "selection_locked": true,
+      "status": "complete"
+    },
+    "E6": {
+      "fixed_updates": 500,
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E6_locked.json",
+      "status": "complete"
+    },
+    "E7": {
+      "fixed_updates": {
+        "frozen": {
+          "per_seed": 0,
+          "total": 0
+        },
+        "head_only_ce": {
+          "per_seed": 200,
+          "total": 600
+        },
+        "lora_ce": {
+          "per_seed": 200,
+          "total": 600
+        },
+        "lora_ce_kl": {
+          "per_seed": 200,
+          "total": 600
+        }
+      },
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": true,
+      "status": "complete"
+    },
+    "E8": {
+      "fixed_updates": null,
+      "seeds": [],
+      "selection_locked": "/root/eight_h100_20260917/output/selection_E8_locked.json",
+      "status": "complete"
+    }
+  },
+  "run_log_operational_flags": {
+    "asset_hashes_missing": true,
+    "ffmpeg_exe_missing": true,
+    "imageio_ffmpeg_missing": true
+  },
+  "schema": "terminal_qa.v1",
+  "scope": "CPU-only independent audit of unpacked terminal artifacts; no GPU operation, retraining, or archive mutation",
+  "selection_locks": {
+    "E1": {
+      "selection": "predeclared parent-uniform vs source-generator-parent sampler; all seeds retained",
+      "test_used": false
+    },
+    "E3": {
+      "selection": "fixed CE versus CE+0.1 consistency; unseen Opus+telephone evaluation",
+      "test_used": false
+    },
+    "E4": {
+      "selection_split": "dev",
+      "test_used": false
+    },
+    "E5": {
+      "selected_pool_by_model": {
+        "anti": "max",
+        "df": "top30"
+      },
+      "selection_data": "calibration thresholds then dev recall/fpr only",
+      "test_used": false
+    },
+    "E6": {
+      "selected_layers": {
+        "Anti": "anti_l24",
+        "MERT": "mert_l12"
+      },
+      "selection_split": "dev",
+      "test_used": false
+    },
+    "E7": {
+      "chosen_arm": "head_only_ce",
+      "locked_before_test": true,
+      "seeds": [
+        41,
+        42,
+        43
+      ]
+    },
+    "E8": {
+      "selection_split": "calibration",
+      "test_used": false
+    }
+  },
+  "verdict": "PASS_NUMERICAL_AND_EXECUTION_ARTIFACTS_WITH_REPORT_LEVEL_BLOCKERS"
+}

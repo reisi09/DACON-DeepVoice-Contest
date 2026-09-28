@@ -1,0 +1,46 @@
+{
+  "music_41": {
+    "checkpoint_sha256": "ff40de49f101d3d76a36a10d6cc21e035d4804ce1c11bd733d317cc415baefbd",
+    "epoch": 20,
+    "epochs_completed": 25,
+    "validation_eer": 0.12506495495544773
+  },
+  "music_42": {
+    "checkpoint_sha256": "a20f50ddf99954ad01b4d3e547d8babdb63c54597eb429399c0cc741b2b9cad7",
+    "epoch": 11,
+    "epochs_completed": 16,
+    "validation_eer": 0.12959675963658043
+  },
+  "music_43": {
+    "checkpoint_sha256": "0bedf194470b43e0190c52e5ab54ef9d50f74603e5a9aa15528708e7002ffc6c",
+    "epoch": 9,
+    "epochs_completed": 14,
+    "validation_eer": 0.13246161504001225
+  },
+  "music_ensemble": {
+    "auc": 0.9460046548772298,
+    "eer": 0.12386704882971686
+  },
+  "voice_41": {
+    "checkpoint_sha256": "e9acc99c7b7f4e450db634b10ef24fde8296e9c76993f674fa276e0c1a8407b3",
+    "epoch": 8,
+    "epochs_completed": 13,
+    "validation_eer": 0.06131893266049005
+  },
+  "voice_42": {
+    "checkpoint_sha256": "06e6f6ad2028e858ecf07cecc7bb57016edaded930d6a048fed56da8d03a1697",
+    "epoch": 9,
+    "epochs_completed": 14,
+    "validation_eer": 0.06131893266049005
+  },
+  "voice_43": {
+    "checkpoint_sha256": "a9dd5a9691c11e7ff299154cc23a764049acbdbbc9604ad8d6a49df038ce6c01",
+    "epoch": 40,
+    "epochs_completed": 45,
+    "validation_eer": 0.05415046876397399
+  },
+  "voice_ensemble": {
+    "auc": 0.9827823350731543,
+    "eer": 0.05992225006707501
+  }
+}

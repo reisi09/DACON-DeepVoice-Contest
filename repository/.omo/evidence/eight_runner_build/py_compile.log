@@ -1,0 +1,4 @@
+scenario=compile_all_eight_python_and_tests
+invocation=.venv/bin/python -m py_compile eight_*.py build_eight_h100_notebook.py test_eight_*.py
+exit_code=0
+observable=all requested Python files compiled

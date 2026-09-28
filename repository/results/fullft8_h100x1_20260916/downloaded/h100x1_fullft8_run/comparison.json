@@ -1,0 +1,65 @@
+[
+  {
+    "trial": "01_S0_MERT_frozen",
+    "status": "complete",
+    "epoch": 5,
+    "tune_eer": 0.24609343373006232,
+    "test_eer": 0.2666666666666667,
+    "held_eer": null
+  },
+  {
+    "trial": "02_S0_MERT_fullft",
+    "status": "complete",
+    "epoch": 3,
+    "tune_eer": 0.23046716865031175,
+    "test_eer": 0.3194444444444444,
+    "held_eer": null
+  },
+  {
+    "trial": "03_S0_EAT_fullft",
+    "status": "complete",
+    "epoch": 1,
+    "tune_eer": 0.21763419965994657,
+    "test_eer": 0.30000000000000004,
+    "held_eer": null
+  },
+  {
+    "trial": "04_S1_MERT_fullft",
+    "status": "complete",
+    "epoch": 8,
+    "tune_eer": 0.10069444444444445,
+    "test_eer": 0.24859550561797755,
+    "held_eer": 0.2708333333333333
+  },
+  {
+    "trial": "05_S1_EAT_fullft",
+    "status": "complete",
+    "epoch": 6,
+    "tune_eer": 0.00694444444444442,
+    "test_eer": 0.24859550561797755,
+    "held_eer": 0.25
+  },
+  {
+    "trial": "06_S2_MERT_fullft",
+    "status": "complete",
+    "epoch": 2,
+    "tune_eer": 0.09722222222222224,
+    "test_eer": 0.33239700374531833,
+    "held_eer": 0.33333333333333337
+  },
+  {
+    "trial": "07_S2_EAT_fullft",
+    "status": "complete",
+    "epoch": 4,
+    "tune_eer": 0.013888888888888895,
+    "test_eer": 0.1676029962546816,
+    "held_eer": 0.16666666666666663
+  },
+  {
+    "trial": "08_S0_adapted_fullft",
+    "status": "complete",
+    "epoch": 6,
+    "tune_eer": 0.1707554044206947,
+    "test_eer": 0.25277777777777777
+  }
+]

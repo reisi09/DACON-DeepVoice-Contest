@@ -1,0 +1,1701 @@
+{
+  "metric": "nearest_abs_fpr_minus_fnr",
+  "roles": {
+    "dev": {
+      "models": {
+        "G0": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.1875,
+              "voice_eer": 0.03152709359605912,
+              "music_eer": 0.2947368421052632,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 32",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+            },
+            "counts": {
+              "file_eer": 160,
+              "voice_eer": 128,
+              "music_eer": 68,
+              "voice_presence_auc": 140,
+              "music_presence_auc": 160
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 32,
+              "music_eer": 0,
+              "voice_presence_auc": 20,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.8,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.875,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 160,
+              "point": {
+                "eer": 0.1875,
+                "auc": 0.91845703125,
+                "threshold": 0.492297056,
+                "fpr": 0.1875,
+                "fnr": 0.1875,
+                "fp": 12,
+                "fn": 18,
+                "tp": 78,
+                "tn": 52,
+                "n": 160
+              }
+            },
+            "voice": {
+              "unknown_relevant": 32,
+              "n": 128,
+              "point": {
+                "eer": 0.03152709359605912,
+                "auc": 0.9866995073891626,
+                "threshold": 0.525752604,
+                "fpr": 0.034482758620689655,
+                "fnr": 0.02857142857142858,
+                "fp": 2,
+                "fn": 2,
+                "tp": 68,
+                "tn": 56,
+                "n": 128
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 68,
+              "point": {
+                "eer": 0.2947368421052632,
+                "auc": 0.6999999999999998,
+                "threshold": 0.6908487082,
+                "fpr": 0.3,
+                "fnr": 0.2894736842105263,
+                "fp": 9,
+                "fn": 11,
+                "tp": 27,
+                "tn": 21,
+                "n": 68
+              }
+            }
+          }
+        },
+        "G1": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.1875,
+              "voice_eer": 0.05443349753694582,
+              "music_eer": 0.3078947368421052,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 32",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+            },
+            "counts": {
+              "file_eer": 160,
+              "voice_eer": 128,
+              "music_eer": 68,
+              "voice_presence_auc": 140,
+              "music_presence_auc": 160
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 32,
+              "music_eer": 0,
+              "voice_presence_auc": 20,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.8,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.875,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 160,
+              "point": {
+                "eer": 0.1875,
+                "auc": 0.9191080729166666,
+                "threshold": 0.4177694494,
+                "fpr": 0.1875,
+                "fnr": 0.1875,
+                "fp": 12,
+                "fn": 18,
+                "tp": 78,
+                "tn": 52,
+                "n": 160
+              }
+            },
+            "voice": {
+              "unknown_relevant": 32,
+              "n": 128,
+              "point": {
+                "eer": 0.05443349753694582,
+                "auc": 0.9862068965517241,
+                "threshold": 0.3539919257,
+                "fpr": 0.05172413793103448,
+                "fnr": 0.05714285714285716,
+                "fp": 3,
+                "fn": 4,
+                "tp": 66,
+                "tn": 55,
+                "n": 128
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 68,
+              "point": {
+                "eer": 0.3078947368421052,
+                "auc": 0.6877192982456138,
+                "threshold": 0.605926007,
+                "fpr": 0.3,
+                "fnr": 0.3157894736842105,
+                "fp": 9,
+                "fn": 12,
+                "tp": 26,
+                "tn": 21,
+                "n": 68
+              }
+            }
+          }
+        },
+        "G2": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.15625,
+              "voice_eer": 0.03152709359605912,
+              "music_eer": 0.2947368421052632,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 32",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+            },
+            "counts": {
+              "file_eer": 160,
+              "voice_eer": 128,
+              "music_eer": 68,
+              "voice_presence_auc": 140,
+              "music_presence_auc": 160
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 32,
+              "music_eer": 0,
+              "voice_presence_auc": 20,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.8,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.875,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 160,
+              "point": {
+                "eer": 0.15625,
+                "auc": 0.9291992187499999,
+                "threshold": 0.5079490346,
+                "fpr": 0.15625,
+                "fnr": 0.15625,
+                "fp": 10,
+                "fn": 15,
+                "tp": 81,
+                "tn": 54,
+                "n": 160
+              }
+            },
+            "voice": {
+              "unknown_relevant": 32,
+              "n": 128,
+              "point": {
+                "eer": 0.03152709359605912,
+                "auc": 0.9866995073891626,
+                "threshold": 0.525752604,
+                "fpr": 0.034482758620689655,
+                "fnr": 0.02857142857142858,
+                "fp": 2,
+                "fn": 2,
+                "tp": 68,
+                "tn": 56,
+                "n": 128
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 68,
+              "point": {
+                "eer": 0.2947368421052632,
+                "auc": 0.6999999999999998,
+                "threshold": 0.6908487082,
+                "fpr": 0.3,
+                "fnr": 0.2894736842105263,
+                "fp": 9,
+                "fn": 11,
+                "tp": 27,
+                "tn": 21,
+                "n": 68
+              }
+            }
+          }
+        },
+        "G3": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.16927083333333331,
+              "voice_eer": 0.05443349753694582,
+              "music_eer": 0.36754385964912284,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 32",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+            },
+            "counts": {
+              "file_eer": 160,
+              "voice_eer": 128,
+              "music_eer": 68,
+              "voice_presence_auc": 140,
+              "music_presence_auc": 160
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 32,
+              "music_eer": 0,
+              "voice_presence_auc": 20,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.8,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.875,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 160,
+              "point": {
+                "eer": 0.16927083333333331,
+                "auc": 0.9287109375,
+                "threshold": 0.4686936888,
+                "fpr": 0.171875,
+                "fnr": 0.16666666666666663,
+                "fp": 11,
+                "fn": 16,
+                "tp": 80,
+                "tn": 53,
+                "n": 160
+              }
+            },
+            "voice": {
+              "unknown_relevant": 32,
+              "n": 128,
+              "point": {
+                "eer": 0.05443349753694582,
+                "auc": 0.9854679802955665,
+                "threshold": 0.5172670037,
+                "fpr": 0.05172413793103448,
+                "fnr": 0.05714285714285716,
+                "fp": 3,
+                "fn": 4,
+                "tp": 66,
+                "tn": 55,
+                "n": 128
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 68,
+              "point": {
+                "eer": 0.36754385964912284,
+                "auc": 0.6894736842105261,
+                "threshold": 0.6436240673,
+                "fpr": 0.36666666666666664,
+                "fnr": 0.368421052631579,
+                "fp": 11,
+                "fn": 14,
+                "tp": 24,
+                "tn": 19,
+                "n": 68
+              }
+            }
+          }
+        },
+        "G4": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.14322916666666669,
+              "voice_eer": 0.038669950738916235,
+              "music_eer": 0.337719298245614,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 32",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 20"
+            },
+            "counts": {
+              "file_eer": 160,
+              "voice_eer": 128,
+              "music_eer": 68,
+              "voice_presence_auc": 140,
+              "music_presence_auc": 160
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 32,
+              "music_eer": 0,
+              "voice_presence_auc": 20,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.8,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.875,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 160,
+              "point": {
+                "eer": 0.14322916666666669,
+                "auc": 0.9384765624999999,
+                "threshold": 0.597438703,
+                "fpr": 0.140625,
+                "fnr": 0.14583333333333337,
+                "fp": 9,
+                "fn": 14,
+                "tp": 82,
+                "tn": 55,
+                "n": 160
+              }
+            },
+            "voice": {
+              "unknown_relevant": 32,
+              "n": 128,
+              "point": {
+                "eer": 0.038669950738916235,
+                "auc": 0.9864532019704434,
+                "threshold": 0.4699558762,
+                "fpr": 0.034482758620689655,
+                "fnr": 0.042857142857142816,
+                "fp": 2,
+                "fn": 3,
+                "tp": 67,
+                "tn": 56,
+                "n": 128
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 68,
+              "point": {
+                "eer": 0.337719298245614,
+                "auc": 0.7701754385964911,
+                "threshold": 0.5533489162,
+                "fpr": 0.3333333333333333,
+                "fnr": 0.3421052631578947,
+                "fp": 10,
+                "fn": 13,
+                "tp": 25,
+                "tn": 20,
+                "n": 68
+              }
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "G1": {
+          "file": {
+            "baseline": {
+              "eer": 0.1875,
+              "auc": 0.91845703125,
+              "threshold": 0.492297056,
+              "fpr": 0.1875,
+              "fnr": 0.1875,
+              "fp": 12,
+              "fn": 18,
+              "tp": 78,
+              "tn": 52,
+              "n": 160
+            },
+            "candidate": {
+              "eer": 0.1875,
+              "auc": 0.9191080729166666,
+              "threshold": 0.4177694494,
+              "fpr": 0.1875,
+              "fnr": 0.1875,
+              "fp": 12,
+              "fn": 18,
+              "tp": 78,
+              "tn": 52,
+              "n": 160
+            },
+            "auc_delta": 0.0006510416666666297,
+            "pair_changes": {
+              "pairs": 6144,
+              "flips": 180,
+              "positive_to_negative_worsened": 88
+            }
+          },
+          "voice": {
+            "baseline": {
+              "eer": 0.03152709359605912,
+              "auc": 0.9866995073891626,
+              "threshold": 0.525752604,
+              "fpr": 0.034482758620689655,
+              "fnr": 0.02857142857142858,
+              "fp": 2,
+              "fn": 2,
+              "tp": 68,
+              "tn": 56,
+              "n": 128
+            },
+            "candidate": {
+              "eer": 0.05443349753694582,
+              "auc": 0.9862068965517241,
+              "threshold": 0.3539919257,
+              "fpr": 0.05172413793103448,
+              "fnr": 0.05714285714285716,
+              "fp": 3,
+              "fn": 4,
+              "tp": 66,
+              "tn": 55,
+              "n": 128
+            },
+            "auc_delta": -0.0004926108374384564,
+            "pair_changes": {
+              "pairs": 4060,
+              "flips": 26,
+              "positive_to_negative_worsened": 14
+            }
+          },
+          "music": {
+            "baseline": {
+              "eer": 0.2947368421052632,
+              "auc": 0.6999999999999998,
+              "threshold": 0.6908487082,
+              "fpr": 0.3,
+              "fnr": 0.2894736842105263,
+              "fp": 9,
+              "fn": 11,
+              "tp": 27,
+              "tn": 21,
+              "n": 68
+            },
+            "candidate": {
+              "eer": 0.3078947368421052,
+              "auc": 0.6877192982456138,
+              "threshold": 0.605926007,
+              "fpr": 0.3,
+              "fnr": 0.3157894736842105,
+              "fp": 9,
+              "fn": 12,
+              "tp": 26,
+              "tn": 21,
+              "n": 68
+            },
+            "auc_delta": -0.012280701754386003,
+            "pair_changes": {
+              "pairs": 1140,
+              "flips": 86,
+              "positive_to_negative_worsened": 50
+            }
+          }
+        },
+        "G2": {
+          "file": {
+            "baseline": {
+              "eer": 0.1875,
+              "auc": 0.91845703125,
+              "threshold": 0.492297056,
+              "fpr": 0.1875,
+              "fnr": 0.1875,
+              "fp": 12,
+              "fn": 18,
+              "tp": 78,
+              "tn": 52,
+              "n": 160
+            },
+            "candidate": {
+              "eer": 0.15625,
+              "auc": 0.9291992187499999,
+              "threshold": 0.5079490346,
+              "fpr": 0.15625,
+              "fnr": 0.15625,
+              "fp": 10,
+              "fn": 15,
+              "tp": 81,
+              "tn": 54,
+              "n": 160
+            },
+            "auc_delta": 0.010742187499999889,
+            "pair_changes": {
+              "pairs": 6144,
+              "flips": 154,
+              "positive_to_negative_worsened": 44
+            }
+          },
+          "voice": {
+            "baseline": {
+              "eer": 0.03152709359605912,
+              "auc": 0.9866995073891626,
+              "threshold": 0.525752604,
+              "fpr": 0.034482758620689655,
+              "fnr": 0.02857142857142858,
+              "fp": 2,
+              "fn": 2,
+              "tp": 68,
+              "tn": 56,
+              "n": 128
+            },
+            "candidate": {
+              "eer": 0.03152709359605912,
+              "auc": 0.9866995073891626,
+              "threshold": 0.525752604,
+              "fpr": 0.034482758620689655,
+              "fnr": 0.02857142857142858,
+              "fp": 2,
+              "fn": 2,
+              "tp": 68,
+              "tn": 56,
+              "n": 128
+            },
+            "auc_delta": 0.0,
+            "pair_changes": {
+              "pairs": 4060,
+              "flips": 0,
+              "positive_to_negative_worsened": 0
+            }
+          },
+          "music": {
+            "baseline": {
+              "eer": 0.2947368421052632,
+              "auc": 0.6999999999999998,
+              "threshold": 0.6908487082,
+              "fpr": 0.3,
+              "fnr": 0.2894736842105263,
+              "fp": 9,
+              "fn": 11,
+              "tp": 27,
+              "tn": 21,
+              "n": 68
+            },
+            "candidate": {
+              "eer": 0.2947368421052632,
+              "auc": 0.6999999999999998,
+              "threshold": 0.6908487082,
+              "fpr": 0.3,
+              "fnr": 0.2894736842105263,
+              "fp": 9,
+              "fn": 11,
+              "tp": 27,
+              "tn": 21,
+              "n": 68
+            },
+            "auc_delta": 0.0,
+            "pair_changes": {
+              "pairs": 1140,
+              "flips": 0,
+              "positive_to_negative_worsened": 0
+            }
+          }
+        },
+        "G3": {
+          "file": {
+            "baseline": {
+              "eer": 0.1875,
+              "auc": 0.91845703125,
+              "threshold": 0.492297056,
+              "fpr": 0.1875,
+              "fnr": 0.1875,
+              "fp": 12,
+              "fn": 18,
+              "tp": 78,
+              "tn": 52,
+              "n": 160
+            },
+            "candidate": {
+              "eer": 0.16927083333333331,
+              "auc": 0.9287109375,
+              "threshold": 0.4686936888,
+              "fpr": 0.171875,
+              "fnr": 0.16666666666666663,
+              "fp": 11,
+              "fn": 16,
+              "tp": 80,
+              "tn": 53,
+              "n": 160
+            },
+            "auc_delta": 0.01025390625,
+            "pair_changes": {
+              "pairs": 6144,
+              "flips": 233,
+              "positive_to_negative_worsened": 85
+            }
+          },
+          "voice": {
+            "baseline": {
+              "eer": 0.03152709359605912,
+              "auc": 0.9866995073891626,
+              "threshold": 0.525752604,
+              "fpr": 0.034482758620689655,
+              "fnr": 0.02857142857142858,
+              "fp": 2,
+              "fn": 2,
+              "tp": 68,
+              "tn": 56,
+              "n": 128
+            },
+            "candidate": {
+              "eer": 0.05443349753694582,
+              "auc": 0.9854679802955665,
+              "threshold": 0.5172670037,
+              "fpr": 0.05172413793103448,
+              "fnr": 0.05714285714285716,
+              "fp": 3,
+              "fn": 4,
+              "tp": 66,
+              "tn": 55,
+              "n": 128
+            },
+            "auc_delta": -0.0012315270935960854,
+            "pair_changes": {
+              "pairs": 4060,
+              "flips": 11,
+              "positive_to_negative_worsened": 8
+            }
+          },
+          "music": {
+            "baseline": {
+              "eer": 0.2947368421052632,
+              "auc": 0.6999999999999998,
+              "threshold": 0.6908487082,
+              "fpr": 0.3,
+              "fnr": 0.2894736842105263,
+              "fp": 9,
+              "fn": 11,
+              "tp": 27,
+              "tn": 21,
+              "n": 68
+            },
+            "candidate": {
+              "eer": 0.36754385964912284,
+              "auc": 0.6894736842105261,
+              "threshold": 0.6436240673,
+              "fpr": 0.36666666666666664,
+              "fnr": 0.368421052631579,
+              "fp": 11,
+              "fn": 14,
+              "tp": 24,
+              "tn": 19,
+              "n": 68
+            },
+            "auc_delta": -0.010526315789473717,
+            "pair_changes": {
+              "pairs": 1140,
+              "flips": 124,
+              "positive_to_negative_worsened": 68
+            }
+          }
+        },
+        "G4": {
+          "file": {
+            "baseline": {
+              "eer": 0.1875,
+              "auc": 0.91845703125,
+              "threshold": 0.492297056,
+              "fpr": 0.1875,
+              "fnr": 0.1875,
+              "fp": 12,
+              "fn": 18,
+              "tp": 78,
+              "tn": 52,
+              "n": 160
+            },
+            "candidate": {
+              "eer": 0.14322916666666669,
+              "auc": 0.9384765624999999,
+              "threshold": 0.597438703,
+              "fpr": 0.140625,
+              "fnr": 0.14583333333333337,
+              "fp": 9,
+              "fn": 14,
+              "tp": 82,
+              "tn": 55,
+              "n": 160
+            },
+            "auc_delta": 0.02001953124999989,
+            "pair_changes": {
+              "pairs": 6144,
+              "flips": 375,
+              "positive_to_negative_worsened": 126
+            }
+          },
+          "voice": {
+            "baseline": {
+              "eer": 0.03152709359605912,
+              "auc": 0.9866995073891626,
+              "threshold": 0.525752604,
+              "fpr": 0.034482758620689655,
+              "fnr": 0.02857142857142858,
+              "fp": 2,
+              "fn": 2,
+              "tp": 68,
+              "tn": 56,
+              "n": 128
+            },
+            "candidate": {
+              "eer": 0.038669950738916235,
+              "auc": 0.9864532019704434,
+              "threshold": 0.4699558762,
+              "fpr": 0.034482758620689655,
+              "fnr": 0.042857142857142816,
+              "fp": 2,
+              "fn": 3,
+              "tp": 67,
+              "tn": 56,
+              "n": 128
+            },
+            "auc_delta": -0.00024630541871917266,
+            "pair_changes": {
+              "pairs": 4060,
+              "flips": 17,
+              "positive_to_negative_worsened": 9
+            }
+          },
+          "music": {
+            "baseline": {
+              "eer": 0.2947368421052632,
+              "auc": 0.6999999999999998,
+              "threshold": 0.6908487082,
+              "fpr": 0.3,
+              "fnr": 0.2894736842105263,
+              "fp": 9,
+              "fn": 11,
+              "tp": 27,
+              "tn": 21,
+              "n": 68
+            },
+            "candidate": {
+              "eer": 0.337719298245614,
+              "auc": 0.7701754385964911,
+              "threshold": 0.5533489162,
+              "fpr": 0.3333333333333333,
+              "fnr": 0.3421052631578947,
+              "fp": 10,
+              "fn": 13,
+              "tp": 25,
+              "tn": 20,
+              "n": 68
+            },
+            "auc_delta": 0.07017543859649122,
+            "pair_changes": {
+              "pairs": 1140,
+              "flips": 214,
+              "positive_to_negative_worsened": 67
+            }
+          }
+        }
+      }
+    },
+    "holdout": {
+      "models": {
+        "G0": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.12347560975609756,
+              "voice_eer": 0.041958041958041946,
+              "music_eer": 0.3078947368421052,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 17",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 13"
+            },
+            "counts": {
+              "file_eer": 65,
+              "voice_eer": 48,
+              "music_eer": 29,
+              "voice_presence_auc": 52,
+              "music_presence_auc": 65
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 17,
+              "music_eer": 0,
+              "voice_presence_auc": 13,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.7384615384615385,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.8,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 65,
+              "point": {
+                "eer": 0.12347560975609756,
+                "auc": 0.9451219512195123,
+                "threshold": 0.5363479211,
+                "fpr": 0.125,
+                "fnr": 0.12195121951219512,
+                "fp": 3,
+                "fn": 5,
+                "tp": 36,
+                "tn": 21,
+                "n": 65
+              }
+            },
+            "voice": {
+              "unknown_relevant": 17,
+              "n": 48,
+              "point": {
+                "eer": 0.041958041958041946,
+                "auc": 0.9807692307692308,
+                "threshold": 0.6663966179,
+                "fpr": 0.045454545454545456,
+                "fnr": 0.038461538461538436,
+                "fp": 1,
+                "fn": 1,
+                "tp": 25,
+                "tn": 21,
+                "n": 48
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 29,
+              "point": {
+                "eer": 0.3078947368421052,
+                "auc": 0.7210526315789474,
+                "threshold": 0.6869312525,
+                "fpr": 0.3,
+                "fnr": 0.3157894736842105,
+                "fp": 3,
+                "fn": 6,
+                "tp": 13,
+                "tn": 7,
+                "n": 29
+              }
+            }
+          }
+        },
+        "G1": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.12347560975609756,
+              "voice_eer": 0.08391608391608389,
+              "music_eer": 0.3078947368421052,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 17",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 13"
+            },
+            "counts": {
+              "file_eer": 65,
+              "voice_eer": 48,
+              "music_eer": 29,
+              "voice_presence_auc": 52,
+              "music_presence_auc": 65
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 17,
+              "music_eer": 0,
+              "voice_presence_auc": 13,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.7384615384615385,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.8,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 65,
+              "point": {
+                "eer": 0.12347560975609756,
+                "auc": 0.9563008130081302,
+                "threshold": 0.468609155,
+                "fpr": 0.125,
+                "fnr": 0.12195121951219512,
+                "fp": 3,
+                "fn": 5,
+                "tp": 36,
+                "tn": 21,
+                "n": 65
+              }
+            },
+            "voice": {
+              "unknown_relevant": 17,
+              "n": 48,
+              "point": {
+                "eer": 0.08391608391608389,
+                "auc": 0.9842657342657343,
+                "threshold": 0.5445865691,
+                "fpr": 0.09090909090909091,
+                "fnr": 0.07692307692307687,
+                "fp": 2,
+                "fn": 2,
+                "tp": 24,
+                "tn": 20,
+                "n": 48
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 29,
+              "point": {
+                "eer": 0.3078947368421052,
+                "auc": 0.763157894736842,
+                "threshold": 0.5888430774,
+                "fpr": 0.3,
+                "fnr": 0.3157894736842105,
+                "fp": 3,
+                "fn": 6,
+                "tp": 13,
+                "tn": 7,
+                "n": 29
+              }
+            }
+          }
+        },
+        "G2": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.12347560975609756,
+              "voice_eer": 0.041958041958041946,
+              "music_eer": 0.3078947368421052,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 17",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 13"
+            },
+            "counts": {
+              "file_eer": 65,
+              "voice_eer": 48,
+              "music_eer": 29,
+              "voice_presence_auc": 52,
+              "music_presence_auc": 65
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 17,
+              "music_eer": 0,
+              "voice_presence_auc": 13,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.7384615384615385,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.8,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 65,
+              "point": {
+                "eer": 0.12347560975609756,
+                "auc": 0.9247967479674797,
+                "threshold": 0.5397991899,
+                "fpr": 0.125,
+                "fnr": 0.12195121951219512,
+                "fp": 3,
+                "fn": 5,
+                "tp": 36,
+                "tn": 21,
+                "n": 65
+              }
+            },
+            "voice": {
+              "unknown_relevant": 17,
+              "n": 48,
+              "point": {
+                "eer": 0.041958041958041946,
+                "auc": 0.9807692307692308,
+                "threshold": 0.6663966179,
+                "fpr": 0.045454545454545456,
+                "fnr": 0.038461538461538436,
+                "fp": 1,
+                "fn": 1,
+                "tp": 25,
+                "tn": 21,
+                "n": 48
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 29,
+              "point": {
+                "eer": 0.3078947368421052,
+                "auc": 0.7210526315789474,
+                "threshold": 0.6869312525,
+                "fpr": 0.3,
+                "fnr": 0.3157894736842105,
+                "fp": 3,
+                "fn": 6,
+                "tp": 13,
+                "tn": 7,
+                "n": 29
+              }
+            }
+          }
+        },
+        "G3": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.1565040650406504,
+              "voice_eer": 0.041958041958041946,
+              "music_eer": 0.3842105263157895,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 17",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 13"
+            },
+            "counts": {
+              "file_eer": 65,
+              "voice_eer": 48,
+              "music_eer": 29,
+              "voice_presence_auc": 52,
+              "music_presence_auc": 65
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 17,
+              "music_eer": 0,
+              "voice_presence_auc": 13,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.7384615384615385,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.8,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 65,
+              "point": {
+                "eer": 0.1565040650406504,
+                "auc": 0.9542682926829268,
+                "threshold": 0.564453423,
+                "fpr": 0.16666666666666666,
+                "fnr": 0.14634146341463417,
+                "fp": 4,
+                "fn": 6,
+                "tp": 35,
+                "tn": 20,
+                "n": 65
+              }
+            },
+            "voice": {
+              "unknown_relevant": 17,
+              "n": 48,
+              "point": {
+                "eer": 0.041958041958041946,
+                "auc": 0.9825174825174825,
+                "threshold": 0.6590456218,
+                "fpr": 0.045454545454545456,
+                "fnr": 0.038461538461538436,
+                "fp": 1,
+                "fn": 1,
+                "tp": 25,
+                "tn": 21,
+                "n": 48
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 29,
+              "point": {
+                "eer": 0.3842105263157895,
+                "auc": 0.7210526315789474,
+                "threshold": 0.681723088,
+                "fpr": 0.4,
+                "fnr": 0.368421052631579,
+                "fp": 4,
+                "fn": 7,
+                "tp": 12,
+                "tn": 6,
+                "n": 29
+              }
+            }
+          }
+        },
+        "G4": {
+          "official_proxy_only": {
+            "score": null,
+            "metrics": {
+              "file_eer": 0.1565040650406504,
+              "voice_eer": 0.041958041958041946,
+              "music_eer": 0.3078947368421052,
+              "voice_presence_auc": null,
+              "music_presence_auc": 1.0
+            },
+            "invalid": {
+              "voice_presence_auc": "both positive and negative labels are required"
+            },
+            "partial": {
+              "voice_eer": "known subset only; unknown relevant labels: 17",
+              "voice_presence_auc": "known subset only; unknown relevant labels: 13"
+            },
+            "counts": {
+              "file_eer": 65,
+              "voice_eer": 48,
+              "music_eer": 29,
+              "voice_presence_auc": 52,
+              "music_presence_auc": 65
+            },
+            "unknown_counts": {
+              "file_eer": 0,
+              "voice_eer": 17,
+              "music_eer": 0,
+              "voice_presence_auc": 13,
+              "music_presence_auc": 0
+            },
+            "coverage": {
+              "file_eer": 1.0,
+              "voice_eer": 0.7384615384615385,
+              "music_eer": 1.0,
+              "voice_presence_auc": 0.8,
+              "music_presence_auc": 1.0
+            }
+          },
+          "roc": {
+            "file": {
+              "unknown_relevant": 0,
+              "n": 65,
+              "point": {
+                "eer": 0.1565040650406504,
+                "auc": 0.9359756097560976,
+                "threshold": 0.6825069844,
+                "fpr": 0.16666666666666666,
+                "fnr": 0.14634146341463417,
+                "fp": 4,
+                "fn": 6,
+                "tp": 35,
+                "tn": 20,
+                "n": 65
+              }
+            },
+            "voice": {
+              "unknown_relevant": 17,
+              "n": 48,
+              "point": {
+                "eer": 0.041958041958041946,
+                "auc": 0.9912587412587412,
+                "threshold": 0.5997666903,
+                "fpr": 0.045454545454545456,
+                "fnr": 0.038461538461538436,
+                "fp": 1,
+                "fn": 1,
+                "tp": 25,
+                "tn": 21,
+                "n": 48
+              }
+            },
+            "music": {
+              "unknown_relevant": 0,
+              "n": 29,
+              "point": {
+                "eer": 0.3078947368421052,
+                "auc": 0.7263157894736842,
+                "threshold": 0.5383726243,
+                "fpr": 0.3,
+                "fnr": 0.3157894736842105,
+                "fp": 3,
+                "fn": 6,
+                "tp": 13,
+                "tn": 7,
+                "n": 29
+              }
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "G1": {
+          "file": {
+            "baseline": {
+              "eer": 0.12347560975609756,
+              "auc": 0.9451219512195123,
+              "threshold": 0.5363479211,
+              "fpr": 0.125,
+              "fnr": 0.12195121951219512,
+              "fp": 3,
+              "fn": 5,
+              "tp": 36,
+              "tn": 21,
+              "n": 65
+            },
+            "candidate": {
+              "eer": 0.12347560975609756,
+              "auc": 0.9563008130081302,
+              "threshold": 0.468609155,
+              "fpr": 0.125,
+              "fnr": 0.12195121951219512,
+              "fp": 3,
+              "fn": 5,
+              "tp": 36,
+              "tn": 21,
+              "n": 65
+            },
+            "auc_delta": 0.011178861788617933,
+            "pair_changes": {
+              "pairs": 984,
+              "flips": 15,
+              "positive_to_negative_worsened": 2
+            }
+          },
+          "voice": {
+            "baseline": {
+              "eer": 0.041958041958041946,
+              "auc": 0.9807692307692308,
+              "threshold": 0.6663966179,
+              "fpr": 0.045454545454545456,
+              "fnr": 0.038461538461538436,
+              "fp": 1,
+              "fn": 1,
+              "tp": 25,
+              "tn": 21,
+              "n": 48
+            },
+            "candidate": {
+              "eer": 0.08391608391608389,
+              "auc": 0.9842657342657343,
+              "threshold": 0.5445865691,
+              "fpr": 0.09090909090909091,
+              "fnr": 0.07692307692307687,
+              "fp": 2,
+              "fn": 2,
+              "tp": 24,
+              "tn": 20,
+              "n": 48
+            },
+            "auc_delta": 0.0034965034965034336,
+            "pair_changes": {
+              "pairs": 572,
+              "flips": 4,
+              "positive_to_negative_worsened": 1
+            }
+          },
+          "music": {
+            "baseline": {
+              "eer": 0.3078947368421052,
+              "auc": 0.7210526315789474,
+              "threshold": 0.6869312525,
+              "fpr": 0.3,
+              "fnr": 0.3157894736842105,
+              "fp": 3,
+              "fn": 6,
+              "tp": 13,
+              "tn": 7,
+              "n": 29
+            },
+            "candidate": {
+              "eer": 0.3078947368421052,
+              "auc": 0.763157894736842,
+              "threshold": 0.5888430774,
+              "fpr": 0.3,
+              "fnr": 0.3157894736842105,
+              "fp": 3,
+              "fn": 6,
+              "tp": 13,
+              "tn": 7,
+              "n": 29
+            },
+            "auc_delta": 0.042105263157894646,
+            "pair_changes": {
+              "pairs": 190,
+              "flips": 12,
+              "positive_to_negative_worsened": 2
+            }
+          }
+        },
+        "G2": {
+          "file": {
+            "baseline": {
+              "eer": 0.12347560975609756,
+              "auc": 0.9451219512195123,
+              "threshold": 0.5363479211,
+              "fpr": 0.125,
+              "fnr": 0.12195121951219512,
+              "fp": 3,
+              "fn": 5,
+              "tp": 36,
+              "tn": 21,
+              "n": 65
+            },
+            "candidate": {
+              "eer": 0.12347560975609756,
+              "auc": 0.9247967479674797,
+              "threshold": 0.5397991899,
+              "fpr": 0.125,
+              "fnr": 0.12195121951219512,
+              "fp": 3,
+              "fn": 5,
+              "tp": 36,
+              "tn": 21,
+              "n": 65
+            },
+            "auc_delta": -0.020325203252032575,
+            "pair_changes": {
+              "pairs": 984,
+              "flips": 28,
+              "positive_to_negative_worsened": 24
+            }
+          },
+          "voice": {
+            "baseline": {
+              "eer": 0.041958041958041946,
+              "auc": 0.9807692307692308,
+              "threshold": 0.6663966179,
+              "fpr": 0.045454545454545456,
+              "fnr": 0.038461538461538436,
+              "fp": 1,
+              "fn": 1,
+              "tp": 25,
+              "tn": 21,
+              "n": 48
+            },
+            "candidate": {
+              "eer": 0.041958041958041946,
+              "auc": 0.9807692307692308,
+              "threshold": 0.6663966179,
+              "fpr": 0.045454545454545456,
+              "fnr": 0.038461538461538436,
+              "fp": 1,
+              "fn": 1,
+              "tp": 25,
+              "tn": 21,
+              "n": 48
+            },
+            "auc_delta": 0.0,
+            "pair_changes": {
+              "pairs": 572,
+              "flips": 0,
+              "positive_to_negative_worsened": 0
+            }
+          },
+          "music": {
+            "baseline": {
+              "eer": 0.3078947368421052,
+              "auc": 0.7210526315789474,
+              "threshold": 0.6869312525,
+              "fpr": 0.3,
+              "fnr": 0.3157894736842105,
+              "fp": 3,
+              "fn": 6,
+              "tp": 13,
+              "tn": 7,
+              "n": 29
+            },
+            "candidate": {
+              "eer": 0.3078947368421052,
+              "auc": 0.7210526315789474,
+              "threshold": 0.6869312525,
+              "fpr": 0.3,
+              "fnr": 0.3157894736842105,
+              "fp": 3,
+              "fn": 6,
+              "tp": 13,
+              "tn": 7,
+              "n": 29
+            },
+            "auc_delta": 0.0,
+            "pair_changes": {
+              "pairs": 190,
+              "flips": 0,
+              "positive_to_negative_worsened": 0
+            }
+          }
+        },
+        "G3": {
+          "file": {
+            "baseline": {
+              "eer": 0.12347560975609756,
+              "auc": 0.9451219512195123,
+              "threshold": 0.5363479211,
+              "fpr": 0.125,
+              "fnr": 0.12195121951219512,
+              "fp": 3,
+              "fn": 5,
+              "tp": 36,
+              "tn": 21,
+              "n": 65
+            },
+            "candidate": {
+              "eer": 0.1565040650406504,
+              "auc": 0.9542682926829268,
+              "threshold": 0.564453423,
+              "fpr": 0.16666666666666666,
+              "fnr": 0.14634146341463417,
+              "fp": 4,
+              "fn": 6,
+              "tp": 35,
+              "tn": 20,
+              "n": 65
+            },
+            "auc_delta": 0.009146341463414531,
+            "pair_changes": {
+              "pairs": 984,
+              "flips": 37,
+              "positive_to_negative_worsened": 14
+            }
+          },
+          "voice": {
+            "baseline": {
+              "eer": 0.041958041958041946,
+              "auc": 0.9807692307692308,
+              "threshold": 0.6663966179,
+              "fpr": 0.045454545454545456,
+              "fnr": 0.038461538461538436,
+              "fp": 1,
+              "fn": 1,
+              "tp": 25,
+              "tn": 21,
+              "n": 48
+            },
+            "candidate": {
+              "eer": 0.041958041958041946,
+              "auc": 0.9825174825174825,
+              "threshold": 0.6590456218,
+              "fpr": 0.045454545454545456,
+              "fnr": 0.038461538461538436,
+              "fp": 1,
+              "fn": 1,
+              "tp": 25,
+              "tn": 21,
+              "n": 48
+            },
+            "auc_delta": 0.0017482517482516613,
+            "pair_changes": {
+              "pairs": 572,
+              "flips": 1,
+              "positive_to_negative_worsened": 0
+            }
+          },
+          "music": {
+            "baseline": {
+              "eer": 0.3078947368421052,
+              "auc": 0.7210526315789474,
+              "threshold": 0.6869312525,
+              "fpr": 0.3,
+              "fnr": 0.3157894736842105,
+              "fp": 3,
+              "fn": 6,
+              "tp": 13,
+              "tn": 7,
+              "n": 29
+            },
+            "candidate": {
+              "eer": 0.3842105263157895,
+              "auc": 0.7210526315789474,
+              "threshold": 0.681723088,
+              "fpr": 0.4,
+              "fnr": 0.368421052631579,
+              "fp": 4,
+              "fn": 7,
+              "tp": 12,
+              "tn": 6,
+              "n": 29
+            },
+            "auc_delta": 0.0,
+            "pair_changes": {
+              "pairs": 190,
+              "flips": 20,
+              "positive_to_negative_worsened": 10
+            }
+          }
+        },
+        "G4": {
+          "file": {
+            "baseline": {
+              "eer": 0.12347560975609756,
+              "auc": 0.9451219512195123,
+              "threshold": 0.5363479211,
+              "fpr": 0.125,
+              "fnr": 0.12195121951219512,
+              "fp": 3,
+              "fn": 5,
+              "tp": 36,
+              "tn": 21,
+              "n": 65
+            },
+            "candidate": {
+              "eer": 0.1565040650406504,
+              "auc": 0.9359756097560976,
+              "threshold": 0.6825069844,
+              "fpr": 0.16666666666666666,
+              "fnr": 0.14634146341463417,
+              "fp": 4,
+              "fn": 6,
+              "tp": 35,
+              "tn": 20,
+              "n": 65
+            },
+            "auc_delta": -0.009146341463414642,
+            "pair_changes": {
+              "pairs": 984,
+              "flips": 57,
+              "positive_to_negative_worsened": 33
+            }
+          },
+          "voice": {
+            "baseline": {
+              "eer": 0.041958041958041946,
+              "auc": 0.9807692307692308,
+              "threshold": 0.6663966179,
+              "fpr": 0.045454545454545456,
+              "fnr": 0.038461538461538436,
+              "fp": 1,
+              "fn": 1,
+              "tp": 25,
+              "tn": 21,
+              "n": 48
+            },
+            "candidate": {
+              "eer": 0.041958041958041946,
+              "auc": 0.9912587412587412,
+              "threshold": 0.5997666903,
+              "fpr": 0.045454545454545456,
+              "fnr": 0.038461538461538436,
+              "fp": 1,
+              "fn": 1,
+              "tp": 25,
+              "tn": 21,
+              "n": 48
+            },
+            "auc_delta": 0.010489510489510412,
+            "pair_changes": {
+              "pairs": 572,
+              "flips": 6,
+              "positive_to_negative_worsened": 0
+            }
+          },
+          "music": {
+            "baseline": {
+              "eer": 0.3078947368421052,
+              "auc": 0.7210526315789474,
+              "threshold": 0.6869312525,
+              "fpr": 0.3,
+              "fnr": 0.3157894736842105,
+              "fp": 3,
+              "fn": 6,
+              "tp": 13,
+              "tn": 7,
+              "n": 29
+            },
+            "candidate": {
+              "eer": 0.3078947368421052,
+              "auc": 0.7263157894736842,
+              "threshold": 0.5383726243,
+              "fpr": 0.3,
+              "fnr": 0.3157894736842105,
+              "fp": 3,
+              "fn": 6,
+              "tp": 13,
+              "tn": 7,
+              "n": 29
+            },
+            "auc_delta": 0.0052631578947368585,
+            "pair_changes": {
+              "pairs": 190,
+              "flips": 27,
+              "positive_to_negative_worsened": 13
+            }
+          }
+        }
+      }
+    }
+  }
+}

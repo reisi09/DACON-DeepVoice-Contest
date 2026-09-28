@@ -1,0 +1,61 @@
+{
+  "scenario": "attempt5 terminal admission failure with watcher rejection, verified stop, bootstrap restore, and independent archive validation",
+  "invocation": "eight_h100_watch.py detached monitor -> _read_state -> _verify_export (receipt status rejected) -> terminal pause/restore; independent watch.verify_archive(results.zip, expected_sha, target)",
+  "binary": "/Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/bin/vesslctl",
+  "workspace": "wsp-9683432r72m7",
+  "watcher_pid": 51626,
+  "watcher_terminal_observed": true,
+  "terminal_run_state": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/downloaded/run_state.json",
+    "sha256": "dfd4ffc16cc550c0b70e6463aa518ef7ec4cb34ca435ea2bb0aa2a838817c699",
+    "attempt": 5,
+    "status": "failed",
+    "stage": "admission_failed",
+    "archive_ready": true,
+    "archive_sha256": "c321b23164d6334a70df4f60fa19a83a56c6346867ac1f7b046415613f99a46d",
+    "export_member_count": 12,
+    "error": "precision/admission bootstrap exit 1"
+  },
+  "watcher_download_verification": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/download_verification.json",
+    "sha256": "7910b39c64139a17fdb1e9e1192a399a631605ec179d1f94aa0ea6e9f1de38fa",
+    "status": "rejected",
+    "error_type": "ValueError",
+    "error": "export receipt does not prove the downloaded archive"
+  },
+  "independent_archive_verification": {
+    "archive_path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/downloaded/results.zip",
+    "archive_sha256": "c321b23164d6334a70df4f60fa19a83a56c6346867ac1f7b046415613f99a46d",
+    "archive_bytes": 1037774,
+    "sidecar_path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/downloaded/results.zip.sha256",
+    "sidecar_sha256": "b4ebae1cc87e6115769469ce40fe9984699ac7a19f3b30ce93220742997157ec",
+    "sidecar_match": true,
+    "export_receipt_path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/downloaded/export_receipt.json",
+    "export_receipt_sha256": "3424b09145e50e1d5cd8dd1387bb2f5e6c1024468d7ea99b5f2687e3cec5f1f5",
+    "export_receipt_status": "admission_exported",
+    "crc_ok": true,
+    "member_hashes_ok": true,
+    "files_verified": 12,
+    "unpacked_path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_runner_build/attempt5_independent_verify/unpacked",
+    "manifest_sha256": "9305eb94ea82d65f4fb2c040033cecfcc89efd282bfde27d8b7218d6adb68cb9"
+  },
+  "resource_stop": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/resource_stop.json",
+    "sha256": "f265c39f0667313964171c054f7218b1baf1961d2ef596c72f71c03f1fe72a4f",
+    "pause_verified": true,
+    "phase": "standby",
+    "verified_at": 1789652891.656714
+  },
+  "bootstrap_restore": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/bootstrap_restored.json",
+    "sha256": "93712e30d7a702aeb987e49d572236dc684a0eb386dedd66dbc51e9cfe637ee6",
+    "restored_bootstrap_sha256": "d027558a7774b4581c6ed1485ed9e94f8bec5b0b8fc88687aa5366e520b07a94",
+    "restored": true
+  },
+  "post_terminal_workspace": {
+    "phase": "standby",
+    "state": "stopped"
+  },
+  "monitor_called_manually": false,
+  "gpu_start_called_by_this_agent": false
+}

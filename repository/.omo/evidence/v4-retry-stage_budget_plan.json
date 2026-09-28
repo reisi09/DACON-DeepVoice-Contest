@@ -1,0 +1,54 @@
+{
+  "allocation_start_unix": 1789283305.0,
+  "hard_deadline_unix": 1789290385.0,
+  "runner_seconds_remaining": 3966.182943344116,
+  "runner_start_unix": 1789286418.8170567,
+  "setup_elapsed_seconds": 3113.817056655884,
+  "stages": {
+    "export": {
+      "canonical_ceiling_minutes": 110,
+      "deadline_unix": 1789290116.1062412,
+      "seconds_after_runner_start": 3697.2891845703125
+    },
+    "g0": {
+      "canonical_ceiling_minutes": 20,
+      "deadline_unix": 1789287091.0514538,
+      "seconds_after_runner_start": 672.2343971729279
+    },
+    "main": {
+      "canonical_ceiling_minutes": 60,
+      "deadline_unix": 1789288435.5202482,
+      "seconds_after_runner_start": 2016.7031915187836
+    },
+    "probes": {
+      "canonical_ceiling_minutes": 35,
+      "deadline_unix": 1789287595.2272518,
+      "seconds_after_runner_start": 1176.4101951122284
+    },
+    "profile": {
+      "canonical_ceiling_minutes": 8,
+      "deadline_unix": 1789286687.7108154,
+      "seconds_after_runner_start": 268.8937587738037
+    },
+    "refit": {
+      "canonical_ceiling_minutes": 95,
+      "deadline_unix": 1789289611.9304433,
+      "seconds_after_runner_start": 3193.113386631012
+    },
+    "sealed": {
+      "canonical_ceiling_minutes": 105,
+      "deadline_unix": 1789289948.0476418,
+      "seconds_after_runner_start": 3529.2305850982666
+    },
+    "shutdown": {
+      "canonical_ceiling_minutes": 118,
+      "deadline_unix": 1789290385.0,
+      "seconds_after_runner_start": 3966.182943344116
+    },
+    "temporal": {
+      "canonical_ceiling_minutes": 80,
+      "deadline_unix": 1789289107.7546453,
+      "seconds_after_runner_start": 2688.9375886917114
+    }
+  }
+}

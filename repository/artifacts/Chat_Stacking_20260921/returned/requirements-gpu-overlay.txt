@@ -1,0 +1,5 @@
+# Target overlay, NOT installed or verified. Preserve current GPU base requirements.
+# Do NOT replace torch/torchaudio/transformers with CPU verification versions.
+scikit-learn==1.8.0
+xgboost==3.1.3
+skops==0.13.0

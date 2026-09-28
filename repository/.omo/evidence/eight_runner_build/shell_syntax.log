@@ -1,0 +1,4 @@
+scenario=validate_gpu_bootstrap_shell_syntax
+invocation=bash -n eight_h100_run.sh
+exit_code=0
+observable=bootstrap shell syntax accepted

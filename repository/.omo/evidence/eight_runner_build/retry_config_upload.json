@@ -1,0 +1,13 @@
+{
+  "scenario": "retry config upload preserving immutable deadline",
+  "invocation": "upload_and_readback(config.json, eight-h100-20260917/)",
+  "binary_observable": {
+    "attempt": 2,
+    "started_epoch": 1789648960,
+    "resumed_epoch": 1789649686,
+    "pause_deadline_epoch": 1789663360,
+    "deadline_preserved": true,
+    "sha256": "ec9f7c416bf00dd7212e007a809d565d2d37c1123fba7c432bdee9da848d7901"
+  },
+  "artifact": "_workspace/eight_h100_20260917/config.json"
+}

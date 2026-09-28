@@ -1,0 +1,28 @@
+{
+  "scenario": "attempt6 full-run watcher attachment before bootstrap-last upload and GPU start",
+  "invocation": "python3 subprocess.Popen([.venv/bin/python, -u, eight_h100_watch.py], stdin=DEVNULL, stdout=watch.log, stderr=STDOUT, start_new_session=True, close_fds=True)",
+  "watcher_pid": 58324,
+  "post_tool_ps": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python -u /Users/choiwuseck/Documents/ChatGPT/데이콘/eight_h100_watch.py",
+  "post_tool_state": "Ss",
+  "post_tool_ppid": 1,
+  "alive_after_process_return": true,
+  "pid_file": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/watch_pid.txt",
+  "watch_log": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/watch.log",
+  "current_run_state": {
+    "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/results/eight_h100_20260917/run_state.json",
+    "sha256": "f2acc264151dcfbf9949ed0103945dcc6a029151ff5097a9ab749982aa38f920",
+    "attempt": 6,
+    "status": "running",
+    "stage": "preparing",
+    "archive_ready": false,
+    "hard_deadline_unix": 1789663360,
+    "resumed_unix": 1789653174.982635
+  },
+  "runner_upload_readback": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_runner_build/attempt6_full_overlay_upload.json",
+  "runner_upload_readback_status": "passed",
+  "workspace": "wsp-9683432r72m7",
+  "object_volume": "objvol-a5gxdg7er70i",
+  "object_prefix": "eight-h100-20260917/",
+  "gpu_start_called_by_this_agent": false,
+  "runner_bootstrap_last_handoff": true
+}

@@ -1,0 +1,5 @@
+RuntimeError: frozen runtime import/CUDA check failed
+Traceback (most recent call last):
+  File "/root/redesign_h100_20260917/redesign_h100_run.py", line 245, in main
+    raise RuntimeError("frozen runtime import/CUDA check failed")
+RuntimeError: frozen runtime import/CUDA check failed

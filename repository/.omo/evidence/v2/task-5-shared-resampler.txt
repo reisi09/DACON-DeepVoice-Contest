@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/choiwuseck/Documents/ChatGPT/데이콘
+collecting ... collected 6 items / 5 deselected / 1 selected
+
+test_train_v2.py::test_non_16k_training_prediction_matches_deployment_resampling PASSED [100%]
+
+======================= 1 passed, 5 deselected in 2.44s ========================

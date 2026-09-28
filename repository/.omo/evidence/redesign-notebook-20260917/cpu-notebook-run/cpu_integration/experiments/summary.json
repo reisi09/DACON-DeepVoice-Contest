@@ -1,0 +1,83 @@
+{
+  "arms": {
+    "A": {
+      "exposure": {
+        "draws_per_epoch": 40,
+        "paired_slots": 40,
+        "paired_target_seconds": 487.9999999999997,
+        "shared_unpaired": 0
+      },
+      "seeds": [
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-run/cpu_integration/experiments/checkpoints/A/41/best.pt",
+          "optimizer_updates": 8,
+          "seed": 41,
+          "selected_epoch": 2
+        }
+      ]
+    },
+    "B": {
+      "exposure": {
+        "draws_per_epoch": 40,
+        "paired_slots": 40,
+        "paired_target_seconds": 487.9999999999997,
+        "shared_unpaired": 0
+      },
+      "seeds": [
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-run/cpu_integration/experiments/checkpoints/B/41/best.pt",
+          "optimizer_updates": 8,
+          "seed": 41,
+          "selected_epoch": 2
+        }
+      ]
+    },
+    "C": {
+      "exposure": {
+        "draws_per_epoch": 40,
+        "paired_slots": 40,
+        "paired_target_seconds": 487.9999999999997,
+        "shared_unpaired": 0
+      },
+      "seeds": [
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-run/cpu_integration/experiments/checkpoints/C/41/best.pt",
+          "optimizer_updates": 8,
+          "seed": 41,
+          "selected_epoch": 2
+        }
+      ]
+    },
+    "D": {
+      "exposure": {
+        "draws_per_epoch": 40,
+        "paired_slots": 40,
+        "paired_target_seconds": 487.9999999999997,
+        "shared_unpaired": 0
+      },
+      "raw_equals_stem_capacity_control": {
+        "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-run/cpu_integration/experiments/checkpoints/D_raw_equals_stem/41/best.pt",
+        "optimizer_updates": 8,
+        "seed": 41,
+        "selected_epoch": 2
+      },
+      "seeds": [
+        {
+          "checkpoint": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/cpu-notebook-run/cpu_integration/experiments/checkpoints/D/41/best.pt",
+          "optimizer_updates": 8,
+          "seed": 41,
+          "selected_epoch": 2
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "CPU fixtures validate execution only; no performance, H100, L4, sealed, or leaderboard claim"
+  ],
+  "status": "complete",
+  "voice": {
+    "eligible_ids": [],
+    "reason": "known real/fake singing and telephone labels are both required",
+    "status": "provisional_skip"
+  }
+}

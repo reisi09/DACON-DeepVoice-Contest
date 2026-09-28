@@ -1,0 +1,15 @@
+{
+  "scenario": "offline Linux imageio-ffmpeg recovery wheel validation",
+  "invocation": "pip download target manylinux2014_x86_64 cp311 then ZIP/METADATA/SHA audit",
+  "binary_observable": {
+    "filename": "imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl",
+    "bytes": 29498237,
+    "sha256": "c7e46fcec401dd990405049d2e2f475e2b397779df2519b544b8aab515195282",
+    "crc_ok": true,
+    "package": "imageio-ffmpeg",
+    "version": "0.6.0",
+    "requires_dist": [],
+    "contains_linux_ffmpeg": true
+  },
+  "artifact": "_workspace/eight_h100_20260917/offline_wheels/imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl"
+}

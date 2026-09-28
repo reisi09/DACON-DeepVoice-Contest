@@ -1,0 +1,30 @@
+{
+  "workspace": {
+    "clusterSlug": "cluster-capella",
+    "createdDt": "2026-09-17T02:12:25.260413Z",
+    "creatorName": "riwpq",
+    "imageUri": "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+    "initScript": "bash /shared/redesign-full-20260917/redesign_full_refit_run.sh",
+    "name": "redesign-b-full1696-h100-20260917",
+    "organizationName": "qwdkw",
+    "phase": "standby",
+    "ports": [],
+    "resourceSpecSlug": "resourcespec-ch100x1",
+    "slug": "wsp-9683432r72m7",
+    "state": "stopped",
+    "teamSlug": "team-jusp6dlv6wl5"
+  },
+  "billingInfo": {
+    "clusterName": "capella-emea",
+    "hourlyCreditForCompute": 2.98,
+    "hourlyCreditForStorage": 0,
+    "region": "eu-north1",
+    "resourceSpecAcceleratorCount": 1,
+    "resourceSpecAcceleratorName": "H100 SXM",
+    "resourceSpecCpuCount": 15,
+    "resourceSpecEphemeralStorageBytes": 200000000000,
+    "resourceSpecMemoryBytes": 200000000000,
+    "resourceSpecName": "VESSL H100 SXM \u00d71",
+    "totalRuntimeSeconds": 0
+  }
+}

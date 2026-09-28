@@ -1,0 +1,25 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_inventory_pcm_hash_names_the_persisted_prepared_wave ___________
+
+tmp_path = PosixPath('/private/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/pytest-of-choiwuseck/pytest-31/test_inventory_pcm_hash_names_0')
+
+    def test_inventory_pcm_hash_names_the_persisted_prepared_wave(tmp_path: Path) -> None:
+        # Given source PCM loud enough for the prepared writer's peak normalization.
+        original = tmp_path / "original.wav"
+        samples = struct.pack("<h", 32767) * (4 * 16000)
+        with wave.open(str(original), "wb") as handle:
+            handle.setparams((1, 2, 16000, 0, "NONE", "not compressed"))
+            handle.writeframes(samples)
+        # When retained, then inventory hashes the bytes decoded from the written prepared file.
+        row = sources._retain(tmp_path, original, "mlaad_real", "g", "p", "c", "u", "r", "CC", "a", sources.real_voice_labels())
+>       assert row.pcm_sha256 == sources.pcm_sha256(sources.decode_audio(tmp_path / row.prepared_path))
+E       AssertionError: assert 'e9a247f330c8...ae58c1da0f32a' == '3aea9ba88e94...24a906c2e008a'
+E         
+E         - 3aea9ba88e94ab90ae27825ab6e4e2e84c173386a317a98114124a906c2e008a
+E         + e9a247f330c8192761bc081fd1c7a3a5286f607f6bc68177165ae58c1da0f32a
+
+test_prepare_v2_sources.py:75: AssertionError
+=========================== short test summary info ============================
+FAILED test_prepare_v2_sources.py::test_inventory_pcm_hash_names_the_persisted_prepared_wave
+1 failed, 5 deselected in 0.21s

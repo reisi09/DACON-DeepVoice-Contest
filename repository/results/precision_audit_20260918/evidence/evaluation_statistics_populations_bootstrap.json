@@ -1,0 +1,96 @@
+{
+  "global_components": 256,
+  "cross_split_components": 0,
+  "populations": {
+    "music": {
+      "rows": 127,
+      "components": 24,
+      "component_row_sizes": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        5,
+        5,
+        5,
+        10,
+        10,
+        18,
+        19,
+        19,
+        21
+      ],
+      "label_component_support": {
+        "0": 15,
+        "1": 18
+      },
+      "label_source_rows": {
+        "1|Echoes/udio/TTA": 6,
+        "1|Echoes/musicgen/TTA": 7,
+        "1|Echoes/musicgen/ATA": 6,
+        "1|Echoes/elevenlabs/TTA": 6,
+        "1|Echoes/diffrhythm/ATA": 6,
+        "1|udio": 5,
+        "0|FMA/FMA": 9,
+        "1|Echoes/diffrhythm/TTA": 9,
+        "1|Echoes/acestep/TTA": 8,
+        "1|suno": 4,
+        "1|Echoes/songgen/TTA": 8,
+        "0|FMA": 14,
+        "1|Echoes/producer/TTA": 3,
+        "1|Echoes/suno/TTA": 6,
+        "1|Echoes/producer/ATA": 3,
+        "1|Echoes/audioldm/TTA": 8,
+        "1|Echoes/brev/TTA": 6,
+        "1|Echoes/stableaudio/TTA": 3,
+        "1|Echoes/audioldm/ATA": 6,
+        "1|Echoes/songgen/ATA": 4
+      }
+    },
+    "voice": {
+      "rows": 48,
+      "components": 1,
+      "component_row_sizes": [
+        48
+      ],
+      "label_component_support": {
+        "0": 1,
+        "1": 1
+      },
+      "label_source_rows": {
+        "1|MLAAD": 4,
+        "0|MLAAD/M-AILABS": 20,
+        "0|MLAAD": 4,
+        "1|MLAAD/Higgs-Audio-V2": 5,
+        "1|MLAAD/Kani-TTS-370M": 4,
+        "1|MLAAD/Chatterbox Multilingual": 6,
+        "1|MLAAD/Cartesia.ai (Sonic-3)": 5
+      }
+    }
+  },
+  "rare_class_bootstrap_reproducer": {
+    "delta_eer": -1.0,
+    "ci95": [
+      -1.0,
+      -1.0
+    ],
+    "components": 5,
+    "resamples": 1000,
+    "valid": 645,
+    "uncertain": false,
+    "invalid": 355,
+    "comparison_status": "measured_improvement",
+    "description": "Five independent groups; only one positive group. Illustrates missing invalid-fraction gate, not observed production result."
+  }
+}

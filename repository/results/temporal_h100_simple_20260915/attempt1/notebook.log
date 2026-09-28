@@ -1,0 +1,101 @@
+Traceback (most recent call last):
+  File "/root/Temporal_Simplification/v7_notebook_runner.py", line 84, in <module>
+    main()
+    ~~~~^^
+  File "/root/Temporal_Simplification/v7_notebook_runner.py", line 45, in main
+    execute_notebook()
+    ~~~~~~~~~~~~~~~~^^
+  File "/root/Temporal_Simplification/v7_notebook_runner.py", line 38, in execute_notebook
+    client.execute()
+    ~~~~~~~~~~~~~~^^
+  File "/root/temporal-venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/conda/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/root/temporal-venv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/root/temporal-venv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/root/temporal-venv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+search = run_augmentation_search(
+    SPLIT['train'], SPLIT['tune'], records, masked, OUT, DEADLINE,
+    batch_size=BATCH_SIZE, compare_architectures=True)
+assert CACHE_BEFORE == (feature_hash(records), feature_hash(masked)), 'Feature cache mutated'
+write_json(OUT/'cache_integrity.json', dict(unchanged=True, original_sha256=CACHE_BEFORE))
+reference = json.loads((ROOT/'reference_deep_crop.json').read_text())
+for seed in (41,42,43):
+    current = json.loads((OUT/f'D_deep_crop_seed{seed}'/'training.json').read_text())
+    previous = reference[str(seed)]
+    for field in ('train_losses', 'validation_losses'):
+        np.testing.assert_allclose(current[field], previous[field], atol=1e-6, rtol=0)
+    assert current['selected_epoch'] == previous['selected_epoch']
+write_json(OUT/'deep_reproduction.json', dict(passed=True, tolerance=1e-6, seeds=[41,42,43]))
+selection = json.loads((OUT/'selection.json').read_text())
+lines = ['| 모델 | 파라미터 | 튜닝 EER | BCE | best epoch | 학습 epoch | 초 |',
+         '|---|---:|---:|---:|---:|---:|---:|']
+for r in search:
+    lines.append(f"| {r['name']} | {r['parameters']:,} | {r['music_eer']:.4f} | {r['balanced_bce']:.4f} | {r['selected_epoch']} | {r['epochs_completed']} | {r['seconds']:.1f} |")
+display(Markdown('\n'.join(lines)))
+
+------------------
+
+----- stdout -----
+D_deep_crop_seed41 {'music_eer': 0.3030119018702939, 'balanced_bce': 0.5659641454582747, 'selected_epoch': 3, 'seconds': 21.383673906326294}
+----- stdout -----
+D_deep_crop_seed42 {'music_eer': 0.31863816695004454, 'balanced_bce': 0.5588465481019966, 'selected_epoch': 5, 'seconds': 15.778456449508667}
+----- stdout -----
+D_deep_crop_seed43 {'music_eer': 0.3030119018702939, 'balanced_bce': 0.5481834582886403, 'selected_epoch': 4, 'seconds': 15.168666362762451}
+----- stdout -----
+S_simple_crop_seed41 {'music_eer': 0.2901789328799288, 'balanced_bce': 0.5764365420199037, 'selected_epoch': 3, 'seconds': 13.734479427337646}
+----- stdout -----
+S_simple_crop_seed42 {'music_eer': 0.31863816695004454, 'balanced_bce': 0.5701571583453433, 'selected_epoch': 6, 'seconds': 14.742432832717896}
+----- stdout -----
+S_simple_crop_seed43 {'music_eer': 0.2929722289693142, 'balanced_bce': 0.5606693848084127, 'selected_epoch': 9, 'seconds': 16.949835777282715}
+------------------
+
+[31m---------------------------------------------------------------------------[39m
+[31mAssertionError[39m                            Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 11[39m
+[32m      7[39m [38;5;28;01mfor[39;00m seed [38;5;28;01min[39;00m ([32m41[39m,[32m42[39m,[32m43[39m):
+[32m      8[39m     current = json.loads((OUT/f'D_deep_crop_seed{seed}'/[33m'training.json'[39m).read_text())
+[32m      9[39m     previous = reference[str(seed)]
+[32m     10[39m     [38;5;28;01mfor[39;00m field [38;5;28;01min[39;00m ([33m'train_losses'[39m, [33m'validation_losses'[39m):
+[32m---> [39m[32m11[39m         np.testing.assert_allclose(current[field], previous[field], atol=[32m1e-6[39m, rtol=[32m0[39m)
+[32m     12[39m     [38;5;28;01massert[39;00m current[[33m'selected_epoch'[39m] == previous[[33m'selected_epoch'[39m]
+[32m     13[39m write_json(OUT/[33m'deep_reproduction.json'[39m, dict(passed=[38;5;28;01mTrue[39;00m, tolerance=[32m1e-6[39m, seeds=[[32m41[39m,[32m42[39m,[32m43[39m]))
+[32m     14[39m selection = json.loads((OUT/[33m'selection.json'[39m).read_text())
+
+    [31m[... skipping hidden 1 frame][39m
+
+[36mFile [39m[32m~/temporal-venv/lib/python3.13/site-packages/numpy/testing/_private/utils.py:921[39m, in [36massert_array_compare[39m[34m(comparison, x, y, err_msg, verbose, header, precision, equal_nan, equal_inf, strict, names)[39m
+[32m    916[39m         err_msg += [33m'[39m[38;5;130;01m\n[39;00m[33m'[39m + [33m'[39m[38;5;130;01m\n[39;00m[33m'[39m.join(remarks)
+[32m    917[39m         msg = build_err_msg([ox, oy], err_msg,
+[32m    918[39m                             verbose=verbose, header=header,
+[32m    919[39m                             names=names,
+[32m    920[39m                             precision=precision)
+[32m--> [39m[32m921[39m         [38;5;28;01mraise[39;00m [38;5;167;01mAssertionError[39;00m(msg)
+[32m    922[39m [38;5;28;01mexcept[39;00m [38;5;167;01mValueError[39;00m:
+[32m    923[39m     [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mtraceback[39;00m
+
+[31mAssertionError[39m: 
+Not equal to tolerance rtol=0, atol=1e-06
+
+Mismatched elements: 15 / 23 (65.2%)
+Max absolute difference among violations: 0.21694319
+Max relative difference among violations: 0.85843648
+ ACTUAL: array([0.667704, 0.617187, 0.53796 , 0.525115, 0.514348, 0.421829,
+       0.423101, 0.35245 , 0.342139, 0.29892 , 0.281481, 0.278728,
+       0.210186, 0.261792, 0.263045, 0.22424 , 0.18478 , 0.246323,
+       0.158293, 0.201426, 0.149777, 0.255784, 0.153393])
+ DESIRED: array([0.667704, 0.617187, 0.53796 , 0.525115, 0.514348, 0.421829,
+       0.423101, 0.35245 , 0.342072, 0.298892, 0.281316, 0.281362,
+       0.208595, 0.256581, 0.249179, 0.225959, 0.183439, 0.260536,
+       0.153485, 0.232503, 0.184554, 0.137634, 0.370336])
+

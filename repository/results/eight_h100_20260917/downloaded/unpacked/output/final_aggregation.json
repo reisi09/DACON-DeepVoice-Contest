@@ -1,0 +1,1091 @@
+{
+  "dataset": {
+    "component_count": 178,
+    "label_denominators": {
+      "FILE_FAKE": {
+        "calibration": {
+          "known": 1880,
+          "unknown": 0
+        },
+        "dev": {
+          "known": 1024,
+          "unknown": 0
+        },
+        "test": {
+          "known": 876,
+          "unknown": 0
+        },
+        "train": {
+          "known": 3321,
+          "unknown": 0
+        }
+      },
+      "MUSIC_FAKE": {
+        "calibration": {
+          "known": 836,
+          "unknown": 1044
+        },
+        "dev": {
+          "known": 680,
+          "unknown": 344
+        },
+        "test": {
+          "known": 532,
+          "unknown": 344
+        },
+        "train": {
+          "known": 2529,
+          "unknown": 792
+        }
+      },
+      "MUSIC_PRESENT": {
+        "calibration": {
+          "known": 1880,
+          "unknown": 0
+        },
+        "dev": {
+          "known": 1024,
+          "unknown": 0
+        },
+        "test": {
+          "known": 876,
+          "unknown": 0
+        },
+        "train": {
+          "known": 3321,
+          "unknown": 0
+        }
+      },
+      "VOICE_FAKE": {
+        "calibration": {
+          "known": 1062,
+          "unknown": 818
+        },
+        "dev": {
+          "known": 356,
+          "unknown": 668
+        },
+        "test": {
+          "known": 356,
+          "unknown": 520
+        },
+        "train": {
+          "known": 810,
+          "unknown": 2511
+        }
+      },
+      "VOICE_PRESENT": {
+        "calibration": {
+          "known": 1080,
+          "unknown": 800
+        },
+        "dev": {
+          "known": 368,
+          "unknown": 656
+        },
+        "test": {
+          "known": 368,
+          "unknown": 508
+        },
+        "train": {
+          "known": 828,
+          "unknown": 2493
+        }
+      }
+    },
+    "probe_family_counts": {
+      "core": 6293,
+      "partial": 648,
+      "swap": 160
+    },
+    "rows": 7101,
+    "source_counts": {
+      "Echoes/acestep/TTA": 268,
+      "Echoes/audioldm/ATA": 237,
+      "Echoes/audioldm/TTA": 261,
+      "Echoes/brev/TTA": 222,
+      "Echoes/diffrhythm/ATA": 243,
+      "Echoes/diffrhythm/TTA": 278,
+      "Echoes/elevenlabs/TTA": 218,
+      "Echoes/mubert/TTA": 34,
+      "Echoes/musicgen/ATA": 237,
+      "Echoes/musicgen/TTA": 263,
+      "Echoes/producer/ATA": 104,
+      "Echoes/producer/TTA": 117,
+      "Echoes/songgen/ATA": 214,
+      "Echoes/songgen/TTA": 275,
+      "Echoes/stableaudio/TTA": 34,
+      "Echoes/suno/TTA": 228,
+      "Echoes/udio/TTA": 227,
+      "FMA": 428,
+      "FMA/FMA": 305,
+      "MLAAD": 120,
+      "MLAAD/Cartesia.ai (Sonic-3)": 28,
+      "MLAAD/Chatterbox Multilingual": 36,
+      "MLAAD/Higgs-Audio-V2": 44,
+      "MLAAD/Kani-TTS-370M": 52,
+      "MLAAD/M-AILABS": 160,
+      "constructed:E2": 160,
+      "constructed:E5": 648,
+      "mlaad_fake": 698,
+      "mlaad_real": 698,
+      "suno": 132,
+      "udio": 132
+    }
+  },
+  "experiments": {
+    "E1": {
+      "bootstrap_unit": "connected provenance component; no population CI when only one component",
+      "claim_limit": "historical/source-confounded diagnostic",
+      "class_exposure": "16 REAL + 16 FAKE per batch32",
+      "comparison_scope": "same prepared labels/features and fixed updates",
+      "component_count": 178,
+      "estimand": "balanced-sampler head difference",
+      "fixed_updates": 500,
+      "label_denominators": {
+        "FILE_FAKE": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "MUSIC_FAKE": {
+          "calibration": {
+            "known": 836,
+            "unknown": 1044
+          },
+          "dev": {
+            "known": 680,
+            "unknown": 344
+          },
+          "test": {
+            "known": 532,
+            "unknown": 344
+          },
+          "train": {
+            "known": 2529,
+            "unknown": 792
+          }
+        },
+        "MUSIC_PRESENT": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "VOICE_FAKE": {
+          "calibration": {
+            "known": 1062,
+            "unknown": 818
+          },
+          "dev": {
+            "known": 356,
+            "unknown": 668
+          },
+          "test": {
+            "known": 356,
+            "unknown": 520
+          },
+          "train": {
+            "known": 810,
+            "unknown": 2511
+          }
+        },
+        "VOICE_PRESENT": {
+          "calibration": {
+            "known": 1080,
+            "unknown": 800
+          },
+          "dev": {
+            "known": 368,
+            "unknown": 656
+          },
+          "test": {
+            "known": 368,
+            "unknown": 508
+          },
+          "train": {
+            "known": 828,
+            "unknown": 2493
+          }
+        }
+      },
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E1_music.csv",
+        "/root/eight_h100_20260917/output/predictions_E1_voice.csv"
+      ],
+      "prediction_rows": 175,
+      "report": "/root/eight_h100_20260917/output/experiment_1.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": true,
+      "status": "complete"
+    },
+    "E2": {
+      "bootstrap_unit": "connected provenance component; no population CI when only one component",
+      "claim_limit": "separator-view diagnostic",
+      "class_exposure": {
+        "same_frozen_models": 2644
+      },
+      "comparison_scope": "paired identical windows",
+      "component_count": 178,
+      "estimand": "raw-minus-recovered-vocal score shift",
+      "fixed_updates": 0,
+      "label_denominators": {
+        "FILE_FAKE": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "MUSIC_FAKE": {
+          "calibration": {
+            "known": 836,
+            "unknown": 1044
+          },
+          "dev": {
+            "known": 680,
+            "unknown": 344
+          },
+          "test": {
+            "known": 532,
+            "unknown": 344
+          },
+          "train": {
+            "known": 2529,
+            "unknown": 792
+          }
+        },
+        "MUSIC_PRESENT": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "VOICE_FAKE": {
+          "calibration": {
+            "known": 1062,
+            "unknown": 818
+          },
+          "dev": {
+            "known": 356,
+            "unknown": 668
+          },
+          "test": {
+            "known": 356,
+            "unknown": 520
+          },
+          "train": {
+            "known": 810,
+            "unknown": 2511
+          }
+        },
+        "VOICE_PRESENT": {
+          "calibration": {
+            "known": 1080,
+            "unknown": 800
+          },
+          "dev": {
+            "known": 368,
+            "unknown": 656
+          },
+          "test": {
+            "known": 368,
+            "unknown": 508
+          },
+          "train": {
+            "known": 828,
+            "unknown": 2493
+          }
+        }
+      },
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E2.csv"
+      ],
+      "prediction_rows": 15864,
+      "report": "/root/eight_h100_20260917/output/experiment_2.json",
+      "seeds": [],
+      "selection_locked": "predeclared_no_selection",
+      "status": "complete"
+    },
+    "E3": {
+      "bootstrap_unit": "connected provenance component; no population CI when only one component",
+      "claim_limit": "unseen-chain diagnostic within recorded sources",
+      "class_exposure": "16 REAL + 16 FAKE per batch32",
+      "comparison_scope": "same transformed views and fixed updates",
+      "component_count": 178,
+      "estimand": "CE-plus-consistency difference",
+      "fixed_updates": 500,
+      "label_denominators": {
+        "FILE_FAKE": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "MUSIC_FAKE": {
+          "calibration": {
+            "known": 836,
+            "unknown": 1044
+          },
+          "dev": {
+            "known": 680,
+            "unknown": 344
+          },
+          "test": {
+            "known": 532,
+            "unknown": 344
+          },
+          "train": {
+            "known": 2529,
+            "unknown": 792
+          }
+        },
+        "MUSIC_PRESENT": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "VOICE_FAKE": {
+          "calibration": {
+            "known": 1062,
+            "unknown": 818
+          },
+          "dev": {
+            "known": 356,
+            "unknown": 668
+          },
+          "test": {
+            "known": 356,
+            "unknown": 520
+          },
+          "train": {
+            "known": 810,
+            "unknown": 2511
+          }
+        },
+        "VOICE_PRESENT": {
+          "calibration": {
+            "known": 1080,
+            "unknown": 800
+          },
+          "dev": {
+            "known": 368,
+            "unknown": 656
+          },
+          "test": {
+            "known": 368,
+            "unknown": 508
+          },
+          "train": {
+            "known": 828,
+            "unknown": 2493
+          }
+        }
+      },
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E3_music.csv",
+        "/root/eight_h100_20260917/output/predictions_E3_voice.csv"
+      ],
+      "prediction_rows": 700,
+      "report": "/root/eight_h100_20260917/output/experiment_3.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": true,
+      "status": "complete"
+    },
+    "E4": {
+      "bootstrap_unit": "connected provenance component; no population CI when only one component",
+      "claim_limit": "complementarity diagnostic",
+      "class_exposure": "16 REAL + 16 FAKE per batch32",
+      "comparison_scope": "dev-selected fusion on grouped split",
+      "component_count": 178,
+      "estimand": "fixed spectral fusion difference",
+      "fixed_updates": 500,
+      "label_denominators": {
+        "FILE_FAKE": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "MUSIC_FAKE": {
+          "calibration": {
+            "known": 836,
+            "unknown": 1044
+          },
+          "dev": {
+            "known": 680,
+            "unknown": 344
+          },
+          "test": {
+            "known": 532,
+            "unknown": 344
+          },
+          "train": {
+            "known": 2529,
+            "unknown": 792
+          }
+        },
+        "MUSIC_PRESENT": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "VOICE_FAKE": {
+          "calibration": {
+            "known": 1062,
+            "unknown": 818
+          },
+          "dev": {
+            "known": 356,
+            "unknown": 668
+          },
+          "test": {
+            "known": 356,
+            "unknown": 520
+          },
+          "train": {
+            "known": 810,
+            "unknown": 2511
+          }
+        },
+        "VOICE_PRESENT": {
+          "calibration": {
+            "known": 1080,
+            "unknown": 800
+          },
+          "dev": {
+            "known": 368,
+            "unknown": 656
+          },
+          "test": {
+            "known": 368,
+            "unknown": 508
+          },
+          "train": {
+            "known": 828,
+            "unknown": 2493
+          }
+        }
+      },
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E4.csv"
+      ],
+      "prediction_rows": 127,
+      "report": "/root/eight_h100_20260917/output/experiment_4.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": true,
+      "status": "complete"
+    },
+    "E5": {
+      "bootstrap_unit": "connected provenance component; no population CI when only one component",
+      "claim_limit": "constructed-composite diagnostic",
+      "class_exposure": {
+        "calibration": {
+          "fake": 108,
+          "real": 108
+        },
+        "dev": {
+          "fake": 72,
+          "real": 72
+        },
+        "test": {
+          "fake": 72,
+          "real": 72
+        }
+      },
+      "comparison_scope": "same windows with calibration-locked thresholds",
+      "component_count": 178,
+      "estimand": "pooling-rule sparse-event sensitivity",
+      "fixed_updates": 0,
+      "label_denominators": {
+        "FILE_FAKE": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "MUSIC_FAKE": {
+          "calibration": {
+            "known": 836,
+            "unknown": 1044
+          },
+          "dev": {
+            "known": 680,
+            "unknown": 344
+          },
+          "test": {
+            "known": 532,
+            "unknown": 344
+          },
+          "train": {
+            "known": 2529,
+            "unknown": 792
+          }
+        },
+        "MUSIC_PRESENT": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "VOICE_FAKE": {
+          "calibration": {
+            "known": 1062,
+            "unknown": 818
+          },
+          "dev": {
+            "known": 356,
+            "unknown": 668
+          },
+          "test": {
+            "known": 356,
+            "unknown": 520
+          },
+          "train": {
+            "known": 810,
+            "unknown": 2511
+          }
+        },
+        "VOICE_PRESENT": {
+          "calibration": {
+            "known": 1080,
+            "unknown": 800
+          },
+          "dev": {
+            "known": 368,
+            "unknown": 656
+          },
+          "test": {
+            "known": 368,
+            "unknown": 508
+          },
+          "train": {
+            "known": 828,
+            "unknown": 2493
+          }
+        }
+      },
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E5.csv"
+      ],
+      "prediction_rows": 648,
+      "report": "/root/eight_h100_20260917/output/experiment_5.json",
+      "seeds": [],
+      "selection_locked": true,
+      "status": "complete"
+    },
+    "E6": {
+      "bootstrap_unit": "connected provenance component; no population CI when only one component",
+      "claim_limit": "layer probe only",
+      "class_exposure": "16 REAL + 16 FAKE per batch32",
+      "comparison_scope": "same grouped split, heads, and updates",
+      "component_count": 178,
+      "estimand": "encoder-layer head difference",
+      "fixed_updates": 500,
+      "label_denominators": {
+        "FILE_FAKE": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "MUSIC_FAKE": {
+          "calibration": {
+            "known": 836,
+            "unknown": 1044
+          },
+          "dev": {
+            "known": 680,
+            "unknown": 344
+          },
+          "test": {
+            "known": 532,
+            "unknown": 344
+          },
+          "train": {
+            "known": 2529,
+            "unknown": 792
+          }
+        },
+        "MUSIC_PRESENT": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "VOICE_FAKE": {
+          "calibration": {
+            "known": 1062,
+            "unknown": 818
+          },
+          "dev": {
+            "known": 356,
+            "unknown": 668
+          },
+          "test": {
+            "known": 356,
+            "unknown": 520
+          },
+          "train": {
+            "known": 810,
+            "unknown": 2511
+          }
+        },
+        "VOICE_PRESENT": {
+          "calibration": {
+            "known": 1080,
+            "unknown": 800
+          },
+          "dev": {
+            "known": 368,
+            "unknown": 656
+          },
+          "test": {
+            "known": 368,
+            "unknown": 508
+          },
+          "train": {
+            "known": 828,
+            "unknown": 2493
+          }
+        }
+      },
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E6_Anti.csv",
+        "/root/eight_h100_20260917/output/predictions_E6_MERT.csv"
+      ],
+      "prediction_rows": 175,
+      "report": "/root/eight_h100_20260917/output/experiment_6.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": true,
+      "status": "complete"
+    },
+    "E7": {
+      "bootstrap_unit": "connected provenance component; no population CI when only one component",
+      "claim_limit": "bounded speech adaptation diagnostic",
+      "class_exposure": {
+        "head_only_ce": {
+          "per_seed": {
+            "fake_windows": 200,
+            "real_windows": 200
+          },
+          "total": {
+            "fake_windows": 600,
+            "real_windows": 600
+          }
+        },
+        "lora_ce": {
+          "per_seed": {
+            "fake_windows": 200,
+            "real_windows": 200
+          },
+          "total": {
+            "fake_windows": 600,
+            "real_windows": 600
+          }
+        },
+        "lora_ce_kl": {
+          "per_seed": {
+            "fake_windows": 200,
+            "real_windows": 200
+          },
+          "total": {
+            "fake_windows": 600,
+            "real_windows": 600
+          }
+        }
+      },
+      "comparison_scope": "same views, schedules, seeds, and initialization",
+      "component_count": 178,
+      "estimand": "CE-plus-KL LoRA difference",
+      "fixed_updates": 200,
+      "label_denominators": {
+        "FILE_FAKE": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "MUSIC_FAKE": {
+          "calibration": {
+            "known": 836,
+            "unknown": 1044
+          },
+          "dev": {
+            "known": 680,
+            "unknown": 344
+          },
+          "test": {
+            "known": 532,
+            "unknown": 344
+          },
+          "train": {
+            "known": 2529,
+            "unknown": 792
+          }
+        },
+        "MUSIC_PRESENT": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "VOICE_FAKE": {
+          "calibration": {
+            "known": 1062,
+            "unknown": 818
+          },
+          "dev": {
+            "known": 356,
+            "unknown": 668
+          },
+          "test": {
+            "known": 356,
+            "unknown": 520
+          },
+          "train": {
+            "known": 810,
+            "unknown": 2511
+          }
+        },
+        "VOICE_PRESENT": {
+          "calibration": {
+            "known": 1080,
+            "unknown": 800
+          },
+          "dev": {
+            "known": 368,
+            "unknown": 656
+          },
+          "test": {
+            "known": 368,
+            "unknown": 508
+          },
+          "train": {
+            "known": 828,
+            "unknown": 2493
+          }
+        }
+      },
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/e7/predictions/frozen.json",
+        "/root/eight_h100_20260917/output/e7/predictions/head_only_ce_seed41.json",
+        "/root/eight_h100_20260917/output/e7/predictions/head_only_ce_seed42.json",
+        "/root/eight_h100_20260917/output/e7/predictions/head_only_ce_seed43.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_kl_seed41.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_kl_seed42.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_kl_seed43.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_seed41.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_seed42.json",
+        "/root/eight_h100_20260917/output/e7/predictions/lora_ce_seed43.json"
+      ],
+      "prediction_rows": 6000,
+      "report": "/root/eight_h100_20260917/output/e7/report.json",
+      "seeds": [
+        41,
+        42,
+        43
+      ],
+      "selection_locked": true,
+      "status": "complete"
+    },
+    "E8": {
+      "bootstrap_unit": "connected provenance component; no population CI when only one component",
+      "claim_limit": "shifted-REAL false-positive diagnostic",
+      "class_exposure": "REAL-only fit",
+      "comparison_scope": "train-REAL fit and calibration-fixed polarity",
+      "component_count": 178,
+      "estimand": "REAL-only distance behavior",
+      "fixed_updates": 500,
+      "label_denominators": {
+        "FILE_FAKE": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "MUSIC_FAKE": {
+          "calibration": {
+            "known": 836,
+            "unknown": 1044
+          },
+          "dev": {
+            "known": 680,
+            "unknown": 344
+          },
+          "test": {
+            "known": 532,
+            "unknown": 344
+          },
+          "train": {
+            "known": 2529,
+            "unknown": 792
+          }
+        },
+        "MUSIC_PRESENT": {
+          "calibration": {
+            "known": 1880,
+            "unknown": 0
+          },
+          "dev": {
+            "known": 1024,
+            "unknown": 0
+          },
+          "test": {
+            "known": 876,
+            "unknown": 0
+          },
+          "train": {
+            "known": 3321,
+            "unknown": 0
+          }
+        },
+        "VOICE_FAKE": {
+          "calibration": {
+            "known": 1062,
+            "unknown": 818
+          },
+          "dev": {
+            "known": 356,
+            "unknown": 668
+          },
+          "test": {
+            "known": 356,
+            "unknown": 520
+          },
+          "train": {
+            "known": 810,
+            "unknown": 2511
+          }
+        },
+        "VOICE_PRESENT": {
+          "calibration": {
+            "known": 1080,
+            "unknown": 800
+          },
+          "dev": {
+            "known": 368,
+            "unknown": 656
+          },
+          "test": {
+            "known": 368,
+            "unknown": 508
+          },
+          "train": {
+            "known": 828,
+            "unknown": 2493
+          }
+        }
+      },
+      "prediction_files": [
+        "/root/eight_h100_20260917/output/predictions_E8.csv"
+      ],
+      "prediction_rows": 291,
+      "report": "/root/eight_h100_20260917/output/experiment_8.json",
+      "seeds": [],
+      "selection_locked": true,
+      "status": "complete"
+    }
+  },
+  "fresh_holdout_claim": false,
+  "official_score": null,
+  "robustness_claim": false
+}

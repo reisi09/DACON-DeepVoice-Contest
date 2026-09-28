@@ -1,0 +1,2528 @@
+{
+  "scope": "root Python source inventory; static imports include unused imports and omit dynamic imports / archive members",
+  "python": "3.11.15 (main, Jun  2 2026, 22:36:57) [Clang 22.1.3 ]",
+  "root_python_count": 246,
+  "production_or_experiment_count": 180,
+  "test_file_count_not_quality_evidence": 66,
+  "mert12_static_dependency_closure": [
+    "eight_heads",
+    "graph_scoring",
+    "mert12_full_refit",
+    "mert12_submission",
+    "music_temporal",
+    "package_mert12_submission",
+    "package_redesign_submission",
+    "redesign_assets",
+    "redesign_checkpoint",
+    "redesign_features_cache",
+    "redesign_features_runtime",
+    "redesign_models",
+    "redesign_submission",
+    "temporal_augmentation",
+    "v6_core",
+    "v6_data",
+    "v6_runtime",
+    "v6_train",
+    "v7_ablation"
+  ],
+  "files": [
+    {
+      "file": "afwhisper_features.py",
+      "lines": 121,
+      "sha256": "cf0e68f26110e7f8de63de88e531b25112a61c2636dd9bdd070c4b3810ad5d08",
+      "local_imports": [
+        "music_temporal",
+        "v6_data",
+        "v6_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "analyze_six_h100.py",
+      "lines": 69,
+      "sha256": "0bdbf7a20bd1da2d46a83c83a65efb54fa74fe26744fd35223da12564ed8effb",
+      "local_imports": [
+        "redesign_evaluation_common",
+        "six_h100_experiments"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "antideepfake_native_reference.py",
+      "lines": 39,
+      "sha256": "a8371d2f964699ccb8b65e4b7ae068da4fa86cf40b5eb58ff71640af65dced59",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "antideepfake_runtime.py",
+      "lines": 110,
+      "sha256": "bbf7ec7bc0b20afa416e7a6fac535d8ab92d984621c1e9be3e395bb7f3d0f729",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "ast_multitask.py",
+      "lines": 264,
+      "sha256": "2204c7a406f2865a9fc84ea9efb3a7ea3bfeaeb1e894eb15ef80671944c69a6b",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "audit_redesign_slices.py",
+      "lines": 151,
+      "sha256": "33c367571ed36dd68d8ce5e9ed9ed8da34b4857baefa78a10b124e055111451a",
+      "local_imports": [
+        "graph_scoring",
+        "redesign_evaluation_common"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "benchmark_fullft8_batching.py",
+      "lines": 91,
+      "sha256": "7e23b06d664b200bcd5e8e7421bd6d7fc6853ed66ef19da730d3e5ea6eb06bbe",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_eight_h100_notebook.py",
+      "lines": 250,
+      "sha256": "bbaf98c8008cbd6ca26ee566890647818ebf95c1e688f652b645e7d743a74c95",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_epoch_extension_notebook.py",
+      "lines": 126,
+      "sha256": "7c20c522cee4de13637a59d73a6c6aba043cafc7b5b31dde3c8fa8c8f51a3a08",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_full_refit_notebook.py",
+      "lines": 110,
+      "sha256": "e2402a48c749ebf729887699bd8f53b3598d940aa029853f23ee72eaa3fe71ff",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_fullft8_notebook.py",
+      "lines": 153,
+      "sha256": "5d361d09662df15e30218ec85cb1ad93ad66d6d6e9ac083816eced33e7d2a4da",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_notebook.py",
+      "lines": 143,
+      "sha256": "57456375947296fcf71e9f056d3dec6f387c4d9951b55ebb735acdb0db6fd560",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_recovery_notebook.py",
+      "lines": 154,
+      "sha256": "e1106dccca0267768072e10ffce5e916f8f6f4040143650b56ae0de77b1cbcca",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_redesign_notebook.py",
+      "lines": 496,
+      "sha256": "9e33228622e94ecf7978259446b4841f654bffe17c03ed247a36b4f1ad49895f",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_temporal_simplification_notebook.py",
+      "lines": 117,
+      "sha256": "f8127dd8ab864fabddc78a3ac40ccb8693817c34f66eb672bace41dff52aa987",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_temporal_tuning_notebook.py",
+      "lines": 104,
+      "sha256": "18172dcb0f813c226adacb06ecef8f4ebd60621a598b3937ea3dd6e08175b755",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_v2_notebook.py",
+      "lines": 142,
+      "sha256": "7eca4f2d1dbb16080f41987cad5c266d12906382a13bed9a13658678e40d589d",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_v2_replay_notebook.py",
+      "lines": 171,
+      "sha256": "eb8280f7835823e7298b93825697fd23f6715f0d21bdeecb151aa322087dc198",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_v4_notebook.py",
+      "lines": 395,
+      "sha256": "1fd3f190b0db7730331036798e34468182e7f93ad9f552685bd7ba75cffd4982",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_v5_final_notebook.py",
+      "lines": 394,
+      "sha256": "f1c2ae5720ecac083a26f7e91d6df903547934f059b9cc9cdcece7278d81a247",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_v5_notebook.py",
+      "lines": 469,
+      "sha256": "18beed5cdc61cf4a606af6baf722f4c9ae8fdf83088033bc42eab4afab4e9da9",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "build_v5_temporal_notebook.py",
+      "lines": 356,
+      "sha256": "f2d04ccaad5f4c7e23fc389bd9f4c2cd7a0aaac017dcb3e7cdc0f25af6d5bc60",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "c08_submission.py",
+      "lines": 97,
+      "sha256": "23d4bb853363c0a67680fbea4b1050ce3a6a1829a751535eb3c051d750415574",
+      "local_imports": [
+        "graph_scoring",
+        "music_temporal",
+        "v6_data",
+        "v6_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "c3_data.py",
+      "lines": 108,
+      "sha256": "7c0265171a1ed5fd9e9145bddd07611dbc52d2a92c06ab0287628304764c9bd5",
+      "local_imports": [
+        "v6_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "c3_full_train.py",
+      "lines": 137,
+      "sha256": "1bfaca66e2f2a992a7e97c30fae32448431af9e8a3c47d4918d24f125bc545c3",
+      "local_imports": [
+        "c3_data",
+        "v6_core",
+        "v6_data",
+        "v6_runtime",
+        "v6_train",
+        "v7_ablation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "check_six_h100.py",
+      "lines": 55,
+      "sha256": "2e9fdaf3280b60166109daa555df166f58bc4f73045db5702d782f019b09ccc4",
+      "local_imports": [
+        "six_h100_experiments",
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "check_voice_music_decoder.py",
+      "lines": 107,
+      "sha256": "4b7a0c6711f1ca7947b6781e9207b2fcb115012018ef16e2b876ae050f853020",
+      "local_imports": [
+        "redesign_features_runtime",
+        "redesign_h100_run",
+        "redesign_notebook_runtime",
+        "voice_music_h100_experiments"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "check_voice_music_h100.py",
+      "lines": 69,
+      "sha256": "c6221a955547032680a1e415c65ce4d5b2be7c273917caa59f23aeaf24fd6f6a",
+      "local_imports": [
+        "prepare_voice_music_h100",
+        "redesign_models",
+        "v2_data",
+        "voice_music_h100_selection"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_ablation.py",
+      "lines": 347,
+      "sha256": "5d6c8fc7b214bcae3701a0ead2798fc97dfc1e1fea34023d37a2a41d10d12246",
+      "local_imports": [
+        "eight_density",
+        "eight_fixed_io",
+        "eight_heads",
+        "eight_metrics"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_audio.py",
+      "lines": 199,
+      "sha256": "dd9566b523f67b6760ec484e25b9180fbbf9b5898b91c07570e3c55985c714ab",
+      "local_imports": [
+        "eight_contract"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_contract.py",
+      "lines": 174,
+      "sha256": "9b3131584fe0f3169449ee3c405410a73ba4f21f97a86834276be52ab2c7b94c",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "eight_data.py",
+      "lines": 276,
+      "sha256": "0977c981b933499bf07459c3fa4672da7e23575da5c38e3a2a3d7e1e79cf9ee2",
+      "local_imports": [
+        "eight_audio",
+        "eight_contract"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_density.py",
+      "lines": 59,
+      "sha256": "c630ca68a4483cfdae4268747839798f6d236cf137fa8d79228988aa6f52c889",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "eight_e2_music_file_analysis.py",
+      "lines": 250,
+      "sha256": "7662d8df42197839cb731f93434041f70ecd8554ef2f8ef2dca0fcd66518a189",
+      "local_imports": [
+        "eight_ablation",
+        "eight_contract",
+        "eight_fixed_io",
+        "eight_heads",
+        "eight_metrics"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_feature_identity.py",
+      "lines": 65,
+      "sha256": "edb796b9c99b1083ec839743694cf9738230ba0f2eac6b14a00c5886a1d45bb2",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "eight_feature_schema.py",
+      "lines": 97,
+      "sha256": "cdc62ffb8da7773deee4d030c68ca7fda1cd2cb99ce2294a866e88ba79d5e9ff",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "eight_features.py",
+      "lines": 338,
+      "sha256": "b0304f4f9aa2d13524d56622f494c4b1fab160b5009e09a51fb77987ed23acac",
+      "local_imports": [
+        "antideepfake_runtime",
+        "eight_contract",
+        "eight_feature_identity",
+        "eight_feature_schema",
+        "eight_spectral",
+        "redesign_assets",
+        "redesign_features_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_fixed_io.py",
+      "lines": 147,
+      "sha256": "2a5267ccb6a77b67b4a1c2bbf22735e129056ff6071f389f9f4576eceb822a69",
+      "local_imports": [
+        "eight_metrics"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_h100_launch.py",
+      "lines": 398,
+      "sha256": "b841f97600a9e589a9f773630b7a05fe20c4cf77a6cb27f9decb126e0ff1017e",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "eight_h100_run.py",
+      "lines": 121,
+      "sha256": "4853d4acc1c2d05cd947e4313f1fb9c7d4e407a72a81f48da2c8088393e67ec1",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "eight_h100_watch.py",
+      "lines": 107,
+      "sha256": "ab5513271a1f826218364caac9472353f5d0b072d94dd3782e2a351fb5472a55",
+      "local_imports": [
+        "redesign_h100_watch"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_heads.py",
+      "lines": 191,
+      "sha256": "630cee4b8126dc138b276ed2d9d7d663bbe69c7057e22b9bf205f9743dabfaef",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "eight_lora.py",
+      "lines": 146,
+      "sha256": "be8828a1eb51dc7a8c8059abfc86ffbd4dda25d27e6b98a0932867a816c1f579",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "eight_lora_runtime.py",
+      "lines": 251,
+      "sha256": "61ca1d6003397ab63f531a4eb6fe912b44e639065b1b892ae6f86ead68b13304",
+      "local_imports": [
+        "eight_audio",
+        "eight_contract",
+        "eight_lora",
+        "eight_metrics"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_lora_train.py",
+      "lines": 274,
+      "sha256": "09fda72f196ea8bf89f7abfe5bcd91bd4c4afd0fff803f0dbab19a9742c505c8",
+      "local_imports": [
+        "antideepfake_runtime",
+        "eight_lora",
+        "eight_lora_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_metrics.py",
+      "lines": 155,
+      "sha256": "78ea26c579d4f59791956c60a674c00c963334be5ccfebfc82ff445ef6f64d4c",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "eight_probe_stats.py",
+      "lines": 60,
+      "sha256": "5c04baa2978e11a18783b98fae2efef1aa42eefa14d1eec6047522b256d85937",
+      "local_imports": [
+        "eight_metrics"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_probes.py",
+      "lines": 267,
+      "sha256": "1661764b7214f5b7cdc2724656aaf8fe865bda11ffec920ec86067fbceb10f52",
+      "local_imports": [
+        "eight_contract",
+        "eight_metrics",
+        "eight_probe_stats"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "eight_spectral.py",
+      "lines": 49,
+      "sha256": "548940bd6993b944ee4d2355d0e18f450643b37bd472967723578416d808118e",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "export_temporal_features.py",
+      "lines": 52,
+      "sha256": "8107f598678a1448c09bdcb5b87c09e1c0f289062fb982ed338cd6909be09dd1",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "fast_h100_ablation.py",
+      "lines": 336,
+      "sha256": "cb8841384c16fb373c5f334ee573711346f19a94f3ff5d54b280932c560e3126",
+      "local_imports": [
+        "graph_scoring",
+        "music_temporal",
+        "s2_eat_submission",
+        "temporal_backbone",
+        "v6_data",
+        "v6_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "full_refit.py",
+      "lines": 141,
+      "sha256": "75abe7e58f57f9939c6e7517ae5269b74ff559832cf2b522a75c409c8474a821",
+      "local_imports": [
+        "ast_multitask",
+        "graph_features",
+        "graph_scoring",
+        "train_v2"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "fullft8_runtime.py",
+      "lines": 174,
+      "sha256": "f06ce098bab8ab37c9d259f71c03e4084942a33e70adecd4b2a12c9fa0cfc255",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "fullft_separator.py",
+      "lines": 276,
+      "sha256": "678d43b46680da6f04049dc6e65216621b51febad17a3d0c8e26b90bb7f98078",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "graph_features.py",
+      "lines": 120,
+      "sha256": "ee21d931a316164f1cd67bef9055afdd104f7e01141fcc890f8fe28a9ab9b137",
+      "local_imports": [
+        "graph_fusion"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "graph_fusion.py",
+      "lines": 199,
+      "sha256": "342602dc27d3311a86bff00ca6e075fa4f74d5e207859734f8b071a9757c3b9a",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "graph_scoring.py",
+      "lines": 167,
+      "sha256": "7993699ceb926c06c000a7ed5313bfa8fd83b558f3c1e1c1e38f2fcb0f52ba96",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "mert12_a100_launch.py",
+      "lines": 256,
+      "sha256": "30b0ec95a02c9515a688ae178a90a75a92eb49230754db1dc7eeb6d9bbe78f66",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "mert12_a100_watch.py",
+      "lines": 205,
+      "sha256": "a3028d1645a8a539fb7f522b001477c9c107b028baef0112e71043a495d17593",
+      "local_imports": [
+        "redesign_h100_watch"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "mert12_batch_parity_probe.py",
+      "lines": 200,
+      "sha256": "dff7fd6de4a41f8ed754feaca38e6f4bf6af28b198ddfb500f60f11a4e95cb80",
+      "local_imports": [
+        "mert12_submission",
+        "v6_data",
+        "v6_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "mert12_full_refit.py",
+      "lines": 269,
+      "sha256": "0f503a9fd9783de7e6de3ca250fd0a912dcb613f4dfa20d69dcf2ef3d945e990",
+      "local_imports": [
+        "eight_heads"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "mert12_submission.py",
+      "lines": 277,
+      "sha256": "30beefd173fbf10370c5dfa59e2e3f0ec9ee12b46a8ba4f24924a7d48e6f7f4e",
+      "local_imports": [
+        "eight_heads",
+        "graph_scoring",
+        "v6_data",
+        "v6_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "mert12_supplemental_qa.py",
+      "lines": 153,
+      "sha256": "33aee9892e51d373caec457ef56923c9e923d6d52e2041cd556532dc8c9cae89",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "music_temporal.py",
+      "lines": 427,
+      "sha256": "208e9ab8f4912e64f19bcd365c5760134db298c5ac0d58075688566278b3ebe5",
+      "local_imports": [
+        "temporal_augmentation",
+        "v6_data",
+        "v7_ablation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "package_c08_submission.py",
+      "lines": 149,
+      "sha256": "2b2465469cacb9bef19a068a29a23d6526407a40481a62248c3c044657bf9224",
+      "local_imports": [
+        "music_temporal",
+        "package_submission",
+        "v6_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "package_hybrid_submission.py",
+      "lines": 183,
+      "sha256": "0b0b9e1192cd9459c14acf8200c0fc209aa42d55ef7fff87ef2e32d6fb44e4da",
+      "local_imports": [
+        "package_submission",
+        "package_v2_submission"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "package_mert12_submission.py",
+      "lines": 159,
+      "sha256": "02abedd396b2fbca0878ec80a31831109e83ee41ce5eb1e1af4e14c1bfe99708",
+      "local_imports": [
+        "mert12_full_refit",
+        "mert12_submission",
+        "package_redesign_submission",
+        "redesign_assets",
+        "v6_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "package_redesign_submission.py",
+      "lines": 170,
+      "sha256": "ec59532f99f731066c2517abd688ee54ac3c0a1e857c68b1a4ac6c2378985111",
+      "local_imports": [
+        "redesign_assets",
+        "redesign_checkpoint",
+        "redesign_features_cache",
+        "redesign_submission"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "package_s2_eat.py",
+      "lines": 135,
+      "sha256": "3dec552deee8402187e4f5fd585fc336e235a8f14889675a6c2fc608e311bd05",
+      "local_imports": [
+        "package_submission"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "package_submission.py",
+      "lines": 184,
+      "sha256": "a5c07c95d7ba7a511a0516e16f5392a0916e5050e21f6c5c837df2bf50e1c790",
+      "local_imports": [
+        "graph_fusion",
+        "graph_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "package_v2_submission.py",
+      "lines": 93,
+      "sha256": "c101ec2c8ebe937e42f7e3d40872cf15b5a76eff7aae8aa7076233d8851af36d",
+      "local_imports": [
+        "package_submission"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "package_v5_submission.py",
+      "lines": 316,
+      "sha256": "c5c3ec5c036453a8df19e7cec3c3aa08ce4d4cd4e43f620071df75cfb9a78b51",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "package_v6_final.py",
+      "lines": 124,
+      "sha256": "bef1ebaf7b89dc08d51e8ad9e2a116586f25cf61d4407f655a58798fdf186ecf",
+      "local_imports": [
+        "v6_core",
+        "v6_data",
+        "v6_runtime",
+        "v6_train"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "prepare_fresh_fma.py",
+      "lines": 140,
+      "sha256": "edc0da568bff7418c7ba47edad9456669891b79718af5e9434b229aa5e5efcc0",
+      "local_imports": [
+        "prepare_v2_sources",
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "prepare_fresh_music_crops.py",
+      "lines": 96,
+      "sha256": "4eba09a13619834a221e41e8481ffa269e8b31fa5674466e4fc6eb049b31b243",
+      "local_imports": [
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "prepare_fresh_sonics.py",
+      "lines": 215,
+      "sha256": "c54c553b3dce4694da7d3ab84ea76aa627e22a502904830f7caccb3476bb3d4c",
+      "local_imports": [
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "prepare_recovery_data.py",
+      "lines": 243,
+      "sha256": "e9a295b3bfcdcf8dda42c7f3c0954d865feb05026b72d616fd114cfa8e0fcd07",
+      "local_imports": [
+        "prepare_v2_sources",
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "prepare_s2_811.py",
+      "lines": 77,
+      "sha256": "68f9bd0379aafaa80a862c7f5e8d49b67b01a7742807ffe9423d4ddd63dc02ca",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "prepare_six_h100.py",
+      "lines": 211,
+      "sha256": "5117d19c1215790aa765fdb96984757ac8ff09ddf7a33899395ee19c5eab3eaa",
+      "local_imports": [
+        "prepare_v2_sources",
+        "v2_data",
+        "v4_data_acquisition"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "prepare_v2_sources.py",
+      "lines": 265,
+      "sha256": "44c7d39773ec5a49b981b5bd760201ad333fbef09798f9f97caf45377b08c7c2",
+      "local_imports": [
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "prepare_v2_validation.py",
+      "lines": 289,
+      "sha256": "a0609916f4f21c460027d3e690ec6f09dc97b0f4aace4106ec0b06df265bede8",
+      "local_imports": [
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "prepare_v4_data.py",
+      "lines": 451,
+      "sha256": "e2e5047b9f9593b57a770a43909b6bb17d1ad9c275ccdce2f9012d9b05a9ef08",
+      "local_imports": [
+        "prepare_v2_sources",
+        "v2_data",
+        "v4_data_acquisition",
+        "v4_data_augmentation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "prepare_validation.py",
+      "lines": 254,
+      "sha256": "c703ba620ed8fac4424363e17fa9b0bbeaf71012b277213131c7aaa7d2cc3290",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "prepare_voice_music_h100.py",
+      "lines": 143,
+      "sha256": "6544a3eb1e0fa05ed8bb665e61dd964213020dc3a81a7669b00a1bd300b91088",
+      "local_imports": [
+        "prepare_fresh_fma",
+        "prepare_fresh_sonics",
+        "prepare_six_h100",
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "recheck_v4_matched.py",
+      "lines": 131,
+      "sha256": "130e078b393f627b871e549e695e9fe8f4061cfe10a1a16494b60d528aab825c",
+      "local_imports": [
+        "v4_batches",
+        "v4_data",
+        "v4_model",
+        "v4_training_trials"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "recovery_fusion.py",
+      "lines": 65,
+      "sha256": "45d261e2468eb53fab2d4744c0cef4e3cf14eb8e0f0c6f64918695a5c34d2482",
+      "local_imports": [
+        "graph_fusion"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "recovery_selection.py",
+      "lines": 213,
+      "sha256": "e804c6126634cb4159d138179754197d9c99963f5e3a51945ec952d92938d525",
+      "local_imports": [
+        "graph_scoring",
+        "v2_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "recovery_sonics.py",
+      "lines": 138,
+      "sha256": "4882c036f504695df46162b81ca794a897acde7a671c564231eea2066b82e0ba",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "redesign_assets.py",
+      "lines": 139,
+      "sha256": "3039d85626bf28c5e5374316c97aa3b49dec37956fd550116e1eb8288575d933",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "redesign_checkpoint.py",
+      "lines": 70,
+      "sha256": "8f9372ea2fab1ac1cd48295d10400d1250ff155a4f109d259d22077a2bee8fab",
+      "local_imports": [
+        "redesign_models"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_data.py",
+      "lines": 276,
+      "sha256": "83799b169bd2a61e55f1fe0b888b57025d061fdd4843043b9fe2ef2cbd16700f",
+      "local_imports": [
+        "redesign_data_validation",
+        "redesign_mix_audio"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_data_validation.py",
+      "lines": 123,
+      "sha256": "8869e6dfd6589d4f51e9d260bfbf1ca01bbe9fbaf6d6bc1346f1a0998680def4",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "redesign_evaluate.py",
+      "lines": 210,
+      "sha256": "201ca84a61fa0056c7ff792b3bacc240915dbd3a2afea4e75e58e6096d603590",
+      "local_imports": [
+        "graph_scoring",
+        "redesign_evaluation_common"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_evaluation_common.py",
+      "lines": 211,
+      "sha256": "eb0bac83fe689bff4fcd9d783f5307efacf7974b14c979097370edacb0537a4e",
+      "local_imports": [
+        "graph_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_features.py",
+      "lines": 191,
+      "sha256": "e5453b39c0e1acec0966bc19642538442ba16d3d9a7f90d41c6f44fd14559eef",
+      "local_imports": [
+        "redesign_assets",
+        "redesign_features_cache",
+        "redesign_features_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_features_cache.py",
+      "lines": 185,
+      "sha256": "5594b86ca3effffeb40893317cad04debf510da11db84158bdc0590508fb299a",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "redesign_features_runtime.py",
+      "lines": 167,
+      "sha256": "33799ddc1efc017a6b04f2ca52a8f22c50b57d32ed05b18cc1eb477447ffec99",
+      "local_imports": [
+        "redesign_features_cache"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_file.py",
+      "lines": 211,
+      "sha256": "6a047801488d1d157a88edfbdb0892dc8398a4f64f54719418dcd7bb78518289",
+      "local_imports": [
+        "graph_scoring",
+        "redesign_evaluation_common",
+        "redesign_oof_validation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_fit.py",
+      "lines": 260,
+      "sha256": "cca6162e1cc45ac68426b56217fd902a72b821bd1e111e5b4551aa79bf6271b2",
+      "local_imports": [
+        "redesign_checkpoint",
+        "redesign_models"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_full_refit_run.py",
+      "lines": 152,
+      "sha256": "281ca287716a04cf77ae56910e9bc623bbb1f53d869c7468c325afe1738dd5a4",
+      "local_imports": [
+        "package_redesign_submission",
+        "redesign_data_validation",
+        "redesign_features",
+        "redesign_fit",
+        "redesign_h100_run",
+        "redesign_notebook_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_h100_run.py",
+      "lines": 298,
+      "sha256": "fd2b44b92908cd0da82fe2f299b4af6102ca69e4807dbb750085894a8c629d87",
+      "local_imports": [
+        "redesign_assets",
+        "redesign_data",
+        "redesign_evaluate",
+        "redesign_notebook_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_h100_watch.py",
+      "lines": 421,
+      "sha256": "ac61434e2a008c408f008cb895eb7a964cdb41e19966d0ac938040f3decc974e",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "redesign_mix_audio.py",
+      "lines": 149,
+      "sha256": "939d63aace193415bb431852f23132385c9595c6ed88eadb0177341c77855e3e",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "redesign_models.py",
+      "lines": 117,
+      "sha256": "5bdd71204c55ed33e4fa7f08b54bbaf47c951d8ab17cafd14370500cdfaa4ae9",
+      "local_imports": [
+        "music_temporal"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_notebook_integration.py",
+      "lines": 272,
+      "sha256": "8575e8cb6cc0facef72a52b12a8681822c0a605e3b18191d5bc58d8a60fcb480",
+      "local_imports": [
+        "redesign_data",
+        "redesign_evaluate",
+        "redesign_features",
+        "redesign_features_cache",
+        "redesign_file",
+        "redesign_notebook_runtime",
+        "redesign_train"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_notebook_results.py",
+      "lines": 78,
+      "sha256": "0305a0973a3210578efe9790c63414031d485c18709373fae7d896b28810d45b",
+      "local_imports": [
+        "graph_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_notebook_runtime.py",
+      "lines": 286,
+      "sha256": "8c7fdd3ccc96f4a54a056668367e7ebfd2112b0fad3493da6768df5d99505776",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "redesign_oof.py",
+      "lines": 137,
+      "sha256": "03c0f4b7312a2d4a1a14ce8e7db1e25b42fa5afba7b335595aeb3d8296f47ca1",
+      "local_imports": [
+        "redesign_fit",
+        "redesign_models"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_oof_validation.py",
+      "lines": 111,
+      "sha256": "ce69800b0fbbf5e09209190b18af384fce2934442aad2227066dcced79a4d442",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "redesign_predictions.py",
+      "lines": 209,
+      "sha256": "5ee2575ec0d8f13d83923bb3b57cd1b600378585b618d6e1eab73c146fe04f93",
+      "local_imports": [
+        "redesign_checkpoint",
+        "redesign_models",
+        "redesign_oof",
+        "redesign_voice"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_submission.py",
+      "lines": 143,
+      "sha256": "fdc86dcf7d7157e910fd6f5067152f307412a539811102a2565443bcdffa6146",
+      "local_imports": [
+        "graph_scoring",
+        "redesign_checkpoint",
+        "redesign_features_cache",
+        "redesign_features_runtime",
+        "redesign_models"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_submission_smoke.py",
+      "lines": 132,
+      "sha256": "74019b9657b176ef9cdb5f70679f02fb3375b8d34f42e37fa1d5c7dfe75a92ac",
+      "local_imports": [
+        "redesign_checkpoint",
+        "redesign_data_validation",
+        "redesign_features_runtime",
+        "redesign_h100_run",
+        "redesign_predictions"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_train.py",
+      "lines": 197,
+      "sha256": "22b37c15b6f628cda867168351b9f548b99ae3eb7df4cdc0eb5374ea1ce69497",
+      "local_imports": [
+        "redesign_data",
+        "redesign_features",
+        "redesign_fit",
+        "redesign_oof",
+        "redesign_predictions",
+        "redesign_voice"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "redesign_voice.py",
+      "lines": 201,
+      "sha256": "5d6d1e9324de765af1639877e79bb06a26efef0f63bb782e0869a4aae27a6a8f",
+      "local_imports": [
+        "redesign_fit",
+        "redesign_models",
+        "redesign_oof"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "resume_v5_final.py",
+      "lines": 71,
+      "sha256": "e1c5b554d82aa9cfde9e30cf0429286c689f631e0262c2397b7f48052082ab73",
+      "local_imports": [
+        "run_v5_final",
+        "v5_features"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "run_epoch_extension.py",
+      "lines": 144,
+      "sha256": "403dab7d72184b9995d18c4445d181705dde6fd68fd9010d934644ca7f475bae",
+      "local_imports": [
+        "ast_multitask",
+        "graph_features",
+        "graph_scoring",
+        "package_hybrid_submission",
+        "package_submission",
+        "package_v2_submission",
+        "run_experiment",
+        "run_v2",
+        "train_v2",
+        "v2_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "run_experiment.py",
+      "lines": 164,
+      "sha256": "4dd5fcc5ecbafd991cb1026f2c5e6afa57e9fbff1b774b4f4903fcd121f44f51",
+      "local_imports": [
+        "graph_features",
+        "graph_fusion",
+        "graph_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "run_full_refit.py",
+      "lines": 126,
+      "sha256": "64ffc208f1ebc87f48f756f90f92cb31cd555be9d803d24b205c9a9f3ec0e302",
+      "local_imports": [
+        "ast_multitask",
+        "full_refit",
+        "graph_features",
+        "graph_scoring",
+        "package_submission",
+        "package_v2_submission",
+        "run_experiment",
+        "train_v2",
+        "v2_inference"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "run_recovery.py",
+      "lines": 255,
+      "sha256": "e87cad8f89ffefbb8f3065f73b5d10952cbea7a214f26d1333f2aec76f8a4699",
+      "local_imports": [
+        "graph_features",
+        "recovery_fusion",
+        "recovery_selection",
+        "recovery_sonics"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "run_v2.py",
+      "lines": 210,
+      "sha256": "18ac379e094b9909dfd18ec78ed89df6e83ae14cc38e0fb78e5ad3b4d825db36",
+      "local_imports": [
+        "ast_multitask",
+        "graph_features",
+        "graph_fusion",
+        "graph_scoring",
+        "package_submission",
+        "package_v2_submission",
+        "run_experiment",
+        "train_v2",
+        "v2_inference",
+        "v2_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "run_v5_final.py",
+      "lines": 353,
+      "sha256": "a195fd6c3178ed41030c336476ff60ce201afbc1f15a05e3e2ff62dbe2dab503",
+      "local_imports": [
+        "graph_scoring",
+        "package_v5_submission",
+        "v5_dataset",
+        "v5_experts",
+        "v5_features",
+        "v5_final_refit",
+        "v5_fusion",
+        "v5_fusion_training",
+        "v5_reporting"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "run_v6_final.py",
+      "lines": 70,
+      "sha256": "99ae7f998f6e914dab2bb6bd00acf76837f95fb5c7a20c23f5e1fdeb6f3cc9a5",
+      "local_imports": [
+        "v6_core",
+        "v6_data",
+        "v6_runtime",
+        "v6_train"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "s2_eat_submission.py",
+      "lines": 108,
+      "sha256": "a3ed15baab8d54bd4efc171b0101e2b504dc2e331d8045bfd99b55296c994ef4",
+      "local_imports": [
+        "graph_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "six_h100_experiments.py",
+      "lines": 250,
+      "sha256": "ecc7e5f8c600ab22a22cf1596cc164d1885742e624c0b9fa75423694caf72169",
+      "local_imports": [
+        "c08_submission",
+        "graph_scoring",
+        "music_temporal",
+        "redesign_checkpoint",
+        "redesign_features",
+        "redesign_fit",
+        "redesign_h100_run",
+        "redesign_submission"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "six_h100_run.py",
+      "lines": 63,
+      "sha256": "e50c384cb5cc31be9c3bf1dd5a929f47b2e574a55057829dec0fd65625875cd2",
+      "local_imports": [
+        "redesign_h100_run",
+        "redesign_notebook_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "six_h100_watch.py",
+      "lines": 22,
+      "sha256": "b79fa414c3db6d4f73983253696ee87ea27b62da7705ba42a7495fedf1070838",
+      "local_imports": [
+        "redesign_h100_watch"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "temporal_afwhisper.py",
+      "lines": 100,
+      "sha256": "016428fdd224a7901e63c198c19cf91f5857556ca93df4fb70538bb01ab7ab4f",
+      "local_imports": [
+        "afwhisper_features",
+        "music_temporal",
+        "temporal_backbone",
+        "temporal_experiment",
+        "temporal_resolution",
+        "v6_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "temporal_augmentation.py",
+      "lines": 74,
+      "sha256": "ac7aaeabdeb72bc8b8553ab75f2fa5b933b0dd419e827f605297804decc986a5",
+      "local_imports": [
+        "music_temporal"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "temporal_augmentation_experiment.py",
+      "lines": 81,
+      "sha256": "690447166ade0d7998285fc163ef0ae0a7aca9efc8a57133e64e3a5eecd82fd0",
+      "local_imports": [
+        "music_temporal",
+        "temporal_augmentation",
+        "temporal_experiment",
+        "v6_data",
+        "v7_ablation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "temporal_backbone.py",
+      "lines": 113,
+      "sha256": "810b92fac801df2fcd2aeac2361c72f5afae7ecc80999b4b904a370fca00c615",
+      "local_imports": [
+        "music_temporal",
+        "temporal_experiment",
+        "temporal_resolution",
+        "temporal_tuning",
+        "v6_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "temporal_experiment.py",
+      "lines": 222,
+      "sha256": "0563e1103a9e7794b3d3a8bcb0f70bb5f95a19b30d098f049f2e0881c84b6089",
+      "local_imports": [
+        "c3_data",
+        "graph_scoring",
+        "music_temporal",
+        "v6_core",
+        "v6_data",
+        "v6_runtime",
+        "v6_train",
+        "v7_ablation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "temporal_full_refit.py",
+      "lines": 99,
+      "sha256": "c312eb780e2f359c83b0ab2703bd934000dc94d8662358c600e85e7d094d1d56",
+      "local_imports": [
+        "c3_data",
+        "music_temporal",
+        "temporal_backbone",
+        "temporal_experiment",
+        "temporal_resolution",
+        "v6_data",
+        "v7_ablation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "temporal_methods.py",
+      "lines": 104,
+      "sha256": "0fa28e379a1e9f6fa8d55a6d84947f50669c737bf5c88ca6358e4ed0cf23f2c1",
+      "local_imports": [
+        "music_temporal",
+        "temporal_backbone",
+        "temporal_experiment",
+        "temporal_resolution",
+        "v6_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "temporal_resolution.py",
+      "lines": 211,
+      "sha256": "a9f995034cf111ff32c311f7948bd178d5bcc93ec3f29431575811a0c1ae6082",
+      "local_imports": [
+        "music_temporal",
+        "temporal_experiment",
+        "temporal_tuning",
+        "v6_data",
+        "v6_runtime",
+        "v7_ablation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "temporal_tuning.py",
+      "lines": 126,
+      "sha256": "674a621c93348d1537c53f28311ae678e19ccb0a24be8bcdb8547ac334931f9c",
+      "local_imports": [
+        "music_temporal",
+        "temporal_experiment",
+        "v6_data",
+        "v7_ablation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "test_afwhisper.py",
+      "lines": 48,
+      "sha256": "f1e0c709839183a1e820d440c54dd76b18f88f3b25a5e0533a24c560472b4963",
+      "local_imports": [
+        "afwhisper_features",
+        "music_temporal"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_ast_multitask.py",
+      "lines": 163,
+      "sha256": "596dba78cc238d2d9b6588d2cd62c7433bb1675767df66096375604780e814a6",
+      "local_imports": [
+        "ast_multitask"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_c08_submission.py",
+      "lines": 38,
+      "sha256": "645714b869ee9b50d359019a6fd77c059507b3a20c300dcbff722b61c68c3460",
+      "local_imports": [
+        "c08_submission",
+        "music_temporal"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_c3_final.py",
+      "lines": 87,
+      "sha256": "8a4800917981be02adfca4abd13cf0305bdd1b1a918476d7f2db61907a39ff81",
+      "local_imports": [
+        "c3_data",
+        "c3_full_train",
+        "v6_data",
+        "v6_train",
+        "v7_ablation"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_eight_corrected_aggregation.py",
+      "lines": 64,
+      "sha256": "e808db56cc5d4ac86f1e97d7ade8dfd70464bc28a84a45f51bd799c07df2b064",
+      "local_imports": [
+        "eight_fixed_io"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_eight_e2_music_file_analysis.py",
+      "lines": 98,
+      "sha256": "0758512dfe49666867aed5cf286b5e2b5dbf0784949861eabac5e29a38f675b0",
+      "local_imports": [
+        "eight_contract",
+        "eight_e2_music_file_analysis",
+        "eight_heads"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_eight_features.py",
+      "lines": 321,
+      "sha256": "69013b045f4cd474774167ab54cdede0813937fda0e6a9f2e8611172277c62d1",
+      "local_imports": [
+        "eight_contract",
+        "eight_feature_schema",
+        "eight_features",
+        "eight_probe_stats",
+        "eight_probes",
+        "eight_spectral"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_eight_fixed.py",
+      "lines": 188,
+      "sha256": "17fe0450208bdd4ff34091603568755976f2005ba261e294891602f0f51c0c65",
+      "local_imports": [
+        "eight_ablation",
+        "eight_contract",
+        "eight_density",
+        "eight_fixed_io",
+        "eight_heads",
+        "eight_metrics",
+        "graph_scoring"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_eight_integration.py",
+      "lines": 137,
+      "sha256": "6cf6cfd054d7653540db81dbaa2ae2c08ee86ed1007b5f67cf24efcd9c619d96",
+      "local_imports": [
+        "eight_ablation",
+        "eight_contract",
+        "eight_probes"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_eight_lora.py",
+      "lines": 126,
+      "sha256": "fcfca3c55550250a4e365ef4fe2958005c1d76aad3c8036601863a464c1d95f2",
+      "local_imports": [
+        "eight_lora",
+        "eight_lora_train"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_full_refit.py",
+      "lines": 47,
+      "sha256": "09053d914f51640deb4e104bf34eb298e398181238aef87c79269369b5c9e3a6",
+      "local_imports": [
+        "ast_multitask",
+        "full_refit",
+        "graph_scoring"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_fullft8_batching.py",
+      "lines": 71,
+      "sha256": "b068a167c414ff882210649c71faddefc640c14353f3433d6eb5e3765519bf0e",
+      "local_imports": [],
+      "test_file": true
+    },
+    {
+      "file": "test_fullft8_integration.py",
+      "lines": 99,
+      "sha256": "21dae5fe8ff3709f808cfff80708960da4c5b6891a78dfcd1424fb50c9db0453",
+      "local_imports": [],
+      "test_file": true
+    },
+    {
+      "file": "test_fullft_separator.py",
+      "lines": 78,
+      "sha256": "549da45be08b274c8a422d33eb020fdf8139f5648fec7e14ae6eb5f6054198fb",
+      "local_imports": [
+        "fullft_separator"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_graph_fusion.py",
+      "lines": 147,
+      "sha256": "8729168a6ac8a7ef359f1b8a7b42b2a1be6fdc0b2197e4602e9418f70875a13d",
+      "local_imports": [
+        "graph_fusion"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_graph_scoring.py",
+      "lines": 133,
+      "sha256": "088c7bdea69e3a4faf9112b18135e290d5d238f8cd3ba40d6d07bacae09de757",
+      "local_imports": [
+        "graph_scoring"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_mert12_submission.py",
+      "lines": 120,
+      "sha256": "ba9fea4db2d9da8db3736d19d32d83a31da7e70f04c068a2d670e21eb691b86c",
+      "local_imports": [
+        "eight_heads",
+        "mert12_full_refit",
+        "mert12_submission",
+        "v6_runtime"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_mert12_supplemental_qa.py",
+      "lines": 51,
+      "sha256": "827eef86de843728562422f10e02180287dfde6f6594b081c2b8f7c416f207e3",
+      "local_imports": [],
+      "test_file": true
+    },
+    {
+      "file": "test_music_temporal.py",
+      "lines": 212,
+      "sha256": "9e8d8983019176e6355d1d420f4da35d99ba4baae37f282e0604738640660f0b",
+      "local_imports": [
+        "music_temporal",
+        "test_temporal_augmentation"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_package_hybrid_submission.py",
+      "lines": 91,
+      "sha256": "49270aad5559bc31f2ba3b26b4b755580bab0f08051548b57b7e7f5784269984",
+      "local_imports": [
+        "ast_multitask",
+        "package_hybrid_submission",
+        "package_submission",
+        "v2_inference"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_package_v2_submission.py",
+      "lines": 138,
+      "sha256": "8849cd081f08c281edb44b0ac3a19a0a4c93f8446cb1113c424799d748d5b6af",
+      "local_imports": [
+        "ast_multitask",
+        "package_v2_submission",
+        "v2_inference"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_prepare_recovery_data.py",
+      "lines": 74,
+      "sha256": "253e7d0e0494970740ab1b197b625659b3cc57918cf985fd1f62ffd61bae7a9b",
+      "local_imports": [
+        "prepare_recovery_data"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_prepare_v2_sources.py",
+      "lines": 75,
+      "sha256": "485ae050bc09d3f2a1aaadd1323e2aa3a406f7e631ef0bfe7403d30977a79a6b",
+      "local_imports": [
+        "prepare_v2_sources"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_prepare_v2_validation.py",
+      "lines": 56,
+      "sha256": "456f62d58d52c5a45dd4412e7f5f7c3c10cbe6189a4e9ea944e51c1479e2590e",
+      "local_imports": [
+        "prepare_v2_validation"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_recovery_fusion.py",
+      "lines": 56,
+      "sha256": "4cc00a68e7b3a9b617148bdf6ef86d55db0bcd3577857ec014e0bb7ab0df7be2",
+      "local_imports": [
+        "graph_fusion",
+        "recovery_fusion"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_recovery_selection.py",
+      "lines": 108,
+      "sha256": "4dfc8aa20d889cd84e5530c26b134ae64fd09f9dae9c2a457daa193ec157f466",
+      "local_imports": [
+        "recovery_selection"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_recovery_sonics.py",
+      "lines": 107,
+      "sha256": "0d3df941226dd813c3ad8e29872879ac50454394af4faf4af1e490367a80b3ef",
+      "local_imports": [
+        "recovery_sonics"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_redesign_data.py",
+      "lines": 178,
+      "sha256": "26fc1228026ed49489ee70d937c62e0717ba342879e7dba581e6e2a8b9e0b77f",
+      "local_imports": [
+        "redesign_data"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_redesign_evaluation.py",
+      "lines": 186,
+      "sha256": "4b1848aa5dba945a0073095ce040ebf8e4c4b43300733354dc737f4eb631044d",
+      "local_imports": [
+        "redesign_evaluate",
+        "redesign_file"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_redesign_evaluation_provenance.py",
+      "lines": 79,
+      "sha256": "7d767886d1a85efdc86e487b857ecfcaa13dd75c0fb16c5261b265e7c0f7b133",
+      "local_imports": [
+        "redesign_file",
+        "test_redesign_evaluation"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_redesign_evaluation_sealed.py",
+      "lines": 103,
+      "sha256": "ba6b018dd89fb0efe7cc87d2e1eb4f977d3dcd71cfd6146f9b6e7366292f933a",
+      "local_imports": [
+        "graph_scoring",
+        "redesign_evaluate",
+        "redesign_evaluation_common",
+        "test_redesign_evaluation"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_redesign_features.py",
+      "lines": 185,
+      "sha256": "bd26ba9bf3613ebfabeda7543fe449806a430134ad3d523aea00dac8737da618",
+      "local_imports": [
+        "redesign_assets",
+        "redesign_features",
+        "redesign_features_cache"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_redesign_full_refit.py",
+      "lines": 165,
+      "sha256": "fda84a4fd6065aebb974df9887f4244b5e3908a5570643cae2f7fde386bdac28",
+      "local_imports": [
+        "redesign_checkpoint",
+        "redesign_fit",
+        "redesign_models"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_redesign_models.py",
+      "lines": 334,
+      "sha256": "a9f5eec071df004c1edbd2ced2de10b9568220eb00a28b8cb7d343bf23bfe7c7",
+      "local_imports": [
+        "redesign_data",
+        "redesign_evaluate",
+        "redesign_evaluation_common",
+        "redesign_features",
+        "redesign_features_cache",
+        "redesign_file",
+        "redesign_fit",
+        "redesign_models",
+        "redesign_oof",
+        "redesign_train",
+        "redesign_voice"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_redesign_notebook.py",
+      "lines": 115,
+      "sha256": "4fd25cc770fa713aee276c3348f5dbb13d541af25cc9951c626c08780b342abb",
+      "local_imports": [],
+      "test_file": true
+    },
+    {
+      "file": "test_redesign_submission.py",
+      "lines": 202,
+      "sha256": "a8dc0b17f8aa71f8b01244f0f6cd27c82bcc457637faef5d925b49ee79cc66e8",
+      "local_imports": [
+        "graph_scoring",
+        "package_redesign_submission",
+        "redesign_checkpoint",
+        "redesign_features_cache",
+        "redesign_models",
+        "redesign_predictions",
+        "redesign_submission"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_restore_submission.py",
+      "lines": 32,
+      "sha256": "cf91bc673954a0e0c164e48b143db43b858981c8a39f1e3bdaf3b3bedc9d39f7",
+      "local_imports": [],
+      "test_file": true
+    },
+    {
+      "file": "test_run_v2.py",
+      "lines": 31,
+      "sha256": "9ab85e095d01e289d5ce8ee188cfc5b3a93a251236e597e0fdd6ef464ee1294a",
+      "local_imports": [
+        "graph_features",
+        "run_v2"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_temporal_augmentation.py",
+      "lines": 163,
+      "sha256": "f7764b243f035240f3599e202f5dca4a9c71965dc4946857d0e881a5b201b845",
+      "local_imports": [
+        "music_temporal",
+        "temporal_augmentation",
+        "temporal_augmentation_experiment",
+        "temporal_experiment"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_temporal_cosine.py",
+      "lines": 113,
+      "sha256": "eccfd7dd79d2f9143988f75be5b0224b5dc5c433095f175c4d91225457ba239b",
+      "local_imports": [
+        "music_temporal",
+        "temporal_backbone",
+        "test_temporal_augmentation",
+        "v7_ablation"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_temporal_experiment.py",
+      "lines": 108,
+      "sha256": "115f3a939e27f5450fb3991ac8362062ff54ef97e0a7d218fc134770c526a3dc",
+      "local_imports": [
+        "export_temporal_features",
+        "music_temporal",
+        "temporal_experiment"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_temporal_full_refit.py",
+      "lines": 47,
+      "sha256": "b6c7d66729787c85c304ea0ae691cf00d7688cbd5a73154ba93394690f31bd5d",
+      "local_imports": [
+        "c08_submission",
+        "music_temporal",
+        "temporal_backbone",
+        "temporal_full_refit",
+        "test_temporal_augmentation",
+        "v6_data"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_temporal_input_dim.py",
+      "lines": 100,
+      "sha256": "a98145358c32769de9431b909e98f246aca8d91e34bc3758127e1d530f6aa03e",
+      "local_imports": [
+        "music_temporal",
+        "temporal_backbone",
+        "test_temporal_augmentation"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_temporal_methods.py",
+      "lines": 29,
+      "sha256": "9b81ce1304fe94073fd5d51e75efc3d0fcf0d0c0388a8bdc41aad237d2818295",
+      "local_imports": [
+        "music_temporal"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_temporal_resolution.py",
+      "lines": 115,
+      "sha256": "6014141a47e5d117ec2556e584bcc3fcb7e110acbb61a14d6d5a36e522caca83",
+      "local_imports": [
+        "music_temporal",
+        "temporal_augmentation",
+        "temporal_resolution",
+        "test_temporal_augmentation"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_temporal_tuning.py",
+      "lines": 59,
+      "sha256": "11fdcb9f2371c8a717d65f2b638e3204880b87d5ccf680c9df879aafb270cf2d",
+      "local_imports": [
+        "music_temporal",
+        "temporal_experiment",
+        "temporal_tuning",
+        "test_temporal_augmentation"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_train_v2.py",
+      "lines": 168,
+      "sha256": "8567dbf898d528e14bbc9f2548480a0d0e0e6bfff928fa924a08afaa99ff337c",
+      "local_imports": [
+        "ast_multitask",
+        "train_v2",
+        "v2_inference"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v2_scoring.py",
+      "lines": 115,
+      "sha256": "f722b930ca622fc1c65d386e1c9727d62f162d96d67aad3685ab241c7142ba6e",
+      "local_imports": [
+        "v2_scoring"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v4_data.py",
+      "lines": 97,
+      "sha256": "e86c57c96eb5002c3e4aebe8b79250aec0c4c54eae1bdeff983fb3be475cfa8e",
+      "local_imports": [
+        "prepare_v4_data",
+        "v2_data",
+        "v4_data",
+        "v4_data_acquisition"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v4_model.py",
+      "lines": 228,
+      "sha256": "444573fff75c7115454d50ba93cc067c8ef83a29e5a3d9264413679d74144697",
+      "local_imports": [
+        "v4_model"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v4_selection.py",
+      "lines": 350,
+      "sha256": "6e429c30f47ed198a5b884fd23e92a5e2e8589e436024eafe4a75ea64d0394f3",
+      "local_imports": [
+        "graph_fusion",
+        "v4_evaluation",
+        "v4_selection"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v4_training.py",
+      "lines": 523,
+      "sha256": "fc3a361acd4fcf40faa8d39cac61719a2e15bc429fecfce4eb450eb8e53f8615",
+      "local_imports": [
+        "recheck_v4_matched",
+        "train_v4",
+        "v4_batches",
+        "v4_data",
+        "v4_model",
+        "v4_training",
+        "v4_training_data",
+        "v4_training_trials"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_analyze.py",
+      "lines": 33,
+      "sha256": "613570d827c9b63ce43053cae8113b245535ff15ed483f96077618a63964bfc6",
+      "local_imports": [
+        "v5_analyze"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_compare.py",
+      "lines": 67,
+      "sha256": "16c5e9def78667a23007405d5974a7690a4e597f268fcfcb673f50de86e2169f",
+      "local_imports": [
+        "v5_compare",
+        "v5_dataset",
+        "v5_features",
+        "v5_fusion_training"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_dataset.py",
+      "lines": 82,
+      "sha256": "167d4eb6ccf00d2833fe9799234bf6f96a73be02e446d5e08005262cb4a95633",
+      "local_imports": [
+        "v5_dataset"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_experts.py",
+      "lines": 262,
+      "sha256": "e053b301609e9657da2d32f7c3d9a49eec008eebeb3f03d590de7586535d1934",
+      "local_imports": [
+        "v5_experts"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_features.py",
+      "lines": 28,
+      "sha256": "0f65c64cfcdbbe18ebb9d4e595fbcf3723d0074ca3c750a6c70deeda81fc7eb0",
+      "local_imports": [
+        "v5_dataset",
+        "v5_features"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_final_pool.py",
+      "lines": 45,
+      "sha256": "62966a57021ed3386d303c80046e7383c00c3b66bc84dd4db26e705e26bb5892",
+      "local_imports": [
+        "run_v5_final"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_final_refit.py",
+      "lines": 214,
+      "sha256": "8d6a8b9885ebd190963f68417e5b173d79ebbec8af7d5712d065272482e5f9c6",
+      "local_imports": [
+        "v5_dataset",
+        "v5_features",
+        "v5_final_refit"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_fusion.py",
+      "lines": 194,
+      "sha256": "b3064b6178b81b115853329edee4608ac918368ad869fd97c787c1148779add2",
+      "local_imports": [
+        "v5_features",
+        "v5_fusion",
+        "v5_fusion_training"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_notebook_archive.py",
+      "lines": 31,
+      "sha256": "310292b2b316132197e9c1c30980c07606b1e3ebd1a2d75e123a909e86997238",
+      "local_imports": [],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_resume_temporal.py",
+      "lines": 38,
+      "sha256": "a6227bf21969464a8849d965ecb350eab95b0e8a91c3a6ba10a6c8eb0d766d5a",
+      "local_imports": [
+        "v5_dataset",
+        "v5_resume_temporal"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_submission.py",
+      "lines": 236,
+      "sha256": "f59318bfd4131885f55f7dc319d7fe5348e0a023e54f1ef7287bb10dad16bc15",
+      "local_imports": [
+        "package_v5_submission",
+        "v2_data",
+        "v5_submission"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v5_training.py",
+      "lines": 189,
+      "sha256": "e32eb4576c318a6ef170466b29b30d4fc1fdec5ab37cd27d57968028055f65ce",
+      "local_imports": [
+        "v5_dataset",
+        "v5_training"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v6_final.py",
+      "lines": 81,
+      "sha256": "b5c440c877fefcc726229d2e199819803094713b856b4c7f4eebc74d40c41b37",
+      "local_imports": [
+        "v6_core",
+        "v6_data",
+        "v6_runtime",
+        "v6_train"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "test_v7_ablation.py",
+      "lines": 96,
+      "sha256": "98b97e3ff4aa9ab567e822d85cac39a4a29b4c2245f556d95c87b847b3c37c67",
+      "local_imports": [
+        "v7_ablation",
+        "v7_features"
+      ],
+      "test_file": true
+    },
+    {
+      "file": "train_v2.py",
+      "lines": 416,
+      "sha256": "587daa9f7ba0d7581b56d852878285e847faf15d74f7920ea5da61a5e02f3761",
+      "local_imports": [
+        "ast_multitask",
+        "graph_features",
+        "graph_scoring",
+        "v2_inference"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "train_v4.py",
+      "lines": 305,
+      "sha256": "5380db2cbbc354fa85348dafbb1d848fdf253806ca99fc315959b52bf0bb1d4e",
+      "local_imports": [
+        "v4_batches",
+        "v4_data",
+        "v4_model",
+        "v4_selection",
+        "v4_training_io",
+        "v4_training_refit",
+        "v4_training_trials"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v2_data.py",
+      "lines": 134,
+      "sha256": "f030da8bd3f91bb04581a3ebcee6d76ce15f33862979adcc554802e0eeeaea0d",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "v2_inference.py",
+      "lines": 131,
+      "sha256": "a6c98733df52013fc4410efdb4afed749cf33a8ad8d2f6f5875ec96ca7a1a4f2",
+      "local_imports": [
+        "ast_multitask"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v2_scoring.py",
+      "lines": 287,
+      "sha256": "1a31cf80dd360cd50bdf7697f491f5a17c40d213ee6f7af16bd31ba871a4afdd",
+      "local_imports": [
+        "graph_fusion",
+        "graph_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_batches.py",
+      "lines": 188,
+      "sha256": "52155fbeeaebb8e7072d3ec3e31e1021069e5317464e8e80624b37c241c536b1",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "v4_data.py",
+      "lines": 19,
+      "sha256": "ff3745f6caf79a1ee2726360f7e38cd51dc296283a8aaba958c8d9ea7a698ccb",
+      "local_imports": [
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_data_acquisition.py",
+      "lines": 222,
+      "sha256": "c37ce5514c9ed5defe2b32a66b39d8627369d30889a5459ef8244b792d607140",
+      "local_imports": [
+        "prepare_v2_sources",
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_data_augmentation.py",
+      "lines": 47,
+      "sha256": "15728b3855225ea50872e935aed8d26fcf03ec1a40ab63a10e6a8d782c71e339",
+      "local_imports": [
+        "v2_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_evaluation.py",
+      "lines": 159,
+      "sha256": "a3a8e307d1024f089748a1777265c1830ae22609c9df81013679499500172144",
+      "local_imports": [
+        "graph_scoring",
+        "v2_scoring"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_model.py",
+      "lines": 272,
+      "sha256": "510a36e121e49707c5cd8d42408c9ba4394eda9c547fb94f25f7608d64051a7b",
+      "local_imports": [
+        "recovery_sonics",
+        "v4_model_components"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_model_components.py",
+      "lines": 116,
+      "sha256": "2991a04d2a81faf1b9c209041b32045a53b2a23dc7d360c0a18ed3ef2b422aae",
+      "local_imports": [
+        "ast_multitask"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_selection.py",
+      "lines": 297,
+      "sha256": "602f46332acdab20453e4f3e9272a21c15f6edcb5487465e39137a879d64e72c",
+      "local_imports": [
+        "v4_evaluation"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_training.py",
+      "lines": 244,
+      "sha256": "63ce9946c13883d79b2039390458ba5f2890435f992b91153ed22e7b1099fae8",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "v4_training_data.py",
+      "lines": 162,
+      "sha256": "fcc6280b1eb619403e05564ce1c40736ae36cffb8139627646681aadd7f63edd",
+      "local_imports": [
+        "v4_batches",
+        "v4_data",
+        "v4_model",
+        "v4_training"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_training_io.py",
+      "lines": 105,
+      "sha256": "04fe392dd350c9d2468ac558d1d87342e18ad9754bd229dac1fbfe9eaddad2c2",
+      "local_imports": [
+        "graph_features",
+        "graph_fusion"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_training_refit.py",
+      "lines": 155,
+      "sha256": "6ccd87831ac23bca015960bbac80bfa5921c9a8a4539b773a7a3885bd9381b72",
+      "local_imports": [
+        "v4_batches",
+        "v4_data",
+        "v4_model",
+        "v4_selection",
+        "v4_training_io",
+        "v4_training_trials"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v4_training_trials.py",
+      "lines": 429,
+      "sha256": "a5b59f5b95792e0075c2fbb2afa9949b015219b9bac4d4686f6f63214dc2bf51",
+      "local_imports": [
+        "v4_batches",
+        "v4_data",
+        "v4_evaluation",
+        "v4_model",
+        "v4_training",
+        "v4_training_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_analyze.py",
+      "lines": 143,
+      "sha256": "546c0517f2e573085a883b3a1d29628708e7c2cadea89b5a48fb26fa2ecfd85c",
+      "local_imports": [
+        "graph_scoring",
+        "v5_dataset",
+        "v5_reporting"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_augment.py",
+      "lines": 37,
+      "sha256": "88d7f7ac2f74bfc0e39790039439a7f0e83e7757db84c51e0fe3addb854f608e",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "v5_compare.py",
+      "lines": 227,
+      "sha256": "efa5c097f1a723f64f2d9e89c21ff94357c763a711b252ee7833f98643ccc452",
+      "local_imports": [
+        "graph_features",
+        "graph_fusion",
+        "graph_scoring",
+        "v5_dataset",
+        "v5_experts",
+        "v5_features",
+        "v5_fusion_training",
+        "v5_joint",
+        "v5_reporting",
+        "v5_training"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_dataset.py",
+      "lines": 244,
+      "sha256": "da8aa7069e984041620cefd4209b3aa27353333c13bb7f564a9a42f45992f3e8",
+      "local_imports": [
+        "v4_data",
+        "v5_augment"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_experts.py",
+      "lines": 287,
+      "sha256": "d20280818f160ea8788cb5453587fc11b0484f5e2389e2a04528a1923db95c32",
+      "local_imports": [
+        "v4_model"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_features.py",
+      "lines": 180,
+      "sha256": "eeef3542dd7760779b8d940b2f21f3b6681db5547d40154d943cc7f9440de660",
+      "local_imports": [
+        "v5_dataset"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_final_refit.py",
+      "lines": 370,
+      "sha256": "d0065fc01f7efa6d5fd41f2ff727635fbfbbf7de35590c36ff8a0c3ea4437453",
+      "local_imports": [
+        "v5_dataset",
+        "v5_features",
+        "v5_fusion",
+        "v5_fusion_training",
+        "v5_training"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_fusion.py",
+      "lines": 194,
+      "sha256": "0888b7b996602dd3834e21ff4d95a318b3d9b4ee28261e8ae5442c6e582a3495",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "v5_fusion_training.py",
+      "lines": 257,
+      "sha256": "279fbdb436845cf1ef6a044b8e87811ccbfb17ed29fb7be038a3f59122247888",
+      "local_imports": [
+        "v5_features",
+        "v5_fusion"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_joint.py",
+      "lines": 127,
+      "sha256": "0f1852212606e6841b3a3ac9874d22196bc84960016fac068dc1742b157d3b6d",
+      "local_imports": [
+        "v5_dataset",
+        "v5_features",
+        "v5_fusion",
+        "v5_reporting"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_reporting.py",
+      "lines": 87,
+      "sha256": "465eca197a4091fd90b65634c2237c55bc7793c839b705107bea09dec40bc91d",
+      "local_imports": [
+        "graph_scoring",
+        "v5_dataset",
+        "v5_features"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_resume_temporal.py",
+      "lines": 293,
+      "sha256": "d4f3333306a51372bc3457976972d475b5ccbee5291858836818acc61817ef37",
+      "local_imports": [
+        "v5_compare",
+        "v5_dataset",
+        "v5_experts",
+        "v5_features",
+        "v5_fusion",
+        "v5_fusion_training",
+        "v5_reporting"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_submission.py",
+      "lines": 429,
+      "sha256": "b7366d9041e3031bb68612a6b3d1a94997d2f86c47991865df7b34442f23399b",
+      "local_imports": [
+        "v5_experts",
+        "v5_fusion"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v5_training.py",
+      "lines": 495,
+      "sha256": "1ae034949aa708189459be687d762be65186d54dac2cdb4930e727e658056cef",
+      "local_imports": [
+        "graph_scoring",
+        "v5_dataset",
+        "v5_experts"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v6_core.py",
+      "lines": 65,
+      "sha256": "b0b0496623f16f815e82d465139449b5258b52cf7d2246f5cad72467037dfd72",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "v6_data.py",
+      "lines": 132,
+      "sha256": "e522a30976fd07941e9056d46786f46053aa7949f8a8a5cc6ce015a40acb8d33",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "v6_runtime.py",
+      "lines": 149,
+      "sha256": "fb2149c034ffd20b090d9ebde9435165ea1d6030f6b93e482b1b2bf77fe3a1ce",
+      "local_imports": [
+        "v6_core",
+        "v6_data"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v6_train.py",
+      "lines": 121,
+      "sha256": "ac5dbad1b572dec8803792012517108055b64da66ddee4b527c6458584135b1b",
+      "local_imports": [
+        "graph_scoring",
+        "v6_core",
+        "v6_data",
+        "v6_runtime"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v7_ablation.py",
+      "lines": 205,
+      "sha256": "1c93d837c8a0fbd65f48b74b078c97755a588b0013163ee95550d18136e4ea89",
+      "local_imports": [
+        "graph_scoring",
+        "v6_core",
+        "v6_data",
+        "v6_train"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v7_features.py",
+      "lines": 110,
+      "sha256": "e32ef1f5d9de4e77fdb5caeac85c0ac536b296047c6cac0afd312a9b579a0254",
+      "local_imports": [
+        "v6_core",
+        "v6_data",
+        "v6_runtime",
+        "v6_train"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "v7_notebook_runner.py",
+      "lines": 84,
+      "sha256": "db204f12b1370621ab38b0240a5f3949251bb2d023db0efc5c310e604045f8b8",
+      "local_imports": [],
+      "test_file": false
+    },
+    {
+      "file": "verify_recovery_results.py",
+      "lines": 101,
+      "sha256": "8236ecb4f4ea9cce0fc4f48cfc4870ef76bc2a874ad132b47a4dddf1a06c934f",
+      "local_imports": [
+        "graph_scoring",
+        "recovery_selection"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "verify_s2_submission.py",
+      "lines": 117,
+      "sha256": "ecc23822fda894add0388cd92fb8b7d29837e9d25c8a5c02cac8271810d7a513",
+      "local_imports": [
+        "graph_scoring",
+        "s2_eat_submission"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "verify_v2_gpu_precision.py",
+      "lines": 150,
+      "sha256": "7077a76da58f679a9b1865601583626c99a6d8e9d91165ca47938c26b397bca3",
+      "local_imports": [
+        "ast_multitask",
+        "graph_features",
+        "package_v2_submission",
+        "v2_inference"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "voice_music_h100_experiments.py",
+      "lines": 268,
+      "sha256": "b23e201ef04c549285815f58a1f40886af1da513c2608cacb60d8a12c631096a",
+      "local_imports": [
+        "antideepfake_runtime",
+        "music_temporal",
+        "redesign_features",
+        "redesign_features_runtime",
+        "redesign_fit",
+        "redesign_h100_run",
+        "redesign_h100_watch",
+        "redesign_submission",
+        "redesign_voice",
+        "six_h100_experiments",
+        "voice_music_h100_selection"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "voice_music_h100_selection.py",
+      "lines": 58,
+      "sha256": "03ceb288b056a1d31076e08c7edae695f191d334d6365205acde83b0c8636577",
+      "local_imports": [
+        "six_h100_experiments"
+      ],
+      "test_file": false
+    },
+    {
+      "file": "voice_music_h100_watch.py",
+      "lines": 35,
+      "sha256": "dee4a3e7c0bd936cc1f7f847ff779bca3175f211a1fbce305aa8fb4ce26ab286",
+      "local_imports": [
+        "redesign_h100_watch"
+      ],
+      "test_file": false
+    }
+  ]
+}

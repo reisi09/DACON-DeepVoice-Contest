@@ -1,0 +1,78 @@
+{
+  "updated_at": 1789721266.909955,
+  "features": {
+    "done": 100,
+    "elapsed_seconds": 1427.1044118404388,
+    "stage": "fixed_voice",
+    "total": 968
+  },
+  "mert_batch": {
+    "chosen": 256,
+    "measurements": [
+      {
+        "batch": 32,
+        "peak_allocated_bytes": 3850387968,
+        "seconds": 0.23370891250669956,
+        "status": "ok",
+        "windows_per_second": 136.92246331890607
+      },
+      {
+        "batch": 64,
+        "peak_allocated_bytes": 6401573376,
+        "seconds": 0.41910665202885866,
+        "status": "ok",
+        "windows_per_second": 152.7057604315789
+      },
+      {
+        "batch": 128,
+        "peak_allocated_bytes": 11507352064,
+        "seconds": 0.8403534265235066,
+        "status": "ok",
+        "windows_per_second": 152.31686569010444
+      },
+      {
+        "batch": 256,
+        "peak_allocated_bytes": 21718520320,
+        "seconds": 1.6573163298889995,
+        "status": "ok",
+        "windows_per_second": 154.4665887755694
+      }
+    ],
+    "policy": "largest within 90% fastest throughput and 80% VRAM"
+  },
+  "ast_batch": {
+    "chosen": 256,
+    "measurements": [
+      {
+        "batch": 32,
+        "peak_allocated_bytes": 1412372992,
+        "seconds": 0.11673882976174355,
+        "status": "ok",
+        "windows_per_second": 274.1161622513258
+      },
+      {
+        "batch": 64,
+        "peak_allocated_bytes": 2445122048,
+        "seconds": 0.2084288476034999,
+        "status": "ok",
+        "windows_per_second": 307.0592230195938
+      },
+      {
+        "batch": 128,
+        "peak_allocated_bytes": 4507277824,
+        "seconds": 0.4328212281689048,
+        "status": "ok",
+        "windows_per_second": 295.73410837891964
+      },
+      {
+        "batch": 256,
+        "peak_allocated_bytes": 8632113664,
+        "seconds": 0.8909468129277229,
+        "status": "ok",
+        "windows_per_second": 287.3347727220252
+      }
+    ],
+    "policy": "largest within 90% fastest throughput and 80% VRAM"
+  },
+  "log_tail": "4627\nDemucs 2440/4627\nDemucs 2460/4627\nDemucs 2480/4627\nDemucs 2500/4627\nDemucs 2520/4627\nDemucs 2540/4627\nDemucs 2560/4627\nDemucs 2580/4627\nDemucs 2600/4627\nDemucs 2620/4627\nDemucs 2640/4627\nDemucs 2660/4627\nDemucs 2680/4627\nDemucs 2700/4627\nDemucs 2720/4627\nDemucs 2740/4627\nDemucs 2760/4627\nDemucs 2780/4627\nDemucs 2800/4627\nDemucs 2820/4627\nDemucs 2840/4627\nDemucs 2860/4627\nDemucs 2880/4627\nDemucs 2900/4627\nDemucs 2920/4627\nDemucs 2940/4627\nDemucs 2960/4627\nDemucs 2980/4627\nDemucs 3000/4627\nDemucs 3020/4627\nDemucs 3040/4627\nDemucs 3060/4627\nDemucs 3080/4627\nDemucs 3100/4627\nDemucs 3120/4627\nDemucs 3140/4627\nDemucs 3160/4627\nDemucs 3180/4627\nDemucs 3200/4627\nDemucs 3220/4627\nDemucs 3240/4627\nDemucs 3260/4627\nDemucs 3280/4627\nDemucs 3300/4627\nDemucs 3320/4627\nDemucs 3340/4627\nDemucs 3360/4627\nDemucs 3380/4627\nDemucs 3400/4627\nDemucs 3420/4627\nDemucs 3440/4627\nDemucs 3460/4627\nDemucs 3480/4627\nDemucs 3500/4627\nDemucs 3520/4627\nDemucs 3540/4627\nDemucs 3560/4627\nDemucs 3580/4627\nDemucs 3600/4627\nDemucs 3620/4627\nDemucs 3640/4627\nDemucs 3660/4627\nDemucs 3680/4627\nDemucs 3700/4627\nDemucs 3720/4627\nDemucs 3740/4627\nDemucs 3760/4627\nDemucs 3780/4627\nDemucs 3800/4627\nDemucs 3820/4627\nDemucs 3840/4627\nDemucs 3860/4627\nDemucs 3880/4627\nDemucs 3900/4627\nDemucs 3920/4627\nDemucs 3940/4627\nDemucs 3960/4627\nDemucs 3980/4627\nDemucs 4000/4627\nDemucs 4020/4627\nDemucs 4040/4627\nDemucs 4060/4627\nDemucs 4080/4627\nDemucs 4100/4627\nDemucs 4120/4627\nDemucs 4140/4627\nDemucs 4160/4627\nDemucs 4180/4627\nDemucs 4200/4627\nDemucs 4220/4627\nDemucs 4240/4627\nDemucs 4260/4627\nDemucs 4280/4627\nDemucs 4300/4627\nDemucs 4320/4627\nDemucs 4340/4627\nDemucs 4360/4627\nDemucs 4380/4627\nDemucs 4400/4627\nDemucs 4420/4627\nDemucs 4440/4627\nDemucs 4460/4627\nDemucs 4480/4627\nDemucs 4500/4627\nDemucs 4520/4627\nDemucs 4540/4627\nDemucs 4560/4627\nDemucs 4580/4627\nDemucs 4600/4627\nDemucs 4620/4627\nDemucs 4627/4627\nCheckpoint path: /root/redesign_h100_20260917/assets/baseline/model/panns/Cnn14_mAP=0.431.pth\nGPU number: 1\n"
+}

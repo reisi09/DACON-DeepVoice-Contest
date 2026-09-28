@@ -1,0 +1,465 @@
+{
+  "receipt_sha256": "392569e91b80ee03e5db2b5567ac1cba73dd6dc41682c0bc27bca1cff4b30a01",
+  "records": {
+    "train-000-pure": {
+      "audio_sha256": "cc959d579667446933e42f18785fbb8e1fe9b1dca169791c65daf02fd50864b9",
+      "record": "records/3516cc5de0417c8c16463c83f421161f98c90fd4852951cba33c38890f19f1b1.npz",
+      "record_sha256": "5b7886f4a09b327fd6cb5d91d8c44090ec1578b7008ca5f942a6a5db687d1935"
+    },
+    "train-000-mixed": {
+      "audio_sha256": "bb990ce3e5628352d174528a07a3d207ada08de55e4fde45e4bf6040a56f68ea",
+      "record": "records/38e3f8a176fa066caf856ce31d37343e7f0ec907640a34092136ba5d01c0f061.npz",
+      "record_sha256": "096edf2cd819c6fbb2cc3255d5387e54baf2f69499d2086c41bd898a01245a48"
+    },
+    "train-001-pure": {
+      "audio_sha256": "42238109efac04f4be9f82b995533765e396fd995279ec9f6351f9b1eae7a108",
+      "record": "records/8e08a7cd529387baf5fbeaeb46ca0e873c21826ddcbe9db70f059f6008c5a7e6.npz",
+      "record_sha256": "fe2aadfb9d9d938025237a5b57c7d116c2b6960192fb9f1c594ca9ee47a95cc9"
+    },
+    "train-001-mixed": {
+      "audio_sha256": "2003ed349acf4c495076b8e51aeddbb4e90fa4ef70b70f6f44f8a4d278600014",
+      "record": "records/0d2f95c36ba85ca096a66ce912090b387effe572dde9a4f1a802b908fb71ede3.npz",
+      "record_sha256": "28dca4bc4c71dfa8901a6b2a1bf3d03982deb3e1c8d8f7150628dc4c93b0e2c5"
+    },
+    "train-002-pure": {
+      "audio_sha256": "4827c989d9688a8b16b30d1ab0556dea3694ee0f0a6e2c1d317ff2504bc57f80",
+      "record": "records/30df4935c760c2a67e00ff774d0663c52549a2b10d976edef92439ba758cb8c7.npz",
+      "record_sha256": "2f9bae86fc62138ce11bd6ad49d34a10d270f54d1042c7459ad90b087bf790ce"
+    },
+    "train-002-mixed": {
+      "audio_sha256": "0d8e08835219f3d09d5e8f92676089842c8301556fd710658bce91e5327db70e",
+      "record": "records/208f5a726f6849395916646e7a40f83e3a6aa2cfd30e3e6480a8dfe62fe83c83.npz",
+      "record_sha256": "b310f0036f26acd0d5fc4c7368fc268cdff91b7e6d2d535009fb1b2841881ce4"
+    },
+    "train-003-pure": {
+      "audio_sha256": "caa024d39b2ae3268842f5534f035a919cf5f9267c23a50f997835bc3f059ab2",
+      "record": "records/40a71f6686887dcc6db72293756e70d5ab58f09da2511253e9fb4c5910b92e3e.npz",
+      "record_sha256": "6a8fee18b7d83c412c946c80aedb79efae5c1d1cd515366bd7174607e8c6cf0b"
+    },
+    "train-003-mixed": {
+      "audio_sha256": "0d93b674472eaa1a723a9a03f3a45ab3e2dc9dd33174cb1df3589c9fd061d2dd",
+      "record": "records/880918e150ebc42fbc0c6827ce3f0d2e6b02bdcea9e4604d53088020d3cdd169.npz",
+      "record_sha256": "f7fc6498743e94740f4b341f5a3e6e4812d72d1c23c7be44b2016987718255ec"
+    },
+    "train-004-pure": {
+      "audio_sha256": "707f9f78609014b1772dcabfcc73e46632b72684506a4e5cbf18339550428590",
+      "record": "records/2d651e3582d80b637fbbaeecd5e375ce5d82ad959562a09e0bc868e23411d1cb.npz",
+      "record_sha256": "b68b0ebc4f447085f3918b502709bf26117250e2a4c63e468e0a4f948abfa382"
+    },
+    "train-004-mixed": {
+      "audio_sha256": "d6d462adaff69a8ed396cea5d23b1d7135f41e85744329cf26489058160d3960",
+      "record": "records/03eb93361c7d733671fb01b91b54c8b6f93f304e3cb5eb19706b1109ff9b049c.npz",
+      "record_sha256": "6ef8404c5b7ec18e4b1ca95c417606cee567f33a4d2d46ebd1f8d4f832de70da"
+    },
+    "train-005-pure": {
+      "audio_sha256": "ee7ab212bbbf6bf905b22c0636751df01e9e6d5eabf07fedf083181a58a98bdc",
+      "record": "records/5bbe42cdaa8393dd44cf148151d949fd2cfe1ea15715ef552b559e7cefff9616.npz",
+      "record_sha256": "c972cf58c848827fe775d4761fa8ca809d5c7d91ff804381e4539e924c7c1440"
+    },
+    "train-005-mixed": {
+      "audio_sha256": "868b188daebbf34f9ae9f583938e8f71abc273bece6f841026e4d98852da2d44",
+      "record": "records/2648d37b94ad96b33f3cfa741552e2af354d43c976b028651c29b7207ff75629.npz",
+      "record_sha256": "c27a77dfb675cf37b74831a63196a65b552f101912e8529d6871fc72b780e174"
+    },
+    "train-006-pure": {
+      "audio_sha256": "a7edf41171b2a42d108b0c7e651c06f1cd65249ad9d28c6164b2bd5ef480ecf0",
+      "record": "records/5ec5e1702b384ebd3584aee8d88190ed73ba692658ec319264e61dc73331fa6e.npz",
+      "record_sha256": "ac39e7c1600033f8841cb3109fe7d620e69823aad8872ad0ec8d9826a42e5800"
+    },
+    "train-006-mixed": {
+      "audio_sha256": "9ac99cba8977c5a0d41a50f32ba4bfa26476a1fce5fbb809e03fce75b037c98e",
+      "record": "records/6ccb0cc45fd8f02816df4a4e3441df345753ba4c410a072f068d96b5473a6b02.npz",
+      "record_sha256": "3970ded4094a281b571762b26e8068c1f077b847e02b5f2a3a5fd59315b21576"
+    },
+    "train-007-pure": {
+      "audio_sha256": "78009bb3e48bef5d0316ec7e384baf89ab0c12fd5eec05aff8706bd80e1f7261",
+      "record": "records/53eecfef3a094dc38a5b0a1ef2202622794d1c1266a8afda8f986538b6e11631.npz",
+      "record_sha256": "dc958ee9773af82795a98e3e9a0eaad77eb2aaf4e4912d8e7d49ce8274454b90"
+    },
+    "train-007-mixed": {
+      "audio_sha256": "de9ea8fdb3fe6dfd7eedac0126a320eb3b8266d69a9b57e7eaa853821d9b320e",
+      "record": "records/eb9d82be185da5a5eb41a6f4bb71057dac8f56adb916d8734933935c93ae2e4a.npz",
+      "record_sha256": "069f8efdd9b7a12cec0aca131a9a0b33cbff70daae050b6268ebd026cdc355af"
+    },
+    "train-008-pure": {
+      "audio_sha256": "b9c006e273e926287b2cf7846e738665e575c6ce86d73503085c2270b60437a3",
+      "record": "records/928fbfb38024c85f26a6e95f1139e6f12868b6d8615e888a13d2e110e5588ad9.npz",
+      "record_sha256": "6aeff361a3e8af39ac66f80eca31e53d51a0e81c1369096271f1ef42b57fec20"
+    },
+    "train-008-mixed": {
+      "audio_sha256": "74989a84b9e1a85616ff7998984e1059a9503c0b9c00bd9a14362f65ce3feae1",
+      "record": "records/e5f6b0b4593ffe457db7308a979c025e2c96f329a94f8ed735b8806643ea2c3b.npz",
+      "record_sha256": "8e43ceb5adc449ce0777d54b8e2ef1722eaed977c1d58047847249f292bb2e08"
+    },
+    "train-009-pure": {
+      "audio_sha256": "dac0524c398be8cdbcc502d010e40af32db75c4f77b0b513dfbdb683a7b112e1",
+      "record": "records/d0120fb51faba0f98b824ec81bbfe584ca39456b4bfddb5705b2a003d7614a6a.npz",
+      "record_sha256": "57b3d4882a6900a76f41cfca86910c983ff49d92be8df6f3e23953be5fb5219a"
+    },
+    "train-009-mixed": {
+      "audio_sha256": "322874e287bfc744a18db4c2d2559e951ab7c272a1ae95416dd1cb9e4bdae150",
+      "record": "records/7a5e5c982bff554e6422ee5b273531826f918253b6d267ec424ce791c486fd00.npz",
+      "record_sha256": "769f201d847d1da61d9e824336001e3467e0afd089de34ea99785b18af07cedb"
+    },
+    "train-010-pure": {
+      "audio_sha256": "2c01c16d57d92ca2398cb5dd5fdffdc765d2686fd6f82295c3fc3722ef5db27c",
+      "record": "records/6736cfec18cea2ed501e17f675da4e3a00010056bb3a5cbebb85228511b56710.npz",
+      "record_sha256": "02ccc8b3e66972ed3193b6b7e05ba59c64fde9ba4123bb9896ffa89d401cdefb"
+    },
+    "train-010-mixed": {
+      "audio_sha256": "cd7530df5897b01980b08c9aef449fbbc4560a85ff8032254061c8dee0e002b4",
+      "record": "records/53e51c255777a7d86179d52bd0423619d42d8bf5e25a9d999e3e812c1abc36bb.npz",
+      "record_sha256": "04354369a4a316be69e17769c9d8bfc00da8414762919c3c97e24ff01ba1d268"
+    },
+    "train-011-pure": {
+      "audio_sha256": "4294b427cbbb4a674dfe393f3e77403703583f46855e9beecbf3f9e7e934b8ae",
+      "record": "records/1c6c2e67ef26a584c463a2bc8deeafb8475410098da385f6fdee0cf9a81b911d.npz",
+      "record_sha256": "7b68c33ddf8bca8d326b7b4afaa4a53c08d9280c323dcfbb1c835b2e79d90fdb"
+    },
+    "train-011-mixed": {
+      "audio_sha256": "295e0748411c81ac099797ffc93075c1ac6d0459573157e59f9d8e31db68332f",
+      "record": "records/3f81df1bc6d9e4b0228ec57056cf744e1f4de8ad5f795e8b6e4639a4afb3f066.npz",
+      "record_sha256": "f9f2c7b9a2e900960b34c5c5e1280d29074a19b5b71c657b604950848071a3f9"
+    },
+    "train-012-pure": {
+      "audio_sha256": "46d0902ebf645d84efab2476e0cf541d81d7bdc436968bad20a173779ee950f8",
+      "record": "records/e05f7ae3d791cddd7694ac44fa3c988c81d60eec57b0372ab2996a54f01dc131.npz",
+      "record_sha256": "8b7b05baec9873eee04a6701aa0191a727ae8d0da72e94e4f0ebdc51645b8022"
+    },
+    "train-012-mixed": {
+      "audio_sha256": "ba6baed217ca3bbacd5e231ca386830fca5e568165b2264eec039578a866ca1f",
+      "record": "records/04e22726864dcf2acd6c79cdb1d4d3f0c2c7c380b528b3a725e26b90a0e66f24.npz",
+      "record_sha256": "68cd610fa2712510d4a834e0c66a77f00fc5169dc00817d73ddc77938e4ae84c"
+    },
+    "train-013-pure": {
+      "audio_sha256": "00b066006116b366979ad9b05a33b0b68ec6e54b7e3ddd917a0b0bce181ece12",
+      "record": "records/2bb060512087ff37ef958b9ef2810df4d5716c80a42218e66f6b77445436f806.npz",
+      "record_sha256": "7ba1061fafea95462210021f8b2c4239d5a07b5193e609302fbab6004fc4add8"
+    },
+    "train-013-mixed": {
+      "audio_sha256": "0cb03a81fe27a735f5591fcad83732d43764636e44b152f7e9c4c6e22285602c",
+      "record": "records/abaa519b64acfca838ab9e27926bc306a3fac7646f0c216133a6f763c0eeb9a0.npz",
+      "record_sha256": "6d5db18d6fc12c2ccd6bca24de256f0f2a12c02c9ecdfcaac9d78aa780992c7b"
+    },
+    "train-014-pure": {
+      "audio_sha256": "276bf2aa4875d8465cb4546311cc82c7c83a518eece34fdfd716b680287a7112",
+      "record": "records/a6eecc0c4d12a777f4937d691639ec92baeb72c95569ea10a028b49fdac770a3.npz",
+      "record_sha256": "ddb9c005335c8d36e2d0526da95a7de07e5731461b83f828f68c4c8f674b2337"
+    },
+    "train-014-mixed": {
+      "audio_sha256": "023a773597c2068f63040d15a90f6b1cdb6d60450ead982695350151a534d85c",
+      "record": "records/78187f64824a96256826e1682f4b9747dfbca3398023f4b4b1d6f41848dc4538.npz",
+      "record_sha256": "b4fddabb9220c0abc543f71f60e0a864c3f633859c36131e2d07115f365b6dab"
+    },
+    "train-015-pure": {
+      "audio_sha256": "d8052b426e6bebe331b10bbd8070f4b465656cf13439431b3e6dcfc4eca88d13",
+      "record": "records/ff613c99077bc5483ed6fed0dfdeae50b8300c17b40993aa54b80310df87984b.npz",
+      "record_sha256": "7b12ab1665161891ad80942aab393b7653619707335864d0c8b83e178ad4169e"
+    },
+    "train-015-mixed": {
+      "audio_sha256": "db174dd7e1d86623b488c99a7b144509b9bf2a9ae6d710f4e4a1f750cbeb5516",
+      "record": "records/ef931f15be5dd199c007b3a0fca01aa4678fb711cccc0b7c8f0a84f9b57d25d8.npz",
+      "record_sha256": "21e3c1fb1cf2c92ee413bf6e015870c82dd181ce881d39ec9d310d6b6a71c1ba"
+    },
+    "train-016-pure": {
+      "audio_sha256": "ef82046d69963ce1c254be1c9728b94a34b2f719d5014497681fc318b9fe8770",
+      "record": "records/9a00cfc2837df1d6436b8aef56c14d325f5858038ca71b144e5602a3c1c8e14f.npz",
+      "record_sha256": "f04d42f4a877bf7392b424ed45fb7cafd87955cbbd8232bff407067fbb5845f7"
+    },
+    "train-016-mixed": {
+      "audio_sha256": "cd18a9afcff763309e1e19204ca35096b582acff22d3c4a6b84e3f81bf740d86",
+      "record": "records/d92b27d095d56183309a93e9a8b53821543621a8fe8d09639d98d425accab272.npz",
+      "record_sha256": "83e18f70f77e5b7c470c19814a100199f5f6072b7120443f0a8bb6a8cc593b13"
+    },
+    "train-017-pure": {
+      "audio_sha256": "2ae7327e5527fede6e8e2de8e7c7307a6d2d99aab62c183a322f3a3c274466e8",
+      "record": "records/b7959e57981b686484ab9cb2a6593a7684b6bbca7b2c2f73989846efbc824ca0.npz",
+      "record_sha256": "4014eb40f5d95ac7edbb27c35f12ae73be1342ea7ec060dd6949bb290da515b7"
+    },
+    "train-017-mixed": {
+      "audio_sha256": "6949520bc223c3dece97da774df8e939667675b56177999fbe2433f3d5d40d06",
+      "record": "records/a70cd6185f62658d80dbe48e6c8fdba9b7105ce4703da9c1da282216b3913c80.npz",
+      "record_sha256": "98cb2dd0823d509a62512fecda6c685514039df665cd7ebfa0f83262ef549870"
+    },
+    "train-018-pure": {
+      "audio_sha256": "a3a23deacf35f8686ffcc58e69fb0bb46662849d24d3ad7a154593d3bf092256",
+      "record": "records/a6b1fbb1b1148f33f44541175d95775dc59e4dc6c332469593897ba0b19e3bcf.npz",
+      "record_sha256": "d1b6be7ca3507a41b407eb90be64866385fca7f752b891ba6c9fa39ad1ea2bf9"
+    },
+    "train-018-mixed": {
+      "audio_sha256": "9d27aa180561de02e1b8b9f87ff5843a092881a6e7103f16744fbee2b2c9cd75",
+      "record": "records/1beb160fb752c5db3578592eb7e6b6583d20ff6e918d3849976abc488f453f25.npz",
+      "record_sha256": "972721879dec96037465d5286fe1964ac995b8800949712e4c6d32572112ea7d"
+    },
+    "train-019-pure": {
+      "audio_sha256": "bd79eca3f2b5a47ecf5ed54f107b7df2f65b3e72cfbdd247a3f09440ea0a9a7a",
+      "record": "records/2bfa8952b5b9d0a76c6f68e92aa1955530891d2695f53b2402f4ca8a61ee764c.npz",
+      "record_sha256": "720d89753e0712c4a07fc53e935212807bfacb92ee9ae9918ff1479711e3129d"
+    },
+    "train-019-mixed": {
+      "audio_sha256": "2f67dfd8212ae32f6b45e3259d88319d33e79f53b9ea332cf238b832a611f834",
+      "record": "records/e2f66a79f76efe5342373da21361c71b14d786662042882c812df68738cf803c.npz",
+      "record_sha256": "a553f4fc010c0814bbef05d649056c9b2415826efe424637d736fc966305f0cf"
+    },
+    "train-020-pure": {
+      "audio_sha256": "c278eac9ca52240e9abb51df57f33a6e88576bc89b869fb77b3c75b3aa739a77",
+      "record": "records/45f59a2fd439f531fbbf9c426d240fbc12512cdd6e3ed80688904640c3ced4e8.npz",
+      "record_sha256": "25d4983d02d45fa5303b508ce9c56e591a4d1b0258945363abc5feb4fc7012bc"
+    },
+    "train-020-mixed": {
+      "audio_sha256": "2ee30dcb809a19978be78537c389229eb93b0062c96c2cd4f39b2c0f4da725f8",
+      "record": "records/dc9df3d22425e07067a0179712c12c720aadaf24e7e82d00a68cea70fdfb6abd.npz",
+      "record_sha256": "0b2367a5d33a618f2542b4d2eb4e4624771cc74e01bba39d5bb2282b933b0093"
+    },
+    "train-021-pure": {
+      "audio_sha256": "87090d43075c42a86c37168a890efaac625ced4c4f2ba6761b97f9606102b31d",
+      "record": "records/891c4ad81bc9e0fcd32214059c2cabda33bddb973c56d9e7ba2cf4fd7925e187.npz",
+      "record_sha256": "51c8b39584ca96dfae3a19c93f3850c5a4491048f31f40c64b7891b4e0cdde1d"
+    },
+    "train-021-mixed": {
+      "audio_sha256": "bd56ae930fb9a106af815bd54eeae873e8089eb5acc573cc32e6d4fbf741b2f0",
+      "record": "records/93ece3603ca4e224fb57cee3536ca971428c8c2f1b53bbcb44f7acbdb9fd2e3a.npz",
+      "record_sha256": "653740a13a4d10253ceec8bbbc8628b239a921bb560733309be9848962605565"
+    },
+    "train-022-pure": {
+      "audio_sha256": "429b1829980951c916229f54d1e0980cdf63e13d516ccb5fe1e736e24f0ec2df",
+      "record": "records/20b60a4fdea28d944de0c535303d711d544bf8b53d1294759caeeb069cb62a0e.npz",
+      "record_sha256": "963077c9e5f71760e8888db4240f7114b7bafc5135fe3aeab765947941a5b1c8"
+    },
+    "train-022-mixed": {
+      "audio_sha256": "633902cf1eef677526f8a2747afe85382d5eb2210a11c8630842da1cf7e88eaf",
+      "record": "records/5d90257724245cda5c5a914eacc4518e539f79e0eea4bff9f560642a2f4fed0c.npz",
+      "record_sha256": "86291a1e4bdf1f75f5f802423fbebe24bdb66901d599c4f42c3152b0d6cf8259"
+    },
+    "train-023-pure": {
+      "audio_sha256": "345efe89d42cff78d5140f0d638d863c7492120ed8d5da2e66339fc6b55ccf95",
+      "record": "records/73e8ec7f93a45ed9fc8a19ff28cca37e62a4efda0e34818ad633a4accd6e5118.npz",
+      "record_sha256": "c2281ed99d25a6f9f66a33f353e904eea0026a28cc7666fe4396e46b9f23424a"
+    },
+    "train-023-mixed": {
+      "audio_sha256": "d5c7725afb3d6ee9681c0227e409fbd9d915d4d8cc7cd2465e10b6aa96480ee6",
+      "record": "records/8dca472dc3975ad9ef339a1d09276c8a508e47fb77e5e7638c84d6e3b354dbe0.npz",
+      "record_sha256": "cbd97684ea68a952721a2c117954552d3baf874e8bfae880b76db3221052a704"
+    },
+    "train-024-pure": {
+      "audio_sha256": "68d9ca9d8df5f91427aec08182eb4abe8cc168f4c8e493bf8d60223ecc62dc74",
+      "record": "records/deb545470f6dfde5de1486436cda935529d12fa2cc9bc2f7c8c9767013306d89.npz",
+      "record_sha256": "f3b5a563b084e12a1275e7fc0d5052955fcd827a36454142cffbe799476278e4"
+    },
+    "train-024-mixed": {
+      "audio_sha256": "213a91b20782f9836c23197391dd0282fe7111f7105b7c19cbf2285e5e15b484",
+      "record": "records/febb5f681ade5a1514c8dd2551c76a376945f9ffa9deda24556b80e8aa8c7dba.npz",
+      "record_sha256": "e3e272cc67a18e3c88ea082dda5f74bbb5257902b9df55d885a7cf223bac1ff3"
+    },
+    "train-025-pure": {
+      "audio_sha256": "750f73b3d1e288fb8b4c8cce8bee8caf2c486247ac14bb62db1481420631da14",
+      "record": "records/52f11c4ee31c1f2809f208b076db009a90bf778377a5c8ba1fe15cd876c4c310.npz",
+      "record_sha256": "782ce6886256b5a7cea6a3232d4a421143d6b8304de009f928bfb8ed7915087f"
+    },
+    "train-025-mixed": {
+      "audio_sha256": "9cf331be3666ef2295584d3806d5dc0f3598c932a16b0a757558fabe9befd380",
+      "record": "records/95796e3fcbeb95af111161f15b0ca135732583e14666d88327799932a078a7f7.npz",
+      "record_sha256": "09d32755362f454eb27eb356c29d28b987f968b8f6358b333833cfc831a634b5"
+    },
+    "train-026-pure": {
+      "audio_sha256": "7ca7eabcedcf09a27286229504cf49944389d05a313b7818b230279239fb881f",
+      "record": "records/0755980b5a2b4bf2c8e92aac88f5b1c9efad56a5edb866c03093594df8901f4c.npz",
+      "record_sha256": "def9b696e17a39248a8c9b121dcaf98ccb607cd04a72ba72c11e4086f424fe6f"
+    },
+    "train-026-mixed": {
+      "audio_sha256": "87a5f0130040d5f5f3d9218988f524068cf904b3a5cc96ae82cd5f4e638a3f2e",
+      "record": "records/7739cda860e8dbc89fe0ff6ec6e6f30a42cfc50fa4259a1d40cb4e0f1f05304b.npz",
+      "record_sha256": "4c8842b3beb9b62e2e19570223cd84f73c8222fa5d95a06ce1db9c44ede6c93d"
+    },
+    "train-027-pure": {
+      "audio_sha256": "196ac497b38fb287257d183f7a4ebcd9f258d5fe3a571a8f348ed4dca99eb5f6",
+      "record": "records/10fa5ef654f44527f99606ed41cb6e15bc7c235331ee1494ab4d5badb711e062.npz",
+      "record_sha256": "d4c198facb1e1c7d418f8b6de57cdd2efb4d8ff4a0ddadf7d8736e6c94e42ae0"
+    },
+    "train-027-mixed": {
+      "audio_sha256": "a552d6f20df023b384e9bdb8ea2d4c91499c31b149d1dfdaf11260faa728510e",
+      "record": "records/0d916648cba06aa6ea369dd5dcb841dac9398ce15e1fe5c946731068bdf29b21.npz",
+      "record_sha256": "5bf0dcd33c0cce56c4e265833ac4de32880530359ec2395af9fc1b2b4d8798bc"
+    },
+    "train-028-pure": {
+      "audio_sha256": "ae469729fe6881f6b5dd170e12e84ecf407a5c246e38ddbdee4489e73f5a4540",
+      "record": "records/5c4242ddb00dc82e868a345c79b7ad6153f4dbbcf51da131e3f8fd5f0a83f993.npz",
+      "record_sha256": "a89f6360b623ab4f14d3532dceb599dea47e4358124b95b38b5e3c4c8e6f5c37"
+    },
+    "train-028-mixed": {
+      "audio_sha256": "ddf575a3002374e35be845236db9c4f232629dff4e69b3505955b2faf1bc8947",
+      "record": "records/d44c8d957a2554d29e85fa918e7347ca11ddba6973c33e47993207c348d2a61b.npz",
+      "record_sha256": "c7777d3e550dc5a02c33ac1f4b19e7233b6a6b89e636ff054c0512bc5b6a0983"
+    },
+    "train-029-pure": {
+      "audio_sha256": "d92df5758655311534efbbc9194a5f08e83300ab44e3053e01ea6a747a418c3f",
+      "record": "records/f9192662585dee0556337c9ba9d9de85d5337cc331f9d27c6c56730253fd0005.npz",
+      "record_sha256": "ee5bc63dc5ad4488a8cf4f3370f0ea0cc687a3d567a0bbb5e58b54f27b30654e"
+    },
+    "train-029-mixed": {
+      "audio_sha256": "afc0bf656dc7535c631fe968c19ad82328f47fb56d54b8e9dae394eaeffca6a7",
+      "record": "records/cfb7657f5ef47d87656e8778e9bd84fc57aa67721eb4cc2bd63bee8bf05bb99f.npz",
+      "record_sha256": "0e81d51b1651519513c894e732c724ff548bfd30dd289721b4368a41c1ca7744"
+    },
+    "train-030-pure": {
+      "audio_sha256": "92527761b0afa06402b825d62d34d5b9c679421b259d4f9425a62bf6b453a9a1",
+      "record": "records/56723f89f823d71867b7dca75cb467eb48a40043a71f87db6ca9a8ba7909e262.npz",
+      "record_sha256": "524ac10ca7a48d4996caf9bc2699169bc2f339e5c8c118939f77a4075193b3c3"
+    },
+    "train-030-mixed": {
+      "audio_sha256": "47a60326944681a788dc67e795d58bdd06e091649cfbd90f271ed037def5ac88",
+      "record": "records/f6b9b9bfd60caeb5445d2c3107673c6fa3bd449577b85a3967706a6adfccc1f7.npz",
+      "record_sha256": "804d73527f05baf92a69d3c9c6d40aae197709ced8f76fe577326529b354fea9"
+    },
+    "train-031-pure": {
+      "audio_sha256": "f5a9e2756be7751f6f21e54dfba6d7e20b3f1d243e815845517d1f2b76107191",
+      "record": "records/fc958f65586a4b85405195db914451fb7d0658e85e143f03ce2e3eedcb40ba73.npz",
+      "record_sha256": "65a8ad6b9f0fdb1bd734bf58955057936ff7389081d563ba1567651ca806832d"
+    },
+    "train-031-mixed": {
+      "audio_sha256": "1f15129d56cbc5c6d75c2fb6237df7152324f7617600eb3ed12a60c374857b8e",
+      "record": "records/2756f93869c18bf47c0eaed647ff7238d88c6eae52f69f77960634cf3864cc72.npz",
+      "record_sha256": "284004bc150a812e3c5e5e5544ad4c0365ed5bf4ca9953b3d967e8c8eef3eb12"
+    },
+    "train-032-pure": {
+      "audio_sha256": "11794050cba0660dba88dd7c9b91c136dd70dfb95d535b6ef0e408d5ff06d26a",
+      "record": "records/60ec71581b8faaf21396f00b17e4ec65fcb34afa452e15df98fa44e8aa85c8df.npz",
+      "record_sha256": "86d9a6b1ac6e7bd1286658ff63f2cba2287b3b4e2e6b32ff71c34226e6da0dbe"
+    },
+    "train-032-mixed": {
+      "audio_sha256": "c2c12b0ca8f7710660cde776c7ace3202ab73fa07bc6bb810eec1dea68592efb",
+      "record": "records/9551cbec83da1ea20f117db1a8f343f184d30c34b16b2957b52b9dc86d1f53d9.npz",
+      "record_sha256": "3789e92f78bb731f9aa59f8edcf839dcfb67960200ab5cbd75bb92780e90f088"
+    },
+    "train-033-pure": {
+      "audio_sha256": "644cfc837abe4938f1f564f21721605e89b8123f3b1549184703193b3445884a",
+      "record": "records/1be3dfd5ab80c636a07a4aa31db86dc263f8cadf300bf6cd0d21c091e79896ca.npz",
+      "record_sha256": "9ca7c94883154a877f21e9ee4177f16b3915ecdceab170549f9d9e4bc5bd5a1d"
+    },
+    "train-033-mixed": {
+      "audio_sha256": "e9743b223e5ae824f16365dc2191bf790f236e548c6491d357b8c17443db25bd",
+      "record": "records/2ea21139f37f3a65bc806e64725adcf478c317eb88a9b413e3bce87df44c574a.npz",
+      "record_sha256": "3e5c9f584ef5617196fc06e664f0c6fa8de69961344fc06dee220a6d7b821aa7"
+    },
+    "train-034-pure": {
+      "audio_sha256": "456105c249654caff5cfde6c55e167ce4e11a245b5f78169418d564515aec1e6",
+      "record": "records/0b90e73f285f14978dcaba681ff4ac4eeab344e5fd94d24f2a4f6f1ea39b74da.npz",
+      "record_sha256": "eaa5570e2a1c8a2b108c4c894bb7f7f7ec52f9ff925dc96bce8c32f849cf4d0d"
+    },
+    "train-034-mixed": {
+      "audio_sha256": "8e1eb145d45d17a09fcc0b35f46d6a1ae6d386dd10d514ddb3e1ca1a12148502",
+      "record": "records/24e135c1803c039c69cef91252bcc1eeaf99dd90d30437be86a305ac9c7e4b7c.npz",
+      "record_sha256": "9abae701298c024dbca53a3004b1fa195b9872a3f056b0379ad42c43a5e2040d"
+    },
+    "train-035-pure": {
+      "audio_sha256": "efcfc4bc87f9c1eededb4021c8245e0ea854ea50f9c286fd1c4506b6aaca0566",
+      "record": "records/4486b22d79906cfdd621160f6aecd0b1f3176d91454827c80f7de5de86fbdb4a.npz",
+      "record_sha256": "b26fe377a9cda113295710b4075b690ac24a7ba2fd0b4bd20308a7b78fd69b89"
+    },
+    "train-035-mixed": {
+      "audio_sha256": "2ef809ca29d23d2253fac97421c73e9d59bed2f8f2a7150017e773d9cc0af32e",
+      "record": "records/4d2fd52473542233ed053e30790b1232be71e73066cb8539f7040db5b8635dcb.npz",
+      "record_sha256": "248b149066feafc2e807d03373afa3f7fdcf847043198094353039d7942335d8"
+    },
+    "train-036-pure": {
+      "audio_sha256": "298a53fccbd79053928e85221867fc58885264b2d80c00d8f8b556d8287af773",
+      "record": "records/ac4cd51b9f4c01e21e9ef0fd0ad45f322aa5b4a68cd3480dd9144ef7fd4a6c39.npz",
+      "record_sha256": "feda5fa12bf916be97e21b85df3928c491acc409e0926e753800109ab6d39d29"
+    },
+    "train-036-mixed": {
+      "audio_sha256": "2ec819b849e4e54f9299e586728d187780a3063ce760c399107d02ae8fc963e1",
+      "record": "records/a91b00faccbc8fa30ccdf3705e8d360ae91def304610e451ad7ac3b696d60d56.npz",
+      "record_sha256": "92db9b79f4f8e2ff56d8278079eae0846453809552b9afc81e2751aa58aa47db"
+    },
+    "train-037-pure": {
+      "audio_sha256": "ebafa6ffac559542441909657253565743653149fc60f5e10f5a44d6da7d52a7",
+      "record": "records/e2e12bfc4ee23f68fbc3da931f6898d61685fdfbc12f948e3d3a3a6f562a8b9d.npz",
+      "record_sha256": "5b82f641b7897078d7aeca200046b169fcd0b53c72c23b7b99aa72a4bef39eec"
+    },
+    "train-037-mixed": {
+      "audio_sha256": "ad259149cefc1ab521c1982f87f9987176a475f7a21a053bb321e4d8660c82a7",
+      "record": "records/9ac5d99d1826e4038a499c8b761608bda42aeee3e6e2337c4ffce401ef227ad0.npz",
+      "record_sha256": "d36ae6b2341ff0cdf82681b22f0728805d1ef7b5ffc8ab5ddcff1f35b295f56d"
+    },
+    "train-038-pure": {
+      "audio_sha256": "63ba4bb00613c2769a08e92a5d64da2e335983a2300cb2ffa3961bafb18c9f00",
+      "record": "records/0a5ae078711cd7ce77534cb22b641690313ead70ee97b25ffe2caea55cf13c41.npz",
+      "record_sha256": "413f88394ce6a5da885f4eb849098bc360ecab9906dcc7d87b88be74188cadb4"
+    },
+    "train-038-mixed": {
+      "audio_sha256": "98ba48b98806d32a3ca0b07a935378af42fe742e76ad042733ecd9550db2d689",
+      "record": "records/a7be5a343ffcdf2d61f5815a8e43e8048b596fc7b8f009a39cd1a3eab03a53d8.npz",
+      "record_sha256": "b0d86669b175bbaa5d0b12cba5f39fdb1ee45a6e73702ae95b0142d3cc69c980"
+    },
+    "train-039-pure": {
+      "audio_sha256": "40a16c7255a14c9866e7540dff7b090ca151a013c7872c066d35617f3ad13ba6",
+      "record": "records/3ca1e90bc23286c88afc31683c889122ae3605c2a345dab2ac8d699502dbc355.npz",
+      "record_sha256": "4276d484c0edbe5309816f6268f8f1ecf10df9a321f2d4bc7f45c0695c28a844"
+    },
+    "train-039-mixed": {
+      "audio_sha256": "b8d21359ca107a873b9e86d38d7d130eab6178d978c4eb57bec423d395b2d249",
+      "record": "records/1fbdca36e70af920fe52a99babb8015fbcbb94bf82186f94f7a5edd5bf20d032.npz",
+      "record_sha256": "8b468e8b02fb29c75b792b7c23c2825cfda622c1c67c4b5fe2af0e4dca3bab08"
+    },
+    "validation-000-observed": {
+      "audio_sha256": "c8c2eb4bbdb8d3dbc80295bba3fc3c702878c5cdf16d68e8bd1446401f6c05f6",
+      "record": "records/1d72255439cc5f820be673eaa472a7b150d7ef5b5d8703919a774ddbe4307771.npz",
+      "record_sha256": "9ab7c8ff0648bf5de50bb9c30b9a287de6ebedd1103c696a34336a2c3073bb7f"
+    },
+    "validation-001-observed": {
+      "audio_sha256": "bcde2c86082b3136e50f329dc735e070547e95c650754eabc6e072385196eb8a",
+      "record": "records/29649f60c321fe59318af528c015e50d1bc70e87584cc19667e67efc844eec6f.npz",
+      "record_sha256": "cdc86003bcd718b16f3576fac7710bad4a5050ff8d1139d73af25887edf9fca1"
+    },
+    "validation-002-observed": {
+      "audio_sha256": "685ee584ac64d09e63a5b1929c2cadeaf6febbccab4c0a869159e02b395c52b5",
+      "record": "records/a014d846e6689148404bc25364b6a5e964fec0af7e423e725b991a7f0da491d6.npz",
+      "record_sha256": "dc8b3b0ad0ebf2d177b0f66879024ac62abaf747f7e5dad2b751d23d1e1f3d84"
+    },
+    "validation-003-observed": {
+      "audio_sha256": "1ee84acdef1b2e64a32d5d4b32195a28a353a15f225c1cab0b641133e41320c3",
+      "record": "records/41774fbe812072e8e701e89bbe6d0b2f9c2df54e4044790cad966b192e5d74a7.npz",
+      "record_sha256": "4c1a052151d4d34db16699d1b1ef9cb9a9eec6ac398225cb0470512490c9983c"
+    },
+    "validation-004-observed": {
+      "audio_sha256": "ea7ee331102e325d32594b30fd08ffd26600949cc7410f40e6f0bb71c286acaf",
+      "record": "records/681620e4eadd600ccfc8f68f869a2a7e3bfbf4de46911b93f272c496c74efc88.npz",
+      "record_sha256": "23dbcf8ffd52ffc8642fe8459b9e3876e83b5fed212cd4039502070c4a9aef8b"
+    },
+    "validation-005-observed": {
+      "audio_sha256": "f9262f66ac9ae6c9847076b47e447bc13e324d91d460c822ac0df00c0db989f5",
+      "record": "records/b7de0d7dd352817f4aca18ae82906656074a43d41e850ff7dd8f99fc95c52379.npz",
+      "record_sha256": "87fb337409d9c7571d006a88578c68dfcc84f751914c83b9b10ed25a87a42b8b"
+    },
+    "validation-006-observed": {
+      "audio_sha256": "801ccbd1626f85d4e47cb444b8fc2b3e996a03b1a86c1a5526cc897e78d02c00",
+      "record": "records/91d5a867c3c5cfc3939bcfa12903f47e07879076d203d0e57ca560614634bfe9.npz",
+      "record_sha256": "518a2511d7c1891a47272f51a33d1c244d44318efb0b7b8dce95da5c0a9bffdf"
+    },
+    "validation-007-observed": {
+      "audio_sha256": "9667e8844c60b0890579dc727354f1aa0ae1422473eda67f341990bb63e176c8",
+      "record": "records/061557246763f4c854c3d2ef93aaeaef18cfe083aa429135c505c0819732fb12.npz",
+      "record_sha256": "e7bde7ccc831c8034cd81d140cfafc940e7e6ea17743e34337d1e9a33229a74b"
+    },
+    "validation-008-observed": {
+      "audio_sha256": "a52772f437ef87cda4316df2cff5a1b449115d22ef948f053b281a916ae0bc86",
+      "record": "records/1e808551669ca2c749c28bfbe429100e5630cc5bda79e75b1b27a33397ae89a7.npz",
+      "record_sha256": "cd066de9aeadba90ecb3070e3bd6391131d8b71cb47e38c2bd7d53b9400bafe8"
+    },
+    "validation-009-observed": {
+      "audio_sha256": "449f8fc9c2d487d14dd014d56eabd07b5fa8294b5a93aeeedd26b3ae2600e456",
+      "record": "records/150d960482f5898be6b26f152704675aaf2dd5df72a0df6086eca2f97c15b1bb.npz",
+      "record_sha256": "379c699e39d64f385b3e03a15104db0d56c33bda7ca8cf2315226619040c1c89"
+    },
+    "validation-010-observed": {
+      "audio_sha256": "2514122f4e08b8930dfb1bcebb5b60a1bd290c5a8ca78d95f294528f3df10880",
+      "record": "records/2cb10eb4efc8931df47f186828545bfdf9cd9c875aaa00585ec85d5e2e711df2.npz",
+      "record_sha256": "dd8f5e304eef46e634f74505cc1fc765072546eddfa8cce166b7ebee377b69ed"
+    },
+    "validation-011-observed": {
+      "audio_sha256": "5ea50d61ede303ddf9920340758a879fab9ae247b691b3a7bfc9e53d6d050174",
+      "record": "records/aaa9f3e3a1f40f4888c33c6c5b79d807fea8db4c30d2cca929b73ac284c14a82.npz",
+      "record_sha256": "3739c5d1d4e5f874ce5443295479468b205cd6d4a4d892c940bcbd896e01748a"
+    }
+  }
+}

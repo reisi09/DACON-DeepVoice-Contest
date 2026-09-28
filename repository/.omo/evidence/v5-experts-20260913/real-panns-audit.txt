@@ -1,0 +1,14 @@
+Scenario: actual trusted PANNs Cnn14 checkpoint forward, gradient, optimizer ownership and update on CPU.
+
+Assets: /tmp/v5-panns-validation/model/panns extracted from baseline_original/baseline_submit.zip; no GPU used.
+Invocation: .venv/bin/python inline audit loading load_expert('presence', Path('/tmp/v5-panns-validation'), ..., 'cpu'), forwarding one deterministic 64600-sample waveform, backpropagating squared two-logit loss, and applying SGD(lr=1e-4) to parameter_groups(model).encoder + head.
+
+Binary observables captured from the completed process:
+logits_shape=[1, 2]
+embedding_shape=[1, 2048]
+trainable_parameters=79677890
+excluded=('cnn.spectrogram_extractor.stft.conv_real.weight', 'cnn.spectrogram_extractor.stft.conv_imag.weight', 'cnn.logmel_extractor.melW', 'cnn.fc_audioset.weight', 'cnn.fc_audioset.bias')
+updated=('cnn.conv_block1.conv1.weight', 'cnn.conv_block3.conv1.weight', 'cnn.conv_block6.conv1.weight', 'cnn.fc1.weight', 'head.weight')
+Process exit: 0
+
+The excluded spectrogram/log-mel tensors are the intentionally frozen analytic frontend. fc_audioset is the unused pretrained 527-class AudioSet head replaced by the ordered two-row presence head.

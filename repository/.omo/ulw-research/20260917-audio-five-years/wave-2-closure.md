@@ -1,0 +1,20 @@
+# Targeted expansion closure
+
+Two rounds followed initial survey. Wave1 cross-checked MixFake/SingGraph,MusicDET/CoMoE/lowbandcode,andAntiLoRA/GRPO. Wave2 resolved referencecode/publicranks,metricgranularity andpaperrevisiondifferences,plusdatasetgroupingandnumericalcodeconcerns. Source-onlyreviews,noGPU.
+
+- A:VIB/ElasticMargincodeunavailable;W2V-ASDGsplitcannotcertifyleakageorofficial-equivalence;layerfusionJune2024issue.
+- B:GRPOperinputvsbatch/currentvsoldpolicyunresolvedimplementationcontract;SLSfulltextblocked,sourcechecked. LoRA+KLourproposalnotpaperreplication.
+- C:TDLv2supersedesv1;TemporalPyramidutterancevsframe;DeePenaccnotEER;TRACElabelcalibration/fixedthresholdmetric;otherlocalizersdeferredsamefamily.
+- D/M:MusicDETActNormisolatedCPUdefect;real-onlyselectionlimited;CoMoEnocode;DeezerNMFtransductive/fullbandexcluded.
+- E:remainingconferenceabstract/accessgapleadsnotrankedmethods;no16kbenefitfrom44.1kupsamplingclaim.
+- F:latestASV5v3stillT32unknownandUSTC12vs6conflict;exactIntemacodenotlocated;primaryrankfixed.
+- G:ATADDvalidranksNKU5/sonomsl3;pairedMSE/GroupDROorganizersummarynotisolatedgain. NewTFCLfullpaper+actualpairedcodeprovidesobjectiveablation;paper.3(Lt+Lf)vslauncher.3Lt+.09Lfandevalfrontendtrainmodeissues. MT/GRLmacro/pooledoppositemovement.
+- H:2022KDLrankandrepomappingnowverified;2026rank1sourcepackageinventory;remainingtopranksduplicativefamilieswithreaddepthexplicit.
+- I:SAFE/DACON/SynAtt/Inclusionsemanticsbounded;unreleasedwinnersremainaccessgaps.
+- J:AADofficialpartitionpoolingandREALsourcegroups;DeepFakeVoxcounts/releasegaps;Reliabilityabstract-onlydoesnotjustifypruningtrainingexamples.
+- K/L:rootreran93connectedcomponentsand160single-windowproofs. Testpanelsaredevelopment-exposeddiagnostics;notofficialimprovement.
+- N:reusedoldagentreturnedstale/incompleteclaims,noexternalread. Rejectedthatoutput;rootplusAindependentlyreviewedconstraints/finalsynthesis. No falseADSweightconflict or residualmissingclaimretained.
+
+Convergence: no unresolved lead necessary to support an adopted recommendation remains unchecked. Public-access/reproduction gaps are explicitly unresolved, and duplicate/out-of-scope mechanisms are excluded rather than claimed fully read. This is bounded saturation of the decision-relevant public evidence, not an exhaustive enumeration of all papers/notebooks. Noauthorcontactortrainingusedtoclosegaps.
+
+FinalskepticAapprovedrecommendationlogic/evidenceboundaries;scopewasnotindependentreauditofall167sources. Known2022rankcorrectionappliedbeforefinal.

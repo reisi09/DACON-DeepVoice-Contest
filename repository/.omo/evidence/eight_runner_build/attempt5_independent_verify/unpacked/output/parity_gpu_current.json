@@ -1,0 +1,86 @@
+{
+  "all_cases_passed": false,
+  "atol": 0.0003,
+  "case_count": 3,
+  "cases": {
+    "fake": {
+      "absolute_errors": [
+        0.0008473396301269531,
+        0.0009770393371582031
+      ],
+      "actual_logits": [
+        5.216914653778076,
+        -5.307145118713379
+      ],
+      "allclose": false,
+      "expected_logits": [
+        5.216067314147949,
+        -5.306168079376221
+      ],
+      "max_absolute_error": 0.0009770393371582031
+    },
+    "mixture": {
+      "absolute_errors": [
+        9.107589721679688e-05,
+        0.0002903938293457031
+      ],
+      "actual_logits": [
+        -4.738183975219727,
+        4.779520034790039
+      ],
+      "allclose": true,
+      "expected_logits": [
+        -4.738275051116943,
+        4.779810428619385
+      ],
+      "max_absolute_error": 0.0002903938293457031
+    },
+    "real": {
+      "absolute_errors": [
+        0.0065348148345947266,
+        0.006031036376953125
+      ],
+      "actual_logits": [
+        -3.9105923175811768,
+        4.035076141357422
+      ],
+      "allclose": false,
+      "expected_logits": [
+        -3.904057502746582,
+        4.029045104980469
+      ],
+      "max_absolute_error": 0.0065348148345947266
+    }
+  },
+  "completed_unix": 1789652560.7912571,
+  "device": "cuda",
+  "gpu_name": "NVIDIA H100 80GB HBM3",
+  "maximum_absolute_error": 0.0065348148345947266,
+  "policy": "current",
+  "precision_after_model_init": {
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "float32_matmul_precision": "highest"
+  },
+  "precision_before": {
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "float32_matmul_precision": "highest"
+  },
+  "precision_configured": {
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "float32_matmul_precision": "highest"
+  },
+  "python": "3.11.13",
+  "python_executable": "/root/fullft8/.venv/bin/python",
+  "python_prefix": "/root/fullft8/.venv",
+  "rtol": 0.0001,
+  "started_unix": 1789652556.8162253,
+  "status": "failed",
+  "torch": "2.7.1+cu128",
+  "torch_cuda": "12.8"
+}

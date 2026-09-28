@@ -1,0 +1,62 @@
+{
+  "locked_epoch": 1789725668.3786752,
+  "checkpoints": [
+    "mean_41.pt",
+    "mean_42.pt",
+    "mean_43.pt",
+    "mil_41.pt",
+    "mil_42.pt",
+    "mil_43.pt",
+    "ast_41.pt",
+    "ast_42.pt",
+    "ast_43.pt"
+  ],
+  "selected_updates": {
+    "original831_mean_41": 72,
+    "original831_mean_42": 96,
+    "original831_mean_43": 24,
+    "mean_41": 72,
+    "mean_42": 48,
+    "mean_43": 96,
+    "mil_41": 96,
+    "mil_42": 72,
+    "mil_43": 72,
+    "ast_41": 72,
+    "ast_42": 96,
+    "ast_43": 96
+  },
+  "control_checkpoints": [
+    "original831_mean_41.pt",
+    "original831_mean_42.pt",
+    "original831_mean_43.pt"
+  ],
+  "winner_by_dev_only": "mil",
+  "dev_selection_keys": {
+    "mean": [
+      0.08777777777777779,
+      0.22046850898036113
+    ],
+    "mil": [
+      0.07888888888888887,
+      0.20163943510654705
+    ],
+    "ast": [
+      0.1122222222222222,
+      0.31589599939014895
+    ]
+  },
+  "checkpoint_sha256": {
+    "mean_41.pt": "6ef5583964271a7b0c6d35c2c2ee872155436ccbb394ecdded2cad430a5be422",
+    "mean_42.pt": "3f8667d53ff44c3e87af90612e1a71e8f5514e0b7f20fffe925dc3aa753796a7",
+    "mean_43.pt": "2e1b8e53c99e51183e23c7970134abd957843fc9a2fffb300184dbfa2bb7a358",
+    "mil_41.pt": "7f3fd783c8965469cd85ee36b339ce6d32cf410492de49e8c4203e815e974801",
+    "mil_42.pt": "a181651c8e6f4f6d498edb0960ede8310bc22b07a842ffdf63f7d0bef757394f",
+    "mil_43.pt": "92b128eca4ba5a44be61dd9ff47b336bde4aa550145f88842e684329d5dd96a4",
+    "ast_41.pt": "d175c89a531db2c7d72721cd48d80291124539712a5bb21d75e6204672c631f2",
+    "ast_42.pt": "b54844a6dbdb71b2c5a226c6ae7be9ac0162ee83bfc46ea0137a241f7fbceed9",
+    "ast_43.pt": "bfd0416a1c41b99603e060a77b96fb7faf104301fe3cf81e0fd22406a36371a6",
+    "original831_mean_41.pt": "ac4a56ff5961cf990ca191f9bdc33a3ce08e8e8ee5b6a847d5740964e6b9283a",
+    "original831_mean_42.pt": "64e549c8ae99a7c4ace922731ebd72680af98c1ea09daebe4746426671f29842",
+    "original831_mean_43.pt": "4fc9f98feb0d35b1b9e72354e4b9eab9801277ebb4583dfc140ccbba075ad9a5"
+  }
+}

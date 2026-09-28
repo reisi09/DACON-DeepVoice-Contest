@@ -1,0 +1,49 @@
+{
+  "environment": {"device": "cpu", "python": "3.11.15", "threads": 2, "torch": "2.7.1"},
+  "models": {
+    "sonics": {
+      "total_parameters": 17172493,
+      "trainable_parameters": 17172493,
+      "encoder_parameters": 17172108,
+      "head_parameters": 385,
+      "optimizer_parameter_identity_exact": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "loss": 0.8205533623695374,
+      "representative_gradient_max_abs": {
+        "encoder.transformer.blocks.0.": 0.07710085064172745,
+        "encoder.transformer.blocks.6.": 0.016121460124850273,
+        "encoder.transformer.blocks.11.": 0.03694502264261246,
+        "classifier.": 2.2559478282928467
+      },
+      "representative_update_max_abs": {
+        "encoder.transformer.blocks.0.": 0.0007710084319114685,
+        "encoder.transformer.blocks.6.": 0.00016121380031108856,
+        "encoder.transformer.blocks.11.": 0.00036945194005966187,
+        "classifier.": 0.022559478878974915
+      }
+    },
+    "ast": {
+      "total_parameters": 86188033,
+      "trainable_parameters": 86188033,
+      "encoder_parameters": 86187264,
+      "head_parameters": 769,
+      "optimizer_parameter_identity_exact": true,
+      "missing_gradient_parameters": [],
+      "zero_gradient_parameters": [],
+      "loss": 0.7299249172210693,
+      "representative_gradient_max_abs": {
+        "backbone.encoder.layer.0.": 0.03592794016003609,
+        "backbone.encoder.layer.6.": 0.15860150754451752,
+        "backbone.encoder.layer.11.": 0.28404101729393005,
+        "head.": 1.1081805229187012
+      },
+      "representative_update_max_abs": {
+        "backbone.encoder.layer.0.": 0.00035928189754486084,
+        "backbone.encoder.layer.6.": 0.0015860162675380707,
+        "backbone.encoder.layer.11.": 0.0028404109179973602,
+        "head.": 0.01108180545270443
+      }
+    }
+  }
+}

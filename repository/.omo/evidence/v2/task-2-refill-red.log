@@ -1,0 +1,16 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_first_valid_refills_after_more_than_four_rejections ___________
+
+    def test_first_valid_refills_after_more_than_four_rejections() -> None:
+        # Given SHA-ordered candidates with five invalid decodes before enough valid rows.
+        candidates = list(range(30))
+        # When selection runs in bounded parallel batches, then it refills through later candidates.
+>       chosen = sources.first_valid(candidates, lambda value: None if value < 5 else value, 20)
+                 ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'prepare_v2_sources' has no attribute 'first_valid'
+
+test_prepare_v2_sources.py:45: AttributeError
+=========================== short test summary info ============================
+FAILED test_prepare_v2_sources.py::test_first_valid_refills_after_more_than_four_rejections
+1 failed, 2 deselected in 0.09s

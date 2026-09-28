@@ -1,0 +1,90 @@
+{
+  "winner": {
+    "name": "S_simple_crop",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 128,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.2,
+      "crop_probability": 0.7,
+      "feature_mask_probability": 0.0,
+      "simplified": true
+    },
+    "music_eer_mean": 0.30059644293309584,
+    "music_eer_std": 0.012808291061874769,
+    "balanced_bce_mean": 0.5690876950578865,
+    "candidates": [
+      "S_simple_crop_seed41",
+      "S_simple_crop_seed42",
+      "S_simple_crop_seed43"
+    ]
+  },
+  "summaries": [
+    {
+      "name": "D_deep_crop",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 128,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.05,
+        "seed": 41,
+        "dropout": 0.2,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.0,
+        "simplified": false
+      },
+      "music_eer_mean": 0.30822065689687744,
+      "music_eer_std": 0.007366292001673476,
+      "balanced_bce_mean": 0.5576661453125719,
+      "candidates": [
+        "D_deep_crop_seed41",
+        "D_deep_crop_seed42",
+        "D_deep_crop_seed43"
+      ]
+    },
+    {
+      "name": "S_simple_crop",
+      "recipe": {
+        "epochs": 300,
+        "patience": 20,
+        "min_delta": 0.0001,
+        "batch_size": 128,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "nsynth_mass": 0.05,
+        "seed": 41,
+        "dropout": 0.2,
+        "crop_probability": 0.7,
+        "feature_mask_probability": 0.0,
+        "simplified": true
+      },
+      "music_eer_mean": 0.30059644293309584,
+      "music_eer_std": 0.012808291061874769,
+      "balanced_bce_mean": 0.5690876950578865,
+      "candidates": [
+        "S_simple_crop_seed41",
+        "S_simple_crop_seed42",
+        "S_simple_crop_seed43"
+      ]
+    }
+  ],
+  "criterion": "Three-seed tune EER mean, then population std, then BCE mean, then name",
+  "test_used": false,
+  "frozen_at": 1789463439.6957517,
+  "evaluation_candidates": [
+    "D_deep_crop_seed41",
+    "D_deep_crop_seed42",
+    "D_deep_crop_seed43",
+    "S_simple_crop_seed41",
+    "S_simple_crop_seed42",
+    "S_simple_crop_seed43"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "scenario": "retry bootstrap upload last with full readback",
+  "invocation": "upload_and_readback(redesign_full_refit_run.sh, redesign-full-20260917/)",
+  "binary_observable": {
+    "sha256": "edd3b99b29acf2d04e266351769945a33034339b276837724319c654f7dc4e63",
+    "local_sha256": "edd3b99b29acf2d04e266351769945a33034339b276837724319c654f7dc4e63",
+    "roundtrip_match": true,
+    "uploaded_last_before_restart": true
+  },
+  "artifact": "_workspace/eight_h100_20260917/retry_bootstrap/redesign_full_refit_run.sh"
+}

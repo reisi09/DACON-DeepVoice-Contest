@@ -1,0 +1,80 @@
+{
+  "manifest_sha256": "db1bffe6a969571db8eb999ca79548956fd2a0e7ee1e6da2ce57b0710a4175b9",
+  "protocol_sha256": "6d42773c0f6f5c4ac3cd7697cf7b8279708ea9f40f8435e52f1d0772c1eeed2c",
+  "seed": 41,
+  "diagnostic": false,
+  "input_rows": 53,
+  "accepted_sources": 51,
+  "generated_rows": 24,
+  "split_rows": {
+    "train": 63,
+    "validation": 6,
+    "sealed": 6
+  },
+  "independent_source_groups": {
+    "train": 36,
+    "validation": 5,
+    "sealed": 5
+  },
+  "strata_counts": {
+    "singing::fixture/provider-0:": {
+      "train": 1,
+      "validation": 0,
+      "sealed": 0
+    },
+    "instrumental:1:fixture/provider-3:fixture-generator": {
+      "train": 10,
+      "validation": 1,
+      "sealed": 2
+    },
+    "speech:0:fixture/provider-0:": {
+      "train": 9,
+      "validation": 2,
+      "sealed": 2
+    },
+    "instrumental:0:fixture/provider-2:": {
+      "train": 10,
+      "validation": 1,
+      "sealed": 1
+    },
+    "speech:1:fixture/provider-1:fixture-generator": {
+      "train": 9,
+      "validation": 2,
+      "sealed": 1
+    }
+  },
+  "paired_state_slots": {
+    "skipped_sample_rate_mismatch": 0,
+    "train": 12,
+    "validation": 0,
+    "sealed": 0
+  },
+  "unknown_labels": {
+    "FILE_FAKE": 1,
+    "VOICE_FAKE": 38,
+    "MUSIC_FAKE": 26,
+    "VOICE_PRESENT": 0,
+    "MUSIC_PRESENT": 0
+  },
+  "lineage_overlap": {},
+  "verified_pairs": 12,
+  "quarantined": [
+    {
+      "line": "2",
+      "ID": "false-claim",
+      "reason": "VOICE_FAKE claims authenticity for an absent component"
+    },
+    {
+      "line": "3",
+      "ID": "corrupt",
+      "reason": "audio decode failed: /Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/data-fixtures/test_sealed_panel_identity_sur0/relocated/corrupt.wav: Error opening '/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/data-fixtures/test_sealed_panel_identity_sur0/relocated/corrupt.wav': Format not recognised."
+    }
+  ],
+  "sealed_panel_identity": "ad2a4be053526346a889cfcf97fcdf225b3622e11d75585c2b5ed31be9e5070c",
+  "coverage_gate": "unmet",
+  "split_manifest_sha256": {
+    "train": "b1b5d7cdaf8c21081c8bdeff05d60fa2a3f94cb44c5a67744fde217ce506d26f",
+    "validation": "27b1de052f4f5328e5aa620c4d01d7900f420ce4deb41ec8e8eaeb23dc230fee",
+    "sealed": "74f432ef609182a50753676673f1c9c829cc3c4ceaafa4112b64e583645e2d73"
+  }
+}

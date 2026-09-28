@@ -1,0 +1,35 @@
+{
+  "run_id": "run-20260916-051256",
+  "started_at": 1789535576,
+  "workspace_slug": "wsp-fu3a51jw77ln",
+  "name": "fullft8-h100-20260916-051256",
+  "state": "stopped",
+  "phase": "standby",
+  "root_volume": "clustervol-qgze68bffy6l",
+  "object_volume": "objvol-a5gxdg7er70i",
+  "remote_prefix": "fullft8/h100x1-20260916/runs/run-20260916-051256/",
+  "hourly_compute_credits": 2.98,
+  "training_limit_hours": 15,
+  "monitor_pause_deadline_epoch": 1789593176,
+  "max_compute_credits_plan": 48,
+  "ui_interaction_allowed": false,
+  "last_verified_utc": "2026-09-16T08:18:49.043974+00:00",
+  "stage": "complete_download_verified_gpu_stopped",
+  "automation_id": "h100-15",
+  "retry_reason": "EAT cold local cache lacked transitive model_core.py; fixed and all pretrained GPU preflights passed",
+  "preflight_models": [
+    "htdemucs",
+    "mert",
+    "eat"
+  ],
+  "throughput_revision": "batch4_workers4",
+  "throughput_changed_trials": [
+    "05_S1_EAT_fullft",
+    "06_S2_MERT_fullft",
+    "07_S2_EAT_fullft"
+  ],
+  "throughput_deployment": "batching_deployment.json",
+  "gpu_resource_stopped": true,
+  "stop_verified_epoch": 1789546729.043974,
+  "automation_status": "PAUSED"
+}

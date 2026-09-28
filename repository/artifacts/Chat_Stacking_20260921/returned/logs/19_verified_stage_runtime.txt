@@ -1,0 +1,26 @@
+$ /opt/pyvenv/bin/python -m dacon_stacking stage-runtime --source-root /mnt/data/stacking_stage_cpu_check --return-root /mnt/data/DACON_Stacking_Return
+{
+  "patched_file_sha256": "85007b08922c31a5ab11f4549a86775ddaa7db46f4bc0d128b467b475af8ebf3",
+  "new_manifest_sha256": "7179eee3442ae0e0e8f325f7800ab8d4f0990bea78285e54099b738ed6f9b464",
+  "missing_package_members": [
+    "model/assets/baseline/model/df_arena_1b/.gitattributes",
+    "model/assets/baseline/model/df_arena_1b/.gitignore",
+    "model/assets/baseline/model/df_arena_1b/pytorch_model.bin",
+    "model/assets/baseline/model/htdemucs/955717e8-8726e21a.th",
+    "model/assets/baseline/model/htdemucs/htdemucs.yaml",
+    "model/assets/baseline/model/panns/Cnn14_mAP=0.431.pth",
+    "model/assets/baseline/model/panns/class_labels_indices.csv",
+    "model/assets/mert/pytorch_model.bin",
+    "model/runtime/bin/ffmpeg",
+    "model/trained/music_41.pt",
+    "model/trained/music_42.pt",
+    "model/trained/music_43.pt",
+    "model/trained/voice_41.pt",
+    "model/trained/voice_42.pt",
+    "model/trained/voice_43.pt"
+  ],
+  "deployment_ready": false,
+  "reason": "Stage only; asset availability, GPU parity, real meta-data and candidate lock require separate verification."
+}
+
+EXIT_CODE=0

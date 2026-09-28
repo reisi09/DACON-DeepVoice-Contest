@@ -1,0 +1,6 @@
+scenario: preregistered CPU-only E2 Music/File postrun analysis on verified attempt6 archive
+invocation: .venv/bin/python eight_e2_music_file_analysis.py _workspace/eight_h100_20260917/dataset results/eight_h100_20260917/downloaded/unpacked/output results/eight_h100_20260917/postrun_e2
+real 1.80
+user 1.39
+sys 0.22
+exit_status: 0

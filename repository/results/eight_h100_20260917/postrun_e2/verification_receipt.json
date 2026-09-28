@@ -1,0 +1,70 @@
+{
+  "analysis_source_sha256": "7662d8df42197839cb731f93434041f70ecd8554ef2f8ef2dca0fcd66518a189",
+  "artifacts": {
+    "contrasts_E2_music_file.csv": {
+      "bytes": 596285,
+      "sha256": "af07a214df40baef9b9a91498ea950d3367ec6ab44591a21b7cdc211d0ca0df1"
+    },
+    "experiment_2_music_file_postrun.json": {
+      "bytes": 8429,
+      "sha256": "de2c3cfa9725203a1c1cf83fb4bfb6c30d08df62be23261342379926cd3a77a8"
+    },
+    "fixed_experiment_population_denominators.json": {
+      "bytes": 9270,
+      "sha256": "373511e90b8f2c6006d5c3080f5952a08c3b20f9f9f2d72492ab854275ac2142"
+    },
+    "normalizer_receipt.json": {
+      "bytes": 45415,
+      "sha256": "6c2b49e538842bd0a22595fe0a6d2a32b4ec814c3eb07101fdfdb08d63f6926e"
+    },
+    "normalizers.npz": {
+      "bytes": 17403,
+      "sha256": "66c3b5578f0d4e3df440f055cb6531f25a2bdc155cea862d48aca869f15bff1c"
+    },
+    "predictions_E2_music_file.csv": {
+      "bytes": 2381783,
+      "sha256": "923432c4adab3a835b91a1ff1193c210b983a922f38a297ad727b292b20a3ec1"
+    },
+    "selection_E2_music_file_postrun_locked.json": {
+      "bytes": 52840,
+      "sha256": "8e6b81b470470f1b00cd2c4246f14b1c98a12f899e053de4fd8aa2a5720ac2a1"
+    },
+    "summary.md": {
+      "bytes": 2928,
+      "sha256": "1998d775bc7ecd202688168583b6c09cef7b78cb1fbac771f3c9623320cda6f4"
+    }
+  },
+  "checkpoint_hash_count": 12,
+  "contrast_means_recomputed": {
+    "balanced.dev.already_fake_file": 0.30214706048447276,
+    "balanced.dev.file_real_backing_control": -0.19127171070025678,
+    "balanced.dev.music_real_backing_control": 0.23244256487953405,
+    "balanced.dev.music_response": 0.13504849727684132,
+    "balanced.dev.truth_changing_file": 0.026526729197839105,
+    "balanced.test.already_fake_file": -0.236273335150024,
+    "balanced.test.file_real_backing_control": -0.7895761597462123,
+    "balanced.test.music_real_backing_control": -0.38307027043871733,
+    "balanced.test.music_response": 0.3633816541332635,
+    "balanced.test.truth_changing_file": 0.38154461161219777,
+    "parent.dev.already_fake_file": 0.36831870560297825,
+    "parent.dev.file_real_backing_control": -0.183287114980886,
+    "parent.dev.music_real_backing_control": 0.15497300798582125,
+    "parent.dev.music_response": 0.18411068615137083,
+    "parent.dev.truth_changing_file": 0.02975523627968074,
+    "parent.test.already_fake_file": -0.11429207546333048,
+    "parent.test.file_real_backing_control": -0.807170611156646,
+    "parent.test.music_real_backing_control": -0.3981712493356705,
+    "parent.test.music_response": 0.43903396318637533,
+    "parent.test.truth_changing_file": 0.38018319154939306
+  },
+  "invocation": ".venv/bin/python eight_e2_music_file_analysis.py _workspace/eight_h100_20260917/dataset results/eight_h100_20260917/downloaded/unpacked/output results/eight_h100_20260917/postrun_e2",
+  "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+  "observable": "exit 0; lock precedes predictions; JSON means exactly match contrast CSV means; verified input hashes unchanged",
+  "scenario": "preregistered CPU E2 Music/File postrun analysis on attempt6",
+  "selection_lock_before_predictions": true,
+  "selection_lock_test_used": false,
+  "status": "verified",
+  "verified_e1_checkpoint_set_hash_before_after": "b5c201e6c78ae40f3955645c452f1a7f90b134132e91c2a1ec737d3f0f72e8a9",
+  "verified_input_top_level_hash_before_after": "0ae54ff008a25d2521380e7b79530f61b6a35b1b21042adcb7f0e6524b53fa60",
+  "verified_output_files_newer_than_lock": 0
+}

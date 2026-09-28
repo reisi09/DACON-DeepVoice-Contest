@@ -1,0 +1,22 @@
+{
+  "admitted_count": 1331,
+  "admitted_sources": {
+    "LibriSpeech": 449,
+    "MusicArena": 882
+  },
+  "total_candidates": 3000,
+  "excluded_count": 1669,
+  "prior_rows": 42947,
+  "combined_rows": 44278,
+  "cross_role_components": 0,
+  "candidate_evaluation_rows": 0,
+  "gpu_used": false,
+  "listening_verified": false,
+  "prepared_audio_root": "_workspace/lb_admission_20260924/prepared",
+  "review_sha256": "40b442b2ba96857dcc3360dd625b6b4d531854c13363eb93f03e6da181f2b833",
+  "prepare_receipt_sha256": "9df49f58bef32ba171dbcccba905646ab821ce821494bb2cd7c8808eccc3bc84",
+  "limitations": [
+    "AST is automated semantic triage, not human listening or detector quality evidence.",
+    "Common output format does not erase source recording or original codec differences."
+  ]
+}

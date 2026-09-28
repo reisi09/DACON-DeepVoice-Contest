@@ -1,0 +1,42 @@
+{
+  "checked_epoch": 1789705832.758066,
+  "manifest_sha256": "daf9317856e63fba6cdba04f8fa28c48afa447fffe9046b246571ddecdbebff4",
+  "split_counts": {
+    "train": 1469,
+    "dev": 164,
+    "calibration": 200,
+    "test": 127,
+    "confirmation_external": 130,
+    "confirmation": 352,
+    "confirmation_presence": 28
+  },
+  "effective_batch": 128,
+  "updates": 125,
+  "draws": {
+    "41": {
+      "unique_rows": 1469,
+      "rows": 1469,
+      "unique_parents": 1405,
+      "minimum_row_exposure": 1,
+      "sample_draws": 16000
+    },
+    "42": {
+      "unique_rows": 1469,
+      "rows": 1469,
+      "unique_parents": 1405,
+      "minimum_row_exposure": 1,
+      "sample_draws": 16000
+    },
+    "43": {
+      "unique_rows": 1469,
+      "rows": 1469,
+      "unique_parents": 1405,
+      "minimum_row_exposure": 1,
+      "sample_draws": 16000
+    }
+  },
+  "total_windows": 10461,
+  "prefix_bytes_estimate": 19506668544,
+  "gpu_started": false,
+  "cpu_checks": "27 focused checks passed; original AST checkpoint native/split CPU replay max difference0; bash syntax passed"
+}

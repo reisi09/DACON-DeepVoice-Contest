@@ -1,0 +1,19 @@
+{
+  "scenario": "stop compute after genuine remote bootstrap dependency failure",
+  "invocation": "vesslctl workspace pause wsp-9683432r72m7 then bounded workspace show polls",
+  "binary_observable": {
+    "failure_type": "ModuleNotFoundError",
+    "missing_module": "imageio_ffmpeg",
+    "native_gpu_admission_created": false,
+    "pause_verified": true,
+    "final_workspace": {
+      "workspace": "wsp-9683432r72m7",
+      "phase": "standby",
+      "state": "stopping",
+      "accelerator": "H100 SXM",
+      "accelerator_count": 1
+    },
+    "poll_count": 1
+  },
+  "artifact": "_workspace/eight_h100_20260917/remote_run_private.log"
+}

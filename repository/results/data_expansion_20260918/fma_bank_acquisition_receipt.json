@@ -1,0 +1,39 @@
+{
+  "status": "acquiring",
+  "records": 601,
+  "origins": {
+    "local_reuse": 270,
+    "new_download": 331
+  },
+  "decode_status": {
+    "ok": 601
+  },
+  "distinct_artists": 600,
+  "new_artists": 331,
+  "train_eligible": 393,
+  "eligible_new": 326,
+  "current_eval_artists_retained_but_excluded": 110,
+  "network_attempts": 608,
+  "transferred_bytes": 1496278020,
+  "download_budget_bytes": 1500000000,
+  "charged_bytes_including_unresolved": 1496278020,
+  "unresolved_attempts": 0,
+  "network_failures": 277,
+  "retained_bank_and_metadata_bytes": 1519083581,
+  "retained_limit_bytes": 1550000000,
+  "free_gib": 198.35163497924805,
+  "candidate_artists": 3581,
+  "metadata_sha256": "b025dc407ed663c10a0e3fd03b7b98154674bab043dff3ed8883f255010f7147",
+  "locked_groups_sha256": "2ca4cf947b2dddd72b4767337ac94601d10b380a9b1b76414fa835e46f640846",
+  "script_sha256": "6011c382da40a9a6de19f9b52a19052d22b90c883335a3d2b13ceb3ab1a6077a",
+  "manifest_sha256": "aa29a62ffb30c877a1e3c7b9e643e04e7542389afeb1546e1617ecb26cb00220",
+  "updated_epoch": 1789708111.785443,
+  "trained": false,
+  "independent_listening": false,
+  "quality_gate": "Full finite decode; >=30s; RMS>=-80dBFS; <90% one-second blocks below-60dBFS; new originals60\u2013180s (+0.1s MP3 padding).",
+  "limitations": [
+    "Technical audio quality only, not human listening or genre verification.",
+    "Per-track licenses from the archived FMA metadata; NC/SA obligations retained.",
+    "Artist aliases, recoded duplicates, and pretraining overlap unresolved."
+  ]
+}

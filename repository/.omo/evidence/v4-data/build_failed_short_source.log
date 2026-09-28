@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/prepare_v4_data.py", line 432, in <module>
+    main()
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/prepare_v4_data.py", line 396, in main
+    rows = list(pool.map(lambda spec: _materialize(spec, output), all_specs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/choiwuseck/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/prepare_v4_data.py", line 396, in <lambda>
+    rows = list(pool.map(lambda spec: _materialize(spec, output), all_specs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/prepare_v4_data.py", line 127, in _materialize
+    raise V4IntegrityError(f"source shorter than four seconds: {spec.raw_path}")
+V4IntegrityError: source shorter than four seconds: /Users/choiwuseck/Documents/ChatGPT/데이콘/_workspace/v4_data/sources/mlaad/original/de/herrnarnesschatz_01_f000143.wav

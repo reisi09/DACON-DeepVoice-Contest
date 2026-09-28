@@ -1,0 +1,14 @@
+{
+  "scenario": "preserve attempt3 missing-assets bootstrap failure",
+  "binary_observable": {
+    "status": "failed",
+    "archive_verified": true,
+    "archive_sha256": "a22678817a43e71b33d0c01153fd8c45ca1b9810632e9e1713a4e67023aef2a4",
+    "sidecar_match": true,
+    "receipt_match": true,
+    "crc_ok": true,
+    "member_hashes_ok": true,
+    "export_member_count": 2
+  },
+  "artifact": "results/eight_h100_20260917/failed_attempt_03"
+}

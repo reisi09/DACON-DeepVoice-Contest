@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- /Users/choiwuseck/Documents/ChatGPT/데이콘/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/choiwuseck/Documents/ChatGPT/데이콘
+collecting ... collected 15 items
+
+test_v4_selection.py::test_attractive_seen_result_cannot_hide_negative_ood_result PASSED [  6%]
+test_v4_selection.py::test_candidate_passes_only_with_both_music_panels_and_partial_score_stays_null PASSED [ 13%]
+test_v4_selection.py::test_refit_forecast_reserve_is_checked_before_ranking PASSED [ 20%]
+test_v4_selection.py::test_d_uses_unrenormalized_file_and_music_weights PASSED [ 26%]
+test_v4_selection.py::test_candidate_cannot_change_a_protected_g0_output PASSED [ 33%]
+test_v4_selection.py::test_candidate_file_score_must_use_the_locked_max_formula PASSED [ 40%]
+test_v4_selection.py::test_actual_rounded_graph_g0_is_within_file_formula_tolerance PASSED [ 46%]
+test_v4_selection.py::test_recipe_lock_allows_resume_but_refuses_reselection PASSED [ 53%]
+test_v4_selection.py::test_failed_or_resource_ineligible_candidate_cannot_be_recipe_locked PASSED [ 60%]
+test_v4_selection.py::test_missing_prediction_id_refuses_evaluation PASSED [ 66%]
+test_v4_selection.py::test_incomplete_refit_exposure_cannot_create_weight_lock PASSED [ 73%]
+test_v4_selection.py::test_refit_manifest_must_cover_the_recipe_locked_eligible_union PASSED [ 80%]
+test_v4_selection.py::test_changed_weight_hash_refuses_sealed_evaluation PASSED [ 86%]
+test_v4_selection.py::test_sealed_gate_cannot_promote_a_runner_up PASSED [ 93%]
+test_v4_selection.py::test_sealed_predictions_must_match_the_locked_inference_receipt PASSED [100%]
+
+============================== 15 passed in 1.39s ==============================

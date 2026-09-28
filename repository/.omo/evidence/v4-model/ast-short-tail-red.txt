@@ -1,0 +1,65 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________ test_real_ast_inference_scores_a_sub_kaldi_window_tail ____________
+
+    def test_real_ast_inference_scores_a_sub_kaldi_window_tail() -> None:
+        # Given: one valid file with a one-sample AST remainder below Kaldi's 400-sample floor.
+        torch.set_num_threads(2)
+        torch.manual_seed(236749)
+        loaded = v4.load_model("ast", AST_ASSETS, "cpu")
+        audio = np.zeros(160_001, dtype=np.float32)
+    
+        # When: full-file inference follows the native nonoverlapping AST grid.
+>       prediction = v4.predict_files(loaded, [audio], p4=False)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_v4_model.py:224: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+v4_model.py:251: in predict_files
+    prepared = prepare_windows(loaded, audios)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+v4_model.py:147: in prepare_windows
+    tensor = loaded.processor(
+.venv/lib/python3.11/site-packages/transformers/models/audio_spectrogram_transformer/feature_extraction_audio_spectrogram_transformer.py:219: in __call__
+    features = [self._extract_fbank_features(waveform, max_length=self.max_length) for waveform in raw_speech]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/transformers/models/audio_spectrogram_transformer/feature_extraction_audio_spectrogram_transformer.py:219: in <listcomp>
+    features = [self._extract_fbank_features(waveform, max_length=self.max_length) for waveform in raw_speech]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/transformers/models/audio_spectrogram_transformer/feature_extraction_audio_spectrogram_transformer.py:119: in _extract_fbank_features
+    fbank = ta_kaldi.fbank(
+.venv/lib/python3.11/site-packages/torchaudio/compliance/kaldi.py:591: in fbank
+    waveform, window_shift, window_size, padded_window_size = _get_waveform_and_window_properties(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+waveform = tensor([0.]), channel = 0, sample_frequency = 16000
+frame_shift = 10.0, frame_length = 25.0, round_to_power_of_two = True
+preemphasis_coefficient = 0.97
+
+    def _get_waveform_and_window_properties(
+        waveform: Tensor,
+        channel: int,
+        sample_frequency: float,
+        frame_shift: float,
+        frame_length: float,
+        round_to_power_of_two: bool,
+        preemphasis_coefficient: float,
+    ) -> Tuple[Tensor, int, int, int]:
+        r"""Gets the waveform and window properties"""
+        channel = max(channel, 0)
+        assert channel < waveform.size(0), "Invalid channel {} for size {}".format(channel, waveform.size(0))
+        waveform = waveform[channel, :]  # size (n)
+        window_shift = int(sample_frequency * frame_shift * MILLISECONDS_TO_SECONDS)
+        window_size = int(sample_frequency * frame_length * MILLISECONDS_TO_SECONDS)
+        padded_window_size = _next_power_of_2(window_size) if round_to_power_of_two else window_size
+    
+>       assert 2 <= window_size <= len(waveform), "choose a window size {} that is [2, {}]".format(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            window_size, len(waveform)
+        )
+E       AssertionError: choose a window size 400 that is [2, 1]
+
+.venv/lib/python3.11/site-packages/torchaudio/compliance/kaldi.py:142: AssertionError
+=========================== short test summary info ============================
+FAILED test_v4_model.py::test_real_ast_inference_scores_a_sub_kaldi_window_tail
+1 failed, 6 deselected in 4.23s

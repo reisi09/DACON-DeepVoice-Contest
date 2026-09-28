@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+_________________ ERROR collecting test_v5_resume_temporal.py __________________
+ImportError while importing test module '/Users/choiwuseck/Documents/ChatGPT/데이콘/test_v5_resume_temporal.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../../.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_v5_resume_temporal.py:10: in <module>
+    from v5_resume_temporal import inspect_cached_views
+E   ModuleNotFoundError: No module named 'v5_resume_temporal'
+=========================== short test summary info ============================
+ERROR test_v5_resume_temporal.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.12s

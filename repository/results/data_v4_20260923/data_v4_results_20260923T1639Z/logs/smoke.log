@@ -1,0 +1,35 @@
+== host
+NVIDIA H100 80GB HBM3, 81559 MiB, 580.82.07
+128
+               total        used        free      shared  buff/cache   available
+Mem:            1574          58         579           0         950        1516
+== disk
+Filesystem                                                                                                                                                    Size  Used Avail Use% Mounted on
+csi-cephfs-node.1@b1906f2e-9123-4aa4-b4f7-2065ecf83fbb.cephfs=/volumes/csi/csi-vol-8563a88a-67f7-48cc-a39b-31ed0d7db5de/6ecbf4d6-e93a-4a2d-9af9-2af3bc6ba97b   10T  201G  9.9T   2% /root
+Filesystem                                                                                                                                                    Size  Used Avail Use% Mounted on
+csi-cephfs-node.1@b1906f2e-9123-4aa4-b4f7-2065ecf83fbb.cephfs=/volumes/csi/csi-vol-8563a88a-67f7-48cc-a39b-31ed0d7db5de/6ecbf4d6-e93a-4a2d-9af9-2af3bc6ba97b   10T  201G  9.9T   2% /root
+== ffmpeg encoders
+MISSING libmp3lame
+MISSING libopus
+MISSING libgsm
+MISSING aac
+MISSING pcm_mulaw
+MISSING pcm_alaw
+MISSING flac
+WARN: drop missing codecs from CODECS in build_manifest.py before materialize (label-independent table must stay valid)
+== self-checks
+sources self-check ok
+generate_speech self-check ok
+generate_music self-check ok
+build_manifest self-check ok
+split self-check ok
+presence self-check ok
+export_bank self-check ok
+file_ensemble self-check ok
+Same-size corruption and output path escape rejected.
+decision_heads self-check ok
+== synthetic end-to-end (materialize -> mix -> split)
+e2e ok: 16 items, 6 mixes, ['constructed_enhanced', 'constructed_song', 'constructed_splice'] codecs ['flac', 'mp3_192', 'pcm_wav', 'tel_gsm', 'tel_ulaw']
+== GPU generators (only envs that exist): one sample each
+htdemucs ok NVIDIA H100 80GB HBM3
+smoke complete

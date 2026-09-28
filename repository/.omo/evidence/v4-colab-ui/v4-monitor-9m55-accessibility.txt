@@ -1,0 +1,20 @@
+Surface: Aside > DACON_236749_trainable_v4.ipynb > existing A100 runtime
+Invocation: sky.get_app_state({app:"at.studio.AsideBrowser"}) after 30s monitoring interval
+Connect start unix: 1789283305 (2026-09-13T07:08:25Z)
+Run-all invoke unix: 1789283350 (2026-09-13T07:09:10Z)
+Timestamp: 2026-09-13T07:20:09.178Z
+
+The following is a diff from the previous accessibility tree for Window: "DACON_236749_trainable_v4.ipynb - Colab" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 38
+~								81 버튼 RAM 디스크 현재 실행 완료 대기 중 Python 3 Google Compute Engine 백엔드 (GPU) RAM: 4.91 GB/83.47 GB 디스크: 77.00 GB/112.64 GB
+~									84 텍스트 현재 실행 완료 대기 중 Python 3 Google Compute Engine 백엔드 (GPU) RAM: 4.91 GB/83.47 GB 디스크: 77.00 GB/112.64 GB
++												465 container
++													466 전환 버튼 Description: 출력 표시/숨기기, Value: 0
++													467 팝업 버튼 코드 셀 출력 작업
++												468 텍스트 CPU_PREFLIGHT_OK 4.0.1
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+~								406 버튼 실행 중(9분 55초)
+~									407 텍스트 실행 중(9분 55초)
+~								445 탭 (selected, settable, boolean) Description: DACON_236749_trainable_v4.ipynb - Colab - 메모리 사용량 - 339MB, Value: on
+The focused UI element is 106 container 셀 0: 텍스트 셀: DACON 236749 V4 trainable recovery

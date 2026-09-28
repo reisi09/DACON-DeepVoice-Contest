@@ -1,0 +1,23 @@
+{
+  "utc": 1789542629.1615212,
+  "preserved_trials": [
+    "01_S0_MERT_frozen",
+    "02_S0_MERT_fullft",
+    "03_S0_EAT_fullft",
+    "adapted/08_S0_adapted_fullft"
+  ],
+  "active_preserved_trial": "04_S1_MERT_fullft",
+  "changed_trials": [
+    "05_S1_EAT_fullft",
+    "06_S2_MERT_fullft",
+    "07_S2_EAT_fullft"
+  ],
+  "previous_worker_sha256": "5efcd568ae23d4dbc32c03ee60d01564f813ebd2231bd50a8b2bd400150ca41a",
+  "worker_sha256": "9c076487890c6e438a9deac80a83be0e04ce4b96d512e6219612efd0cbfbd727",
+  "batch_size": 4,
+  "accumulation": 2,
+  "loader_workers": 4,
+  "effective_songs_per_update": 8,
+  "deadline": 1789589516.0,
+  "qualification": "Same sampling and effective batch; dropout RNG and floating-point order differ. No bitwise or scientific equivalence claim."
+}

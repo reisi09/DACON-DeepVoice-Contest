@@ -1,0 +1,147 @@
+{
+  "status": "completed_and_stopped",
+  "recorded_at_utc": "2026-09-18T06:16:29.608796+00:00",
+  "acquisition_verification_exit_code": 0,
+  "acquisition_session_id": 26739,
+  "asv_download_completed_at_utc": "2026-09-18T06:08:18.136331+00:00",
+  "asv_verification_completed_at_utc": "2026-09-18T06:08:57.619863+00:00",
+  "quality_completed_at_utc": "2026-09-18T06:12:31.221663+00:00",
+  "verified_bank_counts": {
+    "rows": 6620,
+    "unique_source_sha256": 6620,
+    "unique_pcm_sha256": 6620,
+    "hours": 9.10217142361111,
+    "label_counts": {
+      "spoof": 2000,
+      "bonafide": 4620
+    },
+    "train_eligible_rows": 6126
+  },
+  "libri_reserved_speaker_rows_train_ineligible": 494,
+  "asv_original_bytes": 242884605,
+  "asv_original_budget_bytes": 300000000,
+  "asv_selection_sha256": "59cd45bc6a6d45ce354c5aaa6a01488d150705be9ed009ad6f9857770923b258",
+  "all_rows_split": "unassigned",
+  "independent_listening_review": false,
+  "full_asv_archive_md5_verified": false,
+  "known_pretrained_overlap": "ASVspoof2019 listed in DF-Arena training corpus; exact recording membership unknown",
+  "final_successful_resume_transfer": {
+    "stage": "coalesced_plan",
+    "requests": 1212,
+    "remaining_selected_members": 3832,
+    "planned_transfer_bytes": 3006863735,
+    "selected_original_bytes": 242884605,
+    "max_span_bytes": 4194304,
+    "unselected_gap_bytes_retained": false,
+    "status": "acquired",
+    "completed_requests": 1212,
+    "transferred_bytes": 3006863735,
+    "acquired_members": 4000
+  },
+  "all_attempt_cumulative_network_bytes": null,
+  "network_accounting_limitation": "Resume successful responses only; earlier probe and partial/failed traffic are not included in that exact amount. Nonselected gaps were discarded from bounded memory.",
+  "storage": {
+    "speech_directory": {
+      "files": 5436,
+      "apparent_bytes": 288742189,
+      "allocated_bytes": 302583808
+    },
+    "reused_libri_archive": {
+      "files": 1,
+      "apparent_bytes": 346663984,
+      "allocated_bytes": 346664960
+    },
+    "speech_bank_with_reused_archive": {
+      "apparent_bytes": 635406173,
+      "allocated_bytes": 649248768
+    },
+    "speech_results_excluding_this_receipt": {
+      "files": 27,
+      "apparent_bytes": 8295041,
+      "allocated_bytes": 9265152
+    },
+    "final_bank_cap_bytes": 1000000000,
+    "global_collection_cap_bytes": 20000000000,
+    "global_cap_verification_owner": "root aggregate receipt; this receipt measures speech ownership only"
+  },
+  "quality_review_flag_counts": {
+    "libri": {
+      "all_zero_audio": 0,
+      "near_silent_rms_lt1e-6": 0,
+      "extremely_short_lt0p25s": 0,
+      "near_full_scale_fraction_ge0p001": 3
+    },
+    "asv": {
+      "all_zero_audio": 0,
+      "near_silent_rms_lt1e-6": 0,
+      "extremely_short_lt0p25s": 0,
+      "near_full_scale_fraction_ge0p001": 0
+    }
+  },
+  "automatic_quality_exclusions_added": 0,
+  "source_or_label_changes_from_quality_review": false,
+  "remaining_own_partials": [],
+  "final_cleanup_deleted_files": [],
+  "large_whole_archive_paths_absent": [
+    "downloads/train-clean-100.tar.gz",
+    "downloads/ASVspoof2019_LA.zip"
+  ],
+  "process_check": {
+    "speech_acquisition_python": 0,
+    "curl": 0,
+    "ffmpeg": 0,
+    "matches": []
+  },
+  "post_collection_state": {
+    "extra_dataset_acquisition": false,
+    "gpu_started": false,
+    "training_started": false,
+    "automation_created": false,
+    "committed_by_this_agent": false
+  },
+  "changed_code": [
+    "new_panel_data_speech_bank.py"
+  ],
+  "owned_evidence_files": [
+    "results/data_expansion_20260918/speech_asv_acquisition.log",
+    "results/data_expansion_20260918/speech_asv_acquisition_final.log",
+    "results/data_expansion_20260918/speech_asv_acquisition_resume.log",
+    "results/data_expansion_20260918/speech_asv_coalesced_probe.json",
+    "results/data_expansion_20260918/speech_asv_coalescing_estimate.json",
+    "results/data_expansion_20260918/speech_asv_partial_check.json",
+    "results/data_expansion_20260918/speech_asv_probe.log",
+    "results/data_expansion_20260918/speech_asv_protocol_scope.json",
+    "results/data_expansion_20260918/speech_asv_selection.log",
+    "results/data_expansion_20260918/speech_asv_transfer_plan.json",
+    "results/data_expansion_20260918/speech_atomic_retry_regression.json",
+    "results/data_expansion_20260918/speech_bank_asv_selected.csv",
+    "results/data_expansion_20260918/speech_bank_asv_selected.json",
+    "results/data_expansion_20260918/speech_bank_test-clean.csv",
+    "results/data_expansion_20260918/speech_bank_test-clean.json",
+    "results/data_expansion_20260918/speech_bank_test-clean.log",
+    "results/data_expansion_20260918/speech_final_reconciliation.json",
+    "results/data_expansion_20260918/speech_parent_groups.json",
+    "results/data_expansion_20260918/speech_quality_asv.csv",
+    "results/data_expansion_20260918/speech_quality_asv.json",
+    "results/data_expansion_20260918/speech_quality_libri.csv",
+    "results/data_expansion_20260918/speech_quality_libri.json",
+    "results/data_expansion_20260918/speech_rate_limit_receipt.json",
+    "results/data_expansion_20260918/speech_retention_receipt.json",
+    "results/data_expansion_20260918/speech_rights_receipt.json",
+    "results/data_expansion_20260918/speech_timeout_recovery.json",
+    "results/data_expansion_20260918/VOICE_CANDIDATES.md",
+    "results/data_expansion_20260918/speech_completion_receipt.json"
+  ],
+  "owned_raw_data_directory": "_workspace/data_expansion_20260918/speech",
+  "other_persistent_debug_or_test_scripts": [],
+  "unchanged_shared_code": "v2_data.py",
+  "artifact_hashes": {
+    "new_panel_data_speech_bank.py": "1719542e588746a3566c078249f28ec22372e3d6b52542f6e8a894c45b0315cd",
+    "results/data_expansion_20260918/speech_bank_test-clean.csv": "dc2fa4c3b302f2881f7b1c8177451bae9b9e1d571254b00031b779fe8f02fa4f",
+    "results/data_expansion_20260918/speech_bank_asv_selected.csv": "f2774050524a1b332e520ce59c173f4f47b561d790e4bbbca21fbf7837b16c36",
+    "results/data_expansion_20260918/speech_quality_libri.csv": "c3a4fe0e47cc3329ea6170f82772b2202f1251db23e71716a7a51fc2e071ce14",
+    "results/data_expansion_20260918/speech_quality_asv.csv": "f6578f10539c1403db66c6dde6931f7309b77118fad1d5e0cabf22e8e7538318",
+    "_workspace/data_expansion_20260918/speech/asv_selection.json": "59cd45bc6a6d45ce354c5aaa6a01488d150705be9ed009ad6f9857770923b258",
+    "_workspace/data_expansion_20260918/speech/README.md": "1f7ae65c59a9927c38d8f81652b3a955af8c6218df8a4231e79dff8b3db11b9a"
+  }
+}

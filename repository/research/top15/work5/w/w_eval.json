@@ -1,0 +1,412 @@
+{
+ "runs": "runs",
+ "n_test": 4822,
+ "n_natural": 3816,
+ "S7_cpu": {
+  "val": {
+   "file_eer": 0.03268,
+   "voice_eer": 0.01855,
+   "music_eer": 0.06147,
+   "ads": 0.96151
+  },
+  "test": {
+   "file_eer": 0.0741,
+   "voice_eer": 0.06116,
+   "music_eer": 0.13635,
+   "ads": 0.90982
+  },
+  "natural": {
+   "file_eer": 0.06267,
+   "voice_eer": 0.05488,
+   "music_eer": 0.13382,
+   "ads": 0.91754
+  },
+  "real_fpr": {
+   "FILE": {
+    "fleurs_ko": 0.0096,
+    "musan_music": 0.0736,
+    "openmic": 0.0288,
+    "vocalset": 0.0253,
+    "zeroth": 0.0
+   },
+   "VOICE": {
+    "fleurs_ko": 0.014,
+    "musan_music": 0.0355,
+    "vocalset": 0.0,
+    "zeroth": 0.0
+   },
+   "MUSIC": {
+    "musan_music": 0.1093,
+    "openmic": 0.0683
+   }
+  },
+  "refit_file": {
+   "weights": {
+    "max": 1,
+    "noisy_or": 1,
+    "max_nopresence": 1
+   },
+   "val": {
+    "file_eer": 0.0337,
+    "voice_eer": 0.01855,
+    "music_eer": 0.06147,
+    "ads": 0.961
+   },
+   "test": {
+    "file_eer": 0.07531,
+    "voice_eer": 0.06116,
+    "music_eer": 0.13635,
+    "ads": 0.90921
+   }
+  }
+ },
+ "s7": {
+  "val": {
+   "file_eer": 0.03287,
+   "voice_eer": 0.01855,
+   "music_eer": 0.06373,
+   "ads": 0.96073
+  },
+  "test": {
+   "file_eer": 0.0741,
+   "voice_eer": 0.06116,
+   "music_eer": 0.1391,
+   "ads": 0.90899
+  },
+  "natural": {
+   "file_eer": 0.06288,
+   "voice_eer": 0.05488,
+   "music_eer": 0.13382,
+   "ads": 0.91743
+  },
+  "real_fpr": {
+   "FILE": {
+    "fleurs_ko": 0.0114,
+    "musan_music": 0.0736,
+    "openmic": 0.0288,
+    "vocalset": 0.0253,
+    "zeroth": 0.0
+   },
+   "VOICE": {
+    "fleurs_ko": 0.014,
+    "musan_music": 0.0355,
+    "vocalset": 0.0,
+    "zeroth": 0.0
+   },
+   "MUSIC": {
+    "musan_music": 0.1093,
+    "openmic": 0.0683
+   }
+  },
+  "refit_file": {
+   "weights": {
+    "max": 1,
+    "noisy_or": 1,
+    "max_nopresence": 1
+   },
+   "val": {
+    "file_eer": 0.0335,
+    "voice_eer": 0.01855,
+    "music_eer": 0.06373,
+    "ads": 0.96042
+   },
+   "test": {
+    "file_eer": 0.07513,
+    "voice_eer": 0.06116,
+    "music_eer": 0.1391,
+    "ads": 0.90847
+   }
+  },
+  "boot_vs_S7_cpu": {
+   "test": {
+    "delta": -0.00082,
+    "ci95": [
+     -0.00272,
+     0.00167
+    ],
+    "p_gt_0": 0.321
+   },
+   "natural": {
+    "delta": -0.00011,
+    "ci95": [
+     -0.00316,
+     0.00173
+    ],
+    "p_gt_0": 0.323
+   }
+  },
+  "gates": {
+   "natural_dads>=-.005": true,
+   "natural_component_eer_worse<=.02": true,
+   "natural_real_fpr_up<=.05": true
+  },
+  "worst_fpr_up": [
+   [
+    "FILE:fleurs_ko",
+    0.0018
+   ],
+   [
+    "FILE:musan_music",
+    0.0
+   ],
+   [
+    "FILE:openmic",
+    0.0
+   ],
+   [
+    "FILE:vocalset",
+    0.0
+   ],
+   [
+    "FILE:zeroth",
+    0.0
+   ]
+  ],
+  "pass": true
+ },
+ "C": {
+  "val": {
+   "file_eer": 0.03082,
+   "voice_eer": 0.01643,
+   "music_eer": 0.06212,
+   "ads": 0.96267
+  },
+  "test": {
+   "file_eer": 0.07202,
+   "voice_eer": 0.06874,
+   "music_eer": 0.13121,
+   "ads": 0.91088
+  },
+  "natural": {
+   "file_eer": 0.06212,
+   "voice_eer": 0.06272,
+   "music_eer": 0.128,
+   "ads": 0.918
+  },
+  "real_fpr": {
+   "FILE": {
+    "fleurs_ko": 0.0114,
+    "musan_music": 0.0636,
+    "openmic": 0.0288,
+    "vocalset": 0.0108,
+    "zeroth": 0.0
+   },
+   "VOICE": {
+    "fleurs_ko": 0.0184,
+    "musan_music": 0.0213,
+    "vocalset": 0.0,
+    "zeroth": 0.0
+   },
+   "MUSIC": {
+    "musan_music": 0.0855,
+    "openmic": 0.0396
+   }
+  },
+  "refit_file": {
+   "weights": {
+    "max": 8,
+    "max_nopresence": 1,
+    "noisy_or": 1
+   },
+   "val": {
+    "file_eer": 0.02853,
+    "voice_eer": 0.01643,
+    "music_eer": 0.06212,
+    "ads": 0.96381
+   },
+   "test": {
+    "file_eer": 0.07098,
+    "voice_eer": 0.06874,
+    "music_eer": 0.13121,
+    "ads": 0.9114
+   }
+  },
+  "boot_vs_S7_cpu": {
+   "test": {
+    "delta": 0.00106,
+    "ci95": [
+     -0.00295,
+     0.00579
+    ],
+    "p_gt_0": 0.712
+   },
+   "natural": {
+    "delta": 0.00046,
+    "ci95": [
+     -0.00353,
+     0.00502
+    ],
+    "p_gt_0": 0.66
+   }
+  },
+  "boot_vs_s7_gpu": {
+   "test": {
+    "delta": 0.00189,
+    "ci95": [
+     -0.00236,
+     0.00585
+    ],
+    "p_gt_0": 0.83
+   },
+   "natural": {
+    "delta": 0.00056,
+    "ci95": [
+     -0.00315,
+     0.00606
+    ],
+    "p_gt_0": 0.731
+   }
+  },
+  "gates": {
+   "natural_dads>=-.005": true,
+   "natural_component_eer_worse<=.02": true,
+   "natural_real_fpr_up<=.05": true
+  },
+  "worst_fpr_up": [
+   [
+    "VOICE:fleurs_ko",
+    0.0044
+   ],
+   [
+    "FILE:fleurs_ko",
+    0.0018
+   ],
+   [
+    "FILE:openmic",
+    0.0
+   ],
+   [
+    "FILE:zeroth",
+    0.0
+   ],
+   [
+    "VOICE:vocalset",
+    0.0
+   ]
+  ],
+  "pass": true
+ },
+ "W": {
+  "val": {
+   "file_eer": 0.02668,
+   "voice_eer": 0.01617,
+   "music_eer": 0.05758,
+   "ads": 0.96615
+  },
+  "test": {
+   "file_eer": 0.08196,
+   "voice_eer": 0.07523,
+   "music_eer": 0.12608,
+   "ads": 0.90615
+  },
+  "natural": {
+   "file_eer": 0.07156,
+   "voice_eer": 0.07056,
+   "music_eer": 0.11541,
+   "ads": 0.91549
+  },
+  "real_fpr": {
+   "FILE": {
+    "fleurs_ko": 0.0595,
+    "musan_music": 0.0577,
+    "openmic": 0.018,
+    "vocalset": 0.0036,
+    "zeroth": 0.0
+   },
+   "VOICE": {
+    "fleurs_ko": 0.0446,
+    "musan_music": 0.0355,
+    "vocalset": 0.0,
+    "zeroth": 0.0
+   },
+   "MUSIC": {
+    "musan_music": 0.0934,
+    "openmic": 0.0612
+   }
+  },
+  "refit_file": {
+   "weights": {
+    "max": 1,
+    "noisy_or": 1,
+    "max_nopresence": 1
+   },
+   "val": {
+    "file_eer": 0.02565,
+    "voice_eer": 0.01617,
+    "music_eer": 0.05758,
+    "ads": 0.96667
+   },
+   "test": {
+    "file_eer": 0.083,
+    "voice_eer": 0.07523,
+    "music_eer": 0.12608,
+    "ads": 0.90563
+   }
+  },
+  "boot_vs_S7_cpu": {
+   "test": {
+    "delta": -0.00367,
+    "ci95": [
+     -0.00762,
+     0.00064
+    ],
+    "p_gt_0": 0.047
+   },
+   "natural": {
+    "delta": -0.00205,
+    "ci95": [
+     -0.00776,
+     0.00189
+    ],
+    "p_gt_0": 0.149
+   }
+  },
+  "boot_vs_s7_gpu": {
+   "test": {
+    "delta": -0.00284,
+    "ci95": [
+     -0.00698,
+     0.00127
+    ],
+    "p_gt_0": 0.069
+   },
+   "natural": {
+    "delta": -0.00195,
+    "ci95": [
+     -0.00718,
+     0.00269
+    ],
+    "p_gt_0": 0.216
+   }
+  },
+  "gates": {
+   "natural_dads>=-.005": true,
+   "natural_component_eer_worse<=.02": true,
+   "natural_real_fpr_up<=.05": true
+  },
+  "worst_fpr_up": [
+   [
+    "FILE:fleurs_ko",
+    0.0499
+   ],
+   [
+    "VOICE:fleurs_ko",
+    0.0306
+   ],
+   [
+    "FILE:zeroth",
+    0.0
+   ],
+   [
+    "VOICE:musan_music",
+    0.0
+   ],
+   [
+    "VOICE:vocalset",
+    0.0
+   ]
+  ],
+  "pass": true
+ },
+ "order": "W"
+}

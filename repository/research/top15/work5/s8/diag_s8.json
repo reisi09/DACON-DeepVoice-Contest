@@ -1,0 +1,274 @@
+{
+ "file_weights": {
+  "S7_cpu val_refit": {
+   "weights": {
+    "max": 1,
+    "noisy_or": 1,
+    "max_nopresence": 1
+   },
+   "val": {
+    "file_eer": 0.0337,
+    "voice_eer": 0.01855,
+    "music_eer": 0.06147,
+    "ads": 0.961
+   },
+   "test": {
+    "file_eer": 0.07531,
+    "voice_eer": 0.06116,
+    "music_eer": 0.13635,
+    "ads": 0.90921
+   }
+  },
+  "S7_cpu equal": {
+   "weights": {
+    "max": 1,
+    "noisy_or": 1,
+    "max_nopresence": 1
+   },
+   "val": {
+    "file_eer": 0.0337,
+    "voice_eer": 0.01855,
+    "music_eer": 0.06147,
+    "ads": 0.961
+   },
+   "test": {
+    "file_eer": 0.07531,
+    "voice_eer": 0.06116,
+    "music_eer": 0.13635,
+    "ads": 0.90921
+   }
+  },
+  "S7_cpu 0/9/1": {
+   "weights": {
+    "max": 0,
+    "noisy_or": 9,
+    "max_nopresence": 1
+   },
+   "val": {
+    "file_eer": 0.03268,
+    "voice_eer": 0.01855,
+    "music_eer": 0.06147,
+    "ads": 0.96151
+   },
+   "test": {
+    "file_eer": 0.0741,
+    "voice_eer": 0.06116,
+    "music_eer": 0.13635,
+    "ads": 0.90982
+   }
+  },
+  "S8 val_refit": {
+   "weights": {
+    "max": 1,
+    "noisy_or": 1,
+    "max_nopresence": 1
+   },
+   "val": {
+    "file_eer": 0.02936,
+    "voice_eer": 0.01855,
+    "music_eer": 0.05047,
+    "ads": 0.96647
+   },
+   "test": {
+    "file_eer": 0.07202,
+    "voice_eer": 0.06116,
+    "music_eer": 0.12745,
+    "ads": 0.91352
+   }
+  },
+  "S8 equal": {
+   "weights": {
+    "max": 1,
+    "noisy_or": 1,
+    "max_nopresence": 1
+   },
+   "val": {
+    "file_eer": 0.02936,
+    "voice_eer": 0.01855,
+    "music_eer": 0.05047,
+    "ads": 0.96647
+   },
+   "test": {
+    "file_eer": 0.07202,
+    "voice_eer": 0.06116,
+    "music_eer": 0.12745,
+    "ads": 0.91352
+   }
+  },
+  "S8 0/9/1": {
+   "weights": {
+    "max": 0,
+    "noisy_or": 9,
+    "max_nopresence": 1
+   },
+   "val": {
+    "file_eer": 0.02916,
+    "voice_eer": 0.01855,
+    "music_eer": 0.05047,
+    "ads": 0.96657
+   },
+   "test": {
+    "file_eer": 0.06951,
+    "voice_eer": 0.06116,
+    "music_eer": 0.12745,
+    "ads": 0.91478
+   }
+  }
+ },
+ "MUSIC_real_fpr_by_source": {
+  "S7_cpu": {
+   "openmic": [
+    278,
+    0.068
+   ],
+   "musan_music": [
+    503,
+    0.109
+   ],
+   "haim": [
+    56,
+    0.089
+   ],
+   "constructed_mix": [
+    309,
+    0.126
+   ],
+   "constructed_song": [
+    233,
+    0.129
+   ]
+  },
+  "S8": {
+   "openmic": [
+    278,
+    0.054
+   ],
+   "musan_music": [
+    503,
+    0.097
+   ],
+   "haim": [
+    56,
+    0.089
+   ],
+   "constructed_mix": [
+    309,
+    0.071
+   ],
+   "constructed_song": [
+    233,
+    0.047
+   ]
+  }
+ },
+ "FILE_real_fpr_by_source": {
+  "S7_cpu": {
+   "fleurs_ko": [
+    1143,
+    0.012
+   ],
+   "vocalset": [
+    277,
+    0.043
+   ],
+   "openmic": [
+    278,
+    0.029
+   ],
+   "musan_music": [
+    503,
+    0.074
+   ],
+   "zeroth": [
+    72,
+    0.0
+   ],
+   "speechfake": [
+    12,
+    0.0
+   ],
+   "asvspoof2021_la": [
+    4,
+    0.0
+   ],
+   "existing:librispeech_test-clean": [
+    5,
+    0.0
+   ],
+   "asvspoof2021_df": [
+    1,
+    0.0
+   ],
+   "haim": [
+    53,
+    0.038
+   ],
+   "constructed_mix": [
+    95,
+    0.095
+   ],
+   "constructed_song": [
+    233,
+    0.056
+   ],
+   "constructed_enhanced": [
+    215,
+    0.047
+   ]
+  },
+  "S8": {
+   "fleurs_ko": [
+    1143,
+    0.009
+   ],
+   "vocalset": [
+    277,
+    0.036
+   ],
+   "openmic": [
+    278,
+    0.018
+   ],
+   "musan_music": [
+    503,
+    0.05
+   ],
+   "zeroth": [
+    72,
+    0.0
+   ],
+   "speechfake": [
+    12,
+    0.0
+   ],
+   "asvspoof2021_la": [
+    4,
+    0.0
+   ],
+   "existing:librispeech_test-clean": [
+    5,
+    0.0
+   ],
+   "asvspoof2021_df": [
+    1,
+    0.0
+   ],
+   "haim": [
+    53,
+    0.038
+   ],
+   "constructed_mix": [
+    95,
+    0.042
+   ],
+   "constructed_song": [
+    233,
+    0.03
+   ],
+   "constructed_enhanced": [
+    215,
+    0.047
+   ]
+  }
+ }
+}

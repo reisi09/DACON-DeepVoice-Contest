@@ -1,0 +1,69 @@
+{
+  "started_utc": "2026-09-18T05:06:18.546005+00:00",
+  "updated_utc": "2026-09-18T05:06:34.935076+00:00",
+  "status": "complete",
+  "revision": "371be01815b65274762d6d0a33e2cb70e24b9baa",
+  "target": 1602,
+  "retained_sources": 1602,
+  "provider_counts": {
+    "acestep": 800,
+    "musicgen": 802
+  },
+  "status_counts": {
+    "integrity_checked": 1600,
+    "quarantined": 2
+  },
+  "retained_original_bytes": 2010424245,
+  "failures": [],
+  "free_bytes": 212862795776,
+  "split": "unassigned",
+  "pilot_originals_reused": 256,
+  "selection_sha256": "88c37e4bdd1a390de57a01813f859a03a840835f7b09cb1411a3fdc6338052e9",
+  "target_selection_sha256": "a14c571836fc16f9e3ef2fa59c03a853b7c3f235d1ade329cb67326207bfff08",
+  "original_byte_limit": 2500000000,
+  "downloads_enabled": false,
+  "candidate_inventory_count": 11000,
+  "metadata_sha256": {
+    "acestep": "9cdd71bbde987639a1065ac3be2f2c846e776429c24974dcccab8fc893f773e8",
+    "musicgen": "e8251fb8f600a3224fde7f25522c612b0766d9ce66991ab43fd9add7b5fa3709"
+  },
+  "source_ledger": "results/data_expansion_20260918/haim_sources.jsonl",
+  "trained": false,
+  "independent_listening": false,
+  "limitations": [
+    "Integrity flags are not perceptual quality ratings",
+    "Missing MusicGen prompts and unknown ACE lyric provenance",
+    "Exact hashes do not establish absence of partial overlap or artist aliases"
+  ],
+  "valid_provider_counts": {
+    "acestep": 800,
+    "musicgen": 800
+  },
+  "valid_target_met": true,
+  "target_selection_path": "_workspace/data_expansion_20260918/haim/target_selection_1600_v0002.json",
+  "source_catalog_csv": "results/data_expansion_20260918/haim_sources.csv",
+  "source_catalog_sha256": "fae1e22ee5087205f0c201c77022433aea21492b7d40198d66a4e55557db4d32",
+  "source_ledger_sha256": "fe828c22c353a303011bb136596d1796789138b3f054236f64424cb82200a6c1",
+  "full_source_byte_replays": 1602,
+  "full_source_pcm_replays": 1602,
+  "net_new_originals": 1346,
+  "net_new_original_bytes": 1722635273,
+  "quarantined": [
+    {
+      "ID": "haim_musicgen_musicgen_small_00403",
+      "reasons": [
+        "historical_or_confirmation_exact_duplicate"
+      ]
+    },
+    {
+      "ID": "haim_musicgen_musicgen_small_00404",
+      "reasons": [
+        "historical_or_confirmation_exact_duplicate"
+      ]
+    }
+  ],
+  "retained_partial_files": 0,
+  "evaluated": false,
+  "final_verified_utc": "2026-09-18T05:09:40.240991+00:00",
+  "catalog_normalization": "MusicGen small/medium/large is model_variant; undocumented generator_version remains blank"
+}

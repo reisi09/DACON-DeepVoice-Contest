@@ -1,0 +1,70 @@
+{
+  "batch16_vs128": [
+    {
+      "name": "T0",
+      "batch16_tune_eer": 0.47935389846975957,
+      "batch128_tune_eer": 0.3030119018702939
+    },
+    {
+      "name": "T1",
+      "batch16_tune_eer": 0.47935389846975957,
+      "batch128_tune_eer": 0.30580519795967936
+    },
+    {
+      "name": "T2",
+      "batch16_tune_eer": 0.416848838150757,
+      "batch128_tune_eer": 0.33426443202979517
+    },
+    {
+      "name": "T3",
+      "batch16_tune_eer": 0.39118290017002677,
+      "batch128_tune_eer": 0.34430410493077485
+    },
+    {
+      "name": "T4",
+      "batch16_tune_eer": 0.3627236660999109,
+      "batch128_tune_eer": 0.31584487086065904
+    },
+    {
+      "name": "T5",
+      "batch16_tune_eer": 0.3627236660999109,
+      "batch128_tune_eer": 0.30580519795967936
+    },
+    {
+      "name": "T6",
+      "batch16_tune_eer": 0.3599303700105254,
+      "batch128_tune_eer": 0.33147113594040967
+    },
+    {
+      "name": "T7",
+      "batch16_tune_eer": 0.3498906971095458,
+      "batch128_tune_eer": 0.31863816695004454
+    }
+  ],
+  "selected_batch16": 0.5472222222222223,
+  "selected_batch128": 0.4666666666666667,
+  "linear_music_eer": 0.3666666666666667,
+  "batch128_seed_mean": 0.5175925925925927,
+  "batch128_seed_std": 0.08203724604939511,
+  "notebook_runtime_seconds": 237.91476702690125,
+  "credit_balance_difference": 0.343557,
+  "validation": {
+    "same_split_plan_features_and_baseline_bytes": true,
+    "baseline_and_linear_prediction_parity_atol": 1e-06,
+    "all_ten_temporal_checkpoint_hashes_verified": true,
+    "actual_batch128_and_optimizer_counts_verified": true,
+    "selected_epochs_match_minimum_validation_bce": true,
+    "selection_hash_matches_test_report": true,
+    "notebook_completed_cells": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "notebook_errors": 0,
+    "embedded_plot_present": true,
+    "plot_visually_reviewed": true
+  },
+  "limitation": "Historical dev reused; selected configuration differs between batches and optimizer-update counts differ. No new leaderboard proof or test-based seed selection."
+}

@@ -1,0 +1,1854 @@
+{
+ "val_target_vs_got": {
+  "mixed|0|constructed_mix|None": [
+   10,
+   15
+  ],
+  "mixed|0|existing:FMA/FMA|": [
+   2,
+   4
+  ],
+  "mixed|0|existing:FMA|REAL": [
+   26,
+   26
+  ],
+  "mixed|0|existing:JamendoMaxCaps|REAL": [
+   14,
+   14
+  ],
+  "mixed|0|haim|sonicmaster": [
+   14,
+   14
+  ],
+  "mixed|0|openmic|None": [
+   178,
+   178
+  ],
+  "mixed|1|constructed_mix|None": [
+   137,
+   137
+  ],
+  "mixed|1|echoes|Echoes/ATA": [
+   27,
+   27
+  ],
+  "mixed|1|echoes|Echoes/TTA": [
+   25,
+   25
+  ],
+  "mixed|1|existing:Echoes/audioldm/ATA|audioldm": [
+   2,
+   2
+  ],
+  "mixed|1|existing:Echoes/brev/TTA|brev": [
+   3,
+   4
+  ],
+  "mixed|1|existing:Echoes/diffrhythm/ATA|diffrhythm": [
+   1,
+   2
+  ],
+  "mixed|1|existing:Echoes/diffrhythm/TTA|diffrhythm": [
+   1,
+   1
+  ],
+  "mixed|1|existing:Echoes/elevenlabs/TTA|elevenlabs": [
+   2,
+   2
+  ],
+  "mixed|1|existing:Echoes/musicgen/ATA|musicgen": [
+   2,
+   2
+  ],
+  "mixed|1|existing:Echoes/musicgen/TTA|musicgen": [
+   2,
+   2
+  ],
+  "mixed|1|existing:Echoes/songgen/ATA|songgen": [
+   5,
+   7
+  ],
+  "mixed|1|existing:Echoes/songgen/TTA|songgen": [
+   6,
+   6
+  ],
+  "mixed|1|existing:Echoes/suno/TTA|suno": [
+   5,
+   4
+  ],
+  "mixed|1|existing:Echoes/udio/TTA|udio": [
+   3,
+   3
+  ],
+  "mixed|1|existing:FakeMusicCaps|MusicGen_medium": [
+   2,
+   3
+  ],
+  "mixed|1|existing:FakeMusicCaps|audioldm2": [
+   6,
+   9
+  ],
+  "mixed|1|existing:FakeMusicCaps|musicldm": [
+   2,
+   2
+  ],
+  "mixed|1|existing:FakeMusicCaps|mustango": [
+   32,
+   33
+  ],
+  "mixed|1|existing:FakeMusicCaps|stable_audio_open": [
+   18,
+   19
+  ],
+  "mixed|1|existing:HAIM|acestep": [
+   44,
+   44
+  ],
+  "mixed|1|existing:HAIM|musicgen": [
+   2,
+   2
+  ],
+  "mixed|1|existing:SONICS|suno": [
+   56,
+   56
+  ],
+  "mixed|1|existing:SONICS|udio": [
+   57,
+   57
+  ],
+  "mixed|1|generated_music|acestep": [
+   43,
+   55
+  ],
+  "mixed|1|haim|concat": [
+   22,
+   24
+  ],
+  "mixed|1|haim|crossfade": [
+   23,
+   26
+  ],
+  "mixed|1|sonics|suno": [
+   53,
+   53
+  ],
+  "mixed|1|sonics|udio": [
+   58,
+   58
+  ],
+  "mixed|None|haim|concat": [
+   1,
+   1
+  ],
+  "mixed|None|haim|crossfade": [
+   1,
+   1
+  ],
+  "music|0|existing:FMA/FMA|": [
+   5,
+   5
+  ],
+  "music|0|existing:FMA|REAL": [
+   25,
+   25
+  ],
+  "music|0|existing:JamendoMaxCaps|REAL": [
+   36,
+   36
+  ],
+  "music|0|haim|concat": [
+   4,
+   5
+  ],
+  "music|0|haim|crossfade": [
+   3,
+   3
+  ],
+  "music|0|haim|sonicmaster": [
+   18,
+   28
+  ],
+  "music|0|openmic|None": [
+   147,
+   150
+  ],
+  "music|1|echoes|Echoes/ATA": [
+   9,
+   14
+  ],
+  "music|1|echoes|Echoes/TTA": [
+   13,
+   20
+  ],
+  "music|1|existing:Echoes/acestep/TTA|acestep": [
+   7,
+   9
+  ],
+  "music|1|existing:Echoes/audioldm/ATA|audioldm": [
+   4,
+   5
+  ],
+  "music|1|existing:Echoes/audioldm/TTA|audioldm": [
+   6,
+   9
+  ],
+  "music|1|existing:Echoes/brev/TTA|brev": [
+   2,
+   2
+  ],
+  "music|1|existing:Echoes/diffrhythm/ATA|diffrhythm": [
+   4,
+   5
+  ],
+  "music|1|existing:Echoes/diffrhythm/TTA|diffrhythm": [
+   6,
+   6
+  ],
+  "music|1|existing:Echoes/elevenlabs/TTA|elevenlabs": [
+   4,
+   4
+  ],
+  "music|1|existing:Echoes/mubert/TTA|mubert": [
+   1,
+   2
+  ],
+  "music|1|existing:Echoes/musicgen/ATA|musicgen": [
+   4,
+   6
+  ],
+  "music|1|existing:Echoes/musicgen/TTA|musicgen": [
+   5,
+   6
+  ],
+  "music|1|existing:Echoes/producer/ATA|producer": [
+   2,
+   1
+  ],
+  "music|1|existing:Echoes/producer/TTA|producer": [
+   3,
+   3
+  ],
+  "music|1|existing:Echoes/songgen/ATA|songgen": [
+   1,
+   1
+  ],
+  "music|1|existing:Echoes/suno/TTA|suno": [
+   2,
+   2
+  ],
+  "music|1|existing:Echoes/udio/TTA|udio": [
+   3,
+   3
+  ],
+  "music|1|existing:FakeMusicCaps|MusicGen_medium": [
+   56,
+   69
+  ],
+  "music|1|existing:FakeMusicCaps|audioldm2": [
+   49,
+   58
+  ],
+  "music|1|existing:FakeMusicCaps|musicldm": [
+   53,
+   53
+  ],
+  "music|1|existing:FakeMusicCaps|mustango": [
+   25,
+   30
+  ],
+  "music|1|existing:FakeMusicCaps|stable_audio_open": [
+   37,
+   43
+  ],
+  "music|1|existing:HAIM|acestep": [
+   13,
+   13
+  ],
+  "music|1|existing:HAIM|musicgen": [
+   55,
+   55
+  ],
+  "music|1|existing:SONICS|suno": [
+   1,
+   1
+  ],
+  "music|1|existing:SONICS|udio": [
+   2,
+   2
+  ],
+  "music|1|generated_music|acestep": [
+   19,
+   20
+  ],
+  "music|1|haim|concat": [
+   4,
+   4
+  ],
+  "music|1|haim|crossfade": [
+   4,
+   4
+  ],
+  "music|1|sonics|suno": [
+   2,
+   2
+  ],
+  "music|1|sonics|udio": [
+   1,
+   1
+  ],
+  "none|0|musan_noise|None": [
+   94,
+   97
+  ],
+  "unknown_presence|0|existing:FMA/FMA|": [
+   1,
+   1
+  ],
+  "unknown_presence|0|existing:FMA|REAL": [
+   9,
+   9
+  ],
+  "unknown_presence|0|existing:JamendoMaxCaps|REAL": [
+   10,
+   10
+  ],
+  "unknown_presence|0|haim|sonicmaster": [
+   5,
+   5
+  ],
+  "unknown_presence|0|openmic|None": [
+   32,
+   32
+  ],
+  "unknown_presence|1|echoes|Echoes/ATA": [
+   4,
+   4
+  ],
+  "unknown_presence|1|echoes|Echoes/TTA": [
+   3,
+   3
+  ],
+  "unknown_presence|1|existing:Echoes/audioldm/ATA|audioldm": [
+   1,
+   1
+  ],
+  "unknown_presence|1|existing:Echoes/songgen/TTA|songgen": [
+   1,
+   2
+  ],
+  "unknown_presence|1|existing:FakeMusicCaps|MusicGen_medium": [
+   2,
+   4
+  ],
+  "unknown_presence|1|existing:FakeMusicCaps|audioldm2": [
+   5,
+   5
+  ],
+  "unknown_presence|1|existing:FakeMusicCaps|musicldm": [
+   5,
+   5
+  ],
+  "unknown_presence|1|existing:FakeMusicCaps|mustango": [
+   3,
+   4
+  ],
+  "unknown_presence|1|existing:FakeMusicCaps|stable_audio_open": [
+   5,
+   5
+  ],
+  "unknown_presence|1|existing:HAIM|acestep": [
+   3,
+   3
+  ],
+  "unknown_presence|1|existing:HAIM|musicgen": [
+   3,
+   3
+  ],
+  "unknown_presence|1|existing:SONICS|suno": [
+   3,
+   3
+  ],
+  "unknown_presence|1|existing:SONICS|udio": [
+   1,
+   1
+  ],
+  "unknown_presence|1|generated_music|acestep": [
+   5,
+   7
+  ],
+  "unknown_presence|1|haim|concat": [
+   2,
+   2
+  ],
+  "unknown_presence|1|haim|crossfade": [
+   3,
+   4
+  ],
+  "unknown_presence|1|sonics|suno": [
+   5,
+   5
+  ],
+  "unknown_presence|1|sonics|udio": [
+   1,
+   1
+  ],
+  "unknown_presence|None|haim|concat": [
+   1,
+   2
+  ],
+  "voice|0|asvspoof2021_df|bonafide": [
+   101,
+   106
+  ],
+  "voice|0|asvspoof2021_la|bonafide": [
+   152,
+   216
+  ],
+  "voice|0|constructed_enhanced|None": [
+   4,
+   7
+  ],
+  "voice|0|existing:asvspoof2019_la|original": [
+   60,
+   0
+  ],
+  "voice|0|existing:librispeech_test-clean|original": [
+   59,
+   59
+  ],
+  "voice|0|speechfake|bonafide": [
+   88,
+   92
+  ],
+  "voice|0|vocalset|None": [
+   62,
+   66
+  ],
+  "voice|0|zeroth|None": [
+   435,
+   436
+  ],
+  "voice|1|asvspoof2021_df|A07": [
+   3,
+   5
+  ],
+  "voice|1|asvspoof2021_df|A08": [
+   3,
+   4
+  ],
+  "voice|1|asvspoof2021_df|A09": [
+   3,
+   4
+  ],
+  "voice|1|asvspoof2021_df|A10": [
+   3,
+   3
+  ],
+  "voice|1|asvspoof2021_df|A11": [
+   3,
+   3
+  ],
+  "voice|1|asvspoof2021_df|A12": [
+   3,
+   5
+  ],
+  "voice|1|asvspoof2021_df|A13": [
+   3,
+   3
+  ],
+  "voice|1|asvspoof2021_df|A14": [
+   3,
+   1
+  ],
+  "voice|1|asvspoof2021_df|A15": [
+   3,
+   5
+  ],
+  "voice|1|asvspoof2021_df|A16": [
+   3,
+   3
+  ],
+  "voice|1|asvspoof2021_df|A17": [
+   3,
+   4
+  ],
+  "voice|1|asvspoof2021_df|A18": [
+   3,
+   3
+  ],
+  "voice|1|asvspoof2021_df|A19": [
+   3,
+   3
+  ],
+  "voice|1|asvspoof2021_df|HUB-B01": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-D01": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-D02": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-D03": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-D04": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-D05": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N03": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N04": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N05": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N06": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N07": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N08": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N09": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N10": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N11": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N12": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N13": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N14": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N15": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N16": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N17": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N18": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N19": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|HUB-N20": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-B01": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N03": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N04": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N05": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N06": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N10": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N11": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N12": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N13": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N16": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N17": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|SPO-N18": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team01": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team02": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team03": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team04": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team06": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team07": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team08": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team09": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team10": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team11": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team12": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team13": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team14": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team16": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team17": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team18": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team19": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team20": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team21": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team22": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team23": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team24": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team25": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team26": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team27": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team28": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team29": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team30": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team31": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team32": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task1-team33": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team02": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team03": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team05": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team06": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team07": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team08": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team09": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team10": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team11": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team12": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team13": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team15": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team16": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team18": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team19": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team20": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team22": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team23": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team24": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team25": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team26": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team27": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team28": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team29": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team30": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team31": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team32": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_df|Task2-team33": [
+   3,
+   0
+  ],
+  "voice|1|asvspoof2021_la|A07": [
+   31,
+   24
+  ],
+  "voice|1|asvspoof2021_la|A08": [
+   31,
+   34
+  ],
+  "voice|1|asvspoof2021_la|A09": [
+   31,
+   47
+  ],
+  "voice|1|asvspoof2021_la|A10": [
+   31,
+   32
+  ],
+  "voice|1|asvspoof2021_la|A11": [
+   31,
+   33
+  ],
+  "voice|1|asvspoof2021_la|A12": [
+   31,
+   39
+  ],
+  "voice|1|asvspoof2021_la|A13": [
+   31,
+   39
+  ],
+  "voice|1|asvspoof2021_la|A14": [
+   31,
+   39
+  ],
+  "voice|1|asvspoof2021_la|A15": [
+   31,
+   35
+  ],
+  "voice|1|asvspoof2021_la|A16": [
+   31,
+   39
+  ],
+  "voice|1|asvspoof2021_la|A17": [
+   31,
+   40
+  ],
+  "voice|1|asvspoof2021_la|A18": [
+   31,
+   44
+  ],
+  "voice|1|asvspoof2021_la|A19": [
+   31,
+   46
+  ],
+  "voice|1|constructed_splice|None": [
+   18,
+   18
+  ],
+  "voice|1|mlaad|Audio8-TTS-Preview-0.1b": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|Audio8-TTS-Preview-0.6b": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|Ava-82M": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|Azzurra-Voice": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|CaroTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Cartesia.ai (Sonic-3)": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|ChatTTS": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|Chatterbox": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Chatterbox Multilingual": [
+   44,
+   45
+  ],
+  "voice|1|mlaad|Chatterbox-Turbo": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|DeepGram": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|Dramabox": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Echo-TTS": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|Edge-TTS": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|ElevenLabs-Turbo-v2.5": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|ElevenLabs-v2-Multilingual": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|ElevenLabs-v3": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|FireRedTTS-2.0": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|Fish-S2-Pro": [
+   43,
+   46
+  ],
+  "voice|1|mlaad|FishTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|FreyaTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|GLM-TTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|GPA-v1.0": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|GPA-v1.5": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|GPT-SoVITS": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|Gemini-3.1-Flash-TTS": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|Higgs-Audio-V2": [
+   43,
+   45
+  ],
+  "voice|1|mlaad|Higgs-Audio-V3": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Hume TADA-3B-ML": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Index-TTS-1.5": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Index-TTS-2.0": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|IndicF5": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Indri-TTS-0.1": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Inflect-Micro-v2": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Inflect-Nano-v1": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|Inflect-Nano-v2": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|Inworld-TTS-2": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Kani-TTS-370M": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Kartoffelbox": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|Kitten-TTS-Nano-0.1": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Kitten-TTS-Nano-0.2": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|KugelAudio": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Kyutai-TTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|LEMAS-TTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|LFM2.5-Audio": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Llasa-1B": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Llasa-1B-Multilingual": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|Llasa-3B": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|Llasa-8B": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|LongCat-AudioDiT": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|LuxTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|MOSS-TTS-1.7B": [
+   43,
+   46
+  ],
+  "voice|1|mlaad|MOSS-TTS-8B": [
+   44,
+   46
+  ],
+  "voice|1|mlaad|MOSS-TTS-Nano-100M": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Mars5": [
+   4,
+   6
+  ],
+  "voice|1|mlaad|Marvis-TTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|MatchaTTS": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|Maya1 TTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|MegaTTS3": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|MeloTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Metavoice-1B": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Microsoft VibeVoice 1.5B": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Microsoft VibeVoice Large": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|MingTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|MiniCPM-o-2.6": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|MiniMax-Speech-2.8-Turbo": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|MiraTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|MisoTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|NVidia Magpie-TTS Multilingual": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Nari Dia-1.6B": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|Nari Dia2": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|NeuTTS-Air": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|NeuTTS-Nano": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|OmniVoice": [
+   43,
+   47
+  ],
+  "voice|1|mlaad|OpenAI TTS-1 HD": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|OpenVoiceV2": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Openaudio-S1-Mini": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|OuteTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Parler-mini-multilingual": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|PocketTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|PrimeTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Qwen2.5-Omni": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Qwen3-TTS-12Hz-0.6B-Base": [
+   43,
+   45
+  ],
+  "voice|1|mlaad|Qwen3-TTS-12Hz-1.7B-Base": [
+   44,
+   48
+  ],
+  "voice|1|mlaad|Qwen3-TTS-CustomVoice": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|RVC": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Raon-OpenTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Resemble.ai (April 12th, 2025)": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Rime-Coda": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Ringg Squirrel TTS v1.0": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Smallest-Lightning-v3.1": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Soprano11": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|SopranoTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Sopro": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|SoulX-Podcast": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Spark-TTS-0.5B": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Step-Audio-EditX": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Supertonic": [
+   4,
+   6
+  ],
+  "voice|1|mlaad|SvaraTTS v1": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|TADA-1B": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|TADA-3B-ML": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Tsukasa_Speech": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|VITS2-Claude": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Veena": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|VibeVoice-Realtime-0.5B": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|VieNeu-TTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|VoXtream2": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|VoiceCore": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|Voxtral": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|Voxtream": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|WavTTS": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|WhisperSpeech": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|YarnGPT": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|ZONOS2": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|ZipVoice": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|dots.tts-base": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|dots.tts-mf": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|dots.tts-soar": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|e2-tts": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|f5-tts": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|facebook_mms-tts-deu": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|facebook_mms-tts-eng": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|facebook_mms-tts-fin": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|facebook_mms-tts-fra": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|facebook_mms-tts-hun": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|facebook_mms-tts-nld": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|facebook_mms-tts-ron": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|facebook_mms-tts-rus": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|facebook_mms-tts-swe": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|facebook_mms-tts-ukr": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|griffin_lim": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|kokoro": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|microsoft_speecht5_tts": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|minimax/speech-02-turbo": [
+   43,
+   45
+  ],
+  "voice|1|mlaad|minimax_speech-02-turbo": [
+   43,
+   43
+  ],
+  "voice|1|mlaad|minimax_speech-2.6-hd": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|optispeech": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|orpheus-tts-0.1-finetune": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|parler_tts_large_v1": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|parler_tts_mini_v0.1": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|parler_tts_mini_v1": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|sarashina2.2-tts": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|sesame_csm": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|suno_bark": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|suno_bark-small": [
+   4,
+   6
+  ],
+  "voice|1|mlaad|supertonic-3": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|tts_models/multilingual/multi-dataset/bark": [
+   43,
+   47
+  ],
+  "voice|1|mlaad|tts_models/multilingual/multi-dataset/xtts_v2": [
+   44,
+   49
+  ],
+  "voice|1|mlaad|tts_models_bg_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_bn_custom_vits-female": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|tts_models_bn_custom_vits-male": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|tts_models_cs_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_da_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_de_css10_vits-neon": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_de_thorsten_tacotron2-DCA": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_de_thorsten_tacotron2-DDC": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_de_thorsten_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_el_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_blizzard2013_capacitron-t2-c50": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_ek1_tacotron2": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_jenny_jenny": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_fast_pitch": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_glow-tts": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_neural_hmm": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_overflow": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_speedy-speech": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_tacotron2-DCA": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_tacotron2-DDC": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_tacotron2-DDC_ph": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_ljspeech_vits--neon": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_multi-dataset_tortoise-v2": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_en_sam_tacotron-DDC": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_es_css10_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_es_mai_tacotron2-DDC": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|tts_models_et_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_fa_custom_glow-tts": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_fi_css10_vits": [
+   3,
+   4
+  ],
+  "voice|1|mlaad|tts_models_fr_css10_vits": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|tts_models_fr_mai_tacotron2-DDC": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|tts_models_ga_cv_vits": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|tts_models_hr_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_hu_css10_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_it_mai_female_glow-tts": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_it_mai_female_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_it_mai_male_glow-tts": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_it_mai_male_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_lt_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_lv_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_mt_cv_vits": [
+   4,
+   6
+  ],
+  "voice|1|mlaad|tts_models_multilingual_multi-dataset_bark": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|tts_models_multilingual_multi-dataset_xtts_v1.1": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_multilingual_multi-dataset_xtts_v2": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_pl_mai_female_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_pt_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_ro_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_sk_cv_vits": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|tts_models_sl_cv_vits": [
+   4,
+   5
+  ],
+  "voice|1|mlaad|tts_models_sv_cv_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_tr_common-voice_glow-tts": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_uk_mai_glow-tts": [
+   3,
+   3
+  ],
+  "voice|1|mlaad|tts_models_uk_mai_vits": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|tts_models_zh-CN_baker_tacotron2-DDC-GST": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|vixTTS": [
+   4,
+   4
+  ],
+  "voice|1|mlaad|zonosTTS-v0.1": [
+   4,
+   4
+  ],
+  "voice|1|speechfake|CosyVoice": [
+   87,
+   94
+  ],
+  "voice|1|speechfake|MeloTTS": [
+   85,
+   90
+  ],
+  "voice|1|speechfake|SeedVC": [
+   87,
+   131
+  ]
+ },
+ "train_only_cells": [
+  "mixed|0|existing:constructed_music|REAL",
+  "mixed|1|existing:Echoes/audioldm/TTA|audioldm",
+  "mixed|1|existing:Echoes/mubert/TTA|mubert",
+  "mixed|1|existing:Echoes/producer/ATA|producer",
+  "mixed|1|existing:Echoes/producer/TTA|producer",
+  "mixed|1|existing:constructed_music|suno",
+  "mixed|1|existing:constructed_music|udio",
+  "mixed|1|existing:suno|suno",
+  "mixed|1|existing:udio|udio",
+  "music|0|existing:constructed_music|REAL",
+  "music|1|existing:Echoes/songgen/TTA|songgen",
+  "music|1|existing:Echoes/stableaudio/TTA|stableaudio",
+  "music|1|existing:constructed_music|suno",
+  "music|1|existing:constructed_music|udio",
+  "music|1|existing:suno|suno",
+  "music|1|existing:udio|udio",
+  "music|None|haim|concat",
+  "music|None|haim|crossfade",
+  "unknown_presence|0|existing:constructed_music|REAL",
+  "unknown_presence|1|existing:Echoes/audioldm/TTA|audioldm",
+  "unknown_presence|1|existing:Echoes/brev/TTA|brev",
+  "unknown_presence|1|existing:Echoes/diffrhythm/ATA|diffrhythm",
+  "unknown_presence|1|existing:Echoes/diffrhythm/TTA|diffrhythm",
+  "unknown_presence|1|existing:Echoes/elevenlabs/TTA|elevenlabs",
+  "unknown_presence|1|existing:Echoes/musicgen/ATA|musicgen",
+  "unknown_presence|1|existing:Echoes/musicgen/TTA|musicgen",
+  "unknown_presence|1|existing:Echoes/producer/ATA|producer",
+  "unknown_presence|1|existing:Echoes/songgen/ATA|songgen",
+  "unknown_presence|1|existing:Echoes/suno/TTA|suno",
+  "unknown_presence|1|existing:Echoes/udio/TTA|udio",
+  "unknown_presence|1|existing:constructed_music|suno",
+  "unknown_presence|1|existing:constructed_music|udio",
+  "unknown_presence|1|existing:suno|suno",
+  "unknown_presence|1|existing:udio|udio",
+  "unknown_presence|None|haim|crossfade",
+  "voice|0|csd|None",
+  "voice|0|musan_speech|None",
+  "voice|1|asvspoof2021_df|HUB-B00",
+  "voice|1|asvspoof2021_df|SPO-B00",
+  "voice|1|existing:asvspoof2019_la|A01",
+  "voice|1|existing:asvspoof2019_la|A02",
+  "voice|1|existing:asvspoof2019_la|A03",
+  "voice|1|existing:asvspoof2019_la|A04",
+  "voice|1|existing:asvspoof2019_la|A05",
+  "voice|1|existing:asvspoof2019_la|A06",
+  "voice|1|existing:asvspoof2019_la|A07",
+  "voice|1|existing:asvspoof2019_la|A08",
+  "voice|1|existing:asvspoof2019_la|A09",
+  "voice|1|existing:asvspoof2019_la|A10",
+  "voice|1|existing:asvspoof2019_la|A11",
+  "voice|1|existing:asvspoof2019_la|A12",
+  "voice|1|existing:asvspoof2019_la|A13",
+  "voice|1|existing:asvspoof2019_la|A14",
+  "voice|1|existing:asvspoof2019_la|A15",
+  "voice|1|existing:asvspoof2019_la|A16",
+  "voice|1|existing:asvspoof2019_la|A17",
+  "voice|1|existing:asvspoof2019_la|A18",
+  "voice|1|existing:asvspoof2019_la|A19",
+  "voice|1|speechfake|EdgeTTS"
+ ],
+ "ok": true,
+ "component_leaks": 0,
+ "counts": {
+  "test|mixed|0": 621,
+  "test|mixed|1": 1008,
+  "test|mixed|None": 2,
+  "test|music|0": 851,
+  "test|music|1": 193,
+  "test|music|None": 1,
+  "test|none|0": 276,
+  "test|unknown_presence|0": 61,
+  "test|unknown_presence|1": 115,
+  "test|unknown_presence|None": 4,
+  "test|voice|0": 2287,
+  "test|voice|1": 1308,
+  "train|mixed|0": 1395,
+  "train|mixed|1": 3660,
+  "train|mixed|None": 14,
+  "train|music|0": 1362,
+  "train|music|1": 2234,
+  "train|music|None": 2,
+  "train|none|0": 527,
+  "train|unknown_presence|0": 338,
+  "train|unknown_presence|1": 355,
+  "train|unknown_presence|None": 8,
+  "train|voice|0": 6052,
+  "train|voice|1": 15243,
+  "val|mixed|0": 251,
+  "val|mixed|1": 667,
+  "val|mixed|None": 2,
+  "val|music|0": 252,
+  "val|music|1": 453,
+  "val|music|None": 2,
+  "val|none|0": 97,
+  "val|unknown_presence|0": 57,
+  "val|unknown_presence|1": 68,
+  "val|unknown_presence|None": 2,
+  "val|voice|0": 982,
+  "val|voice|1": 2197
+ },
+ "single_class_type_splits": []
+}

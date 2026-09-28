@@ -1,0 +1,7 @@
+manifest_rows=7101 unique_audio_hashes=7101 path_and_audio_sha256=PASS
+global_postmix_components=256 cross_split_group_atoms=0 cross_split_parent_ids=0
+core_base_rows_by_split {'train': 1043, 'calibration': 404, 'dev': 212, 'test': 175} speaker_split_counts {'calibration': 3, 'dev': 2, 'train': 3, 'test': 2}
+unknown_label_masks {'FILE_FAKE': 0, 'VOICE_FAKE': 4517, 'MUSIC_FAKE': 2524, 'VOICE_PRESENT': 4457, 'MUSIC_PRESENT': 0}
+Traceback (most recent call last):
+  File "<stdin>", line 43, in <module>
+AssertionError

@@ -1,0 +1,19 @@
+{
+  "groups": [
+    {
+      "name": "M95_cosine",
+      "tune_eer": 0.29966534423663405,
+      "tune_bce": 0.5776044823219588,
+      "test_music_eer": 0.3601851851851852,
+      "test_file_eer": 0.316025641025641
+    },
+    {
+      "name": "M330_cosine",
+      "tune_eer": 0.285901276549807,
+      "tune_bce": 0.5636309185096199,
+      "test_music_eer": 0.23518518518518516,
+      "test_file_eer": 0.27735042735042736
+    }
+  ],
+  "winner": "M330_cosine"
+}

@@ -1,0 +1,6 @@
+# Music selector correction evidence
+
+1. Scenario: actual 7,101-row manifest population admission. Invocation: `.venv/bin/python` receipt script calling `music_model_rows` over `_workspace/eight_h100_20260917/dataset/manifest.csv`. Binary observable: all four splits contain labels `{0,1}`, planned codec views are present, and `truth_mismatches`, `non_core`, `music_absent` are all zero. Artifact: `music_selector_actual_manifest_receipt.json`.
+2. Scenario: corrected selectors preserve bounded CPU integration and selection-lock behavior. Invocation: `.venv/bin/python -m pytest -q test_eight_fixed.py test_eight_e2_music_file_analysis.py test_eight_integration.py`. Binary observable: exit code 0 and 12 passed. Artifact: `music_selector_cpu_tests.log`.
+3. Scenario: overlay freeze integrity. Invocation: `git diff --check` and `shasum -a 256` for the three owned files. Binary observable: exit code 0 and three SHA-256 values. Artifact: `music_selector_source_hashes.log`.
+4. Scenario: row-role feature pruning audit. Invocation: static line-level consumer trace across `eight_ablation.py`, `eight_fixed_io.py`, `eight_probes.py`, `eight_e2_music_file_analysis.py`, `eight_feature_schema.py`, and `eight_features.py`. Binary observable: exact required-key matrix and identified schema/cache/preflight blockers. Artifact: `feature_key_dependency_audit.md`.

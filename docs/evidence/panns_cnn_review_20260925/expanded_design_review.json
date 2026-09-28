@@ -1,0 +1,62 @@
+{
+  "scope": "expanded PANNs Cnn14 design; no implementation or training",
+  "requested_model": "claude-opus-5-5",
+  "actual_models": [
+    "claude-opus-5-5"
+  ],
+  "requested_effort": "high",
+  "cli_version": "2.1.281",
+  "cli_sha256": "a922981f6f3b55a251ef9f9dbaa0621a5f99cbcb5ca67f8a797476ccfc83f626",
+  "is_error": false,
+  "returncode": 0,
+  "api_duration_ms": 109570,
+  "process_seconds": 111.1089547079755,
+  "num_turns": 1,
+  "prompt_sha256": "f70c887239d160127eeb11b04357ec6f87605924923384e4703fd2bdf71a53c4",
+  "response_sha256": "cda66ffb7d6cbf7a1b315cb7add3a030f0bd109813ed8cf9bd11721affe340ed",
+  "result_sha256": "d061fbf22027212811b42f2edfeab8c76c37c2b2cc4a2c0f051330ed08782849",
+  "reviewed_draft_sha256": "befc1830eeda5d70daf5c026224796e8b06df605152ee3b212bc5c0b56b1eb8a",
+  "final_spec_sha256": "9d6c898dfc9b602cd4e4d7ab5ad15233cca4526cf46b4566f7fc37fec0fbab33",
+  "final_revised_spec_reviewed_by_claude": false,
+  "implementation_started": false,
+  "training_started": false,
+  "new_gpu_started": false,
+  "model_runtime_checks_executed": false,
+  "quality_improvement_proven": false,
+  "self_review": {
+    "scope": "source and arithmetic inspection only; no model execution",
+    "source_sha256": {
+      "repository/baseline_original/script.py": "c17d776b7c17c2d70f1e55c2186ea54f0af8695dcdf07a106523cd80213aed9e",
+      "repository/decision_heads.py": "f807e7a9f21b488f81d54b3c3a91f04cc42f8801508838c91ec116527a340d33",
+      "repository/data_v4/presence.py": "01e3855ecefea44d95f9f471bc783d10c3a7edc3a645d12013e101ea0f71af16",
+      "repository/data_v4/prepare_roles.py": "49c7ee89b451707c92a1e2f2f3a5ee9f0dc82e0a0ecf532d45f17a9bd284b14c",
+      "repository/graph_scoring.py": "0faaf21ff98d1d6be63e8d411ca910f76b1a061b8e639193a5ca54eb4ee05bb0",
+      "repository/full_bank_submission.py": "d2fe71387bebca79e46d54472ad6aa172121931371ff81e0ec2fece2903324d0"
+    },
+    "installed_cnn14_source_sha256": "91f99e879bd42d93850f819914086dd1167f1067f26550a0561f25c4eefa157f",
+    "calculated_parameters": {
+      "SE5": 132160,
+      "TF4": 19,
+      "temporal_pool": 2048,
+      "block6_conv": 56623104,
+      "block5_conv": 14155776,
+      "block5_plus_6_conv": 70778880
+    },
+    "calculated_fp32_adam_state_MiB": {
+      "block6": 864.0,
+      "block5_plus_6": 1080.0
+    },
+    "readout_dtype_probe": {
+      "purpose": "avoid changing baseline tag statistics by blanket float64 promotion",
+      "numpy_version": "2.4.6",
+      "input_dtype": "float32",
+      "max_dtype": "float32",
+      "mean_dtype": "float32",
+      "q90_dtype": "float32",
+      "mean_difference_after_pre_reduction_float64_promotion": -1.2417634337458239e-08,
+      "cnn14_executed": false,
+      "training_executed": false
+    }
+  },
+  "raw_evidence_location": "original project _workspace/panns_architecture_review_20260925/expanded_design_* (not committed)"
+}

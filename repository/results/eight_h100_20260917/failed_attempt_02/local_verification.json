@@ -1,0 +1,17 @@
+{
+  "scenario": "preserve retry2 bootstrap failure before attempt3",
+  "invocation": "VESSL filtered download then archive CRC/member SHA verification",
+  "binary_observable": {
+    "state_status": "failed",
+    "state_error": "bootstrap exit 1",
+    "archive_verified_reported": true,
+    "archive_bytes": 813,
+    "archive_sha256": "9aea0350412de7995e75d8acc0e482269729fd634a4d0eb9e94f37e9e85494e7",
+    "sidecar_match": true,
+    "receipt_match": true,
+    "crc_ok": true,
+    "member_hashes_ok": true,
+    "export_member_count": 1
+  },
+  "artifact": "results/eight_h100_20260917/failed_attempt_02"
+}

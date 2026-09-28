@@ -1,0 +1,25 @@
+{
+  "elapsed_seconds": 6.816441774368286,
+  "gpu_started": false,
+  "invocation": "eight_h100_launch.workspace_snapshot(); cpu_preflight(snapshot)",
+  "observable": "all imports and hashes verified; standby/stopped one-H100 metadata",
+  "preflight": {
+    "antideepfake_model_sha256": "57da6a47234bb8aad0c61b7f575378a12c2734a30f1f395b95bbf97ed4ba5373",
+    "asset_files_verified": 27,
+    "imageio_ffmpeg_imported": true,
+    "imports": 9,
+    "shared_antideepfake_receipt_verified": true,
+    "status": "passed",
+    "workspace_h100_count": 1
+  },
+  "scenario": "CPU import, offline asset identity, shared AntiDeepfake receipt/object, and stopped H100 workspace preflight",
+  "workspace": {
+    "accelerator": "H100 SXM",
+    "accelerator_count": 1,
+    "hourly_compute_credits": 2.98,
+    "init_script": "bash /shared/redesign-full-20260917/redesign_full_refit_run.sh",
+    "phase": "standby",
+    "state": "stopped",
+    "workspace": "wsp-9683432r72m7"
+  }
+}

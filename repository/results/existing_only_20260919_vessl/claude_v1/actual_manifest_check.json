@@ -1,0 +1,1070 @@
+{
+  "cells": [
+    {
+      "generator": "REAL",
+      "label": "0",
+      "route": "music",
+      "rows": 103,
+      "source": "FMA",
+      "split": "test"
+    },
+    {
+      "generator": "",
+      "label": "0",
+      "route": "music",
+      "rows": 9,
+      "source": "FMA/FMA",
+      "split": "test"
+    },
+    {
+      "generator": "MusicGen_medium",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "test"
+    },
+    {
+      "generator": "audioldm2",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "test"
+    },
+    {
+      "generator": "musicldm",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "test"
+    },
+    {
+      "generator": "mustango",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "test"
+    },
+    {
+      "generator": "stable_audio_open",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "test"
+    },
+    {
+      "generator": "acestep",
+      "label": "1",
+      "route": "music",
+      "rows": 33,
+      "source": "HAIM",
+      "split": "test"
+    },
+    {
+      "generator": "lyria-pro3",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "HAIM",
+      "split": "test"
+    },
+    {
+      "generator": "musicgen",
+      "label": "1",
+      "route": "music",
+      "rows": 33,
+      "source": "HAIM",
+      "split": "test"
+    },
+    {
+      "generator": "sonicmaster_real",
+      "label": "0",
+      "route": "music",
+      "rows": 84,
+      "source": "HAIM",
+      "split": "test"
+    },
+    {
+      "generator": "REAL",
+      "label": "0",
+      "route": "music",
+      "rows": 145,
+      "source": "JamendoMaxCaps",
+      "split": "test"
+    },
+    {
+      "generator": "suno",
+      "label": "1",
+      "route": "music",
+      "rows": 61,
+      "source": "SONICS",
+      "split": "test"
+    },
+    {
+      "generator": "udio",
+      "label": "1",
+      "route": "music",
+      "rows": 88,
+      "source": "SONICS",
+      "split": "test"
+    },
+    {
+      "generator": "A01",
+      "label": "1",
+      "route": "voice",
+      "rows": 62,
+      "source": "asvspoof2019_la",
+      "split": "test"
+    },
+    {
+      "generator": "A02",
+      "label": "1",
+      "route": "voice",
+      "rows": 62,
+      "source": "asvspoof2019_la",
+      "split": "test"
+    },
+    {
+      "generator": "A03",
+      "label": "1",
+      "route": "voice",
+      "rows": 62,
+      "source": "asvspoof2019_la",
+      "split": "test"
+    },
+    {
+      "generator": "A04",
+      "label": "1",
+      "route": "voice",
+      "rows": 62,
+      "source": "asvspoof2019_la",
+      "split": "test"
+    },
+    {
+      "generator": "A05",
+      "label": "1",
+      "route": "voice",
+      "rows": 62,
+      "source": "asvspoof2019_la",
+      "split": "test"
+    },
+    {
+      "generator": "A06",
+      "label": "1",
+      "route": "voice",
+      "rows": 62,
+      "source": "asvspoof2019_la",
+      "split": "test"
+    },
+    {
+      "generator": "original",
+      "label": "0",
+      "route": "voice",
+      "rows": 372,
+      "source": "asvspoof2019_la",
+      "split": "test"
+    },
+    {
+      "generator": "acestep",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/acestep/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "audioldm",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/audioldm/ATA",
+      "split": "train"
+    },
+    {
+      "generator": "audioldm",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/audioldm/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "brev",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/brev/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "diffrhythm",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/diffrhythm/ATA",
+      "split": "train"
+    },
+    {
+      "generator": "diffrhythm",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/diffrhythm/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "elevenlabs",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/elevenlabs/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "mubert",
+      "label": "1",
+      "route": "music",
+      "rows": 6,
+      "source": "Echoes/mubert/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "musicgen",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/musicgen/ATA",
+      "split": "train"
+    },
+    {
+      "generator": "musicgen",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/musicgen/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "producer",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/producer/ATA",
+      "split": "train"
+    },
+    {
+      "generator": "producer",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/producer/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "songgen",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/songgen/ATA",
+      "split": "train"
+    },
+    {
+      "generator": "songgen",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/songgen/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "stableaudio",
+      "label": "1",
+      "route": "music",
+      "rows": 6,
+      "source": "Echoes/stableaudio/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "suno",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/suno/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "udio",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "Echoes/udio/TTA",
+      "split": "train"
+    },
+    {
+      "generator": "REAL",
+      "label": "0",
+      "route": "music",
+      "rows": 393,
+      "source": "FMA",
+      "split": "train"
+    },
+    {
+      "generator": "",
+      "label": "0",
+      "route": "music",
+      "rows": 42,
+      "source": "FMA/FMA",
+      "split": "train"
+    },
+    {
+      "generator": "MusicGen_medium",
+      "label": "1",
+      "route": "music",
+      "rows": 80,
+      "source": "FakeMusicCaps",
+      "split": "train"
+    },
+    {
+      "generator": "audioldm2",
+      "label": "1",
+      "route": "music",
+      "rows": 80,
+      "source": "FakeMusicCaps",
+      "split": "train"
+    },
+    {
+      "generator": "musicldm",
+      "label": "1",
+      "route": "music",
+      "rows": 80,
+      "source": "FakeMusicCaps",
+      "split": "train"
+    },
+    {
+      "generator": "mustango",
+      "label": "1",
+      "route": "music",
+      "rows": 80,
+      "source": "FakeMusicCaps",
+      "split": "train"
+    },
+    {
+      "generator": "stable_audio_open",
+      "label": "1",
+      "route": "music",
+      "rows": 80,
+      "source": "FakeMusicCaps",
+      "split": "train"
+    },
+    {
+      "generator": "acestep",
+      "label": "1",
+      "route": "music",
+      "rows": 124,
+      "source": "HAIM",
+      "split": "train"
+    },
+    {
+      "generator": "lyria-pro3",
+      "label": "1",
+      "route": "music",
+      "rows": 78,
+      "source": "HAIM",
+      "split": "train"
+    },
+    {
+      "generator": "musicgen",
+      "label": "1",
+      "route": "music",
+      "rows": 125,
+      "source": "HAIM",
+      "split": "train"
+    },
+    {
+      "generator": "sonicmaster_real",
+      "label": "0",
+      "route": "music",
+      "rows": 292,
+      "source": "HAIM",
+      "split": "train"
+    },
+    {
+      "generator": "REAL",
+      "label": "0",
+      "route": "music",
+      "rows": 565,
+      "source": "JamendoMaxCaps",
+      "split": "train"
+    },
+    {
+      "generator": "suno",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "SONICS",
+      "split": "train"
+    },
+    {
+      "generator": "udio",
+      "label": "1",
+      "route": "music",
+      "rows": 193,
+      "source": "SONICS",
+      "split": "train"
+    },
+    {
+      "generator": "suno",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "suno",
+      "split": "train"
+    },
+    {
+      "generator": "udio",
+      "label": "1",
+      "route": "music",
+      "rows": 20,
+      "source": "udio",
+      "split": "train"
+    },
+    {
+      "generator": "A01",
+      "label": "1",
+      "route": "voice",
+      "rows": 300,
+      "source": "CtrSVDD",
+      "split": "train"
+    },
+    {
+      "generator": "A02",
+      "label": "1",
+      "route": "voice",
+      "rows": 304,
+      "source": "CtrSVDD",
+      "split": "train"
+    },
+    {
+      "generator": "A03",
+      "label": "1",
+      "route": "voice",
+      "rows": 89,
+      "source": "CtrSVDD",
+      "split": "train"
+    },
+    {
+      "generator": "A04",
+      "label": "1",
+      "route": "voice",
+      "rows": 24,
+      "source": "CtrSVDD",
+      "split": "train"
+    },
+    {
+      "generator": "A05",
+      "label": "1",
+      "route": "voice",
+      "rows": 300,
+      "source": "CtrSVDD",
+      "split": "train"
+    },
+    {
+      "generator": "REAL",
+      "label": "0",
+      "route": "voice",
+      "rows": 1017,
+      "source": "CtrSVDD",
+      "split": "train"
+    },
+    {
+      "generator": "A01",
+      "label": "1",
+      "route": "voice",
+      "rows": 44,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A02",
+      "label": "1",
+      "route": "voice",
+      "rows": 44,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A03",
+      "label": "1",
+      "route": "voice",
+      "rows": 44,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A04",
+      "label": "1",
+      "route": "voice",
+      "rows": 44,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A05",
+      "label": "1",
+      "route": "voice",
+      "rows": 44,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A06",
+      "label": "1",
+      "route": "voice",
+      "rows": 43,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A07",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A08",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A09",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A10",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A11",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A12",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A13",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A14",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A15",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A16",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A17",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A18",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "A19",
+      "label": "1",
+      "route": "voice",
+      "rows": 58,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "original",
+      "label": "0",
+      "route": "voice",
+      "rows": 440,
+      "source": "asvspoof2019_la",
+      "split": "train"
+    },
+    {
+      "generator": "original",
+      "label": "0",
+      "route": "voice",
+      "rows": 577,
+      "source": "librispeech_test-clean",
+      "split": "train"
+    },
+    {
+      "generator": "REAL",
+      "label": "0",
+      "route": "music",
+      "rows": 103,
+      "source": "FMA",
+      "split": "val"
+    },
+    {
+      "generator": "",
+      "label": "0",
+      "route": "music",
+      "rows": 4,
+      "source": "FMA/FMA",
+      "split": "val"
+    },
+    {
+      "generator": "MusicGen_medium",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "val"
+    },
+    {
+      "generator": "audioldm2",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "val"
+    },
+    {
+      "generator": "musicldm",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "val"
+    },
+    {
+      "generator": "mustango",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "val"
+    },
+    {
+      "generator": "stable_audio_open",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "FakeMusicCaps",
+      "split": "val"
+    },
+    {
+      "generator": "acestep",
+      "label": "1",
+      "route": "music",
+      "rows": 33,
+      "source": "HAIM",
+      "split": "val"
+    },
+    {
+      "generator": "lyria-pro3",
+      "label": "1",
+      "route": "music",
+      "rows": 21,
+      "source": "HAIM",
+      "split": "val"
+    },
+    {
+      "generator": "musicgen",
+      "label": "1",
+      "route": "music",
+      "rows": 33,
+      "source": "HAIM",
+      "split": "val"
+    },
+    {
+      "generator": "sonicmaster_real",
+      "label": "0",
+      "route": "music",
+      "rows": 89,
+      "source": "HAIM",
+      "split": "val"
+    },
+    {
+      "generator": "REAL",
+      "label": "0",
+      "route": "music",
+      "rows": 144,
+      "source": "JamendoMaxCaps",
+      "split": "val"
+    },
+    {
+      "generator": "suno",
+      "label": "1",
+      "route": "music",
+      "rows": 62,
+      "source": "SONICS",
+      "split": "val"
+    },
+    {
+      "generator": "udio",
+      "label": "1",
+      "route": "music",
+      "rows": 86,
+      "source": "SONICS",
+      "split": "val"
+    },
+    {
+      "generator": "A07",
+      "label": "1",
+      "route": "voice",
+      "rows": 20,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A08",
+      "label": "1",
+      "route": "voice",
+      "rows": 20,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A09",
+      "label": "1",
+      "route": "voice",
+      "rows": 20,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A10",
+      "label": "1",
+      "route": "voice",
+      "rows": 20,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A11",
+      "label": "1",
+      "route": "voice",
+      "rows": 25,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A12",
+      "label": "1",
+      "route": "voice",
+      "rows": 20,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A13",
+      "label": "1",
+      "route": "voice",
+      "rows": 20,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A14",
+      "label": "1",
+      "route": "voice",
+      "rows": 47,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A15",
+      "label": "1",
+      "route": "voice",
+      "rows": 20,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A16",
+      "label": "1",
+      "route": "voice",
+      "rows": 20,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A17",
+      "label": "1",
+      "route": "voice",
+      "rows": 47,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A18",
+      "label": "1",
+      "route": "voice",
+      "rows": 47,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "A19",
+      "label": "1",
+      "route": "voice",
+      "rows": 47,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    },
+    {
+      "generator": "original",
+      "label": "0",
+      "route": "voice",
+      "rows": 373,
+      "source": "asvspoof2019_la",
+      "split": "val"
+    }
+  ],
+  "cross_split_components": 0,
+  "extensions": {
+    ".flac": 5558,
+    ".mp3": 2929,
+    ".wav": 1017
+  },
+  "file_fake_by_split": {
+    "test": {
+      "0": 713,
+      "1": 713
+    },
+    "train": {
+      "0": 3326,
+      "1": 3326
+    },
+    "val": {
+      "0": 713,
+      "1": 713
+    }
+  },
+  "file_fake_differs_from_route_label": 0,
+  "historical_exposure_by_split": {
+    "test": 1001,
+    "train": 4176,
+    "val": 997
+  },
+  "leakage_components": 2613,
+  "route_label_by_split": {
+    "test": {
+      "music": {
+        "0": 341,
+        "1": 341
+      },
+      "voice": {
+        "0": 372,
+        "1": 372
+      }
+    },
+    "train": {
+      "music": {
+        "0": 1292,
+        "1": 1292
+      },
+      "voice": {
+        "0": 2034,
+        "1": 2034
+      }
+    },
+    "val": {
+      "music": {
+        "0": 340,
+        "1": 340
+      },
+      "voice": {
+        "0": 373,
+        "1": 373
+      }
+    }
+  },
+  "routes_by_split": {
+    "test": {
+      "music": 682,
+      "voice": 744
+    },
+    "train": {
+      "music": 2584,
+      "voice": 4068
+    },
+    "val": {
+      "music": 680,
+      "voice": 746
+    }
+  },
+  "rows": 9504,
+  "singing_by_split": {
+    "test": 0,
+    "train": 2034,
+    "val": 0
+  },
+  "split_cross_check": {
+    "test": {
+      "columns_compared": [
+        "FILE_FAKE",
+        "VOICE_FAKE",
+        "MUSIC_FAKE",
+        "VOICE_PRESENT",
+        "MUSIC_PRESENT",
+        "FILE_FAKE_mask",
+        "VOICE_FAKE_mask",
+        "MUSIC_FAKE_mask",
+        "VOICE_PRESENT_mask",
+        "MUSIC_PRESENT_mask",
+        "group_id",
+        "component_id",
+        "parent_id",
+        "parent_ids",
+        "historical_development_exposure",
+        "route",
+        "source",
+        "generator",
+        "input_kind",
+        "variant",
+        "event_intervals",
+        "split"
+      ],
+      "file": "test.csv",
+      "rows": 1426
+    },
+    "train": {
+      "columns_compared": [
+        "FILE_FAKE",
+        "VOICE_FAKE",
+        "MUSIC_FAKE",
+        "VOICE_PRESENT",
+        "MUSIC_PRESENT",
+        "FILE_FAKE_mask",
+        "VOICE_FAKE_mask",
+        "MUSIC_FAKE_mask",
+        "VOICE_PRESENT_mask",
+        "MUSIC_PRESENT_mask",
+        "group_id",
+        "component_id",
+        "parent_id",
+        "parent_ids",
+        "historical_development_exposure",
+        "route",
+        "source",
+        "generator",
+        "input_kind",
+        "variant",
+        "event_intervals",
+        "split"
+      ],
+      "file": "train.csv",
+      "rows": 6652
+    },
+    "val": {
+      "columns_compared": [
+        "FILE_FAKE",
+        "VOICE_FAKE",
+        "MUSIC_FAKE",
+        "VOICE_PRESENT",
+        "MUSIC_PRESENT",
+        "FILE_FAKE_mask",
+        "VOICE_FAKE_mask",
+        "MUSIC_FAKE_mask",
+        "VOICE_PRESENT_mask",
+        "MUSIC_PRESENT_mask",
+        "group_id",
+        "component_id",
+        "parent_id",
+        "parent_ids",
+        "historical_development_exposure",
+        "route",
+        "source",
+        "generator",
+        "input_kind",
+        "variant",
+        "event_intervals",
+        "split"
+      ],
+      "file": "val.csv",
+      "rows": 1426
+    }
+  },
+  "splits": {
+    "test": 1426,
+    "train": 6652,
+    "val": 1426
+  },
+  "unknown_labels_by_split": {
+    "test": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 744,
+      "MUSIC_PRESENT": 0,
+      "VOICE_FAKE": 682,
+      "VOICE_PRESENT": 682
+    },
+    "train": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 4068,
+      "MUSIC_PRESENT": 0,
+      "VOICE_FAKE": 2584,
+      "VOICE_PRESENT": 2584
+    },
+    "val": {
+      "FILE_FAKE": 0,
+      "MUSIC_FAKE": 746,
+      "MUSIC_PRESENT": 0,
+      "VOICE_FAKE": 680,
+      "VOICE_PRESENT": 680
+    }
+  },
+  "within_split_duplicate_audio_groups": 0
+}

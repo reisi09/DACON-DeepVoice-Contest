@@ -1,0 +1,415 @@
+{
+  "analysis": "postrun_report_only_no_refit_or_rescore",
+  "claim_limit": "denominator/component correction only; scores and fitted models unchanged",
+  "component_rule": "connected components resolved once over all manifest contributor atoms before subsetting",
+  "generic_metadata_limitation": "experiment_1/3/4/6/8 top-level label_denominators and component_count aggregate all known manifest labels; use the branch/role-specific values below",
+  "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+  "populations": {
+    "E1": {
+      "music": {
+        "calibration": {
+          "components": 30,
+          "fake": 169,
+          "real": 31,
+          "rows": 200,
+          "variants": {
+            "base": 200
+          }
+        },
+        "dev": {
+          "components": 27,
+          "fake": 139,
+          "real": 25,
+          "rows": 164,
+          "variants": {
+            "base": 164
+          }
+        },
+        "test": {
+          "components": 24,
+          "fake": 104,
+          "real": 23,
+          "rows": 127,
+          "variants": {
+            "base": 127
+          }
+        },
+        "train": {
+          "components": 175,
+          "fake": 692,
+          "real": 139,
+          "rows": 831,
+          "variants": {
+            "base": 831
+          }
+        }
+      },
+      "voice": {
+        "calibration": {
+          "components": 1,
+          "fake": 102,
+          "real": 102,
+          "rows": 204,
+          "variants": {
+            "base": 204
+          }
+        },
+        "dev": {
+          "components": 1,
+          "fake": 24,
+          "real": 24,
+          "rows": 48,
+          "variants": {
+            "base": 48
+          }
+        },
+        "test": {
+          "components": 1,
+          "fake": 24,
+          "real": 24,
+          "rows": 48,
+          "variants": {
+            "base": 48
+          }
+        },
+        "train": {
+          "components": 1,
+          "fake": 106,
+          "real": 106,
+          "rows": 212,
+          "variants": {
+            "base": 212
+          }
+        }
+      }
+    },
+    "E3": {
+      "music": {
+        "calibration": {
+          "components": 30,
+          "fake": 676,
+          "real": 124,
+          "rows": 800,
+          "variants": {
+            "base": 200,
+            "mp3_32k": 200,
+            "opus_telephone": 200,
+            "telephone": 200
+          }
+        },
+        "dev": {
+          "components": 27,
+          "fake": 556,
+          "real": 100,
+          "rows": 656,
+          "variants": {
+            "base": 164,
+            "mp3_32k": 164,
+            "opus_telephone": 164,
+            "telephone": 164
+          }
+        },
+        "test": {
+          "components": 24,
+          "fake": 416,
+          "real": 92,
+          "rows": 508,
+          "variants": {
+            "base": 127,
+            "mp3_32k": 127,
+            "opus_telephone": 127,
+            "telephone": 127
+          }
+        },
+        "train": {
+          "components": 175,
+          "fake": 2076,
+          "real": 417,
+          "rows": 2493,
+          "variants": {
+            "base": 831,
+            "mp3_32k": 831,
+            "telephone": 831
+          }
+        }
+      },
+      "primary_opus_dev_test": {
+        "music": {
+          "dev": {
+            "components": 27,
+            "fake": 139,
+            "real": 25,
+            "rows": 164,
+            "variants": {
+              "opus_telephone": 164
+            }
+          },
+          "test": {
+            "components": 24,
+            "fake": 104,
+            "real": 23,
+            "rows": 127,
+            "variants": {
+              "opus_telephone": 127
+            }
+          }
+        },
+        "voice": {
+          "dev": {
+            "components": 1,
+            "fake": 24,
+            "real": 24,
+            "rows": 48,
+            "variants": {
+              "opus_telephone": 48
+            }
+          },
+          "test": {
+            "components": 1,
+            "fake": 24,
+            "real": 24,
+            "rows": 48,
+            "variants": {
+              "opus_telephone": 48
+            }
+          }
+        }
+      },
+      "voice": {
+        "calibration": {
+          "components": 1,
+          "fake": 408,
+          "real": 408,
+          "rows": 816,
+          "variants": {
+            "base": 204,
+            "mp3_32k": 204,
+            "opus_telephone": 204,
+            "telephone": 204
+          }
+        },
+        "dev": {
+          "components": 1,
+          "fake": 96,
+          "real": 96,
+          "rows": 192,
+          "variants": {
+            "base": 48,
+            "mp3_32k": 48,
+            "opus_telephone": 48,
+            "telephone": 48
+          }
+        },
+        "test": {
+          "components": 1,
+          "fake": 96,
+          "real": 96,
+          "rows": 192,
+          "variants": {
+            "base": 48,
+            "mp3_32k": 48,
+            "opus_telephone": 48,
+            "telephone": 48
+          }
+        },
+        "train": {
+          "components": 1,
+          "fake": 318,
+          "real": 318,
+          "rows": 636,
+          "variants": {
+            "base": 212,
+            "mp3_32k": 212,
+            "telephone": 212
+          }
+        }
+      }
+    },
+    "E4": {
+      "music": {
+        "dev": {
+          "components": 27,
+          "fake": 139,
+          "real": 25,
+          "rows": 164,
+          "variants": {
+            "base": 164
+          }
+        },
+        "test": {
+          "components": 24,
+          "fake": 104,
+          "real": 23,
+          "rows": 127,
+          "variants": {
+            "base": 127
+          }
+        }
+      }
+    },
+    "E6": {
+      "Anti": {
+        "dev": {
+          "components": 1,
+          "fake": 24,
+          "real": 24,
+          "rows": 48,
+          "variants": {
+            "base": 48
+          }
+        },
+        "test": {
+          "components": 1,
+          "fake": 24,
+          "real": 24,
+          "rows": 48,
+          "variants": {
+            "base": 48
+          }
+        }
+      },
+      "MERT": {
+        "dev": {
+          "components": 27,
+          "fake": 139,
+          "real": 25,
+          "rows": 164,
+          "variants": {
+            "base": 164
+          }
+        },
+        "test": {
+          "components": 24,
+          "fake": 104,
+          "real": 23,
+          "rows": 127,
+          "variants": {
+            "base": 127
+          }
+        }
+      }
+    },
+    "E8": {
+      "dev": {
+        "components": 27,
+        "fake": 139,
+        "real": 25,
+        "rows": 164,
+        "variants": {
+          "base": 164
+        }
+      },
+      "fit_train_real": {
+        "components": 127,
+        "fake": 0,
+        "real": 139,
+        "rows": 139,
+        "variants": {
+          "base": 139
+        }
+      },
+      "test": {
+        "components": 24,
+        "fake": 104,
+        "real": 23,
+        "rows": 127,
+        "variants": {
+          "base": 127
+        }
+      },
+      "threshold_calibration_real": {
+        "components": 19,
+        "fake": 0,
+        "real": 31,
+        "rows": 31,
+        "variants": {
+          "base": 31
+        }
+      }
+    }
+  },
+  "prediction_receipts": {
+    "predictions_E1_music.csv": {
+      "components": 24,
+      "fake": 104,
+      "real": 23,
+      "rows": 127,
+      "sha256": "5a0d37a60cca80cd084a1fbdf50b75e4959281ab505d61152b590be263146d87",
+      "splits": {
+        "test": 127
+      }
+    },
+    "predictions_E1_voice.csv": {
+      "components": 1,
+      "fake": 24,
+      "real": 24,
+      "rows": 48,
+      "sha256": "94244f861deaf04d39e2d548a48a1bf2ce2c66bb6143837f1ca387dd4dd55931",
+      "splits": {
+        "test": 48
+      }
+    },
+    "predictions_E3_music.csv": {
+      "components": 24,
+      "fake": 416,
+      "real": 92,
+      "rows": 508,
+      "sha256": "af379edd980552ae1ee685da3ef127fef8fa090ddd0b54dc2004487666095012",
+      "splits": {
+        "test": 508
+      }
+    },
+    "predictions_E3_voice.csv": {
+      "components": 1,
+      "fake": 96,
+      "real": 96,
+      "rows": 192,
+      "sha256": "8b9ac30d2ab58f753e977216a8d46d1df9d7aa75286a79f52b46d79bb9f9d9d1",
+      "splits": {
+        "test": 192
+      }
+    },
+    "predictions_E4.csv": {
+      "components": 24,
+      "fake": 104,
+      "real": 23,
+      "rows": 127,
+      "sha256": "591e321bd533386b536790c9049e9f2cbff55f01253cd33fe061e65912563e5b",
+      "splits": {
+        "test": 127
+      }
+    },
+    "predictions_E6_Anti.csv": {
+      "components": 1,
+      "fake": 24,
+      "real": 24,
+      "rows": 48,
+      "sha256": "bc2a8a9bfc569f23ce6d0b0bd97d41faa9680c022d6898fc67936c9f97842a2e",
+      "splits": {
+        "test": 48
+      }
+    },
+    "predictions_E6_MERT.csv": {
+      "components": 24,
+      "fake": 104,
+      "real": 23,
+      "rows": 127,
+      "sha256": "e801ca141b904f7ad18c82c9ad454224603d8d7f9297a64ec1f2cb10b3503b99",
+      "splits": {
+        "test": 127
+      }
+    },
+    "predictions_E8.csv": {
+      "components": 51,
+      "fake": 243,
+      "real": 48,
+      "rows": 291,
+      "sha256": "2809d637d3be9f93a1d445617d3637e837cff73ec98f8850fcc83eaeb20dba3c",
+      "splits": {
+        "dev": 164,
+        "test": 127
+      }
+    }
+  },
+  "status": "complete"
+}

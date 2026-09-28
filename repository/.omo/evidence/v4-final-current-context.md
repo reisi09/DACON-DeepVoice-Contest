@@ -1,0 +1,17 @@
+# Final V4 execution review context
+
+Review source: `d2397ad8cc96667e5bc2e4132d86405afe093f4e`, detached worktree `/tmp/dacon-v4-review-d2397ad`. Main evidence root `/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence`.
+
+User requires real notebook experiments on Colab A100, pretrained full fine-tuning and epoch/hyperparameter comparison, rule-compliant data, measured results and Drive storage. Original two-hour origin is 1789283305; safe release deadline 1789290385. No purchase, deadline extension, sealed leakage or automatic submission. A no-improvement experiment is a valid outcome; do not invent a performance requirement that results must pass.
+
+First full matrix ran source `a01a50e0c774f181c20238109127c5b81cc95dc1`, run `20260913_074847`. `v4-retry-finished.json`, `v4-retry-selection.json`, `v4-retry-pipeline_status.json`, and terminal receipts establish G0/P1/P2/P3/P4 completed, no candidate passed, G0 retained, sealed unopened. No final 1286-row refit was triggered. Original 5-epoch P1/P3 is exploratory only: initialization RNG pairing was missing and its augmentation causal interpretation is excluded.
+
+Current matched run `20260913_084740` executes d2397ad: two 10-epoch arms, identical initial model and Python/NumPy/Torch/CUDA seed receipts, identical 1116 eligible train rows/210 dev rows, 30-epoch scheduler horizon, 3e-5 encoder/9e-5 head LR. Raw G0 CSV hash is bd1c27227829f36e9ae6191db7600920bf6649810f0896a791730b10555f0854. Backend flags explicitly do not claim bitwise deterministic CUDA. Read `v4-matched-*` files for actual terminal status rather than stale reports. P1 full 10 epochs/350 updates completed; P3 is running at context creation. Final review dispatch must accompany terminal/release evidence.
+
+Runtime source hashes match all 14 canonical recheck sources. Pre-execution defects were fixed: WORK/writefile path mismatch, doubled braces in final-cell cleanup, manifest hash/count enforcement, arbitrary deadline extension, shared seed/reset receipts. Evidence `v4-notebook/builder-smoke.md`, `v4-recheck-guard-review.md`, `v4-training/recheck-source-sha256.txt`.
+
+Executed training notebook capture intentionally occurs before unassign in the current final cell and is labelled potentially incomplete. Do not claim fully completed training-notebook cell outputs. Completed terminal logs/receipts establish training execution. A separate CPU analysis notebook is executed top-to-bottom from those real saved receipts, with inline outputs/plots and explicit provenance; this provides a fully executed results notebook without pretending CPU replay is GPU training.
+
+Latest analysis files: `v4-results-summary.json`, `v4-results-analysis.ipynb`, `v4-results-first-comparison.md`; final matched additions and final report may appear at review dispatch. Builder `_workspace/v4_results_report/build_report.py` belongs to the analysis worker. Unknown voice labels stay unknown, official five-head score remains null. EER lower is better. Selected rank epoch is distinct from minimum overall FILE-EER epoch; updates field may be selected-checkpoint updates while run_total_updates is total optimizer work.
+
+Scope review lanes as leaves; do not spawn reviewers, operate browser, allocate GPU, or commit. Source review is read-only in detached worktree; write only assigned review report in main evidence root. Existing reports at old SHA are historical, not current verdicts. No Git remotes are configured; unrelated communication accounts are outside this task.

@@ -1,0 +1,16 @@
+{
+  "input_sha256": "2147a0169ec1ff1a8b098e2033d6c7de91d15637e5023b8a71225ea12424d138",
+  "sealed_member_count": 38,
+  "zip_crc_valid": true,
+  "source_notebook_bootstrap_match": true,
+  "checks": [
+    "MLP hidden layer and both class rows receive gradients",
+    "added 256 input channels affect classification and receive gradients",
+    "class-1 softmax probability matches inference",
+    "silent masked files get near-zero fake probability",
+    "checkpoint reload prediction parity",
+    "training-only dropout and weight-decay update effect",
+    "original C08 historical predictions remain within 1e-6"
+  ],
+  "gpu_started": false
+}

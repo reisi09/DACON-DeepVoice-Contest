@@ -1,0 +1,1607 @@
+{
+  "input_zip_sha256": null,
+  "input_manifest_sha256": "6d8d81c074c92981b8f6466c0517956e0fa99029f5ca75ea802c105687a01bfd",
+  "manifest_members_verified": 133,
+  "base_commit": "67b2bc61f6ce8a32cfdcf5d17837872f7c5b109c",
+  "heads": {
+    "music_41.pt": {
+      "sha256": "37402170d05f13840becc4ae45b1d9755e565d89889c5330fd6fa11bcd0aeb82",
+      "route": "music",
+      "seed": 41,
+      "epoch": 23,
+      "fake_label_index": 0,
+      "train_ids_count": 2584,
+      "state_shapes": {
+        "mean": [
+          1024
+        ],
+        "scale": [
+          1024
+        ],
+        "head.network.0.weight": [
+          128,
+          1024
+        ],
+        "head.network.0.bias": [
+          128
+        ],
+        "head.network.2.weight": [
+          1,
+          128
+        ],
+        "head.network.2.bias": [
+          1
+        ]
+      },
+      "normalization": "checkpoint mean/scale fitted from training only"
+    },
+    "music_42.pt": {
+      "sha256": "3315cd455b2781571e2d0a5ba02388d4335bfa5210222a1e130ecf79f2101609",
+      "route": "music",
+      "seed": 42,
+      "epoch": 13,
+      "fake_label_index": 0,
+      "train_ids_count": 2584,
+      "state_shapes": {
+        "mean": [
+          1024
+        ],
+        "scale": [
+          1024
+        ],
+        "head.network.0.weight": [
+          128,
+          1024
+        ],
+        "head.network.0.bias": [
+          128
+        ],
+        "head.network.2.weight": [
+          1,
+          128
+        ],
+        "head.network.2.bias": [
+          1
+        ]
+      },
+      "normalization": "checkpoint mean/scale fitted from training only"
+    },
+    "music_43.pt": {
+      "sha256": "ef4dae28ef052d74e2cdd236765be5d2b33d220f02bc6f29129b31e3211be540",
+      "route": "music",
+      "seed": 43,
+      "epoch": 19,
+      "fake_label_index": 0,
+      "train_ids_count": 2584,
+      "state_shapes": {
+        "mean": [
+          1024
+        ],
+        "scale": [
+          1024
+        ],
+        "head.network.0.weight": [
+          128,
+          1024
+        ],
+        "head.network.0.bias": [
+          128
+        ],
+        "head.network.2.weight": [
+          1,
+          128
+        ],
+        "head.network.2.bias": [
+          1
+        ]
+      },
+      "normalization": "checkpoint mean/scale fitted from training only"
+    },
+    "voice_41.pt": {
+      "sha256": "c1d00490d79765e422f99022ea2179db19be6eac800c93832fa4ffb5272c705c",
+      "route": "voice",
+      "seed": 41,
+      "epoch": 50,
+      "fake_label_index": 0,
+      "train_ids_count": 4068,
+      "state_shapes": {
+        "weight": [
+          2,
+          1280
+        ],
+        "bias": [
+          2
+        ]
+      },
+      "normalization": "no added scaler; original fc5-initialized linear head"
+    },
+    "voice_42.pt": {
+      "sha256": "bc394b6bed3cf212f4a09f9811651d8f8b8477efbeeae1a676ba65a9442dd4bb",
+      "route": "voice",
+      "seed": 42,
+      "epoch": 49,
+      "fake_label_index": 0,
+      "train_ids_count": 4068,
+      "state_shapes": {
+        "weight": [
+          2,
+          1280
+        ],
+        "bias": [
+          2
+        ]
+      },
+      "normalization": "no added scaler; original fc5-initialized linear head"
+    },
+    "voice_43.pt": {
+      "sha256": "31b350e02eb54105dac35bf78a43dc674dffa30af0bc75c9b0f665226ae9185b",
+      "route": "voice",
+      "seed": 43,
+      "epoch": 50,
+      "fake_label_index": 0,
+      "train_ids_count": 4068,
+      "state_shapes": {
+        "weight": [
+          2,
+          1280
+        ],
+        "bias": [
+          2
+        ]
+      },
+      "normalization": "no added scaler; original fc5-initialized linear head"
+    }
+  },
+  "caches": [
+    {
+      "ID": "asvspoof2019_la:LA_T_5517266",
+      "sha256": "96cc3f7b3b2faf13494592ecafdc08bd44380214e6fdc5cf124c3caf0ec065c8",
+      "identity": "b80fe989e83ff730c17270a17036a8d6fc0fdf2b38ca0cba8521f79139cf8c58",
+      "samples": 56422,
+      "duration_seconds": 3.526375,
+      "music_windows": 1,
+      "voice_windows": 1,
+      "music_starts": [
+        0
+      ],
+      "music_valid_samples": [
+        56422
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            1
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 0.0006550103425979614,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    },
+    {
+      "ID": "core_63ab76f979000832863b_base",
+      "sha256": "f5d128d2a21215e1a45d3e855203e4903ec50b58f91267f202333178e5104379",
+      "identity": "a6edf5fd4fbdc2a0bb731d859c6123312d502f767039b5f16d97d9c8812bb084",
+      "samples": 128000,
+      "duration_seconds": 8.0,
+      "music_windows": 3,
+      "voice_windows": 2,
+      "music_starts": [
+        0,
+        32300,
+        63400
+      ],
+      "music_valid_samples": [
+        64600,
+        64600,
+        64600
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            3,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            3
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            2,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 0.0002782009541988373,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    },
+    {
+      "ID": "haim_musicgen_musicgen_small_00029",
+      "sha256": "dba7e0f8c6de6b0e2b8e083904c80b98739cab11a6d2f986c505376d57223173",
+      "identity": "b59fa4daaabb85b9697f1538f30b7276586a3a05d34568011ee1af017f2795e7",
+      "samples": 162880,
+      "duration_seconds": 10.18,
+      "music_windows": 5,
+      "voice_windows": 3,
+      "music_starts": [
+        0,
+        32300,
+        64600,
+        96900,
+        98280
+      ],
+      "music_valid_samples": [
+        64600,
+        64600,
+        64600,
+        64600,
+        64600
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            5,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            5
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            5
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            5
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            3,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 0.0007994323968887329,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    },
+    {
+      "ID": "core_c7f4818fe05d69a48837_base",
+      "sha256": "753bc5e116130138ca20093d30366baf9e20f9d7d8b8fd37b33825517d55de63",
+      "identity": "b68e4e7b5f82cd49945b7e2e81b5c3e7182661e10e721cd3fc3438b93e095c52",
+      "samples": 128000,
+      "duration_seconds": 8.0,
+      "music_windows": 3,
+      "voice_windows": 2,
+      "music_starts": [
+        0,
+        32300,
+        63400
+      ],
+      "music_valid_samples": [
+        64600,
+        64600,
+        64600
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            3,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            3
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            2,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 0.0005590319633483887,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    },
+    {
+      "ID": "ctrsvdd_CtrSVDD_0059_D_0002454",
+      "sha256": "78a544e7f86a331098465332f0649a0fbb3297f1b75a0bfeea3e348ef9ff80f3",
+      "identity": "77a274ad441429c631e40baf4f3480d705618c72314ae7fcc384ea862fd7f531",
+      "samples": 73800,
+      "duration_seconds": 4.6125,
+      "music_windows": 2,
+      "voice_windows": 2,
+      "music_starts": [
+        0,
+        9200
+      ],
+      "music_valid_samples": [
+        64600,
+        64600
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            2,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            2,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 0.0012563467025756836,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    },
+    {
+      "ID": "fake_16900_udio_1",
+      "sha256": "29911f6302a54b03abc8fb8f68b86452b80cc3513fddea6afb500ec2eb8e45f1",
+      "identity": "2b616b6669b1aee0d5082016a39d7ef035764e3f30aa78f0935dbb330d8a7194",
+      "samples": 524971,
+      "duration_seconds": 32.8106875,
+      "music_windows": 16,
+      "voice_windows": 9,
+      "music_starts": [
+        0,
+        32300,
+        64600,
+        96900,
+        129200,
+        161500,
+        193800,
+        226100,
+        258400,
+        290700,
+        323000,
+        355300,
+        387600,
+        419900,
+        452200,
+        460371
+      ],
+      "music_valid_samples": [
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600,
+        64600
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            16,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            16
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            16
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            16
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            9,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 0.00041919946670532227,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    },
+    {
+      "ID": "librispeech_test-clean:1580-141083-0008",
+      "sha256": "2a4ecddde0d4a6cb18c43e186ef2361ac6f19537c5f77bff063b7fafe1ee4a17",
+      "identity": "acd3e4739608031579ef63329cbedd5a8bdec1706ef8bfce2ab3ebec50207957",
+      "samples": 68880,
+      "duration_seconds": 4.305,
+      "music_windows": 2,
+      "voice_windows": 2,
+      "music_starts": [
+        0,
+        4280
+      ],
+      "music_valid_samples": [
+        64600,
+        64600
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            2,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            2,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 0.0008952021598815918,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    },
+    {
+      "ID": "asvspoof2019_la:LA_E_5923854",
+      "sha256": "0552fec9faf700f5e51e152445ad362025439623d0bb1969825536183207f816",
+      "identity": "db695a5673d638ae4f6940ff715a239c9dcde745e5cd6f04165d240c12cd2111",
+      "samples": 49844,
+      "duration_seconds": 3.11525,
+      "music_windows": 1,
+      "voice_windows": 1,
+      "music_starts": [
+        0
+      ],
+      "music_valid_samples": [
+        49844
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            1
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            1,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 9.775906801223755e-05,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    },
+    {
+      "ID": "core_9177faa10fc0e78a99e3_base",
+      "sha256": "6d5490f0c1965800196e10e7089dac1a9ab76af1b30bf9b8dc05ef1b0a247c5f",
+      "identity": "7780cfdd878e8d5ad50a8fb9f6ddbaf8d3f0edcc183ddda656d8639bdd1576fc",
+      "samples": 128000,
+      "duration_seconds": 8.0,
+      "music_windows": 3,
+      "voice_windows": 2,
+      "music_starts": [
+        0,
+        32300,
+        63400
+      ],
+      "music_valid_samples": [
+        64600,
+        64600,
+        64600
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            3,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            3
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            2,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 0.0006900429725646973,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    },
+    {
+      "ID": "fakemusiccaps_mustango_b1j-hD9zs6Q",
+      "sha256": "1609cb5d0b57fe3824533e542ad93777a2afde5182c190486c2a071b90a883e1",
+      "identity": "b91a52bf0d25a4ffc324a9fe3b47b6640089bf8a0044d7f05fad257098f1ec43",
+      "samples": 163872,
+      "duration_seconds": 10.242,
+      "music_windows": 5,
+      "voice_windows": 3,
+      "music_starts": [
+        0,
+        32300,
+        64600,
+        96900,
+        99272
+      ],
+      "music_valid_samples": [
+        64600,
+        64600,
+        64600,
+        64600,
+        64600
+      ],
+      "voice_silent": false,
+      "arrays": {
+        "identity": {
+          "shape": [],
+          "dtype": "<U64"
+        },
+        "mert_windows": {
+          "shape": [
+            5,
+            1024
+          ],
+          "dtype": "float32"
+        },
+        "starts": {
+          "shape": [
+            5
+          ],
+          "dtype": "int64"
+        },
+        "valid_samples": {
+          "shape": [
+            5
+          ],
+          "dtype": "int64"
+        },
+        "window_truth": {
+          "shape": [
+            5
+          ],
+          "dtype": "float32"
+        },
+        "voice_embeddings": {
+          "shape": [
+            3,
+            1280
+          ],
+          "dtype": "float32"
+        },
+        "voice_original": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "voice_silent": {
+          "shape": [],
+          "dtype": "bool"
+        },
+        "presence": {
+          "shape": [
+            2
+          ],
+          "dtype": "float32"
+        },
+        "samples": {
+          "shape": [],
+          "dtype": "int64"
+        },
+        "source_peak": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalization_gain": {
+          "shape": [],
+          "dtype": "float64"
+        },
+        "normalized_rms": {
+          "shape": [],
+          "dtype": "float64"
+        }
+      },
+      "max_reference_abs_error": 0.0008466243743896484,
+      "reference_comparison": "current CPU versus provided historical GPU diagnostic; tolerance .002, not GPU parity"
+    }
+  ],
+  "max_reference_abs_errors_by_probability": {
+    "FILE_FAKE_PROB": 0.00011420218424029738,
+    "MUSIC_FAKE_PROB": 0.0007299979527791711,
+    "MUSIC_FAKE_PROB_seed41": 0.0012563467025756836,
+    "MUSIC_FAKE_PROB_seed42": 0.0007673501968383789,
+    "MUSIC_FAKE_PROB_seed43": 0.0008952021598815918,
+    "MUSIC_PRESENT_PROB": 0.0,
+    "VOICE_FAKE_PROB": 0.0006246566772460938,
+    "VOICE_FAKE_PROB_df_arena_original_fc5": 0.0,
+    "VOICE_FAKE_PROB_seed41": 0.0005742907524108887,
+    "VOICE_FAKE_PROB_seed42": 0.0008466243743896484,
+    "VOICE_FAKE_PROB_seed43": 0.0007412433624267578,
+    "VOICE_PRESENT_PROB": 0.0
+  },
+  "datasets": {
+    "selected_list.csv": {
+      "rows": 9504,
+      "metadata_field_coverage": {
+        "parent_id": {
+          "nonempty_rows": 3361,
+          "unique_nonempty_strings": 3361,
+          "missing_rows": 6143
+        },
+        "speaker_id": {
+          "nonempty_rows": 3524,
+          "unique_nonempty_strings": 109,
+          "missing_rows": 5980
+        },
+        "generator": {
+          "nonempty_rows": 9449,
+          "unique_nonempty_strings": 40,
+          "missing_rows": 55
+        },
+        "source": {
+          "nonempty_rows": 9504,
+          "unique_nonempty_strings": 28,
+          "missing_rows": 0
+        },
+        "source_corpus": {
+          "nonempty_rows": 2034,
+          "unique_nonempty_strings": 2,
+          "missing_rows": 7470
+        },
+        "component_id": {
+          "nonempty_rows": 9504,
+          "unique_nonempty_strings": 2613,
+          "missing_rows": 0
+        },
+        "group_id": {
+          "nonempty_rows": 9504,
+          "unique_nonempty_strings": 5777,
+          "missing_rows": 0
+        },
+        "audio_sha256": {
+          "nonempty_rows": 407,
+          "unique_nonempty_strings": 407,
+          "missing_rows": 9097
+        },
+        "source_sha256": {
+          "nonempty_rows": 9504,
+          "unique_nonempty_strings": 9504,
+          "missing_rows": 0
+        }
+      },
+      "split_counts": null,
+      "historical_exposure_values": {
+        "True": 6174,
+        "False": 3330
+      },
+      "source_counts": {
+        "asvspoof2019_la": 2947,
+        "CtrSVDD": 2034,
+        "HAIM": 966,
+        "JamendoMaxCaps": 854,
+        "FakeMusicCaps": 610,
+        "FMA": 599,
+        "librispeech_test-clean": 577,
+        "SONICS": 510,
+        "FMA/FMA": 55,
+        "Echoes/songgen/ATA": 20,
+        "Echoes/diffrhythm/ATA": 20,
+        "Echoes/producer/ATA": 20,
+        "udio": 20,
+        "Echoes/elevenlabs/TTA": 20,
+        "Echoes/udio/TTA": 20,
+        "Echoes/brev/TTA": 20,
+        "Echoes/acestep/TTA": 20,
+        "Echoes/producer/TTA": 20,
+        "Echoes/musicgen/TTA": 20,
+        "Echoes/musicgen/ATA": 20,
+        "Echoes/audioldm/TTA": 20,
+        "Echoes/suno/TTA": 20,
+        "suno": 20,
+        "Echoes/audioldm/ATA": 20,
+        "Echoes/diffrhythm/TTA": 20,
+        "Echoes/songgen/TTA": 20,
+        "Echoes/mubert/TTA": 6,
+        "Echoes/stableaudio/TTA": 6
+      },
+      "interpretation": "Identifiers/string counts are not proof of independent originals; parent_ids JSON strings are NOT counted as individual parents."
+    },
+    "runtime_manifest.csv": {
+      "rows": 9504,
+      "metadata_field_coverage": {
+        "parent_id": {
+          "nonempty_rows": 3361,
+          "unique_nonempty_strings": 3361,
+          "missing_rows": 6143
+        },
+        "parent_ids": {
+          "nonempty_rows": 407,
+          "unique_nonempty_strings": 407,
+          "missing_rows": 9097
+        },
+        "speaker_id": {
+          "nonempty_rows": 3524,
+          "unique_nonempty_strings": 109,
+          "missing_rows": 5980
+        },
+        "track_id": {
+          "nonempty_rows": 1834,
+          "unique_nonempty_strings": 1832,
+          "missing_rows": 7670
+        },
+        "generator": {
+          "nonempty_rows": 9449,
+          "unique_nonempty_strings": 40,
+          "missing_rows": 55
+        },
+        "source": {
+          "nonempty_rows": 9504,
+          "unique_nonempty_strings": 28,
+          "missing_rows": 0
+        },
+        "source_corpus": {
+          "nonempty_rows": 2034,
+          "unique_nonempty_strings": 2,
+          "missing_rows": 7470
+        },
+        "component_id": {
+          "nonempty_rows": 9504,
+          "unique_nonempty_strings": 2613,
+          "missing_rows": 0
+        },
+        "group_id": {
+          "nonempty_rows": 9504,
+          "unique_nonempty_strings": 5777,
+          "missing_rows": 0
+        },
+        "audio_sha256": {
+          "nonempty_rows": 9504,
+          "unique_nonempty_strings": 9504,
+          "missing_rows": 0
+        },
+        "source_sha256": {
+          "nonempty_rows": 9504,
+          "unique_nonempty_strings": 9504,
+          "missing_rows": 0
+        },
+        "native_pcm_sha256": {
+          "nonempty_rows": 4134,
+          "unique_nonempty_strings": 4134,
+          "missing_rows": 5370
+        },
+        "pcm16k_sha256": {
+          "nonempty_rows": 510,
+          "unique_nonempty_strings": 510,
+          "missing_rows": 8994
+        }
+      },
+      "split_counts": {
+        "train": 6652,
+        "test": 1426,
+        "val": 1426
+      },
+      "historical_exposure_values": {
+        "True": 6174,
+        "False": 3330
+      },
+      "source_counts": {
+        "asvspoof2019_la": 2947,
+        "CtrSVDD": 2034,
+        "HAIM": 966,
+        "JamendoMaxCaps": 854,
+        "FakeMusicCaps": 610,
+        "FMA": 599,
+        "librispeech_test-clean": 577,
+        "SONICS": 510,
+        "FMA/FMA": 55,
+        "Echoes/songgen/ATA": 20,
+        "Echoes/diffrhythm/ATA": 20,
+        "Echoes/producer/ATA": 20,
+        "udio": 20,
+        "Echoes/elevenlabs/TTA": 20,
+        "Echoes/udio/TTA": 20,
+        "Echoes/brev/TTA": 20,
+        "Echoes/acestep/TTA": 20,
+        "Echoes/producer/TTA": 20,
+        "Echoes/musicgen/TTA": 20,
+        "Echoes/musicgen/ATA": 20,
+        "Echoes/audioldm/TTA": 20,
+        "Echoes/suno/TTA": 20,
+        "suno": 20,
+        "Echoes/audioldm/ATA": 20,
+        "Echoes/diffrhythm/TTA": 20,
+        "Echoes/songgen/TTA": 20,
+        "Echoes/mubert/TTA": 6,
+        "Echoes/stableaudio/TTA": 6
+      },
+      "interpretation": "Identifiers/string counts are not proof of independent originals; parent_ids JSON strings are NOT counted as individual parents."
+    },
+    "catalog_list.csv": {
+      "rows": 59770,
+      "metadata_field_coverage": {
+        "parent_id": {
+          "nonempty_rows": 9422,
+          "unique_nonempty_strings": 9358,
+          "missing_rows": 50348
+        },
+        "generator": {
+          "nonempty_rows": 59715,
+          "unique_nonempty_strings": 42,
+          "missing_rows": 55
+        },
+        "source": {
+          "nonempty_rows": 59770,
+          "unique_nonempty_strings": 29,
+          "missing_rows": 0
+        },
+        "source_corpus": {
+          "nonempty_rows": 41728,
+          "unique_nonempty_strings": 3,
+          "missing_rows": 18042
+        },
+        "component_id": {
+          "nonempty_rows": 59770,
+          "unique_nonempty_strings": 6418,
+          "missing_rows": 0
+        },
+        "group_id": {
+          "nonempty_rows": 59770,
+          "unique_nonempty_strings": 52485,
+          "missing_rows": 0
+        }
+      },
+      "split_counts": null,
+      "historical_exposure_values": {
+        "False": 45963,
+        "True": 13807
+      },
+      "source_counts": {
+        "CtrSVDD": 41728,
+        "asvspoof2019_la": 4000,
+        "HAIM": 3602,
+        "SONICS": 2932,
+        "librispeech_test-clean": 2620,
+        "FakeMusicCaps": 2560,
+        "JamendoMaxCaps": 854,
+        "FMA": 599,
+        "constructed_music": 128,
+        "FMA/FMA": 55,
+        "Echoes/diffrhythm/TTA": 50,
+        "Echoes/songgen/TTA": 49,
+        "Echoes/musicgen/TTA": 49,
+        "Echoes/acestep/TTA": 48,
+        "Echoes/audioldm/TTA": 47,
+        "Echoes/udio/TTA": 45,
+        "Echoes/diffrhythm/ATA": 45,
+        "Echoes/suno/TTA": 44,
+        "Echoes/musicgen/ATA": 43,
+        "Echoes/audioldm/ATA": 43,
+        "Echoes/elevenlabs/TTA": 42,
+        "Echoes/songgen/ATA": 42,
+        "Echoes/brev/TTA": 42,
+        "udio": 24,
+        "suno": 24,
+        "Echoes/producer/TTA": 23,
+        "Echoes/producer/ATA": 20,
+        "Echoes/mubert/TTA": 6,
+        "Echoes/stableaudio/TTA": 6
+      },
+      "interpretation": "Identifiers/string counts are not proof of independent originals; parent_ids JSON strings are NOT counted as individual parents."
+    }
+  },
+  "diagnostic": {
+    "val": {
+      "rows": 1426,
+      "columns": [
+        "ID",
+        "FILE_FAKE_PROB",
+        "VOICE_FAKE_PROB",
+        "MUSIC_FAKE_PROB",
+        "VOICE_PRESENT_PROB",
+        "MUSIC_PRESENT_PROB",
+        "MUSIC_FAKE_PROB_seed41",
+        "MUSIC_FAKE_PROB_seed42",
+        "MUSIC_FAKE_PROB_seed43",
+        "VOICE_FAKE_PROB_seed41",
+        "VOICE_FAKE_PROB_seed42",
+        "VOICE_FAKE_PROB_seed43",
+        "VOICE_FAKE_PROB_df_arena_original_fc5",
+        "voice_stem_silent",
+        "feature_sha256",
+        "route",
+        "split",
+        "source",
+        "generator",
+        "input_kind",
+        "historical_development_exposure",
+        "component_id",
+        "FILE_FAKE",
+        "VOICE_FAKE",
+        "MUSIC_FAKE",
+        "VOICE_PRESENT",
+        "MUSIC_PRESENT",
+        "FILE_FAKE_mask",
+        "VOICE_FAKE_mask",
+        "MUSIC_FAKE_mask",
+        "VOICE_PRESENT_mask",
+        "MUSIC_PRESENT_mask"
+      ],
+      "baseline_max_formula_max_abs_error": 0.0,
+      "metrics": {
+        "official": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.07994389901823283,
+            "voice_eer": 0.008042895442359251,
+            "music_eer": 0.0911764705882353,
+            "voice_presence_auc": null,
+            "music_presence_auc": 0.999996057404195
+          },
+          "invalid": {
+            "voice_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 680",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 680"
+          },
+          "counts": {
+            "file_eer": 1426,
+            "voice_eer": 746,
+            "music_eer": 680,
+            "voice_presence_auc": 746,
+            "music_presence_auc": 1426
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 680,
+            "music_eer": 0,
+            "voice_presence_auc": 680,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.5231416549789621,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.5231416549789621,
+            "music_presence_auc": 1.0
+          }
+        },
+        "probability": {
+          "FILE_FAKE_PROB": {
+            "n": 1426,
+            "brier": 0.07724881359402785,
+            "logloss": 0.2795012910758219,
+            "single_class": false,
+            "unweighted": true
+          },
+          "VOICE_FAKE_PROB": {
+            "n": 746,
+            "brier": 0.008606857579446917,
+            "logloss": 0.0463186008700842,
+            "single_class": false,
+            "unweighted": true
+          },
+          "MUSIC_FAKE_PROB": {
+            "n": 680,
+            "brier": 0.0695980101232645,
+            "logloss": 0.2350420796771852,
+            "single_class": false,
+            "unweighted": true
+          },
+          "VOICE_PRESENT_PROB": {
+            "n": 746,
+            "brier": 0.057952836212809965,
+            "logloss": 0.27155118170636344,
+            "single_class": true,
+            "unweighted": true
+          },
+          "MUSIC_PRESENT_PROB": {
+            "n": 1426,
+            "brier": 0.011275443189324136,
+            "logloss": 0.07661414974809728,
+            "single_class": false,
+            "unweighted": true
+          }
+        },
+        "note": "EER is discrete ranking/error balance, not a calibration metric; this is local replay, not an official submission score."
+      },
+      "independent_oof": false,
+      "per_window_scores_available": false,
+      "use": "diagnostic replay ONLY"
+    },
+    "test": {
+      "rows": 1426,
+      "columns": [
+        "ID",
+        "FILE_FAKE_PROB",
+        "VOICE_FAKE_PROB",
+        "MUSIC_FAKE_PROB",
+        "VOICE_PRESENT_PROB",
+        "MUSIC_PRESENT_PROB",
+        "MUSIC_FAKE_PROB_seed41",
+        "MUSIC_FAKE_PROB_seed42",
+        "MUSIC_FAKE_PROB_seed43",
+        "VOICE_FAKE_PROB_seed41",
+        "VOICE_FAKE_PROB_seed42",
+        "VOICE_FAKE_PROB_seed43",
+        "VOICE_FAKE_PROB_df_arena_original_fc5",
+        "voice_stem_silent",
+        "feature_sha256",
+        "route",
+        "split",
+        "source",
+        "generator",
+        "input_kind",
+        "historical_development_exposure",
+        "component_id",
+        "FILE_FAKE",
+        "VOICE_FAKE",
+        "MUSIC_FAKE",
+        "VOICE_PRESENT",
+        "MUSIC_PRESENT",
+        "FILE_FAKE_mask",
+        "VOICE_FAKE_mask",
+        "MUSIC_FAKE_mask",
+        "VOICE_PRESENT_mask",
+        "MUSIC_PRESENT_mask"
+      ],
+      "baseline_max_formula_max_abs_error": 0.0,
+      "metrics": {
+        "official": {
+          "score": null,
+          "metrics": {
+            "file_eer": 0.07433380084151474,
+            "voice_eer": 0.0,
+            "music_eer": 0.09090909090909093,
+            "voice_presence_auc": null,
+            "music_presence_auc": 0.9995782486677389
+          },
+          "invalid": {
+            "voice_presence_auc": "both positive and negative labels are required"
+          },
+          "partial": {
+            "voice_eer": "known subset only; unknown relevant labels: 682",
+            "voice_presence_auc": "known subset only; unknown relevant labels: 682"
+          },
+          "counts": {
+            "file_eer": 1426,
+            "voice_eer": 744,
+            "music_eer": 682,
+            "voice_presence_auc": 744,
+            "music_presence_auc": 1426
+          },
+          "unknown_counts": {
+            "file_eer": 0,
+            "voice_eer": 682,
+            "music_eer": 0,
+            "voice_presence_auc": 682,
+            "music_presence_auc": 0
+          },
+          "coverage": {
+            "file_eer": 1.0,
+            "voice_eer": 0.5217391304347826,
+            "music_eer": 1.0,
+            "voice_presence_auc": 0.5217391304347826,
+            "music_presence_auc": 1.0
+          }
+        },
+        "probability": {
+          "FILE_FAKE_PROB": {
+            "n": 1426,
+            "brier": 0.07293744632718722,
+            "logloss": 0.26477297705069447,
+            "single_class": false,
+            "unweighted": true
+          },
+          "VOICE_FAKE_PROB": {
+            "n": 744,
+            "brier": 0.0017323471680478107,
+            "logloss": 0.022310364585559767,
+            "single_class": false,
+            "unweighted": true
+          },
+          "MUSIC_FAKE_PROB": {
+            "n": 682,
+            "brier": 0.06541464135140204,
+            "logloss": 0.22335402632706752,
+            "single_class": false,
+            "unweighted": true
+          },
+          "VOICE_PRESENT_PROB": {
+            "n": 744,
+            "brier": 0.04614546903670314,
+            "logloss": 0.2370866865216575,
+            "single_class": true,
+            "unweighted": true
+          },
+          "MUSIC_PRESENT_PROB": {
+            "n": 1426,
+            "brier": 0.011196853742853568,
+            "logloss": 0.07848196507467431,
+            "single_class": false,
+            "unweighted": true
+          }
+        },
+        "note": "EER is discrete ranking/error balance, not a calibration metric; this is local replay, not an official submission score."
+      },
+      "independent_oof": false,
+      "per_window_scores_available": false,
+      "use": "diagnostic replay ONLY"
+    }
+  },
+  "new_meta_dev_audio_acquired": 0,
+  "new_locked_ood_audio_acquired": 0,
+  "gpu_parity": "NOT_RUN",
+  "generalization_improvement": "NOT_EVALUATED"
+}

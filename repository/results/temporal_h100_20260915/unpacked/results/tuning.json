@@ -1,0 +1,154 @@
+[
+  {
+    "name": "T0",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.2
+    },
+    "music_eer": 0.47935389846975957,
+    "balanced_bce": 0.7741246390896241,
+    "selected_epoch": 2,
+    "epochs_completed": 22,
+    "seconds": 14.573320150375366
+  },
+  {
+    "name": "T1",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.05,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.2
+    },
+    "music_eer": 0.47935389846975957,
+    "balanced_bce": 0.8749761367943707,
+    "selected_epoch": 2,
+    "epochs_completed": 22,
+    "seconds": 11.676480293273926
+  },
+  {
+    "name": "T2",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.4
+    },
+    "music_eer": 0.416848838150757,
+    "balanced_bce": 0.9981868671769594,
+    "selected_epoch": 2,
+    "epochs_completed": 22,
+    "seconds": 11.608412742614746
+  },
+  {
+    "name": "T3",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 16,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.05,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.4
+    },
+    "music_eer": 0.39118290017002677,
+    "balanced_bce": 0.9893805496878467,
+    "selected_epoch": 2,
+    "epochs_completed": 22,
+    "seconds": 11.863765001296997
+  },
+  {
+    "name": "T4",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.2
+    },
+    "music_eer": 0.3627236660999109,
+    "balanced_bce": 0.727493005980952,
+    "selected_epoch": 1,
+    "epochs_completed": 21,
+    "seconds": 10.934067010879517
+  },
+  {
+    "name": "T5",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.05,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.2
+    },
+    "music_eer": 0.3627236660999109,
+    "balanced_bce": 0.7280916836514215,
+    "selected_epoch": 1,
+    "epochs_completed": 21,
+    "seconds": 10.805247783660889
+  },
+  {
+    "name": "T6",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.4
+    },
+    "music_eer": 0.3599303700105254,
+    "balanced_bce": 0.7628644552179069,
+    "selected_epoch": 1,
+    "epochs_completed": 21,
+    "seconds": 10.793543815612793
+  },
+  {
+    "name": "T7",
+    "recipe": {
+      "epochs": 300,
+      "patience": 20,
+      "min_delta": 0.0001,
+      "batch_size": 16,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.05,
+      "nsynth_mass": 0.05,
+      "seed": 41,
+      "dropout": 0.4
+    },
+    "music_eer": 0.3498906971095458,
+    "balanced_bce": 0.7547810927089393,
+    "selected_epoch": 1,
+    "epochs_completed": 21,
+    "seconds": 10.691218137741089
+  }
+]

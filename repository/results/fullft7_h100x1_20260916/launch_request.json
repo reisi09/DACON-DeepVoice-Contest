@@ -1,0 +1,32 @@
+{
+  "run_id": "run-20260916-044239",
+  "started_at": 1789533759,
+  "argv": [
+    "_workspace/bin/vesslctl",
+    "--org",
+    "qwdkw",
+    "--team",
+    "Default",
+    "job",
+    "create",
+    "--name",
+    "fullft7-h100x1-run-20260916-044239",
+    "--resource-spec",
+    "resourcespec-ch100x1",
+    "--image",
+    "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+    "--object-volume",
+    "objvol-a5gxdg7er70i:/shared",
+    "--env",
+    "FULLFT_RUN_ID=run-20260916-044239",
+    "--env",
+    "FULLFT_JOB_STARTED_AT=1789533759",
+    "--cmd",
+    "bash -lc 'remaining=$((FULLFT_JOB_STARTED_AT + 57600 - $(date +%s) - 30)); test \"$remaining\" -gt 0; exec timeout -k 30s \"${remaining}s\" bash /shared/fullft7/h100x1-20260916/launcher/start_job.sh'",
+    "-o",
+    "json"
+  ],
+  "training_limit_hours": 15.5,
+  "outer_limit_hours": 16,
+  "max_session_credits": 48
+}

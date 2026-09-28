@@ -1,0 +1,219 @@
+{
+  "accepted_sources": 1696,
+  "coverage_gate": "diagnostic_only",
+  "diagnostic": true,
+  "generated_rows": 0,
+  "independent_source_groups": {
+    "sealed": 12,
+    "train": 97,
+    "validation": 12
+  },
+  "input_rows": 1696,
+  "lineage_overlap": {},
+  "manifest_sha256": "47ad5a01c1d88365ee1e8c72cd3b125858578d50041e93280516d4372004ae89",
+  "paired_state_slots": {
+    "sealed": 0,
+    "skipped_sample_rate_mismatch": 0,
+    "train": 0,
+    "validation": 0
+  },
+  "protocol_sha256": "b90de51802bbfe7d8135bf8a09db79c2d32a11c995d57266149b6abe18e76cc4",
+  "quarantined": [],
+  "sealed_panel_identity": "f47612f1d424f80a25bf4431fab7b417c186d0488d0ad49c63fcc5dbe4074b90",
+  "seed": 41,
+  "split_manifest_sha256": {
+    "sealed": "8958e7c11c881d0deec5b21da5702fcdd52058122dbeef75244103b1cbacc1c8",
+    "train": "c564e3a55d4651e0d534323d4b24619396233adbc53b81712b69c07aaa0f0ddc",
+    "validation": "e5dd45ea134f8c8c3096c30ae567c3492783e5c442ed65ac66fdc200f7addfae"
+  },
+  "split_rows": {
+    "sealed": 98,
+    "train": 1469,
+    "validation": 129
+  },
+  "strata_counts": {
+    "instrumental:0:nsynth:": {
+      "sealed": 8,
+      "train": 72,
+      "validation": 20
+    },
+    "mixed:0:FMA/FMA:": {
+      "sealed": 10,
+      "train": 73,
+      "validation": 7
+    },
+    "mixed:1:Echoes/acestep/TTA:acestep": {
+      "sealed": 9,
+      "train": 63,
+      "validation": 7
+    },
+    "mixed:1:Echoes/audioldm/ATA:audioldm": {
+      "sealed": 8,
+      "train": 55,
+      "validation": 7
+    },
+    "mixed:1:Echoes/audioldm/TTA:audioldm": {
+      "sealed": 9,
+      "train": 61,
+      "validation": 7
+    },
+    "mixed:1:Echoes/brev/TTA:brev": {
+      "sealed": 1,
+      "train": 57,
+      "validation": 8
+    },
+    "mixed:1:Echoes/diffrhythm/ATA:diffrhythm": {
+      "sealed": 8,
+      "train": 57,
+      "validation": 7
+    },
+    "mixed:1:Echoes/diffrhythm/TTA:diffrhythm": {
+      "sealed": 9,
+      "train": 66,
+      "validation": 7
+    },
+    "mixed:1:Echoes/elevenlabs/TTA:elevenlabs": {
+      "sealed": 0,
+      "train": 57,
+      "validation": 8
+    },
+    "mixed:1:Echoes/mubert/TTA:mubert": {
+      "sealed": 1,
+      "train": 9,
+      "validation": 0
+    },
+    "mixed:1:Echoes/musicgen/ATA:musicgen": {
+      "sealed": 8,
+      "train": 55,
+      "validation": 7
+    },
+    "mixed:1:Echoes/musicgen/TTA:musicgen": {
+      "sealed": 9,
+      "train": 62,
+      "validation": 7
+    },
+    "mixed:1:Echoes/producer/ATA:producer": {
+      "sealed": 0,
+      "train": 27,
+      "validation": 4
+    },
+    "mixed:1:Echoes/producer/TTA:producer": {
+      "sealed": 0,
+      "train": 31,
+      "validation": 4
+    },
+    "mixed:1:Echoes/songgen/ATA:songgen": {
+      "sealed": 8,
+      "train": 50,
+      "validation": 6
+    },
+    "mixed:1:Echoes/songgen/TTA:songgen": {
+      "sealed": 9,
+      "train": 65,
+      "validation": 7
+    },
+    "mixed:1:Echoes/stableaudio/TTA:stableaudio": {
+      "sealed": 1,
+      "train": 9,
+      "validation": 0
+    },
+    "mixed:1:Echoes/suno/TTA:suno": {
+      "sealed": 0,
+      "train": 60,
+      "validation": 8
+    },
+    "mixed:1:Echoes/udio/TTA:udio": {
+      "sealed": 0,
+      "train": 60,
+      "validation": 8
+    },
+    "speech:0:MLAAD/M-AILABS:": {
+      "sealed": 0,
+      "train": 40,
+      "validation": 0
+    },
+    "speech:0:mlaad_real:": {
+      "sealed": 0,
+      "train": 200,
+      "validation": 0
+    },
+    "speech:1:MLAAD/Cartesia.ai (Sonic-3):Cartesia.ai (Sonic-3)": {
+      "sealed": 0,
+      "train": 7,
+      "validation": 0
+    },
+    "speech:1:MLAAD/Chatterbox Multilingual:Chatterbox Multilingual": {
+      "sealed": 0,
+      "train": 9,
+      "validation": 0
+    },
+    "speech:1:MLAAD/Higgs-Audio-V2:Higgs-Audio-V2": {
+      "sealed": 0,
+      "train": 11,
+      "validation": 0
+    },
+    "speech:1:MLAAD/Kani-TTS-370M:Kani-TTS-370M": {
+      "sealed": 0,
+      "train": 13,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:Cartesia.ai (Sonic-3)": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:FireRedTTS-2.0": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:Higgs-Audio-V2": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:Index-TTS-1.5": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:Index-TTS-2.0": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:Llasa-1B-Multilingual": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:Llasa-8B": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:Mars5": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:MeloTTS": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    },
+    "speech:1:mlaad_fake:VoxCPM-0.5B": {
+      "sealed": 0,
+      "train": 20,
+      "validation": 0
+    }
+  },
+  "unknown_labels": {
+    "FILE_FAKE": 0,
+    "MUSIC_FAKE": 480,
+    "MUSIC_PRESENT": 0,
+    "VOICE_FAKE": 1216,
+    "VOICE_PRESENT": 1116
+  },
+  "verified_pairs": 0
+}

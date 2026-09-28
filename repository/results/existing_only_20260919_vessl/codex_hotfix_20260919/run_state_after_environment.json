@@ -1,0 +1,65 @@
+{
+  "controller": {
+    "attached_at": "2026-09-19T13:26:58+00:00",
+    "pid": 231,
+    "start_ticks": 2516571342
+  },
+  "created_at": "2026-09-19T12:54:46+00:00",
+  "run_name": "DACON_Existing9504_A100",
+  "stages": {
+    "environment": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T13:10:08+00:00",
+          "seconds": 77.97372360527515,
+          "status": "failed"
+        },
+        {
+          "finished_at": "2026-09-19T13:29:15+00:00",
+          "seconds": 135.71079397946596,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 213.68451758474112,
+      "finished_at": "2026-09-19T13:29:15+00:00",
+      "seconds": 135.71079397946596,
+      "started_at": "2026-09-19T13:27:00+00:00",
+      "status": "complete"
+    },
+    "pilot": {
+      "attempts": [],
+      "started_at": "2026-09-19T13:30:01+00:00",
+      "status": "running"
+    },
+    "preflight": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T12:54:49+00:00",
+          "seconds": 2.7321470081806183,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 2.7321470081806183,
+      "finished_at": "2026-09-19T12:54:49+00:00",
+      "seconds": 2.7321470081806183,
+      "started_at": "2026-09-19T12:54:47+00:00",
+      "status": "complete"
+    },
+    "stage_inputs": {
+      "attempts": [
+        {
+          "finished_at": "2026-09-19T13:08:49+00:00",
+          "seconds": 839.3439121283591,
+          "status": "complete"
+        }
+      ],
+      "cumulative_seconds": 839.3439121283591,
+      "finished_at": "2026-09-19T13:08:49+00:00",
+      "seconds": 839.3439121283591,
+      "started_at": "2026-09-19T12:54:50+00:00",
+      "status": "complete"
+    }
+  },
+  "status": "running",
+  "updated_at": "2026-09-19T13:30:01+00:00"
+}

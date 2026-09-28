@@ -1,0 +1,42 @@
+{
+  "NSynth_rows": 0,
+  "adversarial": {
+    "actual_dataset_valid": true,
+    "corrupted_audio_rejected": true,
+    "cross_split_contributor_rejected": true
+  },
+  "binary_observable": "all assertions passed",
+  "codec_pairs_checked": 1834,
+  "e2_background_pairs_checked": 80,
+  "e2_fake_background_rows": 40,
+  "e2_max_abs_peak": 0.8294360637664795,
+  "e2_rows": 160,
+  "e5_max_abs_peak": 0.8664604425430298,
+  "e5_pairs_checked": 324,
+  "e5_rows": 648,
+  "manifest": {
+    "audio_hashes": 7101,
+    "probe_families": {
+      "core": 6293,
+      "partial": 648,
+      "swap": 160
+    },
+    "provenance_atoms": 876,
+    "rows": 7101,
+    "splits": {
+      "calibration": 1880,
+      "dev": 1024,
+      "test": 876,
+      "train": 3321
+    }
+  },
+  "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+  "source_hashes_unique": true,
+  "sources_sha256": "ab7de8e9d077d64008381b7cd78831db5b5ace5b7acf219636f1269ee965fdb9",
+  "speaker_splits": {
+    "calibration": 3,
+    "dev": 2,
+    "test": 2,
+    "train": 3
+  }
+}

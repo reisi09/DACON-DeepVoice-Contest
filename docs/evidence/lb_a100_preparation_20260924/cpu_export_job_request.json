@@ -1,0 +1,46 @@
+{
+  "status": "prepared_not_created",
+  "requires_new_paid_cpu_authorization": true,
+  "organization": "qwdkw",
+  "resource": "3 CPU,13GiB RAM,no GPU",
+  "resource_slug": "resourcespec-kmswqig4b12w",
+  "credit_per_hour": 0.3,
+  "command_timeout_seconds": 1800,
+  "termination_grace_seconds": 30,
+  "cost_note": "Up to0.15credit for30minute command plus separately billed startup/shutdown; not a total cost ceiling.",
+  "input_audio_files": 43516,
+  "input_audio_bytes": 12329271166,
+  "source_cluster_volume": "clustervol-qgze68bffy6l",
+  "destination_object_volume": "objvol-a5gxdg7er70i",
+  "destination_prefix": "lb-improvement-20260924/a100-preparation-v1/audio/",
+  "effects": [
+    "Read pinned bank audio and export exact verified bytes to a new persistent-root archive",
+    "Copy archive to existing project object volume and verify full readback",
+    "Do not install dependencies,start GPU,create workspace,overwrite original audio or existing exports"
+  ],
+  "script_sha256": {
+    "export_bank_audio.py": "189d7ba5ba79bf4690f7cf17c44b12c9efb21f5fe0d819b74eface041b69c58c",
+    "export_a100_audio_cpu.sh": "15a6cc84b19d0b37e3cf747b6ee311cc1d80044adcce0152af651382d4f129fc"
+  },
+  "argv": [
+    "/Users/choiwuseck/.local/bin/vesslctl",
+    "--org",
+    "qwdkw",
+    "job",
+    "create",
+    "-n",
+    "lb-a100-audio-export-20260924",
+    "-r",
+    "resourcespec-kmswqig4b12w",
+    "-i",
+    "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+    "--cluster-volume",
+    "clustervol-qgze68bffy6l:/root",
+    "--object-volume",
+    "objvol-a5gxdg7er70i:/shared",
+    "--working-dir",
+    "/tmp",
+    "--cmd",
+    "printf '%s\\n' '189d7ba5ba79bf4690f7cf17c44b12c9efb21f5fe0d819b74eface041b69c58c  /shared/lb-improvement-20260924/a100-preparation-v1/export_bank_audio.py' '15a6cc84b19d0b37e3cf747b6ee311cc1d80044adcce0152af651382d4f129fc  /shared/lb-improvement-20260924/a100-preparation-v1/export_a100_audio_cpu.sh' | sha256sum -c - && timeout --kill-after=30s 1800s bash /shared/lb-improvement-20260924/a100-preparation-v1/export_a100_audio_cpu.sh"
+  ]
+}

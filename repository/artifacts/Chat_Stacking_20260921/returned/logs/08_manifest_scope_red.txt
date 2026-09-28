@@ -1,0 +1,16 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______ test_manifest_requires_parent_scope_and_consistent_component_truth ______
+
+    def test_manifest_requires_parent_scope_and_consistent_component_truth():
+        from dacon_stacking.provenance import validate_manifest
+        a=row(1,'A')
+        a['base_exposure']['reviewed_parent_ids']=[]
+>       with pytest.raises(ValueError,match='parent'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_guards.py:86: Failed
+=========================== short test summary info ============================
+FAILED tests/test_guards.py::test_manifest_requires_parent_scope_and_consistent_component_truth - Failed: DID NOT RAISE <class 'ValueError'>
+1 failed in 0.06s

@@ -1,0 +1,6 @@
+# V5 data validation scenarios
+
+- Scenario: derive V5 from actual V4 train/dev. Invocation: `uv run pytest -q test_v5_dataset.py`. Binary observable: train/dev are 1496/230, five complete NSynth groups (20 rows) move, and group/path/SHA-256 overlaps are all zero. Captured artifacts: `test.log`, `audit.json`.
+- Scenario: crop a partial-edit example twice with the same epoch and seed. Invocation: the same pytest command. Binary observable: float32 windows are byte-identical and all three unproven clip fake targets are NaN. Captured artifact: `test.log`.
+- Scenario: mix actual same-split fake/real speech with generated/non-vocal music and build a real/real edit. Invocation: the same pytest command. Binary observable: supported child labels match exact tuples, possible generated-song voice stays NaN, parent IDs are recorded, and repeated composition is byte-identical. Captured artifact: `test.log`.
+- Scenario: enforce Python source rules and imports. Invocation: `uv run .../check-no-excuse-rules.py v5_dataset.py v5_augment.py test_v5_dataset.py` and `uv run python -c 'import v5_dataset, v5_augment; print("imports: passed")'`. Binary observable: zero rule violations and successful imports. Captured artifacts: `static.log`, `imports.log`.

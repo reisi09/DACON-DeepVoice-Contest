@@ -1,0 +1,26 @@
+{
+  "contract": "redesign-notebook-v1",
+  "stages": {
+    "extract_features": {
+      "detail": "NotebookContractError: GPU stage deadline reached; reserve time for export",
+      "status": "interrupted",
+      "unix": 1789602231.227306
+    },
+    "preflight": {
+      "detail": "CPU provenance, hashes, and writable storage checked",
+      "status": "completed",
+      "unix": 1789602229.2711492
+    },
+    "prepare_assets": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789602229.276575
+    },
+    "prepare_data": {
+      "detail": "flag is False",
+      "status": "not_run",
+      "unix": 1789602229.276302
+    }
+  },
+  "updated_unix": 1789602231.227306
+}

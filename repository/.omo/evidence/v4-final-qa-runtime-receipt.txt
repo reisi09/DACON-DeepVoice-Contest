@@ -1,0 +1,56 @@
+V4 final QA runtime receipt (read-only connector audit)
+
+Scope
+- Allowed Drive root: https://drive.google.com/drive/folders/1-8rmMbN058rMUbtlrGrdPnpWby9ljpF6
+- Run: 20260913_074847
+- Pinned source commit: a01a50e0c774f181c20238109127c5b81cc95dc1
+- Notebook Drive id: 1_5OGLsmCbWYy8m0snIXuGfrDqnqA2AVf
+- Notebook SHA-256: 9e40c7c58bdc262f98699e0fef351ed15a01a8b8be7b296760bdfeead51a413c
+- Audit did not operate Colab UI, allocate GPU, change production, or fetch sealed children/data.
+
+Exact connector read invocations
+- google_drive_list_folder(url=the allowed root URL, top_k=100)
+- google_drive_fetch(url=https://drive.google.com/file/d/<id>/view?usp=drivesdk, download_raw_file=true)
+  for each listed non-sealed receipt below.
+
+Terminal run receipts (Drive ids)
+- pipeline_status.json 1ueh2fZFFZOb-J0n0MGPnxWW5IKQVPnNX:
+  G0 completed files=210; P1/P2/P3/P4 status=completed.
+- finished.json 1UDtVPQrim0YoV7NeD3pDr4U63FWVPqKe:
+  final=G0; sealed_opened=false; actual_gpu_metrics=measured_in_this_run; completed_unix=1789288076.2300541.
+- selection.json 1gov6zcvAIkVJPmFyLadBsd6oY8TB300D:
+  candidate_order=P1,P2,P3,P4; reason=no_candidate_passed; selected=G0.
+- p4_comparison.json 1vnL8oLR7S_14_SUvfyAxJmszXgmGTwP3:
+  parent=P1; optimizer_updates=1395; treatment_run_updates=1395; control_run_updates=1395;
+  treatment_window_exposures=43140; control_window_exposures=43140.
+- epoch_metrics.csv 116h4mxc-tILseYr7c7rBzyJU2fF_pOCj:
+  6 probes + P1/P2/P3/P1_continued/P4 rows are present; all listed rows status=completed.
+- drive_receipt.json 1pUVgt6lES-1Ut94lH3jNvgtIRmOhYiUM:
+  hashes epoch_metrics.csv=5478dff2c9ab3b6878ff44e82a4d64d95ebdac698f8ed88bbcc7ce38fa5f6fa9;
+  experiment.log=6cea7eb77136be2ef9879dd39defc7b383afd07ffe977652eb20d16d02f38488;
+  exposures.json=56bebf4bb630688fa38dfb9cc8731b95e5aa9c2f503cefbed58d173e9363c0a2;
+  selection.json=5ebe47624b4aee5ae923f3257967f726a2d757da9a657bd4b3fd324081c439b3;
+  trials.jsonl=01185eb913181940b8d260cd6d3fbee24cd1f680a8e0fb38b3a14aca96446bde.
+- executed_notebook_capture.json 1iLrG4S3mVa5Y8RjSLl_UciHGNM-6h9hR:
+  status=captured; capture_stage=before_runtime_unassign; current_cell_may_be_incomplete=true;
+  sha256=0fb3fad37d14ca1bfa7211613e769b4f741783c8eb5bf658e0a7334aac5a69c2.
+- executed.ipynb 13hl-PkyK1I4LwmLnV1d3IOLSISCOwOk5:
+  Drive size=332017 bytes; non-empty saved notebook, but capture receipt above prevents claiming complete current-cell execution.
+- release_requested.json 1SWNyYv39YSzUt7dUFGkewHZAlfPPDfHB:
+  elapsed_seconds=2362.970848798752; unix=1789288090.7249749.
+- budget_events.jsonl 1xORneePqjXYxHe1Gd-FeQ0_p9lsaMXiZ:
+  runner_finished unix=1789288089.0998938 elapsed_seconds=2361.3457674980164;
+  retained_g0 unix=1789288076.2243507 reason=no_candidate_passed.
+
+Pinned-source reproducibility limitation
+- In the pinned train_v4.py, SEED is declared but the runner does not call torch.manual_seed,
+  numpy.random.seed, or random.seed before P1/P3 model initialization/trials. Checkpoint RNG
+  state is saved/restored for resume, but that does not establish common initialization across
+  independent P1/P3 trials. Therefore legacy P1 vs P3 causal comparison is invalid as a
+  reproducibility/causal claim. The seed-fix receipts are a separate matched recheck source.
+
+Evaluation boundary
+- Absolute voice metrics contain unknown labels and voice_presence_auc is null; selection
+  records score=null where full labels are unavailable. No fake overall score was accepted.
+- P4 exposure/update equality is real in p4_comparison.json, but treatment-vs-control effect
+  remains a within-run result without common initialization evidence in this pinned run.

@@ -1,0 +1,12 @@
+Fri Sep 18 01:23:47 UTC 2026
+-rw-rw-rw-. 1 root root  200 Sep 18 01:23 /root-1/mert12-a100-20260918/output/final_submission_smoke.json
+
+/root-1/mert12-a100-20260918/output/final_supplemental_qa:
+total 2
+-rw-rw-rw-. 1 root root 790 Sep 18 01:23 input_receipt.json
+-rw-rw-rw-. 1 root root 156 Sep 18 01:23 sample_submission.csv
+drwxrwxrwx. 2 root root   0 Sep 18 01:23 test
+281 /root/V6_L40S/.venv/bin/python -Xfrozen_modules=off -m ipykernel_launcher -f /tmp/tmp31at3cjn.json
+425 /root/V6_L40S/.venv/bin/python /root/mert12_a100_20260918/source/mert12_supplemental_qa.py --package-root /root/mert12_a100_20260918/final_package --source-audio /root/mert12_a100_20260918/input/supplemental_real_source.wav --source-sha256 f11541207692ae85606b95019ab828f2c554bdcd334759f7964c81793b63960e --output /root-1/mert12-a100-20260918/output/final_supplemental_qa --deadline-epoch 1789695277.734545 --runtime-python /root/V6_L40S/.venv/bin/python
+466 /root/V6_L40S/.venv/bin/python /root/mert12_a100_20260918/final_package/script.py --test-dir /root-1/mert12-a100-20260918/output/final_supplemental_qa/test --sample-submission /root-1/mert12-a100-20260918/output/final_supplemental_qa/sample_submission.csv --output /root-1/mert12-a100-20260918/output/final_supplemental_qa/submission.csv --device cuda
+[NbConvertApp] Converting notebook /root/mert12_a100_20260918/source/DACON_MERT12_Final_QA.ipynb to notebook

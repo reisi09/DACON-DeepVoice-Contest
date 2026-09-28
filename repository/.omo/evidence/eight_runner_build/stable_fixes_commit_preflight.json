@@ -1,0 +1,53 @@
+{
+  "scenario": "scoped stable DF1D, nested-prefix watcher, and E2 supplement commit preflight",
+  "invocations": {
+    "manifest": "git diff --cached --name-only",
+    "allowlist": "python3 allowlist check over git diff --cached --name-only",
+    "size": "git diff --cached --name-only -z | xargs -0 stat; reject > 1048576 bytes",
+    "secret_scan": "python3 scan of each staged blob from git show :path",
+    "whitespace": "git diff --cached --check"
+  },
+  "binary_observables": {
+    "staged_count": 17,
+    "allowlist_failures": [],
+    "files_over_1MiB": [],
+    "secret_pattern_hits": 0,
+    "whitespace_check": "PASS",
+    "active_runner_or_launch_files_staged": []
+  },
+  "staged_manifest": [
+    ".omo/evidence/eight-h100-20260917/task-2-df-contract.junit.xml",
+    ".omo/evidence/eight_heads_build/E2_MUSIC_FILE_POSTRUN_PREREGISTRATION.md",
+    ".omo/evidence/eight_heads_build/e2_postrun_compile.log",
+    ".omo/evidence/eight_heads_build/e2_postrun_diff_check.log",
+    ".omo/evidence/eight_heads_build/e2_postrun_fixture.log",
+    ".omo/evidence/eight_heads_build/e2_postrun_fixture_audit.log",
+    ".omo/evidence/eight_heads_build/e2_postrun_no_excuse.log",
+    ".omo/evidence/eight_heads_build/e2_postrun_source_sha256.txt",
+    ".omo/evidence/eight_heads_build/e2_postrun_tests.log",
+    ".omo/evidence/eight_runner_build/stable_fixes_commit_preflight.json",
+    ".omo/evidence/eight_runner_build/watch_nested_prefix_fix.json",
+    ".omo/evidence/eight_runner_build/watch_nested_prefix_fix_operational.json",
+    "eight_e2_music_file_analysis.py",
+    "eight_features.py",
+    "eight_h100_watch.py",
+    "test_eight_e2_music_file_analysis.py",
+    "test_eight_features.py"
+  ],
+  "source_hash_checks": {
+    "eight_e2_music_file_analysis.py": "PASS",
+    "test_eight_e2_music_file_analysis.py": "PASS",
+    ".omo/evidence/eight_heads_build/E2_MUSIC_FILE_POSTRUN_PREREGISTRATION.md": "PASS",
+    "eight_features.py": "PASS"
+  },
+  "test_receipts": {
+    ".omo/evidence/eight-h100-20260917/task-2-df-contract.junit.xml": {
+      "tests": 9,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "execution": "CPU-only targeted pytest receipt; no GPU or remote action"
+    },
+    ".omo/evidence/eight_heads_build/e2_postrun_tests.log": "2 passed in 0.94s; fixture_only=true"
+  }
+}

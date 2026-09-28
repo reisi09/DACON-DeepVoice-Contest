@@ -1,0 +1,35 @@
+{
+  "command": [
+    "/root/V6_L40S/.venv/bin/python",
+    "/root/mert12_a100_20260918/final_package/script.py",
+    "--test-dir",
+    "/root-1/mert12-a100-20260918/output/final_supplemental_qa/test",
+    "--sample-submission",
+    "/root-1/mert12-a100-20260918/output/final_supplemental_qa/sample_submission.csv",
+    "--output",
+    "/root-1/mert12-a100-20260918/output/final_supplemental_qa/submission.csv",
+    "--device",
+    "cuda"
+  ],
+  "files": 3,
+  "finite_probabilities": true,
+  "ids": [
+    "qa_silence_4s",
+    "qa_real_stereo_60s",
+    "qa_codec_mp3_6s"
+  ],
+  "long_case": "first_60s_real_crop",
+  "mp3_status": "tested",
+  "peak_gpu_allocated_bytes": 6555433472,
+  "peak_gpu_reserved_bytes": 6970933248,
+  "peak_rss_bytes": 5976621056,
+  "probability_range": [
+    0.0,
+    0.9999964237
+  ],
+  "quality_claim": null,
+  "runtime_receipt_sha256": "31d51deccdce05328d8b6a762a151e2f49de92b6cb0bacce51acee824938f0e5",
+  "status": "passed",
+  "submission_sha256": "ae9191965198dd34934df1c7905cbca656de7d5beab989234b90041f81e85129",
+  "wall_seconds": 39.272363116033375
+}

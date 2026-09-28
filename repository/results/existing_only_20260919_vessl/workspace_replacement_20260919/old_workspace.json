@@ -1,0 +1,33 @@
+{
+  "workspace": {
+    "clusterSlug": "cluster-betelgeuse",
+    "createdDt": "2026-09-15T00:18:37.251216Z",
+    "creatorName": "riwpq",
+    "imageUri": "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+    "initScript": "",
+    "name": "jolly-routine",
+    "organizationName": "qwdkw",
+    "phase": "standby",
+    "ports": [],
+    "resourceSpecSlug": "resourcespec-a100x1",
+    "slug": "wsp-5i3knd3gxeox",
+    "state": "stopping",
+    "teamSlug": "team-jusp6dlv6wl5"
+  },
+  "clusterVolumes": [
+    {
+      "clusterVolumeSlug": "clustervol-4jnjmzdw5rik",
+      "mountPath": "/root",
+      "volumeName": "main"
+    }
+  ],
+  "objectVolumes": [
+    {
+      "mountPath": "/root-1",
+      "objectStorageSlug": "object_storage_e322branyapw",
+      "objectVolumeSlug": "objvol-a5gxdg7er70i",
+      "volumeName": "dacon-v6-training"
+    }
+  ],
+  "sshKeyIds": []
+}

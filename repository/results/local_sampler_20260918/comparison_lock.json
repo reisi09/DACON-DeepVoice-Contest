@@ -1,0 +1,28 @@
+{
+  "architecture": "1024->128 GELU->1",
+  "batch_size": 32,
+  "corrected_source_sha256": "c3e040ad607e0f40046358a7bd6069d0fe389f6c6c6201c39992060838eeba09",
+  "cpu_threads": 2,
+  "device": "cpu",
+  "feature_zip_sha256": "188c016268af2ebc76fa42e5066d7f11e295b65ae214454a9b09a5b7420fdc4f",
+  "gradient_clip_norm": 1.0,
+  "legacy_source_sha256": "630cee4b8126dc138b276ed2d9d7d663bbe69c7057e22b9bf205f9743dabfaef",
+  "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+  "normalization_fit_split": "train831 only",
+  "normalization_sha256": "a0f47cdfdefa6f844dd77c873013302946f02866d9d22cb10bf7b3d87eee7d2d",
+  "numpy_version": "2.4.6",
+  "optimizer": "AdamW(lr=0.001,weight_decay=0.01)",
+  "python": "3.11.15",
+  "raw_matrix_sha256": "bc789f27bb746520dc9b48bae6f89cc066f89eaf7c35f0bfeb75b2da77deb4ba",
+  "runner_sha256": "ad0fef26937eec7b01204038433f58688469f53496e5d8f6b62e1f0b31f9d426",
+  "scope": "historical held-out diagnostic, already inspected previously; not fresh validation or official score",
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "selection": "fixed matched comparison; no hyperparameter or checkpoint selection",
+  "steps": 500,
+  "test_used_for_selection": false,
+  "torch_version": "2.7.1"
+}

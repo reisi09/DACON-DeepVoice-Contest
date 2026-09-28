@@ -1,0 +1,156 @@
+{
+  "run": "eight_h100_20260917",
+  "scope": "independent source/data and CPU preflight gate before H100 launch",
+  "overall_verdict": "PASS_FOR_SOURCE_DATA_LAUNCH_GATE",
+  "manifest_sha256": "fc21a54a7d9aeec69575ad1b6a9c0d0c35910f13ba317fde434587686309b537",
+  "source_sha256": "ab7de8e9d077d64008381b7cd78831db5b5ace5b7acf219636f1269ee965fdb9",
+  "checks": [
+    {
+      "id": "data_identity",
+      "criterion": "plan data contract: paths, audio hashes, source hashes, and unique identities",
+      "invocation": ".venv/bin/python independent data recompute heredoc; final output in independent_data_recompute_final2.log",
+      "verdict": "PASS",
+      "observed": "7,101 rows; 7,101 unique IDs and audio hashes; all derived paths/audio hashes and 1,834 retained source paths/source hashes verified",
+      "artifactRefs": ["A-data"]
+    },
+    {
+      "id": "provenance_roles",
+      "criterion": "plan split-before-mix and 3/3/2/2 speaker allocation",
+      "invocation": "independent union-find over every group_id and parent_ids atom in manifest.csv",
+      "verdict": "PASS",
+      "observed": "256 global post-mix components; zero cross-split group atoms; zero cross-split parent IDs; 10 speakers allocated train=3, calibration=3, dev=2, test=2",
+      "artifactRefs": ["A-data"]
+    },
+    {
+      "id": "label_masks",
+      "criterion": "plan unknown-label mask contract",
+      "invocation": "independent per-column empty-value count over manifest.csv",
+      "verdict": "PASS",
+      "observed": "Unknowns remain empty: VOICE_FAKE=4517, MUSIC_FAKE=2524, VOICE_PRESENT=4457; FILE_FAKE and MUSIC_PRESENT are complete construction fields",
+      "artifactRefs": ["A-data"]
+    },
+    {
+      "id": "e2_reference_gain",
+      "criterion": "E2 matched parent, duration, and -6 dB gain",
+      "invocation": "RMS(mix_minus6dB - raw parent_ids[0]) / RMS(mix_0dB - raw parent_ids[0]) grouped by (parent_ids[0], variant prefix)",
+      "verdict": "PASS",
+      "observed": "80 groups/160 rows; paired durations match; ratio 0.5011869669..0.5011870861 against 0.501187; max error 8.61e-8",
+      "artifactRefs": ["A-e2"]
+    },
+    {
+      "id": "e5_controls",
+      "criterion": "E5 matched REAL-to-REAL controls and sparse FAKE cells",
+      "invocation": "group partial rows by pair_id and compare labels, split, duration, and parent_ids",
+      "verdict": "PASS",
+      "observed": "648 rows in 324 cells; every cell has one FILE_FAKE=0 and one FILE_FAKE=1 with matching split, duration, and parents",
+      "artifactRefs": ["A-data"]
+    },
+    {
+      "id": "cpu_entrypoints",
+      "criterion": "all fixed-feature and probe entrypoints execute with finite fixture data",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_integration.py",
+      "verdict": "PASS",
+      "observed": "E1/E3/E4/E6/E8 and E2/E5 emitted complete locked reports using seeds 41/42/43 and two CPU updates; fixture is not performance evidence",
+      "artifactRefs": ["A-fixture"]
+    },
+    {
+      "id": "targeted_regressions",
+      "criterion": "meaningful numerical, provenance, sampler, cache, and LoRA connectivity checks",
+      "invocation": ".venv/bin/python -m pytest -q test_eight_features.py test_eight_fixed.py test_eight_lora.py test_eight_integration.py",
+      "verdict": "PASS",
+      "observed": "19 passed; includes transitive provenance, finite EER/sampler/REAL-only checks, adapter gradients and reload, and CPU report integration",
+      "artifactRefs": ["A-tests"]
+    },
+    {
+      "id": "notebook_cpu_imports",
+      "criterion": "runner notebook validity, importability, and execution order",
+      "invocation": ".venv/bin/python notebook import/order heredoc; reads DACON_Eight_H100.ipynb",
+      "verdict": "PASS",
+      "observed": "nine required modules imported; notebook valid; validation, features, E1, E2/E5, E3/E4/E6/E8, and E7 order is increasing",
+      "artifactRefs": ["A-notebook"]
+    },
+    {
+      "id": "e7_head_only_contract",
+      "criterion": "E7 head-only CE control, checkpoint reload, test lock, and frozen checksum guard",
+      "invocation": ".venv/bin/python E7 source static contract audit heredoc",
+      "verdict": "PASS",
+      "observed": "head_only_ce, lora_ce, and lora_ce_kl arms present; selection precedes test; reload probe and frozen checksum guards present",
+      "artifactRefs": ["A-e7"]
+    },
+    {
+      "id": "native_h100_execution",
+      "criterion": "plan F3 native H100 execution and measured forward/training evidence",
+      "invocation": "NOT EXECUTED: this QA lane is forbidden to launch online GPU work",
+      "verdict": "FAIL_BLOCKED",
+      "observed": "Missing prerequisite is root-authorized H100 execution and downloaded notebook/results; no GPU claim is made here",
+      "artifactRefs": ["A-plan"]
+    }
+  ],
+  "adversarialCases": [
+    {
+      "id": "changed_audio_hash",
+      "criterion": "manifest identity rejects changed audio bytes",
+      "class": "data-integrity mutation",
+      "expected": "isolated mutated fixture is rejected",
+      "verdict": "PASS",
+      "artifactRefs": ["A-adv"]
+    },
+    {
+      "id": "same_group_cross_role",
+      "criterion": "contributors cannot cross train/calibration/dev/test roles",
+      "class": "split leakage",
+      "expected": "isolated same-group different-split fixture is rejected",
+      "verdict": "PASS",
+      "artifactRefs": ["A-adv"]
+    },
+    {
+      "id": "transitive_provenance",
+      "criterion": "a|b and b|c remain one component globally",
+      "class": "provenance bridge",
+      "expected": "all bridged rows share one component",
+      "verdict": "PASS",
+      "artifactRefs": ["A-transitive"]
+    },
+    {
+      "id": "expired_deadline",
+      "criterion": "expired allocation is rejected before notebook/model work",
+      "class": "deadline guard",
+      "expected": "nonzero error before execution",
+      "verdict": "PASS",
+      "artifactRefs": ["A-adv"]
+    },
+    {
+      "id": "archive_corruption",
+      "criterion": "corrupt result archive is rejected",
+      "class": "artifact-integrity mutation",
+      "expected": "CRC/archive open fails",
+      "verdict": "PASS",
+      "artifactRefs": ["A-archive"]
+    },
+    {
+      "id": "replay_old_cache",
+      "criterion": "feature cache cannot replay under a changed audio identity",
+      "class": "stale-cache replay",
+      "expected": "identity mismatch is rejected",
+      "verdict": "PASS",
+      "artifactRefs": ["A-adv"]
+    }
+  ],
+  "artifactRefs": [
+    {"id": "A-data", "kind": "command-log", "description": "independent manifest/source/provenance/E5 audit", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/independent_data_recompute_final2.log"},
+    {"id": "A-e2", "kind": "command-log", "description": "independent byte-level E2 gain audit", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/e2_gain_corrected.log"},
+    {"id": "A-fixture", "kind": "pytest-log", "description": "CPU all-entrypoint fixture integration", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/preflight_integration_fixture.log"},
+    {"id": "A-tests", "kind": "pytest-log", "description": "targeted independent regression checks", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/preflight_targeted_final.log"},
+    {"id": "A-notebook", "kind": "command-log", "description": "CPU imports, notebook validation, and order check", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/notebook_cpu_imports.log"},
+    {"id": "A-e7", "kind": "command-log", "description": "E7 head-only control and test-lock source audit", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/e7_head_only_static_audit.log"},
+    {"id": "A-adv", "kind": "command-log", "description": "isolated mutation, expiry, and stale-cache adversarial cases", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/adversarial_cases_final.log"},
+    {"id": "A-transitive", "kind": "command-log", "description": "independent transitive component probe", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/provenance_transitive_probe.log"},
+    {"id": "A-archive", "kind": "command-log", "description": "truncated result archive rejection", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/archive_corruption_final.log"},
+    {"id": "A-plan", "kind": "plan", "description": "native H100 execution requirement and no-launch boundary", "path": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/plans/eight-h100-20260917.md"}
+  ],
+  "assumption_correction": "An earlier QA probe scaled parent vocals to RMS 0.04 before subtraction and falsely reported 12/80 gain matches. The final generator contract keeps the core parent waveform at unchanged gain; the corrected raw-parent subtraction passes 80/80 with max error 8.61e-8.",
+  "native_h100_pending": true,
+  "gpu_launch_performed": false,
+  "secret_output_audit": "PASS; no full API/token output found",
+  "secret_output_artifact": "/Users/choiwuseck/Documents/ChatGPT/데이콘/.omo/evidence/eight_h100_20260917/secret_output_audit.log"
+}

@@ -1,0 +1,2453 @@
+{
+  "calibration": {
+    "music_eer": 0.08166666666666664,
+    "music_auc": 0.9796666666666667,
+    "music_bce": 0.20320003293372899,
+    "known_eligible": 160,
+    "rows": 160,
+    "unknown_relevant": 0,
+    "real": 60,
+    "fake": 100,
+    "official_score": null,
+    "slices": {
+      "source:FMA": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.5273748795189048,
+        "known_eligible": 23,
+        "rows": 23,
+        "unknown_relevant": 0,
+        "real": 23,
+        "fake": 0,
+        "official_score": null
+      },
+      "source:FakeMusicCaps": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.20064721711790573,
+        "known_eligible": 16,
+        "rows": 16,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 16,
+        "official_score": null
+      },
+      "source:HAIM": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.056749397439773676,
+        "known_eligible": 40,
+        "rows": 40,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 40,
+        "official_score": null
+      },
+      "source:JamendoMaxCaps": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.31616014378513574,
+        "known_eligible": 37,
+        "rows": 37,
+        "unknown_relevant": 0,
+        "real": 37,
+        "fake": 0,
+        "official_score": null
+      },
+      "source:SONICS": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.07282105338487202,
+        "known_eligible": 44,
+        "rows": 44,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 44,
+        "official_score": null
+      },
+      "generator:MusicGen_medium": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.054711237539455435,
+        "known_eligible": 4,
+        "rows": 4,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 4,
+        "official_score": null
+      },
+      "generator:REAL": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.39712579248308066,
+        "known_eligible": 60,
+        "rows": 60,
+        "unknown_relevant": 0,
+        "real": 60,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:acestep": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.02030208837242025,
+        "known_eligible": 20,
+        "rows": 20,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 20,
+        "official_score": null
+      },
+      "generator:audioldm2": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.3541600435867159,
+        "known_eligible": 4,
+        "rows": 4,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 4,
+        "official_score": null
+      },
+      "generator:musicgen": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.09319670650712711,
+        "known_eligible": 20,
+        "rows": 20,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 20,
+        "official_score": null
+      },
+      "generator:musicldm": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.1347425986796963,
+        "known_eligible": 4,
+        "rows": 4,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 4,
+        "official_score": null
+      },
+      "generator:stable_audio_open": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.25897498866575525,
+        "known_eligible": 4,
+        "rows": 4,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 4,
+        "official_score": null
+      },
+      "generator:suno": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.027832352566231452,
+        "known_eligible": 22,
+        "rows": 22,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 22,
+        "official_score": null
+      },
+      "generator:udio": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.11780975420351258,
+        "known_eligible": 22,
+        "rows": 22,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 22,
+        "official_score": null
+      },
+      "probe_family:new_bank": {
+        "music_eer": 0.08166666666666664,
+        "music_auc": 0.9796666666666667,
+        "music_bce": 0.20320003293372899,
+        "known_eligible": 160,
+        "rows": 160,
+        "unknown_relevant": 0,
+        "real": 60,
+        "fake": 100,
+        "official_score": null
+      },
+      "duration_seconds:8.00000000": {
+        "music_eer": 0.08166666666666664,
+        "music_auc": 0.9796666666666667,
+        "music_bce": 0.20320003293372899,
+        "known_eligible": 160,
+        "rows": 160,
+        "unknown_relevant": 0,
+        "real": 60,
+        "fake": 100,
+        "official_score": null
+      }
+    },
+    "available_component_metrics": {
+      "score": null,
+      "metrics": {
+        "file_eer": 0.09999999999999999,
+        "voice_eer": null,
+        "music_eer": 0.08166666666666664,
+        "voice_presence_auc": null,
+        "music_presence_auc": null
+      },
+      "invalid": {
+        "voice_eer": "both positive and negative labels are required",
+        "voice_presence_auc": "both positive and negative labels are required",
+        "music_presence_auc": "both positive and negative labels are required"
+      },
+      "partial": {
+        "voice_eer": "known subset only; unknown relevant labels: 160",
+        "voice_presence_auc": "known subset only; unknown relevant labels: 160"
+      },
+      "counts": {
+        "file_eer": 160,
+        "voice_eer": 0,
+        "music_eer": 160,
+        "voice_presence_auc": 0,
+        "music_presence_auc": 160
+      },
+      "unknown_counts": {
+        "file_eer": 0,
+        "voice_eer": 160,
+        "music_eer": 0,
+        "voice_presence_auc": 160,
+        "music_presence_auc": 0
+      },
+      "coverage": {
+        "file_eer": 1.0,
+        "voice_eer": 0.0,
+        "music_eer": 1.0,
+        "voice_presence_auc": 0.0,
+        "music_presence_auc": 1.0
+      }
+    }
+  },
+  "confirmation_external": {
+    "music_eer": 0.21666666666666667,
+    "music_auc": 0.8921333333333334,
+    "music_bce": 0.3517470416526485,
+    "known_eligible": 200,
+    "rows": 200,
+    "unknown_relevant": 0,
+    "real": 50,
+    "fake": 150,
+    "official_score": null,
+    "slices": {
+      "source:FMA": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.7497774044199643,
+        "known_eligible": 20,
+        "rows": 20,
+        "unknown_relevant": 0,
+        "real": 20,
+        "fake": 0,
+        "official_score": null
+      },
+      "source:FakeMusicCaps": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.291994704541306,
+        "known_eligible": 150,
+        "rows": 150,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 150,
+        "official_score": null
+      },
+      "source:JamendoMaxCaps": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.38515515203115036,
+        "known_eligible": 30,
+        "rows": 30,
+        "unknown_relevant": 0,
+        "real": 30,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:REAL": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.5310040529866761,
+        "known_eligible": 50,
+        "rows": 50,
+        "unknown_relevant": 0,
+        "real": 50,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:mustango": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.291994704541306,
+        "known_eligible": 150,
+        "rows": 150,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 150,
+        "official_score": null
+      },
+      "probe_family:new_generator": {
+        "music_eer": 0.21666666666666667,
+        "music_auc": 0.8921333333333334,
+        "music_bce": 0.3517470416526485,
+        "known_eligible": 200,
+        "rows": 200,
+        "unknown_relevant": 0,
+        "real": 50,
+        "fake": 150,
+        "official_score": null
+      },
+      "duration_seconds:8.00000000": {
+        "music_eer": 0.21666666666666667,
+        "music_auc": 0.8921333333333334,
+        "music_bce": 0.3517470416526485,
+        "known_eligible": 200,
+        "rows": 200,
+        "unknown_relevant": 0,
+        "real": 50,
+        "fake": 150,
+        "official_score": null
+      }
+    },
+    "available_component_metrics": {
+      "score": null,
+      "metrics": {
+        "file_eer": 0.18000000000000002,
+        "voice_eer": null,
+        "music_eer": 0.21666666666666667,
+        "voice_presence_auc": null,
+        "music_presence_auc": null
+      },
+      "invalid": {
+        "voice_eer": "both positive and negative labels are required",
+        "voice_presence_auc": "both positive and negative labels are required",
+        "music_presence_auc": "both positive and negative labels are required"
+      },
+      "partial": {
+        "voice_eer": "known subset only; unknown relevant labels: 200",
+        "voice_presence_auc": "known subset only; unknown relevant labels: 200"
+      },
+      "counts": {
+        "file_eer": 200,
+        "voice_eer": 0,
+        "music_eer": 200,
+        "voice_presence_auc": 0,
+        "music_presence_auc": 200
+      },
+      "unknown_counts": {
+        "file_eer": 0,
+        "voice_eer": 200,
+        "music_eer": 0,
+        "voice_presence_auc": 200,
+        "music_presence_auc": 0
+      },
+      "coverage": {
+        "file_eer": 1.0,
+        "voice_eer": 0.0,
+        "music_eer": 1.0,
+        "voice_presence_auc": 0.0,
+        "music_presence_auc": 1.0
+      }
+    }
+  },
+  "confirmation_presence": {
+    "music_eer": null,
+    "music_auc": null,
+    "music_bce": null,
+    "known_eligible": 0,
+    "rows": 128,
+    "unknown_relevant": 0,
+    "real": 0,
+    "fake": 0,
+    "official_score": null,
+    "slices": {
+      "source:asvspoof2019_la": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 128,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A01": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 3,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A02": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 5,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A03": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A04": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 3,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A05": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 9,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A06": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A08": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 5,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A09": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 2,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A11": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 4,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A12": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 3,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A14": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 2,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A16": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 7,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A17": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 3,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A18": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 3,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:A19": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 3,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:original": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 64,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "probe_family:new_bank": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 128,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.00331250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.01325000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.03125000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.03987500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.04425000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.04750000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.05668750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.11343750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.11550000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.20750000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.21087500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.22243750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.25718750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.26168750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.30118750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.31631250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.33643750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.34093750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.34475000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.36025000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.38281250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.38606250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.38825000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.38987500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.42250000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.43175000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.43325000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.43468750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.47275000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.55793750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.59281250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.59462500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.60000000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.60118750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.63168750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.63843750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.63950000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.64356250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.65987500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.67112500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.67806250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.68850000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.72143750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.73112500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.76831250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.80537500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.81631250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.85625000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.85662500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.88893750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.89837500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.90400000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.91218750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.93987500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.94037500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.98525000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:2.98631250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.02325000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.02437500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.10412500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.10418750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.10850000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.11275000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.11462500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.14006250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.19318750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.19425000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.19431250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.23706250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.25500000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.28268750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.32118750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.32143750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.35012500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.36556250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.38606250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.41075000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.41268750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.44981250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.45187500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.45481250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.45581250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.45700000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.47193750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.52562500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.53456250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.58368750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.67618750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.70350000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.75031250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.78950000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.78993750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.79331250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.79550000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.85268750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.88012500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:3.89750000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.01068750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.01293750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.08806250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.08831250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.09093750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.09243750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.09362500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.09393750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.09418750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.13712500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.16462500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.17450000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.21368750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.24106250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.34668750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.37293750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.51218750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.60275000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.64768750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.73156250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.85912500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:4.88868750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:5.03075000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:5.37156250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:5.83681250": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:6.10387500": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:6.50568750": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:6.53675000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 1,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      },
+      "duration_seconds:8.00000000": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": null,
+        "known_eligible": 0,
+        "rows": 3,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 0,
+        "official_score": null
+      }
+    },
+    "available_component_metrics": {
+      "score": null,
+      "metrics": {
+        "file_eer": 0.015625,
+        "voice_eer": 0.0,
+        "music_eer": null,
+        "voice_presence_auc": null,
+        "music_presence_auc": null
+      },
+      "invalid": {
+        "music_eer": "both positive and negative labels are required",
+        "voice_presence_auc": "both positive and negative labels are required",
+        "music_presence_auc": "both positive and negative labels are required"
+      },
+      "partial": {},
+      "counts": {
+        "file_eer": 128,
+        "voice_eer": 128,
+        "music_eer": 0,
+        "voice_presence_auc": 128,
+        "music_presence_auc": 128
+      },
+      "unknown_counts": {
+        "file_eer": 0,
+        "voice_eer": 0,
+        "music_eer": 0,
+        "voice_presence_auc": 0,
+        "music_presence_auc": 0
+      },
+      "coverage": {
+        "file_eer": 1.0,
+        "voice_eer": 1.0,
+        "music_eer": 0.0,
+        "voice_presence_auc": 1.0,
+        "music_presence_auc": 1.0
+      }
+    }
+  },
+  "dev": {
+    "music_eer": 0.08777777777777779,
+    "music_auc": 0.9665925925925928,
+    "music_bce": 0.2406620097381141,
+    "known_eligible": 240,
+    "rows": 240,
+    "unknown_relevant": 0,
+    "real": 90,
+    "fake": 150,
+    "official_score": null,
+    "slices": {
+      "source:FMA": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.6511182069532566,
+        "known_eligible": 35,
+        "rows": 35,
+        "unknown_relevant": 0,
+        "real": 35,
+        "fake": 0,
+        "official_score": null
+      },
+      "source:FakeMusicCaps": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.2794514335144235,
+        "known_eligible": 24,
+        "rows": 24,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 24,
+        "official_score": null
+      },
+      "source:HAIM": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.05488287937703643,
+        "known_eligible": 62,
+        "rows": 62,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 62,
+        "official_score": null
+      },
+      "source:JamendoMaxCaps": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.38449663556440283,
+        "known_eligible": 55,
+        "rows": 55,
+        "unknown_relevant": 0,
+        "real": 55,
+        "fake": 0,
+        "official_score": null
+      },
+      "source:SONICS": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.058013393937794124,
+        "known_eligible": 64,
+        "rows": 64,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 64,
+        "official_score": null
+      },
+      "generator:MusicGen_medium": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.20474250914042255,
+        "known_eligible": 6,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 6,
+        "official_score": null
+      },
+      "generator:REAL": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.48818280221562377,
+        "known_eligible": 90,
+        "rows": 90,
+        "unknown_relevant": 0,
+        "real": 90,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:acestep": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.030825511301425596,
+        "known_eligible": 31,
+        "rows": 31,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 31,
+        "official_score": null
+      },
+      "generator:audioldm2": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.25429523697947476,
+        "known_eligible": 6,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 6,
+        "official_score": null
+      },
+      "generator:musicgen": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.07894024745264726,
+        "known_eligible": 31,
+        "rows": 31,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 31,
+        "official_score": null
+      },
+      "generator:musicldm": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.29412809178702465,
+        "known_eligible": 6,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 6,
+        "official_score": null
+      },
+      "generator:stable_audio_open": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.3646398961507719,
+        "known_eligible": 6,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 6,
+        "official_score": null
+      },
+      "generator:suno": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.02315231633156578,
+        "known_eligible": 32,
+        "rows": 32,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 32,
+        "official_score": null
+      },
+      "generator:udio": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.09287447154402245,
+        "known_eligible": 32,
+        "rows": 32,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 32,
+        "official_score": null
+      },
+      "probe_family:new_bank": {
+        "music_eer": 0.08777777777777779,
+        "music_auc": 0.9665925925925928,
+        "music_bce": 0.2406620097381141,
+        "known_eligible": 240,
+        "rows": 240,
+        "unknown_relevant": 0,
+        "real": 90,
+        "fake": 150,
+        "official_score": null
+      },
+      "duration_seconds:8.00000000": {
+        "music_eer": 0.08777777777777779,
+        "music_auc": 0.9665925925925928,
+        "music_bce": 0.2406620097381141,
+        "known_eligible": 240,
+        "rows": 240,
+        "unknown_relevant": 0,
+        "real": 90,
+        "fake": 150,
+        "official_score": null
+      }
+    },
+    "available_component_metrics": {
+      "score": null,
+      "metrics": {
+        "file_eer": 0.1122222222222222,
+        "voice_eer": null,
+        "music_eer": 0.08777777777777779,
+        "voice_presence_auc": null,
+        "music_presence_auc": null
+      },
+      "invalid": {
+        "voice_eer": "both positive and negative labels are required",
+        "voice_presence_auc": "both positive and negative labels are required",
+        "music_presence_auc": "both positive and negative labels are required"
+      },
+      "partial": {
+        "voice_eer": "known subset only; unknown relevant labels: 240",
+        "voice_presence_auc": "known subset only; unknown relevant labels: 240"
+      },
+      "counts": {
+        "file_eer": 240,
+        "voice_eer": 0,
+        "music_eer": 240,
+        "voice_presence_auc": 0,
+        "music_presence_auc": 240
+      },
+      "unknown_counts": {
+        "file_eer": 0,
+        "voice_eer": 240,
+        "music_eer": 0,
+        "voice_presence_auc": 240,
+        "music_presence_auc": 0
+      },
+      "coverage": {
+        "file_eer": 1.0,
+        "voice_eer": 0.0,
+        "music_eer": 1.0,
+        "voice_presence_auc": 0.0,
+        "music_presence_auc": 1.0
+      }
+    }
+  },
+  "test": {
+    "music_eer": 0.0707142857142857,
+    "music_auc": 0.9834285714285715,
+    "music_bce": 0.19261665157460567,
+    "known_eligible": 240,
+    "rows": 240,
+    "unknown_relevant": 0,
+    "real": 100,
+    "fake": 140,
+    "official_score": null,
+    "slices": {
+      "source:FMA": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.38634746084849186,
+        "known_eligible": 39,
+        "rows": 39,
+        "unknown_relevant": 0,
+        "real": 39,
+        "fake": 0,
+        "official_score": null
+      },
+      "source:FakeMusicCaps": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.2081143846759725,
+        "known_eligible": 24,
+        "rows": 24,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 24,
+        "official_score": null
+      },
+      "source:HAIM": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.07783456973180738,
+        "known_eligible": 56,
+        "rows": 56,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 56,
+        "official_score": null
+      },
+      "source:JamendoMaxCaps": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.324039421561913,
+        "known_eligible": 61,
+        "rows": 61,
+        "unknown_relevant": 0,
+        "real": 61,
+        "fake": 0,
+        "official_score": null
+      },
+      "source:SONICS": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.0340093258722155,
+        "known_eligible": 60,
+        "rows": 60,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 60,
+        "official_score": null
+      },
+      "generator:MusicGen_medium": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.05042124530083617,
+        "known_eligible": 6,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 6,
+        "official_score": null
+      },
+      "generator:REAL": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.34833955688367874,
+        "known_eligible": 100,
+        "rows": 100,
+        "unknown_relevant": 0,
+        "real": 100,
+        "fake": 0,
+        "official_score": null
+      },
+      "generator:acestep": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.021533591712594547,
+        "known_eligible": 28,
+        "rows": 28,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 28,
+        "official_score": null
+      },
+      "generator:audioldm2": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.47105415587194693,
+        "known_eligible": 6,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 6,
+        "official_score": null
+      },
+      "generator:musicgen": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.13413554775102018,
+        "known_eligible": 28,
+        "rows": 28,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 28,
+        "official_score": null
+      },
+      "generator:musicldm": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.1987097813787699,
+        "known_eligible": 6,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 6,
+        "official_score": null
+      },
+      "generator:stable_audio_open": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.11227235615233698,
+        "known_eligible": 6,
+        "rows": 6,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 6,
+        "official_score": null
+      },
+      "generator:suno": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.01133175426694927,
+        "known_eligible": 30,
+        "rows": 30,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 30,
+        "official_score": null
+      },
+      "generator:udio": {
+        "music_eer": null,
+        "music_auc": null,
+        "music_bce": 0.05668689747748174,
+        "known_eligible": 30,
+        "rows": 30,
+        "unknown_relevant": 0,
+        "real": 0,
+        "fake": 30,
+        "official_score": null
+      },
+      "probe_family:new_bank": {
+        "music_eer": 0.0707142857142857,
+        "music_auc": 0.9834285714285715,
+        "music_bce": 0.19261665157460567,
+        "known_eligible": 240,
+        "rows": 240,
+        "unknown_relevant": 0,
+        "real": 100,
+        "fake": 140,
+        "official_score": null
+      },
+      "duration_seconds:8.00000000": {
+        "music_eer": 0.0707142857142857,
+        "music_auc": 0.9834285714285715,
+        "music_bce": 0.19261665157460567,
+        "known_eligible": 240,
+        "rows": 240,
+        "unknown_relevant": 0,
+        "real": 100,
+        "fake": 140,
+        "official_score": null
+      }
+    },
+    "available_component_metrics": {
+      "score": null,
+      "metrics": {
+        "file_eer": 0.09999999999999999,
+        "voice_eer": null,
+        "music_eer": 0.0707142857142857,
+        "voice_presence_auc": null,
+        "music_presence_auc": null
+      },
+      "invalid": {
+        "voice_eer": "both positive and negative labels are required",
+        "voice_presence_auc": "both positive and negative labels are required",
+        "music_presence_auc": "both positive and negative labels are required"
+      },
+      "partial": {
+        "voice_eer": "known subset only; unknown relevant labels: 240",
+        "voice_presence_auc": "known subset only; unknown relevant labels: 240"
+      },
+      "counts": {
+        "file_eer": 240,
+        "voice_eer": 0,
+        "music_eer": 240,
+        "voice_presence_auc": 0,
+        "music_presence_auc": 240
+      },
+      "unknown_counts": {
+        "file_eer": 0,
+        "voice_eer": 240,
+        "music_eer": 0,
+        "voice_presence_auc": 240,
+        "music_presence_auc": 0
+      },
+      "coverage": {
+        "file_eer": 1.0,
+        "voice_eer": 0.0,
+        "music_eer": 1.0,
+        "voice_presence_auc": 0.0,
+        "music_presence_auc": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "gpu_executed": false,
+  "scope": "macOS CPU; synthetic prediction/checkpoint bytes; actual dataset IDs",
+  "author_sha256": "3647291e86971d17abd07d7d75d3155cca78fbcdc34abb7a85c5131b067822ae",
+  "data": {
+    "rows": 9504,
+    "splits": {
+      "test": 1426,
+      "train": 6652,
+      "val": 1426
+    },
+    "cross_split_components": 0
+  },
+  "rejected_mutations": [
+    "test predictions vs test_receipt",
+    "val predictions vs candidate_lock",
+    "test metrics vs test_receipt",
+    "val metrics vs candidate_lock",
+    "parity_receipt.lock_sha256"
+  ],
+  "post_gate_file_change": "rejected on archive reread",
+  "complete_zip": "CRC and evidence binding verified on actual packaged bytes",
+  "download": {
+    "new_link_http": 200,
+    "old_link_http": 403,
+    "downloaded_sha256_matches": true,
+    "hardlink": true,
+    "scope": "Actual FINAL cell in IPython; local Jupyter /files handler, not live VESSL UI",
+    "same_directory_and_cross_filesystem_copy": "verified"
+  }
+}

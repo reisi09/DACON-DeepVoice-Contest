@@ -1,0 +1,44 @@
+[
+  {
+    "case": "before",
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.11",
+      "--with",
+      "numpy==2.2.6",
+      "--with",
+      "pandas==1.5.3",
+      "--with",
+      "scipy==1.15.3",
+      "--with",
+      "scikit-learn==1.8.0",
+      "python",
+      "-c",
+      "from sklearn.linear_model import LogisticRegression; print(\"import succeeded\")"
+    ],
+    "exit_code": 1
+  },
+  {
+    "case": "after",
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.11",
+      "--with",
+      "numpy==2.2.6",
+      "--with",
+      "pandas==2.2.3",
+      "--with",
+      "scipy==1.15.3",
+      "--with",
+      "scikit-learn==1.8.0",
+      "python",
+      "-c",
+      "from sklearn.linear_model import LogisticRegression; print(\"import succeeded\")"
+    ],
+    "exit_code": 0
+  }
+]

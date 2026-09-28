@@ -1,0 +1,77 @@
+Checkpoint path: /root/redesign_h100_20260917/assets/baseline/model/panns/Cnn14_mAP=0.431.pth
+GPU number: 1
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+  File "/root/eight_h100_20260917/source/eight_lora_train.py", line 95, in preflight
+    "gradient_and_rollback": smoke(model, splits["train"], initial, device)}
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/eight_h100_20260917/source/eight_lora_runtime.py", line 178, in smoke
+    before_logits, base_before = logits(model, [train[index] for index in indices], device), frozen_parameter_probe(model)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/eight_h100_20260917/source/eight_lora_runtime.py", line 128, in logits
+    chunks.append(model(audio).float().cpu())
+                  ^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/eight_h100_20260917/source/antideepfake_runtime.py", line 68, in forward
+    hidden = self.encoder(waveform).last_hidden_state
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/models/wav2vec2/modeling_wav2vec2.py", line 1821, in forward
+    encoder_outputs = self.encoder(
+                      ^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/models/wav2vec2/modeling_wav2vec2.py", line 1147, in forward
+    layer_outputs = layer(
+                    ^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/models/wav2vec2/modeling_wav2vec2.py", line 980, in forward
+    hidden_states, attn_weights, _ = self.attention(
+                                     ^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/models/wav2vec2/modeling_wav2vec2.py", line 550, in forward
+    query_states = self.q_proj(hidden_states) * self.scaling
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/eight_h100_20260917/source/eight_lora.py", line 35, in forward
+    return self.base(inputs) + self.lora_b(self.lora_a(inputs)) * self.scaling
+                                           ^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat2 in method wrapper_CUDA_mm)

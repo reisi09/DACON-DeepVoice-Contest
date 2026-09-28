@@ -1,0 +1,86 @@
+[
+  {
+    "ID": "librispeech_test-clean:4446-2271-0000",
+    "split": "val",
+    "route": "voice",
+    "label": "0",
+    "input_kind": "original_full_duration",
+    "audio_sha256": "a557057a06b5042c4f3221db043d570d0f1d1e18c3a8fce01e51248277806996",
+    "cache_sha256": "782bc2b923f47d26e9eb8f0463ff43adb1edc98688c716ccfddae2297a05120d",
+    "seconds": 3.495,
+    "source_peak": 0.391265869140625,
+    "normalization_gain": 1.0
+  },
+  {
+    "ID": "asvspoof2019_la:LA_T_6076657",
+    "split": "val",
+    "route": "voice",
+    "label": "1",
+    "input_kind": "original_full_duration",
+    "audio_sha256": "9560b8c8ae3961c0e5a4de3d8cdf782bb8d2b179a855a6a89191aa9b335f8f38",
+    "cache_sha256": "aa1aa3975592bdebbb9adc502dd2c87616480df0bcd231600dd7f00f814978d1",
+    "seconds": 2.7110625,
+    "source_peak": 0.999969482421875,
+    "normalization_gain": 0.6000183111056856
+  },
+  {
+    "ID": "jamendo_142417",
+    "split": "val",
+    "route": "music",
+    "label": "0",
+    "input_kind": "original_full_duration",
+    "audio_sha256": "c8056a11679eca32e0a5630f257f75f7586a930cf7fe33e677d05a82dc2764ad",
+    "cache_sha256": "c3ec957b70d0b705afde3db969fb80e3c0f45e5d2ed9aa0cad1027378757384a",
+    "seconds": 194.24325,
+    "source_peak": 1.064527988433838,
+    "normalization_gain": 0.563630084430881
+  },
+  {
+    "ID": "haim_musicgen_musicgen_small_01808",
+    "split": "val",
+    "route": "music",
+    "label": "1",
+    "input_kind": "original_full_duration",
+    "audio_sha256": "113188265dabb1cdbee570f229cad1efc16a9a6aceb170ed4d895f1f97f3fc79",
+    "cache_sha256": "f7b94f2ae2ff6420302f132a977cbd545ba921c126bbce6ed378c4880d264d09",
+    "seconds": 30.0,
+    "source_peak": 0.2922644019126892,
+    "normalization_gain": 1.0
+  },
+  {
+    "ID": "bank_fma_97601",
+    "split": "train",
+    "route": "music",
+    "label": "0",
+    "input_kind": "original_full_duration",
+    "audio_sha256": "4f6ecece8770e8e1fbee421e3002c652ff6d88fb703d2de55c68db8231a04e1b",
+    "cache_sha256": "cc0e86cf080a31a0ebb74a5fa82724915b1e187bd50747ee08cbbfdfe17ac353",
+    "seconds": 83.9575625,
+    "source_peak": 0.8281111717224121,
+    "normalization_gain": 0.7245404004779248
+  },
+  {
+    "ID": "core_088637bccc2a15c64971_base",
+    "split": "val",
+    "route": "music",
+    "label": "0",
+    "input_kind": "legacy_crop",
+    "audio_sha256": "c143a61062493527ed4cf709bb58e3795be6fc6814013eac95c1adbf02bcbc91",
+    "cache_sha256": "76f1bce13ba1c202d677ceb89b8771f8cc714797b0d841ba8842e1799bb961d6",
+    "seconds": 8.0,
+    "source_peak": 0.6000000238418579,
+    "normalization_gain": 1.0
+  },
+  {
+    "ID": "core_018699c287bf9fa0a0e8_base",
+    "split": "val",
+    "route": "music",
+    "label": "1",
+    "input_kind": "legacy_crop",
+    "audio_sha256": "67d3754f1f4a2de16381e26a317a72a76072a3fe463506900c93c65b6ee26405",
+    "cache_sha256": "155ef5a234e6dae38c6b523124d126746d0da14c12cc07ae00f37f4f952dc078",
+    "seconds": 8.0,
+    "source_peak": 0.6000000238418579,
+    "normalization_gain": 1.0
+  }
+]

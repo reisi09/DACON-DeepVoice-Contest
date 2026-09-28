@@ -1,0 +1,40 @@
+{
+  "approved": false,
+  "author": "Claude Opus 5 Extra",
+  "reviewer": "Codex",
+  "gpu_executed": false,
+  "artifact_sha256": "1e6f3fe776b162a2e315ad1ea16dcd8dcf05f9b4656ccf3e8a1fda074edd63b8",
+  "measured_checks": "codex_cpu_results.json",
+  "v1_R1_correction": "Original WindowMIL has no dropout; v1 audit dropout causal claim was incorrect. Rebenchmark batch-group drift was the actionable risk.",
+  "v1_disposition": {
+    "R1": "CPU resumed weights/predictions/history/RNG agree; CUDA untested",
+    "R2": "NaN and inf rejection reproduced; mismatch-to-failure path inspected",
+    "R3": "Cross-process ControllerLock and same-process ownership transfer verified; Linux orphan recovery not run locally",
+    "R4": "Fingerprint/evidence/asset repair code inspected; author Linux integration not independently rerun"
+  },
+  "findings": [
+    {
+      "id": "R5",
+      "priority": "P2",
+      "file": "code/tools/make_notebook.py",
+      "line": 119,
+      "finding": "Final ZIP link escapes /root-scoped Jupyter root when cwd is /root.",
+      "evidence_level": "static path reproduction; live VESSL root not checked"
+    },
+    {
+      "id": "R6",
+      "priority": "P1",
+      "file": "code/dacon9504a100/handoff.py",
+      "line": 158,
+      "finding": "Complete coverage gate accepts modified test predictions despite receipt hash mismatch, and accepts parity receipt bound to another lock.",
+      "evidence_level": "actual coverage_report, real 9504 IDs, synthetic evidence; no production results changed"
+    }
+  ],
+  "limitations": [
+    "CPU torch2.7.1 on macOS; target Linux torch2.9.1/A100 not run",
+    "No full encoder inference, GPU parity, runtime or VRAM claim",
+    "test has 1001 historical-exposure rows; no singing val/test rows"
+  ],
+  "disposition": "v2 not approved; v3 correction request sent to existing Claude Opus 5 Extra author chat. Await user recall; do not poll author or start GPU.",
+  "artifact_preservation": "Original author archives and CRLF reference CSV bytes preserved; git diff --check warns about original CRLF CSV lines."
+}

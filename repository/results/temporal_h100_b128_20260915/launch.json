@@ -1,0 +1,15 @@
+{
+  "workspace": "wsp-yiuufw51tke8",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "batch_size": 128,
+  "monitor_minutes": 3,
+  "run_prefix": "/temporal/h100-b128-20260915",
+  "input_sha256": "d6bbcb9bf801245391fd28b96db09120e915edfdd2dd7c8394ee76b96a3cbf5f",
+  "input_bytes": 458572,
+  "run_started_utc": 1789458006.4238138,
+  "deadline_utc": 1789465194,
+  "automation_id": "vessl-l40s-pause",
+  "scope": "Existing 8-candidate temporal search, seed 41/42/43, fresh linear control; no augmentation",
+  "transfer": "Jupyter upload; CLI volume-list endpoint timed out",
+  "verified_at": 1789458083.321268
+}

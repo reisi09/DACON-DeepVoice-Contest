@@ -1,0 +1,35 @@
+{
+  "sources": {
+    "LibriSpeech": {
+      "reviewed": 452,
+      "passed": 449,
+      "below_threshold": 3,
+      "score_quantiles": [
+        0.4411124587059021,
+        0.7547191381454468,
+        0.8105424046516418,
+        0.8563976883888245,
+        0.9537416696548462
+      ]
+    },
+    "MusicArena": {
+      "reviewed": 928,
+      "passed": 882,
+      "below_threshold": 46,
+      "score_quantiles": [
+        0.0011874008923768997,
+        0.709132194519043,
+        0.8075718283653259,
+        0.8844819068908691,
+        0.9709509015083313
+      ]
+    }
+  },
+  "review_rows": 1380,
+  "reviewed_seconds": 20700.0,
+  "inference_seconds": 635.6745447326684,
+  "gpu_used": false,
+  "human_listening_completed": 0,
+  "all_15s_audio_covered": true,
+  "rule": "minimum known-class score over both 10 s windows >= 0.5; operational triage only"
+}

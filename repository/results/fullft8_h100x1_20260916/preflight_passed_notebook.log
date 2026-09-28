@@ -1,0 +1,109 @@
+CELL_START 2
+CELL_DONE 2
+CELL_START 4
+기본 3개: 계획치 4~8시간 / 11.92~23.84 credits
+S1 포함 5개: 계획치 6~12시간 / 17.88~35.76 credits
+S2 포함 7개: 계획치 8~16시간 / 23.84~47.68 credits
+한도: 48.00 credits, 최대 15.0시간
+H100 한 장을 6시간 사용하면 6 GPU·시간입니다.
+CELL_DONE 4
+CELL_START 6
+CELL_DONE 6
+CELL_START 8
+CELL_DONE 8
+CELL_START 9
+S0 {'train': {'files': 918, 'real': 61, 'fake': 857, 'groups': 61}, 'tune': {'files': 248, 'real': 69, 'fake': 179, 'groups': 39}, 'test': {'files': 190, 'real': 60, 'fake': 90, 'groups': 30}}
+S1 {'train': {'files': 474, 'real': 37, 'fake': 437, 'groups': 37}, 'tune': {'files': 156, 'real': 12, 'fake': 144, 'groups': 12}, 'test': {'files': 190, 'real': 12, 'fake': 178, 'groups': 12}}
+held generator test: musicgen 24
+S2 {'train': {'files': 474, 'real': 37, 'fake': 437, 'groups': 37}, 'tune': {'files': 156, 'real': 12, 'fake': 144, 'groups': 12}, 'test': {'files': 190, 'real': 12, 'fake': 178, 'groups': 12}}
+held generator test: audioldm 24
+CELL_DONE 9
+CELL_START 10
+입력 추출 완료: 1356개. 전처리·학습은 별도 플래그로 실행합니다.
+CELL_DONE 10
+CELL_START 12
+CELL_DONE 12
+CELL_START 14
+CELL_DONE 14
+CELL_START 15
+CELL_DONE 15
+CELL_START 17
+CELL_DONE 17
+CELL_START 18
+CELL_DONE 18
+CELL_START 19
+SEPARATOR_ADAPTATION {"step": 0, "pseudo_validation_l1": 0.012246640748344362}
+SEPARATOR_ADAPTATION {"step": 1, "pseudo_validation_l1": 0.013140109134837985}
+Traceback (most recent call last):
+  File "/root/fullft8/fullft8_runtime.py", line 172, in <module>
+    main()
+  File "/root/fullft8/fullft8_runtime.py", line 137, in main
+    execute()
+  File "/root/fullft8/fullft8_runtime.py", line 96, in execute
+    preflight(namespace)
+  File "/root/fullft8/fullft8_runtime.py", line 60, in preflight
+    model = namespace['MusicClassifier'](kind,False,ROOT/'assets/models').cuda().train()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "MERT_EAT_HTDemucs_H100x1_8Experiments.ipynb:cell15", line 12, in __init__
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 558, in from_pretrained
+    model_class = get_class_from_dynamic_module(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/dynamic_module_utils.py", line 570, in get_class_from_dynamic_module
+    return get_class_in_module(class_name, final_module, force_reload=force_download)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/dynamic_module_utils.py", line 255, in get_class_in_module
+    module_files: list[Path] = [module_file] + sorted(map(Path, get_relative_import_files(module_file)))
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/dynamic_module_utils.py", line 127, in get_relative_import_files
+    new_imports.extend(get_relative_imports(f))
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/transformers/dynamic_module_utils.py", line 96, in get_relative_imports
+    with open(module_file, encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/.cache/huggingface/modules/transformers_modules/eat/model_core.py'
+CELL_START 2
+CELL_DONE 2
+CELL_START 4
+기본 3개: 계획치 4~8시간 / 11.92~23.84 credits
+S1 포함 5개: 계획치 6~12시간 / 17.88~35.76 credits
+S2 포함 7개: 계획치 8~16시간 / 23.84~47.68 credits
+한도: 48.00 credits, 최대 15.0시간
+H100 한 장을 6시간 사용하면 6 GPU·시간입니다.
+CELL_DONE 4
+CELL_START 6
+CELL_DONE 6
+CELL_START 8
+CELL_DONE 8
+CELL_START 9
+S0 {'train': {'files': 918, 'real': 61, 'fake': 857, 'groups': 61}, 'tune': {'files': 248, 'real': 69, 'fake': 179, 'groups': 39}, 'test': {'files': 190, 'real': 60, 'fake': 90, 'groups': 30}}
+S1 {'train': {'files': 474, 'real': 37, 'fake': 437, 'groups': 37}, 'tune': {'files': 156, 'real': 12, 'fake': 144, 'groups': 12}, 'test': {'files': 190, 'real': 12, 'fake': 178, 'groups': 12}}
+held generator test: musicgen 24
+S2 {'train': {'files': 474, 'real': 37, 'fake': 437, 'groups': 37}, 'tune': {'files': 156, 'real': 12, 'fake': 144, 'groups': 12}, 'test': {'files': 190, 'real': 12, 'fake': 178, 'groups': 12}}
+held generator test: audioldm 24
+CELL_DONE 9
+CELL_START 10
+입력 추출 완료: 1356개. 전처리·학습은 별도 플래그로 실행합니다.
+CELL_DONE 10
+CELL_START 12
+CELL_DONE 12
+CELL_START 14
+CELL_DONE 14
+CELL_START 15
+CELL_DONE 15
+CELL_START 17
+CELL_DONE 17
+CELL_START 18
+CELL_DONE 18
+CELL_START 19
+/root/fullft8/.venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+PREFLIGHT_PASSED: real HTDemucs, MERT, EAT backward and optimizer updates
+CELL_DONE 19
+CELL_START 21
+주입한 원본 누수 거부: Parent/artist leakage: train/tune
+분할·크레딧·스케줄·동점 EER 검사 완료. GPU 학습 검증과는 별개입니다.
+CELL_DONE 21
+CELL_START 23
+CELL_DONE 23
+CELL_START 24
+GPU 0: prepare all / /root/fullft8/h100x1_fullft8_run/prepare_all.log

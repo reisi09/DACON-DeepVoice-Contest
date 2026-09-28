@@ -1,0 +1,46 @@
+{
+  "billingInfo": {
+    "clusterName": "betelgeuse-na",
+    "hourlyCreditForCompute": 1.48,
+    "hourlyCreditForStorage": 0,
+    "region": "us-west-2",
+    "resourceSpecAcceleratorCount": 1,
+    "resourceSpecAcceleratorName": "A100 SXM",
+    "resourceSpecCpuCount": 11,
+    "resourceSpecEphemeralStorageBytes": 200000000000,
+    "resourceSpecMemoryBytes": 128000000000,
+    "resourceSpecName": "VESSL A100 SXM \u00d71",
+    "totalRuntimeSeconds": 0
+  },
+  "clusterVolumes": [
+    {
+      "clusterVolumeSlug": "clustervol-4jnjmzdw5rik",
+      "mountPath": "/root",
+      "volumeName": "main"
+    }
+  ],
+  "loadingStep": "running",
+  "objectVolumes": [
+    {
+      "mountPath": "/root-1",
+      "objectStorageSlug": "object_storage_e322branyapw",
+      "objectVolumeSlug": "objvol-a5gxdg7er70i",
+      "volumeName": "dacon-v6-training"
+    }
+  ],
+  "sshKeyIds": [],
+  "workspace": {
+    "clusterSlug": "cluster-betelgeuse",
+    "createdDt": "2026-09-19T14:15:11.846362Z",
+    "creatorName": "riwpq",
+    "imageUri": "quay.io/vessl-ai/torch:2.9.1-cuda13.0.1-py3.13-slim",
+    "name": "dacon-existing9504-a100-recovery-20260919",
+    "organizationName": "qwdkw",
+    "phase": "active",
+    "ports": [],
+    "resourceSpecSlug": "resourcespec-a100x1",
+    "slug": "wsp-p6ra2xz0ucd2",
+    "state": "initializing",
+    "teamSlug": "team-jusp6dlv6wl5"
+  }
+}

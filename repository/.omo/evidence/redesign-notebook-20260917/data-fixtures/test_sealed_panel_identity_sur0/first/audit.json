@@ -1,0 +1,80 @@
+{
+  "manifest_sha256": "b4c2d53b3f4bdb06846423849f25d96a3a72c1e86a50b51e5b451f4f1f55fb71",
+  "protocol_sha256": "accaa8f72ae6539e6533461790932367128fd3a9a7b5dfaf63525fc2065a97f5",
+  "seed": 41,
+  "diagnostic": false,
+  "input_rows": 53,
+  "accepted_sources": 51,
+  "generated_rows": 24,
+  "split_rows": {
+    "sealed": 6,
+    "train": 63,
+    "validation": 6
+  },
+  "independent_source_groups": {
+    "sealed": 5,
+    "train": 36,
+    "validation": 5
+  },
+  "strata_counts": {
+    "speech:0:fixture/provider-0:": {
+      "train": 9,
+      "validation": 2,
+      "sealed": 2
+    },
+    "instrumental:1:fixture/provider-3:fixture-generator": {
+      "train": 10,
+      "validation": 1,
+      "sealed": 2
+    },
+    "instrumental:0:fixture/provider-2:": {
+      "train": 10,
+      "validation": 1,
+      "sealed": 1
+    },
+    "speech:1:fixture/provider-1:fixture-generator": {
+      "train": 9,
+      "validation": 2,
+      "sealed": 1
+    },
+    "singing::fixture/provider-0:": {
+      "train": 1,
+      "validation": 0,
+      "sealed": 0
+    }
+  },
+  "paired_state_slots": {
+    "skipped_sample_rate_mismatch": 0,
+    "train": 12,
+    "validation": 0,
+    "sealed": 0
+  },
+  "unknown_labels": {
+    "FILE_FAKE": 1,
+    "VOICE_FAKE": 38,
+    "MUSIC_FAKE": 26,
+    "VOICE_PRESENT": 0,
+    "MUSIC_PRESENT": 0
+  },
+  "lineage_overlap": {},
+  "verified_pairs": 12,
+  "quarantined": [
+    {
+      "line": "53",
+      "ID": "corrupt",
+      "reason": "audio decode failed: /Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/data-fixtures/test_sealed_panel_identity_sur0/original/corrupt.wav: Error opening '/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/.omo/evidence/redesign-notebook-20260917/data-fixtures/test_sealed_panel_identity_sur0/original/corrupt.wav': Format not recognised."
+    },
+    {
+      "line": "54",
+      "ID": "false-claim",
+      "reason": "VOICE_FAKE claims authenticity for an absent component"
+    }
+  ],
+  "sealed_panel_identity": "ad2a4be053526346a889cfcf97fcdf225b3622e11d75585c2b5ed31be9e5070c",
+  "coverage_gate": "unmet",
+  "split_manifest_sha256": {
+    "train": "0c94fe423b5cdfe2d8acbd035f879d00cc081ffc235144d3b7f73066448266d7",
+    "validation": "e88b28aced0308f25a6795378d52444014136b86f0dad6a4147a433055ccd00b",
+    "sealed": "80c632e2776d25fb151a6751f3576aab32054823c7b7b76e94e0b790bc5c65ee"
+  }
+}

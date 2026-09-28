@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-09-17T03:34:17.924366+00:00",
+  "script_sha256": "4eba09a13619834a221e41e8481ffa269e8b31fa5674466e4fc6eb049b31b243",
+  "input_sha256": {
+    "fresh_fma_manifest.csv": "5140bda8d0009f822028387f57ac057e187318866a3c3fa351b89be282315a83",
+    "fresh_sonics_manifest.csv": "8e0da633103da57f71942d8f7eae9adad504337c365b9aad1f9d36f16c71736c"
+  },
+  "source_files": 24,
+  "source_groups": 24,
+  "clips": 68,
+  "durations": [
+    4,
+    15,
+    60
+  ],
+  "crop_rule": "central 60-second start (zero for shorter files), then available same-start 4/15/60-second prefixes",
+  "unavailable_views": [
+    {
+      "parent_id": "fresh_sonics_53664",
+      "duration_seconds": 60,
+      "reason": "source shorter than requested probe; no padding or replacement"
+    },
+    {
+      "parent_id": "fresh_sonics_53777",
+      "duration_seconds": 60,
+      "reason": "source shorter than requested probe; no padding or replacement"
+    },
+    {
+      "parent_id": "fresh_sonics_53243",
+      "duration_seconds": 60,
+      "reason": "source shorter than requested probe; no padding or replacement"
+    },
+    {
+      "parent_id": "fresh_sonics_53703",
+      "duration_seconds": 60,
+      "reason": "source shorter than requested probe; no padding or replacement"
+    }
+  ],
+  "saved_samples_exact": true,
+  "sample_rate": 16000,
+  "channels": 1,
+  "encoding": "float32 WAV without amplitude normalization",
+  "evaluated": false,
+  "trained": false,
+  "official_score": null,
+  "limitations": [
+    "These are grouped duration diagnostics; three crops are not independent samples.",
+    "Duration changes content and end-window alignment, not just pooling count.",
+    "Compare duration effects only on the same parent subset available at all requested lengths.",
+    "Source-level labels need clip audibility/presence review before scored evaluation.",
+    "Mono WAV probes do not validate stereo/codec/telephone robustness."
+  ]
+}

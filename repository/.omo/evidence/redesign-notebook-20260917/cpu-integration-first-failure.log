@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/redesign_notebook_integration.py", line 219, in <module>
+    main()
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/redesign_notebook_integration.py", line 215, in main
+    print(json.dumps(run_cpu_integration(output), indent=2, sort_keys=True))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/redesign_notebook_integration.py", line 169, in run_cpu_integration
+    apply_relation(prediction, relation, related)
+  File "/Users/choiwuseck/Documents/ChatGPT/데이콘/redesign_file.py", line 222, in apply_relation
+    raise ValueError("prediction upstream identity does not match relation fitting identity")
+ValueError: prediction upstream identity does not match relation fitting identity

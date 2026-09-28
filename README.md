@@ -2,11 +2,23 @@
 
 지금까지 진행한 딥보이스 탐지 실험의 모델·학습·추론 코드, 노트북, 설정과 결과 기록을 모았습니다. 원래 프로젝트의 상대 경로는 `repository/` 아래에 유지했습니다.
 
-- [현재 계획과 남은 작업](plan.md)
+- [E08 성능 하락 진단·기존 DataV4와 CPU 비교](docs/E08_REGRESSION_2026-09-24.md)
+- [E08 제출 ZIP 생성·실제 음원 CPU 추론 검증](docs/E08_SUBMISSION_2026-09-24.md)
+- [완료 캐시 5,952개 보존·E08/기준선 학습 완료](docs/A100_PARTIAL_TRAINING_2026-09-24.md)
+- [새 A100 workspace·E00/E04 특징 추출 시작](docs/A100_RUN_2026-09-24.md)
+- [A100 지원 변경·실행 묶음·음원 이전 검증 완료](docs/A100_PREPARATION_2026-09-24.md)
+- [GPU 학습 사전준비·E00/E04·CPU 검증 완료](docs/GPU_PREPARATION_2026-09-24.md)
+- [대회 규칙 재검토·MLAAD 146개 추가·roles-v6](docs/MLAAD_DECISION_2026-09-24.md)
+- [CPU 자동 검토·신규 데이터 1,331개 학습 편입 — 2026-09-24](docs/CPU_ADMISSION_2026-09-24.md)
+- [추가 수집 후 CPU 검수·roles-v4·캐시 확인 — 2026-09-24](docs/CPU_FOLLOWUP_2026-09-24.md)
+- [추가 원본 2,800개 수집·검증 기록 — 2026-09-24](docs/ADDITIONAL_DATA_COLLECTION_2026-09-24.md)
+- [CPU 준비 결과·VESSL 업로드·남은 조건 — 2026-09-24](docs/CPU_PREPARATION_2026-09-24.md)
+- [LB 개선 workflow](repository/docs/superpowers/plans/2026-09-24-dacon-lb-improvement-workflow.md)
+- [기존 계획 기록](plan.md)
 - [실험별 코드 안내](EXPERIMENT_INDEX.md)
 - [전체 실험 기록 — 2026-09-17 기준](docs/EXPERIMENTS_ALL_2026-09-17.md)
 - [최신 Existing9504 구조](docs/PROJECT.md) · [상세 코드 위치](docs/CODE_MAP.md)
-- [실제 소스 파일과 SHA-256](SOURCE_MANIFEST.json)
+- [초기 소스 묶음과 당시 SHA-256](SOURCE_MANIFEST.json)
 - [Data v4 수집·생성·split 설계와 코드 — 2026-09-23](repository/data_v4/DESIGN.md)
 
 ## 최신 완료 실험: Existing9504

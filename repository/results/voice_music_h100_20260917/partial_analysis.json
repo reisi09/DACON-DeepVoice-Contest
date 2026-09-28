@@ -1,0 +1,275 @@
+{
+  "status": "failed_after_stage_1",
+  "completed_stages": [
+    1
+  ],
+  "partially_executed_stages": [
+    2
+  ],
+  "unexecuted_stages": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "failure": "Stage 2 imported v2_data, which imports imageio_ffmpeg absent from the H100 environment",
+  "training_performed": false,
+  "additional_seed_training": false,
+  "additional_seed_gate_evaluated": false,
+  "verified_export_files": 579,
+  "archive_sha256": "352ead2c684e47fadd01bae49ceaf3e273bf4446ce4a0d8bd511f593ea83d24a",
+  "pause_verified": true,
+  "state": "stopped",
+  "phase": "standby",
+  "start_request_to_verified_stop_seconds": 612.484540939331,
+  "allocation_start_to_verified_stop_seconds": 644.484540939331,
+  "stage_1_seconds": 276.2534625530243,
+  "native_gpu_parity": {
+    "fake_class": 0,
+    "max_logit_error": 2.956390380859375e-05,
+    "native_revision": "60c96543210117bdb256636e7961e16463f99291",
+    "real_audio_cases": 3,
+    "unused_training_only": [
+      "m_ssl.model.final_proj.bias",
+      "m_ssl.model.final_proj.weight",
+      "m_ssl.model.project_q.bias",
+      "m_ssl.model.project_q.weight",
+      "m_ssl.model.quantizer.vars",
+      "m_ssl.model.quantizer.weight_proj.bias",
+      "m_ssl.model.quantizer.weight_proj.weight"
+    ]
+  },
+  "dev_voice_comparison": [
+    {
+      "variant": "base",
+      "source_file_label": 0,
+      "rows": 4,
+      "mean_df_raw": 0.00798906059935689,
+      "mean_df_vocals": 0.024205622263252735,
+      "file_prob_ge_half": 0,
+      "background_voice_labels_independently_verified": false
+    },
+    {
+      "variant": "base",
+      "source_file_label": 1,
+      "rows": 4,
+      "mean_df_raw": 0.9965232461690903,
+      "mean_df_vocals": 0.9976369589567184,
+      "file_prob_ge_half": 4,
+      "background_voice_labels_independently_verified": false
+    },
+    {
+      "variant": "mix_minus6dB",
+      "source_file_label": 0,
+      "rows": 4,
+      "mean_df_raw": 0.16931477468460798,
+      "mean_df_vocals": 0.3854982163757086,
+      "file_prob_ge_half": 1,
+      "background_voice_labels_independently_verified": false
+    },
+    {
+      "variant": "mix_minus6dB",
+      "source_file_label": 1,
+      "rows": 4,
+      "mean_df_raw": 0.6661299988627434,
+      "mean_df_vocals": 0.981662780046463,
+      "file_prob_ge_half": 4,
+      "background_voice_labels_independently_verified": false
+    },
+    {
+      "variant": "mix_0dB",
+      "source_file_label": 0,
+      "rows": 4,
+      "mean_df_raw": 0.2067404491826892,
+      "mean_df_vocals": 0.5644815973937511,
+      "file_prob_ge_half": 2,
+      "background_voice_labels_independently_verified": false
+    },
+    {
+      "variant": "mix_0dB",
+      "source_file_label": 1,
+      "rows": 4,
+      "mean_df_raw": 0.4743582084774971,
+      "mean_df_vocals": 0.9665675908327103,
+      "file_prob_ge_half": 3,
+      "background_voice_labels_independently_verified": false
+    },
+    {
+      "variant": "telephone",
+      "source_file_label": 0,
+      "rows": 4,
+      "mean_df_raw": 0.0137889648322016,
+      "mean_df_vocals": 0.03556605824269354,
+      "file_prob_ge_half": 0,
+      "background_voice_labels_independently_verified": false
+    },
+    {
+      "variant": "telephone",
+      "source_file_label": 1,
+      "rows": 4,
+      "mean_df_raw": 0.9897225350141525,
+      "mean_df_vocals": 0.993812769651413,
+      "file_prob_ge_half": 4,
+      "background_voice_labels_independently_verified": false
+    },
+    {
+      "variant": "mp3_32k",
+      "source_file_label": 0,
+      "rows": 4,
+      "mean_df_raw": 0.020364260184578598,
+      "mean_df_vocals": 0.045872253365814686,
+      "file_prob_ge_half": 0,
+      "background_voice_labels_independently_verified": false
+    },
+    {
+      "variant": "mp3_32k",
+      "source_file_label": 1,
+      "rows": 4,
+      "mean_df_raw": 0.9963888078927994,
+      "mean_df_vocals": 0.9971069246530533,
+      "file_prob_ge_half": 4,
+      "background_voice_labels_independently_verified": false
+    }
+  ],
+  "dev_voice_file_metrics": {
+    "base": {
+      "rows": 8,
+      "parent_groups": 1,
+      "score": null,
+      "metrics": {
+        "file_eer": 0.0,
+        "voice_eer": 0.0,
+        "music_eer": null,
+        "voice_presence_auc": null,
+        "music_presence_auc": null
+      },
+      "invalid": {
+        "music_eer": "both positive and negative labels are required",
+        "voice_presence_auc": "both positive and negative labels are required",
+        "music_presence_auc": "both positive and negative labels are required"
+      },
+      "partial": {},
+      "counts": {
+        "file_eer": 8,
+        "voice_eer": 8,
+        "music_eer": 0,
+        "voice_presence_auc": 8,
+        "music_presence_auc": 8
+      },
+      "unknown_counts": {
+        "file_eer": 0,
+        "voice_eer": 0,
+        "music_eer": 0,
+        "voice_presence_auc": 0,
+        "music_presence_auc": 0
+      },
+      "coverage": {
+        "file_eer": 1.0,
+        "voice_eer": 1.0,
+        "music_eer": 0.0,
+        "voice_presence_auc": 1.0,
+        "music_presence_auc": 1.0
+      }
+    },
+    "mix_minus6dB": {
+      "rows": 8,
+      "parent_groups": 3,
+      "score": null,
+      "metrics": {
+        "file_eer": 0.25,
+        "voice_eer": null,
+        "music_eer": null,
+        "voice_presence_auc": null,
+        "music_presence_auc": null
+      },
+      "invalid": {
+        "voice_eer": "both positive and negative labels are required",
+        "music_eer": "both positive and negative labels are required",
+        "voice_presence_auc": "both positive and negative labels are required",
+        "music_presence_auc": "both positive and negative labels are required"
+      },
+      "partial": {
+        "voice_eer": "known subset only; unknown relevant labels: 4"
+      },
+      "counts": {
+        "file_eer": 8,
+        "voice_eer": 4,
+        "music_eer": 8,
+        "voice_presence_auc": 8,
+        "music_presence_auc": 8
+      },
+      "unknown_counts": {
+        "file_eer": 0,
+        "voice_eer": 4,
+        "music_eer": 0,
+        "voice_presence_auc": 0,
+        "music_presence_auc": 0
+      },
+      "coverage": {
+        "file_eer": 1.0,
+        "voice_eer": 0.5,
+        "music_eer": 1.0,
+        "voice_presence_auc": 1.0,
+        "music_presence_auc": 1.0
+      }
+    },
+    "mix_0dB": {
+      "rows": 8,
+      "parent_groups": 3,
+      "score": null,
+      "metrics": {
+        "file_eer": 0.25,
+        "voice_eer": null,
+        "music_eer": null,
+        "voice_presence_auc": null,
+        "music_presence_auc": null
+      },
+      "invalid": {
+        "voice_eer": "both positive and negative labels are required",
+        "music_eer": "both positive and negative labels are required",
+        "voice_presence_auc": "both positive and negative labels are required",
+        "music_presence_auc": "both positive and negative labels are required"
+      },
+      "partial": {
+        "voice_eer": "known subset only; unknown relevant labels: 4"
+      },
+      "counts": {
+        "file_eer": 8,
+        "voice_eer": 4,
+        "music_eer": 8,
+        "voice_presence_auc": 8,
+        "music_presence_auc": 8
+      },
+      "unknown_counts": {
+        "file_eer": 0,
+        "voice_eer": 4,
+        "music_eer": 0,
+        "voice_presence_auc": 0,
+        "music_presence_auc": 0
+      },
+      "coverage": {
+        "file_eer": 1.0,
+        "voice_eer": 0.5,
+        "music_eer": 1.0,
+        "voice_presence_auc": 1.0,
+        "music_presence_auc": 1.0
+      }
+    }
+  },
+  "local_decoder_fix_verified": {
+    "stage_2_without_imageio_ffmpeg": true,
+    "raw_waveform_preserved": true,
+    "music_and_presence_unchanged": true,
+    "gpu_model_quality_checked_here": false
+  },
+  "gpu_rerun_after_fix": false,
+  "original_deadline_unchanged": 1789631286,
+  "official_score": null,
+  "limitations": [
+    "Only four real and four fake dev speech sources from one speaker",
+    "Speech diagnostic panel was previously opened; not a new independent benchmark",
+    "Music source voice labels and independent listening review remain unavailable",
+    "Source bias between FMA and SONICS remains; 106 independent groups below 300-source gate",
+    "No test results opened for this partial report; no candidate selection or training completed"
+  ]
+}

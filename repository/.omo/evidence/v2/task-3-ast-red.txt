@@ -1,0 +1,133 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+__ test_gradient_and_update_reach_only_the_selected_parameters[frozen-False] ___
+
+mode = 'frozen', ast_trainable = False
+
+    @pytest.mark.parametrize(
+        ("mode", "ast_trainable"),
+        [("frozen", False), ("last_block", True)],
+    )
+    def test_gradient_and_update_reach_only_the_selected_parameters(
+        mode: str,
+        ast_trainable: bool,
+    ) -> None:
+        # Given: a real, small AST and one eligible label for every head.
+>       model = tiny_model(mode)
+                ^^^^^^^^^^^^^^^^
+
+test_ast_multitask.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mode = 'frozen'
+
+    def tiny_model(mode: str) -> torch.nn.Module:
+        torch.manual_seed(236749)
+        config = ASTConfig(
+            hidden_size=32,
+            num_hidden_layers=2,
+            num_attention_heads=4,
+            intermediate_size=64,
+            max_length=32,
+            num_mel_bins=128,
+        )
+>       return ast.ASTMultiTask(ASTModel(config), mode)
+               ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'ast_multitask' has no attribute 'ASTMultiTask'
+
+test_ast_multitask.py:24: AttributeError
+_ test_gradient_and_update_reach_only_the_selected_parameters[last_block-True] _
+
+mode = 'last_block', ast_trainable = True
+
+    @pytest.mark.parametrize(
+        ("mode", "ast_trainable"),
+        [("frozen", False), ("last_block", True)],
+    )
+    def test_gradient_and_update_reach_only_the_selected_parameters(
+        mode: str,
+        ast_trainable: bool,
+    ) -> None:
+        # Given: a real, small AST and one eligible label for every head.
+>       model = tiny_model(mode)
+                ^^^^^^^^^^^^^^^^
+
+test_ast_multitask.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mode = 'last_block'
+
+    def tiny_model(mode: str) -> torch.nn.Module:
+        torch.manual_seed(236749)
+        config = ASTConfig(
+            hidden_size=32,
+            num_hidden_layers=2,
+            num_attention_heads=4,
+            intermediate_size=64,
+            max_length=32,
+            num_mel_bins=128,
+        )
+>       return ast.ASTMultiTask(ASTModel(config), mode)
+               ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'ast_multitask' has no attribute 'ASTMultiTask'
+
+test_ast_multitask.py:24: AttributeError
+_________ test_masked_loss_ignores_unknown_and_absent_component_truth __________
+
+    def test_masked_loss_ignores_unknown_and_absent_component_truth() -> None:
+        # Given: one row with absent components and one row with known present components.
+        logits = torch.tensor([[0.7, -1.1, 1.4, -0.2, -0.4], [-0.8, 0.9, -0.7, 0.6, 0.5]])
+        targets = torch.tensor([[0, 0, 1, 0, 0], [1, 1, 0, 1, 1]], dtype=torch.float32)
+>       weights = ast.compute_pos_weights(targets)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'ast_multitask' has no attribute 'compute_pos_weights'
+
+test_ast_multitask.py:71: AttributeError
+_________ test_windows_cover_the_whole_file_once_and_aggregate_by_mean _________
+
+    def test_windows_cover_the_whole_file_once_and_aggregate_by_mean() -> None:
+        # Given: a file slightly longer than six ten-second windows.
+        audio = np.arange(60 * 16_000 + 317, dtype=np.float32)
+    
+        # When: the deterministic file-local splitter and aggregator run.
+>       windows = ast.split_audio(audio)
+                  ^^^^^^^^^^^^^^^
+E       AttributeError: module 'ast_multitask' has no attribute 'split_audio'
+
+test_ast_multitask.py:96: AttributeError
+____________ test_export_reload_replays_and_rejects_contract_drift _____________
+
+tmp_path = PosixPath('/private/var/folders/1t/xzrjp0k52f76sd1rsd1_fbrw0000gn/T/pytest-of-choiwuseck/pytest-1/test_export_reload_replays_and0')
+
+    def test_export_reload_replays_and_rejects_contract_drift(tmp_path: Path) -> None:
+        # Given: a trained tiny AST and the exact official processor contract.
+>       model = tiny_model("last_block").eval()
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_ast_multitask.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mode = 'last_block'
+
+    def tiny_model(mode: str) -> torch.nn.Module:
+        torch.manual_seed(236749)
+        config = ASTConfig(
+            hidden_size=32,
+            num_hidden_layers=2,
+            num_attention_heads=4,
+            intermediate_size=64,
+            max_length=32,
+            num_mel_bins=128,
+        )
+>       return ast.ASTMultiTask(ASTModel(config), mode)
+               ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'ast_multitask' has no attribute 'ASTMultiTask'
+
+test_ast_multitask.py:24: AttributeError
+=========================== short test summary info ============================
+FAILED test_ast_multitask.py::test_gradient_and_update_reach_only_the_selected_parameters[frozen-False]
+FAILED test_ast_multitask.py::test_gradient_and_update_reach_only_the_selected_parameters[last_block-True]
+FAILED test_ast_multitask.py::test_masked_loss_ignores_unknown_and_absent_component_truth
+FAILED test_ast_multitask.py::test_windows_cover_the_whole_file_once_and_aggregate_by_mean
+FAILED test_ast_multitask.py::test_export_reload_replays_and_rejects_contract_drift
+5 failed in 2.60s

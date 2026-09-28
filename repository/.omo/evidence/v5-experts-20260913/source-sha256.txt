@@ -1,0 +1,11 @@
+Implemented artifacts:
+d20280818f160ea8788cb5453587fc11b0484f5e2389e2a04528a1923db95c32  v5_experts.py
+e053b301609e9657da2d32f7c3d9a49eec008eebeb3f03d590de7586535d1934  test_v5_experts.py
+
+Inspected original ZIP members (digest of uncompressed bytes):
+397df32fb0b1a1296b292ec698e7edca44f98c5f2afe3655bf182ad01fa5a11c  model/df_arena_1b/backbone.py
+84651dc9e81aaf4a32b400a621aa37e8f22e656a8207c5f4120cbb6e682c5540  model/df_arena_1b/conformer.py
+36668778db09d5c64090b62d6afb66ba63057304fe456a45388066ff7dabb997  model/df_arena_1b/facebook/wav2vec2-xls-r-1b/config.json
+
+Baseline receipt for wrapper checkpoint:
+780bc14fd4c15e65d58efdef728427cf03cd29cd60be528e97badf8c89087988  model/df_arena_1b/pytorch_model.bin

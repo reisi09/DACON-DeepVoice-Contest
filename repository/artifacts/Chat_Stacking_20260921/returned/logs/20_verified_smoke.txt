@@ -1,0 +1,29 @@
+$ /opt/pyvenv/bin/python -m dacon_stacking smoke --out artifacts/final_synthetic_wiring
+{
+  "purpose": "SYNTHETIC WIRING ONLY. Metrics here are NOT evidence of audio detection performance.",
+  "systems": {
+    "F0/lr": "OK",
+    "F0/et": "OK",
+    "F0/xgb": "OK",
+    "F1/lr": "OK",
+    "F1/et": "OK",
+    "F1/xgb": "OK"
+  },
+  "serialization": {
+    "lr": {
+      "status": "NOT_RUN",
+      "reason": "skops unavailable: safe LR/ExtraTrees serialization NOT_RUN; no pickle fallback"
+    },
+    "et": {
+      "status": "NOT_RUN",
+      "reason": "skops unavailable: safe LR/ExtraTrees serialization NOT_RUN; no pickle fallback"
+    },
+    "xgb": {
+      "status": "PASS",
+      "max_abs_roundtrip_error": 0.0,
+      "manifest_sha256": "e39d9f225ddf9ceabae92d42e2fde10dc4ca58b15b252fe340f4ec058978e1cb"
+    }
+  }
+}
+
+EXIT_CODE=0

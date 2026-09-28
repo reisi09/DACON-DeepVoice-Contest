@@ -1,0 +1,30 @@
+model.safetensors: OK
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+  File "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'imageio_ffmpeg'
+Traceback (most recent call last):
+  File "<stdin>", line 15, in <module>
+  File "/root/fullft8/.venv/lib/python3.11/site-packages/imageio_ffmpeg/_utils.py", line 33, in get_ffmpeg_exe
+    raise RuntimeError(
+RuntimeError: No ffmpeg exe could be found. Install ffmpeg on your system, or set the IMAGEIO_FFMPEG_EXE environment variable.
+model.safetensors: OK
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+  File "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/redesign_full_20260917/assets/asset_hashes.json'
+model.safetensors: OK
+timestamp, name, uuid, driver_version, memory.total [MiB], memory.used [MiB]
+2026/09/17 13:19:01.525, NVIDIA H100 80GB HBM3, GPU-409c21d9-17d6-7725-8531-c5b3dece7a83, 580.82.07, 81559 MiB, 0 MiB
+Filesystem                                                                                                                                                        1B-blocks         Used      Available Use% Mounted on
+csi-cephfs-node.1@b1906f2e-9123-4aa4-b4f7-2065ecf83fbb.cephfs=/volumes/csi/csi-vol-8563a88a-67f7-48cc-a39b-31ed0d7db5de/6ecbf4d6-e93a-4a2d-9af9-2af3bc6ba97b 10995116277760 172171984896 10822944292864   2% /root

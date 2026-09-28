@@ -1,0 +1,32 @@
+{
+  "python": "3.11.13",
+  "executable": "/root/fullft8/.venv/bin/python",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "torchaudio": "2.7.1+cu128",
+    "torchvision": "0.22.1+cu128",
+    "transformers": "4.57.6",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "soundfile": "0.13.1",
+    "safetensors": "0.8.0",
+    "scikit-learn": "1.7.2",
+    "pandas": null,
+    "librosa": "0.11.0",
+    "demucs": "4.0.1",
+    "panns-inference": "0.1.1",
+    "tokenizers": "0.22.2",
+    "huggingface-hub": "0.36.2"
+  },
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "gpu_memory_bytes": 85017624576,
+  "cuda": "12.8",
+  "runtime_overlay": "/root/expanded_h100_20260918_retry1/runtime",
+  "wheel_sha256": {
+    "huggingface_hub-0.36.2-py3-none-any.whl": "48f0c8eac16145dfce371e9d2d7772854a4f591bcb56c9cf548accf531d54270",
+    "safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "fd6f3f93c9a0a7cc2788ee63fb763353d4bd2e89b0751bc78fcf7dda00bea774",
+    "tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "369cc9fc8cc10cb24143873a0d95438bb8ee257bb80c71989e3ee290e8d72c67",
+    "transformers-4.57.6-py3-none-any.whl": "4c9e9de11333ddfe5114bc872c9f370509198acf0b87a832a0ab9458e2bd0550"
+  },
+  "checked_at": 1789719747.9049041
+}

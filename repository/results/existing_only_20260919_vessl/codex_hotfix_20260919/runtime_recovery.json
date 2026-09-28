@@ -1,0 +1,60 @@
+{
+  "workspace": "wsp-5i3knd3gxeox",
+  "author_code_sha256": "d386b833c94d3bce4683f79e67ced8dbf81c2194a404e502de8b09af1575b683",
+  "original_author_archive_preserved": "../claude_v3/author_code.zip",
+  "fix": "Disable inherited FORCE_COLOR/CLICOLOR_FORCE and set NO_COLOR=1 for parsed uv subprocess output. No changes to model, split or training logic.",
+  "red_green": {
+    "live_before": {
+      "parsed_packages": 0,
+      "expected_packages": 83,
+      "ansi": true
+    },
+    "live_no_color": {
+      "parsed_packages": 83,
+      "matches_lock": true,
+      "ansi": false
+    },
+    "regression": "tests/test_environment_color.py passed on local macOS uv and actual Linux uv0.8.17; checks actual installed metadata"
+  },
+  "environment": {
+    "packages": 83,
+    "imports_passed": 18,
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "ffmpeg": "6.1.1-3ubuntu5",
+    "actual_audio_decode": true
+  },
+  "pilot": {
+    "passed_rows": 24,
+    "mert_batch": 256,
+    "peak_allocated_bytes": 26930737664,
+    "projected_feature_hours": 7.797132531347267,
+    "projection_is_not_total_training_runtime": true
+  },
+  "resumption": {
+    "kernel": "60a22044-b3ad-4ae7-b1ff-65c9dd806a3b",
+    "stages": [
+      "features",
+      "train",
+      "test_eval",
+      "parity",
+      "handoff"
+    ],
+    "observed_at": "2026-09-19T13:36:00+00:00",
+    "feature_rows_completed": 163,
+    "feature_rows_total": 9504,
+    "gpu_compute_processes": 1,
+    "optimizer_training_started": false
+  },
+  "monitor": {
+    "automation_id": "full-bank-h100-completion",
+    "interval_minutes": 5,
+    "on_success": "Download and hash verify handoff, then pause and verify workspace stopped",
+    "unchanged_state_notifications": false
+  },
+  "limits": [
+    "Only startup, decoder, model load, all24 pilot samples and initial163 full-feature rows verified so far. Later training/evaluation/parity/handoff still pending.",
+    "Test historical exposure1001/1426; singing train-only; no leaderboard or L4 claims."
+  ]
+}

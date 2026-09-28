@@ -1,0 +1,78 @@
+{"prepared_views": 16, "total": 256}
+{"prepared_views": 32, "total": 256}
+{"prepared_views": 48, "total": 256}
+{"prepared_views": 64, "total": 256}
+{"prepared_views": 80, "total": 256}
+{"prepared_views": 96, "total": 256}
+{"prepared_views": 112, "total": 256}
+{"prepared_views": 128, "total": 256}
+{"prepared_views": 144, "total": 256}
+{"prepared_views": 160, "total": 256}
+{"prepared_views": 176, "total": 256}
+{"prepared_views": 192, "total": 256}
+{"prepared_views": 208, "total": 256}
+{"prepared_views": 224, "total": 256}
+{"prepared_views": 240, "total": 256}
+{"prepared_views": 256, "total": 256}
+{
+  "status": "complete",
+  "revision": "371be01815b65274762d6d0a33e2cb70e24b9baa",
+  "provider_counts": {
+    "acestep": 128,
+    "musicgen": 128
+  },
+  "source_count": 256,
+  "view_count": 256,
+  "view_seconds": 8,
+  "actual_retained_download_bytes": 289492438,
+  "musicgen_subgroups": {
+    "small": 55,
+    "large": 21,
+    "medium": 52
+  },
+  "distinct_acestep_prompts": 127,
+  "conservative_network_budget": {
+    "metadata_bytes": 1703466,
+    "reserved_audio_request_bytes": 1408000000,
+    "audio_request_attempts": 256
+  },
+  "selection_sha256": "5a5528e66556383a80253764d7052a5aaa2ce3db22fa10c9c925794aa47cb0a8",
+  "metadata_sha256": {
+    "acestep": "9cdd71bbde987639a1065ac3be2f2c846e776429c24974dcccab8fc893f773e8",
+    "musicgen": "e8251fb8f600a3224fde7f25522c612b0766d9ce66991ab43fd9add7b5fa3709"
+  },
+  "license_readme_sha256": "c18e4171443f1857985c776d273da9f7979f34f74879cfd2a8de6533fcb610aa",
+  "source_manifest": {
+    "path": "results/local_sampler_20260918/data_preparation_haim_sources.csv",
+    "sha256": "e44adcb447fcae8aa13b13834ab1c9a5acd14bcaf35edbfd95e69ba025c2f9ad"
+  },
+  "training_manifest": {
+    "path": "results/local_sampler_20260918/data_preparation_haim_manifest.csv",
+    "sha256": "2b8abb7e5072ee9716669fae44ce6780e3d07375f84be46abc0e13f1a81d8fb4"
+  },
+  "eligibility": {
+    "acestep": {
+      "metadata_rows": 6000,
+      "eligible_rows": 5185
+    },
+    "musicgen": {
+      "metadata_rows": 5000,
+      "eligible_rows": 5000
+    }
+  },
+  "excluded_known_hashes": 55199,
+  "excluded_identities": 16028,
+  "hash_overlap_count": 0,
+  "source_center_replay_checks": 256,
+  "selection_used_predictions": false,
+  "independent_listening_review": false,
+  "label_source": "Pinned HAIM card A2 Full AI category",
+  "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "limitations": [
+    "Human-reference links are unknown; no matched human/fake pairing",
+    "MusicGen prompts and lyrics are absent from metadata; ACE-Step lyric provenance is unknown",
+    "Exact hashes do not detect partial copies, aliases or pretraining exposure",
+    "Known generators and source-documented labels; voice labels remain unknown",
+    "ACE-Step original duration restricted to 8-120 seconds for the download budget"
+  ]
+}
