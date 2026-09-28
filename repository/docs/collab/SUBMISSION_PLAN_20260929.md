@@ -93,6 +93,25 @@
 
 오늘(09-28) 제출 3번은 S6, S7, S8로 이미 썼다. 화면에 남은 횟수가 없으면 00:00 이후에 제출한다.
 
+
+## 5.1 제출 파일 열기 (Mac 터미널)
+
+Finder에서 zip이 선택된 상태로 열린다. 업로드 전에 sha256을 확인한다.
+
+```bash
+# ① s7_new
+open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_s7_new/submit.zip
+shasum -a 256 ~/Documents/ChatGPT/데이콘/submissions/DataV4_s7_new/submit.zip   # fcdd86913360e4dc31caaaa8fa4ee801360f1b7a6e8d901020d324f7597e5162
+# ② W_new
+open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_W_new/submit.zip
+shasum -a 256 ~/Documents/ChatGPT/데이콘/submissions/DataV4_W_new/submit.zip    # 58e7e3bd460cde93b6cb65aae02da6985b9e2d5c17c5f9f88622f58df04d1c68
+# ③ W_newB (1순위) / s7_new_ob (예비): 완성 후 submit.json의 sha256과 대조
+open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_W_newB/submit.zip
+open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_s7_new_ob/submit.zip
+# 현재 최고 S7
+open -R ~/Documents/ChatGPT/데이콘/submissions/DataV4_S7_SSLAMWavLM/submit.zip
+```
+
 ## 6. 남은 위험
 
 - **DB와 LB의 괴리**: S8은 DB에서 +0.0043(유의)이었는데 LB에서는 −0.0034였다. 이번 후보는 데이터 변경이고 세 평가셋이 같은 방향이지만, LB에서 뒤집힐 가능성은 남아 있다.
