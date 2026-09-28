@@ -1,0 +1,674 @@
+{
+ "runs": "/root/nd_eval",
+ "ref": "s7_ref",
+ "n": {
+  "E1": 4822,
+  "E1_natural": 3816,
+  "E2": 12426,
+  "E2_without_presence": 0
+ },
+ "s7_ref": {
+  "val": {
+   "file_eer": 0.03287,
+   "voice_eer": 0.01855,
+   "music_eer": 0.06373,
+   "ads": 0.96073
+  },
+  "E1": {
+   "file_eer": 0.0741,
+   "voice_eer": 0.06116,
+   "music_eer": 0.1391,
+   "ads": 0.90899
+  },
+  "E1_natural": {
+   "file_eer": 0.06288,
+   "voice_eer": 0.05488,
+   "music_eer": 0.13382,
+   "ads": 0.91743
+  },
+  "E2": {
+   "file_eer": 0.11548,
+   "voice_eer": 0.08794,
+   "music_eer": 0.10445,
+   "ads": 0.89334
+  },
+  "E1+E2": {
+   "file_eer": 0.1071,
+   "voice_eer": 0.08822,
+   "music_eer": 0.11406,
+   "ads": 0.89458
+  },
+  "E2_by_source": {
+   "atadd_singing": {
+    "FILE_eer": 0.144,
+    "FILE_real_fpr": 0.026,
+    "FILE_n": 3500,
+    "VOICE_eer": 0.08,
+    "VOICE_real_fpr": 0.008,
+    "VOICE_n": 3500
+   },
+   "atadd_speech": {
+    "FILE_eer": 0.161,
+    "FILE_real_fpr": 0.16,
+    "FILE_n": 3000,
+    "VOICE_eer": 0.163,
+    "VOICE_real_fpr": 0.164,
+    "VOICE_n": 3000
+   },
+   "atadd_music": {
+    "FILE_eer": 0.118,
+    "FILE_real_fpr": 0.04,
+    "FILE_n": 3500,
+    "MUSIC_eer": 0.1106,
+    "MUSIC_real_fpr": 0.068,
+    "MUSIC_n": 3500
+   },
+   "gtsinger_ko": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 880,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 880
+   },
+   "gtsinger_ko_speech": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 383,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 383
+   },
+   "haim_b3": {
+    "FILE_fake_tpr": 0.9952,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b4": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b6": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 327,
+    "VOICE_fake_tpr": 0.945,
+    "VOICE_n": 327,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 327
+   },
+   "musdb": {
+    "FILE_real_fpr": 0.0631,
+    "FILE_n": 111,
+    "VOICE_real_fpr": 0.0208,
+    "VOICE_n": 96,
+    "MUSIC_real_fpr": 0.0991,
+    "MUSIC_n": 111
+   },
+   "openbmat": {
+    "FILE_eer": 0.3916,
+    "FILE_real_fpr": 0.3778,
+    "FILE_n": 161,
+    "MUSIC_eer": 0.3664,
+    "MUSIC_real_fpr": 0.3333,
+    "MUSIC_n": 161
+   },
+   "sdrr": {
+    "FILE_real_fpr": 0.0479,
+    "FILE_n": 146,
+    "MUSIC_real_fpr": 0.0411,
+    "MUSIC_n": 146
+   }
+  }
+ },
+ "W_ref": {
+  "val": {
+   "file_eer": 0.02668,
+   "voice_eer": 0.01617,
+   "music_eer": 0.05758,
+   "ads": 0.96615
+  },
+  "E1": {
+   "file_eer": 0.08196,
+   "voice_eer": 0.07523,
+   "music_eer": 0.12608,
+   "ads": 0.90615
+  },
+  "E1_natural": {
+   "file_eer": 0.07156,
+   "voice_eer": 0.07056,
+   "music_eer": 0.11541,
+   "ads": 0.91549
+  },
+  "E2": {
+   "file_eer": 0.12482,
+   "voice_eer": 0.10689,
+   "music_eer": 0.10507,
+   "ads": 0.88469
+  },
+  "E1+E2": {
+   "file_eer": 0.12085,
+   "voice_eer": 0.10984,
+   "music_eer": 0.11098,
+   "ads": 0.88431
+  },
+  "E2_by_source": {
+   "atadd_singing": {
+    "FILE_eer": 0.1469,
+    "FILE_real_fpr": 0.029,
+    "FILE_n": 3500,
+    "VOICE_eer": 0.1102,
+    "VOICE_real_fpr": 0.011,
+    "VOICE_n": 3500
+   },
+   "atadd_speech": {
+    "FILE_eer": 0.165,
+    "FILE_real_fpr": 0.168,
+    "FILE_n": 3000,
+    "VOICE_eer": 0.163,
+    "VOICE_real_fpr": 0.16,
+    "VOICE_n": 3000
+   },
+   "atadd_music": {
+    "FILE_eer": 0.1288,
+    "FILE_real_fpr": 0.0313,
+    "FILE_n": 3500,
+    "MUSIC_eer": 0.112,
+    "MUSIC_real_fpr": 0.0587,
+    "MUSIC_n": 3500
+   },
+   "gtsinger_ko": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 880,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 880
+   },
+   "gtsinger_ko_speech": {
+    "FILE_real_fpr": 0.0261,
+    "FILE_n": 383,
+    "VOICE_real_fpr": 0.0078,
+    "VOICE_n": 383
+   },
+   "haim_b3": {
+    "FILE_fake_tpr": 0.9952,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b4": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b6": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 327,
+    "VOICE_fake_tpr": 0.9602,
+    "VOICE_n": 327,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 327
+   },
+   "musdb": {
+    "FILE_real_fpr": 0.0811,
+    "FILE_n": 111,
+    "VOICE_real_fpr": 0.0104,
+    "VOICE_n": 96,
+    "MUSIC_real_fpr": 0.0811,
+    "MUSIC_n": 111
+   },
+   "openbmat": {
+    "FILE_eer": 0.3664,
+    "FILE_real_fpr": 0.3667,
+    "FILE_n": 161,
+    "MUSIC_eer": 0.3538,
+    "MUSIC_real_fpr": 0.2444,
+    "MUSIC_n": 161
+   },
+   "sdrr": {
+    "FILE_real_fpr": 0.0548,
+    "FILE_n": 146,
+    "MUSIC_real_fpr": 0.0274,
+    "MUSIC_n": 146
+   }
+  },
+  "vs_ref": {
+   "E1": {
+    "delta": -0.00284,
+    "ci95": [
+     -0.00698,
+     0.00127
+    ],
+    "p_gt_0": 0.069
+   },
+   "E2": {
+    "delta": -0.00865,
+    "ci95": [
+     -0.01354,
+     -0.00103
+    ],
+    "p_gt_0": 0.012
+   },
+   "E1+E2": {
+    "delta": -0.01027,
+    "ci95": [
+     -0.01325,
+     -0.00652
+    ],
+    "p_gt_0": 0.0
+   }
+  }
+ },
+ "W_new": {
+  "val": {
+   "file_eer": 0.02853,
+   "voice_eer": 0.02067,
+   "music_eer": 0.06212,
+   "ads": 0.96296
+  },
+  "E1": {
+   "file_eer": 0.07116,
+   "voice_eer": 0.07913,
+   "music_eer": 0.12094,
+   "ads": 0.91231
+  },
+  "E1_natural": {
+   "file_eer": 0.06343,
+   "voice_eer": 0.07503,
+   "music_eer": 0.11326,
+   "ads": 0.9193
+  },
+  "E2": {
+   "file_eer": 0.06945,
+   "voice_eer": 0.04739,
+   "music_eer": 0.05791,
+   "ads": 0.93842
+  },
+  "E1+E2": {
+   "file_eer": 0.07451,
+   "voice_eer": 0.0656,
+   "music_eer": 0.07971,
+   "ads": 0.92571
+  },
+  "E2_by_source": {
+   "atadd_singing": {
+    "FILE_eer": 0.094,
+    "FILE_real_fpr": 0.032,
+    "FILE_n": 3500,
+    "VOICE_eer": 0.0542,
+    "VOICE_real_fpr": 0.011,
+    "VOICE_n": 3500
+   },
+   "atadd_speech": {
+    "FILE_eer": 0.058,
+    "FILE_real_fpr": 0.009,
+    "FILE_n": 3000,
+    "VOICE_eer": 0.0543,
+    "VOICE_real_fpr": 0.009,
+    "VOICE_n": 3000
+   },
+   "atadd_music": {
+    "FILE_eer": 0.0706,
+    "FILE_real_fpr": 0.0127,
+    "FILE_n": 3500,
+    "MUSIC_eer": 0.0574,
+    "MUSIC_real_fpr": 0.0167,
+    "MUSIC_n": 3500
+   },
+   "gtsinger_ko": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 880,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 880
+   },
+   "gtsinger_ko_speech": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 383,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 383
+   },
+   "haim_b3": {
+    "FILE_fake_tpr": 0.9952,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b4": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b6": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 327,
+    "VOICE_fake_tpr": 0.9908,
+    "VOICE_n": 327,
+    "MUSIC_fake_tpr": 0.9969,
+    "MUSIC_n": 327
+   },
+   "musdb": {
+    "FILE_real_fpr": 0.027,
+    "FILE_n": 111,
+    "VOICE_real_fpr": 0.0208,
+    "VOICE_n": 96,
+    "MUSIC_real_fpr": 0.018,
+    "MUSIC_n": 111
+   },
+   "openbmat": {
+    "FILE_eer": 0.3538,
+    "FILE_real_fpr": 0.3,
+    "FILE_n": 161,
+    "MUSIC_eer": 0.3105,
+    "MUSIC_real_fpr": 0.1222,
+    "MUSIC_n": 161
+   },
+   "sdrr": {
+    "FILE_real_fpr": 0.0274,
+    "FILE_n": 146,
+    "MUSIC_real_fpr": 0.0068,
+    "MUSIC_n": 146
+   }
+  },
+  "vs_ref": {
+   "E1": {
+    "delta": 0.00332,
+    "ci95": [
+     -0.00425,
+     0.00816
+    ],
+    "p_gt_0": 0.783
+   },
+   "E2": {
+    "delta": 0.04508,
+    "ci95": [
+     0.03696,
+     0.06207
+    ],
+    "p_gt_0": 1.0
+   },
+   "E1+E2": {
+    "delta": 0.03113,
+    "ci95": [
+     0.0259,
+     0.03794
+    ],
+    "p_gt_0": 1.0
+   }
+  }
+ },
+ "W_newB": {
+  "val": {
+   "file_eer": 0.02751,
+   "voice_eer": 0.01829,
+   "music_eer": 0.06373,
+   "ads": 0.96347
+  },
+  "E1": {
+   "file_eer": 0.07263,
+   "voice_eer": 0.07447,
+   "music_eer": 0.12195,
+   "ads": 0.91221
+  },
+  "E1_natural": {
+   "file_eer": 0.06288,
+   "voice_eer": 0.06888,
+   "music_eer": 0.11541,
+   "ads": 0.92016
+  },
+  "E2": {
+   "file_eer": 0.06688,
+   "voice_eer": 0.04825,
+   "music_eer": 0.05531,
+   "ads": 0.94031
+  },
+  "E1+E2": {
+   "file_eer": 0.07289,
+   "voice_eer": 0.06253,
+   "music_eer": 0.07692,
+   "ads": 0.92797
+  },
+  "E2_by_source": {
+   "atadd_singing": {
+    "FILE_eer": 0.094,
+    "FILE_real_fpr": 0.031,
+    "FILE_n": 3500,
+    "VOICE_eer": 0.0598,
+    "VOICE_real_fpr": 0.011,
+    "VOICE_n": 3500
+   },
+   "atadd_speech": {
+    "FILE_eer": 0.056,
+    "FILE_real_fpr": 0.009,
+    "FILE_n": 3000,
+    "VOICE_eer": 0.053,
+    "VOICE_real_fpr": 0.009,
+    "VOICE_n": 3000
+   },
+   "atadd_music": {
+    "FILE_eer": 0.066,
+    "FILE_real_fpr": 0.0093,
+    "FILE_n": 3500,
+    "MUSIC_eer": 0.0552,
+    "MUSIC_real_fpr": 0.0187,
+    "MUSIC_n": 3500
+   },
+   "gtsinger_ko": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 880,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 880
+   },
+   "gtsinger_ko_speech": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 383,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 383
+   },
+   "haim_b3": {
+    "FILE_fake_tpr": 0.9952,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b4": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b6": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 327,
+    "VOICE_fake_tpr": 0.9908,
+    "VOICE_n": 327,
+    "MUSIC_fake_tpr": 0.9969,
+    "MUSIC_n": 327
+   },
+   "musdb": {
+    "FILE_real_fpr": 0.018,
+    "FILE_n": 111,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 96,
+    "MUSIC_real_fpr": 0.027,
+    "MUSIC_n": 111
+   },
+   "openbmat": {
+    "FILE_eer": 0.3538,
+    "FILE_real_fpr": 0.3111,
+    "FILE_n": 161,
+    "MUSIC_eer": 0.3105,
+    "MUSIC_real_fpr": 0.1556,
+    "MUSIC_n": 161
+   },
+   "sdrr": {
+    "FILE_real_fpr": 0.0274,
+    "FILE_n": 146,
+    "MUSIC_real_fpr": 0.0137,
+    "MUSIC_n": 146
+   }
+  },
+  "vs_ref": {
+   "E1": {
+    "delta": 0.00322,
+    "ci95": [
+     -0.00397,
+     0.00929
+    ],
+    "p_gt_0": 0.829
+   },
+   "E2": {
+    "delta": 0.04698,
+    "ci95": [
+     0.03863,
+     0.06489
+    ],
+    "p_gt_0": 1.0
+   },
+   "E1+E2": {
+    "delta": 0.03339,
+    "ci95": [
+     0.02864,
+     0.04034
+    ],
+    "p_gt_0": 1.0
+   }
+  }
+ },
+ "s7_new": {
+  "val": {
+   "file_eer": 0.02751,
+   "voice_eer": 0.02041,
+   "music_eer": 0.05824,
+   "ads": 0.96469
+  },
+  "E1": {
+   "file_eer": 0.0664,
+   "voice_eer": 0.06224,
+   "music_eer": 0.12984,
+   "ads": 0.9154
+  },
+  "E1_natural": {
+   "file_eer": 0.0574,
+   "voice_eer": 0.05657,
+   "music_eer": 0.13168,
+   "ads": 0.92048
+  },
+  "E2": {
+   "file_eer": 0.08434,
+   "voice_eer": 0.06376,
+   "music_eer": 0.07742,
+   "ads": 0.92185
+  },
+  "E1+E2": {
+   "file_eer": 0.08339,
+   "voice_eer": 0.07192,
+   "music_eer": 0.09454,
+   "ads": 0.91556
+  },
+  "E2_by_source": {
+   "atadd_singing": {
+    "FILE_eer": 0.1509,
+    "FILE_real_fpr": 0.054,
+    "FILE_n": 3500,
+    "VOICE_eer": 0.0611,
+    "VOICE_real_fpr": 0.006,
+    "VOICE_n": 3500
+   },
+   "atadd_speech": {
+    "FILE_eer": 0.062,
+    "FILE_real_fpr": 0.011,
+    "FILE_n": 3000,
+    "VOICE_eer": 0.061,
+    "VOICE_real_fpr": 0.012,
+    "VOICE_n": 3000
+   },
+   "atadd_music": {
+    "FILE_eer": 0.0806,
+    "FILE_real_fpr": 0.016,
+    "FILE_n": 3500,
+    "MUSIC_eer": 0.0834,
+    "MUSIC_real_fpr": 0.0287,
+    "MUSIC_n": 3500
+   },
+   "gtsinger_ko": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 880,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 880
+   },
+   "gtsinger_ko_speech": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 383,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 383
+   },
+   "haim_b3": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b4": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 209,
+    "MUSIC_fake_tpr": 1.0,
+    "MUSIC_n": 209
+   },
+   "haim_b6": {
+    "FILE_fake_tpr": 1.0,
+    "FILE_n": 327,
+    "VOICE_fake_tpr": 0.9817,
+    "VOICE_n": 327,
+    "MUSIC_fake_tpr": 0.9969,
+    "MUSIC_n": 327
+   },
+   "musdb": {
+    "FILE_real_fpr": 0.018,
+    "FILE_n": 111,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 96,
+    "MUSIC_real_fpr": 0.036,
+    "MUSIC_n": 111
+   },
+   "openbmat": {
+    "FILE_eer": 0.3357,
+    "FILE_real_fpr": 0.2,
+    "FILE_n": 161,
+    "MUSIC_eer": 0.3357,
+    "MUSIC_real_fpr": 0.1444,
+    "MUSIC_n": 161
+   },
+   "sdrr": {
+    "FILE_real_fpr": 0.0068,
+    "FILE_n": 146,
+    "MUSIC_real_fpr": 0.0137,
+    "MUSIC_n": 146
+   }
+  },
+  "vs_ref": {
+   "E1": {
+    "delta": 0.00641,
+    "ci95": [
+     0.00134,
+     0.01105
+    ],
+    "p_gt_0": 0.995
+   },
+   "E2": {
+    "delta": 0.02851,
+    "ci95": [
+     0.02066,
+     0.04457
+    ],
+    "p_gt_0": 1.0
+   },
+   "E1+E2": {
+    "delta": 0.02098,
+    "ci95": [
+     0.01571,
+     0.02883
+    ],
+    "p_gt_0": 1.0
+   }
+  }
+ }
+}

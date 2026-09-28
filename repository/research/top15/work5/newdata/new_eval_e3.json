@@ -1,0 +1,359 @@
+{
+ "runs": "/Users/choiwuseck/Documents/ChatGPT/\ub370\uc774\ucf58/_workspace/nd_runs_e3",
+ "ref": "s7_ref",
+ "n": {
+  "E1": 4822,
+  "E1_natural": 3816,
+  "E2": 257,
+  "E2_without_presence": 0
+ },
+ "s7_ref": {
+  "val": {
+   "file_eer": 0.03287,
+   "voice_eer": 0.01855,
+   "music_eer": 0.06373,
+   "ads": 0.96073
+  },
+  "E1": {
+   "file_eer": 0.0741,
+   "voice_eer": 0.06116,
+   "music_eer": 0.1391,
+   "ads": 0.90899
+  },
+  "E1_natural": {
+   "file_eer": 0.06288,
+   "voice_eer": 0.05488,
+   "music_eer": 0.13382,
+   "ads": 0.91743
+  },
+  "E2": null,
+  "E1+E2": {
+   "file_eer": 0.07367,
+   "voice_eer": 0.06101,
+   "music_eer": 0.13649,
+   "ads": 0.91001
+  },
+  "E2_by_source": {
+   "aihub_465": {
+    "FILE_real_fpr": 0.0667,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 75
+   },
+   "aihub_473": {
+    "FILE_real_fpr": 0.0533,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.0667,
+    "VOICE_n": 75
+   },
+   "aihub_71544": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 107,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 107,
+    "MUSIC_real_fpr": 0.0187,
+    "MUSIC_n": 107
+   }
+  }
+ },
+ "W_ref": {
+  "val": {
+   "file_eer": 0.02668,
+   "voice_eer": 0.01617,
+   "music_eer": 0.05758,
+   "ads": 0.96615
+  },
+  "E1": {
+   "file_eer": 0.08196,
+   "voice_eer": 0.07523,
+   "music_eer": 0.12608,
+   "ads": 0.90615
+  },
+  "E1_natural": {
+   "file_eer": 0.07156,
+   "voice_eer": 0.07056,
+   "music_eer": 0.11541,
+   "ads": 0.91549
+  },
+  "E2": null,
+  "E1+E2": {
+   "file_eer": 0.08154,
+   "voice_eer": 0.0727,
+   "music_eer": 0.12459,
+   "ads": 0.90732
+  },
+  "E2_by_source": {
+   "aihub_465": {
+    "FILE_real_fpr": 0.0667,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 75
+   },
+   "aihub_473": {
+    "FILE_real_fpr": 0.1067,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.0533,
+    "VOICE_n": 75
+   },
+   "aihub_71544": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 107,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 107,
+    "MUSIC_real_fpr": 0.0187,
+    "MUSIC_n": 107
+   }
+  },
+  "vs_ref": {
+   "E1": {
+    "delta": -0.00284,
+    "ci95": [
+     -0.00698,
+     0.00127
+    ],
+    "p_gt_0": 0.069
+   },
+   "E2": {
+    "delta": NaN,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "p_gt_0": 0.0
+   },
+   "E1+E2": {
+    "delta": -0.0027,
+    "ci95": [
+     -0.00726,
+     0.00113
+    ],
+    "p_gt_0": 0.088
+   }
+  }
+ },
+ "W_new": {
+  "val": {
+   "file_eer": 0.02853,
+   "voice_eer": 0.02067,
+   "music_eer": 0.06212,
+   "ads": 0.96296
+  },
+  "E1": {
+   "file_eer": 0.07116,
+   "voice_eer": 0.07913,
+   "music_eer": 0.12094,
+   "ads": 0.91231
+  },
+  "E1_natural": {
+   "file_eer": 0.06343,
+   "voice_eer": 0.07503,
+   "music_eer": 0.11326,
+   "ads": 0.9193
+  },
+  "E2": null,
+  "E1+E2": {
+   "file_eer": 0.07095,
+   "voice_eer": 0.07568,
+   "music_eer": 0.11665,
+   "ads": 0.91439
+  },
+  "E2_by_source": {
+   "aihub_465": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 75
+   },
+   "aihub_473": {
+    "FILE_real_fpr": 0.04,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.04,
+    "VOICE_n": 75
+   },
+   "aihub_71544": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 107,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 107,
+    "MUSIC_real_fpr": 0.0093,
+    "MUSIC_n": 107
+   }
+  },
+  "vs_ref": {
+   "E1": {
+    "delta": 0.00332,
+    "ci95": [
+     -0.00425,
+     0.00816
+    ],
+    "p_gt_0": 0.783
+   },
+   "E2": {
+    "delta": NaN,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "p_gt_0": 0.0
+   },
+   "E1+E2": {
+    "delta": 0.00438,
+    "ci95": [
+     -0.00252,
+     0.00919
+    ],
+    "p_gt_0": 0.867
+   }
+  }
+ },
+ "W_newB": {
+  "val": {
+   "file_eer": 0.02751,
+   "voice_eer": 0.01829,
+   "music_eer": 0.06373,
+   "ads": 0.96347
+  },
+  "E1": {
+   "file_eer": 0.07263,
+   "voice_eer": 0.07447,
+   "music_eer": 0.12195,
+   "ads": 0.91221
+  },
+  "E1_natural": {
+   "file_eer": 0.06288,
+   "voice_eer": 0.06888,
+   "music_eer": 0.11541,
+   "ads": 0.92016
+  },
+  "E2": null,
+  "E1+E2": {
+   "file_eer": 0.07153,
+   "voice_eer": 0.07056,
+   "music_eer": 0.11699,
+   "ads": 0.91503
+  },
+  "E2_by_source": {
+   "aihub_465": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 75
+   },
+   "aihub_473": {
+    "FILE_real_fpr": 0.04,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.0267,
+    "VOICE_n": 75
+   },
+   "aihub_71544": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 107,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 107,
+    "MUSIC_real_fpr": 0.0093,
+    "MUSIC_n": 107
+   }
+  },
+  "vs_ref": {
+   "E1": {
+    "delta": 0.00322,
+    "ci95": [
+     -0.00397,
+     0.00929
+    ],
+    "p_gt_0": 0.829
+   },
+   "E2": {
+    "delta": NaN,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "p_gt_0": 0.0
+   },
+   "E1+E2": {
+    "delta": 0.00502,
+    "ci95": [
+     -0.00186,
+     0.01017
+    ],
+    "p_gt_0": 0.916
+   }
+  }
+ },
+ "s7_new": {
+  "val": {
+   "file_eer": 0.02751,
+   "voice_eer": 0.02041,
+   "music_eer": 0.05824,
+   "ads": 0.96469
+  },
+  "E1": {
+   "file_eer": 0.0664,
+   "voice_eer": 0.06224,
+   "music_eer": 0.12984,
+   "ads": 0.9154
+  },
+  "E1_natural": {
+   "file_eer": 0.0574,
+   "voice_eer": 0.05657,
+   "music_eer": 0.13168,
+   "ads": 0.92048
+  },
+  "E2": null,
+  "E1+E2": {
+   "file_eer": 0.0654,
+   "voice_eer": 0.05978,
+   "music_eer": 0.12723,
+   "ads": 0.91718
+  },
+  "E2_by_source": {
+   "aihub_465": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 75
+   },
+   "aihub_473": {
+    "FILE_real_fpr": 0.0267,
+    "FILE_n": 75,
+    "VOICE_real_fpr": 0.0267,
+    "VOICE_n": 75
+   },
+   "aihub_71544": {
+    "FILE_real_fpr": 0.0,
+    "FILE_n": 107,
+    "VOICE_real_fpr": 0.0,
+    "VOICE_n": 107,
+    "MUSIC_real_fpr": 0.0093,
+    "MUSIC_n": 107
+   }
+  },
+  "vs_ref": {
+   "E1": {
+    "delta": 0.00641,
+    "ci95": [
+     0.00134,
+     0.01105
+    ],
+    "p_gt_0": 0.995
+   },
+   "E2": {
+    "delta": NaN,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "p_gt_0": 0.0
+   },
+   "E1+E2": {
+    "delta": 0.00716,
+    "ci95": [
+     0.00166,
+     0.01142
+    ],
+    "p_gt_0": 0.995
+   }
+  }
+ }
+}
