@@ -1,0 +1,7 @@
+# omp (Oh My Pi) project settings, merged over ~/.omp/agent/config.yml.
+# omp also reads the repo-root AGENTS.md and the skills in .claude/skills (skills.enableClaudeProject, on by default).
+features:
+  # Jev decision layer built into omp: a text-only stop goes to the `judge` role (typesafe/jev-latest) and
+  # the agent continues when Jev calls the stop premature. Needs TYPESAFE_API_KEY; without it omp asks the
+  # session model instead, which costs a chat call per text-only stop.
+  unexpectedStopDetection: smart

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "JEV_BELAY_SHADOW": "1",
+    "JEV_BELAY_LOG": "1",
+    "JEV_BELAY_TIMEOUT_MS": "8000"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/harness/bin/session-start.sh",
+            "timeout": 300
+          }
+        ]
+      }
+    ]
+  }
+}

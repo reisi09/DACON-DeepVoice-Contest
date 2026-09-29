@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "vendor_dir": "harness/vendor",
+  "skills_dir": ".claude/skills",
+  "plugins": [
+    {
+      "name": "ponytail",
+      "what": "Least-code discipline (YAGNI, stdlib first); re-injects its rules every turn and into subagents",
+      "repo": "https://github.com/DietrichGebert/ponytail",
+      "commit": "e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156",
+      "version": "4.10.0",
+      "license": "MIT",
+      "egress": "none",
+      "files": ["LICENSE", "hooks/claude-codex-hooks.json", "hooks/ponytail-*.js", "pi-extension/index.js", "pi-extension/package.json", "skills/**"],
+      "claude_hooks": "hooks/claude-codex-hooks.json",
+      "skills": {
+        "skills/ponytail": "ponytail",
+        "skills/ponytail-audit": "ponytail-audit",
+        "skills/ponytail-debt": "ponytail-debt",
+        "skills/ponytail-gain": "ponytail-gain",
+        "skills/ponytail-help": "ponytail-help",
+        "skills/ponytail-review": "ponytail-review"
+      },
+      "omp_extension": "pi-extension/index.js"
+    },
+    {
+      "name": "caveman",
+      "what": "Terse output mode (~75% fewer output tokens); /caveman lite|full|ultra switches level",
+      "repo": "https://github.com/JuliusBrussee/caveman",
+      "commit": "2fd153c67988e980fb0b2455c90832159a6a5a25",
+      "version": "2.7.0",
+      "license": "MIT (skills/, src/hooks/; engine dirs are BSL and not vendored)",
+      "egress": "none",
+      "files": ["LICENSE", ".claude-plugin/plugin.json", "src/hooks/*.js", "src/hooks/package.json", "skills/caveman/**", "skills/caveman-help/**", "skills/caveman-commit/**", "skills/caveman-review/**", "skills/caveman-stats/**", "skills/caveman-compress/**"],
+      "claude_hooks": ".claude-plugin/plugin.json",
+      "skills": {
+        "skills/caveman": "caveman",
+        "skills/caveman-help": "caveman-help",
+        "skills/caveman-commit": "caveman-commit",
+        "skills/caveman-review": "caveman-review",
+        "skills/caveman-stats": "caveman-stats",
+        "skills/caveman-compress": "caveman-compress"
+      }
+    },
+    {
+      "name": "jev-belay",
+      "what": "Jev Stop gate: blocks a 'done' when files changed and no test/build passed since; code checks evidence first, Jev only judges the closing message",
+      "repo": "https://github.com/valentynkit/jev-belay",
+      "commit": "ef719db7eaadc56aa4def86c4da4ffff5bcbca35",
+      "version": "0.2.0",
+      "license": "MIT",
+      "egress": "api.typesafe.ai only when TYPESAFE_API_KEY is set and a stop has unverified edits (4 questions: closing message + evidence counts, redacted)",
+      "files": ["LICENSE", "belay.mjs", "tui.mjs", "package.json", "hooks/hooks.json", "tools/fake-jev.mjs", "skills/**"],
+      "claude_hooks": "hooks/hooks.json",
+      "skills": {
+        "skills/doctor": "jev-belay-doctor",
+        "skills/why": "jev-belay-why"
+      }
+    },
+    {
+      "name": "jevmem",
+      "what": "Jev project memory: Jev decides which turns are worth one line in JEVMEM.md and recalls them per prompt; inert until `jevmem enable`",
+      "repo": "https://github.com/Avinash-jetwani/jevmem",
+      "commit": "87c99dc2cd88f5c7c7df54455436f752dc5299a7",
+      "version": "plugin 0.5.7 (directory branch) + CLI 0.5.9 from npm",
+      "license": "MIT",
+      "egress": "api.typesafe.ai after `jevmem enable`: prompt, previous two turns (shortened), up to 200 memory lines; secrets scrubbed by pattern (PGPASSWORD fix needs CLI >= 0.5.8)",
+      "root": "plugin",
+      "files": ["LICENSE", "hooks/hooks.json", "hooks/jevmem-hook.sh"],
+      "claude_hooks": "hooks/hooks.json",
+      "skills": {}
+    },
+    {
+      "name": "building-with-typesafe-jev",
+      "what": "Skill: Jev API (Choice/Score/Noul), confidence routing, anti-patterns, prior-art index",
+      "repo": "https://github.com/aaddrick/building-with-typesafe-jev",
+      "commit": "db95c54abf6cbaa3c2e0e9059051508675e3649b",
+      "version": "0.3.0",
+      "license": "MIT",
+      "egress": "none by itself; tells the agent to make a few live Jev calls when TYPESAFE_API_KEY is set",
+      "files": ["LICENSE", "skills/building-with-typesafe-jev/**"],
+      "skills": {
+        "skills/building-with-typesafe-jev": "building-with-typesafe-jev"
+      }
+    },
+    {
+      "name": "omp-utility-skills",
+      "what": "Skills: omp-docs (answers from a fresh omp source checkout) and omp-config (inspect/change omp config)",
+      "repo": "https://github.com/hkay-dev/omp-utility-skills",
+      "commit": "6c75f09c7222114ec62ec7b36cfddd3fd90fb96a",
+      "version": "2026-08-20",
+      "license": "MIT",
+      "egress": "git clone of github.com/can1357/oh-my-pi when omp-docs refreshes its checkout",
+      "files": ["LICENSE", "skills/**"],
+      "skills": {
+        "skills/omp-docs": "omp-docs",
+        "skills/omp-config": "omp-config"
+      }
+    },
+    {
+      "name": "omp-delegate",
+      "what": "Skill: hand a written brief to omp headless (`omp --mode json`), then review its diff before committing",
+      "repo": "https://github.com/amElnagdy/delegate-skills",
+      "commit": "6826b363085dcc80875372315fe7d208c4bf733f",
+      "version": "0.5.0",
+      "license": "MIT",
+      "egress": "whatever model provider omp is configured with",
+      "files": ["LICENSE", "skills/omp-delegate/**"],
+      "skills": {
+        "skills/omp-delegate": "omp-delegate"
+      }
+    }
+  ],
+  "not_vendored": [
+    {
+      "name": "Computer (computer-use@openai-bundled)",
+      "why": "Codex's bundled plugin; the @-mention in claude.ai preferences does nothing in Claude Code. Cloud containers have no desktop to control.",
+      "instead": "omp has built-in browser/computer tools; the Claude desktop app has the claude.ai computer-use skill"
+    }
+  ]
+}

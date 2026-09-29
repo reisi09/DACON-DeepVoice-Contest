@@ -44,6 +44,7 @@ Voice EER은 음성이 있는 샘플에서만, Music EER은 음악이 있는 샘
   - 마지막 날의 기각 실험 X1–X3: [x2](repository/research/top15/work5/x2_20260928/SUMMARY.md), [x3](repository/research/top15/work5/x3_20260929/SUMMARY.md)
 - 음원, 특징, 가중치, 제출 zip은 이 저장소에 없다. 대회가 끝난 뒤 작업 환경의 데이터(AI-Hub 포함)는 삭제했다.
 
+- [에이전트 하네스: omp·Jev·플러그인 목록](harness/README.md)
 - [협업 문서: 모델·데이터·검증 요약 — 2026-09-28](repository/docs/collab/README.md)
 - [Top-15 research plan across all branches — 2026-09-27](docs/TOP15_RESEARCH_PLAN_2026-09-27.md)
 - [Research results across all branches — 2026-09-27](docs/RESEARCH_RESULTS_2026-09-27.md)
