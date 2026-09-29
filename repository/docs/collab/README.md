@@ -24,9 +24,10 @@
 | S2a | DataV4_S2a_AIHubPhone | c7c8b1c83d242df9 | 0.7689 | P1에 AI-Hub 571 전화 음성 800개 추가 |
 | S3 | DataV4_S3_Backbones | 062fc236bf0d1503 | 0.7853 | AntiDeepfake 음성 멤버, MERT 6+12층 음악 특징 |
 | S6 | DataV4_S6_S5LabelCompletion | 7429b1830aaf0333 | 0.8220 | MLP/ResMLP head, EAT 음악 특징, 라벨 보완 규칙 L |
-| **S7** | **DataV4_S7_SSLAMWavLM** | **5239c912ccbee8c2** | **0.8374 (최고)** | S6에 SSLAM b5 음악 특징과 WavLM h8 음성 멤버 추가 |
+| S7 | DataV4_S7_SSLAMWavLM | 5239c912ccbee8c2 | 0.8374 | S6에 SSLAM b5 음악 특징과 WavLM h8 음성 멤버 추가 |
 | S8 | DataV4_S8_MixSSLAM | b0e8744225e9252e | 0.8340 | S7에 원본 믹스의 SSLAM 특징 추가 (DB에서는 +0.0043, LB에서는 −0.0034) |
 | W (후보) | DataV4_W_Reweight | a17442e6f3e2a830 | 미제출 | S7 구조 그대로, 모든 head를 W 가중치로 재학습 |
+| **W_new (최종)** | **DataV4_W_new** | **58e7e3bd460cde93** | **0.85195 (최고, total 0.86652, CPS 0.99767, 최종 29위)** | W에 새 데이터 40,214행 추가 (2026-09-29 제출, 사용자 보고) |
 
 ## 3. 모델 (S7 구조, W도 동일)
 

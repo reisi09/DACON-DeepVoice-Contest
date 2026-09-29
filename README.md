@@ -2,6 +2,26 @@
 
 지금까지 진행한 딥보이스 탐지 실험의 모델·학습·추론 코드, 노트북, 설정과 결과 기록을 모았습니다. 원래 프로젝트의 상대 경로는 `repository/` 아래에 유지했습니다.
 
+## 최종 결과 (대회 종료 2026-09-29 10:00 KST)
+
+| 항목 | 값 |
+|---|---|
+| 최종 제출 모델 | W_new (`repository/submissions/DataV4_W_new/submit.json`, zip sha256 `58e7e3bd460cde93b6cb65aae02da6985b9e2d5c17c5f9f88622f58df04d1c68`) |
+| 리더보드 | total **0.86652**, ADS **0.85195**, CPS **0.99767** |
+| 순위 | **29위** (테스트 전체가 Public이고 Private와 같다. 사용자 확인) |
+| 이전 최고 | S7 ADS 0.8374 → W_new가 +0.0146 |
+
+- **모델 구조**: S7 구조를 그대로 쓰고, 모든 head를 W 가중치로 다시 학습했다. 학습 데이터는 bank v4 P1 행에 새 데이터 40,214행을 더했다.
+- **고정 인코더**: HTDemucs, DF-Arena-1B, AntiDeepfake XLS-R-1B, WavLM-Large, MERT-330M, EAT-large, SSLAM, PANNs.
+- **학습한 head**:
+  - 음성: DF-Arena·AntiDeepfake(라벨 보완 L)·WavLM h8 멤버를 1/0.5/1로 융합
+  - 음악: MERT 6·12층, EAT 16, SSLAM 5 특징 위의 WindowMIL
+  - FILE: 후보 규칙을 0/9/1로 가중
+- **자세한 기록**:
+  - 구성과 검증: [협업 문서](repository/docs/collab/README.md), [제출 계획과 LB 결과](repository/docs/collab/SUBMISSION_PLAN_20260929.md)
+  - 마지막 날의 기각 실험 X1–X3: [x2](repository/research/top15/work5/x2_20260928/SUMMARY.md), [x3](repository/research/top15/work5/x3_20260929/SUMMARY.md)
+- 음원, 특징, 가중치, 제출 zip은 이 저장소에 없다. 대회가 끝난 뒤 작업 환경의 데이터(AI-Hub 포함)는 삭제했다.
+
 - [협업 문서: 모델·데이터·검증 요약 — 2026-09-28](repository/docs/collab/README.md)
 - [Top-15 research plan across all branches — 2026-09-27](docs/TOP15_RESEARCH_PLAN_2026-09-27.md)
 - [Research results across all branches — 2026-09-27](docs/RESEARCH_RESULTS_2026-09-27.md)
