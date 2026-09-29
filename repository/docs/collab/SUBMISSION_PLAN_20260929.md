@@ -21,6 +21,7 @@
 | ③ 2순위 | s7_new_ob (s7_new + AI-OpenBMAT 400행) | `submissions/DataV4_s7_new_ob/submit.zip` | `e4205dcecbc32989ba899fe445cb455ff510882aade659605232e1fae4ea1070` | Mac CPU, 출력 일치(V 0.00018 / M 0.00028 / F 0.0001). **VESSL CUDA 미실행**(x1 정지 중) |
 | ③ 3순위 | W_new (W 가중치 + 같은 새 데이터) | `submissions/DataV4_W_new/submit.zip` | `58e7e3bd460cde93b6cb65aae02da6985b9e2d5c17c5f9f88622f58df04d1c68` | Mac CPU, 출력 일치(V 0.00064 / M 0.00102 / F 0.0002), VESSL CUDA 통과 |
 
+| 추가 (07:13) | mix: 음성 s7_new + 음악 W_new (head byte 복사, 재학습 없음) | `submissions/DataV4_mix/submit.zip` | `ba14fe5e73fd27c65dbe296376caff998a0bb9cce7bf439fa3a00a05d94b4922` | 사용자 요청으로 검증 생략(패키저 CRC만). newval 선택 검정 +0.0013 미달 |
 - 모든 패키지는 인코더와 실행 코드가 S7과 같고 head만 다르다. L4 실행 시간(약 30분)과 GPU 메모리도 S7과 같다.
 - FILE 규칙은 모두 0/9/1로 고정했다.
 
@@ -82,6 +83,15 @@
 철회한 해석: 16:40 판의 4.0절은 "s7_new 한 번으로 채점기 fake가 최신 생성기 위주인지 판별한다"고 적었다.
 AT-ADD 34,000행은 fake 21,500 + real 12,500이고, 데이터 추가는 real 구성과 학습 가중치도 함께 바꾼다.
 그래서 LB 변화폭만으로 채점기의 성격을 판별할 수 없다. 4.1절의 LB 구간별 분기표도 같은 이유로 폐기했다.
+
+## 4.1 LB 결과 (사용자 보고)
+
+| 제출 | total | ADS | CPS | public 순위 |
+|---|---|---|---|---|
+| S7 (기존 최고) | – | 0.8374 | – | – |
+| W_new (2026-09-29) | 0.86652 | 0.85195 | 0.99767 | 29위 |
+
+W_new의 ADS는 S7보다 +0.0146 높다. 이 비교는 LB 한 번의 결과다.
 
 ## 5. 일정
 
